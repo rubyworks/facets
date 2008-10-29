@@ -16,12 +16,13 @@
 #     memoize :a
 #   end
 #
-#   t = T.new
+#   t = T.new(1)
 #   t.a.__id__ == t.a.__id__  #=> true
 #
 # == Authors
 #
-# * Trans
+# * trans
+# * rtb
 #
 # == Copying
 #
@@ -59,11 +60,10 @@ class Module
   #   t.a.__id__ == t.a.__id__  #=> true
   #
   def memoize(*meths)
-    @_MEMOIZE_CACHE ||= Hash.new
     meths.each do |meth|
-      mc = @_MEMOIZE_CACHE[meth] = Hash.new
       old = instance_method(meth)
       new = proc do |*args|
+        mc = ((@_MEMOIZE_CACHE ||= {})[meth] ||= {})
         if mc.has_key? args
           mc[args]
         else
@@ -77,23 +77,18 @@ class Module
 end
 
 # This allows memoize to work in main and instance scope too.
-#--
-# Would this be good to have? Will need to modify for instance level, if so.
-#++
-
 def memoize(*args)
   Object.memoize(*args)
 end
 
-#
-module Kernel
+module Kernel #:nodoc:
 
   # Object#cache is essentially like Module#memoize except
   # it can also be used on singleton/eigen methods.
   # OTOH, memoize's implementation is arguably better for it's
   # use of #bind instead of #alias. Eventually the two implmenations
-  # will be reconciled with a single implmentation.
-
+  # should be reconciled with a single implementation.
+  #
   def cache m = nil
     if m
       (Module === self ? self : (class << self; self; end)).module_eval <<-code
@@ -113,4 +108,3 @@ module Kernel
   end
 
 end
-

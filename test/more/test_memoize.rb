@@ -17,19 +17,21 @@ class TC_Memoize < Test::Unit::TestCase
 
 
   def setup
-    @t = T.new(2)
+    @t1 = T.new(1)
+    @t2 = T.new(2)
+    @t3 = T.new(3)
   end
 
-  def test_memoize_01
-    assert_equal( @t.a, @t.a )
+  def test_memoize_gives_correct_value
+    assert_equal( @t1.a, "6" )
+    assert_equal( @t2.a, "5" )
+    assert_equal( @t3.a, "4" )
   end
 
-  def test_memoize_02
-    assert_equal( @t.a.__id__, @t.a.__id__ )
-  end
-
-  def test_memoize_03
-    assert_equal( @t.a.__id__, @t.a.__id__ )
+  def test_memoize_returns_identical_objects
+    assert_equal( @t1.a.__id__, @t1.a.__id__ )
+    assert_equal( @t2.a.__id__, @t2.a.__id__ )
+    assert_equal( @t3.a.__id__, @t3.a.__id__ )
   end
 
 end
