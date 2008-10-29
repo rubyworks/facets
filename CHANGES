@@ -1,0 +1,56 @@
+== 2.4.5 / 2008-10-03
+
+* 6 Major Enhancements
+
+    * Re-added date.rb to lore library, and removed from core.  (#r1014)
+    * Much improved date.rb extension now in Lore library.  (#r1027)
+    * Deprecated kernel/suppress. Use Exception.suppress from now on.  (#r1040)
+    * Deprecates string/style.rb. Use English project instead.  (#r1074)
+    * Console namespace is no longer supported (for Ansicode).  (#r1077)
+    * enumerable/mode.rb, Enumerable#mode now returns array since there can be more than one.  (#r1079)
+
+* 11 Minor Enhancements
+
+    * Moved variablize methods out of metaid.rb and into separate files (string/ and symbol/).  (#r1042)
+    * Added Time#advance.  (#r1046)
+    * OpenCascade automatically creates nodes, use foo? to query.  (#r1056)
+    * Speed up of Integer odd/even methods.  (#r1057)
+    * Array#index now takes a block (this is a core override).  (#r1059)
+    * Spilt file/write.rb into separate method files (append, create, writelines).  (#r1073)
+    * Modified Enumerable#split to behave like String#split.  (#r1076)
+    * integer/odd.rb, fixed Ruby 1.9 condition.  (#r1080)
+    * hash/op.rb, split into separate method files.  (#r1081)
+    * Added string/modulize. string/methodize handles path names now too.  (#r1085)
+    * Class#cattr is now part of core.  (#r1089)
+
+* 2 Bug Fixes
+
+    * OpenStruct#to_h dups internal table.  (#r1015)
+    * Fixed require of string/xor in bicrypt.rb.  (#r1039)
+
+
+== 2.4.4 / 2008-09-01
+
+* 4 Major Enhancements
+
+    * Added string/mask providing powerful string manipulation.  (#r997)
+    * BasicObject is now just a synonm for BlankSlate unless Ruby 1.9.  (#r1000)
+    * Added Symbol#plain?, Symbol#query? and Symbol#setter?  (#r1011)
+    * Removed Time#to_date. 
+      * Due to clobberd RI Docs (!) this should have been in Lore lib date.rb
+      * Moved to Lore date.rb. (#r1012)
+
+* 6 Minor Enhancements
+
+    * Moved style.rb to string/stylize.rb  (#r998)
+    * Renamed string/subtract to string/op_sub. 
+      Old name will remain for time being for compatability. (#r1002)
+    * Module#instance_method_define? now only applies to public methods.  (#r1003)
+    * Array#index accepts a block (one of the few core overrides).  (#r1004)
+    * Moved Hash#<< from hash/update.rb to hash/op_push.rb  (#r1005)
+    * Add facets class files (eg. facets/string) have been made dynamic.  (#r1013)
+
+* 1 Bug Fixes
+
+    * Hash#<< now return self  (#r1001)
+

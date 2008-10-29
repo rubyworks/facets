@@ -1,0 +1,112 @@
+<html>
+
+<head>
+  <title>Facets Typecast</title>
+
+  <style>
+    body { font: 12pt sans-serif; 
+      padding: 0; margin: 0;
+    }
+    #container {
+      margin: 0 auto;
+    }
+    #title {
+      color: #dddddd;
+      border-bottom: 1px solid gray;
+      padding: 20px;
+    }
+    #project {
+      font: 22pt sans-serif;
+      color: black;
+    }
+    #package {
+      font: bold 42pt sans-serif;
+      color: red;
+    }
+    #corpus {
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+<div id="container">
+
+  <div id="title">
+    <div id="project">Facets</div>
+    <div id="package">Typecast</div>
+  </div>
+
+  <div id="corpus">
+    <h2>Overview</h2>
+    <p>Typecast provides a simple generic type conversion system. All the ruby core
+    conversions are available by default.</p>
+
+    <p>To implement a new type conversion, you have two choices. Given:</p>
+
+     <pre>
+      class CustomType
+        def initialize(my_var)
+          @my_var = my_var
+        end
+      end
+     </pre>
+
+     <p> 1) Define a to_class_name instance method </p>
+
+    <pre>
+      class CustomType
+        def to_string
+          my_var.to_s
+        end
+      end
+
+      c = CustomType.new 1234
+      s.cast_to String   =>  "1234" (String)
+    </pre>
+
+    <p> 2. Define a from_class_name class method </p>
+
+    <pre>
+      class CustomType
+        def self.from_string(str)
+          self.new(str)
+        end
+      end
+
+      "1234".cast_to CustomType  =>  #<CustomType:0xb7d1958c @my_var="1234">
+    </pre>
+
+    <p>Those two methods are equivalent in the result. It was coded like that to
+    avoid the pollution of core classes with tons of to_* methods.</p>
+
+    <p>The standard methods to_s, to_f, to_i, to_a and to_sym are also used by
+    this system if available.</p>
+
+    <p>Usage looks like</p>
+
+    <pre>
+      "1234".cast_to Float     => 1234.0  (Float)
+      Time.cast_from("6:30")   => 1234.0   (Time)
+    </pre>
+
+    <h2>FAQ</h2>
+
+    <p>Why didn't you name the `cast_to` method to `to` ?</p>
+
+    <p>Even if it would make the syntax more friendly, I suspect it could cause
+    a lot of collisions with already existing code. The goal is that each
+    time you call cast_to, you either get your result, either a
+    TypeCastException.</p>
+  </div>
+
+  <div id="copy">
+    Copyright &copy; 2004 Thomas Sawyer and all respective authors.
+    Ruby License
+  </div>
+
+</div>
+</body>
+
+</html>
+

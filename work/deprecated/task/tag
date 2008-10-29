@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+
+# Tag the current version.
+
+def svn_tag
+  developername = ENV['RUBYFORGE_USERNAME']
+
+  abort "RUBYFORGE_USERNAME environment var required" unless developername
+
+  from = "svn+ssh://#{developername}@rubyforge.org/var/svn/facets/trunk"
+  twrd = "svn+ssh://#{developername}@rubyforge.org/var/svn/facets/tags/#{version}"
+  mesg = "TAG #{vers}"
+
+  svn "copy #{from} #{twrd} -m '#{mesg}'"
+end
+
+#
+
+def version
+  File.read('meta/VERSION').strip.split(' ')[0]
+end
+
+# Go!
+if $0 == __FILE__
+  svn_tag
+end

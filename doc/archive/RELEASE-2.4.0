@@ -1,0 +1,70 @@
+= Release Notes
+
+Facets 2.4 is a major step forward for Facets. It is perhaps
+the release that 2.0 should have been, but of course it took
+the actual 2.0 release to make 2.4 possible. Some annoyances
+you may have encountered in updating your code to 2.0 are now
+fixed. And from 2.4 on, Facets will now be settling down into
+simple refinement release cycles.
+
+The main change under the hood is to bring everything up to
+the top lib/facets/ directory. No longer are the libraries
+sorted by category. I had done so for a long time to make
+it easier to track the various libs, but in the end it was
+only making it more diffcult to deal with build tools and 
+packaging.
+
+For the end-user, the largest change is a new emphisis on:
+
+  require 'facets'
+
+This is better than cherry-picking methods. It may seem counter-
+intuitive, but it actually proves more advantantages to do this
+for the sake of interoperability than the practice of cherry-picking.
+The reason is simply because others may have cherry-picked different
+methods, and those distinctions go unaccounted and untested.
+
+Also with this release, to bolster the use of require 'facets',
+some lack-luster extensions have been deprecated and namespace usage
+has been improved. In addition, we are getting very close to full
+ActiveSupport, and Ruby 1.9, interoperability. Expect this
+to be complete in the next minor release or two.
+
+== Previously
+
+(2.3.0) Amoung other changes with this release, cloneable.rb is
+now a true deep dup/clone mixin; tracepoint.rb returns
+to the library.
+
+(2.2.1) This release get rid of the underlying methods subdir.
+All method redirects are now in core, to ensure
+there are no more name clashes.
+
+(2.2.0) This release provides improved rdocs and prepares facets for
+use with RUby 1.9. It also adds Matthew Harris' duration.rb
+library. Bug thanks to Matthew!
+
+(2.1.0) Major changes include a new and much-improved command.rb,
+a new BiCrypt class for simple two-way crypotgraphy,
+as well as attr_reader!, attr_writer! and attr_accessor!
+for flag attributes, plus alias_xxx methods for all
+attr_xxx methods.
+
+
+### CHANGELOG 2.4.0 / 2008-03-24
+
+* String#to_re and String#to_rx have swapped default behaviors. #to_rx escapes, #to_re does not.
+* The Console namespace is being deprecated. command.rb and arguments.rb now use CLI naemspace.
+* #compare_on and #equate_on are now "mixin methods" Comparable() and Equateable().
+* Enumerable#product, #combintations and #permutations have change to be Ruby 1.9 compatible.
+* thread.rb, map_send, et al, block is passed to send instead of yielding on result.
+* namespace.rb has been renamed to methodspace.rb.
+* Ruby 1.9 defined a new Proc#curry method, so Facets version has been made compatible.
+* The old curry method is now called #partial, as in "partial application".
+* Deprecated interface.rb. Perhaps a better approach but nonetheless extraneous.
+* Deprecated paramix.rb. A better way is to use a capitialized methods. (Perhaps a lib for that?)
+* Brought back a few web related libs, htmlfilter.rb and cssfilter.rb in particular.
+* camelcase and snakecase are core extensions. For specialized styles use String#style in style.rb.
+* This was a fairly large and fast-paced update, so unfortunately not all changes are listed this time.
+
+

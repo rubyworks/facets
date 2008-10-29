@@ -1,0 +1,60 @@
+= Annotations
+
+A Complete In Code Annotations System
+by Trans and George Moschovitis
+
+http://facets.rubyforge.org
+
+== Synopsis
+
+Annotations provides a complete and easy to use system of annotating methods and arbitrary objects. The annotations are defined in-code,not in comments, so it is fully reflective without any preproccessing.
+
+== What's New
+
+This is Facets/Annotations first release as an independent project. As with all Facets' subprojects it is included in the complete facets package. So if you have 'facets' installed you do not need this.
+
+Version 2.0+ is a major simplification over 1.0 series. Overall speed is much faster and the notation more consistant. Where before one would use "ann.attr_name.ann_name", now it's ann(:attr_name, :ann_name). This change was inspired by Ara T. Howard.
+
+== Example
+
+  class X
+    attr :foo, String, :default => "bar"
+  end
+
+  X.ann :foo, :class               #=> String
+  X.ann :foo, :default             #=> "bar"
+
+  X.ann :foo, :default => "baz"
+
+  X.ann :foo, :default             #=> "baz"
+
+== Installation
+
+IMPORTANT! This library is included in the complete facets package. You do not this library if you already have facets installed. 
+
+You can install either via gem or tarball.
+
+  gem install facets_annotations
+
+or
+
+  wget http://rubyforge.org/frs/download.php/18317/facets_annotations-2.0.0.tgz
+  cd facets_annotations
+  sudo ruby setup.rb
+
+== Documentation
+
+Please see doc/ directory for additional documentation.
+
+== Credit
+
+  Trans [Implementation]
+  George Moschovitis [Original Concept]
+  Ara T. Howard [Suggestions]
+
+== License
+
+Copyright (c) 2004-2007 Thomas Sawyer, George Moschovitis
+
+Distributed under the Ruby/GPL dual-license.
+

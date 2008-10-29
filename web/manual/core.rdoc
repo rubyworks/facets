@@ -1,0 +1,37 @@
+= Facets Core
+
+Core contains the *essentials* of Facets. Core consists of a number
+of generally useful core extension methods, and a couple small support
+classes.
+
+By definition Core contains anything that will load automatically when
+issuing:
+
+  require 'facets'
+
+== Facets by the Method
+
+In the 1.0 series of Facets, all extensions were stored on a per-method
+basis. This had some advantages, organization and complete fine-grain control
+over requires was possible, but it proved in practice to be _too_ granular.
+Some method simply too close in nature, or dependency, to go without others.
+
+So version 2.0 has grouped the extensions method into small groups.
+The library is still highly granular, but not excessively. But there's
+still refinement being done in this regard. You need not worry about it
+though, becuase per-method redirect libraries are provided. This is useful,
+not only for backward compatability, but also if you know what method you
+want, but don't recall exactly which core file it is in.
+
+Here's an example:
+
+  require 'facets-by-method/hash/collate'
+
+== Authors
+
+This library more than any other part of Facets is full of contributions
+from sources all across the Ruby community. For all who have code here,
+the Facets Team salutes you.
+
+For a list of names, look to the README in Facet's main documetation.
+

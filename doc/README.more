@@ -1,0 +1,43 @@
+= Facets More Library
+
+  http://facets.rubyforge.com
+
+  "ALL YOUR BASE ARE BELONG TO RUBY"
+
+
+== Introduction
+
+On top of the extensive Core library, Facet provides a large collection of addational modules and classes.
+
+
+== Usage
+
+Use the More library like ou would any other 3rd party library. The only difference between Facets More library and other
+thrid party libraries is the lack of a enclosing @Facets::@ namespace. This is becuase the libraries provided by Facets
+are considerd fairly low-level. (Albeit there are a few exceptions.)
+
+
+== License
+
+The collection PER COLLECTION is licensed as follows:
+
+  Ruby Facets
+  Copyright (c) 2004-2006 Thomas Sawyer
+
+  Distributed under the terms of the Ruby license.
+
+The Ruby license is a dual license that also provides for use of the GPL. Complete texts of both licenses accompany this document (see LICENSE).
+
+Acknowledgments and Copyrights for particular snippets of borrowed code are given in their respective source. All licenses are either compatible with the Ruby license (namely the GPL) or the original author has given permission for inclusion of their code under such license.
+
+
+
+ALL YOUR BASE ARE BELONG TO RUBY!
+
+
+Ruby Facets, Copyright (c)2005,2006,2007,2008 Thomas Sawyer
+
+Do you Ruby? (http://ruby-lang.org)
+
+
+

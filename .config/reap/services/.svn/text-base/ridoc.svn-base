@@ -1,0 +1,6 @@
+---
+# divide this up into three as well?
+service : RiDoc
+output  : doc/ri
+include : [lib/core/facets, lib/lore/facets, lib/more/facets]
+

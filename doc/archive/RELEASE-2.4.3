@@ -1,0 +1,78 @@
+= Release Notes -- 2.4.3
+
+== Major Changes
+
+* Changed File#rewrite to not use the in-place change of the string.
+* Deprecate Hash#keys_to_s and Hash#keys_to_sym.
+* Renamed Class#to_pathname and #to_methodname to #pathize and #methodize.
+* Deprecated Console:: namespace for ANSICode.
+* Added Time#trunc and Time#round to Core.
+* Added Ken Bloom's DictionaryMatcher class (will be renamed in future version)
+* Added Array#recursively and fixed bug in Hash#recursively.
+* Added kernel/instance method which provides a fluent interface to private object space.
+* Moved Mentalguy's lazy.rb to core!
+* Added Indexable and Stackable to core.
+* Deprecated ruby.rb, which was a sort 1.9 compatibility layer.
+* The ruby.rb methods were moved to core, wrapped in a 1.9 condition.
+
+== Minor Changes
+
+* Fixed Time#hence changed years when changing months.
+* Fixed Time#hence to flip year correctly when adding months.
+* Added optional argument to Dictionary#first and #last.
+* Improved File#rootname --it is now more robust.
+* Made FileUtils#whereis a module_function again.
+* Although not perceptible to the end user, there are now three divisions lib/core, lib/lore, lib/more.
+* Created Lore library to house extensions to Ruby's standard library.
+
+Note that this release does not include a setup.rb script. We are working
+on a new version of this script, which we plan to include in the next release.
+
+Special thanks to:
+
+* Ken Bloom
+* Nick Caruso
+* Evgeniy Dolzhenko
+* Andy Freeman
+* Tomasz Muras
+* Dave Myron
+
+And of course, to anyone else I failed to mention that has contributed.
+
+As a REMINDER, Facets 2.4+ now encourages:
+
+  require 'facets'
+
+This is better than cherry-picking methods. It may seem counter-intuitive,
+but it actually proves more advantages to do this for the sake of
+improved interoperability. The practice of cherry-picking can become 
+problematic if other dependent libraries have cherry-picked different
+methods. In those cases these distinctions go unaccounted and untested.
+
+Facets is almost fully interoperable with ActiveSupport and Ruby 1.9.
+We will continue to improve this interoperability in upcoming releases.
+
+
+### CHANGELOG 2.4.3 / 2008-08-14
+
+* Fixed Time#hence changed years when changing months.
+* Deprecate Hash#keys_to_s and Hash#keys_to_sym.
+* Renamed Class#to_pathname and #to_methodname to #pathize and #methodize.
+* Added Sting#pathize and String#methodize.
+* Deprecated Console:: namespace for ANSICode.
+* Added Time#trunc and Time#round to Core.
+* Added Ken Bloom's DictionaryMatcher class (will be renamed in future version)
+* IMPORTANT! Changed File#rewrite to not use the inplace change of the string.
+* Added Array#recursively and fixed bug in Hash#recursively.
+* Fixed Time#hence to flip year correctly when adding months.
+* Added optional argument to Dictionary#first and #last.
+* Added kernel/instance method which provides a fluent interface to private object space.
+* Moved Mentalguy's lazy.rb to core!
+* Added Stackable and Indexable to core.
+* Removed ruby.rb, which was a sort 1.9 compatibility lib. The methods are now in core.
+* Improved File#rootname --much more robust now.
+* Made FileUtils#whereis a module_function again.
+* Although not perceptable to the end user, there are now three libs (lib/core, lib/lore, lib/more).
+* Created Lore library to house extensions to Ruby's standard library.
+
+

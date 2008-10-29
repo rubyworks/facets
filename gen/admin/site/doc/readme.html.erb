@@ -1,0 +1,24 @@
+<% require 'rdoc/markup/simple_markup' %>
+<% require 'rdoc/markup/simple_markup/to_html' %>
+
+<html>
+<head>
+  <title>FACETS README</title>
+  <link href="api.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <div class="content">
+  <div class="main">
+
+  <%= 
+    m = ::SM::SimpleMarkup.new
+    h = ::SM::ToHtml.new
+    f = ::File.read('README')
+    m.convert(f,h) 
+  %>
+
+  </div>
+  </div>
+</body>
+</html>
+

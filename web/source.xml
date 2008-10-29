@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml-stylesheet href="layout.xsl" type="text/xsl" ?>
+
+<content>
+
+<div class="blurb">
+  Under the Hood
+
+  <div class="desc">
+    Subversion repository
+  </div>
+</div>
+
+<div class="page">
+
+<!--
+  <div style="text-align: center; margin-top: 10px; margin-bottom: 30px;">
+    <img src="img/SPYlights.png" style="padding-left: 30px;"/>
+  </div>
+-->
+
+  <div class="section">
+
+    <h1>Anonymous Subversion Access</h1>
+
+    <p>This project's SVN repository can be checked out through anonymous access with
+       either of the following commands:</p>
+
+    <pre style="padding-left: 40px;"><code>
+      svn checkout http://facets.rubyforge.org/svn/
+      svn checkout svn://rubyforge.org/var/svn/facets
+    </code></pre>
+
+    <p>The last step may require super-user permissions (eg. use <code>sudo</code>).</p>
+  </div>
+
+  <div class="section">
+
+    <h1>Developer Subversion Access via SSH</h1>
+
+    <p>Only project developers can access the SVN tree via this method. SSH must be
+       installed on your client machine. Substitute developername with the proper values.
+       Enter your site password when prompted.</p>
+
+    <pre><code>
+     svn checkout svn+ssh://developername@rubyforge.org/var/svn/facets
+    </code></pre>
+
+  </div>
+
+  <div class="section">
+  
+    <h1>Browse Source</h1>
+
+    <p>Facets source code is hosted by RubyForge. You 
+       <a href="http://rubyforge.org/scm/?group_id=804">SCM page</a>
+       may provide additional information.
+       You can 
+       <a href="http://facets.rubyforge.org/svn/">browse the source via the web</a>
+       thru their basic interface.
+    </p>
+ 
+  </div>
+
+</div>
+
+</content>
+

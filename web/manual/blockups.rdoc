@@ -1,0 +1,101 @@
+= Buildable
+
+Block builder system.
+
+by Trans
+
+http://facets.rubyforge.org
+
+
+== Synopsis
+
+Buildable provides a library for creating your own block builders.
+
+
+== Example
+
+   require 'facets/buildable'
+   require 'xmlhelper'
+
+   module XMLHelper
+     include Buildable
+     alias :build :element
+   end
+
+   doc = XMLHelper.build do
+     html do
+       head do
+         title "Test"
+       end
+       body do
+         i "Hello"
+         br
+         text "Test"
+         text "Hey"
+       end
+     end
+   end
+
+   doc.to_s
+
+_produces_
+
+   <html><head><title>Test</title><body><i>Hello</i><br />TestHey</body></html>
+
+The Buildable module is based on BuildingBlock class. The same effect can be achieved using it directly:
+
+   require 'facets'
+   require 'xmlhelper'
+
+   builder = BuildingBlock.new(XMLHelper, :element)
+
+   doc = builder.html do
+     head do
+       title "Test"
+     end
+     body do
+       i "Hello"
+       br
+       text "Test"
+       text "Hey"
+     end
+   end
+
+   doc.to_s
+
+
+== Installation
+
+IMPORTANT! This library is included in the complete facets package. You do not this library if you already have facets installed. 
+
+You can install either via gem:
+
+  gem install buildable
+
+or manually via tarball:
+
+  wget http://rubyforge.org/frs/download.php/.../buildable-x.x.x.tgz
+  cd buildable-x.x.x
+  sudo util/setup
+
+
+== Documentation
+
+Please see doc/ directory for additional documentation.
+
+
+== Upcoming Features
+
+Better support for alternate output buffers.
+
+
+== Credit
+
+  Trans
+
+
+== License
+
+Copyright (c) 2004-2007 Thomas Sawyer
+
+Distributed under the Ruby/GPL dual-license.

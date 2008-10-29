@@ -1,0 +1,177 @@
+= Command
+
+Command provides a clean and easy way to create a command
+line interface for your program. The unique technique
+utlizes a Commandline to Object Mapping (COM) to make
+it quick and easy.
+
+== Synopsis
+
+Let's make an executable called 'mycmd'.
+
+  #!/usr/bin/env ruby
+
+  require 'facets/console/command'
+
+  class MyCmd < Console::Command
+
+    def _v
+      $VERBOSE = true
+    end
+
+    def jump
+      if $VERBOSE
+        puts "JUMP! JUMP! JUMP!"
+      else
+        puts "Jump"
+      end
+    end
+
+  end
+
+  MyCmd.execute
+
+Then on the command line:
+
+  % mycmd jump
+  Jump
+
+  % mycmd -v jump
+  JUMP! JUMP! JUMP!
+
+== Subcommands
+
+Commands can take subcommand and suboptions. To do this
+simply add a module to your class with the same name
+as the subcommand, in which the suboption methods are defined.
+
+  MyCmd << Console::Command
+
+    def initialize
+      @height = 1
+    end
+
+    def _v
+      $VERBOSE = true
+    end
+
+    def jump
+      if $VERBOSE
+        puts "JUMP!" * @height
+      else
+        puts "Jump" * @height
+      end
+    end
+
+    module Jump
+      def __height(h)
+        @height = h.to_i
+      end
+    end
+
+  end
+
+  MyCmd.start
+
+Then on the command line:
+
+  % mycmd jump -h 2
+  Jump Jump
+
+  % mycmd -v jump -h 3
+  JUMP! JUMP! JUMP!
+
+Another thing to notice about this example is that #start is an alias
+for #execute.
+
+== Missing Subcommands
+
+You can use #method_missing to catch missing subcommand calls.
+
+== Main and Default
+
+If your command does not take subcommands then simply define
+a #main method to dispatch action. All options will be treated globablly
+in this case and any remaining comman-line arguments will be passed
+to #main.
+
+If on the other hand your command does take subcommands but none is given,
+the #default method will be called, if defined. If not defined
+an error will be raised (but only reported if $DEBUG is true).
+
+== Global Options
+
+You can define <i>global options</i> which are options that will be
+processed no matter where they occur in the command line. In the above
+examples only the options occuring before the subcommand are processed
+globally. Anything occuring after the subcommand belonds strictly to
+the subcommand. For instance, if we had added the following to the above
+example:
+
+  global_option :_v
+
+Then -v could appear anywhere in the command line, even on the end,
+and still work as expected.
+
+  % mycmd jump -h 3 -v
+
+== Missing Options
+
+You can use #option_missing to catch any options that are not explicility
+defined.
+
+The method signature should look like:
+
+  option_missing(option_name, args)
+
+Example:
+  def option_missing(option_name, args)
+    p args if $debug
+    case option_name
+      when 'p'
+        @a = args[0].to_i
+        @b = args[1].to_i
+        2
+      else
+        raise InvalidOptionError(option_name, args)
+    end
+  end
+
+Its return value should be the effective "arity" of that options -- that is,
+how many arguments it consumed ("-p a b", for example, would consume 2 args:
+"a" and "b"). An arity of 1 is assumed if nil or false is returned.
+
+Be aware that when using subcommand modules, the same option_missing
+method will catch missing options for global options and subcommand
+options too unless an option_missing method is also defined in the
+subcommand module.
+
+== Help Documentation
+
+You can also add help information quite easily. If the following code
+is saved as 'foo' for instance.
+
+  MyCmd << Console::Command
+
+    help "Dispays the word JUMP!"
+
+    def jump
+      if $VERBOSE
+        puts "JUMP! JUMP! JUMP!"
+      else
+        puts "Jump"
+      end
+    end
+
+  end
+
+  MyCmd.execute
+
+then by running 'foo help' on the command line, standard help information
+will be displayed.
+
+  foo
+
+    jump  Displays the word JUMP!
+
+

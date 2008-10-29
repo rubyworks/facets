@@ -1,0 +1,34 @@
+= Facets Modeling
+
+Facets Modeling is a collection of libraries to assist in object-oriented
+modeling.
+
+== Libraries
+
+=== Capsule
+
+A module which is an instance of the Capsule class encapsulates in its scope
+the top-level methods, top-level constants, and instance variables defined in
+a ruby script file (and its subfiles) loaded by a ruby program. This allows
+use of script files to define objects that can be loaded into a program in
+much the same way that objects can be loaded from YAML or Marshal files.
+
+See intro.txt[link:files/intro_txt.html] for an overview.
+
+
+== Contact
+
+  facets-universal@rubyforge.org
+
+
+== Install
+
+  gem install facets
+
+
+== License
+
+  Facets
+  Copyright (c) 2004 Thomas Sawyer
+  Ruby License
+

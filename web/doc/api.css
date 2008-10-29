@@ -1,0 +1,79 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: url(img/fade_red_down.png) repeat-x;
+}
+
+h1 {
+  font-size: 54px;
+  font-variant: small-caps;
+  background: transparent;
+  color: white;
+  margin: 0px 0px;
+  padding: 12px 15px 40px 0px;
+}
+
+h2 {
+  font-size: 24px;
+  /* font-variant: small-caps; */
+  margin: 40px 10px 10px -3px;
+  /* padding-left: 36px;
+  background: url(img/ruby.gif) -1px 0px no-repeat; */
+}
+
+p {
+  margin: 10px 0px;
+}
+
+ul {
+  margin: 0px 0px;
+  padding-left: 15px;
+}
+
+li {
+  list-style-type: disc;
+  list-style-image: url(’img/ruby.gif’);
+  text-indent: 5px;
+}
+
+img {
+  border: none;
+  margin: 2px;
+}
+
+pre {
+  background: black;
+  color: white;
+  font-family: monospace;
+  padding: 20px;
+}
+
+.content {
+  width: 84%;
+  margin: 0 auto;
+  border: 0px solid red;
+  padding-bottom: 30px;
+  background: transparent;
+  font-family: Micorsoft sans-serif, sans-serif;
+}
+
+.main {
+  background: url(img/ruby.png) -10px -60px no-repeat;
+}
+
+.nav {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: url(img/ruby.gif) no-repeat white;
+  color: red;
+  border: 2px solid red;
+  padding: 5px 5px 5px 36px;
+}
+
+.nav a {
+  color: red;
+  font-weight: bold;
+}
+
+

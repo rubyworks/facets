@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml-stylesheet href="layout.xsl" type="text/xsl" ?>
+
+<content>
+
+<div class="blurb">
+  The Dependency of Choice
+
+  <div class="desc">
+    Get it while it's Hot!
+  </div>
+</div>
+
+<div class="page">
+
+<!--
+  <div style="text-align: center; margin-top: 10px; margin-bottom: 30px;">
+    <img src="img/SPYlights.png" style="padding-left: 30px;"/>
+  </div>
+-->
+
+  <div class="section">
+
+    <h1>Installation</h1>
+
+    <p>Facets can be dowloaded and installed easily using RubyGems:</p>
+
+    <pre style="padding-left: 40px;"><code>gem install facets
+    </code></pre>
+
+    <p>Gems will automatically generate rdocs on installation. Unfortunately
+    the Gem generated rdocs are very poor --in fact Facets only allows them
+    to be generated to ensure the creation of ri docs (ruby api index files).
+    We recommend instread that you use the pre-generated rdocs provided in the
+    doc/ directory which are much more user-friendly.</p>
+
+    <p>If you prefer to install from source. You can download the <code>.tgz</code>
+    package from RubyForge and follow the standard procedure:</p>
+
+    <pre><code>
+      $ tar -xvzf facets-3.0.0.tgz
+      $ cd facets-3.0.0
+      $ ruby setup.rb
+    </code></pre>
+
+    <p>The last step may require super-user permissions (eg. use <code>sudo</code>).</p>
+  </div>
+
+  <div class="section">
+
+    <h1>Packages</h1>
+
+    <p>Facets' distribution packages are hosted on RubyForge.org.
+    You can download any of the distributed packages directly from the Facets
+    project site:</p>
+
+    <p style="padding-left: 40px;">
+      <a href="http://rubyforge.org/frs/?group_id=804">http://rubyforge.org/frs/?group_id=804</a>
+    </p>
+
+  </div>
+
+  <div class="section">
+
+    <h1>Ruby</h1>
+
+    <p>Of course, to use Facets you also need Ruby. We recommend Ruby 1.8.6 for use with Facets.
+       Facets is mostly compatible with Ruby 1.9, but it will be a little while yet
+       before Ruby 1.9 is stable enoguh to ensure 100% usability.</p>
+  
+  	<p style="padding-left: 40px;">
+  	  <a href="http://ftp.ruby-lang.org/pub/ruby/1.8/ruby-1.8.6.tar.gz">Source</a>:
+        Compile it yourself. <br/>
+  	  <a href="http://rubyforge.org/frs/?group_id=167">Windows installer</a>:
+        Includes Ruby, popular extensions and editor. <br/>
+  	  <b>OS X 10.5+</b> Ruby is already included! <br/>
+  	</p>
+
+  </div>
+
+</div>
+
+</content>
+

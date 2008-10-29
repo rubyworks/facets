@@ -1,0 +1,9 @@
+== Instance Prefixed Methods
+
+Kernel extension prefixed by instance_ which provide
+internal (eg private) access to the object.
+Kernel extension using instance_ prefix which is beneficial
+to separation of metaprogramming from general programming.
+object_ methods, in contrast to the instance_ methods,
+do not access internal state.
+

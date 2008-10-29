@@ -1,0 +1,6 @@
+== 2.3.0 / 2008-02-01
+
+* Reorganized library into smaller groups: core, more, class and mixin.
+* Added tracepoint.rb back to the library.
+* Fixed multiglob_r bug, so it will NOT follow symlinks.
+

@@ -1,0 +1,2 @@
+require 'facets/class/descendents'
+

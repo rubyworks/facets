@@ -1,0 +1,193 @@
+
+        <html>
+        <head>
+          <title>CHANGES</title>
+          <link href="api.css" rel="stylesheet" type="text/css">
+        </head>
+        <body>
+          <div class="content">
+          <div class="main">
+            <h1>Change History</h1>
+<h2>2.4.0 / 2008-03-24</h2>
+<ul>
+<li>The Console name space is being deprecated. command.rb and arguments.rb now
+use CLI naemspace.
+
+</li>
+<li>#compare_on and #equate_on are now &quot;mixin methods&quot; Comparable()
+and Equateable().
+
+</li>
+<li>Enumerable#product, #combintations and #permutations have change to be Ruby
+1.9 compatible.
+
+</li>
+<li>thread.rb, map_send, et al, block is passed to send instead of yiedling on
+result.
+
+</li>
+<li>namespace.rb has been renamed to methodspace.rb.
+
+</li>
+<li>Ruby 1.9 defined a new Proc#curry method, so Facets version has been made
+compatible.
+
+</li>
+<li>The old curry method is now called #partial, as in &quot;partial
+application&quot;.
+
+</li>
+<li>Deprecated interface.rb &#8212;it proved absolutely extraneous.
+
+</li>
+<li>Deprecated paramix.rb &#8212;a better way is to use a capitialize method.
+
+</li>
+<li>Brought back a few web related libs htmlfilter.rb and cssfilter.rb in
+particular.
+
+</li>
+<li>This was a fairly large and fast-paced update, so not all changes are
+listed. See RDocs to more information.
+
+</li>
+</ul>
+<h2>2.3.0 / 2008-02-01</h2>
+<ul>
+<li>Reorganized library into smaller groups: core, more, class and mixin.
+
+</li>
+<li>Added tracepoint.rb back to the library.
+
+</li>
+<li>Fixed multiglob_r bug, so it will NOT follow symlinks.
+
+</li>
+</ul>
+<h2>2.2.1 / 2007-12-22</h2>
+<ul>
+<li>Got rid of methods subdir. All method redirects are in core/.
+
+</li>
+</ul>
+<h2>2.2.0 / 2007-12-13</h2>
+<ul>
+<li>A lot of rdoc updates to core extensions &#8212;as promised ;)
+
+</li>
+<li>Just about every method now has at least a brief explinaiton and an
+example.
+
+</li>
+<li>integer/bitmask.rb has changed a bit &#8212;pun intended ;) Deprecated some
+methods and now use &quot;~&quot; instead of &quot;-&quot; to clear bits.
+
+</li>
+<li>The name Array#unzip didn&#8217;t makes sense, it was renamed to #modulate
+(though #collate seems better?)
+
+</li>
+<li>Renamed Enumerable#collate to #mash (Map hASH); #collate and #graph remain
+aliases for the time being.
+
+</li>
+<li>Deprecated Module#include_and_extend. Just use both silly.
+
+</li>
+<li>More lib pp_s.rb has been removed. Use #pretty_inspect instead.
+
+</li>
+<li>Split binding extensions up a bit more finely &#8212;eval.rb sprouted
+here.rb, self.rb and defined.rb.
+
+</li>
+<li>Move Time#stamp out of conversion.rb and into time/ dir, and remove to_s
+alias.
+
+</li>
+<li>Preliminary addition of Matthew Harris&#8217; excellent duration.rb lib
+(will integrate with times.rb better in future).
+
+</li>
+<li>Added if clauses to handle upcoming Ruby 1.9 gracefully. Facets should now
+be just about ready for use with 1.9.
+
+</li>
+</ul>
+<h2>2.1.3 / 2007-11-28</h2>
+<ul>
+<li>Fixed minor oddity in Enumerable/collate.
+
+</li>
+<li>Fixed major issue with 2.1.2 where it would not core facets correctly.
+
+</li>
+</ul>
+<h2>2.1.2 / 2007-11-22</h2>
+<ul>
+<li>Dir::multiglob no longer handels -/+ modifiers. Use FileList instead.
+
+</li>
+<li>Fixed task/install script.
+
+</li>
+<li>Improved task/changes.
+
+</li>
+</ul>
+<h2>2.1.1 / 2007-11-16</h2>
+<ul>
+<li>Fixed bug in command.rb that clobbered options.
+
+</li>
+<li>Added kernel/ergo.rb.
+
+</li>
+</ul>
+<h2>2.1.0 / 2007-11-10</h2>
+<ul>
+<li>command.rb has been completely rewritten. The API has changed completely!
+
+</li>
+<li>There is no longer a Commmand::Optoins class. Use Console::Arguments
+instead.
+
+</li>
+<li>Added BiCrypt class to crypt.rb for simple two-way encyrption.
+
+</li>
+<li>module/attr.rb now has attr_reader!, attr_writer! and attr_accessor!
+
+</li>
+<li>All attr_xxx methods have coresponding alias_xxx methods.
+
+</li>
+<li>Fixed bug in Enumerable#cluster_by which returned nil instead of [].
+
+</li>
+</ul>
+<h2>2.0.5 / 2007-11-07</h2>
+<ul>
+<li>Added final methods Gavin Sinclair&#8217;s Extensions project (contributed
+by Noah Gibbs).
+
+</li>
+<li>Fixes bug with Dictionary#initialize
+
+</li>
+<li>Fixes bug with Hash#-
+
+</li>
+<li>Also improves changelog production.
+
+</li>
+<li>Made #alias_method_chain compatible with current ActiveSupport version.
+
+</li>
+</ul>
+
+          </div>
+          </div>
+        </body>
+        </html>
+      

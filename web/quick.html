@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+  <title>Facets Quick!</title>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+  <META NAME="DESCRIPTION"
+        CONTENT="Ruby Facets is a alarge collection of libarires for the Ruby programming lanaguage."/>
+
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+
+  <style>
+    body { font-size: 1em; margin: 3px; padding: 0; }
+       a { text-decoration: none; color: black; }
+     img { border: 0; }
+
+    #title { margin: 0 auto; text-align: center;
+             font-weight: bold; font-size: 15pt; color: #222222; }
+
+    #menu { text-align: center; margin-bottom: 5px; }
+    #menu a { font: bold 9pt serif; }
+    #menu img { vertical-align: middle; }
+
+    #quickdoc { border: solid 0pt silver; margin: 0px; width: 100%;
+                text-align: left; padding-top: 5px;
+              }
+
+   iframe#list { width: 99%;
+                 margin: 5px 0px;
+                 border: 1px solid #cccccc;
+               }
+  </style>
+
+  <script>
+    function getWindowHeight() {
+      var windowHeight = 0;
+      if (typeof(window.innerHeight) == 'number') {
+        windowHeight = window.innerHeight;
+      }
+      else {
+        if (document.documentElement && document.documentElement.clientHeight) {
+          windowHeight = document.documentElement.clientHeight;
+        }
+        else {
+          if (document.body && document.body.clientHeight) {
+            windowHeight = document.body.clientHeight;
+          }
+        }
+      }
+      return windowHeight;
+    };
+
+    function resizePage() {
+      var list = document.getElementById('list');
+      var h = getWindowHeight();
+      var nh = (h - 160) + 'px';
+      list.style.height = nh;
+    };
+
+    function changeQuickDoc() {
+      var p = document.getElementById('qpkg').value;
+      var t = document.getElementById('qtype').value;
+      var l = document.getElementById('list');
+      l.src = 'rdoc/' + p + '/fr_' + t + '_index.html';
+    };
+
+    window.onresize = resizePage;
+  </script>
+</head>
+
+<body onLoad="resizePage();">
+
+<table id="header">
+  <tr><td nowrap="true">
+    <span id="title">
+      <a href="http://facets.rubyforge.org/public/home.html">
+        Ruby<img id="logo" height="30px" src="img/ruby-lg.png" align="top">Facets
+      </a>
+    </span>
+    &nbsp;
+    <span id="menu" style="padding-top: 5px;">
+      <a href="http://rubyforge.org/projects/facets/" target="_blank" title="Develpment Site">
+        <img src="img/develop.gif" style="border: 0;" title="Develpment Site"/>
+      </a>
+
+      <a href="http://rubyforge.org/tracker/?group_id=804" target="_blank" title="Submit Ticket">
+        <img src="img/bomb.gif" style="border: 0;" title="Submit Ticket"/>
+      </a>
+
+      <a href="http://rubyforge.org/scm/?group_id=804" target="_blank" title="Browse Source">
+        <img src="img/source.gif" style="border: 0;" title="Browse Source"/>
+      </a>
+
+      <a href="http://groups.google.com/group/facets-universal/web?hl=en" target="_blank" title="Wiki Wiki">
+        <img src="img/quill.gif" style="border: 0;" title="Wiki Wiki" alt="Wiki Wiki"/>
+      </a>
+
+      <a href="http://groups.google.com/group/facets-universal?hl=en" target="_blank" title="Mailing List">
+        <img src="img/email.gif" style="border: 0;" title="Mailing List"/>
+      </a>
+    </span>
+  </td>
+  </tr>
+</table>
+
+<table id="quickdoc">
+<tr>
+<td>
+  <select id="qtype" onChange="javascript: changeQuickDoc();" style="width: 120px;"/>
+    <option value="file">Files</option>
+    <option value="class">Classes</option>
+    <option value="method" selected>Methods</option>
+  </select>
+</td>
+<td width="90%">
+  <select id="qpkg" onChange="javascript: changeQuickDoc();" style="width: 100%;"/>
+    <optgroup label="Core">
+      <option value="Core" selected><b>Core</b></option>
+    </optgroup>
+    <optgroup label="More">
+      <option value="annotations"> Annotations </option>
+      <option value="aop"> Aop </option>
+      <option value="buildable"> Buildable </option>
+      <option value="command"> Command </option>
+      <option value="dictionary"> Dictionary </option>
+      <option value="fileable"> Fileable </option>
+      <option value="heap"> Heap </option>
+      <option value="openobject"> Openobject </option>
+      <option value="syncarray"> Syncarray </option>
+      <option value="attributes"> Attributes </option>
+      <option value="advice"> Advice </option>
+      <option value="association"> Association </option>
+      <option value="autoarray"> Autoarray </option>
+      <option value="binreadable"> Binreadable </option>
+      <option value="bbcode"> Bbcode </option>
+      <option value="fileutils"> Fileutils </option>
+      <option value="cachedelegator"> Cachedelegator </option>
+      <option value="bytes"> Bytes </option>
+      <option value="coroutine"> Coroutine </option>
+      <option value="crypt"> Crypt </option>
+      <option value="cloneable"> Cloneable </option>
+      <option value="validation"> Validation </option>
+      <option value="infinity"> Infinity </option>
+      <option value="interval"> Interval </option>
+      <option value="lazy"> Lazy </option>
+      <option value="let"> Let </option>
+      <option value="minitar"> Minitar </option>
+      <option value="main"> Main </option>
+      <option value="paramix"> Paramix </option>
+      <option value="multipliers"> Multipliers </option>
+      <option value="lrucache"> Lrucache </option>
+      <option value="linkedlist"> Linkedlist </option>
+      <option value="pool"> Pool </option>
+      <option value="prepend"> Prepend </option>
+      <option value="snapshot"> Snapshot </option>
+      <option value="semaphore"> Semaphore </option>
+      <option value="rwdelegator"> Rwdelegator </option>
+      <option value="ziputils"> Ziputils </option>
+      <option value="reflection"> Reflection </option>
+      <option value="recursive"> Recursive </option>
+      <option value="progressbar"> Progressbar </option>
+      <option value="random"> Random </option>
+      <option value="reference"> Reference </option>
+      <option value="uninheritable"> Uninheritable </option>
+      <option value="typecast"> Typecast </option>
+      <option value="tuple"> Tuple </option>
+      <option value="timer"> Timer </option>
+      <option value="overload"> Overload </option>
+      <option value="stylize"> Stylize </option>
+      <option value="version"> Version </option>
+      <option value="recorder"> Recorder </option>
+      <option value="daemonize"> Daemonize </option>
+      <option value="elementor"> Elementor </option>
+      <option value="inheritor"> Inheritor </option>
+      <option value="capsule"> Capsule </option>
+      <option value="classmethods"> Classmethods </option>
+      <option value="instantiable"> Instantiable </option>
+      <option value="instantise"> Instantise </option>
+      <option value="namespace"> Namespace </option>
+      <option value="multiton"> Multiton </option>
+      <option value="prototype"> Prototype </option>
+      <option value="registerable"> Registerable </option>
+      <option value="times"> Times </option>
+      <option value="nullclass"> Nullclass </option>
+      <option value="expirable"> Expirable </option>
+      <option value="enumerablepass"> Enumerablepass </option>
+      <option value="downloader"> Downloader </option>
+      <option value="dependency"> Dependency </option>
+      <option value="compare_on"> Compare_on </option>
+      <option value="console"> Console </option>
+      <option value="eventhook"> Eventhook </option>
+      <option value="interface"> Interface </option>
+      <option value="class_extension"> Class_extension </option>
+      <option value="nackclass"> Nackclass </option>
+      <option value="autoreload"> Autoreload </option>
+      <option value="basicobject"> Basicobject </option>
+      <option value="behavior"> Behavior </option>
+      <option value="uploadutils"> Uploadutils </option>
+      <option value="smtp_tls"> Smtp_tls </option>
+      <option value="ioredirect"> Ioredirect </option>
+      <option value="memoize"> Memoize </option>
+      <option value="getoptlong"> Getoptlong </option>
+      <option value="logger"> Logger </option>
+      <option value="rbconfig"> Rbconfig </option>
+      <option value="shellwords"> Shellwords </option>
+      <option value="yaml"> Yaml </option>
+      <option value="date"> Date </option>
+      <option value="pathname"> Pathname </option>
+      <option value="rbsystem"> Rbsystem </option>
+      <option value="curry"> Curry </option>
+      <option value="thread"> Thread </option>
+    </optgroup>
+  </select>
+</td>
+</tr>
+</table>
+
+<div>
+  <iframe id="list" src="rdoc/Core/fr_method_index.html"></iframe>
+</div>
+
+<div style="width: 100%; height: 70px; text-align: center; margin-top: 5px;">
+  <script type="text/javascript"><!--
+  google_ad_client = "pub-1126154564663472";
+  google_ad_width = 234;
+  google_ad_height = 60;
+  google_ad_format = "234x60_as";
+  google_ad_type = "text_image";
+  //2007-07-22: facets
+  google_ad_channel = "2923120207";
+  //-->
+  </script>
+  <script type="text/javascript"
+    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+  </script>
+<div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-2883355-2";
+urchinTracker();
+</script>
+
+</body>
+</html>

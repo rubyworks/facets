@@ -1,0 +1,14 @@
+== 2.2.0 / 2007-12-13
+
+* A lot of rdoc updates to core extensions --as promised ;)
+* Just about every method now has at least a brief explinaiton and an example.
+* integer/bitmask.rb has changed a bit --pun intended ;) Deprecated some methods and now use "~" instead of "-" to clear bits.
+* The name Array#unzip didn't makes sense, it was renamed to #modulate (though #collate seems better?)
+* Renamed Enumerable#collate to #mash (Map hASH); #collate and #graph remain aliases for the time being.
+* Deprecated Module#include_and_extend. Just use both silly.
+* More lib pp_s.rb has been removed. Use #pretty_inspect instead.
+* Split binding extensions up a bit more finely --eval.rb sprouted here.rb, self.rb and defined.rb.
+* Move Time#stamp out of conversion.rb and into time/ dir, and remove to_s alias.
+* Preliminary addition of Matthew Harris' excellent duration.rb lib (will integrate with times.rb better in future).
+* Added if clauses to handle upcoming Ruby 1.9 gracefully. Facets should now be just about ready for use with 1.9.
+

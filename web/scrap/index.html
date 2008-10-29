@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+  <title>Ruby Facets</title>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+  <!-- google verification-->
+  <meta name="verify-v1" content="p14vW7GGMohDo2YKUHm0SXXTL+tzyPbKxxp35/WIQLA=" />
+
+  <META NAME="DESCRIPTION"
+        CONTENT="Ruby Facets is a alarge collection of libraries for the Ruby programming lanaguage."/>
+
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  <style>
+    h3 { font-weight: normal; }
+  </style>
+
+  <script src="hover.js" type="text/javascript"></script>
+</head>
+
+
+<body>
+
+<div id="whole">
+
+  <div id="head">
+    <img id="logo" src="img/RubyFacets.png" align="middle">
+  </div>
+
+  <div id="menu">
+    <a href="index.html">Home</a> &nbsp;&nbsp;
+    <a href="learn.html">Learn</a> &nbsp;&nbsp;
+    <a href="light.html">Light</a> &nbsp;&nbsp;
+    <a href="love.html">Love</a>
+    <img style="width: 110px; height: 1px;" src="img/clear.gif"/>
+    <a href="http://rubyforge.org/frs/?group_id=804">Install</a> &nbsp;&nbsp;
+    <a href="http://rubyforge.org/scm/?group_id=804">Code</a> &nbsp;&nbsp;
+    <a href="http://groups.google.com/group/facets-universal/web?hl=en">Wiki</a> &nbsp;&nbsp;
+    <a href="http://groups.google.com/group/facets-universal/topics?hl=en">Talk</a>
+    <img style="width: 30px; height: 1px;" src="img/clear.gif"/>
+  </div>
+
+  <div id="drop_shadow"></div>
+
+  <div id="content">
+
+    <div class="blurb">
+        LIBRARY FANTASTIC!
+    </div>
+
+    <div id="sell">
+      Ruby Facets is the single largest collection of core extension methods
+      and standard library additions available for the Ruby programming language.
+    </div>
+
+    <table width="100%" style="margin-top: 30px;">
+    <tr>
+      <td style="text-align: center;">
+        <img src="img/lightbulb.jpg"/>
+      </td>
+
+      <td>
+        <h3>The <b>IDEA</b></h3>
+
+        <p>As programmers are wont to do, I started collecting reusable pieces of
+        Ruby long ago. At first it was just a small function here, a useful
+        module there. Eventually the collection became sizable and I called it <i>TomsLib</i>.
+        As time wore on and my library grew, I started to feel it worth a general
+        release. Sometime shortly there after I hit upon the idea of <i>atomicity</i>
+        for the core extensions. That's how the name Facets came about -- it's all about
+        the little things. Much has changed since those first days. But time has been
+        good to Facets. Today, Facets 2.0 is a more solid and leaner library than ever before.</p>
+
+        <p>The continuing philosophy of <span class="red">Facets</span> can be summed
+        up in a simple mantra, "ALL BASE COMMON". The notion is that by sharing
+        a large common foundation, that foundation can better serve us.
+        There are a number of advantages to this approach. Among them
+        name consistency, better code-reuse, collaborative improvements and
+        reduced installation requirements.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img src="img/apple_core.jpg" width="200px"/>
+      </td>
+
+      <td>
+        <h3>The <b>CORE</b></h3>
+
+        <p><span style="font-size:.7em;">Hundreds of methods in the Atomic Methods collection!</span></p>
+
+        <p><span class="red">Facets/<b>CORE</b></span> is a vast collection of core extension methods,
+        plus a few basic classes. All of which can be loaded with the one command <code>require 'facets'</code>.
+        But... of particular uniqueness is the library's atomicity. CORE is an
+        <span class="red"><i>Atomic Library</i></span> becuase all methods are organized into
+        small, tightly bound groups, such that each group can be required independently of any other
+        This allows for highly granular control over loaded features, which can be useful to minimize
+        resource footprint and potential "cross-talk" with other code resources.
+        </p>
+
+        <p><i>The concept of atomicity has changed from series 1.x to 2.x. Previously, every
+        single method was isolated from all others. While this made organization of the code quite nice,
+        in practice it proved too granular --subatomic, if you will. With 2.0 we have created more
+        sensible "atoms" of closely related functionality. Facets remains very granular however. Very few
+        libraryfiles contain more than a handfule of methods. We also note, that since this is a new
+        organization, which adds an additional layer of categorization, there are still refinements
+        being made.</i></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img src="img/apples3.jpg" width="200px"/>
+      </td>
+
+      <td>
+        <h3>And <b>MORE</b></h3>
+
+        <p><span style="font-size:.7em;">Dozens of classes, modules and micro frameworks.</span></p>
+
+        <p><span class="red">Facets/<b>MORE</b></span> is a collection of classes, modules and
+        micro-frameworks which constitute an ever improving source of general-purpose, reusable components.
+        Some very nice additions are available, from an elegant Annotations systems to the more typical
+        classes, such as Tuple and Dictionary.</p>
+
+        <p><i>Facets 2.x is a much leaner library than the 1.x series. Where 1.x still focused on
+        gathering large swaths of new functionally, 2.x is focusing on refinement. Along with this
+        came a new "definition" of what it is to be "MORE". MORE is the equivalent of Ruby's Standard
+        library. As such, only libraries one might reasonably conceive as part of Ruby's Standard lib
+        are included. This led to a number of libraries being moved to their own projects.
+        In particular, the web-related libraries were moved to <a href="http://blow.rubyforge.org">Blow</a>,
+        the Units system to <a href="http://stick.rubyforge.org">Stick</a>, and the inflection system to
+        <a href="http://english.rubyforge.org">English</a>. There were also a few libs removed simply
+        because they weren't stable and/or useful enough.</i></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img src="img/people.jpg" width="200px"/>
+      </td>
+
+      <td>
+        <h3>The <b>CREW</b></h3>
+
+        <p>If you have any questions or suggestion feel free to contact
+          <b>Thomas Sawyer &lt;transfire AT gmail DOT com&gt;</b>. Contributions are always welcome!</p>
+
+        <p>Facets is not the sole achievement of one person, but was made possible by the hard
+          work of many good programmers.</p>
+
+        <pre style="margin-left: -35px; font-size: 8pt;">
+          Thibaut Barrere         Daniel J. Berger        Paul Brannan
+          Mikael Brockman         Jamis Buck              Renald Buter
+          Shashank Date           Robert Feldt            Mauricio Fernandez
+          Florian Frank           Hal Fulton              Michael Granger
+          Florian Gross           Thomas-Ivo Heinen       Ara T. Howard
+          Dave Hoover             David Hansson           Mohammad Khan
+          Gavin Kistner           Richard Laugesen        Derek Lewis
+          MenTaLguY               Jan Molic               George Moschovitis
+          Michael Neumann         Sean O'Halpin           Tim Pease
+          Jonas Pfenniger         Ryan Platte             Tyler Rick
+          Christoph Rippel        Thomas Sawyer :)        Daniel Schierbeck
+          Gavin Sinclair          Tilo Sloboda            Phil Tomson
+          Peter Vanbroekhoven     Jim Weirich             Jeff Wood
+          Austin Ziegler          Why The Lucky Stiff
+        </pre>
+
+        <p>If I've missed anyone please toss me a bone!
+          Great waves of thanks to all persons who made Facets possible.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: center;">
+        <img src="img/license.jpg" width="160px"/>
+      </td>
+
+      <td>
+        <h3>The <b>LICENSE</b></h3>
+
+        <p>Ruby Facets, Copyright (c) 2005 Thomas Sawyer</p>
+
+        <p>Ruby Facets is provided under the
+          <a href="http://www.ruby-lang.org/en/LICENSE.txt" style="color: red;">Ruby License</a>.</p>
+
+        <p>Credit and Copyrights for particular borrowed code segments are
+          given in their respective source. All licenses are either compatible
+          with the Ruby license (Ruby or GPL) or the original author has given
+          permission for inclusion of their code under this license.</p>
+
+        <p>THIS SOFTWARE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR
+          IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
+          WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+          PURPOSE.</p>
+      </td>
+    </tr>
+    </table>
+
+  </div>
+
+  <div id="sell" style="margin-top: 60px;">
+    <i>"Lots of cool stuff... There's just so much there!"</i><br/>
+    <span style="font-size: 10pt;">--Austin Ziegler</span>
+  </div>
+
+  <div id="copyright">
+    <img src="img/abc1.png"/>
+
+    <br/><br/><br/>
+
+    Copyright (c) 2005-2007 Thomas Sawyer.<br/><br/>
+
+    Ruby Facets was created by Thomas Sawyer (7rans), either written by hand or
+    collected from a variety of Ruby resources. The system continues to be extended
+    and improved by a diverse cast of open-source contributors.<br/><br/>
+
+    Facets is released under the terms of the Ruby license, just like Ruby.<br/>
+    The Ruby license is a dual GPLv2 license.<br/><br/>
+
+    "Facets", "Ruby Facets" and "All Base Common" are trademarks of Thomas Sawyer. All rights reserved.
+  </div>
+
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-2883355-2";
+urchinTracker();
+</script>
+
+</body>
+</html>

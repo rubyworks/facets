@@ -1,0 +1,9 @@
+---
+service : RDoc
+template: ./.config/rdoc-template
+output  : doc/rdoc/more
+title   : Facets More API
+main    : doc/README.more
+options : "-S -a"
+include : [doc/README.more, README, lib/more/facets]
+

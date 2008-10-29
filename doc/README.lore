@@ -1,0 +1,51 @@
+= Facets Lore Library
+
+  http://facets.rubyforge.com
+
+  "ALL YOUR BASE ARE BELONG TO RUBY"
+
+
+== Introduction
+
+The Facets "Lore" library houses extension for Ruby's Standard library.
+
+
+== Usage
+
+Like Ruby's own standard libraries, the Lore libs have to loaded manually. However you do not need to
+load Ruby's library first, as the Facets' library will do that automatically.
+
+For example, normally one load Ruby's OpenStruct class via:
+
+  require 'ostruct'
+
+To get Facets extensions simply use:
+
+  require 'facets/ostruct'
+
+instead.
+
+
+== License
+
+The collection PER COLLECTION is licensed as follows:
+
+  Ruby Facets
+  Copyright (c) 2004-2006 Thomas Sawyer
+
+  Distributed under the terms of the Ruby license.
+
+The Ruby license is a dual license that also provides for use of the GPL. Complete texts of both licenses accompany this document (see LICENSE).
+
+Acknowledgments and Copyrights for particular snippets of borrowed code are given in their respective source. All licenses are either compatible with the Ruby license (namely the GPL) or the original author has given permission for inclusion of their code under such license.
+
+
+
+ALL YOUR BASE ARE BELONG TO RUBY!
+
+
+Ruby Facets, Copyright (c)2005,2006,2007,2008 Thomas Sawyer
+
+Do you Ruby? (http://ruby-lang.org)
+
+

@@ -1,0 +1,140 @@
+= Ruby Facets
+
+  http://facets.rubyforge.com
+
+  "ALL YOUR BASE ARE BELONG TO RUBY"
+
+
+== Introduction
+
+Ruby Facets is the single largest collection of general purpose method extensions and system additions for the Ruby programming language.
+
+The core extensions is a large collection of methods which extend the core capabilities of Ruby's built-in classes and modules. This collection of extension methods are unique by virtue of their atomicity. The methods are stored in relatively small groups of tightly coupled methods so that each can be required independently. This gives developers the potential for much finer control over which extra methods to bring into their code.
+
+The "more" additions are a collection of classes, modules and light meta-systems which constitutes an ever improving source of reusable components. Some very nice additions are provided, from the simple Functor class to a full-blown annotations system.
+
+
+== Documentation
+
+Facets has special documentation needs due to it's extensive bredth. The RDocs generated when installing via RubyGems, are unweildly because it combines all of Facets in one set of docs. Hopefully we can remedy this in the future. In the mean time the gem package includes better documentation --divided into three sections, in the doc/rdoc directory.
+
+Online documentaiton is available at http://facets.rubyforge.org/learn.html. There is a "Quick Doc" feature that can be a bit more convenient then the usual RDocs. Prior to 2.3.1 off-line docs had to be downloaded via a separate package, but this is no longer the case. I've seen past the stigma of not including documentation along with the package itself (the extra 500K isn't even a floppy disk folks!), so you will find them in the doc/ directory of whatever package you have choosen to install. In fact, a good package installer should give you the option to install those in the appropriate place in your system (eg. in /usr/share/doc/facets/).
+
+
+== Release Notes
+
+Please see the NEWS file.
+
+
+== Changes
+
+Please see the CHANGES file.
+
+
+== Installation
+
+The easiest way to install is via RubyGems.
+
+  $ gem install facets
+
+To install manually, download and unpack the .tar.gz package and use the included
+task/install script. Eg.
+
+  $ tar -xvzf facets-2.x.x.tar.gz
+  $ cd facets-2.x.x
+  $ sudo task/setup
+
+On Window the last step will be:
+
+  C:\> ruby task/setup
+
+IMPORTANT! Note that setup.rb is no longer used b/c of Facets' new layout.
+
+
+== Compatibility with 1.x series.
+
+Prior to 2.0, Facets was divided between CORE and MORE --standalone extensions vs. classes and modules, respectively. With 2.0, the notion of "CORE" has taken on a slightly different meaning. Instead CORE now consists of the libraries that are thought essential and as such are loaded automatically when using ++require "facets"++. While still primarily made up of extension methods modules and classes may now belong to core as well.
+
+The other significant change from 1.x to 2.0 is the removal of some libraries that were considered too extraneous for a general purpose library. Most of these were spun-off to their own projects. In particular, the web-related libs are now part of Blow (http://blow.rubyforge.org), inflection libraries are in English (http://english.rubyforge.org), units.rb along with constants.rb are in Stick (http://stick.rubyforge.org), and the persistance system in Opod (http://opod.rubyforge.org).
+
+
+== Mission
+
+Facets holds to the notion that the more we can reasonably integrate into a common foundation directed toward general needs, the better that foundation will be able to serve everyone. There are a number of advantages here:
+
+    * Better Code-reuse
+    * Collaborative Improvements
+    * Greater Name Consistency
+    * One-stop Shop and Installation
+
+
+== Usage
+
+For information in usage, please see the special README for the specific set of libraries:
+
+  README.core     Core extensions
+  README.lore     Standard extensions
+  README.more     Additions
+
+General usage of the CORE library is provided via:
+
+  require 'facets'
+
+This is the recommended usage. However, you can also "cherry pick" core methods. While there are exceptions the rule of thumb for loading a core method is:
+
+  require 'facets/{class|module}/{method}'
+
+See README.core for more information.
+
+Using the Facets/MORE library of modules, classes or microframeworks is essentially the same. For example:
+
+  require 'facets/basicobject'
+
+Again, for details pertaining to the functionality of each feature, please see the API Docs.
+
+
+== Contribute
+
+This project thrives on contribution.
+
+If you have any extension methods, classes, modules or small frameworks that you think have general applicability and would like to see them included in this project, don't hesitiate to submit. There's a very good chance they will be included.  Also, if you have better versions of any thing already included or simply have a patch, they too are more than welcome. We want Ruby Facets to be of the highest quality.
+
+
+== Authors
+
+This collection was put together by, and largely written by Thomas Sawyer (aka Trans). He can be reached via email at transfire at gmail.com.
+
+Some parts of this collection were written and/or inspired by other persons. Fortunately nearly all were copyrighted under the same open license, the Ruby License. In the few exceptions I have included the copyright notice with the source code.
+
+Any code file not specifically labeled shall fall under the Ruby License.
+
+In all cases, I have made every effort to give credit where credit is due. You will find these copyrights, thanks and acknowledgments embedded in the source code, and an unobtrusive "Author(s)" section is given in the RDocs.
+
+Also see the AUTHORS file for a list of all contributing Rubyists.
+
+If anyone is missing from the list, please let me know and I will correct right away. Thanks.
+
+
+== License
+
+The collection PER COLLECTION is licensed as follows:
+
+  Ruby Facets
+  Copyright (c) 2004-2006 Thomas Sawyer
+
+  Distributed under the terms of the Ruby license.
+
+The Ruby license is a dual license that also provides for use of the GPL. Complete texts of both licenses accompany this document (see LICENSE).
+
+Acknowledgments and Copyrights for particular snippets of borrowed code are given in their respective source. All licenses are either compatible with the Ruby license (namely the GPL) or the original author has given permission for inclusion of their code under such license.
+
+
+
+ALL YOUR BASE ARE BELONG TO RUBY!
+
+
+Ruby Facets, Copyright (c)2005,2006,2007,2008 Thomas Sawyer
+
+Do you Ruby? (http://ruby-lang.org)
+
+

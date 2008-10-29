@@ -1,0 +1,49 @@
+#!/usr/bin/env ruby
+
+require 'enumerator'
+
+def method_list
+  list = []
+
+  ObjectSpace.each_object(Module) do |klass|
+    insta_methods = klass.public_instance_methods(true) +
+                    klass.private_instance_methods(true) +
+                    klass.protected_instance_methods(true)
+
+    class_methods = klass.public_methods(true) + 
+                    klass.private_methods(true) +
+                    klass.protected_methods(true)
+
+    klass.ancestors[1..-1].each do |ancestor|
+      #next unless ancestor.is_a?(Module)
+
+      if ancestor.is_a?(Class)
+        insta_methods -= ancestor.public_instance_methods(true) +
+                         ancestor.private_instance_methods(true) +
+                         ancestor.protected_instance_methods(true)
+
+        class_methods -= ancestor.public_methods(true) +
+                         ancestor.private_methods(true) +
+                         ancestor.protected_methods(true)
+      end
+    end
+
+    class_methods -= Kernel.public_methods(true) +
+                     Kernel.private_methods(true) +
+                     Kernel.protected_methods(true)
+
+    class_methods.map!{|c| "#{klass}." + c}
+    insta_methods.map!{|c| "#{klass}#" + c}
+
+    list.concat(class_methods)
+    list.concat(insta_methods)
+  end
+
+  return list
+end
+
+ARGV.each{ |lib| require lib }
+
+puts method_list.sort.join("\n")
+
+

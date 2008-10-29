@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml-stylesheet href="layout.xsl" type="text/xsl" ?>
+
+<content>
+
+<div class="blurb">
+  All About Facets
+
+  <div class="desc">
+    Facets was forged from need, but hewed with blood, sweat and tears.<br/>
+    Okay, blood? Maybe not so much :)
+  </div>
+</div>
+
+<div class="page">
+<!--
+  <div style="text-align: center; margin-top: 10px; margin-bottom: 30px;">
+    <img src="img/SPYlights.png" style="padding-left: 30px;"/>
+  </div>
+-->
+
+  <div class="section">
+
+    <h1>On Version 2.4</h1>
+
+    <p>Facets 2.4 developed out the lessons learned from earlier versions. The most important
+    lesson being that Facets touted "atomicity" isn't neccessarily beneficial. Facets
+    Core remains an <span class="red"><i>Atomic Library</i></span> becuase all methods are
+    organized into individual files, such that nearly each can be required independently of
+    any other. However atomicity can give a false sens of security. When cherry picking methods,
+    one must keep in mind another programmer might pick a different set of methods. So ensured
+    interoperbility depends on expecting an Facets method may be required. Nonetheless,
+    atomicity still allows for highly granular control over loaded features --useful to minimize
+    resource footprint.</p>
+
+  </div>
+
+  <div class="section">
+
+    <h1>On Version 2.0</h1>
+
+    <p>Facets 2.x serious is a much leaner library than the 1.x series. Where 1.x focused on
+    gathering large swaths of new functionally, 2.x is focusing on refinement. Along with this
+    came a new "definition" of what it is to be "MORE". MORE is the equivalent of Ruby's Standard
+    library. As such, only libraries one might reasonably conceive as part of Ruby's Standard lib
+    are included. This led to a number of libraries being moved to their own projects.
+    In particular, some web-related libraries were moved to <a href="http://blow.rubyforge.org">Blow</a>,
+    the Units system to <a href="http://stick.rubyforge.org">Stick</a>, and the inflection system to
+    <a href="http://english.rubyforge.org">English</a>. There were also a few libs removed simply
+    because they weren't stable and/or useful enough.</p>
+
+  </div>
+
+  <div class="section">
+
+    <h1>How Facets Was Born</h1>
+
+    <p>As programmers are wont to do, I started collecting reusable pieces of
+    Ruby long ago. At first it was just a small function here, a useful
+    module there. Eventually the collection became sizable and I called it <i>TomsLib</i>.
+    As time wore on and my library grew, I started to feel it worth a general
+    release. Sometime shortly there after I hit upon the idea of <i>atomicity</i>
+    for the core extensions. That's how the name Facets came about -- it's all about
+    the little things. Much has changed since those first days. But time has been
+    good to Facets. Today, Facets is a more solid and leaner library than
+    ever before.</p>
+
+  </div>
+
+</div>
+</content>
+

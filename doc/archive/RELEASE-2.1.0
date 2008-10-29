@@ -1,0 +1,9 @@
+== 2.1.0 / 2007-11-10
+
+* command.rb has been completely rewritten. The API has changed completely!
+* There is no longer a Commmand::Optoins class. Use Console::Arguments instead.
+* Added BiCrypt class to crypt.rb for simple two-way encyrption.
+* module/attr.rb now has attr_reader!, attr_writer! and attr_accessor!
+* All attr_xxx methods have coresponding alias_xxx methods.
+* Fixed bug in Enumerable#cluster_by which returned nil instead of [].
+

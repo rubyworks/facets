@@ -1,0 +1,73 @@
+= Facets History
+
+This is a record of some musings along the way in the creatiojn of Facets.
+It is not in any way all that important. Its' simply here to give some historical
+context to development and to provide and cues for recollection.
+
+== On the Name "Ruby Facets"
+
+A lot of mental anguish went into finding this good project name Ruby Facets. Of course, in the end only one name can take the honor. Other good names which were considered: Calibre, Florida and California, Warchest w/ Atomix, Downs & Ace, Trix & Atomx and even Pillbox & Pills (a _why suggestion). Then the names that almost won out and were used for a good while: Nano Methods and Mega Modules --great names but a little too "fad". Finally let's not forget even older "working" titles that were used along the way: Raspberry, ABC, Succ and the very original Tomslib.
+
+== Feature that May Return
+
+[EXTACTED FROM README]
+
+It is possible to eliminate the need for the 'facets/' prefix on requires if the Facets libpaths are added to the LOAD_PATH. But this isn't as straight-forward as it is for most libraries b/c of the layout of Facets library.
+
+  require 'facets-topload'
+  require 'basicobject'
+
+Understand that on the off chance that another library has the same name as one of Facets' everything will still work fine. You will just not be able to use the prefixless shortcut to require it.
+
+== Some convesion extemnsions that turned out to be bad.
+
+  class Symbol
+
+    # Same functionality as before, just a touch more efficient.
+    #
+    #--
+    # CHANGE transami@gmail.com - removed #freeze from #id2name
+    # BAD BAD. Somehow it breaks things. Very weired breaks too,
+    # like making Time#parse alwsy output Time.now _after_ first use.
+    #++
+
+    def to_s
+      @to_s || (@to_s = id2name)
+    end
+
+    # Symbol's really are just simplified strings.
+    # Thus #to_str seems quite reasonable.
+    # This uses the Kernal#String method.
+    #--
+    # Maybe just change to #to_s?
+    # BTW: This would be lots faster, I bet, if implemented in core.
+    #
+    # NOTE This causes Struct.new to bomb!
+    #++
+
+    def to_str
+      String( self )
+    end
+
+  end
+
+== String#to_a extension is too dangerous
+
+  class String
+
+    # Essentially makes #to_a an alias for split,
+    # with the excpetion that if no divider is given
+    # then the array is split on charaters, and
+    # NOT on the global input record divider ($/).
+    #
+    # WARNING There is a slight chance of
+    # incompatability with other libraries which
+    # depend on spliting with $/ (although doing
+    # so is a very bad idea!).
+
+    #def to_a(div=//,limit=0)
+    #  split(div,limit)
+    #end
+
+  end
+
