@@ -3,7 +3,7 @@ class Numeric
   # Conceptually, rounding is expected to apply to floating point numbers.
   # However it can actually be applied to pretty much and Numeric object.
   # For example, one could round an Integer to the nearest kilo. So the
-  # actual round.rb lib is in the numeric folder, but we'll add this 
+  # actual round.rb lib is in the numeric folder, but we'll add this
   # here for convenience.
   #
   # See Float#round_at.
@@ -37,9 +37,6 @@ class Integer
 end
 
 class Float
-
-  # Float#round_off is simply an alias for Float#round.
-  #alias_method :round_off, :round
 
   # Rounds to the given decimal position.
   #
