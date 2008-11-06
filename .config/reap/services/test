@@ -1,2 +1,3 @@
 ---
-service: TestUnitSolo
+service: TestUnit
+active: false
