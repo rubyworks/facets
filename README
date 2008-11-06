@@ -23,12 +23,7 @@ Online documentaiton is available at http://facets.rubyforge.org/learn.html. The
 
 == Release Notes
 
-Please see the NEWS file.
-
-
-== Changes
-
-Please see the CHANGES file.
+Please see the RELEASE file.
 
 
 == Installation
@@ -97,7 +92,7 @@ Again, for details pertaining to the functionality of each feature, please see t
 
 This project thrives on contribution.
 
-If you have any extension methods, classes, modules or small frameworks that you think have general applicability and would like to see them included in this project, don't hesitiate to submit. There's a very good chance they will be included.  Also, if you have better versions of any thing already included or simply have a patch, they too are more than welcome. We want Ruby Facets to be of the highest quality.
+If you have any extension methods, classes, modules or small frameworks that you think have general applicability and would like to see them included in this project, don't hesitiate to submit. Also, if you have better versions of any thing already included or simply have a patch, they are more than welcome. We want Ruby Facets to be of the highest quality.
 
 
 == Authors
@@ -108,10 +103,9 @@ Some parts of this collection were written and/or inspired by other persons. For
 
 Any code file not specifically labeled shall fall under the Ruby License.
 
-In all cases, I have made every effort to give credit where credit is due. You will find these copyrights, thanks and acknowledgments embedded in the source code, and an unobtrusive "Author(s)" section is given in the RDocs.
+In all cases, I have made every effort to give credit where credit is due. You will find these copyrights, thanks and acknowledgments embedded in the source code. You can see them in "CREDIT:" lines or as file-base "Author(s)" sections given in the RDocs. 
 
 Also see the AUTHORS file for a list of all contributing Rubyists.
-
 If anyone is missing from the list, please let me know and I will correct right away. Thanks.
 
 
@@ -136,5 +130,4 @@ ALL YOUR BASE ARE BELONG TO RUBY!
 Ruby Facets, Copyright (c)2005,2006,2007,2008 Thomas Sawyer
 
 Do you Ruby? (http://ruby-lang.org)
-
 
