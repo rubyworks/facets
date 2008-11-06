@@ -69,7 +69,7 @@ class Time
   # - the time range. you can get the start/end times using
   #   range methods.
   #
-  #  CREDIT George Moschovitis
+  # CREDIT George Moschovitis
 
   def self.days_extrema(time1, time2=nil)
     time2 = time1 if (not time2.valid? Time)

@@ -14,8 +14,7 @@ class Hash
   #   p ah['section one'].keys
   #   # ["param one", "param four", "param three", "param two"]
   #
-  #  CREDIT: Trans
-  #  CREDIT: Jan Molic
+  # CREDIT: Trans, Jan Molic
 
   def self.autonew(*args)
     #new(*args){|a,k| a[k] = self.class::new(*args)}

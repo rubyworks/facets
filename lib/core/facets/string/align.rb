@@ -32,7 +32,7 @@ class String
   #                and
   #              so on
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def align_right(n, sep="\n", c=' ')
     return rjust(n.to_i,c.to_s) if sep==nil
@@ -62,7 +62,7 @@ class String
   #     and
   #     so on
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def align_left(n, sep="\n", c=' ')
     return ljust(n.to_i,c.to_s) if sep==nil
@@ -92,7 +92,7 @@ class String
   #        and
   #       so on
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def align_center(n, sep="\n", c=' ')
     return center(n.to_i,c.to_s) if sep==nil

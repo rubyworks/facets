@@ -12,7 +12,7 @@ module Kernel
   #
   # This is like #tap, but tap yields self -and- returns self.
   #
-  #  CREDIT: Daniel DeLorme
+  # CREDIT: Daniel DeLorme
 
   def ergo &b
     if block_given?
@@ -31,7 +31,7 @@ class NilClass
   #   "a".ergo{ |o| o.upcase } #=> "A"
   #   nil.ergo{ |o| o.bar } #=> nil
   #
-  #   CREDIT: Daniel DeLorme
+  # CREDIT: Daniel DeLorme
 
   def ergo
     @_ergo ||= Functor.new{ nil }

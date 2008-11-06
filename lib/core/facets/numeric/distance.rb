@@ -5,7 +5,7 @@ class Numeric
   # for common naming between variant classes.
   #
   #   4.distance(3)  #=> 1
-
+  #
   def distance(other)
     self - other
   end

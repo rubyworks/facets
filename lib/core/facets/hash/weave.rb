@@ -35,7 +35,7 @@ class Hash
   # hashes. It is especially useful for implementing overridable
   # configuration schemes.
   #
-  #   CREDIT: Thomas Sawyer
+  # CREDIT: Thomas Sawyer
 
   def weave(h)
     raise ArgumentError, "Hash expected" unless h.kind_of?(Hash)

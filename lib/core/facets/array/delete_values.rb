@@ -27,7 +27,7 @@ class Array
   # NOTE: It would be nice to see #delete_at incorporate this
   # funcitonaility.
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def delete_values_at(*selectors)
     idx = []

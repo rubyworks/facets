@@ -13,7 +13,7 @@ class String
   # === Output:
   # The rewritten string.
   #
-  #   CREDIT: George Moschovitis
+  # CREDIT: George Moschovitis
 
   def rewrite(rules)
     raise ArgumentError.new('The rules parameter is nil') unless rules

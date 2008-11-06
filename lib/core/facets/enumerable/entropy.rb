@@ -9,7 +9,7 @@ module Enumerable
   #
   #   %w{ a b c d e e e }.entropy  #=>
   #
-  #   CREDIT: Derek
+  # CREDIT: Derek
 
   def entropy
     arr = to_a
@@ -25,7 +25,7 @@ module Enumerable
   # with given size assuming that it is an "order-0" source
   # (each element is selected independently of the next).
   #
-  #   CREDIT: Derek
+  # CREDIT: Derek
 
   def ideal_entropy
     arr = to_a

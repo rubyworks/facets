@@ -6,7 +6,7 @@ class Hash
   #   { :a=>1, :b=>2 }.collate :a=>3, :b=>4, :c=>5
   #   #=> { :a=>[1,3], :b=>[2,4], :c=>[5] }
   #
-  #  CREDIT: Gavin Kistner (Phrogz)
+  # CREDIT: Gavin Kistner (Phrogz)
 
   def collate(other_hash)
     dup.collate!(other_hash)

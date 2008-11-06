@@ -48,7 +48,7 @@ class Array
   #   []         [1]        [1,2]
   #   [2,3]      [3]        []
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def each_iteration
     if block_given?

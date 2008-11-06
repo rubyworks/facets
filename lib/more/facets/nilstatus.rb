@@ -13,7 +13,7 @@ class NilClass
   #     result.status   #=> "failed foo!"
   #   end
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def status(status=nil)
     if status
@@ -36,7 +36,7 @@ class NilClass
   #     result.status   #=> "failed foo!"
   #   end
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def status?
     return unless @status
@@ -45,3 +45,4 @@ class NilClass
   end
 
 end
+

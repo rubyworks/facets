@@ -32,7 +32,7 @@ module Enumerable
   # Like Enumerable#map but each iteration is processed via
   # a separate thread.
   #
-  #  CREDIT Sean O'Halpin
+  # CREDIT Sean O'Halpin
 
   def threaded_map #:yield:
     map{ |e| Thread.new(e){ |t| yield(t) } }.map{ |t| t.value }
@@ -41,7 +41,7 @@ module Enumerable
   # Like Enumerable#map_send but each iteration is processed via
   # a separate thread.
   #
-  #  CREDIT Sean O'Halpin
+  # CREDIT Sean O'Halpin
 
   def threaded_map_send(meth, *args, &block)
     map{ |e| Thread.new(e){ |t| t.send(meth, *args, &block) } }.map{ |t| t.value }

@@ -8,7 +8,7 @@ class File
   #   str = 'The content for the file'
   #   File.create('myfile.txt', str)
   #
-  #   CREDIT: George Moschovitis
+  # CREDIT: George Moschovitis
 
   def self.create(path, str='', &blk)
     open(path, 'wb') do |f|

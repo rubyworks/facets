@@ -5,7 +5,7 @@ class String
   #   "help".lchomp("h")  #=> "elp"
   #   "help".lchomp("k")  #=> "help"
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def lchomp(match)
     if index(match) == 0
@@ -20,7 +20,7 @@ class String
   #   "help".lchomp("h")  #=> "elp"
   #   "help".lchomp("k")  #=> "help"
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def lchomp!(match)
     if index(match) == 0

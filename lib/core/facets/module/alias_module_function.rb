@@ -20,7 +20,7 @@ class Module
   #   end
   #
   #   Demo.hi       #=> Hello
-
+  #
   def alias_module_function(new, old)
     alias_method(new, old)
     module_function(new)

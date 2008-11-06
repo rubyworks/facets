@@ -4,7 +4,7 @@ module Enumerable
   # to the relative frequency, i.e. the probablity, of
   # it appearence.
   #
-  #   CREDIT: Brian Schröder
+  # CREDIT: Brian Schröder
 
   def probability
     probs = Hash.new(0.0)

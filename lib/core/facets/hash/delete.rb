@@ -6,7 +6,7 @@ class Hash
   #
   #
   #
-  #   CREDIT: Daniel Schierbeck
+  # CREDIT: Daniel Schierbeck
 
   def delete_unless #:yield:
     delete_if{ |key, value| ! yield(key, value) }
@@ -19,7 +19,7 @@ class Hash
   #   hsh.delete_values(1)
   #   hsh  #=> { :b => 2 }
   #
-  #   CREDIT: Daniel Schierbeck
+  # CREDIT: Daniel Schierbeck
 
   def delete_values(*values)
     keys.map{ |key| delete(key) if values.include?(fetch(key)) }
@@ -37,7 +37,7 @@ class Hash
   #    [a, b, c]  #=> [1, 2, 3]
   #    hsh        #=> {}
   #
-  #   CREDIT: Daniel Schierbeck
+  # CREDIT: Daniel Schierbeck
 
   def delete_values_at(*keys, &yld)
     keys.map{|key| delete(key, &yld) }

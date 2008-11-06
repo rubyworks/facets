@@ -16,7 +16,7 @@ unless (RUBY_VERSION[0,3] == '1.9')
     #   [1,2].cart([4,5]){|elem| a << elem }
     #   a  #=> [[1, 4],[1, 5],[2, 4],[2, 5]]
     #
-    #  CREDIT: Thomas Hafner
+    # CREDIT: Thomas Hafner
 
     def product(*enums, &block)
       enums.unshift self
@@ -49,7 +49,7 @@ class Array
   #   a = [1,2] ** [4,5]
   #   a  #=> [[1, 4],[1, 5],[2, 4],[2, 5]]
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   alias_method :**, :product
 

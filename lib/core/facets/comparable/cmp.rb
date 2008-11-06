@@ -9,14 +9,14 @@ module Comparable
   # This fundamental compare method is used to keep
   # comparison compatible with <tt>#succ</tt>.
   #
-  #   CREDIT Peter Vanbroekhoven
+  # CREDIT: Peter Vanbroekhoven
 
   def cmp(o)
     self<=>o
   end
 end
 
-class String 
+class String
 
   # Compare method that takes length into account.
   # Unlike #<=>, this is compatible with #succ.
@@ -26,7 +26,7 @@ class String
   #   "abc".cmp("abcd")  #=> -1
   #   "xyz".cmp("abc")   #=>  1
   #
-  #   CREDIT Peter Vanbroekhoven
+  # CREDIT: Peter Vanbroekhoven
 
   def cmp(other)
     return -1 if length < other.length

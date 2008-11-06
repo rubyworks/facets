@@ -17,7 +17,7 @@ class Module
   #   m.inspect       #=> "#<Module:0xb7bb0434>"
   #   m.basename      #=> "Module_0xb7bb0434"
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def basename
     if name and not name.empty?

@@ -10,7 +10,7 @@ class Module
   #   y #=> 1
   #   self.y = 2
   #   x #=> 2
-
+  #
   def alias_accessor(*args)
     orig = args.last
     args = args - [orig]
@@ -22,7 +22,7 @@ class Module
 
   # As with alias_accessor, but just for the reader.
   # This is basically the same as alias_method.
-
+  #
   def alias_reader(*args)
     orig = args.last
     args = args - [orig]
@@ -32,7 +32,7 @@ class Module
   end
 
   # As with alias_method but does the writer instead.
-
+  #
   def alias_writer(*args)
     orig = args.last
     args = args - [orig]

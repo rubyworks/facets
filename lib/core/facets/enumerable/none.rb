@@ -16,7 +16,7 @@ unless (RUBY_VERSION[0,3] == '1.9')
     #   (1...10).none? { |n| n < 0 }  # true
     #   (1...10).none? { |n| n > 0 }  # false
     #
-    #   CREDIT: Gavin Sinclair
+    # CREDIT: Gavin Sinclair
 
     def none?  # :yield: e
       if block_given?

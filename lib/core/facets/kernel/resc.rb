@@ -6,7 +6,7 @@ module Kernel
   #
   #   TODO: Should this be deprecated in favor of String#to_re/to_rx ?
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def resc(str)
     Regexp.escape(str.to_s)

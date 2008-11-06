@@ -19,10 +19,9 @@ unless (RUBY_VERSION[0,3] == '1.9')
     #   %{john terry fiona}.map(&:capitalize)   # -> %{John Terry Fiona}
     #   sum = numbers.inject(&:+)
     #
-    #   TODO: This will be deprecated as of Ruby 1.9, since it will become standard Ruby.
+    # TODO: This will be deprecated as of Ruby 1.9, since it will become standard Ruby.
     #
-    # CREDIT: Florian Gross (orignal)
-    # CREDIT: Nobuhiro Imai (current)
+    # CREDIT: Florian Gross (orignal), Nobuhiro Imai (current)
 
     def to_proc
       Proc.new{|*args| args.shift.__send__(self, *args)}

@@ -10,7 +10,7 @@ class String
   #
   #   ["<p>This", "<b>is", "</b>a test.", "</p>"]
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def divide( re )
     re2 = /#{re}.*?(?=#{re}|\Z)/

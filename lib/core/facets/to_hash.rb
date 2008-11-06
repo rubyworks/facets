@@ -15,7 +15,7 @@ class Array
   #
   #   array1.zip(array2).to_h
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def to_h(arrayed=nil)
     h = {}

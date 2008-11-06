@@ -6,7 +6,7 @@ class File
   #
   #   File.split_all("a/b/c") =>  ['a', 'b', 'c']
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def self.split_all(path)
     head, tail = File.split(path)

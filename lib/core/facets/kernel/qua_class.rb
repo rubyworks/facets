@@ -5,8 +5,8 @@ module Kernel
   #
   # Yes, another one.
   #
-  #  CREDIT: Trans
-  #
+  # CREDIT: Trans
+
   def qua_class(&block)
     if block_given?
       (class << self; self; end).class_eval(&block)

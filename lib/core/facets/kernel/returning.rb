@@ -13,7 +13,7 @@ module Kernel
   # #returning from #with, however it also would require
   # implementation in Ruby itself.
   #
-  #   CREDIT: Mikael Brockman
+  # CREDIT: Mikael Brockman
 
   def returning(obj=self) #:yield:
     yield obj

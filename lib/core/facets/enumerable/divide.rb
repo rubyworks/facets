@@ -5,7 +5,7 @@ module Enumerable
   #   ['a1','b1','a2','b2'].divide(/^a/)
   #   => [['a1,'b1'],['a2','b2']]
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def divide(pattern)
     memo = []

@@ -11,8 +11,7 @@ class File
   #
   # Returns +nil+.
   #
-  #   CREDIT: Noah Gibbs
-  #   CREDIT: Gavin Sinclair
+  # CREDIT: Noah Gibbs, Gavin Sinclair
 
   def self.writelines(path, data)
     File.open(path, "wb") do |file|

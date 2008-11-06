@@ -14,7 +14,7 @@ class Module
   #     include_function_module Utils
   #   end
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def include_function_module *mod
     include(*mod)

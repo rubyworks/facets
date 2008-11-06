@@ -6,7 +6,7 @@ class Hash
   #   h.update_values{ |v| v+1 }
   #   h  #=> { a:=>2, :b=>3 }
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def update_values #:yield:
     if block_given?

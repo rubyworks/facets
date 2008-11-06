@@ -9,9 +9,9 @@ class String
   #         }.margin
   #
   #
-  #   NOTE: This may still need a bit of tweaking.
+  # NOTE: This may still need a bit of tweaking.
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def margin(n=0)
     #d = /\A.*\n\s*(.)/.match( self )[1]

@@ -11,8 +11,7 @@ class Array
   #
   #   [1,2,3].rotate(-1)  #=> [2,3,1]
   #
-  #  CREDIT: Florian Gross
-  #  CREDIT: Thomas Sawyer
+  # CREDIT: Florian Gross, Thomas Sawyer
 
   def rotate(n=1)
     self.dup.rotate!(n)
@@ -24,8 +23,7 @@ class Array
   #   a.rotate!
   #   a  #=> [3,1,2]
   #
-  #  CREDIT: Florian Gross
-  #  CREDIT: Thomas Sawyer
+  # CREDIT: Florian Gross, Thomas Sawyer
 
   def rotate!(n=1)
     n = n.to_int

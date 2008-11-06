@@ -4,7 +4,7 @@ class Numeric
   # within a given _n_th degree. Defaults to 100ths
   # if the degree is not specified.
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def approx?(x, n=0.01)
     return(self == x) if n == 0

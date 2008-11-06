@@ -3,7 +3,7 @@ class String
   # Cleave a string. Break a string in two parts at
   # the nearest whitespace.
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def cleave(threshold=nil, len=nil)
     l = (len || size / 2)

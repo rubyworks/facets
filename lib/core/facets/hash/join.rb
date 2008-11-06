@@ -2,7 +2,7 @@ class Hash
 
   # Like Array#join but specialized to Hash.
   #
-  #  CREDIT: Mauricio Fernandez
+  # CREDIT: Mauricio Fernandez
 
   def join(pair_divider='', elem_divider='')
     s = []

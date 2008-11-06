@@ -6,8 +6,7 @@ class Hash
   #   Hash.zipnew(["a","b","c"], [1,2,3])
   #     #=> { "a"=>1, "b"=>2, "c"=>3 }
   #
-  #  CREDIT: Trans
-  #  CREDIT: Ara T. Howard
+  # CREDIT: Trans, Ara T. Howard
 
   def self.zipnew(keys,values) # or some better name
     h = {}

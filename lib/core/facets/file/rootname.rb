@@ -7,7 +7,7 @@ class File
   #   File.rootname('/jump.rb')     #=> '/'
   #   File.rootname('jump.rb')      #=> '.'
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
   #
   def self.rootname(path)
     # this should be fairly robust

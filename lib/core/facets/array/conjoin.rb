@@ -25,7 +25,7 @@ class Array
   #   [1,1,2,2].conjoin{ |i, a, b| a == b ? '=' : '!=' }
   #   => "1=1!=2=2"
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def conjoin(*args, &block)
     return first.to_s if size < 2

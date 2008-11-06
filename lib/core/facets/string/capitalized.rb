@@ -6,7 +6,7 @@ class String
   #   "This".capitalized?  #=> true
   #   "this".capitalized?  #=> false
   #
-  #  CREDIT: Phil Tomson
+  # CREDIT: Phil Tomson
 
   def capitalized?
     self =~ /^[A-Z]/
@@ -18,7 +18,7 @@ class String
   #   "This".downcase?  #=> false
   #   "this".downcase?  #=> true
   #
-  #  CREDIT: Phil Tomson
+  # CREDIT: Phil Tomson
 
   def downcase?
     downcase == self
@@ -33,7 +33,7 @@ class String
   #   "This".upcase?  #=> false
   #   "this".upcase?  #=> false
   #
-  #  CREDIT: Phil Tomson
+  # CREDIT: Phil Tomson
 
   def upcase?
     upcase == self

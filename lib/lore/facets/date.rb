@@ -84,7 +84,7 @@ class Date
   #
   #   Date.new(2004,2).days_in_month #=> 28
   #
-  #  CREDIT: Ken Kunz.
+  # CREDIT: Ken Kunz.
 
   def days_in_month
      Date.civil(year, month, -1).day
@@ -96,7 +96,7 @@ class Date
 
   # Get the month name for this date object
   #
-  #  CREDIT Benjamin Oakes
+  # CREDIT: Benjamin Oakes
 
   def month_name
     MONTHNAMES[self.month]

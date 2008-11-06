@@ -7,7 +7,7 @@ class Hash
   #   h.has_keys?( :a )   #=> true
   #   h.has_keys?( :c )   #=> false
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def has_keys?(*check_keys)
     unknown_keys = check_keys - self.keys
@@ -23,7 +23,7 @@ class Hash
   #   h.has_only_keys?( :a, :b )   #=> true
   #   h.has_only_keys?( :a )       #=> false
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def has_only_keys?(*check_keys)
     unknown_keys = self.keys - check_keys
@@ -35,7 +35,7 @@ class Hash
   # Each with key is like each_pair but reverses the order
   # the parameters to [value,key] instead of [key,value].
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def each_with_key( &yld )
     each_pair{ |k,v| yld.call(v,k) }

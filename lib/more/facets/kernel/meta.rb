@@ -20,7 +20,7 @@ module Kernel
   # TODO: Don't see any reason this can't go into core, but there is
   # a conflict with URI prior to 1.8.6, so it will have to wait.
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def meta
     @_meta_functor ||= Functor.new do |op,*args|

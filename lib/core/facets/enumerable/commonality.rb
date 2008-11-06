@@ -12,7 +12,7 @@ module Enumerable
   #   # Returns all persons that share their last name with another person.
   #   persons.collisions { |person| person.last_name }
   #
-  #   CREDIT: Florian Gross
+  # CREDIT: Florian Gross
 
   def commonality( &block )
     had_no_block = !block

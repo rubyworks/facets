@@ -7,7 +7,7 @@ class Proc
   #   plusproc = lambda { |x| x + 1 }
   #   plusproc.to_method(self, 'foo')
   #   X.new.foo(1)  #=> 2
-
+  #
   def to_method(object, name=nil)
     #object = object || eval("self", self)
     block, time = self, Time.now

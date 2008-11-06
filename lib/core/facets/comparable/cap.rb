@@ -5,7 +5,7 @@ module Comparable
   #   4.at_least(5)  #=> 5
   #   6.at_least(5)  #=> 6
   #
-  #  CREDIT Florian Gross
+  # CREDIT: Florian Gross
 
   def at_least(lower)
     (self >= lower) ? self : lower
@@ -16,7 +16,7 @@ module Comparable
   #   4.at_most(5)  #=> 4
   #   6.at_most(5)  #=> 5
   #
-  #  CREDIT Florian Gross
+  # CREDIT: Florian Gross
 
   def at_most(upper)
     (self <= upper) ? self : upper
@@ -27,7 +27,7 @@ module Comparable
   #   4.cap(5)  #=> 4
   #   6.cap(5)  #=> 5
   #
-  #  CREDIT Trans
+  # CREDIT: Trans
 
   alias_method :cap, :at_most
 

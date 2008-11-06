@@ -8,7 +8,7 @@ class Module
   # Return a new module based on another.
   # This includes the original module into the new one.
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def revise(&blk)
     base = self
@@ -46,7 +46,7 @@ class Module
   # returns the reconstructred module. It does not
   # include it.
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def integrate(mod, &block)
     #include mod.revisal( &blk )

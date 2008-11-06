@@ -6,7 +6,7 @@ class Integer
   #   3.factorial  #=> 6
   #   3.factorial  #=> 24
   #
-  #  CREDIT: Malte Milatz
+  # CREDIT: Malte Milatz
 
   def factorial
     return 1 if zero?

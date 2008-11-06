@@ -13,7 +13,7 @@ class Hash
   # TODO: Testing value to see if it is a Hash also catches subclasses of Hash.
   #       This is probably not the right thing to do and should catch Hashes only (?)
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def traverse(&b)
     inject({}) do |h,(k,v)|
@@ -31,7 +31,7 @@ class Hash
   #   h.traverse! { |k,v| [k.downcase, v] }
   #   h  #=> { "a"=>"A", "b"=>"B" }
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def traverse!(&b)
     self.replace( self.traverse(&b) )

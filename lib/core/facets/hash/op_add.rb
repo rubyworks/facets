@@ -2,7 +2,7 @@ class Hash
 
   # Operator for #merge.
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def +(other)
     merge(other)

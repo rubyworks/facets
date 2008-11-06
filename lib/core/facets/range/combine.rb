@@ -7,7 +7,7 @@ class Range
   #
   #   TODO: Incorporate end-sentinal inclusion vs. exclusion.
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def combine(*intervals)
     Range.combine(self, *intervals)
@@ -18,7 +18,7 @@ class Range
   #   Range.combine(1..2, 2..4)   #=> [1..4]
   #   Range.combine(1..2, 3..4)   #=> [1..2, 3..4]
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def self.combine(*intervals)
     intype = intervals.first.class

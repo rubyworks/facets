@@ -5,7 +5,7 @@ class MatchData
   #   md = /123/.match "123456"
   #   md.match  #=> "123"
   #
-  #  CREDIT: Martin DeMello
+  # CREDIT: Martin DeMello
 
   def match(index=0)
     self[index]

@@ -9,7 +9,7 @@ class Array
   #
   #   [0,1,2].pad(-6,"a")  #=> ["a","a","a",0,1,2]
   #
-  #  CREDIT: Richard Laugesen
+  # CREDIT: Richard Laugesen
 
   def pad(len, val=nil)
     return dup if self.size >= len.abs
@@ -26,7 +26,7 @@ class Array
   #    a.pad!(6,"x")
   #    a  #=> [0,1,2,"x","x","x"]
   #
-  #  CREDIT: Richard Laugesen
+  # CREDIT: Richard Laugesen
 
   def pad!(len, val=nil)
     return self if self.size >= len.abs

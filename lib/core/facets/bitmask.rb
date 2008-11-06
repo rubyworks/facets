@@ -9,8 +9,7 @@ class Integer
   #   10.bit!(~3)      #=> 2
   #   0xb0100.bit(~3)  #=> 0
   #
-  #   CREDIT: Thomas Sawyer
-  #   CREDIT: George Moschovitis
+  # CREDIT: Thomas Sawyer, George Moschovitis
 
   def bit(bit)
     if bit < 0
@@ -27,7 +26,7 @@ class Integer
 
   # Clear bit.
   #
-  #   CREDIT: George Moschovitis
+  # CREDIT: George Moschovitis
 
   def clear_bit(bit)
     mask = (1 << bit)
@@ -39,8 +38,7 @@ class Integer
   #   8.bit?(3)  #=> true
   #   8.bit?(2)  #=> false
   #
-  #   CREDIT: Thomas Sawyer
-  #   CREDIT: George Moschovitis
+  # CREDIT: Thomas Sawyer, George Moschovitis
 
   def bit?(bit)
     mask = (1 << bit)
@@ -56,7 +54,7 @@ class Integer
   #   7.bitmask(~2) #=> 5
   #   5.bitmask(~2) #=> 5
   #
-  #   CREDIT: George Moschovitis
+  # CREDIT: George Moschovitis
 
   def bitmask(mask)
     if mask < 0
@@ -75,7 +73,7 @@ class Integer
   #   7.bitmask?(5) #=> true
   #   8.bitmask?(3) #=> false
   #
-  #   CREDIT: George Moschovitis
+  # CREDIT: George Moschovitis
 
   def bitmask?(mask)
     (self & mask) != 0
@@ -94,8 +92,7 @@ module Kernel
   #
   # This is equivalent to n-shift: "1 << n".
   #
-  #   CREDIT: Thomas Sawyer
-  #   CREDIT: George Moschovitis
+  # CREDIT: Thomas Sawyer, George Moschovitis
 
   def Bit(n)
     1 << Integer(n)

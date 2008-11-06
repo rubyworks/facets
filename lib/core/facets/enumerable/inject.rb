@@ -1,6 +1,6 @@
 module Enumerable
 
-  # A small variation of #Inject that save one from having to 
+  # A small variation of #Inject that save one from having to
   # return the aggregating or memo argument.
   #
   # Say you want to count letters.
@@ -11,8 +11,7 @@ module Enumerable
   #
   #    some_text.inject(Hash.new(0)) {|h,l| h[l] +=1; h}
   #
-  #  CREDIT: David Black
-  #  CREDIT: Louis J Scoras
+  # CREDIT: David Black, Louis J Scoras
 
   def inject!(s)
     k = s

@@ -8,7 +8,7 @@ class Regexp
   # Note that this is not perfect, especially with regards to \x
   # and embedded comments.
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def arity
     source.scan( /(?!\\)[(](?!\?[#=:!>-imx])/ ).length

@@ -13,7 +13,7 @@ class Array
   #   a.poke(9)   #=> [9,1,2,3]
   #   a           #=> [9,1,2,3]
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   alias_method :poke, :unshift
 
@@ -25,7 +25,7 @@ class Array
   #   a.pull  #=> 1
   #   a       #=> [2,3]
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   alias_method :pull, :shift
 

@@ -11,7 +11,7 @@ class Module
   #
   # See also Module#basename.
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def modspace
     space = name[ 0...(name.rindex( '::' ) || 0)]

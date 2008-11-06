@@ -3,8 +3,7 @@ class Dir
   # Recursively scan a directory and pass each file
   # to the given block.
   #
-  #   CREDIT: George Moschovitis
-
+  # CREDIT: George Moschovitis
   def self.recurse(path='.', &block)
     list = []
     stoplist = ['.', '..']

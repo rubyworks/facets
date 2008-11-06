@@ -35,7 +35,7 @@ module OpEsc
   #
   #   op_esc('-') #=> "op_minus"
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def self.escape(str)
     str.gsub(OPERATORS_REGEXP){ OPERATORS_ESC_TABLE[$1] }

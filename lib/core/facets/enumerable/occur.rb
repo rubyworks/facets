@@ -13,8 +13,6 @@ module Enumerable
   #   [1,1,2,3,3,4,5,5].occur { |n| n == 1 } #=> [2,4]
   #   [1,1,2,3,3,4,5,5].occur { |n| n > 1 }  #=> [1,3,5]
   #
-  #   CREDIT: ?
-
   def occur(n=nil) #:yield:
     result = Hash.new { |hash, key| hash[key] = Array.new }
     self.each do |item|

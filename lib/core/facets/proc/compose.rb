@@ -9,7 +9,7 @@ class Proc
   #   a.compose(b).call(4)  #=> 6
   #   b.compose(a).call(4)  #=> 4
   #
-  #   CREDIT: Dave
+  # CREDIT: Dave
 
   def compose(g)
     raise ArgumentError, "arity count mismatch" unless arity == g.arity
@@ -24,7 +24,7 @@ class Proc
   #   (a * b).call(4)  #=> 6
   #   (b * a).call(4)  #=> 4
   #
-  #   CREDIT: Dave
+  # CREDIT: Dave
 
   def *(x)
     if Integer===x

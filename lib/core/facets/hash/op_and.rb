@@ -14,7 +14,7 @@ class Hash
   # in that #pairs_at will return a nil value for a key
   # not in the hash, but #& will not.
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def &(other)
     case other

@@ -6,7 +6,7 @@ module Kernel
   #   X.meta_alias "ynot?", "y?"
   #   X.ynot?  #=> y?
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def meta_alias(*args)
     meta_class do
@@ -17,7 +17,7 @@ module Kernel
   # Evaluate code in a metaclass. This is equivalent to
   # 'meta_class.instance_eval'.
   #
-  #  CREDIT: WhyTheLuckyStiff
+  # CREDIT: WhyTheLuckyStiff
 
   def meta_eval(str=nil, &blk)
     if str
@@ -33,7 +33,7 @@ module Kernel
   #   X.meta_def(:x){"x"}
   #   X.x  #=> "x"
   #
-  #  CREDIT: WhyTheLuckyStiff
+  # CREDIT: WhyTheLuckyStiff
 
   def meta_def( name, &block )
     meta_class do
@@ -64,7 +64,7 @@ module Kernel
   #
   #                       -- why the lucky stiff
   #
-  #   CREDIT: WhyTheLuckyStiff
+  # CREDIT: WhyTheLuckyStiff
 
   def eigenclass
     (class << self; self; end)
@@ -77,7 +77,7 @@ class Module
 
   # Defines an instance method within a class.
   #
-  #   CREDIT: WhyTheLuckyStiff
+  # CREDIT: WhyTheLuckyStiff
 
   def class_def name, &blk
     class_eval { define_method name, &blk }

@@ -74,9 +74,9 @@ class Time
     # Adjust DST
     #
     # TODO: Can't seem to get this to pass ActiveSupport tests.
-    #       Even though it is essentially identical to the
-    #       ActiveSupport code (see Time#since in time/calculations.rb).
-    #       It handels all but 4 tests.
+    # Even though it is essentially identical to the
+    # ActiveSupport code (see Time#since in time/calculations.rb).
+    # It handels all but 4 tests.
     def dst_adjustment(time)
       self_dst = self.dst? ? 1 : 0
       time_dst = time.dst? ? 1 : 0

@@ -12,8 +12,7 @@ class String
   #
   #   TODO: Invert case flag?
   #
-  #   CREDIT: Alan Davies
-  #   CREDIT: Martin Pool
+  # CREDIT: Alan Davies, Martin Pool
   #
   #--
   # Adapted from:

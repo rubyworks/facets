@@ -6,7 +6,7 @@ unless (RUBY_VERSION[0,3] == '1.9')
     # Each is indexed by a permutation number. The maximum number of
     # arrangements is the factorial of the size of the array.
     #
-    #  CREDIT: Shin-ichiro Hara
+    # CREDIT: Shin-ichiro Hara
 
     def permutation(n=size)
       if size < n or n < 0

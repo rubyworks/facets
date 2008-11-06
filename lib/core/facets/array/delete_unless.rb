@@ -5,7 +5,7 @@ class Array
   #   [1,2,3].delete_unless{ |x| x < 2 }
   #   => [1,2]
   #
-  #  CREDIT: Daniel Schierbeck
+  # CREDIT: Daniel Schierbeck
 
   def delete_unless(&block)
     delete_if { |element| not block.call(element) }

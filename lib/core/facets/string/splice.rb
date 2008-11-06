@@ -15,7 +15,7 @@ class String
   #   a.splice(1)    #=> "E"
   #   a              #=> "HLLO"
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def splice(idx, sub=nil)
     if sub
@@ -23,7 +23,7 @@ class String
     else
       case idx
       when Range
-        slice!(idx) 
+        slice!(idx)
       else
         slice!(idx,1)
       end

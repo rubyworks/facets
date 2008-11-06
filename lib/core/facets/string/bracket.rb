@@ -9,7 +9,7 @@ class String
   #   "wrap me".bracket('{')        #=> "{wrap me}"
   #   "wrap me".bracket('--','!')   #=> "--wrap me!"
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def bracket(bra, ket=nil)
     #ket = String.bra2ket[$&] if ! ket && /^[\[({<]$/ =~ bra
@@ -19,7 +19,7 @@ class String
 
   # Inplace version of #braket.
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def bracket!(bra, ket=nil)
     self.replace(bracket(bra, ket))
@@ -32,7 +32,7 @@ class String
   #   "{unwrap me}".debracket('{')        #=> "unwrap me"
   #   "--unwrap me!".debracket('--','!')  #=> "unwrap me!"
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def unbracket(bra=nil, ket=nil)
     if bra
@@ -52,7 +52,7 @@ class String
 
   # Inplace version of #debraket.
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def unbracket!(bra=nil, ket=nil)
     self.replace( unbracket(bra, ket) )
@@ -64,7 +64,7 @@ class String
   #   "quote me".quote     #=> "'quote me'"
   #   "quote me".quote(2)  #=> "\"quote me\""
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def quote(type=:s)
     case type.to_s.downcase
@@ -83,7 +83,7 @@ class String
   #
   #   "'hi'".dequite    #=> "hi"
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def dequote
     s = self.dup

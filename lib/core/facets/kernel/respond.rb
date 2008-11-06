@@ -11,7 +11,7 @@ module Kernel
   #   x.respond(:f)  #=> "f"
   #   x.respond(:g)  #=> nil
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def respond(sym, *args)
     return nil if not respond_to?(sym)

@@ -14,7 +14,7 @@ class String
   # if the given string ends in a newline, it is replaced with
   # a single space.
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def fold(ignore_indented=false)
     ns = ''

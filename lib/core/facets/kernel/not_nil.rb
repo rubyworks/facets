@@ -5,7 +5,7 @@ module Kernel
   #   "hello".not_nil?     # -> true
   #   nil.not_nil?         # -> false
   #
-  #  CREDIT: Gavin Sinclair
+  # CREDIT: Gavin Sinclair
 
   def not_nil?
     not nil?

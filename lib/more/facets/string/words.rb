@@ -7,7 +7,7 @@ class String
     # Returns an array of characters.
     #
     #   "abc 123".words  #=> ["abc","123"]
-
+    #
     def words
       self.split(/\s+/)
     end
@@ -15,7 +15,7 @@ class String
     # Iterate through each word of a string.
     #
     #   "a string".each_word { |word, range| ... }
-
+    #
     def each_word( &yld )
       rest_of_string = self
       wordfind = /([-'\w]+)/
@@ -38,8 +38,8 @@ class String
     #
     #   "a string".word_filter { |word| word =~ /^a/ }  #=> "string"
     #
-    #   CREDIT: George Moschovitis
-
+    # CREDIT: George Moschovitis
+    #
     def word_filter( &blk )
       s = self.dup
       s.word_filter!( &blk )
@@ -49,7 +49,7 @@ class String
     #
     #   "a string".word_filter { |word| ... }
     #
-    #   CREDIT: George Moschovitis
+    # CREDIT: George Moschovitis
 
     def word_filter! #:yield:
       rest_of_string = self
@@ -104,8 +104,7 @@ class String
     #   is a
     #   test
     #
-    #   CREDIT: Gavin Kistner
-    #   CREDIT: Dayne Broderson
+    # CREDIT: Gavin Kistner, Dayne Broderson
 
     def word_wrap( col_width=80 )
       self.dup.word_wrap!( col_width )
@@ -113,8 +112,7 @@ class String
 
     # As with #word_wrap, but modifies the string in place.
     #
-    #   CREDIT: Gavin Kistner
-    #   CREDIT: Dayne Broderson
+    # CREDIT: Gavin Kistner, Dayne Broderson
 
     def word_wrap!( col_width=80 )
       self.gsub!( /(\S{#{col_width}})(?=\S)/, '\1 ' )
@@ -142,8 +140,7 @@ class String
     # if possible, and appended by +ellipsis+, which defaults
     # to '...'.
     #
-    #   CREDIT: George Moschovitis
-    #   CREDIT: Trans
+    # CREDIT: George Moschovitis, Trans
 
     def brief(range=76, ellipsis="...")
       if Range===range

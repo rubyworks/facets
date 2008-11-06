@@ -16,7 +16,7 @@ class UnboundMethod
   #
   # When defaults are used the arguments must end in "*args".
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def arguments
     ar = arity

@@ -7,7 +7,7 @@ class String
 
   # Aligns each line n spaces.
   #
-  #  CREDIT: Gavin Sinclair
+  # CREDIT: Gavin Sinclair
   #
   def tab(n)
     gsub(/^ */, ' ' * n)

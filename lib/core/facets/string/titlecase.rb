@@ -5,7 +5,7 @@ class String
   #   "this is a string".titlecase
   #   => "This Is A String"
   #
-  #  CREDIT: Eliazar Parra
+  # CREDIT: Eliazar Parra
 
   def titlecase
     gsub(/\b\w/){$&.upcase}

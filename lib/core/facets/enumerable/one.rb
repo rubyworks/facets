@@ -16,7 +16,7 @@ unless (RUBY_VERSION[0,3] == '1.9')
     #   (1...10).one? { |n| n == 5 } # true
     #   (1...10).one? { |n| n < 5 }  # false
     #
-    #   CREDIT: Gavin Sinclair
+    # CREDIT: Gavin Sinclair
 
     def one?  # :yield: e
       matches = 0

@@ -5,7 +5,7 @@ class Integer
   #   7.multiple?(2)  #=> false
   #   8.multiple?(2)  #=> true
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def multiple?(number)
     self % number == 0

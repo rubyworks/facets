@@ -9,7 +9,6 @@ class Class
   #
   # NOTE: This is a intesive operation. Do not
   # expect it to be super fast.
-
   def descendents
     subclass = []
     ObjectSpace.each_object( Class ) do |c|
@@ -27,7 +26,6 @@ class Class
     # NOTE: ActiveSupport returns string names rather
     # then actual classes, so this is excluded
     # if ActiveSupport has already been loaded.
-    #
     alias_method :subclasses, :descendents
 
   end

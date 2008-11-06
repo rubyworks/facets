@@ -37,7 +37,6 @@ class Dir
   # This is very useful in collecting files as specificed by a configuration
   # parameter.
   #++
-
   def self.multiglob(*patterns)
     options  = (Hash === patterns.last ? patterns.pop : {})
 
@@ -76,7 +75,6 @@ class Dir
   #
   #   Dir.multiglob( 'folder', 'folder/**/**' )
   #
-
   def self.multiglob_r(*patterns)
     options = (Hash === patterns.last ? patterns.pop : {})
     matches = multiglob(*patterns)

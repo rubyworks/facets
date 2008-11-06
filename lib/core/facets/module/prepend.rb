@@ -15,7 +15,7 @@ class Module
   #
   #   X.x  # => "{x}"
   #
-  #  CREDIT Trans
+  # CREDIT Trans
 
   def prepend(aspect)
     aspect.__send__(:include, self)

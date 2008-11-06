@@ -4,7 +4,7 @@ class Module
 
     # Load file into module/class namespace.
     #
-    #   CREDIT: Trans
+    # CREDIT: Trans
 
     def module_load( path )
       if path =~ /^[\/~.]/
@@ -22,7 +22,7 @@ class Module
 
     # Require file into module/class namespace.
     #
-    #   CREDIT: Trans
+    # CREDIT: Trans
 
     def module_require( path )
       if path =~ /^[\/~.]/

@@ -14,7 +14,7 @@ unless (RUBY_VERSION[0,3] == '1.9')
     #   e = { 'a' => 2, 'a' => 2, 'b' => 1 }
     #   e.count('a',2)  #=> 1
     #
-    #   CREDIT: Trans
+    # CREDIT: Trans
 
     def count(*c)
       self.select{ |*i| i == c }.length

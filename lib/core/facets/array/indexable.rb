@@ -12,7 +12,7 @@ class Array
   #   a.first!      #=> "a"
   #   p a           #=> ["y","z"]
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   alias_method :first!, :shift
 
@@ -23,7 +23,7 @@ class Array
   #   a.last! 3
   #   p a           #=> [1,2,3]
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   alias_method :last!, :pop
 

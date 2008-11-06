@@ -8,6 +8,7 @@ class String
   #     FROM users
   #   QUERY
   #   => "SELECT name FROM users"
+  #
   def compress_lines(spaced = true)
     split($/).map { |line| line.strip }.join(spaced ? ' ' : '')
   end

@@ -30,8 +30,7 @@ class Module
   # benefit that Ruby's concept of modules has over
   # traditional traits, inheritance.
   #
-  #   CREDIT: Thomas Sawyer
-  #   CREDIT: Robert Dober
+  # CREDIT: Thomas Sawyer, Robert Dober
 
   def +(other)
     base = self
@@ -45,8 +44,7 @@ class Module
   #
   #   TODO: Should this use all instance_methods, not just public?
   #
-  #   CREDIT: Thomas Sawyer
-  #   CREDIT: Robert Dober
+  # CREDIT: Thomas Sawyer, Robert Dober
 
   def -(other)
     case other
@@ -77,8 +75,7 @@ class Module
   #   X.new.b    #=> "a"
   #
   #
-  #   CREDIT: Thomas Sawyer
-  #   CREDIT: Robert Dober
+  # Thomas Sawyer, Robert Dober
 
   def *(rename_map)
     base = self

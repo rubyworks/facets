@@ -8,7 +8,7 @@ class Hash
   #   h1 + h2  #=> { :a=>2, :b=>3 }
   #   h1 * h2  #=> { :a=>1, :b=>3 }
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def *(other)
     other.merge(self)

@@ -22,12 +22,11 @@ class Class
   # Implementation of this method has some limitations,
   # in that it works by overriding #new and #allocate.
   #
-  # CREDIT Trans
+  # CREDIT: Trans
   #
   # TODO: Perhaps rename this to preallocate, b/c of
-  #       the way it works. It is not really a clean
-  #       prepend, like that of Module#prepend.
-
+  # the way it works. It is not really a clean
+  # prepend, like that of Module#prepend.
   def prepend( aspect )
     _new      = method(:new)
     _allocate = method(:allocate)

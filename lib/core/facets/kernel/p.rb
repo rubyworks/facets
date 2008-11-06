@@ -13,7 +13,7 @@ module Kernel
   #   1
   #   5
   #
-  # DEPRECATE AS OF 1.9, _if_ #p will then do this too.
+  # TODO: DEPRECATE as of 1.9, _if_ it will do this.
 
   def p(*x)
     x.each{ |e| puts e.inspect } #p(*x)

@@ -17,7 +17,7 @@ module Enumerable
   # the arity of the block. If each_slice ever suppots this
   # this method can be deprecated.
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def each_by(steps=nil, &block)
     if steps

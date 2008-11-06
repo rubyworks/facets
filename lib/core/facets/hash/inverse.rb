@@ -9,7 +9,7 @@ class Hash
   #   h.inverse.inverse       #=> {"a"=>3, "b"=>3, "c"=>3, "d"=>2, "e"=>9, "f"=>3, "g"=>9}
   #   h.inverse.inverse == h  #=> true
   #
-  #   CREDIT: Tilo Sloboda
+  # CREDIT: Tilo Sloboda
 
   def inverse
     i = Hash.new

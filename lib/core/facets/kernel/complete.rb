@@ -8,7 +8,7 @@ module Kernel
   #   end
   #   b  #=> [3, 2, 1, nil]
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def complete
     loop { break unless yield }

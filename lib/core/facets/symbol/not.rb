@@ -5,7 +5,7 @@ class Symbol
   #   "friend".to_sym.not?   #=> false
   #   "~friend".to_sym.not?  #=> true
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def not?
     self.to_s.slice(0,1) == '~'
@@ -15,7 +15,7 @@ class Symbol
   #
   #   ~:friend    #=> :"~friend"
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def ~@
     if self.to_s.slice(0,1) == '~'

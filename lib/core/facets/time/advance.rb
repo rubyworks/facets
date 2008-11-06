@@ -5,7 +5,8 @@ class Time
   # <tt>:months</tt>, <tt>:weeks</tt>, <tt>:days</tt>, <tt>:hours</tt>,
   # <tt>:minutes</tt>, <tt>:seconds</tt>.
   #
-  #   CREDIT: ActiveSupport
+  # CREDIT: ActiveSupport Team
+
   def advance(options)
     d = to_date.advance(options)
     time_advanced_by_date = change(:year => d.year, :month => d.month, :day => d.day)

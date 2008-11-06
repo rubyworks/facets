@@ -13,7 +13,7 @@ unless (RUBY_VERSION[0,3] == '1.9')
     #
     #   meth.name  #=> "foo"
     #
-    #   CREDIT: Trans
+    # CREDIT: Trans
 
     def name
       i = to_s.rindex('#')

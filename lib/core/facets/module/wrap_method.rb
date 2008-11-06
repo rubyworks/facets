@@ -15,7 +15,7 @@ class Module
   # Keep in mind that this can not be used to wrap methods
   # that take a block.
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def wrap_method( sym, &blk )
     old = instance_method(sym)

@@ -13,7 +13,7 @@ module Kernel
   #   Test.constant("Unit::Assertions")   # -> Test::Unit::Assertions
   #   Test.constant("::Test::Unit")       # -> Test::Unit
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def constant(const)
     const = const.to_s.dup

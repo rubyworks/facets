@@ -10,7 +10,7 @@ class Integer
     #   -99.odd?          # -> true
     #   -98.odd?          # -> false
     #
-    #  CREDIT: Daniel Schierbeck
+    # CREDIT: Daniel Schierbeck
 
     def odd?
       #self % 2 == 1
@@ -22,7 +22,7 @@ class Integer
     #   2.even?  #=> true
     #   3.even?  #=> false
     #
-    #   CREDIT: Daniel Schierbeck
+    # CREDIT: Daniel Schierbeck
 
     def even?
       #self % 2 == 0

@@ -2,7 +2,7 @@ class Hash
 
   # Operator for #reverse_merge.
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def |(other)
     other.merge(self)

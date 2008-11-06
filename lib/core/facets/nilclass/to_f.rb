@@ -7,7 +7,7 @@ class NilClass
     #
     #   nil.to_f   #=> 0.0
     #
-    #   CREDIT: Matz
+    # CREDIT: Matz
 
     def to_f; 0.0; end
 

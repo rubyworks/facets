@@ -22,8 +22,7 @@ class Module
   #
   # so you can safely chain foo, foo?, and foo! with the same feature.
   #
-  #  CREDIT: Bitsweat
-  #  CREDIT: Rails Team
+  # CREDIT: Bitsweat, Rails Team
 
   def alias_method_chain(target, feature)
     # Strip out punctuation on predicates or bang methods since

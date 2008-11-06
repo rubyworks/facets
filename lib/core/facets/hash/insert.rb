@@ -5,7 +5,7 @@ class Hash
   #
   # TODO: Would #store? be a better name?
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def insert(name, value)
     if key?(name)

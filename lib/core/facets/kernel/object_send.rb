@@ -12,7 +12,7 @@ module Kernel
   #
   # TODO: object_send needs to change for 1.9.
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
   #--
   # Which implementation is faster?
   #++

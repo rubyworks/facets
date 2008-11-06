@@ -7,8 +7,7 @@ class Array
   #   [1,2,3].only  # -> IndexError
   #   [].only       # -> IndexError
   #
-  #  CREDIT: Gavin Sinclair
-  #  CREDIT: Noah Gibbs
+  # CREDIT: Gavin Sinclair, Noah Gibbs
 
   def only
     unless size == 1

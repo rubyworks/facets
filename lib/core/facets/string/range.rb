@@ -4,7 +4,7 @@ class String
   #
   #   "This is a test!".range('test')  #=> 10..13
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def range(s, offset=0)
     if index(s, offset)
@@ -19,7 +19,7 @@ class String
   #
   #   TODO: Add offset, perhaps ?
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def range_all(s, reuse=false)
     r = []; i = 0
@@ -41,7 +41,7 @@ class String
   #   "this\nis\na\ntest".range_of_line
   #   #=> [0..4, 5..7, 8..9, 10..13]
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def range_of_line
     offset=0; charmap = []
@@ -61,7 +61,7 @@ class String
   #   "bbb".index_all('bb', false)  #=> [0]
   #   "bbb".index_all('bb', true)   #=> [0,1]
   #
-  #   TODO: Culd probably be defined for Indexable in general too.
+  # TODO: Culd probably be defined for Indexable in general too.
 
   def index_all(s, reuse=false)
     s = Regexp.new(Regexp.escape(s)) unless Regexp===s
@@ -74,4 +74,3 @@ class String
   end
 
 end
-

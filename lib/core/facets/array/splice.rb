@@ -12,7 +12,7 @@ class Array
   #   a.splice(1,4)  #=> 4
   #   a              #=>[1,4,3]
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def splice(*args)
     if args.size == 1

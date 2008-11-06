@@ -4,7 +4,7 @@ class Symbol
   #
   #   :ab.chomp(:b)  #=> :a
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def chomp(seperator)
     to_s.chomp(seperator.to_s).to_sym
@@ -14,7 +14,7 @@ class Symbol
   #
   #   :ab.lchomp(:a)  #=> :b
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def lchomp(seperator)
     to_s.reverse.chomp(seperator.to_s).reverse.to_sym

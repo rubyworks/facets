@@ -20,29 +20,3 @@ class Array
   end
 
 end
-
-
-=begin :spec:
-
-  require 'quarry/spec'
-
-  Quarry.spec "Array" do
-
-    the_method "index" do
-
-      finds "an element" do
-        i = [1,2,3].index{ |e| e == 2 }
-        i.assert == 1
-      end
-
-      terminates "when no element is found" do
-        i = [1,2,3].index{ |e| e == 5 }
-        i.assert == nil
-      end
-
-    end
-
-  end
-
-=end
-

@@ -7,8 +7,8 @@ class Module
   #   private_instance_methods
   #
   # TODO: Better name for #all_instance_methods?
-  # 
-  #  CREDIT: Trans
+  #
+  # CREDIT: Trans
 
   def all_instance_methods(include_super=true)
     public_instance_methods(include_super) +
@@ -18,8 +18,7 @@ class Module
 
   # Query whether a public instance method is defined for the module.
   #
-  #  CREDIT: Gavin Sinclair
-  #  CREDIT: Noah Gibbs
+  # CREDIT: Gavin Sinclair, Noah Gibbs
 
   def instance_method_defined?(meth)
     instance_methods(true).find{ |m| m == meth.to_s }
@@ -27,8 +26,7 @@ class Module
 
   # Query whether a normal (singleton) method is defined for the module.
   #
-  #  CREDIT: Gavin Sinclair
-  #  CREDIT: Noah Gibbs
+  # CREDIT: Gavin Sinclair, Noah Gibbs
 
   def singleton_method_defined?(meth)
     singleton_methods(true).find{ |m| m == meth.to_s }

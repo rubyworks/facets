@@ -15,8 +15,7 @@ class Module
   #
   #   TODO: All instance methods, or just public?
   #
-  #  CREDIT: Thomas Sawyer
-  #  CREDIT: Robert Dober
+  # CREDIT: Thomas Sawyer, Robert Dober
 
   def conflict?(other)
     common_ancestor = (ancestors & other.ancestors).first

@@ -5,7 +5,7 @@ class Range
   #
   #   (1..3).within?(0..4)  #=> true
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def within?(rng)
     case rng.umbrella(self)
@@ -44,8 +44,7 @@ class Range
   #
   #   (0..3).umbrella(1..2)  #=>  [-1,-1]
   #
-  #   CREDIT: Trans
-  #   CREDIT: Chris Kappler
+  # CREDIT: Trans, Chris Kappler
 
   def umbrella(r)
     s = first <=> r.first
@@ -63,4 +62,3 @@ class Range
   end
 
 end
-

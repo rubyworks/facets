@@ -4,7 +4,7 @@ module FileTest
 
   # Is the specified directory the root directory?
   #
-  #  CREDIT: Jeffrey Schwab
+  # CREDIT: Jeffrey Schwab
 
   def root?(dir=nil)
     pth = File.expand_path(dir||Dir.pwd)

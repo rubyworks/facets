@@ -4,9 +4,9 @@ module Enumerable
   #
   # [2,4,6,8].modulate(2)  #=> [[2,6],[4,8]]
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
   #
-  # NOTE: Would this be better named 'collate'?
+  # NOTE: Would the better name for this be 'collate'?
 
   def modulate(modulo)
     return to_a if modulo == 1

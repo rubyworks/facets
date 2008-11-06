@@ -8,7 +8,7 @@ class Module
   #
   #   Y.is?(X)  #=> true
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def is?(base)
     ancestors.slice(1..-1).include?(base)
@@ -20,7 +20,7 @@ class Module
   #     is Enumerable
   #   end
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   #alias_method :is, :include
 

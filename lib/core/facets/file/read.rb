@@ -2,7 +2,7 @@ class File
 
   # Cleans up a filename to ensure it will work on filesystem.
   #
-  #  CREDIT: George Moschovitis
+  # CREDIT: George Moschovitis
 
   def self.sanitize(filename)
     filename = File.basename(filename.gsub("\\", "/")) # work-around for IE
@@ -13,7 +13,7 @@ class File
 
   # Read in a file as binary data.
   #
-  #  CREDIT: George Moschovitis
+  # CREDIT: George Moschovitis
 
   def self.read_binary(fname)
     open(fname, 'rb') {|f|
@@ -25,7 +25,7 @@ class File
   # (lines starting with '#') and then returns
   # an array of all the remaining lines.
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def self.read_list(filepath, chomp_string='')
     farr = nil

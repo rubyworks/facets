@@ -6,7 +6,7 @@ class Array
   #   a.merge! [2,3]
   #   a => [1,2,3]
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def merge!( other )
     self.replace(self.merge(other))

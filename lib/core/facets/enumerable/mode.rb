@@ -3,7 +3,7 @@ module Enumerable
   # In Statistics mode is the value that occurs most
   # frequently in a given set of data.
   #
-  #  CREDIT: Robert Klemme
+  # CREDIT: Robert Klemme
 
   def mode
     max = 0

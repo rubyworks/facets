@@ -10,7 +10,7 @@ class Module
   #   c = C.new
   #   c.a  #=> Error: undefined abstraction #a
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def abstract( *sym )
     sym.each { |s|

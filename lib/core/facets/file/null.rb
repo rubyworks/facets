@@ -2,7 +2,7 @@ class File
 
   # Platform dependent null device.
   #
-  #   CREDIT: Daniel Burger
+  # CREDIT: Daniel Burger
 
   def self.null
     case RUBY_PLATFORM

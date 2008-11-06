@@ -4,25 +4,21 @@ require 'facets/callstack'
 class Binding
 
   # Returns the call stack, same format as Kernel#caller()
-
   def caller( skip=0 )
     eval("caller(#{skip})")
   end
 
   # Returns line number.
-
   def __LINE__
     eval("__LINE__")
   end
 
   # Returns file name.
-
   def __FILE__
     eval("__FILE__")
   end
 
   # Return the directory of the file.
-
   def __DIR__
     eval("File.dirname(__FILE__)")
   end
@@ -32,7 +28,6 @@ class Binding
   #   def tester; p called; end
   #   tester  #=> :tester
   #
-
   def __callee__
     name = /\`([^\']+)\'/.match(caller(1).first)[1]
     return name.to_sym
@@ -44,7 +39,7 @@ class Binding
   #
   #   def tester; p methodname; end
   #   tester  #=> "tester"
-
+  #
   def __method__
     name = /\`([^\']+)\'/.match(caller(1).first)[1]
     return name

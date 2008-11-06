@@ -9,7 +9,7 @@ class Exception
   # Output:
   # The pretty printed string
   #
-  #  CREDIT: George Moschovitis
+  # CREDIT: George Moschovitis
 
   def detail
     return %{#{message}\n  #{backtrace.join("\n  ")}\n  LOGGED FROM: #{caller[0]}}

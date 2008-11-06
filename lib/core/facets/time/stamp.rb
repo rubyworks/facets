@@ -19,7 +19,7 @@ class Time
 
   # Produce time stamp for Time.now. See #stamp.
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def self.stamp(*args)
     now.stamp(*args)
@@ -31,7 +31,7 @@ class Time
   #
   # Supported formats come from the Time::FORMAT constant.
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def stamp(fmt = nil)
     unless String === fmt

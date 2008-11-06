@@ -4,7 +4,7 @@ class String
   #
   #   "HELLO HELLO" - "LL"    #=> "HEO HEO"
   #
-  #   CREDIT: Benjamin David Oakes
+  # CREDIT: Benjamin David Oakes
 
   def -(pattern)
     self.gsub(pattern, '')

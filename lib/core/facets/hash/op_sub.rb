@@ -4,7 +4,7 @@ class Hash
   # the pairs are only removed if both key and value are equal.
   # If an array is given then matching keys are removed.
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def -(other)
     h = self.dup

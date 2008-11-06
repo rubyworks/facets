@@ -8,9 +8,7 @@ class Class
   # method is not carried along. So it is now just a Class
   # method. Accordingly, #mattr has been deprecated.
   #
-  #  CREDIT: David Heinemeier Hansson
-  #  CREDIT: Ara T. Howard (for suggesting)
-
+  # CREDIT: David Heinemeier Hansson
   def cattr( *syms )
     writers, readers = syms.flatten.partition{ |a| a.to_s =~ /=$/ }
     writers = writers.collect{ |e| e.to_s.chomp('=').to_sym }
@@ -31,8 +29,7 @@ class Class
   #   MyClass.a           #=> 10
   #   MyClass.new.a       #=> 10
   #
-  #  CREDIT: David Heinemeier Hansson
-
+  # CREDIT: David Heinemeier Hansson
   def cattr_reader( *syms )
     syms.flatten.each do |sym|
       class_eval(<<-EOS, __FILE__, __LINE__)
@@ -67,8 +64,7 @@ class Class
   #   MyClass.new.a = 29
   #   MyClass.a            #=> 29
   #
-  #  CREDIT: David Heinemeier Hansson
-
+  # CREDIT: David Heinemeier Hansson
   def cattr_writer(*syms)
     syms.flatten.each do |sym|
       class_eval(<<-EOS, __FILE__, __LINE__)
@@ -99,17 +95,18 @@ class Class
   #   MyClass.a           #=> 10
   #   mc = MyClass.new
   #   mc.a                #=> 10
-
+  #
+  # CREDIT: David Heinemeier Hansson
   def cattr_accessor(*syms)
     cattr_reader(*syms) + cattr_writer(*syms)
   end
 
 end
 
+# Not properly applicable to modules, so these have been deprecated.
 #class Module
   #alias_method :mattr,          :cattr            # deprecate
   #alias_method :mattr_reader,   :cattr_reader     # deprecate
   #alias_method :mattr_writer,   :cattr_writer     # deprecate
   #alias_method :mattr_accessor, :cattr_accessor   # deprecate
 #end
-

@@ -7,8 +7,7 @@ unless (RUBY_VERSION[0,3] == '1.9')
     #   "hello".starts_with?("he")    #=> true
     #   "hello".starts_with?("to")    #=> false
     #
-    #  CREDIT: Lucas Carlson
-    #  CREDIT: Blaine Cook
+    # CREDIT: Lucas Carlson, Blaine Cook
 
     def start_with?(prefix)
       self.index(prefix) == 0
@@ -19,8 +18,7 @@ unless (RUBY_VERSION[0,3] == '1.9')
     #   "hello".ends_with?("lo")    #=> true
     #   "hello".ends_with?("to")    #=> false
     #
-    #  CREDIT: Lucas Carlson
-    #  CREDIT: Blaine Cook
+    # CREDIT: Lucas Carlson, Blaine Cook
 
     def end_with?(suffix)
       self.rindex(suffix) == size - suffix.size

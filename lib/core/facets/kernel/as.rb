@@ -18,7 +18,7 @@ module Kernel
   #   end
   #
   #   C.new.x  #=> 1
-
+  #
   def as(ancestor, &blk)
     @__as ||= {}
     unless r = @__as[ancestor]
@@ -69,7 +69,7 @@ module Kernel
   #   end
   #
   #   C.new.x  #=> 1
-
+  #
   def super_as(klass=self.class.superclass, *args, &blk)
     unless self.class.ancestors.include?(klass)
       raise ArgumentError

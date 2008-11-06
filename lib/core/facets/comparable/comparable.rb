@@ -24,7 +24,7 @@ class Module
   #     cmp = self.b <=> other.b; return cmp unless cmp == 0
   #     0
   #   end
-
+  #
   def Comparable(*accessors)
     define_method(:comparability){ accessors }
     code = %{

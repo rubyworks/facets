@@ -14,7 +14,7 @@ module Kernel
   #   object.a = 1
   #   object.b = 2
   #
-  # Using an associative array instead of hash guarentees 
+  # Using an associative array instead of hash guarentees
   # order of assignemnt.
   #
   # Using a hash or array will not raise an error if the
@@ -49,7 +49,7 @@ module Kernel
   #   obj2.a  #=> 1
   #   obj2.b  #=> 2
   #
-  # TODO: pepulate_from(obj) ?
+  # TODO: populate_from(obj) ?
 
   def set_from(obj, *fields)
     unless fields.empty?

@@ -11,8 +11,7 @@ module Comparable
   #   9.clip(2,7)  #=> 7
   #   1.clip(2,7)  #=> 2
   #
-  #  CREDIT Florian Gross
-  #  CREDIT Trans
+  # CREDIT Florian Gross, Trans
 
   def clip(lower, upper=nil)
     return lower if self < lower
@@ -32,8 +31,7 @@ module Comparable
   #   9.bound(2,7)  #=> 7
   #   1.bound(2,7)  #=> 2
   #
-  #  CREDIT Florian Gross
-  #  CREDIT Trans
+  # CREDIT: Florian Gross
 
   alias_method :bound, :clip
 

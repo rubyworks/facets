@@ -53,9 +53,7 @@ class OpenStruct
   # A setter block versus a defualt block is determined by the arity of
   # the block. You can not provide both at the same time.
   #
-  #   CREDIT Noah Gibbs
-  #   CREDIT Gavin Sinclair
-  #   CREDIT 7rans
+  # CREDIT: Noah Gibbs, Gavin Sinclair
   #
   def initialize(hash=nil, &block)
     if block && block.arity==2
@@ -108,7 +106,7 @@ class OpenStruct
     @table[key]=val
   end
 
-  # CREDIT Robert J. Berger <rberger AT ibd.com>
+  # CREDIT: Robert J. Berger <rberger AT ibd.com>
   # Thanks for reporting issues that this method resolved.
 
   # Provides access to an OpenStruct's inner table.
@@ -200,9 +198,7 @@ class Hash
     OpenStruct.new(self)
   end
 
-  # CREDIT Alison Rowland
-  # CREDIT Jamie Macey
-  # CREDIT Mat Schaffer
+  # CREDIT Alison Rowland, Jamie Macey, Mat Schaffer
 
   #--
   # Special thanks to Alison Rowland, Jamie Macey and Mat Schaffer

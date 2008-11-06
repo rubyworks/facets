@@ -8,7 +8,7 @@ class String
   #   "SnakeCase".snakecase           #=> "snake_case"
   #   "Snake-Case".snakecase          #=> "snake_case"
   #   "SnakeCase::Errors".underscore  #=> "snake_case/errors"
-
+  #
   def snakecase
     gsub(/::/, '/').  # NOT SO SURE ABOUT THIS -T
     gsub(/([A-Z]+)([A-Z][a-z])/,'\1_\2').

@@ -6,7 +6,7 @@ class Array
   #   a.select!{ |e| e % 2 == 0 }
   #   a  #=> [2,4,6,8,10]
   #
-  #  CREDIT: Gavin Sinclair
+  # CREDIT: Gavin Sinclair
   #
   def select!  # :yield:
     reject!{ |e| not yield(e) }

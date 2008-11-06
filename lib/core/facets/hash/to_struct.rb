@@ -7,7 +7,7 @@ class Hash
   #
   # TODO: Is this robust enough considerd hashes aren't ordered?
   #
-  #  CREDIT: Daniel Berger
+  # CREDIT: Daniel Berger
 
   def to_struct(struct_name)
     Struct.new(struct_name,*keys).new(*values)

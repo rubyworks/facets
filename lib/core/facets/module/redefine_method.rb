@@ -21,7 +21,7 @@ class Module
   #
   #   Greeter.new.hello   #=> "Hello, friend!"
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def redefine_method(sym, aka=nil, &blk)
     raise ArgumentError, "method does not exist" unless method_defined?( sym )

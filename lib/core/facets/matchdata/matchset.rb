@@ -6,7 +6,7 @@ class MatchData
   #   md.to_a      #=> ["XXaabbccddeeffXX", "bb", "ccdd", "dd", "ee"]
   #   md.matchset  #=> ["XXaa", [["bb"], ["cc", ["dd"]], "ee"], "ffXX"]
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def matchset
      [pre_match, matchtree, post_match]
@@ -19,7 +19,7 @@ class MatchData
   #   md.to_a       #=> ["XXaabbccddeeffXX", "bb", "ccdd", "dd", "ee"]
   #   md.matchtree  #=> [["bb"], ["cc", ["dd"]], "ee"]
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def matchtree(index=0)
     ret=[]

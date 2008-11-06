@@ -6,7 +6,7 @@ class Module
   #
   #   rename_method( :to_method, :from_method  )
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def rename_method( to_sym, from_sym )
     raise ArgumentError, "method #{from_sym} does not exist" unless method_defined?( from_sym )

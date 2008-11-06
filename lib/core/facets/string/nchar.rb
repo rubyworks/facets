@@ -12,8 +12,6 @@ class String
   #    str.nchar(4, 'that')    #=> "that"
   #    str                     #=> "that is text"
   #
-  #   CREDIT: ?
-
   def nchar(n, replacement=nil)
     if replacement
       s = self.dup

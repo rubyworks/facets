@@ -3,8 +3,7 @@ class String
   # Indent left or right by n spaces.
   # (This used to be called #tab and aliased as #indent.)
   #
-  #  CREDIT: Gavin Sinclair
-  #  CREDIT: Trans
+  # CREDIT: Gavin Sinclair, Trans
 
   def indent(n)
     if n >= 0
@@ -16,7 +15,7 @@ class String
 
   # Outdent just indents a negative number of spaces.
   #
-  #  CREDIT: Noah Gibbs
+  # CREDIT: Noah Gibbs
 
   def outdent(n)
     indent(-n)

@@ -13,8 +13,7 @@ class String
   # This is basic implementation of word wrap, but smart
   # enough to suffice for most use cases.
   #
-  #  CREDIT: Gavin Kistner
-  #  CREDIT: Dayne Broderson
+  # CREDIT: Gavin Kistner, Dayne Broderson
   #
   def word_wrap( col_width=80 )
     self.dup.word_wrap!( col_width )
@@ -22,8 +21,7 @@ class String
 
   # As with #word_wrap, but modifies the string in place.
   #
-  #   CREDIT: Gavin Kistner
-  #   CREDIT: Dayne Broderson
+  # CREDIT: Gavin Kistner, Dayne Broderson
   #
   def word_wrap!( col_width=80 )
     self.gsub!( /(\S{#{col_width}})(?=\S)/, '\1 ' )

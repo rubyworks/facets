@@ -10,7 +10,7 @@ class File
   #
   # Returns the number of bytes written.
   #
-  #   CREDIT: Gavin Sinclair
+  # CREDIT: Gavin Sinclair
 
   def self.write(path, data)
     File.open(path, "wb") do |file|

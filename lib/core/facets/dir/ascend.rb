@@ -14,8 +14,7 @@ class Dir
   #   /var
   #   /
   #
-  #   CREDIT: Daniel Berger
-  #   CREDIT: Jeffrey Schwab
+  # CREDIT: Daniel Berger, Jeffrey Schwab
 
   def self.ascend(dir, inclusive=true, &blk)
     dir = dir.dup
@@ -43,8 +42,7 @@ class Dir
   #   /var
   #   /var/log
   #
-  #   CREDIT: Daniel Berger
-  #   CREDIT: Jeffrey Schwab
+  # CREDIT: Daniel Berger, Jeffrey Schwab
 
   def self.descend(path) #:yield:
     paths = path.split('/')
@@ -56,4 +54,3 @@ class Dir
   end
 
 end
-

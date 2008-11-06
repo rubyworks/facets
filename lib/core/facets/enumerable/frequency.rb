@@ -3,7 +3,7 @@ module Enumerable
   # Generates a hash mapping each unique symbol in the array
   # to the absolute frequency it appears.
   #
-  #  CREDIT: Brian Schröder
+  # CREDIT: Brian Schröder
 
   def frequency
     #probs = Hash.new(0)

@@ -4,7 +4,7 @@ module Enumerable
   #
   #   [1,1,2,2,3,4,5].nonuniq  #=> [1,2]
   #
-  #   CREDIT: Martin DeMello
+  # CREDIT: Martin DeMello
 
   def nonuniq
     h1 = {}
@@ -30,7 +30,7 @@ module Enumerable
 
   # Return list of dulicate elements.
   #
-  #   CREDIT: Thibaut Barrère
+  # CREDIT: Thibaut Barrère
 
   alias_method :duplicates, :nonuniq
 

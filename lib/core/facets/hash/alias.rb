@@ -18,7 +18,7 @@ class Hash
   # Note that if the _oldkey_ is reassigned, the reference will no longer exist,
   # and the _newkey_ will remain as it was.
   #
-  #  CREDIT: Gavin Sinclair
+  # CREDIT: Gavin Sinclair
   #
   # TODO: Rename to #aliaskey or something else.
 

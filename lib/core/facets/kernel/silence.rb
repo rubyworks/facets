@@ -8,7 +8,7 @@ module Kernel
   #
   #   puts 'But this will'
   #
-  #   CREDIT: David Heinemeier Hansson
+  # CREDIT: David Heinemeier Hansson
 
   def silence_stream(*streams) #:yeild:
     on_hold = streams.collect{ |stream| stream.dup }
@@ -33,7 +33,7 @@ module Kernel
     silence_stream(STDOUT) { yield }
   end
 
-  # Just like silence_stream, but will default to 
+  # Just like silence_stream, but will default to
   # STDOUT, STDERR if no streams are given.
 
   def silently(*streams) #:yeild:
@@ -50,7 +50,7 @@ module Kernel
   #
   #   noisy_call  # no warning is voiced
   #
-  #  CREDIT: David Heinemeier Hansson
+  # CREDIT: David Heinemeier Hansson
 
   def silence_warnings
     old_verbose, $VERBOSE = $VERBOSE, nil
@@ -62,7 +62,7 @@ module Kernel
   # Sets $VERBOSE to true for the duration of the block
   # and back to its original value afterwards.
   #
-  #  CREDIT: David Heinemeier Hansson
+  # CREDIT: David Heinemeier Hansson
 
   def enable_warnings
     old_verbose, $VERBOSE = $VERBOSE, true

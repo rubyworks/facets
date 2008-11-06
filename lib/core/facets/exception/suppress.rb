@@ -2,8 +2,7 @@ class Exception
 
   # Supress errors while executing a block, with execptions.
   #
-  #  CREDIT: Trans
-  #  CREDIT: David Heinemeier Hansson
+  # CREDIT: David Heinemeier Hansson, Thomas Sawyer
 
   def self.suppress(*exception_classes)
     exception_classes.each do |e|

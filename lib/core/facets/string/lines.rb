@@ -5,7 +5,7 @@ unless (RUBY_VERSION[0,3] == '1.9')
     # Returns an array of characters.
     #
     #   "abc\n123".lines  #=> ["abc","123"]
-
+    #
     def lines
       self.split(/\n/)
     end
@@ -13,4 +13,3 @@ unless (RUBY_VERSION[0,3] == '1.9')
   end
 
 end
-

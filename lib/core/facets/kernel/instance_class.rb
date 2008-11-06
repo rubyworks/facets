@@ -14,7 +14,7 @@ module Kernel
   #
   #     It is what it is.
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def instance_class(&block)
     (class << self; self; end).module_eval(&block) if block

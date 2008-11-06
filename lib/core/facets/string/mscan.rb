@@ -3,7 +3,7 @@ class String
   # Like #scan but returns MatchData ($~) rather
   # then matched string ($&).
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def mscan(re) #:yield:
     if block_given?

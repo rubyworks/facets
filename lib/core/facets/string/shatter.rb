@@ -10,7 +10,7 @@ class String
   #
   #   ["<p>", "This", "<b>", "is", "</b>", "a test.", "</p>"]
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def shatter( re )
     r = self.gsub( re ){ |s| "\1" + s + "\1" }

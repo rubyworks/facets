@@ -45,7 +45,7 @@ class Float
   #   4.555.round_at(2)  #=> 4.56
   #   4.555.round_at(3)  #=> 4.555
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def round_at( d ) #d=0
     (self * (10.0 ** d)).round.to_f / (10.0 ** d)
@@ -58,7 +58,7 @@ class Float
   #   4.555.round_to(0.01)  #=> 4.56
   #   4.555.round_to(0)     #=> 4.555
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def round_to( n ) #n=1
     return self if n == 0

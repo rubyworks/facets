@@ -22,7 +22,7 @@ module Kernel
   # in a different format, _prior_ to requiring this, then the
   # results will be indeterminate.
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def callstack( level = 1 )
     call_str_array = pp_callstack(level)

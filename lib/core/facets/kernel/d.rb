@@ -1,9 +1,5 @@
 module Kernel
 
-  def __HERE__
-    "#{__FILE__}: #{__LINE__}"
-  end
-
   # Like #p but gives file and line number.
   #
   #   d("hi")
@@ -14,7 +10,7 @@ module Kernel
   #   "hi"
   #
   # TODO: This is borderline "prime". Keep here?
-  #       Another copy of it exits in dtools.rb
+  # Another copy of it exits in dtools.rb
 
   def d(*x)
     puts "#{__FILE__}, #{__LINE__}"

@@ -5,7 +5,7 @@ class Hash
   # But does not use #mash to accomplish the task.
   # Hence #update_each is probably a touch faster.
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def update_each  # :yield:
     dup.each do |k,v|

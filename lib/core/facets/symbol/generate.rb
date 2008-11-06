@@ -10,7 +10,7 @@ class Symbol
   #
   #   TODO: Is the generated symbol format acceptable?
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def self.generate(key=nil)
     key = key.to_sym if key

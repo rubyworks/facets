@@ -4,7 +4,7 @@ class Module
   #
   #   A::B::C.nesting  #=> [ A, A::B ]
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def nesting
     n = []

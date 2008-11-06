@@ -5,7 +5,7 @@ module Enumerable
   #   a = [1,2,3].collect_with_index { |e,i| e*i }
   #   a  #=> [0,2,6]
   #
-  #   CREDIT: Gavin Sinclair
+  # CREDIT: Gavin Sinclair
 
   def collect_with_index
     r = []
@@ -32,7 +32,7 @@ module Enumerable
   #
   # NOTE: Perhaps nicer to have as added functionality for #compact.
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def compact_map(trash=nil, &block)
     y = []

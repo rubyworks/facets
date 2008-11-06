@@ -23,7 +23,7 @@ class File
   # of the file string. The new version will write whatever the block
   # returns instead!!!
   #
-  #  CREDIT: George Moschovitis
+  # CREDIT: George Moschovitis
   #
   def self.rewrite(name, mode = "") #:yield:
     unless block_given?

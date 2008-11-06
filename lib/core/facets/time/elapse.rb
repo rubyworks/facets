@@ -4,7 +4,7 @@ class Time
   #
   #   Time.elapse { sleep 1 }  #=> 0.999188899993896
   #
-  #   CREDIT: Hal Fulton
+  # CREDIT: Hal Fulton
 
   def self.elapse
     raise "Need block" unless block_given?

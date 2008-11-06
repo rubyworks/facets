@@ -9,7 +9,7 @@ class String
   #   12345
   #   67890
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def line_wrap(width, tabs=4)
     s = gsub(/\t/,' ' * tabs) # tabs default to 4 spaces

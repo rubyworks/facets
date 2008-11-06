@@ -12,7 +12,7 @@ module Enumerable
     #   ["I had", 1, "dollar and", 50, "cents"].group_by { |e| e.class }
     #        #=> { String => ["I had","dollar and","cents"], Fixnum => [1,50] }
     #
-    #  CREDIT: Erik Veenstra
+    # CREDIT: Erik Veenstra
 
     def group_by #:yield:
       #h = k = e = nil

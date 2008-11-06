@@ -10,7 +10,7 @@ class String
   #   NOTE: The block neccessary in order to get
   #         then binding of the caller.
   #
-  #   CREDIT: Trans
+  # CREDIT: Trans
 
   def self.interpolate(&str)
     eval "%{#{str.call}}", str.binding

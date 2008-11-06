@@ -9,16 +9,16 @@ module Kernel
   #   self.x   #=> 1
   #   self.y   #=> 2
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def attr_singleton_reader(*args)
     #h, a = *args.partition{|a| Hash===a}
-    (class << self ; self ; end).send( :attr_reader, *args )  
+    (class << self ; self ; end).send( :attr_reader, *args )
     #(class << self ; self ; end).send( :attr_reader, *h.keys )
     #h.each { |k,v| instance_variable_set("@#{k}", v) }
   end
 
-  # Takes an array or a hash with default values and creates 
+  # Takes an array or a hash with default values and creates
   # singleton attr_writers for each.
   #
   #   attr_singleton_writer { :x => 1, :y => 2 }
@@ -29,7 +29,7 @@ module Kernel
   #   @x           #=> 3
   #   @y           #=> 4
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def attr_singleton_writer(*args)
     #h, a = *args.partition{|a| Hash===a}
@@ -49,7 +49,7 @@ module Kernel
   #   self.x      #=> 3
   #   self.y      #=> 4
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def attr_singleton_accessor(*args)
     #h, a = *args.partition{|a| Hash===a}

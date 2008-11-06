@@ -21,8 +21,7 @@ class Hash
   #   foo.rekey{ |k| k.to_s }  #=>  { "name"=>"Gavin", "wife"=>:Lisa }
   #   foo.inspect              #=>  { :name =>"Gavin", :wife=>:Lisa }
   #
-  #  CREDIT: Trans
-  #  CREDIT: Gavin Kistner
+  # CREDIT: Trans, Gavin Kistner
 
   def rekey(*args, &block)
     dup.rekey!(*args, &block)
@@ -34,8 +33,7 @@ class Hash
   #   foo.rekey!{ |k| k.to_s }  #=>  { "name"=>"Gavin", "wife"=>:Lisa }
   #   foo.inspect               #=>  { "name"=>"Gavin", "wife"=>:Lisa }
   #
-  #  CREDIT: Trans
-  #  CREDIT: Gavin Kistner
+  # CREDIT: Trans, Gavin Kistner
 
   def rekey!(*args, &block)
     # for backward comptability (TODO: DEPRECATE).

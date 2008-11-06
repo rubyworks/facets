@@ -4,7 +4,7 @@ class String
   #
   #   "a?".to_re  #=> /a?/
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def to_re(esc=false)
     Regexp.new((esc ? Regexp.escape(self) : self))
@@ -16,7 +16,7 @@ class String
   #
   #   "[".to_rx  #=> /\[/
   #
-  #  CREDIT: Trans
+  # CREDIT: Trans
 
   def to_rx(esc=true)
     Regexp.new((esc ? Regexp.escape(self) : self))
