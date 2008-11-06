@@ -3,6 +3,22 @@ require 'test/unit'
 
 class TC_String_Outdent < Test::Unit::TestCase
 
+  def setup
+    @poem1 = <<-EOF
+    I must go down to the seas again
+      The lonely sea and the sky
+    And all I want is a tall ship
+      And a star to steer her by
+    EOF
+
+    @poem2 = <<-EOF
+       "Eek!"
+    She cried
+      As the mouse quietly scurried
+  by.
+    EOF
+  end  # def setup
+
   def test_outdent_0
     assert_equal("    xyz", "   xyz".outdent(-1))
     assert_equal("   xyz", "   xyz".outdent(0))

@@ -81,8 +81,7 @@ class InstanceVariables
 
 end
 
-
-if $0 == __FILE__
+=begin demo
 
   class Friend
     attr_accessor :name, :age, :phone
@@ -95,5 +94,4 @@ if $0 == __FILE__
   p f1.variables
   p f1.variables.to_hash
 
-end
-
+=end
