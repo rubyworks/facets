@@ -1,4 +1,4 @@
-class DictionaryMatcher
+class Matcher
   attr_reader :word_count
 
   #Contains the index matched, and the word matched
@@ -36,7 +36,7 @@ class DictionaryMatcher
 
     container[0] = true # Mark end of word
     container[:depth]=i
-     
+
     ff=compute_failure_function word
     ff.zip(containers).each do |pointto,container|
       container[:failure]=containers[pointto] if pointto
@@ -61,7 +61,7 @@ class DictionaryMatcher
   end
   private :compute_failure_function
 
-   #Determine whether +string+ was previously <tt>add</tt>ed to the 
+   #Determine whether +string+ was previously <tt>add</tt>ed to the
    #Trie.
   def include?(word)
     container = @trie
@@ -72,18 +72,18 @@ class DictionaryMatcher
     container[0]
   end
 
-   #Determines whether one of the words in the DictionaryMatcher is a 
+   #Determines whether one of the words in the DictionaryMatcher is a
    #substring of
-   #+string+. Returns the index of the match if found, +nil+ if not 
+   #+string+. Returns the index of the match if found, +nil+ if not
    #found.
   def =~ text
     internal_match(text){|md| return md.index}
     nil
   end
 
-   #Determine whether one of the words in the DictionaryMatcher is a 
+   #Determine whether one of the words in the DictionaryMatcher is a
    #substring of
-   #+string+. Returns a DictionaryMatcher::MatchData object if found, 
+   #+string+. Returns a DictionaryMatcher::MatchData object if found,
    #+nil+ if not #found.
   def match text
     internal_match(text){|md| return md}
@@ -101,7 +101,7 @@ class DictionaryMatcher
 	       if node[:failure]
 		  node=node[:failure]
 	       else
-		  advance=true 
+		  advance=true
 	       end
 	    elsif nextnode[0]
 	       yield MatchData.new(pos, string[pos+1-nextnode[:depth],nextnode[:depth]])
@@ -117,11 +117,11 @@ class DictionaryMatcher
   end
   private :internal_match
 
-   #Scans +string+ for all occurrances of strings in the 
+   #Scans +string+ for all occurrances of strings in the
    #DictionaryMatcher.
-   #Overlapping matches are skipped (only the first one is yielded), and 
+   #Overlapping matches are skipped (only the first one is yielded), and
    #when some strings in the
-   #DictionaryMatcher are substrings of others, only the shortest match 
+   #DictionaryMatcher are substrings of others, only the shortest match
    #at a given position is found.
   def scan(text, &block)
     matches=[]
