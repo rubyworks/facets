@@ -10,6 +10,8 @@ module Enumerable
   #   groups.accumulate.users
   #
   # will return a list of users from all groups.
+  #
+  # CREDIT: George Moshchovitis
 
   def accumulate
     @_accumulate ||= Functor.new do |op, *args|

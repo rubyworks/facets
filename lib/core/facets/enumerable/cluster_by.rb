@@ -11,7 +11,7 @@ module Enumerable
   #
   #    [ ['a'], ['is'], ['this', 'test'] ]
   #
-  # CREDIT Erik Veenstra
+  # CREDIT: Erik Veenstra
 
   def cluster_by(&b)
     group_by(&b).sort.transpose.pop || []   # group_by(&b).values ?
