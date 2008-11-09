@@ -1,7 +1,7 @@
 require 'facets/class/cattr.rb'
 require 'test/unit'
 
-class TCModule < Test::Unit::TestCase
+class TC_Class_CAttr < Test::Unit::TestCase
 
   class MockObject
     def initialize
