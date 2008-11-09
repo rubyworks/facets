@@ -2,11 +2,17 @@ require 'facets/symbol/to_proc'
 
 class Hash
 
-  # rekey(to_key, from_key)
-  # rekey{ |key| ... }
+  # Rekey a hash.
+  #
+  #   rekey()
+  #   rekey(to_key, from_key)
+  #   rekey{ |key| ... }
+  #
+  # If no arguments or block are given, then all keys are converted
+  # to Symbols.
   #
   # If two keys are given, then the second key is changed to
-  # the first.
+  # the first. You can think of it as +alias+ for hash keys.
   #
   #   foo = { :a=>1, :b=>2 }
   #   foo.rekey('a',:a)       #=> { 'a'=>1, :b=>2 }
