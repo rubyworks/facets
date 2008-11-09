@@ -1,3 +1,7 @@
+#= Matcher
+#
+# Matcher derives from Ruby Quiz #103, the DictionaryMatcher quiz.
+#
 class Matcher
   attr_reader :word_count
 
