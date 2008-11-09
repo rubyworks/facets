@@ -1,5 +1,5 @@
 require 'facets/binding/eval'
-require 'facets/callstack'
+require 'facets/binding/callstack'
 
 class Binding
 
