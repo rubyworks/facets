@@ -13,15 +13,16 @@ class Time
     # a number of time-units ago.
     #
     def ago(number, units=:seconds)
-      time =(
+      return hence(-number, units) if number < 0
+
+      time = (
         case units.to_s.downcase.to_sym
         when :years
           set(:year => (year - number))
         when :months
-          #years = ((month - number) / 12).to_i
-          y = ((month - number) / 12).to_i
-          m = ((month - number - 1) % 12) + 1
-          set(:year => (year - y), :month => m)
+          new_month = ((month - number - 1) % 12) + 1
+          y = (number / 12) + (new_month > month ? 1 : 0)
+          set(:year => (year - y), :month => new_month)
         when :weeks
           self - (number * 604800)
         when :days
@@ -43,14 +44,16 @@ class Time
     # a number of time-units hence.
 
     def hence(number, units=:seconds)
-      time =(
+      return ago(-number, units) if number < 0
+
+      time = (
         case units.to_s.downcase.to_sym
         when :years
           set( :year=>(year + number) )
         when :months
-          y = ((month + number) / 12).to_i
-          m = ((month + number - 1) % 12) + 1
-          set(:year => (year + y), :month => m)
+          new_month = ((month + number - 1) % 12) + 1
+          y = (number / 12) + (new_month < month ? 1 : 0)
+          set(:year => (year + y), :month => new_month)
         when :weeks
           self + (number * 604800)
         when :days
@@ -76,7 +79,7 @@ class Time
     # TODO: Can't seem to get this to pass ActiveSupport tests.
     # Even though it is essentially identical to the
     # ActiveSupport code (see Time#since in time/calculations.rb).
-    # It handels all but 4 tests.
+    # It handles all but 4 tests.
     def dst_adjustment(time)
       self_dst = self.dst? ? 1 : 0
       time_dst = time.dst? ? 1 : 0
