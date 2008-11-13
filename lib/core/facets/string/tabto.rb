@@ -1,3 +1,5 @@
+require 'facets/string/indent'
+
 class String
 
   # Preserves relative tabbing.

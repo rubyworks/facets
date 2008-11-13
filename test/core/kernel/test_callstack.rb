@@ -1,4 +1,4 @@
-require 'facets/callstack.rb'
+require 'facets/kernel/callstack.rb'
 require 'test/unit'
 
 class TestCallStack < Test::Unit::TestCase
