@@ -1,14 +1,6 @@
 
 class Hash
 
-  # Alias #slice to #values_at.
-  #
-  #   h = { :a => 1, :b => 2, :c => 3 }
-  #   h.slice(:a)      #=> [1]
-  #   h.slice(:a, :b)  #=> [1,2]
-
-  alias_method(:slice, :values_at)
-
   # Adds slicing to Hash#[]. If more than one key arguments
   # is given to <tt>Hash#[]</tt>, the return value will be
   # an array of the corresponding values.
@@ -149,10 +141,6 @@ end
       assert_equal( %w{set of values}, @hash[%w{some other array}] )
     end
 
-    def test_slice
-      h =  {:a=>1, :b=>2, :c=>3 }
-      assert_equal( [1,2], h.slice(:a,:b) )
-    end
   end
 
 =end
