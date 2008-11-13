@@ -58,6 +58,8 @@
 #   ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
 #   FOR A PARTICULAR PURPOSE.
 
+warn "WARNING: facets/uploadutils.rb will be deprecated. Use Folio or alternate solution for future versions."
+
 require 'openssl'
 require 'shellwords'
 require 'tmpdir'
