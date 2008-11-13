@@ -1,18 +1,4 @@
-# = Console Utilities
-#
-# ConsoleUtils provides methods that are
-# generally useful in the context of
-# creating console output.
-#
-# = Authors
-#
-# * Thomas Sawyer
-#
-# == Copying
-#
-# Copyright (c) 2006,2007 Thomas Sawyer
-# Ruby/GPL
-
+warn "WARNING: facets/consoleutils.rb will be deprecated. Use alternate solution, such as Clio, for future versions."
 
 # = ConsoleUtils
 #

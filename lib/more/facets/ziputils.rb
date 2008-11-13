@@ -1,27 +1,4 @@
-# = ZipUtils
-#
-# Function module for compression methods.
-#
-# == Authors
-#
-# * Thomas Sawyer
-#
-# == Todo
-#
-# * Most of this shells out. It would be best to internalize.
-#
-# == Copyright
-#
-# Copyright (c) 2006 Thomas Sawyer
-#
-# Ruby License
-#
-# This module is free software. You may use, modify, and/or redistribute this
-# software under the same terms as Ruby.
-#
-# This program is distributed in the hope that it will be useful, but WITHOUT
-# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-# FOR A PARTICULAR PURPOSE.
+warn "WARNING: facets/ziputils.rb will be deprecated. Use Folio or alternate solution for future versions."
 
 require 'facets/minitar'
 require 'zlib'
@@ -29,6 +6,8 @@ require 'zlib'
 # = ZipUtils
 #
 # Function module for compression methods.
+#
+# TODO: Most of this shells out. It would be best to internalize.
 #
 module ZipUtils
 
