@@ -3,26 +3,6 @@
 # Exception-based Event Hooks provides an Event Hooks system designed
 # on top of Ruby's built-in Exception system.
 #
-#   def dothis2
-#     puts 'pre'
-#     hook :quitit
-#     puts 'post'
-#   end
-#
-#   def tryit2
-#     begin
-#       puts "BEFORE"
-#       dothis2
-#       puts "AFTER"
-#     rescue EventHook
-#       event :quitit do
-#         puts "HERE"
-#       end
-#     end
-#   end
-#
-#   tryit2
-#
 # == Authors
 #
 # * Thomas Sawyer
@@ -66,6 +46,16 @@
 #
 #   tryit2
 #
+# produces
+#
+#   BEFORE
+#   pre
+#   HERE
+#   post
+#   AFTER
+#
+# Note that EventHook use callcc.
+
 class EventHook < Exception
   attr_reader :name, :cc
   def initialize(name, cc)
