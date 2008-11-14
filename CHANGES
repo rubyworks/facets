@@ -1,3 +1,29 @@
+2008-11-09   trans <transfire@gmail.com>
+
+        * improved docs for Hash#rekey
+        * renamed DictionaryMatcher to just Matcher
+        * moved Hash#symolize_keys to core and removed tagiter.rb
+        * finalized deprecation of buildable.rb, bytes.rb and times.rb  [major]
+        * minor touch up to a few tests
+        * fixed some credits
+        * binding/caller.rb, fixed require for callstack.rb
+
+
+2008-11-06   trans <transfire@gmail.com>
+
+        * updated all CREDIT: comments elminating any indent
+
+
+2008-11-05   trans <transfire@gmail.com>
+
+        * deprecated annotations.rb --use Anise project instead
+        * added lazyenum.rb to work/consider
+        * add string/outdent.rb file
+        * updated AUTHORS and README
+        * deactivated reap test services temporarily
+        * fixed outdent test and demo in instance_variables.rb
+
+
 2008-10-29   trans <transfire@gmail.com>
 
         * aliased Comparable#cap to at_most and separated bound methods into files

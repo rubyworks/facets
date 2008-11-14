@@ -1,11 +1,50 @@
-Facets 2.4.5 is a maintaince release. This release is notable
-however in that it will likely be the last that to use SVN.
-Facets will be switching to Git. Also, some libraries that
-have been flagged "to be deprecated" for some time will
-finally be so.
+Facets 2.5.0 is an significant milestone in the development of
+Facets. 
+
+First, this release has been tested against Rails' ActiveSupport
+library. As long as Facets is loaded after ActiveSupport, everthing
+should work fine. Of course, there's no counting for real world
+trials, but all ActiveSupport tests cases passed under this scenario.
+
+Secondly, Facets 2.5.0 is nearly Ruby 1.9 ready. While it has not
+been turoughly tested yet, the extensions have been reviewed for
+potential conflicts and made conditional on the running version
+of Ruby where they overlap.
+
+Lastly, this release is the first of a set of down-scaling releases
+that will remove any remaining library "fat" from the collection.
+Some libraries have been spun-off into separate projects.
+
+  If you were using...   Use this project instead...
+
+    annotations.rb         Anise
+
+    bytes.rb               RichUnits
+    multiplers.rb
+    times.rb
+
+A few other libraries have also been depreacted but lack any
+dedicated, compatible replacement. This was done in cases where
+the codebase was weak and other libraries exist that provide
+better solutions.
+
+  If you were using...   Recommend switching to...
+
+    command.rb             Clio -or- OptParse
+    buildable.rb           Nokogiri -or- Markaby
+
+Although this release constitutes a slimming down of Facets, one
+library in particular has been added to Facets: *ini.rb* by
+Jeena Paradies. While YAML is frequently used by Rubyists for
+configuration files, a full-on serializer like YAML is often
+overkill. INI files provide a lightweight solution specifically
+geared for configuration files.
 
 
-### 2.4.5 / 2008-10-02
+### 2.5.0 / 2008-11-10
+
+
+
 
 * 6 Major Enhancements
 

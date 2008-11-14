@@ -9,6 +9,9 @@
 The following developers have recently contributed to the development of Facets.
 They are held in the highest regard for their efforts.
 
+* Tyler Rick          Fixed bug in Time#hence and #ago.
+* Brian Candler       Provided Enumerator::Filter.
+* Jeena Paradies      Provided INI implementation.
 * Robert Klemme       Fix for Enumerable#mode.
 * Daniel Schierbeck   Speed imporvements to odd? and even?
 * Ken Bloom           For DictionaryMatcher class (class might be renamed in future).
