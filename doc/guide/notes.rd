@@ -1,8 +1,9 @@
-= Facets History
+= Facets Development Notes
 
-This is a record of some musings along the way in the creatiojn of Facets.
-It is not in any way all that important. Its' simply here to give some historical
-context to development and to provide and cues for recollection.
+This is a record of some musings along the way in the creatiojn of
+Facets. It is not in any way all that important. Its' simply here
+to give some historical context to development and to provide and
+cues for recollection.
 
 == On the Name "Ruby Facets"
 
@@ -70,4 +71,61 @@ Understand that on the off chance that another library has the same name as one 
     #end
 
   end
+
+== Lazy Enumerator
+
+Brian Candler provided his Filter class.
+
+Originally he had suggested to the Ruby community the idea l-methods for Enumerable.
+Eg. lmap, lselect, etc.
+
+== On <i>instance_</i> Methods
+
+Kernel extension prefixed by instance_ which provide
+internal (eg private) access to the object.
+Kernel extension using instance_ prefix which is beneficial
+to separation of metaprogramming from general programming.
+object_ methods, in contrast to the instance_ methods,
+do not access internal state.
+
+
+== On <i>object_</i> Methods
+
+I was considering this core addition to Facets:
+
+  module Kernel
+    alias_method :object_dup, :dup
+    alias_method :object_clone, :clone
+  end
+
+Already Facets has #object_class. The method goes along with #object_id
+and serves to stay out of the programmers way. Of course, since 'class'
+is a keyword in Ruby, it doesn't help as much. However, mwhen using
+method_missing one can exclude all object_* methods from removal so
+as to still have access to these important introspective methods. That's
+what I have traditionally done. Essentially,
+
+  private *instance_methods.select{ |m| m !~ /^(__|instance_|object__)/ }
+
+With the advent of 1.9 and BasicObject, this is no longer as important,
+but BasicObject leaves us in a bit of a lurch, b/c it removes nearly 
+everything leaving us no recourse to these methods. I can think of two
+good solutions: 1) Have some global "methods" that can handle objects
+at a higher level of abstraction. These can be defined as lambdas and
+called using#[], eg.
+
+  $class[x]
+  $id[x]
+  $dup[x]
+
+The other is to define a special method, perhaps #object, using fluent
+notaiton, we could handle this in a more object-oritented fashion:
+
+  x.object.class
+  x.object.id
+  x.object.dup
+
+In anycase, whatever might come along to provide this functionality, it
+is clear that "object_" methods will not be the solution, and for
+that reason #object_dup and #object_clone will never be facets.
 
