@@ -1,6 +1,0 @@
-name    = facets
-version = 2.4.3
-status  = stable
-date    = 2008-08-14
-default = facets.rb
-libpath = lib/core;lib/core/facets;lib/lore/facets;lib/more/facets
