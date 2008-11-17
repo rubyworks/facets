@@ -1,4 +1,5 @@
 ---
-service: MailingList
-mailto: transfire@gmail.com
+announce:
+  service: EMail
+  mailto: transfire@gmail.com
 

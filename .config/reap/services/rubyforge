@@ -1,4 +1,5 @@
 ---
-service : Rubyforge
-groupid : 804
+rubyforge:
+  service : Rubyforge
+  groupid : 804
 

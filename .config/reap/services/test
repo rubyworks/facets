@@ -1,3 +1,6 @@
 ---
-service: TestUnit
-active: false
+# switch to turn solo runner
+testunit:
+  service: TestUnit
+  active: false
+

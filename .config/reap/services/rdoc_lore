@@ -1,9 +1,10 @@
 ---
-service : RDoc
-template: ./.config/rdoc-template
-output  : doc/rdoc/lore
-title   : Facets Lore API
-main    : doc/README.lore
-options : "-S -a"
-include : [doc/README.lore, README, lib/lore/facets]
+rdoc_lore:
+  service : RDoc
+  template: ./.config/rdoc-template
+  output  : doc/rdoc/lore
+  title   : Facets Lore API
+  main    : doc/README.lore
+  options : "-S -a"
+  include : [doc/README.lore, README, lib/lore/facets]
 

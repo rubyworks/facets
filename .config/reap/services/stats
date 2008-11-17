@@ -1,2 +1,4 @@
 ---
-service: BasicStats
+basic-stats:
+  service: BasicStats
+

@@ -1,5 +1,6 @@
 ---
-service : Gem
-include : [demo, doc, lib, task, test, "[A-Z]*"]
-exclude : [doc/ri]
+rubygem:
+  service : Gem
+  include : [demo, doc, lib, task, test, "[A-Z]*"]
+  exclude : [doc/ri]
 
