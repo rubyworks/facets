@@ -1,0 +1,39 @@
+ These have been reported:
+module Enumerable
+
+  # person.find_and_map { |p| p.age if p.age > 18 } # Age of the first person above 18
+  def find_and_map
+    found = nil
+    self.each do |x|
+      found = yield(x)
+      break if found
+    end
+    found
+  end
+end
+
+Esad Hajdarevic <esad@esse.at>
+
+?
+
+class String
+  def paragraph_word_wrap(width=80)
+    self.split(/
+
+/).map{|me| me.word_wrap!(width) }.join("
+")
+
+  end
+end
+
+class Array
+
+?def rand
+
+?? return self[rand(length)]?
+
+?end
+
+end
+
+
