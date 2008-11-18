@@ -1,39 +1,34 @@
-warn "WARNING: facets/ziputils.rb will be deprecated. Use Folio or alternate solution for future versions."
-
-require 'facets/minitar'
-require 'zlib'
+#require 'zlib'
 
 # = ZipUtils
 #
 # Function module for compression methods.
 #
-# TODO: Most of this shells out. It would be best to internalize.
+# TODO: Much of this shells out. It would be best to internalize.
 #
 module ZipUtils
 
   COMPRESS_FORMAT = {
-    'tar.gz'  => 'tar_gzip',
-    'tgz'     => 'tar_gzip',
-    'tar.bz2' => 'tar_bzip',
-    'zip'     => 'zip',
-
     '.tar.gz'  => 'tar_gzip',
     '.tgz'     => 'tar_gzip',
-    '.tar.bz2' => 'tar_bzip',
+    '.tar.bz2' => 'tar_bzip2',
     '.zip'     => 'zip'
   }
 
+  ###############
   module_function
+  ###############
 
-  # Compress based on given extension.
+  # Compress folder or file based on given extension.
   # Supported extensions are:
-  # * tar.gz
-  # * tgz
-  # * tar.bz2
-  # * zip
-
-  def compress(format_extension, folder, file=nil, options={})
-    format = COMPRESS_FORMAT[format_extension.to_s]
+  # * .tar.gz
+  # * .tgz
+  # * .tar.bz2
+  # * .zip
+  #
+  # TODO: support gzip and bzip2 as well.
+  def compress(folder, file, options={})
+    format = COMPRESS_FORMAT[File.extname(file)]
     if format
       send(format, folder, file, options)
     else
@@ -41,109 +36,162 @@ module ZipUtils
     end
   end
 
-  # Tar Gzip
+  #
+  #
+  def gzip(file, option={})
+    require 'zlib'
+    fname = File.basename(file) + '.gz'
+    if options[:dryrun] or options[:verbose]
+      puts "gzip #{file}"
+    end
+    Zlib::GzipWriter.open(fname) do |gz|
+      gz.write(File.read(file))
+    end unless options[:dryrun] or options[:noop]
+    return File.expand_path(fname)
+  end
 
+  #
+  #
+  def ungzip(file, options={})
+    require 'zlib'
+    fname = File.basename(file).chomp(File.extname(file))
+    if options[:dryrun] or options[:verbose]
+      puts "ungzip #{file}"
+    end
+    Zlib::GzipReader.open(file) do |gz|
+      File.open(fname, 'wb'){ |f| f << gz.read }
+    end unless options[:dryrun] or options[:noop]
+    return File.expand_path(fname)
+  end
+
+  #
+  #
+  def bzip2(file, option={})
+    cmd = "bzip2 #{file}"
+    puts   cmd if     options[:dryrun] or options[:verbose]
+    system cmd unless options[:dryrun] or options[:noop]
+    return File.expand_path(file + '.bz2')
+  end
+
+  alias_method :bzip, :bzip2
+
+  #
+  #
+  def unbzip2(file, options={})
+    cmd = "unbzip2 #{file}"
+    puts   cmd if     options[:dryrun] or options[:verbose]
+    system cmd unless options[:dryrun] or options[:noop]
+    return File.expand_path(file.chomp(File.extname(file)))
+  end
+
+  alias_method :unbzip, :unbzip2
+
+  #
+  #
+  def tar(folder, file=nil, options={})
+    require 'facets/minitar'
+    file ||= File.basename(File.expand_path(folder)) + '.tar'
+    cmd = "tar -cf #{file} #{folder}"
+    puts cmd if options[:verbose] or options[:dryrun]
+    unless options[:noop] or options[:dryrun]
+      gzIO = File.open(file, 'wb')
+      Archive::Tar::Minitar.pack(folder, gzIO)
+    end
+    return File.expand_path(file)
+  end
+
+  #
+  #
+  def untar(file, options={})
+    require 'facets/minitar'
+    #file ||= File.basename(File.expand_path(folder)) + '.tar'
+    cmd = "untar #{file}"
+    puts cmd if options[:verbose] or options[:dryrun]
+    unless options[:noop] or options[:dryrun]
+      gzIO = File.open(file, 'wb')
+      Archive::Tar::Minitar.unpack(gzIO)
+    end
+    return File.expand_path(file)
+  end
+
+  # Tar Gzip
+  #
   def tar_gzip(folder, file=nil, options={})
     require 'zlib'
-    # name of file to create
-    file ||= File.basename(File.expand_path(folder)) + '.tar.gz'
+    require 'facets/minitar'
+    file ||= File.basename(File.expand_path(folder)) + '.tar.gz' # '.tgz' which ?
     cmd = "tar --gzip -czf #{file} #{folder}"
-    # display equivalent commandline
-    if options[:verbose] or options[:dryrun]
-      puts cmd
-    end
-    # create tar.gzip file
+    puts cmd if options[:verbose] or options[:dryrun]
     unless options[:noop] or options[:dryrun]
       gzIO = Zlib::GzipWriter.new(File.open(file, 'wb'))
       Archive::Tar::Minitar.pack(folder, gzIO)
     end
     return File.expand_path(file)
   end
+
   alias_method :tar_z, :tar_gzip
 
-  #
-
-  def tgz(folder, file=nil, options={})
-    file ||= File.basename(File.expand_path(folder)) + '.tgz'
-    tar_gzip(folder, file, options)
-  end
+  #def tgz(folder, file=nil, options={})
+  #  file ||= File.basename(File.expand_path(folder)) + '.tgz'
+  #  tar_gzip(folder, file, options)
+  #end
 
   # Untar Gzip
-
+  #
+  # TODO: Write unified untar_gzip function.
   def untar_gzip(file, options={})
-    require 'zlib'
-    # TODO Write internalized untar_gzip function.
-
+    untar(ungzip(file, options), options)
   end
+
   alias_method :untar_z, :untar_gzip
 
   # Tar Bzip2
-
+  #
   def tar_bzip2(folder, file=nil, options={})
     # name of file to create
     file ||= File.basename(File.expand_path(folder)) + '.tar.bz2'
     cmd = "tar --bzip2 -cf #{file} #{folder}"
-    # display equivalent commandline
-    if options[:verbose] or options[:dryrun]
-      puts cmd
-    end
-    # create tar.bzip2 file
-    unless options[:noop] or options[:dryrun]
-      system cmd
-    end
+    puts   cmd if     options[:dryrun] or options[:verbose]
+    system cmd unless options[:dryrun] or options[:noop]
     return File.expand_path(file)
   end
+
   alias_method :tar_bzip, :tar_bzip2
+
   alias_method :tar_j, :tar_bzip2
 
   # Untar Bzip2
-
+  #
   def untar_bzip2(file, options={})
     cmd = "tar --bzip2 -xf #{file}"
-    # display equivalent commandline
-    if options[:verbose] or options[:dryrun]
-      puts cmd
-    end
-    # untar/bzip2 file
-    unless options[:noop] or options[:dryrun]
-      system cmd
-    end
+    puts   cmd if     options[:dryrun] or options[:verbose]
+    system cmd unless options[:dryrun] or options[:noop]
   end
+
   alias_method :untar_bzip, :untar_bzip2
+
   alias_method :untar_j, :untar_bzip2
 
   # Zip
-
+  #
   def zip(folder, file=nil, options={})
     raise ArgumentError if folder == '.*'
-    # name of file to create
     file ||= File.basename(File.expand_path(folder)) + '.zip'
     cmd = "zip -rqu #{file} #{folder}"
-    # display equivalent commandline
-    if options[:verbose] or options[:dryrun]
-      puts cmd
-    end
-    # create zip file
-    unless options[:noop] or options[:dryrun]
-      system cmd
-    end
+    puts   cmd if     options[:dryrun] or options[:verbose]
+    system cmd unless options[:dryrun] or options[:noop]
     return File.expand_path(file)
   end
 
   # Unzip
-
+  #
   def unzip(file, options={})
     cmd = "unzip #{file}"
-    # display equivalent commandline
-    if options[:verbose] or options[:dryrun]
-      puts cmd
-    end
-    # unzip file
-    unless options[:noop] or options[:dryrun]
-      system cmd
-    end
+    puts   cmd if     options[:dryrun] or options[:verbose]
+    system cmd unless options[:dryrun] or options[:noop]
   end
-end
+
+end #module ZipUtils
 
 # Verbose version of ZipUtils.
 #
@@ -155,6 +203,40 @@ module ZipUtils::Verbose
   def compress(format_extension, folder, file=nil, options={})
     options[:verbose] = true
     ZipUtils.tar_gzip(format_extension, folder, file, options)
+  end
+
+  def gzip(file, options={})
+    options[:verbose] = true
+    ZipUtils.gzip(file, options)
+  end
+
+  def ungzip(file, options={})
+    options[:verbose] = true
+    ZipUtils.ungzip(file, options)
+  end
+
+  def bzip2(file, options={})
+    options[:verbose] = true
+    ZipUtils.bzip2(file, options)
+  end
+
+  alias_method :bzip, :bzip2
+
+  def unbzip2(file, options={})
+    options[:verbose] = true
+    ZipUtils.unbzip2(file, options)
+  end
+
+  alias_method :unbzip, :unbzip2
+
+  def tar(folder, file=nil, options={})
+    options[:verbose] = true
+    ZipUtils.tar(folder, file, options)
+  end
+
+  def untar(file, options={})
+    options[:verbose] = true
+    ZipUtils.untar(file, options)
   end
 
   def tar_gzip(folder, file=nil, options={})
@@ -200,6 +282,40 @@ module ZipUtils::NoWrite
     ZipUtils.tar_gzip(format_extension, folder, file, options)
   end
 
+  def gzip(file, options={})
+    options[:noop] = true
+    ZipUtils.gzip(file, options)
+  end
+
+  def ungzip(file, options={})
+    options[:noop] = true
+    ZipUtils.ungzip(file, options)
+  end
+
+  def bzip2(file, options={})
+    options[:noop] = true
+    ZipUtils.bzip2(file, options)
+  end
+
+  alias_method :bzip, :bzip2
+
+  def unbzip2(file, options={})
+    options[:noop] = true
+    ZipUtils.unbzip2(file, options)
+  end
+
+  alias_method :unbzip, :unbzip2
+
+  def tar(folder, file=nil, options={})
+    options[:noop] = true
+    ZipUtils.tar(folder, file, options)
+  end
+
+  def untar(file, options={})
+    options[:noop] = true
+    ZipUtils.untar(file, options)
+  end
+
   def tar_gzip(folder, file=nil, options={})
     options[:noop] = true
     ZipUtils.tar_gzip(folder, file, options)
@@ -215,10 +331,14 @@ module ZipUtils::NoWrite
     ZipUtils.untar_bzip2(folder, file, options)
   end
 
+  alias_method :tar_bzip, :tar_bzip2
+
   def untar_bzip2(file, options={})
     options[:noop] = true
     ZipUtils.untar_bzip2(file, options)
   end
+
+  alias_method :untar_bzip, :untar_bzip2
 
   def zip(folder, file=nil, options={})
     options[:noop] = true
@@ -244,6 +364,40 @@ module ZipUtils::DryRun
     ZipUtils.tar_gzip(format_extension, folder, file, options)
   end
 
+  def gzip(file, options={})
+    options[:dryrun] = true
+    ZipUtils.gzip(file, options)
+  end
+
+  def ungzip(file, options={})
+    options[:dryrun] = true
+    ZipUtils.ungzip(file, options)
+  end
+
+  def bzip2(file, options={})
+    options[:dryrun] = true
+    ZipUtils.bzip2(file, options)
+  end
+
+  alias_method :bzip, :bzip2
+
+  def unbzip2(file, options={})
+    options[:dryrun] = true
+    ZipUtils.unbzip2(file, options)
+  end
+
+  alias_method :unbzip, :unbzip2
+
+  def tar(folder, file=nil, options={})
+    options[:dryrun] = true
+    ZipUtils.tar(folder, file, options)
+  end
+
+  def untar(file, options={})
+    options[:dryrun] = true
+    ZipUtils.untar(file, options)
+  end
+
   def tar_gzip(folder, file=nil, options={})
     options[:dryrun] = true
     ZipUtils.tar_gzip(folder, file, options)
@@ -259,10 +413,14 @@ module ZipUtils::DryRun
     ZipUtils.untar_bzip2(folder, file, options)
   end
 
+  alias_method :tar_bzip, :tar_bzip2
+
   def untar_bzip2(file, options={})
     options[:dryrun] = true
     ZipUtils.untar_bzip2(file, options)
   end
+
+  alias_method :untar_bzip, :untar_bzip2
 
   def zip(folder, file=nil, options={})
     options[:dryrun] = true
@@ -275,6 +433,9 @@ module ZipUtils::DryRun
   end
 end
 
+
+
+# OLD VERSION
 #   #
 #   # DryRun version of ZipUtils.
 #   #

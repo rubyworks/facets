@@ -7,7 +7,7 @@
   United We Stand
 
   <div class="desc">
-    Hook up with other users, and boraden the scope of usage.
+    Hook up with other users, and broaden your scope of usage.
   </div>
 </div>
 
@@ -43,15 +43,10 @@
     <h1><img src="img/applewik.jpg" width="60px;" align="absmiddle"/> Wiki Wiki</h1>
 
     <p>The Wiki is a place for end-users to create their own documentation. Ultimately,
-       it is hoped, this documentaiton will supplant the use of the RDocs as the main
-       source of end-usage documentation. However, a full Wiki solution isn't in place yet
-       and we are simply using Google Pages, provided along side the Google mailing list
-       interface.
+       it is hoped, this documentaiton will make a great source for sharing real-world
+       use cases. However, a full Wiki solution isn't in place yetand we are simply
+       using Google Pages, provided along side the Google mailing list interface.
      </p>
-
-    <p>Plans are in the works to provided a dedicated Wiki for Facets to allow
-       users to post use cases... for now we are using Google pages provided
-       via the Google Archive mailing list.</p>
 
      <p>
        The pages are here:
@@ -59,6 +54,9 @@
          http://groups.google.com/group/facets-universal/web?hl=en
        </a>
      </p>
+
+    <p>Plans are in the works to provided a dedicated Wiki for Facets via
+       <a href="http://github.com/">GitHub</a>. Stay tuned.</p>
   </div>
 
   <div class="section">

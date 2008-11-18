@@ -37,6 +37,8 @@
 # ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
 # FOR A PARTICULAR PURPOSE.
 
+#require 'facets/memoizer'
+
 #
 class Module
 
@@ -108,3 +110,4 @@ module Kernel #:nodoc:
   end
 
 end
+

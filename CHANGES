@@ -1,32 +1,43 @@
-2008-11-09   trans <transfire@gmail.com>
+== 2.5.0 / 2008-11-15
 
-        * improved docs for Hash#rekey
-        * renamed DictionaryMatcher to just Matcher
-        * moved Hash#symolize_keys to core and removed tagiter.rb
-        * finalized deprecation of buildable.rb, bytes.rb and times.rb  [major]
-        * minor touch up to a few tests
-        * fixed some credits
-        * binding/caller.rb, fixed require for callstack.rb
+* 3 Major Enhancements
 
+    * memoize.rb, bug had cache working at class-level, fixed to work at instance-level  (#f5c3b659591b85ff55d0a82ec65316126b01e210)
+    * finalized deprecation of buildable.rb, bytes.rb and times.rb  (#e290ea855cceefd0033bb3b7fe2ff23fb6beb29a)
+    * Added Brian Candler's Enumerator::Filter  (#1f69ed9924af80b71328eec3509f7ccc280435c6)
 
-2008-11-06   trans <transfire@gmail.com>
+* 27 Other Enhancements
 
-        * updated all CREDIT: comments elminating any indent
-
-
-2008-11-05   trans <transfire@gmail.com>
-
-        * deprecated annotations.rb --use Anise project instead
-        * added lazyenum.rb to work/consider
-        * add string/outdent.rb file
-        * updated AUTHORS and README
-        * deactivated reap test services temporarily
-        * fixed outdent test and demo in instance_variables.rb
-
-
-2008-10-29   trans <transfire@gmail.com>
-
-        * aliased Comparable#cap to at_most and separated bound methods into files
-        * memoize.rb, bug had cache working at class-level, fixed to work at instance-level  [major]
-        * switched to git as of 2.4.4
+    * switched to git as of 2.4.4 (#9677fbda269f205ff5ab07eabca70fe419b7b485)
+    * aliased Comparable#cap to at_most and separated bound methods into files (#576e36a3e709c1512477084ceab962cde10aafba)
+    * fixed outdent test and demo in instance_variables.rb (#d207eadbd9bc43936e63730a9d0a93e6c9c3c45b)
+    * deactivated reap test services temporarily (#0495409de664c53293b64d50316b8a1ad59b803c)
+    * updated AUTHORS and README (#d793ab0df2fbbe5b3947dadf2ab612a5f0b54253)
+    * add string/outdent.rb file (#a4c7cf513d4a37f8230392917f57eb48c4560c45)
+    * added lazyenum.rb to work/consider (#26ed9bd74574df80752f243610e77d5b2e19e278)
+    * deprecated annotations.rb --use Anise project instead (#ffd083e355ac069aacb7bd6a18d9ab3609f0aec8)
+    * updated all CREDIT: comments elminating any indent (#26e439aa7cd825443470071ad28fe3ae00d7041d)
+    * binding/caller.rb, fixed require for callstack.rb (#3c8c51271854a308be35118e69f97c85767fade7)
+    * fixed some credits (#46a2e5e0cd235b40b6c8dd7ac6f0c1a5d28b3bb3)
+    * minor touch up to a few tests (#c15d569c5ff44770291490a06ec280765f0b23ae)
+    * moved Hash#symolize_keys to core and removed tagiter.rb (#99a43a648411bb27a5473e2feb049476d2fe8158)
+    * renamed DictionaryMatcher to just Matcher (#7170ecfdfd650d7477974c28ed3e7aeeafbe37e8)
+    * improved docs for Hash#rekey (#6f8eb8ac265613ca25d1f91f17bb87eeeaa30f17)
+    * removed tests of deprecated libraries (#c40eb89ac84eb6968bf3ca5b63255361e401dc3d)
+    * removed more/chain.rb; it was expiremental (#21ee88ae808daf4e94c0f918776068f6b93ca00c)
+    * fixed missing require in string/tabto and minor doc adjustments (#033bee47b8e77180018fffc9cf937e05f0ef15b0)
+    * consoleutils.rb and ziputils.rb, added deprecation warning (#3393df26d085e43e5f23707e9a44744ad12c9a34)
+    * removed some old work material (#fe44485a97e582f9d7fb269ed5215358f16bc870)
+    * uploadutils.rb, added deprecation warning (#85b8796a2391ab1b3f4b7c24abea51f1d75407f0)
+    * added test for filter.rb (#d1b683f891f9b6a536fdf8ee39ff28a1867d1171)
+    * Fixed some bugs with Time#ago/Time#hence not changing years correctly when you changed months.
+      (For example, Time.utc(2008, 1, 1).ago(12, :months) incorrectly returned 2009-01-01 instead of 2007-01-01.)
+      Added a bunch of tests for Time#ago/Time#hence.
+      Changed Time#ago/Time#hence to still work if passed negative number. (#6713f9ed3ac045ce7ab26f336b375167f09fbed1)
+    * update authors (#805a1e7dd8be36063a7ad580279fd12525a48ae2)
+    * Merge: 805a1e7... 6713f9e...
+      
+      Merge branch 'master' of gitosis@rubyforge.org:facets (#b6bd3fbeb09aa7c84d503b529ffaf14a2a57188f)
+    * adjusted docs for eventhook.rb (#cddd022ba77c910aa6c8c3f4f258f6fbb429f67f)
+    * collected notes into doc/guide/notes.rd (#063c61e560c44528b7d194d1dea68a0d1a58dbc0)
 
