@@ -79,6 +79,7 @@ class PathList < Array
     alias :include? find
 
   end
+
   include Finder
 end
 
