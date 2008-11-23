@@ -12,10 +12,10 @@ potential conflicts and made conditional on the running version
 of Ruby where they overlap. So it's a good start. Over the next
 couple of release we will complete this process.
 
-Lastly, and most importantly, this release is a major down-scaling
-release that removes most of the remaining library "fat" from the
-collection. Some libraries have been spun-off into separate, but
-compatible, projects.
+Lastly, and most importantly, this release is a signifficant down 
+scaling that removes most of the remaining library "fat" from the
+collection. Some libraries have been spun-off into separate, largely
+compatible projects.
 
   If you were using...   Use this project instead...
 
@@ -25,19 +25,14 @@ compatible, projects.
     multiplers.rb
     times.rb
 
-Others have been deprecated in favor of altogether better solutions.
-
-  If you were using...   Alternate solution...
+    ziputils.rb            Folio
+    uploadutils.rb
 
     command.rb             Clio
     consoleutils.rb
 
-    ziputils.rb            Folio
-    uploadutils.rb
-
-A few other completely experimental libraries are being deprecated as
-well, such as eventhook.rb and chain.rb. This output warnings in this
-release and will be fully removed by the next.
+A few other libraries have been deprecated because they were simply 
+experimental, such as eventhook.rb.
 
 Although this release largely constitutes a slimming down of Facets,
 two excellent new libraries have been added.
@@ -51,9 +46,9 @@ specifically geared for configuration files.
 Enumerable methods. This is an elegant way to optimize contiguous
 maps, selections, etc. --effective even on infinite enumerators.
 
-While there still remains some work to do, I am happy to say Facets is
-finally reaching the level of stability I set out to achieve just over
-a year ago. Whew!
+There still remains some work to do. But I am happy to say, Facets
+is finally reaching the level of stability I set out to achieve just
+over a year ago. Whew!
 
 Enjoy!
 

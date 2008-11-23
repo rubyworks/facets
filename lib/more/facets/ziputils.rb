@@ -1,4 +1,5 @@
 #require 'zlib'
+#require 'facets/minitar'
 
 # = ZipUtils
 #
