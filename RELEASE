@@ -12,10 +12,10 @@ potential conflicts and made conditional on the running version
 of Ruby where they overlap. So it's a good start. Over the next
 couple of release we will complete this process.
 
-Lastly, and most importantly, this release is a signifficant down 
-scaling that removes most of the remaining library "fat" from the
-collection. Some libraries have been spun-off into separate, largely
-compatible projects.
+Lastly, and most importantly, this release is a significant down 
+scaling that removes much of the libraries remaining "fat". Some
+scriptss have been spun-off into separate, largely compatible
+projects.
 
   If you were using...   Use this project instead...
 
@@ -31,8 +31,8 @@ compatible projects.
     command.rb             Clio
     consoleutils.rb
 
-A few other libraries have been deprecated because they were simply 
-experimental, such as eventhook.rb.
+While a few others have been deprecated because they were simply 
+experimental, such as chain.rb and eventhook.rb.
 
 Although this release largely constitutes a slimming down of Facets,
 two excellent new libraries have been added.
@@ -46,40 +46,46 @@ specifically geared for configuration files.
 Enumerable methods. This is an elegant way to optimize contiguous
 maps, selections, etc. --effective even on infinite enumerators.
 
-There still remains some work to do. But I am happy to say, Facets
-is finally reaching the level of stability I set out to achieve just
+While work remains to be done, I am happy to say, Facets is 
+finally reaching the level of solidity I set out to achieve just
 over a year ago. Whew!
+
+Special thanks to Brian Candler, Jeena Paradies and Tyler Rick.
 
 Enjoy!
 
 
-### 2.5.0 / 2008-11-10
+### 2.5.0 / 2008-11-23
 
-* 6 Major Enhancements
+* 9 Major Changes
 
-    * Re-added date.rb to lore library, and removed from core.  (#r1014)
-    * Much improved date.rb extension now in Lore library.  (#r1027)
-    * Deprecated kernel/suppress. Use Exception.suppress from now on.  (#r1040)
-    * Deprecated string/style.rb. Use English project instead.  (#r1074)
-    * Console namespace is no longer supported (for Ansicode).  (#r1077)
-    * enumerable/mode.rb, Enumerable#mode returns array since there can be more than one.  (#r1079)
-    * OpenCascade automatically creates nodes, use foo? to query.  (#r1056)
+    * Added Brian Candler's Enumerator::Filter
+    * added sparse_array.rb (was old harray.rb)
+    * added Jeena Paradies' ini.rb
+    * renamed CacheDelegator to Memoizer
+    * renamed DictionaryMatcher to just Matcher
+    * deprecated bytes.rb and times.rb (use RichUnits instead)
+    * deprecated uploadutils.rb; ziputils.rb will be (use Folio)
+    * deprecated annotations.rb (use Anise instead)
+    * deprecated command.rb and consoleutils.rb (use Clio instead)
 
-* 11 Minor Enhancements
+* 5 Minor Changes
 
-    * Moved variablize methods out of metaid.rb and into separate files (string/ and symbol/).  (#r1042)
-    * Added Time#advance.  (#r1046)
-    * Speed up of Integer odd/even methods.  (#r1057)
-    * Array#index now takes a block (this is a core override).  (#r1059)
-    * Spilt file/write.rb into separate method files (append, create, writelines).  (#r1073)
-    * Modified Enumerable#split to behave like String#split.  (#r1076)
-    * hash/op.rb, split into separate method files.  (#r1081)
-    * Added string/modulize. string/methodize handles path names now too.  (#r1085)
-    * Class#cattr is now part of core.  (#r1089)
+    * deprecated chain.rb (very expiremental)
+    * deprecated eventhook.rb (moved to ToadCode project)
+    * deprecated tagiter.rb (moved to ToadCode project)
+    * moved Hash#symolize_keys and #stringify_keys to core lib
+      (still recommend #rekey instead though)
+    * switched to git as of 2.4.5
 
-* 2 Bug Fixes
+* 4 Bug Fixes
 
-    * OpenStruct#to_h dups internal table.  (#r1015)
-    * Fixed require of string/xor in bicrypt.rb.  (#r1039)
-    * integer/odd.rb, fixed Ruby 1.9 condition.  (#r1080)
+    * memoize.rb, cache was at class-level, now at instance-level
+    * binding/caller.rb, fixed require for callstack.rb
+    * fixed missing require in string/tabto.rb
+    * Fixed some bugs with Time#ago/Time#hence not changing years
+      correctly when you changed months.
+      (For example, Time.utc(2008, 1, 1).ago(12, :months) incorrectly
+      returned 2009-01-01 instead of 2007-01-01.)
+      Changed Time#ago/Time#hence to still work if passed negative number.
 
