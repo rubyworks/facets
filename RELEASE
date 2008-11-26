@@ -22,7 +22,6 @@ projects.
     annotations.rb         Anise
 
     bytes.rb               RichUnits
-    multiplers.rb
     times.rb
 
     ziputils.rb            Folio
