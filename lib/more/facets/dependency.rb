@@ -142,7 +142,7 @@ class Module
 
 end
 
-class RecursiveDependency < StandardError; end
+#class RecursiveDependency < StandardError; end
 
 
 #class Module

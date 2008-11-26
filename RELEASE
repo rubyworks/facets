@@ -1,21 +1,20 @@
-Facets 2.5.0 is an significant milestone in the development of
-Facets.
+Facets 2.5.0 is an important milestone in the development of Facets.
 
-First, this release has been tested against Rails' ActiveSupport
-library. As long as Facets is loaded after ActiveSupport, everything
+This release has been tested against Rails' ActiveSupport library.
+As long as Facets is loaded after ActiveSupport, everything
 should work fine. Of course, there's no counting for real world
-trials, but all ActiveSupport tests cases pass under this scenario.
+trials, but all ActiveSupport test cases pass under this scenario.
 
-Secondly, Facets 2.5.0 is nearly Ruby 1.9 ready. While it has not
+Also, Facets 2.5.0 is nearly Ruby 1.9 ready. While it has not
 been thoroughly tested yet, the extensions have been reviewed for
 potential conflicts and made conditional on the running version
 of Ruby where they overlap. So it's a good start. Over the next
-couple of release we will complete this process.
+few releases we will seek to complete this process.
 
-Lastly, and most importantly, this release is a significant down 
-scaling that removes much of the libraries remaining "fat". Some
-scriptss have been spun-off into separate, largely compatible
-projects.
+Finally, and most importantly, this release is the first of two
+down-scalings that will remove the remaining "fat" from the library.
+Some scripts are being spun-off into separate, largely compatible
+projects. In this release:
 
   If you were using...   Use this project instead...
 
@@ -30,8 +29,9 @@ projects.
     command.rb             Clio
     consoleutils.rb
 
-While a few others have been deprecated because they were simply 
-experimental, such as chain.rb and eventhook.rb.
+A few others scripts have been deprecated, without an alternative
+resource, simply because they were experimental, such as chain.rb
+and eventhook.rb.
 
 Although this release largely constitutes a slimming down of Facets,
 two excellent new libraries have been added.
@@ -39,15 +39,15 @@ two excellent new libraries have been added.
 1) *ini.rb* by Jeena Paradies. While YAML is frequently used by
 Rubyists for configuration files, a full-on serializer like YAML
 is often overkill. INI files provide a lightweight solution
-specifically geared for configuration files.
+specifically geared for configuration.
 
 2) *filter.rb* by Brian Candler offers lazy evaluation chains of 
 Enumerable methods. This is an elegant way to optimize contiguous
 maps, selections, etc. --effective even on infinite enumerators.
 
 While work remains to be done, I am happy to say, Facets is 
-finally reaching the level of solidity I set out to achieve just
-over a year ago. Whew!
+finally beginning to reach the level of solidity I set out to
+achieve just over a year ago. Yeah!
 
 Special thanks to Brian Candler, Jeena Paradies and Tyler Rick.
 
@@ -58,7 +58,7 @@ Enjoy!
 
 * 9 Major Changes
 
-    * Added Brian Candler's Enumerator::Filter
+    * added Brian Candler's Enumerator::Filter
     * added sparse_array.rb (was old harray.rb)
     * added Jeena Paradies' ini.rb
     * renamed CacheDelegator to Memoizer
