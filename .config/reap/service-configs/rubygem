@@ -1,6 +1,6 @@
 ---
 rubygem:
   service : Gem
-  include : [demo, doc, lib, task, test, "[A-Z]*"]
+  include : [demo, doc, lib, meta, task, test, "[A-Z]*"]
   exclude : [doc/ri]
 
