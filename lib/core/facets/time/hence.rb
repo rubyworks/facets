@@ -2,7 +2,7 @@ require 'facets/time/set'
 
 class Time
 
-  if defined?(::ActiveSupport)
+  if defined?(::ActiveSupport) && method_defined?(:since)
 
     alias_method :in, :since
     alias_method :hence, :since
