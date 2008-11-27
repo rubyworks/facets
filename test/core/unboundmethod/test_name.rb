@@ -1,4 +1,4 @@
-require 'facets/unboundmethod/arguments'
+require 'facets/unboundmethod/name'
 
 class Test_UnboundMethod < Test::Unit::TestCase
 

@@ -1,7 +1,8 @@
-require './filter'
+require 'facets/filter'
 require 'test/unit'
 
-class TC_Enumerable_Filter < Test::Unit::TestCase
+class TC_Enumerator_Filter < Test::Unit::TestCase
+
   SOURCE = (1..1/0.0)   # infinite Enumerable object
 
   def test_enumerator_with_block
@@ -18,13 +19,13 @@ class TC_Enumerable_Filter < Test::Unit::TestCase
   
   def test_filter_without_block
     a = SOURCE.filter
-    assert_equal Enumerable::Filter, a.class
+    assert_equal Enumerator::Filter, a.class
     assert_equal [1,2,3,4,5], a.take(5).to_a
   end
 
   def test_filter_with_block
     a = SOURCE.filter { |out,i| out << i*2 }
-    assert_equal Enumerable::Filter, a.class
+    assert_equal Enumerator::Filter, a.class
     assert_equal [2,4,6,8,10], a.take(5).to_a
   end
 

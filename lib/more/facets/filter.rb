@@ -29,13 +29,13 @@ module Enumerable
   #
   def filter(&blk)
     if block_given?
-      Filter.new do |output|
+      Enumerator::Filter.new do |output|
         each do |*input|
           yield output, *input
         end
       end
     else
-      Filter.new do |output|
+      Enumerator::Filter.new do |output|
         each do |*input|
           output.yield *input
         end
@@ -51,7 +51,7 @@ module Enumerable
   #
   module Filterable
     def map
-      Filter.new do |output|
+      Enumerator::Filter.new do |output|
         each do |*input|
           output.yield yield(*input)
         end
@@ -60,7 +60,7 @@ module Enumerable
     alias :collect :map
 
     def select
-      Filter.new do |output|
+      Enumerator::Filter.new do |output|
         each do |*input|
           output.yield(*input) if yield(*input)
         end
@@ -69,7 +69,7 @@ module Enumerable
     alias :find_all :select
 
     def reject
-      Filter.new do |output|
+      Enumerator::Filter.new do |output|
         each do |*input|
           output.yield(*input) unless yield(*input)
         end
@@ -79,7 +79,7 @@ module Enumerable
     # Limit to the first n items in the list
 
     def take(n)
-      Filter.new do |output|
+      Enumerator::Filter.new do |output|
         count = 0
         each do |*input|
           break if count >= n
@@ -92,7 +92,7 @@ module Enumerable
     # Skip the first n items in the list
 
     def skip(n)
-      Filter.new do |output|
+      Enumerator::Filter.new do |output|
         count = 0
         each do |*input|
           output.yield(*input) if count >= n

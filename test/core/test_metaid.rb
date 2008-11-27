@@ -13,10 +13,10 @@ class TestMetaid < Test::Unit::TestCase
     assert_equal( (class << o; self; end), o.meta_class )
   end
 
-  def test_singleton
-    o = Object.new
-    assert_equal( (class << o; self; end), o.singleton )
-  end
+  #def test_singleton
+  #  o = Object.new
+  #  assert_equal( (class << o; self; end), o.singleton )
+  #end
 
   #def test_singleton_eval
   #  assert_nothing_raised do
@@ -31,9 +31,9 @@ class TestMetaid < Test::Unit::TestCase
   #  assert_equal(2, o.testing(1) )
   #end
 
-  def test_singleton_class
-    o = Object.new
-    assert_equal( (class << o; self; end), o.singleton_class )
-  end
+  #def test_singleton_class
+  #  o = Object.new
+  #  assert_equal( (class << o; self; end), o.singleton_class )
+  #end
 
 end
