@@ -19,5 +19,12 @@ class TC_Hash_Op < Test::Unit::TestCase
     assert_equal(r, h1)
   end
 
+  def test_shift_update
+    a = { :a => 1, :b => 2, :c => 3 }
+    b = { :a => 0, :d => 4 }
+    e = { :a => 0, :b => 2, :c => 3, :d => 4 }
+    assert_equal( e, a << b )
+  end
+
 end
 
