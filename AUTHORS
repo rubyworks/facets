@@ -9,6 +9,7 @@
 The following developers have recently contributed to the development of Facets.
 They are held in the highest regard for their efforts.
 
+* Sandor Szücs        Fixes for String#align_right and #align_left.
 * Tyler Rick          Fixed bug in Time#hence and #ago.
 * Brian Candler       Provided Enumerator::Filter.
 * Jeena Paradies      Provided INI implementation.
@@ -16,7 +17,6 @@ They are held in the highest regard for their efforts.
 * Daniel Schierbeck   Speed imporvements to odd? and even?
 * Ken Bloom           For DictionaryMatcher class (class might be renamed in future).
 * Matthew Harris      Incorporated very useful Duration class.
-* Noah Gibbs          Completed port from Extensions project.
 
 == Recent Bug Reports
 
