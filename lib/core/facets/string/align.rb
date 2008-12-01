@@ -14,8 +14,9 @@ class String
   end
 
   # Align a string to the right.
-  # The defualt alignment seperation is a new line ("/n")
-  # This can be changes as can be the padding string which
+  #
+  # The default alignment separation is a new line ("\n").
+  # This can be changed as can be the padding string which
   # defaults to a single space (' ').
   #
   #   s = <<-EOS
@@ -24,28 +25,28 @@ class String
   #     so on
   #   EOS
   #
-  #   puts s.align_right(2)
+  #   puts s.align_right(14)
   #
   # _produces_
   #
-  #     This is a test
-  #                and
-  #              so on
+  #   This is a test
+  #              and
+  #            so on
   #
   # CREDIT: Trans
 
   def align_right(n, sep="\n", c=' ')
     return rjust(n.to_i,c.to_s) if sep==nil
-    q = split(sep.to_s).collect { |line|
+    q = split(sep.to_s).map do |line|
       line.rjust(n.to_i,c.to_s)
-    }
+    end
     q.join(sep.to_s)
   end
 
   # Align a string to the left.
   #
-  # The defualt alignment seperation is a new line ("/n")
-  # This can be changes as can be the padding string which
+  # The default alignment separation is a new line ("\n").
+  # This can be changed as can be the padding string which
   # defaults to a single space (' ').
   #
   #   s = <<-EOS
@@ -54,27 +55,27 @@ class String
   #     so on
   #   EOS
   #
-  #   puts s.align_left(2)
+  #   puts s.align_left(20, "\n", '.')
   #
   # _produces_
   #
-  #     This is a test
-  #     and
-  #     so on
+  #   This is a test......
+  #   and.................
+  #   so on...............
   #
   # CREDIT: Trans
 
   def align_left(n, sep="\n", c=' ')
     return ljust(n.to_i,c.to_s) if sep==nil
-    q = split(sep.to_s).collect { |line|
-      line.ljust(n.to_i,c.to_s)
-    }
+    q = split(sep.to_s).map do |line|
+      line.strip.ljust(n.to_i,c.to_s)
+    end
     q.join(sep.to_s)
   end
 
   # Centers each line of a string.
   #
-  # The defualt alignment seperation is a new line ("/n")
+  # The default alignment separation is a new line ("\n").
   # This can be changed as can be the padding string which
   # defaults to a single space (' ').
   #

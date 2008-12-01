@@ -1,9 +1,15 @@
 class String
 
-  # XOR two string.
+  # Binary XOR of two strings. 
   #
-  # TODO: This is used by crypt.rb, it needs to be documented.
-
+  #   puts "\000\000\001\001" ^ "\000\001\000\001"
+  #   puts  "\003\003\003" ^ "\000\001\002"
+  #
+  # _produces_
+  #
+  #   "\000\001\001\000"
+  #   "\003\002\001"
+  #
   def ^(aString)
     a = self.unpack('C'*(self.length))
     b = aString.unpack('C'*(aString.length))
