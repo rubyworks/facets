@@ -1,36 +1,48 @@
 class Array
 
-  # Converts a two-element associative array into a hash.
-  #
-  #   a = [ [:a,1], [:b,2] ]
-  #   a.to_h  #=> { :a=>1, :b=>2 }
-  #
-  # If +arrayed+ is set it will maintain trailing arrays.
-  #
-  #   a = [ [:a,1,2], [:b,3] ]
-  #   a.to_h(true)  #=> { :a=>[1,2], :b=>[3] }
-  #
-  # Note that the use of a values parameter has been deprecated
-  # because that functionality is as simple as:
-  #
-  #   array1.zip(array2).to_h
-  #
-  # CREDIT: Trans
+  if RUBY_VERSION < '1.9'
 
-  def to_h(arrayed=nil)
-    h = {}
-    if arrayed #or (flatten.size % 2 == 1)
-      #each{ |e| h[e.first] = e.slice(1..-1) }
-      each{ |k,*v| h[k] = v }
-    else
-      #h = Hash[*flatten(1)] # TODO Use in 1.9 instead.
-      ary = []
-      each do |a|
-        Array===a ? ary.concat(a) : ary << a
+    # Converts an associative array into a hash.
+    #
+    #   a = [ [:a,1], [:b,2] ]
+    #   a.to_h  #=> { :a=>1, :b=>2 }
+    #
+    # If +arrayed+ is set it will maintain trailing arrays.
+    #
+    #   a = [ [:a,1,2], [:b,3] ]
+    #   a.to_h(true)  #=> { :a=>[1,2], :b=>[3] }
+    #
+    # NOTE: The use of a +values+ parameter has been deprecated
+    # because that functionality is as simple as:
+    #
+    #   array1.zip(array2).to_h
+    #
+    # CREDIT: Trans
+
+    def to_h(arrayed=nil)
+      if arrayed
+        h = {}
+        each{ |k,*v| h[k] = v }
+      else
+        ary = []
+        each do |a|
+          Array===a ? ary.concat(a) : ary << a
+        end
+        h = Hash[*ary]
       end
-      h = Hash[*ary]
+      h
     end
-    h
+
+  else
+
+    def to_h(arrayed=nil)
+      if arrayed
+        each{ |k,*v| h[k] = v }
+      else
+        Hash[*flatten(1)]
+      end
+    end
+
   end
 
   #def to_hash
