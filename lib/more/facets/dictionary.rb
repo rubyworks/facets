@@ -239,7 +239,6 @@ class Dictionary
   end
 
   #
-
   def reorder
     if @order_by
       assoc = @order.collect{ |k| [k,@hash[k]] }.sort_by(&@order_by)
@@ -352,9 +351,16 @@ class Dictionary
     self == hsh2 ? nil : hsh2
   end
 
-  def replace( hsh2 )
-    @order = hsh2.order
-    @hash = hsh2.hash
+  def replace(hsh2)
+    case hsh2
+    when Hash
+      @order = hsh2.keys
+      @hash  = hsh2
+    else
+      @order = hsh2.order
+      @hash  = hsh2.hash
+    end
+    reorder
   end
 
   def shift
