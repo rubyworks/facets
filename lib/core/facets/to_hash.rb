@@ -43,6 +43,17 @@ class Array
       end
     end
 
+    # * Sander Suggested *
+    #def to_h
+    #  h = {}
+    #  if(flatten.size % 2 == 1)
+    #    each { |e| h[e.first] = e.slice(1..-1) }
+    #  else
+    #    h = Hash[*flatten(1)]
+    #  end
+    #  h
+    #end
+
   end
 
   #def to_hash
@@ -94,6 +105,64 @@ class NilClass
   # CREDIT: Trans
 
   def to_h; {}; end
+
+end
+
+ 
+if RUBY_VERSION < "1.9.0"
+
+  class Enumerable::Enumerator
+  
+    # Convert an Enumerable::Enumerator object directly into a hash.
+    # 
+    #   e = [1,2,3,4,5].to_enum
+    #   e.to_h  #=> {5=>nil, 1=>2, 3=>4}
+    #   e2 = [1,2,1,3,1,5].to_enum
+    #   e2.to_h #=> {1=>5}
+    #   e3 = [[1,:a],[2,:b],[3,:c]].to_enum
+    #   e3.to_h #=> { 1=>:a, 2=>:b, 3=>:c }
+    #
+    # CREDIT: Sandor Szücs
+    def to_h(arrayed=nil)
+      h = {}
+      loop do
+        x,y = self.next
+        h[x] ||= nil
+        y = self.next unless y
+        h[x] = y
+      end
+
+      return h
+    end
+  end
+
+else
+
+  class Enumerator
+    
+    # Convert an Enumerator object directly into a hash.
+    # 
+    #   e1 = [1,2,3,4,5].to_enum
+    #   e1.to_h  #=> {5=>nil, 1=>2, 3=>4}
+    #   e2 = [1,2,1,3,1,5].to_enum
+    #   e2.to_h #=> {1=>5}
+    #   e3 = [[1,:a],[2,:b],[3,:c]].to_enum
+    #   e3.to_h #=> { 1=>:a, 2=>:b, 3=>:c }
+    #
+    # CREDIT: Sandor Szücs
+    def to_h
+      h = {}
+      loop do
+        x,y = self.next
+        h[x] ||= nil
+        y = self.next unless y
+        h[x] = y
+      end
+
+      return h
+    end
+
+  end
 
 end
 
