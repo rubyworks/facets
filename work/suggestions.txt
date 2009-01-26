@@ -1,4 +1,14 @@
- These have been reported:
+= Suggestions
+
+== xor file name
+
+Should String#xor file be called op_xor.rb instead of just xor.rb? That was the 
+going procedure, but someone mentioned it seemed redudant to them. Maybe it
+isn't needed?
+
+
+== find_ane_map
+
 module Enumerable
 
   # person.find_and_map { |p| p.age if p.age > 18 } # Age of the first person above 18
@@ -14,6 +24,9 @@ end
 
 Esad Hajdarevic <esad@esse.at>
 
+
+== paragraph_word_wrap
+
 ?
 
 class String
@@ -26,6 +39,9 @@ class String
   end
 end
 
+
+== Array#rand
+
 class Array
 
 ?def rand
@@ -35,5 +51,4 @@ class Array
 ?end
 
 end
-
 
