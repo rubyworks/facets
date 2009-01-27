@@ -1,6 +1,6 @@
 require 'facets/unboundmethod/name'
 
-class Test_UnboundMethod < Test::Unit::TestCase
+class Test_UnboundMethod_Name < Test::Unit::TestCase
 
   class X
     def foo; end
