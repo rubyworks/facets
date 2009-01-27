@@ -1,9 +1,11 @@
-unless (RUBY_VERSION[0,3] == '1.9')
+if RUBY_VERSION < '1.9'
 
   class UnboundMethod
 
     # Return the name of the method.
-    # Is this already in 1.9+ ?
+    #
+    # Be aware that in ruby 1.9 UnboundMethod#name is defined already,
+    # but it returns a Symbol not a String.
     #
     #   class X
     #     def foo; end
