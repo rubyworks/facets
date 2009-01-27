@@ -8,8 +8,8 @@ module Enumerable
   # CREDIT: Trans
 
   def split(pattern)
-    sect = []
     memo = []
+    sect = []
     each do |obj|
       if pattern === obj
         memo << sect
@@ -18,8 +18,8 @@ module Enumerable
         sect << obj
       end
     end
-    memo << sect #unless sect.empty?
-    memo.pop while memo.last.empty?
+    memo << sect
+    memo.pop while memo.last == []
     memo
   end
 
