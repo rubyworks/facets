@@ -96,19 +96,40 @@
 #   IPAddr
 #   Process::Status
 #
-class Association
+# TODO: Should associations be singleton?
 
+class Association
   include Comparable
 
-  attr_accessor :index, :value
+  class << self
+    # Store association references.
+    def reference
+      @reference ||= Hash.new{ |h,k,v| h[k]=[] }
+    end
 
-  def self.[](*args)
-    new(*args)
+    def [](index, value)
+      new(index, value)
+    end
+
+    #def new(index, value)
+    #  lookup[[index, value]] ||= new(index, value)
+    #end
+
+    #def lookup
+    #  @lookup ||= {}
+    #end
   end
+
+  attr_accessor :index
+  attr_accessor :value
 
   def initialize(index, value=nil)
     @index = index
     @value = value
+
+    unless index.associations.include?(value)
+      index.associations << value
+    end
   end
 
   def <=>(assoc)
@@ -135,22 +156,17 @@ class Association
     [ @index, @value ]
   end
 
-  # Store association references.
-
-  REFERENCE = Hash.new{ |h,k,v| h[k]=[] }
-
   # Object extensions.
-
+  #
   module Kernel
 
     # Define an association with +self+.
     def >>(to)
-      REFERENCE[self] << to
       Association.new(self, to)
     end
 
     def associations
-      REFERENCE[self]
+      Association.reference[self]
     end
 
   end
@@ -163,7 +179,7 @@ end
 
 
 #--
-# Setup the >> method in classes that use it  already.
+# Setup the >> method in classes that use it already.
 #
 # This is a bad idea b/c it can cause backward compability issues.
 #
