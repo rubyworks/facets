@@ -19,13 +19,13 @@ body {
   color           : black;
   text-align      : center; /* for IE */
   /*background       : url(img/RubyFacetsShadow2.png) bottom no-repeat white;*/
-  background      : white;
+  background      : #eeeeee;
   font-size       : 11pt;
 }
 
 p {
   font-size       : 1em;
-  color           : #333333;
+  color           : #222222;
   text-align      : justify;
   margin          : 10px 10px 15px 0px;
   line-height     : 1.5em;
@@ -132,6 +132,7 @@ td { padding: 5px; }
   text-align  : left;             /* counter the body center */
   padding     : 0;
   background   : url(img/RubyFacetsShadowFade.png) top center repeat-x white;
+  background   : white;
 }
 
 .page {
@@ -143,7 +144,6 @@ td { padding: 5px; }
 .sell {
   margin           : 15px auto;
   text-align       : center;
-  background       : #FFFFFF;
   padding          : 10px 10px 10px 10px;
   font-size        : 1.5em;
   font-family      : sans-serif, serif;
@@ -153,6 +153,16 @@ td { padding: 5px; }
   -moz-border-radius-bottomleft  : 1em; border-bottomleft-radius  : 1em;
   -moz-border-radius-bottomright : 1em; border-bottomright-radius : 1em;
 }
+
+.ico img {
+  -moz-border-radius: 5px;
+  border-radius     : 5px;
+  width: 72px;
+  background: white;
+  text-align: center;
+  margin-top: 15px;
+}
+
 .sm{
   font-size        : 1.2em;
   font-family      : sans-serif, serif;
@@ -160,13 +170,21 @@ td { padding: 5px; }
 }
 
 #copyright {
-  border-top    : 1px solid black;
-  color:          #333333;
+  color:          #444444;
   text-align:     center;
   font-size:      0.6em;
   padding:        30px 0;
   font-family   : sans-serif;
-  background    : pink;
+  font-weight   : bold;
+}
+
+#doctable td {
+  text-align    : center;
+  border        : 2px solid #cccccc;
+  padding-right : 10px;
+  background    : white;
+  -moz-border-radius : 1em;
+  border-radius      : 1em;
 }
 
 /* CLASSES */
@@ -194,19 +212,33 @@ td { padding: 5px; }
 
 .blurb {
   text-align   : center;
-  padding-top  : 80px;
+  padding      : 30px 0 10px 0;
+  color        : #333333;
+  /* border-bottom: 2px solid gray; */
   font-size    : 2.7em;
   font-weight  : bold;
-  color        : black;
-  background   : url(img/RubyFacetsShadow.png) top center no-repeat transparent;
-  /* border-bottom: 2px solid gray; */
 }
 
 .desc {
   font-size: .5em;
   padding: 15px;
-  width: 70%;
-  margin: 0 auto;
+  padding-bottom: 20px;
+  width      : 750px;
+  margin     : 0 auto;
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  border: 0px solid #cccccc;
+}
+
+.desc h1 {
+  margin: 0 0 15px 0;
+  color: #FF0077;
+}
+
+.desc .small {
+  padding-top: 20px;
+  font-size: 0.7em;
+  font-family: sans-serif;
 }
 
 div.section {

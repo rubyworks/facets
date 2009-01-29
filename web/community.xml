@@ -4,10 +4,10 @@
 <content>
 
 <div class="blurb">
-  United We Stand
-
   <div class="desc">
-    Hook up with other users, and broaden your scope of usage.
+    <h1>United We Stand</h1>
+    Hook up with other users and broaden the scope of your usage.
+    Ruby Facets has a moto, "All Base Common".
   </div>
 </div>
 
@@ -64,7 +64,7 @@
     <h1>Contact</h1>
 
     <p>If you have any questions, suggestions or contributions you'd like to make privately,
-    you can contact Trans &lt;trandfire AT gmail DOT com&gt;.</p>
+    you can contact Trans &lt;transfire AT gmail DOT com&gt;.</p>
 
   </div>
 

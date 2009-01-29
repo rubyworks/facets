@@ -4,12 +4,12 @@
 <content>
 
 <div class="blurb">
-  Facets is for Everyone
-
   <div class="desc">
-    Who uses Facets? Lots of Rubyists do! <br/>
-    Whether by copy-and-paste or direct dependency, <br/>
-    Facets is used by thousands of Ruby programmers.
+    <h1>Facets is for Everyone</h1>
+    Who uses Facets? Lots of Rubyists do!
+    <div class="small">Whether by copy-and-paste or direct dependency,
+    the following is a brief list of just a few of the projects
+    that have benefited from Facets.</div>
   </div>
 </div>
 

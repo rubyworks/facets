@@ -4,10 +4,11 @@
 <content>
 
 <div class="blurb">
-  Under the Hood
-
   <div class="desc">
-    Subversion repository
+    <h1>Under the Hood</h1>
+    Facets has moved it's source control system over to Git. 
+    <div class="small">Having originally used Darcs, the switch is a nice change of pace
+    over the previous Subversion repository.</div>
   </div>
 </div>
 

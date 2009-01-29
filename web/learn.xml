@@ -4,9 +4,8 @@
 <content>
 
 <div class="blurb">
-  Easy to Learn
-
   <div class="desc">
+    <h1>Easy to Learn</h1>
     Learn Facets as you program, these resources make it a snap.
   </div>
 </div>
@@ -20,9 +19,9 @@
  -->
   <br/>
 
-  <table style="width: 80%; margin: 0 auto;">
+  <table id="doctable" style="width: 80%; margin: 0 auto;">
     <tr>
-      <td style="text-align: center; border: 0px solid #cccccc; padding-right: 15px;">
+      <td style="text-align: center; border: 0px solid #cccccc;">
         <a class="big" href="doc/index.html">
           <img src="img/candy-s.jpg" height="150px" style="padding: 1px;" align="middle"/>
         </a> <br/><br/>

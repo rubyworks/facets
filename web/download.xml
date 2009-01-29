@@ -4,10 +4,12 @@
 <content>
 
 <div class="blurb">
-  The Dependency of Choice
-
   <div class="desc">
-    Get it while it's Hot!
+    <h1>A Dependency of Choice</h1>
+    Ruby Facets is a vast resource for Ruby developers.
+    <div class="small">Whether it is to borrow code or as a direct gem dependency,
+    Ruby Facets is here to serve the Ruby development community
+    to create better, more robust software.</div>
   </div>
 </div>
 

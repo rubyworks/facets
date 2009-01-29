@@ -61,9 +61,8 @@
 
       Copyright (c) 2005-2008 Thomas Sawyer &amp; Contributors <br/><br/>
 
-      Ruby Facets was created by Thomas Sawyer (7rans), either written by hand or
-      collected from a variety of Ruby resources. The system continues
-      to be extended and improved by a diverse cast of open-source contributors.<br/><br/>
+      Ruby Facets was created by Thomas Sawyer (7rans), either written by hand or collected from a variety of Ruby resources.<br/>
+     The system continues to be extended and improved by a diverse cast of open-source contributors.<br/><br/>
 
       Facets is released under the terms of the Ruby license, just like Ruby.<br/>
       The Ruby license is a dual GPLv2 license.<br/><br/>
