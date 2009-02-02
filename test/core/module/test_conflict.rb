@@ -11,9 +11,14 @@ class Test_Module_Conflict < Test::Unit::TestCase
     def q; "qy"; end
   end
 
-  def test_conflict?
-    assert_equal( ["q"], X.conflict?(Y) )
+  if RUBY_VERSION < '1.9'
+    def test_conflict?
+      assert_equal( ["q"], X.conflict?(Y) )
+    end
+  else
+    def test_conflict?
+      assert_equal( [:q], X.conflict?(Y) )
+    end
   end
-
 end
 
