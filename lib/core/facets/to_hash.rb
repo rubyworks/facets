@@ -37,7 +37,9 @@ class Array
 
     def to_h(arrayed=nil)
       if arrayed
+        h={}
         each{ |k,*v| h[k] = v }
+        h
       else
         Hash[*flatten(1)]
       end
