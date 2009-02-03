@@ -1,19 +1,11 @@
-unless (RUBY_VERSION[0,3] == '1.9')
+class Array
 
-  class Array
+  if RUBY_VERSION < '1.9'
 
-    # Provides the cross-product of two or more Enumerables.
-    # This is the class-level method. The instance method
-    # calls on this.
-    #
-    #   Enumerable.cartesian_product([1,2], [4], ["apple", "banana"])
-    #   #=> [[1, 4, "apple"], [1, 4, "banana"], [2, 4, "apple"], [2, 4, "banana"]]
-    #
-    #   Enumerable.cartesian_product([1,2], [3,4])
-    #   #=> [[1, 3], [1, 4], [2, 3], [2, 4]]
+    # Provides the cartesian product of two or more arrays.
     #
     #   a = []
-    #   [1,2].cart([4,5]){|elem| a << elem }
+    #   [1,2].product([4,5]){|elem| a << elem }
     #   a  #=> [[1, 4],[1, 5],[2, 4],[2, 5]]
     #
     # CREDIT: Thomas Hafner
@@ -37,12 +29,16 @@ unless (RUBY_VERSION[0,3] == '1.9')
       end
     end
 
+  else
+
+    alias_method :_product, :product
+
+    def product(*enums, &block)
+      result = _product(*enums)
+      return (block_given?) ? result.each{ |e| block.call(e) } : result
+    end
+
   end
-
-end
-
-
-class Array
 
   # Operator alias for cross-product.
   #
