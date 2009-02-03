@@ -10,7 +10,7 @@ class Array
     #
     # CREDIT: Thomas Hafner
 
-    def product(*enums, &block)
+    def product(*enums)
       enums.unshift self
       result = [[]]
       while [] != enums
@@ -22,20 +22,7 @@ class Array
           end
         end
       end
-      if block_given?
-        result.each{ |e| block.call(e) }
-      else
-        result
-      end
-    end
-
-  else
-
-    alias_method :_product, :product
-
-    def product(*enums, &block)
-      result = _product(*enums)
-      return (block_given?) ? result.each{ |e| block.call(e) } : result
+      result
     end
 
   end

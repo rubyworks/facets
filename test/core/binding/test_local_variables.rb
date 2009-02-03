@@ -10,9 +10,15 @@ class TC_Binding_Local_Variables < Test::Unit::TestCase
     @bind = binding
   end
 
-  def test_local_variables
-    assert_equal( ["a","b","x"], @bind.local_variables )
-  end
+  unless RUBY_VERSION > "1.9"
+      def test_local_variables
+        assert_equal( ["a","b","x"], @bind.local_variables )
+      end
+    else
+      def test_local_variables
+        assert_equal( [:a,:b,:x], @bind.local_variables )
+      end
+    end
 
 end
 
