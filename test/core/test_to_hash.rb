@@ -5,17 +5,44 @@ require 'test/unit'
 class TestArrayConversion < Test::Unit::TestCase
 
   def test_to_h
-    a = [[1,2],[3,4],[5,6]]
-    assert_equal( { 1=>2, 3=>4, 5=>6 }, a.to_h )
-    assert_equal( {1=>2, 3=>4}, [1,2,3,4].to_h)
-    assert_raise(ArgumentError) { [[1,:a],:b].to_h }
+    a = [1,2,3,4]
+    x = {1=>2,3=>4}
+    assert_equal(x, a.to_h)
   end
 
-  def test_to_h_arrayed
-    a = [[:a,1,2],[:b,3,4],[:c,5,6]]
-    assert_equal( { :a=>[1,2], :b=>[3,4], :c=>[5,6] }, a.to_h(true) )
-    assert_equal({1=>[],2=>[],3=>[]}, [1,2,3].to_h(true))
+  #def test_to_h_odd_number_of_entries
+  #  assert_raise(ArgumentError) { [[1,:a],:b].to_h }
+  #end
+
+  def test_to_h_flat
+    a = [[1,2],3,4,5]
+    x = {1=>2,3=>4,5=>nil}
+    assert_equal(x, a.to_h_flat)
   end
+
+  def test_to_h_splat
+    a = [1,2,3,4,[5,6]]
+    x = { 1=>2, 3=>4, [5,6]=>nil }
+    assert_equal(x, a.to_h_splat)
+  end
+
+  def test_to_h_assoc
+    a = [[:a,1],[:b,2],[:c],:d,[:a,5]]
+    x = {:a=>[5],:b=>[2],:c=>[],:d=>[]}
+    assert_equal(x, a.to_h_assoc)
+  end
+
+  def test_to_h_multi
+    a = [[:a,1],[:b,2],[:c],:d,[:a,5]]
+    x = {:a=>[1,5],:b=>[2],:c=>[],:d=>[]}
+    assert_equal(x, a.to_h_multi)
+  end
+
+  #def test_to_h_assoc_arrayed
+  #  a = [[:a,1,2],[:b,3,4],[:c,5,6]]
+  #  x = { :a=>[1,2], :b=>[3,4], :c=>[5,6] }
+  #  assert_equal(x, a.to_h(true))
+  #end
 
   #def test_to_hash
   #  a = [:a,:b,:c]
@@ -29,16 +56,28 @@ class TestEnumerableConversion < Test::Unit::TestCase
 
   def test_to_h
     a = [[1,:a],[2,:b],[3,:c]]
-    assert_equal( { 1=>:a, 2=>:b, 3=>:c }, a.to_h )
-    assert_equal( {1=>2, 3=>4}, [1,2,3,4].to_h)
+    x = {1=>:a, 2=>:b, 3=>:c}
+    assert_equal(x, a.to_h )
+  end
+
+  def test_to_h_flat
+    a = [1,2,[3,4]]
+    x = {1=>2, 3=>4}
+    assert_equal(x, a.to_h_flat)
   end
   
-  def test_to_h_arrayed
+  def test_to_h_multi
     a = [[:a,1,2],[:b,3,4],[:c,5,6]]
-    assert_equal( { :a=>[1,2], :b=>[3,4], :c=>[5,6] }, a.to_h(true) )
-    assert_equal({1=>[],2=>[],3=>[]}, [1,2,3].to_h(true))
+    x = {:a=>[1,2], :b=>[3,4], :c=>[5,6]}
+    assert_equal(x, a.to_h_multi)
   end
-  
+
+  #def test_to_h_arrayed_flat
+  #  a = [1,2,3]
+  #  x = {1=>[],2=>[],3=>[]}
+  #  assert_equal(x, a.to_h(true))
+  #end
+
   #def test_to_hash
   #  a = [:a,:b,:c]
   #  assert_equal( { 0=>:a, 1=>:b, 2=>:c }, a.to_hash )
