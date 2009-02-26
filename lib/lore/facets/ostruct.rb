@@ -125,6 +125,7 @@ class OpenStruct
   def instance_delegate
     @table
   end
+
   alias ostruct_delegate instance_delegate
 
   # Insert/update hash data on the fly.
@@ -134,6 +135,7 @@ class OpenStruct
   #   o.a  #=> 2
   #
   def ostruct_update(other)
+    raise TypeError, "can't modify frozen #{self.class}", caller(1) if self.frozen?
     #other = other.to_hash  #to_h ?
     for k,v in other
       @table[k.to_sym] = v
@@ -166,6 +168,7 @@ class OpenStruct
   #   o.a  #=> 2
   #
   def __update__(other)
+    raise TypeError, "can't modify frozen #{self.class}", caller(1) if self.frozen?
     #other = other.to_hash #to_h?
     for k,v in other
       @table[k.to_sym] = v
