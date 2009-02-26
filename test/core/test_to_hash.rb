@@ -49,6 +49,26 @@ class TestArrayConversion < Test::Unit::TestCase
   #  assert_equal( { 0=>:a, 1=>:b, 2=>:c }, a.to_hash )
   #end
 
+  def test_to_h_assoc_dispatched
+    a = [:a, 1, [:b, 2, :c]]
+    assert_equal(a.to_h_assoc, a.to_h(:assoc))
+  end
+  
+  def test_to_h_flat_dispatched
+    a = [:a, 1, [:b, 2, :c]]
+    assert_equal(a.to_h_flat, a.to_h(:flat))
+  end
+  
+  def test_to_h_multi_dispatched
+    a = [:a, 1, [:b, 2, :c]]
+    assert_equal(a.to_h_multi, a.to_h(:multi))
+  end
+  
+  def test_to_h_splat_dispatched
+    a = [:a, 1, [:b, 2, :c]]
+    assert_equal(a.to_h_splat, a.to_h(:splat))
+  end
+
 end
 
 
