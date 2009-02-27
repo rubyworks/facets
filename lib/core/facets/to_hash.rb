@@ -27,7 +27,7 @@ class Hash
   # or nil set as the value instead.
   #
   #   h = { :a=>[1], :b=>[1,2], :c=>3, :d=>[] }
-  #   h.dearray_values  #=> { :a=>1, :b=>[1,2], :c=>3, :d=>nil }
+  #   h.dearray_singluar_values  #=> { :a=>1, :b=>[1,2], :c=>3, :d=>nil }
   #
   # CREDIT: Trans
 
@@ -36,7 +36,7 @@ class Hash
     each do |k,v|
       case v
       when Array
-        h[k] = v[0] if v.size < 2
+        h[k] = (v.size < 2) ? v[0] : v
       else
         h[k] = v
       end
