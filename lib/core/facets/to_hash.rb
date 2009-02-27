@@ -98,15 +98,44 @@ class Array
   def to_h(mode=nil)
     case mode
     when :splat
-      to_h_splat
+      return to_h_splat
     when :flat
-      to_h_flat
+      return to_h_flat
     when :multi, true
-      to_h_multi
+      return to_h_multi
     when :assoc
-      to_h_assoc
+      return to_h_assoc
+    else
+      return to_h_auto
     end
+  end
 
+  # Converts an array into a hash. Converting an array
+  # into a hash is not a one-to-one conversion, for this
+  # reason #to_h examines at the array being converted
+  # and then dispatches the conversion to the most sutiable
+  # specialized function. There are three possiblities for this.
+  #
+  # If the array is a collection of perfect pairs, like that
+  # which Hash#to_a generates, then conversion is handled by 
+  # #to_h_flat.
+  #
+  #   a = [ [:a,1], [:b,2] ]
+  #   a.to_h  #=> { :a=>1, :b=>2 }
+  #
+  # If the array contains only arrays, but are not perfect pairs,
+  # then #to_h_multi is called.
+  #
+  #   a = [ [:a,1,2], [:b,2], [:c], [:d] ]
+  #   a.to_h  #=> { :a=>[1,2], :b=>[2], :c=>[], :d=>[] }
+  #
+  # If the array contians objects other then arrays then
+  # the #to_h_splat method is called.
+  #
+  #   a = [ [:a,1,2], 2, :b, [:c,3], 9 ]
+  #   a.to_h  #=> { [:a,1,2]=>2, :b=>[:c,3], 9=>nil } 
+  #
+  def to_h_auto
     pairs = true
     mixed = false
 
