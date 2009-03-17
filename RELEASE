@@ -1,83 +1,49 @@
-Facets 2.5.0 is an important milestone in the development of Facets.
+Facets 2.5.1 fixes a few bugs, makes some small but nice additions
+and improves 1.9 compatibility.
 
-This release has been tested against Rails' ActiveSupport library.
-As long as Facets is loaded after ActiveSupport, everything
-should work fine. Of course, there's no counting for real world
-trials, but all ActiveSupport testcases pass under this scenario.
+The most important addition to make note of is Object#extend, which has
+been overridden to allow a block parameter. This is one of only two or three
+actual "monkey patches" in all of Facets. The block, when provided,
+is used to create an annonymous module which then extends the reciever.
+This is a "good practice" way to extend objects, rather than using class_eval
+on the singleton class.
 
-Secondly, this release is the first of two (or three) down-scaling
-releases intended to remove all the remaining "excess" from the
-library. This is being done for a variety of reasons. Some scripts
-are substantial enough to be one their own and have been spun-off
-into separate largely compatible projects. In this release:
-
-  If you were using...   Use this project instead...
-
-    annotations.rb         Anise
-
-    bytes.rb               RichUnits
-    times.rb
-
-    command.rb             Clio
-    consoleutils.rb
-
-A few others scripts have been deprecated, without an alternative
-recourse, simply because they were too weak, such as  uploadutils.rb,
-or highly experimental, such as chain.rb and eventhook.rb.
-
-Although this release constitutes an over all slimming down of Facets,
-two excellent new libraries have been added.
-
-1) *ini.rb* by Jeena Paradies. While YAML is frequently used by
-Rubyists for configuration files, a full-on serializer like YAML
-is often overkill. INI files provide a lightweight solution
-specifically geared for configuration.
-
-2) *filter.rb* by Brian Candler offers lazy evaluation chains of 
-Enumerable methods. This is an elegant way to optimize contiguous
-maps, selections, etc. --effective even on infinite enumerators.
-(Note, the name of this library may be changed in the next release.)
-
-While work remains to be done, I am happy to say, Facets is 
-finally beginning to approach the level of solidity I set out to
-achieve just over a year ago. Thank the Maker!
-
-Special thanks to Brian Candler, Jeena Paradies and Tyler Rick.
+Special thanks to Erik Veenstra, Pit Capitan and especially Sandor Szücs
+for their contributions to this release.
 
 Enjoy!
 
 
-### 2.5.0 / 2008-11-23
+== 2.5.1 / 2009-03-05
 
-* 9 Major Changes
+* 7 Additions
 
-    * added Brian Candler's Enumerator::Filter
-    * added sparse_array.rb (was old harray.rb)
-    * added Jeena Paradies' ini.rb
-    * renamed CacheDelegator to Memoizer
-    * renamed DictionaryMatcher to just Matcher
-    * deprecated bytes.rb and times.rb (use RichUnits instead)
-    * deprecated uploadutils.rb; ziputils.rb will be (use Folio)
-    * deprecated annotations.rb (use Anise instead)
-    * deprecated command.rb and consoleutils.rb (use Clio instead)
+    * added Hash#group_by_value (thanks to Erik Veenstra) (#131d6c81a5411fb21f005ae8d2051311b0e3e9c5)
+    * added String#file (#952399f7d437f26aee3c4e9747a61e76b7e89735)
+    * added Hash#new_with (Pit Capitan) (#2dca37952e9803e816efc62514e8027fc2e1bf12)
+    * added module/extend.rb, now can take a block. (#cd6fd7dea22a4ca57712773331ca495d1fb46b86)
+    * added hook.rb (#928f39446a01278e9587586fb6c684f3e1b1e36f)
+    * added to_h_auto (#d7d5b02a219f850bc4a3b396de67e63cf005df5c)
+    * overhauled to_hash.rb, now has multiple methods (#5ba2fb2bef735af8afec1b27cf381787baad3a8f)
 
-* 5 Minor Changes
+* 10 Bug Fixes
 
-    * deprecated chain.rb (very expiremental)
-    * deprecated eventhook.rb (moved to ToadCode project)
-    * deprecated tagiter.rb (moved to ToadCode project)
-    * moved Hash#symolize_keys and #stringify_keys to core lib
-      (still recommend #rekey instead though)
-    * switched to git as of 2.4.5
+    * corrected ostruct.rb to test for frozen state on updates  (#1170dd9e1fdd552a98a01056547531ac6c9ee9f4)
+    * fixed String#left_align (#743d17d08f81ff1b4eb69d640a993865a8292335)
+    * fixed conflict between test_name.rb and test_arguments.rb (#5f33a45aff80f42f1644d46d9bd0746a2ae84b6b)
+    * fixed Enumreable#split when reciever is empty array (#11bb453a7e9cf98a8dc698e8a8a10cdb81f69050)
+    * fixed coruption of reciever by Hash#collate (thanks to Tilo Sloboda) (#de5fd8002d5c2452b5dd46051d02d27044506e9b)
+    * fixed Array#to_h, h={} was not initialized (#67deaed1b1dff94ccde641917861ec3b1b5ba643)
+    * fixed test of Module#conflict according ruby19 (#fa2229603f423925d10488bfa090a4c7fb138947)
+    * fixed Hash#dearray_singluar_values
+    * association.rb stores reference when using #new (#4ca00a54bab0850436e769931b3d39e52d1fc9e6)
+    * changed Array#product to make it compatible to ruby 19, deleted block parameter (#28170c739f5c033d5172835fa50b81db83fc1e88)
 
-* 4 Bug Fixes
+* 5 Minor Enhancements
 
-    * memoize.rb, cache was at class-level, now at instance-level
-    * binding/caller.rb, fixed require for callstack.rb
-    * fixed missing require in string/tabto.rb
-    * Fixed some bugs with Time#ago/Time#hence not changing years
-      correctly when you changed months.
-      (For example, Time.utc(2008, 1, 1).ago(12, :months) incorrectly
-      returned 2009-01-01 instead of 2007-01-01.)
-      Changed Time#ago/Time#hence to still work if passed negative number.
+    * split enumerable/collect into map_with_index and compact_map (#a917218ab39cc15fbba6137a9b27911317dc64f2)
+    * improved Array#to_h for 1.9 using flatten(1) (#a9e7f024b2a589c87b1313c4addc5d7e1f5df524)
+    * Dictionary#replace can take regular Hash too (#69d6d8cc132564979e6af774bc252e4320f27d4c)
+    * move test_to_hash.rb from more to core (#06d1fce988e2d3f6372fe68897ccb045450dac6d)
+    * Doc'd that UnboundMethod#name returns Symbol in 1.9, but String in 1.8 (#88efec19f49fa048d936e93d07ab01b38b94d2c6)
 
