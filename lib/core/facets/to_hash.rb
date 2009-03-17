@@ -2,8 +2,8 @@ require 'enumerator' if RUBY_VERSION < "1.9"
 
 class Hash
 
-  # Any array values with less one or no elements will have the element
-  # or nil set as the value instead.
+  # Any array values with be replaced with the first element of the array
+  # Arrays with no elements will be set to nil.
   #
   #   h = { :a=>[1], :b=>[1,2], :c=>3, :d=>[] }
   #   h.dearray_values  #=> { :a=>1, :b=>1, :c=>3, :d=>nil }
@@ -23,15 +23,15 @@ class Hash
     h
   end
 
-  # Any array values with less one or no elements will have the element
-  # or nil set as the value instead.
+  # Any array values with one or no elements will be set to the element
+  # or nil.
   #
   #   h = { :a=>[1], :b=>[1,2], :c=>3, :d=>[] }
-  #   h.dearray_singluar_values  #=> { :a=>1, :b=>[1,2], :c=>3, :d=>nil }
+  #   h.dearray_singular_values  #=> { :a=>1, :b=>[1,2], :c=>3, :d=>nil }
   #
   # CREDIT: Trans
 
-  def dearray_singluar_values
+  def dearray_singular_values
     h = {}
     each do |k,v|
       case v
@@ -193,7 +193,7 @@ class Array
   #   a = [ [:a,1,2], [:b,2], [:c], :d ]
   #   a.to_h  #=> { :a=>[1,2], :b=>[2], :c=>[], :d=>[] }
   #
-  # If the fist entry of any subelements are the same, then
+  # If the first entry of any subelements are the same, then
   # the value will be set to the last occuring value.
   #
   #   a = [ :x, [:x], [:x,1,2], [:x,3], [:x,4] ]
@@ -213,7 +213,7 @@ class Array
   #   a = [ [:a,1,2], [:b,2], [:c], :d ]
   #   a.to_h  #=> { :a=>[1,2], :b=>[2], :c=>[], :d=>[] }
   #
-  # If the fist entry of the subelements is the same, then
+  # If the first entry of the subelements is the same, then
   # the values will be merged using #concat.
   #
   #   a = [ [:a,1,2], [:a,3], [:a,4], [:a], :a ]
@@ -253,6 +253,12 @@ class Hash
 
   def to_h; rehash; end
 
+  # Returns _self_.
+  #
+  # CREDIT: Trans
+
+  def to_hash; self; end
+
 end
 
 module Enumerable
@@ -264,6 +270,26 @@ module Enumerable
 
   def to_h(mode=nil)
     to_a.to_h(mode)
+  end
+
+  def to_h_auto
+    to_a.to_h_auto
+  end
+
+  def to_h_splat
+    to_a.to_h_splat
+  end
+
+  def to_h_flat
+    to_a.to_h_flat
+  end
+
+  def to_h_assoc
+    to_a.to_h_assoc
+  end
+
+  def to_h_multi
+    to_a.to_h_multi
   end
 
   #def to_hash
@@ -290,37 +316,71 @@ if RUBY_VERSION < "1.9"
 
   class Enumerable::Enumerator
   
-    # Convert an Enumerable::Enumerator object directly into a hash.
+    # Convert an Enumerable::Enumerator object into a hash.
+    # This is equivalent to Array#to_h.
+    #
+    #   e1 = [[1,:a],[2,:b],[3,:c]].to_enum
+    #   e1.to_h #=> { 1=>:a, 2=>:b, 3=>:c }
     # 
-    #   e = [1,2,3,4,5].to_enum
-    #   e.to_h  #=> {5=>nil, 1=>2, 3=>4}
-    #   e2 = [1,2,1,3,1,5].to_enum
-    #   e2.to_h #=> {1=>5}
-    #   e3 = [[1,:a],[2,:b],[3,:c]].to_enum
-    #   e3.to_h #=> { 1=>:a, 2=>:b, 3=>:c }
+    #   e2 = [1,2,3,4,5].to_enum
+    #   e2.to_h  #=> {5=>nil, 1=>2, 3=>4}
+    #
+    #   e3 = [1,2,1,3,1,5].to_enum
+    #   e3.to_h #=> {1=>5}
     #
     # CREDIT: Sandor Szücs
 
     def to_h(mode=nil)
       to_a.to_h(mode)
     end
+
+    # This is equivalent to Array#to_h_auto.
+    #
+    def to_h_auto
+      to_a.to_h_auto
+    end
+
+    # This is equivalent to Array#to_h_splat.
+    #
+    def to_h_splat
+      to_a.to_h_splat
+    end
+
+    # This is equivalent to Array#to_h_flat.
+    #
+    def to_h_flat
+      to_a.to_h_flat
+    end
+
+    # This is equivalent to Array#to_h_assoc.
+    #
+    def to_h_assoc
+      to_a.to_h_assoc
+    end
+
+    # This is equivalent to Array#to_h_multi.
+    #
+    def to_h_multi
+      to_a.to_h_multi
+    end
+
   end
 
 else
 
   class Enumerator
 
-    # Convert an Enumerator object directly into a hash.
-    # 
-    #   e3 = [[1,:a],[2,:b],[3,:c]].to_enum
-    #   e3.to_h #=> { 1=>:a, 2=>:b, 3=>:c }
+    # Convert an Enumerator object into a hash.
+    # This is equivalent to Array#to_h.
     #
-    #   e1 = [1,2,3,4,5].to_enum
-    #   e1.to_h  #=> {5=>nil, 1=>2, 3=>4}
+    #   e1 = [[1,:a],[2,:b],[3,:c]].to_enum
+    #   e1.to_h #=> { 1=>:a, 2=>:b, 3=>:c }
     #
-    #   e2 = [1,2,1,3,1,5].to_enum
-    #   e2.to_h #=> {1=>5}
+    #   e2 = [1,2,3,4,5].to_enum
+    #   e2.to_h  #=> {5=>nil, 1=>2, 3=>4}
     #
+    #   e3 = [1,2,1,3,1,5].to_enum
+    #   e3.to_h #=> {1=>5}
     #
     # CREDIT: Sandor Szücs
 
@@ -328,16 +388,36 @@ else
       to_a.to_h(mode)
     end
 
-    #def to_h
-    #  h = {}
-    #  loop do
-    #    x,y = self.next
-    #    h[x] ||= nil
-    #    y = self.next unless y
-    #    h[x] = y
-    #  end
-    #  return h
-    #end
+    # This is equivalent to Array#to_h_auto.
+    #
+    def to_h_auto
+      to_a.to_h_auto
+    end
+
+    # This is equivalent to Array#to_h_splat.
+    #
+    def to_h_splat
+      to_a.to_h_splat
+    end
+
+    # This is equivalent to Array#to_h_flat.
+    #
+    def to_h_flat
+      to_a.to_h_flat
+    end
+
+    # This is equivalent to Array#to_h_assoc.
+    #
+    def to_h_assoc
+      to_a.to_h_assoc
+    end
+
+    # This is equivalent to Array#to_h_multi.
+    #
+    def to_h_multi
+      to_a.to_h_multi
+    end
+
   end
 
 end

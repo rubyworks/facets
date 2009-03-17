@@ -14,6 +14,21 @@ class TestArrayConversion < Test::Unit::TestCase
   #  assert_raise(ArgumentError) { [[1,:a],:b].to_h }
   #end
 
+  def test_to_h_auto
+    a0 = [ [:a,1], [:b,2] ]
+    x0 = { :a=>1, :b=>2 }
+
+    a1 = [ [:a,1,2], [:b,2], [:c], [:d] ]
+    x1 = { :a=>[1,2], :b=>[2], :c=>[], :d=>[] }
+
+    a2 = [ [:a,1,2], 2, :b, [:c,3], 9 ]
+    x2 = { [:a,1,2]=>2, :b=>[:c,3], 9=>nil } 
+
+    assert_equal(x0, a0.to_h_auto)
+    assert_equal(x1, a1.to_h_auto)
+    assert_equal(x2, a2.to_h_auto)  
+  end
+
   def test_to_h_flat
     a = [[1,2],3,4,5]
     x = {1=>2,3=>4,5=>nil}
@@ -27,15 +42,33 @@ class TestArrayConversion < Test::Unit::TestCase
   end
 
   def test_to_h_assoc
-    a = [[:a,1],[:b,2],[:c],:d,[:a,5]]
-    x = {:a=>[5],:b=>[2],:c=>[],:d=>[]}
-    assert_equal(x, a.to_h_assoc)
+    a0 = [[:a,1],[:b,2],[:c],:d,[:a,5]]
+    x0 = {:a=>[5],:b=>[2],:c=>[],:d=>[]}
+
+    a1 = [ [:a,1,2], [:b,2], [:c], :d ]
+    x1 = { :a=>[1,2], :b=>[2], :c=>[], :d=>[] }
+
+    a2 = [ :x, [:x], [:x,1,2], [:x,3], [:x,4] ]
+    x2 = { :x=>[4] }
+
+    assert_equal(x0, a0.to_h_assoc)
+    assert_equal(x1, a1.to_h_assoc)
+    assert_equal(x2, a2.to_h_assoc)
   end
 
   def test_to_h_multi
-    a = [[:a,1],[:b,2],[:c],:d,[:a,5]]
-    x = {:a=>[1,5],:b=>[2],:c=>[],:d=>[]}
-    assert_equal(x, a.to_h_multi)
+    a0 = [[:a,1],[:b,2],[:c],:d,[:a,5]]
+    x0 = {:a=>[1,5],:b=>[2],:c=>[],:d=>[]}
+
+    a1 = [ [:a,1,2], [:b,2], [:c], :d ]
+    x1 = { :a=>[1,2], :b=>[2], :c=>[], :d=>[] }
+
+    a2 = [ [:a,1,2], [:a,3], [:a,4], [:a], :a ]
+    x2 = { :a=>[1,2,3,4,nil,nil] }
+
+    assert_equal(x0, a0.to_h_multi)
+    assert_equal(x1, a1.to_h_multi)
+    assert_equal(x2, a2.to_h_multi)
   end
 
   #def test_to_h_assoc_arrayed
@@ -119,10 +152,10 @@ class TestHashConversion < Test::Unit::TestCase
     assert_equal(x, h.dearray_values)    
   end
   
-  def test_dearray_singluar_values
+  def test_dearray_singular_values
     h = { :a=>[1], :b=>[1,2], :c=>3, :d=>[] }
     x = { :a=>1, :b=>[1,2], :c=>3, :d=>nil }
-    assert_equal(x, h.dearray_singluar_values )
+    assert_equal(x, h.dearray_singular_values )
   end
 
 end
@@ -138,15 +171,86 @@ end
 
 
 class TestEnumeratorConversion < Test::Unit::TestCase
-  
+
   def test_to_h
+    e0 = [1,2,3,4].to_enum
+    x0 = {1=>2,3=>4}
     e1 = [[1,:a],[2,:b],[3,:c]].to_enum
-    e2 = [1,2,3,4].to_enum
-    e3 = [:a,1,:b].to_enum
-    assert_equal( { 1=>:a, 2=>:b, 3=>:c }, e1.to_h )
-    assert_equal( {1=>2, 3=>4}, e2.to_h)
-    assert_equal( {:a=>1,:b=>nil}, e3.to_h)
+    x1 = { 1=>:a, 2=>:b, 3=>:c }
+    e2 = [:a,1,:b].to_enum
+    x2 = {:a=>1,:b=>nil}
+    assert_equal(x0, e0.to_h)
+    assert_equal(x1, e1.to_h)
+    assert_equal(x2, e2.to_h)
   end
   
+  def test_to_h_auto
+    e0 = [ [:a,1], [:b,2] ].to_enum
+    x0 = { :a=>1, :b=>2 }
+    e1 = [ [:a,1,2], [:b,2], [:c], [:d] ].to_enum
+    x1 = { :a=>[1,2], :b=>[2], :c=>[], :d=>[] }
+    e2 = [ [:a,1,2], 2, :b, [:c,3], 9 ].to_enum
+    x2 = { [:a,1,2]=>2, :b=>[:c,3], 9=>nil } 
+    assert_equal(x0, e0.to_h_auto)
+    assert_equal(x1, e1.to_h_auto)
+    assert_equal(x2, e2.to_h_auto)  
+  end  
+
+  def test_to_h_flat
+    e = [[1,2],3,4,5].to_enum
+    x = {1=>2,3=>4,5=>nil}
+    e2 = [:a,1,[:b,2,:c]].to_enum
+    x2 = { :a=>1, :b=>2, :c=>nil }        
+    e3 = [[:a,1],[:b,2]].to_enum
+    x3 = { :a=>1, :b=>2 }    
+    assert_equal(x, e.to_h_flat)
+    assert_equal(x, e.to_h(:flat))
+    assert_equal(x2, e2.to_h_flat)
+    assert_equal(x2, e2.to_h(:flat))
+    assert_equal(x3, e3.to_h_flat)
+    assert_equal(x3, e3.to_h(:flat))
+  end
+
+  def test_to_h_splat
+    e = [1,2,3,4,[5,6]].to_enum
+    x = { 1=>2, 3=>4, [5,6]=>nil }
+    e2 = [:a,1,:b,2,:c].to_enum
+    x2 = { :a=>1, :b=>2, :c=>nil }
+    assert_equal(x, e.to_h_splat)
+    assert_equal(x, e.to_h(:splat))
+    assert_equal(x2, e2.to_h_splat)
+    assert_equal(x2, e2.to_h(:splat))
+  end
+
+  def test_to_h_assoc
+    e = [[:a,1],[:b,2],[:c],:d,[:a,5]].to_enum
+    x = {:a=>[5],:b=>[2],:c=>[],:d=>[]}
+    e2 = [ [:a,1,2], [:b,2], [:c], :d ].to_enum
+    x2 = { :a=>[1,2], :b=>[2], :c=>[], :d=>[] }
+    e3 = [ :x, [:x], [:x,1,2], [:x,3], [:x,4] ].to_enum
+    x3 = { :x=>[4] }
+    assert_equal(x, e.to_h_assoc)
+    assert_equal(x, e.to_h(:assoc))
+    assert_equal(x2, e2.to_h_assoc)
+    assert_equal(x2, e2.to_h(:assoc))
+    assert_equal(x3, e3.to_h_assoc)
+    assert_equal(x3, e3.to_h(:assoc))
+  end
+
+  def test_to_h_multi
+    e = [[:a,1],[:b,2],[:c],:d,[:a,5]].to_enum
+    x = {:a=>[1,5],:b=>[2],:c=>[],:d=>[]}
+    e2 = [ [:a,1,2], [:b,2], [:c], :d ]
+    x2 = { :a=>[1,2], :b=>[2], :c=>[], :d=>[] }
+    e3 = [ [:a,1,2], [:a,3], [:a,4], [:a], :a ]
+    e3 = { :a=>[1,2,3,4,nil,nil] }
+    assert_equal(x, e.to_h_multi)
+    assert_equal(x, e.to_h(:multi))
+    assert_equal(x2, e2.to_h_multi)
+    assert_equal(x2, e2.to_h(:multi))
+    assert_equal(x3, e3.to_h_multi)
+    assert_equal(x3, e3.to_h(:multi))
+  end
+ 
 end
 
