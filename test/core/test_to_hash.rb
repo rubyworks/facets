@@ -64,7 +64,7 @@ class TestArrayConversion < Test::Unit::TestCase
     x1 = { :a=>[1,2], :b=>[2], :c=>[], :d=>[] }
 
     a2 = [ [:a,1,2], [:a,3], [:a,4], [:a], :a ]
-    x2 = { :a=>[1,2,3,4,nil,nil] }
+    x2 = { :a=>[1,2,3,4] }
 
     assert_equal(x0, a0.to_h_multi)
     assert_equal(x1, a1.to_h_multi)
@@ -197,14 +197,14 @@ class TestEnumeratorConversion < Test::Unit::TestCase
   end  
 
   def test_to_h_flat
-    e = [[1,2],3,4,5].to_enum
-    x = {1=>2,3=>4,5=>nil}
+    e1 = [[1,2],3,4,5].to_enum
+    x1 = {1=>2,3=>4,5=>nil}
     e2 = [:a,1,[:b,2,:c]].to_enum
     x2 = { :a=>1, :b=>2, :c=>nil }        
     e3 = [[:a,1],[:b,2]].to_enum
     x3 = { :a=>1, :b=>2 }    
-    assert_equal(x, e.to_h_flat)
-    assert_equal(x, e.to_h(:flat))
+    assert_equal(x1, e1.to_h_flat)
+    assert_equal(x1, e1.to_h(:flat))
     assert_equal(x2, e2.to_h_flat)
     assert_equal(x2, e2.to_h(:flat))
     assert_equal(x3, e3.to_h_flat)
@@ -212,25 +212,25 @@ class TestEnumeratorConversion < Test::Unit::TestCase
   end
 
   def test_to_h_splat
-    e = [1,2,3,4,[5,6]].to_enum
-    x = { 1=>2, 3=>4, [5,6]=>nil }
+    e1 = [1,2,3,4,[5,6]].to_enum
+    x1 = { 1=>2, 3=>4, [5,6]=>nil }
     e2 = [:a,1,:b,2,:c].to_enum
     x2 = { :a=>1, :b=>2, :c=>nil }
-    assert_equal(x, e.to_h_splat)
-    assert_equal(x, e.to_h(:splat))
+    assert_equal(x1, e1.to_h_splat)
+    assert_equal(x1, e1.to_h(:splat))
     assert_equal(x2, e2.to_h_splat)
     assert_equal(x2, e2.to_h(:splat))
   end
 
   def test_to_h_assoc
-    e = [[:a,1],[:b,2],[:c],:d,[:a,5]].to_enum
-    x = {:a=>[5],:b=>[2],:c=>[],:d=>[]}
+    e1 = [[:a,1],[:b,2],[:c],:d,[:a,5]].to_enum
+    x1 = {:a=>[5],:b=>[2],:c=>[],:d=>[]}
     e2 = [ [:a,1,2], [:b,2], [:c], :d ].to_enum
     x2 = { :a=>[1,2], :b=>[2], :c=>[], :d=>[] }
     e3 = [ :x, [:x], [:x,1,2], [:x,3], [:x,4] ].to_enum
     x3 = { :x=>[4] }
-    assert_equal(x, e.to_h_assoc)
-    assert_equal(x, e.to_h(:assoc))
+    assert_equal(x1, e1.to_h_assoc)
+    assert_equal(x1, e1.to_h(:assoc))
     assert_equal(x2, e2.to_h_assoc)
     assert_equal(x2, e2.to_h(:assoc))
     assert_equal(x3, e3.to_h_assoc)
@@ -238,14 +238,14 @@ class TestEnumeratorConversion < Test::Unit::TestCase
   end
 
   def test_to_h_multi
-    e = [[:a,1],[:b,2],[:c],:d,[:a,5]].to_enum
-    x = {:a=>[1,5],:b=>[2],:c=>[],:d=>[]}
+    e1 = [[:a,1],[:b,2],[:c],:d,[:a,5]].to_enum
+    x1 = {:a=>[1,5],:b=>[2],:c=>[],:d=>[]}
     e2 = [ [:a,1,2], [:b,2], [:c], :d ]
     x2 = { :a=>[1,2], :b=>[2], :c=>[], :d=>[] }
     e3 = [ [:a,1,2], [:a,3], [:a,4], [:a], :a ]
-    e3 = { :a=>[1,2,3,4,nil,nil] }
-    assert_equal(x, e.to_h_multi)
-    assert_equal(x, e.to_h(:multi))
+    x3 = { :a=>[1,2,3,4] }
+    assert_equal(x1, e1.to_h_multi)
+    assert_equal(x1, e1.to_h(:multi))
     assert_equal(x2, e2.to_h_multi)
     assert_equal(x2, e2.to_h(:multi))
     assert_equal(x3, e3.to_h_multi)
