@@ -1,7 +1,7 @@
 begin
   require 'setup'
   $setup_installed = true  
-rescue => LoadError
+rescue LoadError
   $setup_installed = false
 puts "NOTP"
 end
