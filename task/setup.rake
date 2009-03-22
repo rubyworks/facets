@@ -1,13 +1,20 @@
-begin
-  require 'setup'
-  $setup_installed = true  
-rescue LoadError
-  $setup_installed = false
-puts "NOTP"
+
+def load_setup
+  begin
+    require 'setup'
+    $setup_installed = true
+  rescue LoadError
+    $setup_installed = false
+    puts "NOTP"
+  end
 end
 
+private :load_setup
+
 desc "install to ruby site location"
-task "setup:install" do
+task :install do
+  load_setup
+  
   if $setup_installed
     sh "setup.rb all"
   else
@@ -18,7 +25,9 @@ task "setup:install" do
 end
 
 desc "uninstall from ruby site location"
-task "setup:uninstall" do
+task :uninstall do
+  load_setup
+
   if $setup_installed
     sh "setup.rb uninstall"
   else
@@ -27,4 +36,3 @@ task "setup:uninstall" do
     puts "or 'gem install setup'."
   end
 end
-
