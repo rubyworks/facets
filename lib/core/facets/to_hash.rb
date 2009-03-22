@@ -1,6 +1,6 @@
 require 'enumerator' if RUBY_VERSION < "1.9"
 
-require 'facets/dearray_values'
+require 'facets/hash/dearray_values'
 
 class Array
 
