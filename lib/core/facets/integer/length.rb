@@ -5,6 +5,7 @@
 # 10.length  #=> 2
 # 100.length #=> 3
 #
+# CREDIT: Victor H. Goff III
 
 class Integer
   # Returns the length of an integer as an integer.
