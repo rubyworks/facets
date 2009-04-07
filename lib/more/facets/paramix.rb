@@ -44,19 +44,19 @@ require 'facets/module/modspace'
 #   end
 #
 #   class MyClass
-#     include Mixin[:name => 'Ruby']
+#     include MyMixin[:name => 'Ruby']
 #   end
 #
 #   m = MyClass.new
-#   m.hello -> 'Hello from Ruby!'
+#   m.hello   #=> 'Hello from Ruby!'
 #
 # You can view the full set of parameters via the #mixin_parameters
 # class method, which returns a hash keyed on the included modules.
 #
-#   MyClass.mixin_parameters         #=> {MyMixin=>{:name=>'Ruby'}}
+#   MyClass.mixin_parameters           #=> {MyMixin=>{:name=>'Ruby'}}
 #   MyClass.mixin_parameters[MyMixin]  #=> {:name=>'ruby'}
 #
-# The include Praamix is equivalent to:
+# The include Paramix is equivalent to:
 #
 #   def [](parameters)
 #     Paramix.new(self, parameters)
@@ -65,7 +65,7 @@ require 'facets/module/modspace'
 # Paramix.new can also take a block that injects code into the class
 # or module including the parametric mixin. This is useful as an
 # alternative to using the #included callback for creating dynamic
-# mixins.. For example:
+# mixins. For example:
 #
 #   def self.[](parameters)
 #     Paramix.new(self, parameters) do
