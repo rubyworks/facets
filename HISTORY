@@ -1,0 +1,261 @@
+== 2.5.1 / 2009-03-05
+
+* 7 Additions
+
+    * added Hash#group_by_value (thanks to Erik Veenstra)
+    * added String#file
+    * added Hash#new_with (Pit Capitan)
+    * added module/extend.rb, now can take a block.
+    * added hook.rb
+    * added to_h_auto
+    * overhauled to_hash.rb, now has multiple methods
+
+* 10 Bug Fixes
+
+    * corrected ostruct.rb to test for frozen state on updates
+    * fixed String#left_align
+    * fixed conflict between test_name.rb and test_arguments.rb
+    * fixed Enumreable#split when reciever is empty array
+    * fixed coruption of reciever by Hash#collate (thanks to Tilo Sloboda)
+    * fixed Array#to_h, h={} was not initialized
+    * fixed test of Module#conflict according ruby19
+    * fixed Hash#dearray_singluar_values
+    * association.rb stores reference when using #new
+    * changed Array#product to make it compatible to ruby 19, deleted block parameter
+
+* 5 Minor Enhancements
+
+    * split enumerable/collect into map_with_index and compact_map
+    * improved Array#to_h for 1.9 using flatten(1)
+    * Dictionary#replace can take regular Hash too
+    * move test_to_hash.rb from more to core
+    * Doc'd that UnboundMethod#name returns Symbol in 1.9, but String in 1.8
+
+
+== 2.5.0 / 2008-11-23
+
+* 9 Major Changes
+
+    * added Brian Candler's Enumerator::Filter
+    * added sparse_array.rb (was old harray.rb)
+    * added Jeena Paradies' ini.rb
+    * renamed CacheDelegator to Memoizer
+    * renamed DictionaryMatcher to just Matcher
+    * deprecated bytes.rb and times.rb (use RichUnits instead)
+    * deprecated uploadutils.rb; ziputils.rb will be (use Folio)
+    * deprecated annotations.rb (use Anise instead)
+    * deprecated command.rb and consoleutils.rb (use Clio instead)
+
+* 5 Minor Changes
+
+    * deprecated chain.rb (very expiremental)
+    * deprecated eventhook.rb (moved to ToadCode project)
+    * deprecated tagiter.rb (moved to ToadCode project)
+    * moved Hash#symolize_keys and #stringify_keys to core lib
+      (still recommend #rekey instead though)
+    * switched to git as of 2.4.5
+
+* 4 Bug Fixes
+
+    * memoize.rb, cache was at class-level, now at instance-level
+    * binding/caller.rb, fixed require for callstack.rb
+    * fixed missing require in string/tabto.rb
+    * Fixed some bugs with Time#ago/Time#hence not changing years
+      correctly when you changed months.
+      (For example, Time.utc(2008, 1, 1).ago(12, :months) incorrectly
+      returned 2009-01-01 instead of 2007-01-01.)
+      Changed Time#ago/Time#hence to still work if passed negative number.
+
+
+== 2.4.5 / 2008-10-02
+
+* 6 Major Enhancements
+
+    * Re-added date.rb to lore library, and removed from core.  (#r1014)
+    * Much improved date.rb extension now in Lore library.  (#r1027)
+    * Deprecated kernel/suppress. Use Exception.suppress from now on.  (#r1040)
+    * Deprecated string/style.rb. Use English project instead.  (#r1074)
+    * Console namespace is no longer supported (for Ansicode).  (#r1077)
+    * enumerable/mode.rb, Enumerable#mode returns array since there can be more than one.  (#r1079)
+    * OpenCascade automatically creates nodes, use foo? to query.  (#r1056)
+
+* 11 Minor Enhancements
+
+    * Moved variablize methods out of metaid.rb and into separate files (string/ and symbol/).  (#r1042)
+    * Added Time#advance.  (#r1046)
+    * Speed up of Integer odd/even methods.  (#r1057)
+    * Array#index now takes a block (this is a core override).  (#r1059)
+    * Spilt file/write.rb into separate method files (append, create, writelines).  (#r1073)
+    * Modified Enumerable#split to behave like String#split.  (#r1076)
+    * hash/op.rb, split into separate method files.  (#r1081)
+    * Added string/modulize. string/methodize handles path names now too.  (#r1085)
+    * Class#cattr is now part of core.  (#r1089)
+
+* 2 Bug Fixes
+
+    * OpenStruct#to_h dups internal table.  (#r1015)
+    * Fixed require of string/xor in bicrypt.rb.  (#r1039)
+    * integer/odd.rb, fixed Ruby 1.9 condition.  (#r1080)
+
+
+== 2.4.4 / 2008-09-01
+
+* 7 Major Enhancements
+
+    * Added string/mask providing powerful string manipulation.  (#997)
+    * BasicObject is now just a synonm for BlankSlate unless Ruby 1.9.  (#1000)
+    * Added Symbol#plain?, Symbol#query? and Symbol#setter?  (#1011)
+    * Removed Time#to_date. 
+      * Due to clobberd RI Docs (!) this should have been in Lore lib date.rb
+      * Moved to Lore date.rb. (#1012)
+    * Re-added date.rb to lore library, and removed from core.  (#1014)
+    * Much improved date.rb extension now in Lore library.  (#1027)
+    * Deprecated kernel/suppress. Use Exception.suppress from now on.  (#1040)
+
+* 8 Minor Enhancements
+
+    * Moved style.rb to string/stylize.rb  (#998)
+    * Renamed string/subtract to string/op_sub. 
+      Old name will remain for time being for compatability. (#1002)
+    * Module#instance_method_define? now only applies to public methods.  (#1003)
+    * Array#index accepts a block (one of the few core overrides).  (#1004)
+    * Moved Hash#<< from hash/update.rb to hash/op_push.rb  (#1005)
+    * Add facets class files (eg. facets/string) have been made dynamic.  (#1013)
+    * Moved variablize methods out of metaid.rb and into separate files (string/ and symbol/).  (#1042)
+    * Added Time#advance.  (#1046)
+
+* 3 Bug Fixes
+
+    * Hash#<< now return self  (#1001)
+    * OpenStruct#to_h dups internal table.  (#1015)
+    * Fixed require of string/xor in bicrypt.rb.  (#1039)
+
+
+== 2.4.3 / 2008-08-14
+
+* 12 Major Changes
+
+    * Changed File#rewrite to not use the in-place change of the string.
+    * Deprecate Hash#keys_to_s and Hash#keys_to_sym.
+    * Renamed Class#to_pathname and #to_methodname to #pathize and #methodize.
+    * Deprecated Console:: namespace for ANSICode.
+    * Added Time#trunc and Time#round to Core.
+    * Added Ken Bloom's DictionaryMatcher class (will be renamed in future version)
+    * Added Array#recursively and fixed bug in Hash#recursively.
+    * Added kernel/instance method which provides a fluent interface to private object space.
+    * Moved Mentalguy's lazy.rb to core!
+    * Added Indexable and Stackable to core.
+    * Deprecated ruby.rb, which was a sort 1.9 compatibility layer.
+    * The ruby.rb methods were moved to core, wrapped in a 1.9 condition.
+
+* 7 Minor Changes
+
+    * Fixed Time#hence changed years when changing months.
+    * Fixed Time#hence to flip year correctly when adding months.
+    * Added optional argument to Dictionary#first and #last.
+    * Improved File#rootname --it is now more robust.
+    * Made FileUtils#whereis a module_function again.
+    * Although not perceptible to the end user, there are now three divisions lib/core, lib/lore, lib/more.
+    * Created Lore library to house extensions to Ruby's standard library.
+
+
+== 2.4.2 / 2008-08-12
+
+    * See 2.4.3. This was just a test release that was available for only one day.
+
+
+== 2.4.1 / 2008-04-03
+
+* 5 Changes
+
+    * Comparing to ActiveSupport, found 63 extension clashes, but most are due to 1.9 features and the rest should be compatible.
+    * A much improved paramix.rb has been returned to the library; but please note it's not quite finished yet.
+    * Reatomized a number of Kernel and String methods. Reatomization is nearly complete.
+    * Deprecated behavior.rb. It was not robust.
+    * Added basex.rb, library for working in any encoding base using any character set (base62 is the default).
+
+
+== 2.4.0 / 2008-03-24
+
+* 
+
+    * String#to_re and String#to_rx have swapped default behaviors. #to_rx escapes, #to_re does not.
+    * The Console namespace is being deprecated. command.rb and arguments.rb now use CLI naemspace.
+    * #compare_on and #equate_on are now "mixin methods" Comparable() and Equateable().
+    * Enumerable#product, #combintations and #permutations have change to be Ruby 1.9 compatible.
+    * thread.rb, map_send, et al, block is passed to send instead of yielding on result.
+    * namespace.rb has been renamed to methodspace.rb.
+    * Ruby 1.9 defined a new Proc#curry method, so Facets version has been made compatible.
+    * The old curry method is now called #partial, as in "partial application".
+    * Deprecated interface.rb. Perhaps a better approach but nonetheless extraneous.
+    * Deprecated paramix.rb. A better way is to use a capitialized methods. (Perhaps a lib for that?)
+    * Brought back a few web related libs, htmlfilter.rb and cssfilter.rb in particular.
+    * camelcase and snakecase are core extensions. For specialized styles use String#style in style.rb.
+    * This was a fairly large and fast-paced update, so unfortunately not all changes are listed this time.
+
+
+== 2.3.0 / 2008-02-01
+
+    * Reorganized library into smaller groups: core, more, class and mixin.
+    * Added tracepoint.rb back to the library.
+    * Fixed multiglob_r bug, so it will NOT follow symlinks.
+
+
+== 2.2.1 / 2007-12-22
+
+    * Got rid of methods subdir. All method redirects are in core/.
+
+
+== 2.2.0 / 2007-12-13
+
+    * A lot of rdoc updates to core extensions --as promised ;)
+    * Just about every method now has at least a brief explinaiton and an example.
+    * integer/bitmask.rb has changed a bit --pun intended ;) Deprecated some methods and now use "~" instead of "-" to clear bits.
+    * The name Array#unzip didn't makes sense, it was renamed to #modulate (though #collate seems better?)
+    * Renamed Enumerable#collate to #mash (Map hASH); #collate and #graph remain aliases for the time being.
+    * Deprecated Module#include_and_extend. Just use both silly.
+    * More lib pp_s.rb has been removed. Use #pretty_inspect instead.
+    * Split binding extensions up a bit more finely --eval.rb sprouted here.rb, self.rb and defined.rb.
+    * Move Time#stamp out of conversion.rb and into time/ dir, and remove to_s alias.
+    * Preliminary addition of Matthew Harris' excellent duration.rb lib (will integrate with times.rb better in future).
+    * Added if clauses to handle upcoming Ruby 1.9 gracefully. Facets should now be just about ready for use with 1.9.
+
+
+== 2.1.3 / 2007-11-28
+
+    * Fixed minor oddity in Enumerable/collate.
+    * Fixed major issue with 2.1.2 where it would not core facets correctly.
+
+
+== 2.1.2 / 2007-11-22
+
+    * Dir::multiglob no longer handels -/+ modifiers. Use FileList instead.
+    * Fixed task/install script.
+    * Improved task/changes.
+
+
+== 2.1.1 / 2007-11-16
+
+    * Fixed bug in command.rb that clobbered options.
+    * Added kernel/ergo.rb.
+
+
+== 2.1.0 / 2007-11-10
+
+    * command.rb has been completely rewritten. The API has changed completely!
+    * There is no longer a Commmand::Optoins class. Use Console::Arguments instead.
+    * Added BiCrypt class to crypt.rb for simple two-way encyrption.
+    * module/attr.rb now has attr_reader!, attr_writer! and attr_accessor!
+    * All attr_xxx methods have coresponding alias_xxx methods.
+    * Fixed bug in Enumerable#cluster_by which returned nil instead of [].
+
+
+== 2.0.5 / 2007-11-07
+
+    * Added final methods Gavin Sinclair's Extensions project (contributed by Noah Gibbs).
+    * Fixes bug with Dictionary#initialize
+    * Fixes bug with Hash#-
+    * Also improves changelog production.
+    * Made #alias_method_chain compatible with current ActiveSupport version.
+
+
