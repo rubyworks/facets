@@ -1,1 +1,1 @@
-require 'facets/uppercase'
+require 'facets/string/uppercase'
