@@ -120,19 +120,16 @@ class String
       self
     end
 
-    # old def
-
-    #def word_wrap(max=80)
-    #  c = dup
-    #  c.word_wrap!(max)
-    #  c
-    #end
-
-    #def word_wrap!(max=80)
-    #  raise ArgumentError, "Wrap margin too low: #{n}" if max <= 2
-    #  #gsub!( Regexp.new( "(.{1,#{max-1}}\\w)\\b\\s*" ), "\\1\n")
-    #  gsub!( /(.{1,#{max-1}}\S)([ ]|\n)/, "\\1\n")
-    #end
+    #--
+    # (OLD DEFINITION)
+    #
+    # def word_wrap!(max=80)
+    #   raise ArgumentError, "Wrap margin too low: #{n}" if max <= 2
+    #   #gsub!( Regexp.new( "(.{1,#{max-1}}\\w)\\b\\s*" ), "\\1\n")
+    #   gsub!( /(.{1,#{max-1}}\S)([ ]|\n)/, "\\1\n")
+    # end
+    #
+    #++
 
     # Returns short abstract of long strings; not exceeding +range+
     # characters. If range is an integer then the minimum is 20%
