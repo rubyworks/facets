@@ -4,7 +4,7 @@
 #
 # Archive::Tar::Minitar is a pure-Ruby library and command-line
 # utility that provides the ability to deal with POSIX tar(1) archive
-# files. The implementation is based heavily on Mauricio Fern�dez's
+# files. The implementation is based heavily on Mauricio Ferna'ndez's
 # implementation in rpa-base, but has been reorganised to promote
 # reuse in other projects.
 #
@@ -16,7 +16,7 @@
 # NOTE::: support for typeflags 1 and 2 is not yet implemented in this
 #         version.
 #
-# This release is version 0.5.1. The library can only handle files and
+# This release is version 0.5.2. The library can only handle files and
 # directories at this point. A future version will be expanded to
 # handle symbolic links and hard links in a portable manner. The
 # command line utility, minitar, can only create archives, extract
@@ -64,16 +64,16 @@
 #
 # == Version
 #
-#   0.5.1
+#   0.5.2
 #
 # == Authors
 #
-# * Mauricio Julio Fern�dez Pradier
+# * Mauricio Julio Ferna'ndez Pradier
 # * Austin Ziegler
 #
 # == Copying
 #
-# Copyright 2004 Mauricio Julio Fern�dez Pradier and Austin Ziegler
+# Copyright 2004 Mauricio Julio Ferna'ndez Pradier and Austin Ziegler
 #
 # This program is based on and incorporates parts of RPA::Package from
 # rpa-base (lib/rpa/package.rb and lib/rpa/util.rb) by Mauricio and
@@ -227,10 +227,10 @@ end
 require 'fileutils'
 require 'find'
 
-  # = Archive::Tar::Minitar 0.5.1
+  # = Archive::Tar::Minitar 0.5.2
   # Archive::Tar::Minitar is a pure-Ruby library and command-line
   # utility that provides the ability to deal with POSIX tar(1) archive
-  # files. The implementation is based heavily on Mauricio Fern�dez's
+  # files. The implementation is based heavily on Mauricio Ferna'ndez's
   # implementation in rpa-base, but has been reorganised to promote
   # reuse in other projects.
   #
@@ -242,7 +242,7 @@ require 'find'
   # NOTE::: support for typeflags 1 and 2 is not yet implemented in this
   #         version.
   #
-  # This release is version 0.5.1. The library can only handle files and
+  # This release is version 0.5.2. The library can only handle files and
   # directories at this point. A future version will be expanded to
   # handle symbolic links and hard links in a portable manner. The
   # command line utility, minitar, can only create archives, extract
@@ -288,20 +288,20 @@ require 'find'
   #   end
   #
   # == Copyright
-  # Copyright 2004 Mauricio Julio Fern�dez Pradier and Austin Ziegler
+  # Copyright 2004 Mauricio Julio Ferna'ndez Pradier and Austin Ziegler
   #
   # This program is based on and incorporates parts of RPA::Package from
   # rpa-base (lib/rpa/package.rb and lib/rpa/util.rb) by Mauricio and
   # has been adapted to be more generic by Austin.
   #
   # 'minitar' contains an adaptation of Ruby/ProgressBar by Satoru
-  # Takabayashi <satoru@namazu.org>, copyright  2001 - 2004.
+  # Takabayashi <satoru@namazu.org>, copyright 2001 - 2004.
   #
   # This program is free software. It may be redistributed and/or
   # modified under the terms of the GPL version 2 (or later) or Ruby's
   # licence.
 module Archive::Tar::Minitar
-  VERSION = "0.5.1"
+  VERSION = "0.5.2"
 
     # The exception raised when a wrapped data stream class is expected to
     # respond to #rewind or #pos but does not.
