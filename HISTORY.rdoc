@@ -1,29 +1,38 @@
+= Facets History
+
 == 2.5.3 / 2009-07-03
 
 Facets 2.5.3 fixes an arity bug with Module#extend --one of the
-very few actual core overrides in Facets, and it removes htmlfilter.rb
-due to a licensing incompatability.
+very few actual core overrides in Facets. It also removes htmlfilter.rb
+and cssfilter.rb due to a licensing incompatability. These scripts
+are now available as a separate pacakge called 'htmlfilter'.
 
 * 2 Major Enhancements
-  * Removed htmlfilter.rb due to licensing issues.
-  * Also removed cssfilter.rb ('gem install htmlfilter' now)
+
+    * Removed htmlfilter.rb due to licensing issues.
+    * Also removed cssfilter.rb ('gem install htmlfilter' now)
+
 * 1 Minor Enhancements
-  * Removed Kernel#__HERE__ as it simply cannot work.
-  (Ruby 1.9.2 will offer #source_location for the same,, btw.)
+
+    * Removed Kernel#__HERE__ as it simply cannot work.
+      (Ruby 1.9.2 will offer #source_location for the same,, btw.)
+
 * 1 Bug Fixes
-  * Fixed arity issue with Module#extend.
+
+    * Fixed arity issue with Module#extend.
 
 
 == 2.5.2 / 2009-04-07
 
 Facets 2.5.2 is a simple maintentance release.
 
-=== Changes
-
 * 1 Major Enhancement
-** added string/uppercase and lowercase
+
+    * added string/uppercase and lowercase
+
 * 1 Minor Enhancement
-** adjustemnts to to_hash.rb
+
+    * adjustemnts to to_hash.rb
 
 
 == 2.5.1 / 2009-03-05
@@ -40,8 +49,6 @@ on the singleton class.
 
 Special thanks to Erik Veenstra, Pit Capitan and especially Sandor Szücs
 for their contributions to this release.
-
-=== Changes
 
 * 7 Major Enhancements
 
@@ -158,10 +165,9 @@ Special thanks to Brian Candler, Jeena Paradies and Tyler Rick.
 
 == 2.4.5 / 2008-10-02
 
-Facets 2.4.5 is a maintaince release. This release is notable
-however in that it will likely be the last that to use SVN.
-Facets will be switching to Git. Also, some libraries that
-have been flagged "to be deprecated" for some time will
+Facets 2.4.5 is a maintaince release. This release is notable however in that
+it will likely be the last that to use SVN. Facets will be switching to Git.
+Also, some libraries that have been flagged "to be deprecated" for some time will
 finally be so.
 
 * 8 Major Enhancements
@@ -205,7 +211,12 @@ finally be so.
 
 == 2.4.4 / 2008-09-01
 
-* 7 Major Enhancements
+Facets 2.4.4 includes a major bug fix that caused Facets not to load properly,
+having to do with a Time extension. The problem has been fixed. In addition,
+this release put Facets only a few pending adjustments away from full
+Rails/ActiveSupport compatibility.
+
+* 10 Major Enhancements
 
     * Added string/mask providing powerful string manipulation.  (#997)
     * BasicObject is now just a synonm for BlankSlate unless Ruby 1.9.  (#1000)
@@ -216,8 +227,14 @@ finally be so.
     * Re-added date.rb to lore library, and removed from core.  (#1014)
     * Much improved date.rb extension now in Lore library.  (#1027)
     * Deprecated kernel/suppress. Use Exception.suppress from now on.  (#1040)
+    * Improved date.rb and moved to LORE library, and removed from CORE.  [major]
+    * Deprecated kernel/suppress. Use Exception.suppress from now on.  [major]
+    * Deprecated String#to_time.
+      * This method reqiures the loading of a number of other standard libs.
+      * We can reconsider adding it again if we decide these other libs should be core.
+      * Or if we find a more suitable way to define the method.
 
-* 8 Minor Enhancements
+* 17 Minor Enhancements
 
     * Moved style.rb to string/stylize.rb  (#998)
     * Renamed string/subtract to string/op_sub. 
@@ -228,49 +245,60 @@ finally be so.
     * Add facets class files (eg. facets/string) have been made dynamic.  (#1013)
     * Moved variablize methods out of metaid.rb and into separate files (string/ and symbol/).  (#1042)
     * Added Time#advance.  (#1046)
+    * Added qua_class.rb. Yea. It really is my favorite.
+    * Added simple functional test that loads all of Facets.
+    * Added a benchmark for measuring how fast Facets loads. (Core < 1sec!)
+    * Made Module#alias_method_chain a public method (for better Rails support).
+    * Wrapped Nilclass#to_f in 1.9 condition.
+    * float/round.rb redirects to numeric/round.rb.
+    * numeric/float.rb holds rounding methods for all classed Numeric, Integer and Float.
+    * Replaced Kernel#instance_exec with Mauricio's version.
+    * Improved String#each_char to work like Ruby 1.9.
+      * This loads strscan.rb.
+      * It is wrapped in a 1.9 condition.
 
-* 3 Bug Fixes
+* 8 Bug Fixes
 
     * Hash#<< now returns self  (#1001)
     * OpenStruct#to_h dups internal table.  (#1015)
     * Fixed require of string/xor in bicrypt.rb.  (#1039)
     * Fixed facets.rb to use relative paths.
-
-* More Changes
-
-    * date.rb (stamp) fixed ref to constant FORMAT.
-    * Updated all per-class loaders to use relative paths.
-    * Added qua_class.rb. Yea. It really is my favorite.
-    * Moved variablize methods out of metaid.rb and into separate files (string/ and symbol/).  [minor]
-    * Deprecated String#to_time.
-      * This method reqiures the loading of a number of other standard libs.
-      * We can reconsider adding it again if we decide these other libs should be core.
-      * Or if we find a more suitable way to define the method.
-    * Deprecated kernel/suppress. Use Exception.suppress from now on.  [major]
-    * Fixed require of string/xor in bicrypt.rb.  [bug]
     * Fixed cgi.rb (CGI is a class not a module).
-    * Added a benchmark for measuring how fast Facets loads. (Core < 1sec!)
-    * Moved README.* to doc/.
-    * Added simple functional test that loads all of Facets.
-    * Remove doc/notes and add README.* files.
-    * Added Instantise as a synonym for Instantize.
-    * Much improved date.rb extension now in Lore library.  [major]
-    * Made Module#alias_method_chaing a public method (for better Rails support).
-    * Wrapped Nilclass#to_f in 1.9 condition.
-    * float/round.rb redirects to numeric/round.rb.
-    * numeric/float.rb holds rounding methods for all classed Numeric, Integer and Float.
-    * Replace Kernel#instance_exec with Mauricio's version.
-    * Wrapped String#to_time in Ruby 1.9 condition.
-    * Improved String#each_char to work like Ruby 1.9.
-      * This loads strscan.rb.
-      * It is wrapped in a 1.9 condition.
     * OpenStruct#to_h dups internal table.  [bug]
-    * Re-added date.rb to lore library, and removed from core.  [major]
+    * Fixed require of string/xor in bicrypt.rb.  [bug]
+    * date.rb (stamp) fixed ref to constant FORMAT.
 
 
 == 2.4.3 / 2008-08-14
 
-* 12 Major Changes
+Facets is almost fully interoperable with ActiveSupport and Ruby 1.9.
+We will continue to improve this interoperability in upcoming releases.
+
+As a REMINDER, Facets 2.4+ now encourages:
+
+  require 'facets'
+
+This is better than cherry-picking methods. It may seem counter-intuitive,
+but it actually proves more advantages to do this for the sake of
+improved interoperability. The practice of cherry-picking can become 
+problematic if other dependent libraries have cherry-picked different
+methods. In those cases these distinctions go unaccounted and untested.
+
+Note that this release does not include a setup.rb script. We are working
+on a new version of this script, which we plan to include in the next release.
+
+This release give special thanks to the following people for their contributions:
+
+* Ken Bloom
+* Nick Caruso
+* Evgeniy Dolzhenko
+* Andy Freeman
+* Tomasz Muras
+* Dave Myron
+
+And of course, to anyone else I failed to mention that has contributed.
+
+* 17 Major Enhancements
 
     * Changed File#rewrite to not use the in-place change of the string.
     * Deprecate Hash#keys_to_s and Hash#keys_to_sym.
@@ -284,8 +312,13 @@ finally be so.
     * Added Indexable and Stackable to core.
     * Deprecated ruby.rb, which was a sort 1.9 compatibility layer.
     * The ruby.rb methods were moved to core, wrapped in a 1.9 condition.
+    * BasicObject is now just a synonm for BlankSlate unless Ruby 1.9.  [major]
+    * Moved Indexable and Stackable to core.
+    * Deprecated Console:: namespace for ANSICode.
+    * Renamed Class#to_pathname and #to_methodname to #pathize and #methodize.
+    * Added Symbol#plain?, Symbol#query? and Symbol#setter?  [major]
 
-* 7 Minor Changes
+* Minor Enhancements
 
     * Fixed Time#hence changed years when changing months.
     * Fixed Time#hence to flip year correctly when adding months.
@@ -295,213 +328,112 @@ finally be so.
     * Although not perceptible to the end user, there are now three divisions lib/core, lib/lore, lib/more.
     * Created Lore library to house extensions to Ruby's standard library.
     * Add facets class files (eg. facets/string) have been made dynamic.  [minor]
+    * Moved binding/opvars from core to more.
+    * Deprecate Hash#keys_to_s and Hash#keys_to_sym.
+      * These are the original versions of these methods.
+      * But now we can use #rekey(:to_s) and #rekey(:to_sym) instead.
+    * Split kernel/load.rb into require_all.rb and require_local.rb.
+    * Array#index accepts a block (one of the few core overrides).  [minor]
+    * Added hash/symbolize_keys and stringify_keys.
+    * Modified script/test to display $LOAD_PATH before running tests.
+    * Split module/alias.rb up into alias_accessor, alias_module_function and alias_method_chain.
+    * Added file/split_root.
+    * Added #bump method to VersionNumber class.*
+    * Module#instance_method_define? now only applies to public methods.  [minor]
+    * Renamed string/subtract to string/op_sub. 
+      Old name will remain for time being for compatability. [minor]
+    * Added #glob and #glob_first as extensions to Pathname.
+    * Moved style.rb to string/stylize.rb  [minor]
+    * Added string/mask providing powerful string manipulation.  [major]
+    * Added warning to bytes --use RichUnits instead.
+    * Added niclass/ergo whic points back to kernel/ergo.
+    * Made core/facets/hash.rb dynamic.
+    * Renamed arguments.rb and CLI::Arguments to argvector.rb and Argvector.*
+    * Updated warn line fore eventual deprecation of fileshell and arguments.*
+    * Added facets-load.rb to allow old school cherry picking.*
+      * Between 2.0 and 2.4 require 'facets' simply added core to LOAD_PATH.
+      * Starting with 2.4 it loads all of core automatically instead.
+      * facets-load.rb provides a way to use the old behavior.
+            require 'facets-load.rb
+            require 'kernel/with'
+            require 'symbol/to_proc'
+        This adds the path to the end of LOAD_PATH to prevent any load conflicts.
+    * Added Jim Weirich's BlankSlate class.
+      * This is a temporary measure be compatible w/ AcitveSupport's BasicObject.
+    * Added block to Array#index.
+      * This is one of the few core overrides in Facets.
+      * It is a feature already in Ruby 1.9.
 
-        * Added Symbol#plain?, Symbol#query? and Symbol#setter?  [major]
-        * Move admin/sow to admin/share.
-        * Moved old changelogs to archive.
-        * Added a log/archive.
-        * Fixed tests for BasicObject and Hash#slice.
-        * Added admin/share dirctory.
-        * Moved Hash#<< from hash/update.rb to hash/op_push.rb  [minor]
-        * Array#index accepts a block (one of the few core overrides).  [minor]
-        * Module#instance_method_define? now only applies to public methods.  [minor]
-        * Renamed string/subtract to string/op_sub. 
-          Old name will remain for time being for compatability. [minor]
-        * Hash#<< now return self  [bug]
-        * BasicObject is now just a synonm for BlankSlate unless Ruby 1.9.  [major]
-        * Added #glob and #glob_first as extensions to Pathname.
-        * Moved style.rb to string/stylize.rb  [minor]
-        * Added string/mask providing powerful string manipulation.  [major]
-        * Added warning to bytes --use RichUnits instead.
-        * Added Jim Weirich's BlankSlate class.
-          * This is a temporary measure be compatible w/ AcitveSupport's BasicObject.
-        * Added block to Array#index.
-          * This is one of the few core overrides in Facets.
-          * It is a feature already in Ruby 1.9.
-        * Added niclass/ergo whic points back to kernel/ergo.
-        * Added reap and sow to admin/.
-        * Made core/facets/hash.rb dynamic.
-        * Renamed arguments.rb and CLI::Arguments to argvector.rb and Argvector.*
-        * Added #bump method to VersionNumber class.*
-        * Updated warn line fore eventual deprecation of fileshell and arguments.*
-        * Added facets-load.rb to allow old school cherry picking.*
-          * Between 2.0 and 2.4 require 'facets' simply added core to LOAD_PATH.
-          * Starting with 2.4 it loads all of core automatically instead.
-          * facets-load.rb provides a way to use the old behavior.
-                require 'facets-load.rb
-                require 'kernel/with'
-                require 'symbol/to_proc'
-          * It adds the path to the end of LOAD_PATH to prevent any load conflicts.
-        * Added file/split_root.*
-        * Made module/alias_method_chain and alias_accessor separate files.*
-        * Split module/alias.rb up into alias_accessor, alias_module_function and alias_method_chain.
-        * Renamed Instantise to Instantize.
+* 2 Bug Fixes
 
-2008-08-13  transami
-
-        * Modified script/test to display $LOAD_PATH before running tests.
-        * Fixed dir tests to require 'fileutils'.
-        * Upped version to 2.4.3.
-        * Updated NEWS and CHANGES.
-        * Moved Indexable and Stackable to core.
-        * Update news and added svn entry to reap.yaml.
-        * Fixed string/pathize.
-        * Move test_partial to more tests.
-        * Split out Enumerable#probability tests, etc.
-        * Split tests for String#words, etc.
-        * Remove module/test_clone.
-        * Modified website copyright notice section.
-        * Split out String #word_wrap, #words and #each_word.
-        * Split out enumerable methods probability, commonality, entropy and frequency.
-        * Remove more/facets/module --there's nothing in it.
-        * Worked through core lib breaking up a few remaining large method bunches.
-        * Added module directory to more lib, as well as hash/symbolize_keys and stringify_keys.
-        * Split revise.rb up into separate methods.
-        * Split kernel/load.rb into require_all.rb and require_local.rb.
-        * Deprecate Hash#keys_to_s and Hash#keys_to_sym.
-          * These are the original versions of these methods.
-          * But now we can use #rekey(:to_s) and #rekey(:to_sym) instead.
-        * Added had directory to more library.
-        * Renamed Class#to_pathname and #to_methodname to #pathize and #methodize.
-        * Moved binding/opvars from core to more.
-        * Added a binding directory to more lib.
-        * Deprecated Console:: namespace for ANSICode.
+    * Hash#<< returns self
+    * Fixed string/pathize.
 
 
 == 2.4.2 / 2008-08-12
+
+Just some more of those great old work your ass off changes.
+
+* Major Enhancements
+
+    * Added Ken Bloom's DictionaryMatcher class from Ruby Quiz #103.
+      (Note this class will probably be renamed in the future.)
+    * Changed File#rewrite to not use the inplace change of the string.
+      * If you were using the function, change your code to use File#rewrite! instead.
+      * Or, modify your code ot use the new behavior.
+      * This change can make for a slippery bug, so be sure to check for it!
+    * Moved live.rb to facets-live.rb.
+    * Added kernel/instance method which provides a fluent interface to private object space.
+
+* Minor Enhancements
 
     * Added sow generation forms.
     * Spilt Time#trunc into separate file.
     * Remove old log files --shouldn't version control these.
     * Added note to FileList to add glob options parameter.
+    * Added optional argument to Dictionary#first and #last.
 
+* Other Enhancements
 
-2008-08-10  transami
-
-        * Added Ken Bloom's DictionaryMatcher class from Ruby Quiz #103.
-          * Note this class will probably be renamed in the future.
-        * IMPORTANT! Changed File#rewrite to not use the inplace change of the string.
-          * If you were using the function, change your code to use File#rewrite! instead.
-          * Or, modify your code ot use the new behavior.
-          * This change can make for a slippery bug, so be sure to check for it!
-        * Moved test-old to test/more.
-        * Remove test/more --we'll just copy test-old at this point.
-        * Move "lore" tests to test/lore (lore are extensions to Ruby's standard lib).
-        * Moved test-old core test to test/core.
-        * Added test/core, test/lore and test/more.
-        * Added new test directory.
-        * Temporarily move test to test-old.
-        * Added time/test_round.rb
-        * Updated user scripts.
-        * Updated reap configuration.
-        * Updated test to correspond with previous changs.
-        * Adjusted require path for facets.rb.
-        * Added array/recursively.
-        * Added time/round.
-        * Time#to_date makes the public (it already existed in Ruby!)
-        * Fixed Time#hence to flip year correctly when adding months.
-        * Split hash/recurisve_merge out from hash/recursively.
-        * Added optional argument to Dictionary#first and #last.
-        * Moved facets.rb to core/.
-        * Removed intermediate facets directory.
-        * Moved live.rb to facets-live.rb.
-        * Removed intermediate facets directory for lib/.
-
-
-2008-08-09  transami
-
-        * Move facets to more/.
-        * Recreate more directory.
-        * Temporarily move more to facets/.
-        * Move facets to lore/.
-        * Recreate lore directory.
-        * Temorarily move lore to facets/.
-        * Moved facets to core/.
-        * Added core directory back.
-        * Temporary move of core to facets.
-        * Removed remaining requires of 'ruby.rb'.
-        * Completed moving test_ruby.rb tests to separate files.
-        * Removed test/test_ruby.
-        * Updated tests.
-        * Removed test_ruby/array.
-        * Updated array test which were moved from ruby.rb.
-        * Moved history.rdoc and notes.rodc to doc/notes.
-        * Added doc/notes directory.
-        * Moved doc/html to admin/site/doc.
-        * Removed site/doc --only to be relplaced by doc/html.
-        * Update web docs.
-        * Added kernel/instance method which provides a fluent interface to private object space.
-        * Work on documentation using new Sow system.
-        * Moved meta.rb to more/kernel/meta.rb and merged facets/core.rb into facets.rb.
-        * Added more/kernel directory --hey not every extension can be core.
-        * Adjusted loadpath and moved lazy.rb to core!
-        * Moved remaing files to subdirectory locations.
-        * Moved most core libs to core/.
-        * Move most more files to the more directory.
-        * Added lore and more directories.
-        * Added facets/core directory. Yes, I'm spiliting the lib again.
-          * Loadpath will be used, so user inteface will stay the same.
-          * Setup.rb will be adjusted to recognaize loadpath.
-
-        * Removed Rope class. If anything this will have a separate project.
-
-
-2008-08-08  transami
-
-        * Update metadata and added admin/config to repository.
-
-
-2008-08-07  transami
-
-        * Removed work directory.
-        * Finished moving old work content to depot.
-        * Move work/old to depot/deprecated.
-        * Moved work/ref to depot/reference.
-        * Moved work/new and work/sandbox to depot.
-        * Added depot to admin directory to store odd files.
-          * This used to be calle work/.
-          * Is used to store scrap code, reference code, etc.
-        * Moved setup.rb to script/setup.
-          * This will either be replaced with configure/install scripts.
-          * Or, depend on a separate ruby setup.rb project.
-        * Metadata modifications.
-
-
-2008-08-06  transami
-
-        * Moved work to admin.
-        * Added recorder.rb to consider in work directory.
-        * Moved site to admin.
-        * Moved log/ to admin/.
-        * Update to testlog and changelog.
-        * Added admin directory.
-        * Added doc/news to store archives of part release notes.
-        * Added website images.
-        * Added test for paramix.rb.
-        * Updated website with cleaner look.
-        * Added "TO BE DEPRECATED" message to ruby.rb.
-        * Added all methods from ruby.rb as individual core methods.
-          * These are the methods that overlap with 1.9.
-          * They are encased in 'unless RUBY_VERSION' caluses.
-
-
-2008-08-01  transami
-
-        * Imporved file/rootname --now much more robust.
-        * Added Kernel#to_yamlfrag to yaml.rb as way to output yaml w/o the "---" header.
-          * Perhaps not the most robust solution, but okay for now.
-          * Maybe a poor name for the method, but you got a better one?
-
-
-2008-06-11  tylerrick
-
-        * Made FileUtils#whereis a module_function again like it used to be. Because:
-          (1) that seems to be the way most other FileUtils methods are (cd, mkdir, cp, ...) and the most obvious way that users would WANT to use FileUtils: FileUtils.whereis("ruby"). 
-          (3) I see module_function used in other comparible parts of Facets: UploadUtils, ConsoleUtils, ZipUtils, FileUtils#safe_ln, ...
-          (3) My code that relied on the old module_function behavior was breaking
-          What were you thinkin changing it?? ;)
-
-
+    * Move "lore" tests to test/lore (lore are extensions to Ruby's standard lib).
+    * Added test/core, test/lore and test/more.
+    * Added time/test_round.rb
+    * Added array/recursively.
+    * Added time/round.
+    * Time#to_date makes the public (it already existed in Ruby!)
+    * Fixed Time#hence to flip year correctly when adding months.
+    * Work on documentation using new Sow system.
+    * Moved meta.rb to more/kernel/meta.rb and merged facets/core.rb into facets.rb.
+    * Added more/kernel directory --hey not every extension can be core.
+    * Adjusted loadpath and moved lazy.rb to core!
+    * Moved remaing files to subdirectory locations.
+    * Moved most core libs to core/.
+    * Move most more files to the more directory.
+    * Added lore and more directories.
+    * Added facets/core directory. Yes, I'm spiliting the lib again.
+      * Loadpath will be used, so user inteface will stay the same.
+      * Setup.rb will be adjusted to recognaize loadpath.
+    * Removed Rope class. If anything this will have a separate project.
+    * Moved setup.rb to script/setup.
+      * This will either be replaced with configure/install scripts.
+      * Or, depend on a separate ruby setup.rb project.
+    * Added recorder.rb to consider in work directory.
+    * Added admin directory.
+    * Added "TO BE DEPRECATED" message to ruby.rb.
+    * Added all methods from ruby.rb as individual core methods.
+      * These are the methods that overlap with 1.9.
+      * They are encased in 'unless RUBY_VERSION' caluses.
+    * Imporved file/rootname --now much more robust.
+    * Added Kernel#to_yamlfrag to yaml.rb as way to output yaml w/o the "---" header.
+      * Perhaps not the most robust solution, but okay for now.
+      * Maybe a poor name for the method, but you got a better one?
+    * Made FileUtils#whereis a module_function again like it used to be. Because:
+      (1) that seems to be the way most other FileUtils methods are (cd, mkdir, cp, ...) and the most
+          obvious way that users would WANT to use FileUtils: FileUtils.whereis("ruby"). 
+      (2) I see module_function used in other comparible parts of Facets: UploadUtils, ConsoleUtils,
+          ZipUtils, FileUtils#safe_ln, ...
+      (3) My code that relied on the old module_function behavior was breaking
+          What were you thinking changing it?? ;)
 
 
 == 2.4.1 / 2008-04-03
@@ -514,29 +446,60 @@ finally be so.
     * Deprecated behavior.rb. It was not robust.
     * Added basex.rb, library for working in any encoding base using any character set (base62 is the default).
 
+* Other Changes
 
-        * Paramix is all spiffy again.
-          * There a no longer capitialize module methods at all.
-          * Use Module#[] and mixin_params[] instead.
+    * Paramix is all spiffy again.
+      * There a no longer capitialize module methods at all.
+      * Use Module#[] and mixin_params[] instead.
 
-2008-04-03  transami
-
-        * Update to notes and changes.
-        * Added doc/notes.rdoc
-        * Renamed.
-        * Update metadata for 2.4.1.
-        * Added new logs.
-        * Removed old logs.
-        * Removed old xml changelogs.
-        * Added .rsync-filter and .htaccess to site/.
-        * Fixed methods and conflicts scripts to compare extension libraries.
-        * Updated tests for reatomizations.
-        * Continued work on reatomizing core extensions (nearly complete now).
-        * Work on kernel instance methods.
-        * Added basex.rb and deprecated bahavior.rb.
+    * Update to notes and changes.
+    * Added doc/notes.rdoc
+    * Renamed.
+    * Update metadata for 2.4.1.
+    * Added new logs.
+    * Removed old logs.
+    * Removed old xml changelogs.
+    * Added .rsync-filter and .htaccess to site/.
+    * Fixed methods and conflicts scripts to compare extension libraries.
+    * Updated tests for reatomizations.
+    * Continued work on reatomizing core extensions (nearly complete now).
+    * Work on kernel instance methods.
+    * Added basex.rb and deprecated bahavior.rb.
 
 
 == 2.4.0 / 2008-03-24
+
+Facets 2.4 is a major step forward for Facets. It is perhaps
+the release that 2.0 should have been, but of course it took
+the actual 2.0 release to make 2.4 possible. Some annoyances
+you may have encountered in updating your code to 2.0 are now
+fixed. And from 2.4 on, Facets will now be settling down into
+simple refinement release cycles.
+
+The main change under the hood is to bring everything up to
+the top lib/facets/ directory. No longer are the libraries
+sorted by category. I had done so for a long time to make
+it easier to track the various libs, but in the end it was
+only making it more diffcult to deal with build tools and 
+packaging.
+
+For the end-user, the largest change is a new emphisis on:
+
+  require 'facets'
+
+This is better than cherry-picking methods. It may seem counter-
+intuitive, but it actually proves more advantantages to do this
+for the sake of interoperability than the practice of cherry-picking.
+The reason is simply because others may have cherry-picked different
+methods, and those distinctions go unaccounted and untested.
+
+Also with this release, to bolster the use of require 'facets',
+some lack-luster extensions have been deprecated and namespace usage
+has been improved. In addition, we are getting very close to full
+ActiveSupport, and Ruby 1.9, interoperability. Expect this
+to be complete in the next minor release or two.
+
+* Enhancements
 
     * String#to_re and String#to_rx have swapped default behaviors. #to_rx escapes, #to_re does not.
     * The Console namespace is being deprecated. command.rb and arguments.rb now use CLI naemspace.
@@ -553,503 +516,387 @@ finally be so.
     * This was a fairly large and fast-paced update, so unfortunately not all changes are listed this time.
 
 
-2008-03-24  transami
-
-        * Updated website a little.
-        * Split off some time tests.
-        * Updated logs.
-        * Update CHANGES and NOTES.
-        * Fixed minor bugs to pass tests.
-        * Split up include.rb.
-        * Split up include.rb.
-        * Moved test/test_one_nine.rb to test/test_ruby.rb.
-        * Removed use of Console namepspace. command.rb and arguments.rb now use CLI.
-        * Renamed ArgVector to CLI::Arguments
-        * Removed rdoc script (will replace in future).
-        * Added ri generation to setup.rb.
-        * Added site/doc soft link to doc/html.
-        * Moved one_nine.rb to ruby.rb
-        * Update d requires for "one_nine" to just "ruby" b/c of backports to 1.8.7.
-        * Added some work files.
-        * Added some expirments in "safe" extensions.
-        * Added html docs.
-        * Added tests.
-        * Added amazon books.
-        * Add some addition separation to extensions.
-        * Renamed task/ to script/, since the community is used to it b/c of Rails.
-        * Fixed up tasks.
-        * Clean up task system and docs.
-        * Update metadata.
-        * Test updates.
-        * Minor updates.
-
-
-2008-03-22  transami
-
-        * Update annotations for to_hash.rb.
-        * Added headers to docs.
-        * Updated docs.
-
-
-2008-03-16  transami
-
-        * Added the new split-off tests.
-        * Splinter remaining clumped tests.
-        * Removed test_array.
-        * Splintered array tests.
-        * Added some finer-grain to core method.
-        * Some deprecated libs added to work/old.
-        * Tests are now to th epoint of passing again. Yea!
-
-
-2008-03-15  transami
-
-        * Continued touching up tests.
-        * Moved some old tests to proper place in work/old.
-        * Deprecated files moved to work/old.
-        * Coninuted work on tests.
-
-
-2008-03-14  transami
-
-        * Adjusted module tests.
-        * Removed cli directory.
-        * Removed prime test directory and moved cli test up a level.
-        * Adjust test to match lib (again).
-        * Some deprecated extensions place in work/old for possible future reference.
-
-
-2008-03-12  transami
-
-        * Umph... there it is.
-        * Removed prime directory.
-        * Make way for class extensions.
-        * Added warning to Rick Kilmers's unit system.
-          * Moving Rich Kilmers's units system to it's own package.
-          * Three are alternate unit systems available and Facets should work with any of them.
-          * Will keep a fair amount of the Time extensions though.
-
-
-2008-03-10  transami
-
-        * Move core method decisions (I sware there are only a few more!)
-        * Moved cli libs to toplevel. Added a few methods to prime library.
-        * And so on...
-
-
-2008-03-08  transami
-
-        * Cleandup symbol and class extra extensions.
-        * Moved nil/status.rb to nilstatus.rb
-        * Got rid of Method#curry and Method#partial since they just convert to Procs.
-        * Divied prime methods to sepearate files after all.
-
-
-2008-03-07  transami
-
-        * General cleanup pushing toward 3.0 release.
-        * Finished the reorganization of Enumerable extensions.
-        * Loose end additions.
-        * Cleanup module tests.
-        * Cleanup hash tests.
-        * Cleanup enumerable tests.
-        * Added new test/kernel directory.
-        * Removed old test/kernel directory.
-        * Moved test_let to prime/kernel in order to move prime/kernel.
-        * Cleanup array and time tests.
-        * Cleanup file tests.
-        * Cleanup string tests.
-        * Continued test cleanup. Oh, so, fun fun ;)
-        * Removed uneeded test directories.
-        * Continued organizing tests.
-        * Move integer tests cleanup.
-        * Cleaned up integer tests.
-        * Continued fixing tests.
-        * Working on test organization.
-        * Cleaned up binding tests.
-        * Removed old core/more test directories.
-        * Moved remaining tests to top test directory.
-        * MOved extra extension test to toplevel.
-        * Again moved more files to top level.
-        * MOved more test to toplevel.
-        * Moved remaining core test to top test level.
-        * Moved ext/core to prime/.
-          * Will not combine the per-method tests for the moment.
-          * Will save that for later (unless we decide to div prime again :p)
-        * Fixed requires for prime/ directory.
-        * Moved all "prime" libs to subdir (yes, like they were).
-        * Cleaned up remaining extranerous files.
-
-
-2008-03-06  transami
-
-        * Further touchups to website.
-        * Added some extra pages to website.
-        * OVerhaul website for version 3.
-
-
-2008-03-05  transami
-
-        * Made op_esc.rb a separate module rather thanan extension.
-        * REmoved more extraneous files and moved a few to work area.
-
-
-2008-03-04  transami
-
-        * Added some tasks and a couple of file to work old.
-        * Cleaned up extra binding extensions.
-        * Continued considations (almost there).
-        * Continued consolidation and removing extraneous files.
-        * Deprecated with_reader, with_writer and with_accessor for attr_singleton_reader, &c.
-        * Removed extraneous Enumerable files.
-
-
-2008-03-03  transami
-
-        * Removed extraneous module alias and attr files.
-        * Deprecated Hash#pairs_at. Use Hash#slice instead from core.
-        * Removed extraneous kernel extension files.
-        * Removed extraneous String extextion files.
-        * Removed some work folders.
-        * Partial adjustments for work area dure to organization changes.
-        * Scrap code.
-        * Removed vestiges of transfers to core extensions and consolidations.
-        * Fixed require in core libraries.
-        * Fixed the namespaces of some extensions.
-        * It is finished!
-        * Move all "prime" libs to top.
-        * Removed extra/.
-        * Moved extra/continuation to top.
-        * Move the rest of extra directories.
-        * Moved all "extra" extensions to top facets/ directory.
-        * Few more.
-        * Added some file that were added before in the transition.
-
-
-2008-03-02  transami
-
-        * Removed remains vestigaes of old organization. (Now just ot fix the new one!)
-        * The big wadoozy.
-        * Remove empty directories for more/ext.
-        * Move add classes and module to facets/.
-        * Move more extensions to facets/extra.
-        * Move a few more/ext to prime.
-        * Moved core/facets to facets/extra.
-        * Removed empty ext directories.
-        * Added prime directory and files.
-        * Removed some dir methods that are now in prime.
-        * Remove some now empty directories from core/ext, due to the "prime" transfer.
-        * Removed all "prime" extension files.
-        * Move mattr to module.
-
-
-2008-03-01  transami
-
-        * Fixed require bug in time methods.
-        * Reverted memomize.rb back to original code --will come back to later.
-        * Moved random.rb to sys/.
-        * Added stylizer.rb to replace stylize.rb
-        * Removed old stylize.rb library --see new stylizer.rb.
-        * Array #recursively is not only called #traverse.
-        * Added case/stylize methods to more/facets/string.
-        * Renamed more/string/facets/titlecase to captialize_all.
-
-
-2008-02-29  transami
-
-        * Added uri and xoxo tests.
-        * Cleaning up more/ext tests.
-        * Some more reorganization in test/core.
-        * Removed finaly vestage of old dir structure.
-        * Moved remaing test to more/add.
-        * Removed some outdated test and organized.
-        * Moved more/ext tests out of more/add/.
-        * Added ext, cli and sys to test/more/.
-        * Removed test/mixin.
-        * Moved test from mixin to more/add.
-        * Moved add to test/more.
-        * Added test/more.
-        * Moved test/more to add.
-        * Moved ext tests to core subdir.
-        * Added test/core.
-        * Move text/core to test/ext.
-        * Updated .roll file for new organization.
-        * Updated .reap file.
-        * Updated metadata to fit new organization. (Happy Days!)
-        * Moved facets.rb up a level.
-        * Temporarily moved console libs to cli --mainly to ease working on them.
-        * Moved condole to add.
-        * Moved system to more/sys.
-        * Moved "lore" to add/. Yea!
-        * Moved libs to ext.
-        * Added more/ext directory.
-        * Progressive work on memoize and elementor.
-        * Moved systematic libs from ext/ to sys/.
-        * Moved classes and modules from ext/ to add/.
-        * Added facets directory to add/ directory.
-        * dded add/ directory to core/.
-        * Moved facets/ to ext/.
-        * Added ext directory.
-        * Minor doc change.
-        * Functor no longer privatizes =, == and =~.
-        * Minor doc fix.
-        * Properly split conversion.rb.
-        * Some string methods extracted from stylize.rb.
-
-
-2008-02-28  transami
-
-        * Continued structuring.
-        * Moved lore/console up a notch.
-        * Moved lore/system up a notch.
-        * Moved random.rb to more/.
-        * Renamed namespace.eb to methodspace.rb.
-        * Moved autoreload to more/facets/kernel.
-        * Moved four remaing web libs to common directory (use web/ subdir?).
-
-
-2008-02-26  transami
-
-        * Moved some modules from system to common.
-        * Moved all mixins back in with classes.
-        * Moved class/facets up a level.
-        * Removed old curry.rb.
-        * More as standard and extraneous core extensions is progressing.
-        * Added enumerable directory to more.
-        * Moved some libs from system to more.
-        * Added string directory to more.
-        * Added kernel directory to more extensions.
-        * Recreated more to house standard extensions.
-        * More as standard extensions, and Lore (?) for the rest.
-        * Added some web related libraries.
-
-
-2008-02-25  transami
-
-        * Added cgi.rb with some standard extensions.
-        * Fixed bug with #peek in stackable.
-        * Deprecated paramix.rb.
-
-
-2008-02-24  transami
-
-        * Added xmlhash.rb and returned uri.rb extensions to the library.
-        * Moved getoptlong/rb to standard extensions folder.
-        * Added #method_name to Date class.
-
-
-2008-02-22  transami
-
-        * Removed extraneous level in doc.
-        * REmove cut-bases AOP, now in it's own library.
-        * Converted compare_on.rb to Paramtric Mixins.
-
-
-2008-02-21  transami
-
-        * Split fileutils up into individual methods.
-        * Update metadata to reflect organization changes.
-        * Moved standard library extensions to more/extend.
-        * Added facets directory to more/extend.
-        * Continued organization.
-        * Moved console related libs to more/console.
-        * Added facets subdir to console.
-        * Added more/console; trying something a bit different in organization.
-        * Added more/class/facets/net and moved set and ostruct to class as well.
-        * more/system, rather than systems.
-        * Moved class, mixin, and system to more.
-        * Added new more directory.
-        * Moved more to systems.
-
-
-2008-02-20  transami
-
-        * Added test for command.rb.
-
-
-2008-02-19  transami
-
-        * Renamed console.rb to whate it should be consoleutils.rb.
-        * Update to command.rb integrating MasterCommand and Command into a single class.
-          * The Console::Command is not nice and simple command parser I've been aiming torward.
-          * Barring some major oversite, this class will not change in an incompatible way ever again.
-          * Basic tests pass. More eleborate test will follow to ensure more complex designs also work.
-
-
-2008-02-18  transami
-
-        * Added doc directory.
-        * Updated README and allowed doc/ to be included in package.
-        * Added site/rdoc, which is a symlink.
-        * Added log/Changelog.txt too.
-        * Update logs. (Should these even be under version control?)
-        * Added Rakefile to redirect to task/*.
-        * Fixed bug in Kernel#object_hexid.
-        * Fixed test for hash/collate.
-        * Added test task and temporary rdoc task.
-        * Added options back into multiglob_r.
-        * Fixed bug in multiglob_r so it will NOT follow symlinks.
-        * Moved work/reference to work/ref.
-        * Moved work/current to new (can you tell I have a new naming scheme for work/?)
-        * Moved work/outdated to old.
-        * Added some outdated tasks to work. Will eventually delete.
-
-
-2008-02-11  transami
-
-        * Moved doc/ to site/.
-        * Added remaining doc files.
-        * Converted website to XML.
-
-
-2008-02-09  transami
-
-        * Automated learn and quick doc menus.
-        * Convert website from html to xml.
-        * Finishing touches for next release.
-        * Saved old rdoc script.
-
-
-2008-02-06  transami
-
-        * Updates to tests as embedded tests are no more.
-        * Finally completed removal of all embedded tests.
-        * Organized tests according to new lib organization.
-        * Improved cloneable.rb to be a true deep dup/clone mixin using Ken Bloom's suggestion.
-
-
-2008-02-05  transami
-
-        * Working on end-user tasks.
-        * Added work/outdated/task.
-        * Updated the way rdocs are generated.
-        * Organized all libs between core, more, class and mixin.
-        * Moved class libraries to lib/class/facets.
-        * Added lib/class.
-        * Added tasksystem.rb.
-        * Remove some admin task files no longer needed thanks to Reap.
-        * Move admin/ to work/outdated. We'll be using reap instead.
-        * Moved meta/facets.roll to .roll.
-          * This is related to an update of Rolls...
-          * It's better to have good SOC here regardless of some metadata redundancy.
-        * Added meta/authors.
-        * Moved old changelogs to log/ and move meta/config.yaml to .reap per new reap design.
-        * Updaed reap config and removed icli.yaml.
-        * Added doc/ads directory.
-        * Removed dev/ directory.
-        * Moved remaining dev files to work/ (will cleanup later).
-        * Moved dev/sandbox to work/.
-        * Moved dev/task and reference material to work directory.
-        * Moved outdated dev libs to work.
-        * Moved current dev to work directory.
-        * Update to admin/tasks.
-        * Update to project file.
-        * Added enumerable/combinations.
-        * Added openhash and tracepoint.
-        * Added work directory.
-        * Added some development scraps, plan to move dev/ to work/.
-
+    * Moved test/test_one_nine.rb to test/test_ruby.rb.
+    * Removed use of Console namepspace. command.rb and arguments.rb now use CLI.
+    * Renamed ArgVector to CLI::Arguments
+    * Removed rdoc script (will replace in future).
+    * Added ri generation to setup.rb.
+    * Added site/doc soft link to doc/html.
+    * Moved one_nine.rb to ruby.rb
+    * Update d requires for "one_nine" to just "ruby" b/c of backports to 1.8.7.
+    * Added some work files.
+    * Added some expirments in "safe" extensions.
+    * Added html docs.
+    * Added tests.
+    * Added amazon books.
+    * Add some addition separation to extensions.
+    * Renamed task/ to script/, since the community is used to it b/c of Rails.
+    * Fixed up tasks.
+    * Clean up task system and docs.
+    * Update metadata.
+    * Test updates.
+    * Minor updates.
+
+    * Added the new split-off tests.
+    * Splinter remaining clumped tests.
+    * Removed test_array.
+    * Splintered array tests.
+    * Added some finer-grain to core method.
+    * Some deprecated libs added to work/old.
+    * Tests are now to th epoint of passing again. Yea!
+
+    * Continued touching up tests.
+    * Moved some old tests to proper place in work/old.
+    * Deprecated files moved to work/old.
+    * Coninuted work on tests.
+
+    * Adjusted module tests.
+    * Removed cli directory.
+    * Removed prime test directory and moved cli test up a level.
+    * Adjust test to match lib (again).
+    * Some deprecated extensions place in work/old for possible future reference.
+
+    * Make way for class extensions.
+    * Added warning to Rick Kilmers's unit system.
+      * Moving Rich Kilmers's units system to it's own package.
+      * Three are alternate unit systems available and Facets should work with any of them.
+      * Will keep a fair amount of the Time extensions though.
+
+    * Move core method decisions (I sware there are only a few more!)
+    * Moved cli libs to toplevel. Added a few methods to prime library.
+
+    * Cleandup symbol and class extra extensions.
+    * Moved nil/status.rb to nilstatus.rb
+    * Got rid of Method#curry and Method#partial since they just convert to Procs.
+    * Divied prime methods to sepearate files after all.
+
+    * General cleanup pushing toward 3.0 release.
+    * Finished the reorganization of Enumerable extensions.
+    * Loose end additions.
+    * Cleanup module tests.
+    * Cleanup hash tests.
+    * Cleanup enumerable tests.
+    * Added new test/kernel directory.
+    * Removed old test/kernel directory.
+    * Moved test_let to prime/kernel in order to move prime/kernel.
+    * Cleanup array and time tests.
+    * Cleanup file tests.
+    * Cleanup string tests.
+    * Continued test cleanup. Oh, so, fun fun ;)
+    * Removed uneeded test directories.
+    * Continued organizing tests.
+    * Move integer tests cleanup.
+    * Cleaned up integer tests.
+    * Continued fixing tests.
+    * Working on test organization.
+    * Cleaned up binding tests.
+    * Removed old core/more test directories.
+    * Moved remaining tests to top test directory.
+    * MOved extra extension test to toplevel.
+    * Again moved more files to top level.
+    * MOved more test to toplevel.
+    * Moved remaining core test to top test level.
+    * Moved ext/core to prime/.
+      * Will not combine the per-method tests for the moment.
+      * Will save that for later (unless we decide to div prime again :p)
+    * Fixed requires for prime/ directory.
+    * Moved all "prime" libs to subdir (yes, like they were).
+    * Cleaned up remaining extranerous files.
+
+    * Further touchups to website.
+    * Added some extra pages to website.
+    * OVerhaul website for version 3.
+
+    * Made op_esc.rb a separate module rather thanan extension.
+    * REmoved more extraneous files and moved a few to work area.
+
+
+    * Added some tasks and a couple of file to work old.
+    * Cleaned up extra binding extensions.
+    * Continued considations (almost there).
+    * Continued consolidation and removing extraneous files.
+    * Deprecated with_reader, with_writer and with_accessor for attr_singleton_reader, &c.
+    * Removed extraneous Enumerable files.
+
+    * Removed extraneous module alias and attr files.
+    * Deprecated Hash#pairs_at. Use Hash#slice instead from core.
+    * Removed extraneous kernel extension files.
+    * Removed extraneous String extextion files.
+    * Removed some work folders.
+    * Partial adjustments for work area dure to organization changes.
+    * Scrap code.
+    * Removed vestiges of transfers to core extensions and consolidations.
+    * Fixed require in core libraries.
+    * Fixed the namespaces of some extensions.
+    * It is finished!
+    * Move all "prime" libs to top.
+    * Removed extra/.
+    * Moved extra/continuation to top.
+    * Move the rest of extra directories.
+    * Moved all "extra" extensions to top facets/ directory.
+    * Few more.
+    * Added some file that were added before in the transition.
+
+    * Removed remains vestigaes of old organization. (Now just ot fix the new one!)
+    * The big wadoozy.
+    * Remove empty directories for more/ext.
+    * Move add classes and module to facets/.
+    * Move more extensions to facets/extra.
+    * Move a few more/ext to prime.
+    * Moved core/facets to facets/extra.
+    * Removed empty ext directories.
+    * Added prime directory and files.
+    * Removed some dir methods that are now in prime.
+    * Remove some now empty directories from core/ext, due to the "prime" transfer.
+    * Removed all "prime" extension files.
+    * Move mattr to module.
+
+    * Fixed require bug in time methods.
+    * Reverted memomize.rb back to original code --will come back to later.
+    * Moved random.rb to sys/.
+    * Added stylizer.rb to replace stylize.rb
+    * Removed old stylize.rb library --see new stylizer.rb.
+    * Array #recursively is not only called #traverse.
+    * Added case/stylize methods to more/facets/string.
+    * Renamed more/string/facets/titlecase to captialize_all.
+
+    * Added uri and xoxo tests.
+    * Cleaning up more/ext tests.
+    * Some more reorganization in test/core.
+    * Removed finaly vestage of old dir structure.
+    * Moved remaing test to more/add.
+    * Removed some outdated test and organized.
+    * Moved more/ext tests out of more/add/.
+    * Added ext, cli and sys to test/more/.
+    * Removed test/mixin.
+    * Moved test from mixin to more/add.
+    * Moved add to test/more.
+    * Added test/more.
+    * Moved test/more to add.
+    * Moved ext tests to core subdir.
+    * Added test/core.
+    * Move text/core to test/ext.
+    * Updated .roll file for new organization.
+    * Updated .reap file.
+    * Updated metadata to fit new organization. (Happy Days!)
+    * Moved facets.rb up a level.
+    * Temporarily moved console libs to cli --mainly to ease working on them.
+    * Moved condole to add.
+    * Moved system to more/sys.
+    * Moved "lore" to add/. Yea!
+    * Moved libs to ext.
+    * Added more/ext directory.
+    * Progressive work on memoize and elementor.
+    * Moved systematic libs from ext/ to sys/.
+    * Moved classes and modules from ext/ to add/.
+    * Added facets directory to add/ directory.
+    * dded add/ directory to core/.
+    * Moved facets/ to ext/.
+    * Added ext directory.
+    * Minor doc change.
+    * Functor no longer privatizes =, == and =~.
+    * Minor doc fix.
+    * Properly split conversion.rb.
+    * Some string methods extracted from stylize.rb.
+
+    * Continued structuring.
+    * Moved lore/console up a notch.
+    * Moved lore/system up a notch.
+    * Moved random.rb to more/.
+    * Renamed namespace.eb to methodspace.rb.
+    * Moved autoreload to more/facets/kernel.
+    * Moved four remaing web libs to common directory (use web/ subdir?).
+
+    * Moved some modules from system to common.
+    * Moved all mixins back in with classes.
+    * Moved class/facets up a level.
+    * Removed old curry.rb.
+    * More as standard and extraneous core extensions is progressing.
+    * Added enumerable directory to more.
+    * Moved some libs from system to more.
+    * Added string directory to more.
+    * Added kernel directory to more extensions.
+    * Recreated more to house standard extensions.
+    * More as standard extensions, and Lore (?) for the rest.
+    * Added some web related libraries.
+
+    * Added cgi.rb with some standard extensions.
+    * Fixed bug with #peek in stackable.
+    * Deprecated paramix.rb.
+
+    * Added xmlhash.rb and returned uri.rb extensions to the library.
+    * Moved getoptlong/rb to standard extensions folder.
+    * Added #method_name to Date class.
+
+    * Removed extraneous level in doc.
+    * REmove cut-bases AOP, now in it's own library.
+    * Converted compare_on.rb to Paramtric Mixins.
+
+    * Split fileutils up into individual methods.
+    * Update metadata to reflect organization changes.
+    * Moved standard library extensions to more/extend.
+    * Added facets directory to more/extend.
+    * Continued organization.
+    * Moved console related libs to more/console.
+    * Added facets subdir to console.
+    * Added more/console; trying something a bit different in organization.
+    * Added more/class/facets/net and moved set and ostruct to class as well.
+    * more/system, rather than systems.
+    * Moved class, mixin, and system to more.
+    * Added new more directory.
+    * Moved more to systems.
+
+    * Renamed console.rb to whate it should be consoleutils.rb.
+    * Update to command.rb integrating MasterCommand and Command into a single class.
+      * The Console::Command is not nice and simple command parser I've been aiming torward.
+      * Barring some major oversite, this class will not change in an incompatible way ever again.
+      * Basic tests pass. More eleborate test will follow to ensure more complex designs also work.
+
+    * Added doc directory.
+    * Updated README and allowed doc/ to be included in package.
+    * Added site/rdoc, which is a symlink.
+    * Added log/Changelog.txt too.
+    * Update logs. (Should these even be under version control?)
+    * Added Rakefile to redirect to task/*.
+    * Fixed bug in Kernel#object_hexid.
+    * Fixed test for hash/collate.
+    * Added test task and temporary rdoc task.
+    * Added options back into multiglob_r.
+    * Fixed bug in multiglob_r so it will NOT follow symlinks.
+    * Moved work/reference to work/ref.
+    * Moved work/current to new (can you tell I have a new naming scheme for work/?)
+    * Moved work/outdated to old.
+    * Added some outdated tasks to work. Will eventually delete.
+
+    * Moved doc/ to site/.
+    * Added remaining doc files.
+    * Converted website to XML.
+
+    * Automated learn and quick doc menus.
+    * Convert website from html to xml.
+    * Finishing touches for next release.
+    * Saved old rdoc script.
+
+    * Updates to tests as embedded tests are no more.
+    * Finally completed removal of all embedded tests.
+    * Organized tests according to new lib organization.
+    * Improved cloneable.rb to be a true deep dup/clone mixin using Ken Bloom's suggestion.
+
+    * Working on end-user tasks.
+    * Added work/outdated/task.
+    * Updated the way rdocs are generated.
+    * Organized all libs between core, more, class and mixin.
+    * Moved class libraries to lib/class/facets.
+    * Added lib/class.
+    * Added tasksystem.rb.
+    * Remove some admin task files no longer needed thanks to Reap.
+    * Move admin/ to work/outdated. We'll be using reap instead.
+    * Moved meta/facets.roll to .roll.
+      * This is related to an update of Rolls...
+      * It's better to have good SOC here regardless of some metadata redundancy.
+    * Added meta/authors.
+    * Moved old changelogs to log/ and move meta/config.yaml to .reap per new reap design.
+    * Updaed reap config and removed icli.yaml.
+    * Added doc/ads directory.
+    * Removed dev/ directory.
+    * Moved remaining dev files to work/ (will cleanup later).
+    * Moved dev/sandbox to work/.
+    * Moved dev/task and reference material to work directory.
+    * Moved outdated dev libs to work.
+    * Moved current dev to work directory.
+    * Update to admin/tasks.
+    * Update to project file.
+    * Added enumerable/combinations.
+    * Added openhash and tracepoint.
+    * Added work directory.
+    * Added some development scraps, plan to move dev/ to work/.
 
 
 == 2.3.0 / 2008-02-01
+
+Amoung other changes with this release, cloneable.rb is
+now a true deep dup/clone mixin; tracepoint.rb returns
+to the library.
 
     * Reorganized library into smaller groups: core, more, class and mixin.
     * Added tracepoint.rb back to the library.
     * Fixed multiglob_r bug, so it will NOT follow symlinks.
 
-2008-01-19  transami
+    * Remove admin/log.
+    * Convert changelog to pure ruby.
+    * Remove admin/svn subdir.
+    * Organize admin tasks better.
+    * Add admin tasks.
+    * Moved admin tasks to admin directory.
+    * Added admin directory.
+    * Removed task/doc subdir.
+    * Moved some tasks.
+    * Convert tasks to pure ruby.
 
-        * Remove admin/log.
-        * Convert changelog to pure ruby.
-        * Remove admin/svn subdir.
-        * Organize admin tasks better.
-        * Add admin tasks.
-        * Moved admin tasks to admin directory.
-        * Added admin directory.
-        * Removed task/doc subdir.
-        * Moved some tasks.
-        * Convert tasks to pure ruby.
+    * Move test/unit to test/core.
+    * Moved remaining more test to test/more.
+    * Added test/more/hash directory.
+    * Moved more tests to test/more directory.
+    * Added test/more.
+    * Fixed test_keyize.rb.
+    * binding/test_cflow renamed to test_caller
 
+    * Added test for new hash/collate.
+    * Added demo benchmarks.
+    * Update publish task.
+    * Update quick.html and wiki code.
+    * Added TODO to toplevel.
+    * Added a couple of missing binding requires to repo.
+    * Moved More lib hash_keyize.rb to hash/keyize.rb.
 
-2008-01-16  transami
+    * Move source_material to just source.
 
-        * Move test/unit to test/core.
-        * Moved remaining more test to test/more.
-        * Added test/more/hash directory.
-        * Moved more tests to test/more directory.
-        * Added test/more.
-        * Fixed test_keyize.rb.
-        * binding/test_cflow renamed to test_caller
-
-
-2008-01-09  transami
-
-        * Added test for new hash/collate.
-        * Added demo benchmarks.
-        * Update publish task.
-        * Update quick.html and wiki code.
-        * Added TODO to toplevel.
-        * Added a couple of missing binding requires to repo.
-        * Moved More lib hash_keyize.rb to hash/keyize.rb.
-
-
-2007-12-29  transami
-
-        * Move source_material to just source.
-
-
-2007-12-27  transami
-
-        * ANd so it goes with work reorganization.
-        * Moved dev/play to dev/sandbox.
-        * Further reorganiztion of work area.
-        * Some reorganization of developemnt area.
+    * ANd so it goes with work reorganization.
+    * Moved dev/play to dev/sandbox.
+    * Further reorganiztion of work area.
+    * Some reorganization of developemnt area.
 
 
 == 2.2.1 / 2007-12-22
 
+(2.2.1) This release get rid of the underlying methods subdir.
+All method redirects are now in core, to ensure
+there are no more name clashes.
+
     * Got rid of methods subdir. All method redirects are in core/.
 
-2007-12-22  transami
+    * Moved doc/wiki to apiwiki b/c of Rubyforge's wiki.
+    * Removed doc/api dir.
+    * Added wiki.
+    * Prepare for 2.2.1 release.
+    * Update per-module/class files.
+    * Moved binding/cflow.rb to caller.rb.
+    * Fixed up binding extensions.
+    * Update tests and prepare for next version.
+    * Ditto.
+    * Renamed a couple test tasks.
 
-        * Moved doc/wiki to apiwiki b/c of Rubyforge's wiki.
-        * Removed doc/api dir.
-        * Added wiki.
-        * Prepare for 2.2.1 release.
-        * Update per-module/class files.
-        * Moved binding/cflow.rb to caller.rb.
-        * Fixed up binding extensions.
-        * Update tests and prepare for next version.
-        * Ditto.
-        * Renamed a couple test tasks.
+    * Moved methods and groups task to trash.
+    * Moved core hash/keyize to more.
+    * Added test class/remove_descendents.rb.
+    * Added all remaining per-method require libs from methods/ --will need to wrok through these over time.
+    * Added trash work directory.
 
+    * Adjust text according to per-method file changes.
+    * All hash method, but the conversion methods, are now rpresented in core/facets/hash.
+    * Added a few more Hash per-method files.
+    * Add per-method libs for hash.
+    * Updated facets/string.rb.
+    * Moved string/format.rb to string/wrap.rb.
+    * Updated String#brief.
 
-2007-12-21  transami
-
-        * Moved methods and groups task to trash.
-        * Moved core hash/keyize to more.
-        * Added test class/remove_descendents.rb.
-        * Added all remaining per-method require libs from methods/ --will need to wrok through these over time.
-        * Added trash work directory.
-
-
-2007-12-20  transami
-
-        * Adjust text according to per-method file changes.
-        * All hash method, but the conversion methods, are now rpresented in core/facets/hash.
-        * Added a few more Hash per-method files.
-        * Add per-method libs for hash.
-        * Updated facets/string.rb.
-        * Moved string/format.rb to string/wrap.rb.
-        * Updated String#brief.
-
-
-2007-12-17  transami
-
-        * Renamed ROLLRC to facets.roll.
+    * Renamed ROLLRC to facets.roll.
 
 
 == 2.2.0 / 2007-12-13
+
+This release provides improved rdocs and prepares facets for use with Ruby 1.9.
+It also adds Matthew Harris' duration.rb library. Bug thanks to Matthew!
 
     * A lot of rdoc updates to core extensions --as promised ;)
     * Just about every method now has at least a brief explinaiton and an example.
@@ -1063,112 +910,82 @@ finally be so.
     * Preliminary addition of Matthew Harris' excellent duration.rb lib (will integrate with times.rb better in future).
     * Added if clauses to handle upcoming Ruby 1.9 gracefully. Facets should now be just about ready for use with 1.9.
 
-2007-12-13  transami
+    * Fixed project.yaml summary.
+    * Update AUTHORS list.
+    * Update release notes.
+    * Update CHANGES for 2.2.0.
+    * VERSION 2.2.0
+    * Added some missing tests dur to recent separations.
+    * Minor update to test/general.
+    * Updated tests to reflect recent changes.
+    * Fixed test for continuation and removed test for pp_s.rb.
+    * Move task/docpkg to task/doc/zip.
+    * Moved task/config.yaml to meta/ per new Ratch.
+    * Moved task/special to task/doc.
+    * Minor updates to test and install tasks.
+    * Updated todo list (in dev/).
+    * Copied log/history.rd to CHANGES.
+    * Removed log/history.rd and log/todo.rd
+    * Fixed stylize.rb for use with 1.9 (fixed case statement).
+    * Separated kernel/returning, now that #tap will be in 1.9.
+    * Updated facets.rb for use with 1.9.
+    * Separated time/stamp.rb.
+    * Divided binding up into a few more pieces.
+    * Fixed kernel/instance to play nice with 1.9.
+    * Added test for string/op.rb.
 
-        * Fixed project.yaml summary.
-        * Update AUTHORS list.
-        * Update release notes.
-        * Update CHANGES for 2.2.0.
-        * VERSION 2.2.0
-        * Added some missing tests dur to recent separations.
-        * Minor update to test/general.
-        * Updated tests to reflect recent changes.
-        * Fixed test for continuation and removed test for pp_s.rb.
-        * Move task/docpkg to task/doc/zip.
-        * Moved task/config.yaml to meta/ per new Ratch.
-        * Moved task/special to task/doc.
-        * Minor updates to test and install tasks.
-        * Updated todo list (in dev/).
-        * Copied log/history.rd to CHANGES.
-        * Removed log/history.rd and log/todo.rd
-        * Fixed stylize.rb for use with 1.9 (fixed case statement).
-        * Separated kernel/returning, now that #tap will be in 1.9.
-        * Updated facets.rb for use with 1.9.
-        * Separated time/stamp.rb.
-        * Divided binding up into a few more pieces.
-        * Fixed kernel/instance to play nice with 1.9.
-        * Added test for string/op.rb.
+    * Renamed accessor #attributes to #instance_attributes.
 
+    * Removed continuation from core.
+    * Removed pp_s.rb (use pretty_inspect) add continuation.rb.
+    * Documentaiton improvements and moved continuation extension to more lib.
+    * Added 1.9 check in continuation/create.rb.
+    * Added op.rb to string.rb.
+    * Added String/op.rb with String#- method.
 
-2007-12-12  transami
+    * Minor edit to basicobject.rb in light of 1.9.
+    * Minor adjustments to lazy.rb to fix warnings by Ruby 1.9.
+    * Added Matthew Harris' Duration class.
 
-        * Renamed accessor #attributes to #instance_attributes.
+    * Added Hash#slice and Hash#except (didn't we have this before?)
 
+    * Minor adjust to website.
+    * Improved on tests in relation to doc work.
+    * Handled some minor bugs found while documenting.
+    * Mode doc improvements.
 
-2007-12-10  transami
+    * Add a couple new task for rdoc gen.
+    * Added nbsp to quickopts task.
+    * Website updates.
+    * Work on website using siteparts.
+    * Added registerable.rb, updated history.
+    * Added #include_as to facets/namespace.rb.
+    * Cleanup test hearders.
+    * Rdoc improvements.
 
-        * Removed continuation from core.
-        * Removed pp_s.rb (use pretty_inspect) add continuation.rb.
-        * Documentaiton improvements and moved continuation extension to more lib.
-        * Added 1.9 check in continuation/create.rb.
-        * Added op.rb to string.rb.
-        * Added String/op.rb with String#- method.
+    * Removed test for kernel/require_esc.rb
+    * Remove kernel/require_esc.rb.
+    * Updated integer docs.
+    * Updates to kernel test headers.
+    * Documentation updates to kernel extensions.
 
+    * Update docs continued.
+    * Update hash test headers.
+    * Updated hash extension docs.
+    * Updated docs.
+    * Added some missing tests.
+    * Continued docs update.
+    * Update docs.
+    * Added test_collect.rb split-offs and test_mash inplace of test_collate.
+    * Updated lots of test headers.
+    * Renamed Enumerable #collate to #mash. (old name, along with graph, will be an alias for time being)
+    * Lots of doc updates.
+    * Updated documentation for array extensions.
 
-2007-12-09  transami
-
-        * Minor edit to basicobject.rb in light of 1.9.
-        * Minor adjustments to lazy.rb to fix warnings by Ruby 1.9.
-        * Added Matthew Harris' Duration class.
-
-
-2007-12-08  transami
-
-        * Added Hash#slice and Hash#except (didn't we have this before?)
-
-
-2007-12-04  transami
-
-        * Minor adjust to website.
-        * Improved on tests in relation to doc work.
-        * Handled some minor bugs found while documenting.
-        * Mode doc improvements.
-
-
-2007-12-02  transami
-
-        * Add a couple new task for rdoc gen.
-        * Added nbsp to quickopts task.
-        * Website updates.
-        * Work on website using siteparts.
-        * Added registerable.rb, updated history.
-        * Added #include_as to facets/namespace.rb.
-        * Cleanup test hearders.
-        * Rdoc improvements.
-
-
-2007-12-01  transami
-
-        * Removed test for kernel/require_esc.rb
-        * Remove kernel/require_esc.rb.
-        * Updated integer docs.
-        * Updates to kernel test headers.
-        * Documentation updates to kernel extensions.
-
-
-2007-11-30  transami
-
-        * Update docs continued.
-        * Update hash test headers.
-        * Updated hash extension docs.
-        * Updated docs.
-        * Added some missing tests.
-        * Continued docs update.
-        * Update docs.
-        * Added test_collect.rb split-offs and test_mash inplace of test_collate.
-        * Updated lots of test headers.
-        * Renamed Enumerable #collate to #mash. (old name, along with graph, will be an alias for time being)
-        * Lots of doc updates.
-        * Updated documentation for array extensions.
-
-
-2007-11-29  transami
-
-        * Updated AUTHORS.
-        * Divided enumerable/collect into split.rb and each.rb as well.
-        * Moved mapsend.rb to thread.rb.
-        * Updated mapsend.rb to focus on threads.
-
+    * Updated AUTHORS.
+    * Divided enumerable/collect into split.rb and each.rb as well.
+    * Moved mapsend.rb to thread.rb.
+    * Updated mapsend.rb to focus on threads.
 
 
 == 2.1.3 / 2007-11-28
@@ -1205,6 +1022,12 @@ finally be so.
 
 
 == 2.1.0 / 2007-11-10
+
+Major changes include a new and much-improved command.rb,
+a new BiCrypt class for simple two-way crypotgraphy,
+as well as attr_reader!, attr_writer! and attr_accessor!
+for flag attributes, plus alias_xxx methods for all
+attr_xxx methods.
 
     * command.rb has been completely rewritten. The API has changed completely!
     * There is no longer a Commmand::Optoins class. Use Console::Arguments instead.
