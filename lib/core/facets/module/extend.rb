@@ -2,8 +2,8 @@ class Module
 
   alias_method :_extend, :extend
 
-  def extend(mod=nil, &blk)
-    _extend mod if mod
+  def extend(*mod, &blk)
+    _extend *mod unless mod.empty?
     _extend Module.new(&blk) if blk
   end
 
