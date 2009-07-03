@@ -1,6 +1,57 @@
+== 2.5.3 / 2009-07-03
+
+Facets 2.5.3 fixes an arity bug with Module#extend --one of the
+very few actual core overrides in Facets, and it removes htmlfilter.rb
+due to a licensing incompatability.
+
+* 2 Major Enhancements
+
+    * Removed htmlfilter.rb due to licensing issues.
+    * Also removed cssfilter.rb ('gem install htmlfilter' now)
+
+* 1 Minor Enhancements
+
+    * Removed Kernel#__HERE__ as it simply cannot work.
+      (Ruby 1.9.2 will offer #source_location for the same,, btw.)
+
+* 1 Bug Fixes
+
+    * Fixed arity issue with Module#extend.
+
+
+== 2.5.2 / 2009-04-07
+
+Facets 2.5.2 is a simple maintentance release.
+
+=== Changes
+
+* 1 Major Enhancement
+
+    * added string/uppercase and lowercase
+
+* 1 Minor Enhancement
+
+    * adjustemnts to to_hash.rb
+
+
 == 2.5.1 / 2009-03-05
 
-* 7 Additions
+Facets 2.5.1 fixes a few bugs, makes some small but nice additions
+and improves 1.9 compatibility.
+
+The most important addition to make note of is Object#extend, which has
+been overridden to allow a block parameter. This is one of only two or three
+actual "monkey patches" in all of Facets. The block, when provided,
+is used to create an annonymous module which then extends the reciever.
+This is a "good practice" way to extend objects, rather than using class_eval
+on the singleton class.
+
+Special thanks to Erik Veenstra, Pit Capitan and especially Sandor Szücs
+for their contributions to this release.
+
+=== Changes
+
+* 7 Major Enhancements
 
     * added Hash#group_by_value (thanks to Erik Veenstra)
     * added String#file
@@ -33,6 +84,52 @@
 
 
 == 2.5.0 / 2008-11-23
+
+Facets 2.5.0 is an important milestone in the development of Facets.
+
+This release has been tested against Rails' ActiveSupport library.
+As long as Facets is loaded after ActiveSupport, everything
+should work fine. Of course, there's no counting for real world
+trials, but all ActiveSupport testcases pass under this scenario.
+
+Secondly, this release is the first of two (or three) down-scaling
+releases intended to remove all the remaining "excess" from the
+library. This is being done for a variety of reasons. Some scripts
+are substantial enough to be one their own and have been spun-off
+into separate largely compatible projects. In this release:
+
+  If you were using...   Use this project instead...
+
+    annotations.rb         Anise
+
+    bytes.rb               RichUnits
+    times.rb
+
+    command.rb             Clio
+    consoleutils.rb
+
+A few others scripts have been deprecated, without an alternative
+recourse, simply because they were too weak, such as  uploadutils.rb,
+or highly experimental, such as chain.rb and eventhook.rb.
+
+Although this release constitutes an over all slimming down of Facets,
+two excellent new libraries have been added.
+
+1) *ini.rb* by Jeena Paradies. While YAML is frequently used by
+Rubyists for configuration files, a full-on serializer like YAML
+is often overkill. INI files provide a lightweight solution
+specifically geared for configuration.
+
+2) *filter.rb* by Brian Candler offers lazy evaluation chains of 
+Enumerable methods. This is an elegant way to optimize contiguous
+maps, selections, etc. --effective even on infinite enumerators.
+(Note, the name of this library may be changed in the next release.)
+
+While work remains to be done, I am happy to say, Facets is 
+finally beginning to approach the level of solidity I set out to
+achieve just over a year ago. Thank the Maker!
+
+Special thanks to Brian Candler, Jeena Paradies and Tyler Rick.
 
 * 9 Major Changes
 
@@ -68,6 +165,12 @@
 
 
 == 2.4.5 / 2008-10-02
+
+Facets 2.4.5 is a maintaince release. This release is notable
+however in that it will likely be the last that to use SVN.
+Facets will be switching to Git. Also, some libraries that
+have been flagged "to be deprecated" for some time will
+finally be so.
 
 * 8 Major Enhancements
 
