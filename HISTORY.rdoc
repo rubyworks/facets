@@ -5,18 +5,13 @@ very few actual core overrides in Facets, and it removes htmlfilter.rb
 due to a licensing incompatability.
 
 * 2 Major Enhancements
-
-    * Removed htmlfilter.rb due to licensing issues.
-    * Also removed cssfilter.rb ('gem install htmlfilter' now)
-
+  * Removed htmlfilter.rb due to licensing issues.
+  * Also removed cssfilter.rb ('gem install htmlfilter' now)
 * 1 Minor Enhancements
-
-    * Removed Kernel#__HERE__ as it simply cannot work.
-      (Ruby 1.9.2 will offer #source_location for the same,, btw.)
-
+  * Removed Kernel#__HERE__ as it simply cannot work.
+  (Ruby 1.9.2 will offer #source_location for the same,, btw.)
 * 1 Bug Fixes
-
-    * Fixed arity issue with Module#extend.
+  * Fixed arity issue with Module#extend.
 
 
 == 2.5.2 / 2009-04-07
@@ -26,12 +21,9 @@ Facets 2.5.2 is a simple maintentance release.
 === Changes
 
 * 1 Major Enhancement
-
-    * added string/uppercase and lowercase
-
+** added string/uppercase and lowercase
 * 1 Minor Enhancement
-
-    * adjustemnts to to_hash.rb
+** adjustemnts to to_hash.rb
 
 
 == 2.5.1 / 2009-03-05
