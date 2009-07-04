@@ -1,4 +1,4 @@
 ---
-basic-stats:
-  service: BasicStats
+codestats:
+  service: CodeStats
 

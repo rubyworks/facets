@@ -1,5 +1,5 @@
 ---
 announce:
-  service: EMail
+  service: Mailinglist
   mailto: transfire@gmail.com
 
