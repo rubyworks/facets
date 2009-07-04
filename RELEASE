@@ -1,49 +1,37 @@
-Facets 2.5.2 fixes a few bugs, makes some small but nice additions
-and improves 1.9 compatibility.
 
-The most important addition to make note of is Object#extend, which has
-been overridden to allow a block parameter. This is one of only two or three
-actual "monkey patches" in all of Facets. The block, when provided,
-is used to create an annonymous module which then extends the reciever.
-This is a "good practice" way to extend objects, rather than using class_eval
-on the singleton class.
+Facets 2.6.0 removes htmlfilter.rb and cssfilter.rb due to licensing
+incompatability. These scripts are now available as a separate package
+called 'htmlfilter'. Also removed are a few MORE libs that were too
+expiremental and/or not robust enough. Effectively this finishes up
+the "spring cleaning" of the MORE lib mentioned a few releases back.
 
-Special thanks to Erik Veenstra, Pit Capitan and especially Sandor Szücs
-for their contributions to this release.
+But it also marks a new start in trimming MORE down further. We have
+decided to do this for three reasons 1) Some of the MORE libs would
+be better served as separate projects. 2) Facets will become a tighter
+library, primarily focused on extensions. And 3) all libraries involved
+will become easier to maintain and thus more robust in the long run.
 
-Enjoy!
+This release also fixes an important arity bug with the recently added
+Module#extend method --one of the very few actual core overrides in Facets.
 
+### 2.6.0 / 2009-07-03
 
-== 2.5.1 / 2009-03-05
+* 7 Major Enhancements
 
-* 7 Additions
+    * Removed htmlfilter.rb due to licensing issues.
+    * Also removed cssfilter.rb ('gem install htmlfilter' now)
+    * Removed rwdelegator.rb, simply not a robust solution.
+    * Removed buildable.rb, api is too confusing.
+    * Removed meta.rb which was not very useful and too expiremental anyway.
+    * Removed prototype.rb, which needs it's own project.
 
-    * added Hash#group_by_value (thanks to Erik Veenstra)
-    * added String#file
-    * added Hash#new_with (Pit Capitan)
-    * added module/extend.rb, now can take a block.
-    * added hook.rb
-    * added to_h_auto
-    * overhauled to_hash.rb, now has multiple methods
+* 2 Minor Enhancements
 
-* 10 Bug Fixes
+    * Removed Kernel#__HERE__ as it simply cannot work.
+      (Ruby 1.9.2 will offer #source_location for the same, btw)
+    * Returned binding/opvars to core.
 
-    * corrected ostruct.rb to test for frozen state on updates
-    * fixed String#left_align
-    * fixed conflict between test_name.rb and test_arguments.rb
-    * fixed Enumreable#split when reciever is empty array
-    * fixed coruption of reciever by Hash#collate (thanks to Tilo Sloboda)
-    * fixed Array#to_h, h={} was not initialized
-    * fixed test of Module#conflict according ruby19
-    * fixed Hash#dearray_singluar_values
-    * association.rb stores reference when using #new
-    * changed Array#product to make it compatible to ruby 19, deleted block parameter
+* 1 Bug Fix
 
-* 5 Minor Enhancements
-
-    * split enumerable/collect into map_with_index and compact_map
-    * improved Array#to_h for 1.9 using flatten(1)
-    * Dictionary#replace can take regular Hash too
-    * move test_to_hash.rb from more to core
-    * Doc'd that UnboundMethod#name returns Symbol in 1.9, but String in 1.8
+    * Fixed arity issue with Module#extend.
 

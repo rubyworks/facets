@@ -1,30 +1,47 @@
 = Facets History
 
-== 2.5.3 / 2009-07-03
+== 2.6.0 / 2009-07-03
 
-Facets 2.5.3 fixes an arity bug with Module#extend --one of the
-very few actual core overrides in Facets. It also removes htmlfilter.rb
-and cssfilter.rb due to a licensing incompatability. These scripts
-are now available as a separate pacakge called 'htmlfilter'.
+Facets 2.6.0 removes htmlfilter.rb and cssfilter.rb due to licensing
+incompatability. These scripts are now available as a separate package
+called 'htmlfilter'. Also removed are a few MORE libs that were too
+expiremental and/or not robust enough. Effectively this finishes up
+the "spring cleaning" of the MORE lib mentioned a few releases back.
 
-* 2 Major Enhancements
+But it also marks a new start in trimming MORE down further. We have
+decided to do this for three reasons 1) Some of the MORE libs would
+be better served as separate projects. 2) Facets will become a tighter
+library, primarily focused on extensions. And 3) all libraries involved
+will become easier to maintain and thus more robust in the long run.
+
+This release also fixes an important arity bug with the recently added
+Module#extend method --one of the very few actual core overrides in Facets.
+
+* 7 Major Enhancements
 
     * Removed htmlfilter.rb due to licensing issues.
     * Also removed cssfilter.rb ('gem install htmlfilter' now)
+    * Removed rwdelegator.rb, simply not a robust solution.
+    * Removed buildable.rb, api is too confusing.
+    * Removed meta.rb which was not very useful and too expiremental anyway.
+    * Removed prototype.rb, which needs it's own project.
 
-* 1 Minor Enhancements
+* 2 Minor Enhancements
 
     * Removed Kernel#__HERE__ as it simply cannot work.
-      (Ruby 1.9.2 will offer #source_location for the same,, btw.)
+      (Ruby 1.9.2 will offer #source_location for the same, btw)
+    * Returned binding/opvars to core.
 
-* 1 Bug Fixes
+* 1 Bug Fix
 
     * Fixed arity issue with Module#extend.
 
 
 == 2.5.2 / 2009-04-07
 
-Facets 2.5.2 is a simple maintentance release.
+Facets 2.5.2 is a simple maintentance release which fixed a few issues
+in the new to_hash.rb library. This release also added String#lowercase
+and String#uppercae.
 
 * 1 Major Enhancement
 
@@ -32,7 +49,7 @@ Facets 2.5.2 is a simple maintentance release.
 
 * 1 Minor Enhancement
 
-    * adjustemnts to to_hash.rb
+    * adjustments to to_hash.rb
 
 
 == 2.5.1 / 2009-03-05
@@ -298,7 +315,7 @@ This release give special thanks to the following people for their contributions
 
 And of course, to anyone else I failed to mention that has contributed.
 
-* 17 Major Enhancements
+* 22 Major Enhancements
 
     * Changed File#rewrite to not use the in-place change of the string.
     * Deprecate Hash#keys_to_s and Hash#keys_to_sym.
@@ -315,40 +332,40 @@ And of course, to anyone else I failed to mention that has contributed.
     * BasicObject is now just a synonm for BlankSlate unless Ruby 1.9.  [major]
     * Moved Indexable and Stackable to core.
     * Deprecated Console:: namespace for ANSICode.
-    * Renamed Class#to_pathname and #to_methodname to #pathize and #methodize.
     * Added Symbol#plain?, Symbol#query? and Symbol#setter?  [major]
-
-* Minor Enhancements
-
-    * Fixed Time#hence changed years when changing months.
-    * Fixed Time#hence to flip year correctly when adding months.
-    * Added optional argument to Dictionary#first and #last.
-    * Improved File#rootname --it is now more robust.
-    * Made FileUtils#whereis a module_function again.
-    * Although not perceptible to the end user, there are now three divisions lib/core, lib/lore, lib/more.
-    * Created Lore library to house extensions to Ruby's standard library.
-    * Add facets class files (eg. facets/string) have been made dynamic.  [minor]
-    * Moved binding/opvars from core to more.
     * Deprecate Hash#keys_to_s and Hash#keys_to_sym.
       * These are the original versions of these methods.
       * But now we can use #rekey(:to_s) and #rekey(:to_sym) instead.
-    * Split kernel/load.rb into require_all.rb and require_local.rb.
-    * Array#index accepts a block (one of the few core overrides).  [minor]
+    * Renamed arguments.rb and CLI::Arguments to argvector.rb and Argvector.
+    * Added optional argument to Dictionary#first and #last.
+    * Moved binding/opvars from core to more.
     * Added hash/symbolize_keys and stringify_keys.
+    * Added file/split_root.
+
+* 20 Minor Enhancements
+
+    * Improved File#rootname --it is now more robust.
+    * Made FileUtils#whereis a module_function again.
+    * While not perceptible to an end user, there are now 3 divisions: lib/core, lib/lore, lib/more.
+    * Created Lore library to house extensions to Ruby's standard library.
+    * Re-added facets class files (eg. facets/string) and are now dynamic.
+    * Added block to Array#index.
+      * This is one of the few core overrides in Facets.
+      * It is a feature already in Ruby 1.9.
+    * Added Jim Weirich's BlankSlate class.
+      * This is a temporary measure be compatible w/ AcitveSupport's BasicObject.
+    * Split kernel/load.rb into require_all.rb and require_local.rb.
     * Modified script/test to display $LOAD_PATH before running tests.
     * Split module/alias.rb up into alias_accessor, alias_module_function and alias_method_chain.
-    * Added file/split_root.
-    * Added #bump method to VersionNumber class.*
-    * Module#instance_method_define? now only applies to public methods.  [minor]
+    * Added #bump method to VersionNumber class.
+    * Module#instance_method_defined? now only applies to public methods.  [minor]
     * Renamed string/subtract to string/op_sub. 
       Old name will remain for time being for compatability. [minor]
     * Added #glob and #glob_first as extensions to Pathname.
     * Moved style.rb to string/stylize.rb  [minor]
     * Added string/mask providing powerful string manipulation.  [major]
-    * Added warning to bytes --use RichUnits instead.
+    * Added warning to bytes to use RichUnits instead.
     * Added niclass/ergo whic points back to kernel/ergo.
-    * Made core/facets/hash.rb dynamic.
-    * Renamed arguments.rb and CLI::Arguments to argvector.rb and Argvector.*
     * Updated warn line fore eventual deprecation of fileshell and arguments.*
     * Added facets-load.rb to allow old school cherry picking.*
       * Between 2.0 and 2.4 require 'facets' simply added core to LOAD_PATH.
@@ -357,15 +374,12 @@ And of course, to anyone else I failed to mention that has contributed.
             require 'facets-load.rb
             require 'kernel/with'
             require 'symbol/to_proc'
-        This adds the path to the end of LOAD_PATH to prevent any load conflicts.
-    * Added Jim Weirich's BlankSlate class.
-      * This is a temporary measure be compatible w/ AcitveSupport's BasicObject.
-    * Added block to Array#index.
-      * This is one of the few core overrides in Facets.
-      * It is a feature already in Ruby 1.9.
+      * This adds the path to the end of LOAD_PATH to prevent any load conflicts.
 
-* 2 Bug Fixes
+* 4 Bug Fixes
 
+    * Fixed Time#hence changed years when changing months.
+    * Fixed Time#hence to flip year correctly when adding months.
     * Hash#<< returns self
     * Fixed string/pathize.
 
@@ -385,7 +399,7 @@ Just some more of those great old work your ass off changes.
     * Moved live.rb to facets-live.rb.
     * Added kernel/instance method which provides a fluent interface to private object space.
 
-* Minor Enhancements
+* 5 Minor Enhancements
 
     * Added sow generation forms.
     * Spilt Time#trunc into separate file.
@@ -438,50 +452,38 @@ Just some more of those great old work your ass off changes.
 
 == 2.4.1 / 2008-04-03
 
-* 5 Changes
+This release takes aim at improving compatability with ActiveSupport.
+It also reintroduces an improved paramix.rb.
 
-    * Comparing to ActiveSupport, found 63 extension clashes, but most are due to 1.9 features and the rest should be compatible.
-    * A much improved paramix.rb has been returned to the library; but please note it's not quite finished yet.
-    * Reatomized a number of Kernel and String methods. Reatomization is nearly complete.
-    * Deprecated behavior.rb. It was not robust.
-    * Added basex.rb, library for working in any encoding base using any character set (base62 is the default).
+* 4 Major Enhancements
 
-* Other Changes
-
-    * Paramix is all spiffy again.
+    * A much improved paramix.rb has been returned to the library.
       * There a no longer capitialize module methods at all.
       * Use Module#[] and mixin_params[] instead.
+    * Deprecated behavior.rb. It was not robust.
+    * Added basex.rb, for working in any encoding base using any character set (base62 is the default).
 
-    * Update to notes and changes.
-    * Added doc/notes.rdoc
-    * Renamed.
-    * Update metadata for 2.4.1.
-    * Added new logs.
-    * Removed old logs.
-    * Removed old xml changelogs.
-    * Added .rsync-filter and .htaccess to site/.
-    * Fixed methods and conflicts scripts to compare extension libraries.
-    * Updated tests for reatomizations.
+* 3 Minor Enhancements
+
+    * Comparing to ActiveSupport, found 63 extension clashes, but most are due to 1.9 features.
+      The rest should be compatible.
+    * Reatomized a number of Kernel and String methods. Reatomization is nearly complete.
     * Continued work on reatomizing core extensions (nearly complete now).
-    * Work on kernel instance methods.
-    * Added basex.rb and deprecated bahavior.rb.
 
 
 == 2.4.0 / 2008-03-24
 
-Facets 2.4 is a major step forward for Facets. It is perhaps
-the release that 2.0 should have been, but of course it took
-the actual 2.0 release to make 2.4 possible. Some annoyances
-you may have encountered in updating your code to 2.0 are now
-fixed. And from 2.4 on, Facets will now be settling down into
-simple refinement release cycles.
+Facets 2.4 is a major step forward for Facets. It is perhaps the release
+that 2.0 should have been, but of course it took the actual 2.0 release
+to make 2.4 possible. Some annoyances you may have encountered in updating
+your code to 2.0 are now fixed. And from 2.4 on, Facets will now be
+settling down into simple refinement release cycles for a while.
 
-The main change under the hood is to bring everything up to
-the top lib/facets/ directory. No longer are the libraries
-sorted by category. I had done so for a long time to make
-it easier to track the various libs, but in the end it was
-only making it more diffcult to deal with build tools and 
-packaging.
+The main change under the hood is to bring everything up to the top
+lib/facets/ directory. No longer are the libraries sorted by category.
+I had done so for a long time to make it easier to track the various libs,
+but in the end it was only making it more diffcult to deal with build tools
+and packaging.
 
 For the end-user, the largest change is a new emphisis on:
 
@@ -515,7 +517,6 @@ to be complete in the next minor release or two.
     * camelcase and snakecase are core extensions. For specialized styles use String#style in style.rb.
     * This was a fairly large and fast-paced update, so unfortunately not all changes are listed this time.
 
-
     * Moved test/test_one_nine.rb to test/test_ruby.rb.
     * Removed use of Console namepspace. command.rb and arguments.rb now use CLI.
     * Renamed ArgVector to CLI::Arguments
@@ -524,18 +525,7 @@ to be complete in the next minor release or two.
     * Added site/doc soft link to doc/html.
     * Moved one_nine.rb to ruby.rb
     * Update d requires for "one_nine" to just "ruby" b/c of backports to 1.8.7.
-    * Added some work files.
-    * Added some expirments in "safe" extensions.
-    * Added html docs.
-    * Added tests.
-    * Added amazon books.
-    * Add some addition separation to extensions.
     * Renamed task/ to script/, since the community is used to it b/c of Rails.
-    * Fixed up tasks.
-    * Clean up task system and docs.
-    * Update metadata.
-    * Test updates.
-    * Minor updates.
 
     * Added the new split-off tests.
     * Splinter remaining clumped tests.
@@ -572,24 +562,7 @@ to be complete in the next minor release or two.
 
     * General cleanup pushing toward 3.0 release.
     * Finished the reorganization of Enumerable extensions.
-    * Loose end additions.
-    * Cleanup module tests.
-    * Cleanup hash tests.
-    * Cleanup enumerable tests.
-    * Added new test/kernel directory.
-    * Removed old test/kernel directory.
-    * Moved test_let to prime/kernel in order to move prime/kernel.
-    * Cleanup array and time tests.
-    * Cleanup file tests.
-    * Cleanup string tests.
-    * Continued test cleanup. Oh, so, fun fun ;)
-    * Removed uneeded test directories.
-    * Continued organizing tests.
     * Move integer tests cleanup.
-    * Cleaned up integer tests.
-    * Continued fixing tests.
-    * Working on test organization.
-    * Cleaned up binding tests.
     * Removed old core/more test directories.
     * Moved remaining tests to top test directory.
     * MOved extra extension test to toplevel.
@@ -609,7 +582,6 @@ to be complete in the next minor release or two.
 
     * Made op_esc.rb a separate module rather thanan extension.
     * REmoved more extraneous files and moved a few to work area.
-
 
     * Added some tasks and a couple of file to work old.
     * Cleaned up extra binding extensions.
@@ -661,20 +633,12 @@ to be complete in the next minor release or two.
     * Renamed more/string/facets/titlecase to captialize_all.
 
     * Added uri and xoxo tests.
-    * Cleaning up more/ext tests.
     * Some more reorganization in test/core.
     * Removed finaly vestage of old dir structure.
     * Moved remaing test to more/add.
     * Removed some outdated test and organized.
     * Moved more/ext tests out of more/add/.
     * Added ext, cli and sys to test/more/.
-    * Removed test/mixin.
-    * Moved test from mixin to more/add.
-    * Moved add to test/more.
-    * Added test/more.
-    * Moved test/more to add.
-    * Moved ext tests to core subdir.
-    * Added test/core.
     * Move text/core to test/ext.
     * Updated .roll file for new organization.
     * Updated .reap file.
@@ -802,14 +766,8 @@ to be complete in the next minor release or two.
     * Moved remaining dev files to work/ (will cleanup later).
     * Moved dev/sandbox to work/.
     * Moved dev/task and reference material to work directory.
-    * Moved outdated dev libs to work.
-    * Moved current dev to work directory.
-    * Update to admin/tasks.
-    * Update to project file.
     * Added enumerable/combinations.
     * Added openhash and tracepoint.
-    * Added work directory.
-    * Added some development scraps, plan to move dev/ to work/.
 
 
 == 2.3.0 / 2008-02-01
@@ -1042,60 +1000,46 @@ attr_xxx methods.
     * MasterCommand now passes (args, opts), until 1.9 is main stream.
     * Added BiCrypt class for simple two-way encryption.
 
+    * Added dev/test
+    * Renamed RELEASE to WHATSNEW
+    * Added injecting test and cleaned up.
+    * Fixed bud in enumerable/cluster_by (returned nil instead of []).
+    * Cleaned up enumerable/permutation.rb
+    * minor space removal
+    * Complete rewrite of command.rb.
+    * Added comment for potential future #is.
+    * Added "tester" attribues attr_xxx!. Also added alias_xxx for all attr_xxx methods.
+    * Added top-level log directory.
 
-2007-11-09  transami
+    * Added -q option to zip method in ZipUtils.
 
-        * Added dev/test
-        * Renamed RELEASE to WHATSNEW
-        * Added injecting test and cleaned up.
-        * Fixed bud in enumerable/cluster_by (returned nil instead of []).
-        * Cleaned up enumerable/permutation.rb
-        * minor space removal
-        * Complete rewrite of command.rb.
-        * Added comment for potential future #is.
-        * Added "tester" attribues attr_xxx!. Also added alias_xxx for all attr_xxx methods.
-        * Added top-level log directory.
+    * Remove #q reference from RELEASE.
+    * Cleanup of test_initializer.rb.
+    * VERSION 2.0.5
+    * Fixed return bug in hash/op.rb.
+    * Ok. #p is back. This will in fact be in 1.9, so we're good.
+    * Allowed Class#initializer to return the attribute names.
+        * This should allow things like: 'private *initializer(...)'
 
+    * Added missing (*args) in #initialize on Hash.new.
+    * Renamed #p to #q, because of multiple args problem.
+        * I don't know how Ruby 1.9 plans to handle multiple args.
+        * Will deprecate for 1.9 anyway so doesn't matter much.
+    * Fixed package name in icli.yaml.
+    * Added name field to meta/icli.yaml.
+    * Added meta/icli.yaml.
+    * Added a RELEASE file to hold current release notes.
+    * Added log task.
+    * Added changelog file in doc/log/.
+    * Up'd version to 2.0.4.
+    * Update task/groups.
+    * Fixed to_h in Command::Options
+    * Fixed bug in initialize.
 
-2007-11-08  transami
-
-        * Added -q option to zip method in ZipUtils.
-2007-11-05  transami
-
-        * Remove #q reference from RELEASE.
-        * Cleanup of test_initializer.rb.
-        * VERSION 2.0.5
-        * Fixed return bug in hash/op.rb.
-        * Ok. #p is back. This will in fact be in 1.9, so we're good.
-        * Allowed Class#initializer to return the attribute names.
-            * This should allow things like: 'private *initializer(...)'
-
-
-2007-11-04  transami
-
-        * Added missing (*args) in #initialize on Hash.new.
-        * Renamed #p to #q, because of multiple args problem.
-            * I don't know how Ruby 1.9 plans to handle multiple args.
-            * Will deprecate for 1.9 anyway so doesn't matter much.
-        * Fixed package name in icli.yaml.
-        * Added name field to meta/icli.yaml.
-        * Added meta/icli.yaml.
-        * Added a RELEASE file to hold current release notes.
-        * Added log task.
-        * Added changelog file in doc/log/.
-        * Up'd version to 2.0.4.
-        * Update task/groups.
-        * Fixed to_h in Command::Options
-        * Fixed bug in initialize.
-
-
-2007-11-03  transami
-
-        * Removed extest task. We will no longer need it.
-        * Fixed bug in Hash#- Thanks to Xavier Shay.
-        * Minor update to rdoc.yaml.
-        * Renamed old changelogs.
-
+    * Removed extest task. We will no longer need it.
+    * Fixed bug in Hash#- Thanks to Xavier Shay.
+    * Minor update to rdoc.yaml.
+    * Renamed old changelogs.
 
 
 == 2.0.5 / 2007-11-05
