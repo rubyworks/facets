@@ -1,5 +1,31 @@
 = Facets History
 
+== 2.6.1 / 2009-08-01
+
+Facets 2.6.1 continues the process of trimming down or the MORE library.
+Ten high-level libraries have been removed that are all available as separate gems.
+
+* 6 Major Enhancements
+
+    * overload.rb has been spun-off as a separate project (gem install overload).
+    * binreadable.rb has been spun-off as a separate project (gem install binaryio).
+    * downloader.rb has been spun-off as a separate project (gem install downloader).
+    * xoxo.rb has been spun-off as a separate project (gem install xoxo).
+    * bicrypt.rb has been spun-off as a separate project (gem install bicrypt).
+    * typecast.rb has been spun-off as a separate project (gem install typecast).
+    * ziputils.rb has been deprecated. Have a look at Folio (gem install folio) for replacement.
+    * minitar.rb has also been removed from the library. It is available separately and in Folio.
+    * net/smtp_tls.rb has been removed. It's not need for 1.8.7+, and it is also 
+      available as a separate gem.
+    * Deprecated 1stclassmethod.rb; #method! and #instance_method! are now part of core.
+    * Added Module#attr_setter to core (and removed from attr.rb).
+
+* 1 Minor Enhancements
+
+    * BlankSlate is now an alias for BasicObject. This alias will be phased out eventually.
+    * xmlhash.rb has been deprecated. It may get it's own project, but it needs some work first.
+
+
 == 2.6.0 / 2009-07-03
 
 Facets 2.6.0 removes htmlfilter.rb and cssfilter.rb due to licensing
