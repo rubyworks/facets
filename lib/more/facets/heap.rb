@@ -15,6 +15,8 @@
 # ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
 # FOR A PARTICULAR PURPOSE.
 
+warn "Use PQueue instead of Heap for future version."
+
 require 'facets/pqueue'
 
 # Heap is PQueue.
