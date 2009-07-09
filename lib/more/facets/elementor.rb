@@ -43,6 +43,9 @@ module Enumerable
     Elementor.new(self, meth || :map)
   end
 
+  #
+  #   [1,2,3].per.select > 1
+  #
   def per
     @__per__ ||= Functor.new do |op|
       Elementor.new(self, op)
