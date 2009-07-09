@@ -11,7 +11,7 @@
 #       puts 'inst_meth'
 #     end
 #
-#     class_extension do
+#     class_extend do
 #       def class_meth
 #         "Class Method!"
 #       end
@@ -66,7 +66,7 @@ class Module
   #       puts 'inst_meth'
   #     end
   #
-  #     class_extension do
+  #     class_extend do
   #       def class_meth
   #         "Class Method!"
   #       end
@@ -79,35 +79,37 @@ class Module
   #
   #   X.class_meth  #=> "Class Method!"
   #
-
-  def class_extension(&block)
+  def class_extend(*mods, &block)
     @class_extension ||= Module.new do
       def self.append_features(mod)
         append_features_without_class_extension(mod)
       end
     end
+    @class_extension.__send__(:include, *mods)
     @class_extension.module_eval(&block) if block_given?
+    extend(@class_extension)  # extend this module too
     @class_extension
   end
 
-  private :class_extension
+  #private :class_extend
 
+  # Override +append_features+ to handle class-inheritable extensions.
   def append_features(mod)
     append_features_without_class_extension(mod)
-    mod.extend(class_extension)
+    mod.extend(class_extend)
     if mod.instance_of? Module
-      mod.__send__(:class_extension).__send__(:include, class_extension)
+      mod.__send__(:class_extend).__send__(:include, class_extend)
     end
   end
 
 end
 
 class Class
-  # For a class #class_extension is the same as class_eval.
-  # The alternative is to "undef_method :class_extension",
+  # For Class, #class_extend is the same as class_eval.
+  # The alternative is to "undef_method :class_extend",
   # but this seems uneccessarily limited.
-
-  def class_extension(&blk)
+  #
+  def class_extend(&blk)
     class_eval(&blk)
   end
 end
