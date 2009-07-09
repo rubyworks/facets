@@ -1,7 +1,8 @@
 ---
 rdoc_lore:
   service : RDoc
-  template: ./.config/rdoc-template
+  #template: ./.config/rdoc-template
+  template: kilmer
   output  : doc/rdoc/lore
   title   : Facets Lore API
   main    : doc/README.lore

@@ -1,7 +1,8 @@
 ---
 rdoc_more:
   service : RDoc
-  template: ./.config/rdoc-template
+  #template: ./.config/rdoc-template
+  template: kilmer
   output  : doc/rdoc/more
   title   : Facets More API
   main    : doc/README.more
