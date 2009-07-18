@@ -2,9 +2,9 @@
 #
 # This is not a mixin, since nearly all objects have this baehavior.
 #
-# Is this the same as immutable? Whould that be a better name?
+# TODO: Is this the same as immutable? Whould that be a better name?
 
-class Object
+class Object #:nodoc:
   # Can you safely .dup this object?
   # False for nil, false, true, symbols, and numbers; true otherwise.
   def duplicable?
@@ -41,3 +41,6 @@ class Numeric #:nodoc:
     false
   end
 end
+
+# :facets: extra
+
