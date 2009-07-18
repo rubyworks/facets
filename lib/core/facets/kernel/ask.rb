@@ -19,6 +19,7 @@ module Kernel
   def ask(question, answers=nil)
     $stdout << "#{question}"
     $stdout << " [#{answers}] " if answers
+    $stdout.flush
     until inp = $stdin.gets ; sleep 1 ; end
     inp.strip
   end
