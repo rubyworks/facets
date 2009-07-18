@@ -1,4 +1,4 @@
-# = Equatable
+# = Equitable
 #
 # This mixin provides methods of equality based
 # on a single #identity method which must return
@@ -6,9 +6,9 @@
 #
 # It also provides a "shortcut" for creating the
 # #identity method based on given accessors and returns
-# the Equatable module for inclusion.
+# the Equitable module for inclusion.
 #
-#   include Equatable(:a, :b)
+#   include Equitable(:a, :b)
 #
 # is equivalent to including a module containing:
 #
@@ -42,7 +42,7 @@
 # FOR A PARTICULAR PURPOSE.
 
 
-# = Equatable
+# = Equitable
 #
 # This mixin provides methods of equality based
 # on a single #identity method which must return
@@ -50,9 +50,9 @@
 #
 # It also provides a "shortcut" for creating the
 # #identity method based on given accessors and returns
-# the Equatable module for inclusion.
+# the Equitable module for inclusion.
 #
-#   include Equatable(:a, :b)
+#   include Equitable(:a, :b)
 #
 # is equivalent to including a module containing:
 #
@@ -68,7 +68,7 @@
 #     self.a.hash ^ self.b.hash
 #   end
 #
-module Equatable
+module Equitable
 
   def self.identify(base, *accessors)
     base.send(:define_method, :identity){ accessors }
@@ -93,9 +93,9 @@ class Module
 
   # This function provided a "shortcut" for creating the
   # #identity method based on given accessors and returns
-  # the Equatable module for inclusion.
+  # the Equitable module for inclusion.
   #
-  #  include Equatable(:a, :b)
+  #  include Equitable(:a, :b)
   #
   # is equivalent to including a module containing:
   #
@@ -112,8 +112,8 @@ class Module
   #   end
   #
 
-  def Equatable(*accessors)
-    Equatable.identify(self, *accessors)
+  def Equitable(*accessors)
+    Equitable.identify(self, *accessors)
   end
 
 end
