@@ -32,6 +32,7 @@ module Kernel #:nodoc:
       ids.each do |m|
         base.module_eval <<-code
           alias_method '#{ m }:once', '#{ m }'
+          private '#{ m }:once'
           def #{ m }(*__a__,&__b__)
             c = once['#{ m }']
             k = [__a__,__b__]
