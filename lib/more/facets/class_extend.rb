@@ -53,8 +53,6 @@ class Module
 
   alias_method :append_features_without_class_extension, :append_features
 
-  # = class_extension
-  #
   # Normally when including modules, class/module methods are not
   # extended. To achieve this behavior requires some clever
   # Ruby Karate. Instead class_extension provides an easy to use
@@ -90,6 +88,8 @@ class Module
     extend(@class_extension)  # extend this module too
     @class_extension
   end
+
+  alias_method :class_extension, :class_extend
 
   #private :class_extend
 
