@@ -1,7 +1,7 @@
 require 'facets/kernel/deep_copy.rb'
 require 'test/unit'
 
-class TestKernelCopy < Test::Unit::TestCase
+class TestKernelDeepCopy < Test::Unit::TestCase
 
   # fixtures for copy / deep_copy
   class A
