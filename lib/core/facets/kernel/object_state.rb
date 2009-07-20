@@ -1,50 +1,61 @@
-module Kernel
-
-  def state(data=nil)
-    if state
+class Object
+  # Get state of object.
+  def object_state(data=nil)
+    if data
       instance_variables.each do |iv|
         name = iv.to_s.sub(/^[@]/, '').to_sym
-        instance_variable_set(iv, data[name])
+        instance_variable_set(iv, snap[name])
       end
     else
-      data = Hash.new
+      data = {}
       instance_variables.each do |iv|
         name = iv.to_s.sub(/^[@]/, '').to_sym
         data[name] = instance_variable_get(iv)
       end
-      data
+      snap
     end
   end
 
+  # Replace state of object.
+  def replace(data)
+    instance_variables.each do |iv|
+      name = iv.to_s.sub(/^[@]/, '').to_sym
+      instance_variable_set(iv, data[name])
+    end
+  end
 end
 
 class Array
-  def state(data=nil)
+  def object_state(data=nil)
     data ? replace(data) : dup
   end
 end
 
 class String
-  def state(data=nil)
+  def object_state(data=nil)
     data ? replace(data) : dup
   end
 end
 
 class Hash
-  def state(data=nil)
+  def object_state(data=nil)
     data ? replace(data) : dup
   end
 end
 
 class Struct
-  def state(data=nil)
+  def object_state(data=nil)
     if data
       data.each_pair {|k,v| send(k.to_s + "=", v)}
     else
-      data = Hash.new
+      data = {}
       each_pair{|k,v| data[k] = v}
       data
     end
+  end
+
+  def replace(snap)
+    snap.each_pair {|k,v| send(k.to_s + "=", v)}
   end
 end
 
