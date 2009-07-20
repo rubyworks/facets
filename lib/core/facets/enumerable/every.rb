@@ -31,15 +31,5 @@ module Enumerable
   #  end
   #end
 
-  # Possible name change for every.
-  #
-  #   r = [1,2,3].elements + 3  #=> [4,5,6]
-  #
-  # Certainly reads better.
-
-  # DEPRECATED
-  #alias_method :elements, :every
-  #alias_method :elements!, :every!
-
 end
 
