@@ -48,6 +48,13 @@ class ObjectReflection
 
   instance_methods.each{|m| private(m) unless m.to_s =~ /^__/ }
 
+  def instance(object)
+    @reflections ||= {}
+    @reflections[object] ||= new(object)
+  end
+
+  private :new
+
   #
   def initialize(object)
     @self = object
@@ -90,7 +97,7 @@ module Kernel
   # For metaprogramming this can be important.
 
   def __object__
-    @_object_reflection ||= ObjectReflection.new(self)
+    ObjectReflection.instance(self)
   end
 
   #def __instance__
