@@ -19,10 +19,10 @@ class Module
   #
   # CREDIT: Trans
 
-  def attr_accessor!(*args)
+  def attr_switch_accessor(*args)
     attr_reader!(*args) + attr_writer!(*args)
   end
-  alias_method :attr_switcher, :attr_accessor!
+
   alias_method :attr_toggler,  :attr_accessor!
 
   # Create aliases for flag accessors.
@@ -39,47 +39,6 @@ class Module
   end
   alias_method :alias_switcher, :alias_accessor!
   alias_method :alias_toggler,  :alias_accessor!
-
-  # Create an tester attribute. This creates a single method
-  # used to test the attribute for truth.
-  #
-  #   attr_reader! :a
-  #
-  # is equivalent to
-  #
-  #   def a?
-  #     @a ? true : @a
-  #   end
-  #
-  def attr_reader!(*args)
-    code, made = '', []
-    args.each do |a|
-      code << %{
-        def #{a}?(truth=nil)
-          @#{a} ? truth || @#{a} : @#{a}
-        end
-      }
-      made << "#{a}?".to_sym
-    end
-    module_eval code
-    made
-  end
-  alias_method :attr_reader?, :attr_reader!
-  alias_method :attr_tester, :attr_reader!
-
-  # Create aliases for flag reader.
-  #
-  # CREDIT: Trans
-
-  def alias_reader!(*args)
-    orig = args.last
-    args = args - [orig]
-    args.each do |name|
-      alias_method("#{name}?", "#{orig}?")
-    end
-  end
-  alias_method :alias_reader?, :alias_reader!
-  alias_method :alias_tester, :alias_reader!
 
   # Create a flaggable attribute. This creates a single methods
   # used to set an attribute to "true".

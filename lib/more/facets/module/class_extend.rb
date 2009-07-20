@@ -89,6 +89,7 @@ class Module
     @class_extension
   end
 
+  # TODO: DEPRECATE
   alias_method :class_extension, :class_extend
 
   #private :class_extend
