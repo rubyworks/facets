@@ -1,3 +1,5 @@
+$FIRST_CLASS_METHODS = Hash.new{ |h,k| h[k] = {} }
+
 module Kernel
 
   # Easy access to method as object, and they retain state.
@@ -16,7 +18,8 @@ module Kernel
   #   m2.annotate  #=> "simple example"
 
   def method!(s)
-    ( @__methods__ ||= {} )[s.to_sym] ||= method(s)
+    #( @__methods__ ||= {} )[s.to_sym] ||= method(s)
+    $FIRST_CLASS_METHODS[self][s.to_sym] ||= method(s)
   end
 
 end
