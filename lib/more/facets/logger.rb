@@ -34,6 +34,7 @@
 
 require "logger"
 require "time"
+require "facets/ansicode"
 
 # = Logger
 #
@@ -58,40 +59,21 @@ class Logger
   SIMPLE_FORMAT = "%5s: %s\n"
   DETAILED_FORMAT = "%s %5s: %s\n"
 
-  # Dictate the way in which this logger should format the
-  # messages it displays. This method requires a block. The
-  # block should return formatted strings given severity,
-  # timestamp, msg, progname.
-  #
-  # === Example
-  #
-  # logger = Logger.new
-  # logger.setup_format do |severity, timestamp, msg, progname|
-  #   "#{progname}@#{timestamp} - #{severity}::#{msg}"
-  # end
+  # Why these names ?
+  alias_method :devel, :debug
+  alias_method :fine, :debug
 
-  def setup_format(&format_proc)
-    raise "Formating block needed" unless format_proc
-    @format_proc = format_proc
-  end
-
-  def format_procedure
-    @format_proc
-  end
-
-private
-
-  attr_accessor :format_proc
-
-  alias_method :format_message_without_proc, :format_message # :nodoc:
-
-  def format_message(*args) # :nodoc:
-    @format_proc ? @format_proc.call(*args) : format_message_without_proc(*args)
+  def ansicolor=(on)
+    unless is_a?(Ansicolor)
+      class << self
+        include Ansicolor
+      end
+    end
+    @logdev.ansicolor = on
   end
 
 # NOTE: trace is deprecated b/c binding of caller is no longer possible.
 =begin
-public
   # Prints a trace message to DEBUGLOG (at debug level).
   # Useful for emitting the value of variables, etc.  Use
   # like this:
@@ -154,5 +136,156 @@ public
   )
 =end
 
+  # Dictate the way in which this logger should format the
+  # messages it displays. This method requires a block. The
+  # block should return formatted strings given severity,
+  # timestamp, msg, progname.
+  #
+  # === Example
+  #
+  # logger = Logger.new
+  # logger.setup_format do |severity, timestamp, msg, progname|
+  #   "#{progname}@#{timestamp} - #{severity}::#{msg}"
+  # end
+
+  def setup_format(&format_proc)
+    raise "Formating block needed" unless format_proc
+    @format_proc = format_proc
+  end
+
+  def format_procedure
+    @format_proc
+  end
+
+private
+
+  attr_accessor :format_proc
+
+  alias_method :format_message_without_proc, :format_message # :nodoc:
+
+  def format_message(*args) # :nodoc:
+    @format_proc ? @format_proc.call(*args) : format_message_without_proc(*args)
+  end
+
+  class LogDevice
+    attr_writer :ansicolor
+
+    def ansicolor?
+      @ansicolor
+    end
+  end
+
+  # For adding ansicolor output.
+
+  module Ansicolor
+
+    def info(str)
+      return unless info?
+      @logdev.ansicolor? ? info_with_color{ super } : super
+    end
+
+    def warn(str)
+      return unless warn?
+      @logdev.ansicolor? ? warn_with_color{ super } : super
+    end
+
+    def debug(str)
+      return unless debug?
+      @logdev.ansicolor? ? debug_with_color{ super } : super
+    end
+
+    def error(str)
+      return unless error?
+      @logdev.ansicolor? ? error_with_color{ super } : super
+    end
+
+    def fatal(str)
+      return unless error?
+      @logdev.ansicolor? ? fatal_with_color{ super } : super
+    end
+
+    def info_with_color #:yield:
+      self << ANSICode.green
+      yield
+      self << ANSICode.clear
+    end
+
+    def warn_with_color #:yield:
+      self << ANSICode.cyan
+      yield
+      self << ANSICode.clear
+    end
+
+    def error_with_color #:yield:
+      self << ANSICode.red
+      yield
+      self << ANSICode.clear
+    end
+
+    def debug_with_color #:yield:
+      self << ANSICode.yellow
+      yield
+      self << ANSICode.clear
+    end
+
+    def fatal_with_color #:yield:
+      self << ANSICode.bold + ANSICode.red
+      yield
+      self << ANSICode.clear
+    end
+
+  end
+
 end
+
+# OLD WAY TO ADD COLOR
+=begin
+module Console
+
+  class  Logger < ::Logger
+
+    attr_accessor :style
+
+    def style
+      @style ||= Style.new
+    end
+
+    def info(str)
+      return if level > Logger::INFO
+      self << style.info(str)
+      super
+      self << ANSICode.clear
+    end
+
+    def warn(str)
+      self << style.warn(str)
+      super
+      self << ANSICode.clear
+    end
+
+    def error(str)
+      return if level > Logger::ERROR
+      self << style.error(str)
+      super
+      self << ANSICode.clear
+    end
+
+    def debug(str)
+      self << style.debug(str)
+      super
+      self << ANSICode.clear
+    end
+
+    # Logger Style
+
+    class Style
+      def info(str)  ; ANSICode.green ; end
+      def warn(str)  ; ANSICode.cyan ; end
+      def error(str) ; ANSICode.bold + ANSICode.red ; end
+      def debug(str) ; '' ; end
+    end
+
+  end
+end
+=end
 
