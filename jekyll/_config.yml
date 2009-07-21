@@ -1,0 +1,6 @@
+---
+source      : .
+destination : ../web
+markdown    : rdiscount
+pygments    : true
+

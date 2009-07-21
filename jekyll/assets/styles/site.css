@@ -1,0 +1,313 @@
+/*
+ * FACETS STYLESHEET
+ * Thomas Sawyer, 2007
+ *
+ */
+
+
+/* GENERAL */
+
+* {
+  margin          : 0;
+  padding         : 0;
+  border          : none;
+}
+
+body {
+  margin          : 0;
+  padding         : 0;
+  color           : black;
+  background      : white;
+  text-align      : center; /* for IE */
+  /*background       : url(../images/RubyFacetsShadow2.png) bottom no-repeat white;*/
+  font-size       : 11pt;
+}
+
+p {
+  font-size       : 1em;
+  color           : #222222;
+  text-align      : justify;
+  margin          : 10px 10px 15px 0px;
+  line-height     : 1.5em;
+}
+
+a {
+  font-weight     : bold;
+  text-decoration : underline;
+  color           : #FF0066;
+}
+
+pre {
+  background      : black;
+  font-size       : 0.8em;
+  padding-top     : 10px;
+  color           : white;
+}
+
+blockquote {
+  margin          : 5px 0px 0px 5px;
+  font-style      : italic;
+  font-weight     : bold;
+  font-size       : 0.8em;
+  color           : #999;
+}
+
+p a {
+  font-weight     : normal;
+}
+
+td {
+  vertical-align: top;
+}
+
+li { color: black; font: 16pt sans-serif; }
+
+h3 { font-weight: normal; }
+
+td { padding: 5px; }
+
+#sidebar {
+  float            : right;
+  height           : 1000px;
+}
+
+#container {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+/* HEADER */
+
+#header {
+  width            : 100%;
+  height           : 160px;
+  color            : white;
+  text-align       : center;
+  font-weight      : bold;
+  font-size        : 4em;
+  letter-spacing   : -1px;
+  background       : url(/images/fade_red_up.png) bottom repeat-x white;
+  /* border-bottom    : 1px solid #553333; */
+}
+
+#logo { z-index: 2; }
+
+/* MENU BAR */
+
+#menu {
+  background       : white;
+  color            : gray;
+  padding          : 10px 0 5px 0; 
+  font-size        : 12px;
+  z-index          : 0;
+  text-align       : center;
+  /*border-bottom    : 2px solid #553333;*/
+  /*border-top       : 2px solid #773333;*/
+}
+
+#menu a {
+  font-weight      : bold;
+  font-size        : 12px;
+  font-family      : sans-serif, monospace;
+  color            : #FF0066;
+  text-decoration  : none;
+}
+
+#menu a:hover {
+  text-decoration  : underline;
+}
+
+/*
+#drop_shadow {
+  height           : 32px;
+  background       : url(../images/RubyFacetsShadow.png) top repeat-x white;
+  margin-bottom    : -22px;
+}
+*/
+
+/* Content */
+
+#content {
+  width        : 800px;
+  margin       : 0 auto;
+  text-align   : left;             /* counter the body center */
+  padding      : 0;
+  background   : url(../images/RubyFacetsShadowFade.png) top center repeat-x;
+  background   : white;
+}
+
+.page {
+  width       : 800px;
+  margin      : 0 auto;
+  padding     : 10px 0;
+}
+
+.sell {
+  margin           : 15px auto;
+  text-align       : center;
+  padding          : 10px 10px 10px 10px;
+  font-size        : 1.5em;
+  font-family      : sans-serif, serif;
+  color            : #222222;
+  -moz-border-radius-topleft     : 1em; border-topleft-radius     : 1em;
+  -moz-border-radius-topright    : 1em; border-topright-radius    : 1em;
+  -moz-border-radius-bottomleft  : 1em; border-bottomleft-radius  : 1em;
+  -moz-border-radius-bottomright : 1em; border-bottomright-radius : 1em;
+}
+
+.ico img {
+  -moz-border-radius: 5px;
+  border-radius     : 5px;
+  width: 72px;
+  background: white;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.sm{
+  font-size        : 1em;
+  font-family      : sans-serif, serif;
+  color            : #222222;
+}
+
+#copyright {
+  color:          #444444;
+  text-align:     center;
+  font-size:      0.6em;
+  padding:        30px 0;
+  font-family   : sans-serif;
+  font-weight   : normal;
+  width         : 800px;
+  margin        : 0 auto;
+}
+
+#doctable td {
+  text-align    : center;
+  border        : 2px solid #cccccc;
+  padding-right : 10px;
+  background    : white;
+  -moz-border-radius : 1em;
+  border-radius      : 1em;
+}
+
+/* CLASSES */
+
+.r { color: pink; }
+.g { color: yellow; }
+.b { color: skyblue; }
+
+.red { color: #ff0044; }
+
+
+.spotlight {
+  padding-bottom : 10px;
+  padding-top    : 5px;
+  margin         : 5px;
+  /*
+    background: #FFFFEE;
+    border: 1px solid gray;
+    -moz-border-radius-topleft: 1em; border-topleft-radius: 1em;
+    -moz-border-radius-topright: 1em; border-topright-radius: 1em;
+    -moz-border-radius-bottomleft: 1em; border-bottomleft-radius: 1em;
+    -moz-border-radius-bottomright: 1em; border-bottomright-radius: 1em;
+  */
+}
+
+.blurb {
+  text-align   : center;
+  padding      : 30px 0 10px 0;
+  color        : #333333;
+  font-size    : 2.7em;
+  font-weight  : bold;
+}
+
+.desc {
+  font-size: .5em;
+  padding: 15px;
+  padding-bottom: 20px;
+  width      : 750px;
+  margin     : 0 auto;
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  border: 1px solid #cccccc;
+  background: pink; 
+}
+
+.desc h1 {
+  margin: 0 0 15px 0;
+  color: #FF0077;
+}
+
+.desc .small {
+  padding-top: 20px;
+  font-size: 0.7em;
+  font-family: sans-serif;
+}
+
+div.section {
+  margin: 10px;
+  padding-bottom: 10px;
+}
+
+div.section h1 {
+  margin: 20px 0 15px 0;
+  color: #FF0077;
+}
+
+/*
+.spotlights a {
+  color: #4444AA;
+  text-decoration: none;
+  font: normal 1.5em monospace;
+}
+
+.spotlights a:hover {
+  text-decoration: underline;
+}
+
+.spy {
+  padding-top      : 20px;
+  padding-bottom   : 10px;
+  font-size        : 2em;
+  font-weight      : bold;
+  color            : #222222;
+  text-align       : left;
+}
+
+spy img { width: 30px; } 
+*/
+
+.spot { font-weight: bold; color: #FF0077; text-align: left; }
+
+.emblem {
+  margin      : 0 auto;
+  border      : 1px solid black;
+  margin-top  : 20px;
+  background  : gray;
+  font-size   : 0.9em;
+  width       : 125px;
+  height      : 20px;
+  line-height : 20px;
+}
+
+.heading {
+  font: 48pt helvetica; color: #dd00aa;
+  width: 620px;
+  margin: 0 auto;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.item {
+  margin-bottom: 10px;
+}
+
+
+/* MISCELLANEOUS */
+
+#apidocs td a {
+  text-decoration: none;
+  padding-right: 5px;
+
+}
+
