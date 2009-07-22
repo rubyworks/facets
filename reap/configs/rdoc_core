@@ -2,15 +2,10 @@
 rdoc_core:
   service : RDoc
   #template: ./.config/rdoc-template
-  template: kilmer
-  output  : doc/rdoc/core
+  template: ~ #kilmer
+  output  : rdoc/core
   title   : Facets Core API
   main    : doc/README.core
   options : "-S -a"
-  include : [doc/README.core, README, lib/core/facets]
-
-
-
-
-
+  include : [rdoc/README.core, README.rdoc, lib/core]
 

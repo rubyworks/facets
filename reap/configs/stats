@@ -1,4 +1,5 @@
 ---
 codestats:
   service: CodeStats
+  output : log
 
