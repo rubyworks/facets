@@ -20,10 +20,14 @@ class TestProcCurry < Test::Unit::TestCase
     c = f.curry(1)
     assert_equal( 9, c[2][3] )
   end
-  
+
   def test_inclass_scope
+    # first test the lambda
+    org = lambda{ |y, x| x + " " + y }
+    foo = org.curry['yeah']
+    assert_equal('boo yeah', foo['boo'])
+    # now test it as a method definition
     baz = Class.new
-    foo = lambda {|y, x| puts x + " " + y}.curry['yeah']
     baz.__send__(:define_method, 'foo', foo)
     assert_equal('boo yeah',baz.new.foo('boo'))
   end
