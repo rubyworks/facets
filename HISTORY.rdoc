@@ -1,30 +1,113 @@
 = Facets History
 
-== 2.6.1 / 2009-08-01
+== 2.7.0 / 2009-08-01
 
-Facets 2.6.1 continues the process of trimming down or the MORE library.
-Ten high-level libraries have been removed that are all available as separate gems.
+Facets 2.7.0 is the biggest release of Facets since 2.4. Rather then trickle-release these
+changes of the course of the 2.6.x series, 2.7 handles them all at once. This release nearly
+completes the process of trimming down or the MORE library. Over 30 high-level libraries have
+been spun-off as separate gems and over 10 other libraries have been deprecatedf for various
+resaons. A few other major changes have been made that may effect your code. In particular
+#class_extension has been renamed to #class_extend (require 'facets/class_extend').
 
-* 6 Major Enhancements
+* Spun-Off Projects
 
-    * overload.rb has been spun-off as a separate project (gem install overload).
-    * binreadable.rb has been spun-off as a separate project (gem install binaryio).
-    * downloader.rb has been spun-off as a separate project (gem install downloader).
-    * xoxo.rb has been spun-off as a separate project (gem install xoxo).
-    * bicrypt.rb has been spun-off as a separate project (gem install bicrypt).
-    * typecast.rb has been spun-off as a separate project (gem install typecast).
-    * ziputils.rb has been deprecated. Have a look at Folio (gem install folio) for replacement.
-    * minitar.rb has also been removed from the library. It is available separately and in Folio.
-    * net/smtp_tls.rb has been removed. It's not need for 1.8.7+, and it is also 
-      available as a separate gem.
-    * Deprecated 1stclassmethod.rb; #method! and #instance_method! are now part of core.
-    * Added Module#attr_setter to core (and removed from attr.rb).
+These libraries have been deprectated from Facets entirely, but are available
+as separate gems.
 
-* 1 Minor Enhancements
+    LIBRARY               GEM
+    --------------------  ------------------------------
+    overload.rb           overload
+    binreadable.rb        binaryio
+    downloader.rb         downloader
+    xoxo.rb               xoxo
+    bicrypt.rb            bicrypt
+    typecast.rb           typecast
+    association.rb        association
+    syncarray.rb          sync
+    synchash.rb           sync
+    paramix.rb            paramix
+    crypt.rb              crypt3
+    lrucache.rb           lrucache
+    net/smtp_tls.rb       smtp_tls
+    basex.rb              base_n
+    advisable.rb          advisable
+    buildable.rb          buildable
+    memoizer.rb           memoizer
+    harray.rb             sparray 
+    sparse_array.rb       sparray
+    iteration.rb          iteration
+    interval.rb           stick
+    infinity.rb           stick
+    pool.rb               pool
+    linkedlist.rb         linkedlist
+    enumerablepass.rb     enumargs
+    semaphore.rb          semaphore
+    pqueue.rb             pqueue
+    censor.rb             language
+    macther.rb            language
 
-    * BlankSlate is now an alias for BasicObject. This alias will be phased out eventually.
-    * xmlhash.rb has been deprecated. It may get it's own project, but it needs some work first.
+* Spun-Off But Still Available
 
+These libraries have been spun-off into stand-alone gems, but remain
+available via Facets too. Ultimately some these will be removed
+from Facets as well (most noteably the ansicode libraries).
+
+    LIBRARY               GEM
+    --------------------  ------------------------------
+    ansicode.rb           ansicode -or- clio
+    progressbar.rb        ansicode -or- clio
+    logger.rb             ansicode (partially)
+    tracepoint.rb         tracepoint
+    dictionary.rb         dictionary
+    recorder.rb           recorder
+    ostructable.rb        ostructable -or- openhash
+    openobject.rb         openhash
+    opencollection.rb     openhash
+    opencascade.rb        openhash
+    openhash.rb           openhash
+    openmodule.rb         openmodule
+    fileable.rb           fileable
+    expirable.rb          expirable
+
+* Deprecations Without Current Replacement
+
+The libraries have been deprecated but do not yet have a replacement.
+Seperate gems for these are planned though.
+
+    * bbcode.rb
+    * ini.rb
+    * settings.rb
+    * version.rb
+    * xmlhash.rb
+
+* General Deprecations
+
+These libraries have simply been deprecated becuase they were found lacking
+in some significant fashion, or otherwise made available elsewhere.
+
+    * 1stclassmethod.rb   #method! and #instance_method! are now part of core.
+    * attr.rb             Added Module#attr_setter to core, and separated out the rest.
+    * coroutine.rb        Depended on continuations, which are not supported in 1.9+.
+    * nilstatus.rb        It proved rather useless, not to mention trivial.
+    * heap.rb             Heap was just an alias for PQueue anyway. Use 'pqueue' instead.
+    * dependency.rb       Other solutions exist that are much better.
+    * classmethods.rb     #class_extend solution is more robust.
+    * ziputils.rb         Have a look at Folio (gem install folio) for replacement.
+    * consoleutils.rb     #ask is in core, for the rest see Clio project.
+    * minitar.rb          Available as a gem and in Folio.
+    * elementor.rb        #per has been added to core. 
+    * elementwise.rb      #ewise has been added to core. 
+    * unheritable.rb      It's implementation is trivial and usefulness questionaable.
+    * instantise.rb       Replaced by instance_function.rb.
+
+* Other Enhancements
+
+    * Module#class_extension has been renamed to #class_extend (require 'facets/class_extend').
+    * kernel#instance is no longer in core; now it is an extra monkey patch for #instance_eval.
+    * Kernel#this has been removed. It is equivalent to 'method(__method__)'.
+    * BlankSlate is now an alias for BasicObject, and will be deprecated in the future.
+    * Kernel#method! and Module#instance_method! now use a global variable for their cache.
+    * #object_state (old name was #state) has been added to core.
 
 == 2.6.0 / 2009-07-03
 

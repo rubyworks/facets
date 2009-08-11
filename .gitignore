@@ -1,5 +1,7 @@
 .cache
 MANIFEST
-doc/log
-doc/rdoc
+log
+doc/rdoc/core
+doc/rdoc/more
 doc/ri
+site
