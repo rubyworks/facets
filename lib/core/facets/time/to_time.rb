@@ -1,6 +1,6 @@
 class Time
 
-  unless defined? to_time #1.9
+  unless method_defined?(:to_time) # 1.9
 
     # To be able to keep Dates and Times interchangeable
     # on conversions.

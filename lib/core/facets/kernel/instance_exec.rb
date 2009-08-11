@@ -1,9 +1,10 @@
 class Object #module Kernel
 
-  unless defined? instance_exec # 1.9
+  unless method_defined?(:instance_exec) # 1.9
 
     module InstanceExecMethods #:nodoc:
     end
+
     include InstanceExecMethods
 
     # Evaluate the block with the given arguments within the context of

@@ -1,6 +1,6 @@
 class String
 
-  unless defined?(chars) or defined?(::ActiveSupport) # 1.9 & ActiveSupport
+  unless method_defined?(:chars) or defined?(::ActiveSupport) # 1.9 & ActiveSupport
 
     # Returns an array of characters.
     #

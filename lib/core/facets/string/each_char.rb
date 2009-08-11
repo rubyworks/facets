@@ -1,6 +1,6 @@
 class String
 
-  unless defined? each_char # 1.9
+  unless method_defined?(:each_char) # 1.9
 
     require 'strscan'
 
