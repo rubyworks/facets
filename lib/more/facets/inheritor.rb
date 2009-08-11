@@ -20,7 +20,7 @@
 # ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
 # FOR A PARTICULAR PURPOSE.
 
-require 'facets/class_extension'
+require 'facets/class_extend'
 
 class Object
 
@@ -97,7 +97,7 @@ class Object
       (class << self; self; end).class_eval(&deflambda)
     elsif is_a?(Module)
       #class_inherit &deflambda
-      extend class_extension(&deflambda)
+      extend class_extend(&deflambda)
     else # other Object
       (class << self; self; end).class_eval(&deflambda)
     end
