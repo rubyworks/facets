@@ -1,0 +1,102 @@
+= Facets Core Library
+
+  http://facets.rubyforge.com
+
+  "ALL YOUR BASE ARE BELONG TO RUBY"
+
+
+== Introduction
+
+At the heart of Facets is the core extensions library. This a sizable collection
+of methods that augment Ruby's own core classes and modules.
+
+
+== Usage
+
+For detailed usage of any given method or module please refer to the API RDocs.
+
+  http://facets.rubyforge.org/learn.html
+
+Most libraries are well documented. Assistance in improving documentation though is always appreciated.
+
+If you plan to use more then a few of Facets core method it is recommended that you require the main facility.
+
+  require 'facets'
+
+This loads all the CORE functionality at once.
+
+Of course you can use the CORE library piecemeal if you prefer. The general require statement for a core extensions library is:
+
+  require 'facets/<class|module>/<method-lib>'
+
+For example:
+
+  require 'facets/time/stamp'
+
+Most "atoms" contain only one method, but a few exceptions occur when methods are closely tied together.
+
+You can load per-class or per-module groups of core methods by requiring the class or module by name. For example"
+
+  require 'facets/time'
+
+Will require all the core Time method extensions.
+
+Note that some methods that were part of CORE in 1.8 and earlier are now part of MORE libraries. A good example is 'random.rb'. There were separated because they had more specialized use cases, where as CORE extensions are intended as general purpose.
+
+
+== Method File Names
+
+Operator method redirect files are stored using English names. For instance for Proc#* is 'proc/op_mul'.
+
+For reference, here is the chart.
+
+     +@   => op_plus_self
+     -@   => op_minus_self
+     +    => op_plus
+     -    => op_minus
+     **   => op_pow
+     *    => op_mul
+     /    => op_div
+     %    => op_mod
+     ~    => op_tilde
+     <=>  => op_cmp
+     <<   => op_lshift
+     >>   => op_rshift
+     <    => op_lt
+     >    => op_gt
+     ===  => op_case_eq
+     ==   => op_equal
+     =~   => op_apply
+     <=   => op_lt_eq
+     >=   => op_gt_eq
+     |    => op_or
+     &    => op_and
+     ^    => op_xor
+     []=  => op_store
+     []   => op_fetch
+
+Facets simply takes the '*' and translates it into a string acceptable to all file systems. Also, if a method ends in '=', '?' or '!' it is simply removed.
+
+
+== License
+
+The collection PER COLLECTION is licensed as follows:
+
+  Ruby Facets
+  Copyright (c) 2004-2006 Thomas Sawyer
+
+  Distributed under the terms of the Ruby license.
+
+The Ruby license is a dual license that also provides for use of the GPL. Complete texts of both licenses accompany this document (see LICENSE).
+
+Acknowledgments and Copyrights for particular snippets of borrowed code are given in their respective source. All licenses are either compatible with the Ruby license (namely the GPL) or the original author has given permission for inclusion of their code under such license.
+
+
+
+ALL YOUR BASE ARE BELONG TO RUBY!
+
+
+Ruby Facets, Copyright (c)2005,2006,2007,2008 Thomas Sawyer
+
+Do you Ruby? (http://ruby-lang.org)
+
