@@ -1,8 +1,13 @@
+require 'facets/kernel/require_relative'
+
+=begin
 module Kernel
 
   # Require file from same dir as calling script.
   #
   #   require_local 'templib'
+  #
+  # CREDIT: Paul Brannan
   #
   def require_local(fname)
     #fdir = File.expand_path( File.dirname( caller[0] ) )
@@ -14,6 +19,8 @@ module Kernel
   #
   #   load_local 'templib'
   #
+  # CREDIT: Paul Brannan
+  #
   def load_local(fname, safe=nil)
     #fdir = File.expand_path( File.dirname( caller[0] ) )
     fdir = File.dirname( caller[0] )
@@ -21,4 +28,4 @@ module Kernel
   end
 
 end
-
+=end
