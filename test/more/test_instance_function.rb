@@ -1,10 +1,11 @@
-require 'facets/instantise'
+require 'facets/instance_function'
 require 'test/unit'
 
 # fixture
 
 module MyModule
-  extend Instantise
+  instance_function
+
   def self.jumble( obj, arg )
     obj + arg
   end

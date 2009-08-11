@@ -1,6 +1,6 @@
 # Test facets/class_extension.rb.
 
-require 'facets/class_extension.rb'
+require 'facets/class_extend'
 require 'test/unit'
 
 class TC_ClassExtension < Test::Unit::TestCase
@@ -8,11 +8,11 @@ class TC_ClassExtension < Test::Unit::TestCase
   # fixture
 
   module N
-    class_extension do
+    class_extend do
       def n ; 43 ; end
       def s ; self ; end
     end
-    extend class_extension
+    #extend class_extend # TODO: needed?
   end
 
   class X
@@ -22,7 +22,7 @@ class TC_ClassExtension < Test::Unit::TestCase
 
   module K
     include N
-    class_extension do
+    class_extend do
       def n ; super + 1 ; end
     end
   end
@@ -45,7 +45,7 @@ class TC_ClassExtension < Test::Unit::TestCase
     assert_equal( 11, X.new.n )
   end
   def test_04
-    assert_equal( 43, K.n )  #notic the difference!
+    assert_equal( 43, K.n )  # notice the difference!
     assert_equal(  K, K.s )
   end
   def test_05

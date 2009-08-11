@@ -1,6 +1,6 @@
 # Test facets/memoize.rb
 
-require 'facets/memoize.rb'
+require 'facets/once' #memoize'
 require 'test/unit'
 
 class TC_Memoize < Test::Unit::TestCase

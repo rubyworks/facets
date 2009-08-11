@@ -1,4 +1,4 @@
-require 'facets/equatable.rb'
+require 'facets/equitable'
 require 'test/unit'
 
 class TestModuleEquatable < Test::Unit::TestCase
@@ -6,7 +6,7 @@ class TestModuleEquatable < Test::Unit::TestCase
   def test_equatable_with_arguments
     c = Class.new
     c.class_eval { 
-      include Equatable(:a,:b)
+      include Equitable(:a,:b)
       attr_accessor :a, :b
     }
     c1,c2 = c.new,c.new
