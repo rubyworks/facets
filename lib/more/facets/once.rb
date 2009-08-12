@@ -19,14 +19,19 @@ module Kernel #:nodoc:
   #   t = T.new
   #   t.a.__id__ == t.a.__id__  #=> true
   #
-  # This methis can also be used at the instance level
+  # This method can also be used at the instance level
   # to cache singleton/eigen methods.
+  #
+  # Note, this method used to be called +cache+ along with
+  # it's other alias #memoize, but +once+ is the term used
+  # in PickAxe so it has been adopted instead. The #memoize
+  # alias has also been retained.
   #
   # CREDIT Robert Feldt
   #
   def once(*ids)
     if ids.empty?
-      @once ||= Hash::new{|h,k| h[k]={}}
+      @_once ||= Hash::new{|h,k| h[k]={}}
     else
       base = (Module === self ? self : (class << self; self; end))
       ids.each do |m|
@@ -49,7 +54,6 @@ module Kernel #:nodoc:
 
   # +once+ is also widely known as +memoize+.
   alias_method :memoize, :once
-  alias_method :cache, :once
 
 end
 
