@@ -1,7 +1,8 @@
 .cache
+.yardoc
 MANIFEST
 log
-doc/rdoc/core
-doc/rdoc/more
+doc/rdoc
 doc/ri
+doc/yard
 site

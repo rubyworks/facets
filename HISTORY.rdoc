@@ -2,12 +2,15 @@
 
 == 2.7.0 / 2009-08-01
 
-Facets 2.7.0 is the biggest release of Facets since 2.4. Rather then trickle-release these
-changes of the course of the 2.6.x series, 2.7 handles them all at once. This release nearly
-completes the process of trimming down or the MORE library. Over 30 high-level libraries have
-been spun-off as separate gems and over 10 other libraries have been deprecatedf for various
-resaons. A few other major changes have been made that may effect your code. In particular
-#class_extension has been renamed to #class_extend (require 'facets/class_extend').
+Facets 2.7 is the biggest release of Facets since 2.4. Rather then trickle-release these
+changes over the course of the 2.6.x series, the decision was made to let 2.7 meet them
+all at once. In so doing this release nearly completes the process of trimming down
+the MORE library to the essentials. Over 30 high-level libraries have been spun-off
+as separate gems and over 10 other libraries have been deprecated for varying reasons.
+
+A few other changes have been made that may also effect your code. In particular you
+should note that #class_extension has been renamed to #class_extend
+(require 'facets/class_extend').
 
 * Spun-Off Projects
 
@@ -29,28 +32,27 @@ as separate gems.
     crypt.rb              crypt3
     lrucache.rb           lrucache
     net/smtp_tls.rb       smtp_tls
-    basex.rb              base_n
     advisable.rb          advisable
     buildable.rb          buildable
     memoizer.rb           memoizer
-    harray.rb             sparray 
+    harray.rb             sparray
     sparse_array.rb       sparray
     iteration.rb          iteration
     interval.rb           stick
     infinity.rb           stick
     pool.rb               pool
     linkedlist.rb         linkedlist
-    enumerablepass.rb     enumargs
     semaphore.rb          semaphore
     pqueue.rb             pqueue
     censor.rb             language
     macther.rb            language
+    basex.rb              base_n
 
 * Spun-Off But Still Available
 
 These libraries have been spun-off into stand-alone gems, but remain
-available via Facets too. Ultimately some these will be removed
-from Facets as well (most noteably the ansicode libraries).
+available via Facets too. Ultimately some of these will be removed
+from Facets as well.
 
     LIBRARY               GEM
     --------------------  ------------------------------
@@ -68,46 +70,54 @@ from Facets as well (most noteably the ansicode libraries).
     openmodule.rb         openmodule
     fileable.rb           fileable
     expirable.rb          expirable
+    enumerablepass.rb     enumargs
+    minitar.rb            archive-tar-minitar -or- folio
 
 * Deprecations Without Current Replacement
 
-The libraries have been deprecated but do not yet have a replacement.
+The libraries have been deprecated but do not yet have replacements.
 Seperate gems for these are planned though.
 
     * bbcode.rb
     * ini.rb
     * settings.rb
-    * version.rb
     * xmlhash.rb
+
+* Deprecations Merged Into CORE
+
+These libraries have been deprecated because their functionality was merged into
+the CORE library and/or made available in some another way.
+
+    * 1stclassmethod.rb   #method! and #instance_method! are now part of CORE.
+    * elementor.rb        #per has been added to CORE.
+    * elementwise.rb      #ewise has been added to CORE.
+    * consoleutils.rb     #ask is in CORE, for the rest see Ansi or Clio project.
+    * attr.rb             Added Module#attr_setter to CORE, and separated the rest in MORE.
 
 * General Deprecations
 
-These libraries have simply been deprecated becuase they were found lacking
-in some significant fashion, or otherwise made available elsewhere.
+These libraries have simply been deprecated because they were found lacking in
+some significant fashion.
 
-    * 1stclassmethod.rb   #method! and #instance_method! are now part of core.
-    * attr.rb             Added Module#attr_setter to core, and separated out the rest.
     * coroutine.rb        Depended on continuations, which are not supported in 1.9+.
-    * nilstatus.rb        It proved rather useless, not to mention trivial.
+    * nilstatus.rb        Poved rather useless, not to mention trivial.
     * heap.rb             Heap was just an alias for PQueue anyway. Use 'pqueue' instead.
-    * dependency.rb       Other solutions exist that are much better.
+    * dependency.rb       Other solutions exist that are much better (like Advisable).
     * classmethods.rb     #class_extend solution is more robust.
     * ziputils.rb         Have a look at Folio (gem install folio) for replacement.
-    * consoleutils.rb     #ask is in core, for the rest see Clio project.
-    * minitar.rb          Available as a gem and in Folio.
-    * elementor.rb        #per has been added to core. 
-    * elementwise.rb      #ewise has been added to core. 
-    * unheritable.rb      It's implementation is trivial and usefulness questionaable.
+    * unheritable.rb      Implementation is trivial and usefulness questionable.
     * instantise.rb       Replaced by instance_function.rb.
 
 * Other Enhancements
 
+    * Fixed Proc#curry to work with #define_method (Thanks to R.Potter)
     * Module#class_extension has been renamed to #class_extend (require 'facets/class_extend').
     * kernel#instance is no longer in core; now it is an extra monkey patch for #instance_eval.
     * Kernel#this has been removed. It is equivalent to 'method(__method__)'.
     * BlankSlate is now an alias for BasicObject, and will be deprecated in the future.
     * Kernel#method! and Module#instance_method! now use a global variable for their cache.
     * #object_state (old name was #state) has been added to core.
+
 
 == 2.6.0 / 2009-07-03
 
@@ -246,12 +256,12 @@ Rubyists for configuration files, a full-on serializer like YAML
 is often overkill. INI files provide a lightweight solution
 specifically geared for configuration.
 
-2) *filter.rb* by Brian Candler offers lazy evaluation chains of 
+2) *filter.rb* by Brian Candler offers lazy evaluation chains of
 Enumerable methods. This is an elegant way to optimize contiguous
 maps, selections, etc. --effective even on infinite enumerators.
 (Note, the name of this library may be changed in the next release.)
 
-While work remains to be done, I am happy to say, Facets is 
+While work remains to be done, I am happy to say, Facets is
 finally beginning to approach the level of solidity I set out to
 achieve just over a year ago. Thank the Maker!
 
@@ -348,7 +358,7 @@ Rails/ActiveSupport compatibility.
     * Added string/mask providing powerful string manipulation.  (#997)
     * BasicObject is now just a synonm for BlankSlate unless Ruby 1.9.  (#1000)
     * Added Symbol#plain?, Symbol#query? and Symbol#setter?  (#1011)
-    * Removed Time#to_date. 
+    * Removed Time#to_date.
       * Due to clobberd RI Docs (!) this should have been in Lore lib date.rb
       * Moved to Lore date.rb. (#1012)
     * Re-added date.rb to lore library, and removed from core.  (#1014)
@@ -364,7 +374,7 @@ Rails/ActiveSupport compatibility.
 * 17 Minor Enhancements
 
     * Moved style.rb to string/stylize.rb  (#998)
-    * Renamed string/subtract to string/op_sub. 
+    * Renamed string/subtract to string/op_sub.
       Old name will remain for time being for compatability. (#1002)
     * Module#instance_method_define? now only applies to public methods.  (#1003)
     * Array#index accepts a block (one of the few core overrides).  (#1004)
@@ -407,7 +417,7 @@ As a REMINDER, Facets 2.4+ now encourages:
 
 This is better than cherry-picking methods. It may seem counter-intuitive,
 but it actually proves more advantages to do this for the sake of
-improved interoperability. The practice of cherry-picking can become 
+improved interoperability. The practice of cherry-picking can become
 problematic if other dependent libraries have cherry-picked different
 methods. In those cases these distinctions go unaccounted and untested.
 
@@ -469,7 +479,7 @@ And of course, to anyone else I failed to mention that has contributed.
     * Split module/alias.rb up into alias_accessor, alias_module_function and alias_method_chain.
     * Added #bump method to VersionNumber class.
     * Module#instance_method_defined? now only applies to public methods.  [minor]
-    * Renamed string/subtract to string/op_sub. 
+    * Renamed string/subtract to string/op_sub.
       Old name will remain for time being for compatability. [minor]
     * Added #glob and #glob_first as extensions to Pathname.
     * Moved style.rb to string/stylize.rb  [minor]
@@ -553,7 +563,7 @@ Just some more of those great old work your ass off changes.
       * Maybe a poor name for the method, but you got a better one?
     * Made FileUtils#whereis a module_function again like it used to be. Because:
       (1) that seems to be the way most other FileUtils methods are (cd, mkdir, cp, ...) and the most
-          obvious way that users would WANT to use FileUtils: FileUtils.whereis("ruby"). 
+          obvious way that users would WANT to use FileUtils: FileUtils.whereis("ruby").
       (2) I see module_function used in other comparible parts of Facets: UploadUtils, ConsoleUtils,
           ZipUtils, FileUtils#safe_ln, ...
       (3) My code that relied on the old module_function behavior was breaking
