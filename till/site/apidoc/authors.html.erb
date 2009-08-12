@@ -3,8 +3,8 @@
 
 <html>
 <head>
-  <title>FACETS NEWS</title>
-  <link href="api.css" rel="stylesheet" type="text/css">
+  <title>FACETS AUHTORS</title>
+  <link href="assets/styles/api.css" rel="stylesheet" type="text/css">
 </head>
 <body>
   <div class="content">
@@ -13,7 +13,7 @@
   <%= 
     m = ::SM::SimpleMarkup.new
     h = ::SM::ToHtml.new
-    f = ::File.read('NEWS')
+    f = ::File.read('AUTHORS')
     m.convert(f,h) 
   %>
 

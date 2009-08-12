@@ -1,5 +1,8 @@
 ---
 rubyforge:
-  service : Rubyforge
-  groupid : 804
-
+  service: Rubyforge
+  groupid: 804
+  sitemap:
+    site    : '.'
+    doc/rdoc: rdoc
+    doc/yard: yard

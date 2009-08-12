@@ -2,6 +2,6 @@
 # divide this up into three as well?
 ridoc:
   service : RiDoc
-  output  : ri
-  include : [lib/core/facets, lib/lore/facets, lib/more/facets]
+  output  : doc/ri
+  include : [lib/core/facets, lib/more/facets]
 

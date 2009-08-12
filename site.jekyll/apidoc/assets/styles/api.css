@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: url(img/fade_red_down.png) repeat-x;
+  background: url(../images/fade_red_down.png) repeat-x;
 }
 
 h1 {
@@ -18,7 +18,7 @@ h2 {
   /* font-variant: small-caps; */
   margin: 40px 10px 10px -3px;
   /* padding-left: 36px;
-  background: url(img/ruby.gif) -1px 0px no-repeat; */
+  background: url(../images/ruby.gif) -1px 0px no-repeat; */
 }
 
 p {
@@ -32,7 +32,7 @@ ul {
 
 li {
   list-style-type: disc;
-  list-style-image: url(’img/ruby.gif’);
+  list-style-image: url(../images/ruby.gif);
   text-indent: 5px;
 }
 
@@ -58,14 +58,14 @@ pre {
 }
 
 .main {
-  background: url(img/ruby.png) -10px -60px no-repeat;
+  background: url(../images/ruby.png) -10px -60px no-repeat;
 }
 
 .nav {
   position: absolute;
   right: 10px;
   top: 10px;
-  background: url(img/ruby.gif) no-repeat white;
+  background: url(../images/ruby.gif) no-repeat white;
   color: red;
   border: 2px solid red;
   padding: 5px 5px 5px 36px;
