@@ -36,7 +36,7 @@ module Hook
 end
 
 
-#=begin demo
+=begin demo
 
   class X
     include Hook
@@ -61,5 +61,5 @@ end
 
   X.new.signal("hi")
 
-#=end
+=end
 
