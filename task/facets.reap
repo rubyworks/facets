@@ -6,17 +6,14 @@ facets.rb:
     facetslib = 'lib/core/facets.rb'
 
     libs = []
-    okay = false
-    Dir.chdir('lib/core/facets') do
-      libs = Dir['**/*'].select{ |f| File.file?(f) }
-      okay = outofdate?('../facets.rb', libs)
+    need = false
 
-      #libs += `grep -R '#\s*:facets:\s*extra' *`.split("\n")
-      #libs += `grep -R '#\s*:facets:\s*standard' *`.split("\n")
-      #libs.map{ |l| l.split(':')[0] }
+    chdir('lib/core/facets') do
+      libs = Dir['**/*'].select{ |f| File.file?(f) }
+      need = outofdate?('../facets.rb', libs)
     end
 
-    if okay
+    if need
       File.open(facetslib, 'w') do |f|
         f << "# Generated #{Time.now}\n"
         libs.each do |l|
@@ -27,3 +24,4 @@ facets.rb:
     else
       puts "#{facetslib} is current."
     end
+
