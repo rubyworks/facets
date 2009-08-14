@@ -77,6 +77,11 @@ module Arguments
     wrap_enumerable_method( m )
   end
 
+  #
+  def to_a(*args)
+    map(*args){ |x| x }
+  end
+
   # Make exception for #find (a negative arity method) to accept
   # keyword argument.
   #
