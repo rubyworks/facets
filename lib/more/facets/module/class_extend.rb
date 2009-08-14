@@ -77,6 +77,11 @@ class Module
   #
   #   X.class_meth  #=> "Class Method!"
   #
+  # NOTE: This old #class_extension version of this method
+  # did not extend the containing class automatically --it had
+  # to be done by hand. With #class_extend, that is no longer
+  # the case.
+  #
   def class_extend(*mods, &block)
     @class_extension ||= Module.new do
       def self.append_features(mod)
