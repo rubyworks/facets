@@ -1,0 +1,7 @@
+---
+webri:
+  service: WebRI
+  active : true
+  output : ~       # default is doc/webri
+  ridoc  : ~       # default is doc/rdoc
+

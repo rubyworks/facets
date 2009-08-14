@@ -1,6 +1,5 @@
 ---
-# switch to turn solo runner
 testunit:
-  service: TestUnit
+  service: Testrb
   active: false
 

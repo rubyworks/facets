@@ -1,7 +1,7 @@
 ---
 yardcore:
   service : Yard
-  active  : true
+  active  : false
   #template: ./.config/rdoc-template #kilmer
   #template: hanna
   output  : doc/yard/core
@@ -12,7 +12,7 @@ yardcore:
 
 yardmore:
   service : Yard
-  active  : true
+  active  : false
   #template: ./.config/rdoc-template
   #template: hanna
   output  : doc/yard/more

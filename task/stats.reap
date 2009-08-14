@@ -1,5 +1,4 @@
 ---
-codestats:
-  service: CodeStats
-  output : log
+stats:
+  service: Stats
 

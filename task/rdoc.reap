@@ -1,23 +1,23 @@
 ---
-rdoc_core:
+rdoccore:
   service : RDoc
-  active  : false
+  active  : true
   #template: ./.config/rdoc-template #kilmer
   template: hanna
   output  : doc/rdoc/core
   title   : Facets Core API
   main    : doc/README.core
   extra   : "-a"
-  include : [doc/rdoc/README.core, README.rdoc, lib/core]
+  include : [doc/README.core, README.rdoc, lib/core]
 
-rdoc_more:
+rdocmore:
   service : RDoc
-  active  : false
+  active  : true
   #template: ./.config/rdoc-template
   template: hanna
   output  : doc/rdoc/more
   title   : Facets More API
   main    : doc/README.more
   extra   : "-a"
-  include : [doc/rdoc/README.more, README.rdoc, lib/more]
+  include : [doc/README.more, README.rdoc, lib/more]
 

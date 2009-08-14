@@ -1,0 +1,8 @@
+---
+rcov:
+  service: RCov
+  active : true
+  output : ~
+  scripts: ~
+  options: ~
+
