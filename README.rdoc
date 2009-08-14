@@ -7,11 +7,19 @@
 
 == Introduction
 
-Ruby Facets is the single largest collection of general purpose method extensions and system additions for the Ruby programming language.
+Ruby Facets is the single largest collection of general purpose method
+extensions and system additions for the Ruby programming language.
 
-The core extensions is a large collection of methods which extend the core capabilities of Ruby's built-in classes and modules. This collection of extension methods are unique by virtue of their atomicity. The methods are stored in relatively small groups of tightly coupled methods so that each can be required independently. This gives developers the potential for much finer control over which extra methods to bring into their code.
+The CORE extensions is a large collection of methods which extend the
+core capabilities of Ruby's built-in classes and modules. This collection
+of extension methods are unique by virtue of their atomicity. The methods
+are generally stored in individual files so that each can be required
+independently. This gives developers the potential for much finer control
+over which extra methods to bring into their code.
 
-The "more" additions are a collection of classes, modules and light meta-systems which constitutes an ever improving source of reusable components. Some very nice additions are provided, from the simple Functor class to a full-blown annotations system.
+The MORE additions are a collection of classes, modules and lightweight systems
+which constitute an ever improving source of reusable components. This set of
+libraries is kept small and focused on widely useful parts.
 
 
 == Documentation
