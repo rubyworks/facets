@@ -12,7 +12,7 @@ class TC_ClassExtension < Test::Unit::TestCase
       def n ; 43 ; end
       def s ; self ; end
     end
-    #extend class_extend # TODO: needed?
+    #extend class_extend # NOTE: No longer needed!
   end
 
   class X
@@ -35,7 +35,7 @@ class TC_ClassExtension < Test::Unit::TestCase
 
   def test_01
     assert_equal( 43, N.n )
-    assert_equal(  N,  N.s )
+    assert_equal(  N, N.s )
   end
   def test_02
     assert_equal( 43, X.n )
@@ -45,7 +45,7 @@ class TC_ClassExtension < Test::Unit::TestCase
     assert_equal( 11, X.new.n )
   end
   def test_04
-    assert_equal( 43, K.n )  # notice the difference!
+    assert_equal( 44, K.n )  # notice the difference!
     assert_equal(  K, K.s )
   end
   def test_05
