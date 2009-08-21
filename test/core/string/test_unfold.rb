@@ -1,4 +1,5 @@
 require 'test/unit'
+require 'facets/string/unfold'
 
 class TC_String_Unfold < Test::Unit::TestCase
 
