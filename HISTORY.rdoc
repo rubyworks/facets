@@ -3,19 +3,23 @@
 == 2.7.0 / 2009-08-01
 
 Facets 2.7 is the biggest release of Facets since 2.4. Rather then trickle-release these
-changes over the course of the 2.6.x series, the decision was made to let 2.7 meet them
+changes over the course of the 2.6.x series, I made the decision to let 2.7 have them
 all at once. In so doing this release nearly completes the process of trimming down
-the MORE library to the essentials. Over 30 high-level libraries have been spun-off
-as separate gems and over 10 other libraries have been deprecated for varying reasons.
+the MORE library to its essentials. Over 40 high-level libraries have been spun-off
+as separate gems and/or deprecated. No doubt this is a big change for Facets, and the
+transition may be a bit bumpy over the short-term, but I am certain that in the long-run
+everyone involved will be better served. To help, I have listed the effected libraries
+and the alternate gems availble to take their place.
 
-A few other changes have been made that may also effect your code. In particular you
-should note that #class_extension has been renamed to #class_extend
-(require 'facets/class_extend').
+A few other changes have also been made in the release that may also effect your code.
+In particular you should note that #class_extension has been renamed to #class_extend
+(require 'facets/class_extend'). In addition we have added a few new core methods such
+as Exception#raised? and Symbol#thrown?.
 
 * Spun-Off Projects
 
 These libraries have been deprectated from Facets entirely, but are available
-as separate gems.
+as separate gems (or soon will be).
 
     LIBRARY               GEM
     --------------------  ------------------------------
@@ -46,19 +50,20 @@ as separate gems.
     pqueue.rb             pqueue
     censor.rb             language
     macther.rb            language
-    basex.rb              base_n
+    basex.rb              radix
+    minitar.rb            archive-tar-minitar -or- folio
 
 * Spun-Off But Still Available
 
 These libraries have been spun-off into stand-alone gems, but remain
 available via Facets too. Ultimately some of these will be removed
-from Facets as well.
+from Facets too (in particular the ansi libraries).
 
     LIBRARY               GEM
     --------------------  ------------------------------
-    ansicode.rb           ansicode -or- clio
-    progressbar.rb        ansicode -or- clio
-    logger.rb             ansicode (partially)
+    ansicode.rb           ansi
+    progressbar.rb        ansi
+    logger.rb             ansi
     tracepoint.rb         tracepoint
     dictionary.rb         dictionary
     recorder.rb           recorder
@@ -71,7 +76,6 @@ from Facets as well.
     fileable.rb           fileable
     expirable.rb          expirable
     enumerablepass.rb     enumargs
-    minitar.rb            archive-tar-minitar -or- folio
 
 * Deprecations Without Current Replacement
 
@@ -99,7 +103,6 @@ the CORE library and/or made available in some another way.
 These libraries have simply been deprecated because they were found lacking in
 some significant fashion.
 
-    * coroutine.rb        Depended on continuations, which are not supported in 1.9+.
     * nilstatus.rb        Poved rather useless, not to mention trivial.
     * heap.rb             Heap was just an alias for PQueue anyway. Use 'pqueue' instead.
     * dependency.rb       Other solutions exist that are much better (like Advisable).
