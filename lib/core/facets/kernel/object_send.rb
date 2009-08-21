@@ -20,9 +20,9 @@ module Kernel
   def object_send(name,*args,&blk)
     #instance_eval "self.#{name}(*args)"
     if respond_to?(name)
-      send(name,*args,&blk)
+      __send__(name,*args,&blk)
     else #if respond_to?(:method_missing)
-      method_missing(name,*args,&blk)
+      __send__(:method_missing,name,*args,&blk)
     #else
     #  raise NoMethodError
     end
