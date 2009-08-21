@@ -1,4 +1,4 @@
-module Exception
+class Exception
 
   # Does a block raise an a given +exception+.
   #
