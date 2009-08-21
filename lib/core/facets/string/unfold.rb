@@ -21,7 +21,7 @@ class String
       end
     end
     text = text.gsub(/(\n){3,}/,"\n\n")
-    return text
+    text.rstrip
   end
 
 end
