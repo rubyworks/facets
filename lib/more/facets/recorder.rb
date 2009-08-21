@@ -77,10 +77,9 @@ class Recorder
 
   # Privatize all kernel methods.
 
-  private(*instance_methods)
+  instance_methods.each{ |m| private(m) unless /^__/ =~ m.to_s }
 
   #
-
   def initialize( msg=nil )
     @msg = msg
   end
