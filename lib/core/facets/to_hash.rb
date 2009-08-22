@@ -266,112 +266,54 @@ class NilClass
 end
 
 
-if RUBY_VERSION < "1.9"
+class Enumerator
 
-  class Enumerable::Enumerator
-  
-    # Convert an Enumerable::Enumerator object into a hash.
-    # This is equivalent to Array#to_h.
-    #
-    #   e1 = [[1,:a],[2,:b],[3,:c]].to_enum
-    #   e1.to_h #=> { 1=>:a, 2=>:b, 3=>:c }
-    # 
-    #   e2 = [1,2,3,4,5].to_enum
-    #   e2.to_h  #=> {5=>nil, 1=>2, 3=>4}
-    #
-    #   e3 = [1,2,1,3,1,5].to_enum
-    #   e3.to_h #=> {1=>5}
-    #
-    # CREDIT: Sandor Szücs
+  # Convert an Enumerator object into a hash.
+  # This is equivalent to Array#to_h.
+  #
+  #   e1 = [[1,:a],[2,:b],[3,:c]].to_enum
+  #   e1.to_h #=> { 1=>:a, 2=>:b, 3=>:c }
+  #
+  #   e2 = [1,2,3,4,5].to_enum
+  #   e2.to_h  #=> {5=>nil, 1=>2, 3=>4}
+  #
+  #   e3 = [1,2,1,3,1,5].to_enum
+  #   e3.to_h #=> {1=>5}
+  #
+  # CREDIT: Sandor Szücs
 
-    def to_h(mode=nil)
-      to_a.to_h(mode)
-    end
-
-    # This is equivalent to Array#to_h_auto.
-    #
-    def to_h_auto
-      to_a.to_h_auto
-    end
-
-    # This is equivalent to Array#to_h_splat.
-    #
-    def to_h_splat
-      to_a.to_h_splat
-    end
-
-    # This is equivalent to Array#to_h_flat.
-    #
-    def to_h_flat
-      to_a.to_h_flat
-    end
-
-    # This is equivalent to Array#to_h_assoc.
-    #
-    def to_h_assoc
-      to_a.to_h_assoc
-    end
-
-    # This is equivalent to Array#to_h_multi.
-    #
-    def to_h_multi
-      to_a.to_h_multi
-    end
-
+  def to_h(mode=nil)
+    to_a.to_h(mode)
   end
 
-else
+  # This is equivalent to Array#to_h_auto.
+  #
+  def to_h_auto
+    to_a.to_h_auto
+  end
 
-  class Enumerator
+  # This is equivalent to Array#to_h_splat.
+  #
+  def to_h_splat
+    to_a.to_h_splat
+  end
 
-    # Convert an Enumerator object into a hash.
-    # This is equivalent to Array#to_h.
-    #
-    #   e1 = [[1,:a],[2,:b],[3,:c]].to_enum
-    #   e1.to_h #=> { 1=>:a, 2=>:b, 3=>:c }
-    #
-    #   e2 = [1,2,3,4,5].to_enum
-    #   e2.to_h  #=> {5=>nil, 1=>2, 3=>4}
-    #
-    #   e3 = [1,2,1,3,1,5].to_enum
-    #   e3.to_h #=> {1=>5}
-    #
-    # CREDIT: Sandor Szücs
+  # This is equivalent to Array#to_h_flat.
+  #
+  def to_h_flat
+    to_a.to_h_flat
+  end
 
-    def to_h(mode=nil)
-      to_a.to_h(mode)
-    end
+  # This is equivalent to Array#to_h_assoc.
+  #
+  def to_h_assoc
+    to_a.to_h_assoc
+  end
 
-    # This is equivalent to Array#to_h_auto.
-    #
-    def to_h_auto
-      to_a.to_h_auto
-    end
-
-    # This is equivalent to Array#to_h_splat.
-    #
-    def to_h_splat
-      to_a.to_h_splat
-    end
-
-    # This is equivalent to Array#to_h_flat.
-    #
-    def to_h_flat
-      to_a.to_h_flat
-    end
-
-    # This is equivalent to Array#to_h_assoc.
-    #
-    def to_h_assoc
-      to_a.to_h_assoc
-    end
-
-    # This is equivalent to Array#to_h_multi.
-    #
-    def to_h_multi
-      to_a.to_h_multi
-    end
-
+  # This is equivalent to Array#to_h_multi.
+  #
+  def to_h_multi
+    to_a.to_h_multi
   end
 
 end
