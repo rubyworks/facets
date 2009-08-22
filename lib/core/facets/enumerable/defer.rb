@@ -1,5 +1,4 @@
-require 'facets/enumerable/take'
-require 'facets/enumerator'
+require 'facets/denumerable'
 
 module Enumerable
 
@@ -34,13 +33,13 @@ module Enumerable
   #
   def defer(&blk)
     if block_given?
-      Denumerator.new do |output|
+      Denumerable::Denumerator.new do |output|
         each do |*input|
           yield output, *input
         end
       end
     else
-      Denumerator.new do |output|
+      Denumerable::Denumerator.new do |output|
         each do |*input|
           output.yield *input
         end
@@ -48,15 +47,18 @@ module Enumerable
     end
   end
 
+end
+
 =begin
+  
+  TODO: (Programming Challenge) Dynamically create this in a single
+  method using a Functor and without the need of Denumerable.
+  
+  Below is my first shot at it. It's close, but it cannot handle
+  infinite series.
+ 
   require 'facets/functor'
-  #
-  # TODO: (Programming Challenge) Dynamically create this in a single
-  # method using a Functor and without the need of Denumerable.
-  #
-  # Below is my first shot at it. It's close, but it cannot handle
-  # infinite series.
-  #
+
   def defer
     l = lambda do |enum|
       Functor.new do |op, *a, &b|
@@ -70,87 +72,6 @@ module Enumerable
     end
     l[self]
   end
-=end
-
-end
-
-
-# = Denumerable
-#
-# Classes which include Enumerable::Filterable will get versions
-# of map, select etc. which return a Filter, so that they work
-# horizontally without creating intermediate arrays.
-#
-module Denumerable
-
-  #
-  def map
-    Denumerator.new do |output|
-      each do |*input|
-        output.yield yield(*input)
-      end
-    end
-  end
-  alias :collect :map
-
-  #
-  def select
-    Denumerator.new do |output|
-      each do |*input|
-        output.yield(*input) if yield(*input)
-      end
-    end
-  end
-  alias :find_all :select
-
-  #
-  def reject
-    Denumerator.new do |output|
-      each do |*input|
-        output.yield(*input) unless yield(*input)
-      end
-    end
-  end
-
-  # Limit to the first n items in the list
-  def take(n)
-    Denumerator.new do |output|
-      count = 0
-      each do |*input|
-        break if count >= n
-        output.yield(*input)
-        count += 1
-      end
-    end
-  end
-
-  # Skip the first n items in the list
-  def skip(n)
-    Denumerator.new do |output|
-      count = 0
-      each do |*input|
-        output.yield(*input) if count >= n
-        count += 1
-      end
-    end
-  end
-
-  # TODO: add more methods, e.g. grep, take_while etc.
-end
-
-# = Denumerator
-#
-# A class like Enumerator, but which has 'lazy' versions of map, select etc.
-#
-class Denumerator < Enumerator
-  include Denumerable
-end
-
-
-=begin test.ae
-
-  r = (1..10).defer.select{ |i| i % 2 == 0 }.map{ |i| i + 100 }.to_a
-  r.assert == [102,104,106,108,110]
 
 =end
 
