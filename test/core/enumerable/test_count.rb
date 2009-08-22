@@ -16,7 +16,7 @@ class TC_Enumerable_Count < Test::Unit::TestCase
 
   def test_count_03
     e = { 'a' => 2, 'a' => 2, 'b' => 1 }
-    assert_equal( 1, e.count('a',2) )
+    assert_equal(1, e.count(['a',2]))
   end
 
 end

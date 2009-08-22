@@ -16,8 +16,14 @@ module Enumerable
     #
     # CREDIT: Trans
 
-    def count(*c)
-      self.select{ |*i| i == c }.length
+    def count(item=ArgumentError, &blk)
+      return select(&blk).size              if block_given?
+      return select{ |*i| item == i }.size  if ArgumentError == item
+      begin
+        size
+      rescue
+        (i=0; each{|e| i+=1 }; i)
+      end
     end
 
   end
