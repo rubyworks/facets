@@ -5,12 +5,16 @@ facets.rb:
   generate: |
     facetslib = 'lib/core/facets.rb'
 
-    libs = []
-    need = false
+    libs = Dir['lib/core/facets/**/*'].select{ |f| File.file?(f) }.sort.uniq
+
+    outofdate?(facetslib, libs)
+
+    need = force? || outofdate?(facetslib, libs)
+
+    puts "#{libs.size} core library files."
 
     chdir('lib/core/facets') do
-      libs = Dir['**/*'].select{ |f| File.file?(f) }
-      need = outofdate?('../facets.rb', libs)
+      libs = Dir['**/*'].select{ |f| File.file?(f) }.sort
     end
 
     if need

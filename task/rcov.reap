@@ -1,7 +1,7 @@
 ---
 rcov:
   service: RCov
-  active : true
+  active : false
   output : ~
   scripts: ~
   options: ~
