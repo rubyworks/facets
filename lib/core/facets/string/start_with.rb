@@ -1,6 +1,6 @@
-unless (RUBY_VERSION[0,3] == '1.9')
+class String
 
-  class String
+  unless method_defined?(:start_with?) # 1.8.7+
 
     # Does a string start with the given prefix.
     #
@@ -12,6 +12,10 @@ unless (RUBY_VERSION[0,3] == '1.9')
     def start_with?(prefix)
       self.index(prefix) == 0
     end
+
+  end
+
+  unless method_defined?(:end_with?) # 1.8.7+
 
     # Does a string end with the given suffix?
     #
@@ -25,6 +29,9 @@ unless (RUBY_VERSION[0,3] == '1.9')
     end
 
   end
+
+  alias_method :starts_with?, :start_with?
+  alias_method :ends_with?  , :ends_with?
 
 end
 

@@ -1,6 +1,6 @@
 class Integer
 
-  if RUBY_VERSION < '1.9'
+  unless method_defined?(:odd?)  # 1.8.7+
 
     # Returns true if this integer is odd, false otherwise.
     #
@@ -16,6 +16,10 @@ class Integer
       #self % 2 == 1
       self & 1 == 1
     end
+
+  end
+
+  unless method_defined?(:even?)  # 1.8.7+
 
     # Returns true if this integer is even, false otherwise.
     #

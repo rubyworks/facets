@@ -1,6 +1,6 @@
-unless (RUBY_VERSION[0,3] == '1.9')
+class Array
 
-  class Array
+  unless method_defined?(:permutation) # 1.8.7+
 
     # Permutation provids the possible orders of an enumerable.
     # Each is indexed by a permutation number. The maximum number of

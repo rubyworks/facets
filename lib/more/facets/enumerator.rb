@@ -60,6 +60,7 @@ if RUBY_VERSION < "1.9"
     
   end
 
+  # FIXME: I don't think this is true. I think they put it back. ???
   # For ruby-1.9 compatibility, define Enumerator class at top level
   Enumerator = Enumerable::Enumerator unless defined? ::Enumerator
 

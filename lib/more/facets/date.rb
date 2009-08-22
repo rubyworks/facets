@@ -48,7 +48,7 @@ class Date
   # on conversions. In this case, it simply returns +self+.
   def to_date
     self
-  end if RUBY_VERSION < '1.9'
+  end unless method_defined?(:to_date) # 1.9+ ?
 
   # Converts a Date instance to a DateTime, where the time is set to the beginning of the day
   # and UTC offset is set to 0.
@@ -59,7 +59,7 @@ class Date
   #   date.to_datetime               # => Sat, 10 Nov 2007 00:00:00 0000
   def to_datetime
     ::DateTime.civil(year, month, day, 0, 0, 0, 0)
-  end if RUBY_VERSION < '1.9'
+  end unless method_defined?(:to_datetime) # 1.9+ ?
 
   # Converts a Date instance to a Time, where the time is set to the beginning of the day.
   # The timezone can be either :local or :utc (default :local).
@@ -327,7 +327,7 @@ class DateTime
   # Converts datetime to an appropriate format for use in XML
   def xmlschema
     strftime("%Y-%m-%dT%H:%M:%S%Z")
-  end if RUBY_VERSION < '1.9'
+  end unless method_defined?(:xmlschema) # 1.9+ ?
 
   # Converts self to a floating-point number of seconds since the Unix epoch 
   def to_f

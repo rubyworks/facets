@@ -1,9 +1,9 @@
-unless (RUBY_VERSION[0,3] == '1.9')
+module Kernel
 
-  module Kernel
+  unless method_defined?(:tap)  # 1.8.7+
 
     # The tap K-Combinator. This yields self -and- returns self.
-
+    #
     def tap(&b)
       if block_given?
         b.arity == 1 ? yield(self) : instance_eval(&b)
@@ -11,11 +11,11 @@ unless (RUBY_VERSION[0,3] == '1.9')
       self
     end
 
-    # This is just an off-the-cuff consideration for #tap using Functor:
+    # == Future definition?
+    #
+    # This is a consideration for a future #tap using Functor:
     #
     #   require 'facets/functor'
-    #
-    #   # Yield self -and- return self.
     #
     #   def tap(&b)
     #     if block_given?
@@ -25,6 +25,10 @@ unless (RUBY_VERSION[0,3] == '1.9')
     #       Functor.new{ |op, *args| self.send(op, *args); self }
     #     end
     #   end
+    #
+    # It would allow a single call, before returning the original.
+    # However there are not very many useful things you can do with
+    # that.
 
   end
 

@@ -1,6 +1,8 @@
 class Array
 
-  if RUBY_VERSION < '1.9'
+  # CORE OVERRIDE
+
+  if RUBY_VERSION < '1.8.7'
 
     alias_method :_facets_index, :index
 
@@ -20,3 +22,4 @@ class Array
   end
 
 end
+

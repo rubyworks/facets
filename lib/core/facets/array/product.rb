@@ -1,6 +1,6 @@
 class Array
 
-  if RUBY_VERSION < '1.9'
+  unless method_defined?(:product) # 1.8.7+
 
     # Provides the cartesian product of two or more arrays.
     #

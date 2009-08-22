@@ -1,6 +1,6 @@
-unless (RUBY_VERSION[0,3] == '1.9')
+module Enumerable
 
-  module Enumerable
+  unless method_defined?(:count)
 
     # Count the number of items in an enumerable
     # equal (==) to the given object.

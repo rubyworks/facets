@@ -1,6 +1,6 @@
-unless (RUBY_VERSION[0,3] == '1.9')
+class Symbol
 
-  class Symbol
+  unless method_defined?(:to_proc)  # 1.8.7+
 
     # Turn a symbol into a proc calling the method to
     # which it refers.
@@ -35,3 +35,4 @@ unless (RUBY_VERSION[0,3] == '1.9')
   end
 
 end
+

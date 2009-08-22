@@ -1,6 +1,6 @@
 class Binding
 
-  unless (RUBY_VERSION[0,3] == '1.9')
+  unless method_defined?(:eval) # 1.8.7+
 
     # Evaluate a Ruby source code string (or block) in the binding context.
 

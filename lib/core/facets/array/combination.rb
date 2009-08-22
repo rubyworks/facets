@@ -1,8 +1,8 @@
-if RUBY_VERSION < '1.9'
+class Array
 
-  require 'enumerator'
+  unless method_defined?(:combination) # 1.8.7+
 
-  class Array
+    require 'enumerator'
 
     # Yields the block to each unique combination of _n_ elements.
     #

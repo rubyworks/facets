@@ -1,6 +1,6 @@
-unless (RUBY_VERSION[0,3] == '1.9')
+module Enumerable
 
-  module Enumerable
+  unless method_defined?(:none?)  # 1.8.7+
 
     # Enumerable#none? is the logical opposite of the builtin method
     # Enumerable#any?.  It returns +true+ if and only if _none_ of
@@ -29,3 +29,4 @@ unless (RUBY_VERSION[0,3] == '1.9')
   end
 
 end
+

@@ -1,6 +1,6 @@
-unless (RUBY_VERSION[0,3] == '1.9')
+module Kernel
 
-  module Kernel
+  unless method_defined?(:__method__)  # 1.8.7+
 
     # Retreive the current running method name.
     #
@@ -15,6 +15,12 @@ unless (RUBY_VERSION[0,3] == '1.9')
       /\`([^\']+)\'/.match(caller(1).first)[1].to_sym
     end
 
+    private :__method__
+
+  end
+
+  unless method_defined?(:__callee__)  # 1.9+  # TODO: Is this so?
+
     # Retreive the current running method name.
     #
     #   def tester; __callee__; end
@@ -28,7 +34,7 @@ unless (RUBY_VERSION[0,3] == '1.9')
       /\`([^\']+)\'/.match(caller(1).first)[1].to_sym
     end
 
-    private :__callee__, :__method__
+    private :__callee__
 
   end
 

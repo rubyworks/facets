@@ -1,6 +1,6 @@
-unless (RUBY_VERSION[0,3] == '1.9')
+module Enumerable
 
-  module Enumerable
+  unless method_defined?(:one?)  # 1.8.7+
 
     # Enumerable#one? returns +true+ if and only if <em>exactly one</em>
     # element in the collection satisfies the given predicate.
@@ -36,3 +36,4 @@ unless (RUBY_VERSION[0,3] == '1.9')
   end
 
 end
+
