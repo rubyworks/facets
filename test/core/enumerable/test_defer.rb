@@ -1,7 +1,8 @@
 require 'facets/enumerable/defer'
+require 'facets/enumerable/take'
 require 'test/unit'
 
-class TC_Enumerator_Filter < Test::Unit::TestCase
+class TC_Enumerable_Defer < Test::Unit::TestCase
 
   SOURCE = (1..1/0.0)   # infinite Enumerable object
 
@@ -19,13 +20,13 @@ class TC_Enumerator_Filter < Test::Unit::TestCase
   
   def test_defer_without_block
     a = SOURCE.defer
-    assert_equal Enumerator::Deferred, a.class
+    assert_equal Denumerator, a.class
     assert_equal [1,2,3,4,5], a.take(5).to_a
   end
 
   def test_defer_with_block
     a = SOURCE.defer { |out,i| out << i*2 }
-    assert_equal Enumerator::Deferred, a.class
+    assert_equal Denumerator, a.class
     assert_equal [2,4,6,8,10], a.take(5).to_a
   end
 
