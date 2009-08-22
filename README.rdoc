@@ -22,6 +22,11 @@ which constitute an ever improving source of reusable components. This set of
 libraries is kept light and focused on useful to a wide variety of usecases.
 
 
+== Release Notes
+
+Please see Facets Blog (http://facets.rubyforge.org).
+
+
 == Documentation
 
 Facets has special documentation needs due to it's extensive bredth.
@@ -39,11 +44,6 @@ disk folks!), so you will find them in the doc/ directory of whatever package
 you have choosen to install. In fact, a good package installer should give you
 the option to install those in the appropriate place in your system anyway
 (eg. in /usr/share/doc/facets/).
-
-
-== Release Notes
-
-Please see the HISTORY file.
 
 
 == Installation

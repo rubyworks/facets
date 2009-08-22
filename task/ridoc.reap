@@ -1,5 +1,5 @@
 ---
-# divide this up into three as well?
+# divide this up into two as well?
 ridoc:
   service : RiDoc
   output  : doc/ri

@@ -38,10 +38,10 @@ a {
 }
 
 pre {
-  background      : black;
+  background      : white;
   font-size       : 0.8em;
-  padding-top     : 10px;
-  color           : white;
+  padding         : 5px 0 30px 20px;
+  color           : #333;
 }
 
 blockquote {
@@ -60,7 +60,8 @@ td {
   vertical-align: top;
 }
 
-li { color: black; font: 16pt sans-serif; }
+ul { margin-left: 30px; margin-bottom: 30px; }
+li { color: black; font-family: monospace; font-size: 0.9em; }
 
 h3 { font-weight: normal; }
 

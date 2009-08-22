@@ -16,6 +16,8 @@ In particular you should note that #class_extension has been renamed to #class_e
 (require 'facets/class_extend'). In addition we have added a few new core methods such
 as Exception#raised? and Symbol#thrown?.
 
+Changes:
+
 * Spun-Off Projects
 
 These libraries have been deprectated from Facets entirely, but are available
@@ -139,6 +141,8 @@ will become easier to maintain and thus more robust in the long run.
 This release also fixes an important arity bug with the recently added
 Module#extend method --one of the very few actual core overrides in Facets.
 
+Changes:
+
 * 7 Major Enhancements
 
     * Removed htmlfilter.rb due to licensing issues.
@@ -166,6 +170,8 @@ Facets 2.5.2 is a simple maintentance release which fixed a few issues
 in the new to_hash.rb library. This release also added String#lowercase
 and String#uppercae.
 
+Changes:
+
 * 1 Major Enhancement
 
     * added string/uppercase and lowercase
@@ -189,6 +195,8 @@ on the singleton class.
 
 Special thanks to Erik Veenstra, Pit Capitan and especially Sandor Szücs
 for their contributions to this release.
+
+Changes:
 
 * 7 Major Enhancements
 
@@ -270,6 +278,8 @@ achieve just over a year ago. Thank the Maker!
 
 Special thanks to Brian Candler, Jeena Paradies and Tyler Rick.
 
+Changes:
+
 * 9 Major Changes
 
     * added Brian Candler's Enumerator::Filter
@@ -309,6 +319,8 @@ Facets 2.4.5 is a maintaince release. This release is notable however in that
 it will likely be the last that to use SVN. Facets will be switching to Git.
 Also, some libraries that have been flagged "to be deprecated" for some time will
 finally be so.
+
+Changes:
 
 * 8 Major Enhancements
 
@@ -355,6 +367,8 @@ Facets 2.4.4 includes a major bug fix that caused Facets not to load properly,
 having to do with a Time extension. The problem has been fixed. In addition,
 this release put Facets only a few pending adjustments away from full
 Rails/ActiveSupport compatibility.
+
+Changes:
 
 * 10 Major Enhancements
 
@@ -438,6 +452,8 @@ This release give special thanks to the following people for their contributions
 
 And of course, to anyone else I failed to mention that has contributed.
 
+Changes:
+
 * 22 Major Enhancements
 
     * Changed File#rewrite to not use the in-place change of the string.
@@ -511,6 +527,8 @@ And of course, to anyone else I failed to mention that has contributed.
 
 Just some more of those great old work your ass off changes.
 
+Changes:
+
 * Major Enhancements
 
     * Added Ken Bloom's DictionaryMatcher class from Ruby Quiz #103.
@@ -578,6 +596,8 @@ Just some more of those great old work your ass off changes.
 This release takes aim at improving compatability with ActiveSupport.
 It also reintroduces an improved paramix.rb.
 
+Changes:
+
 * 4 Major Enhancements
 
     * A much improved paramix.rb has been returned to the library.
@@ -623,6 +643,8 @@ some lack-luster extensions have been deprecated and namespace usage
 has been improved. In addition, we are getting very close to full
 ActiveSupport, and Ruby 1.9, interoperability. Expect this
 to be complete in the next minor release or two.
+
+Changes:
 
 * Enhancements
 
@@ -899,6 +921,8 @@ Amoung other changes with this release, cloneable.rb is
 now a true deep dup/clone mixin; tracepoint.rb returns
 to the library.
 
+Changes:
+
     * Reorganized library into smaller groups: core, more, class and mixin.
     * Added tracepoint.rb back to the library.
     * Fixed multiglob_r bug, so it will NOT follow symlinks.
@@ -944,6 +968,8 @@ to the library.
 All method redirects are now in core, to ensure
 there are no more name clashes.
 
+Changes:
+
     * Got rid of methods subdir. All method redirects are in core/.
 
     * Moved doc/wiki to apiwiki b/c of Rubyforge's wiki.
@@ -978,6 +1004,8 @@ there are no more name clashes.
 
 This release provides improved rdocs and prepares facets for use with Ruby 1.9.
 It also adds Matthew Harris' duration.rb library. Bug thanks to Matthew!
+
+Changes:
 
     * A lot of rdoc updates to core extensions --as promised ;)
     * Just about every method now has at least a brief explinaiton and an example.
@@ -1071,6 +1099,8 @@ It also adds Matthew Harris' duration.rb library. Bug thanks to Matthew!
 
 == 2.1.3 / 2007-11-28
 
+Changes:
+
     * Fixed minor oddity in Enumerable/collate.
     * Fixed major issue with 2.1.2 where it would not core facets correctly.
     * Array#to_h used flatten, but it needs to be flatten(1).
@@ -1080,6 +1110,8 @@ It also adds Matthew Harris' duration.rb library. Bug thanks to Matthew!
 
 == 2.1.2 / 2007-11-22
 
+Changes:
+
     * Dir::multiglob no longer handels -/+ modifiers. Use FileList instead.
     * Fixed task/install script.
     * Added copyright notice to COPYING file.
@@ -1088,6 +1120,8 @@ It also adds Matthew Harris' duration.rb library. Bug thanks to Matthew!
 
 
 == 2.1.1 / 2007-11-16
+
+Changes:
 
     * Fixed bug in command.rb that clobbered options.
     * Added kernel/ergo.rb.
@@ -1109,6 +1143,8 @@ a new BiCrypt class for simple two-way crypotgraphy,
 as well as attr_reader!, attr_writer! and attr_accessor!
 for flag attributes, plus alias_xxx methods for all
 attr_xxx methods.
+
+Changes:
 
     * command.rb has been completely rewritten. The API has changed completely!
     * There is no longer a Commmand::Optoins class. Use Console::Arguments instead.
@@ -1167,6 +1203,8 @@ attr_xxx methods.
 
 == 2.0.5 / 2007-11-05
 
+Changes:
+
     * Added final methods Gavin Sinclair's Extensions project (contributed by Noah Gibbs).
     * Fixes bug with Dictionary#initialize
     * Fixes bug with Hash#-
@@ -1176,8 +1214,11 @@ attr_xxx methods.
 
 == 2.0.4 / 2007-11-04
 
+Changes:
 
 == 2.0.3 / 2007-11-02
+
+Changes:
 
         * Touch up to methods task.
         * Update rsync filter
@@ -1195,10 +1236,14 @@ attr_xxx methods.
 
 2007-11-01  transami
 
+Changes:
+
         * Added array/only,  symbol/to_proc (where did it go?) and hash/select.
 
 
 2007-10-31  transami
+
+Changes:
 
         * Update roll file.
         * Moved test_command_options to test_command.
@@ -1227,6 +1272,8 @@ attr_xxx methods.
 
 2007-10-28  transami
 
+Changes:
+
         * Modifications to command.rb, snapshot and rbsystem.
             * Merged command.rb and command_options.rb into command.rb.
             * Added to_data aliases to snapshot.rb
@@ -1235,23 +1282,28 @@ attr_xxx methods.
 
 2007-10-27  transami
 
-        * Removed embedded test from overload.rb.
-        * Allow OpenStruct#initialize to take a setter block.
-        * Downloader needs 'wb' flag rather then just 'w'.
-        * Fixed typo and removed embedded test.
-        * Fixed bug in command_options.rb, putting the class back in the Console namespace.
+Changes:
 
+    * Removed embedded test from overload.rb.
+    * Allow OpenStruct#initialize to take a setter block.
+    * Downloader needs 'wb' flag rather then just 'w'.
+    * Fixed typo and removed embedded test.
+    * Fixed bug in command_options.rb, putting the class back in the Console namespace.
 
     * improved module/traits.rb
 
 
 == 2.0.2 / 2007-10-08
 
+Changes:
+
     * cleaned up some test and updated version to 2.0.2
     * update methods to eleminate duplicate file names between lib/core and lib/methods
 
 
 == 2.0.0 / 2007-10-02
+
+Changes:
 
 2007-10-07  transami
 
@@ -1611,6 +1663,8 @@ attr_xxx methods.
 
 == 1.8.54 / 2007-02-19
 
+Changes:
+
     * added reqiure to ostruct.rb test
     * fix to command.rb's initializer
     * fixed bug with times.rb beginning_of_year and beginning_of_month
@@ -1671,6 +1725,8 @@ attr_xxx methods.
 
 
 == 1.8.0 / 2007-01-24
+
+Changes:
 
     * added buildingblock.rb, replaced builderobject.rb
     * adjust require for "yored" files
@@ -1876,6 +1932,8 @@ attr_xxx methods.
 
 == 1.7.0 / 2006-07-25
 
+Changes:
+
     * fix to inifinty.rb
     * comment on cut.rb needed a quick fix
     * updated infinity
@@ -1906,6 +1964,8 @@ attr_xxx methods.
 
 
 == 1.6.0
+
+Changes:
 
     * PrivateAccess expiremental class
     * added reverse_merge  (from Active Support)
@@ -1957,6 +2017,8 @@ attr_xxx methods.
 
 == 1.4.5 / 2006-07-05
 
+Changes:
+
     * move ProjectInfo to proj/info
     * better arrangment of repository
     * Added nil#status, module#alias_method_chain and enumerable#cascade.
@@ -1977,6 +2039,8 @@ attr_xxx methods.
 
 
 == 1.4.4 / 2007-07-03
+
+Changes:
 
     * added nil#status - Allows a messgae to be passed through
       a failure chain.
@@ -1999,6 +2063,8 @@ attr_xxx methods.
 
 == 1.4.2 / 2006-06-21
 
+Changes:
+
     * Started using Darcs --finally!
     * Transition to Darcs has interupted ChangeLog though :(
     * Mostly minor fixes in prepeartion for official 1.4 release.
@@ -2011,6 +2077,8 @@ attr_xxx methods.
 
 
 == 1.4.0 / 2006-06-05
+
+Changes:
 
     * Added Cookie, HTTP and HTTPAccess of ...'s library.
     * OpenObject's __get__ and __set__ methods have been changed
@@ -2037,12 +2105,16 @@ attr_xxx methods.
 
 == 1.3.1 / 2006-04-17
 
+Changes:
+
     * Deprecated string/to_arr, and slightly adjusted string#to_a.
       (Not commonly used so not a major change.)
     * Minor bug fixes.
 
 
 == 1.3.0 / 2006-04-05
+
+Changes:
 
     * Ported parts of Nitro's Glue library to Facets.
       * more/aspects.rb
@@ -2058,10 +2130,14 @@ attr_xxx methods.
 
 == 1.2.1 / 2006-03-29
 
+Changes:
+
     * kernel/meta has been renamed to kernel/instance
 
 
 == 1.2.0 / 2006-03-24
+
+Changes:
 
     * Added zimba.tm's string/modulize, pathize and methodize.
     * Added some Gem methods, self/active?, self/gemspec, self/gempath.
@@ -2069,11 +2145,15 @@ attr_xxx methods.
 
 == 1.0.3 / 2006-02-10
 
+Changes:
+
     * A last ditch attempt to keep facets and calibre as one project.
     * Added _why's Array modulo.
 
 
 == 1.0.0 / 2005-12-04
+
+Changes:
 
     * Sped up string#similarity.
     * By popular protest deprecated usage of "AClass.use Facets, :amethod".
@@ -2082,7 +2162,11 @@ attr_xxx methods.
     * All is now well preped for a Rolls release shoud that come about.
 
 
-== 0.10.30  Halloween
+== 0.10.30
+
+Halloween
+
+Changes:
 
     * Change OrderedHash (ohash.rb) to Dictionary (dictionary.rb).
     * Change BlankSlate (blankslate.rb) to BasicObject (basicobject.rb).
@@ -2094,7 +2178,11 @@ attr_xxx methods.
       Use #every or #ew instead.
 
 
-== 0.10.11  Palapable
+== 0.10.11
+
+Palapable
+
+Changes:
 
     * Merged Mega into Facets. I put the old Mega ChangeLog at
       the bottom of this document.
@@ -2112,7 +2200,11 @@ attr_xxx methods.
       works in practice.
 
 
-== 0.9.5  Rebirth
+== 0.9.5
+
+Rebirth
+
+Changes:
 
     * Rebirth of Facets! As cool as the name Nano is, it became clear
       that most people are drawn toward the name Facets. So we are
@@ -2131,7 +2223,11 @@ attr_xxx methods.
       the aliasing system.
 
 
-== 0.9.2  Littles
+== 0.9.2
+
+Littles
+
+Changes:
 
     * Added string/starts_with? and string/ends_with?
     * Fixed module/memoize to cache on a per class/module bases.
@@ -2142,7 +2238,11 @@ attr_xxx methods.
     * Renamed module/super_send to module/send_as.
 
 
-== 0.9.1  Wraps
+== 0.9.1
+
+Wraps
+
+Changes:
 
     * Added module/nesting (not to be confused with the class method Module::nesting).
     * Thanks goes to Gavien Kistner for new string/word_wrap methods
@@ -2153,7 +2253,11 @@ attr_xxx methods.
       what one might expect.
 
 
-== 0.9.0 / 2005-10-28 - NotUorI
+== 0.9.0 / 2005-10-28
+
+NotUorI
+
+Changes:
 
     * Deprecated object#special_class, which was a method for (class<<self;self;end).
       Already have too many aliases for this, and though the name is fitting, the simpler
@@ -2165,7 +2269,11 @@ attr_xxx methods.
       David A. Black, Gavin Sinclair, Nikolai Weibull and Christian Neukirchen.
 
 
-== 0.8.3  UorI
+== 0.8.3
+
+UorI
+
+Changes:
 
     * Added kernel/uri and kernel/unuri
     * (Good idea?) removed methods module/sattr, sattr_reader, &c. Instead created object/meta
@@ -2176,7 +2284,11 @@ attr_xxx methods.
     * Class method file names now begin with '::' to separate them from instance methods.
 
 
-== 0.8.2  Nano Revolution
+== 0.8.2
+
+Nano Revolution
+
+Changes:
 
     * Name Change! What was Ruby Facets is now Nano Methods!
     * New minor version as there has been a change of plans with the integration of what was Carats.
@@ -2212,14 +2324,22 @@ attr_xxx methods.
     * Fixed bug with string/capitalized? which wasn't always giving the correct result.
 
 
-== 0.7.2 / 2005-05-22 - George II
+== 0.7.2 / 2005-05-22
+
+George II
+
+Changes:
 
     * Added a class method dir/recurse which allows one to loop through a dir and all its
       subdirs, etc. It also has an alias #ls_r. Thanks goes to George Maschovitis for this.
     * Changed array/permute to array/each_permutation.
 
 
-== 0.7.1  Quick George
+== 0.7.1
+
+Quick George
+
+Changes:
 
     * Added facet.rb, although expiremental it makes it possible to use atomic methods without
       specificaly requiring them. It uses Object#method_missing to require them as needed.
@@ -2227,7 +2347,11 @@ attr_xxx methods.
       These will see a great deal of continued improvement in the future.
 
 
-== 0.7.0  Georgian Transform
+== 0.7.0
+
+Georgian Transform
+
+Changes:
 
     * All methods with names containing non-alphanumeric characters now have facet
       files without those special characters. This removes some incompatibilites with
@@ -2244,7 +2368,11 @@ attr_xxx methods.
     * Added array/permute.
 
 
-== 0.6.3  Gemstone
+== 0.6.3
+
+Gemstone
+
+Changes:
 
     * Gem is now avaliable!
     * Added kernel/require_all which allows one to require a pattern of files,
@@ -2263,7 +2391,11 @@ attr_xxx methods.
     * Added array/last_index. (Thanks goes to Jabari)
 
 
-== 0.6.2  Refinement I
+== 0.6.2
+
+Refinement I
+
+Changes:
 
     * Added kernel/resc as a shortcut for Regexp.escape.
     * Renamed hash/keys_to_string to hash/key_to_s and
@@ -2285,26 +2417,42 @@ attr_xxx methods.
     * Added string/shatter which is similar to split but includes
       the matched portions of text.
 
-== 0.6.1  Florian's Mixes
+== 0.6.1
+
+Florian's Mixes
+
+Changes:
 
     * Updated the current set of mix files which were still from
       version 0.5.0. (2004-12-31)
 
 
-== 0.6.0  Florian's Onslaught
+== 0.6.0
+
+Florian's Onslaught
+
+Changes:
 
     * Major revisions made by Florian's onslaught. (2004-12-28)
     * First general public release.
 
 
-== 0.5.0  Fit for First
+== 0.5.0
+
+Fit for First
+
+Changes:
 
     * This is the beginning of offical releases. (2004-12-23)
     * Now called Facets.
     * Changed layout to be completely atomic! (2004-10-30)
 
 
-== 0.4.0  Raspberry
+== 0.4.0
+
+Raspberry
+
+Changes:
 
     * Scoured the Ruby world for useful additions.
     * Changed name again from A.B.C. to Raspberry.
@@ -2315,20 +2463,32 @@ attr_xxx methods.
     * Removed services.rb unitl in gets fixed and a better name.
 
 
-== 0.3.3 Mega2
+== 0.3.3
+
+Mega2
+
+Changes:
 
     * Added inheritable.rb, a lib for creating class vars inherit from ancestors
     * Addes annotations.rb, a lightweight metadata system good for annotating
       methods esspecially. It is built on top of inheritable.rb.
 
 
-== 0.3.2 Mega
+== 0.3.2
+
+Mega
+
+Changes:
 
     * Added services.rb, a lib for managing methods as first class objects
     * Fixed/cleaned-up orm_supprt.rb
 
 
-== 0.3.0  ABC
+== 0.3.0
+
+ABC
+
+Changes:
 
     * Reorganinzed all of this together in a nice neat way.
     * Changed name of library from Succ to A.B.C.
@@ -2345,23 +2505,37 @@ attr_xxx methods.
 
 == 0.3.1
 
+Changes:
+
     * Aliased #autoload_classes with #autorequire.
     * Added #strfbits and #strfbytes to binary_multiplers.rb.
 
 
-== 0.2.0  Succ
+== 0.2.0
+
+Succ
+
+Changes:
 
     * A number of new methods added.
     * Renamed it Succ for "successor". (2003-05-31)
     * Initial public release
 
 
-== 0.1.0  Carats
+== 0.1.0
+
+Carats
+
+Changes:
 
     * Early Development as Ruby Carats
 
 
-== 0.0.0  TomsLib
+== 0.0.0
+
+TomsLib
+
+Changes:
 
     * Tomslib's just a few useful methods. (2002-07-01)
 

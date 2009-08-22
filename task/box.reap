@@ -2,5 +2,7 @@
 box:
   service : Box
   types   : [gem, tar]
+  spec    : true
   include : [demo, doc, lib, meta, task, test, "[A-Z]*"]
-  exclude : [doc/ri]
+  exclude : [doc/ri, doc/webri]
+
