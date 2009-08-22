@@ -33,13 +33,13 @@ module Enumerable
   #
   def defer(&blk)
     if block_given?
-      Denumerable::Denumerator.new do |output|
+      Denumerator.new do |output|
         each do |*input|
           yield output, *input
         end
       end
     else
-      Denumerable::Denumerator.new do |output|
+      Denumerator.new do |output|
         each do |*input|
           output.yield *input
         end

@@ -1,4 +1,4 @@
-require 'enumerator'
+require 'facets/enumerator'
 
 module Enumerable
 

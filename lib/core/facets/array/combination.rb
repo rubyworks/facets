@@ -2,7 +2,7 @@ class Array
 
   unless method_defined?(:combination) # 1.8.7+
 
-    require 'enumerator'
+    require 'facets/enumerator'
 
     # Yields the block to each unique combination of _n_ elements.
     #

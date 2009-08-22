@@ -11,7 +11,7 @@
 # ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
 # FOR A PARTICULAR PURPOSE.
 
-require 'enumerator'
+require 'facets/enumerator'
 
 # This is a simple reimplementation of the core Enumerable module
 # to allow the methods to take and pass-on arbitrary arguments to the

@@ -5,7 +5,7 @@ class TestKernelTap < Test::Unit::TestCase
 
   def test_tap
     x = "foo"
-    r = ("foobar".tap{ gsub!(/bar/, '') })
+    r = ("foobar".tap{ |x| x.gsub!(/bar/, '') })
     assert_equal(x, r)
   end
 

@@ -20,13 +20,13 @@ class TC_Enumerable_Defer < Test::Unit::TestCase
   
   def test_defer_without_block
     a = SOURCE.defer
-    assert_equal Denumerable::Denumerator, a.class
+    assert_equal Denumerator, a.class
     assert_equal [1,2,3,4,5], a.take(5).to_a
   end
 
   def test_defer_with_block
     a = SOURCE.defer { |out,i| out << i*2 }
-    assert_equal Denumerable::Denumerator, a.class
+    assert_equal Denumerator, a.class
     assert_equal [2,4,6,8,10], a.take(5).to_a
   end
 

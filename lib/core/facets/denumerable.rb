@@ -63,20 +63,14 @@ module Denumerable
 
   # TODO: add more methods, e.g. grep, take_while etc.
 
-  # = Denumerator
-  #
-  # A class like Enumerator, but which has 'lazy' versions of map, select etc.
-  #
-  class Denumerator < Enumerable::Enumerator
-    include Denumerable
-  end
-
 end
 
-=begin test.ae
 
-  r = (1..10).defer.select{ |i| i % 2 == 0 }.map{ |i| i + 100 }.to_a
-  r.assert == [102,104,106,108,110]
-
-=end
+# = Denumerator
+#
+# A class like Enumerator, but which has 'lazy' versions of map, select etc.
+#
+class Denumerator < Enumerator
+  include Denumerable
+end
 

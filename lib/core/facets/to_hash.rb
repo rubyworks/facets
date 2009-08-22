@@ -1,8 +1,4 @@
-begin
-  require 'enumerator' #if RUBY_VERSION < 1.9
-rescue LoadError # Ruby 1.9 already has it built-in.
-end
-
+require 'facets/enumerator'
 require 'facets/hash/dearray_values'
 
 class Array

@@ -4,6 +4,9 @@ module Kernel
 
     # The tap K-Combinator. This yields self -and- returns self.
     #
+    # Note, Ruby 1.9+ does not appear to support the zero arity 
+    # instance_eval option.
+    #
     def tap(&b)
       if block_given?
         b.arity == 1 ? yield(self) : instance_eval(&b)
