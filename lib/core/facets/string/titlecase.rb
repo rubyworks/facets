@@ -8,7 +8,7 @@ class String
   # CREDIT: Eliazar Parra
 
   def titlecase
-    gsub(/\b\w/){$&.upcase}
+    gsub(/\b\w/){ $`[-1,1] == "'" ? $& : $&.upcase }
   end
 
 end
