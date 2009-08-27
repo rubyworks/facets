@@ -2,10 +2,10 @@ class String
 
   unless method_defined?(:start_with?) # 1.8.7+
 
-    # Does a string start with the given prefix.
+    # Does a string start with the given prefix?
     #
-    #   "hello".starts_with?("he")    #=> true
-    #   "hello".starts_with?("to")    #=> false
+    #   "hello".start_with?("he")    #=> true
+    #   "hello".start_with?("to")    #=> false
     #
     # CREDIT: Lucas Carlson, Blaine Cook
 
@@ -19,8 +19,8 @@ class String
 
     # Does a string end with the given suffix?
     #
-    #   "hello".ends_with?("lo")    #=> true
-    #   "hello".ends_with?("to")    #=> false
+    #   "hello".end_with?("lo")    #=> true
+    #   "hello".end_with?("to")    #=> false
     #
     # CREDIT: Lucas Carlson, Blaine Cook
 
@@ -31,7 +31,7 @@ class String
   end
 
   alias_method :starts_with?, :start_with?
-  alias_method :ends_with?  , :ends_with?
+  alias_method :ends_with?  , :end_with?
 
 end
 
