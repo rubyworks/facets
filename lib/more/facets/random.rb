@@ -2,9 +2,9 @@
 #
 # Randomization core extension methods.
 #
-# This library extends Object, Array, String and Hash with randomization
+# This library extends Object, Array, String, Hash, and Range with randomization
 # methods. Most of the methods are of one of two kinds. Either they "pick"
-# a random element from the reciever or they randomly "shuffle" the reciever.
+# a random element from the reciever or they randomly "shuffle" the receiver.
 #
 # The most common example is Array#shuffle, which simply randmomizes the
 # order of an array's elements.
@@ -66,6 +66,8 @@ module Random
   def self.append_features(mod)
     if mod == ::Object
       mod.send(:include, Random::Object)
+    elsif mod == ::Range
+      mod.send(:include, Random::Range)
     elsif mod == ::Array
       mod.send(:include, Random::Array)
     elsif mod == ::Hash
@@ -97,9 +99,25 @@ module Random
 
   #
 
+  module Range
+
+    # Return a random element from the range.
+    #
+    #   (1..4).at_rand           #=> 2
+    #   (1..4).at_rand           #=> 4
+    #
+    def at_rand
+      array = to_a
+      array.at(Random.number(array.size))
+    end
+
+  end
+
+  #
+
   module Array
 
-    # Return a random element of the array.
+    # Return a random element from the array.
     #
     #   [1, 2, 3, 4].at_rand           #=> 2
     #   [1, 2, 3, 4].at_rand           #=> 4
@@ -434,6 +452,10 @@ module Random
 end
 
 class Object
+  include Random
+end
+
+class Range
   include Random
 end
 
