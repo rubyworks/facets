@@ -18,7 +18,9 @@ module Kernel
   # order of assignemnt.
   #
   # Using a hash or array will not raise an error if the
-  # accessor does not exits --it will simply be skipped.
+  # accessor does not exits -- it will simply be skipped.
+  #
+  # (See also: instance_vars.update, which sets instance variables directly, bypassing accessor method.)
   #
   # TODO: Better name, #set_with ?
 

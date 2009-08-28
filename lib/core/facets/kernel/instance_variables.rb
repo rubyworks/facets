@@ -40,15 +40,16 @@ class InstanceVariables
 
   def []=(name, value)
     name = atize(name)
-    @delegate.instance_varaible_set(name,value)
+    @delegate.instance_variable_set(name,value)
   end
 
   def <<(pair)
     name, value = *pair
     name = atize(name)
-    @delegate.instance_varaible_set(name, value)
+    @delegate.instance_variable_set(name, value)
   end
 
+  # (See also: Kernel#populate, which uses accessor method rather than setting instance variables directly.)
   def update(hash)
     hash.each do |pair|
       self << pair
@@ -82,7 +83,6 @@ class InstanceVariables
 end
 
 =begin demo
-
   class Friend
     attr_accessor :name, :age, :phone
     def initialize(name, age, phone)
@@ -91,7 +91,7 @@ end
   end
 
   f1 = Friend.new("John", 30, "555-1212")
-  p f1.variables
-  p f1.variables.to_hash
-
+  p f1.instance_vars
+  f1.instance_vars.update({:name=>'Jerry'})
+  p f1.instance_vars
 =end
