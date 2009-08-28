@@ -57,7 +57,7 @@ Understand that on the off chance that another library has the same name as one 
   class String
 
     # Essentially makes #to_a an alias for split,
-    # with the excpetion that if no divider is given
+    # with the exception that if no divider is given
     # then the array is split on charaters, and
     # NOT on the global input record divider ($/).
     #

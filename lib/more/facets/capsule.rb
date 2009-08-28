@@ -1,7 +1,7 @@
 # = Capsule
 #
 # A Capsule is subclass of Module. It encapsulates an extenal script
-# as a funcitons module.
+# as a functions module.
 #
 # A module which is an instance of the Capsule class encapsulates in its scope
 # the top-level methods, top-level constants, and instance variables defined in
@@ -38,7 +38,7 @@
 # = Capsule
 #
 # A Capsule is subclass of Module. It encapsulates an extenal script
-# as a funcitons module.
+# as a functions module.
 #
 # A module which is an instance of the Capsule class encapsulates in its scope
 # the top-level methods, top-level constants, and instance variables defined in
@@ -60,7 +60,7 @@ class Capsule < Module
   #attr_reader :dir
 
   # An array of paths to search for scripts. This has the same
-  # semantics as <tt>$:</tt>, alias <tt>$LOAD_PATH</tt>, excpet
+  # semantics as <tt>$:</tt>, alias <tt>$LOAD_PATH</tt>, except
   # that it is local to this script. The path of the current
   # script is added automatically (equivalent to '.')
   attr_reader :load_path
@@ -212,7 +212,7 @@ class Capsule < Module
 
 end
 
-# TODO Is autoimport bets name for this?
+# TODO Is autoimport best name for this?
 
 class Module
 

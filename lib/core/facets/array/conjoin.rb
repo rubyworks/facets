@@ -1,9 +1,9 @@
 class Array
 
-  # This is more advnaced form of #join. It allows for fine control
+  # This is more advanced form of #join. It allows for fine control
   # of separators.
   #
-  # NOTE: The old version used to default it's separator to ", " and
+  # NOTE: The old version used to default its separator to ", " and
   # default the terminating separator to " and ". This is no longer
   # the case. You must specifically provide these parameters.
   #

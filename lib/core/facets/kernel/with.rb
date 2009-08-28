@@ -1,6 +1,6 @@
 module Kernel
 
-  # Like returning but exectures the block
+  # Like returning but exectues the block
   # via instance_eval.
   #
   #   def foo

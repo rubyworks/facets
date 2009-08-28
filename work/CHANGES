@@ -279,7 +279,7 @@ As a REMINDER, Facets 2.4+ now encourages:
   require 'facets'
 
 This is better than cherry-picking methods. It may seem counter-intuitive,
-but it actually proves more advantages to do this for the sake of
+but it actually proves more advantageous to do this for the sake of
 improved interoperability. The practice of cherry-picking can become 
 problematic if other dependent libraries have cherry-picked different
 methods. In those cases these distinctions go unaccounted and untested.

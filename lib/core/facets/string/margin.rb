@@ -8,8 +8,9 @@ class String
   #         |     margin controlled!
   #         }.margin
   #
-  #
   # NOTE: This may still need a bit of tweaking.
+  #
+  # TODO: describe its limits and caveats and edge cases
   #
   # CREDIT: Trans
 

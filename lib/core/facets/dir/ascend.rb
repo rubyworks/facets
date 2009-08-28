@@ -16,6 +16,9 @@ class Dir
   #
   # CREDIT: Daniel Berger, Jeffrey Schwab
 
+  # TODO: make it work with windows too
+  # use FileTest.root?
+
   def self.ascend(dir, inclusive=true, &blk)
     dir = dir.dup
     blk.call(dir) if inclusive

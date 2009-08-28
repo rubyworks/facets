@@ -1,7 +1,7 @@
 class Array
 
-  # Apply a block to hash, and recursively apply that block
-  # to each subhash.
+  # Apply a block to array, and recursively apply that block
+  # to each subarray.
   #
   #   arr = ["a", ["b", "c", nil], nil]
   #   arr.recursively{|a| a.compact! }
