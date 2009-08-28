@@ -11,6 +11,16 @@ class TestKernelRandom < Test::Unit::TestCase
 
 end
 
+class TestRangeRandom < Test::Unit::TestCase
+
+  def test_at_rand
+    r = (1..4)
+    20.times{ assert_nothing_raised{ r.at_rand } }
+    20.times{ assert( r.include?( r.at_rand ) ) }
+  end
+
+end
+
 class TestArrayRandom < Test::Unit::TestCase
 
   def test_at_rand
@@ -125,16 +135,15 @@ class TestStringRandom < Test::Unit::TestCase
   end
 
   def test_rand_byte
-    s = 'ab'
-    r = s.rand_byte
-    assert( r == 97 || r == 98 )
-  end
-
-  def test_rand_byte_again
-    s = 'ab'
-    r = s.rand_byte
-    assert( r == 97 || r == 98 )
-    assert( s = 'a' || s = 'b' )
+    2.times do
+      s = 'ab'
+      r = s.rand_byte
+      if RUBY_VERSION > '1.9'
+        assert( r == 'a' || r == 'b' )
+      else
+        assert( r == 97 || r == 98 )
+      end
+    end
   end
 
   def test_shuffle
