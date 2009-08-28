@@ -15,7 +15,7 @@ class Script < Module
   #attr_reader :dir
 
   # An array of paths to search for scripts. This has the same
-  # semantics as <tt>$:</tt>, alias <tt>$LOAD_PATH</tt>, excpet
+  # semantics as <tt>$:</tt>, alias <tt>$LOAD_PATH</tt>, except
   # that it is local to this script. The path of the current
   # script is added automatically (equivalent to '.')
   attr_reader :load_path

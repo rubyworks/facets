@@ -1,6 +1,6 @@
 class Module
 
-  # Automatically generate sorting defintions base on attribute fields.
+  # Automatically generate sorting definitions based on attribute fields.
   #
   #   sort_on :a, :b
   #

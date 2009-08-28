@@ -2,7 +2,7 @@ class Array
 
   # Splice acts a combination of #slice! and #store.
   # If two arguments are given it calls #store.
-  # If a single argument is give it calls slice!.
+  # If a single argument is given it calls slice!.
   #
   #   a = [1,2,3]
   #   a.splice(1)    #=> 2

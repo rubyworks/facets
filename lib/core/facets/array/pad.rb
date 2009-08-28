@@ -1,6 +1,6 @@
 class Array
 
-  # Pad an array with a given <tt>value</tt> upto a given <tt>length</tt>.
+  # Pad an array with a given <tt>value</tt> up to a given <tt>length</tt>.
   #
   #   [0,1,2].pad(6,"a")  #=> [0,1,2,"a","a","a"]
   #

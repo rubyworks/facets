@@ -13,9 +13,9 @@
 
 class Module
 
-  # Automatically generate sorting defintions base on attribute fields.
+  # Automatically generate sorting definitions based on attribute fields.
   #
-  #   include SortOn(:a, :b)
+  #   include Comparable(:a, :b)
   #
   # is equivalent to including a module containing:
   #

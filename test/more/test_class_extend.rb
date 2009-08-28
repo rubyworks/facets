@@ -8,6 +8,8 @@ class TC_ClassExtension < Test::Unit::TestCase
   # fixture
 
   module N
+    def instance_method; end
+
     class_extend do
       def n ; 43 ; end
       def s ; self ; end
@@ -51,6 +53,10 @@ class TC_ClassExtension < Test::Unit::TestCase
   def test_05
     assert_equal( 44, Z.n )
     assert_equal(  Z, Z.s )
+  end
+  def test_06
+    assert_equal( [:instance_method], N.instance_methods )
+    assert_equal( [:n, :s, :append_features], (N.methods - N.instance_methods - Object.instance_methods - Module.methods) )
   end
 
 end
