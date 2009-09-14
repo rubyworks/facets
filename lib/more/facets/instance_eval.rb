@@ -31,16 +31,16 @@ class Object
   #
   # TODO: Will only support calls with blocks as of Ruby 1.9+.
   #
-  def instance_eval(&block)
-    return super if block
+  def instance_eval(*args, &block)
+    return super if block or !args.empty?
     @_instance_eval ||= Functor.new do |op, *a|
       instance_eval{ send(op, *a) }
     end
   end
 
   # TODO for Ruby 1.9
-  #def instance_eval(&block)
-  #  return super if block
+  #def instance_eval(*args, &block)
+  #  return super if block or !args.empty?
   #  @_instance_functor ||= Functor.new do |op, *a, &b|
   #    fcall(op, *a, &b)
   #  end

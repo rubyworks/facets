@@ -4,6 +4,10 @@ class Dir
   # to the given block.
   #
   # CREDIT: George Moschovitis
+  #
+  # TODO: If fully compatible, reimplement as alias of Find.find,
+  # or just copy and paste Find.find code here if it looks more robust.
+  #
   def self.recurse(path='.', &block)
     list = []
     stoplist = ['.', '..']

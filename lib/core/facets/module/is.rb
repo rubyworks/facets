@@ -6,12 +6,12 @@ class Module
   #  class X ; end
   #  class Y < X ; end
   #
-  #   Y.is?(X)  #=> true
+  #  Y.is?(X)  #=> true
   #
   # CREDIT: Trans
 
   def is?(base)
-    ancestors.slice(1..-1).include?(base)
+    Module===base && ancestors.slice(1..-1).include?(base)
   end
 
   # An alias for #include.
@@ -21,8 +21,6 @@ class Module
   #   end
   #
   # CREDIT: Trans
-
-  #alias_method :is, :include
 
   def is(*mods)
     mods.each do |mod|
@@ -38,9 +36,11 @@ class Module
     include(*mods)
   end
 
+  #alias_method :is, :include
+
   # Expirmental idea for #is.
   #
-  # If the module has #append_function_function
+  # If the module has #append_feature_function
   # defined, this will use that instead of #include.
   #
   #   def is(*modules)

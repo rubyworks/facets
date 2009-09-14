@@ -1,8 +1,10 @@
 require 'facets/functor'
 
+#--
 # TODO: Consider Enumerator methods
+#++
 
-module Enumerable #:nodoc:
+module Enumerable
 
   # Per element meta-functor.
   #
