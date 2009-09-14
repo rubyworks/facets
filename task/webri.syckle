@@ -1,7 +1,7 @@
 ---
 webri:
   service: WebRI
-  active : true
+  active : false
   output : ~       # default is doc/webri
   ridoc  : doc/ri  # default is doc/ri
 
