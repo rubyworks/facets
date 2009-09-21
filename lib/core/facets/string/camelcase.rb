@@ -16,18 +16,20 @@ class String
   #   "Camel_case".camelcase(false)      #=> "camelCase"
   #
   # TODO: Is this the best approach? Should lowerCamelCase be default instead?
-  def camelcase(first_letter=nil)
-    case first_letter
-    when :upper, true
-      upper_camelcase
-    when :lower, false
-      lower_camelcase
-    else
-      str = dup
-      str.gsub!(/\/(.?)/){ "::#{$1.upcase}" }  # NOT SO SURE ABOUT THIS
-      str.gsub!(/(?:_+|-+)([a-z])/){ $1.upcase }
-      #str.gsub!(/(\A|\s)([a-z])/){ $1 + $2.upcase }
-      str
+  unless method_defined?(:camelcase)
+    def camelcase(first_letter=nil)
+      case first_letter
+      when :upper, true
+        upper_camelcase
+      when :lower, false
+        lower_camelcase
+      else
+        str = dup
+        str.gsub!(/\/(.?)/){ "::#{$1.upcase}" }  # NOT SO SURE ABOUT THIS
+        str.gsub!(/(?:_+|-+)([a-z])/){ $1.upcase }
+        #str.gsub!(/(\A|\s)([a-z])/){ $1 + $2.upcase }
+        str
+      end
     end
   end
 
