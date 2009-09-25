@@ -113,14 +113,14 @@ class FileList
 
   # List of array methods (that are not in +Object+) that need to be
   # delegated.
-  ARRAY_METHODS = Array.instance_methods - Object.instance_methods
+  ARRAY_METHODS = (Array.instance_methods - Object.instance_methods).map(&:to_sym)
 
   # List of additional methods that must be delegated.
-  MUST_DEFINE = %w[to_a inspect]
+  MUST_DEFINE = %w[to_a inspect].map(&:to_sym)
 
   # List of methods that should not be delegated here (we define
   # special versions of them explicitly below).
-  MUST_NOT_DEFINE = %w[to_a to_ary partition *]
+  MUST_NOT_DEFINE = %w[to_a to_ary partition *].map(&:to_sym)
 
   # List of delegated methods that return new array values which
   # need wrapping.
@@ -128,7 +128,7 @@ class FileList
     map collect sort sort_by select find_all reject grep
     compact flatten uniq values_at
     + - & |
-  ]
+  ].map(&:to_sym)
 
   DELEGATING_METHODS = (ARRAY_METHODS + MUST_DEFINE - MUST_NOT_DEFINE).sort.uniq
 
@@ -486,7 +486,7 @@ end # FileList
       Dir.chdir File.join( $TESTDIR, 'filelist' ) do
         fl = FileList.new
         fl.include('*')
-        assert_equal( ['testfile.txt', 'testfile2.txt'], fl.to_a )
+        assert_equal( ['testfile2.txt', 'testfile.txt'], fl.to_a )
         fl.exclude('*2.txt')
         assert_equal( ['testfile.txt'], fl.to_a )
       end
