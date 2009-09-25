@@ -129,7 +129,7 @@ class Pathname
     flags = 0
     opts.each do |opt|
       case opt when Symbol, String
-        flags += File.const_get("FNM_#{opt}".upcase)
+        flags += ::File.const_get("FNM_#{opt}".upcase)
       else
         flags += opt
       end
@@ -156,10 +156,17 @@ class Pathname
     Dir.glob(::File.join(self.to_s, '*')).empty?
   end
 
-end
+  #
+  def uptodate?(*sources)
+    ::FileUtils.uptodate?(to_s, sources.flatten)
+  end
 
-# Constant alias of Pathname (short is better!)
-Path = Pathname
+  #
+  def outofdate?(*sources)
+    ::FileUtils.outofdate?(to_s, sources.flatten)
+  end
+
+end
 
 class NilClass
   # Provide platform dependent null path.
