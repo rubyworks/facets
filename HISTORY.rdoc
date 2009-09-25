@@ -1,5 +1,12 @@
 = Facets History
 
+== 2.7.1 / 2009-09-14
+
+
+Thanks to:
+* ccjr
+
+
 == 2.7.0 / 2009-08-01
 
 Facets 2.7 is the biggest release of Facets since 2.4. Rather then trickle-release these

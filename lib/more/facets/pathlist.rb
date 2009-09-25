@@ -89,16 +89,8 @@ $:.find_ext = 'rb'
 # Doesn't work
 #ENV['PATH'] = PathList.new(ENV['PATH'])
 
-#++
 
-
-#  _____         _
-# |_   _|__  ___| |_
-#   | |/ _ \/ __| __|
-#   | |  __/\__ \ |_
-#   |_|\___||___/\__|
-#
-=begin #testing
+=begin test
 
   require 'test/unit'
 

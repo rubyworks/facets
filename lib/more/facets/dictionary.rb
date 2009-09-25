@@ -1,67 +1,6 @@
-# = Dictionary
+# = Dictionary.rb
 #
-# The Dictionary class is a Hash that preserves order.
-# So it has some array-like extensions also. By defualt
-# a Dictionary object preserves insertion order, but any
-# order can be specified including alphabetical key order.
-#
-# == Usage
-#
-# Just require this file and use Dictionary instead of Hash.
-#
-#   # You can do simply
-#   hsh = Dictionary.new
-#   hsh['z'] = 1
-#   hsh['a'] = 2
-#   hsh['c'] = 3
-#   p hsh.keys     #=> ['z','a','c']
-#
-#   # or using Dictionary[] method
-#   hsh = Dictionary['z', 1, 'a', 2, 'c', 3]
-#   p hsh.keys     #=> ['z','a','c']
-#
-#   # but this don't preserve order
-#   hsh = Dictionary['z'=>1, 'a'=>2, 'c'=>3]
-#   p hsh.keys     #=> ['a','c','z']
-#
-#   # Dictionary has useful extensions: push, pop and unshift
-#   p hsh.push('to_end', 15)       #=> true, key added
-#   p hsh.push('to_end', 30)       #=> false, already - nothing happen
-#   p hsh.unshift('to_begin', 50)  #=> true, key added
-#   p hsh.unshift('to_begin', 60)  #=> false, already - nothing happen
-#   p hsh.keys                     #=> ["to_begin", "a", "c", "z", "to_end"]
-#   p hsh.pop                      #=> ["to_end", 15], if nothing remains, return nil
-#   p hsh.keys                     #=> ["to_begin", "a", "c", "z"]
-#   p hsh.shift                    #=> ["to_begin", 30], if nothing remains, return nil
-#
-# == Usage Notes
-#
-# * You can use #order_by to set internal sort order.
-# * #<< takes a two element [k,v] array and inserts.
-# * Use ::auto which creates Dictionay sub-entries as needed.
-# * And ::alpha which creates a new Dictionary sorted by key.
-#
-# == Authors
-#
-# * Jan Molic
-# * Thomas Sawyer
-#
-# == Acknowledgments
-#
-# * Andrew Johnson (merge, to_a, inspect, shift and Hash[])
-# * Jeff Sharpe    (reverse and reverse!)
-# * Thomas Leitner (has_key? and key?)
-#
-# Originally ported from OrderHash 2.0, Copyright (c) 2005 jan molic
-#
-# == History
-#
-# * 2007.10.31 trans
-# ** Fixed initialize so the constructor blocks correctly effected dictionary rather then just the internal hash.
-#
-# == Copying
-#
-# Copyright (c) 2005 Jan Molic, Thomas Sawyer
+# Copyright (c) 2005, 2009 Jan Molic, Thomas Sawyer
 #
 # Ruby License
 #
@@ -71,7 +10,14 @@
 # This program is distributed in the hope that it will be useful, but WITHOUT
 # ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
 # FOR A PARTICULAR PURPOSE.
-
+#
+# == Acknowledgments
+#
+# * Andrew Johnson (merge, to_a, inspect, shift and Hash[])
+# * Jeff Sharpe    (reverse and reverse!)
+# * Thomas Leitner (has_key? and key?)
+#
+# Ported from OrderHash 2.0, Copyright (c) 2005 Jan Molic
 
 # = Dictionary
 #
