@@ -1,22 +1,6 @@
 # = IORedirect
 #
-# A class to redirect $stdout, or other IO object, to a StringIO object,
-# or any other object with a write() method.
-#
-#   s = StringIO.new
-#   r = Redirector.redirect($stdout, s) do
-#     $stdout.puts "this is a test"
-#   end
-#
-# == History
-#
-# * IORedirect was ported from Paul Brannan's Ruby Treasures.
-#
-# == Authors
-#
-# * Paul Brannan <paul@atdesk.com>
-#
-# = Copying
+# IORedirect was ported from Paul Brannan's Ruby Treasures.
 #
 # Copyright (C) 2002 Paul Brannan <paul@atdesk.com>
 #
@@ -85,46 +69,6 @@ class IORedirect
       s.stop
     end
   end
-end
-
-
-# --- test ---
-
-if __FILE__ == $0 then
-
-  class SimpleStringIO
-    attr_reader :str
-    def initialize; @str = ''; end
-    def write(str); @str << str; end
-  end
-
-  Thread.abort_on_exception = true
-  s = SimpleStringIO.new
-  r = Redirector.redirect($stdout, s) do
-    $stdout.puts "this is a test"
-    $stdout.puts "of the StringIO redirection system"
-  end
-  puts "Done redirecting."
-  puts "Result:\n#{s.str}"
 
 end
-
-
-
-#  _____         _
-# |_   _|__  ___| |_
-#   | |/ _ \/ __| __|
-#   | |  __/\__ \ |_
-#   |_|\___||___/\__|
-#
-
-# TODO
-
-=begin #testing
-
-  require 'test/unit'
-
-=end
-
-
 
