@@ -1,12 +1,14 @@
-# Test for facets/continuation.rb
-
-require 'facets/continuation.rb'
+require 'facets/continuation'
 require 'test/unit'
 
-class TC_Continuation < Test::Unit::TestCase
+if defined?(Continuation)
 
-  def test_Continuation_create
-    assert_nothing_raised { c, r = Continuation.create }
+  class TC_Continuation < Test::Unit::TestCase
+
+    def test_create
+      assert_nothing_raised { c, r = Continuation.create }
+    end
+
   end
 
 end
