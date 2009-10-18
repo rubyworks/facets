@@ -1,4 +1,4 @@
-class Module
+module Kernel
 
   alias_method :_extend, :extend
 

@@ -34,13 +34,13 @@ class OpenStruct
   #     o.name    = 'John Smith'
   #     o.gender  = :M
   #     o.age     = 71
-  #   end 
+  #   end
   #
   # You can still provide a hash for initialization purposes, and even combine
   # the two approaches if you wish.
   #
   #   person = OpenStruct.new(:name => 'John Smith', :age => 31) do |p|
-  #     p.gender = :M 
+  #     p.gender = :M
   #   end
   #
   # Alternatively you can provide a default block:
@@ -201,13 +201,6 @@ class Hash
     OpenStruct.new(self)
   end
 
-  # CREDIT Alison Rowland, Jamie Macey, Mat Schaffer
-
-  #--
-  # Special thanks to Alison Rowland, Jamie Macey and Mat Schaffer
-  # for inspiring recursive improvements.
-  #++
-
   # Like to_ostruct but recusively objectifies all hash elements as well.
   #
   #     o = { 'a' => { 'b' => 1 } }.to_ostruct_recurse
@@ -223,6 +216,8 @@ class Hash
   #     o = h.to_ostruct_recurse( { h['a'] => h['a'] } )
   #     o.a['b']  #=> 1
   #
+  # CREDIT: Alison Rowland, Jamie Macey, Mat Schaffer
+
   def to_ostruct_recurse(exclude={})
     return exclude[self] if exclude.key?( self )
     o = exclude[self] = OpenStruct.new
@@ -232,6 +227,11 @@ class Hash
     end
     o.__update__(h)
   end
+
+  #--
+  # Special thanks to Alison Rowland, Jamie Macey and Mat Schaffer
+  # for inspiring recursive improvements.
+  #++
 
 end
 

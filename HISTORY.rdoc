@@ -1,10 +1,42 @@
 = Facets History
 
-== 2.7.1 / 2009-09-14
+== 2.8.0 / 2009-10-01
 
+Facets 2.8.0 takes the next evolutionary step for Facets in the vein of 2.7.0.
+However, 2.8 also reverts a few of the deprecations made in the last version.
+These libs will remain in Facets's MORE library for the forseeable future.
+This version effectively concludes the MORE library "clean-up". The next
+verison of Facets will focus on "auditing" of the CORE library.
 
-Thanks to:
-* ccjr
+Changes:
+
+* 4 Libraries Undeprecated:
+
+  * linkedlist.rb
+  * matcher.rb
+  * memoizer.rb
+  * semaphore.rb
+
+* 1 Library Deprecated:
+
+  * fileable.rb
+  
+* 6 Libraries Spun-Off And Deprecated:
+
+  * capsule.rb            capsule
+  * ansicode.rb           ansi
+  * progressbar.rb        ansi
+  * logger.rb             ansi
+  * recorder.rb           recorder
+
+* Additonal Enhancements:
+
+  * Fixed kernel#d so it is now useable.
+  * Added Range#at_rand (thanks to Tyler Rick)
+  * Added Enumerable#map_detect (thanks to Scott Taylor)
+  * String#/ calls File.join.
+  * Added String#newlines and String#cleanlines
+  * Other minor improvements (thanks to ccjr)
 
 
 == 2.7.0 / 2009-08-01
@@ -58,7 +90,7 @@ as separate gems (or soon will be).
     semaphore.rb          semaphore
     pqueue.rb             pqueue
     censor.rb             language
-    macther.rb            language
+    matcher.rb            language
     basex.rb              radix
     minitar.rb            archive-tar-minitar -or- folio
 
@@ -83,7 +115,6 @@ from Facets too (in particular the ansi libraries).
     openhash.rb           openhash
     openmodule.rb         openmodule
     fileable.rb           fileable
-    expirable.rb          expirable
     enumerablepass.rb     enumargs
 
 * Deprecations Without Current Replacement

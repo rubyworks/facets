@@ -13,6 +13,7 @@ module Kernel
   # block is provided to eval against it.
   #
   #     It is what it is.
+  #     But I think I like this one best.
   #
   # CREDIT: Trans
 
