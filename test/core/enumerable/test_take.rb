@@ -1,7 +1,7 @@
 require 'facets/enumerable/take'
 require 'test/unit'
 
-class TC_Enumerable_Defer < Test::Unit::TestCase
+class TC_Enumerable_Take < Test::Unit::TestCase
 
   SOURCE = (1..1/0.0)   # infinite Enumerable object
 

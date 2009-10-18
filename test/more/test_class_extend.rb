@@ -55,8 +55,9 @@ class TC_ClassExtension < Test::Unit::TestCase
     assert_equal(  Z, Z.s )
   end
   def test_06
-    assert_equal( [:instance_method], N.instance_methods )
-    assert_equal( [:n, :s, :append_features], (N.methods - N.instance_methods - Object.instance_methods - Module.methods) )
+    assert_equal( ['instance_method'], N.instance_methods.map{ |m| m.to_s } )
+    result = (N.methods - N.instance_methods - Object.instance_methods - Module.methods).map{ |m| m.to_s }.sort
+    assert_equal( ['append_features', 'n', 's'], result)
   end
 
 end
