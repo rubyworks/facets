@@ -1,8 +1,9 @@
 = Ruby Facets
 
-  http://facets.rubyforge.com
+* home: http://facets.rubyforge.com
+* source: http://github.com/rubyworks/facets
 
-  "ALL YOUR BASE ARE BELONG TO RUBY"
+"ALL YOUR BASE ARE BELONG TO RUBY"
 
 
 == Introduction
@@ -60,9 +61,9 @@ Then download and unpack the .tar.gz package and run:
   $ sudo setup.rb
 
 
-== Compatibility with 1.x series.
+== Compatibility w/ 1.x
 
-Prior to 2.0, Facets was divided between CORE and MORE --standalone extensions 
+Prior to 2.0, Facets was divided between CORE and MORE --core extensions 
 vs. classes and modules, respectively. With 2.0, the notion of "CORE" has taken
 on a slightly different meaning. Instead CORE now consists of the libraries that
 are thought "essential" and as such are loaded automatically when using 
@@ -76,10 +77,10 @@ Facets holds to the notion that the more we can reasonably integrate into
 a common foundation, directed toward general needs, the better that foundation
 will be able to serve the community. There are a number of advantages here:
 
-    * Better Code-reuse
-    * Collaborative Improvements
-    * Greater Name Consistency
-    * One-stop Shop and Installation
+* Better Code-reuse
+* Collaborative Improvements
+* Greater Name Consistency
+* One-stop Shop and Installation
 
 
 == Usage
