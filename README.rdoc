@@ -2,6 +2,7 @@
 
 * home: http://facets.rubyforge.com
 * source: http://github.com/rubyworks/facets
+* forum: http://groups.google.com/group/facets-universal
 
 "ALL YOUR BASE ARE BELONG TO RUBY"
 
