@@ -115,7 +115,8 @@ class Coroutine
   def initialize(data = {})
     @stopped = nil
     @data = data
-    callcc do |@continue|
+    callcc do |c|
+      @continue = c
       return
     end
     yield self
@@ -125,7 +126,8 @@ class Coroutine
   attr_reader :stopped
 
   def run
-    callcc do |@stopped|
+    callcc do |s|
+      @stopped = s
       continue
     end
   end
@@ -135,7 +137,8 @@ class Coroutine
   end
 
   def resume(other)
-    callcc do |@continue|
+    callcc do |c|
+      @continue = c
       other.continue(self)
     end
   end
