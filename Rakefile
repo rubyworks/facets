@@ -103,7 +103,6 @@ def add_loadpath(*paths)
 
   unless live
     # $LOAD_PATH.unshift(File.expand_path('lib/core'))
-    # $LOAD_PATH.unshift(File.expand_path('lib/lore'))
     # $LOAD_PATH.unshift(File.expand_path('lib/more'))
     paths.each do |path|
       $LOAD_PATH.unshift(File.expand_path(path))
@@ -144,7 +143,7 @@ def run_tests(files)
 end
 
 def prepare_tests_all
-  add_loadpath('lib/core','lib/lore','lib/more')
+  add_loadpath('lib/core','lib/more')
   files = get_tests
   run_tests(files)
 end
@@ -152,12 +151,6 @@ end
 def prepare_tests_core
   add_loadpath('lib/core')
   files = get_tests('core')
-  run_tests(files)
-end
-
-def prepare_tests_lore
-  add_loadpath('lib/lore')
-  files = get_tests('lore')
   run_tests(files)
 end
 
@@ -172,7 +165,6 @@ end
 #
 #  unless live
 #    $LOAD_PATH.unshift(File.expand_path('lib/core'))
-#    $LOAD_PATH.unshift(File.expand_path('lib/lore'))
 #    $LOAD_PATH.unshift(File.expand_path('lib/more'))
 #  end
 #
