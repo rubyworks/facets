@@ -55,13 +55,16 @@ task "rdoc" do
   FileUtils.rm_r(APIOUT)
 
   system "rdoc -a -S -t'Facets Core API' -T #{TEMPLATE} -m README --op '#{APIOUT}/core' README lib/facets/core"
-  #system "rdoc -a -S -t'Facets Lore API' -T #{TEMPLATE} -m README --op '#{APIOUT}/lore' README lib/facets/lore"
   system "rdoc -a -S -t'Facets More API' -T #{TEMPLATE} -m README --op '#{APIOUT}/more' README lib/facets/more"
 end
 
 #
 # RUN TESTS
 # ----------------------------------------------------------------------------
+
+task 'default' do
+  prepare_tests_all
+end
 
 task 'test' do
   prepare_tests_all
@@ -77,11 +80,6 @@ task 'test:core' do
   prepare_tests_core
 end
 
-#desc "run lore unit tests"
-#task 'test:lore' do
-#  prepare_tests_lore
-#end
-
 desc "run more unit tests"
 task 'test:more' do
   prepare_tests_more
@@ -92,9 +90,6 @@ task 'test:all:activesupport' => [:include_activesupport, 'test:all']
 
 desc "run core unit tests with ActiveSupport loaded"
 task 'test:core:activesupport' => [:include_activesupport, 'test:core']
-
-#desc "run lore unit tests with ActiveSupport loaded"
-#task 'test:lore:activesupport' => [:include_activesupport, 'test:lore']
 
 desc "run more unit tests with ActiveSupport loaded"
 task 'test:more:activesupport' => [:include_activesupport, 'test:more']
@@ -120,7 +115,8 @@ def add_loadpath(*paths)
 end
 
 def get_tests(which="{c,l,m}ore")
-  if find = ARGV[1..-1].select{|e| e !~ /(^[-]|[=])/ }[0]
+  #if find = ARGV[1..-1].select{|e| e !~ /(^[-]|[=])/ }[0]
+  if find = ENV['TESTS']
     unless FileTest.file?(find)
       #find = File.join(find, '**', 'test_*.rb')
       find = ['test/test_*.rb']
