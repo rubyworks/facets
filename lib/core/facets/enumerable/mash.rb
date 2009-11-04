@@ -13,14 +13,16 @@ module Enumerable
 
   def mash(&yld)
     if yld
-      inject({}) do |h, *kv| # Used to be inject({}) do |h,kv|
-        r = *yld[*kv]        # The *-op works differnt from to_a on single element hash!!!
-        nk, nv = *r          # Used to be nk, nv = *yld[*kv].to_a.flatten
+      h = {}
+      each do |*kv|         # Used to be inject({}) do |h,kv|
+        r = yld[*kv]        # The *-op works different from to_a on single element hash!!!
+        r = *r.to_a
+        nk, nv = *r         # Used to be nk, nv = *yld[*kv].to_a.flatten
         h[nk] = nv
-        h
       end
+      h
     else
-      Enumerator.new(self,:graph)  # Used to be Hash[*self.to_a] or Hash[*self.to_a.flatten]
+      Enumerator.new(self,:mash)  # Used to be Hash[*self.to_a] or Hash[*self.to_a.flatten]
     end
   end
 
