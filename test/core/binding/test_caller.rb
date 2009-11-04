@@ -33,12 +33,19 @@ class TestBindingCallStack < Test::Unit::TestCase
     assert_nothing_raised{ @bind.caller }
   end
 
-  def test_callee
-    assert_equal( :setup, @bind.__callee__ )
+  # These only work for certain versions, which is okay.
+
+  unless RUBY_VERSION < "1.9"
+    def test_callee
+      assert_equal(:setup, @bind.__callee__)
+    end
   end
 
-  def test_method
-    assert_equal( 'setup', @bind.__method__ )
+  unless RUBY_VERSION < "1.8.7"
+    def test_method
+      assert_equal(:setup, @bind.__method__)
+    end
   end
 
 end
+

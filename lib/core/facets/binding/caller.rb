@@ -29,8 +29,7 @@ class Binding
   #   tester  #=> :tester
   #
   def __callee__
-    name = /\`([^\']+)\'/.match(caller(1).first)[1]
-    return name.to_sym
+    eval('__callee__')
   end
 
   # There is a lot of debate on what to call this.
@@ -41,8 +40,7 @@ class Binding
   #   tester  #=> "tester"
   #
   def __method__
-    name = /\`([^\']+)\'/.match(caller(1).first)[1]
-    return name
+    eval('__method__')
   end
 
 end
