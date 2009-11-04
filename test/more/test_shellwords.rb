@@ -24,7 +24,9 @@ class TestShellwords < Test::Unit::TestCase
   def test_hash_shellwords_2
     e = ['--name="jim"', '--debug']
     a = {:debug=>true, :name=>"jim"}.shellwords
-    assert_equal(e, a)
+    a.each do |x|
+      assert(e.include?(x))
+    end
   end
 
 end
