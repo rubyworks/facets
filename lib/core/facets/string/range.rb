@@ -45,7 +45,7 @@ class String
 
   def range_of_line
     offset=0; charmap = []
-    self.each do |line|
+    each_line do |line|
       charmap << (offset..(offset + line.length - 1))
       offset += line.length
     end
