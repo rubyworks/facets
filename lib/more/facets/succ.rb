@@ -1,4 +1,4 @@
-class Integer
+class Fixnum
 
   # Allows #succ to take _n_ increments.
   #
