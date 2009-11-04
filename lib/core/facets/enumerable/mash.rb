@@ -14,15 +14,21 @@ module Enumerable
   def mash(&yld)
     if yld
       h = {}
-      each do |*kv|         # Used to be inject({}) do |h,kv|
-        r = yld[*kv]        # The *-op works different from to_a on single element hash!!!
-        r = *r.to_a
-        nk, nv = *r         # Used to be nk, nv = *yld[*kv].to_a.flatten
+      each do |*kv|
+        r = yld[*kv]
+        case r
+        when Hash
+          nk, nv = *r.to_a[0]
+        when Range
+          nk, nv = r.first, r.last
+        else
+          nk, nv = *r
+        end
         h[nk] = nv
       end
       h
     else
-      Enumerator.new(self,:mash)  # Used to be Hash[*self.to_a] or Hash[*self.to_a.flatten]
+      Enumerator.new(self,:mash)
     end
   end
 
