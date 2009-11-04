@@ -1,3 +1,5 @@
+require 'facets/hash/count'
+
 module Enumerable
 
   unless method_defined?(:count)
