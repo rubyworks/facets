@@ -20,14 +20,13 @@ unless defined? BasicObject  # just in case it already exists!
       # hide +instance_eval+ or any method beginning with "__".
       def hide(name)
         undef_method name if
-        instance_methods.include?(name.to_s) and
-        name !~ /^(__|instance_eval)/
+          instance_methods.include?(name.to_s) and
+          name !~ /^(__|respond_to\?$|instance_eval$|equal\?$|object_id$|send$)/
       end
     end
 
     instance_methods.each { |m| hide(m) }
   end
-
 
   # Since Ruby is very dynamic, methods added to the ancestors of
   # BlankSlate <em>after BlankSlate is defined</em> will show up in the
@@ -42,7 +41,7 @@ unless defined? BasicObject  # just in case it already exists!
       def method_added(name)
         blank_slate_method_added(name)
         return if self != Kernel
-        BlankSlate.hide(name)
+        BasicObject.hide(name)
       end
     end
   end
@@ -56,18 +55,10 @@ unless defined? BasicObject  # just in case it already exists!
       def method_added(name)
         blank_slate_method_added(name)
         return if self != Object
-        BlankSlate.hide(name)
+        BasicObject.hide(name)
       end
     end
   end
-
-end
-
-unless defined? BlankSlate
-
-  # ActiveSupport compatiable version of BasicObject
-  # if not Ruby 1.9+ uses Jim Weirich's BlankSlate.
-  BlankSlate = BasicObject
 
 end
 

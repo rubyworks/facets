@@ -1,6 +1,4 @@
-# for facets/basicobject.rb
-
-require 'facets/basicobject.rb'
+require 'facets/basicobject'
 require 'test/unit'
 
 class TestBasicObject < Test::Unit::TestCase
@@ -12,22 +10,26 @@ class TestBasicObject < Test::Unit::TestCase
     @a = A.new
   end
 
-  #def test_001
-    #assert( ! @a.object_class.method_defined?( :id ) )
-    #assert( ! @a.object_class.method_defined?( :class ) )
-  #end
-
-  def test_has_underscore_methods
-    assert( @a.__id__ )
-    assert( @a.__send__(:__id__) )
-    #assert( @a.object_class.method_defined?( :object_self ) )
-    #assert( @a.object_class.method_defined?( :dup ) )
-    #assert( @a.object_class.method_defined?( :as ) )
+  def test_has_respond_to?
+    assert( @a.__respond_to?(:respond_to?))
   end
 
-  #def test_003
-  #  assert_equal( A, @a.object_self.class )
-  #end
+  def test_has_equal?
+    assert( @a.__respond_to?(:equal?))
+  end
+
+  def test_has_object_id
+    assert( @a.__respond_to?(:object_id))
+  end
+
+  def test_has_send
+    assert( @a.__respond_to?(:send))
+    assert( @a.__respond_to?(:__send__))
+  end
+
+  def test_has___id__
+    assert( @a.__respond_to?(:__id__))
+  end
 
   def test_ignore_new_kernel_methods
     Kernel.module_eval { def xxx ; end }
