@@ -110,10 +110,10 @@ def add_loadpath(*paths)
   end
 
   puts "RUBY VERSION: #{RUBY_VERSION}"
-  puts "LOAD PATH:\n" + $LOAD_PATH.join("\n")
+  puts "LOAD PATH:\n" + $LOAD_PATH.join("\n") if $DEBUG
 end
 
-def get_tests(which="{c,l,m}ore")
+def get_tests(which="{c,m}ore")
   #if find = ARGV[1..-1].select{|e| e !~ /(^[-]|[=])/ }[0]
   if find = ENV['TESTS']
     unless FileTest.file?(find)
