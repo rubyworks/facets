@@ -4,11 +4,7 @@ require 'time'
 
 class TC_Time_Stamp < Test::Unit::TestCase
 
-  def setup
-
-  end
-
-  # TODO Problem with TIMEZONE.
+  # TODO: Problem with TIMEZONE.
 
   #def test_stamp_01
   #  t = Time.parse('4/20/2005 15:37')
@@ -16,13 +12,14 @@ class TC_Time_Stamp < Test::Unit::TestCase
   #end
 
   def test_stamp_02
-    t = Time.parse('4/20/2005 15:37')
+    t = Time.parse('2005-04-20 15:37')
     assert_equal( "April 20, 2005 15:37", t.stamp(:long) )
   end
 
   def test_stamp_03
-    t = Time.parse('4/20/2005 15:37')
+    t = Time.parse('2005-04-20 15:37')
     assert_equal( "20 Apr 15:37", t.stamp(:short) )
   end
 
 end
+
