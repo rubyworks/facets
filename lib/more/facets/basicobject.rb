@@ -15,16 +15,26 @@ unless defined? BasicObject  # just in case it already exists!
   # depend upon <tt>method_missing</tt> (e.g. dynamic proxies).
   class BasicObject
     class << self
-
       # Hide the method named +name+ in the BlankSlate class.  Don't
       # hide +instance_eval+ or any method beginning with "__".
+      #
+      # According to 1.9.1 it should have only these methods:
+      #
+      # * #__send__
+      # * #instance_eval
+      # * #instance_exec
+      # * #equal?
+      # * #==
+      # * #!
+      # * #!=
+      #
+      # Seems to me it should have #__id__ too.
       def hide(name)
         undef_method name if
           instance_methods.include?(name.to_s) and
-          name !~ /^(__|respond_to\?$|instance_eval$|equal\?$|object_id$|send$)/
+          name !~ /^(__|instance_eval$|instance_exec$|equal\?$|\=\=$)/
       end
     end
-
     instance_methods.each { |m| hide(m) }
   end
 
