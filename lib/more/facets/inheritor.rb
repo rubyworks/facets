@@ -97,7 +97,7 @@ class Object
       (class << self; self; end).class_eval(&deflambda)
     elsif is_a?(Module)
       #class_inherit &deflambda
-      extend class_extend(&deflambda)
+      class_extend(&deflambda)
     else # other Object
       (class << self; self; end).class_eval(&deflambda)
     end
