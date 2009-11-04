@@ -19,7 +19,7 @@ module Kernel
 
   end
 
-  unless method_defined?(:__callee__)  # 1.9+  # TODO: Is this so?
+  unless method_defined?(:__callee__)  # 1.9+
 
     # Retreive the current running method name.
     #

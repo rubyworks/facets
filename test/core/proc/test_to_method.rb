@@ -19,7 +19,7 @@ class TestProc < Test::Unit::TestCase
 
     assert_equal(:foo, tmeth.call)
     assert_respond_to( :foo, :tryit )
-    assert_equal( :foo, :foo.tryit(1) )
+    assert_equal( :foo, :foo.tryit )
   end
 
 end
