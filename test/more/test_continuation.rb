@@ -1,7 +1,7 @@
 require 'facets/continuation'
 require 'test/unit'
 
-#if defined?(Continuation)
+if defined?(Continuation)
 
   class TC_Continuation < Test::Unit::TestCase
 
@@ -11,5 +11,5 @@ require 'test/unit'
 
   end
 
-#end
+end
 
