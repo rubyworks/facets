@@ -1,4 +1,4 @@
-if defined?(Continuation)
+#if defined?(Continuation)
 
   # = Continuation Extension
   #
@@ -52,5 +52,5 @@ if defined?(Continuation)
     return *[cc, *result]
   end
 
-end
+#end
 
