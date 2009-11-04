@@ -66,8 +66,8 @@ class Object
     #base = self
     deflambda = lambda do
 
-      define_method( key ) do
-        defined?(super()) ? super.__send__(op,obj) : obj.dup
+      define_method(key) do
+        defined?(super) ? super().__send__(op,obj) : obj.dup
       end
 
       define_method( "#{key}!" ) do
