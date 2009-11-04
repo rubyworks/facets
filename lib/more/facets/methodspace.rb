@@ -70,11 +70,16 @@ class Module
     methods = {}
     mod.instance_methods(false).each do |m|
       methods[m.to_sym] = mod.instance_method(m)
-      mod.instance_eval do
-        define_method(m) do
-          super
+      mod.module_eval %{
+        def #{m}(*a,&b)
+          super(*a,&b)
         end
-      end
+      }
+      #mod.instance_eval do
+        #define_method(m)
+        #  super
+        #end
+      #end
     end
 
     # Add a method for the namespace that delegates
