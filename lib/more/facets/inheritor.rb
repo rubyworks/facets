@@ -28,12 +28,11 @@ class Object
   #
   # Create an inheritor "class attribute".
   #
-  # Inheritor providse a means to store and inherit data via
-  # the class heirarchy. An inheritor creates two methods
-  # one named after the key that provides a reader. And one
-  # named after key! which provides the writer. (Because of
-  # the unique nature of inheritor the reader and writer
-  # can't be the same method.)
+  # Inheritor providse a means to store and inherit data via the class
+  # heirarchy. An inheritor creates two methods one named after the key
+  # that provides a reader. And one named after key! which provides the
+  # writer. (Because of the unique nature of inheritor the reader and
+  # writer can't be the same method.)
   #
   #   class X
   #     inheritor :foo, [], :+
@@ -50,60 +49,78 @@ class Object
   #   X.x => [:a]
   #   Y.x => [:a, :b]
   #
-  # It is interesting to note that the only reason inheritor is needed at all
-  # is becuase Ruby does not allow modules to be "inherited" at the class-level,
-  # or conversely that the class-level is not a module instead.
-  # Otherwise using #super at the class-level would suffice.
+  # It is interesting to note that the only reason inheritor is needed
+  # at all is becuase Ruby does not allow modules to be "inherited" at
+  # the class-level, or conversely that the class-level is not a module
+  # instead. Otherwise using #super at the class-level would suffice.
   #
-  def inheritor(key, obj, op=nil)
+  # NOTE: Adding an inheritor directly to Module or Class will probably
+  # not do what is expected. Thankfully that usecase is likely a YAGNI,
+  # but in anycase it is even more likely that it is not possible with
+  # this code.
 
-    # inhertiance operator
-    op = op ? op.to_sym : :add  #NOTE: why #add ?
+  def inheritor(key, obj, op=nil, &fop)
+    raise ArgumentError if op && fop
 
-    # inheritor store a this level
-    instance_variable_set("@#{key}", obj)
+    if !fop
+      op  = op ? op.to_sym : :+
+      fop = lambda{ |o, x| o.__send__(op, x) }
+    end
 
-    #base = self
-    deflambda = lambda do
+    #(class << self; self; end).module_eval do
+    class_extend do
 
       define_method(key) do
-        defined?(super) ? super().__send__(op,obj) : obj.dup
+        ancestors.reverse.inject(obj.dup) do |o, a|
+          if a.respond_to?("#{key}!")
+            fop.call(o, a.__send__("#{key}!"))
+          else
+            o
+          end
+        end
       end
 
-      define_method( "#{key}!" ) do
+      define_method("#{key}!") do
         if instance_variable_defined?("@#{key}")
           instance_variable_get("@#{key}")
         else
-          inheritor(key, obj.class.new, op)
+          instance_variable_set("@#{key}", obj.dup)
         end
-        # -- old version --
-        #if instance_variables.include?("@#{key}")
-        #  instance_variable_get("@#{key}")
-        #else
-        #  if self != base
-        #    inheritor( key, obj.class.new, op )
-        #  end
-        #end
       end
+
     end
-
-    # TODO: This is an issue if you try to include a module
-    #       into Module or Class itself. How to fix?
-
-    # if the object is a module (not a class or other object)
-    if self == Class or self == Module
-      class_eval(&deflambda)
-    elsif is_a?(Class)
-      (class << self; self; end).class_eval(&deflambda)
-    elsif is_a?(Module)
-      #class_inherit &deflambda
-      class_extend(&deflambda)
-    else # other Object
-      (class << self; self; end).class_eval(&deflambda)
-    end
-
-    obj
   end
 
 end
+
+
+=begin
+if $0 == __FILE__
+
+  class X
+    inheritor :x, [], :+
+  end
+
+  class Y < X
+    inheritor :x, [], :+
+  end
+
+  puts "X.x  : #{X.x.inspect}"
+
+  X.x! << 1
+
+  puts "X.x  : #{X.x.inspect}"
+
+  puts
+
+  puts "Y.x  : #{Y.x.inspect}"
+  puts "Y.x! : #{Y.x!.inspect}"
+
+  Y.x! << 2
+
+  puts "X.x  : #{X.x.inspect}"
+  puts "Y.x! : #{Y.x!.inspect}"
+  puts "Y.x  : #{Y.x.inspect}"
+end
+=end
 

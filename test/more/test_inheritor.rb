@@ -18,10 +18,12 @@ require 'test/unit'
 
 class TC_Inheritor_02 < Test::Unit::TestCase
   class C
-    inheritor :koko, [1], :+
+    inheritor :koko, [], :+
+    koko! << 1
   end
   class D < C
-    inheritor :koko, [2], :+
+    inheritor :koko, [], :+
+    koko! << 2
   end
 
   def test_02_001
@@ -40,7 +42,8 @@ end
 
 class TC_Inheritor_03 < Test::Unit::TestCase
   class C
-    inheritor :koko, [1], :+
+    inheritor :koko, [], :+
+    koko! << 1
   end
   class D < C
   end
@@ -61,14 +64,17 @@ end
 
 class TC_Inheritor_04 < Test::Unit::TestCase
   class X
-    inheritor :x, {:a=>1}, :merge
+    inheritor :x, {}, :merge
+    x![:a] = 1
   end
   module M
-    inheritor :x, {:b=>2}, :merge
+    inheritor :x, {}, :merge
+    x![:b] = 2
   end
   class Y < X
     include M
-    inheritor :x, {:c=>3}, :merge
+    inheritor :x, {}, :merge
+    x![:c] = 3
   end
 
   def test_04_001
