@@ -13,6 +13,7 @@
 # ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
 # FOR A PARTICULAR PURPOSE.
 
+require 'thread'
 
 # = IORedirect
 #
@@ -20,7 +21,7 @@
 # or any other object with a write() method.
 #
 #   s = StringIO.new
-#   r = Redirector.redirect($stdout, s) do
+#   r = IORedirect.redirect($stdout, s) do
 #     $stdout.puts "this is a test"
 #   end
 #
@@ -39,7 +40,7 @@ class IORedirect
   def start
     raise "Redirection already in progress" if @t
     tmp = @from.dup
-    r, w = IO.pipe
+    r, w = *IO.pipe
     @from.reopen(w)
     @t = Thread.new do
       begin
@@ -62,7 +63,7 @@ class IORedirect
 
   # An exception-safe class method for redirection
   def self.redirect(from, to)
-    s = self.new(from, to)
+    s = new(from, to)
     begin
       yield
     ensure
