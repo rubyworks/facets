@@ -34,6 +34,11 @@ class Object
   # writer. (Because of the unique nature of inheritor the reader and
   # writer can't be the same method.)
   #
+  # The first argument is the inheritor's name. The second argument
+  # is the archtype object. This object must be duplicable (via #dup).
+  # The last argument is either the symbolic operator/method or a block
+  # that specifies how one hierarchical level "integrates" with the next.
+  #
   #   class X
   #     inheritor :foo, [], :+
   #   end
@@ -92,35 +97,4 @@ class Object
   end
 
 end
-
-
-=begin
-if $0 == __FILE__
-
-  class X
-    inheritor :x, [], :+
-  end
-
-  class Y < X
-    inheritor :x, [], :+
-  end
-
-  puts "X.x  : #{X.x.inspect}"
-
-  X.x! << 1
-
-  puts "X.x  : #{X.x.inspect}"
-
-  puts
-
-  puts "Y.x  : #{Y.x.inspect}"
-  puts "Y.x! : #{Y.x!.inspect}"
-
-  Y.x! << 2
-
-  puts "X.x  : #{X.x.inspect}"
-  puts "Y.x! : #{Y.x!.inspect}"
-  puts "Y.x  : #{Y.x.inspect}"
-end
-=end
 
