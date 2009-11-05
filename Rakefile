@@ -63,11 +63,7 @@ end
 # ----------------------------------------------------------------------------
 
 task 'default' do
-  #prepare_tests_all
-  add_loadpath('lib/core')
-  files = get_tests('test/core/kernel')
-  files += get_tests('test/core/enumerable/test_count.rb')
-  run_tests(files)
+  prepare_tests_all
 end
 
 task 'test' do
