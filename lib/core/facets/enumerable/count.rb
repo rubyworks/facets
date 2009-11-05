@@ -2,7 +2,7 @@ require 'facets/hash/count'
 
 module Enumerable
 
-  #unless method_defined?(:count)
+  unless method_defined?(:count)
 
     # Count the number of items in an enumerable
     # equal (==) to the given object(s).
@@ -35,7 +35,7 @@ module Enumerable
       end
     end
 
-  #end
+  end
 
 end
 
