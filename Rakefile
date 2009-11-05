@@ -63,7 +63,10 @@ end
 # ----------------------------------------------------------------------------
 
 task 'default' do
-  prepare_tests_all
+  #prepare_tests_all
+  add_loadpath('lib/core')
+  files = get_tests('test/core/enumerable/test_count.rb')
+  run_tests(files)
 end
 
 task 'test' do
@@ -113,20 +116,9 @@ def add_loadpath(*paths)
   puts "LOAD PATH:\n" + $LOAD_PATH.join("\n") if $DEBUG
 end
 
-def get_tests(which="{c,m}ore")
-  #if find = ARGV[1..-1].select{|e| e !~ /(^[-]|[=])/ }[0]
-  if find = ENV['TESTS']
-    unless FileTest.file?(find)
-      #find = File.join(find, '**', 'test_*.rb')
-      find = ['test/test_*.rb']
-      find << File.join(find, which, '**', 'test_*.rb')
-    end
-  else
-    #find = 'test/**/test_*.rb'
-    find = ['test/test_*.rb']
-    find << "test/#{which}/**/test_*.rb"
-  end
-
+def get_tests(find=nil)
+  find = find && File.directory?(find) ? File.join(find, '**/test_*.rb') : find
+  find = find || ENV['TESTS'] || 'test/**/test_*.rb'
   Dir.glob(find)
 end
 
@@ -150,13 +142,13 @@ end
 
 def prepare_tests_core
   add_loadpath('lib/core')
-  files = get_tests('core')
+  files = get_tests('test/core')
   run_tests(files)
 end
 
 def prepare_tests_more
   add_loadpath('lib/more')
-  files = get_tests('more')
+  files = get_tests('test/more')
   run_tests(files)
 end
 

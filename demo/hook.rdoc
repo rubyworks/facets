@@ -45,3 +45,5 @@ The hooks should have been fired.
   
 QED.
 
+---
+require 'ae/should'
