@@ -1,5 +1,7 @@
 class Object
-  # Get state of object.
+  # Get or set state of object.
+  #
+  # TODO: Would #instance_state be a more appropriate name?
   def object_state(data=nil)
     if data
       instance_variables.each do |iv|
@@ -12,7 +14,7 @@ class Object
         name = iv.to_s.sub(/^[@]/, '').to_sym
         data[name] = instance_variable_get(iv)
       end
-      snap
+      data
     end
   end
 
