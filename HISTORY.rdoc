@@ -1,42 +1,60 @@
-= Facets History
+= Facets Release History
 
-== 2.8.0 / 2009-10-01
 
-Facets 2.8.0 takes the next evolutionary step for Facets in the vein of 2.7.0.
-However, 2.8 also reverts a few of the deprecations made in the last version.
-These libs will remain in Facets's MORE library for the forseeable future.
-This version effectively concludes the MORE library "clean-up". The next
-verison of Facets will focus on "auditing" of the CORE library.
+== 2.8.0 / 2009-11-05
+
+acets 2.8 effectively completes the MORE library clean-up which peaked
+with the previous 2.7 release. Another eight libraries have been deprecated,
+a few of them spun-off to a separate project. However, this verison also
+reverts a few of the deprecations made in the last version. These libs 
+will remain in Facets's MORE library for the forseeable future.
+
+This version effectively concludes the MORE library clean-up. The next, and
+last version before Facets 3.0, will focus on "auditing" the CORE library.
 
 Changes:
 
-* 4 Libraries Undeprecated:
+* 6 Libraries "Undeprecated":
 
+  * ini.rb
   * linkedlist.rb
   * matcher.rb
   * memoizer.rb
+  * roman.rb
   * semaphore.rb
 
-* 1 Library Deprecated:
+* 5 Libraries Deprecated:
 
-  * fileable.rb
-  
-* 6 Libraries Spun-Off And Deprecated:
+  * fileable.rb    (too esoteric)
+  * ioredirect.rb  (needs better implementation)
+  * coroutine.rb   (because of Fiber)
+  * capsule.rb     (may be spun-off)
+  * recorder.rb    (may be spun-off)
 
-  * capsule.rb            capsule
+* 3 Libraries Spun-Off and Deprecated:
+
   * ansicode.rb           ansi
   * progressbar.rb        ansi
   * logger.rb             ansi
-  * recorder.rb           recorder
 
 * Additonal Enhancements:
 
-  * Fixed kernel#d so it is now useable.
+  * Kernel#extend can now take a block
+  * Fixed kernel#d so it is useable
   * Added Range#at_rand (thanks to Tyler Rick)
   * Added Enumerable#map_detect (thanks to Scott Taylor)
-  * String#/ calls File.join.
+  * String#/ calls File.join
   * Added String#newlines and String#cleanlines
-  * Other minor improvements (thanks to ccjr)
+  * String#titlecase includes apostrophe in words
+  * BasicObject/BlankSlate is more compliant with 1.9.1 design
+  * Enumerable#count can take multiple items, treats as logical Or
+  * Class#class_extend extends class level, not class_eval
+  * Integer#succ(n) becomes Fixnum#succ(n), succ.rb
+  * Complete rewrite of Inheritor
+  * Shellwords extensions have been reworked
+  * Added String#similarity
+  * Added Levenshtein String#edit_distance method
+  * And other minor improvements (some thanks to ccjr)
 
 
 == 2.7.0 / 2009-08-01
