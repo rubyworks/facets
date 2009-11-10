@@ -1,0 +1,19 @@
+---
+output: news.html
+filter: erb
+format: html
+---
+<html>
+<head>
+<title>FACETS NEWS</title>
+<link href="assets/styles/api.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="content">
+<div class="main">
+<%= Tilt::RDocTemplate.new{ File.read(root+'NEWS') }.render %>
+</div>
+</div>
+</body>
+</html>
+
