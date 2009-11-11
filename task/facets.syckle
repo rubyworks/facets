@@ -4,4 +4,5 @@ facets.rb:
   pipeline: main
   generate: |
     sh 'till lib/core/facets.rb'
+  active: false
 

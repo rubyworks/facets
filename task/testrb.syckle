@@ -1,5 +1,5 @@
 ---
-testunit:
+testrb:
   service: Testrb
   active: false
 

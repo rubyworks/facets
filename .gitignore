@@ -6,6 +6,6 @@ doc/rdoc
 doc/ri
 doc/webri
 doc/yard
-pack
+pkg
 site
 facets.gemspec

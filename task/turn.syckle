@@ -1,5 +1,5 @@
 ---
-# need to use solo runner when supported by reap
+# need to use solo runner when supported by syckle
 turn:
   service: Turn
   active: true

@@ -1,8 +1,8 @@
 ---
 box:
   service : Box
-  types   : [gem, tar]
+  types   : [gem, gz]
   spec    : true
-  include : [demo, doc, lib, meta, task, test, "[A-Z]*"]
-  exclude : [doc/ri, doc/webri]
+  include : [demo, lib, meta, task, test, "[A-Z]*"]
+  exclude : []
 
