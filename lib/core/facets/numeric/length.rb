@@ -1,4 +1,3 @@
-#
 # Calculate the number of digits in an integer.
 #
 # 1.length   #=> 1
@@ -7,7 +6,7 @@
 #
 # CREDIT: Victor H. Goff III
 
-class Integer
+class Numeric
   # Returns the length of an integer as an integer.
   def length
     to_s.length
