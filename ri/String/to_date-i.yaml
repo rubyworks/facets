@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Parse data from string.
+full_name: String#to_date
+is_singleton: false
+name: to_date
+params: ()
+visibility: public

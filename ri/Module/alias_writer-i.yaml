@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: As with alias_method but does the writer instead.
+full_name: Module#alias_writer
+is_singleton: false
+name: alias_writer
+params: (*args)
+visibility: private

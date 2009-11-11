@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Platform dependent null device.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Daniel Burger"
+full_name: File::null
+is_singleton: true
+name: "null"
+params: ()
+visibility: public

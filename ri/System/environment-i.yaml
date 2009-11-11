@@ -1,0 +1,10 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: System#environment
+is_singleton: false
+name: environment
+params: ()
+visibility: public

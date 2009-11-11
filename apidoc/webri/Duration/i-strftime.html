@@ -1,0 +1,22 @@
+<br/><b>Duration#strftime</b><hr />
+strftime(fmt)<br />
+<p />
+From /home/trans/Documents/programs/current/facets/doc/ri/Duration/cdesc-Duration.yaml<hr />
+Format duration.<p />
+<b>Identifiers</b><p />
+<pre>    %w -- Number of weeks
+    %d -- Number of days
+    %h -- Number of hours
+    %m -- Number of minutes
+    %s -- Number of seconds
+    %t -- Total number of seconds
+    %x -- Duration#to_s
+    %% -- Literal `%' character
+</pre>
+<b>Example</b><p />
+<pre>    d = Duration.new(:weeks =&amp;gt; 10, :days =&amp;gt; 7)
+    =&amp;gt; #&amp;lt;Duration: 11 weeks&amp;gt;
+    d.strftime(&amp;quot;It's been %w weeks!&amp;quot;)
+    =&amp;gt; &amp;quot;It's been 11 weeks!&amp;quot;
+</pre>
+<br/><br/>

@@ -1,0 +1,25 @@
+<br/><b>OpenStruct::new</b><hr />
+OpenStruct::new(hash=nil, &amp;block) {|self| ...}<br />
+<p />
+From /home/trans/Documents/programs/current/facets/doc/ri/OpenStruct/cdesc-OpenStruct.yaml<hr />
+Allows the initialization of an OpenStruct with a setter block:<p />
+<pre>  person = OpenStruct.new do |o|
+    o.name    = 'John Smith'
+    o.gender  = :M
+    o.age     = 71
+  end
+</pre>
+You can still provide a hash for initialization purposes, and even combine the two approaches if you wish.<p />
+<pre>  person = OpenStruct.new(:name =&amp;gt; 'John Smith', :age =&amp;gt; 31) do |p|
+    p.gender = :M
+  end
+</pre>
+Alternatively you can provide a default block:<p />
+<pre>  stuff = OpenStruct.new{ |o,k| o[k] = [] }
+  stuff.place &amp;lt;&amp;lt; :a
+  stuff.place &amp;lt;&amp;lt; :b
+  stuff.place #=&amp;gt; [:a, :b]
+</pre>
+A setter block versus a defualt block is determined by the arity of the block. You can not provide both at the same time.<p />
+CREDIT: Noah Gibbs, Gavin Sinclair<p />
+<br/><br/>

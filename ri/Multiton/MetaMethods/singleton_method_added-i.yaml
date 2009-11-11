@@ -1,0 +1,10 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Multiton::MetaMethods#singleton_method_added
+is_singleton: false
+name: singleton_method_added
+params: (sym)
+visibility: private

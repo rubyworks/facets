@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Convert symbol to string, apply string method and convert back to symbol via a fluent interface.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  :HELLO.re_s.downcase\n"
+full_name: Symbol#re_s
+is_singleton: false
+name: re_s
+params: ()
+visibility: public

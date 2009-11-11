@@ -1,0 +1,11 @@
+<br/><b>String#modulize</b><hr />
+modulize()<br />
+<p />
+From /home/trans/Documents/programs/current/facets/doc/ri/String/cdesc-String.yaml<hr />
+Converts a string to module name representation.<p />
+This is essentially #camelcase. It also converts '/' to '::' which is useful for converting paths to namespaces.<p />
+Examples<p />
+<pre>  &amp;quot;method_name&amp;quot;.modulize    #=&amp;gt; &amp;quot;MethodName&amp;quot;
+  &amp;quot;method/name&amp;quot;.modulize    #=&amp;gt; &amp;quot;Method::Name&amp;quot;
+</pre>
+<br/><br/>

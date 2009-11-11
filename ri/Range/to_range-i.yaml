@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: A thing really should know itself. This simply returns <em>self</em>.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Note: This does not internally effect the Ruby interpretor such that it can coerce Range-like objects into a Range."
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Trans"
+full_name: Range#to_range
+is_singleton: false
+name: to_range
+params: ()
+visibility: public

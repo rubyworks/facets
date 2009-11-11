@@ -1,0 +1,32 @@
+--- !ruby/object:RDoc::RI::ModuleDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 1
+  text: Stackable
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Stackable mixin provides #pop, #push, #pull, etc. It depends on #slice, #splice and #insert."
+constants: []
+
+full_name: Stackable
+includes: []
+
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: peek
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: poke
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: pop
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: pull
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: push
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: shift
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: unshift
+name: Stackable

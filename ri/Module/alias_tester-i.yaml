@@ -1,0 +1,15 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: 
+- !ruby/object:RDoc::RI::AliasName 
+  name: alias_reader?
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Create aliases for flag reader.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Trans"
+full_name: Module#alias_tester
+is_singleton: false
+name: alias_tester
+params: (*args)
+visibility: public

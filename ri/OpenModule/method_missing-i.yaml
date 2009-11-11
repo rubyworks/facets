@@ -1,0 +1,10 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: OpenModule#method_missing
+is_singleton: false
+name: method_missing
+params: (s, *a, &b)
+visibility: public

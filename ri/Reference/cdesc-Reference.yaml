@@ -1,0 +1,30 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 1
+  text: Reference
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Reference provides a way to access object indirectly. This allows for the object itself to be changed on the fly.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  a = &quot;HELLO&quot;\n  b = ref(a)\n  puts b    #=&gt; &quot;HELLO&quot;\n  c = 10\n  b.become(c)\n  puts b    #=&gt; &quot;10&quot;\n"
+constants: []
+
+full_name: Reference
+includes: []
+
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: __value__
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: become
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: instance_delegate
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: method_missing
+name: Reference
+superclass: Object

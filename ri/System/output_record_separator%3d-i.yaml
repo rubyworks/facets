@@ -1,0 +1,11 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: 
+- !ruby/object:RDoc::RI::AliasName 
+  name: ors=
+block_params: 
+comment: 
+full_name: System#output_record_separator=
+is_singleton: false
+name: output_record_separator=
+params: (x)
+visibility: public

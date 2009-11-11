@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Change the first element.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  a = [&quot;a&quot;,&quot;y&quot;,&quot;z&quot;]\n  a.first = &quot;x&quot;\n  p a           #=&gt; [&quot;x&quot;,&quot;y&quot;,&quot;z&quot;]\n"
+full_name: Indexable#first=
+is_singleton: false
+name: first=
+params: (x)
+visibility: public

@@ -1,0 +1,20 @@
+--- !ruby/object:RDoc::RI::ModuleDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: append_features
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "TODO: hooks should be an inheritor"
+constants: []
+
+full_name: Hook
+includes: []
+
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: hook
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: hooks
+name: Hook

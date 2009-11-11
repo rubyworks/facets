@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: This is equivalent to Hash[*array.flatten], but it will pad the array with a <tt>nil</tt> object if there are not an even number of elements.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  a = [:a,1,[:b,2,:c]]\n  a.to_h_flat  #=&gt; { :a=&gt;1, :b=&gt;2, :c=&gt;nil }\n"
+full_name: Array#to_h_flat
+is_singleton: false
+name: to_h_flat
+params: ()
+visibility: public

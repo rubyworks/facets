@@ -1,0 +1,11 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: []
+
+full_name: Tuple::cast_from_array
+is_singleton: true
+name: cast_from_array
+params: ( arr )
+visibility: public

@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Converts a class name to a unix path
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Examples
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  CoolClass.pathize       #=&gt; &quot;cool_class&quot;\n  My::CoolClass.pathize   #=&gt; &quot;my/cool_class&quot;\n"
+full_name: Module#pathize
+is_singleton: false
+name: pathize
+params: ()
+visibility: public

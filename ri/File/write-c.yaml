@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Writes the given data to the given path and closes the file. This is done in binary mode, complementing <tt>IO.read</tt> in standard Ruby.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Returns the number of bytes written.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Gavin Sinclair"
+full_name: File::write
+is_singleton: true
+name: write
+params: (path, data)
+visibility: public

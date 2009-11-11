@@ -1,0 +1,10 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: OpenObject#protect_slot
+is_singleton: false
+name: protect_slot
+params: ( key )
+visibility: protected

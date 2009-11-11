@@ -1,0 +1,11 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: []
+
+full_name: URI::Hash#to_uri
+is_singleton: false
+name: to_uri
+params: ()
+visibility: public

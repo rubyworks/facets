@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Alias for #input_record_separator="
+full_name: System#rs=
+is_singleton: false
+name: rs=
+params: (x)
+visibility: public

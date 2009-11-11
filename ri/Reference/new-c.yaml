@@ -1,0 +1,10 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Reference::new
+is_singleton: true
+name: new
+params: (obj)
+visibility: public

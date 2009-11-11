@@ -1,0 +1,2603 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+  <title>Module: System</title>
+
+  
+    <link rel="SHORTCUT ICON" href="../assets/icon/module.png">
+  
+
+  <link type="text/css" rel="stylesheet" href="../assets/rdoc.css" media="screen" />
+  <link type="text/css" rel="stylesheet" href="../assets/highlight/styles/github.css" title="GitHub" />
+
+  <script type="text/javascript" charset="utf-8" src="../assets/jquery.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/highlight/highlight.pack.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/quicksearch.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/main.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready( function() {
+      hookHighlightSyntax();
+	    hookSourceViews();
+	    hookDebuggingToggle();
+	    hookQuickSearch();
+	    highlightLocationTarget();
+
+	    $('ul.link-list a').bind("click", highlightClickTarget);
+    });
+  </script>
+</head>
+<body class="module">
+<div id="main">
+
+  <div class="head">
+    <h1>
+      
+        <img src="../assets/icon/module.png" align="absmiddle">&nbsp;
+      
+      <a href="../index.html">Facets More API</a>&nbsp;
+      <a href="/">System</a>
+    </h1>
+  </div>
+
+  <div id="metadata">
+    <div id="project-metadata">
+
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li class="file"><a href="../files/lib/more/facets/rbsystem_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/more/facets/rbsystem.rb">lib/more/facets/rbsystem.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      <!-- What about Git info, or Hg info? This seems almost silly, albeit kind of cool. -->
+      <!-- TODO: generalize this for all SCMs -->
+
+      
+    </div>
+
+    <div id="class-metadata">
+
+      <!-- Parent Class -->
+      
+
+      <!-- Namespace Contents -->
+      
+
+      <!-- Method Quickref -->
+      
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+            
+            <li class="method">
+              <a href="#M000496">#argf</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000470">#argv</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000474">#child_status</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000482">#coding</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000483">#coding=</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000531">#current_platform</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000521">#data</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000478">#debug</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000494">#default_input</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000497">#default_output</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000498">#default_output=</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000495">#defin</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000499">#defout</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000500">#defout=</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000487">#env</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000486">#environment</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000476">#error_info</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000477">#error_position</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000475">#exit_status</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000526">#extentions</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000517">#fs</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000518">#fs=</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000515">#input_field_separator</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000516">#input_field_separator=</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000519">#input_line_number</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000520">#input_lineno</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000510">#input_record_separator</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000511">#input_record_separator=</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000484">#line_end_processing</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000528">#load_path</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000529">#loaded_features</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000532">#match_platform</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000508">#ofs</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000509">#ofs=</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000471">#options</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000503">#ors</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000504">#ors=</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000505">#output_field_separator</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000506">#output_field_separator=</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000501">#output_record_separator</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000502">#output_record_separator=</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000473">#pid</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000523">#platform</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000472">#process_id</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000485">#program_loop</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000468">#program_name</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000469">#program_name=</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000525">#release</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000530">#required</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000512">#rs</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000513">#rs=</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000527">#rubylibdir</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000522">#rubypath</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000479">#safe</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000492">#stderr</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000493">#stderr=</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000488">#stdin</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000489">#stdin=</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000490">#stdout</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000491">#stdout=</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000480">#verbose</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000481">#verbose=</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000524">#version</a>
+            </li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Included Modules -->
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Information</h3>
+        <ul>
+        
+          <li class="file"><a href="../files/README_rdoc.html">README.rdoc</a></li>
+        
+          <li class="file"><a href="../files/doc/README_more.html">README.more</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class Index
+          <span class="search-toggle"><img src="../assets/icon/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <!-- classpage.html : classes -->
+        <ul class="link-list">
+        
+          <li class="module"><a href="../classes/Random.html">Random</a></li>
+        
+          <li class="module"><a href="../classes/Random/Array.html">Random::Array</a></li>
+        
+          <li class="module"><a href="../classes/Random/Hash.html">Random::Hash</a></li>
+        
+          <li class="module"><a href="../classes/Random/Object.html">Random::Object</a></li>
+        
+          <li class="module"><a href="../classes/Random/Range.html">Random::Range</a></li>
+        
+          <li class="module"><a href="../classes/Random/String.html">Random::String</a></li>
+        
+          <li class="module"><a href="../classes/Random/String/Self.html">Random::String::Self</a></li>
+        
+          <li class="module"><a href="../classes/Multiton.html">Multiton</a></li>
+        
+          <li class="module"><a href="../classes/Multiton/Inclusive.html">Multiton::Inclusive</a></li>
+        
+          <li class="module"><a href="../classes/Multiton/MetaMethods.html">Multiton::MetaMethods</a></li>
+        
+          <li class="class"><a href="../classes/Duration.html">Duration</a></li>
+        
+          <li class="module"><a href="../classes/Duration/Numeric.html">Duration::Numeric</a></li>
+        
+          <li class="module"><a href="../classes/Duration/Time.html">Duration::Time</a></li>
+        
+          <li class="module"><a href="../classes/URI.html">URI</a></li>
+        
+          <li class="module"><a href="../classes/URI/Hash.html">URI::Hash</a></li>
+        
+          <li class="module"><a href="../classes/URI/Kernel.html">URI::Kernel</a></li>
+        
+          <li class="module"><a href="../classes/ERB.html">ERB</a></li>
+        
+          <li class="class"><a href="../classes/ERB/OpenTemplate.html">ERB::OpenTemplate</a></li>
+        
+          <li class="module"><a href="../classes/English/RomanNumerals.html">English::RomanNumerals</a></li>
+        
+          <li class="module"><a href="../classes/Enumerable.html">Enumerable</a></li>
+        
+          <li class="module"><a href="../classes/Enumerable/Arguments.html">Enumerable::Arguments</a></li>
+        
+          <li class="class"><a href="../classes/Enumerator.html">Enumerator</a></li>
+        
+          <li class="class"><a href="../classes/GetoptLong.html">GetoptLong</a></li>
+        
+          <li class="class"><a href="../classes/GetoptLong/DSL.html">GetoptLong::DSL</a></li>
+        
+          <li class="class"><a href="../classes/LinkedList.html">LinkedList</a></li>
+        
+          <li class="class"><a href="../classes/LinkedList/Node.html">LinkedList::Node</a></li>
+        
+          <li class="class"><a href="../classes/Matcher.html">Matcher</a></li>
+        
+          <li class="class"><a href="../classes/Matcher/MatchData.html">Matcher::MatchData</a></li>
+        
+          <li class="class"><a href="../classes/Module.html">Module</a></li>
+        
+          <li class="module"><a href="../classes/Module/InstanceFunction.html">Module::InstanceFunction</a></li>
+        
+          <li class="module"><a href="../classes/Numeric/Multipliers.html">Numeric::Multipliers</a></li>
+        
+          <li class="class"><a href="../classes/PathList.html">PathList</a></li>
+        
+          <li class="module"><a href="../classes/PathList/Finder.html">PathList::Finder</a></li>
+        
+          <li class="class"><a href="../classes/Platform.html">Platform</a></li>
+        
+          <li class="module"><a href="../classes/Platform/ByteOrder.html">Platform::ByteOrder</a></li>
+        
+          <li class="class"><a href="../classes/Timer.html">Timer</a></li>
+        
+          <li class="class"><a href="../classes/Timer/Dummy.html">Timer::Dummy</a></li>
+        
+          <li class="module"><a href="../classes/ANSICode.html">ANSICode</a></li>
+        
+          <li class="class"><a href="../classes/Argvector.html">Argvector</a></li>
+        
+          <li class="class"><a href="../classes/Array.html">Array</a></li>
+        
+          <li class="class"><a href="../classes/AutoArray.html">AutoArray</a></li>
+        
+          <li class="class"><a href="../classes/BasicObject.html">BasicObject</a></li>
+        
+          <li class="class"><a href="../classes/CGI.html">CGI</a></li>
+        
+          <li class="class"><a href="../classes/Class.html">Class</a></li>
+        
+          <li class="module"><a href="../classes/Cloneable.html">Cloneable</a></li>
+        
+          <li class="module"><a href="../classes/Config.html">Config</a></li>
+        
+          <li class="class"><a href="../classes/Continuation.html">Continuation</a></li>
+        
+          <li class="class"><a href="../classes/Date.html">Date</a></li>
+        
+          <li class="class"><a href="../classes/DateTime.html">DateTime</a></li>
+        
+          <li class="class"><a href="../classes/Dictionary.html">Dictionary</a></li>
+        
+          <li class="module"><a href="../classes/Equitable.html">Equitable</a></li>
+        
+          <li class="module"><a href="../classes/Expirable.html">Expirable</a></li>
+        
+          <li class="class"><a href="../classes/File.html">File</a></li>
+        
+          <li class="class"><a href="../classes/FileList.html">FileList</a></li>
+        
+          <li class="module"><a href="../classes/FileUtils.html">FileUtils</a></li>
+        
+          <li class="class"><a href="../classes/Fixnum.html">Fixnum</a></li>
+        
+          <li class="class"><a href="../classes/HashBuilder.html">HashBuilder</a></li>
+        
+          <li class="module"><a href="../classes/Hook.html">Hook</a></li>
+        
+          <li class="class"><a href="../classes/IORedirect.html">IORedirect</a></li>
+        
+          <li class="class"><a href="../classes/Ini.html">Ini</a></li>
+        
+          <li class="module"><a href="../classes/Instantiable.html">Instantiable</a></li>
+        
+          <li class="class"><a href="../classes/Integer.html">Integer</a></li>
+        
+          <li class="class"><a href="../classes/Memoizer.html">Memoizer</a></li>
+        
+          <li class="class"><a href="../classes/NilClass.html">NilClass</a></li>
+        
+          <li class="class"><a href="../classes/NullClass.html">NullClass</a></li>
+        
+          <li class="module"><a href="../classes/OpEsc.html">OpEsc</a></li>
+        
+          <li class="class"><a href="../classes/OpenCascade.html">OpenCascade</a></li>
+        
+          <li class="class"><a href="../classes/OpenCollection.html">OpenCollection</a></li>
+        
+          <li class="class"><a href="../classes/OpenHash.html">OpenHash</a></li>
+        
+          <li class="class"><a href="../classes/OpenModule.html">OpenModule</a></li>
+        
+          <li class="class"><a href="../classes/OpenObject.html">OpenObject</a></li>
+        
+          <li class="class"><a href="../classes/OpenStruct.html">OpenStruct</a></li>
+        
+          <li class="module"><a href="../classes/OpenStructable.html">OpenStructable</a></li>
+        
+          <li class="class"><a href="../classes/Pathname.html">Pathname</a></li>
+        
+          <li class="module"><a href="../classes/PluginManager.html">PluginManager</a></li>
+        
+          <li class="class"><a href="../classes/Proc.html">Proc</a></li>
+        
+          <li class="class"><a href="../classes/Range.html">Range</a></li>
+        
+          <li class="class"><a href="../classes/Reference.html">Reference</a></li>
+        
+          <li class="module"><a href="../classes/Registerable.html">Registerable</a></li>
+        
+          <li class="class"><a href="../classes/Semaphore.html">Semaphore</a></li>
+        
+          <li class="class"><a href="../classes/Set.html">Set</a></li>
+        
+          <li class="module"><a href="../classes/Shellwords.html">Shellwords</a></li>
+        
+          <li class="class"><a href="../classes/Stash.html">Stash</a></li>
+        
+          <li class="class"><a href="../classes/String.html">String</a></li>
+        
+          <li class="module"><a href="../classes/System.html">System</a></li>
+        
+          <li class="class"><a href="../classes/TracePoint.html">TracePoint</a></li>
+        
+          <li class="class"><a href="../classes/Tuple.html">Tuple</a></li>
+        
+          <li class="class"><a href="../classes/VersionNumber.html">VersionNumber</a></li>
+        
+          <li class="class"><a href="../classes/X.html">X</a></li>
+        
+          <li class="module"><a href="../classes/Zlib.html">Zlib</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+    </div>
+
+    <div id="validator-badges">
+      
+      <div style="float: right; margin-right: 5px;">
+        <a href="http://validator.w3.org/check/referer"><img src="../assets/icon/check.png" alt="[Validate]" height="16" width="16" /></a>
+      </div>
+      Generated with <a href="http://github.com/proutils/webri">WebRI Redfish</a> 1.0.0
+      <br/><br/>
+    </div>
+  </div>
+
+  <div id="documentation">
+
+    <div id="description">
+      
+
+      <h1><a href="System.html">System</a></h1>
+<p>
+The <a href="System.html">System</a> module provides <a
+href="Platform.html">Platform</a> and Ruby system information. The module
+should also be able to stand in for rbconfig. It is intended for use as a
+service module although it can be mixed-in too.
+</p>
+
+    </div>
+
+    <!-- Constants -->
+    
+
+    <!-- Attributes -->
+    
+
+    <!-- Methods -->
+    
+    <div id="public-instance-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="argf-method" class="method-detail method-alias">
+        <a name="M000496"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">argf</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="System.html#M000494">default_input</a>
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="argv-method" class="method-detail ">
+        <a name="M000470"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">argv</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="argv-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 55</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">argv</span>; <span class="ruby-identifier">$*</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="System.html#M000471">options</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="child-status-method" class="method-detail ">
+        <a name="M000474"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">child_status</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="child-status-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 66</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">child_status</span>; <span class="ruby-identifier">$?</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="System.html#M000475">exit_status</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="coding-method" class="method-detail ">
+        <a name="M000482"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">coding</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="coding-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 79</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">coding</span>; <span class="ruby-identifier">$-K</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="coding--method" class="method-detail ">
+        <a name="M000483"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">coding=</span><span
+            class="method-args">(x)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="coding--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 80</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">coding=</span>(<span class="ruby-identifier">x</span>); <span class="ruby-identifier">$-K</span>=<span class="ruby-identifier">x</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="current-platform-method" class="method-detail ">
+        <a name="M000531"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">current_platform</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+platform
+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="current-platform-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 188</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">current_platform</span>
+    <span class="ruby-identifier">arch</span> = <span class="ruby-constant">Config</span><span class="ruby-operator">::</span><span class="ruby-constant">CONFIG</span>[<span class="ruby-value str">'arch'</span>]
+    <span class="ruby-comment cmt">#cpu, os = arch.split '-', 2</span>
+    <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">match_platform</span>(<span class="ruby-identifier">arch</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="data-method" class="method-detail ">
+        <a name="M000521"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">data</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Miscellaneous
+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="data-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 134</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">data</span>; <span class="ruby-constant">DATA</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="debug-method" class="method-detail ">
+        <a name="M000478"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">debug</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="debug-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 72</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">debug</span>; <span class="ruby-identifier">$DEBUG</span>; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="default-input-method" class="method-detail ">
+        <a name="M000494"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">default_input</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="default-input-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 100</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">default_input</span> ; <span class="ruby-identifier">$&lt;</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="System.html#M000495">defin</a>, <a href="System.html#M000496">argf</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="default-output-method" class="method-detail ">
+        <a name="M000497"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">default_output</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="default-output-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 104</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">default_output</span> ; <span class="ruby-identifier">$&gt;</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="System.html#M000499">defout</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="default-output--method" class="method-detail ">
+        <a name="M000498"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">default_output=</span><span
+            class="method-args">(x)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="default-output--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 105</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">default_output=</span>(<span class="ruby-identifier">x</span>); <span class="ruby-identifier">$defout</span>=<span class="ruby-identifier">x</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="System.html#M000500">defout=</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="defin-method" class="method-detail method-alias">
+        <a name="M000495"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">defin</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="System.html#M000494">default_input</a>
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="defout-method" class="method-detail method-alias">
+        <a name="M000499"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">defout</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="System.html#M000497">default_output</a>
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="defout--method" class="method-detail method-alias">
+        <a name="M000500"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">defout=</span><span
+            class="method-args">(x)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="System.html#M000498">default_output=</a>
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="env-method" class="method-detail ">
+        <a name="M000487"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">env</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="env-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 87</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">env</span>; <span class="ruby-constant">ENV</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="environment-method" class="method-detail ">
+        <a name="M000486"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">environment</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="environment-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 86</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">environment</span>; <span class="ruby-constant">ENV</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="error-info-method" class="method-detail ">
+        <a name="M000476"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">error_info</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="error-info-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 69</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">error_info</span>; <span class="ruby-identifier">$!</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="error-position-method" class="method-detail ">
+        <a name="M000477"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">error_position</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="error-position-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 70</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">error_position</span>; <span class="ruby-identifier">$@</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="exit-status-method" class="method-detail method-alias">
+        <a name="M000475"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">exit_status</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="System.html#M000474">child_status</a>
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="extentions-method" class="method-detail ">
+        <a name="M000526"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">extentions</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="extentions-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 160</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">extentions</span>
+    [ <span class="ruby-value str">'rb'</span>, <span class="ruby-constant">DLEXT</span> ]
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="fs-method" class="method-detail method-alias">
+        <a name="M000517"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">fs</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="System.html#M000515">input_field_separator</a>
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="fs--method" class="method-detail method-alias">
+        <a name="M000518"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">fs=</span><span
+            class="method-args">(x)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="System.html#M000516">input_field_separator=</a>
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="input-field-separator-method" class="method-detail ">
+        <a name="M000515"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">input_field_separator</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="input-field-separator-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 124</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">input_field_separator</span> ; <span class="ruby-identifier">$/</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="System.html#M000517">fs</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="input-field-separator--method" class="method-detail ">
+        <a name="M000516"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">input_field_separator=</span><span
+            class="method-args">(x)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="input-field-separator--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 125</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">input_field_separator=</span>(<span class="ruby-identifier">x</span>) ; <span class="ruby-identifier">$/</span>=<span class="ruby-identifier">x</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="System.html#M000518">fs=</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="input-line-number-method" class="method-detail ">
+        <a name="M000519"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">input_line_number</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="input-line-number-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 129</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">input_line_number</span> ; <span class="ruby-identifier">$.</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="System.html#M000520">input_lineno</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="input-lineno-method" class="method-detail method-alias">
+        <a name="M000520"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">input_lineno</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="System.html#M000519">input_line_number</a>
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="input-record-separator-method" class="method-detail ">
+        <a name="M000510"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">input_record_separator</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="input-record-separator-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 119</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">input_record_separator</span> ; <span class="ruby-identifier">$/</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="System.html#M000512">rs</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="input-record-separator--method" class="method-detail ">
+        <a name="M000511"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">input_record_separator=</span><span
+            class="method-args">(x)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="input-record-separator--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 120</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">input_record_separator=</span>(<span class="ruby-identifier">x</span>) ; <span class="ruby-identifier">$/</span>=<span class="ruby-identifier">x</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="System.html#M000513">rs=</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="line-end-processing-method" class="method-detail ">
+        <a name="M000484"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">line_end_processing</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="line-end-processing-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 82</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">line_end_processing</span>; <span class="ruby-identifier">$-l</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="load-path-method" class="method-detail ">
+        <a name="M000528"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">load_path</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+load path
+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="load-path-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 181</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">load_path</span>; <span class="ruby-identifier">$:</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="loaded-features-method" class="method-detail ">
+        <a name="M000529"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">loaded_features</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="loaded-features-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 183</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">loaded_features</span>; <span class="ruby-identifier">$&quot;</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="System.html#M000530">required</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="match-platform-method" class="method-detail ">
+        <a name="M000532"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">match_platform</span><span
+            class="method-args">(arch)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="match-platform-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 196</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">match_platform</span>(<span class="ruby-identifier">arch</span>)
+    <span class="ruby-identifier">cpu</span>, <span class="ruby-identifier">os</span> = <span class="ruby-identifier">arch</span>.<span class="ruby-identifier">split</span> <span class="ruby-value str">'-'</span>, <span class="ruby-value">2</span>
+    <span class="ruby-identifier">cpu</span>, <span class="ruby-identifier">os</span> = <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">cpu</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">os</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-comment cmt"># java</span>
+
+    <span class="ruby-identifier">cpu</span> = <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">cpu</span>
+          <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/i\d86/</span> <span class="ruby-keyword kw">then</span> <span class="ruby-value str">'x86'</span>
+          <span class="ruby-keyword kw">else</span> <span class="ruby-identifier">cpu</span>
+          <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-identifier">os</span>  = <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">os</span>
+          <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/cygwin/</span> <span class="ruby-keyword kw">then</span>            [ <span class="ruby-value str">'cygwin'</span>,  <span class="ruby-keyword kw">nil</span> ]
+          <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/darwin(\d+)?/</span> <span class="ruby-keyword kw">then</span>      [ <span class="ruby-value str">'darwin'</span>,  <span class="ruby-identifier">$1</span>  ]
+          <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/freebsd(\d+)/</span> <span class="ruby-keyword kw">then</span>      [ <span class="ruby-value str">'freebsd'</span>, <span class="ruby-identifier">$1</span>  ]
+          <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/^java$/</span> <span class="ruby-keyword kw">then</span>            [ <span class="ruby-value str">'java'</span>,    <span class="ruby-keyword kw">nil</span> ]
+          <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/^java([\d.]*)/</span> <span class="ruby-keyword kw">then</span>     [ <span class="ruby-value str">'java'</span>,    <span class="ruby-identifier">$1</span>  ]
+          <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/linux/</span> <span class="ruby-keyword kw">then</span>             [ <span class="ruby-value str">'linux'</span>,   <span class="ruby-identifier">$1</span>  ]
+          <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/mingw32/</span> <span class="ruby-keyword kw">then</span>           [ <span class="ruby-value str">'mingw32'</span>, <span class="ruby-keyword kw">nil</span> ]
+          <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/mswin32/</span> <span class="ruby-keyword kw">then</span>           [ <span class="ruby-value str">'mswin32'</span>, <span class="ruby-keyword kw">nil</span> ]
+          <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/openbsd(\d+\.\d+)/</span> <span class="ruby-keyword kw">then</span> [ <span class="ruby-value str">'openbsd'</span>, <span class="ruby-identifier">$1</span>  ]
+          <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/solaris(\d+\.\d+)/</span> <span class="ruby-keyword kw">then</span> [ <span class="ruby-value str">'solaris'</span>, <span class="ruby-identifier">$1</span>  ]
+          <span class="ruby-keyword kw">else</span>                          [ <span class="ruby-value str">'unknown'</span>, <span class="ruby-keyword kw">nil</span> ]
+          <span class="ruby-keyword kw">end</span>
+
+    [<span class="ruby-identifier">cpu</span>, <span class="ruby-identifier">os</span>].<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;-&quot;</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="ofs-method" class="method-detail method-alias">
+        <a name="M000508"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">ofs</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="System.html#M000505">output_field_separator</a>
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="ofs--method" class="method-detail method-alias">
+        <a name="M000509"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">ofs=</span><span
+            class="method-args">(x)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="System.html#M000506">output_field_separator=</a>
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="options-method" class="method-detail method-alias">
+        <a name="M000471"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">options</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="System.html#M000470">argv</a>
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="ors-method" class="method-detail method-alias">
+        <a name="M000503"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">ors</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="System.html#M000501">output_record_separator</a>
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="ors--method" class="method-detail method-alias">
+        <a name="M000504"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">ors=</span><span
+            class="method-args">(x)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="System.html#M000502">output_record_separator=</a>
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="output-field-separator-method" class="method-detail ">
+        <a name="M000505"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">output_field_separator</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="output-field-separator-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 114</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">output_field_separator</span> ; <span class="ruby-identifier">$-F</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="System.html#M000508">ofs</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="output-field-separator--method" class="method-detail ">
+        <a name="M000506"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">output_field_separator=</span><span
+            class="method-args">(x)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="output-field-separator--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 115</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">output_field_separator=</span>(<span class="ruby-identifier">x</span>) ; <span class="ruby-identifier">$-F</span>=<span class="ruby-identifier">x</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="System.html#M000509">ofs=</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="output-record-separator-method" class="method-detail ">
+        <a name="M000501"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">output_record_separator</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="output-record-separator-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 109</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">output_record_separator</span> ; <span class="ruby-identifier">$\</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="System.html#M000503">ors</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="output-record-separator--method" class="method-detail ">
+        <a name="M000502"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">output_record_separator=</span><span
+            class="method-args">(x)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="output-record-separator--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 110</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">output_record_separator=</span>(<span class="ruby-identifier">x</span>) ; <span class="ruby-identifier">$\</span>=<span class="ruby-identifier">x</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="System.html#M000504">ors=</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="pid-method" class="method-detail method-alias">
+        <a name="M000473"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">pid</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="System.html#M000472">process_id</a>
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="platform-method" class="method-detail ">
+        <a name="M000523"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">platform</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="platform-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 148</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">platform</span>
+    <span class="ruby-constant">RUBY_PLATFORM</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="process-id-method" class="method-detail ">
+        <a name="M000472"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">process_id</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <pre>
+ these won't work here
+</pre>
+<p>
+def file; <em>FILE</em> ; end def filepath; File.expand_path(<em>FILE</em>)
+; end def lineno; <em>LINE</em> ; end
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="process-id-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 63</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">process_id</span>; <span class="ruby-identifier">$$</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="System.html#M000473">pid</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="program-loop-method" class="method-detail ">
+        <a name="M000485"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">program_loop</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="program-loop-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 84</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">program_loop</span>; <span class="ruby-identifier">$-p</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="program-name-method" class="method-detail ">
+        <a name="M000468"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">program_name</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Execution Environment
+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="program-name-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 52</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">program_name</span>; <span class="ruby-identifier">$0</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="program-name--method" class="method-detail ">
+        <a name="M000469"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">program_name=</span><span
+            class="method-args">(x)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="program-name--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 53</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">program_name=</span>(<span class="ruby-identifier">x</span>); <span class="ruby-identifier">$0</span>=<span class="ruby-identifier">x</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="release-method" class="method-detail ">
+        <a name="M000525"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">release</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="release-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 156</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">release</span>
+    <span class="ruby-constant">RUBY_RELEASE_DATE</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="required-method" class="method-detail method-alias">
+        <a name="M000530"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">required</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="System.html#M000529">loaded_features</a>
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="rs-method" class="method-detail method-alias">
+        <a name="M000512"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">rs</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="System.html#M000510">input_record_separator</a>
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="rs--method" class="method-detail method-alias">
+        <a name="M000513"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">rs=</span><span
+            class="method-args">(x)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="System.html#M000511">input_record_separator=</a>
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="rubylibdir-method" class="method-detail ">
+        <a name="M000527"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">rubylibdir</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="rubylibdir-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 164</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">rubylibdir</span>
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>( <span class="ruby-identifier">libdir</span>, <span class="ruby-value str">'ruby'</span>  )
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="rubypath-method" class="method-detail ">
+        <a name="M000522"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">rubypath</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="rubypath-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 144</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">rubypath</span>
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>( <span class="ruby-identifier">bindir</span>, <span class="ruby-identifier">ruby_install_name</span> )
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="safe-method" class="method-detail ">
+        <a name="M000479"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">safe</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="safe-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 74</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">safe</span>; <span class="ruby-identifier">$SAFE</span>; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="stderr-method" class="method-detail ">
+        <a name="M000492"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">stderr</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="stderr-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 97</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stderr</span> ; <span class="ruby-identifier">$stderr</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="stderr--method" class="method-detail ">
+        <a name="M000493"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">stderr=</span><span
+            class="method-args">(x)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="stderr--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 98</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stderr=</span>(<span class="ruby-identifier">x</span>); <span class="ruby-identifier">$stderr</span>=<span class="ruby-identifier">x</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="stdin-method" class="method-detail ">
+        <a name="M000488"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">stdin</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Input/Ouput Variables
+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="stdin-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 91</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stdin</span>; <span class="ruby-identifier">$stdin</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="stdin--method" class="method-detail ">
+        <a name="M000489"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">stdin=</span><span
+            class="method-args">(x)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="stdin--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 92</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stdin=</span>(<span class="ruby-identifier">x</span>); <span class="ruby-identifier">$stdin</span>=<span class="ruby-identifier">x</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="stdout-method" class="method-detail ">
+        <a name="M000490"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">stdout</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="stdout-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 94</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stdout</span> ; <span class="ruby-identifier">$stdout</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="stdout--method" class="method-detail ">
+        <a name="M000491"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">stdout=</span><span
+            class="method-args">(x)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="stdout--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 95</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stdout=</span>(<span class="ruby-identifier">x</span>); <span class="ruby-identifier">$stdout</span>=<span class="ruby-identifier">x</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="verbose-method" class="method-detail ">
+        <a name="M000480"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">verbose</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="verbose-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 76</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">verbose</span>; <span class="ruby-identifier">$VERBOSE</span>; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="verbose--method" class="method-detail ">
+        <a name="M000481"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">verbose=</span><span
+            class="method-args">(x)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="verbose--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 77</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">verbose=</span>(<span class="ruby-identifier">x</span>); <span class="ruby-identifier">$VERBOSE</span>=<span class="ruby-identifier">x</span>; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="version-method" class="method-detail ">
+        <a name="M000524"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">version</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="version-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/rbsystem.rb, line 152</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">version</span>
+    <span class="ruby-constant">RUBY_VERSION</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+
+  </div>
+
+
+  <div id="rdoc-debugging-section-dump" class="debugging-section">
+  
+    <p>Disabled; run with --debug to generate this.</p>
+  
+  </div>
+
+</main>
+</body>
+</html>
+

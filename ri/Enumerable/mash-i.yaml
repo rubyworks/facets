@@ -1,0 +1,19 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: 
+- !ruby/object:RDoc::RI::AliasName 
+  name: graph
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Like <tt>#map</tt>/<tt>#collect</tt>, but generates a Hash. The block is expected to return two values: the key and the value for the new hash."
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  numbers  = (1..3)\n  squares  = numbers.mash { |n| [n, n*n] }   # { 1=&gt;1, 2=&gt;4, 3=&gt;9 }\n  sq_roots = numbers.mash { |n| [n*n, n] }   # { 1=&gt;1, 4=&gt;2, 9=&gt;3 }\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: The name &quot;mash&quot; stands for &quot;map hash&quot;.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Andrew Dudzik (adudzik), Trans"
+full_name: Enumerable#mash
+is_singleton: false
+name: mash
+params: (&yld)
+visibility: public

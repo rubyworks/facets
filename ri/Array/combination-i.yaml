@@ -1,0 +1,20 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: s.values_at(*idx)
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Yields the block to each unique combination of <em>n</em> elements.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  a = %w|a b c d|\n  a.combination(3)\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: produces
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  [[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;],\n   [&quot;a&quot;, &quot;b&quot;, &quot;d&quot;],\n   [&quot;a&quot;, &quot;c&quot;, &quot;d&quot;],\n   [&quot;b&quot;, &quot;c&quot;, &quot;d&quot;]]\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Florian Gross"
+full_name: Array#combination
+is_singleton: false
+name: combination
+params: (k=2) {|s.values_at(*idx)| ...}
+visibility: public

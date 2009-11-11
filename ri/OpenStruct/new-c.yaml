@@ -1,0 +1,26 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: self
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Allows the initialization of an OpenStruct with a setter block:"
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  person = OpenStruct.new do |o|\n    o.name    = 'John Smith'\n    o.gender  = :M\n    o.age     = 71\n  end\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: You can still provide a hash for initialization purposes, and even combine the two approaches if you wish.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  person = OpenStruct.new(:name =&gt; 'John Smith', :age =&gt; 31) do |p|\n    p.gender = :M\n  end\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Alternatively you can provide a default block:"
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  stuff = OpenStruct.new{ |o,k| o[k] = [] }\n  stuff.place &lt;&lt; :a\n  stuff.place &lt;&lt; :b\n  stuff.place #=&gt; [:a, :b]\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: A setter block versus a defualt block is determined by the arity of the block. You can not provide both at the same time.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Noah Gibbs, Gavin Sinclair"
+full_name: OpenStruct::new
+is_singleton: true
+name: new
+params: (hash=nil, &block) {|self| ...}
+visibility: public

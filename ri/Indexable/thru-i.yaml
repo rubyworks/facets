@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Fetch values from a start index thru an end index.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  [1,2,3,4,5].thru(0,2)  #=&gt; [1,2,3]\n  [1,2,3,4,5].thru(2,4)  #=&gt; [3,4,5]\n"
+full_name: Indexable#thru
+is_singleton: false
+name: thru
+params: (from, to)
+visibility: public

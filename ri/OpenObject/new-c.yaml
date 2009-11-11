@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Inititalizer for OpenObject is slightly differnt than that of Hash. It does not take a default parameter, but an initial priming Hash as with OpenStruct. The initializer can still take a default block however. To set the degault value use ++#default!(value)++.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  OpenObject(:a=&gt;1).default!(0)\n"
+full_name: OpenObject::new
+is_singleton: true
+name: new
+params: ( hash=nil, &yld )
+visibility: public

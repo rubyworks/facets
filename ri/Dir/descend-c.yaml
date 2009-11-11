@@ -1,0 +1,20 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: ""
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Descend a directory path.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  Dir.descend(&quot;/var/log&quot;) do |path|\n    p path\n  end\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: <em>produces</em>
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  /\n  /var\n  /var/log\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Daniel Berger, Jeffrey Schwab"
+full_name: Dir::descend
+is_singleton: true
+name: descend
+params: (path) {|| ...}
+visibility: public

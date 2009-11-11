@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Returns an array of characters.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  &quot;abc&quot;.chars  #=&gt; [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;]\n"
+full_name: String#chars
+is_singleton: false
+name: chars
+params: ()
+visibility: public

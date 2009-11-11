@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Teeny is third number in the version series.
+full_name: VersionNumber#teeny
+is_singleton: false
+name: teeny
+params: ()
+visibility: public

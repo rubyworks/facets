@@ -1,0 +1,18 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Delete multiple values from array given indexes or index range.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  a = [1,2,3,4]\n  a.delete_values_at(1,2)   #=&gt; [2,3]\n  a                         #=&gt; [1,4]\n  a = [1,2,3,4]\n  a.delete_values_at(0..2)  #=&gt; [1,2,3]\n  a                         #=&gt; [4]\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "NOTE: It would be nice to see #delete_at incorporate this funcitonaility."
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Trans"
+full_name: Array#delete_values_at
+is_singleton: false
+name: delete_values_at
+params: (*selectors)
+visibility: public

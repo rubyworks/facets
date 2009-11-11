@@ -1,0 +1,27 @@
+<br/><b>Class: OpenStructable</b><hr />
+OpensStructable is a mixin module which can provide OpenStruct behavior to any class or object. OpenStructable allows extention of data objects with arbitrary attributes.<p />
+<h2>Usage</h2>
+<pre>  require 'ostructable'
+
+  class Record
+    include OpenStructable
+  end
+
+  record = Record.new
+  record.name    = &amp;quot;John Smith&amp;quot;
+  record.age     = 70
+  record.pension = 300
+
+  puts record.name     # -&amp;gt; &amp;quot;John Smith&amp;quot;
+  puts record.address  # -&amp;gt; nil
+</pre>
+<h2>Author(s)</h2>
+<ul><li>Thomas Sawyer<p />
+</li><li>Yukihiro Matsumoto<p />
+</li><li>Gavin Sinclair (Documentation)<p />
+</li></ul><hr />
+<p />
+<h2>Class methods:</h2>
+new<p />
+<h2>Instance methods:</h2>
+==, delete_field, initialize_copy, inspect, marshal_dump, marshal_load, new_ostruct_member, update<br/><br/>

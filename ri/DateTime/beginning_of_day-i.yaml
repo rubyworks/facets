@@ -1,0 +1,13 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: 
+- !ruby/object:RDoc::RI::AliasName 
+  name: midnight
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Returns a new DateTime representing the start of the day (0:00)
+full_name: DateTime#beginning_of_day
+is_singleton: false
+name: beginning_of_day
+params: ()
+visibility: public

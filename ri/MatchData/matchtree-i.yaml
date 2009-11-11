@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "An alternate to #to_a which returns the matches in order corresponding with the regular expression."
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  md = /(bb)(cc(dd))(ee)/.match &quot;XXaabbccddeeffXX&quot;\n  md.to_a       #=&gt; [&quot;XXaabbccddeeffXX&quot;, &quot;bb&quot;, &quot;ccdd&quot;, &quot;dd&quot;, &quot;ee&quot;]\n  md.matchtree  #=&gt; [[&quot;bb&quot;], [&quot;cc&quot;, [&quot;dd&quot;]], &quot;ee&quot;]\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Trans"
+full_name: MatchData#matchtree
+is_singleton: false
+name: matchtree
+params: (index=0)
+visibility: public

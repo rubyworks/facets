@@ -1,0 +1,1083 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+  <title>Module: Indexable</title>
+
+  
+    <link rel="SHORTCUT ICON" href="../assets/icon/module.png">
+  
+
+  <link type="text/css" rel="stylesheet" href="../assets/rdoc.css" media="screen" />
+  <link type="text/css" rel="stylesheet" href="../assets/highlight/styles/github.css" title="GitHub" />
+
+  <script type="text/javascript" charset="utf-8" src="../assets/jquery.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/highlight/highlight.pack.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/quicksearch.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/main.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready( function() {
+      hookHighlightSyntax();
+	    hookSourceViews();
+	    hookDebuggingToggle();
+	    hookQuickSearch();
+	    highlightLocationTarget();
+
+	    $('ul.link-list a').bind("click", highlightClickTarget);
+    });
+  </script>
+</head>
+<body class="module">
+<div id="main">
+
+  <div class="head">
+    <h1>
+      
+        <img src="../assets/icon/module.png" align="absmiddle">&nbsp;
+      
+      <a href="../index.html">Facets Core API</a>&nbsp;
+      <a href="/">Indexable</a>
+    </h1>
+  </div>
+
+  <div id="metadata">
+    <div id="project-metadata">
+
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li class="file"><a href="../files/lib/core/facets/indexable_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/indexable.rb">lib/core/facets/indexable.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      <!-- What about Git info, or Hg info? This seems almost silly, albeit kind of cool. -->
+      <!-- TODO: generalize this for all SCMs -->
+
+      
+    </div>
+
+    <div id="class-metadata">
+
+      <!-- Parent Class -->
+      
+
+      <!-- Namespace Contents -->
+      
+
+      <!-- Method Quickref -->
+      
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+            
+            <li class="method">
+              <a href="#M000796">#body</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000806">#ends</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000800">#first</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000804">#first!</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000802">#first=</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000795">#foot</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000793">#head</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000808">#index</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000810">#index_of</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000801">#last</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000805">#last!</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000803">#last=</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000797">#mid</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000798">#middle</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000807">#pos</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000814">#range</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000794">#tail</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000799">#thru</a>
+            </li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Included Modules -->
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Information</h3>
+        <ul>
+        
+          <li class="file"><a href="../files/doc/README_core.html">README.core</a></li>
+        
+          <li class="file"><a href="../files/README_rdoc.html">README.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class Index
+          <span class="search-toggle"><img src="../assets/icon/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <!-- classpage.html : classes -->
+        <ul class="link-list">
+        
+          <li class="module"><a href="../classes/Lazy.html">Lazy</a></li>
+        
+          <li class="class"><a href="../classes/Lazy/Future.html">Lazy::Future</a></li>
+        
+          <li class="class"><a href="../classes/Lazy/Promise.html">Lazy::Promise</a></li>
+        
+          <li class="class"><a href="../classes/Lazy/PromiseSafe.html">Lazy::PromiseSafe</a></li>
+        
+          <li class="module"><a href="../classes/Enumerable.html">Enumerable</a></li>
+        
+          <li class="class"><a href="../classes/Object.html">Object</a></li>
+        
+          <li class="class"><a href="../classes/Array.html">Array</a></li>
+        
+          <li class="class"><a href="../classes/Binding.html">Binding</a></li>
+        
+          <li class="class"><a href="../classes/Class.html">Class</a></li>
+        
+          <li class="module"><a href="../classes/Comparable.html">Comparable</a></li>
+        
+          <li class="module"><a href="../classes/Denumerable.html">Denumerable</a></li>
+        
+          <li class="class"><a href="../classes/Denumerator.html">Denumerator</a></li>
+        
+          <li class="class"><a href="../classes/Dir.html">Dir</a></li>
+        
+          <li class="class"><a href="../classes/Enumerator.html">Enumerator</a></li>
+        
+          <li class="class"><a href="../classes/Exception.html">Exception</a></li>
+        
+          <li class="class"><a href="../classes/FalseClass.html">FalseClass</a></li>
+        
+          <li class="class"><a href="../classes/File.html">File</a></li>
+        
+          <li class="module"><a href="../classes/FileTest.html">FileTest</a></li>
+        
+          <li class="class"><a href="../classes/Float.html">Float</a></li>
+        
+          <li class="class"><a href="../classes/Functor.html">Functor</a></li>
+        
+          <li class="class"><a href="../classes/Hash.html">Hash</a></li>
+        
+          <li class="module"><a href="../classes/Indexable.html">Indexable</a></li>
+        
+          <li class="class"><a href="../classes/InstanceVariables.html">InstanceVariables</a></li>
+        
+          <li class="class"><a href="../classes/Integer.html">Integer</a></li>
+        
+          <li class="module"><a href="../classes/Kernel.html">Kernel</a></li>
+        
+          <li class="class"><a href="../classes/MatchData.html">MatchData</a></li>
+        
+          <li class="class"><a href="../classes/Module.html">Module</a></li>
+        
+          <li class="class"><a href="../classes/NilClass.html">NilClass</a></li>
+        
+          <li class="class"><a href="../classes/Numeric.html">Numeric</a></li>
+        
+          <li class="module"><a href="../classes/ObjectSpace.html">ObjectSpace</a></li>
+        
+          <li class="class"><a href="../classes/Proc.html">Proc</a></li>
+        
+          <li class="class"><a href="../classes/Range.html">Range</a></li>
+        
+          <li class="class"><a href="../classes/Regexp.html">Regexp</a></li>
+        
+          <li class="module"><a href="../classes/Stackable.html">Stackable</a></li>
+        
+          <li class="class"><a href="../classes/String.html">String</a></li>
+        
+          <li class="class"><a href="../classes/Struct.html">Struct</a></li>
+        
+          <li class="class"><a href="../classes/Symbol.html">Symbol</a></li>
+        
+          <li class="class"><a href="../classes/Time.html">Time</a></li>
+        
+          <li class="class"><a href="../classes/TrueClass.html">TrueClass</a></li>
+        
+          <li class="class"><a href="../classes/UnboundMethod.html">UnboundMethod</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+    </div>
+
+    <div id="validator-badges">
+      
+      <div style="float: right; margin-right: 5px;">
+        <a href="http://validator.w3.org/check/referer"><img src="../assets/icon/check.png" alt="[Validate]" height="16" width="16" /></a>
+      </div>
+      Generated with <a href="http://github.com/proutils/webri">WebRI Redfish</a> 1.0.0
+      <br/><br/>
+    </div>
+  </div>
+
+  <div id="documentation">
+
+    <div id="description">
+      
+
+      <h1><a href="Indexable.html">Indexable</a></h1>
+<p>
+<a href="Indexable.html">Indexable</a> is a mixin that provides index based
+methods, working soley with four methods: <a
+href="Indexable.html#M000808">index</a>, slice, splice and size.
+</p>
+<p>
+These methods work in harmony. Where <a
+href="Indexable.html#M000808">index</a> returns a position of a given
+element, slice returns elements for given positions. splice is like slice
+but replaces the given position with new values. This mehtod is not part of
+ruby core, but it generally just an alias for #[]=, just as slice is an
+alias of #[]. size of course simply returns the total length of the
+indexable object.
+</p>
+
+    </div>
+
+    <!-- Constants -->
+    
+
+    <!-- Attributes -->
+    
+
+    <!-- Methods -->
+    
+    <div id="public-instance-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="body-method" class="method-detail ">
+        <a name="M000796"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">body</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns an array of the first element upto, but not including, the last
+element.
+</p>
+<pre>
+  [1,2,3].body  #=&gt; [1,2]
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="body-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/indexable.rb, line 71</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">body</span>
+    <span class="ruby-identifier">slice</span>(<span class="ruby-value">0</span>,<span class="ruby-identifier">size</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="ends-method" class="method-detail ">
+        <a name="M000806"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">ends</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+A shorting of &#8220;ends at&#8221;, returns the last index of the
+indexable object. Returns nil if there are no elements.
+</p>
+<pre>
+  [1,2,3,4,5].ends  #=&gt; 4
+</pre>
+<p>
+This nearly equivalent to +size - 1+.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="ends-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/indexable.rb, line 192</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ends</span>
+    <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+    <span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="first-method" class="method-detail ">
+        <a name="M000800"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">first</span><span
+            class="method-args">(n=1)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns first <em>n</em> elements.
+</p>
+<pre>
+  &quot;Hello World&quot;.first(3)  #=&gt; &quot;Hel&quot;
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="first-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/indexable.rb, line 130</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">first</span>(<span class="ruby-identifier">n</span>=<span class="ruby-value">1</span>)
+    <span class="ruby-identifier">slice</span>(<span class="ruby-value">0</span>, <span class="ruby-identifier">n</span>.<span class="ruby-identifier">to_i</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="first--method" class="method-detail ">
+        <a name="M000804"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">first!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Remove and return the first element.
+</p>
+<pre>
+  a = [1,2,3]
+  a.first!      #=&gt; 1
+  a             #=&gt; [2,3]
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="first--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/indexable.rb, line 170</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">first!</span>
+    <span class="ruby-identifier">splice</span>(<span class="ruby-value">0</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="first--method" class="method-detail ">
+        <a name="M000802"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">first=</span><span
+            class="method-args">(x)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Change the first element.
+</p>
+<pre>
+  a = [&quot;a&quot;,&quot;y&quot;,&quot;z&quot;]
+  a.first = &quot;x&quot;
+  p a           #=&gt; [&quot;x&quot;,&quot;y&quot;,&quot;z&quot;]
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="first--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/indexable.rb, line 150</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">first=</span>(<span class="ruby-identifier">x</span>)
+    <span class="ruby-identifier">splice</span>(<span class="ruby-value">0</span>,<span class="ruby-identifier">x</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="foot-method" class="method-detail ">
+        <a name="M000795"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">foot</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Like <a href="Indexable.html#M000801">last</a>, returning the last element
+in an array.
+</p>
+<pre>
+  [1,2,3].foot  #=&gt; [3]
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="foot-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/indexable.rb, line 58</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">foot</span>
+    <span class="ruby-identifier">slice</span>(<span class="ruby-value">-1</span>,<span class="ruby-value">1</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="head-method" class="method-detail ">
+        <a name="M000793"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">head</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Like <a href="Indexable.html#M000800">first</a> but returns the first
+element in a new array.
+</p>
+<pre>
+  [1,2,3].head  #=&gt; [1]
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="head-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/indexable.rb, line 41</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">head</span>
+    <span class="ruby-identifier">slice</span>(<span class="ruby-value">0</span>,<span class="ruby-value">1</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="index-method" class="method-detail ">
+        <a name="M000808"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">index</span><span
+            class="method-args">(obj=nil, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns the index of the first element equal to the given object or
+satisfying the block condition.
+</p>
+<pre>
+  [1,2,3,4].index{ |e| e == 3 }  #=&gt; 2
+  [1,2,3,4].index{ |e| e &gt; 3 }   #=&gt; 3
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="index-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/indexable.rb, line 217</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">index</span>(<span class="ruby-identifier">obj</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+      <span class="ruby-identifier">size</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">yield</span>(<span class="ruby-identifier">slice</span>(<span class="ruby-identifier">i</span>))
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">size</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">obj</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">slice</span>(<span class="ruby-identifier">i</span>)
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">nil</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Indexable.html#M000810">index_of</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="index-of-method" class="method-detail method-alias">
+        <a name="M000810"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">index_of</span><span
+            class="method-args">(obj=nil, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="Indexable.html#M000808">index</a>
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="last-method" class="method-detail ">
+        <a name="M000801"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">last</span><span
+            class="method-args">(n=1)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns last <em>n</em> elements.
+</p>
+<pre>
+  &quot;Hello World&quot;.last(3)  #=&gt; &quot;rld&quot;
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="last-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/indexable.rb, line 138</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">last</span>(<span class="ruby-identifier">n</span>=<span class="ruby-value">1</span>)
+    <span class="ruby-identifier">n</span> = <span class="ruby-identifier">n</span>.<span class="ruby-identifier">to_i</span>
+    <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">self</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">n</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">size</span>
+    <span class="ruby-identifier">slice</span>(<span class="ruby-operator">-</span><span class="ruby-identifier">n</span>, <span class="ruby-identifier">n</span>) <span class="ruby-comment cmt">#slice(-n..-1)</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="last--method" class="method-detail ">
+        <a name="M000805"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">last!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Remove and return the last element.
+</p>
+<pre>
+  a = [1,2,3]
+  a.last!       #=&gt; 3
+  a             #=&gt; [1,2]
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="last--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/indexable.rb, line 180</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">last!</span>
+    <span class="ruby-identifier">splice</span>(<span class="ruby-value">-1</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="last--method" class="method-detail ">
+        <a name="M000803"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">last=</span><span
+            class="method-args">(x)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Change the last element.
+</p>
+<pre>
+  a = [1,2,5]
+  a.last = 3
+  p a           #=&gt; [1,2,3]
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="last--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/indexable.rb, line 160</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">last=</span>(<span class="ruby-identifier">x</span>)
+    <span class="ruby-identifier">splice</span>(<span class="ruby-value">-1</span>,<span class="ruby-identifier">x</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="mid-method" class="method-detail ">
+        <a name="M000797"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">mid</span><span
+            class="method-args">(offset=0)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns the middle element of an array, or the element offset from middle
+if the parameter is given. Even-sized arrays, not having an exact middle,
+return the middle-right element.
+</p>
+<pre>
+  [1,2,3,4,5].mid        #=&gt; 3
+  [1,2,3,4,5,6].mid      #=&gt; 4
+  [1,2,3,4,5,6].mid(-1)  #=&gt; 3
+  [1,2,3,4,5,6].mid(-2)  #=&gt; 2
+  [1,2,3,4,5,6].mid(1)   #=&gt; 5
+</pre>
+<p>
+In other words, If there are an even number of elements the higher-indexed
+of the two center elements is indexed as orgin (0).
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="mid-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/indexable.rb, line 89</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">mid</span>(<span class="ruby-identifier">offset</span>=<span class="ruby-value">0</span>)
+    <span class="ruby-identifier">slice</span>((<span class="ruby-identifier">size</span> <span class="ruby-operator">/</span> <span class="ruby-value">2</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">offset</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="middle-method" class="method-detail ">
+        <a name="M000798"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">middle</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns the middle element(s) of an array. Even-sized arrays, not having an
+exact middle, returns a two-element array of the two middle elements.
+</p>
+<pre>
+  [1,2,3,4,5].middle        #=&gt; 3
+  [1,2,3,4,5,6].middle      #=&gt; [3,4]
+</pre>
+<p>
+In contrast to <a href="Indexable.html#M000797">mid</a> which utilizes an
+offset.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="middle-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/indexable.rb, line 102</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">middle</span>
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">size</span> <span class="ruby-operator">%</span> <span class="ruby-value">2</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+     <span class="ruby-identifier">slice</span>( (<span class="ruby-identifier">size</span> <span class="ruby-operator">/</span> <span class="ruby-value">2</span>) <span class="ruby-operator">-</span> <span class="ruby-value">1</span>, <span class="ruby-value">2</span> )
+     <span class="ruby-comment cmt">#[slice((size / 2) - 1, 1), slice(size / 2, 1)]</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">slice</span>(<span class="ruby-identifier">size</span> <span class="ruby-operator">/</span> <span class="ruby-value">2</span>)
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="pos-method" class="method-detail ">
+        <a name="M000807"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">pos</span><span
+            class="method-args">(i)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns the positive ordinal index given a cardinal position, 1 to n or -n
+to -1.
+</p>
+<pre>
+  [1,2,3,4,5].pos(1)   #=&gt; 0
+  [1,2,3,4,5].pos(-1)  #=&gt; 4
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="pos-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/indexable.rb, line 203</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">pos</span>(<span class="ruby-identifier">i</span>)
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">size</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">i</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="range-method" class="method-detail ">
+        <a name="M000814"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">range</span><span
+            class="method-args">(a=nil,z=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns the index range between two elements. If no elements are given,
+returns the range from first to last.
+</p>
+<pre>
+  ['a','b','c','d'].range            #=&gt; 0..3
+  ['a','b','c','d'].range('b','d')   #=&gt; 1..2
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="range-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/indexable.rb, line 242</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">range</span>(<span class="ruby-identifier">a</span>=<span class="ruby-keyword kw">nil</span>,<span class="ruby-identifier">z</span>=<span class="ruby-keyword kw">nil</span>)
+    <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">a</span>
+      <span class="ruby-value">0</span><span class="ruby-operator">..</span>(<span class="ruby-identifier">size</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>)
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">index</span>(<span class="ruby-identifier">a</span>)<span class="ruby-operator">..</span><span class="ruby-identifier">index</span>(<span class="ruby-identifier">z</span>)
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="tail-method" class="method-detail ">
+        <a name="M000794"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">tail</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns an array from second element to last element.
+</p>
+<pre>
+  [1,2,3].tail  #=&gt; [2,3]
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="tail-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/indexable.rb, line 49</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">tail</span>
+    <span class="ruby-identifier">slice</span>(<span class="ruby-value">1</span>,<span class="ruby-identifier">length</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="thru-method" class="method-detail ">
+        <a name="M000799"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">thru</span><span
+            class="method-args">(from, to)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Fetch values from a start index thru an end index.
+</p>
+<pre>
+  [1,2,3,4,5].thru(0,2)  #=&gt; [1,2,3]
+  [1,2,3,4,5].thru(2,4)  #=&gt; [3,4,5]
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="thru-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/indexable.rb, line 116</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">thru</span>(<span class="ruby-identifier">from</span>, <span class="ruby-identifier">to</span>)
+    <span class="ruby-identifier">a</span> = []
+    <span class="ruby-identifier">i</span> = <span class="ruby-identifier">from</span>
+    <span class="ruby-keyword kw">while</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">to</span>
+      <span class="ruby-identifier">a</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">slice</span>(<span class="ruby-identifier">i</span>)
+      <span class="ruby-identifier">i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">a</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+
+  </div>
+
+
+  <div id="rdoc-debugging-section-dump" class="debugging-section">
+  
+    <p>Disabled; run with --debug to generate this.</p>
+  
+  </div>
+
+</main>
+</body>
+</html>
+

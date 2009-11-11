@@ -1,0 +1,29 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Apply a set of rules (regular expression matches) to the string.
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 3
+  text: "Requirements:"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: The rules must be applied in order! So we cannot use a hash because the ordering is not guaranteed! we use an array instead.
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 3
+  text: "Input:"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: The array containing rule-pairs (match, write).
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 3
+  text: "Output:"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: The rewritten string.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: George Moschovitis"
+full_name: String#rewrite
+is_singleton: false
+name: rewrite
+params: (rules)
+visibility: public

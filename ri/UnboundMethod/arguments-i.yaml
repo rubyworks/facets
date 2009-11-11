@@ -1,0 +1,18 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Resolves the arguments of the method to have an identical signiture --useful for preserving arity.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  class X\n    def foo(a, b); end\n    def bar(a, b=1); end\n  end\n\n  foo_method = X.instance_method(:foo)\n  foo_method.arguments   #=&gt; &quot;a0, a1&quot;\n\n  bar_method = X.instance_method(:bar)\n  bar_method.arguments   #=&gt; &quot;a0, *args&quot;\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: When defaults are used the arguments must end in &quot;*args&quot;.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Trans"
+full_name: UnboundMethod#arguments
+is_singleton: false
+name: arguments
+params: ()
+visibility: public

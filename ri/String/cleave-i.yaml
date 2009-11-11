@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Cleave a string. Break a string in two parts at the nearest whitespace.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Trans"
+full_name: String#cleave
+is_singleton: false
+name: cleave
+params: (threshold=nil, len=nil)
+visibility: public

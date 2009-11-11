@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Kill time limit thread, if any.
+full_name: Timer#defuse
+is_singleton: false
+name: defuse
+params: ()
+visibility: public

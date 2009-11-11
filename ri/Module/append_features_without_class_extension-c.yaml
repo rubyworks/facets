@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Alias for #append_features"
+full_name: Module::append_features_without_class_extension
+is_singleton: true
+name: append_features_without_class_extension
+params: (mod)
+visibility: public

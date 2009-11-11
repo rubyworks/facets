@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Return the directory of the file.
+full_name: Binding#__DIR__
+is_singleton: false
+name: __DIR__
+params: ()
+visibility: public

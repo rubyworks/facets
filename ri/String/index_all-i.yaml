@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Like index but returns an array of all index locations. The reuse flag allows the trailing portion of a match to be reused for subsquent matches.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  &quot;abcabcabc&quot;.index_all('a')  #=&gt; [0,3,6]\n\n  &quot;bbb&quot;.index_all('bb', false)  #=&gt; [0]\n  &quot;bbb&quot;.index_all('bb', true)   #=&gt; [0,1]\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "TODO: Culd probably be defined for Indexable in general too."
+full_name: String#index_all
+is_singleton: false
+name: index_all
+params: (s, reuse=false)
+visibility: public

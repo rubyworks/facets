@@ -1,0 +1,65 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: current
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: tomorrow
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: yesterday
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 1
+  text: Date
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: This new version of Date extension has been largely improved by porting some of the methods used by ActiveSupport. The old version already had much in common with the Active Support library, so it was decided to take it a step further in that direction for the sake of interoparability.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Hopefully most of these methods will find there way into Ruby's own standard library eventually.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "The biggest difference with ActiveSupport is the lack of many of the &quot;English-esque&quot; methods, and that we use #stamp with Date::FORMAT, instead of #to_formmated_s with Date::DATE_FORMATS. We do not override the standard #to_s method like ActiveSupport does."
+constants: 
+- !ruby/object:RDoc::RI::Constant 
+  comment: 
+  name: FORMAT
+  value: "{     :short        => \"%e %b\",     :long         => \"%B %e, %Y\",     :db           => \"%Y-%m-%d\",     :number       => \"%Y%m%d\",     :rfc822       => \"%e %b %Y\",     :default      => \"%Y-%m-%d\",     nil           => \"%Y-%m-%d\"   }"
+full_name: Date
+includes: []
+
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: advance
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: ago
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: beginning_of_day
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: change
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: days_in_month
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: days_of_month
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: in
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: midnight
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: month_name
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: since
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: stamp
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_date
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_datetime
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_time
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: tomorrow
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: xmlschema
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: yesterday
+name: Date
+superclass: Object

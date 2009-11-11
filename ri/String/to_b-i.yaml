@@ -1,0 +1,18 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Interpret common affirmative string meanings as true, otherwise false. Balnk sapce and case are ignored. The following strings that will return true:"
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  <tt>true</tt>,<tt>yes</tt>,<tt>on</tt>,<tt>t</tt>,<tt>1</tt>,<tt>y</tt>,<tt>==</tt>\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Examples:"
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  &quot;true&quot;.to_b   #=&gt; true\n  &quot;yes&quot;.to_b    #=&gt; true\n  &quot;no&quot;.to_b     #=&gt; false\n  &quot;123&quot;.to_b    #=&gt; false\n"
+full_name: String#to_b
+is_singleton: false
+name: to_b
+params: ()
+visibility: public

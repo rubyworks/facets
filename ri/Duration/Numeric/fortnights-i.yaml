@@ -1,0 +1,13 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: 
+- !ruby/object:RDoc::RI::AliasName 
+  name: fortnight
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Converts fortnights into seconds. (A fortnight is 2 weeks)
+full_name: Duration::Numeric#fortnights
+is_singleton: false
+name: fortnights
+params: ()
+visibility: public

@@ -1,0 +1,13 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: 
+- !ruby/object:RDoc::RI::AliasName 
+  name: up
+- !ruby/object:RDoc::RI::AliasName 
+  name: v
+block_params: 
+comment: 
+full_name: Semaphore#signal
+is_singleton: false
+name: signal
+params: ()
+visibility: public

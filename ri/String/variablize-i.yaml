@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Prepend an &quot;@&quot; to the beginning of a string to make a instance variable name. This also replaces non-valid characters with underscores.
+full_name: String#variablize
+is_singleton: false
+name: variablize
+params: ()
+visibility: public

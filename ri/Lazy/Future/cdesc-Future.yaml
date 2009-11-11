@@ -1,0 +1,27 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 1
+  text: Future
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Future class subclasses PromiseSafe.
+- !ruby/struct:RDoc::Markup::Flow::RULE 
+  width: 
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 1
+  text: Future
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Future class subclasses PromiseSafe.
+constants: []
+
+full_name: Lazy::Future
+includes: []
+
+instance_methods: []
+
+name: Future
+superclass: PromiseSafe

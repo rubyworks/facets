@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Inflate a deflated sting.
+full_name: Zlib::inflate
+is_singleton: true
+name: inflate
+params: (string)
+visibility: public

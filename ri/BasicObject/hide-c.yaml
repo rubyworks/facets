@@ -1,0 +1,40 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Hide the method named <tt>name</tt> in the BlankSlate class. Don't hide <tt>instance_eval</tt> or any method beginning with &quot;__&quot;.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "According to 1.9.1 it should have only these methods:"
+- !ruby/object:RDoc::Markup::Flow::LIST 
+  contents: 
+  - !ruby/struct:RDoc::Markup::Flow::LI 
+    label: "*"
+    body: "#<em>send</em>"
+  - !ruby/struct:RDoc::Markup::Flow::LI 
+    label: "*"
+    body: "#instance_eval"
+  - !ruby/struct:RDoc::Markup::Flow::LI 
+    label: "*"
+    body: "#instance_exec"
+  - !ruby/struct:RDoc::Markup::Flow::LI 
+    label: "*"
+    body: "#equal?"
+  - !ruby/struct:RDoc::Markup::Flow::LI 
+    label: "*"
+    body: "#=="
+  - !ruby/struct:RDoc::Markup::Flow::LI 
+    label: "*"
+    body: "#!"
+  - !ruby/struct:RDoc::Markup::Flow::LI 
+    label: "*"
+    body: "#!="
+  type: :BULLET
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Seems to me it should have #<em>id</em> too."
+full_name: BasicObject::hide
+is_singleton: true
+name: hide
+params: (name)
+visibility: public

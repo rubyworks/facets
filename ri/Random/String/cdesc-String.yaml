@@ -1,0 +1,29 @@
+--- !ruby/object:RDoc::RI::ModuleDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: included
+comment: []
+
+constants: []
+
+full_name: Random::String
+includes: []
+
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: at_rand
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: at_rand!
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: rand_byte
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: rand_byte!
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: rand_index
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: shuffle
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: shuffle!
+name: String

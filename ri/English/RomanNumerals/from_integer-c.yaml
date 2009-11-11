@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Converts <tt>integer</tt> to a roman numeral.
+full_name: English::RomanNumerals::from_integer
+is_singleton: true
+name: from_integer
+params: (integer)
+visibility: public

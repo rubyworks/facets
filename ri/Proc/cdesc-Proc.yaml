@@ -1,0 +1,28 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Proc
+includes: []
+
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: "*"
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: bind
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: compose
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: curry
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: partial
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_method
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_openobject
+name: Proc
+superclass: Object

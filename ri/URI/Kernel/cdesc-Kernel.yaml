@@ -1,0 +1,17 @@
+--- !ruby/object:RDoc::RI::ModuleDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: URI::Kernel
+includes: []
+
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: unuri
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: uri
+name: Kernel

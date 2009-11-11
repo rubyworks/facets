@@ -1,0 +1,10 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: TracePoint#event_map
+is_singleton: false
+name: event_map
+params: (e)
+visibility: public

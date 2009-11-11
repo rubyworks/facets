@@ -1,0 +1,22 @@
+<br/><b>Module#alias_method_chain</b><hr />
+alias_method_chain(target, feature) {|aliased_target, punctuation| ...}<br />
+<p />
+From /home/trans/Documents/programs/current/facets/doc/ri/Module/cdesc-Module.yaml<hr />
+Encapsulates the common pattern of:<p />
+<pre>  alias_method :foo_without_feature, :foo
+  alias_method :foo, :foo_with_feature
+</pre>
+With this, you simply do:<p />
+<pre>  alias_method_chain :foo, :feature
+</pre>
+And both aliases are set up for you.<p />
+Query and bang methods (foo?, foo!) keep the same punctuation:<p />
+<pre>  alias_method_chain :foo?, :feature
+</pre>
+is equivalent to<p />
+<pre>  alias_method :foo_without_feature?, :foo?
+  alias_method :foo?, :foo_with_feature?
+</pre>
+so you can safely chain foo, foo?, and foo! with the same feature.<p />
+CREDIT: Bitsweat, Rails Team<p />
+<br/><br/>

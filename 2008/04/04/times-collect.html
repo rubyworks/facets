@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+
+  <title>Ruby Facets</title>
+
+  <!-- google verification-->
+  <meta name="verify-v1" content="p14vW7GGMohDo2YKUHm0SXXTL+tzyPbKxxp35/WIQLA=" />
+
+  <meta name="DESCRIPTION"
+        content="Ruby Facets is a large collection of libraries for the Ruby programming lanaguage."/>
+
+  <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon" />
+
+  <link href="/atom.xml" rel="alternate" title="blog.facets.rubyforge.org" type="application/atom+xml" />
+
+<!--
+  <link href="/assets/styles/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <link href="/assets/styles/print.css"  media="print" rel="stylesheet" type="text/css" />
+-->
+
+  <!--[if IE]>
+      <link href="/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <![endif]-->
+
+  <link href="/assets/styles/site.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/styles/syntax.css" rel="stylesheet" type="text/css" />
+
+  <!-- <script src="/js/rdocs.js" type="text/javascript"></script> -->
+</head>
+
+</body>
+</html>
+
+<body>
+
+<div id="sidebar">
+</div>
+
+<div id="container">
+
+  <div id="menu">
+    <a href="/index.html">What's New</a> |
+    <a href="/about.html">Overview</a> |
+    <a href="/download.html">Download</a> |
+    <a href="/learn.html">Documentation</a> |
+    <a href="/endorse.html">Endorsements</a> |
+    <a href="/community.html">Community</a> |
+    <a href="/source.html">Development</a>
+    <img style="width: 20px; height: 1px;" src="/assets/images/clear.gif"/>
+  </div>
+
+  <div id="header">
+    <img id="logo" src="/assets/images/RubyFacets.png" align="middle" />
+  </div>
+
+  <!-- <div id="drop_shadow"></div> -->
+
+  <div id="content">
+    
+<div class="page">
+
+  <h2>I Spy Integer#times_collect</h2>
+
+  <p>The method #collect, or its alias #map if your prefer, is one of the most useful methods
+in Rubyland. You see it all the time. Unfortunately it isn't applicable to a number of common
+variants of iteration. One of these is Integer#times. So Facets provided just such a method.</p></p>
+
+<div class="highlight"><pre>  <span class="nb">require</span> <span class="s1">&#39;facets/integer/times_collect&#39;</span>
+
+  <span class="n">bottles</span> <span class="o">=</span> <span class="mi">99</span><span class="o">.</span><span class="n">times_collect</span> <span class="p">{</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+    <span class="s2">&quot;Bottle of Beer No. </span><span class="si">#{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="p">}</span>
+</pre>
+</div>
+
+
+<p>This is also aliased as <code>times_map</code>. But if either of these method names strikes you
+as too long then you might find this alternate (required separately) more convenient:</p></p>
+
+<div class="highlight"><pre>  <span class="nb">require</span> <span class="s1">&#39;facets/integer/of&#39;</span>
+
+  <span class="n">bottles</span> <span class="o">=</span> <span class="mi">99</span><span class="o">.</span><span class="n">of</span> <span class="p">{</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+    <span class="s2">&quot;Bottle of Beer No. </span><span class="si">#{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="p">}</span>
+</pre>
+</div>
+
+
+<p>Take one down, pass it around!</p>
+
+
+  <small>Written by Trans, 04 Apr 2008</small>
+
+  <ul class="posts">
+    
+    <li><span>Previous: 01 Jan 2008</span> &raquo; <a href="/2008/01/01/how-facets-was-born.html">How Facets Was Born</a></li>
+    
+    
+    <li><span> Next: 10 Oct 2008</span> &raquo; <a href="/2008/10/10/string-margin.html">I Spy String#margin</a></li>
+    
+  </ul>
+
+</div>
+
+
+  </div>
+
+</div>
+
+<div id="copyright">
+  <img src="/assets/images/abc1.png"/>
+
+  <br/><br/><br/>
+
+  Copyright (c) 2005-2008 Thomas Sawyer &amp; Contributors <br/><br/>
+
+  Ruby Facets was created by Thomas Sawyer (7rans), either written by hand or collected from a variety of Ruby resources.<br/>
+  The system continues to be extended and improved by a diverse cast of open-source contributors.<br/><br/>
+
+  Facets is released under the terms of the Ruby license, just like Ruby.<br/>
+  The Ruby license is a dual GPLv2 license.<br/><br/>
+
+  "Facets", "Ruby Facets" and "All Base Common" are trademarks of Thomas Sawyer. All rights reserved.
+
+  <br/><br/>
+
+  THIS SOFTWARE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR
+  IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
+  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE.
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-2883355-2";
+urchinTracker();
+</script>
+
+</body>
+</html>
+

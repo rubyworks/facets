@@ -1,0 +1,13 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: 
+- !ruby/object:RDoc::RI::AliasName 
+  name: in
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Returns a new DateTime representing the time a number of seconds since the instance time Do not use this method in combination with x.months, use months_since instead!
+full_name: DateTime#since
+is_singleton: false
+name: since
+params: (seconds)
+visibility: public

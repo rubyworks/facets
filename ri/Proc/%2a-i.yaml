@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Operator for Proc#compose and Integer#times_collect/of.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  a = lambda { |x| x + 4 }\n  b = lambda { |y| y / 2 }\n\n  (a * b).call(4)  #=&gt; 6\n  (b * a).call(4)  #=&gt; 4\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Dave"
+full_name: Proc#*
+is_singleton: false
+name: "*"
+params: (x)
+visibility: public

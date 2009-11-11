@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Like #index but returns a Range."
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  &quot;This is a test!&quot;.range('test')  #=&gt; 10..13\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Trans"
+full_name: String#range
+is_singleton: false
+name: range
+params: (s, offset=0)
+visibility: public

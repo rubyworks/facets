@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Aligns each line n spaces.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Gavin Sinclair"
+full_name: String#tab
+is_singleton: false
+name: tab
+params: (n)
+visibility: public

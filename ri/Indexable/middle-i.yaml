@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Returns the middle element(s) of an array. Even-sized arrays, not having an exact middle, returns a two-element array of the two middle elements.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  [1,2,3,4,5].middle        #=&gt; 3\n  [1,2,3,4,5,6].middle      #=&gt; [3,4]\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "In contrast to #mid which utilizes an offset."
+full_name: Indexable#middle
+is_singleton: false
+name: middle
+params: ()
+visibility: public

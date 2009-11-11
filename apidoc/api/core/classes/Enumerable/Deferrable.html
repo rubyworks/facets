@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+  <head>
+    <title>: Enumerable::Deferrable [Facets Core API]</title>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+    <link href='../../rdoc-style.css' media='screen' rel='stylesheet' type='text/css'>
+    <script type='text/javascript'>
+      //<![CDATA[
+        function popupCode(url) {
+          window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+        }
+        
+        function toggleCode(id) {
+          var code = document.getElementById(id)
+        
+          code.style.display = code.style.display != 'block' ? 'block' : 'none'
+          return true
+        }
+        
+        // Make codeblocks hidden by default
+        document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+      //]]>
+    </script>
+  </head>
+  <body class='page'>
+    <div class='class' id='wrapper'>
+      <div class='header'>
+        <h1 class='name'>
+          <span class='type'>Module</span>
+          Enumerable::Deferrable
+        </h1>
+        <ol class='paths'>
+          <li>
+            <a href="../../files/lib/core/facets/enumerable/defer_rb.html">lib/core/facets/enumerable/defer.rb</a>
+          </li>
+        </ol>
+      </div>
+      <div id='content'>
+        <div id='text'>
+          <div id='description'>
+            <p>
+            Classes which include <a href="Deferrable.html">Enumerable::Deferrable</a>
+            will get versions of map, select etc. which return a Deferred object, so
+            that they work horizontally without creating intermediate arrays.
+            </p>
+          </div>
+          <div id='method-list'>
+            <h2>Methods</h2>
+            <h3>public instance</h3>
+            <ol>
+              <li><a href="#M000440">collect</a></li>
+              <li><a href="#M000442">find_all</a></li>
+              <li><a href="#M000439">map</a></li>
+              <li><a href="#M000443">reject</a></li>
+              <li><a href="#M000441">select</a></li>
+              <li><a href="#M000445">skip</a></li>
+              <li><a href="#M000444">take</a></li>
+            </ol>
+          </div>
+          <div id='section'>
+            <div id='methods'>
+              <h2>Public instance methods</h2>
+              <div class='public-instance method' id='method-M000440'>
+                <a name='M000440'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>collect</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  Alias for <a href="Deferrable.html#M000439">map</a>
+                  </p>
+                </div>
+              </div>
+              <div class='public-instance method' id='method-M000442'>
+                <a name='M000442'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>find_all</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  Alias for <a href="Deferrable.html#M000441">select</a>
+                  </p>
+                </div>
+              </div>
+              <div class='public-instance method' id='method-M000439'>
+                <a name='M000439'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>map</span>
+                  <span class='arguments'>() {|*input| ...}</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000439-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000439-source'><span class="ruby-comment cmt"># File lib/core/facets/enumerable/defer.rb, line 51</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">map</span>&#x000A;      <span class="ruby-constant">Enumerator</span><span class="ruby-operator">::</span><span class="ruby-constant">Deferred</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">output</span><span class="ruby-operator">|</span>&#x000A;        <span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-operator">*</span><span class="ruby-identifier">input</span><span class="ruby-operator">|</span>&#x000A;          <span class="ruby-identifier">output</span>.<span class="ruby-identifier">yield</span> <span class="ruby-keyword kw">yield</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">input</span>)&#x000A;        <span class="ruby-keyword kw">end</span>&#x000A;      <span class="ruby-keyword kw">end</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-instance method' id='method-M000443'>
+                <a name='M000443'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>reject</span>
+                  <span class='arguments'>() {|*input| ...}</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000443-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000443-source'><span class="ruby-comment cmt"># File lib/core/facets/enumerable/defer.rb, line 69</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">reject</span>&#x000A;      <span class="ruby-constant">Enumerator</span><span class="ruby-operator">::</span><span class="ruby-constant">Deferred</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">output</span><span class="ruby-operator">|</span>&#x000A;        <span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-operator">*</span><span class="ruby-identifier">input</span><span class="ruby-operator">|</span>&#x000A;          <span class="ruby-identifier">output</span>.<span class="ruby-identifier">yield</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">input</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-keyword kw">yield</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">input</span>)&#x000A;        <span class="ruby-keyword kw">end</span>&#x000A;      <span class="ruby-keyword kw">end</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-instance method' id='method-M000441'>
+                <a name='M000441'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>select</span>
+                  <span class='arguments'>() {|*input| ...}</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000441-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000441-source'><span class="ruby-comment cmt"># File lib/core/facets/enumerable/defer.rb, line 60</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">select</span>&#x000A;      <span class="ruby-constant">Enumerator</span><span class="ruby-operator">::</span><span class="ruby-constant">Deferred</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">output</span><span class="ruby-operator">|</span>&#x000A;        <span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-operator">*</span><span class="ruby-identifier">input</span><span class="ruby-operator">|</span>&#x000A;          <span class="ruby-identifier">output</span>.<span class="ruby-identifier">yield</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">input</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">yield</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">input</span>)&#x000A;        <span class="ruby-keyword kw">end</span>&#x000A;      <span class="ruby-keyword kw">end</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-instance method' id='method-M000445'>
+                <a name='M000445'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>skip</span>
+                  <span class='arguments'>(n)</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  Skip the first n items in the list
+                  </p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000445-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000445-source'><span class="ruby-comment cmt"># File lib/core/facets/enumerable/defer.rb, line 92</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">skip</span>(<span class="ruby-identifier">n</span>)&#x000A;      <span class="ruby-constant">Enumerator</span><span class="ruby-operator">::</span><span class="ruby-constant">Deferred</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">output</span><span class="ruby-operator">|</span>&#x000A;        <span class="ruby-identifier">count</span> = <span class="ruby-value">0</span>&#x000A;        <span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-operator">*</span><span class="ruby-identifier">input</span><span class="ruby-operator">|</span>&#x000A;          <span class="ruby-identifier">output</span>.<span class="ruby-identifier">yield</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">input</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">count</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">n</span>&#x000A;          <span class="ruby-identifier">count</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>&#x000A;        <span class="ruby-keyword kw">end</span>&#x000A;      <span class="ruby-keyword kw">end</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-instance method' id='method-M000444'>
+                <a name='M000444'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>take</span>
+                  <span class='arguments'>(n)</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  Limit to the first n items in the list
+                  </p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000444-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000444-source'><span class="ruby-comment cmt"># File lib/core/facets/enumerable/defer.rb, line 79</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">take</span>(<span class="ruby-identifier">n</span>)&#x000A;      <span class="ruby-constant">Enumerator</span><span class="ruby-operator">::</span><span class="ruby-constant">Deferred</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">output</span><span class="ruby-operator">|</span>&#x000A;        <span class="ruby-identifier">count</span> = <span class="ruby-value">0</span>&#x000A;        <span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-operator">*</span><span class="ruby-identifier">input</span><span class="ruby-operator">|</span>&#x000A;          <span class="ruby-keyword kw">break</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">count</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">n</span>&#x000A;          <span class="ruby-identifier">output</span>.<span class="ruby-identifier">yield</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">input</span>)&#x000A;          <span class="ruby-identifier">count</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>&#x000A;        <span class="ruby-keyword kw">end</span>&#x000A;      <span class="ruby-keyword kw">end</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id='footer-push'></div>
+    </div>
+    <div id='footer'>
+      <a href="http://github.com/mislav/hanna/tree/master"><strong>Hanna</strong> RDoc template</a>
+    </div>
+  </body>
+</html>

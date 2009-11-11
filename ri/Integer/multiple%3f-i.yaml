@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Is is a multiple of a given number?
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  7.multiple?(2)  #=&gt; false\n  8.multiple?(2)  #=&gt; true\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Trans"
+full_name: Integer#multiple?
+is_singleton: false
+name: multiple?
+params: (number)
+visibility: public

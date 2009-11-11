@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Similar to #at_rand, but will return an array of randomly picked exclusive elements if given a number."
+full_name: Random::Array#pick
+is_singleton: false
+name: pick
+params: (n=nil)
+visibility: public

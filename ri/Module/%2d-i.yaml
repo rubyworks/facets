@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Subtract modules.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  TODO: Should this use all instance_methods, not just public?\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Thomas Sawyer, Robert Dober"
+full_name: Module#-
+is_singleton: false
+name: "-"
+params: (other)
+visibility: public

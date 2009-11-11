@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Translate a module name to a suitable method name.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  My::CoolClass.methodize =&gt; &quot;my__cool_class&quot;\n"
+full_name: Module#methodize
+is_singleton: false
+name: methodize
+params: ()
+visibility: public

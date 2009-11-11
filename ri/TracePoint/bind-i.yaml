@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: shorthand for binding
+full_name: TracePoint#bind
+is_singleton: false
+name: bind
+params: ()
+visibility: public

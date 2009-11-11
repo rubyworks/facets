@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+  <title>Class: Range</title>
+
+  
+    <link rel="SHORTCUT ICON" href="../assets/icon/class.png">
+  
+
+  <link type="text/css" rel="stylesheet" href="../assets/rdoc.css" media="screen" />
+  <link type="text/css" rel="stylesheet" href="../assets/highlight/styles/github.css" title="GitHub" />
+
+  <script type="text/javascript" charset="utf-8" src="../assets/jquery.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/highlight/highlight.pack.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/quicksearch.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/main.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready( function() {
+      hookHighlightSyntax();
+	    hookSourceViews();
+	    hookDebuggingToggle();
+	    hookQuickSearch();
+	    highlightLocationTarget();
+
+	    $('ul.link-list a').bind("click", highlightClickTarget);
+    });
+  </script>
+</head>
+<body class="class">
+<div id="main">
+
+  <div class="head">
+    <h1>
+      
+        <img src="../assets/icon/class.png" align="absmiddle">&nbsp;
+      
+      <a href="../index.html">Facets Core API</a>&nbsp;
+      <a href="/">Range</a>
+    </h1>
+  </div>
+
+  <div id="metadata">
+    <div id="project-metadata">
+
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li class="file"><a href="../files/lib/core/facets/range/overlap_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/range/overlap.rb">lib/core/facets/range/overlap.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/range/combine_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/range/combine.rb">lib/core/facets/range/combine.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/range/to_r_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/range/to_r.rb">lib/core/facets/range/to_r.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/range/within_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/range/within.rb">lib/core/facets/range/within.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      <!-- What about Git info, or Hg info? This seems almost silly, albeit kind of cool. -->
+      <!-- TODO: generalize this for all SCMs -->
+
+      
+    </div>
+
+    <div id="class-metadata">
+
+      <!-- Parent Class -->
+      
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        <ul>
+          
+          <!-- why was this class="link" ? -->
+          <li class="class"><a href="Object.html">Object</a></li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Namespace Contents -->
+      
+
+      <!-- Method Quickref -->
+      
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+            
+            <li class="singleton">
+              <a href="#M000843">::combine</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000842">#combine</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000830">#overlap?</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000844">#to_r</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000845">#to_range</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000847">#umbrella</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000846">#within?</a>
+            </li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Included Modules -->
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Information</h3>
+        <ul>
+        
+          <li class="file"><a href="../files/doc/README_core.html">README.core</a></li>
+        
+          <li class="file"><a href="../files/README_rdoc.html">README.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class Index
+          <span class="search-toggle"><img src="../assets/icon/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <!-- classpage.html : classes -->
+        <ul class="link-list">
+        
+          <li class="module"><a href="../classes/Lazy.html">Lazy</a></li>
+        
+          <li class="class"><a href="../classes/Lazy/Future.html">Lazy::Future</a></li>
+        
+          <li class="class"><a href="../classes/Lazy/Promise.html">Lazy::Promise</a></li>
+        
+          <li class="class"><a href="../classes/Lazy/PromiseSafe.html">Lazy::PromiseSafe</a></li>
+        
+          <li class="module"><a href="../classes/Enumerable.html">Enumerable</a></li>
+        
+          <li class="class"><a href="../classes/Object.html">Object</a></li>
+        
+          <li class="class"><a href="../classes/Array.html">Array</a></li>
+        
+          <li class="class"><a href="../classes/Binding.html">Binding</a></li>
+        
+          <li class="class"><a href="../classes/Class.html">Class</a></li>
+        
+          <li class="module"><a href="../classes/Comparable.html">Comparable</a></li>
+        
+          <li class="module"><a href="../classes/Denumerable.html">Denumerable</a></li>
+        
+          <li class="class"><a href="../classes/Denumerator.html">Denumerator</a></li>
+        
+          <li class="class"><a href="../classes/Dir.html">Dir</a></li>
+        
+          <li class="class"><a href="../classes/Enumerator.html">Enumerator</a></li>
+        
+          <li class="class"><a href="../classes/Exception.html">Exception</a></li>
+        
+          <li class="class"><a href="../classes/FalseClass.html">FalseClass</a></li>
+        
+          <li class="class"><a href="../classes/File.html">File</a></li>
+        
+          <li class="module"><a href="../classes/FileTest.html">FileTest</a></li>
+        
+          <li class="class"><a href="../classes/Float.html">Float</a></li>
+        
+          <li class="class"><a href="../classes/Functor.html">Functor</a></li>
+        
+          <li class="class"><a href="../classes/Hash.html">Hash</a></li>
+        
+          <li class="module"><a href="../classes/Indexable.html">Indexable</a></li>
+        
+          <li class="class"><a href="../classes/InstanceVariables.html">InstanceVariables</a></li>
+        
+          <li class="class"><a href="../classes/Integer.html">Integer</a></li>
+        
+          <li class="module"><a href="../classes/Kernel.html">Kernel</a></li>
+        
+          <li class="class"><a href="../classes/MatchData.html">MatchData</a></li>
+        
+          <li class="class"><a href="../classes/Module.html">Module</a></li>
+        
+          <li class="class"><a href="../classes/NilClass.html">NilClass</a></li>
+        
+          <li class="class"><a href="../classes/Numeric.html">Numeric</a></li>
+        
+          <li class="module"><a href="../classes/ObjectSpace.html">ObjectSpace</a></li>
+        
+          <li class="class"><a href="../classes/Proc.html">Proc</a></li>
+        
+          <li class="class"><a href="../classes/Range.html">Range</a></li>
+        
+          <li class="class"><a href="../classes/Regexp.html">Regexp</a></li>
+        
+          <li class="module"><a href="../classes/Stackable.html">Stackable</a></li>
+        
+          <li class="class"><a href="../classes/String.html">String</a></li>
+        
+          <li class="class"><a href="../classes/Struct.html">Struct</a></li>
+        
+          <li class="class"><a href="../classes/Symbol.html">Symbol</a></li>
+        
+          <li class="class"><a href="../classes/Time.html">Time</a></li>
+        
+          <li class="class"><a href="../classes/TrueClass.html">TrueClass</a></li>
+        
+          <li class="class"><a href="../classes/UnboundMethod.html">UnboundMethod</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+    </div>
+
+    <div id="validator-badges">
+      
+      <div style="float: right; margin-right: 5px;">
+        <a href="http://validator.w3.org/check/referer"><img src="../assets/icon/check.png" alt="[Validate]" height="16" width="16" /></a>
+      </div>
+      Generated with <a href="http://github.com/proutils/webri">WebRI Redfish</a> 1.0.0
+      <br/><br/>
+    </div>
+  </div>
+
+  <div id="documentation">
+
+    <div id="description">
+      
+        <h1>Range</h1>
+      
+
+      
+    </div>
+
+    <!-- Constants -->
+    
+
+    <!-- Attributes -->
+    
+
+    <!-- Methods -->
+    
+    <div id="public-class-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="combine-method" class="method-detail ">
+        <a name="M000843"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">combine</span><span
+            class="method-args">(*intervals)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Combine intervals.
+</p>
+<pre>
+  Range.combine(1..2, 2..4)   #=&gt; [1..4]
+  Range.combine(1..2, 3..4)   #=&gt; [1..2, 3..4]
+</pre>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="combine-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/range/combine.rb, line 23</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">combine</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">intervals</span>)
+    <span class="ruby-identifier">intype</span> = <span class="ruby-identifier">intervals</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">class</span>
+    <span class="ruby-identifier">result</span> = []
+
+    <span class="ruby-identifier">intervals</span> = <span class="ruby-identifier">intervals</span>.<span class="ruby-identifier">collect</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+      [<span class="ruby-identifier">i</span>.<span class="ruby-identifier">first</span>, <span class="ruby-identifier">i</span>.<span class="ruby-identifier">last</span>]
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-identifier">intervals</span>.<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span>(<span class="ruby-identifier">from</span>, <span class="ruby-identifier">to</span>)<span class="ruby-operator">|</span>  <span class="ruby-comment cmt">#inject([]) do |result,</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">from</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">last</span>[<span class="ruby-value">1</span>]
+        <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">from</span>, <span class="ruby-identifier">to</span>]
+      <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">to</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">last</span>[<span class="ruby-value">1</span>]
+        <span class="ruby-identifier">result</span>.<span class="ruby-identifier">last</span>[<span class="ruby-value">1</span>] = <span class="ruby-identifier">to</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-comment cmt">#result</span>
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">intype</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-constant">Range</span>
+      <span class="ruby-identifier">result</span>.<span class="ruby-identifier">collect</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> ((<span class="ruby-identifier">i</span>.<span class="ruby-identifier">first</span>)<span class="ruby-operator">..</span>(<span class="ruby-identifier">i</span>.<span class="ruby-identifier">last</span>)) }
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">result</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+    <div id="public-instance-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="combine-method" class="method-detail ">
+        <a name="M000842"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">combine</span><span
+            class="method-args">(*intervals)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Combine ranges.
+</p>
+<pre>
+  (1..2).combine(2..4)   #=&gt; [1..4]
+  (1..2).combine(3..4)   #=&gt; [1..2, 3..4]
+
+  TODO: Incorporate end-sentinal inclusion vs. exclusion.
+</pre>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="combine-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/range/combine.rb, line 12</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">combine</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">intervals</span>)
+    <span class="ruby-constant">Range</span>.<span class="ruby-identifier">combine</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">intervals</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="overlap--method" class="method-detail ">
+        <a name="M000830"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">overlap?</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Do two ranges overlap?
+</p>
+<p>
+CREDIT: Daniel Schierbeck, Brandon Keepers
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="overlap--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/range/overlap.rb, line 7</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">overlap?</span>(<span class="ruby-identifier">other</span>)
+    <span class="ruby-identifier">include?</span>(<span class="ruby-identifier">other</span>.<span class="ruby-identifier">first</span>) <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">first</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="to-r-method" class="method-detail ">
+        <a name="M000844"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">to_r</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+A thing really should know itself. This simply returns <em>self</em>.
+</p>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="to-r-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/range/to_r.rb, line 8</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_r</span>
+    <span class="ruby-keyword kw">self</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="to-range-method" class="method-detail ">
+        <a name="M000845"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">to_range</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+A thing really should know itself. This simply returns <em>self</em>.
+</p>
+<p>
+Note: This does not internally effect the Ruby interpretor such that it can
+coerce Range-like objects into a <a href="Range.html">Range</a>.
+</p>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="to-range-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/range/to_r.rb, line 21</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_range</span>
+    <span class="ruby-keyword kw">self</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="umbrella-method" class="method-detail ">
+        <a name="M000847"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">umbrella</span><span
+            class="method-args">(r)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns a two element array of the relationship between two Ranges.
+</p>
+<p>
+Diagram:
+</p>
+<pre>
+    Relationship     Returns
+
+  self |-----------|
+  r    |-----------|    [0,0]
+
+  self |-----------|
+  r     |---------|     [-1,-1]
+
+  self  |---------|
+  r    |-----------|    [1,1]
+
+  self |-----------|
+  r     |----------|    [-1,0]
+
+  self |-----------|
+  r     |-----------|   [-1,1]
+
+  etc.
+</pre>
+<p>
+Example:
+</p>
+<pre>
+  (0..3).umbrella(1..2)  #=&gt;  [-1,-1]
+</pre>
+<p>
+CREDIT: Trans, Chris Kappler
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="umbrella-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/range/within.rb, line 49</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">umbrella</span>(<span class="ruby-identifier">r</span>)
+    <span class="ruby-identifier">s</span> = <span class="ruby-identifier">first</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">first</span>
+    <span class="ruby-identifier">e</span> = <span class="ruby-identifier">r</span>.<span class="ruby-identifier">last</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">last</span>
+
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">e</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">exclude_end?</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">exclude_end?</span>
+        <span class="ruby-identifier">e</span> = <span class="ruby-identifier">r</span>.<span class="ruby-identifier">max</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">max</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">e</span> = (<span class="ruby-identifier">r</span>.<span class="ruby-identifier">exclude_end?</span> <span class="ruby-value">? </span><span class="ruby-value">0</span> <span class="ruby-operator">:</span> <span class="ruby-value">1</span>) <span class="ruby-operator">&lt;=&gt;</span> (<span class="ruby-identifier">exclude_end?</span> <span class="ruby-value">? </span><span class="ruby-value">0</span> <span class="ruby-operator">:</span> <span class="ruby-value">1</span>)
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">s</span>,<span class="ruby-identifier">e</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="within--method" class="method-detail ">
+        <a name="M000846"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">within?</span><span
+            class="method-args">(rng)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Uses the <a href="Range.html#M000847">Range#umbrella</a> method to
+determine if another <a href="Range.html">Range</a> is <em>anywhere</em>
+within this <a href="Range.html">Range</a>.
+</p>
+<pre>
+  (1..3).within?(0..4)  #=&gt; true
+</pre>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="within--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/range/within.rb, line 10</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">within?</span>(<span class="ruby-identifier">rng</span>)
+    <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">rng</span>.<span class="ruby-identifier">umbrella</span>(<span class="ruby-keyword kw">self</span>)
+    <span class="ruby-keyword kw">when</span> [<span class="ruby-value">0</span>,<span class="ruby-value">0</span>], [<span class="ruby-value">-1</span>,<span class="ruby-value">0</span>], [<span class="ruby-value">0</span>,<span class="ruby-value">-1</span>], [<span class="ruby-value">-1</span>,<span class="ruby-value">-1</span>]
+      <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">true</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+
+  </div>
+
+
+  <div id="rdoc-debugging-section-dump" class="debugging-section">
+  
+    <p>Disabled; run with --debug to generate this.</p>
+  
+  </div>
+
+</main>
+</body>
+</html>
+

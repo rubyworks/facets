@@ -1,0 +1,17 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: 
+- !ruby/object:RDoc::RI::AliasName 
+  name: succ1
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Allows #succ to take <em>n</em> step increments."
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  &quot;abc&quot;.succ      #=&gt; &quot;abd&quot;\n  &quot;abc&quot;.succ(4)   #=&gt; &quot;abg&quot;\n  &quot;abc&quot;.succ(24)  #=&gt; &quot;aca&quot;\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Trans"
+full_name: String#succ
+is_singleton: false
+name: succ
+params: (n=1)
+visibility: public

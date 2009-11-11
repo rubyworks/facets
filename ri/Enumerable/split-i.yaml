@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Split on matching pattern. Unlike #divide this does not include matching elements."
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  ['a1','a2','b1','a3','b2','a4'].split(/^b/)\n  =&gt; [['a1','a2'],['a3'],['a4']]\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Trans"
+full_name: Enumerable#split
+is_singleton: false
+name: split
+params: (pattern)
+visibility: public

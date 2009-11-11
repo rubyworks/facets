@@ -1,0 +1,10 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Hook#hooks
+is_singleton: false
+name: hooks
+params: ()
+visibility: public

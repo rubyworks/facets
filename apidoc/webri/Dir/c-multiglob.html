@@ -1,0 +1,24 @@
+<br/><b>Dir::multiglob</b><hr />
+Dir::multiglob(*patterns)<br />
+<p />
+From /home/trans/Documents/programs/current/facets/doc/ri/Dir/cdesc-Dir.yaml<hr />
+Like <tt>glob</tt> but can take multiple patterns.<p />
+<pre>  Dir.multiglob( '*.rb', '*.py' )
+</pre>
+Rather then constants for options multiglob accepts a trailing options hash of symbol keys.<p />
+<pre>  :noescape    File::FNM_NOESCAPE
+  :casefold    File::FNM_CASEFOLD
+  :pathname    File::FNM_PATHNAME
+  :dotmatch    File::FNM_DOTMATCH
+  :strict      File::FNM_PATHNAME &amp;amp;&amp;amp; File::FNM_DOTMATCH
+</pre>
+It also has an option for recurse.<p />
+<pre>  :recurse     Recurively include contents of directories.
+</pre>
+For example<p />
+<pre>  Dir.multiglob( '*', :recurse =&amp;gt; true )
+</pre>
+would have the same result as<p />
+<pre>  Dir.multiglob('*&lt;b&gt;/&lt;/b&gt;')
+</pre>
+<br/><br/>

@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Alias a module function so that the alias is also a module function. The typical #alias_method does not do this."
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  module Demo\n    module_function\n    def hello\n      &quot;Hello&quot;\n    end\n  end\n\n  Demo.hello    #=&gt; Hello\n\n  module Demo\n    alias_module_function( :hi , :hello )\n  end\n\n  Demo.hi       #=&gt; Hello\n"
+full_name: Module#alias_module_function
+is_singleton: false
+name: alias_module_function
+params: (new, old)
+visibility: private

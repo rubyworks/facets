@@ -1,0 +1,26 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Turn a symbol into a proc calling the method to which it refers.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  up = :upcase.to_proc\n  up.call(&quot;hello&quot;)  #=&gt; HELLO\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: More useful is the fact that this allows <tt>&amp;</tt> to be used to coerce Symbol into Proc.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  %w{foo bar qux}.map(&amp;:upcase)   #=&gt; [&quot;FOO&quot;,&quot;BAR&quot;,&quot;QUX&quot;]\n  [1, 2, 3].inject(&amp;:+)           #=&gt; 6\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "And other conveniences such as:"
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  %{john terry fiona}.map(&amp;:capitalize)   # -&gt; %{John Terry Fiona}\n  sum = numbers.inject(&amp;:+)\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "TODO: This will be deprecated as of Ruby 1.9, since it will become standard Ruby."
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Florian Gross (orignal), Nobuhiro Imai (current)"
+full_name: Symbol#to_proc
+is_singleton: false
+name: to_proc
+params: ()
+visibility: public

@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Returns first <em>n</em> elements.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  &quot;Hello World&quot;.first(3)  #=&gt; &quot;Hel&quot;\n"
+full_name: Indexable#first
+is_singleton: false
+name: first
+params: (n=1)
+visibility: public

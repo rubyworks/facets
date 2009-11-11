@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Deflate a string.
+full_name: Zlib::deflate
+is_singleton: true
+name: deflate
+params: (string, level=DEFAULT_COMPRESSION)
+visibility: public

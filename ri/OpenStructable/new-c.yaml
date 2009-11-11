@@ -1,0 +1,10 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: OpenStructable::new
+is_singleton: true
+name: new
+params: (hash=nil)
+visibility: public

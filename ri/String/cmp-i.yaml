@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Compare method that takes length into account. Unlike #&lt;=&gt;, this is compatible with #succ."
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  &quot;abc&quot;.cmp(&quot;abc&quot;)   #=&gt;  0\n  &quot;abcd&quot;.cmp(&quot;abc&quot;)  #=&gt;  1\n  &quot;abc&quot;.cmp(&quot;abcd&quot;)  #=&gt; -1\n  &quot;xyz&quot;.cmp(&quot;abc&quot;)   #=&gt;  1\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Peter Vanbroekhoven"
+full_name: String#cmp
+is_singleton: false
+name: cmp
+params: (other)
+visibility: public

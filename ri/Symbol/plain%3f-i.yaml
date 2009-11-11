@@ -1,0 +1,10 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Symbol#plain?
+is_singleton: false
+name: plain?
+params: ()
+visibility: public

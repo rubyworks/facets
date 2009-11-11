@@ -1,0 +1,11 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: []
+
+full_name: Duration#reset_segments
+is_singleton: false
+name: reset_segments
+params: (*segments)
+visibility: public

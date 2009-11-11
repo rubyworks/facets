@@ -1,0 +1,30 @@
+<br/><b>Module#+</b><hr />
++(other)<br />
+<p />
+From /home/trans/Documents/programs/current/facets/doc/ri/Module/cdesc-Module.yaml<hr />
+Combine modules.<p />
+<pre>  module A
+    def a; &amp;quot;a&amp;quot;; end
+  end
+
+  module B
+    def b; &amp;quot;b&amp;quot;; end
+  end
+
+  C = A + B
+
+  class X; include C; end
+
+  X.new.a    #=&amp;gt; &amp;quot;a&amp;quot;
+  X.new.b    #=&amp;gt; &amp;quot;b&amp;quot;
+</pre>
+Note that in the old version of traits.rb we cloned modules and altered their copies. Eg.<p />
+<pre>    def +(other)
+      mod1 = other.clone
+      mod2 = clone
+      mod1.module_eval{ include mod2 }
+    end
+</pre>
+Later it was realized that this thwarted the main benefit that Ruby's concept of modules has over traditional traits, inheritance.<p />
+CREDIT: Thomas Sawyer, Robert Dober<p />
+<br/><br/>

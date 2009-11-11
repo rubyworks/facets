@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Create an hidden input field through which an object can can be marshalled. This makes it very easy to pass from data betwenn requests.
+full_name: CGI#marshal_to_cgi
+is_singleton: false
+name: marshal_to_cgi
+params: (name, iobj)
+visibility: public

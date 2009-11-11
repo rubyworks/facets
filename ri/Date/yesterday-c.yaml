@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Returns a new Date representing the date 1 day ago (i.e. yesterday's date).
+full_name: Date::yesterday
+is_singleton: true
+name: yesterday
+params: ()
+visibility: public

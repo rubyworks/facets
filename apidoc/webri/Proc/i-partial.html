@@ -1,0 +1,16 @@
+<br/><b>Proc#partial</b><hr />
+partial(*args)<br />
+<p />
+From /home/trans/Documents/programs/current/facets/doc/ri/Proc/cdesc-Proc.yaml<hr />
+Convert a Proc object into new partial Proc object.<p />
+<pre>  a = proc { |a,b,c| a+b+c }
+  b = a.partial(X,2,X)
+  b[1,3] #=&amp;gt; 6
+
+  a = proc { |a,b,c| a+b+c }
+  b = a.partial(__,2,__)
+  b[1,3] #=&amp;gt; 6
+</pre>
+This method is similar to Proc#curry.<p />
+CREDT Trans<p />
+<br/><br/>

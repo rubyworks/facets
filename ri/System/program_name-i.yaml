@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Execution Environment -------------------------------------
+full_name: System#program_name
+is_singleton: false
+name: program_name
+params: ()
+visibility: public

@@ -1,0 +1,20 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Provides a margin controlled string.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  x = %Q{\n        | This\n        |   is\n        |     margin controlled!\n        }.margin\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "NOTE: This may still need a bit of tweaking."
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "TODO: describe its limits and caveats and edge cases"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Trans"
+full_name: String#margin
+is_singleton: false
+name: margin
+params: (n=0)
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Returns an Enumerator for iterating over each line of the string, void of the termining newline character, in contrast to #lines which retains it."
+full_name: String#newlines
+is_singleton: false
+name: newlines
+params: (&block)
+visibility: public

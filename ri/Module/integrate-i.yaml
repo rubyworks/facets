@@ -1,0 +1,20 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Using integrate is just like using include except the module included is a reconstruction of the one given altered by the commands given in the block.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Convenient commands available are: #rename, #redef, #remove, #nodef and #wrap. But any module method can be used."
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  module W\n    def q ; &quot;q&quot; ; end\n    def y ; &quot;y&quot; ; end\n  end\n\n  class X\n    integrate W do\n      nodef :y\n    end\n  end\n\n  x = X.new\n  x.q  #=&gt; &quot;q&quot;\n  x.y  #=&gt; missing method error\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "This is like #revisal, but #revisal only returns the reconstructred module. It does not include it."
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Trans"
+full_name: Module#integrate
+is_singleton: false
+name: integrate
+params: (mod, &block)
+visibility: public

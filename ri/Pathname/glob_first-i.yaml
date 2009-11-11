@@ -1,0 +1,11 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: []
+
+full_name: Pathname#glob_first
+is_singleton: false
+name: glob_first
+params: (match, *opts)
+visibility: public

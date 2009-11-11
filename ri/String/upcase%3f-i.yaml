@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Is the string upcase/uppercase?
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  &quot;THIS&quot;.upcase?  #=&gt; true\n  &quot;This&quot;.upcase?  #=&gt; false\n  &quot;this&quot;.upcase?  #=&gt; false\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Phil Tomson"
+full_name: String#upcase?
+is_singleton: false
+name: upcase?
+params: ()
+visibility: public

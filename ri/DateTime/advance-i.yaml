@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Uses Date to provide precise Time calculations for years, months, and days. The <tt>options</tt> parameter takes a hash with any of these keys: <tt>:years</tt>, <tt>:months</tt>, <tt>:weeks</tt>, <tt>:days</tt>, <tt>:hours</tt>, <tt>:minutes</tt>, <tt>:seconds</tt>."
+full_name: DateTime#advance
+is_singleton: false
+name: advance
+params: (options)
+visibility: public

@@ -1,0 +1,10 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: .gsub(ColoredRegexp, '')
+comment: 
+full_name: ANSICode#uncolored
+is_singleton: false
+name: uncolored
+params: (string = nil) {|.gsub(ColoredRegexp, '')| ...}
+visibility: public

@@ -1,0 +1,18 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Automatically generate sorting definitions based on attribute fields.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  include Comparable(:a, :b)\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "is equivalent to including a module containing:"
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  def &lt;=&gt;(other)\n    cmp = self.a &lt;=&gt; other.a; return cmp unless cmp == 0\n    cmp = self.b &lt;=&gt; other.b; return cmp unless cmp == 0\n    0\n  end\n"
+full_name: Module#Comparable
+is_singleton: false
+name: Comparable
+params: (*accessors)
+visibility: public

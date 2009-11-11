@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Like #to_re, but following Ruby's formal definitions, only a Regular expression type object will respond to this."
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Note that to be of much real use this should be defined in core Ruby.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Florian Gross"
+full_name: Regexp#to_regexp
+is_singleton: false
+name: to_regexp
+params: ()
+visibility: public

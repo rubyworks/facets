@@ -1,0 +1,36 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: A fuzzy matching mechanism. Returns a score from 0-1, based on the number of shared edges. To be effective, the strings must be of length 2 or greater.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  &quot;Alexsander&quot;.fuzzy_match( &quot;Aleksander&quot; )  #=&gt; 0.9\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "The way it works:"
+- !ruby/object:RDoc::Markup::Flow::LIST 
+  contents: 
+  - !ruby/struct:RDoc::Markup::Flow::LI 
+    label: "*"
+    body: Converts each string into a &quot;graph like&quot; object, with edges
+  - !ruby/struct:RDoc::Markup::Flow::VERB 
+    body: "  &quot;alexsander&quot; -&gt; [ alexsander, alexsand, alexsan ... lexsand ... san ... an, etc ]\n  &quot;aleksander&quot; -&gt; [ aleksander, aleksand ... etc. ]\n"
+  - !ruby/struct:RDoc::Markup::Flow::LI 
+    label: "*"
+    body: Perform match, then remove any subsets from this matched set (i.e. a hit on &quot;san&quot; is a subset of a hit on &quot;sander&quot;)
+  - !ruby/struct:RDoc::Markup::Flow::VERB 
+    body: "  Above example, once reduced -&gt; [ ale, sander ]\n"
+  - !ruby/struct:RDoc::Markup::Flow::LI 
+    label: "*"
+    body: See's how many of the matches remain, and calculates a score based on how many matches, their length, and compare to the length of the larger of the two words.
+  type: :BULLET
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Still a bit rough. Any suggestions for improvement are welcome.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Derek Lewis."
+full_name: String#similarity
+is_singleton: false
+name: similarity
+params: (str_in)
+visibility: public

@@ -1,0 +1,77 @@
+--- !ruby/object:RDoc::RI::ModuleDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: from_integer
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: is_roman_numeral?
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_integer
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Contains methods to convert integers to roman numeral strings and vice-versa.
+- !ruby/struct:RDoc::Markup::Flow::RULE 
+  width: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Contains methods to convert integers to roman numeral strings and vice-versa.
+constants: 
+- !ruby/object:RDoc::RI::Constant 
+  comment: []
+
+  name: LOOKUP
+  value: TABLE.invert.merge(PAIR_TABLE.invert)
+- !ruby/object:RDoc::RI::Constant 
+  comment: 
+  - !ruby/struct:RDoc::Markup::Flow::P 
+    body: The largest integer representable as a roman numerable by this module.
+  name: MAX
+  value: "3999"
+- !ruby/object:RDoc::RI::Constant 
+  comment: 
+  name: NUMBERS
+  value: "[ 1000, 500, 100,  50,  10,   5,   1 ]"
+- !ruby/object:RDoc::RI::Constant 
+  comment: 
+  name: PAIR_NUMBERS
+  value: "[ 900,  400,    90,   40,    9,    4,   1 ]"
+- !ruby/object:RDoc::RI::Constant 
+  comment: []
+
+  name: PAIR_SYMBOLS
+  value: "[ \"CM\", \"CD\", \"XC\", \"XL\", \"IX\", \"IV\", \"I\" ]"
+- !ruby/object:RDoc::RI::Constant 
+  comment: 
+  - !ruby/struct:RDoc::Markup::Flow::P 
+    body: "{"
+  - !ruby/struct:RDoc::Markup::Flow::VERB 
+    body: "  'CM' =&gt; 900,\n  'CD' =&gt; 400,\n  'XC' =&gt; 90,\n  'XL' =&gt; 40,\n  'IX' =&gt; 9,\n  'IV' =&gt; 4\n"
+  - !ruby/struct:RDoc::Markup::Flow::P 
+    body: "}"
+  name: PAIR_TABLE
+  value: Hash[*PAIR_SYMBOLS.zip(PAIR_NUMBERS).flatten]
+- !ruby/object:RDoc::RI::Constant 
+  comment: 
+  - !ruby/struct:RDoc::Markup::Flow::P 
+    body: Stolen from O'Reilly's Perl Cookbook 6.23. Regular Expression Grabbag.
+  name: REGEXP
+  value: /^M*(D?C{0,3}|C[DM])(L?X{0,3}|X[LC])(V?I{0,3}|I[VX])$/i
+- !ruby/object:RDoc::RI::Constant 
+  comment: []
+
+  name: SYMBOLS
+  value: "[  \"M\", \"D\", \"C\", \"L\", \"X\", \"V\", \"I\" ]"
+- !ruby/object:RDoc::RI::Constant 
+  comment: 
+  - !ruby/struct:RDoc::Markup::Flow::P 
+    body: Maps roman numeral digits to their integer values.
+  - !ruby/struct:RDoc::Markup::Flow::VERB 
+    body: "  {\n    'I' =&gt; 1,\n    'V' =&gt; 5,\n    'X' =&gt; 10,\n    'L' =&gt; 50,\n    'C' =&gt; 100,\n    'D' =&gt; 500,\n    'M' =&gt; 1000,\n  }\n"
+  name: TABLE
+  value: Hash[*SYMBOLS.zip(NUMBERS).flatten]
+full_name: English::RomanNumerals
+includes: []
+
+instance_methods: []
+
+name: RomanNumerals

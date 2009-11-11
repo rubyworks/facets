@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Recursively scan a directory and pass each file to the given block.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: George Moschovitis"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "TODO: If fully compatible, reimplement as alias of Find.find, or just copy and paste Find.find code here if it looks more robust."
+full_name: Dir::recurse
+is_singleton: true
+name: recurse
+params: (path='.', &block)
+visibility: public

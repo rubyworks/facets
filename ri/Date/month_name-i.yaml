@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Get the month name for this date object
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Benjamin Oakes"
+full_name: Date#month_name
+is_singleton: false
+name: month_name
+params: ()
+visibility: public

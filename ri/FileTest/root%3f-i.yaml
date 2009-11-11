@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Is the specified directory the root directory?
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Jeffrey Schwab"
+full_name: FileTest#root?
+is_singleton: false
+name: root?
+params: (dir=nil)
+visibility: public

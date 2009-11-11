@@ -1,0 +1,17 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: 
+- !ruby/object:RDoc::RI::AliasName 
+  name: alias_switcher
+- !ruby/object:RDoc::RI::AliasName 
+  name: alias_toggler
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Create aliases for flag accessors.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Trans"
+full_name: Module#alias_accessor!
+is_singleton: false
+name: alias_accessor!
+params: (*args)
+visibility: public

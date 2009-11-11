@@ -1,0 +1,20 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Format duration.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: <b>Identifiers</b>
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "    %w -- Number of weeks\n    %d -- Number of days\n    %h -- Number of hours\n    %m -- Number of minutes\n    %s -- Number of seconds\n    %t -- Total number of seconds\n    %x -- Duration#to_s\n    %% -- Literal `%' character\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: <b>Example</b>
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "    d = Duration.new(:weeks =&gt; 10, :days =&gt; 7)\n    =&gt; #&lt;Duration: 11 weeks&gt;\n    d.strftime(&quot;It's been %w weeks!&quot;)\n    =&gt; &quot;It's been 11 weeks!&quot;\n"
+full_name: Duration#strftime
+is_singleton: false
+name: strftime
+params: (fmt)
+visibility: public

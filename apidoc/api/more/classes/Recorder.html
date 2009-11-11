@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+  <head>
+    <title>: Recorder [Facets More API]</title>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+    <link href='../rdoc-style.css' media='screen' rel='stylesheet' type='text/css'>
+    <script type='text/javascript'>
+      //<![CDATA[
+        function popupCode(url) {
+          window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+        }
+        
+        function toggleCode(id) {
+          var code = document.getElementById(id)
+        
+          code.style.display = code.style.display != 'block' ? 'block' : 'none'
+          return true
+        }
+        
+        // Make codeblocks hidden by default
+        document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+      //]]>
+    </script>
+  </head>
+  <body class='page'>
+    <div class='class' id='wrapper'>
+      <div class='header'>
+        <div class='name'>
+          <span class='type'>Class</span>
+          Recorder
+        </div>
+        <ol class='paths'>
+          <li>
+            <a href="../files/lib/more/facets/recorder_rb.html">lib/more/facets/recorder.rb</a>
+          </li>
+        </ol>
+        <div class='parent'>
+          Parent:
+          <strong>Object</strong>
+        </div>
+      </div>
+      <div id='content'>
+        <div id='text'>
+          <div id='description'>
+            <h1><a href="Recorder.html">Recorder</a></h1>
+            <p>
+            <a href="Recorder.html">Recorder</a> is similar essentially a method probe.
+            It records everthing that happens to it, building an internal parse tree.
+            You can then pass a substitute object and apply the recoding to it. Or you
+            can utilize the parse tree.
+            </p>
+            <p>
+            The only limitation of <a href="Recorder.html">Recorder</a> is with special
+            operators, like if, &amp;&amp;, ||, etc. Since they are not true methods
+            they can&#8217;t be recorded. (Too bad for Ruby.)
+            </p>
+            <pre>class Z&#x000A;  def name ; 'George' ; end&#x000A;  def age ; 12 ; end&#x000A;end&#x000A;&#x000A;z = Z.new&#x000A;&#x000A;r = Recorder.new&#x000A;q = proc { |x| (x.name == 'George') &amp; (x.age &gt; 10) }&#x000A;x = q[r]&#x000A;x.__call__(z)</pre>
+            <p>
+            produces
+            </p>
+            <pre>true</pre>
+          </div>
+          <div id='method-list'>
+            <h2>Methods</h2>
+            <h3>public class</h3>
+            <ol>
+              <li><a href="#M000477">new</a></li>
+            </ol>
+            <h3>public instance</h3>
+            <ol>
+              <li><a href="#M000479">__call__</a></li>
+              <li><a href="#M000478">inspect</a></li>
+              <li><a href="#M000480">method_missing</a></li>
+            </ol>
+          </div>
+          <div id='section'>
+            <div id='methods'>
+              <h2>Public class methods</h2>
+              <div class='public-class method' id='method-M000477'>
+                <a name='M000477'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>new</span>
+                  <span class='arguments'>( msg=nil )</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000477-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000477-source'><span class="ruby-comment cmt"># File lib/more/facets/recorder.rb, line 83</span>&#x000A;  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">msg</span>=<span class="ruby-keyword kw">nil</span> )&#x000A;    <span class="ruby-ivar">@msg</span> = <span class="ruby-identifier">msg</span>&#x000A;  <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <h2>Public instance methods</h2>
+              <div class='public-instance method' id='method-M000479'>
+                <a name='M000479'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>__call__</span>
+                  <span class='arguments'>( orig )</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000479-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000479-source'><span class="ruby-comment cmt"># File lib/more/facets/recorder.rb, line 91</span>&#x000A;  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">__call__</span>( <span class="ruby-identifier">orig</span> )&#x000A;    <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">orig</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@msg</span>&#x000A;&#x000A;    <span class="ruby-identifier">sym</span>  = <span class="ruby-ivar">@msg</span>[<span class="ruby-value">0</span>]&#x000A;    <span class="ruby-identifier">args</span> = <span class="ruby-ivar">@msg</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>].<span class="ruby-identifier">collect</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">a</span><span class="ruby-operator">|</span>&#x000A;      <span class="ruby-constant">Recorder</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">a</span> <span class="ruby-value">? </span><span class="ruby-identifier">a</span>.<span class="ruby-identifier">__call__</span>(<span class="ruby-identifier">orig</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">a</span>&#x000A;    <span class="ruby-keyword kw">end</span>&#x000A;    <span class="ruby-identifier">obj</span>  = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span>&#x000A;&#x000A;    <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">__send__</span>( <span class="ruby-identifier">sym</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span> )&#x000A;  <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-instance method' id='method-M000478'>
+                <a name='M000478'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>inspect</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000478-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000478-source'><span class="ruby-comment cmt"># File lib/more/facets/recorder.rb, line 87</span>&#x000A;  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">inspect</span>&#x000A;    <span class="ruby-node">&quot;&lt;Recorder #{@msg.inspect}&gt;&quot;</span>&#x000A;  <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-instance method' id='method-M000480'>
+                <a name='M000480'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>method_missing</span>
+                  <span class='arguments'>( sym, *args, &amp;blk )</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000480-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000480-source'><span class="ruby-comment cmt"># File lib/more/facets/recorder.rb, line 103</span>&#x000A;  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">method_missing</span>( <span class="ruby-identifier">sym</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span> )&#x000A;    <span class="ruby-identifier">object_class</span>.<span class="ruby-identifier">new</span>( [ <span class="ruby-identifier">sym</span>, <span class="ruby-keyword kw">self</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span> ] )&#x000A;  <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id='footer-push'></div>
+    </div>
+    <div id='footer'>
+      <a href="http://github.com/mislav/hanna/tree/master"><strong>Hanna</strong> RDoc template</a>
+    </div>
+  </body>
+</html>

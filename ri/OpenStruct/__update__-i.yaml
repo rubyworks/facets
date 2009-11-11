@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Insert/update hash data on the fly.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  o = OpenStruct.new\n  o.ostruct_update { :a =&gt; 2 }\n  o.a  #=&gt; 2\n"
+full_name: OpenStruct#__update__
+is_singleton: false
+name: __update__
+params: (other)
+visibility: public

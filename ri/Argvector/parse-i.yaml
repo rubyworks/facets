@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Basic parser partitions the command line into options and operands. Options are converted to a hash and the two parts are returned.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  line = &quot;--trace stamp --file=VERSION&quot;\n\n  args, keys = *parse_command(line)\n\n  args #=&gt; [&quot;stamp&quot;]\n  keys #=&gt; {&quot;trace&quot;=&gt;true, &quot;file&quot;=&gt;&quot;VERSION&quot;}\n"
+full_name: Argvector#parse
+is_singleton: false
+name: parse
+params: ()
+visibility: private

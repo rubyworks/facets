@@ -1,0 +1,20 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Pad an array with a given <tt>value</tt> up to a given <tt>length</tt>.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  [0,1,2].pad(6,&quot;a&quot;)  #=&gt; [0,1,2,&quot;a&quot;,&quot;a&quot;,&quot;a&quot;]\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: If <tt>length</tt> is a negative number padding will be added to the beginning of the array.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  [0,1,2].pad(-6,&quot;a&quot;)  #=&gt; [&quot;a&quot;,&quot;a&quot;,&quot;a&quot;,0,1,2]\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Richard Laugesen"
+full_name: Array#pad
+is_singleton: false
+name: pad
+params: (len, val=nil)
+visibility: public

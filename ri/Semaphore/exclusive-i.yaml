@@ -1,0 +1,11 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: 
+- !ruby/object:RDoc::RI::AliasName 
+  name: synchronize
+block_params: ""
+comment: 
+full_name: Semaphore#exclusive
+is_singleton: false
+name: exclusive
+params: () {|| ...}
+visibility: public

@@ -1,0 +1,20 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Line wrap at width.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  puts &quot;1234567890&quot;.line_wrap(5)\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: <em>produces</em>
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  12345\n  67890\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Trans"
+full_name: String#line_wrap
+is_singleton: false
+name: line_wrap
+params: (width, tabs=4)
+visibility: public

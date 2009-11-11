@@ -1,0 +1,12 @@
+<br/><b>Tuple::cast_from_string</b><hr />
+Tuple::cast_from_string( str, &amp;yld )<br />
+<p />
+From /home/trans/Documents/programs/current/facets/doc/ri/Tuple/cdesc-Tuple.yaml<hr />
+Translates a string in the form on a set of numerical and/or alphanumerical characters separated by non-word characters (eg \W+) into a Tuple. The values of the tuple will be converted to integers if they are purely numerical.<p />
+<pre>  Tuple.cast_from_string('1.2.3a')  #=&amp;gt; [1,2,&amp;quot;3a&amp;quot;]
+</pre>
+It you would like to control the interpretation of each value as it is added to the tuple you can supply a block.<p />
+<pre>  Tuple.cast_from_string('1.2.3a'){ |v| v.upcase }  #=&amp;gt; [&amp;quot;1&amp;quot;,&amp;quot;2&amp;quot;,&amp;quot;3A&amp;quot;]
+</pre>
+This method is called by String#to_t.<p />
+<br/><br/>

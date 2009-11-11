@@ -1,0 +1,16 @@
+<br/><b>OpenStruct#instance_delegate</b><hr />
+instance_delegate()<br />
+<p />
+From /home/trans/Documents/programs/current/facets/doc/ri/OpenStruct/cdesc-OpenStruct.yaml<hr />
+Provides access to an OpenStruct's inner table.<p />
+<pre>  o = OpenStruct.new
+  o.a = 1
+  o.b = 2
+  o.instance_delegate.each { |k, v| puts &amp;quot;#{k} #{v}&amp;quot; }
+</pre>
+produces<p />
+<pre>  a 1
+  b 2
+</pre>
+<p />
+(also known as ostruct_delegate)<br/><br/>

@@ -1,0 +1,3610 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+  <title>Class: Hash</title>
+
+  
+    <link rel="SHORTCUT ICON" href="../assets/icon/class.png">
+  
+
+  <link type="text/css" rel="stylesheet" href="../assets/rdoc.css" media="screen" />
+  <link type="text/css" rel="stylesheet" href="../assets/highlight/styles/github.css" title="GitHub" />
+
+  <script type="text/javascript" charset="utf-8" src="../assets/jquery.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/highlight/highlight.pack.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/quicksearch.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/main.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready( function() {
+      hookHighlightSyntax();
+	    hookSourceViews();
+	    hookDebuggingToggle();
+	    hookQuickSearch();
+	    highlightLocationTarget();
+
+	    $('ul.link-list a').bind("click", highlightClickTarget);
+    });
+  </script>
+</head>
+<body class="class">
+<div id="main">
+
+  <div class="head">
+    <h1>
+      
+        <img src="../assets/icon/class.png" align="absmiddle">&nbsp;
+      
+      <a href="../index.html">Facets Core API</a>&nbsp;
+      <a href="/">Hash</a>
+    </h1>
+  </div>
+
+  <div id="metadata">
+    <div id="project-metadata">
+
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li class="file"><a href="../files/lib/core/facets/to_hash_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/to_hash.rb">lib/core/facets/to_hash.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/new_with_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/new_with.rb">lib/core/facets/hash/new_with.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/zipnew_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/zipnew.rb">lib/core/facets/hash/zipnew.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/dearray_values_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/dearray_values.rb">lib/core/facets/hash/dearray_values.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/update_values_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/update_values.rb">lib/core/facets/hash/update_values.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/alias_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/alias.rb">lib/core/facets/hash/alias.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/autonew_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/autonew.rb">lib/core/facets/hash/autonew.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/recursively_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/recursively.rb">lib/core/facets/hash/recursively.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/op_and_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/op_and.rb">lib/core/facets/hash/op_and.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/op_sub_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/op_sub.rb">lib/core/facets/hash/op_sub.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/except_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/except.rb">lib/core/facets/hash/except.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/keys_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/keys.rb">lib/core/facets/hash/keys.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/merge_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/merge.rb">lib/core/facets/hash/merge.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/traverse_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/traverse.rb">lib/core/facets/hash/traverse.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/op_or_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/op_or.rb">lib/core/facets/hash/op_or.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/op_mul_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/op_mul.rb">lib/core/facets/hash/op_mul.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/op_push_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/op_push.rb">lib/core/facets/hash/op_push.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/inverse_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/inverse.rb">lib/core/facets/hash/inverse.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/data_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/data.rb">lib/core/facets/hash/data.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/recursive_merge_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/recursive_merge.rb">lib/core/facets/hash/recursive_merge.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/to_proc_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/to_proc.rb">lib/core/facets/hash/to_proc.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/insert_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/insert.rb">lib/core/facets/hash/insert.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/select_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/select.rb">lib/core/facets/hash/select.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/diff_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/diff.rb">lib/core/facets/hash/diff.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/mash_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/mash.rb">lib/core/facets/hash/mash.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/collate_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/collate.rb">lib/core/facets/hash/collate.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/delete_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/delete.rb">lib/core/facets/hash/delete.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/weave_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/weave.rb">lib/core/facets/hash/weave.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/swap_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/swap.rb">lib/core/facets/hash/swap.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/to_struct_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/to_struct.rb">lib/core/facets/hash/to_struct.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/symbolize_keys_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/symbolize_keys.rb">lib/core/facets/hash/symbolize_keys.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/join_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/join.rb">lib/core/facets/hash/join.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/replace_each_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/replace_each.rb">lib/core/facets/hash/replace_each.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/group_by_value_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/group_by_value.rb">lib/core/facets/hash/group_by_value.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/slice_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/slice.rb">lib/core/facets/hash/slice.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/op_add_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/op_add.rb">lib/core/facets/hash/op_add.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/count_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/count.rb">lib/core/facets/hash/count.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/rekey_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/rekey.rb">lib/core/facets/hash/rekey.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/update_each_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/update_each.rb">lib/core/facets/hash/update_each.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/update_keys_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/update_keys.rb">lib/core/facets/hash/update_keys.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/argumentize_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/argumentize.rb">lib/core/facets/hash/argumentize.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/hash/at_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/hash/at.rb">lib/core/facets/hash/at.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/object_state_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/object_state.rb">lib/core/facets/kernel/object_state.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/blank_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/blank.rb">lib/core/facets/blank.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      <!-- What about Git info, or Hg info? This seems almost silly, albeit kind of cool. -->
+      <!-- TODO: generalize this for all SCMs -->
+
+      
+    </div>
+
+    <div id="class-metadata">
+
+      <!-- Parent Class -->
+      
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        <ul>
+          
+          <!-- why was this class="link" ? -->
+          <li class="class"><a href="Object.html">Object</a></li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Namespace Contents -->
+      
+
+      <!-- Method Quickref -->
+      
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+            
+            <li class="singleton">
+              <a href="#M000873">::autonew</a>
+            </li>
+          
+            
+            <li class="singleton">
+              <a href="#M000867">::new_with</a>
+            </li>
+          
+            
+            <li class="singleton">
+              <a href="#M000868">::zipnew</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000876">#&</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000891">#*</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000921">#+</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000877">#-</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000892">#<<</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000872">#alias!</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000927">#argumentize</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000904">#collate</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000905">#collate!</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000922">#count</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000894">#data</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000870">#dearray_singular_values</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000869">#dearray_values</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000906">#delete_unless</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000907">#delete_values</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000908">#delete_values_at</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000901">#diff</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000887">#each_with_key</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000878">#except</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000879">#except!</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000903">#graph!</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000918">#group_by_value</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000880">#has_keys?</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000883">#has_only_keys?</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000899">#insert</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000893">#inverse</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000915">#join</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000882">#keys?</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000902">#mash!</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000983">#object_state</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000884">#only_keys?</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000895">#recursive_merge</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000896">#recursive_merge!</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000874">#recursively</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000875">#recursively!</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000924">#rekey</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000925">#rekey!</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000917">#replace_each</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000881">#reverse_merge</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000885">#reverse_merge!</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000886">#reverse_update</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000900">#select!</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000919">#slice</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000920">#slice!</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000914">#stringify_keys</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000916">#stringify_keys!</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000909">#swap!</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000912">#symbolize_keys</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000913">#symbolize_keys!</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000754">#to_h</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000755">#to_hash</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000897">#to_proc</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000898">#to_proc_with_reponse</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000911">#to_struct</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000889">#traverse</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000890">#traverse!</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000923">#update_each</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000926">#update_keys</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000871">#update_values</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000910">#weave</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000888">#|</a>
+            </li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Included Modules -->
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Information</h3>
+        <ul>
+        
+          <li class="file"><a href="../files/doc/README_core.html">README.core</a></li>
+        
+          <li class="file"><a href="../files/README_rdoc.html">README.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class Index
+          <span class="search-toggle"><img src="../assets/icon/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <!-- classpage.html : classes -->
+        <ul class="link-list">
+        
+          <li class="module"><a href="../classes/Lazy.html">Lazy</a></li>
+        
+          <li class="class"><a href="../classes/Lazy/Future.html">Lazy::Future</a></li>
+        
+          <li class="class"><a href="../classes/Lazy/Promise.html">Lazy::Promise</a></li>
+        
+          <li class="class"><a href="../classes/Lazy/PromiseSafe.html">Lazy::PromiseSafe</a></li>
+        
+          <li class="module"><a href="../classes/Enumerable.html">Enumerable</a></li>
+        
+          <li class="class"><a href="../classes/Object.html">Object</a></li>
+        
+          <li class="class"><a href="../classes/Array.html">Array</a></li>
+        
+          <li class="class"><a href="../classes/Binding.html">Binding</a></li>
+        
+          <li class="class"><a href="../classes/Class.html">Class</a></li>
+        
+          <li class="module"><a href="../classes/Comparable.html">Comparable</a></li>
+        
+          <li class="module"><a href="../classes/Denumerable.html">Denumerable</a></li>
+        
+          <li class="class"><a href="../classes/Denumerator.html">Denumerator</a></li>
+        
+          <li class="class"><a href="../classes/Dir.html">Dir</a></li>
+        
+          <li class="class"><a href="../classes/Enumerator.html">Enumerator</a></li>
+        
+          <li class="class"><a href="../classes/Exception.html">Exception</a></li>
+        
+          <li class="class"><a href="../classes/FalseClass.html">FalseClass</a></li>
+        
+          <li class="class"><a href="../classes/File.html">File</a></li>
+        
+          <li class="module"><a href="../classes/FileTest.html">FileTest</a></li>
+        
+          <li class="class"><a href="../classes/Float.html">Float</a></li>
+        
+          <li class="class"><a href="../classes/Functor.html">Functor</a></li>
+        
+          <li class="class"><a href="../classes/Hash.html">Hash</a></li>
+        
+          <li class="module"><a href="../classes/Indexable.html">Indexable</a></li>
+        
+          <li class="class"><a href="../classes/InstanceVariables.html">InstanceVariables</a></li>
+        
+          <li class="class"><a href="../classes/Integer.html">Integer</a></li>
+        
+          <li class="module"><a href="../classes/Kernel.html">Kernel</a></li>
+        
+          <li class="class"><a href="../classes/MatchData.html">MatchData</a></li>
+        
+          <li class="class"><a href="../classes/Module.html">Module</a></li>
+        
+          <li class="class"><a href="../classes/NilClass.html">NilClass</a></li>
+        
+          <li class="class"><a href="../classes/Numeric.html">Numeric</a></li>
+        
+          <li class="module"><a href="../classes/ObjectSpace.html">ObjectSpace</a></li>
+        
+          <li class="class"><a href="../classes/Proc.html">Proc</a></li>
+        
+          <li class="class"><a href="../classes/Range.html">Range</a></li>
+        
+          <li class="class"><a href="../classes/Regexp.html">Regexp</a></li>
+        
+          <li class="module"><a href="../classes/Stackable.html">Stackable</a></li>
+        
+          <li class="class"><a href="../classes/String.html">String</a></li>
+        
+          <li class="class"><a href="../classes/Struct.html">Struct</a></li>
+        
+          <li class="class"><a href="../classes/Symbol.html">Symbol</a></li>
+        
+          <li class="class"><a href="../classes/Time.html">Time</a></li>
+        
+          <li class="class"><a href="../classes/TrueClass.html">TrueClass</a></li>
+        
+          <li class="class"><a href="../classes/UnboundMethod.html">UnboundMethod</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+    </div>
+
+    <div id="validator-badges">
+      
+      <div style="float: right; margin-right: 5px;">
+        <a href="http://validator.w3.org/check/referer"><img src="../assets/icon/check.png" alt="[Validate]" height="16" width="16" /></a>
+      </div>
+      Generated with <a href="http://github.com/proutils/webri">WebRI Redfish</a> 1.0.0
+      <br/><br/>
+    </div>
+  </div>
+
+  <div id="documentation">
+
+    <div id="description">
+      
+        <h1>Hash</h1>
+      
+
+      
+    </div>
+
+    <!-- Constants -->
+    
+
+    <!-- Attributes -->
+    
+
+    <!-- Methods -->
+    
+    <div id="public-class-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="autonew-method" class="method-detail ">
+        <a name="M000873"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">autonew</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <pre>
+ Hash which auto initializes it's children.
+
+  ah = Hash.autonew
+  ah['section one']['param one'] = 4
+  ah['section one']['param two'] = 5
+  ah['section one']['param three'] = 2
+  ah['section one']['param four'] = 3
+
+  p ah
+  # {&quot;section one&quot;=&gt;{&quot;param one&quot;=&gt;4, &quot;param four&quot;=&gt;3, &quot;param three&quot;=&gt;2, &quot;param two&quot;=&gt;5}}
+
+  p ah['section one'].keys
+  # [&quot;param one&quot;, &quot;param four&quot;, &quot;param three&quot;, &quot;param two&quot;]
+</pre>
+<p>
+CREDIT: Trans, Jan Molic
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="autonew-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/autonew.rb, line 19</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">autonew</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+    <span class="ruby-comment cmt">#new(*args){|a,k| a[k] = self.class::new(*args)}</span>
+    <span class="ruby-identifier">leet</span> = <span class="ruby-identifier">lambda</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">hsh</span>, <span class="ruby-identifier">key</span><span class="ruby-operator">|</span> <span class="ruby-identifier">hsh</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">new</span>( <span class="ruby-operator">&amp;</span><span class="ruby-identifier">leet</span> ) }
+    <span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>,<span class="ruby-operator">&amp;</span><span class="ruby-identifier">leet</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="new-with-method" class="method-detail ">
+        <a name="M000867"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">new_with</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Instantiate a new hash with a default value determined by the block.
+</p>
+<p>
+<a href="Hash.html#M000867">Hash.new_with</a> { [] }
+</p>
+<p>
+CREDIT: Pit Capitan
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="new-with-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/new_with.rb, line 10</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">new_with</span> <span class="ruby-comment cmt">#:yield:</span>
+    <span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">h</span>, <span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-keyword kw">yield</span> }
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="zipnew-method" class="method-detail ">
+        <a name="M000868"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">zipnew</span><span
+            class="method-args">(keys,values)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Creates a new hash from two arrays &#8212;a keys array and a values array.
+</p>
+<pre>
+  Hash.zipnew([&quot;a&quot;,&quot;b&quot;,&quot;c&quot;], [1,2,3])
+    #=&gt; { &quot;a&quot;=&gt;1, &quot;b&quot;=&gt;2, &quot;c&quot;=&gt;3 }
+</pre>
+<p>
+CREDIT: Trans, Ara T. Howard
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="zipnew-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/zipnew.rb, line 11</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">zipnew</span>(<span class="ruby-identifier">keys</span>,<span class="ruby-identifier">values</span>) <span class="ruby-comment cmt"># or some better name</span>
+    <span class="ruby-identifier">h</span> = {}
+    <span class="ruby-identifier">keys</span>.<span class="ruby-identifier">size</span>.<span class="ruby-identifier">times</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h</span>[ <span class="ruby-identifier">keys</span>[<span class="ruby-identifier">i</span>] ] = <span class="ruby-identifier">values</span>[<span class="ruby-identifier">i</span>] }
+    <span class="ruby-identifier">h</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+    <div id="public-instance-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="--method" class="method-detail ">
+        <a name="M000876"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">&amp;</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+<a href="Hash.html">Hash</a> intersection. Two hashes intersect when their
+pairs are equal.
+</p>
+<pre>
+  {:a=&gt;1,:b=&gt;2} &amp; {:a=&gt;1,:c=&gt;3}  #=&gt; {:a=&gt;1}
+</pre>
+<p>
+A hash can also be intersected with an array to intersect keys only.
+</p>
+<pre>
+  {:a=&gt;1,:b=&gt;2} &amp; [:a,:c]  #=&gt; {:a=&gt;1}
+</pre>
+<p>
+The later form is similar to pairs_at. The differ only in that pairs_at
+will return a nil value for a key not in the hash, but #&amp; will not.
+</p>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/op_and.rb, line 19</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-operator">&amp;</span>(<span class="ruby-identifier">other</span>)
+    <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">other</span>
+    <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Array</span>
+      <span class="ruby-identifier">k</span> = (<span class="ruby-identifier">keys</span> <span class="ruby-operator">&amp;</span> <span class="ruby-identifier">other</span>)
+      <span class="ruby-constant">Hash</span>[<span class="ruby-operator">*</span>(<span class="ruby-identifier">k</span>.<span class="ruby-identifier">zip</span>(<span class="ruby-identifier">values_at</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">k</span>)).<span class="ruby-identifier">flatten</span>)]
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">x</span> = (<span class="ruby-identifier">to_a</span> <span class="ruby-operator">&amp;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_a</span>).<span class="ruby-identifier">inject</span>([]) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">a</span>, <span class="ruby-identifier">kv</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">a</span>.<span class="ruby-identifier">concat</span> <span class="ruby-identifier">kv</span>; <span class="ruby-identifier">a</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-constant">Hash</span>[<span class="ruby-operator">*</span><span class="ruby-identifier">x</span>]
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="--method" class="method-detail ">
+        <a name="M000891"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">*</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Like merge operator &#8217;+&#8217; but merges in reverse order.
+</p>
+<pre>
+  h1 = { :a=&gt;1 }
+  h2 = { :a=&gt;2, :b=&gt;3 }
+
+  h1 + h2  #=&gt; { :a=&gt;2, :b=&gt;3 }
+  h1 * h2  #=&gt; { :a=&gt;1, :b=&gt;3 }
+</pre>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/op_mul.rb, line 13</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-operator">*</span>(<span class="ruby-identifier">other</span>)
+    <span class="ruby-identifier">other</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-keyword kw">self</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="--method" class="method-detail ">
+        <a name="M000921"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">+</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Operator for merge.
+</p>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/op_add.rb, line 7</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-operator">+</span>(<span class="ruby-identifier">other</span>)
+    <span class="ruby-identifier">merge</span>(<span class="ruby-identifier">other</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="--method" class="method-detail ">
+        <a name="M000877"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">-</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Operator for remove hash paris. If another hash is given the pairs are only
+removed if both key and value are equal. If an array is given then matching
+keys are removed.
+</p>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/op_sub.rb, line 9</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-operator">-</span>(<span class="ruby-identifier">other</span>)
+    <span class="ruby-identifier">h</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">dup</span>
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:to_ary</span>)
+      <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_ary</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">h</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">k</span>)
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">other</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">h</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">k</span>)
+          <span class="ruby-identifier">h</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">k</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">v</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>]
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">h</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="--method" class="method-detail ">
+        <a name="M000892"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">&lt;&lt;</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Can be used like update, or passed as two-element [key,value] array.
+</p>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/op_push.rb, line 8</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-operator">&lt;&lt;</span>(<span class="ruby-identifier">other</span>)
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:to_ary</span>)
+      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">store</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">other</span>)
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">update</span>(<span class="ruby-identifier">other</span>)
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">self</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="alias--method" class="method-detail ">
+        <a name="M000872"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">alias!</span><span
+            class="method-args">(newkey, oldkey)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Modifies the receiving <a href="Hash.html">Hash</a> so that the value
+previously referred to by <em>oldkey</em> is also referenced by
+<em>newkey</em>; <em>oldkey</em> is retained in the <a
+href="Hash.html">Hash</a>. If <em>oldkey</em> does not exist as a key in
+the <a href="Hash.html">Hash</a>, no change is effected.
+</p>
+<p>
+Returns a reference to the <a href="Hash.html">Hash</a>.
+</p>
+<pre>
+  foo = { :name=&gt;'Gavin', 'wife'=&gt;:Lisa }
+  foo.alias!('name',:name)     =&gt; { :name=&gt;'Gavin', 'name'=&gt;'Gavin', 'wife'=&gt;:Lisa }
+
+  foo = { :name=&gt;'Gavin', 'wife'=&gt;:Lisa }
+  foo.alias!('spouse','wife')  =&gt; { :name=&gt;'Gavin', 'wife'=&gt;:Lisa, 'spouse'=&gt;:Lisa }
+
+  foo = { :name=&gt;'Gavin', 'wife'=&gt;:Lisa }
+  foo.alias!('bar','foo')      =&gt; { :name=&gt;'Gavin', 'wife'=&gt;:Lisa }
+</pre>
+<p>
+Note that if the <em>oldkey</em> is reassigned, the reference will no
+longer exist, and the <em>newkey</em> will remain as it was.
+</p>
+<p>
+CREDIT: Gavin Sinclair
+</p>
+<p>
+TODO: Rename to aliaskey or something else.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="alias--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/alias.rb, line 25</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">alias!</span>(<span class="ruby-identifier">newkey</span>, <span class="ruby-identifier">oldkey</span>)
+    <span class="ruby-keyword kw">self</span>[<span class="ruby-identifier">newkey</span>] = <span class="ruby-keyword kw">self</span>[<span class="ruby-identifier">oldkey</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">oldkey</span>)
+    <span class="ruby-keyword kw">self</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="argumentize-method" class="method-detail ">
+        <a name="M000927"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">argumentize</span><span
+            class="method-args">(args_field=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Turn a hash into arguments.
+</p>
+<pre>
+  h = { :list =&gt; [1,2], :base =&gt; &quot;HI&quot; }
+  h.argumentize #=&gt; [ [], { :list =&gt; [1,2], :base =&gt; &quot;HI&quot; } ]
+  h.argumentize(:list)   #=&gt; [ [1,2], { :base =&gt; &quot;HI&quot; } ]
+  h.argumentize(:base)   #=&gt; [ [&quot;HI&quot;], { :list =&gt; [1,2] } ]
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="argumentize-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/argumentize.rb, line 10</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">argumentize</span>(<span class="ruby-identifier">args_field</span>=<span class="ruby-keyword kw">nil</span>)
+    <span class="ruby-identifier">config</span> = <span class="ruby-identifier">dup</span>
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args_field</span>
+      <span class="ruby-identifier">args</span> = [<span class="ruby-identifier">config</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">args_field</span>)].<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">compact</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">args</span> = []
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">args</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">config</span>
+    <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">args</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="collate-method" class="method-detail ">
+        <a name="M000904"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">collate</span><span
+            class="method-args">(other_hash)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Merge the values of this hash with those from another, setting all values
+to be arrays representing the values from both hashes.
+</p>
+<pre>
+  { :a=&gt;1, :b=&gt;2 }.collate :a=&gt;3, :b=&gt;4, :c=&gt;5
+  #=&gt; { :a=&gt;[1,3], :b=&gt;[2,4], :c=&gt;[5] }
+</pre>
+<p>
+CREDIT: Tilo Sloboda CREDIT: Gavin Kistner (Phrogz)
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="collate-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/collate.rb, line 12</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">collate</span>(<span class="ruby-identifier">other_hash</span>)
+    <span class="ruby-identifier">h</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-comment cmt"># Prepare, ensuring every existing key is already an Array</span>
+    <span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+        <span class="ruby-identifier">h</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">value</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">h</span>[<span class="ruby-identifier">key</span>] = [<span class="ruby-identifier">value</span>]
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># Collate with values from other_hash</span>
+    <span class="ruby-identifier">other_hash</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">key</span>]
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+          <span class="ruby-identifier">h</span>[<span class="ruby-identifier">key</span>].<span class="ruby-identifier">concat</span>(<span class="ruby-identifier">value</span>)
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-identifier">h</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">value</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+        <span class="ruby-identifier">h</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">value</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">h</span>[<span class="ruby-identifier">key</span>] = [<span class="ruby-identifier">value</span>]
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt">#each{ |key, value| value.uniq! } if options[ :uniq ]</span>
+    <span class="ruby-identifier">h</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="collate--method" class="method-detail ">
+        <a name="M000905"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">collate!</span><span
+            class="method-args">(other_hash)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+The same as <a href="Hash.html#M000904">collate</a>, but modifies the
+receiver in place.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="collate--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/collate.rb, line 42</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">collate!</span>(<span class="ruby-identifier">other_hash</span>)
+    <span class="ruby-identifier">result</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">collate</span>(<span class="ruby-identifier">other_hash</span>)
+    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">replace</span>(<span class="ruby-identifier">result</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="count-method" class="method-detail ">
+        <a name="M000922"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">count</span><span
+            class="method-args">(value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Like <a href="Enumerable.html#M001060">Enumerable#count</a>, but counts
+hash values.
+</p>
+<pre>
+  {:A=&gt;1, :B=&gt;1}.count(1) #=&gt; 2
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="count-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/count.rb, line 9</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">count</span>(<span class="ruby-identifier">value</span>)
+    <span class="ruby-identifier">values</span>.<span class="ruby-identifier">count</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="data-method" class="method-detail ">
+        <a name="M000894"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">data</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+TODO: The name of this method may change.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="data-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/data.rb, line 7</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">data</span>
+    <span class="ruby-constant">Functor</span>.<span class="ruby-identifier">new</span>() <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">op</span><span class="ruby-operator">|</span> 
+      <span class="ruby-keyword kw">self</span>[<span class="ruby-identifier">op</span>]
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="dearray-singular-values-method" class="method-detail ">
+        <a name="M000870"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">dearray_singular_values</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Any array values with one or no elements will be set to the element or nil.
+</p>
+<pre>
+  h = { :a=&gt;[1], :b=&gt;[1,2], :c=&gt;3, :d=&gt;[] }
+  h.dearray_singular_values  #=&gt; { :a=&gt;1, :b=&gt;[1,2], :c=&gt;3, :d=&gt;nil }
+</pre>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="dearray-singular-values-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/dearray_values.rb, line 32</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">dearray_singular_values</span>
+    <span class="ruby-identifier">h</span> = {}
+    <span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">v</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Array</span>
+        <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>] = (<span class="ruby-identifier">v</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">2</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">v</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">:</span> <span class="ruby-identifier">v</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">v</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">h</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="dearray-values-method" class="method-detail ">
+        <a name="M000869"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">dearray_values</span><span
+            class="method-args">(index=0)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Any array values with be replaced with the first element of the array.
+Arrays with no elements will be set to nil.
+</p>
+<pre>
+  h = { :a=&gt;[1], :b=&gt;[1,2], :c=&gt;3, :d=&gt;[] }
+  h.dearray_values  #=&gt; { :a=&gt;1, :b=&gt;1, :c=&gt;3, :d=&gt;nil }
+</pre>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="dearray-values-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/dearray_values.rb, line 11</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">dearray_values</span>(<span class="ruby-identifier">index</span>=<span class="ruby-value">0</span>)
+    <span class="ruby-identifier">h</span> = {}
+    <span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">v</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Array</span>
+        <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">v</span>[<span class="ruby-identifier">index</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">v</span>[<span class="ruby-value">-1</span>]
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">v</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">h</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="delete-unless-method" class="method-detail ">
+        <a name="M000906"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">delete_unless</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Inverse of delete_if.
+</p>
+<p>
+CREDIT: Daniel Schierbeck
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="delete-unless-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/delete.rb, line 11</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">delete_unless</span> <span class="ruby-comment cmt">#:yield:</span>
+    <span class="ruby-identifier">delete_if</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span> <span class="ruby-operator">!</span> <span class="ruby-keyword kw">yield</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span>) }
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="delete-values-method" class="method-detail ">
+        <a name="M000907"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">delete_values</span><span
+            class="method-args">(*values)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Minor modification to Ruby&#8217;s Hash#delete method allowing it to take
+multiple keys.
+</p>
+<pre>
+  hsh = { :a =&gt; 1, :b =&gt; 2 }
+  hsh.delete_values(1)
+  hsh  #=&gt; { :b =&gt; 2 }
+</pre>
+<p>
+CREDIT: Daniel Schierbeck
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="delete-values-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/delete.rb, line 24</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">delete_values</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">values</span>)
+    <span class="ruby-identifier">keys</span>.<span class="ruby-identifier">map</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span> <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">key</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">values</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">key</span>)) }
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="delete-values-at-method" class="method-detail ">
+        <a name="M000908"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">delete_values_at</span><span
+            class="method-args">(*keys, &yld)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Minor modification to Ruby&#8217;s Hash#delete method allowing it to take
+multiple keys.
+</p>
+<p>
+This works niely with hash#[] and Hash#[]= facets.
+</p>
+<pre>
+   hsh[:a, :b, :c] = 1, 2, 3
+
+   a, b, c = hsh.delete_values_at(:a, :b, :c)
+
+   [a, b, c]  #=&gt; [1, 2, 3]
+   hsh        #=&gt; {}
+</pre>
+<p>
+CREDIT: Daniel Schierbeck
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="delete-values-at-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/delete.rb, line 42</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">delete_values_at</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">keys</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">yld</span>)
+    <span class="ruby-identifier">keys</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span> <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">key</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">yld</span>) }
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="diff-method" class="method-detail ">
+        <a name="M000901"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">diff</span><span
+            class="method-args">(hash)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Difference comparison of two hashes.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="diff-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/diff.rb, line 5</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">diff</span>(<span class="ruby-identifier">hash</span>)
+    <span class="ruby-identifier">h1</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">dup</span>.<span class="ruby-identifier">delete_if</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">k</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">v</span> }
+    <span class="ruby-identifier">h2</span> = <span class="ruby-identifier">hash</span>.<span class="ruby-identifier">dup</span>.<span class="ruby-identifier">delete_if</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">k</span>) }
+    <span class="ruby-identifier">h1</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">h2</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="each-with-key-method" class="method-detail ">
+        <a name="M000887"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">each_with_key</span><span
+            class="method-args">( &yld )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Each with key is like each_pair but reverses the order the parameters to
+[value,key] instead of [key,value].
+</p>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="each-with-key-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/keys.rb, line 40</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">each_with_key</span>( <span class="ruby-operator">&amp;</span><span class="ruby-identifier">yld</span> )
+    <span class="ruby-identifier">each_pair</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">yld</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">v</span>,<span class="ruby-identifier">k</span>) }
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="except-method" class="method-detail ">
+        <a name="M000878"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">except</span><span
+            class="method-args">(*less_keys)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns a new hash less the given keys.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="except-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/except.rb, line 5</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">except</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">less_keys</span>)
+    <span class="ruby-identifier">slice</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">keys</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">less_keys</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="except--method" class="method-detail ">
+        <a name="M000879"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">except!</span><span
+            class="method-args">(*less_keys)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Replaces hash with new hash less the given keys. This returns the hash of
+keys removed.
+</p>
+<pre>
+  h = {:a=&gt;1, :b=&gt;2, :c=&gt;3}
+  h.except!(:a)  #=&gt; {:a=&gt;1}
+  h              #=&gt; {:b=&gt;2,:c=&gt;3}
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="except--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/except.rb, line 18</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">except!</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">less_keys</span>)
+      <span class="ruby-identifier">removed</span> = <span class="ruby-identifier">slice</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">less_keys</span>)
+      <span class="ruby-identifier">replace</span>(<span class="ruby-identifier">except</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">less_keys</span>))
+      <span class="ruby-identifier">removed</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="graph--method" class="method-detail method-alias">
+        <a name="M000903"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">graph!</span><span
+            class="method-args">(&yld)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="Hash.html#M000902">mash!</a>
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="group-by-value-method" class="method-detail ">
+        <a name="M000918"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">group_by_value</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Like group_by, but allows hash values to be grouped with weeding out the
+keys.
+</p>
+<pre>
+  Example:
+
+  birthdays = {...}   # Maps each person to his/her birthday.
+</pre>
+<p>
+Now I want to have the list of people that have their birthday on a
+specific date. This can be done by creating a hash first, using group_by:
+</p>
+<pre>
+  birthdays.group_by{|person, birthday| birthday}
+</pre>
+<p>
+This returns:
+</p>
+<p>
+{date=>[[person1, date], [person2, date], [person3, date]]}
+</p>
+<p>
+&#8230; which is a bit inconvient. Too many dates. I would rather like to
+have:
+</p>
+<pre>
+  {date=&gt;[person1, person2, person3]]}
+</pre>
+<p>
+This can be achieved by:
+</p>
+<pre>
+  birthdays.inject!({}){|h, (person, date)| (h[date] ||= []) &lt;&lt; person}
+</pre>
+<p>
+I&#8217;ve used this pattern just once too often, so I moved the code to <a
+href="Hash.html">Hash</a> (and <a href="Enumerable.html">Enumerable</a>,
+for associative arrays). Here&#8217;s the cleaner code:
+</p>
+<p>
+birthdays.group_by_value
+</p>
+<pre>
+  h = {&quot;A&quot;=&gt;1, &quot;B&quot;=&gt;1, &quot;C&quot;=&gt;1, &quot;D&quot;=&gt;2, &quot;E&quot;=&gt;2, &quot;F&quot;=&gt;2, &quot;G&quot;=&gt;3, &quot;H&quot;=&gt;3, &quot;I&quot;=&gt;3}
+
+  h.group_by{|k, v| v}    # ==&gt; {1=&gt;[[&quot;A&quot;, 1], [&quot;B&quot;, 1], [&quot;C&quot;, 1]], 2=&gt;[[&quot;D&quot;, 2], [&quot;E&quot;, 2], [&quot;F&quot;, 2]], 3=&gt;[[&quot;G&quot;, 3], [&quot;H&quot;, 3], [&quot;I&quot;, 3]]}
+  h.group_by_value        # ==&gt; {1=&gt;[&quot;A&quot;, &quot;B&quot;, &quot;C&quot;], 2=&gt;[&quot;D&quot;, &quot;E&quot;, &quot;F&quot;], 3=&gt;[&quot;G&quot;, &quot;H&quot;, &quot;I&quot;]}
+  h.sort.group_by_value   # ==&gt; [[1, [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;]], [2, [&quot;D&quot;, &quot;E&quot;, &quot;F&quot;]], [3, [&quot;G&quot;, &quot;H&quot;, &quot;I&quot;]]]
+</pre>
+<p>
+CREDIT: Erik Veenstra
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="group-by-value-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/group_by_value.rb, line 42</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">group_by_value</span>
+    <span class="ruby-identifier">res</span> = {}
+    <span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span> (<span class="ruby-identifier">res</span>[<span class="ruby-identifier">v</span>] <span class="ruby-operator">||=</span> []) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">k</span>}
+    <span class="ruby-identifier">res</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="has-keys--method" class="method-detail ">
+        <a name="M000880"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">has_keys?</span><span
+            class="method-args">(*check_keys)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns true or false whether the hash contains the given keys.
+</p>
+<pre>
+  h = { :a =&gt; 1, :b =&gt; 2 }
+  h.has_keys?( :a )   #=&gt; true
+  h.has_keys?( :c )   #=&gt; false
+</pre>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="has-keys--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/keys.rb, line 12</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">has_keys?</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">check_keys</span>)
+    <span class="ruby-identifier">unknown_keys</span> = <span class="ruby-identifier">check_keys</span> <span class="ruby-operator">-</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">keys</span>
+    <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">unknown_keys</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Hash.html#M000882">keys?</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="has-only-keys--method" class="method-detail ">
+        <a name="M000883"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">has_only_keys?</span><span
+            class="method-args">(*check_keys)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns true if the hash contains <em>only</em> the given keys, otherwise
+false.
+</p>
+<pre>
+  h = { :a =&gt; 1, :b =&gt; 2 }
+  h.has_only_keys?( :a, :b )   #=&gt; true
+  h.has_only_keys?( :a )       #=&gt; false
+</pre>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="has-only-keys--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/keys.rb, line 28</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">has_only_keys?</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">check_keys</span>)
+    <span class="ruby-identifier">unknown_keys</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">keys</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">check_keys</span>
+    <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">unknown_keys</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Hash.html#M000884">only_keys?</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="insert-method" class="method-detail ">
+        <a name="M000899"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">insert</span><span
+            class="method-args">(name, value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+As with store but only if the key isn&#8217;t already in the hash.
+</p>
+<p>
+TODO: Would store? be a better name?
+</p>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="insert-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/insert.rb, line 10</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">insert</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>)
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">key?</span>(<span class="ruby-identifier">name</span>)
+      <span class="ruby-keyword kw">false</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">store</span>(<span class="ruby-identifier">name</span>,<span class="ruby-identifier">value</span>)
+      <span class="ruby-keyword kw">true</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="inverse-method" class="method-detail ">
+        <a name="M000893"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">inverse</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Create a &#8220;true&#8221; inverse hash by storing mutliple values in
+Arrays.
+</p>
+<pre>
+  h = {&quot;a&quot;=&gt;3, &quot;b&quot;=&gt;3, &quot;c&quot;=&gt;3, &quot;d&quot;=&gt;2, &quot;e&quot;=&gt;9, &quot;f&quot;=&gt;3, &quot;g&quot;=&gt;9}
+
+  h.invert                #=&gt; {2=&gt;&quot;d&quot;, 3=&gt;&quot;f&quot;, 9=&gt;&quot;g&quot;}
+  h.inverse               #=&gt; {2=&gt;&quot;d&quot;, 3=&gt;[&quot;f&quot;, &quot;c&quot;, &quot;b&quot;, &quot;a&quot;], 9=&gt;[&quot;g&quot;, &quot;e&quot;]}
+  h.inverse.inverse       #=&gt; {&quot;a&quot;=&gt;3, &quot;b&quot;=&gt;3, &quot;c&quot;=&gt;3, &quot;d&quot;=&gt;2, &quot;e&quot;=&gt;9, &quot;f&quot;=&gt;3, &quot;g&quot;=&gt;9}
+  h.inverse.inverse == h  #=&gt; true
+</pre>
+<p>
+CREDIT: Tilo Sloboda
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="inverse-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/inverse.rb, line 14</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">inverse</span>
+    <span class="ruby-identifier">i</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">each_pair</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword kw">if</span> (<span class="ruby-constant">Array</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">v</span>)
+        <span class="ruby-identifier">v</span>.<span class="ruby-identifier">each</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">i</span>[<span class="ruby-identifier">x</span>] = ( <span class="ruby-identifier">i</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">x</span>) <span class="ruby-operator">?</span> [<span class="ruby-identifier">k</span>,<span class="ruby-identifier">i</span>[<span class="ruby-identifier">x</span>]].<span class="ruby-identifier">flatten</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">k</span> ) }
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">i</span>[<span class="ruby-identifier">v</span>] = ( <span class="ruby-identifier">i</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">v</span>) <span class="ruby-operator">?</span> [<span class="ruby-identifier">k</span>,<span class="ruby-identifier">i</span>[<span class="ruby-identifier">v</span>]].<span class="ruby-identifier">flatten</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">k</span> )
+      <span class="ruby-keyword kw">end</span>
+    }
+    <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">i</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="join-method" class="method-detail ">
+        <a name="M000915"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">join</span><span
+            class="method-args">(pair_divider='', elem_divider='')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Like Array#join but specialized to <a href="Hash.html">Hash</a>.
+</p>
+<p>
+CREDIT: Mauricio Fernandez
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="join-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/join.rb, line 7</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">join</span>(<span class="ruby-identifier">pair_divider</span>=<span class="ruby-value str">''</span>, <span class="ruby-identifier">elem_divider</span>=<span class="ruby-value str">''</span>)
+    <span class="ruby-identifier">s</span> = []
+    <span class="ruby-identifier">each_pair</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;#{k}#{pair_divider}#{v}&quot;</span> }
+    <span class="ruby-identifier">s</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">elem_divider</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="keys--method" class="method-detail method-alias">
+        <a name="M000882"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">keys?</span><span
+            class="method-args">(*check_keys)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="Hash.html#M000880">has_keys?</a>
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="mash--method" class="method-detail ">
+        <a name="M000902"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">mash!</span><span
+            class="method-args">(&yld)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+In place version of mash.
+</p>
+<pre>
+  NOTE: Hash#mash! is only useful for Hash. It is not generally
+        applicable to Enumerable.
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="mash--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/mash.rb, line 10</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">mash!</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">yld</span>)
+    <span class="ruby-identifier">replace</span>(<span class="ruby-identifier">mash</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">yld</span>))
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Hash.html#M000903">graph!</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="object-state-method" class="method-detail ">
+        <a name="M000983"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">object_state</span><span
+            class="method-args">(data=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="object-state-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/object_state.rb, line 43</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">object_state</span>(<span class="ruby-identifier">data</span>=<span class="ruby-keyword kw">nil</span>)
+    <span class="ruby-identifier">data</span> <span class="ruby-value">? </span><span class="ruby-identifier">replace</span>(<span class="ruby-identifier">data</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">dup</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="only-keys--method" class="method-detail method-alias">
+        <a name="M000884"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">only_keys?</span><span
+            class="method-args">(*check_keys)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="Hash.html#M000883">has_only_keys?</a>
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="recursive-merge-method" class="method-detail ">
+        <a name="M000895"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">recursive_merge</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Same as Hash#merge but recursively merges sub-hashes.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="recursive-merge-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/recursive_merge.rb, line 5</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">recursive_merge</span>(<span class="ruby-identifier">other</span>)
+    <span class="ruby-identifier">hash</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">dup</span>
+    <span class="ruby-identifier">other</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">myval</span> = <span class="ruby-keyword kw">self</span>[<span class="ruby-identifier">key</span>]
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">myval</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+        <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">myval</span>.<span class="ruby-identifier">recursive_merge</span>(<span class="ruby-identifier">value</span>)
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">value</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">hash</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="recursive-merge--method" class="method-detail ">
+        <a name="M000896"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">recursive_merge!</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Same as Hash#merge! but recursively merges sub-hashes.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="recursive-merge--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/recursive_merge.rb, line 20</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">recursive_merge!</span>(<span class="ruby-identifier">other</span>)
+    <span class="ruby-identifier">other</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">myval</span> = <span class="ruby-keyword kw">self</span>[<span class="ruby-identifier">key</span>]
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">myval</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+        <span class="ruby-identifier">myval</span>.<span class="ruby-identifier">recursive_merge!</span>(<span class="ruby-identifier">value</span>)
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-keyword kw">self</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">value</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">self</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="recursively-method" class="method-detail ">
+        <a name="M000874"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">recursively</span><span
+            class="method-args">(&block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Apply a block to hash, and recursively apply that block to each subhash.
+</p>
+<pre>
+  h = {:a=&gt;1, :b=&gt;{:b1=&gt;1, :b2=&gt;2}}
+  h.recursively{|h| h.rekey(&amp;:to_s) }
+  =&gt; {&quot;a&quot;=&gt;1, &quot;b&quot;=&gt;{&quot;b1&quot;=&gt;1, &quot;b2&quot;=&gt;2}}
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="recursively-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/recursively.rb, line 10</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">recursively</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+    <span class="ruby-identifier">h</span> = <span class="ruby-identifier">inject</span>({}) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">hash</span>, (<span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span>)<span class="ruby-operator">|</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+        <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">recursively</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">value</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">hash</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">yield</span> <span class="ruby-identifier">h</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="recursively--method" class="method-detail ">
+        <a name="M000875"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">recursively!</span><span
+            class="method-args">(&block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="recursively--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/recursively.rb, line 24</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">recursively!</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+    <span class="ruby-identifier">replace</span>(<span class="ruby-identifier">recursively</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>))
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="rekey-method" class="method-detail ">
+        <a name="M000924"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">rekey</span><span
+            class="method-args">(*args, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Rekey a hash.
+</p>
+<pre>
+  rekey()
+  rekey(to_key, from_key)
+  rekey{ |key| ... }
+</pre>
+<p>
+If no arguments or block are given, then all keys are converted to Symbols.
+</p>
+<p>
+If two keys are given, then the second key is changed to the first. You can
+think of it as <tt>alias</tt> for hash keys.
+</p>
+<pre>
+  foo = { :a=&gt;1, :b=&gt;2 }
+  foo.rekey('a',:a)       #=&gt; { 'a'=&gt;1, :b=&gt;2 }
+  foo.rekey('b',:b)       #=&gt; { 'a'=&gt;1, 'b'=&gt;2 }
+  foo.rekey('foo','bar')  #=&gt; { 'a'=&gt;1, 'b'=&gt;2 }
+</pre>
+<p>
+If a block is given, converts all keys in the <a href="Hash.html">Hash</a>
+accroding to the given block. If the block returns <tt>nil</tt> for given
+key, then that key will be left intact.
+</p>
+<pre>
+  foo = { :name=&gt;'Gavin', :wife=&gt;:Lisa }
+  foo.rekey{ |k| k.to_s }  #=&gt;  { &quot;name&quot;=&gt;&quot;Gavin&quot;, &quot;wife&quot;=&gt;:Lisa }
+  foo.inspect              #=&gt;  { :name =&gt;&quot;Gavin&quot;, :wife=&gt;:Lisa }
+</pre>
+<p>
+CREDIT: Trans, Gavin Kistner
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="rekey-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/rekey.rb, line 32</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">rekey</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+    <span class="ruby-identifier">dup</span>.<span class="ruby-identifier">rekey!</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="rekey--method" class="method-detail ">
+        <a name="M000925"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">rekey!</span><span
+            class="method-args">(*args, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Synonym for <a href="Hash.html#M000924">Hash#rekey</a>, but modifies the
+receiver in place (and returns it).
+</p>
+<pre>
+  foo = { :name=&gt;'Gavin', :wife=&gt;:Lisa }
+  foo.rekey!{ |k| k.to_s }  #=&gt;  { &quot;name&quot;=&gt;&quot;Gavin&quot;, &quot;wife&quot;=&gt;:Lisa }
+  foo.inspect               #=&gt;  { &quot;name&quot;=&gt;&quot;Gavin&quot;, &quot;wife&quot;=&gt;:Lisa }
+</pre>
+<p>
+CREDIT: Trans, Gavin Kistner
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="rekey--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/rekey.rb, line 44</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">rekey!</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+    <span class="ruby-comment cmt"># for backward comptability (TODO: DEPRECATE).</span>
+    <span class="ruby-identifier">block</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">pop</span>.<span class="ruby-identifier">to_sym</span>.<span class="ruby-identifier">to_proc</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+    <span class="ruby-comment cmt"># if no args use block.</span>
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">block</span> = <span class="ruby-identifier">lambda</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_sym</span>} <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">block</span>
+      <span class="ruby-identifier">keys</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">nk</span> = <span class="ruby-identifier">block</span>[<span class="ruby-identifier">k</span>]
+        <span class="ruby-keyword kw">self</span>[<span class="ruby-identifier">nk</span>]=<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">k</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">nk</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">&quot;3 for 2&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block</span>
+      <span class="ruby-identifier">to</span>, <span class="ruby-identifier">from</span> = <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>
+      <span class="ruby-keyword kw">self</span>[<span class="ruby-identifier">to</span>] = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">from</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">from</span>)
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">self</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="replace-each-method" class="method-detail ">
+        <a name="M000917"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">replace_each</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Same as <a href="Hash.html#M000923">update_each</a>, but deletes the key
+element first.
+</p>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="replace-each-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/replace_each.rb, line 7</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">replace_each</span>  <span class="ruby-comment cmt"># :yield:</span>
+    <span class="ruby-identifier">dup</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">k</span>)
+      <span class="ruby-identifier">update</span>(<span class="ruby-keyword kw">yield</span>(<span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span>))
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">self</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="reverse-merge-method" class="method-detail ">
+        <a name="M000881"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">reverse_merge</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Allows for reverse merging where its the keys in the calling hash that wins
+over those in the <tt>other_hash</tt>. This is particularly useful for
+initializing an incoming option hash with default values:
+</p>
+<pre>
+  def setup(options = {})
+    options.reverse_merge! :size =&gt; 25, :velocity =&gt; 10
+  end
+</pre>
+<p>
+The default :size and :velocity is only set if the <tt>options</tt> passed
+in doesn&#8217;t already have those keys set.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="reverse-merge-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/merge.rb, line 15</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">reverse_merge</span>(<span class="ruby-identifier">other</span>)
+    <span class="ruby-identifier">other</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-keyword kw">self</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="reverse-merge--method" class="method-detail ">
+        <a name="M000885"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">reverse_merge!</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Inplace form of <a href="Hash.html#M000881">reverse_merge</a>.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="reverse-merge--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/merge.rb, line 21</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">reverse_merge!</span>(<span class="ruby-identifier">other</span>)
+    <span class="ruby-identifier">replace</span>(<span class="ruby-identifier">reverse_merge</span>(<span class="ruby-identifier">other</span>))
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Hash.html#M000886">reverse_update</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="reverse-update-method" class="method-detail method-alias">
+        <a name="M000886"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">reverse_update</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="Hash.html#M000885">reverse_merge!</a>
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="select--method" class="method-detail ">
+        <a name="M000900"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">select!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+In-place version of Hash#select. The opposite of the built-in Hash#reject!.
+</p>
+<p>
+CREDIT: Gavin Sinclair, Noah Gibbs
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="select--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/select.rb, line 8</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">select!</span>
+    <span class="ruby-identifier">reject!</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">not</span> <span class="ruby-keyword kw">yield</span>(<span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span>) }
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="slice-method" class="method-detail ">
+        <a name="M000919"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">slice</span><span
+            class="method-args">(*keep_keys)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns a new hash with only the given keys.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="slice-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/slice.rb, line 9</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">slice</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">keep_keys</span>)
+      <span class="ruby-identifier">h</span> = {}
+      <span class="ruby-identifier">keep_keys</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">h</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">key</span>)
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">h</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="slice--method" class="method-detail ">
+        <a name="M000920"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">slice!</span><span
+            class="method-args">(*keep_keys)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Replaces hash with a new hash having only the given keys. This return the
+hash of keys removed.
+</p>
+<pre>
+  h = {:a=&gt;1, :b=&gt;2}
+  h.slice!(:a)  #=&gt; {:a=&gt;1}
+  h             #=&gt; {:b=&gt;2}
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="slice--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/slice.rb, line 24</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">slice!</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">keep_keys</span>)
+      <span class="ruby-identifier">removed</span> = <span class="ruby-identifier">except</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">keep_keys</span>)
+      <span class="ruby-identifier">replace</span>(<span class="ruby-identifier">slice</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">keep_keys</span>))
+      <span class="ruby-identifier">removed</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="stringify-keys-method" class="method-detail ">
+        <a name="M000914"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">stringify_keys</span><span
+            class="method-args">(&filter)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Converts all keys in the <a href="Hash.html">Hash</a> to Strings, returning
+a new <a href="Hash.html">Hash</a>. With a <tt>filter</tt> parameter,
+limits conversion to only a certain selection of keys.
+</p>
+<pre>
+  foo = { :name=&gt;'Gavin', :wife=&gt;:Lisa }
+  foo.stringify_keys    #=&gt;  { &quot;name&quot;=&gt;&quot;Gavin&quot;, &quot;wife&quot;=&gt;:Lisa }
+  foo.inspect           #=&gt;  { :name =&gt;&quot;Gavin&quot;, :wife=&gt;:Lisa }
+</pre>
+<p>
+This method is considered archaic. Use <a
+href="Hash.html#M000924">rekey</a> instead.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="stringify-keys-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/symbolize_keys.rb, line 54</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stringify_keys</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">filter</span>)
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">filter</span>
+        <span class="ruby-identifier">rekey</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">filter</span>[<span class="ruby-identifier">k</span>] <span class="ruby-operator">?</span> <span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">nil</span> }
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">rekey</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_s</span> }
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="stringify-keys--method" class="method-detail ">
+        <a name="M000916"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">stringify_keys!</span><span
+            class="method-args">(&filter)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Synonym for <a href="Hash.html#M000914">Hash#stringify_keys</a>, but
+modifies the receiver in place and returns it. With a <tt>filter</tt>
+parameter, limits conversion to only a certain selection of keys.
+</p>
+<pre>
+  foo = { :name=&gt;'Gavin', :wife=&gt;:Lisa }
+  foo.stringify_keys!    #=&gt;  { &quot;name&quot;=&gt;&quot;Gavin&quot;, &quot;wife&quot;=&gt;:Lisa }
+  foo.inspect            #=&gt;  { &quot;name&quot;=&gt;&quot;Gavin&quot;, &quot;wife&quot;=&gt;:Lisa }
+</pre>
+<p>
+This method is considered archaic. Use <a
+href="Hash.html#M000924">rekey</a> instead.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="stringify-keys--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/symbolize_keys.rb, line 73</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stringify_keys!</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">filter</span>)
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">filter</span>
+        <span class="ruby-identifier">rekey!</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">filter</span>[<span class="ruby-identifier">k</span>] <span class="ruby-operator">?</span> <span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">nil</span> }
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">rekey!</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_s</span> }
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="swap--method" class="method-detail ">
+        <a name="M000909"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">swap!</span><span
+            class="method-args">(key1, key2)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Swap the values of a pair of keys in place.
+</p>
+<pre>
+  {:a=&gt;1,:b=&gt;2}.swap!(:a,:b)  #=&gt; {:a=&gt;2,:b=&gt;1}
+</pre>
+<p>
+CREDIT: Gavin Sinclair
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="swap--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/swap.rb, line 9</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">swap!</span>(<span class="ruby-identifier">key1</span>, <span class="ruby-identifier">key2</span>)
+    <span class="ruby-identifier">tmp</span> = <span class="ruby-keyword kw">self</span>[<span class="ruby-identifier">key1</span>]
+    <span class="ruby-keyword kw">self</span>[<span class="ruby-identifier">key1</span>] = <span class="ruby-keyword kw">self</span>[<span class="ruby-identifier">key2</span>]
+    <span class="ruby-keyword kw">self</span>[<span class="ruby-identifier">key2</span>] = <span class="ruby-identifier">tmp</span>
+    <span class="ruby-keyword kw">self</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="symbolize-keys-method" class="method-detail ">
+        <a name="M000912"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">symbolize_keys</span><span
+            class="method-args">(&filter)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Converts all keys in the <a href="Hash.html">Hash</a> to Symbols, returning
+a new <a href="Hash.html">Hash</a>. With a <tt>filter</tt>, limits
+conversion to only a certain selection of keys.
+</p>
+<pre>
+  foo = { :name=&gt;'Gavin', 'wife'=&gt;:Lisa }
+  foo.symbolize_keys    #=&gt;  { :name=&gt;&quot;Gavin&quot;, :wife=&gt;:Lisa }
+  foo.inspect           #=&gt;  { &quot;name&quot; =&gt;&quot;Gavin&quot;, &quot;wife&quot;=&gt;:Lisa }
+</pre>
+<p>
+This method is considered archaic. Use <a
+href="Hash.html#M000924">rekey</a> instead.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="symbolize-keys-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/symbolize_keys.rb, line 20</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">symbolize_keys</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">filter</span>)
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">filter</span>
+        <span class="ruby-identifier">rekey</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">filter</span>[<span class="ruby-identifier">k</span>] <span class="ruby-operator">?</span> <span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_sym</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">nil</span> }
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">rekey</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_sym</span> }
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="symbolize-keys--method" class="method-detail ">
+        <a name="M000913"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">symbolize_keys!</span><span
+            class="method-args">(&filter)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Synonym for <a href="Hash.html#M000912">Hash#symbolize_keys</a>, but
+modifies the receiver in place and returns it. With a <tt>filter</tt>
+parameter, limits conversion to only a certain selection of keys.
+</p>
+<pre>
+  foo = { 'name'=&gt;'Gavin', 'wife'=&gt;:Lisa }
+  foo.symbolize_keys!    #=&gt;  { :name=&gt;&quot;Gavin&quot;, :wife=&gt;:Lisa }
+  foo.inspect            #=&gt;  { :name=&gt;&quot;Gavin&quot;, :wife=&gt;:Lisa }
+</pre>
+<p>
+This method is considered archaic. Use <a
+href="Hash.html#M000924">rekey</a> instead.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="symbolize-keys--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/symbolize_keys.rb, line 37</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">symbolize_keys!</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">filter</span>)
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">filter</span>
+        <span class="ruby-identifier">rekey!</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">filter</span>[<span class="ruby-identifier">k</span>] <span class="ruby-operator">?</span> <span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_sym</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">nil</span> }
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">rekey!</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_sym</span> }
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="to-h-method" class="method-detail ">
+        <a name="M000754"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">to_h</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Return a rehashing of <em>self</em>.
+</p>
+<pre>
+  {&quot;a&quot;=&gt;1,&quot;b&quot;=&gt;2}.to_h  #=&gt; {&quot;b&quot;=&gt;2,&quot;a&quot;=&gt;1}
+</pre>
+<p>
+CREDIT: Forian Gross
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="to-h-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/to_hash.rb, line 208</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_h</span>; <span class="ruby-identifier">rehash</span>; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="to-hash-method" class="method-detail ">
+        <a name="M000755"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">to_hash</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns <em>self</em>.
+</p>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="to-hash-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/to_hash.rb, line 214</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_hash</span>; <span class="ruby-keyword kw">self</span>; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="to-proc-method" class="method-detail ">
+        <a name="M000897"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">to_proc</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Constructs a <a href="Proc.html">Proc</a> object from a hash such that the
+parameter of the <a href="Proc.html">Proc</a> is assigned the hash keys as
+attributes.
+</p>
+<pre>
+  h = { :a =&gt; 1 }
+  p = h.to_proc
+  o = OpenStruct.new
+  p.call(o)
+  o.a  #=&gt; 1
+</pre>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="to-proc-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/to_proc.rb, line 15</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_proc</span>
+    <span class="ruby-identifier">lambda</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">o</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">ke</span> = <span class="ruby-node">&quot;#{k}=&quot;</span>
+        <span class="ruby-identifier">o</span>.<span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">ke</span>, <span class="ruby-identifier">v</span>)
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="to-proc-with-reponse-method" class="method-detail ">
+        <a name="M000898"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">to_proc_with_reponse</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+A fault-tolerent version of <a href="Hash.html#M000897">to_proc</a>.
+</p>
+<p>
+It works just like <a href="Hash.html#M000897">to_proc</a>, but the block
+will make sure# the object responds to the assignment.
+</p>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="to-proc-with-reponse-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/to_proc.rb, line 31</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_proc_with_reponse</span>
+    <span class="ruby-identifier">lambda</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">o</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">ke</span> = <span class="ruby-node">&quot;#{k}=&quot;</span>
+        <span class="ruby-identifier">o</span>.<span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">ke</span>, <span class="ruby-identifier">v</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">ke</span>)
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="to-struct-method" class="method-detail ">
+        <a name="M000911"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">to_struct</span><span
+            class="method-args">(struct_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+A method to convert a <a href="Hash.html">Hash</a> into a <a
+href="Struct.html">Struct</a>.
+</p>
+<pre>
+  h = {:name=&gt;&quot;Dan&quot;,&quot;age&quot;=&gt;33,&quot;rank&quot;=&gt;&quot;SrA&quot;,&quot;grade&quot;=&gt;&quot;E4&quot;}
+  s = h.to_struct(&quot;Foo&quot;)
+</pre>
+<p>
+TODO: Is this robust enough considerd hashes aren&#8217;t ordered?
+</p>
+<p>
+CREDIT: Daniel Berger
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="to-struct-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/to_struct.rb, line 12</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_struct</span>(<span class="ruby-identifier">struct_name</span>)
+    <span class="ruby-constant">Struct</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">struct_name</span>,<span class="ruby-operator">*</span><span class="ruby-identifier">keys</span>).<span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">values</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="traverse-method" class="method-detail ">
+        <a name="M000889"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">traverse</span><span
+            class="method-args">(&b)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns a new hash created by traversing the hash and its subhashes,
+executing the given block on the key and value. The block should return a
+2-element array of the form +[key, value]+.
+</p>
+<pre>
+  h = { &quot;A&quot;=&gt;&quot;A&quot;, &quot;B&quot;=&gt;&quot;B&quot; }
+  g = h.traverse { |k,v| [k.downcase, v] }
+  g  #=&gt; { &quot;a&quot;=&gt;&quot;A&quot;, &quot;b&quot;=&gt;&quot;B&quot; }
+</pre>
+<p>
+TODO: Contrast these to recursibely &#8212;we may not need both.
+</p>
+<p>
+TODO: Testing value to see if it is a <a href="Hash.html">Hash</a> also
+catches subclasses of <a href="Hash.html">Hash</a>.
+</p>
+<pre>
+      This is probably not the right thing to do and should catch Hashes only (?)
+</pre>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="traverse-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/traverse.rb, line 18</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">traverse</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">b</span>)
+    <span class="ruby-identifier">inject</span>({}) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">h</span>,(<span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span>)<span class="ruby-operator">|</span>
+      <span class="ruby-identifier">v</span> = ( <span class="ruby-constant">Hash</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">v</span> <span class="ruby-value">? </span><span class="ruby-identifier">v</span>.<span class="ruby-identifier">traverse</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">b</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">v</span> )
+      <span class="ruby-identifier">nk</span>, <span class="ruby-identifier">nv</span> = <span class="ruby-identifier">b</span>[<span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span>]
+      <span class="ruby-identifier">h</span>[<span class="ruby-identifier">nk</span>] = <span class="ruby-identifier">nv</span> <span class="ruby-comment cmt">#( Hash === v ? v.traverse(base,&amp;b) : nv )</span>
+      <span class="ruby-identifier">h</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="traverse--method" class="method-detail ">
+        <a name="M000890"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">traverse!</span><span
+            class="method-args">(&b)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+In place version of traverse, which traverses the hash and its subhashes,
+executing the given block on the key and value.
+</p>
+<pre>
+  h = { &quot;A&quot;=&gt;&quot;A&quot;, &quot;B&quot;=&gt;&quot;B&quot; }
+  h.traverse! { |k,v| [k.downcase, v] }
+  h  #=&gt; { &quot;a&quot;=&gt;&quot;A&quot;, &quot;b&quot;=&gt;&quot;B&quot; }
+</pre>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="traverse--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/traverse.rb, line 36</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">traverse!</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">b</span>)
+    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">replace</span>( <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">traverse</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">b</span>) )
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="update-each-method" class="method-detail ">
+        <a name="M000923"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">update_each</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Iterates through each pair and updates a the hash in place. This is
+formally equivalent to <a href="Hash.html#M000902">mash!</a> But does not
+use mash to accomplish the task. Hence <a
+href="Hash.html#M000923">update_each</a> is probably a touch faster.
+</p>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="update-each-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/update_each.rb, line 10</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">update_each</span>  <span class="ruby-comment cmt"># :yield:</span>
+    <span class="ruby-identifier">dup</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+     <span class="ruby-identifier">update</span>(<span class="ruby-keyword kw">yield</span>(<span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span>))
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">self</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="update-keys-method" class="method-detail ">
+        <a name="M000926"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">update_keys</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Iterate over hash updating just the keys.
+</p>
+<pre>
+  h = {:a=&gt;1, :b=&gt;2}
+  h.update_keys{ |k| &quot;#{k}!&quot; }
+  h  #=&gt; { &quot;a!&quot;=&gt;1, &quot;b!&quot;=&gt;2 }
+</pre>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="update-keys-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/update_keys.rb, line 11</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">update_keys</span> <span class="ruby-comment cmt">#:yield:</span>
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+      <span class="ruby-identifier">keys</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">old_key</span><span class="ruby-operator">|</span> <span class="ruby-identifier">store</span>(<span class="ruby-keyword kw">yield</span>(<span class="ruby-identifier">old_key</span>), <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">old_key</span>)) }
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">to_enum</span>(<span class="ruby-identifier">:update_keys</span>)
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="update-values-method" class="method-detail ">
+        <a name="M000871"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">update_values</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Iterate over hash updating just the values.
+</p>
+<pre>
+  h = {:a=&gt;1, :b=&gt;2}
+  h.update_values{ |v| v+1 }
+  h  #=&gt; { a:=&gt;2, :b=&gt;3 }
+</pre>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="update-values-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/update_values.rb, line 11</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">update_values</span> <span class="ruby-comment cmt">#:yield:</span>
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+      <span class="ruby-identifier">each</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">store</span>(<span class="ruby-identifier">k</span>, <span class="ruby-keyword kw">yield</span>(<span class="ruby-identifier">v</span>)) }
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">to_enum</span>(<span class="ruby-identifier">:update_values</span>)
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="weave-method" class="method-detail ">
+        <a name="M000910"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">weave</span><span
+            class="method-args">(h)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Weave is a very uniqe hash operator. I is designed to merge to complex
+hashes in according to sensible, regular pattern. The effect is akin to
+inheritance.
+</p>
+<p>
+Two hashes are weaved together to produce a new hash. The two hashes need
+to be compatible according to the following rules for each node:
+</p>
+<pre>
+  &lt;tt&gt;
+  hash,   hash    =&gt; hash (recursive +)
+  hash,   array   =&gt; error
+  hash,   value   =&gt; error
+  array,  hash    =&gt; error
+  array,  array   =&gt; array + array
+  array,  value   =&gt; array &lt;&lt; value
+  value,  hash    =&gt; error
+  value,  array   =&gt; array.unshift(valueB)
+  value1, value2  =&gt; value2
+  &lt;/tt&gt;
+</pre>
+<p>
+Here is a basic example:
+</p>
+<pre>
+  h1 = { :a =&gt; 1, :b =&gt; [ 1 ], :c =&gt; { :x =&gt; 1 } }
+  =&gt; {:b=&gt;[1], :c=&gt;{:x=&gt;1}, :a=&gt;1}
+
+  h2 = { :a =&gt; 2, :b =&gt; [ 2 ], :c =&gt; { :x =&gt; 2 } }
+  =&gt; {:b=&gt;[2], :c=&gt;{:x=&gt;2}, :a=&gt;2}
+
+  h1.weave(h2)
+  =&gt; {:b=&gt;[1, 2], :c=&gt;{:x=&gt;2}, :a=&gt;2}
+</pre>
+<p>
+Weave follows the most expected pattern of unifying two complex hashes. It
+is especially useful for implementing overridable configuration schemes.
+</p>
+<p>
+CREDIT: Thomas Sawyer
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="weave-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/weave.rb, line 40</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">weave</span>(<span class="ruby-identifier">h</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">&quot;Hash expected&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">h</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Hash</span>)
+    <span class="ruby-identifier">s</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">h</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">node</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">node_is_hash</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Hash</span>)
+      <span class="ruby-identifier">node_is_array</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Array</span>)
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">k</span>)
+        <span class="ruby-identifier">self_node_is_hash</span> = <span class="ruby-identifier">s</span>[<span class="ruby-identifier">k</span>].<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Hash</span>)
+        <span class="ruby-identifier">self_node_is_array</span> = <span class="ruby-identifier">s</span>[<span class="ruby-identifier">k</span>].<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Array</span>)
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">self_node_is_hash</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">node_is_hash</span>
+            <span class="ruby-identifier">s</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">s</span>[<span class="ruby-identifier">k</span>].<span class="ruby-identifier">weave</span>(<span class="ruby-identifier">node</span>)
+          <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">node_is_array</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">'Incompatible hash addition'</span> <span class="ruby-comment cmt">#self[k] = node</span>
+          <span class="ruby-keyword kw">else</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">'Incompatible hash addition'</span> <span class="ruby-comment cmt">#self[k] = node</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">self_node_is_array</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">node_is_hash</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">'Incompatible hash addition'</span> <span class="ruby-comment cmt">#self[k] = node</span>
+          <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">node_is_array</span>
+            <span class="ruby-identifier">s</span>[<span class="ruby-identifier">k</span>] <span class="ruby-operator">+=</span> <span class="ruby-identifier">node</span>
+          <span class="ruby-keyword kw">else</span>
+            <span class="ruby-identifier">s</span>[<span class="ruby-identifier">k</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">node</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">node_is_hash</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">'Incompatible hash addition'</span> <span class="ruby-comment cmt">#self[k] = node</span>
+          <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">node_is_array</span>
+            <span class="ruby-identifier">s</span>[<span class="ruby-identifier">k</span>].<span class="ruby-identifier">unshift</span>( <span class="ruby-identifier">node</span> )
+          <span class="ruby-keyword kw">else</span>
+            <span class="ruby-identifier">s</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">node</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">s</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">node</span>
+      <span class="ruby-keyword kw">end</span>
+    }
+    <span class="ruby-identifier">s</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="--method" class="method-detail ">
+        <a name="M000888"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">|</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Operator for <a href="Hash.html#M000881">reverse_merge</a>.
+</p>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/hash/op_or.rb, line 7</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-operator">|</span>(<span class="ruby-identifier">other</span>)
+    <span class="ruby-identifier">other</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-keyword kw">self</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+
+  </div>
+
+
+  <div id="rdoc-debugging-section-dump" class="debugging-section">
+  
+    <p>Disabled; run with --debug to generate this.</p>
+  
+  </div>
+
+</main>
+</body>
+</html>
+

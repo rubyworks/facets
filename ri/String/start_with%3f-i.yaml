@@ -1,0 +1,17 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: 
+- !ruby/object:RDoc::RI::AliasName 
+  name: starts_with?
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Does a string start with the given prefix?
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  &quot;hello&quot;.start_with?(&quot;he&quot;)    #=&gt; true\n  &quot;hello&quot;.start_with?(&quot;to&quot;)    #=&gt; false\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Lucas Carlson, Blaine Cook"
+full_name: String#start_with?
+is_singleton: false
+name: start_with?
+params: (prefix)
+visibility: public

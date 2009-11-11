@@ -1,0 +1,9 @@
+<br/><b>Array#to_h_flat</b><hr />
+to_h_flat()<br />
+<p />
+From /home/trans/Documents/programs/current/facets/doc/ri/Array/cdesc-Array.yaml<hr />
+This is equivalent to Hash[*array.flatten], but it will pad the array with a <tt>nil</tt> object if there are not an even number of elements.<p />
+<pre>  a = [:a,1,[:b,2,:c]]
+  a.to_h_flat  #=&amp;gt; { :a=&amp;gt;1, :b=&amp;gt;2, :c=&amp;gt;nil }
+</pre>
+<br/><br/>

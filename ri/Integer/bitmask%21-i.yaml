@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Alias for #bitmask"
+full_name: Integer#bitmask!
+is_singleton: false
+name: bitmask!
+params: (mask)
+visibility: public

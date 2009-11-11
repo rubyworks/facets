@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Is a given class or module an ancestor of this class or module?
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: " class X ; end\n class Y &lt; X ; end\n\n Y.is?(X)  #=&gt; true\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Trans"
+full_name: Module#is?
+is_singleton: false
+name: is?
+params: (base)
+visibility: public

@@ -1,0 +1,19 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: 
+- !ruby/object:RDoc::RI::AliasName 
+  name: ostruct_delegate
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Provides access to an OpenStruct's inner table.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  o = OpenStruct.new\n  o.a = 1\n  o.b = 2\n  o.instance_delegate.each { |k, v| puts &quot;#{k} #{v}&quot; }\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: produces
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  a 1\n  b 2\n"
+full_name: OpenStruct#instance_delegate
+is_singleton: false
+name: instance_delegate
+params: ()
+visibility: public

@@ -1,0 +1,53 @@
+html, body  {
+  height:100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  text-align: left;
+  position: relative;
+}
+
+body { font: normal 12px sans-serif, arial, tahoma, helvetica; background: #fff; }
+
+div { margin: 0; padding: 0; }
+
+pre { font-family: monospace; }
+
+p { padding: 5px 0; }
+
+/* HEADER */
+
+#header { width: 100%; background: white; height: 100px; }
+#header h1 { margin: 0; padding: 0; font-size: 64px; }
+#header h2 { margin: 0; padding: 0; font-size: 10pt; font-weight: bold; }
+#header .small { font-size: 10pt; }
+
+.small { font-size: 10pt; }
+
+/* TREE */
+
+ul { cursor: pointer; cursor: hand; padding-left: 10px; }
+li { margin-left: 10px; }
+
+#tree { padding: 10px; background: white; float: left; width: 250px; overflow: scroll; border: 1px solid #ccc; }
+
+.trigger { cursor: pointer; cursor: hand; }
+.branch { display: none; }
+.leaf { color: #cc0000; }
+.meta_leaf { color: #00cc00; font-weight: bold; }
+.link { font-weight: bold; }
+.link:hover{ text-decoration: underline; }
+
+/* MAIN */
+
+#main {
+  margin-left: 260px;
+  padding: 10px 15px; /* bottom padding for footer */
+  border: 1px solid #ccc;
+  background: white;
+  overflow: scroll;
+}
+
+.ad { float: right; padding: 20px 20px 0 0; }
+
+

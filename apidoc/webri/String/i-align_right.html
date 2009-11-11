@@ -1,0 +1,21 @@
+<br/><b>String#align_right</b><hr />
+align_right(n, sep=&quot;\n&quot;, c=' ')<br />
+<p />
+From /home/trans/Documents/programs/current/facets/doc/ri/String/cdesc-String.yaml<hr />
+Align a string to the right.<p />
+The default alignment separation is a new line (&quot;\n&quot;). This can be changed as can be the padding string which defaults to a single space (' ').<p />
+<pre>  s = &amp;lt;&amp;lt;-EOS
+  This is a test
+    and
+    so on
+  EOS
+
+  puts s.align_right(14)
+</pre>
+<i>produces</i><p />
+<pre>  This is a test
+             and
+           so on
+</pre>
+CREDIT: Trans<p />
+<br/><br/>

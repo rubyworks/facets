@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Return a random element from the array.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  [1, 2, 3, 4].at_rand           #=&gt; 2\n  [1, 2, 3, 4].at_rand           #=&gt; 4\n"
+full_name: Random::Array#at_rand
+is_singleton: false
+name: at_rand
+params: ()
+visibility: public

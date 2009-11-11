@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Alias for #rand_pair!"
+full_name: Random::Hash#pick_pair
+is_singleton: false
+name: pick_pair
+params: ()
+visibility: public

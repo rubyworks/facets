@@ -1,0 +1,21 @@
+<br/><b>Module#Equitable</b><hr />
+Equitable(*accessors)<br />
+<p />
+From /home/trans/Documents/programs/current/facets/doc/ri/Module/cdesc-Module.yaml<hr />
+This function provided a &quot;shortcut&quot; for creating the #identity method based on given accessors and returns the Equitable module for inclusion.<p />
+<pre> include Equitable(:a, :b)
+</pre>
+is equivalent to including a module containing:<p />
+<pre>  def ==(other)
+    self.a == other.a &amp;amp;&amp;amp; self.b == other.b
+  end
+
+  def eql?(other)
+    self.a.eql?(other.a) &amp;amp;&amp;amp; self.b.eql?(other.b)
+  end
+
+  def hash()
+    self.a.hash ^ self.b.hash
+  end
+</pre>
+<br/><br/>

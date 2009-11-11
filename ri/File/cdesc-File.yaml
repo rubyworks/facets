@@ -1,0 +1,42 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: append
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: create
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: "null"
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: read_binary
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: read_list
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: rewrite
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: rewrite!
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: rootname
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: sanitize
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: split_all
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: split_root
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: write
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: writelines
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: yaml?
+comment: 
+constants: []
+
+full_name: File
+includes: []
+
+instance_methods: []
+
+name: File
+superclass: Object

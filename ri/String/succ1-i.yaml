@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Alias for #succ"
+full_name: String#succ1
+is_singleton: false
+name: succ1
+params: (n=1)
+visibility: public

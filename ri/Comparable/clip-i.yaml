@@ -1,0 +1,17 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: 
+- !ruby/object:RDoc::RI::AliasName 
+  name: bound
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Returns self if above the given lower bound, or within the given lower and upper bounds, otherwise returns the the bound of which the value falls outside.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  4.clip(3)    #=&gt; 4\n  4.clip(5)    #=&gt; 5\n  4.clip(2,7)  #=&gt; 4\n  9.clip(2,7)  #=&gt; 7\n  1.clip(2,7)  #=&gt; 2\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: CREDIT Florian Gross, Trans
+full_name: Comparable#clip
+is_singleton: false
+name: clip
+params: (lower, upper=nil)
+visibility: public

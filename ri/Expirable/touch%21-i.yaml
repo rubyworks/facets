@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Update the expiration period. Override in your application.
+full_name: Expirable#touch!
+is_singleton: false
+name: touch!
+params: ()
+visibility: public

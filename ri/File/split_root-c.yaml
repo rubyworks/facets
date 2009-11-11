@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Return the head of path from the rest of the path.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  File.split_root('etc/xdg/gtk')  #=&gt; ['etc', 'xdg/gtk']\n"
+full_name: File::split_root
+is_singleton: true
+name: split_root
+params: (path)
+visibility: public

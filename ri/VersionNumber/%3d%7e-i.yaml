@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: For pessimistic constraint (like '~&gt;' in gems)
+full_name: VersionNumber#=~
+is_singleton: false
+name: =~
+params: ( other )
+visibility: public

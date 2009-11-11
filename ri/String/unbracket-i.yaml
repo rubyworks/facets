@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Return a new string embraced by given brakets. If only one bracket char is given it will be placed on either side.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  &quot;{unwrap me}&quot;.debracket('{')        #=&gt; &quot;unwrap me&quot;\n  &quot;--unwrap me!&quot;.debracket('--','!')  #=&gt; &quot;unwrap me!&quot;\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Trans"
+full_name: String#unbracket
+is_singleton: false
+name: unbracket
+params: (bra=nil, ket=nil)
+visibility: public

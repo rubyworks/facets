@@ -1,0 +1,11 @@
+<br/><b>MatchData#matchtree</b><hr />
+matchtree(index=0)<br />
+<p />
+From /home/trans/Documents/programs/current/facets/doc/ri/MatchData/cdesc-MatchData.yaml<hr />
+An alternate to #to_a which returns the matches in order corresponding with the regular expression.<p />
+<pre>  md = /(bb)(cc(dd))(ee)/.match &amp;quot;XXaabbccddeeffXX&amp;quot;
+  md.to_a       #=&amp;gt; [&amp;quot;XXaabbccddeeffXX&amp;quot;, &amp;quot;bb&amp;quot;, &amp;quot;ccdd&amp;quot;, &amp;quot;dd&amp;quot;, &amp;quot;ee&amp;quot;]
+  md.matchtree  #=&amp;gt; [[&amp;quot;bb&amp;quot;], [&amp;quot;cc&amp;quot;, [&amp;quot;dd&amp;quot;]], &amp;quot;ee&amp;quot;]
+</pre>
+CREDIT: Trans<p />
+<br/><br/>

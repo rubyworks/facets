@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Alias for #weeks"
+full_name: Duration::Numeric#week
+is_singleton: false
+name: week
+params: ()
+visibility: public

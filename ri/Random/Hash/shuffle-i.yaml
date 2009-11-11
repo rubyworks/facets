@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Returns a copy of the hash with <em>values</em> arranged in new random order.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  h = {:a=&gt;1, :b=&gt;2, :c=&gt;3}\n  h.shuffle_hash  #=&gt; {:b=&gt;2, :c=&gt;1, :a&gt;3}\n"
+full_name: Random::Hash#shuffle
+is_singleton: false
+name: shuffle
+params: ()
+visibility: public

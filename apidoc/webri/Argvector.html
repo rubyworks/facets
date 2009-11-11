@@ -1,0 +1,24 @@
+<br/><b>Class: Argvector < Object</b><hr />
+<h1>Argvector</h1>
+Argvector provides a very simple means of parsing command line arguments.<p />
+Unlike other more complex libs this provides only the most basic and standard parsing functionality. In many cases that's all one really needs.<p />
+Usage is straight foward. Simply instantiate the class and query it for the particular &quot;views&quot; of the command line you want.<p />
+<pre>  cargs = Argvector.new(&amp;quot;-a foo -b=2&amp;quot;)
+
+  cargs.parameters    #=&amp;gt; [['foo'],{'a'=&amp;gt;true,'b'=&amp;gt;'2'}]
+  cargs.flags         #=&amp;gt; ['a']
+  cargs.preoptions    #=&amp;gt; {'a'=&amp;gt;true}
+  cargs.preflags      #=&amp;gt; ['a']
+  cargs.subcommand    #=&amp;gt; ['foo',{'b'=&amp;gt;'2'}]
+</pre>
+<hr />
+<p />
+<h2>Attributes:</h2>
+argv (R)<br />
+arity (R)<br />
+line (R)<br />
+<p />
+<h2>Class methods:</h2>
+new, parameters<p />
+<h2>Instance methods:</h2>
+arguments, assoc_options, flags, format_options, multi_flag, operands, options, parameters, parameters_without_duplicates, parse, parse_arity, parse_line, parse_preoptions, preflags, preoptions, subcommand, subcommand_with_arguments, subcommand_with_parameters, subcommand_with_preoptions<br/><br/>

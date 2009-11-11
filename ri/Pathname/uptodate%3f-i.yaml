@@ -1,0 +1,11 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: []
+
+full_name: Pathname#uptodate?
+is_singleton: false
+name: uptodate?
+params: (*sources)
+visibility: public

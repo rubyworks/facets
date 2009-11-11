@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Returns onlt the first portion of the directory of a file path name.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  File.rootname('lib/jump.rb')  #=&gt; 'lib'\n  File.rootname('/jump.rb')     #=&gt; '/'\n  File.rootname('jump.rb')      #=&gt; '.'\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Trans"
+full_name: File::rootname
+is_singleton: true
+name: rootname
+params: (path)
+visibility: public

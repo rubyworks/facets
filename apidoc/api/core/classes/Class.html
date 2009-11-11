@@ -1,0 +1,774 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+  <title>Class: Class</title>
+
+  
+    <link rel="SHORTCUT ICON" href="../assets/icon/class.png">
+  
+
+  <link type="text/css" rel="stylesheet" href="../assets/rdoc.css" media="screen" />
+  <link type="text/css" rel="stylesheet" href="../assets/highlight/styles/github.css" title="GitHub" />
+
+  <script type="text/javascript" charset="utf-8" src="../assets/jquery.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/highlight/highlight.pack.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/quicksearch.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/main.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready( function() {
+      hookHighlightSyntax();
+	    hookSourceViews();
+	    hookDebuggingToggle();
+	    hookQuickSearch();
+	    highlightLocationTarget();
+
+	    $('ul.link-list a').bind("click", highlightClickTarget);
+    });
+  </script>
+</head>
+<body class="class">
+<div id="main">
+
+  <div class="head">
+    <h1>
+      
+        <img src="../assets/icon/class.png" align="absmiddle">&nbsp;
+      
+      <a href="../index.html">Facets Core API</a>&nbsp;
+      <a href="/">Class</a>
+    </h1>
+  </div>
+
+  <div id="metadata">
+    <div id="project-metadata">
+
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li class="file"><a href="../files/lib/core/facets/class/prepend_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/class/prepend.rb">lib/core/facets/class/prepend.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/class/cattr_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/class/cattr.rb">lib/core/facets/class/cattr.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/class/methodize_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/class/methodize.rb">lib/core/facets/class/methodize.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/class/pathize_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/class/pathize.rb">lib/core/facets/class/pathize.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/class/descendents_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/class/descendents.rb">lib/core/facets/class/descendents.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/class/to_proc_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/class/to_proc.rb">lib/core/facets/class/to_proc.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      <!-- What about Git info, or Hg info? This seems almost silly, albeit kind of cool. -->
+      <!-- TODO: generalize this for all SCMs -->
+
+      
+    </div>
+
+    <div id="class-metadata">
+
+      <!-- Parent Class -->
+      
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        <ul>
+          
+          <!-- why was this class="link" ? -->
+          <li class="class"><a href="Object.html">Object</a></li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Namespace Contents -->
+      
+
+      <!-- Method Quickref -->
+      
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+            
+            <li class="method">
+              <a href="#M001222">#cattr</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M001226">#cattr_accessor</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M001224">#cattr_reader</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M001225">#cattr_writer</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M001229">#descendents</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M001223">#methodize</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M001227">#pathize</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M001221">#prepend</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M001228">#to_proc</a>
+            </li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Included Modules -->
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Information</h3>
+        <ul>
+        
+          <li class="file"><a href="../files/doc/README_core.html">README.core</a></li>
+        
+          <li class="file"><a href="../files/README_rdoc.html">README.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class Index
+          <span class="search-toggle"><img src="../assets/icon/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <!-- classpage.html : classes -->
+        <ul class="link-list">
+        
+          <li class="module"><a href="../classes/Lazy.html">Lazy</a></li>
+        
+          <li class="class"><a href="../classes/Lazy/Future.html">Lazy::Future</a></li>
+        
+          <li class="class"><a href="../classes/Lazy/Promise.html">Lazy::Promise</a></li>
+        
+          <li class="class"><a href="../classes/Lazy/PromiseSafe.html">Lazy::PromiseSafe</a></li>
+        
+          <li class="module"><a href="../classes/Enumerable.html">Enumerable</a></li>
+        
+          <li class="class"><a href="../classes/Object.html">Object</a></li>
+        
+          <li class="class"><a href="../classes/Array.html">Array</a></li>
+        
+          <li class="class"><a href="../classes/Binding.html">Binding</a></li>
+        
+          <li class="class"><a href="../classes/Class.html">Class</a></li>
+        
+          <li class="module"><a href="../classes/Comparable.html">Comparable</a></li>
+        
+          <li class="module"><a href="../classes/Denumerable.html">Denumerable</a></li>
+        
+          <li class="class"><a href="../classes/Denumerator.html">Denumerator</a></li>
+        
+          <li class="class"><a href="../classes/Dir.html">Dir</a></li>
+        
+          <li class="class"><a href="../classes/Enumerator.html">Enumerator</a></li>
+        
+          <li class="class"><a href="../classes/Exception.html">Exception</a></li>
+        
+          <li class="class"><a href="../classes/FalseClass.html">FalseClass</a></li>
+        
+          <li class="class"><a href="../classes/File.html">File</a></li>
+        
+          <li class="module"><a href="../classes/FileTest.html">FileTest</a></li>
+        
+          <li class="class"><a href="../classes/Float.html">Float</a></li>
+        
+          <li class="class"><a href="../classes/Functor.html">Functor</a></li>
+        
+          <li class="class"><a href="../classes/Hash.html">Hash</a></li>
+        
+          <li class="module"><a href="../classes/Indexable.html">Indexable</a></li>
+        
+          <li class="class"><a href="../classes/InstanceVariables.html">InstanceVariables</a></li>
+        
+          <li class="class"><a href="../classes/Integer.html">Integer</a></li>
+        
+          <li class="module"><a href="../classes/Kernel.html">Kernel</a></li>
+        
+          <li class="class"><a href="../classes/MatchData.html">MatchData</a></li>
+        
+          <li class="class"><a href="../classes/Module.html">Module</a></li>
+        
+          <li class="class"><a href="../classes/NilClass.html">NilClass</a></li>
+        
+          <li class="class"><a href="../classes/Numeric.html">Numeric</a></li>
+        
+          <li class="module"><a href="../classes/ObjectSpace.html">ObjectSpace</a></li>
+        
+          <li class="class"><a href="../classes/Proc.html">Proc</a></li>
+        
+          <li class="class"><a href="../classes/Range.html">Range</a></li>
+        
+          <li class="class"><a href="../classes/Regexp.html">Regexp</a></li>
+        
+          <li class="module"><a href="../classes/Stackable.html">Stackable</a></li>
+        
+          <li class="class"><a href="../classes/String.html">String</a></li>
+        
+          <li class="class"><a href="../classes/Struct.html">Struct</a></li>
+        
+          <li class="class"><a href="../classes/Symbol.html">Symbol</a></li>
+        
+          <li class="class"><a href="../classes/Time.html">Time</a></li>
+        
+          <li class="class"><a href="../classes/TrueClass.html">TrueClass</a></li>
+        
+          <li class="class"><a href="../classes/UnboundMethod.html">UnboundMethod</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+    </div>
+
+    <div id="validator-badges">
+      
+      <div style="float: right; margin-right: 5px;">
+        <a href="http://validator.w3.org/check/referer"><img src="../assets/icon/check.png" alt="[Validate]" height="16" width="16" /></a>
+      </div>
+      Generated with <a href="http://github.com/proutils/webri">WebRI Redfish</a> 1.0.0
+      <br/><br/>
+    </div>
+  </div>
+
+  <div id="documentation">
+
+    <div id="description">
+      
+        <h1>Class</h1>
+      
+
+      
+    </div>
+
+    <!-- Constants -->
+    
+
+    <!-- Attributes -->
+    
+
+    <!-- Methods -->
+    
+    <div id="public-instance-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="cattr-method" class="method-detail ">
+        <a name="M001222"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">cattr</span><span
+            class="method-args">( *syms )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Creates a class-variable attribute that can be accessed both on an instance
+and class level.
+</p>
+<p>
+NOTE This used to be a <a href="Module.html">Module</a> method. But turns
+out it does not work as expected when included. The class-level method is
+not carried along. So it is now just a <a href="Class.html">Class</a>
+method. Accordingly, mattr has been deprecated.
+</p>
+<p>
+CREDIT: David Heinemeier Hansson
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="cattr-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/class/cattr.rb, line 12</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cattr</span>( <span class="ruby-operator">*</span><span class="ruby-identifier">syms</span> )
+    <span class="ruby-identifier">writers</span>, <span class="ruby-identifier">readers</span> = <span class="ruby-identifier">syms</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">partition</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">a</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/=$/</span> }
+    <span class="ruby-identifier">writers</span> = <span class="ruby-identifier">writers</span>.<span class="ruby-identifier">collect</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">chomp</span>(<span class="ruby-value str">'='</span>).<span class="ruby-identifier">to_sym</span> }
+    <span class="ruby-identifier">readers</span>.<span class="ruby-identifier">concat</span>( <span class="ruby-identifier">writers</span> ) <span class="ruby-comment cmt"># writers also get readers</span>
+    <span class="ruby-identifier">cattr_writer</span>( <span class="ruby-operator">*</span><span class="ruby-identifier">writers</span> )
+    <span class="ruby-identifier">cattr_reader</span>( <span class="ruby-operator">*</span><span class="ruby-identifier">readers</span> )
+    <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">readers</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">writers</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="cattr-accessor-method" class="method-detail ">
+        <a name="M001226"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">cattr_accessor</span><span
+            class="method-args">(*syms)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Creates a class-variable attr_accessor that can be accessed both on an
+instance and class level.
+</p>
+<pre>
+  class MyClass
+    cattr_accessor :a
+  end
+
+  MyClass.a = 10
+  MyClass.a           #=&gt; 10
+  mc = MyClass.new
+  mc.a                #=&gt; 10
+</pre>
+<p>
+CREDIT: David Heinemeier Hansson
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="cattr-accessor-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/class/cattr.rb, line 102</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cattr_accessor</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">syms</span>)
+    <span class="ruby-identifier">cattr_reader</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">syms</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">cattr_writer</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">syms</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="cattr-reader-method" class="method-detail ">
+        <a name="M001224"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">cattr_reader</span><span
+            class="method-args">( *syms )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Creates a class-variable attr_reader that can be accessed both on an
+instance and class level.
+</p>
+<pre>
+  class MyClass
+    @@a = 10
+    cattr_reader :a
+  end
+
+  MyClass.a           #=&gt; 10
+  MyClass.new.a       #=&gt; 10
+</pre>
+<p>
+CREDIT: David Heinemeier Hansson
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="cattr-reader-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/class/cattr.rb, line 33</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cattr_reader</span>( <span class="ruby-operator">*</span><span class="ruby-identifier">syms</span> )
+    <span class="ruby-identifier">syms</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">sym</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">class_eval</span>(<span class="ruby-value str">&quot;unless defined? @@\#{sym}\n@@\#{sym} = nil\nend\n\ndef self.\#{sym}\n@@\#{sym}\nend\n\ndef \#{sym}\n@@\#{sym}\nend\n&quot;</span>, <span class="ruby-keyword kw">__FILE__</span>, <span class="ruby-keyword kw">__LINE__</span>)
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">syms</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="cattr-writer-method" class="method-detail ">
+        <a name="M001225"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">cattr_writer</span><span
+            class="method-args">(*syms)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Creates a class-variable attr_writer that can be accessed both on an
+instance and class level.
+</p>
+<pre>
+  class MyClass
+    cattr_writer :a
+    def a
+      @@a
+    end
+  end
+
+  MyClass.a = 10
+  MyClass.a            #=&gt; 10
+  MyClass.new.a = 29
+  MyClass.a            #=&gt; 29
+</pre>
+<p>
+CREDIT: David Heinemeier Hansson
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="cattr-writer-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/class/cattr.rb, line 69</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cattr_writer</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">syms</span>)
+    <span class="ruby-identifier">syms</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">sym</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">class_eval</span>(<span class="ruby-value str">&quot;unless defined? @@\#{sym}\n@@\#{sym} = nil\nend\n\ndef self.\#{sym}=(obj)\n@@\#{sym} = obj\nend\n\ndef \#{sym}=(obj)\n@@\#{sym}=(obj)\nend\n&quot;</span>, <span class="ruby-keyword kw">__FILE__</span>, <span class="ruby-keyword kw">__LINE__</span>)
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">syms</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="descendents-method" class="method-detail ">
+        <a name="M001229"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">descendents</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+List all descedents of this class.
+</p>
+<pre>
+  class X ; end
+  class A &lt; X; end
+  class B &lt; X; end
+  X.descendents  #=&gt; [A,B]
+</pre>
+<p>
+NOTE: This is a intesive operation. Do not expect it to be super fast.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="descendents-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/class/descendents.rb, line 12</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">descendents</span>
+    <span class="ruby-identifier">subclass</span> = []
+    <span class="ruby-constant">ObjectSpace</span>.<span class="ruby-identifier">each_object</span>( <span class="ruby-constant">Class</span> ) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">ancestors</span>.<span class="ruby-identifier">include?</span>( <span class="ruby-keyword kw">self</span> ) <span class="ruby-keyword kw">and</span> <span class="ruby-keyword kw">self</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">c</span>
+        <span class="ruby-identifier">subclass</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">c</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">subclass</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="methodize-method" class="method-detail ">
+        <a name="M001223"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">methodize</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Translate a class name to a suitable method name.
+</p>
+<pre>
+  My::CoolClass.methodize =&gt; &quot;my__cool_class&quot;
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="methodize-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/class/methodize.rb, line 9</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">methodize</span>
+    <span class="ruby-identifier">name</span>.<span class="ruby-identifier">methodize</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="pathize-method" class="method-detail ">
+        <a name="M001227"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">pathize</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Converts a class name to a unix path.
+</p>
+<pre>
+  My::CoolClass.pathize  #=&gt; &quot;my/cool_class&quot;
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="pathize-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/class/pathize.rb, line 9</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">pathize</span>
+    <span class="ruby-identifier">name</span>.<span class="ruby-identifier">pathize</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="prepend-method" class="method-detail ">
+        <a name="M001221"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">prepend</span><span
+            class="method-args">( aspect )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Prepend an &#8220;aspect module&#8221; to a class.
+</p>
+<pre>
+  class Firetruck
+    def put_out_fire(option)
+      &quot;Put out #{option}&quot;
+    end
+  end
+
+  module FastFiretruck
+    def put_out_fire(option)
+      super(&quot;very #{option}!&quot;)
+    end
+  end
+
+  Firetruck.prepend(FastFiretruck)
+
+  ft = Firetruck.new
+  ft.put_out_fire('fast') #=&gt; &quot;Put out very fast!&quot;
+</pre>
+<p>
+Implementation of this method has some limitations, in that it works by
+overriding new and allocate.
+</p>
+<p>
+CREDIT: Trans
+</p>
+<p>
+TODO: Perhaps rename this to preallocate, b/c of the way it works. It is
+not really a clean prepend, like that of <a
+href="Module.html#M001148">Module#prepend</a>.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="prepend-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/class/prepend.rb, line 30</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">prepend</span>( <span class="ruby-identifier">aspect</span> )
+    <span class="ruby-identifier">_new</span>      = <span class="ruby-identifier">method</span>(<span class="ruby-identifier">:new</span>)
+    <span class="ruby-identifier">_allocate</span> = <span class="ruby-identifier">method</span>(<span class="ruby-identifier">:allocate</span>)
+    (<span class="ruby-keyword kw">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword kw">self</span>; <span class="ruby-keyword kw">self</span>; <span class="ruby-keyword kw">end</span>).<span class="ruby-identifier">class_eval</span> <span class="ruby-keyword kw">do</span>
+      <span class="ruby-identifier">define_method</span>(<span class="ruby-identifier">:new</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-operator">*</span><span class="ruby-identifier">args</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">o</span> = <span class="ruby-identifier">_new</span>.<span class="ruby-identifier">call</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+        <span class="ruby-identifier">o</span>.<span class="ruby-identifier">extend</span> <span class="ruby-identifier">aspect</span>
+        <span class="ruby-identifier">o</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">define_method</span>(<span class="ruby-identifier">:allocate</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-operator">*</span><span class="ruby-identifier">args</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">o</span> = <span class="ruby-identifier">_allocate</span>.<span class="ruby-identifier">call</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+        <span class="ruby-identifier">o</span>.<span class="ruby-identifier">extend</span> <span class="ruby-identifier">aspect</span>
+        <span class="ruby-identifier">o</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="to-proc-method" class="method-detail ">
+        <a name="M001228"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">to_proc</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Convert instatiation of a class into a <a href="Proc.html">Proc</a>.
+</p>
+<pre>
+  class Person
+    def initialize(name)
+      @name = name
+    end
+
+    def inspect
+      @name.to_str
+    end
+  end
+
+  %w(john bob jane hans).map(&amp;Person) =&gt; [john, bob, jane, hans]
+</pre>
+<p>
+CREDIT: Daniel Schierbeck
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="to-proc-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/class/to_proc.rb, line 18</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_proc</span>
+    <span class="ruby-identifier">proc</span>{<span class="ruby-operator">|</span><span class="ruby-operator">*</span><span class="ruby-identifier">args</span><span class="ruby-operator">|</span> <span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)}
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+
+  </div>
+
+
+  <div id="rdoc-debugging-section-dump" class="debugging-section">
+  
+    <p>Disabled; run with --debug to generate this.</p>
+  
+  </div>
+
+</main>
+</body>
+</html>
+

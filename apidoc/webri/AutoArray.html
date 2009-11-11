@@ -1,0 +1,16 @@
+<br/><b>Class: AutoArray < Array</b><hr />
+An Array that automatically expands dimensions as needed.<p />
+<pre>  a  = Autoarray.new
+  a[1][2][3] = 12
+  a             #=&amp;gt; [nil, [nil, nil, [nil, nil, nil, 12]]]
+  a[2][3][4]    #=&amp;gt; []
+  a             #=&amp;gt; [nil, [nil, nil, [nil, nil, nil, 12]]]
+  a[1][-2][1] = &amp;quot;Negative&amp;quot;
+  a             #=&amp;gt; [nil, [nil, [nil, &amp;quot;Negative&amp;quot;], [nil, nil, nil, 12]]]
+</pre>
+<hr />
+<p />
+<h2>Class methods:</h2>
+new<p />
+<h2>Instance methods:</h2>
+[], []=<br/><br/>

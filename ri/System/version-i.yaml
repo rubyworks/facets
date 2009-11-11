@@ -1,0 +1,10 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: System#version
+is_singleton: false
+name: version
+params: ()
+visibility: public

@@ -1,0 +1,187 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: interpolate
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Conveniently turn a string into a tuple.
+constants: 
+- !ruby/object:RDoc::RI::Constant 
+  comment: 
+  name: BRA2KET
+  value: "{ '['=>']', '('=>')', '{'=>'}', '<'=>'>' }"
+full_name: String
+includes: 
+- !ruby/object:RDoc::RI::IncludedModule 
+  name: Random
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: "-"
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: /
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: ^
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: align
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: align_center
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: align_left
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: align_right
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: blank?
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: bracket
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: bracket!
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: bytes
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: camelcase
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: capitalized?
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: chars
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: cleanlines
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: cleave
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: cmp
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: compress_lines
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: dequote
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: divide
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: downcase?
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: each_char
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: each_word
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: edit_distance
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: end_with?
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: ends_with?
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: expand_tab
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: expand_tabs
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: file
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: fold
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: indent
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: index_all
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: is_roman_numeral?
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: lchomp
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: lchomp!
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: line_wrap
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: lines
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: lower_camelcase
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: lowercase
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: margin
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: methodize
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: modulize
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: mscan
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: natcmp
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: nchar
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: newlines
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: object_state
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: outdent
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: pathize
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: quote
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: range
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: range_all
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: range_of_line
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: rewrite
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: shatter
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: similarity
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: snakecase
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: splice
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: start_with?
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: starts_with?
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: succ
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: succ1
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: tab
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: tabto
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: titlecase
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_b
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_date
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_datetime
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_i_roman
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_re
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_rx
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_t
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: unbracket
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: unbracket!
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: underscore
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: unfold
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: upcase?
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: upper_camelcase
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: uppercase
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: variablize
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: word_wrap
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: word_wrap!
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: words
+name: String
+superclass: Object

@@ -1,0 +1,20 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Generate a unique symbol.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  Symbol.generate =&gt; :-1\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: If <tt>key</tt> is given the new symbol will be prefixed with it.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  Symbol.generate(:foo) =&gt; :foo-1\n\n  TODO: Is the generated symbol format acceptable?\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Trans"
+full_name: Symbol::generate
+is_singleton: true
+name: generate
+params: (key=nil)
+visibility: public

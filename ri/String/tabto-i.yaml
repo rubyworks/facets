@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Preserves relative tabbing. The first non-empty line ends up with n spaces before nonspace.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Gavin Sinclair"
+full_name: String#tabto
+is_singleton: false
+name: tabto
+params: (n)
+visibility: public

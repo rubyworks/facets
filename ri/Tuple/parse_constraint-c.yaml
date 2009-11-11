@@ -1,0 +1,10 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Tuple::parse_constraint
+is_singleton: true
+name: parse_constraint
+params: ( constraint, &yld )
+visibility: public

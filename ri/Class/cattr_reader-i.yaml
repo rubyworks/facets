@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Creates a class-variable attr_reader that can be accessed both on an instance and class level.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  class MyClass\n    @@a = 10\n    cattr_reader :a\n  end\n\n  MyClass.a           #=&gt; 10\n  MyClass.new.a       #=&gt; 10\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: David Heinemeier Hansson"
+full_name: Class#cattr_reader
+is_singleton: false
+name: cattr_reader
+params: ( *syms )
+visibility: public

@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Return a new string embraced by given quotes. If no quotes are specified, then assumes single quotes.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  &quot;quote me&quot;.quote     #=&gt; &quot;'quote me'&quot;\n  &quot;quote me&quot;.quote(2)  #=&gt; &quot;\\&quot;quote me\\&quot;&quot;\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Trans"
+full_name: String#quote
+is_singleton: false
+name: quote
+params: (type=:s)
+visibility: public

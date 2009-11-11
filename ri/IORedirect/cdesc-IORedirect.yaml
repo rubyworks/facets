@@ -1,0 +1,28 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: new
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: redirect
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 1
+  text: IORedirect
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: A class to redirect $stdout, or other IO object, to a StringIO object, or any other object with a write() method.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  s = StringIO.new\n  r = IORedirect.redirect($stdout, s) do\n    $stdout.puts &quot;this is a test&quot;\n  end\n"
+constants: []
+
+full_name: IORedirect
+includes: []
+
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: start
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: stop
+name: IORedirect
+superclass: Object

@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Same as <tt>gsub</tt> except that the original file list is modified.
+full_name: FileList#gsub!
+is_singleton: false
+name: gsub!
+params: (pat, rep)
+visibility: public

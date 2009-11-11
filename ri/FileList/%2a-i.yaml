@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Redefine * to return either a string or a new file list.
+full_name: FileList#*
+is_singleton: false
+name: "*"
+params: (other)
+visibility: public

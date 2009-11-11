@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Parse preoptions. A &quot;preoption&quot; is one that occurs before the first operans (if any).
+full_name: Argvector#parse_preoptions
+is_singleton: false
+name: parse_preoptions
+params: (args)
+visibility: private

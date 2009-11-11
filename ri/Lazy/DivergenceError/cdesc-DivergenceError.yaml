@@ -1,0 +1,21 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Raised when a demanded computation diverges (e.g. if it tries to directly use its own result)
+- !ruby/struct:RDoc::Markup::Flow::RULE 
+  width: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Raised when a demanded computation diverges (e.g. if it tries to directly use its own result)
+constants: []
+
+full_name: Lazy::DivergenceError
+includes: []
+
+instance_methods: []
+
+name: DivergenceError
+superclass: Exception

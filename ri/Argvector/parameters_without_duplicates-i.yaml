@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Like parameters but without allowing for duplicate options.
+full_name: Argvector#parameters_without_duplicates
+is_singleton: false
+name: parameters_without_duplicates
+params: ()
+visibility: public

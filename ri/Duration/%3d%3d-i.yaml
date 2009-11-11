@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Returns true if <tt>other</tt> is also a Duration instance with the same <tt>value</tt>, or if <tt>other == value</tt>.
+full_name: Duration#==
+is_singleton: false
+name: ==
+params: (other)
+visibility: public

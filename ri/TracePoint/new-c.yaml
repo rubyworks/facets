@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Until Ruby has a built-in way to get the name of the calling method that information must be passed into the TracePoint.
+full_name: TracePoint::new
+is_singleton: true
+name: new
+params: ( event, method, bind, back_binding=bind )
+visibility: public

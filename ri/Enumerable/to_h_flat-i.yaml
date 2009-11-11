@@ -1,0 +1,10 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Enumerable#to_h_flat
+is_singleton: false
+name: to_h_flat
+params: ()
+visibility: public

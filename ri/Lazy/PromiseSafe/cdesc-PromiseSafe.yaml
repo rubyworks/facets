@@ -1,0 +1,27 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 1
+  text: PromiseSafe
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Thread safe version of Promise class.
+- !ruby/struct:RDoc::Markup::Flow::RULE 
+  width: 
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 1
+  text: PromiseSafe
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Thread safe version of Promise class.
+constants: []
+
+full_name: Lazy::PromiseSafe
+includes: []
+
+instance_methods: []
+
+name: PromiseSafe
+superclass: Promise

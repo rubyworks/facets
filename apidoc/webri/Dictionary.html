@@ -1,0 +1,43 @@
+<br/><b>Class: Dictionary < Object</b><hr />
+<h1>Dictionary</h1>
+The Dictionary class is a Hash that preserves order. So it has some array-like extensions also. By defualt a Dictionary object preserves insertion order, but any order can be specified including alphabetical key order.<p />
+<h2>Usage</h2>
+Just require this file and use Dictionary instead of Hash.<p />
+<pre>  # You can do simply
+  hsh = Dictionary.new
+  hsh['z'] = 1
+  hsh['a'] = 2
+  hsh['c'] = 3
+  p hsh.keys     #=&amp;gt; ['z','a','c']
+
+  # or using Dictionary[] method
+  hsh = Dictionary['z', 1, 'a', 2, 'c', 3]
+  p hsh.keys     #=&amp;gt; ['z','a','c']
+
+  # but this don't preserve order
+  hsh = Dictionary['z'=&amp;gt;1, 'a'=&amp;gt;2, 'c'=&amp;gt;3]
+  p hsh.keys     #=&amp;gt; ['a','c','z']
+
+  # Dictionary has useful extensions: push, pop and unshift
+  p hsh.push('to_end', 15)       #=&amp;gt; true, key added
+  p hsh.push('to_end', 30)       #=&amp;gt; false, already - nothing happen
+  p hsh.unshift('to_begin', 50)  #=&amp;gt; true, key added
+  p hsh.unshift('to_begin', 60)  #=&amp;gt; false, already - nothing happen
+  p hsh.keys                     #=&amp;gt; [&amp;quot;to_begin&amp;quot;, &amp;quot;a&amp;quot;, &amp;quot;c&amp;quot;, &amp;quot;z&amp;quot;, &amp;quot;to_end&amp;quot;]
+  p hsh.pop                      #=&amp;gt; [&amp;quot;to_end&amp;quot;, 15], if nothing remains, return nil
+  p hsh.keys                     #=&amp;gt; [&amp;quot;to_begin&amp;quot;, &amp;quot;a&amp;quot;, &amp;quot;c&amp;quot;, &amp;quot;z&amp;quot;]
+  p hsh.shift                    #=&amp;gt; [&amp;quot;to_begin&amp;quot;, 30], if nothing remains, return nil
+</pre>
+<h2>Usage Notes</h2>
+<ul><li>You can use #order_by to set internal sort order.<p />
+</li><li>#&lt;&lt; takes a two element [k,v] array and inserts.<p />
+</li><li>Use ::auto which creates Dictionay sub-entries as needed.<p />
+</li><li>And ::alpha which creates a new Dictionary sorted by key.<p />
+</li></ul><hr />
+<p />
+<h2>Includes:</h2>
+Enumerable<p />
+<h2>Class methods:</h2>
+[], alpha, auto, new, new_by<p />
+<h2>Instance methods:</h2>
+&lt;&lt;, ==, [], []=, clear, delete, delete_if, dup, each, each_key, each_pair, each_value, empty?, fetch, first, has_key?, insert, inspect, invert, key?, keys, last, length, merge, merge!, order, order_by, order_by_key, order_by_value, pop, push, reject, reject!, reorder, replace, reverse, reverse!, select, shift, size, store, to_a, to_h, to_hash, to_s, unshift, update, values<br/><br/>

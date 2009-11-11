@@ -1,0 +1,10 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: TrueClass#to_bool
+is_singleton: false
+name: to_bool
+params: ()
+visibility: public

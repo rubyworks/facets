@@ -1,0 +1,11 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: []
+
+full_name: OpenStruct#each
+is_singleton: false
+name: each
+params: (&blk)
+visibility: public

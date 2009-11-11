@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Convert a FileList to a string by joining all elements with a space.
+full_name: FileList#to_s
+is_singleton: false
+name: to_s
+params: ()
+visibility: public

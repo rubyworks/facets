@@ -1,0 +1,16 @@
+<br/><b>String#splice</b><hr />
+splice(idx, sub=nil)<br />
+<p />
+From /home/trans/Documents/programs/current/facets/doc/ri/String/cdesc-String.yaml<hr />
+This is basically the same as #store, but it acts like slice! when given only one argument.<p />
+Essentlay #slice, but writes rather than reads.<p />
+<pre>  a = &amp;quot;HELLO&amp;quot;
+  a.splice(&amp;quot;X&amp;quot;, 1)
+  a                #=&amp;gt; &amp;quot;HXLLO&amp;quot;
+
+  a = &amp;quot;HELLO&amp;quot;
+  a.splice(1)    #=&amp;gt; &amp;quot;E&amp;quot;
+  a              #=&amp;gt; &amp;quot;HLLO&amp;quot;
+</pre>
+CREDIT: Trans<p />
+<br/><br/>

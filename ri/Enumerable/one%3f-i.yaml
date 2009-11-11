@@ -1,0 +1,18 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: e
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Enumerable#one? returns <tt>true</tt> if and only if <em>exactly one</em> element in the collection satisfies the given predicate.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: If no predicate is provided, Enumerable#one? returns <tt>true</tt> if and only if <em>exactly one</em> element has a true value (i.e. not <tt>nil</tt> or <tt>false</tt>).
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  [].one?                      # false\n  [nil].one?                   # false\n  [5].one?                     # true\n  [5,8,9].one?                 # false\n  (1...10).one? { |n| n == 5 } # true\n  (1...10).one? { |n| n &lt; 5 }  # false\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Gavin Sinclair"
+full_name: Enumerable#one?
+is_singleton: false
+name: one?
+params: () {|e| ...}
+visibility: public

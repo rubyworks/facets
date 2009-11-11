@@ -1,0 +1,11 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: 
+- !ruby/object:RDoc::RI::AliasName 
+  name: init
+block_params: 
+comment: 
+full_name: GetoptLong::new
+is_singleton: true
+name: new
+params: (*arguments, &block)
+visibility: public

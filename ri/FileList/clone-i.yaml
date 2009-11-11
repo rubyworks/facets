@@ -1,0 +1,13 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: 
+- !ruby/object:RDoc::RI::AliasName 
+  name: dup
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: include Cloneable
+full_name: FileList#clone
+is_singleton: false
+name: clone
+params: ()
+visibility: public

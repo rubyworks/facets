@@ -1,0 +1,43 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: 
+- !ruby/object:RDoc::RI::Attribute 
+  comment: 
+  name: word_count
+  rw: R
+class_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 1
+  text: Matcher
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: " Matcher derives from Ruby Quiz #103, the DictionaryMatcher quiz.\n"
+constants: []
+
+full_name: Matcher
+includes: []
+
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: "<<"
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: ===
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: =~
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: add
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: compute_failure_function
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: include?
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: inspect
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: internal_match
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: match
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: scan
+name: Matcher
+superclass: Object

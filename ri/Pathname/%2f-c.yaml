@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Active path separator.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  p1 = Pathname.new('/')\n  p2 = p1 / 'usr' / 'share'   #=&gt; Pathname:/usr/share\n"
+full_name: Pathname::/
+is_singleton: true
+name: /
+params: (path)
+visibility: public

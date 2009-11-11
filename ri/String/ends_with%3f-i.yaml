@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Alias for #end_with?"
+full_name: String#ends_with?
+is_singleton: false
+name: ends_with?
+params: (suffix)
+visibility: public

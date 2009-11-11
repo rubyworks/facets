@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Returns the positive ordinal index given a cardinal position, 1 to n or -n to -1.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  [1,2,3,4,5].pos(1)   #=&gt; 0\n  [1,2,3,4,5].pos(-1)  #=&gt; 4\n"
+full_name: Indexable#pos
+is_singleton: false
+name: pos
+params: (i)
+visibility: public

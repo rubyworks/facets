@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: ""
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: In block form, yields lines ((<b>from</b>))-((<b>to</b>)). In non-block form, returns an array of lines ((<b>from</b>))-((<b>to</b>)).
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  # Returns lines 8-12 of 'myfile'\n  FileUtils.body(&quot;myfile&quot;,8,12)\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: CREDIT Shashank Date, via Daniel Berger.
+full_name: FileUtils#slice
+is_singleton: false
+name: slice
+params: (filename,from,to) {|| ...}
+visibility: public

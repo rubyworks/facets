@@ -1,0 +1,759 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+  <title>Module: OpenStructable</title>
+
+  
+    <link rel="SHORTCUT ICON" href="../assets/icon/module.png">
+  
+
+  <link type="text/css" rel="stylesheet" href="../assets/rdoc.css" media="screen" />
+  <link type="text/css" rel="stylesheet" href="../assets/highlight/styles/github.css" title="GitHub" />
+
+  <script type="text/javascript" charset="utf-8" src="../assets/jquery.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/highlight/highlight.pack.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/quicksearch.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/main.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready( function() {
+      hookHighlightSyntax();
+	    hookSourceViews();
+	    hookDebuggingToggle();
+	    hookQuickSearch();
+	    highlightLocationTarget();
+
+	    $('ul.link-list a').bind("click", highlightClickTarget);
+    });
+  </script>
+</head>
+<body class="module">
+<div id="main">
+
+  <div class="head">
+    <h1>
+      
+        <img src="../assets/icon/module.png" align="absmiddle">&nbsp;
+      
+      <a href="../index.html">Facets More API</a>&nbsp;
+      <a href="/">OpenStructable</a>
+    </h1>
+  </div>
+
+  <div id="metadata">
+    <div id="project-metadata">
+
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li class="file"><a href="../files/lib/more/facets/ostructable_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/more/facets/ostructable.rb">lib/more/facets/ostructable.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      <!-- What about Git info, or Hg info? This seems almost silly, albeit kind of cool. -->
+      <!-- TODO: generalize this for all SCMs -->
+
+      
+    </div>
+
+    <div id="class-metadata">
+
+      <!-- Parent Class -->
+      
+
+      <!-- Namespace Contents -->
+      
+
+      <!-- Method Quickref -->
+      
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+            
+            <li class="singleton">
+              <a href="#M000566">::new</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000581">#==</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000578">#delete_field</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000568">#initialize_copy</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000579">#inspect</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000570">#marshal_dump</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000571">#marshal_load</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000572">#new_ostruct_member</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000575">#update</a>
+            </li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Included Modules -->
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Information</h3>
+        <ul>
+        
+          <li class="file"><a href="../files/README_rdoc.html">README.rdoc</a></li>
+        
+          <li class="file"><a href="../files/doc/README_more.html">README.more</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class Index
+          <span class="search-toggle"><img src="../assets/icon/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <!-- classpage.html : classes -->
+        <ul class="link-list">
+        
+          <li class="module"><a href="../classes/Random.html">Random</a></li>
+        
+          <li class="module"><a href="../classes/Random/Array.html">Random::Array</a></li>
+        
+          <li class="module"><a href="../classes/Random/Hash.html">Random::Hash</a></li>
+        
+          <li class="module"><a href="../classes/Random/Object.html">Random::Object</a></li>
+        
+          <li class="module"><a href="../classes/Random/Range.html">Random::Range</a></li>
+        
+          <li class="module"><a href="../classes/Random/String.html">Random::String</a></li>
+        
+          <li class="module"><a href="../classes/Random/String/Self.html">Random::String::Self</a></li>
+        
+          <li class="module"><a href="../classes/Multiton.html">Multiton</a></li>
+        
+          <li class="module"><a href="../classes/Multiton/Inclusive.html">Multiton::Inclusive</a></li>
+        
+          <li class="module"><a href="../classes/Multiton/MetaMethods.html">Multiton::MetaMethods</a></li>
+        
+          <li class="class"><a href="../classes/Duration.html">Duration</a></li>
+        
+          <li class="module"><a href="../classes/Duration/Numeric.html">Duration::Numeric</a></li>
+        
+          <li class="module"><a href="../classes/Duration/Time.html">Duration::Time</a></li>
+        
+          <li class="module"><a href="../classes/URI.html">URI</a></li>
+        
+          <li class="module"><a href="../classes/URI/Hash.html">URI::Hash</a></li>
+        
+          <li class="module"><a href="../classes/URI/Kernel.html">URI::Kernel</a></li>
+        
+          <li class="module"><a href="../classes/ERB.html">ERB</a></li>
+        
+          <li class="class"><a href="../classes/ERB/OpenTemplate.html">ERB::OpenTemplate</a></li>
+        
+          <li class="module"><a href="../classes/English/RomanNumerals.html">English::RomanNumerals</a></li>
+        
+          <li class="module"><a href="../classes/Enumerable.html">Enumerable</a></li>
+        
+          <li class="module"><a href="../classes/Enumerable/Arguments.html">Enumerable::Arguments</a></li>
+        
+          <li class="class"><a href="../classes/Enumerator.html">Enumerator</a></li>
+        
+          <li class="class"><a href="../classes/GetoptLong.html">GetoptLong</a></li>
+        
+          <li class="class"><a href="../classes/GetoptLong/DSL.html">GetoptLong::DSL</a></li>
+        
+          <li class="class"><a href="../classes/LinkedList.html">LinkedList</a></li>
+        
+          <li class="class"><a href="../classes/LinkedList/Node.html">LinkedList::Node</a></li>
+        
+          <li class="class"><a href="../classes/Matcher.html">Matcher</a></li>
+        
+          <li class="class"><a href="../classes/Matcher/MatchData.html">Matcher::MatchData</a></li>
+        
+          <li class="class"><a href="../classes/Module.html">Module</a></li>
+        
+          <li class="module"><a href="../classes/Module/InstanceFunction.html">Module::InstanceFunction</a></li>
+        
+          <li class="module"><a href="../classes/Numeric/Multipliers.html">Numeric::Multipliers</a></li>
+        
+          <li class="class"><a href="../classes/PathList.html">PathList</a></li>
+        
+          <li class="module"><a href="../classes/PathList/Finder.html">PathList::Finder</a></li>
+        
+          <li class="class"><a href="../classes/Platform.html">Platform</a></li>
+        
+          <li class="module"><a href="../classes/Platform/ByteOrder.html">Platform::ByteOrder</a></li>
+        
+          <li class="class"><a href="../classes/Timer.html">Timer</a></li>
+        
+          <li class="class"><a href="../classes/Timer/Dummy.html">Timer::Dummy</a></li>
+        
+          <li class="module"><a href="../classes/ANSICode.html">ANSICode</a></li>
+        
+          <li class="class"><a href="../classes/Argvector.html">Argvector</a></li>
+        
+          <li class="class"><a href="../classes/Array.html">Array</a></li>
+        
+          <li class="class"><a href="../classes/AutoArray.html">AutoArray</a></li>
+        
+          <li class="class"><a href="../classes/BasicObject.html">BasicObject</a></li>
+        
+          <li class="class"><a href="../classes/CGI.html">CGI</a></li>
+        
+          <li class="class"><a href="../classes/Class.html">Class</a></li>
+        
+          <li class="module"><a href="../classes/Cloneable.html">Cloneable</a></li>
+        
+          <li class="module"><a href="../classes/Config.html">Config</a></li>
+        
+          <li class="class"><a href="../classes/Continuation.html">Continuation</a></li>
+        
+          <li class="class"><a href="../classes/Date.html">Date</a></li>
+        
+          <li class="class"><a href="../classes/DateTime.html">DateTime</a></li>
+        
+          <li class="class"><a href="../classes/Dictionary.html">Dictionary</a></li>
+        
+          <li class="module"><a href="../classes/Equitable.html">Equitable</a></li>
+        
+          <li class="module"><a href="../classes/Expirable.html">Expirable</a></li>
+        
+          <li class="class"><a href="../classes/File.html">File</a></li>
+        
+          <li class="class"><a href="../classes/FileList.html">FileList</a></li>
+        
+          <li class="module"><a href="../classes/FileUtils.html">FileUtils</a></li>
+        
+          <li class="class"><a href="../classes/Fixnum.html">Fixnum</a></li>
+        
+          <li class="class"><a href="../classes/HashBuilder.html">HashBuilder</a></li>
+        
+          <li class="module"><a href="../classes/Hook.html">Hook</a></li>
+        
+          <li class="class"><a href="../classes/Ini.html">Ini</a></li>
+        
+          <li class="module"><a href="../classes/Instantiable.html">Instantiable</a></li>
+        
+          <li class="class"><a href="../classes/Integer.html">Integer</a></li>
+        
+          <li class="class"><a href="../classes/Memoizer.html">Memoizer</a></li>
+        
+          <li class="class"><a href="../classes/NilClass.html">NilClass</a></li>
+        
+          <li class="class"><a href="../classes/NullClass.html">NullClass</a></li>
+        
+          <li class="module"><a href="../classes/OpEsc.html">OpEsc</a></li>
+        
+          <li class="class"><a href="../classes/OpenCascade.html">OpenCascade</a></li>
+        
+          <li class="class"><a href="../classes/OpenCollection.html">OpenCollection</a></li>
+        
+          <li class="class"><a href="../classes/OpenHash.html">OpenHash</a></li>
+        
+          <li class="class"><a href="../classes/OpenModule.html">OpenModule</a></li>
+        
+          <li class="class"><a href="../classes/OpenObject.html">OpenObject</a></li>
+        
+          <li class="class"><a href="../classes/OpenStruct.html">OpenStruct</a></li>
+        
+          <li class="module"><a href="../classes/OpenStructable.html">OpenStructable</a></li>
+        
+          <li class="class"><a href="../classes/Pathname.html">Pathname</a></li>
+        
+          <li class="module"><a href="../classes/PluginManager.html">PluginManager</a></li>
+        
+          <li class="class"><a href="../classes/Proc.html">Proc</a></li>
+        
+          <li class="class"><a href="../classes/Range.html">Range</a></li>
+        
+          <li class="class"><a href="../classes/Reference.html">Reference</a></li>
+        
+          <li class="module"><a href="../classes/Registerable.html">Registerable</a></li>
+        
+          <li class="class"><a href="../classes/Semaphore.html">Semaphore</a></li>
+        
+          <li class="class"><a href="../classes/Set.html">Set</a></li>
+        
+          <li class="module"><a href="../classes/Shellwords.html">Shellwords</a></li>
+        
+          <li class="class"><a href="../classes/Stash.html">Stash</a></li>
+        
+          <li class="class"><a href="../classes/String.html">String</a></li>
+        
+          <li class="module"><a href="../classes/System.html">System</a></li>
+        
+          <li class="class"><a href="../classes/TracePoint.html">TracePoint</a></li>
+        
+          <li class="class"><a href="../classes/Tuple.html">Tuple</a></li>
+        
+          <li class="class"><a href="../classes/VersionNumber.html">VersionNumber</a></li>
+        
+          <li class="class"><a href="../classes/X.html">X</a></li>
+        
+          <li class="module"><a href="../classes/Zlib.html">Zlib</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+    </div>
+
+    <div id="validator-badges">
+      
+      <div style="float: right; margin-right: 5px;">
+        <a href="http://validator.w3.org/check/referer"><img src="../assets/icon/check.png" alt="[Validate]" height="16" width="16" /></a>
+      </div>
+      Generated with <a href="http://github.com/proutils/webri">WebRI Redfish</a> 1.0.0
+      <br/><br/>
+    </div>
+  </div>
+
+  <div id="documentation">
+
+    <div id="description">
+      
+        <h1>OpenStructable</h1>
+      
+
+      <p>
+OpensStructable is a mixin module which can provide <a
+href="OpenStruct.html">OpenStruct</a> behavior to any class or object. <a
+href="OpenStructable.html">OpenStructable</a> allows extention of data
+objects with arbitrary attributes.
+</p>
+<h2>Usage</h2>
+<pre>
+  require 'ostructable'
+
+  class Record
+    include OpenStructable
+  end
+
+  record = Record.new
+  record.name    = &quot;John Smith&quot;
+  record.age     = 70
+  record.pension = 300
+
+  puts record.name     # -&gt; &quot;John Smith&quot;
+  puts record.address  # -&gt; nil
+</pre>
+<h2>Author(s)</h2>
+<ul>
+<li>Thomas Sawyer
+
+</li>
+<li>Yukihiro Matsumoto
+
+</li>
+<li>Gavin Sinclair (Documentation)
+
+</li>
+</ul>
+
+    </div>
+
+    <!-- Constants -->
+    
+
+    <!-- Attributes -->
+    
+
+    <!-- Methods -->
+    
+    <div id="public-class-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="new-method" class="method-detail ">
+        <a name="M000566"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">new</span><span
+            class="method-args">(hash=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="new-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/ostructable.rb, line 61</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">hash</span>=<span class="ruby-keyword kw">nil</span>)
+    <span class="ruby-ivar">@__table__</span> = {}
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">hash</span>
+      <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span> <span class="ruby-keyword kw">in</span> <span class="ruby-identifier">hash</span>
+        <span class="ruby-ivar">@__table__</span>[<span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_sym</span>] = <span class="ruby-identifier">v</span>
+        <span class="ruby-identifier">new_ostruct_member</span>(<span class="ruby-identifier">k</span>)
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+    <div id="public-instance-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="--method" class="method-detail ">
+        <a name="M000581"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">==</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Compare this object and <tt>other</tt> for equality.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/ostructable.rb, line 154</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-operator">==</span>(<span class="ruby-identifier">other</span>)
+    <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">unless</span>(<span class="ruby-identifier">other</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">OpenStruct</span>))
+    <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@__table__</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">table</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="delete-field-method" class="method-detail ">
+        <a name="M000578"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">delete_field</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Remove the named field from the object.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="delete-field-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/ostructable.rb, line 132</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">delete_field</span>(<span class="ruby-identifier">name</span>)
+    <span class="ruby-ivar">@__table__</span> <span class="ruby-operator">||=</span> {}
+    <span class="ruby-ivar">@__table__</span>.<span class="ruby-identifier">delete</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_sym</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="initialize-copy-method" class="method-detail ">
+        <a name="M000568"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">initialize_copy</span><span
+            class="method-args">(orig)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+duplicate an <a href="OpenStruct.html">OpenStruct</a> object members.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="initialize-copy-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/ostructable.rb, line 72</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize_copy</span>(<span class="ruby-identifier">orig</span>)
+    <span class="ruby-keyword kw">super</span>
+    <span class="ruby-ivar">@__table__</span> = <span class="ruby-ivar">@__table__</span>.<span class="ruby-identifier">dup</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="inspect-method" class="method-detail ">
+        <a name="M000579"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">inspect</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns a string containing a detailed summary of the keys and values.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="inspect-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/ostructable.rb, line 140</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">inspect</span>
+    <span class="ruby-identifier">str</span> = <span class="ruby-node">&quot;&lt;#{self.class}&quot;</span>
+    <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span> <span class="ruby-keyword kw">in</span> (<span class="ruby-ivar">@__table__</span> <span class="ruby-operator">||=</span> {})
+      <span class="ruby-identifier">str</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot; #{k}=#{v.inspect}&quot;</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">str</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;&gt;&quot;</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="marshal-dump-method" class="method-detail ">
+        <a name="M000570"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">marshal_dump</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="marshal-dump-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/ostructable.rb, line 77</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">marshal_dump</span>
+    <span class="ruby-ivar">@table</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="marshal-load-method" class="method-detail ">
+        <a name="M000571"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">marshal_load</span><span
+            class="method-args">(x)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="marshal-load-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/ostructable.rb, line 80</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">marshal_load</span>(<span class="ruby-identifier">x</span>)
+    <span class="ruby-ivar">@table</span> = <span class="ruby-identifier">x</span>
+    <span class="ruby-ivar">@table</span>.<span class="ruby-identifier">each_key</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span> <span class="ruby-identifier">new_ostruct_member</span>(<span class="ruby-identifier">key</span>)}
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="new-ostruct-member-method" class="method-detail ">
+        <a name="M000572"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">new_ostruct_member</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="new-ostruct-member-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/ostructable.rb, line 85</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">new_ostruct_member</span>(<span class="ruby-identifier">name</span>)
+    <span class="ruby-keyword kw">unless</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">name</span>)
+      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">instance_eval</span> <span class="ruby-node">%{
+        def #{name}; @__table__[:#{name}]; end
+        def #{name}=(x); @__table__[:#{name}] = x; end
+      }</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="update-method" class="method-detail ">
+        <a name="M000575"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">update</span><span
+            class="method-args">(hash)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Generate additional attributes and values.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="update-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/ostructable.rb, line 97</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">update</span>(<span class="ruby-identifier">hash</span>)
+    <span class="ruby-ivar">@__table__</span> <span class="ruby-operator">||=</span> {}
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">hash</span>
+      <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span> <span class="ruby-keyword kw">in</span> <span class="ruby-identifier">hash</span>
+        <span class="ruby-ivar">@__table__</span>[<span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_sym</span>] = <span class="ruby-identifier">v</span>
+        <span class="ruby-identifier">new_ostruct_member</span>(<span class="ruby-identifier">k</span>)
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+
+  </div>
+
+
+  <div id="rdoc-debugging-section-dump" class="debugging-section">
+  
+    <p>Disabled; run with --debug to generate this.</p>
+  
+  </div>
+
+</main>
+</body>
+</html>
+

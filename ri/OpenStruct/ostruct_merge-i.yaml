@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Merge hash data creating a new OpenStruct object.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  o = OpenStruct.new\n  o.ostruct_merge { :a =&gt; 2 }\n  o.a  #=&gt; 2\n"
+full_name: OpenStruct#ostruct_merge
+is_singleton: false
+name: ostruct_merge
+params: (other)
+visibility: public

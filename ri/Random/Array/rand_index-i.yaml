@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Random index.
+full_name: Random::Array#rand_index
+is_singleton: false
+name: rand_index
+params: ()
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Alias for #each"
+full_name: Dictionary#each_pair
+is_singleton: false
+name: each_pair
+params: ()
+visibility: public

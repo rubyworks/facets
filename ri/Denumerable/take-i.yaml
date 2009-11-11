@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Limit to the first n items in the list
+full_name: Denumerable#take
+is_singleton: false
+name: take
+params: (n)
+visibility: public

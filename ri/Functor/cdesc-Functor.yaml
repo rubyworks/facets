@@ -1,0 +1,23 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: By definition a Functor is simply a first class method, but these are common in the form of Method and Proc. So for Ruby a Functor is a more specialized as a Higher-order function or Metafunction. Essentally, a Functor can vary its behavior accorrding to the operation applied to it.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  f = Functor.new { |op, x| x.send(op, x) }\n  f + 1  #=&gt; 2\n  f + 2  #=&gt; 4\n  f + 3  #=&gt; 6\n  f * 1  #=&gt; 1\n  f * 2  #=&gt; 4\n  f * 3  #=&gt; 9\n"
+constants: []
+
+full_name: Functor
+includes: []
+
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: method_missing
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_proc
+name: Functor
+superclass: Object

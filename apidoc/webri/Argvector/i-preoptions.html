@@ -1,0 +1,11 @@
+<br/><b>Argvector#preoptions</b><hr />
+preoptions()<br />
+<p />
+From /home/trans/Documents/programs/current/facets/doc/ri/Argvector/cdesc-Argvector.yaml<hr />
+Returns a hash of options that occur before the first operand. This works well with subcommand to get the main command's options.<p />
+<pre>  line = &amp;quot;--trace stamp --file VERSION&amp;quot;
+  cargs = Argvector.new(line)
+  opts = cargs.preoptions
+  opts #=&amp;gt; {&amp;quot;trace&amp;quot;=&amp;gt;true}
+</pre>
+<br/><br/>

@@ -1,0 +1,28 @@
+--- !ruby/object:RDoc::RI::ModuleDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: append_features
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 1
+  text: Random
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Randomization core extension methods.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: This library extends Array, String and Hash with randomization methods. Most of the methods are of one of two kinds. Either they &quot;pick&quot; a random element from the reciever or they randomly &quot;shuffle&quot; the reciever.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: The most common example is Array#shuffle, which simply randmomizes the order of an array's elements.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  [1,2,3].shuffle  #=&gt; [2,3,1]\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: The other methods do similar things for their respective classes.
+constants: []
+
+full_name: Random
+includes: []
+
+instance_methods: []
+
+name: Random

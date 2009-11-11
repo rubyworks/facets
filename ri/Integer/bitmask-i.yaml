@@ -1,0 +1,21 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: 
+- !ruby/object:RDoc::RI::AliasName 
+  name: bitmask!
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Apply a bitmask.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  1.bitmask(6) #=&gt; 7\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Using a inverted bitmask clears bits.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  7.bitmask(~2) #=&gt; 5\n  5.bitmask(~2) #=&gt; 5\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: George Moschovitis"
+full_name: Integer#bitmask
+is_singleton: false
+name: bitmask
+params: (mask)
+visibility: public

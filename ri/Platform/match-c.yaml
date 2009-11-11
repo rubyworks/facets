@@ -1,0 +1,10 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Platform::match
+is_singleton: true
+name: match
+params: (platform)
+visibility: public

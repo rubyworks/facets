@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Work constant for building paths from root directory onward.
+full_name: Pathname::work
+is_singleton: true
+name: work
+params: ()
+visibility: public

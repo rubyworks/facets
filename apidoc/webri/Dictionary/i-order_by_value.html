@@ -1,0 +1,15 @@
+<br/><b>Dictionary#order_by_value</b><hr />
+order_by_value()<br />
+<p />
+From /home/trans/Documents/programs/current/facets/doc/ri/Dictionary/cdesc-Dictionary.yaml<hr />
+Keep dictionary sorted by value.<p />
+<pre>  d = Dictionary.new.order_by_value
+  d[&amp;quot;z&amp;quot;] = 1
+  d[&amp;quot;y&amp;quot;] = 2
+  d[&amp;quot;x&amp;quot;] = 3
+  d  #=&amp;gt; {&amp;quot;x&amp;quot;=&amp;gt;3,&amp;quot;y&amp;quot;=&amp;gt;2,&amp;quot;z&amp;quot;=&amp;gt;2}
+</pre>
+This is equivalent to:<p />
+<pre>  Dictionary.new.order_by { |key,value| value }
+</pre>
+<br/><br/>

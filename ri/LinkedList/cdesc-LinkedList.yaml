@@ -1,0 +1,56 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: LinkedList implements a simple doubly linked list with efficient hash-like element access.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: This is a simple linked list implementation with efficient random access of data elements. It was inspired by George Moscovitis' LRUCache implementation found in Facets 1.7.30, but unlike the linked list in that cache, this one does not require the use of a mixin on any class to be stored. The linked list provides the push, pop, shift, unshift, first, last, delete and length methods which work just like their namesakes in the Array class, but it also supports setting and retrieving values by key, just like a hash.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: LinkedList was ported from the original in Kirk Hanes IOWA web framework.
+constants: []
+
+full_name: LinkedList
+includes: 
+- !ruby/object:RDoc::RI::IncludedModule 
+  name: Enumerable
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: "[]"
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: "[]="
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: delete
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: each
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: empty?
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: first
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: last
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: length
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: node_delete
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: node_join
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: node_purge
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: pop
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: push
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: queue
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: shift
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_a
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: unshift
+name: LinkedList
+superclass: Object

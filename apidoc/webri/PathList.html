@@ -1,0 +1,22 @@
+<br/><b>Class: PathList < Array</b><hr />
+<h1>PathList</h1>
+A PathList is an array containing 1..n paths. It is useful to regroup paths and make lookups on them.<p />
+<h2>Usage</h2>
+<pre> path = PathList.new(ENV['PATH'])
+ path.find 'env'            #=&amp;gt; &amp;quot;/usr/bin/env&amp;quot;
+
+ # This is already done when including the library
+ $:.class                   #=&amp;gt; Array
+ $:.extend PathList::Finder
+ $:.find_ext = 'rb'
+
+ $:.find 'uri'              #=&amp;gt; &amp;quot;/usr/lib/ruby/1.8/uri.rb&amp;quot;
+</pre>
+<hr />
+<p />
+<h2>Includes:</h2>
+Finder<p />
+<h2>Class methods:</h2>
+new<p />
+<h2>Instance methods:</h2>
+to_s<br/><br/>

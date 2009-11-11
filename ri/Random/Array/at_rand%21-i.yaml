@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Same as #at_rand, but acts in place removing a random element from the array."
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  a = [1,2,3,4]\n  a.at_rand!       #=&gt; 2\n  a                #=&gt; [1,3,4]\n"
+full_name: Random::Array#at_rand!
+is_singleton: false
+name: at_rand!
+params: ()
+visibility: public

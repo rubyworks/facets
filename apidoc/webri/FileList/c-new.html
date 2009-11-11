@@ -1,0 +1,13 @@
+<br/><b>FileList::new</b><hr />
+FileList::new(*patterns) {|self if block_given?| ...}<br />
+<p />
+From /home/trans/Documents/programs/current/facets/doc/ri/FileList/cdesc-FileList.yaml<hr />
+Create a file list from the globbable patterns given. If you wish to perform multiple includes or excludes at object build time, use the &quot;yield self&quot; pattern.<p />
+Example:<p />
+<pre>  file_list = FileList.new['lib/*&lt;b&gt;/&lt;/b&gt;.rb', 'test/test*.rb']
+
+  pkg_files = FileList.new['lib/*&lt;b&gt;/&lt;/b&gt;'] do |fl|
+    fl.exclude(/\bCVS\b/)
+  end
+</pre>
+<br/><br/>

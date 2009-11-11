@@ -1,0 +1,81 @@
+--- !ruby/object:RDoc::RI::ModuleDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 1
+  text: Multipliers
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Adds methods to Numeric to make working with magnitudes (kilo, mega, giga, milli, micro, etc.)
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  1.kilo               #=&gt; 1000\n  1.milli              #=&gt; 0.001\n  1.kibi               #=&gt; 1024\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: To display a value in a certain denomination, simply perform the inverse operation by placing the multiplier called on unit (1) in the denominator.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  1000 / 1.kilo        #=&gt; 1\n  1024 / 1.kibi        #=&gt; 1\n"
+- !ruby/struct:RDoc::Markup::Flow::RULE 
+  width: 
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 1
+  text: Multipliers
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Adds methods to Numeric to make working with magnitudes (kilo, mega, giga, milli, micro, etc.)
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  1.kilo               #=&gt; 1000\n  1.milli              #=&gt; 0.001\n  1.kibi               #=&gt; 1024\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: To display a value in a certain denomination, simply perform the inverse operation by placing the multiplier called on unit (1) in the denominator.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  1000 / 1.kilo        #=&gt; 1\n  1024 / 1.kibi        #=&gt; 1\n"
+constants: []
+
+full_name: Numeric::Multipliers
+includes: []
+
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: atto
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: centi
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: deci
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: deka
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: exa
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: exbi
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: femto
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: gibi
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: giga
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: hecto
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: kibi
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: kilo
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: mebi
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: mega
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: micro
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: milli
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: nano
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: pebi
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: peta
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: pico
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: tebi
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: tera
+name: Multipliers

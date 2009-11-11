@@ -1,0 +1,20 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Accumulate a set of a set.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: For example, in an ORM design if Group has_many User then
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  groups.accumulate.users\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: will return a list of users from all groups.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: George Moshchovitis"
+full_name: Enumerable#accumulate
+is_singleton: false
+name: accumulate
+params: ()
+visibility: public

@@ -1,0 +1,1004 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+  <title>Class: TracePoint</title>
+
+  
+    <link rel="SHORTCUT ICON" href="../assets/icon/class.png">
+  
+
+  <link type="text/css" rel="stylesheet" href="../assets/rdoc.css" media="screen" />
+  <link type="text/css" rel="stylesheet" href="../assets/highlight/styles/github.css" title="GitHub" />
+
+  <script type="text/javascript" charset="utf-8" src="../assets/jquery.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/highlight/highlight.pack.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/quicksearch.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/main.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready( function() {
+      hookHighlightSyntax();
+	    hookSourceViews();
+	    hookDebuggingToggle();
+	    hookQuickSearch();
+	    highlightLocationTarget();
+
+	    $('ul.link-list a').bind("click", highlightClickTarget);
+    });
+  </script>
+</head>
+<body class="class">
+<div id="main">
+
+  <div class="head">
+    <h1>
+      
+        <img src="../assets/icon/class.png" align="absmiddle">&nbsp;
+      
+      <a href="../index.html">Facets More API</a>&nbsp;
+      <a href="/">TracePoint</a>
+    </h1>
+  </div>
+
+  <div id="metadata">
+    <div id="project-metadata">
+
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li class="file"><a href="../files/lib/more/facets/tracepoint_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/more/facets/tracepoint.rb">lib/more/facets/tracepoint.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      <!-- What about Git info, or Hg info? This seems almost silly, albeit kind of cool. -->
+      <!-- TODO: generalize this for all SCMs -->
+
+      
+    </div>
+
+    <div id="class-metadata">
+
+      <!-- Parent Class -->
+      
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        <ul>
+          
+          <!-- why was this class="link" ? -->
+          <li class="class"><a href="Object.html">Object</a></li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Namespace Contents -->
+      
+
+      <!-- Method Quickref -->
+      
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+            
+            <li class="singleton">
+              <a href="#M000705">::active</a>
+            </li>
+          
+            
+            <li class="singleton">
+              <a href="#M000706">::active=</a>
+            </li>
+          
+            
+            <li class="singleton">
+              <a href="#M000708">::new</a>
+            </li>
+          
+            
+            <li class="singleton">
+              <a href="#M000707">::trace</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000718">#===</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000710">#back</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000709">#bind</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000713">#called</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000712">#callee</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000716">#event?</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000715">#event_map</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000717">#eventless?</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000714">#method_name</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000711">#self</a>
+            </li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Included Modules -->
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Information</h3>
+        <ul>
+        
+          <li class="file"><a href="../files/README_rdoc.html">README.rdoc</a></li>
+        
+          <li class="file"><a href="../files/doc/README_more.html">README.more</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class Index
+          <span class="search-toggle"><img src="../assets/icon/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <!-- classpage.html : classes -->
+        <ul class="link-list">
+        
+          <li class="module"><a href="../classes/Random.html">Random</a></li>
+        
+          <li class="module"><a href="../classes/Random/Array.html">Random::Array</a></li>
+        
+          <li class="module"><a href="../classes/Random/Hash.html">Random::Hash</a></li>
+        
+          <li class="module"><a href="../classes/Random/Object.html">Random::Object</a></li>
+        
+          <li class="module"><a href="../classes/Random/Range.html">Random::Range</a></li>
+        
+          <li class="module"><a href="../classes/Random/String.html">Random::String</a></li>
+        
+          <li class="module"><a href="../classes/Random/String/Self.html">Random::String::Self</a></li>
+        
+          <li class="module"><a href="../classes/Multiton.html">Multiton</a></li>
+        
+          <li class="module"><a href="../classes/Multiton/Inclusive.html">Multiton::Inclusive</a></li>
+        
+          <li class="module"><a href="../classes/Multiton/MetaMethods.html">Multiton::MetaMethods</a></li>
+        
+          <li class="class"><a href="../classes/Duration.html">Duration</a></li>
+        
+          <li class="module"><a href="../classes/Duration/Numeric.html">Duration::Numeric</a></li>
+        
+          <li class="module"><a href="../classes/Duration/Time.html">Duration::Time</a></li>
+        
+          <li class="module"><a href="../classes/URI.html">URI</a></li>
+        
+          <li class="module"><a href="../classes/URI/Hash.html">URI::Hash</a></li>
+        
+          <li class="module"><a href="../classes/URI/Kernel.html">URI::Kernel</a></li>
+        
+          <li class="module"><a href="../classes/ERB.html">ERB</a></li>
+        
+          <li class="class"><a href="../classes/ERB/OpenTemplate.html">ERB::OpenTemplate</a></li>
+        
+          <li class="module"><a href="../classes/English/RomanNumerals.html">English::RomanNumerals</a></li>
+        
+          <li class="module"><a href="../classes/Enumerable.html">Enumerable</a></li>
+        
+          <li class="module"><a href="../classes/Enumerable/Arguments.html">Enumerable::Arguments</a></li>
+        
+          <li class="class"><a href="../classes/Enumerator.html">Enumerator</a></li>
+        
+          <li class="class"><a href="../classes/GetoptLong.html">GetoptLong</a></li>
+        
+          <li class="class"><a href="../classes/GetoptLong/DSL.html">GetoptLong::DSL</a></li>
+        
+          <li class="class"><a href="../classes/LinkedList.html">LinkedList</a></li>
+        
+          <li class="class"><a href="../classes/LinkedList/Node.html">LinkedList::Node</a></li>
+        
+          <li class="class"><a href="../classes/Matcher.html">Matcher</a></li>
+        
+          <li class="class"><a href="../classes/Matcher/MatchData.html">Matcher::MatchData</a></li>
+        
+          <li class="class"><a href="../classes/Module.html">Module</a></li>
+        
+          <li class="module"><a href="../classes/Module/InstanceFunction.html">Module::InstanceFunction</a></li>
+        
+          <li class="module"><a href="../classes/Numeric/Multipliers.html">Numeric::Multipliers</a></li>
+        
+          <li class="class"><a href="../classes/PathList.html">PathList</a></li>
+        
+          <li class="module"><a href="../classes/PathList/Finder.html">PathList::Finder</a></li>
+        
+          <li class="class"><a href="../classes/Platform.html">Platform</a></li>
+        
+          <li class="module"><a href="../classes/Platform/ByteOrder.html">Platform::ByteOrder</a></li>
+        
+          <li class="class"><a href="../classes/Timer.html">Timer</a></li>
+        
+          <li class="class"><a href="../classes/Timer/Dummy.html">Timer::Dummy</a></li>
+        
+          <li class="module"><a href="../classes/ANSICode.html">ANSICode</a></li>
+        
+          <li class="class"><a href="../classes/Argvector.html">Argvector</a></li>
+        
+          <li class="class"><a href="../classes/Array.html">Array</a></li>
+        
+          <li class="class"><a href="../classes/AutoArray.html">AutoArray</a></li>
+        
+          <li class="class"><a href="../classes/BasicObject.html">BasicObject</a></li>
+        
+          <li class="class"><a href="../classes/CGI.html">CGI</a></li>
+        
+          <li class="class"><a href="../classes/Class.html">Class</a></li>
+        
+          <li class="module"><a href="../classes/Cloneable.html">Cloneable</a></li>
+        
+          <li class="module"><a href="../classes/Config.html">Config</a></li>
+        
+          <li class="class"><a href="../classes/Continuation.html">Continuation</a></li>
+        
+          <li class="class"><a href="../classes/Date.html">Date</a></li>
+        
+          <li class="class"><a href="../classes/DateTime.html">DateTime</a></li>
+        
+          <li class="class"><a href="../classes/Dictionary.html">Dictionary</a></li>
+        
+          <li class="module"><a href="../classes/Equitable.html">Equitable</a></li>
+        
+          <li class="module"><a href="../classes/Expirable.html">Expirable</a></li>
+        
+          <li class="class"><a href="../classes/File.html">File</a></li>
+        
+          <li class="class"><a href="../classes/FileList.html">FileList</a></li>
+        
+          <li class="module"><a href="../classes/FileUtils.html">FileUtils</a></li>
+        
+          <li class="class"><a href="../classes/Fixnum.html">Fixnum</a></li>
+        
+          <li class="class"><a href="../classes/HashBuilder.html">HashBuilder</a></li>
+        
+          <li class="module"><a href="../classes/Hook.html">Hook</a></li>
+        
+          <li class="class"><a href="../classes/Ini.html">Ini</a></li>
+        
+          <li class="module"><a href="../classes/Instantiable.html">Instantiable</a></li>
+        
+          <li class="class"><a href="../classes/Integer.html">Integer</a></li>
+        
+          <li class="class"><a href="../classes/Memoizer.html">Memoizer</a></li>
+        
+          <li class="class"><a href="../classes/NilClass.html">NilClass</a></li>
+        
+          <li class="class"><a href="../classes/NullClass.html">NullClass</a></li>
+        
+          <li class="module"><a href="../classes/OpEsc.html">OpEsc</a></li>
+        
+          <li class="class"><a href="../classes/OpenCascade.html">OpenCascade</a></li>
+        
+          <li class="class"><a href="../classes/OpenCollection.html">OpenCollection</a></li>
+        
+          <li class="class"><a href="../classes/OpenHash.html">OpenHash</a></li>
+        
+          <li class="class"><a href="../classes/OpenModule.html">OpenModule</a></li>
+        
+          <li class="class"><a href="../classes/OpenObject.html">OpenObject</a></li>
+        
+          <li class="class"><a href="../classes/OpenStruct.html">OpenStruct</a></li>
+        
+          <li class="module"><a href="../classes/OpenStructable.html">OpenStructable</a></li>
+        
+          <li class="class"><a href="../classes/Pathname.html">Pathname</a></li>
+        
+          <li class="module"><a href="../classes/PluginManager.html">PluginManager</a></li>
+        
+          <li class="class"><a href="../classes/Proc.html">Proc</a></li>
+        
+          <li class="class"><a href="../classes/Range.html">Range</a></li>
+        
+          <li class="class"><a href="../classes/Reference.html">Reference</a></li>
+        
+          <li class="module"><a href="../classes/Registerable.html">Registerable</a></li>
+        
+          <li class="class"><a href="../classes/Semaphore.html">Semaphore</a></li>
+        
+          <li class="class"><a href="../classes/Set.html">Set</a></li>
+        
+          <li class="module"><a href="../classes/Shellwords.html">Shellwords</a></li>
+        
+          <li class="class"><a href="../classes/Stash.html">Stash</a></li>
+        
+          <li class="class"><a href="../classes/String.html">String</a></li>
+        
+          <li class="module"><a href="../classes/System.html">System</a></li>
+        
+          <li class="class"><a href="../classes/TracePoint.html">TracePoint</a></li>
+        
+          <li class="class"><a href="../classes/Tuple.html">Tuple</a></li>
+        
+          <li class="class"><a href="../classes/VersionNumber.html">VersionNumber</a></li>
+        
+          <li class="class"><a href="../classes/X.html">X</a></li>
+        
+          <li class="module"><a href="../classes/Zlib.html">Zlib</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+    </div>
+
+    <div id="validator-badges">
+      
+      <div style="float: right; margin-right: 5px;">
+        <a href="http://validator.w3.org/check/referer"><img src="../assets/icon/check.png" alt="[Validate]" height="16" width="16" /></a>
+      </div>
+      Generated with <a href="http://github.com/proutils/webri">WebRI Redfish</a> 1.0.0
+      <br/><br/>
+    </div>
+  </div>
+
+  <div id="documentation">
+
+    <div id="description">
+      
+
+      <h1><a href="TracePoint.html">TracePoint</a></h1>
+<p>
+A <a href="TracePoint.html">TracePoint</a> is a Binding with the addition
+of event information. Among other things, it functions very well as the
+join-point for Event-based AOP.
+</p>
+<h2>Usage</h2>
+<pre>
+  TracePoint.trace { |tp|
+    puts &quot;#{tp.self.class}\t#{tp.called}\t#{tp.event}\t#{tp.return?}\t#{tp.back == tp.bind}&quot;
+  }
+
+  1 + 1
+</pre>
+<p>
+produces
+</p>
+<pre>
+  Class   trace   return     true    false
+  Object          line       false   false
+  Fixnum  +       c-call     false   false
+  Fixnum  +       c-return   false   false
+</pre>
+<h2>Notes</h2>
+<p>
+You can&#8217;t subclass Binding, so we delegate (which is better anyway).
+</p>
+
+    </div>
+
+    <!-- Constants -->
+    
+    <div id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt><a name="EVENT_MAP">EVENT_MAP</a></dt>
+        
+        <dd class="description"><p>
+methods for working with events
+</p></dd>
+        
+      
+      </dl>
+    </div>
+    
+
+    <!-- Attributes -->
+    
+    <div id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="event-attribute-method" class="method-detail">
+        <a name="event"></a>
+        
+        <a name="event="></a>
+        
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">event</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>
+&#8212; instance &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+</p>
+        
+        </div>
+      </div>
+      
+      <div id="binding-attribute-method" class="method-detail">
+        <a name="binding"></a>
+        
+        <a name="binding="></a>
+        
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">binding</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>
+&#8212; instance &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+</p>
+        
+        </div>
+      </div>
+      
+      <div id="back-binding-attribute-method" class="method-detail">
+        <a name="back_binding"></a>
+        
+        <a name="back_binding="></a>
+        
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">back_binding</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>
+&#8212; instance &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+</p>
+        
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- Methods -->
+    
+    <div id="public-class-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="active-method" class="method-detail ">
+        <a name="M000705"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">active</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="active-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/tracepoint.rb, line 86</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">active</span> ; <span class="ruby-ivar">@@active</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="active--method" class="method-detail ">
+        <a name="M000706"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">active=</span><span
+            class="method-args">(x)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="active--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/tracepoint.rb, line 88</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">active=</span>(<span class="ruby-identifier">x</span>)
+      <span class="ruby-ivar">@@active</span> = <span class="ruby-identifier">x</span> <span class="ruby-value">? </span><span class="ruby-keyword kw">true</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">false</span>
+      <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@@active</span>
+        <span class="ruby-identifier">set_trace_func</span> <span class="ruby-keyword kw">nil</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="new-method" class="method-detail ">
+        <a name="M000708"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">new</span><span
+            class="method-args">( event, method, bind, back_binding=bind )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Until Ruby has a built-in way to get the name of the calling method that
+information must be passed into the <a
+href="TracePoint.html">TracePoint</a>.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="new-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/tracepoint.rb, line 121</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">event</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">bind</span>, <span class="ruby-identifier">back_binding</span>=<span class="ruby-identifier">bind</span> )
+    <span class="ruby-ivar">@event</span> = <span class="ruby-identifier">event</span>
+    <span class="ruby-ivar">@method</span> = <span class="ruby-identifier">method</span>
+    <span class="ruby-ivar">@binding</span> = <span class="ruby-identifier">bind</span>
+    <span class="ruby-ivar">@back_binding</span> = <span class="ruby-identifier">back_binding</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="trace-method" class="method-detail ">
+        <a name="M000707"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">trace</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Trace execution using a <a href="TracePoint.html">TracePoint</a>.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="trace-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/tracepoint.rb, line 96</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">trace</span> <span class="ruby-comment cmt"># :yield:</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">active</span>
+        <span class="ruby-identifier">bb_stack</span> = []
+        <span class="ruby-identifier">set_trace_func</span> <span class="ruby-identifier">proc</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">e</span>, <span class="ruby-identifier">f</span>, <span class="ruby-identifier">l</span>, <span class="ruby-identifier">m</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">k</span><span class="ruby-operator">|</span>
+          <span class="ruby-comment cmt">#(p e, f, l, m, b, k, @@bb_stack; puts &quot;---&quot;) if $DEBUG</span>
+          <span class="ruby-keyword kw">if</span> [<span class="ruby-value str">'call'</span>,<span class="ruby-value str">'c-call'</span>,<span class="ruby-value str">'class'</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">e</span>)
+            <span class="ruby-identifier">bb_stack</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">b</span>
+          <span class="ruby-keyword kw">elsif</span> [<span class="ruby-value str">'return'</span>,<span class="ruby-value str">'c-return'</span>,<span class="ruby-value str">'end'</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">e</span>)
+            <span class="ruby-identifier">bb</span> = <span class="ruby-identifier">bb_stack</span>.<span class="ruby-identifier">pop</span>
+          <span class="ruby-keyword kw">end</span>
+          <span class="ruby-identifier">b</span> = <span class="ruby-identifier">bb</span> <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span> <span class="ruby-identifier">b</span>    <span class="ruby-comment cmt"># this sucks!</span>
+          <span class="ruby-identifier">tp</span> = <span class="ruby-constant">TracePoint</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>,<span class="ruby-identifier">m</span>,<span class="ruby-identifier">b</span>,<span class="ruby-identifier">bb</span>)
+          <span class="ruby-keyword kw">yield</span>(<span class="ruby-identifier">tp</span>)
+        }
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+    <div id="public-instance-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="--method" class="method-detail ">
+        <a name="M000718"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">===</span><span
+            class="method-args">(e)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+For use in case conditions
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/tracepoint.rb, line 173</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-operator">===</span>(<span class="ruby-identifier">e</span>)
+    <span class="ruby-constant">EVENT_MAP</span>[<span class="ruby-identifier">e</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-ivar">@event</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="back-method" class="method-detail ">
+        <a name="M000710"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">back</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+shorthand for <a href="TracePoint.html#back_binding">back_binding</a>
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="back-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/tracepoint.rb, line 132</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">back</span> ; <span class="ruby-ivar">@back_binding</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="bind-method" class="method-detail ">
+        <a name="M000709"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">bind</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+shorthand for binding
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="bind-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/tracepoint.rb, line 129</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">bind</span> ; <span class="ruby-ivar">@binding</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="called-method" class="method-detail method-alias">
+        <a name="M000713"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">called</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="TracePoint.html#M000712">callee</a>
+</p>
+          
+
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="TracePoint.html#M000714">method_name</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="callee-method" class="method-detail ">
+        <a name="M000712"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">callee</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns the name of the event&#8217;s method. This could delegate to the
+binding if Ruby had an internal way to retrieve the current method name.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="callee-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/tracepoint.rb, line 141</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">callee</span> ; <span class="ruby-ivar">@method</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="TracePoint.html#M000713">called</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="event--method" class="method-detail ">
+        <a name="M000716"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">event?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Is the trace point defined or undefined?
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="event--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/tracepoint.rb, line 169</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">event?</span> ; <span class="ruby-operator">!</span><span class="ruby-operator">!</span> <span class="ruby-ivar">@event</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="event-map-method" class="method-detail ">
+        <a name="M000715"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">event_map</span><span
+            class="method-args">(e)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="event-map-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/tracepoint.rb, line 166</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">event_map</span>(<span class="ruby-identifier">e</span>) ; <span class="ruby-constant">EVENT_MAP</span>[<span class="ruby-identifier">e</span>] ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="eventless--method" class="method-detail ">
+        <a name="M000717"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">eventless?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="eventless--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/tracepoint.rb, line 170</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">eventless?</span> ; <span class="ruby-operator">!</span> <span class="ruby-ivar">@event</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="method-name-method" class="method-detail method-alias">
+        <a name="M000714"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">method_name</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="TracePoint.html#M000713">called</a>
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="self-method" class="method-detail ">
+        <a name="M000711"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">self</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Delegates &#8220;self&#8221; to the binding which in turn delegates the
+binding object.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="self-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/tracepoint.rb, line 136</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span> ; <span class="ruby-ivar">@binding</span>.<span class="ruby-identifier">self</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+
+  </div>
+
+
+  <div id="rdoc-debugging-section-dump" class="debugging-section">
+  
+    <p>Disabled; run with --debug to generate this.</p>
+  
+  </div>
+
+</main>
+</body>
+</html>
+

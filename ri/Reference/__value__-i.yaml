@@ -1,0 +1,11 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: 
+- !ruby/object:RDoc::RI::AliasName 
+  name: instance_delegate
+block_params: 
+comment: 
+full_name: Reference#__value__
+is_singleton: false
+name: __value__
+params: ()
+visibility: public

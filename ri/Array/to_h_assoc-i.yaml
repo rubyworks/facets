@@ -1,0 +1,18 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "When a mixed or multi-element accociative array is used, the result is as follows:"
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  a = [ [:a,1,2], [:b,2], [:c], :d ]\n  a.to_h  #=&gt; { :a=&gt;[1,2], :b=&gt;[2], :c=&gt;[], :d=&gt;[] }\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: If the first entry of any subelements are the same, then the value will be set to the last occuring value.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  a = [ :x, [:x], [:x,1,2], [:x,3], [:x,4] ]\n  a.to_h_assoc  #=&gt; { :x=&gt;4 }\n"
+full_name: Array#to_h_assoc
+is_singleton: false
+name: to_h_assoc
+params: ()
+visibility: public

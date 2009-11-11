@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "TODO: find a better name. Gets the request uri, injects extra parameters in the query string and returns a new uri. The request object is not modified. There is always a qs string so an extra test is skipped."
+full_name: URI#update_request_uri
+is_singleton: false
+name: update_request_uri
+params: (request, parameters)
+visibility: public

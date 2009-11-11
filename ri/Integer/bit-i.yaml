@@ -1,0 +1,21 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: 
+- !ruby/object:RDoc::RI::AliasName 
+  name: bit!
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Set a bit.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  0.bit!(4)  #=&gt; 8\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Using an inverted bit will clear a bit.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  10.bit!(~3)      #=&gt; 2\n  0xb0100.bit(~3)  #=&gt; 0\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Thomas Sawyer, George Moschovitis"
+full_name: Integer#bit
+is_singleton: false
+name: bit
+params: (bit)
+visibility: public

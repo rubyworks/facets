@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: []
+
+constants: []
+
+full_name: Numeric
+includes: []
+
+instance_methods: []
+
+name: Numeric
+superclass: Object

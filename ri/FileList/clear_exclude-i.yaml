@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Clear all the exclude patterns so that we exclude nothing.
+full_name: FileList#clear_exclude
+is_singleton: false
+name: clear_exclude
+params: ()
+visibility: public

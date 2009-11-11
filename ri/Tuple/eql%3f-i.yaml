@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Returns true if two tuple references are for the very same tuple.
+full_name: Tuple#eql?
+is_singleton: false
+name: eql?
+params: ( other )
+visibility: public

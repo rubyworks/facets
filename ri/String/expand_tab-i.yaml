@@ -1,0 +1,19 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: 
+- !ruby/object:RDoc::RI::AliasName 
+  name: expand_tabs
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Expands tabs to <tt>n</tt> spaces. Non-destructive. If <tt>n</tt> is 0, then tabs are simply removed. Raises an exception if <tt>n</tt> is negative.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  &quot;\\t\\tHey&quot;.expand_tab(2)  #=&gt; &quot;    Hey&quot;\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Thanks to GGaramuno for a more efficient algorithm. Very nice.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Gavin Sinclair, Noah Gibbs, GGaramuno"
+full_name: String#expand_tab
+is_singleton: false
+name: expand_tab
+params: (n=8)
+visibility: public

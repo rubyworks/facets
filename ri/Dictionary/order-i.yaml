@@ -1,0 +1,10 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Dictionary#order
+is_singleton: false
+name: order
+params: ()
+visibility: public

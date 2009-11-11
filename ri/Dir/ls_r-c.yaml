@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Same as Dir#recurse.
+full_name: Dir::ls_r
+is_singleton: true
+name: ls_r
+params: (path='.', &block)
+visibility: public

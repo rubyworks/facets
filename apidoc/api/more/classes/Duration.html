@@ -1,0 +1,1512 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+  <title>Class: Duration</title>
+
+  
+    <link rel="SHORTCUT ICON" href="../assets/icon/class.png">
+  
+
+  <link type="text/css" rel="stylesheet" href="../assets/rdoc.css" media="screen" />
+  <link type="text/css" rel="stylesheet" href="../assets/highlight/styles/github.css" title="GitHub" />
+
+  <script type="text/javascript" charset="utf-8" src="../assets/jquery.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/highlight/highlight.pack.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/quicksearch.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/main.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready( function() {
+      hookHighlightSyntax();
+	    hookSourceViews();
+	    hookDebuggingToggle();
+	    hookQuickSearch();
+	    highlightLocationTarget();
+
+	    $('ul.link-list a').bind("click", highlightClickTarget);
+    });
+  </script>
+</head>
+<body class="class">
+<div id="main">
+
+  <div class="head">
+    <h1>
+      
+        <img src="../assets/icon/class.png" align="absmiddle">&nbsp;
+      
+      <a href="../index.html">Facets More API</a>&nbsp;
+      <a href="/">Duration</a>
+    </h1>
+  </div>
+
+  <div id="metadata">
+    <div id="project-metadata">
+
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li class="file"><a href="../files/lib/more/facets/duration_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/more/facets/duration.rb">lib/more/facets/duration.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      <!-- What about Git info, or Hg info? This seems almost silly, albeit kind of cool. -->
+      <!-- TODO: generalize this for all SCMs -->
+
+      
+    </div>
+
+    <div id="class-metadata">
+
+      <!-- Parent Class -->
+      
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        <ul>
+          
+          <!-- why was this class="link" ? -->
+          <li class="class"><a href="Object.html">Object</a></li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Namespace Contents -->
+      
+      <div id="namespace-list-section" class="section">
+        <h3 class="section-header">Namespace</h3>
+        <ul class="link-list">
+          
+          <li class="module"><a href="Duration/Numeric.html">Duration::Numeric</a></li>
+          
+          <li class="module"><a href="Duration/Time.html">Duration::Time</a></li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Method Quickref -->
+      
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+            
+            <li class="singleton">
+              <a href="#M000063">::[]</a>
+            </li>
+          
+            
+            <li class="singleton">
+              <a href="#M000064">::new</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000084">#+</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000086">#+</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000085">#-</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000087">#/</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000076">#<=></a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000075">#==</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000093">#after</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000092">#before</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000079">#days</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000080">#hours</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000068">#inspect</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000081">#minutes</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000067">#reset_segments</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000082">#seconds</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000088">#segmented</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000066">#segments</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000089">#strftime</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000071">#to_a</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000070">#to_f</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000072">#to_h</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000069">#to_i</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000074">#to_s</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000083">#total</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000078">#weeks</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000077">#years</a>
+            </li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Included Modules -->
+      
+      <div id="includes-section" class="section">
+        <h3 class="section-header">Included Modules</h3>
+        <ul class="link-list">
+        
+        
+          <li class="module"><span class="include">Comparable</span></li>
+        
+        
+        </ul>
+      </div>
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Information</h3>
+        <ul>
+        
+          <li class="file"><a href="../files/README_rdoc.html">README.rdoc</a></li>
+        
+          <li class="file"><a href="../files/doc/README_more.html">README.more</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class Index
+          <span class="search-toggle"><img src="../assets/icon/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <!-- classpage.html : classes -->
+        <ul class="link-list">
+        
+          <li class="module"><a href="../classes/Random.html">Random</a></li>
+        
+          <li class="module"><a href="../classes/Random/Array.html">Random::Array</a></li>
+        
+          <li class="module"><a href="../classes/Random/Hash.html">Random::Hash</a></li>
+        
+          <li class="module"><a href="../classes/Random/Object.html">Random::Object</a></li>
+        
+          <li class="module"><a href="../classes/Random/Range.html">Random::Range</a></li>
+        
+          <li class="module"><a href="../classes/Random/String.html">Random::String</a></li>
+        
+          <li class="module"><a href="../classes/Random/String/Self.html">Random::String::Self</a></li>
+        
+          <li class="module"><a href="../classes/Multiton.html">Multiton</a></li>
+        
+          <li class="module"><a href="../classes/Multiton/Inclusive.html">Multiton::Inclusive</a></li>
+        
+          <li class="module"><a href="../classes/Multiton/MetaMethods.html">Multiton::MetaMethods</a></li>
+        
+          <li class="class"><a href="../classes/Duration.html">Duration</a></li>
+        
+          <li class="module"><a href="../classes/Duration/Numeric.html">Duration::Numeric</a></li>
+        
+          <li class="module"><a href="../classes/Duration/Time.html">Duration::Time</a></li>
+        
+          <li class="module"><a href="../classes/URI.html">URI</a></li>
+        
+          <li class="module"><a href="../classes/URI/Hash.html">URI::Hash</a></li>
+        
+          <li class="module"><a href="../classes/URI/Kernel.html">URI::Kernel</a></li>
+        
+          <li class="module"><a href="../classes/ERB.html">ERB</a></li>
+        
+          <li class="class"><a href="../classes/ERB/OpenTemplate.html">ERB::OpenTemplate</a></li>
+        
+          <li class="module"><a href="../classes/English/RomanNumerals.html">English::RomanNumerals</a></li>
+        
+          <li class="module"><a href="../classes/Enumerable.html">Enumerable</a></li>
+        
+          <li class="module"><a href="../classes/Enumerable/Arguments.html">Enumerable::Arguments</a></li>
+        
+          <li class="class"><a href="../classes/Enumerator.html">Enumerator</a></li>
+        
+          <li class="class"><a href="../classes/GetoptLong.html">GetoptLong</a></li>
+        
+          <li class="class"><a href="../classes/GetoptLong/DSL.html">GetoptLong::DSL</a></li>
+        
+          <li class="class"><a href="../classes/LinkedList.html">LinkedList</a></li>
+        
+          <li class="class"><a href="../classes/LinkedList/Node.html">LinkedList::Node</a></li>
+        
+          <li class="class"><a href="../classes/Matcher.html">Matcher</a></li>
+        
+          <li class="class"><a href="../classes/Matcher/MatchData.html">Matcher::MatchData</a></li>
+        
+          <li class="class"><a href="../classes/Module.html">Module</a></li>
+        
+          <li class="module"><a href="../classes/Module/InstanceFunction.html">Module::InstanceFunction</a></li>
+        
+          <li class="module"><a href="../classes/Numeric/Multipliers.html">Numeric::Multipliers</a></li>
+        
+          <li class="class"><a href="../classes/PathList.html">PathList</a></li>
+        
+          <li class="module"><a href="../classes/PathList/Finder.html">PathList::Finder</a></li>
+        
+          <li class="class"><a href="../classes/Platform.html">Platform</a></li>
+        
+          <li class="module"><a href="../classes/Platform/ByteOrder.html">Platform::ByteOrder</a></li>
+        
+          <li class="class"><a href="../classes/Timer.html">Timer</a></li>
+        
+          <li class="class"><a href="../classes/Timer/Dummy.html">Timer::Dummy</a></li>
+        
+          <li class="module"><a href="../classes/ANSICode.html">ANSICode</a></li>
+        
+          <li class="class"><a href="../classes/Argvector.html">Argvector</a></li>
+        
+          <li class="class"><a href="../classes/Array.html">Array</a></li>
+        
+          <li class="class"><a href="../classes/AutoArray.html">AutoArray</a></li>
+        
+          <li class="class"><a href="../classes/BasicObject.html">BasicObject</a></li>
+        
+          <li class="class"><a href="../classes/CGI.html">CGI</a></li>
+        
+          <li class="class"><a href="../classes/Class.html">Class</a></li>
+        
+          <li class="module"><a href="../classes/Cloneable.html">Cloneable</a></li>
+        
+          <li class="module"><a href="../classes/Config.html">Config</a></li>
+        
+          <li class="class"><a href="../classes/Continuation.html">Continuation</a></li>
+        
+          <li class="class"><a href="../classes/Date.html">Date</a></li>
+        
+          <li class="class"><a href="../classes/DateTime.html">DateTime</a></li>
+        
+          <li class="class"><a href="../classes/Dictionary.html">Dictionary</a></li>
+        
+          <li class="module"><a href="../classes/Equitable.html">Equitable</a></li>
+        
+          <li class="module"><a href="../classes/Expirable.html">Expirable</a></li>
+        
+          <li class="class"><a href="../classes/File.html">File</a></li>
+        
+          <li class="class"><a href="../classes/FileList.html">FileList</a></li>
+        
+          <li class="module"><a href="../classes/FileUtils.html">FileUtils</a></li>
+        
+          <li class="class"><a href="../classes/Fixnum.html">Fixnum</a></li>
+        
+          <li class="class"><a href="../classes/HashBuilder.html">HashBuilder</a></li>
+        
+          <li class="module"><a href="../classes/Hook.html">Hook</a></li>
+        
+          <li class="class"><a href="../classes/Ini.html">Ini</a></li>
+        
+          <li class="module"><a href="../classes/Instantiable.html">Instantiable</a></li>
+        
+          <li class="class"><a href="../classes/Integer.html">Integer</a></li>
+        
+          <li class="class"><a href="../classes/Memoizer.html">Memoizer</a></li>
+        
+          <li class="class"><a href="../classes/NilClass.html">NilClass</a></li>
+        
+          <li class="class"><a href="../classes/NullClass.html">NullClass</a></li>
+        
+          <li class="module"><a href="../classes/OpEsc.html">OpEsc</a></li>
+        
+          <li class="class"><a href="../classes/OpenCascade.html">OpenCascade</a></li>
+        
+          <li class="class"><a href="../classes/OpenCollection.html">OpenCollection</a></li>
+        
+          <li class="class"><a href="../classes/OpenHash.html">OpenHash</a></li>
+        
+          <li class="class"><a href="../classes/OpenModule.html">OpenModule</a></li>
+        
+          <li class="class"><a href="../classes/OpenObject.html">OpenObject</a></li>
+        
+          <li class="class"><a href="../classes/OpenStruct.html">OpenStruct</a></li>
+        
+          <li class="module"><a href="../classes/OpenStructable.html">OpenStructable</a></li>
+        
+          <li class="class"><a href="../classes/Pathname.html">Pathname</a></li>
+        
+          <li class="module"><a href="../classes/PluginManager.html">PluginManager</a></li>
+        
+          <li class="class"><a href="../classes/Proc.html">Proc</a></li>
+        
+          <li class="class"><a href="../classes/Range.html">Range</a></li>
+        
+          <li class="class"><a href="../classes/Reference.html">Reference</a></li>
+        
+          <li class="module"><a href="../classes/Registerable.html">Registerable</a></li>
+        
+          <li class="class"><a href="../classes/Semaphore.html">Semaphore</a></li>
+        
+          <li class="class"><a href="../classes/Set.html">Set</a></li>
+        
+          <li class="module"><a href="../classes/Shellwords.html">Shellwords</a></li>
+        
+          <li class="class"><a href="../classes/Stash.html">Stash</a></li>
+        
+          <li class="class"><a href="../classes/String.html">String</a></li>
+        
+          <li class="module"><a href="../classes/System.html">System</a></li>
+        
+          <li class="class"><a href="../classes/TracePoint.html">TracePoint</a></li>
+        
+          <li class="class"><a href="../classes/Tuple.html">Tuple</a></li>
+        
+          <li class="class"><a href="../classes/VersionNumber.html">VersionNumber</a></li>
+        
+          <li class="class"><a href="../classes/X.html">X</a></li>
+        
+          <li class="module"><a href="../classes/Zlib.html">Zlib</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+    </div>
+
+    <div id="validator-badges">
+      
+      <div style="float: right; margin-right: 5px;">
+        <a href="http://validator.w3.org/check/referer"><img src="../assets/icon/check.png" alt="[Validate]" height="16" width="16" /></a>
+      </div>
+      Generated with <a href="http://github.com/proutils/webri">WebRI Redfish</a> 1.0.0
+      <br/><br/>
+    </div>
+  </div>
+
+  <div id="documentation">
+
+    <div id="description">
+      
+        <h1>Duration</h1>
+      
+
+      
+    </div>
+
+    <!-- Constants -->
+    
+    <div id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt><a name="SECOND">SECOND</a></dt>
+        
+        <dd class="description missing-docs">(Not documented)</dd>
+        
+      
+        <dt><a name="MINUTE">MINUTE</a></dt>
+        
+        <dd class="description missing-docs">(Not documented)</dd>
+        
+      
+        <dt><a name="HOUR">HOUR</a></dt>
+        
+        <dd class="description missing-docs">(Not documented)</dd>
+        
+      
+        <dt><a name="DAY">DAY</a></dt>
+        
+        <dd class="description missing-docs">(Not documented)</dd>
+        
+      
+        <dt><a name="WEEK">WEEK</a></dt>
+        
+        <dd class="description missing-docs">(Not documented)</dd>
+        
+      
+        <dt><a name="YEAR">YEAR</a></dt>
+        
+        <dd class="description missing-docs">(Not documented)</dd>
+        
+      
+        <dt><a name="SEGMENTS">SEGMENTS</a></dt>
+        
+        <dd class="description missing-docs">(Not documented)</dd>
+        
+      
+      </dl>
+    </div>
+    
+
+    <!-- Attributes -->
+    
+
+    <!-- Methods -->
+    
+    <div id="public-class-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="--method" class="method-detail ">
+        <a name="M000063"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">[]</span><span
+            class="method-args">(seconds, *segments)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/duration.rb, line 14</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-operator">[]</span>(<span class="ruby-identifier">seconds</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">segments</span>)
+    <span class="ruby-identifier">new</span>(<span class="ruby-identifier">seconds</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">segments</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="new-method" class="method-detail ">
+        <a name="M000064"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">new</span><span
+            class="method-args">(seconds=0, *segments)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="new-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/duration.rb, line 19</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">seconds</span>=<span class="ruby-value">0</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">segments</span>)
+    <span class="ruby-ivar">@seconds</span> = <span class="ruby-identifier">seconds</span>.<span class="ruby-identifier">to_i</span>
+    <span class="ruby-identifier">reset_segments</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">segments</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+    <div id="public-instance-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="--method" class="method-detail ">
+        <a name="M000084"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">+</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/duration.rb, line 123</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-operator">+</span>(<span class="ruby-identifier">other</span>)
+    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@seconds</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_i</span>, <span class="ruby-identifier">segments</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="--method" class="method-detail ">
+        <a name="M000086"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">+</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/duration.rb, line 131</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-operator">+</span>(<span class="ruby-identifier">other</span>)
+    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@seconds</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_i</span>, <span class="ruby-identifier">segments</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="--method" class="method-detail ">
+        <a name="M000085"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">-</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/duration.rb, line 127</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-operator">-</span>(<span class="ruby-identifier">other</span>)
+    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@seconds</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_i</span>, <span class="ruby-identifier">segments</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="--method" class="method-detail ">
+        <a name="M000087"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">/</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/duration.rb, line 135</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-operator">/</span>(<span class="ruby-identifier">other</span>)
+    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@seconds</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_i</span>, <span class="ruby-identifier">segments</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="--method" class="method-detail ">
+        <a name="M000076"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">&lt;=&gt;</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/duration.rb, line 102</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-operator">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>)
+    <span class="ruby-ivar">@seconds</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_i</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="--method" class="method-detail ">
+        <a name="M000075"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">==</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns true if <tt>other</tt> is also a <a
+href="Duration.html">Duration</a> instance with the same <tt>value</tt>, or
+if <tt>other == value</tt>.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/duration.rb, line 94</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-operator">==</span>(<span class="ruby-identifier">other</span>)
+    <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Duration</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">other</span>
+      <span class="ruby-identifier">other</span>.<span class="ruby-identifier">seconds</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">seconds</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">other</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">seconds</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="after-method" class="method-detail ">
+        <a name="M000093"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">after</span><span
+            class="method-args">(time)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="after-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/duration.rb, line 211</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">after</span>(<span class="ruby-identifier">time</span>)
+    <span class="ruby-ivar">@seconds</span>.<span class="ruby-identifier">after</span>(<span class="ruby-identifier">time</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="before-method" class="method-detail ">
+        <a name="M000092"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">before</span><span
+            class="method-args">(time)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="before-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/duration.rb, line 206</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">before</span>(<span class="ruby-identifier">time</span>)
+    <span class="ruby-ivar">@seconds</span>.<span class="ruby-identifier">before</span>(<span class="ruby-identifier">time</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="days-method" class="method-detail ">
+        <a name="M000079"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">days</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="days-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/duration.rb, line 116</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">days</span>    ; <span class="ruby-identifier">to_h</span>[<span class="ruby-identifier">:days</span>]    ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="hours-method" class="method-detail ">
+        <a name="M000080"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">hours</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="hours-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/duration.rb, line 117</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">hours</span>   ; <span class="ruby-identifier">to_h</span>[<span class="ruby-identifier">:hours</span>]   ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="inspect-method" class="method-detail ">
+        <a name="M000068"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">inspect</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="inspect-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/duration.rb, line 50</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">inspect</span>
+    <span class="ruby-identifier">h</span> = <span class="ruby-identifier">to_h</span>
+    <span class="ruby-identifier">segments</span>.<span class="ruby-identifier">reverse</span>.<span class="ruby-identifier">collect</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">l</span><span class="ruby-operator">|</span>
+      <span class="ruby-node">&quot;#{h[l.to_sym]} #{l}&quot;</span>
+    <span class="ruby-keyword kw">end</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">' '</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="minutes-method" class="method-detail ">
+        <a name="M000081"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">minutes</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="minutes-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/duration.rb, line 118</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">minutes</span> ; <span class="ruby-identifier">to_h</span>[<span class="ruby-identifier">:minutes</span>] ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="reset-segments-method" class="method-detail ">
+        <a name="M000067"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">reset_segments</span><span
+            class="method-args">(*segments)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="reset-segments-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/duration.rb, line 28</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">reset_segments</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">segments</span>)
+    <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">segments</span>.<span class="ruby-identifier">size</span>
+    <span class="ruby-keyword kw">when</span> <span class="ruby-value">0</span>
+      <span class="ruby-ivar">@segments</span> = [<span class="ruby-identifier">:days</span>, <span class="ruby-identifier">:hours</span>, <span class="ruby-identifier">:minutes</span>, <span class="ruby-identifier">:seconds</span>]
+    <span class="ruby-keyword kw">when</span> <span class="ruby-value">1</span>
+      <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">segments</span> = <span class="ruby-identifier">segments</span>[<span class="ruby-value">0</span>]
+      <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Array</span>
+        <span class="ruby-ivar">@segments</span> = <span class="ruby-identifier">segments</span>.<span class="ruby-identifier">collect</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> (<span class="ruby-identifier">p</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">downcase</span>.<span class="ruby-identifier">chomp</span>(<span class="ruby-value str">'s'</span>) <span class="ruby-operator">+</span> <span class="ruby-value str">'s'</span>).<span class="ruby-identifier">to_sym</span> }
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@segments</span>.<span class="ruby-identifier">all?</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-constant">SEGMENTS</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">s</span>) }
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">f</span> = <span class="ruby-constant">SEGMENTS</span>.<span class="ruby-identifier">index</span>(<span class="ruby-identifier">segments</span>)
+        <span class="ruby-ivar">@segments</span> = <span class="ruby-constant">SEGMENTS</span>[<span class="ruby-identifier">f</span><span class="ruby-operator">..</span><span class="ruby-value">0</span>]
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">when</span> <span class="ruby-value">2</span>
+      <span class="ruby-identifier">f</span> = <span class="ruby-constant">SEGMENTS</span>.<span class="ruby-identifier">index</span>(<span class="ruby-identifier">segments</span>[<span class="ruby-value">0</span>])
+      <span class="ruby-identifier">t</span> = <span class="ruby-constant">SEGMENTS</span>.<span class="ruby-identifier">index</span>(<span class="ruby-identifier">segments</span>[<span class="ruby-value">1</span>])
+      <span class="ruby-ivar">@segments</span> = <span class="ruby-constant">SEGMENTS</span>[<span class="ruby-identifier">f</span><span class="ruby-operator">..</span><span class="ruby-identifier">t</span>]
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="seconds-method" class="method-detail ">
+        <a name="M000082"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">seconds</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="seconds-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/duration.rb, line 119</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">seconds</span> ; <span class="ruby-identifier">to_h</span>[<span class="ruby-identifier">:seconds</span>] ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="segmented-method" class="method-detail ">
+        <a name="M000088"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">segmented</span><span
+            class="method-args">(*segments)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="segmented-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/duration.rb, line 140</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">segmented</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">segments</span>)
+    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@seconds</span>, <span class="ruby-identifier">segments</span>)
+    <span class="ruby-comment cmt">#segments = segments.collect{ |p| p.to_s.downcase.chomp('s') }</span>
+    <span class="ruby-comment cmt">#y,w,d,h,m,s = nil,nil,nil,nil,nil,nil</span>
+    <span class="ruby-comment cmt">#x = @seconds</span>
+    <span class="ruby-comment cmt">#y, x = *x.divmod(YEAR)   if segments.include?('year')</span>
+    <span class="ruby-comment cmt">#w, x = *x.divmod(WEEK)   if segments.include?('week')</span>
+    <span class="ruby-comment cmt">#d, x = *x.divmod(DAY)    if segments.include?('day')</span>
+    <span class="ruby-comment cmt">#h, x = *x.divmod(HOUR)   if segments.include?('hour')</span>
+    <span class="ruby-comment cmt">#m, x = *x.divmod(MINUTE) if segments.include?('minute')</span>
+    <span class="ruby-comment cmt">#s = x if segments.include?('second')</span>
+    <span class="ruby-comment cmt">#[y, w, d, h, m, s].compact</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="segments-method" class="method-detail ">
+        <a name="M000066"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">segments</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="segments-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/duration.rb, line 25</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">segments</span>; <span class="ruby-ivar">@segments</span>; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="strftime-method" class="method-detail ">
+        <a name="M000089"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">strftime</span><span
+            class="method-args">(fmt)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Format duration.
+</p>
+<p>
+<b>Identifiers</b>
+</p>
+<pre>
+    %w -- Number of weeks
+    %d -- Number of days
+    %h -- Number of hours
+    %m -- Number of minutes
+    %s -- Number of seconds
+    %t -- Total number of seconds
+    %x -- Duration#to_s
+    %% -- Literal `%' character
+</pre>
+<p>
+<b>Example</b>
+</p>
+<pre>
+    d = Duration.new(:weeks =&gt; 10, :days =&gt; 7)
+    =&gt; #&lt;Duration: 11 weeks&gt;
+    d.strftime(&quot;It's been %w weeks!&quot;)
+    =&gt; &quot;It's been 11 weeks!&quot;
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="strftime-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/duration.rb, line 174</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">strftime</span>(<span class="ruby-identifier">fmt</span>)
+    <span class="ruby-identifier">h</span> = <span class="ruby-identifier">to_h</span>
+    <span class="ruby-identifier">hx</span> = {
+     <span class="ruby-value str">'y'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">:years</span>]  ,
+     <span class="ruby-value str">'w'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">:weeks</span>]  ,
+     <span class="ruby-value str">'d'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">:days</span>]   ,
+     <span class="ruby-value str">'h'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">:hours</span>]  ,
+     <span class="ruby-value str">'m'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">:minutes</span>],
+     <span class="ruby-value str">'s'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">:seconds</span>],
+     <span class="ruby-value str">'t'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">total</span>,
+     <span class="ruby-value str">'x'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">to_s</span> 
+    }
+    <span class="ruby-identifier">fmt</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/%?%(w|d|h|m|s|t|x)/</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">match</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">hx</span>[<span class="ruby-identifier">match</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">1</span>]]
+    <span class="ruby-keyword kw">end</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-value str">'%%'</span>, <span class="ruby-value str">'%'</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="to-a-method" class="method-detail ">
+        <a name="M000071"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">to_a</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="to-a-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/duration.rb, line 62</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_a</span>
+    <span class="ruby-identifier">a</span>, <span class="ruby-identifier">s</span> = [], <span class="ruby-ivar">@seconds</span>
+    <span class="ruby-identifier">a</span>[<span class="ruby-value">5</span>], <span class="ruby-identifier">s</span> = <span class="ruby-operator">*</span><span class="ruby-identifier">s</span>.<span class="ruby-identifier">divmod</span>(<span class="ruby-constant">YEAR</span>)   <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@segments</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">:years</span>)
+    <span class="ruby-identifier">a</span>[<span class="ruby-value">4</span>], <span class="ruby-identifier">s</span> = <span class="ruby-operator">*</span><span class="ruby-identifier">s</span>.<span class="ruby-identifier">divmod</span>(<span class="ruby-constant">WEEK</span>)   <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@segments</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">:weeks</span>)
+    <span class="ruby-identifier">a</span>[<span class="ruby-value">3</span>], <span class="ruby-identifier">s</span> = <span class="ruby-operator">*</span><span class="ruby-identifier">s</span>.<span class="ruby-identifier">divmod</span>(<span class="ruby-constant">DAY</span>)    <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@segments</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">:days</span>)
+    <span class="ruby-identifier">a</span>[<span class="ruby-value">2</span>], <span class="ruby-identifier">s</span> = <span class="ruby-operator">*</span><span class="ruby-identifier">s</span>.<span class="ruby-identifier">divmod</span>(<span class="ruby-constant">HOUR</span>)   <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@segments</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">:hours</span>)
+    <span class="ruby-identifier">a</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">s</span> = <span class="ruby-operator">*</span><span class="ruby-identifier">s</span>.<span class="ruby-identifier">divmod</span>(<span class="ruby-constant">MINUTE</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@segments</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">:minutes</span>)
+    <span class="ruby-identifier">a</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">s</span> = <span class="ruby-operator">*</span><span class="ruby-identifier">s</span>.<span class="ruby-identifier">divmod</span>(<span class="ruby-constant">SECOND</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@segments</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">:seconds</span>)
+    <span class="ruby-identifier">a</span>.<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">reverse</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="to-f-method" class="method-detail ">
+        <a name="M000070"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">to_f</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="to-f-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/duration.rb, line 58</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_f</span> ; <span class="ruby-ivar">@seconds</span>.<span class="ruby-identifier">to_f</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="to-h-method" class="method-detail ">
+        <a name="M000072"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">to_h</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="to-h-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/duration.rb, line 74</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_h</span>
+    <span class="ruby-identifier">h</span>, <span class="ruby-identifier">s</span> = {}, <span class="ruby-ivar">@seconds</span>
+    <span class="ruby-identifier">h</span>[<span class="ruby-identifier">:years</span>],   <span class="ruby-identifier">s</span> = <span class="ruby-operator">*</span><span class="ruby-identifier">s</span>.<span class="ruby-identifier">divmod</span>(<span class="ruby-constant">YEAR</span>)   <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@segments</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">:years</span>)
+    <span class="ruby-identifier">h</span>[<span class="ruby-identifier">:weeks</span>],   <span class="ruby-identifier">s</span> = <span class="ruby-operator">*</span><span class="ruby-identifier">s</span>.<span class="ruby-identifier">divmod</span>(<span class="ruby-constant">WEEK</span>)   <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@segments</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">:weeks</span>)
+    <span class="ruby-identifier">h</span>[<span class="ruby-identifier">:days</span>],    <span class="ruby-identifier">s</span> = <span class="ruby-operator">*</span><span class="ruby-identifier">s</span>.<span class="ruby-identifier">divmod</span>(<span class="ruby-constant">DAY</span>)    <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@segments</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">:days</span>)
+    <span class="ruby-identifier">h</span>[<span class="ruby-identifier">:hours</span>],   <span class="ruby-identifier">s</span> = <span class="ruby-operator">*</span><span class="ruby-identifier">s</span>.<span class="ruby-identifier">divmod</span>(<span class="ruby-constant">HOUR</span>)   <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@segments</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">:hours</span>)
+    <span class="ruby-identifier">h</span>[<span class="ruby-identifier">:minutes</span>], <span class="ruby-identifier">s</span> = <span class="ruby-operator">*</span><span class="ruby-identifier">s</span>.<span class="ruby-identifier">divmod</span>(<span class="ruby-constant">MINUTE</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@segments</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">:minutes</span>)
+    <span class="ruby-identifier">h</span>[<span class="ruby-identifier">:seconds</span>], <span class="ruby-identifier">s</span> = <span class="ruby-operator">*</span><span class="ruby-identifier">s</span>.<span class="ruby-identifier">divmod</span>(<span class="ruby-constant">SECOND</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@segments</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">:seconds</span>)
+    <span class="ruby-identifier">h</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="to-i-method" class="method-detail ">
+        <a name="M000069"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">to_i</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="to-i-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/duration.rb, line 57</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_i</span> ; <span class="ruby-ivar">@seconds</span>.<span class="ruby-identifier">to_i</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="to-s-method" class="method-detail ">
+        <a name="M000074"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="to-s-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/duration.rb, line 85</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>
+    <span class="ruby-identifier">h</span> = <span class="ruby-identifier">to_h</span>
+    <span class="ruby-identifier">segments</span>.<span class="ruby-identifier">reverse</span>.<span class="ruby-identifier">collect</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">l</span><span class="ruby-operator">|</span>
+      <span class="ruby-node">&quot;#{h[l.to_sym]} #{l}&quot;</span>
+    <span class="ruby-keyword kw">end</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">' '</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="total-method" class="method-detail ">
+        <a name="M000083"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">total</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="total-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/duration.rb, line 121</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">total</span> ; <span class="ruby-identifier">seconds</span> ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="weeks-method" class="method-detail ">
+        <a name="M000078"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">weeks</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="weeks-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/duration.rb, line 115</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">weeks</span>   ; <span class="ruby-identifier">to_h</span>[<span class="ruby-identifier">:weeks</span>]   ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="years-method" class="method-detail ">
+        <a name="M000077"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">years</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+def self.===(other) #:nodoc:
+</p>
+<pre>
+  other.is_a?(Duration) rescue super
+</pre>
+<p>
+end
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="years-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/duration.rb, line 114</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">years</span>   ; <span class="ruby-identifier">to_h</span>[<span class="ruby-identifier">:years</span>]   ; <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+
+  </div>
+
+
+  <div id="rdoc-debugging-section-dump" class="debugging-section">
+  
+    <p>Disabled; run with --debug to generate this.</p>
+  
+  </div>
+
+</main>
+</body>
+</html>
+

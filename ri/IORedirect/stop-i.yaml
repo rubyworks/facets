@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Stop redirection, if it is occurring
+full_name: IORedirect#stop
+is_singleton: false
+name: stop
+params: ()
+visibility: public

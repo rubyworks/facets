@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Upacks string into bytes.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Note, this is not 100% compatible with 1.8.7+ which returns an enumerator instead of an array.
+full_name: String#bytes
+is_singleton: false
+name: bytes
+params: (&blk)
+visibility: public

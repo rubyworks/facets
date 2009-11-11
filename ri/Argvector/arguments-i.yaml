@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Alias for #operands"
+full_name: Argvector#arguments
+is_singleton: false
+name: arguments
+params: ()
+visibility: public

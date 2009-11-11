@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Removes the query string from a uri
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Input: the uri"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Output: the chomped uri."
+full_name: URI#chomp_query_string
+is_singleton: false
+name: chomp_query_string
+params: (uri)
+visibility: public

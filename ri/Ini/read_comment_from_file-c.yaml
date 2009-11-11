@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Reading comments from file
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: <tt>path</tt> is a path to the ini file
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Returns a string with comments from the beginning of the ini file.
+full_name: Ini::read_comment_from_file
+is_singleton: true
+name: read_comment_from_file
+params: (path)
+visibility: public

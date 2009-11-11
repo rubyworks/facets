@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Override <tt>append_features</tt> to handle class-inheritable extensions.
+full_name: Module#append_features
+is_singleton: false
+name: append_features
+params: (mod)
+visibility: public

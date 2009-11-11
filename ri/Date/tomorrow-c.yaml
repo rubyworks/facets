@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Returns a new Date representing the date 1 day after today (i.e. tomorrow's date).
+full_name: Date::tomorrow
+is_singleton: true
+name: tomorrow
+params: ()
+visibility: public

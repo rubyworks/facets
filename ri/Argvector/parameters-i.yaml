@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Returns [operands, options], which is good for plugging directly into a method.
+full_name: Argvector#parameters
+is_singleton: false
+name: parameters
+params: ()
+visibility: public

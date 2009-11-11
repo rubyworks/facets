@@ -1,0 +1,17 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: 
+- !ruby/object:RDoc::RI::AliasName 
+  name: ends_with?
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Does a string end with the given suffix?
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  &quot;hello&quot;.end_with?(&quot;lo&quot;)    #=&gt; true\n  &quot;hello&quot;.end_with?(&quot;to&quot;)    #=&gt; false\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Lucas Carlson, Blaine Cook"
+full_name: String#end_with?
+is_singleton: false
+name: end_with?
+params: (suffix)
+visibility: public

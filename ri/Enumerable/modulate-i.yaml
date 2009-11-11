@@ -1,0 +1,18 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Modulate. Divide an array into groups by modulo of the index.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "[2,4,6,8].modulate(2) #=&gt; [[2,6],[4,8]]"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Trans"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "NOTE: Would the better name for this be 'collate'?"
+full_name: Enumerable#modulate
+is_singleton: false
+name: modulate
+params: (modulo)
+visibility: public

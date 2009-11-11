@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Alias for #alias_accessor!"
+full_name: Module#alias_switcher
+is_singleton: false
+name: alias_switcher
+params: (*args)
+visibility: public

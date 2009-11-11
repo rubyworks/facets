@@ -1,0 +1,10 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Tuple::multiton_id
+is_singleton: true
+name: multiton_id
+params: (arg=0, default=0, &block)
+visibility: public

@@ -1,0 +1,15 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: 
+- !ruby/object:RDoc::RI::AliasName 
+  name: hash_to_query_string
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Given a hash with parameter/value pairs construct a standard query string.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  URI.hash_to_query(:a =&gt; 1, :b =&gt; 2)\n  =&gt; &quot;a=1&amp;b=2&quot;\n"
+full_name: URI#hash_to_query
+is_singleton: false
+name: hash_to_query
+params: (parameters)
+visibility: public

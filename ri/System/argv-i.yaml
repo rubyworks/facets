@@ -1,0 +1,11 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: 
+- !ruby/object:RDoc::RI::AliasName 
+  name: options
+block_params: 
+comment: 
+full_name: System#argv
+is_singleton: false
+name: argv
+params: ()
+visibility: public

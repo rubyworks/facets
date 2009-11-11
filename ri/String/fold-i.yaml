@@ -1,0 +1,22 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Returns a new string with all new lines removed from adjacent lines of text.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  s = &quot;This is\\na test.\\n\\nIt clumps\\nlines of text.&quot;\n  s.fold\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: <em>produces</em>
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  &quot;This is a test.\\n\\nIt clumps lines of text. &quot;\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "One arguable flaw with this, that might need a fix: if the given string ends in a newline, it is replaced with a single space."
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Trans"
+full_name: String#fold
+is_singleton: false
+name: fold
+params: (ignore_indented=false)
+visibility: public

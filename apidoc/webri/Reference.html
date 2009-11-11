@@ -1,0 +1,16 @@
+<br/><b>Class: Reference < Object</b><hr />
+<h1>Reference</h1>
+Reference provides a way to access object indirectly. This allows for the object itself to be changed on the fly.<p />
+<pre>  a = &amp;quot;HELLO&amp;quot;
+  b = ref(a)
+  puts b    #=&amp;gt; &amp;quot;HELLO&amp;quot;
+  c = 10
+  b.become(c)
+  puts b    #=&amp;gt; &amp;quot;10&amp;quot;
+</pre>
+<hr />
+<p />
+<h2>Class methods:</h2>
+new<p />
+<h2>Instance methods:</h2>
+__value__, become, instance_delegate, method_missing<br/><br/>

@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: To be able to keep Times, Dates and DateTimes interchangeable on conversions
+full_name: DateTime#to_datetime
+is_singleton: false
+name: to_datetime
+params: ()
+visibility: public

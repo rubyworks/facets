@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Split single letter option groupings into separate options. ie. -xyz =&gt; -x -y -z
+full_name: Argvector#multi_flag
+is_singleton: false
+name: multi_flag
+params: (args=nil)
+visibility: private

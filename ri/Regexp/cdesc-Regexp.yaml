@@ -1,0 +1,20 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Regexp
+includes: []
+
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: arity
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_re
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_regexp
+name: Regexp
+superclass: Object

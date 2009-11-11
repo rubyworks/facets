@@ -1,0 +1,25 @@
+<br/><b>Class: Recorder < Object</b><hr />
+<h1>Recorder</h1>
+Recorder is similar essentially a method probe. It records everthing that happens to it, building an internal parse tree. You can then pass a substitute object and apply the recoding to it. Or you can utilize the parse tree.<p />
+The only limitation of Recorder is with special operators, like if, &amp;&amp;, ||, etc. Since they are not true methods they can't be recorded. (Too bad for Ruby.)<p />
+<pre>  class Z
+    def name ; 'George' ; end
+    def age ; 12 ; end
+  end
+
+  z = Z.new
+
+  r = Recorder.new
+  q = proc { |x| (x.name == 'George') &amp;amp; (x.age &amp;gt; 10) }
+  x = q[r]
+  x.&lt;em&gt;call&lt;/em&gt;(z)
+</pre>
+produces<p />
+<pre>  true
+</pre>
+<hr />
+<p />
+<h2>Class methods:</h2>
+new<p />
+<h2>Instance methods:</h2>
+__call__, inspect, method_missing<br/><br/>

@@ -1,0 +1,24 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: ""
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Opens a file as a string and writes back the string to the file at the end of the block.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Returns the number of written bytes or <tt>nil</tt> if the file wasn't modified.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Note that the file will even be written back in case the block raises an exception.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Mode can either be &quot;b&quot; or &quot;+&quot; and specifies to open the file in binary mode (no mapping of the plattform's newlines to &quot;\n&quot; is done) or to append to it.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  # Reverse contents of &quot;message&quot;\n  File.rewrite(&quot;message&quot;) { |str| str.reverse }\n\n  # Replace &quot;foo&quot; by &quot;bar&quot; in &quot;binary&quot;\n  File.rewrite(&quot;binary&quot;, &quot;b&quot;) { |str| str.gsub(&quot;foo&quot;, &quot;bar&quot;) }\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "IMPORTANT: The old version of this method required in place modification of the file string. The new version will write whatever the block returns instead!!!"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: George Moschovitis"
+full_name: File::rewrite
+is_singleton: true
+name: rewrite
+params: (name, mode = "") {|| ...}
+visibility: public

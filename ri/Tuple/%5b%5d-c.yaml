@@ -1,0 +1,10 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Tuple::[]
+is_singleton: true
+name: "[]"
+params: ( *args )
+visibility: public

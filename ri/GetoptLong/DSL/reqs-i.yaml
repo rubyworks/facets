@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Alias for #required"
+full_name: GetoptLong::DSL#reqs
+is_singleton: false
+name: reqs
+params: (*opts)
+visibility: public

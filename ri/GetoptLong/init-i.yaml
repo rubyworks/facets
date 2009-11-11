@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Alias for #initialize"
+full_name: GetoptLong#init
+is_singleton: false
+name: init
+params: (*arguments, &block)
+visibility: public

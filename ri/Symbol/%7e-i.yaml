@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Add a &quot;not&quot; sign to the front of a symbol.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  ~:friend    #=&gt; :&quot;~friend&quot;\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Trans"
+full_name: Symbol#~
+is_singleton: false
+name: "~"
+params: ()
+visibility: public

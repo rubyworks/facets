@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Returns true iif <tt>string</tt> is a roman numeral.
+full_name: English::RomanNumerals::is_roman_numeral?
+is_singleton: true
+name: is_roman_numeral?
+params: (string)
+visibility: public

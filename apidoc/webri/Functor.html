@@ -1,0 +1,16 @@
+<br/><b>Class: Functor < Object</b><hr />
+By definition a Functor is simply a first class method, but these are common in the form of Method and Proc. So for Ruby a Functor is a more specialized as a Higher-order function or Metafunction. Essentally, a Functor can vary its behavior accorrding to the operation applied to it.<p />
+<pre>  f = Functor.new { |op, x| x.send(op, x) }
+  f + 1  #=&amp;gt; 2
+  f + 2  #=&amp;gt; 4
+  f + 3  #=&amp;gt; 6
+  f * 1  #=&amp;gt; 1
+  f * 2  #=&amp;gt; 4
+  f * 3  #=&amp;gt; 9
+</pre>
+<hr />
+<p />
+<h2>Class methods:</h2>
+new<p />
+<h2>Instance methods:</h2>
+method_missing, to_proc<br/><br/>

@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Generate additional attributes and values.
+full_name: OpenStructable#update
+is_singleton: false
+name: update
+params: (hash)
+visibility: public

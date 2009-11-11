@@ -1,0 +1,13 @@
+<br/><b>Argvector#parse</b><hr />
+parse()<br />
+<p />
+From /home/trans/Documents/programs/current/facets/doc/ri/Argvector/cdesc-Argvector.yaml<hr />
+Basic parser partitions the command line into options and operands. Options are converted to a hash and the two parts are returned.<p />
+<pre>  line = &amp;quot;--trace stamp --file=VERSION&amp;quot;
+
+  args, keys = *parse_command(line)
+
+  args #=&amp;gt; [&amp;quot;stamp&amp;quot;]
+  keys #=&amp;gt; {&amp;quot;trace&amp;quot;=&amp;gt;true, &amp;quot;file&amp;quot;=&amp;gt;&amp;quot;VERSION&amp;quot;}
+</pre>
+<br/><br/>

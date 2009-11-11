@@ -1,0 +1,52 @@
+--- !ruby/object:RDoc::RI::ModuleDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: OpensStructable is a mixin module which can provide OpenStruct behavior to any class or object. OpenStructable allows extention of data objects with arbitrary attributes.
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 2
+  text: Usage
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  require 'ostructable'\n\n  class Record\n    include OpenStructable\n  end\n\n  record = Record.new\n  record.name    = &quot;John Smith&quot;\n  record.age     = 70\n  record.pension = 300\n\n  puts record.name     # -&gt; &quot;John Smith&quot;\n  puts record.address  # -&gt; nil\n"
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 2
+  text: Author(s)
+- !ruby/object:RDoc::Markup::Flow::LIST 
+  contents: 
+  - !ruby/struct:RDoc::Markup::Flow::LI 
+    label: "*"
+    body: Thomas Sawyer
+  - !ruby/struct:RDoc::Markup::Flow::LI 
+    label: "*"
+    body: Yukihiro Matsumoto
+  - !ruby/struct:RDoc::Markup::Flow::LI 
+    label: "*"
+    body: Gavin Sinclair (Documentation)
+  type: :BULLET
+constants: []
+
+full_name: OpenStructable
+includes: []
+
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: ==
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: delete_field
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: initialize_copy
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: inspect
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: marshal_dump
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: marshal_load
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: new_ostruct_member
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: update
+name: OpenStructable

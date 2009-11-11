@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Define a simple method namespace.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  class A\n    attr_writer :x\n    method_space :inside do\n      def x; @x; end\n    end\n  end\n\n  a = A.new\n  a.x = 10\n  a.inside.x #=&gt; 10\n  a.x  # no method error\n"
+full_name: Module#method_space
+is_singleton: false
+name: method_space
+params: (name, mod=nil, &blk)
+visibility: public

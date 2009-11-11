@@ -1,0 +1,11 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: 
+- !ruby/object:RDoc::RI::AliasName 
+  name: new
+block_params: 
+comment: 
+full_name: Multiton::MetaMethods#instance
+is_singleton: false
+name: instance
+params: (*e, &b)
+visibility: public

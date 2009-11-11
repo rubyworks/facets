@@ -1,0 +1,22 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 1
+  text: OpenCollection
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Mapping OpenObject.
+constants: []
+
+full_name: OpenCollection
+includes: []
+
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: method_missing
+name: OpenCollection
+superclass: Object

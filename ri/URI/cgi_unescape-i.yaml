@@ -1,0 +1,11 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: []
+
+full_name: URI#cgi_unescape
+is_singleton: false
+name: cgi_unescape
+params: (string)
+visibility: public

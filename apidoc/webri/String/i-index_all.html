@@ -1,0 +1,12 @@
+<br/><b>String#index_all</b><hr />
+index_all(s, reuse=false)<br />
+<p />
+From /home/trans/Documents/programs/current/facets/doc/ri/String/cdesc-String.yaml<hr />
+Like index but returns an array of all index locations. The reuse flag allows the trailing portion of a match to be reused for subsquent matches.<p />
+<pre>  &amp;quot;abcabcabc&amp;quot;.index_all('a')  #=&amp;gt; [0,3,6]
+
+  &amp;quot;bbb&amp;quot;.index_all('bb', false)  #=&amp;gt; [0]
+  &amp;quot;bbb&amp;quot;.index_all('bb', true)   #=&amp;gt; [0,1]
+</pre>
+TODO: Culd probably be defined for Indexable in general too.<p />
+<br/><br/>

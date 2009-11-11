@@ -1,0 +1,28 @@
+<br/><b>Class: Multiton</b><hr />
+<h1>Multiton</h1>
+Multiton design pattern ensures only one object is allocated for a given state.<p />
+The 'multiton' pattern is similar to a singleton, but instead of only one instance, there are several similar instances. It is useful when you want to avoid constructing objects many times because of some huge expense (connecting to a database for example), require a set of similar but not identical objects, and cannot easily control how many times a contructor may be called.<p />
+<pre>  class SomeMultitonClass
+    include Multiton
+    attr :arg
+    def initialize(arg)
+      @arg = arg
+    end
+  end
+
+  a = SomeMultitonClass.new(4)
+  b = SomeMultitonClass.new(4)   # a and b are same object
+  c = SomeMultitonClass.new(2)   # c is a different object
+</pre>
+<h2>How It Works</h2>
+A pool of objects is searched for a previously cached object, if one is not found we construct one and cache it in the pool based on class and the args given to the contructor.<p />
+A limitation of this approach is that it is impossible to detect if different blocks were given to a contructor (if it takes a block). So it is the constructor arguments <i>only</i> which determine the uniqueness of an object. To workaround this, define the <i>class</i> method ::multiton_id.<p />
+<pre>  def Klass.multiton_id(*args, &amp;amp;block)
+    # ...
+  end
+</pre>
+Which should return a hash key used to identify the object being constructed as (not) unique.<p />
+<hr />
+<p />
+<h2>Instance methods:</h2>
+_dump, clone, dup<br/><br/>

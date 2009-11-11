@@ -1,0 +1,33 @@
+--- !ruby/object:RDoc::RI::ModuleDescription 
+attributes: []
+
+class_methods: []
+
+comment: []
+
+constants: []
+
+full_name: Multiton::MetaMethods
+includes: 
+- !ruby/object:RDoc::RI::IncludedModule 
+  name: Inclusive
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: _load
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: initialized?
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: instance
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: multiton_id
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: multiton_instance
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: multiton_mutex
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: new
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: reinitialize
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: singleton_method_added
+name: MetaMethods

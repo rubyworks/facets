@@ -1,0 +1,19 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: 
+- !ruby/object:RDoc::RI::AliasName 
+  name: attr_reader?
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Create an tester attribute. This creates a single method used to test the attribute for truth.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  attr_tester :a\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: is equivalent to
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  def a?\n    @a ? true : @a\n  end\n"
+full_name: Module#attr_tester
+is_singleton: false
+name: attr_tester
+params: (*args)
+visibility: public

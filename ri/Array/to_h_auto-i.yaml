@@ -1,0 +1,24 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Converts an array into a hash. Converting an array into a hash is not a one-to-one conversion, for this reason #to_h examines at the array being converted and then dispatches the conversion to the most sutiable specialized function. There are three possiblities for this."
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "If the array is a collection of perfect pairs, like that which Hash#to_a generates, then conversion is handled by #to_h_flat."
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  a = [ [:a,1], [:b,2] ]\n  a.to_h  #=&gt; { :a=&gt;1, :b=&gt;2 }\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "If the array contains only arrays, but are not perfect pairs, then #to_h_multi is called."
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  a = [ [:a,1,2], [:b,2], [:c], [:d] ]\n  a.to_h  #=&gt; { :a=&gt;[1,2], :b=&gt;[2], :c=&gt;[], :d=&gt;[] }\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "If the array contians objects other then arrays then the #to_h_splat method is called."
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  a = [ [:a,1,2], 2, :b, [:c,3], 9 ]\n  a.to_h  #=&gt; { [:a,1,2]=&gt;2, :b=&gt;[:c,3], 9=&gt;nil }\n"
+full_name: Array#to_h_auto
+is_singleton: false
+name: to_h_auto
+params: ()
+visibility: public

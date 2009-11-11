@@ -1,0 +1,11 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: 
+- !ruby/object:RDoc::RI::AliasName 
+  name: required
+block_params: 
+comment: 
+full_name: System#loaded_features
+is_singleton: false
+name: loaded_features
+params: ()
+visibility: public

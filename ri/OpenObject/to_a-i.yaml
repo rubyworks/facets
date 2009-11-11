@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Conversion methods. (Careful, these can be clobbered!)
+full_name: OpenObject#to_a
+is_singleton: false
+name: to_a
+params: ()
+visibility: public

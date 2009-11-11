@@ -1,0 +1,26 @@
+<br/><b>Class#prepend</b><hr />
+prepend( aspect )<br />
+<p />
+From /home/trans/Documents/programs/current/facets/doc/ri/Class/cdesc-Class.yaml<hr />
+Prepend an &quot;aspect module&quot; to a class.<p />
+<pre>  class Firetruck
+    def put_out_fire(option)
+      &amp;quot;Put out #{option}&amp;quot;
+    end
+  end
+
+  module FastFiretruck
+    def put_out_fire(option)
+      super(&amp;quot;very #{option}!&amp;quot;)
+    end
+  end
+
+  Firetruck.prepend(FastFiretruck)
+
+  ft = Firetruck.new
+  ft.put_out_fire('fast') #=&amp;gt; &amp;quot;Put out very fast!&amp;quot;
+</pre>
+Implementation of this method has some limitations, in that it works by overriding #new and #allocate.<p />
+CREDIT: Trans<p />
+TODO: Perhaps rename this to preallocate, b/c of the way it works. It is not really a clean prepend, like that of Module#prepend.<p />
+<br/><br/>

@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: ""
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Does a block raise an a given <tt>exception</tt>.
+full_name: Exception#raised?
+is_singleton: false
+name: raised?
+params: () {|| ...}
+visibility: public

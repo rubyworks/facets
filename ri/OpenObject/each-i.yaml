@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Iterate over each key-value pair. (Careful, this can be clobbered!)
+full_name: OpenObject#each
+is_singleton: false
+name: each
+params: (&yld)
+visibility: public

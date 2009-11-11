@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Change the last element.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  a = [1,2,5]\n  a.last = 3\n  p a           #=&gt; [1,2,3]\n"
+full_name: Indexable#last=
+is_singleton: false
+name: last=
+params: (x)
+visibility: public

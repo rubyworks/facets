@@ -1,0 +1,11 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: 
+- !ruby/object:RDoc::RI::AliasName 
+  name: each_pair
+block_params: ( k,@hash[k] )
+comment: 
+full_name: Dictionary#each
+is_singleton: false
+name: each
+params: () {|k,@hash[k]| ...}
+visibility: public

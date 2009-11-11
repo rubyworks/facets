@@ -1,0 +1,20 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Struct
+includes: []
+
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: attributes
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: object_state
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: replace
+name: Struct
+superclass: Object

@@ -1,0 +1,18 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Alternate name for comparison operator #&lt;=&gt;."
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  3.cmp(1)   #=&gt;  1\n  3.cmp(3)   #=&gt;  0\n  3.cmp(10)  #=&gt; -1\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: This fundamental compare method is used to keep comparison compatible with <tt>#succ</tt>.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Peter Vanbroekhoven"
+full_name: Comparable#cmp
+is_singleton: false
+name: cmp
+params: (o)
+visibility: public

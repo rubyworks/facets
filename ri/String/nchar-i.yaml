@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Returns <em>n</em> characters of the string. If <em>n</em> is positive the characters are from the beginning of the string. If <em>n</em> is negative from the end of the string.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Alternatively a replacement string can be given, which will replace the <em>n</em> characters.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "   str = &quot;this is text&quot;\n   str.nchar(4)            #=&gt; &quot;this&quot;\n   str.nchar(4, 'that')    #=&gt; &quot;that&quot;\n   str                     #=&gt; &quot;that is text&quot;\n"
+full_name: String#nchar
+is_singleton: false
+name: nchar
+params: (n, replacement=nil)
+visibility: public

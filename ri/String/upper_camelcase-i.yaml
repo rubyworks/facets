@@ -1,0 +1,10 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: String#upper_camelcase
+is_singleton: false
+name: upper_camelcase
+params: ()
+visibility: public

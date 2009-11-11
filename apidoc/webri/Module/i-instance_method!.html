@@ -1,0 +1,14 @@
+<br/><b>Module#instance_method!</b><hr />
+instance_method!(s)<br />
+<p />
+From /home/trans/Documents/programs/current/facets/doc/ri/Module/cdesc-Module.yaml<hr />
+Access method as a singleton object and retain state.<p />
+<pre>  module K
+    def hello
+      puts &amp;quot;Hello World!&amp;quot;
+    end
+  end
+  p K.instance_method!(:hello)   #=&amp;gt; &amp;lt;UnboundMethod: #hello&amp;gt;
+</pre>
+NOTE: This is limited to the scope of the current module/class.<p />
+<br/><br/>

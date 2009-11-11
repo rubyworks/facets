@@ -1,0 +1,10 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: LinkedList#shift
+is_singleton: false
+name: shift
+params: ()
+visibility: public

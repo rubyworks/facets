@@ -1,0 +1,17 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: 
+- !ruby/object:RDoc::RI::AliasName 
+  name: add
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Add file names defined by glob patterns to the file list. If an array is given, add each element of the array.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Example:"
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  file_list.include(&quot;*.java&quot;, &quot;*.cfg&quot;)\n  file_list.include %w( math.c lib.h *.o )\n"
+full_name: FileList#include
+is_singleton: false
+name: include
+params: (*filenames)
+visibility: public

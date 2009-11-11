@@ -1,0 +1,24 @@
+<br/><b>Module#integrate</b><hr />
+integrate(mod, &amp;block)<br />
+<p />
+From /home/trans/Documents/programs/current/facets/doc/ri/Module/cdesc-Module.yaml<hr />
+Using integrate is just like using include except the module included is a reconstruction of the one given altered by the commands given in the block.<p />
+Convenient commands available are: #rename, #redef, #remove, #nodef and #wrap. But any module method can be used.<p />
+<pre>  module W
+    def q ; &amp;quot;q&amp;quot; ; end
+    def y ; &amp;quot;y&amp;quot; ; end
+  end
+
+  class X
+    integrate W do
+      nodef :y
+    end
+  end
+
+  x = X.new
+  x.q  #=&amp;gt; &amp;quot;q&amp;quot;
+  x.y  #=&amp;gt; missing method error
+</pre>
+This is like #revisal, but #revisal only returns the reconstructred module. It does not include it.<p />
+CREDIT: Trans<p />
+<br/><br/>

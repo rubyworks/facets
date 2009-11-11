@@ -1,0 +1,19 @@
+--- !ruby/object:RDoc::RI::ModuleDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 1
+  text: Lazy
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Everything you need for Lazy evaluation in Ruby.
+constants: []
+
+full_name: Lazy
+includes: []
+
+instance_methods: []
+
+name: Lazy

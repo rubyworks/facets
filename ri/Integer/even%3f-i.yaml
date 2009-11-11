@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Returns true if this integer is even, false otherwise.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  2.even?  #=&gt; true\n  3.even?  #=&gt; false\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Daniel Schierbeck"
+full_name: Integer#even?
+is_singleton: false
+name: even?
+params: ()
+visibility: public

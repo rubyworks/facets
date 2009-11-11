@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: As with alias_method, but alias both reader and writer.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  attr_accessor :x\n  self.x = 1\n  alias_accessor :y, :x\n  y #=&gt; 1\n  self.y = 2\n  x #=&gt; 2\n"
+full_name: Module#alias_accessor
+is_singleton: false
+name: alias_accessor
+params: (*args)
+visibility: private

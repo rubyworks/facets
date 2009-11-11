@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Peek at the top of the stack.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  a = [1, 2, 3]\n  a.peek          #=&gt; 3\n  a               #=&gt; [1, 2, 3]\n"
+full_name: Stackable#peek
+is_singleton: false
+name: peek
+params: ()
+visibility: public

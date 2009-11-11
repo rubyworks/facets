@@ -1,0 +1,1147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+  <title>Class: Integer</title>
+
+  
+    <link rel="SHORTCUT ICON" href="../assets/icon/class.png">
+  
+
+  <link type="text/css" rel="stylesheet" href="../assets/rdoc.css" media="screen" />
+  <link type="text/css" rel="stylesheet" href="../assets/highlight/styles/github.css" title="GitHub" />
+
+  <script type="text/javascript" charset="utf-8" src="../assets/jquery.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/highlight/highlight.pack.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/quicksearch.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/main.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready( function() {
+      hookHighlightSyntax();
+	    hookSourceViews();
+	    hookDebuggingToggle();
+	    hookQuickSearch();
+	    highlightLocationTarget();
+
+	    $('ul.link-list a').bind("click", highlightClickTarget);
+    });
+  </script>
+</head>
+<body class="class">
+<div id="main">
+
+  <div class="head">
+    <h1>
+      
+        <img src="../assets/icon/class.png" align="absmiddle">&nbsp;
+      
+      <a href="../index.html">Facets Core API</a>&nbsp;
+      <a href="/">Integer</a>
+    </h1>
+  </div>
+
+  <div id="metadata">
+    <div id="project-metadata">
+
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li class="file"><a href="../files/lib/core/facets/integer/multiple_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/integer/multiple.rb">lib/core/facets/integer/multiple.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/integer/ordinal_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/integer/ordinal.rb">lib/core/facets/integer/ordinal.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/integer/odd_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/integer/odd.rb">lib/core/facets/integer/odd.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/integer/length_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/integer/length.rb">lib/core/facets/integer/length.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/integer/factorial_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/integer/factorial.rb">lib/core/facets/integer/factorial.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/integer/of_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/integer/of.rb">lib/core/facets/integer/of.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/numeric/round_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/numeric/round.rb">lib/core/facets/numeric/round.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/bitmask_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/bitmask.rb">lib/core/facets/bitmask.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      <!-- What about Git info, or Hg info? This seems almost silly, albeit kind of cool. -->
+      <!-- TODO: generalize this for all SCMs -->
+
+      
+    </div>
+
+    <div id="class-metadata">
+
+      <!-- Parent Class -->
+      
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        <ul>
+          
+          <!-- why was this class="link" ? -->
+          <li class="class"><a href="Object.html">Object</a></li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Namespace Contents -->
+      
+
+      <!-- Method Quickref -->
+      
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+            
+            <li class="method">
+              <a href="#M000861">#bit</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000862">#bit!</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000864">#bit?</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000865">#bitmask</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000866">#bitmask!</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000867">#bitmask?</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000863">#clear_bit</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000723">#even?</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000726">#fac</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000725">#factorial</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000724">#length</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000719">#multiple?</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000722">#odd?</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000727">#of</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000720">#ordinal</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000721">#ordinalize</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000790">#round_at</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000791">#round_to</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000728">#times_collect</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000729">#times_map</a>
+            </li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Included Modules -->
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Information</h3>
+        <ul>
+        
+          <li class="file"><a href="../files/doc/README_core.html">README.core</a></li>
+        
+          <li class="file"><a href="../files/README_rdoc.html">README.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class Index
+          <span class="search-toggle"><img src="../assets/icon/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <!-- classpage.html : classes -->
+        <ul class="link-list">
+        
+          <li class="module"><a href="../classes/Lazy.html">Lazy</a></li>
+        
+          <li class="class"><a href="../classes/Lazy/Future.html">Lazy::Future</a></li>
+        
+          <li class="class"><a href="../classes/Lazy/Promise.html">Lazy::Promise</a></li>
+        
+          <li class="class"><a href="../classes/Lazy/PromiseSafe.html">Lazy::PromiseSafe</a></li>
+        
+          <li class="module"><a href="../classes/Enumerable.html">Enumerable</a></li>
+        
+          <li class="class"><a href="../classes/Object.html">Object</a></li>
+        
+          <li class="class"><a href="../classes/Array.html">Array</a></li>
+        
+          <li class="class"><a href="../classes/Binding.html">Binding</a></li>
+        
+          <li class="class"><a href="../classes/Class.html">Class</a></li>
+        
+          <li class="module"><a href="../classes/Comparable.html">Comparable</a></li>
+        
+          <li class="module"><a href="../classes/Denumerable.html">Denumerable</a></li>
+        
+          <li class="class"><a href="../classes/Denumerator.html">Denumerator</a></li>
+        
+          <li class="class"><a href="../classes/Dir.html">Dir</a></li>
+        
+          <li class="class"><a href="../classes/Enumerator.html">Enumerator</a></li>
+        
+          <li class="class"><a href="../classes/Exception.html">Exception</a></li>
+        
+          <li class="class"><a href="../classes/FalseClass.html">FalseClass</a></li>
+        
+          <li class="class"><a href="../classes/File.html">File</a></li>
+        
+          <li class="module"><a href="../classes/FileTest.html">FileTest</a></li>
+        
+          <li class="class"><a href="../classes/Float.html">Float</a></li>
+        
+          <li class="class"><a href="../classes/Functor.html">Functor</a></li>
+        
+          <li class="class"><a href="../classes/Hash.html">Hash</a></li>
+        
+          <li class="module"><a href="../classes/Indexable.html">Indexable</a></li>
+        
+          <li class="class"><a href="../classes/InstanceVariables.html">InstanceVariables</a></li>
+        
+          <li class="class"><a href="../classes/Integer.html">Integer</a></li>
+        
+          <li class="module"><a href="../classes/Kernel.html">Kernel</a></li>
+        
+          <li class="class"><a href="../classes/MatchData.html">MatchData</a></li>
+        
+          <li class="class"><a href="../classes/Module.html">Module</a></li>
+        
+          <li class="class"><a href="../classes/NilClass.html">NilClass</a></li>
+        
+          <li class="class"><a href="../classes/Numeric.html">Numeric</a></li>
+        
+          <li class="module"><a href="../classes/ObjectSpace.html">ObjectSpace</a></li>
+        
+          <li class="class"><a href="../classes/Proc.html">Proc</a></li>
+        
+          <li class="class"><a href="../classes/Range.html">Range</a></li>
+        
+          <li class="class"><a href="../classes/Regexp.html">Regexp</a></li>
+        
+          <li class="module"><a href="../classes/Stackable.html">Stackable</a></li>
+        
+          <li class="class"><a href="../classes/String.html">String</a></li>
+        
+          <li class="class"><a href="../classes/Struct.html">Struct</a></li>
+        
+          <li class="class"><a href="../classes/Symbol.html">Symbol</a></li>
+        
+          <li class="class"><a href="../classes/Time.html">Time</a></li>
+        
+          <li class="class"><a href="../classes/TrueClass.html">TrueClass</a></li>
+        
+          <li class="class"><a href="../classes/UnboundMethod.html">UnboundMethod</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+    </div>
+
+    <div id="validator-badges">
+      
+      <div style="float: right; margin-right: 5px;">
+        <a href="http://validator.w3.org/check/referer"><img src="../assets/icon/check.png" alt="[Validate]" height="16" width="16" /></a>
+      </div>
+      Generated with <a href="http://github.com/proutils/webri">WebRI Redfish</a> 1.0.0
+      <br/><br/>
+    </div>
+  </div>
+
+  <div id="documentation">
+
+    <div id="description">
+      
+        <h1>Integer</h1>
+      
+
+      <p>
+Calculate the number of digits in an integer.
+</p>
+<p>
+1.length #=> 1 10.length #=> 2 100.length #=> 3
+</p>
+<p>
+CREDIT: Victor H. Goff III
+</p>
+
+    </div>
+
+    <!-- Constants -->
+    
+
+    <!-- Attributes -->
+    
+
+    <!-- Methods -->
+    
+    <div id="public-instance-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="bit-method" class="method-detail ">
+        <a name="M000861"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">bit</span><span
+            class="method-args">(bit)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Set a bit.
+</p>
+<pre>
+  0.bit!(4)  #=&gt; 8
+</pre>
+<p>
+Using an inverted bit will clear a bit.
+</p>
+<pre>
+  10.bit!(~3)      #=&gt; 2
+  0xb0100.bit(~3)  #=&gt; 0
+</pre>
+<p>
+CREDIT: Thomas Sawyer, George Moschovitis
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="bit-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/bitmask.rb, line 14</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">bit</span>(<span class="ruby-identifier">bit</span>)
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">bit</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span>
+      <span class="ruby-identifier">mask</span> = (<span class="ruby-value">1</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-operator">~</span><span class="ruby-identifier">bit</span>)
+      <span class="ruby-keyword kw">self</span> <span class="ruby-operator">&amp;</span> <span class="ruby-operator">~</span><span class="ruby-identifier">mask</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">mask</span> = (<span class="ruby-value">1</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">bit</span>)
+      <span class="ruby-keyword kw">self</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">mask</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Integer.html#M000862">bit!</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="bit--method" class="method-detail method-alias">
+        <a name="M000862"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">bit!</span><span
+            class="method-args">(bit)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="Integer.html#M000861">bit</a>
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="bit--method" class="method-detail ">
+        <a name="M000864"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">bit?</span><span
+            class="method-args">(bit)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Is a bit set?
+</p>
+<pre>
+  8.bit?(3)  #=&gt; true
+  8.bit?(2)  #=&gt; false
+</pre>
+<p>
+CREDIT: Thomas Sawyer, George Moschovitis
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="bit--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/bitmask.rb, line 43</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">bit?</span>(<span class="ruby-identifier">bit</span>)
+    <span class="ruby-identifier">mask</span> = (<span class="ruby-value">1</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">bit</span>)
+    (<span class="ruby-keyword kw">self</span> <span class="ruby-operator">&amp;</span> <span class="ruby-identifier">mask</span>) <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="bitmask-method" class="method-detail ">
+        <a name="M000865"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">bitmask</span><span
+            class="method-args">(mask)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Apply a bitmask.
+</p>
+<pre>
+  1.bitmask(6) #=&gt; 7
+</pre>
+<p>
+Using a inverted bitmask clears bits.
+</p>
+<pre>
+  7.bitmask(~2) #=&gt; 5
+  5.bitmask(~2) #=&gt; 5
+</pre>
+<p>
+CREDIT: George Moschovitis
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="bitmask-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/bitmask.rb, line 59</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">bitmask</span>(<span class="ruby-identifier">mask</span>)
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">mask</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span>
+      <span class="ruby-keyword kw">self</span> <span class="ruby-operator">&amp;</span> <span class="ruby-identifier">mask</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-keyword kw">self</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">mask</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Integer.html#M000866">bitmask!</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="bitmask--method" class="method-detail method-alias">
+        <a name="M000866"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">bitmask!</span><span
+            class="method-args">(mask)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="Integer.html#M000865">bitmask</a>
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="bitmask--method" class="method-detail ">
+        <a name="M000867"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">bitmask?</span><span
+            class="method-args">(mask)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Is bitmask set?
+</p>
+<pre>
+  7.bitmask?(7) #=&gt; true
+  7.bitmask?(5) #=&gt; true
+  8.bitmask?(3) #=&gt; false
+</pre>
+<p>
+CREDIT: George Moschovitis
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="bitmask--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/bitmask.rb, line 78</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">bitmask?</span>(<span class="ruby-identifier">mask</span>)
+    (<span class="ruby-keyword kw">self</span> <span class="ruby-operator">&amp;</span> <span class="ruby-identifier">mask</span>) <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="clear-bit-method" class="method-detail ">
+        <a name="M000863"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">clear_bit</span><span
+            class="method-args">(bit)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Clear bit.
+</p>
+<p>
+CREDIT: George Moschovitis
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="clear-bit-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/bitmask.rb, line 31</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clear_bit</span>(<span class="ruby-identifier">bit</span>)
+    <span class="ruby-identifier">mask</span> = (<span class="ruby-value">1</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">bit</span>)
+    <span class="ruby-keyword kw">self</span> <span class="ruby-operator">&amp;</span> <span class="ruby-operator">~</span><span class="ruby-identifier">mask</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="even--method" class="method-detail ">
+        <a name="M000723"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">even?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns true if this integer is even, false otherwise.
+</p>
+<pre>
+  2.even?  #=&gt; true
+  3.even?  #=&gt; false
+</pre>
+<p>
+CREDIT: Daniel Schierbeck
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="even--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/integer/odd.rb, line 31</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">even?</span>
+      <span class="ruby-comment cmt">#self % 2 == 0</span>
+      <span class="ruby-keyword kw">self</span> <span class="ruby-operator">&amp;</span> <span class="ruby-value">1</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="fac-method" class="method-detail method-alias">
+        <a name="M000726"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">fac</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="Integer.html#M000725">factorial</a>
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="factorial-method" class="method-detail ">
+        <a name="M000725"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">factorial</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Calculate the factorial of an integer.
+</p>
+<pre>
+  2.factorial  #=&gt; 2
+  3.factorial  #=&gt; 6
+  3.factorial  #=&gt; 24
+</pre>
+<p>
+CREDIT: Malte Milatz
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="factorial-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/integer/factorial.rb, line 11</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">factorial</span>
+    <span class="ruby-keyword kw">return</span> <span class="ruby-value">1</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">zero?</span>
+    <span class="ruby-identifier">f</span> = <span class="ruby-value">1</span>
+    <span class="ruby-value">2</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-keyword kw">self</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span> <span class="ruby-operator">*=</span> <span class="ruby-identifier">n</span> }
+    <span class="ruby-identifier">f</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Integer.html#M000726">fac</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="length-method" class="method-detail ">
+        <a name="M000724"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">length</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns the length of an integer as an integer.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="length-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/integer/length.rb, line 12</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">length</span>
+    <span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">length</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="multiple--method" class="method-detail ">
+        <a name="M000719"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">multiple?</span><span
+            class="method-args">(number)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Is is a multiple of a given number?
+</p>
+<pre>
+  7.multiple?(2)  #=&gt; false
+  8.multiple?(2)  #=&gt; true
+</pre>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="multiple--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/integer/multiple.rb, line 10</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">multiple?</span>(<span class="ruby-identifier">number</span>)
+    <span class="ruby-keyword kw">self</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">number</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="odd--method" class="method-detail ">
+        <a name="M000722"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">odd?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns true if this integer is odd, false otherwise.
+</p>
+<pre>
+  2.odd?            #=&gt; false
+  3.odd?            #=&gt; true
+
+  -99.odd?          # -&gt; true
+  -98.odd?          # -&gt; false
+</pre>
+<p>
+CREDIT: Daniel Schierbeck
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="odd--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/integer/odd.rb, line 15</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">odd?</span>
+      <span class="ruby-comment cmt">#self % 2 == 1</span>
+      <span class="ruby-keyword kw">self</span> <span class="ruby-operator">&amp;</span> <span class="ruby-value">1</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="of-method" class="method-detail ">
+        <a name="M000727"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">of</span><span
+            class="method-args">(&block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Like times but returns a collection of the yield results.
+</p>
+<pre>
+  a = 3.of { |i| &quot;#{i+1}&quot; }
+  a =&gt; [ &quot;1&quot;, &quot;2&quot;, &quot;3&quot; ]
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="of-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/integer/of.rb, line 9</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">of</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+    <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Integer.html#M000728">times_collect</a>, <a href="Integer.html#M000729">times_map</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="ordinal-method" class="method-detail ">
+        <a name="M000720"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">ordinal</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="ordinal-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/integer/ordinal.rb, line 3</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ordinal</span>
+    <span class="ruby-keyword kw">if</span> [<span class="ruby-value">11</span>,<span class="ruby-value">12</span>,<span class="ruby-value">13</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-keyword kw">self</span> <span class="ruby-operator">%</span> <span class="ruby-value">100</span>)
+      <span class="ruby-node">&quot;#{self}th&quot;</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-keyword kw">case</span> (<span class="ruby-keyword kw">self</span> <span class="ruby-operator">%</span> <span class="ruby-value">10</span>)
+      <span class="ruby-keyword kw">when</span> <span class="ruby-value">1</span>
+        <span class="ruby-node">&quot;#{self}st&quot;</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-value">2</span>
+        <span class="ruby-node">&quot;#{self}nd&quot;</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-value">3</span>
+        <span class="ruby-node">&quot;#{self}rd&quot;</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-node">&quot;#{self}th&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Integer.html#M000721">ordinalize</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="ordinalize-method" class="method-detail method-alias">
+        <a name="M000721"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">ordinalize</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="Integer.html#M000720">ordinal</a>
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="round-at-method" class="method-detail ">
+        <a name="M000790"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">round_at</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+See <a href="Float.html#M000792">Float#round_at</a>.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="round-at-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/numeric/round.rb, line 27</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">round_at</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+    <span class="ruby-identifier">to_f</span>.<span class="ruby-identifier">round_at</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="round-to-method" class="method-detail ">
+        <a name="M000791"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">round_to</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+See <a href="Float.html#M000793">Float#round_to</a>.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="round-to-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/numeric/round.rb, line 33</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">round_to</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+    <span class="ruby-identifier">to_f</span>.<span class="ruby-identifier">round_to</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="times-collect-method" class="method-detail method-alias">
+        <a name="M000728"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">times_collect</span><span
+            class="method-args">(&block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="Integer.html#M000727">of</a>
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="times-map-method" class="method-detail method-alias">
+        <a name="M000729"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">times_map</span><span
+            class="method-args">(&block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="Integer.html#M000727">of</a>
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+
+  </div>
+
+
+  <div id="rdoc-debugging-section-dump" class="debugging-section">
+  
+    <p>Disabled; run with --debug to generate this.</p>
+  
+  </div>
+
+</main>
+</body>
+</html>
+

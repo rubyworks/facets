@@ -1,0 +1,25 @@
+--- !ruby/object:RDoc::RI::ModuleDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Comparable
+includes: []
+
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: at_least
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: at_most
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: bound
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: cap
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: clip
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: cmp
+name: Comparable

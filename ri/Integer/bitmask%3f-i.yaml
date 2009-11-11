@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Is bitmask set?
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  7.bitmask?(7) #=&gt; true\n  7.bitmask?(5) #=&gt; true\n  8.bitmask?(3) #=&gt; false\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: George Moschovitis"
+full_name: Integer#bitmask?
+is_singleton: false
+name: bitmask?
+params: (mask)
+visibility: public

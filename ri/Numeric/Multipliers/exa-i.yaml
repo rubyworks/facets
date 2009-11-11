@@ -1,0 +1,10 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Numeric::Multipliers#exa
+is_singleton: false
+name: exa
+params: ()
+visibility: public

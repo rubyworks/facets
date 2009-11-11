@@ -1,0 +1,113 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: 
+- !ruby/object:RDoc::RI::Attribute 
+  comment: 
+  name: default
+  rw: RW
+class_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: "[]"
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: cast_from_array
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: cast_from_string
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: constraint_to_lambda
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: multiton_id
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: new
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: parse_constraint
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 1
+  text: Tuple
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "A tuple can be made using #new or #[] just as one builds an array, or using the #to_t method on a string or array. With a string tuple remembers the first non-alphanumeric character as the tuple divider."
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 2
+  text: Usage
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  t1 = Tuple[1,2,3]\n  t2 = Tuple[2,3,4]\n\n  t1 &lt; t2   #=&gt; true\n  t1 &gt; t2   #=&gt; false\n\n  t1 = '1.2.3'.to_t\n  t2 = '1-2-3'.to_t\n\n  puts t1  #=&gt; 1.2.3\n  puts t2  #=&gt; 1-2-3\n\n  t1 == t2  #=&gt; true\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Keep in mind that Tuple[1,2,3] is not the same as Tuple['1','2','3'].
+constants: []
+
+full_name: Tuple
+includes: 
+- !ruby/object:RDoc::RI::IncludedModule 
+  name: "::Multiton"
+- !ruby/object:RDoc::RI::IncludedModule 
+  name: "::Enumerable"
+- !ruby/object:RDoc::RI::IncludedModule 
+  name: "::Comparable"
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: "<<"
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: <=>
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: =~
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: "[]"
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: "[]="
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: divider
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: each
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: each_index
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: empty?
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: eql?
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: first
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: hash
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: index
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: inspect
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: last
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: length
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: major
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: minor
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: pop
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: pot
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: pull
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: push
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: rindex
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: shift
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: size
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: teeny
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_a
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_ary
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_s
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_t
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_tuple
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: unshift
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: values
+name: Tuple
+superclass: Object

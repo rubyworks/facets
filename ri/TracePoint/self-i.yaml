@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Delegates &quot;self&quot; to the binding which in turn delegates the binding object.
+full_name: TracePoint#self
+is_singleton: false
+name: self
+params: ()
+visibility: public

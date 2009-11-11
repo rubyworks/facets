@@ -1,0 +1,14 @@
+<br/><b>String#fold</b><hr />
+fold(ignore_indented=false)<br />
+<p />
+From /home/trans/Documents/programs/current/facets/doc/ri/String/cdesc-String.yaml<hr />
+Returns a new string with all new lines removed from adjacent lines of text.<p />
+<pre>  s = &amp;quot;This is\na test.\n\nIt clumps\nlines of text.&amp;quot;
+  s.fold
+</pre>
+<i>produces</i><p />
+<pre>  &amp;quot;This is a test.\n\nIt clumps lines of text. &amp;quot;
+</pre>
+One arguable flaw with this, that might need a fix: if the given string ends in a newline, it is replaced with a single space.<p />
+CREDIT: Trans<p />
+<br/><br/>

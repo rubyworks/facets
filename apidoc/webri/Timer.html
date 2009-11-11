@@ -1,0 +1,44 @@
+<br/><b>Class: Timer < Object</b><hr />
+<h1>Timer</h1>
+Provides a strightforward means for controlling time critical execution. Can be used as a &quot;stop watch&quot; timer or as a &quot;time bomb&quot; timer.<p />
+<pre>  t = Timer.new(10) { raise TimeoutError, &amp;quot;timeout!&amp;quot; }
+  t.start
+    :      # done within 10sec timeout
+  t.stop
+  t.start
+    :
+  if condition then
+    t.reset       #--&amp;gt; restart timer
+  end
+</pre>
+A Kernel method is also provided for easily timing the exectuion of a block.<p />
+<pre>  timed { |timer|
+     timer.total_time.round #=&amp;gt; 0
+
+     sleep 1
+     timer.total_time.round #=&amp;gt; 1
+
+     timer.stop
+     timer.total_time.round #=&amp;gt; 1
+
+     sleep 2
+     timer.total_time.round #=&amp;gt; 1
+
+     timer.start
+     timer.total_time.round #=&amp;gt; 1
+
+     sleep 1
+     timer.total_time.round #=&amp;gt; 2
+  }
+</pre>
+<hr />
+<p />
+<h2>Attributes:</h2>
+end_time (R)<br />
+start_time (R)<br />
+time_limit (RW)<br />
+<p />
+<h2>Class methods:</h2>
+new<p />
+<h2>Instance methods:</h2>
+defuse, limit, on_timeout, reset, reset_limit, running?, start, stop, stopped?, total_time<br/><br/>

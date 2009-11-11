@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Turns a string into a regular expression. By default it will escape all characters. Use <tt>false</tt> argument to turn off escaping.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  &quot;[&quot;.to_rx  #=&gt; /\\[/\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Trans"
+full_name: String#to_rx
+is_singleton: false
+name: to_rx
+params: (esc=true)
+visibility: public

@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Provide platform dependent null path.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: CREDIT Daniel Burger
+full_name: NilClass#to_path
+is_singleton: false
+name: to_path
+params: ()
+visibility: public

@@ -1,0 +1,13 @@
+<br/><b>Module#alias_accessor</b><hr />
+alias_accessor(*args)<br />
+<p />
+From /home/trans/Documents/programs/current/facets/doc/ri/Module/cdesc-Module.yaml<hr />
+As with alias_method, but alias both reader and writer.<p />
+<pre>  attr_accessor :x
+  self.x = 1
+  alias_accessor :y, :x
+  y #=&amp;gt; 1
+  self.y = 2
+  x #=&amp;gt; 2
+</pre>
+<br/><br/>

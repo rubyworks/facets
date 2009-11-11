@@ -1,0 +1,17 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: X class is used to represent an argument &quot;slot&quot;.
+constants: []
+
+full_name: X
+includes: []
+
+instance_methods: []
+
+name: X
+superclass: ArgumentError

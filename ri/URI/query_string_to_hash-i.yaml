@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Alias for #query_to_hash"
+full_name: URI#query_string_to_hash
+is_singleton: false
+name: query_string_to_hash
+params: (query_string)
+visibility: public

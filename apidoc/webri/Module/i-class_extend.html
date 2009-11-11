@@ -1,0 +1,26 @@
+<br/><b>Module#class_extend</b><hr />
+class_extend(*mods, &amp;block)<br />
+<p />
+From /home/trans/Documents/programs/current/facets/doc/ri/Module/cdesc-Module.yaml<hr />
+Normally when including modules, class/module methods are not extended. To achieve this behavior requires some clever Ruby Karate. Instead class_extension provides an easy to use and clean solution. Simply place the extending class methods in a block of the special module method #class_extension.<p />
+<pre>  module Mix
+    def inst_meth
+      puts 'inst_meth'
+    end
+
+    class_extend do
+      def class_meth
+        &amp;quot;Class Method!&amp;quot;
+      end
+    end
+  end
+
+  class X
+    include Mix
+  end
+
+  X.class_meth  #=&amp;gt; &amp;quot;Class Method!&amp;quot;
+</pre>
+NOTE: This old #class_extension version of this method did not extend the containing class automatically --it had to be done by hand. With #class_extend, that is no longer the case.<p />
+<p />
+(also known as class_extension)<br/><br/>

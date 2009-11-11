@@ -1,0 +1,10 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Dictionary#merge
+is_singleton: false
+name: merge
+params: ( hsh2 )
+visibility: public

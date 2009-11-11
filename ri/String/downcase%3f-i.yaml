@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Return true if the string is lowercase (downcase), otherwise false.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  &quot;THIS&quot;.downcase?  #=&gt; false\n  &quot;This&quot;.downcase?  #=&gt; false\n  &quot;this&quot;.downcase?  #=&gt; true\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Phil Tomson"
+full_name: String#downcase?
+is_singleton: false
+name: downcase?
+params: ()
+visibility: public

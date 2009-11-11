@@ -1,0 +1,20 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Count the number of items in an enumerable equal (==) to the given object(s).
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  e = [ 'a', '1', 'a' ]\n  e.count('1')     #=&gt; 1\n  e.count('a')     #=&gt; 2\n  e.count('a', 1)  #=&gt; 3\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Note that Hash#count only considers values.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  e = { 'a' =&gt; 2, 'x' =&gt; 2, 'b' =&gt; 1 }\n  e.count(1) #=&gt; 1\n  e.count(2) #=&gt; 2\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Trans"
+full_name: Enumerable#count
+is_singleton: false
+name: count
+params: (*items, &block)
+visibility: public

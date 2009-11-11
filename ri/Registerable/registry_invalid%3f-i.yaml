@@ -1,0 +1,11 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: []
+
+full_name: Registerable#registry_invalid?
+is_singleton: false
+name: registry_invalid?
+params: (*types)
+visibility: public

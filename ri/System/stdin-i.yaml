@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Input/Ouput Variables -------------------------------------
+full_name: System#stdin
+is_singleton: false
+name: stdin
+params: ()
+visibility: public

@@ -1,0 +1,35 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 1
+  text: Hash
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Stash is just like Hash, except that all keys are converted to Strings.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: This is rather fresh code, so is not yet complete. For instnace, it currently does not ensure that default keys are strings when using default_proc.
+constants: []
+
+full_name: Stash
+includes: []
+
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: "<<"
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: "[]"
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: "[]="
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: fetch
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: has_key?
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: key?
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: store
+name: Stash
+superclass: Hash

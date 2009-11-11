@@ -1,0 +1,13 @@
+<br/><b>Random::Array#rand_subset</b><hr />
+rand_subset( number=nil, exclusive=true )<br />
+<p />
+From /home/trans/Documents/programs/current/facets/doc/ri/Random/Array/cdesc-Array.yaml<hr />
+Returns a random subset of an Array. If a <i>number</i> of elements is specified then returns that number of elements, otherwise returns a random number of elements upto the size of the Array.<p />
+By defualt the returned values are exclusive of each other, but if <i>exclusive</i> is set to <tt>false</tt>, the same values can be choosen more than once.<p />
+When <i>exclusive</i> is <tt>true</tt> (the default) and the <i>number</i> given is greater than the size of the array, then all values are returned.<p />
+<pre>  [1, 2, 3, 4].rand_subset(1)        #=&amp;gt; [2]
+  [1, 2, 3, 4].rand_subset(4)        #=&amp;gt; [2, 1, 3, 4]
+  [1, 2, 3, 4].rand_subset           #=&amp;gt; [1, 3, 4]
+  [1, 2, 3, 4].rand_subset           #=&amp;gt; [2, 3]
+</pre>
+<br/><br/>

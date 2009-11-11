@@ -1,0 +1,47 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: constraint_lambda
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: new
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: parse_constraint
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 1
+  text: VersionNumber
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: VersionNumber is a simplified form of a Tuple class desgined specifically for dealing with version numbers.
+constants: []
+
+full_name: VersionNumber
+includes: 
+- !ruby/object:RDoc::RI::IncludedModule 
+  name: Comparable
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: <=>
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: =~
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: "[]"
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: bump
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: inspect
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: major
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: method_missing
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: minor
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: teeny
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_s
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_str
+name: VersionNumber
+superclass: Object

@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Parses a string constraint returning the operation as a lambda.
+full_name: VersionNumber::constraint_lambda
+is_singleton: true
+name: constraint_lambda
+params: ( constraint )
+visibility: public

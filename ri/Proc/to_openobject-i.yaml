@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Translates a Proc into an OpenObject. By droping an OpenObject into the Proc, the resulting assignments incured as the procedure is evaluated produce the OpenObject. This technique is simlar to that of MethodProbe.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  p = lambda { |x|\n    x.word = &quot;Hello&quot;\n  }\n  o = p.to_openobject\n  o.word #=&gt; &quot;Hello&quot;\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: NOTE The Proc must have an arity of one --no more and no less.
+full_name: Proc#to_openobject
+is_singleton: false
+name: to_openobject
+params: ()
+visibility: public

@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Returns the maximum possible Shannon entropy of the array with given size assuming that it is an &quot;order-0&quot; source (each element is selected independently of the next).
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Derek"
+full_name: Enumerable#ideal_entropy
+is_singleton: false
+name: ideal_entropy
+params: ()
+visibility: public

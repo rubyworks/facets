@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Rename methods.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  module A\n    def a; &quot;a&quot;; end\n  end\n\n  B = A * { :a =&gt; :b }\n\n  class X; include B; end\n\n  X.new.b    #=&gt; &quot;a&quot;\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Thomas Sawyer, Robert Dober
+full_name: Module#*
+is_singleton: false
+name: "*"
+params: (rename_map)
+visibility: public

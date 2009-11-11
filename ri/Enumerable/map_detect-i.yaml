@@ -1,0 +1,18 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: (member)
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Yield each element to the block. Returns the result of the block when the block is true, terminating early as detect does.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  obj1.foo? #=&gt; false\n  obj2.foo? #=&gt; true\n\n  obj2.foo  #=&gt; &quot;a value&quot;\n\n  [obj1, obj2].map_detect { |obj| obj.foo if obj.foo? } #=&gt; &quot;a value&quot;\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: If the block is never true, return the object given in the first parameter, or nil if none specified.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  [1,2,3].map_detect { |_| false }    #=&gt; nil\n  [false].map_detect(1) { |_| false } #=&gt; 1\n"
+full_name: Enumerable#map_detect
+is_singleton: false
+name: map_detect
+params: (value_for_none_matching = nil) {|member| ...}
+visibility: public

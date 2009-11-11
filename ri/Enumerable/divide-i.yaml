@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Divide on matching pattern.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  ['a1','b1','a2','b2'].divide(/^a/)\n  =&gt; [['a1,'b1'],['a2','b2']]\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Trans"
+full_name: Enumerable#divide
+is_singleton: false
+name: divide
+params: (pattern)
+visibility: public

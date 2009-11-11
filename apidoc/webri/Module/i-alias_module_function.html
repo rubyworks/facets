@@ -1,0 +1,21 @@
+<br/><b>Module#alias_module_function</b><hr />
+alias_module_function(new, old)<br />
+<p />
+From /home/trans/Documents/programs/current/facets/doc/ri/Module/cdesc-Module.yaml<hr />
+Alias a module function so that the alias is also a module function. The typical #alias_method does not do this.<p />
+<pre>  module Demo
+    module_function
+    def hello
+      &amp;quot;Hello&amp;quot;
+    end
+  end
+
+  Demo.hello    #=&amp;gt; Hello
+
+  module Demo
+    alias_module_function( :hi , :hello )
+  end
+
+  Demo.hi       #=&amp;gt; Hello
+</pre>
+<br/><br/>

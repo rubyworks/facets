@@ -1,0 +1,33 @@
+--- !ruby/object:RDoc::RI::ModuleDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: identify
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 1
+  text: Equitable
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "This mixin provides methods of equality based on a single #identity method which must return a list of accessors used as the identity keys."
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "It also provides a &quot;shortcut&quot; for creating the #identity method based on given accessors and returns the Equitable module for inclusion."
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  include Equitable(:a, :b)\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "is equivalent to including a module containing:"
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  def ==(other)\n    self.a == other.a &amp;&amp; self.b == other.b\n  end\n\n  def eql?(other)\n    self.a.eql?(other.a) &amp;&amp; self.b.eql?(other.b)\n  end\n\n  def hash()\n    self.a.hash ^ self.b.hash\n  end\n"
+constants: []
+
+full_name: Equitable
+includes: []
+
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: ==
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: eql?
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: hash
+name: Equitable

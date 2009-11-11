@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: See Float#round_to.
+full_name: Integer#round_to
+is_singleton: false
+name: round_to
+params: (*args)
+visibility: public

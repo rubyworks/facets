@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "An alias for #include."
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  class X\n    is Enumerable\n  end\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Trans"
+full_name: Module#is
+is_singleton: false
+name: is
+params: (*mods)
+visibility: public

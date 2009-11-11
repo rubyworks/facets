@@ -1,0 +1,42 @@
+﻿/*
+
+Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+
+*/
+
+pre code {
+  display: block;
+  background: white; color: black;
+  border: solid #CCC 1px;
+}
+
+.string,
+.attribute .value,
+.filter .argument,
+.addition,
+.change,
+.apache .tag,
+.apache .cbracket {
+  color: #888;
+}
+
+.comment,
+.template_comment,
+.shebang,
+.doctype,
+.pi,
+.javadoc,
+.deletion,
+.apache .sqbracket {
+  color: #CCC;
+}
+
+.keyword,
+.tag .title,
+.ini .title,
+.winutils,
+.flow,
+.lisp .title,
+.apache .tag {
+  font-weight: bold;
+}

@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: ""
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: An exception-safe class method for redirection
+full_name: IORedirect::redirect
+is_singleton: true
+name: redirect
+params: (from, to) {|| ...}
+visibility: public

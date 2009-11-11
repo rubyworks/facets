@@ -1,0 +1,17 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Converts a Date instance to a DateTime, where the time is set to the beginning of the day and UTC offset is set to 0.
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 4
+  text: "Example:"
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  date = Date.new(2007, 11, 10)  # =&gt; Sat, 10 Nov 2007\n\n  date.to_datetime               # =&gt; Sat, 10 Nov 2007 00:00:00 0000\n"
+full_name: Date#to_datetime
+is_singleton: false
+name: to_datetime
+params: ()
+visibility: public

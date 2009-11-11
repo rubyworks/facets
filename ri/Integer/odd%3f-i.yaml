@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Returns true if this integer is odd, false otherwise.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  2.odd?            #=&gt; false\n  3.odd?            #=&gt; true\n\n  -99.odd?          # -&gt; true\n  -98.odd?          # -&gt; false\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Daniel Schierbeck"
+full_name: Integer#odd?
+is_singleton: false
+name: odd?
+params: ()
+visibility: public

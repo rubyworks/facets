@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Converts a Date instance to a Time, where the time is set to the beginning of the day. The timezone can be either :local or :utc (default :local).
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  date = Date.new(2007, 11, 10)  # =&gt; Sat, 10 Nov 2007\n\n  date.to_time                   # =&gt; Sat Nov 10 00:00:00 0800 2007\n  date.to_time(:local)           # =&gt; Sat Nov 10 00:00:00 0800 2007\n\n  date.to_time(:utc)             # =&gt; Sat Nov 10 00:00:00 UTC 2007\n"
+full_name: Date#to_time
+is_singleton: false
+name: to_time
+params: (form=:local)
+visibility: public

@@ -1,0 +1,140 @@
+
+
+
+<html>
+<head>
+  <title>FACETS NEWS</title>
+  <link href="assets/styles/api.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <div class="content">
+  <div class="main">
+
+  <h1>Release Notes</h1>
+<p>
+Facets 2.4.3 is now out in the wild. The release is primarily a maintenance
+release &#8212;fixing a handful of small bugs and adding some small feature
+improvements, but a few significant changes are also present. Here&#8217;s
+an overview:
+</p>
+<h2>Major Changes</h2>
+<ul>
+<li>Changed File#rewrite to not use the in-place change of the string.
+
+</li>
+<li>Deprecate Hash#keys_to_s and Hash#keys_to_sym.
+
+</li>
+<li>Renamed Class#to_pathname and #to_methodname to #pathize and #methodize.
+
+</li>
+<li>Deprecated Console:: namespace for ANSICode.
+
+</li>
+<li>Added Time#trunc and Time#round to Core.
+
+</li>
+<li>Added Ken Bloom&#8217;s DictionaryMatcher class (will be renamed in future
+version)
+
+</li>
+<li>Added Array#recursively and fixed bug in Hash#recursively.
+
+</li>
+<li>Added kernel/instance method which provides a fluent interface to private
+object space.
+
+</li>
+<li>Moved Mentalguy&#8217;s lazy.rb to core!
+
+</li>
+<li>Added Indexable and Stackable to core.
+
+</li>
+<li>Deprecated ruby.rb, which was a sort 1.9 compatibility layer.
+
+</li>
+<li>The ruby.rb methods were moved to core, wrapped in a 1.9 condition.
+
+</li>
+</ul>
+<h2>Minor Changes</h2>
+<ul>
+<li>Fixed Time#hence changed years when changing months.
+
+</li>
+<li>Fixed Time#hence to flip year correctly when adding months.
+
+</li>
+<li>Added optional argument to Dictionary#first and #last.
+
+</li>
+<li>Improved File#rootname &#8212;it is now more robust.
+
+</li>
+<li>Made FileUtils#whereis a module_function again.
+
+</li>
+<li>Although not perceptible to the end user, there are now three divisions
+lib/core, lib/lore, lib/more.
+
+</li>
+<li>Created Lore library to house extensions to Ruby&#8217;s standard library.
+
+</li>
+</ul>
+<p>
+Note that this release does not include a setup.rb script. We are working
+on a new version of this script, which we plan to include in the next
+release.
+</p>
+<p>
+Special thanks to:
+</p>
+<ul>
+<li>Ken Bloom
+
+</li>
+<li>Nick Caruso
+
+</li>
+<li>Evgeniy Dolzhenko
+
+</li>
+<li>Andy Freeman
+
+</li>
+<li>Tomasz Muras
+
+</li>
+<li>Dave Myron
+
+</li>
+</ul>
+<p>
+And of course, to anyone else I failed to mention that has contributed.
+</p>
+<p>
+As a REMINDER, Facets 2.4+ now encourages:
+</p>
+<pre>
+  require 'facets'
+</pre>
+<p>
+This is better than cherry-picking methods. It may seem counter-intuitive,
+but it actually proves more advantages to do this for the sake of improved
+interoperability. The practice of cherry-picking can become problematic if
+other dependent libraries have cherry-picked different methods. In those
+cases these distinctions go unaccounted and untested.
+</p>
+<p>
+Facets is almost fully interoperable with ActiveSupport and Ruby 1.9. We
+will continue to improve this interoperability in upcoming releases.
+</p>
+
+
+  </div>
+  </div>
+</body>
+</html>
+

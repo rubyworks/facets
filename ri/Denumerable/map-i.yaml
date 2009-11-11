@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: 
+- !ruby/object:RDoc::RI::AliasName 
+  name: collect
+block_params: (*input)
+comment: []
+
+full_name: Denumerable#map
+is_singleton: false
+name: map
+params: () {|*input| ...}
+visibility: public

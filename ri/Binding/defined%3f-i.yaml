@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Returns the nature of something within the context of the binding. Returns nil if that thing is not defined.
+full_name: Binding#defined?
+is_singleton: false
+name: defined?
+params: (x)
+visibility: public

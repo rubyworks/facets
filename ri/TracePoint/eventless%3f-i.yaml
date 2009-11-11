@@ -1,0 +1,10 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: TracePoint#eventless?
+is_singleton: false
+name: eventless?
+params: ()
+visibility: public

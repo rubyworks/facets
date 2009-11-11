@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Turn a hash (up to 2 levels deepness) into a ini string
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: <tt>inihash</tt> is a hash representing the ini File. Default is a empty hash.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Returns a string in the ini file format.
+full_name: Ini::to_s
+is_singleton: true
+name: to_s
+params: (inihash={})
+visibility: public

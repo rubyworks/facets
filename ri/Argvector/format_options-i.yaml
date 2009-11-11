@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Format flag options. This converts the associative array of options/flags into a hash. Repeat options will be placed in arrays.
+full_name: Argvector#format_options
+is_singleton: false
+name: format_options
+params: (assoc_options)
+visibility: private

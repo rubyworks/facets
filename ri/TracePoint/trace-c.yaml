@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: ""
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Trace execution using a TracePoint.
+full_name: TracePoint::trace
+is_singleton: true
+name: trace
+params: () {|| ...}
+visibility: public

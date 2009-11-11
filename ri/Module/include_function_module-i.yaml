@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Include module and apply module_fuction to the included methods.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  module Utils\n    module_function\n    def foo; &quot;foo&quot;; end\n  end\n\n  module UtilsPlus\n    include_function_module Utils\n  end\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Trans"
+full_name: Module#include_function_module
+is_singleton: false
+name: include_function_module
+params: (*mod)
+visibility: private

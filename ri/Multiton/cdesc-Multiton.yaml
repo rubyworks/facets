@@ -1,0 +1,39 @@
+--- !ruby/object:RDoc::RI::ModuleDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 1
+  text: Multiton
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Multiton design pattern ensures only one object is allocated for a given state.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: The 'multiton' pattern is similar to a singleton, but instead of only one instance, there are several similar instances. It is useful when you want to avoid constructing objects many times because of some huge expense (connecting to a database for example), require a set of similar but not identical objects, and cannot easily control how many times a contructor may be called.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  class SomeMultitonClass\n    include Multiton\n    attr :arg\n    def initialize(arg)\n      @arg = arg\n    end\n  end\n\n  a = SomeMultitonClass.new(4)\n  b = SomeMultitonClass.new(4)   # a and b are same object\n  c = SomeMultitonClass.new(2)   # c is a different object\n"
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 2
+  text: How It Works
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: A pool of objects is searched for a previously cached object, if one is not found we construct one and cache it in the pool based on class and the args given to the contructor.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: A limitation of this approach is that it is impossible to detect if different blocks were given to a contructor (if it takes a block). So it is the constructor arguments <em>only</em> which determine the uniqueness of an object. To workaround this, define the <em>class</em> method ::multiton_id.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  def Klass.multiton_id(*args, &amp;block)\n    # ...\n  end\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Which should return a hash key used to identify the object being constructed as (not) unique.
+constants: []
+
+full_name: Multiton
+includes: []
+
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: _dump
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: clone
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: dup
+name: Multiton

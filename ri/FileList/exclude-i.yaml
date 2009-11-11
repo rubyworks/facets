@@ -1,0 +1,26 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Register a list of file name patterns that should be excluded from the list. Patterns may be regular expressions, glob patterns or regular strings.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Note that glob patterns are expanded against the file system. If a file is explicitly added to a file list, but does not exist in the file system, then an glob pattern in the exclude list will not exclude the file.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Examples:"
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  FileList['a.c', 'b.c'].exclude(&quot;a.c&quot;) =&gt; ['b.c']\n  FileList['a.c', 'b.c'].exclude(/^a/)  =&gt; ['b.c']\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: If &quot;a.c&quot; is a file, then ...
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  FileList['a.c', 'b.c'].exclude(&quot;a.*&quot;) =&gt; ['b.c']\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: If &quot;a.c&quot; is not a file, then ...
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  FileList['a.c', 'b.c'].exclude(&quot;a.*&quot;) =&gt; ['a.c', 'b.c']\n"
+full_name: FileList#exclude
+is_singleton: false
+name: exclude
+params: (*patterns)
+visibility: public

@@ -1,0 +1,10 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: LinkedList::Node::new
+is_singleton: true
+name: new
+params: (key=nil,value=nil,prev_node=nil,next_node=nil)
+visibility: public

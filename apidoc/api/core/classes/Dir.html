@@ -1,0 +1,675 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+  <title>Class: Dir</title>
+
+  
+    <link rel="SHORTCUT ICON" href="../assets/icon/class.png">
+  
+
+  <link type="text/css" rel="stylesheet" href="../assets/rdoc.css" media="screen" />
+  <link type="text/css" rel="stylesheet" href="../assets/highlight/styles/github.css" title="GitHub" />
+
+  <script type="text/javascript" charset="utf-8" src="../assets/jquery.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/highlight/highlight.pack.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/quicksearch.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/main.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready( function() {
+      hookHighlightSyntax();
+	    hookSourceViews();
+	    hookDebuggingToggle();
+	    hookQuickSearch();
+	    highlightLocationTarget();
+
+	    $('ul.link-list a').bind("click", highlightClickTarget);
+    });
+  </script>
+</head>
+<body class="class">
+<div id="main">
+
+  <div class="head">
+    <h1>
+      
+        <img src="../assets/icon/class.png" align="absmiddle">&nbsp;
+      
+      <a href="../index.html">Facets Core API</a>&nbsp;
+      <a href="/">Dir</a>
+    </h1>
+  </div>
+
+  <div id="metadata">
+    <div id="project-metadata">
+
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li class="file"><a href="../files/lib/core/facets/dir/ascend_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/dir/ascend.rb">lib/core/facets/dir/ascend.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/dir/multiglob_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/dir/multiglob.rb">lib/core/facets/dir/multiglob.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/dir/recurse_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/dir/recurse.rb">lib/core/facets/dir/recurse.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/dir/parent_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/dir/parent.rb">lib/core/facets/dir/parent.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      <!-- What about Git info, or Hg info? This seems almost silly, albeit kind of cool. -->
+      <!-- TODO: generalize this for all SCMs -->
+
+      
+    </div>
+
+    <div id="class-metadata">
+
+      <!-- Parent Class -->
+      
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        <ul>
+          
+          <!-- why was this class="link" ? -->
+          <li class="class"><a href="Object.html">Object</a></li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Namespace Contents -->
+      
+
+      <!-- Method Quickref -->
+      
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+            
+            <li class="singleton">
+              <a href="#M001206">::ascend</a>
+            </li>
+          
+            
+            <li class="singleton">
+              <a href="#M001208">::descend</a>
+            </li>
+          
+            
+            <li class="singleton">
+              <a href="#M001212">::ls_r</a>
+            </li>
+          
+            
+            <li class="singleton">
+              <a href="#M001207">::multiglob</a>
+            </li>
+          
+            
+            <li class="singleton">
+              <a href="#M001209">::multiglob_r</a>
+            </li>
+          
+            
+            <li class="singleton">
+              <a href="#M001211">::parent?</a>
+            </li>
+          
+            
+            <li class="singleton">
+              <a href="#M001210">::recurse</a>
+            </li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Included Modules -->
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Information</h3>
+        <ul>
+        
+          <li class="file"><a href="../files/doc/README_core.html">README.core</a></li>
+        
+          <li class="file"><a href="../files/README_rdoc.html">README.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class Index
+          <span class="search-toggle"><img src="../assets/icon/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <!-- classpage.html : classes -->
+        <ul class="link-list">
+        
+          <li class="module"><a href="../classes/Lazy.html">Lazy</a></li>
+        
+          <li class="class"><a href="../classes/Lazy/Future.html">Lazy::Future</a></li>
+        
+          <li class="class"><a href="../classes/Lazy/Promise.html">Lazy::Promise</a></li>
+        
+          <li class="class"><a href="../classes/Lazy/PromiseSafe.html">Lazy::PromiseSafe</a></li>
+        
+          <li class="module"><a href="../classes/Enumerable.html">Enumerable</a></li>
+        
+          <li class="class"><a href="../classes/Object.html">Object</a></li>
+        
+          <li class="class"><a href="../classes/Array.html">Array</a></li>
+        
+          <li class="class"><a href="../classes/Binding.html">Binding</a></li>
+        
+          <li class="class"><a href="../classes/Class.html">Class</a></li>
+        
+          <li class="module"><a href="../classes/Comparable.html">Comparable</a></li>
+        
+          <li class="module"><a href="../classes/Denumerable.html">Denumerable</a></li>
+        
+          <li class="class"><a href="../classes/Denumerator.html">Denumerator</a></li>
+        
+          <li class="class"><a href="../classes/Dir.html">Dir</a></li>
+        
+          <li class="class"><a href="../classes/Enumerator.html">Enumerator</a></li>
+        
+          <li class="class"><a href="../classes/Exception.html">Exception</a></li>
+        
+          <li class="class"><a href="../classes/FalseClass.html">FalseClass</a></li>
+        
+          <li class="class"><a href="../classes/File.html">File</a></li>
+        
+          <li class="module"><a href="../classes/FileTest.html">FileTest</a></li>
+        
+          <li class="class"><a href="../classes/Float.html">Float</a></li>
+        
+          <li class="class"><a href="../classes/Functor.html">Functor</a></li>
+        
+          <li class="class"><a href="../classes/Hash.html">Hash</a></li>
+        
+          <li class="module"><a href="../classes/Indexable.html">Indexable</a></li>
+        
+          <li class="class"><a href="../classes/InstanceVariables.html">InstanceVariables</a></li>
+        
+          <li class="class"><a href="../classes/Integer.html">Integer</a></li>
+        
+          <li class="module"><a href="../classes/Kernel.html">Kernel</a></li>
+        
+          <li class="class"><a href="../classes/MatchData.html">MatchData</a></li>
+        
+          <li class="class"><a href="../classes/Module.html">Module</a></li>
+        
+          <li class="class"><a href="../classes/NilClass.html">NilClass</a></li>
+        
+          <li class="class"><a href="../classes/Numeric.html">Numeric</a></li>
+        
+          <li class="module"><a href="../classes/ObjectSpace.html">ObjectSpace</a></li>
+        
+          <li class="class"><a href="../classes/Proc.html">Proc</a></li>
+        
+          <li class="class"><a href="../classes/Range.html">Range</a></li>
+        
+          <li class="class"><a href="../classes/Regexp.html">Regexp</a></li>
+        
+          <li class="module"><a href="../classes/Stackable.html">Stackable</a></li>
+        
+          <li class="class"><a href="../classes/String.html">String</a></li>
+        
+          <li class="class"><a href="../classes/Struct.html">Struct</a></li>
+        
+          <li class="class"><a href="../classes/Symbol.html">Symbol</a></li>
+        
+          <li class="class"><a href="../classes/Time.html">Time</a></li>
+        
+          <li class="class"><a href="../classes/TrueClass.html">TrueClass</a></li>
+        
+          <li class="class"><a href="../classes/UnboundMethod.html">UnboundMethod</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+    </div>
+
+    <div id="validator-badges">
+      
+      <div style="float: right; margin-right: 5px;">
+        <a href="http://validator.w3.org/check/referer"><img src="../assets/icon/check.png" alt="[Validate]" height="16" width="16" /></a>
+      </div>
+      Generated with <a href="http://github.com/proutils/webri">WebRI Redfish</a> 1.0.0
+      <br/><br/>
+    </div>
+  </div>
+
+  <div id="documentation">
+
+    <div id="description">
+      
+        <h1>Dir</h1>
+      
+
+      
+    </div>
+
+    <!-- Constants -->
+    
+
+    <!-- Attributes -->
+    
+
+    <!-- Methods -->
+    
+    <div id="public-class-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="ascend-method" class="method-detail ">
+        <a name="M001206"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">ascend</span><span
+            class="method-args">(dir, inclusive=true, &blk)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+TODO: make it work with windows too use <a
+href="FileTest.html#M001220">FileTest.root?</a>
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="ascend-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/dir/ascend.rb, line 22</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">ascend</span>(<span class="ruby-identifier">dir</span>, <span class="ruby-identifier">inclusive</span>=<span class="ruby-keyword kw">true</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+    <span class="ruby-identifier">dir</span> = <span class="ruby-identifier">dir</span>.<span class="ruby-identifier">dup</span>
+    <span class="ruby-identifier">blk</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">dir</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">inclusive</span>
+    <span class="ruby-identifier">ri</span> = <span class="ruby-identifier">dir</span>.<span class="ruby-identifier">rindex</span>(<span class="ruby-value str">'/'</span>)
+    <span class="ruby-keyword kw">while</span> <span class="ruby-identifier">ri</span>
+      <span class="ruby-identifier">dir</span> = <span class="ruby-identifier">dir</span>.<span class="ruby-identifier">slice</span>(<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">ri</span>)
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">dir</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;&quot;</span>
+        <span class="ruby-identifier">blk</span>.<span class="ruby-identifier">call</span>(<span class="ruby-value str">'/'</span>) ; <span class="ruby-keyword kw">break</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">blk</span>.<span class="ruby-identifier">call</span>( <span class="ruby-identifier">dir</span> )
+      <span class="ruby-identifier">ri</span> = <span class="ruby-identifier">dir</span>.<span class="ruby-identifier">rindex</span>(<span class="ruby-value str">'/'</span>)
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="descend-method" class="method-detail ">
+        <a name="M001208"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">descend</span><span
+            class="method-args">(path)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Descend a directory path.
+</p>
+<pre>
+  Dir.descend(&quot;/var/log&quot;) do |path|
+    p path
+  end
+</pre>
+<p>
+<em>produces</em>
+</p>
+<pre>
+  /
+  /var
+  /var/log
+</pre>
+<p>
+CREDIT: Daniel Berger, Jeffrey Schwab
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="descend-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/dir/ascend.rb, line 50</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">descend</span>(<span class="ruby-identifier">path</span>) <span class="ruby-comment cmt">#:yield:</span>
+    <span class="ruby-identifier">paths</span> = <span class="ruby-identifier">path</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">'/'</span>)
+    <span class="ruby-identifier">paths</span>.<span class="ruby-identifier">size</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">pth</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">paths</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">n</span>])
+      <span class="ruby-identifier">pth</span> = <span class="ruby-value str">&quot;/&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">pth</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;&quot;</span>
+      <span class="ruby-keyword kw">yield</span>(<span class="ruby-identifier">pth</span>)
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="ls-r-method" class="method-detail ">
+        <a name="M001212"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">ls_r</span><span
+            class="method-args">(path='.', &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Same as <a href="Dir.html#M001210">Dir#recurse</a>.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="ls-r-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/dir/recurse.rb, line 27</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">ls_r</span>(<span class="ruby-identifier">path</span>=<span class="ruby-value str">'.'</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+    <span class="ruby-identifier">recurse</span>(<span class="ruby-identifier">path</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="multiglob-method" class="method-detail ">
+        <a name="M001207"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">multiglob</span><span
+            class="method-args">(*patterns)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Like <tt>glob</tt> but can take multiple patterns.
+</p>
+<pre>
+  Dir.multiglob( '*.rb', '*.py' )
+</pre>
+<p>
+Rather then constants for options multiglob accepts a trailing options hash
+of symbol keys.
+</p>
+<pre>
+  :noescape    File::FNM_NOESCAPE
+  :casefold    File::FNM_CASEFOLD
+  :pathname    File::FNM_PATHNAME
+  :dotmatch    File::FNM_DOTMATCH
+  :strict      File::FNM_PATHNAME &amp;&amp; File::FNM_DOTMATCH
+</pre>
+<p>
+It also has an option for recurse.
+</p>
+<pre>
+  :recurse     Recurively include contents of directories.
+</pre>
+<p>
+For example
+</p>
+<pre>
+  Dir.multiglob( '*', :recurse =&gt; true )
+</pre>
+<p>
+would have the same result as
+</p>
+<pre>
+  Dir.multiglob('**/*')
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="multiglob-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/dir/multiglob.rb, line 40</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">multiglob</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">patterns</span>)
+    <span class="ruby-identifier">options</span>  = (<span class="ruby-constant">Hash</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">patterns</span>.<span class="ruby-identifier">last</span> <span class="ruby-value">? </span><span class="ruby-identifier">patterns</span>.<span class="ruby-identifier">pop</span> <span class="ruby-operator">:</span> {})
+
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">:recurse</span>)
+      <span class="ruby-comment cmt">#patterns += patterns.collect{ |f| File.join(f, '**', '**') }</span>
+      <span class="ruby-identifier">multiglob_r</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">patterns</span>)
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-identifier">bitflags</span> = <span class="ruby-value">0</span>
+    <span class="ruby-identifier">bitflags</span> <span class="ruby-operator">|=</span> <span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">FNM_NOESCAPE</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:noescape</span>]
+    <span class="ruby-identifier">bitflags</span> <span class="ruby-operator">|=</span> <span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">FNM_CASEFOLD</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:casefold</span>]
+    <span class="ruby-identifier">bitflags</span> <span class="ruby-operator">|=</span> <span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">FNM_PATHNAME</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:pathname</span>] <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:strict</span>]
+    <span class="ruby-identifier">bitflags</span> <span class="ruby-operator">|=</span> <span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">FNM_DOTMATCH</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:dotmatch</span>] <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:strict</span>]
+
+    <span class="ruby-identifier">patterns</span> = [<span class="ruby-identifier">patterns</span>].<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">compact</span>
+
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:recurse</span>]
+      <span class="ruby-identifier">patterns</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">patterns</span>.<span class="ruby-identifier">collect</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">f</span>, <span class="ruby-value str">'**'</span>, <span class="ruby-value str">'**'</span>) }
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-identifier">files</span> = []
+    <span class="ruby-identifier">files</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">patterns</span>.<span class="ruby-identifier">collect</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">pattern</span><span class="ruby-operator">|</span> <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">glob</span>(<span class="ruby-identifier">pattern</span>, <span class="ruby-identifier">bitflags</span>) }.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">uniq</span>
+
+    <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">files</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="multiglob-r-method" class="method-detail ">
+        <a name="M001209"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">multiglob_r</span><span
+            class="method-args">(*patterns)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+The same as <tt>multiglob</tt>, but recusively includes directories.
+</p>
+<pre>
+  Dir.multiglob_r( 'folder' )
+</pre>
+<p>
+is equivalent to
+</p>
+<pre>
+  Dir.multiglob( 'folder', :recurse=&gt;true )
+</pre>
+<p>
+The effect of which is
+</p>
+<pre>
+  Dir.multiglob( 'folder', 'folder/**/**' )
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="multiglob-r-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/dir/multiglob.rb, line 78</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">multiglob_r</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">patterns</span>)
+    <span class="ruby-identifier">options</span> = (<span class="ruby-constant">Hash</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">patterns</span>.<span class="ruby-identifier">last</span> <span class="ruby-value">? </span><span class="ruby-identifier">patterns</span>.<span class="ruby-identifier">pop</span> <span class="ruby-operator">:</span> {})
+    <span class="ruby-identifier">matches</span> = <span class="ruby-identifier">multiglob</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">patterns</span>)
+    <span class="ruby-identifier">directories</span> = <span class="ruby-identifier">matches</span>.<span class="ruby-identifier">select</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">m</span>) }
+    <span class="ruby-identifier">matches</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">directories</span>.<span class="ruby-identifier">collect</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">d</span><span class="ruby-operator">|</span> <span class="ruby-identifier">multiglob_r</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">d</span>, <span class="ruby-value str">'**'</span>), <span class="ruby-identifier">options</span>) }.<span class="ruby-identifier">flatten</span>
+    <span class="ruby-identifier">matches</span>.<span class="ruby-identifier">uniq</span>
+    <span class="ruby-comment cmt">#options = (Hash === patterns.last ? patterns.pop : {})</span>
+    <span class="ruby-comment cmt">#options[:recurse] = true</span>
+    <span class="ruby-comment cmt">#patterns &lt;&lt; options</span>
+    <span class="ruby-comment cmt">#multiglob(*patterns)</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="parent--method" class="method-detail ">
+        <a name="M001211"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">parent?</span><span
+            class="method-args">(parent_path, child_path)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Is a path parental to another?
+</p>
+<p>
+TODO: Needs improvement. TODO: Instance version?
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="parent--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/dir/parent.rb, line 8</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">parent?</span>(<span class="ruby-identifier">parent_path</span>, <span class="ruby-identifier">child_path</span>)
+    <span class="ruby-node">%r|^#{Regexp.escape(parent_path)}|</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">child_path</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="recurse-method" class="method-detail ">
+        <a name="M001210"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">recurse</span><span
+            class="method-args">(path='.', &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Recursively scan a directory and pass each file to the given block.
+</p>
+<p>
+CREDIT: George Moschovitis
+</p>
+<p>
+TODO: If fully compatible, reimplement as alias of Find.find, or just copy
+and paste Find.find code here if it looks more robust.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="recurse-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/dir/recurse.rb, line 11</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">recurse</span>(<span class="ruby-identifier">path</span>=<span class="ruby-value str">'.'</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+    <span class="ruby-identifier">list</span> = []
+    <span class="ruby-identifier">stoplist</span> = [<span class="ruby-value str">'.'</span>, <span class="ruby-value str">'..'</span>]
+    <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">foreach</span>(<span class="ruby-identifier">path</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword kw">next</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">stoplist</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">f</span>)
+      <span class="ruby-identifier">filename</span> = (<span class="ruby-identifier">path</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'.'</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">f</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">path</span> <span class="ruby-operator">+</span> <span class="ruby-value str">'/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">f</span>)
+      <span class="ruby-identifier">list</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">filename</span>
+      <span class="ruby-identifier">block</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">filename</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-constant">FileTest</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">filename</span>) <span class="ruby-keyword kw">and</span> <span class="ruby-keyword kw">not</span> <span class="ruby-constant">FileTest</span>.<span class="ruby-identifier">symlink?</span>(<span class="ruby-identifier">filename</span>)
+        <span class="ruby-identifier">list</span>.<span class="ruby-identifier">concat</span>( <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">recurse</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>) )
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">list</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+
+  </div>
+
+
+  <div id="rdoc-debugging-section-dump" class="debugging-section">
+  
+    <p>Disabled; run with --debug to generate this.</p>
+  
+  </div>
+
+</main>
+</body>
+</html>
+

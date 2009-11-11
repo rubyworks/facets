@@ -1,0 +1,35 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Set the ignore patterns back to the default value. The default patterns will ignore files
+- !ruby/object:RDoc::Markup::Flow::LIST 
+  contents: 
+  - !ruby/struct:RDoc::Markup::Flow::LI 
+    label: "*"
+    body: containing &quot;CVS&quot; in the file path
+  - !ruby/struct:RDoc::Markup::Flow::LI 
+    label: "*"
+    body: containing &quot;.svn&quot; in the file path
+  - !ruby/struct:RDoc::Markup::Flow::LI 
+    label: "*"
+    body: containing &quot;_darcs&quot; in the file path
+  - !ruby/struct:RDoc::Markup::Flow::LI 
+    label: "*"
+    body: ending with &quot;.bak&quot;
+  - !ruby/struct:RDoc::Markup::Flow::LI 
+    label: "*"
+    body: ending with &quot;~&quot;
+  - !ruby/struct:RDoc::Markup::Flow::LI 
+    label: "*"
+    body: named &quot;core&quot;
+  type: :BULLET
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Note that file names beginning with &quot;.&quot; are automatically ignored by Ruby's glob patterns and are not specifically listed in the ignore patterns.
+full_name: FileList::select_default_ignore_patterns
+is_singleton: true
+name: select_default_ignore_patterns
+params: ()
+visibility: public

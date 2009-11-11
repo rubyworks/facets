@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Alias for #of"
+full_name: Integer#times_map
+is_singleton: false
+name: times_map
+params: (&block)
+visibility: public

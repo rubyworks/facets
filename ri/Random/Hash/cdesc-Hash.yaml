@@ -1,0 +1,40 @@
+--- !ruby/object:RDoc::RI::ModuleDescription 
+attributes: []
+
+class_methods: []
+
+comment: []
+
+constants: []
+
+full_name: Random::Hash
+includes: []
+
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: at_rand
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: at_rand!
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: pick
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: pick_key
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: pick_pair
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: rand_key
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: rand_key!
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: rand_pair
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: rand_pair!
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: rand_value
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: rand_value!
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: shuffle
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: shuffle!
+name: Hash

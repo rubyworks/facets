@@ -1,0 +1,17 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: 
+- !ruby/object:RDoc::RI::AliasName 
+  name: fac
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Calculate the factorial of an integer.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  2.factorial  #=&gt; 2\n  3.factorial  #=&gt; 6\n  3.factorial  #=&gt; 24\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Malte Milatz"
+full_name: Integer#factorial
+is_singleton: false
+name: factorial
+params: ()
+visibility: public

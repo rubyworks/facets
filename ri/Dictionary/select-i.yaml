@@ -1,0 +1,10 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: k,v
+comment: 
+full_name: Dictionary#select
+is_singleton: false
+name: select
+params: () {|k,v| ...}
+visibility: public

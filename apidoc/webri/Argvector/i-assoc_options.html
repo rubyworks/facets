@@ -1,0 +1,10 @@
+<br/><b>Argvector#assoc_options</b><hr />
+assoc_options(args)<br />
+<p />
+From /home/trans/Documents/programs/current/facets/doc/ri/Argvector/cdesc-Argvector.yaml<hr />
+Parse flags takes the command line and transforms it such that flags (eg. -x and --x) are elemental associative arrays.<p />
+<pre>  line = &amp;quot;--foo hello --try=this&amp;quot;
+
+  parse_flags(line) #=&amp;gt; [ [foo,true], hello, [&amp;quot;try&amp;quot;,&amp;quot;this&amp;quot;] ]
+</pre>
+<br/><br/>

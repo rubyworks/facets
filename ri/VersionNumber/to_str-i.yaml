@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: This is here only becuase File.join calls it instead of to_s.
+full_name: VersionNumber#to_str
+is_singleton: false
+name: to_str
+params: ()
+visibility: public

@@ -1,0 +1,25 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Wraps an exception raised by a lazy computation.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: The reason we wrap such exceptions in LazyException is that they need to be distinguishable from similar exceptions which might normally be raised by whatever strict code we happen to be in at the time.
+- !ruby/struct:RDoc::Markup::Flow::RULE 
+  width: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Wraps an exception raised by a lazy computation.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: The reason we wrap such exceptions in LazyException is that they need to be distinguishable from similar exceptions which might normally be raised by whatever strict code we happen to be in at the time.
+constants: []
+
+full_name: Lazy::LazyException
+includes: []
+
+instance_methods: []
+
+name: LazyException
+superclass: DivergenceError

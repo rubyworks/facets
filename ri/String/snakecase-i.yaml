@@ -1,0 +1,18 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: The reverse of <tt>camelcase</tt>. Makes an underscored of a camelcase string.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Changes '::' to '/' to convert namespaces to paths.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Examples
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  &quot;SnakeCase&quot;.snakecase           #=&gt; &quot;snake_case&quot;\n  &quot;Snake-Case&quot;.snakecase          #=&gt; &quot;snake_case&quot;\n  &quot;SnakeCase::Errors&quot;.snakecase   #=&gt; &quot;snake_case/errors&quot;\n"
+full_name: String#snakecase
+is_singleton: false
+name: snakecase
+params: ()
+visibility: public

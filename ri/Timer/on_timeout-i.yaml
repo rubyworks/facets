@@ -1,0 +1,10 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Timer#on_timeout
+is_singleton: false
+name: on_timeout
+params: ( &block )
+visibility: public

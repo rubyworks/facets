@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Bind a Proc to an object returning a Method.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "NOTE: This version comes from Rails. The old Facets"
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "      version used thread.rb, but I no longer think\n      the implementaiton is thread critical. Please\n      make a bug report if this proves wrong.\n"
+full_name: Proc#bind
+is_singleton: false
+name: bind
+params: (object)
+visibility: public

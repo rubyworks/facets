@@ -1,0 +1,35 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: new
+comment: 
+constants: []
+
+full_name: OpenStruct
+includes: []
+
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: "[]"
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: "[]="
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: __merge__
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: __update__
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: each
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: instance_delegate
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: ostruct_delegate
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: ostruct_merge
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: ostruct_update
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_h
+name: OpenStruct
+superclass: Object

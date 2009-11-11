@@ -1,0 +1,21 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: 
+- !ruby/object:RDoc::RI::AliasName 
+  name: redirect
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Redirect methods to other methods. This simply defines methods by the name of a hash key which calls the method with the name of the hash's value.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  class Example\n    redirect_method :hi =&gt; :hello, :hey =&gt; :hello\n    def hello(name)\n      puts &quot;Hello, #{name}.&quot;\n    end\n  end\n\n  e = Example.new\n  e.hello(&quot;Bob&quot;)    #=&gt; &quot;Hello, Bob.&quot;\n  e.hi(&quot;Bob&quot;)       #=&gt; &quot;Hello, Bob.&quot;\n  e.hey(&quot;Bob&quot;)      #=&gt; &quot;Hello, Bob.&quot;\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "The above class definition is equivalent to:"
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  class Example\n    def hi(*args)\n      hello(*args)\n    end\n    def hey(*args)\n      hello(*args)\n    end\n    def hello\n      puts &quot;Hello&quot;\n    end\n  end\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Trans"
+full_name: Module#redirect_method
+is_singleton: false
+name: redirect_method
+params: ( method_hash )
+visibility: private

@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Rounds to the given decimal position.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  4.555.round_at(0)  #=&gt; 5.0\n  4.555.round_at(1)  #=&gt; 4.6\n  4.555.round_at(2)  #=&gt; 4.56\n  4.555.round_at(3)  #=&gt; 4.555\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Trans"
+full_name: Float#round_at
+is_singleton: false
+name: round_at
+params: ( d )
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "For Class, #class_extend is the same as class_eval. The alternative is to &quot;undef_method :class_extend&quot;, but this seems uneccessarily limited."
+full_name: Class#class_extend
+is_singleton: false
+name: class_extend
+params: (*mods, &block)
+visibility: public

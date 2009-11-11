@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Simply returns itself. Helpful when converting strings to regular expressions, where regexp might occur as well --in the same vien as using #to_s on symbols. The parameter is actaully a dummy parameter to coincide with String#to_re."
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  /abc/.to_re  #=&gt; /abc/\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Trans"
+full_name: Regexp#to_re
+is_singleton: false
+name: to_re
+params: (esc=false)
+visibility: public

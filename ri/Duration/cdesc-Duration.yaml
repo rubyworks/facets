@@ -1,0 +1,95 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: "[]"
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: new
+comment: 
+constants: 
+- !ruby/object:RDoc::RI::Constant 
+  comment: 
+  name: SECOND
+  value: "1"
+- !ruby/object:RDoc::RI::Constant 
+  comment: 
+  name: MINUTE
+  value: 60 * SECOND
+- !ruby/object:RDoc::RI::Constant 
+  comment: 
+  name: HOUR
+  value: 60 * MINUTE
+- !ruby/object:RDoc::RI::Constant 
+  comment: 
+  name: DAY
+  value: 24 * HOUR
+- !ruby/object:RDoc::RI::Constant 
+  comment: 
+  name: WEEK
+  value: 7 * DAY
+- !ruby/object:RDoc::RI::Constant 
+  comment: 
+  name: YEAR
+  value: 365 * DAY
+- !ruby/object:RDoc::RI::Constant 
+  comment: 
+  name: SEGMENTS
+  value: "%w{years weeks days hours minutes seconds}.collect{ |s| s.to_sym }"
+full_name: Duration
+includes: 
+- !ruby/object:RDoc::RI::IncludedModule 
+  name: Comparable
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: +
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: +
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: "-"
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: /
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: <=>
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: ==
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: after
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: before
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: days
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: hours
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: inspect
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: minutes
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: reset_segments
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: seconds
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: segmented
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: segments
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: strftime
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_a
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_f
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_h
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_i
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_s
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: total
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: weeks
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: years
+name: Duration
+superclass: Object

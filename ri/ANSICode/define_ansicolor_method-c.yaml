@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Define color codes.
+full_name: ANSICode::define_ansicolor_method
+is_singleton: true
+name: define_ansicolor_method
+params: (name,code)
+visibility: public

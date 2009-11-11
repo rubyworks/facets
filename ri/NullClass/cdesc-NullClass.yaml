@@ -1,0 +1,32 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 1
+  text: Nullclass
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: NullClass is essentially NilClass but it differs in one important way. When a method is called against it that it deoesn't have, it will simply return null value rather then raise an error.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "TODO: Perhaps NullClass and NackClass should be one and the same?"
+constants: []
+
+full_name: NullClass
+includes: []
+
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: "[]"
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: inspect
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: method_missing
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: nil?
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: null?
+name: NullClass
+superclass: Object

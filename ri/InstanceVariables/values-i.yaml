@@ -1,0 +1,10 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: InstanceVariables#values
+is_singleton: false
+name: values
+params: ()
+visibility: public

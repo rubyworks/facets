@@ -1,0 +1,26 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Convert to a formatted string. See Time::FORMAT for predefined formats.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: This method is aliased to <tt>to_s</tt>.
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 3
+  text: "Examples:"
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  datetime = DateTime.civil(2007, 12, 4, 0, 0, 0, 0)   # =&gt; Tue, 04 Dec 2007 00:00:00 +0000\n\n  datetime.stamp(:db)            # =&gt; &quot;2007-12-04 00:00:00&quot;\n  datetime.stamp(:db)            # =&gt; &quot;2007-12-04 00:00:00&quot;\n  datetime.stamp(:number)        # =&gt; &quot;20071204000000&quot;\n  datetime.stamp(:short)         # =&gt; &quot;04 Dec 00:00&quot;\n  datetime.stamp(:long)          # =&gt; &quot;December 04, 2007 00:00&quot;\n  datetime.stamp(:rfc822)        # =&gt; &quot;Tue, 04 Dec 2007 00:00:00 +0000&quot;\n"
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 2
+  text: Adding your own datetime formats to stamp
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: DateTime formats are shared with Time. You can add your own to the Time::FORMAT hash. Use the format name as the hash key and a strftime string as the value. Eg.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  Time::FORMAT[:month_and_year] = &quot;%B %Y&quot;\n"
+full_name: DateTime#stamp
+is_singleton: false
+name: stamp
+params: (format=:default)
+visibility: public

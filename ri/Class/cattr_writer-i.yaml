@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Creates a class-variable attr_writer that can be accessed both on an instance and class level.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  class MyClass\n    cattr_writer :a\n    def a\n      @@a\n    end\n  end\n\n  MyClass.a = 10\n  MyClass.a            #=&gt; 10\n  MyClass.new.a = 29\n  MyClass.a            #=&gt; 29\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: David Heinemeier Hansson"
+full_name: Class#cattr_writer
+is_singleton: false
+name: cattr_writer
+params: (*syms)
+visibility: public

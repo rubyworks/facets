@@ -1,0 +1,29 @@
+--- !ruby/object:RDoc::RI::ModuleDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: escape
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 1
+  text: OpEsc
+constants: 
+- !ruby/object:RDoc::RI::Constant 
+  comment: 
+  name: OPERATORS
+  value: "%w{ +@ -@ + - ** * / % ~ <=> << >> < > === == =~ <= >= | & ^ []= [] }"
+- !ruby/object:RDoc::RI::Constant 
+  comment: 
+  name: OPERATORS_REGEXP
+  value: Regexp.new( '(' << OPERATORS.collect{ |k| Regexp.escape(k) }.join('|') << ')' )
+- !ruby/object:RDoc::RI::Constant 
+  comment: 
+  name: OPERATORS_ESC_TABLE
+  value: "{       \"+@\"   => \"op_plus_self\",       \"-@\"   => \"op_minus_self\",       \"+\"    => \"op_plus\",       \"-\"    => \"op_minus\",       \"**\"   => \"op_pow\",       \"*\"    => \"op_mul\",       \"/\"    => \"op_div\",       \"%\"    => \"op_mod\",       \"~\"    => \"op_tilde\",       \"<=>\"  => \"op_cmp\",       \"<<\"   => \"op_lshift\",       \">>\"   => \"op_rshift\",       \"<\"    => \"op_lt\",       \">\"    => \"op_gt\",       \"===\"  => \"op_case_eq\",       \"==\"   => \"op_equal\",       \"=~\"   => \"op_apply\",       \"<=\"   => \"op_lt_eq\",       \">=\"   => \"op_gt_eq\",       \"|\"    => \"op_or\",       \"&\"    => \"op_and\",       \"^\"    => \"op_xor\",       \"[]=\"  => \"op_store\",       \"[]\"   => \"op_fetch\"   }"
+full_name: OpEsc
+includes: []
+
+instance_methods: []
+
+name: OpEsc

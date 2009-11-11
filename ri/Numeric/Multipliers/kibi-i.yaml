@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: SI Binary
+full_name: Numeric::Multipliers#kibi
+is_singleton: false
+name: kibi
+params: ()
+visibility: public

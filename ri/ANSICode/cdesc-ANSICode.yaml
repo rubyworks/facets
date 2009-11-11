@@ -1,0 +1,59 @@
+--- !ruby/object:RDoc::RI::ModuleDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: define_ansicolor_method
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 1
+  text: ANSICode
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Module which makes it very easy to use ANSI codes. These are esspecially nice for beautifying shell output.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  include ANSICode\n\n  p red, &quot;Hello&quot;, blue, &quot;World&quot;\n  =&gt; &quot;\\e[31mHello\\e[34mWorld&quot;\n\n  p red { &quot;Hello&quot; } + blue { &quot;World&quot; }\n  =&gt; &quot;\\e[31mHello\\e[0m\\e[34mWorld\\e[0m&quot;\n"
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 2
+  text: Supported ANSI Comands
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: The following is a list of supported codes.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "    save\n    restore\n    clear_screen\n    cls             # synonym for :clear_screen\n    clear_line\n    clr             # synonym for :clear_line\n    move\n    up\n    down\n    left\n    right\n    display\n\n    clear\n    reset           # synonym for :clear\n    bold\n    dark\n    italic          # not widely implemented\n    underline\n    underscore      # synonym for :underline\n    blink\n    rapid_blink     # not widely implemented\n    negative        # no reverse because of String#reverse\n    concealed\n    strikethrough   # not widely implemented\n\n    black\n    red\n    green\n    yellow\n    blue\n    magenta\n    cyan\n    white\n\n    on_black\n    on_red\n    on_green\n    on_yellow\n    on_blue\n    on_magenta\n    on_cyan\n    on_white\n"
+constants: 
+- !ruby/object:RDoc::RI::Constant 
+  comment: 
+  name: ColoredRegexp
+  value: /\e\[([34][0-7]|[0-9])m/
+full_name: ANSICode
+includes: []
+
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: clear_line
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: clear_screen
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: clr
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: cls
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: colors
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: display
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: down
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: left
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: move
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: restore
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: right
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: save
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: uncolored
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: up
+name: ANSICode

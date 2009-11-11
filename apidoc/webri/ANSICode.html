@@ -1,0 +1,66 @@
+<br/><b>Class: ANSICode</b><hr />
+<h1>ANSICode</h1>
+Module which makes it very easy to use ANSI codes. These are esspecially nice for beautifying shell output.<p />
+<pre>  include ANSICode
+
+  p red, &amp;quot;Hello&amp;quot;, blue, &amp;quot;World&amp;quot;
+  =&amp;gt; &amp;quot;\e[31mHello\e[34mWorld&amp;quot;
+
+  p red { &amp;quot;Hello&amp;quot; } + blue { &amp;quot;World&amp;quot; }
+  =&amp;gt; &amp;quot;\e[31mHello\e[0m\e[34mWorld\e[0m&amp;quot;
+</pre>
+<h2>Supported ANSI Comands</h2>
+The following is a list of supported codes.<p />
+<pre>    save
+    restore
+    clear_screen
+    cls             # synonym for :clear_screen
+    clear_line
+    clr             # synonym for :clear_line
+    move
+    up
+    down
+    left
+    right
+    display
+
+    clear
+    reset           # synonym for :clear
+    bold
+    dark
+    italic          # not widely implemented
+    underline
+    underscore      # synonym for :underline
+    blink
+    rapid_blink     # not widely implemented
+    negative        # no reverse because of String#reverse
+    concealed
+    strikethrough   # not widely implemented
+
+    black
+    red
+    green
+    yellow
+    blue
+    magenta
+    cyan
+    white
+
+    on_black
+    on_red
+    on_green
+    on_yellow
+    on_blue
+    on_magenta
+    on_cyan
+    on_white
+</pre>
+<hr />
+<p />
+<h2>Constants:</h2>
+ColoredRegexp = /\e\[([34][0-7]|[0-9])m/<br />
+<p />
+<h2>Class methods:</h2>
+define_ansicolor_method<p />
+<h2>Instance methods:</h2>
+clear_line, clear_screen, clr, cls, colors, display, down, left, move, restore, right, save, uncolored, up<br/><br/>

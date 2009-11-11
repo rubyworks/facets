@@ -1,0 +1,20 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Create a toggle attribute. This creates two methods for each given name. One is a form of tester and the other is used to toggle the value.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  attr_accessor! :a\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: is equivalent to
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  def a?\n    @a\n  end\n\n  def a!(value=true)\n    @a = value\n    self\n  end\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Trans"
+full_name: Module#attr_switch_accessor
+is_singleton: false
+name: attr_switch_accessor
+params: (*args)
+visibility: public

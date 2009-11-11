@@ -1,0 +1,10 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: LinkedList#first
+is_singleton: false
+name: first
+params: ()
+visibility: public

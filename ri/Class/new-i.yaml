@@ -1,0 +1,11 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: 
+- !ruby/object:RDoc::RI::AliasName 
+  name: postinitialize_new
+block_params: 
+comment: 
+full_name: Class#new
+is_singleton: false
+name: new
+params: (*args, &blk)
+visibility: public

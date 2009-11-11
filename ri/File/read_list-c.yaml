@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Reads in a file, removes blank lines and remarks (lines starting with '#') and then returns an array of all the remaining lines.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Trans"
+full_name: File::read_list
+is_singleton: true
+name: read_list
+params: (filepath, chomp_string='')
+visibility: public

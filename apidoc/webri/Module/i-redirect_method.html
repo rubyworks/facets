@@ -1,0 +1,33 @@
+<br/><b>Module#redirect_method</b><hr />
+redirect_method( method_hash )<br />
+<p />
+From /home/trans/Documents/programs/current/facets/doc/ri/Module/cdesc-Module.yaml<hr />
+Redirect methods to other methods. This simply defines methods by the name of a hash key which calls the method with the name of the hash's value.<p />
+<pre>  class Example
+    redirect_method :hi =&amp;gt; :hello, :hey =&amp;gt; :hello
+    def hello(name)
+      puts &amp;quot;Hello, #{name}.&amp;quot;
+    end
+  end
+
+  e = Example.new
+  e.hello(&amp;quot;Bob&amp;quot;)    #=&amp;gt; &amp;quot;Hello, Bob.&amp;quot;
+  e.hi(&amp;quot;Bob&amp;quot;)       #=&amp;gt; &amp;quot;Hello, Bob.&amp;quot;
+  e.hey(&amp;quot;Bob&amp;quot;)      #=&amp;gt; &amp;quot;Hello, Bob.&amp;quot;
+</pre>
+The above class definition is equivalent to:<p />
+<pre>  class Example
+    def hi(*args)
+      hello(*args)
+    end
+    def hey(*args)
+      hello(*args)
+    end
+    def hello
+      puts &amp;quot;Hello&amp;quot;
+    end
+  end
+</pre>
+CREDIT: Trans<p />
+<p />
+(also known as redirect)<br/><br/>

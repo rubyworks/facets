@@ -1,0 +1,21 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: 
+- !ruby/object:RDoc::RI::AliasName 
+  name: class_require
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Require file into module/class namespace.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Unlike load this keeps a per-module cache and will not load the same file into the same module more than once despite repeated attempts.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: The cache is kept in a global var called +$module_require+.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Please use this with careful consideration. It is best suited to loading plugin-type scripts, and should generally not be used as a substitue for Ruby's standard load system.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Trans"
+full_name: Module#module_require
+is_singleton: false
+name: module_require
+params: ( path )
+visibility: public

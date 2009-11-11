@@ -1,0 +1,11 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: item
+comment: []
+
+full_name: Array#traverse
+is_singleton: false
+name: traverse
+params: (&block) {|item| ...}
+visibility: public

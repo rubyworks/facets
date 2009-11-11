@@ -1,0 +1,10 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Stash#[]
+is_singleton: false
+name: "[]"
+params: (k)
+visibility: public

@@ -1,0 +1,28 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: load
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 1
+  text: HashBuilder
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Build a hash programmatically via a fluent DSL-like syntax. In other words, this uses #method_missing to buld the hash."
+constants: []
+
+full_name: HashBuilder
+includes: []
+
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: build!
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: method_missing
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_h
+name: HashBuilder
+superclass: Object

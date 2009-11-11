@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Uses #+ to sum the enumerated elements."
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  [1,2,3].sum  #=&gt; 6\n  [3,3,3].sum  #=&gt; 9\n"
+full_name: Enumerable#sum
+is_singleton: false
+name: sum
+params: (identity = 0, &block)
+visibility: public

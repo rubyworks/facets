@@ -1,0 +1,10 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Duration#to_s
+is_singleton: false
+name: to_s
+params: ()
+visibility: public

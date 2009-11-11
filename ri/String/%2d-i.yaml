@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Removes occurances of a string or regexp.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  &quot;HELLO HELLO&quot; - &quot;LL&quot;    #=&gt; &quot;HEO HEO&quot;\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Benjamin David Oakes"
+full_name: String#-
+is_singleton: false
+name: "-"
+params: (pattern)
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Alias for #subcommand_with_parameters"
+full_name: Argvector#subcommand
+is_singleton: false
+name: subcommand
+params: ()
+visibility: public

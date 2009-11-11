@@ -1,0 +1,32 @@
+--- !ruby/object:RDoc::RI::ModuleDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 1
+  text: Denumerable
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Classes which include Enumerable::Filterable will get versions of map, select etc. which return a Filter, so that they work horizontally without creating intermediate arrays.
+constants: []
+
+full_name: Denumerable
+includes: []
+
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: collect
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: find_all
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: map
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: reject
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: select
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: skip
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: take
+name: Denumerable

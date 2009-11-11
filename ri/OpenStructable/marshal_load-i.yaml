@@ -1,0 +1,10 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: OpenStructable#marshal_load
+is_singleton: false
+name: marshal_load
+params: (x)
+visibility: public

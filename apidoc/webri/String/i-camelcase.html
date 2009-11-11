@@ -1,0 +1,14 @@
+<br/><b>String#camelcase</b><hr />
+camelcase(first_letter=nil)<br />
+<p />
+From /home/trans/Documents/programs/current/facets/doc/ri/String/cdesc-String.yaml<hr />
+Converts a string to camelcase.<p />
+By default camelcase leaves the first character of the string as given. If <tt>first_letter</tt> is set to <tt>:lower</tt> or <tt>false</tt>, then <tt>#camelcase</tt> will produce lowerCamelCase. If it is set to <tt>:upper</tt> or <tt>true</tt> it will produce UpperCamelCase.<p />
+<tt>#camelcase</tt> also converts '/' to '::' which is useful for converting paths to namespaces.<p />
+Examples<p />
+<pre>  &amp;quot;camel_case&amp;quot;.camelcase             #=&amp;gt; &amp;quot;camelCase&amp;quot;
+  &amp;quot;camel/case&amp;quot;.camelcase(true)       #=&amp;gt; &amp;quot;Camel::Case&amp;quot;
+  &amp;quot;Camel_case&amp;quot;.camelcase(false)      #=&amp;gt; &amp;quot;camelCase&amp;quot;
+</pre>
+TODO: Is this the best approach? Should lowerCamelCase be default instead?<p />
+<br/><br/>

@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: ""
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Like #scan but returns MatchData ($~) rather then matched string ($&amp;)."
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Trans"
+full_name: String#mscan
+is_singleton: false
+name: mscan
+params: (re) {|| ...}
+visibility: public

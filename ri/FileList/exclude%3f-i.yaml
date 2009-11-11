@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Should the given file name be excluded?
+full_name: FileList#exclude?
+is_singleton: false
+name: exclude?
+params: (fn)
+visibility: public

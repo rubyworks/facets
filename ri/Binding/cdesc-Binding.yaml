@@ -1,0 +1,40 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Binding
+includes: []
+
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: "[]"
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: "[]="
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: __DIR__
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: __FILE__
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: __LINE__
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: __callee__
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: __method__
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: caller
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: callstack
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: defined?
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: eval
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: local_variables
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: self
+name: Binding
+superclass: Object

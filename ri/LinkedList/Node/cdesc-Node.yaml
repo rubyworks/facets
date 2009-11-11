@@ -1,0 +1,37 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: 
+- !ruby/object:RDoc::RI::Attribute 
+  comment: 
+  name: key
+  rw: RW
+- !ruby/object:RDoc::RI::Attribute 
+  comment: 
+  name: next_node
+  rw: RW
+- !ruby/object:RDoc::RI::Attribute 
+  comment: 
+  name: prev_node
+  rw: RW
+- !ruby/object:RDoc::RI::Attribute 
+  comment: 
+  name: value
+  rw: RW
+class_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Represents a single node of the linked list.
+- !ruby/struct:RDoc::Markup::Flow::RULE 
+  width: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Represents a single node of the linked list.
+constants: []
+
+full_name: LinkedList::Node
+includes: []
+
+instance_methods: []
+
+name: Node
+superclass: Object

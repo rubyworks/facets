@@ -1,0 +1,17 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: 
+- !ruby/object:RDoc::RI::AliasName 
+  name: getutc
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Adjusts DateTime to UTC by adding its offset value; offset is set to 0
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Example:"
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  DateTime.civil(2005, 2, 21, 10, 11, 12, Rational(-6, 24))       # =&gt; Mon, 21 Feb 2005 10:11:12 -0600\n  DateTime.civil(2005, 2, 21, 10, 11, 12, Rational(-6, 24)).utc   # =&gt; Mon, 21 Feb 2005 16:11:12 +0000\n"
+full_name: DateTime#utc
+is_singleton: false
+name: utc
+params: ()
+visibility: public

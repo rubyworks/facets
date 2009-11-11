@@ -1,0 +1,89 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Convert and array into a tuple.
+constants: []
+
+full_name: Array
+includes: 
+- !ruby/object:RDoc::RI::IncludedModule 
+  name: Indexable
+- !ruby/object:RDoc::RI::IncludedModule 
+  name: Stackable
+- !ruby/object:RDoc::RI::IncludedModule 
+  name: Random
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: "**"
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: combination
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: conjoin
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: delete_unless
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: delete_values
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: delete_values_at
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: index
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: merge!
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: not_empty?
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: object_state
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: only
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: pad
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: pad!
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: permutation
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: power_set
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: product
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: recursively
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: recursively!
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: rotate
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: rotate!
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: select!
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: shelljoin
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: shellwords
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: splice
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_b
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_h
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_h_assoc
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_h_auto
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_h_flat
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_h_multi
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_h_splat
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_t
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: traverse
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: traverse!
+name: Array
+superclass: Object

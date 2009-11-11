@@ -1,0 +1,34 @@
+--- !ruby/object:RDoc::RI::ModuleDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 1
+  text: "TITLE:"
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  Roman Numerals\n"
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 1
+  text: "SYNOPSIS:"
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  Generates roman numerals from integers and vice-versa.\n"
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 1
+  text: "NOTES:"
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  A response to Ruby Quiz of the Week #22 - Roman Numerals [ruby-talk:132925]\n"
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 1
+  text: "AUTHORS:"
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  - Dave Burt &lt;dave at burt.id.au&gt;\n  - Trans\n"
+constants: []
+
+full_name: English
+includes: []
+
+instance_methods: []
+
+name: English

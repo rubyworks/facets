@@ -1,0 +1,10 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: System#error_position
+is_singleton: false
+name: error_position
+params: ()
+visibility: public

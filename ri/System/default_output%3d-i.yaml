@@ -1,0 +1,11 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: 
+- !ruby/object:RDoc::RI::AliasName 
+  name: defout=
+block_params: 
+comment: 
+full_name: System#default_output=
+is_singleton: false
+name: default_output=
+params: (x)
+visibility: public

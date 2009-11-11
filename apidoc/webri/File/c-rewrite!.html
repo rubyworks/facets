@@ -1,0 +1,12 @@
+<br/><b>File::rewrite!</b><hr />
+File::rewrite!(name, mode = &quot;&quot;) {|| ...}<br />
+<p />
+From /home/trans/Documents/programs/current/facets/doc/ri/File/cdesc-File.yaml<hr />
+In place version of #rewrite. This version of method requires that the string be modified in place within the block.<p />
+<pre>  # Reverse contents of &amp;quot;message&amp;quot;
+  File.rewrite(&amp;quot;message&amp;quot;) { |str| str.reverse! }
+
+  # Replace &amp;quot;foo&amp;quot; by &amp;quot;bar&amp;quot; in &amp;quot;binary&amp;quot;
+  File.rewrite(&amp;quot;binary&amp;quot;, &amp;quot;b&amp;quot;) { |str| str.gsub!(&amp;quot;foo&amp;quot;, &amp;quot;bar&amp;quot;) }
+</pre>
+<br/><br/>

@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Same as #rotate, but acts in place."
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  a = [1,2,3]\n  a.rotate!\n  a  #=&gt; [3,1,2]\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Florian Gross, Thomas Sawyer"
+full_name: Array#rotate!
+is_singleton: false
+name: rotate!
+params: (n=1)
+visibility: public

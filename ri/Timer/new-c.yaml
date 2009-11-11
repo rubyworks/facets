@@ -1,0 +1,10 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Timer::new
+is_singleton: true
+name: new
+params: ( time_limit=nil, &block )
+visibility: public

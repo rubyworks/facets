@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Convenience method which returns a new Date/DateTime representing the time 1 day ago
+full_name: Date#yesterday
+is_singleton: false
+name: yesterday
+params: ()
+visibility: public

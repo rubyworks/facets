@@ -1,0 +1,71 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: 
+- !ruby/object:RDoc::RI::Attribute 
+  comment: 
+  name: cpu
+  rw: RW
+- !ruby/object:RDoc::RI::Attribute 
+  comment: 
+  name: os
+  rw: RW
+- !ruby/object:RDoc::RI::Attribute 
+  comment: 
+  name: version
+  rw: RW
+class_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: const_missing
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: local
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: match
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: new
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: supported
+comment: 
+constants: 
+- !ruby/object:RDoc::RI::Constant 
+  comment: 
+  name: RbConfig
+  value: Config unless defined? ::RbConfig
+- !ruby/object:RDoc::RI::Constant 
+  comment: 
+  name: DEPRECATED_CONSTS
+  value: "[     :DARWIN,     :LINUX_586,     :MSWIN32,     :PPC_DARWIN,     :WIN32,     :X86_LINUX   ]"
+- !ruby/object:RDoc::RI::Constant 
+  comment: 
+  - !ruby/struct:RDoc::Markup::Flow::P 
+    body: A pure-ruby gem that may use Gem::Specification#extensions to build binary files.
+  name: RUBY
+  value: "'ruby'"
+- !ruby/object:RDoc::RI::Constant 
+  comment: 
+  - !ruby/struct:RDoc::Markup::Flow::P 
+    body: A platform-specific gem that is built for the packaging ruby's platform. This will be replaced with Gem::Platform::local.
+  name: CURRENT
+  value: "'current'"
+full_name: Platform
+includes: []
+
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: ==
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: ===
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: =~
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: big_endian?
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: byte_order
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: inspect
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: little_endian?
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_a
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_s
+name: Platform
+superclass: Object

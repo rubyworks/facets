@@ -1,0 +1,10 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Date#xmlschema
+is_singleton: false
+name: xmlschema
+params: ()
+visibility: public

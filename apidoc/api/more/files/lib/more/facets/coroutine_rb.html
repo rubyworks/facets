@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+  <head>
+    <title>File: coroutine.rb [Facets More API]</title>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+    <link href='../../../../rdoc-style.css' media='screen' rel='stylesheet' type='text/css'>
+    <script type='text/javascript'>
+      //<![CDATA[
+        function popupCode(url) {
+          window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+        }
+        
+        function toggleCode(id) {
+          var code = document.getElementById(id)
+        
+          code.style.display = code.style.display != 'block' ? 'block' : 'none'
+          return true
+        }
+        
+        // Make codeblocks hidden by default
+        document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+      //]]>
+    </script>
+  </head>
+  <body class='page'>
+    <div class='file' id='wrapper'>
+      <div class='header'>
+        <div class='name'>coroutine.rb</div>
+        <div class='paths'>
+          lib/more/facets/coroutine.rb
+        </div>
+        <div class='last-update'>
+          Last Update:
+          <span class='datetime'>Fri Aug 14 07:42:12 -0400 2009</span>
+        </div>
+      </div>
+      <div id='content'>
+        <div id='text'>
+          <div id='description'>
+            <h1><a href="../../../../classes/Coroutine.html">Coroutine</a></h1>
+            <p>
+            Coroutines are program components like subroutines. Coroutines are more
+            generic and flexible than subroutines, but are less widely used in
+            practice. Coroutines were first introduced natively in Simula. Coroutines
+            are well suited for implementing more familiar program components such as
+            cooperative tasks, iterators, infinite lists, and pipes.
+            </p>
+            <p>
+            This mixin solely depends on method read(n), which must be defined in the
+            class/module where you mix in this module.
+            </p>
+            <h2>Usage</h2>
+            <pre>count = (ARGV.shift || 1000).to_i&#x000A;input = (1..count).map { (rand * 10000).round.to_f / 100}&#x000A;&#x000A;Producer = Coroutine.new do |me|&#x000A;  loop do&#x000A;    1.upto(6) do&#x000A;      me[:last_input] = input.shift&#x000A;      me.resume(Printer)&#x000A;    end&#x000A;    input.shift # discard every seventh input number&#x000A;  end&#x000A;end&#x000A;Printer = Coroutine.new do |me|&#x000A;  loop do&#x000A;    1.upto(8) do&#x000A;      me.resume(Producer)&#x000A;      if Producer[:last_input]&#x000A;        print Producer[:last_input], &quot;\t&quot;&#x000A;        Producer[:last_input] = nil&#x000A;      end&#x000A;      me.resume(Controller)&#x000A;    end&#x000A;    puts&#x000A;  end&#x000A;end&#x000A;&#x000A;Controller = Coroutine.new do |me|&#x000A;  until input.empty? do&#x000A;    me.resume(Printer)&#x000A;  end&#x000A;end&#x000A;&#x000A;Controller.run</pre>
+            <h2>Authors</h2>
+            <ul>
+            <li>Florian Frank
+            
+            </li>
+            </ul>
+            <h2>Copying</h2>
+            <p>
+            Copyright &#169; 2005 Florian Frank
+            </p>
+            <p>
+            Ruby License
+            </p>
+            <p>
+            This module is free software. You may use, modify, and/or redistribute this
+            software under the same terms as Ruby.
+            </p>
+            <p>
+            This program is distributed in the hope that it will be useful, but WITHOUT
+            ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+            FITNESS FOR A PARTICULAR PURPOSE.
+            </p>
+          </div>
+          <div id='section'>
+          </div>
+        </div>
+      </div>
+      <div id='footer-push'></div>
+    </div>
+    <div id='footer'>
+      <a href="http://github.com/mislav/hanna/tree/master"><strong>Hanna</strong> RDoc template</a>
+    </div>
+  </body>
+</html>

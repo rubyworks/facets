@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Set the expire timeout for this entry. The timeout happens after (base + rand(spread)) seconds.
+full_name: Expirable#expires_spread
+is_singleton: false
+name: expires_spread
+params: (base, spread)
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: load path ----------------------------------------------------
+full_name: System#load_path
+is_singleton: false
+name: load_path
+params: ()
+visibility: public

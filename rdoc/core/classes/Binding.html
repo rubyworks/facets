@@ -1,0 +1,815 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+  <title>Class: Binding</title>
+
+  
+    <link rel="SHORTCUT ICON" href="../assets/icon/class.png">
+  
+
+  <link type="text/css" rel="stylesheet" href="../assets/rdoc.css" media="screen" />
+  <link type="text/css" rel="stylesheet" href="../assets/highlight/styles/github.css" title="GitHub" />
+
+  <script type="text/javascript" charset="utf-8" src="../assets/jquery.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/highlight/highlight.pack.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/quicksearch.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/main.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready( function() {
+      hookHighlightSyntax();
+	    hookSourceViews();
+	    hookDebuggingToggle();
+	    hookQuickSearch();
+	    highlightLocationTarget();
+
+	    $('ul.link-list a').bind("click", highlightClickTarget);
+    });
+  </script>
+</head>
+<body class="class">
+<div id="main">
+
+  <div class="head">
+    <h1>
+      
+        <img src="../assets/icon/class.png" align="absmiddle">&nbsp;
+      
+      <a href="../index.html">Facets Core API</a>&nbsp;
+      <a href="/">Binding</a>
+    </h1>
+  </div>
+
+  <div id="metadata">
+    <div id="project-metadata">
+
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li class="file"><a href="../files/lib/core/facets/binding/caller_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/binding/caller.rb">lib/core/facets/binding/caller.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/binding/eval_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/binding/eval.rb">lib/core/facets/binding/eval.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/binding/self_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/binding/self.rb">lib/core/facets/binding/self.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/binding/local_variables_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/binding/local_variables.rb">lib/core/facets/binding/local_variables.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/binding/defined_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/binding/defined.rb">lib/core/facets/binding/defined.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/binding/opvars_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/binding/opvars.rb">lib/core/facets/binding/opvars.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/callstack_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/callstack.rb">lib/core/facets/kernel/callstack.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      <!-- What about Git info, or Hg info? This seems almost silly, albeit kind of cool. -->
+      <!-- TODO: generalize this for all SCMs -->
+
+      
+    </div>
+
+    <div id="class-metadata">
+
+      <!-- Parent Class -->
+      
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        <ul>
+          
+          <!-- why was this class="link" ? -->
+          <li class="class"><a href="Object.html">Object</a></li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Namespace Contents -->
+      
+
+      <!-- Method Quickref -->
+      
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+            
+            <li class="method">
+              <a href="#M000821">#[]</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000822">#[]=</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000813">#__DIR__</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000812">#__FILE__</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000811">#__LINE__</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000815">#__callee__</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000816">#__method__</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000809">#caller</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M001010">#callstack</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000820">#defined?</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000817">#eval</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000819">#local_variables</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000818">#self</a>
+            </li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Included Modules -->
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Information</h3>
+        <ul>
+        
+          <li class="file"><a href="../files/doc/README_core.html">README.core</a></li>
+        
+          <li class="file"><a href="../files/README_rdoc.html">README.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class Index
+          <span class="search-toggle"><img src="../assets/icon/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <!-- classpage.html : classes -->
+        <ul class="link-list">
+        
+          <li class="module"><a href="../classes/Lazy.html">Lazy</a></li>
+        
+          <li class="class"><a href="../classes/Lazy/Future.html">Lazy::Future</a></li>
+        
+          <li class="class"><a href="../classes/Lazy/Promise.html">Lazy::Promise</a></li>
+        
+          <li class="class"><a href="../classes/Lazy/PromiseSafe.html">Lazy::PromiseSafe</a></li>
+        
+          <li class="module"><a href="../classes/Enumerable.html">Enumerable</a></li>
+        
+          <li class="class"><a href="../classes/Object.html">Object</a></li>
+        
+          <li class="class"><a href="../classes/Array.html">Array</a></li>
+        
+          <li class="class"><a href="../classes/Binding.html">Binding</a></li>
+        
+          <li class="class"><a href="../classes/Class.html">Class</a></li>
+        
+          <li class="module"><a href="../classes/Comparable.html">Comparable</a></li>
+        
+          <li class="module"><a href="../classes/Denumerable.html">Denumerable</a></li>
+        
+          <li class="class"><a href="../classes/Denumerator.html">Denumerator</a></li>
+        
+          <li class="class"><a href="../classes/Dir.html">Dir</a></li>
+        
+          <li class="class"><a href="../classes/Enumerator.html">Enumerator</a></li>
+        
+          <li class="class"><a href="../classes/Exception.html">Exception</a></li>
+        
+          <li class="class"><a href="../classes/FalseClass.html">FalseClass</a></li>
+        
+          <li class="class"><a href="../classes/File.html">File</a></li>
+        
+          <li class="module"><a href="../classes/FileTest.html">FileTest</a></li>
+        
+          <li class="class"><a href="../classes/Float.html">Float</a></li>
+        
+          <li class="class"><a href="../classes/Functor.html">Functor</a></li>
+        
+          <li class="class"><a href="../classes/Hash.html">Hash</a></li>
+        
+          <li class="module"><a href="../classes/Indexable.html">Indexable</a></li>
+        
+          <li class="class"><a href="../classes/InstanceVariables.html">InstanceVariables</a></li>
+        
+          <li class="class"><a href="../classes/Integer.html">Integer</a></li>
+        
+          <li class="module"><a href="../classes/Kernel.html">Kernel</a></li>
+        
+          <li class="class"><a href="../classes/MatchData.html">MatchData</a></li>
+        
+          <li class="class"><a href="../classes/Module.html">Module</a></li>
+        
+          <li class="class"><a href="../classes/NilClass.html">NilClass</a></li>
+        
+          <li class="class"><a href="../classes/Numeric.html">Numeric</a></li>
+        
+          <li class="module"><a href="../classes/ObjectSpace.html">ObjectSpace</a></li>
+        
+          <li class="class"><a href="../classes/Proc.html">Proc</a></li>
+        
+          <li class="class"><a href="../classes/Range.html">Range</a></li>
+        
+          <li class="class"><a href="../classes/Regexp.html">Regexp</a></li>
+        
+          <li class="module"><a href="../classes/Stackable.html">Stackable</a></li>
+        
+          <li class="class"><a href="../classes/String.html">String</a></li>
+        
+          <li class="class"><a href="../classes/Struct.html">Struct</a></li>
+        
+          <li class="class"><a href="../classes/Symbol.html">Symbol</a></li>
+        
+          <li class="class"><a href="../classes/Time.html">Time</a></li>
+        
+          <li class="class"><a href="../classes/TrueClass.html">TrueClass</a></li>
+        
+          <li class="class"><a href="../classes/UnboundMethod.html">UnboundMethod</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+    </div>
+
+    <div id="validator-badges">
+      
+      <div style="float: right; margin-right: 5px;">
+        <a href="http://validator.w3.org/check/referer"><img src="../assets/icon/check.png" alt="[Validate]" height="16" width="16" /></a>
+      </div>
+      Generated with <a href="http://github.com/proutils/webri">WebRI Redfish</a> 1.0.0
+      <br/><br/>
+    </div>
+  </div>
+
+  <div id="documentation">
+
+    <div id="description">
+      
+        <h1>Binding</h1>
+      
+
+      
+    </div>
+
+    <!-- Constants -->
+    
+
+    <!-- Attributes -->
+    
+
+    <!-- Methods -->
+    
+    <div id="public-instance-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="--method" class="method-detail ">
+        <a name="M000821"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">[]</span><span
+            class="method-args">( x )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns the value of some variable.
+</p>
+<pre>
+  a = 2
+  binding[&quot;a&quot;]  #=&gt; 2
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/binding/opvars.rb, line 10</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-operator">[]</span>( <span class="ruby-identifier">x</span> )
+    <span class="ruby-identifier">eval</span>( <span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_s</span> )
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="--method" class="method-detail ">
+        <a name="M000822"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">[]=</span><span
+            class="method-args">( l, v )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Set the value of a local variable.
+</p>
+<pre>
+  binding[&quot;a&quot;] = 4
+  a  #=&gt; 4
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/binding/opvars.rb, line 19</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-operator">[]=</span>( <span class="ruby-identifier">l</span>, <span class="ruby-identifier">v</span> )
+    <span class="ruby-identifier">eval</span>( <span class="ruby-node">&quot;lambda {|v| #{l} = v}&quot;</span>).<span class="ruby-identifier">call</span>( <span class="ruby-identifier">v</span> )
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="--method" class="method-detail ">
+        <a name="M000813"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">__DIR__</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Return the directory of the file.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/binding/caller.rb, line 22</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">__DIR__</span>
+    <span class="ruby-identifier">eval</span>(<span class="ruby-value str">&quot;File.dirname(__FILE__)&quot;</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="--method" class="method-detail ">
+        <a name="M000812"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">__FILE__</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns file name.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/binding/caller.rb, line 17</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">__FILE__</span>
+    <span class="ruby-identifier">eval</span>(<span class="ruby-value str">&quot;__FILE__&quot;</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="--method" class="method-detail ">
+        <a name="M000811"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">__LINE__</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns line number.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/binding/caller.rb, line 12</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">__LINE__</span>
+    <span class="ruby-identifier">eval</span>(<span class="ruby-value str">&quot;__LINE__&quot;</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="-callee--method" class="method-detail ">
+        <a name="M000815"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">__callee__</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Retreive the current running method.
+</p>
+<pre>
+  def tester; p called; end
+  tester  #=&gt; :tester
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="-callee--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/binding/caller.rb, line 31</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">__callee__</span>
+    <span class="ruby-identifier">eval</span>(<span class="ruby-value str">'__callee__'</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="-method--method" class="method-detail ">
+        <a name="M000816"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">__method__</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+There is a lot of debate on what to call this. <tt>method_name</tt> differs
+from called only by the fact that it returns a string, rather then a
+symbol.
+</p>
+<pre>
+  def tester; p methodname; end
+  tester  #=&gt; &quot;tester&quot;
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="-method--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/binding/caller.rb, line 42</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">__method__</span>
+    <span class="ruby-identifier">eval</span>(<span class="ruby-value str">'__method__'</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="caller-method" class="method-detail ">
+        <a name="M000809"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">caller</span><span
+            class="method-args">( skip=0 )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns the call stack, same format as Kernel#caller()
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="caller-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/binding/caller.rb, line 7</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">caller</span>( <span class="ruby-identifier">skip</span>=<span class="ruby-value">0</span> )
+    <span class="ruby-identifier">eval</span>(<span class="ruby-node">&quot;caller(#{skip})&quot;</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="callstack-method" class="method-detail ">
+        <a name="M001010"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">callstack</span><span
+            class="method-args">(level=1)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns the call stack, in array format.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="callstack-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/callstack.rb, line 47</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">callstack</span>(<span class="ruby-identifier">level</span>=<span class="ruby-value">1</span>)
+    <span class="ruby-identifier">eval</span>( <span class="ruby-node">&quot;callstack( #{level} )&quot;</span> )
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="defined--method" class="method-detail ">
+        <a name="M000820"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">defined?</span><span
+            class="method-args">(x)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns the nature of something within the context of the binding. Returns
+nil if that thing is not defined.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="defined--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/binding/defined.rb, line 7</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">defined?</span>(<span class="ruby-identifier">x</span>)
+    <span class="ruby-identifier">eval</span>(<span class="ruby-node">&quot;defined? #{x}&quot;</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="eval-method" class="method-detail ">
+        <a name="M000817"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">eval</span><span
+            class="method-args">(str)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Evaluate a Ruby source code string (or block) in the binding context.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="eval-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/binding/eval.rb, line 7</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">eval</span>(<span class="ruby-identifier">str</span>) <span class="ruby-comment cmt">#='', &amp;blk )</span>
+      <span class="ruby-comment cmt">#if block_given?</span>
+      <span class="ruby-comment cmt">#  Kernel.eval( self, &amp;blk )</span>
+      <span class="ruby-comment cmt">#elsif str</span>
+        <span class="ruby-constant">Kernel</span>.<span class="ruby-identifier">eval</span>(<span class="ruby-identifier">str</span>, <span class="ruby-keyword kw">self</span>)
+      <span class="ruby-comment cmt">#end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="local-variables-method" class="method-detail ">
+        <a name="M000819"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">local_variables</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns the local variables defined in the binding context
+</p>
+<pre>
+  a = 2
+  binding.local_variables  #=&gt; [&quot;a&quot;]
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="local-variables-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/binding/local_variables.rb, line 10</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">local_variables</span>()
+    <span class="ruby-identifier">eval</span>(<span class="ruby-value str">&quot;local_variables&quot;</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="self-method" class="method-detail ">
+        <a name="M000818"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">self</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns self of the binding context.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="self-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/binding/self.rb, line 7</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>()
+    <span class="ruby-ivar">@_self</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">eval</span>(<span class="ruby-value str">&quot;self&quot;</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+
+  </div>
+
+
+  <div id="rdoc-debugging-section-dump" class="debugging-section">
+  
+    <p>Disabled; run with --debug to generate this.</p>
+  
+  </div>
+
+</main>
+</body>
+</html>
+

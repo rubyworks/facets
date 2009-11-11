@@ -1,0 +1,18 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Converts a string to module name representation.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "This is essentially #camelcase. It also converts '/' to '::' which is useful for converting paths to namespaces."
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Examples
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  &quot;method_name&quot;.modulize    #=&gt; &quot;MethodName&quot;\n  &quot;method/name&quot;.modulize    #=&gt; &quot;Method::Name&quot;\n"
+full_name: String#modulize
+is_singleton: false
+name: modulize
+params: ()
+visibility: public

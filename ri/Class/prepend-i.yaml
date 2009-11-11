@@ -1,0 +1,20 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Prepend an &quot;aspect module&quot; to a class.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  class Firetruck\n    def put_out_fire(option)\n      &quot;Put out #{option}&quot;\n    end\n  end\n\n  module FastFiretruck\n    def put_out_fire(option)\n      super(&quot;very #{option}!&quot;)\n    end\n  end\n\n  Firetruck.prepend(FastFiretruck)\n\n  ft = Firetruck.new\n  ft.put_out_fire('fast') #=&gt; &quot;Put out very fast!&quot;\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Implementation of this method has some limitations, in that it works by overriding #new and #allocate."
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Trans"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "TODO: Perhaps rename this to preallocate, b/c of the way it works. It is not really a clean prepend, like that of Module#prepend."
+full_name: Class#prepend
+is_singleton: false
+name: prepend
+params: ( aspect )
+visibility: public

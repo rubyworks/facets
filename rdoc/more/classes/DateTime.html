@@ -1,0 +1,1199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+  <title>Class: DateTime</title>
+
+  
+    <link rel="SHORTCUT ICON" href="../assets/icon/class.png">
+  
+
+  <link type="text/css" rel="stylesheet" href="../assets/rdoc.css" media="screen" />
+  <link type="text/css" rel="stylesheet" href="../assets/highlight/styles/github.css" title="GitHub" />
+
+  <script type="text/javascript" charset="utf-8" src="../assets/jquery.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/highlight/highlight.pack.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/quicksearch.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/main.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready( function() {
+      hookHighlightSyntax();
+	    hookSourceViews();
+	    hookDebuggingToggle();
+	    hookQuickSearch();
+	    highlightLocationTarget();
+
+	    $('ul.link-list a').bind("click", highlightClickTarget);
+    });
+  </script>
+</head>
+<body class="class">
+<div id="main">
+
+  <div class="head">
+    <h1>
+      
+        <img src="../assets/icon/class.png" align="absmiddle">&nbsp;
+      
+      <a href="../index.html">Facets More API</a>&nbsp;
+      <a href="/">DateTime</a>
+    </h1>
+  </div>
+
+  <div id="metadata">
+    <div id="project-metadata">
+
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li class="file"><a href="../files/lib/more/facets/date_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/more/facets/date.rb">lib/more/facets/date.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      <!-- What about Git info, or Hg info? This seems almost silly, albeit kind of cool. -->
+      <!-- TODO: generalize this for all SCMs -->
+
+      
+    </div>
+
+    <div id="class-metadata">
+
+      <!-- Parent Class -->
+      
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        <ul>
+          
+          <!-- why was this class="link" ? -->
+          <li class="class"><a href="Object.html">Object</a></li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Namespace Contents -->
+      
+
+      <!-- Method Quickref -->
+      
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+            
+            <li class="singleton">
+              <a href="#M000140">::local_offset</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000157">#advance</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000158">#ago</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000161">#beginning_of_day</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000149">#change</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000163">#end_of_day</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000165">#getutc</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000160">#in</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000162">#midnight</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000147">#seconds_since_midnight</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000159">#since</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000146">#stamp</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000141">#to_date</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000144">#to_datetime</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000169">#to_f</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000143">#to_time</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000164">#utc</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000166">#utc?</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000167">#utc_offset</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000168">#xmlschema</a>
+            </li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Included Modules -->
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Information</h3>
+        <ul>
+        
+          <li class="file"><a href="../files/README_rdoc.html">README.rdoc</a></li>
+        
+          <li class="file"><a href="../files/doc/README_more.html">README.more</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class Index
+          <span class="search-toggle"><img src="../assets/icon/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <!-- classpage.html : classes -->
+        <ul class="link-list">
+        
+          <li class="module"><a href="../classes/Random.html">Random</a></li>
+        
+          <li class="module"><a href="../classes/Random/Array.html">Random::Array</a></li>
+        
+          <li class="module"><a href="../classes/Random/Hash.html">Random::Hash</a></li>
+        
+          <li class="module"><a href="../classes/Random/Object.html">Random::Object</a></li>
+        
+          <li class="module"><a href="../classes/Random/Range.html">Random::Range</a></li>
+        
+          <li class="module"><a href="../classes/Random/String.html">Random::String</a></li>
+        
+          <li class="module"><a href="../classes/Random/String/Self.html">Random::String::Self</a></li>
+        
+          <li class="module"><a href="../classes/Multiton.html">Multiton</a></li>
+        
+          <li class="module"><a href="../classes/Multiton/Inclusive.html">Multiton::Inclusive</a></li>
+        
+          <li class="module"><a href="../classes/Multiton/MetaMethods.html">Multiton::MetaMethods</a></li>
+        
+          <li class="class"><a href="../classes/Duration.html">Duration</a></li>
+        
+          <li class="module"><a href="../classes/Duration/Numeric.html">Duration::Numeric</a></li>
+        
+          <li class="module"><a href="../classes/Duration/Time.html">Duration::Time</a></li>
+        
+          <li class="module"><a href="../classes/URI.html">URI</a></li>
+        
+          <li class="module"><a href="../classes/URI/Hash.html">URI::Hash</a></li>
+        
+          <li class="module"><a href="../classes/URI/Kernel.html">URI::Kernel</a></li>
+        
+          <li class="module"><a href="../classes/ERB.html">ERB</a></li>
+        
+          <li class="class"><a href="../classes/ERB/OpenTemplate.html">ERB::OpenTemplate</a></li>
+        
+          <li class="module"><a href="../classes/English/RomanNumerals.html">English::RomanNumerals</a></li>
+        
+          <li class="module"><a href="../classes/Enumerable.html">Enumerable</a></li>
+        
+          <li class="module"><a href="../classes/Enumerable/Arguments.html">Enumerable::Arguments</a></li>
+        
+          <li class="class"><a href="../classes/Enumerator.html">Enumerator</a></li>
+        
+          <li class="class"><a href="../classes/GetoptLong.html">GetoptLong</a></li>
+        
+          <li class="class"><a href="../classes/GetoptLong/DSL.html">GetoptLong::DSL</a></li>
+        
+          <li class="class"><a href="../classes/LinkedList.html">LinkedList</a></li>
+        
+          <li class="class"><a href="../classes/LinkedList/Node.html">LinkedList::Node</a></li>
+        
+          <li class="class"><a href="../classes/Matcher.html">Matcher</a></li>
+        
+          <li class="class"><a href="../classes/Matcher/MatchData.html">Matcher::MatchData</a></li>
+        
+          <li class="class"><a href="../classes/Module.html">Module</a></li>
+        
+          <li class="module"><a href="../classes/Module/InstanceFunction.html">Module::InstanceFunction</a></li>
+        
+          <li class="module"><a href="../classes/Numeric/Multipliers.html">Numeric::Multipliers</a></li>
+        
+          <li class="class"><a href="../classes/PathList.html">PathList</a></li>
+        
+          <li class="module"><a href="../classes/PathList/Finder.html">PathList::Finder</a></li>
+        
+          <li class="class"><a href="../classes/Platform.html">Platform</a></li>
+        
+          <li class="module"><a href="../classes/Platform/ByteOrder.html">Platform::ByteOrder</a></li>
+        
+          <li class="class"><a href="../classes/Timer.html">Timer</a></li>
+        
+          <li class="class"><a href="../classes/Timer/Dummy.html">Timer::Dummy</a></li>
+        
+          <li class="module"><a href="../classes/ANSICode.html">ANSICode</a></li>
+        
+          <li class="class"><a href="../classes/Argvector.html">Argvector</a></li>
+        
+          <li class="class"><a href="../classes/Array.html">Array</a></li>
+        
+          <li class="class"><a href="../classes/AutoArray.html">AutoArray</a></li>
+        
+          <li class="class"><a href="../classes/BasicObject.html">BasicObject</a></li>
+        
+          <li class="class"><a href="../classes/CGI.html">CGI</a></li>
+        
+          <li class="class"><a href="../classes/Class.html">Class</a></li>
+        
+          <li class="module"><a href="../classes/Cloneable.html">Cloneable</a></li>
+        
+          <li class="module"><a href="../classes/Config.html">Config</a></li>
+        
+          <li class="class"><a href="../classes/Continuation.html">Continuation</a></li>
+        
+          <li class="class"><a href="../classes/Date.html">Date</a></li>
+        
+          <li class="class"><a href="../classes/DateTime.html">DateTime</a></li>
+        
+          <li class="class"><a href="../classes/Dictionary.html">Dictionary</a></li>
+        
+          <li class="module"><a href="../classes/Equitable.html">Equitable</a></li>
+        
+          <li class="module"><a href="../classes/Expirable.html">Expirable</a></li>
+        
+          <li class="class"><a href="../classes/File.html">File</a></li>
+        
+          <li class="class"><a href="../classes/FileList.html">FileList</a></li>
+        
+          <li class="module"><a href="../classes/FileUtils.html">FileUtils</a></li>
+        
+          <li class="class"><a href="../classes/Fixnum.html">Fixnum</a></li>
+        
+          <li class="class"><a href="../classes/HashBuilder.html">HashBuilder</a></li>
+        
+          <li class="module"><a href="../classes/Hook.html">Hook</a></li>
+        
+          <li class="class"><a href="../classes/IORedirect.html">IORedirect</a></li>
+        
+          <li class="class"><a href="../classes/Ini.html">Ini</a></li>
+        
+          <li class="module"><a href="../classes/Instantiable.html">Instantiable</a></li>
+        
+          <li class="class"><a href="../classes/Integer.html">Integer</a></li>
+        
+          <li class="class"><a href="../classes/Memoizer.html">Memoizer</a></li>
+        
+          <li class="class"><a href="../classes/NilClass.html">NilClass</a></li>
+        
+          <li class="class"><a href="../classes/NullClass.html">NullClass</a></li>
+        
+          <li class="module"><a href="../classes/OpEsc.html">OpEsc</a></li>
+        
+          <li class="class"><a href="../classes/OpenCascade.html">OpenCascade</a></li>
+        
+          <li class="class"><a href="../classes/OpenCollection.html">OpenCollection</a></li>
+        
+          <li class="class"><a href="../classes/OpenHash.html">OpenHash</a></li>
+        
+          <li class="class"><a href="../classes/OpenModule.html">OpenModule</a></li>
+        
+          <li class="class"><a href="../classes/OpenObject.html">OpenObject</a></li>
+        
+          <li class="class"><a href="../classes/OpenStruct.html">OpenStruct</a></li>
+        
+          <li class="module"><a href="../classes/OpenStructable.html">OpenStructable</a></li>
+        
+          <li class="class"><a href="../classes/Pathname.html">Pathname</a></li>
+        
+          <li class="module"><a href="../classes/PluginManager.html">PluginManager</a></li>
+        
+          <li class="class"><a href="../classes/Proc.html">Proc</a></li>
+        
+          <li class="class"><a href="../classes/Range.html">Range</a></li>
+        
+          <li class="class"><a href="../classes/Reference.html">Reference</a></li>
+        
+          <li class="module"><a href="../classes/Registerable.html">Registerable</a></li>
+        
+          <li class="class"><a href="../classes/Semaphore.html">Semaphore</a></li>
+        
+          <li class="class"><a href="../classes/Set.html">Set</a></li>
+        
+          <li class="module"><a href="../classes/Shellwords.html">Shellwords</a></li>
+        
+          <li class="class"><a href="../classes/Stash.html">Stash</a></li>
+        
+          <li class="class"><a href="../classes/String.html">String</a></li>
+        
+          <li class="module"><a href="../classes/System.html">System</a></li>
+        
+          <li class="class"><a href="../classes/TracePoint.html">TracePoint</a></li>
+        
+          <li class="class"><a href="../classes/Tuple.html">Tuple</a></li>
+        
+          <li class="class"><a href="../classes/VersionNumber.html">VersionNumber</a></li>
+        
+          <li class="class"><a href="../classes/X.html">X</a></li>
+        
+          <li class="module"><a href="../classes/Zlib.html">Zlib</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+    </div>
+
+    <div id="validator-badges">
+      
+      <div style="float: right; margin-right: 5px;">
+        <a href="http://validator.w3.org/check/referer"><img src="../assets/icon/check.png" alt="[Validate]" height="16" width="16" /></a>
+      </div>
+      Generated with <a href="http://github.com/proutils/webri">WebRI Redfish</a> 1.0.0
+      <br/><br/>
+    </div>
+  </div>
+
+  <div id="documentation">
+
+    <div id="description">
+      
+        <h1>DateTime</h1>
+      
+
+      
+    </div>
+
+    <!-- Constants -->
+    
+
+    <!-- Attributes -->
+    
+
+    <!-- Methods -->
+    
+    <div id="public-class-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="local-offset-method" class="method-detail ">
+        <a name="M000140"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">local_offset</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="local-offset-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/date.rb, line 197</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">local_offset</span>
+    <span class="ruby-operator">::</span><span class="ruby-constant">Time</span>.<span class="ruby-identifier">local</span>(<span class="ruby-value">2007</span>).<span class="ruby-identifier">utc_offset</span>.<span class="ruby-identifier">to_r</span> <span class="ruby-operator">/</span> <span class="ruby-value">86400</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+    <div id="public-instance-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="advance-method" class="method-detail ">
+        <a name="M000157"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">advance</span><span
+            class="method-args">(options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Uses <a href="Date.html">Date</a> to provide precise Time calculations for
+years, months, and days. The <tt>options</tt> parameter takes a hash with
+any of these keys: <tt>:years</tt>, <tt>:months</tt>, <tt>:weeks</tt>,
+<tt>:days</tt>, <tt>:hours</tt>, <tt>:minutes</tt>, <tt>:seconds</tt>.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="advance-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/date.rb, line 275</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">advance</span>(<span class="ruby-identifier">options</span>)
+    <span class="ruby-identifier">d</span> = <span class="ruby-identifier">to_date</span>.<span class="ruby-identifier">advance</span>(<span class="ruby-identifier">options</span>)
+    <span class="ruby-identifier">datetime_advanced_by_date</span> = <span class="ruby-identifier">change</span>(<span class="ruby-identifier">:year</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">year</span>, <span class="ruby-identifier">:month</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">month</span>, <span class="ruby-identifier">:day</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">day</span>)
+    <span class="ruby-identifier">seconds_to_advance</span> = (<span class="ruby-identifier">options</span>[<span class="ruby-identifier">:seconds</span>] <span class="ruby-operator">||</span> <span class="ruby-value">0</span>) <span class="ruby-operator">+</span> (<span class="ruby-identifier">options</span>[<span class="ruby-identifier">:minutes</span>] <span class="ruby-operator">||</span> <span class="ruby-value">0</span>) <span class="ruby-operator">*</span> <span class="ruby-value">60</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">options</span>[<span class="ruby-identifier">:hours</span>] <span class="ruby-operator">||</span> <span class="ruby-value">0</span>) <span class="ruby-operator">*</span> <span class="ruby-value">3600</span>
+    <span class="ruby-identifier">seconds_to_advance</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">datetime_advanced_by_date</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">datetime_advanced_by_date</span>.<span class="ruby-identifier">since</span>(<span class="ruby-identifier">seconds_to_advance</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="ago-method" class="method-detail ">
+        <a name="M000158"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">ago</span><span
+            class="method-args">(seconds)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns a new <a href="DateTime.html">DateTime</a> representing the time a
+number of seconds ago Do not use this method in combination with x.months,
+use months_ago instead!
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="ago-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/date.rb, line 284</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ago</span>(<span class="ruby-identifier">seconds</span>)
+    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">since</span>(<span class="ruby-operator">-</span><span class="ruby-identifier">seconds</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="beginning-of-day-method" class="method-detail ">
+        <a name="M000161"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">beginning_of_day</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns a new <a href="DateTime.html">DateTime</a> representing the start
+of the day (0:00)
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="beginning-of-day-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/date.rb, line 296</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">beginning_of_day</span>
+    <span class="ruby-identifier">change</span>(<span class="ruby-identifier">:hour</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="DateTime.html#M000162">midnight</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="change-method" class="method-detail ">
+        <a name="M000149"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">change</span><span
+            class="method-args">(options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns a new <a href="DateTime.html">DateTime</a> where one or more of the
+elements have been changed according to the <tt>options</tt> parameter. The
+time options (hour, minute, sec) reset cascadingly, so if only the hour is
+passed, then minute and sec is set to 0. If the hour and minute is passed,
+then sec is set to 0.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="change-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/date.rb, line 258</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">change</span>(<span class="ruby-identifier">options</span>)
+    <span class="ruby-operator">::</span><span class="ruby-constant">DateTime</span>.<span class="ruby-identifier">civil</span>(
+      <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:year</span>]  <span class="ruby-operator">||</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">year</span>,
+      <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:month</span>] <span class="ruby-operator">||</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">month</span>,
+      <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:day</span>]   <span class="ruby-operator">||</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">day</span>,
+      <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:hour</span>]  <span class="ruby-operator">||</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">hour</span>,
+      <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:min</span>]   <span class="ruby-operator">||</span> (<span class="ruby-identifier">options</span>[<span class="ruby-identifier">:hour</span>] <span class="ruby-operator">?</span> <span class="ruby-value">0</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">min</span>),
+      <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:sec</span>]   <span class="ruby-operator">||</span> ((<span class="ruby-identifier">options</span>[<span class="ruby-identifier">:hour</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:min</span>]) <span class="ruby-operator">?</span> <span class="ruby-value">0</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">sec</span>),
+      <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:offset</span>]  <span class="ruby-operator">||</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">offset</span>,
+      <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:start</span>]  <span class="ruby-operator">||</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">start</span>
+    )
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="end-of-day-method" class="method-detail ">
+        <a name="M000163"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">end_of_day</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns a new <a href="DateTime.html">DateTime</a> representing the end of
+the day (23:59:59)
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="end-of-day-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/date.rb, line 302</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">end_of_day</span>
+    <span class="ruby-identifier">change</span>(<span class="ruby-identifier">:hour</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">23</span>, <span class="ruby-identifier">:min</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">59</span>, <span class="ruby-identifier">:sec</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">59</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="getutc-method" class="method-detail method-alias">
+        <a name="M000165"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">getutc</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="DateTime.html#M000164">utc</a>
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="in-method" class="method-detail method-alias">
+        <a name="M000160"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">in</span><span
+            class="method-args">(seconds)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="DateTime.html#M000159">since</a>
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="midnight-method" class="method-detail method-alias">
+        <a name="M000162"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">midnight</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="DateTime.html#M000161">beginning_of_day</a>
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="seconds-since-midnight-method" class="method-detail ">
+        <a name="M000147"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">seconds_since_midnight</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Seconds since midnight: DateTime.now.<a
+href="DateTime.html#M000147">seconds_since_midnight</a>
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="seconds-since-midnight-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/date.rb, line 249</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">seconds_since_midnight</span>
+    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">sec</span> <span class="ruby-operator">+</span> (<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">min</span> <span class="ruby-operator">*</span> <span class="ruby-value">60</span>) <span class="ruby-operator">+</span> (<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">hour</span> <span class="ruby-operator">*</span> <span class="ruby-value">3600</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="since-method" class="method-detail ">
+        <a name="M000159"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">since</span><span
+            class="method-args">(seconds)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns a new <a href="DateTime.html">DateTime</a> representing the time a
+number of seconds since the instance time Do not use this method in
+combination with x.months, use months_since instead!
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="since-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/date.rb, line 290</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">since</span>(<span class="ruby-identifier">seconds</span>)
+    <span class="ruby-keyword kw">self</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Rational</span>(<span class="ruby-identifier">seconds</span>.<span class="ruby-identifier">round</span>, <span class="ruby-value">86400</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="DateTime.html#M000160">in</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="stamp-method" class="method-detail ">
+        <a name="M000146"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">stamp</span><span
+            class="method-args">(format=:default)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Convert to a formatted string. See Time::FORMAT for predefined formats.
+</p>
+<p>
+This method is aliased to <tt>to_s</tt>.
+</p>
+<h3>Examples:</h3>
+<pre>
+  datetime = DateTime.civil(2007, 12, 4, 0, 0, 0, 0)   # =&gt; Tue, 04 Dec 2007 00:00:00 +0000
+
+  datetime.stamp(:db)            # =&gt; &quot;2007-12-04 00:00:00&quot;
+  datetime.stamp(:db)            # =&gt; &quot;2007-12-04 00:00:00&quot;
+  datetime.stamp(:number)        # =&gt; &quot;20071204000000&quot;
+  datetime.stamp(:short)         # =&gt; &quot;04 Dec 00:00&quot;
+  datetime.stamp(:long)          # =&gt; &quot;December 04, 2007 00:00&quot;
+  datetime.stamp(:rfc822)        # =&gt; &quot;Tue, 04 Dec 2007 00:00:00 +0000&quot;
+</pre>
+<h2>Adding your own datetime formats to stamp</h2>
+<p>
+<a href="DateTime.html">DateTime</a> formats are shared with Time. You can
+add your own to the Time::FORMAT hash. Use the format name as the hash key
+and a strftime string as the value. Eg.
+</p>
+<pre>
+  Time::FORMAT[:month_and_year] = &quot;%B %Y&quot;
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="stamp-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/date.rb, line 240</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stamp</span>(<span class="ruby-identifier">format</span>=<span class="ruby-identifier">:default</span>)
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">formatter</span> = <span class="ruby-operator">::</span><span class="ruby-constant">Time</span><span class="ruby-operator">::</span><span class="ruby-constant">FORMAT</span>[<span class="ruby-identifier">format</span>]
+      <span class="ruby-identifier">strftime</span>(<span class="ruby-identifier">formatter</span>)
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">to_s</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="to-date-method" class="method-detail ">
+        <a name="M000141"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">to_date</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Converts self to a Ruby <a href="Date.html">Date</a> object; time portion
+is discarded
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="to-date-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/date.rb, line 202</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_date</span>
+    <span class="ruby-operator">::</span><span class="ruby-constant">Date</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="to-datetime-method" class="method-detail ">
+        <a name="M000144"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">to_datetime</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+To be able to keep Times, Dates and DateTimes interchangeable on
+conversions
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="to-datetime-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/date.rb, line 215</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_datetime</span>
+    <span class="ruby-keyword kw">self</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="to-f-method" class="method-detail ">
+        <a name="M000169"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">to_f</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Converts self to a floating-point number of seconds since the Unix epoch
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="to-f-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/date.rb, line 333</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_f</span>
+    <span class="ruby-identifier">days_since_unix_epoch</span> = <span class="ruby-keyword kw">self</span> <span class="ruby-operator">-</span> <span class="ruby-operator">::</span><span class="ruby-constant">DateTime</span>.<span class="ruby-identifier">civil</span>(<span class="ruby-value">1970</span>)
+    (<span class="ruby-identifier">days_since_unix_epoch</span> <span class="ruby-operator">*</span> <span class="ruby-value">86_400</span>).<span class="ruby-identifier">to_f</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="to-time-method" class="method-detail ">
+        <a name="M000143"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">to_time</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Attempts to convert self to a Ruby Time object; returns self if out of
+range of Ruby Time class, If self has an offset other than 0, self will
+just be returned unaltered, since there&#8217;s no clean way to map it to a
+Time
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="to-time-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/date.rb, line 210</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_time</span>
+    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">offset</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span> <span class="ruby-operator">?</span> <span class="ruby-operator">::</span><span class="ruby-constant">Time</span>.<span class="ruby-identifier">utc_time</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>, <span class="ruby-identifier">hour</span>, <span class="ruby-identifier">min</span>, <span class="ruby-identifier">sec</span>) <span class="ruby-operator">:</span> <span class="ruby-keyword kw">self</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="utc-method" class="method-detail ">
+        <a name="M000164"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">utc</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Adjusts <a href="DateTime.html">DateTime</a> to UTC by adding its offset
+value; offset is set to 0
+</p>
+<p>
+Example:
+</p>
+<pre>
+  DateTime.civil(2005, 2, 21, 10, 11, 12, Rational(-6, 24))       # =&gt; Mon, 21 Feb 2005 10:11:12 -0600
+  DateTime.civil(2005, 2, 21, 10, 11, 12, Rational(-6, 24)).utc   # =&gt; Mon, 21 Feb 2005 16:11:12 +0000
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="utc-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/date.rb, line 312</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">utc</span>
+    <span class="ruby-identifier">new_offset</span>(<span class="ruby-value">0</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="DateTime.html#M000165">getutc</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="utc--method" class="method-detail ">
+        <a name="M000166"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">utc?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns true if offset == 0
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="utc--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/date.rb, line 318</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">utc?</span>
+    <span class="ruby-identifier">offset</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="utc-offset-method" class="method-detail ">
+        <a name="M000167"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">utc_offset</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns the offset value in seconds
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="utc-offset-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/date.rb, line 323</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">utc_offset</span>
+    (<span class="ruby-identifier">offset</span> <span class="ruby-operator">*</span> <span class="ruby-value">86400</span>).<span class="ruby-identifier">to_i</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="xmlschema-method" class="method-detail ">
+        <a name="M000168"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">xmlschema</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Converts datetime to an appropriate format for use in XML
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="xmlschema-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/date.rb, line 328</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">xmlschema</span>
+    <span class="ruby-identifier">strftime</span>(<span class="ruby-value str">&quot;%Y-%m-%dT%H:%M:%S%Z&quot;</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+
+  </div>
+
+
+  <div id="rdoc-debugging-section-dump" class="debugging-section">
+  
+    <p>Disabled; run with --debug to generate this.</p>
+  
+  </div>
+
+</main>
+</body>
+</html>
+

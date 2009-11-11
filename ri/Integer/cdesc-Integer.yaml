@@ -1,0 +1,64 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Calculate the number of digits in an integer.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "1.length #=&gt; 1 10.length #=&gt; 2 100.length #=&gt; 3"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Victor H. Goff III"
+constants: []
+
+full_name: Integer
+includes: []
+
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: bit
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: bit!
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: bit?
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: bitmask
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: bitmask!
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: bitmask?
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: clear_bit
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: even?
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: fac
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: factorial
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: length
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: multiple?
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: odd?
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: of
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: ordinal
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: ordinalize
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: roman
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: round_at
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: round_to
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: times_collect
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: times_map
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_s_roman
+name: Integer
+superclass: Object

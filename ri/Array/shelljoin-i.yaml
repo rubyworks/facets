@@ -1,0 +1,10 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Array#shelljoin
+is_singleton: false
+name: shelljoin
+params: ()
+visibility: public

@@ -1,0 +1,23 @@
+<br/><b>Class: FileList < Object</b><hr />
+<h1>FileList</h1>
+A FileList is essentially an array with helper methods to make file manipulation easier.<p />
+FileLists are lazy. When given a list of glob patterns for possible files to be included in the file list, instead of searching the file structures to find the files, a FileList holds the pattern for latter use.<p />
+This allows us to define a number of FileList to match any number of files, but only search out the actual files when then FileList itself is actually used. The key is that the first time an element of the FileList/Array is requested, the pending patterns are resolved into a real list of file names.<p />
+<pre>  fl = FileList.new
+  fl.include('./*&lt;b&gt;/&lt;/b&gt;')
+  fl.exclude('./*~')
+</pre>
+<hr />
+<p />
+<h2>Constants:</h2>
+ARRAY_METHODS = Array.instance_methods - Object.instance_methodsList of array methods (that are not in <tt>Object</tt>) that need to be delegated.<p />
+DEFAULT_IGNORE_PATTERNS = [     /(^|[\/\\])CVS([\/\\]|$)/,     /(^|[\/\\])\.svn([\/\\]|$)/,     /(^|[\/\\])_darcs([\/\\]|$)/,     /\.bak$/,     /~$/,     /(^|[\/\\])core$/   ]<br />
+DELEGATING_METHODS = (ARRAY_METHODS + MUST_DEFINE - MUST_NOT_DEFINE).sort.uniq<br />
+MUST_DEFINE = %w[to_a inspect]List of additional methods that must be delegated.<p />
+MUST_NOT_DEFINE = %w[to_a to_ary partition *]List of methods that should not be delegated here (we define special versions of them explicitly below).<p />
+SPECIAL_RETURN = %w[     map collect sort sort_by select find_all reject grep     compact flatten uniq values_at     + - &amp; |   ]List of delegated methods that return new array values which need wrapping.<p />
+<p />
+<h2>Class methods:</h2>
+[], clear_ignore_patterns, new, select_default_ignore_patterns<p />
+<h2>Instance methods:</h2>
+*, ==, add, add_matching, calculate_exclude_regexp, clear_exclude, clone, dup, egrep, exclude, exclude?, ext, gsub, gsub!, import, include, resolve, resolve_add, resolve_exclude, sub, sub!, to_a, to_ary, to_s<br/><br/>

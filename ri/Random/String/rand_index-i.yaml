@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Return a random string index.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  &quot;Ruby rules&quot;.rand_index  #=&gt; 3\n"
+full_name: Random::String#rand_index
+is_singleton: false
+name: rand_index
+params: ()
+visibility: public

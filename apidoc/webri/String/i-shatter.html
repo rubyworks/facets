@@ -1,0 +1,13 @@
+<br/><b>String#shatter</b><hr />
+shatter( re )<br />
+<p />
+From /home/trans/Documents/programs/current/facets/doc/ri/String/cdesc-String.yaml<hr />
+Breaks a string up into an array based on a regular expression. Similar to scan, but includes the matches.<p />
+<pre>  s = &amp;quot;&amp;lt;p&amp;gt;This&lt;b&gt;is&lt;/b&gt;a test.&amp;lt;/p&amp;gt;&amp;quot;
+  s.shatter( /&amp;lt;.*?\&amp;gt;/ )
+</pre>
+<i>produces</i><p />
+<pre>  [&amp;quot;&amp;lt;p&amp;gt;&amp;quot;, &amp;quot;This&amp;quot;, &amp;quot;&lt;b&gt;&amp;quot;, &amp;quot;is&amp;quot;, &amp;quot;&lt;/b&gt;&amp;quot;, &amp;quot;a test.&amp;quot;, &amp;quot;&amp;lt;/p&amp;gt;&amp;quot;]
+</pre>
+CREDIT: Trans<p />
+<br/><br/>

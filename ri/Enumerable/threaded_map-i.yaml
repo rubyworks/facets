@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: ""
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Like Enumerable#map but each iteration is processed via a separate thread.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: CREDIT Sean O'Halpin
+full_name: Enumerable#threaded_map
+is_singleton: false
+name: threaded_map
+params: () {|| ...}
+visibility: public

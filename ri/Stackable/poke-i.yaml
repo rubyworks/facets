@@ -1,0 +1,15 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: 
+- !ruby/object:RDoc::RI::AliasName 
+  name: unshift
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Poke item onto the stack.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  a = [2, 3]\n  a.poke(1)       #=&gt; [1, 2, 3]\n\n  TODO: Better name (besides unshift)?\n"
+full_name: Stackable#poke
+is_singleton: false
+name: poke
+params: (x)
+visibility: public

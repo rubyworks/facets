@@ -1,0 +1,10 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: System#line_end_processing
+is_singleton: false
+name: line_end_processing
+params: ()
+visibility: public

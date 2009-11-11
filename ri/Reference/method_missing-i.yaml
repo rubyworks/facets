@@ -1,0 +1,10 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Reference#method_missing
+is_singleton: false
+name: method_missing
+params: (*args, &block)
+visibility: public

@@ -1,0 +1,13 @@
+<br/><b>Proc#compose</b><hr />
+compose(g)<br />
+<p />
+From /home/trans/Documents/programs/current/facets/doc/ri/Proc/cdesc-Proc.yaml<hr />
+Returns a new proc that is the functional composition of two procs, in order.<p />
+<pre>  a = lambda { |x| x + 4 }
+  b = lambda { |y| y / 2 }
+
+  a.compose(b).call(4)  #=&amp;gt; 6
+  b.compose(a).call(4)  #=&amp;gt; 4
+</pre>
+CREDIT: Dave<p />
+<br/><br/>

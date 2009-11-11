@@ -1,0 +1,11 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: []
+
+full_name: DateTime::local_offset
+is_singleton: true
+name: local_offset
+params: ()
+visibility: public

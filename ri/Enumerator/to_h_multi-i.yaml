@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: This is equivalent to Array#to_h_multi.
+full_name: Enumerator#to_h_multi
+is_singleton: false
+name: to_h_multi
+params: ()
+visibility: public

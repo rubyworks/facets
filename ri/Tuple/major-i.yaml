@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: These are useful for using a Tuple as a version.
+full_name: Tuple#major
+is_singleton: false
+name: major
+params: ()
+visibility: public

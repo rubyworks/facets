@@ -1,0 +1,38 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: ""
+constants: []
+
+full_name: Class
+includes: []
+
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: cattr
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: cattr_accessor
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: cattr_reader
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: cattr_writer
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: class_extend
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: descendents
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: methodize
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: new
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: pathize
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: postinitialize_new
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: prepend
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_proc
+name: Class
+superclass: Object

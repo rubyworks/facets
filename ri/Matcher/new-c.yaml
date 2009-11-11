@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Create a DictionaryMatcher with no words in it
+full_name: Matcher::new
+is_singleton: true
+name: new
+params: ()
+visibility: public

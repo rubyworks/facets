@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Like #first but returns the first element in a new array."
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  [1,2,3].head  #=&gt; [1]\n"
+full_name: Indexable#head
+is_singleton: false
+name: head
+params: ()
+visibility: public

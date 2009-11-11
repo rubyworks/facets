@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Seconds since midnight: DateTime.now.seconds_since_midnight"
+full_name: DateTime#seconds_since_midnight
+is_singleton: false
+name: seconds_since_midnight
+params: ()
+visibility: public

@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Generates a hash mapping each unique symbol in the array to the absolute frequency it appears.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Brian Schr\xC3\xB6der"
+full_name: Enumerable#frequency
+is_singleton: false
+name: frequency
+params: ()
+visibility: public

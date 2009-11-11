@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Is this entry expired?
+full_name: Expirable#expired?
+is_singleton: false
+name: expired?
+params: ()
+visibility: public

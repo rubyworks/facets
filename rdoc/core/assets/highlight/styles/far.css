@@ -1,0 +1,113 @@
+/*
+
+FAR Style (c) MajestiC <majestic2k@gmail.com>
+
+*/
+
+pre code[class]:after {
+  content: 'highlight: ' attr(class);
+  display: block; text-align: right;
+  font-size: smaller;
+  color: #CCC; background: white;
+  border-top: solid 1px;
+  padding-top: 0.5em;
+}
+
+pre code {
+  display: block;
+  background: #000080;
+}
+
+pre code,
+.ruby .subst {
+  color: #0FF;
+}
+
+.string,
+.ruby .string,
+.function .title,
+.class .title,
+.ini .title,
+.tag .attribute .value,
+.css .rules .value,
+.css .rules .value .number,
+.preprocessor,
+.ruby .symbol,
+.built_in,
+.sql .aggregate,
+.django .template_tag,
+.django .variable,
+.smalltalk .class,
+.addition,
+.apache .tag,
+.apache .cbracket {
+  color: #FF0;
+}
+
+.keyword,
+.css .id,
+.function .title,
+.class .title,
+.ini .title,
+.vbscript .built_in,
+.sql .aggregate,
+.rsl .built_in,
+.smalltalk .class,
+.xml .tag .title,
+.winutils,
+.flow,
+.lisp .title,
+.change,
+.envvar,
+.bash .variable {
+  color: #FFF;
+}
+
+.comment,
+.phpdoc,
+.javadoc,
+.java .annotation,
+.template_comment,
+.deletion,
+.apache .sqbracket {
+  color: #888;
+}
+
+.number,
+.date,
+.regexp,
+.literal,
+.smalltalk .symbol,
+.smalltalk .char {
+  color: #0F0;
+}
+
+.python .decorator,
+.django .filter .argument,
+.smalltalk .localvars,
+.smalltalk .array,
+.attr_selector,
+.pseudo,
+.xml .pi,
+.diff .header,
+.chunk,
+.shebang {
+  color: #008080;
+}
+
+.keyword,
+.css .id,
+.function .title,
+.class .title,
+.ini .title,
+.vbscript .built_in,
+.sql .aggregate,
+.rsl .built_in,
+.smalltalk .class,
+.xml .tag .title,
+.winutils,
+.flow,
+.lisp .title,
+.apache .tag {
+  font-weight: bold;
+}

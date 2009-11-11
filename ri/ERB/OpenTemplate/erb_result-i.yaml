@@ -1,0 +1,11 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: []
+
+full_name: ERB::OpenTemplate#erb_result
+is_singleton: false
+name: erb_result
+params: (str)
+visibility: public

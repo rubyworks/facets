@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Convert instatiation of a class into a Proc.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  class Person\n    def initialize(name)\n      @name = name\n    end\n\n    def inspect\n      @name.to_str\n    end\n  end\n\n  %w(john bob jane hans).map(&amp;Person) =&gt; [john, bob, jane, hans]\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Daniel Schierbeck"
+full_name: Class#to_proc
+is_singleton: false
+name: to_proc
+params: ()
+visibility: public

@@ -1,0 +1,19 @@
+<br/><b>Date#stamp</b><hr />
+stamp(format=:default)<br />
+<p />
+From /home/trans/Documents/programs/current/facets/doc/ri/Date/cdesc-Date.yaml<hr />
+Convert to a formatted string. See DATE_FORMATS for predefined formats.<p />
+This method is aliased to <tt>to_s</tt>.<p />
+<h4>Examples:</h4>
+<pre>  date = Date.new(2007, 11, 10)       # =&amp;gt; Sat, 10 Nov 2007
+
+  date.stamp(:db)            # =&amp;gt; &amp;quot;2007-11-10&amp;quot;
+  date.stamp(:short)         # =&amp;gt; &amp;quot;10 Nov&amp;quot;
+  date.stamp(:long)          # =&amp;gt; &amp;quot;November 10, 2007&amp;quot;
+  date.stamp(:rfc822)        # =&amp;gt; &amp;quot;10 Nov 2007&amp;quot;
+</pre>
+<h2>Adding your own formats to stamp</h2>
+You can add your own formats to the Date::FORMAT hash. Use the format name as the hash key and a strftime string as the value. Eg.<p />
+<pre>  Date::FORMAT[:month_and_year] = &amp;quot;%B %Y&amp;quot;
+</pre>
+<br/><br/>

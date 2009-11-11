@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Is the trace point defined or undefined?
+full_name: TracePoint#event?
+is_singleton: false
+name: event?
+params: ()
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Not thread-safe! Speed is important in caches... ;]
+full_name: Memoizer#method_missing
+is_singleton: false
+name: method_missing
+params: (method_name, *args, &block)
+visibility: public

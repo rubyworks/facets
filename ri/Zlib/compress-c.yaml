@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Compresses a string using gzip.
+full_name: Zlib::compress
+is_singleton: true
+name: compress
+params: (source)
+visibility: public

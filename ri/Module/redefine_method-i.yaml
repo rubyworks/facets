@@ -1,0 +1,19 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: 
+- !ruby/object:RDoc::RI::AliasName 
+  name: redef
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Creates a new method for a pre-existing method.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: If <em>aka</em> is given, then the method being redefined will first be aliased to this name.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  class Greeter\n    def hello ; &quot;Hello&quot; ; end\n  end\n\n  Greeter.new.hello   #=&gt; &quot;Hello&quot;\n\n  class Greeter\n    redefine_method( :hello, :hi ) do\n      hi + &quot;, friend!&quot;\n    end\n  end\n\n  Greeter.new.hello   #=&gt; &quot;Hello, friend!&quot;\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Trans"
+full_name: Module#redefine_method
+is_singleton: false
+name: redefine_method
+params: (sym, aka=nil, &blk)
+visibility: private

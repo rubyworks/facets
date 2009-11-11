@@ -1,0 +1,22 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: (k, i)
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "A small variation of #Inject that save one from having to return the aggregating or memo argument."
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Say you want to count letters.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "   some_text.inject!(Hash.new(0)) {|h,l| h[l] += 1}\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: vs
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "   some_text.inject(Hash.new(0)) {|h,l| h[l] +=1; h}\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: David Black, Louis J Scoras"
+full_name: Enumerable#inject!
+is_singleton: false
+name: inject!
+params: (s) {|k, i| ...}
+visibility: public

@@ -1,0 +1,7 @@
+<br/><b>Capsule#require</b><hr />
+require(feature)<br />
+<p />
+From /home/trans/Documents/programs/current/facets/doc/ri/Capsule/cdesc-Capsule.yaml<hr />
+Analogous to <tt>Kernel#require</tt>. First tries the local dir, then falls back to <tt>Kernel#require</tt>. Will load a given <i>feature</i> only once.<p />
+Note that extensions (*.so, *.dll) can be required in the global scope, as usual, but not in the local scope. (This is not much of a limitation in practice--you wouldn't want to load an extension more than once.) This implementation falls back to <tt>Kernel#require</tt> when the argument is an extension or is not found locally.<p />
+<br/><br/>

@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Returns self of the binding context.
+full_name: Binding#self
+is_singleton: false
+name: self
+params: ()
+visibility: public

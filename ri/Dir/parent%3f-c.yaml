@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Is a path parental to another?
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "TODO: Needs improvement. TODO: Instance version?"
+full_name: Dir::parent?
+is_singleton: true
+name: parent?
+params: (parent_path, child_path)
+visibility: public

@@ -1,0 +1,20 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Breaks a string up into an array based on a regular expression. Similar to scan, but includes the matches.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  s = &quot;&lt;p&gt;This<b>is</b>a test.&lt;/p&gt;&quot;\n  s.divide( /&lt;.*?\\&gt;/ )\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: <em>produces</em>
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  [&quot;&lt;p&gt;This&quot;, &quot;<b>is&quot;, &quot;</b>a test.&quot;, &quot;&lt;/p&gt;&quot;]\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Trans"
+full_name: String#divide
+is_singleton: false
+name: divide
+params: ( re )
+visibility: public

@@ -1,0 +1,14 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Include a module via a specified space.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  module T\n    def t ; &quot;HERE&quot; ; end\n  end\n\n  class X\n    include_as :test =&gt; T\n    def t ; test.t ; end\n  end\n\n  X.new.t  #=&gt; &quot;HERE&quot;\n"
+full_name: Module#include_as
+is_singleton: false
+name: include_as
+params: (h)
+visibility: public

@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: ""
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "#group_by is used to group items in a collection by something they have in common. The common factor is the key in the resulting hash, the array of like elements is the value."
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  (1..5).group_by { |n| n % 3 }\n       #=&gt; { 0 =&gt; [3], 1 =&gt; [1, 4], 2 =&gt; [2,5] }\n\n  [&quot;I had&quot;, 1, &quot;dollar and&quot;, 50, &quot;cents&quot;].group_by { |e| e.class }\n       #=&gt; { String =&gt; [&quot;I had&quot;,&quot;dollar and&quot;,&quot;cents&quot;], Fixnum =&gt; [1,50] }\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Erik Veenstra"
+full_name: Enumerable#group_by
+is_singleton: false
+name: group_by
+params: () {|| ...}
+visibility: public

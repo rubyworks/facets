@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Combine intervals.
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  Range.combine(1..2, 2..4)   #=&gt; [1..4]\n  Range.combine(1..2, 3..4)   #=&gt; [1..2, 3..4]\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "CREDIT: Trans"
+full_name: Range::combine
+is_singleton: true
+name: combine
+params: (*intervals)
+visibility: public

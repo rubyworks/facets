@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: def self.build( blockstr=nil, &amp;block )
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  self.new.build( blockstr, &amp;block ).to_h\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: end
+full_name: HashBuilder::new
+is_singleton: true
+name: new
+params: ( blockstr=nil, &block )
+visibility: public

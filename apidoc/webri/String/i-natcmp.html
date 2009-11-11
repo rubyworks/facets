@@ -1,0 +1,14 @@
+<br/><b>String#natcmp</b><hr />
+natcmp(str2, caseInsensitive=false)<br />
+<p />
+From /home/trans/Documents/programs/current/facets/doc/ri/String/cdesc-String.yaml<hr />
+'Natural order' comparison of strings, e.g.<p />
+<pre>  &amp;quot;my_prog_v1.1.0&amp;quot; &amp;lt; &amp;quot;my_prog_v1.2.0&amp;quot; &amp;lt; &amp;quot;my_prog_v1.10.0&amp;quot;
+</pre>
+which does not follow alphabetically. A secondary parameter, if set to <i>true</i>, makes the comparison case insensitive.<p />
+<pre>  &amp;quot;Hello.10&amp;quot;.natcmp(&amp;quot;Hello.1&amp;quot;)  #=&amp;gt; -1
+
+  TODO: Invert case flag?
+</pre>
+CREDIT: Alan Davies, Martin Pool<p />
+<br/><br/>

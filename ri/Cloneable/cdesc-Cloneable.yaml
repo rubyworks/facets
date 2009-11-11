@@ -1,0 +1,20 @@
+--- !ruby/object:RDoc::RI::ModuleDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 1
+  text: Clonable
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Standard basis for adding deep #dup and #clone to a class. Provides a class with deep cloneablity via the standard #dup and #clone methods."
+constants: []
+
+full_name: Cloneable
+includes: []
+
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: initialize_copy
+name: Cloneable

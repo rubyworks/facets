@@ -1,0 +1,4099 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+  <title>Module: Kernel</title>
+
+  
+    <link rel="SHORTCUT ICON" href="../assets/icon/module.png">
+  
+
+  <link type="text/css" rel="stylesheet" href="../assets/rdoc.css" media="screen" />
+  <link type="text/css" rel="stylesheet" href="../assets/highlight/styles/github.css" title="GitHub" />
+
+  <script type="text/javascript" charset="utf-8" src="../assets/jquery.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/highlight/highlight.pack.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/quicksearch.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/main.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready( function() {
+      hookHighlightSyntax();
+	    hookSourceViews();
+	    hookDebuggingToggle();
+	    hookQuickSearch();
+	    highlightLocationTarget();
+
+	    $('ul.link-list a').bind("click", highlightClickTarget);
+    });
+  </script>
+</head>
+<body class="module">
+<div id="main">
+
+  <div class="head">
+    <h1>
+      
+        <img src="../assets/icon/module.png" align="absmiddle">&nbsp;
+      
+      <a href="../index.html">Facets Core API</a>&nbsp;
+      <a href="/">Kernel</a>
+    </h1>
+  </div>
+
+  <div id="metadata">
+    <div id="project-metadata">
+
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li class="file"><a href="../files/lib/core/facets/metaid_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/metaid.rb">lib/core/facets/metaid.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/lazy_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/lazy.rb">lib/core/facets/lazy.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/boolean_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/boolean.rb">lib/core/facets/boolean.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/bitmask_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/bitmask.rb">lib/core/facets/bitmask.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/here_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/here.rb">lib/core/facets/kernel/here.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/as_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/as.rb">lib/core/facets/kernel/as.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/extension_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/extension.rb">lib/core/facets/kernel/extension.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/__class___rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/__class__.rb">lib/core/facets/kernel/__class__.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/ask_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/ask.rb">lib/core/facets/kernel/ask.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/require_relative_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/require_relative.rb">lib/core/facets/kernel/require_relative.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/demo_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/demo.rb">lib/core/facets/kernel/demo.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/maybe_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/maybe.rb">lib/core/facets/kernel/maybe.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/instance_send_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/instance_send.rb">lib/core/facets/kernel/instance_send.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/equate_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/equate.rb">lib/core/facets/kernel/equate.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/object_hexid_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/object_hexid.rb">lib/core/facets/kernel/object_hexid.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/object_class_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/object_class.rb">lib/core/facets/kernel/object_class.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/tap_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/tap.rb">lib/core/facets/kernel/tap.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/object_send_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/object_send.rb">lib/core/facets/kernel/object_send.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/ergo_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/ergo.rb">lib/core/facets/kernel/ergo.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/complete_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/complete.rb">lib/core/facets/kernel/complete.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/identical_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/identical.rb">lib/core/facets/kernel/identical.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/__get___rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/__get__.rb">lib/core/facets/kernel/__get__.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/not_nil_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/not_nil.rb">lib/core/facets/kernel/not_nil.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/deep_copy_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/deep_copy.rb">lib/core/facets/kernel/deep_copy.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/silence_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/silence.rb">lib/core/facets/kernel/silence.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/require_all_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/require_all.rb">lib/core/facets/kernel/require_all.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/qua_class_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/qua_class.rb">lib/core/facets/kernel/qua_class.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/resc_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/resc.rb">lib/core/facets/kernel/resc.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/instance_variables_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/instance_variables.rb">lib/core/facets/kernel/instance_variables.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/instance_assign_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/instance_assign.rb">lib/core/facets/kernel/instance_assign.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/with_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/with.rb">lib/core/facets/kernel/with.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/d_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/d.rb">lib/core/facets/kernel/d.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/__method___rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/__method__.rb">lib/core/facets/kernel/__method__.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/source_location_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/source_location.rb">lib/core/facets/kernel/source_location.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/instance_class_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/instance_class.rb">lib/core/facets/kernel/instance_class.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/attr_singleton_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/attr_singleton.rb">lib/core/facets/kernel/attr_singleton.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/__here___rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/__here__.rb">lib/core/facets/kernel/__here__.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/p_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/p.rb">lib/core/facets/kernel/p.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/singleton_class_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/singleton_class.rb">lib/core/facets/kernel/singleton_class.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/try_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/try.rb">lib/core/facets/kernel/try.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/__dir___rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/__dir__.rb">lib/core/facets/kernel/__dir__.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/extend_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/extend.rb">lib/core/facets/kernel/extend.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/returning_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/returning.rb">lib/core/facets/kernel/returning.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/callstack_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/callstack.rb">lib/core/facets/kernel/callstack.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/populate_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/populate.rb">lib/core/facets/kernel/populate.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/val_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/val.rb">lib/core/facets/kernel/val.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/constant_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/constant.rb">lib/core/facets/kernel/constant.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/method_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/method.rb">lib/core/facets/kernel/method.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/respond_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/respond.rb">lib/core/facets/kernel/respond.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/kernel/in_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/kernel/in.rb">lib/core/facets/kernel/in.rb</a></li>
+          
+            <li class="file"><a href="../files/lib/core/facets/blank_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/blank.rb">lib/core/facets/blank.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      <!-- What about Git info, or Hg info? This seems almost silly, albeit kind of cool. -->
+      <!-- TODO: generalize this for all SCMs -->
+
+      
+    </div>
+
+    <div id="class-metadata">
+
+      <!-- Parent Class -->
+      
+
+      <!-- Namespace Contents -->
+      
+
+      <!-- Method Quickref -->
+      
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+            
+            <li class="method">
+              <a href="#M000868">#Bit</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000999">#__DIR__</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000992">#__HERE__</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000988">#__callee__</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000986">#__method__</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M001001">#_extend</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000930">#as</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000935">#ask</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000994">#attr_singleton_accessor</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000991">#attr_singleton_reader</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000993">#attr_singleton_writer</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M001268">#blank?</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000837">#bool?</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M001003">#callstack</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000949">#complete</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M001008">#constant</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000985">#d</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000952">#deep_copy</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000786">#demand</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000940">#demo</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000735">#eigenclass</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000959">#enable_warnings</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000942">#equate?</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000947">#ergo</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M001000">#extend</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000931">#extension</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000836">#false?</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000787">#future</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M001012">#in?</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000973">#instance_assign</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000989">#instance_class</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000970">#instance_values</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000962">#instance_vars</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000939">#load_local</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000938">#load_relative</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000941">#maybe</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000730">#meta_alias</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000733">#meta_class</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000732">#meta_def</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000731">#meta_eval</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000734">#metaclass</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M001009">#method!</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000951">#non_nil?</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000950">#not_nil?</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000943">#object_hexid</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000944">#object_hexid</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000946">#object_send</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000995">#p</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M001005">#populate</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000785">#promise</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000960">#qua_class</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000954">#require_all</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000937">#require_local</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000936">#require_relative</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000961">#resc</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M001010">#respond</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M001011">#respond_with_value</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M001002">#returning</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000932">#send_as</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M001006">#set_from</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000955">#silence_stderr</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000956">#silence_stdout</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000953">#silence_stream</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000958">#silence_warnings</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000957">#silently</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000997">#singleton</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000996">#singleton_class</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000987">#source_location</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000934">#super_as</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000933">#super_method</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000945">#tap</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000834">#to_b</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000835">#true?</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000998">#try</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M001007">#val?</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000978">#with</a>
+            </li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Included Modules -->
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Information</h3>
+        <ul>
+        
+          <li class="file"><a href="../files/doc/README_core.html">README.core</a></li>
+        
+          <li class="file"><a href="../files/README_rdoc.html">README.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class Index
+          <span class="search-toggle"><img src="../assets/icon/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <!-- classpage.html : classes -->
+        <ul class="link-list">
+        
+          <li class="module"><a href="../classes/Lazy.html">Lazy</a></li>
+        
+          <li class="class"><a href="../classes/Lazy/Future.html">Lazy::Future</a></li>
+        
+          <li class="class"><a href="../classes/Lazy/Promise.html">Lazy::Promise</a></li>
+        
+          <li class="class"><a href="../classes/Lazy/PromiseSafe.html">Lazy::PromiseSafe</a></li>
+        
+          <li class="module"><a href="../classes/Enumerable.html">Enumerable</a></li>
+        
+          <li class="class"><a href="../classes/Object.html">Object</a></li>
+        
+          <li class="class"><a href="../classes/Array.html">Array</a></li>
+        
+          <li class="class"><a href="../classes/Binding.html">Binding</a></li>
+        
+          <li class="class"><a href="../classes/Class.html">Class</a></li>
+        
+          <li class="module"><a href="../classes/Comparable.html">Comparable</a></li>
+        
+          <li class="module"><a href="../classes/Denumerable.html">Denumerable</a></li>
+        
+          <li class="class"><a href="../classes/Denumerator.html">Denumerator</a></li>
+        
+          <li class="class"><a href="../classes/Dir.html">Dir</a></li>
+        
+          <li class="class"><a href="../classes/Enumerator.html">Enumerator</a></li>
+        
+          <li class="class"><a href="../classes/Exception.html">Exception</a></li>
+        
+          <li class="class"><a href="../classes/FalseClass.html">FalseClass</a></li>
+        
+          <li class="class"><a href="../classes/File.html">File</a></li>
+        
+          <li class="module"><a href="../classes/FileTest.html">FileTest</a></li>
+        
+          <li class="class"><a href="../classes/Float.html">Float</a></li>
+        
+          <li class="class"><a href="../classes/Functor.html">Functor</a></li>
+        
+          <li class="class"><a href="../classes/Hash.html">Hash</a></li>
+        
+          <li class="module"><a href="../classes/Indexable.html">Indexable</a></li>
+        
+          <li class="class"><a href="../classes/InstanceVariables.html">InstanceVariables</a></li>
+        
+          <li class="class"><a href="../classes/Integer.html">Integer</a></li>
+        
+          <li class="module"><a href="../classes/Kernel.html">Kernel</a></li>
+        
+          <li class="class"><a href="../classes/MatchData.html">MatchData</a></li>
+        
+          <li class="class"><a href="../classes/Module.html">Module</a></li>
+        
+          <li class="class"><a href="../classes/NilClass.html">NilClass</a></li>
+        
+          <li class="class"><a href="../classes/Numeric.html">Numeric</a></li>
+        
+          <li class="module"><a href="../classes/ObjectSpace.html">ObjectSpace</a></li>
+        
+          <li class="class"><a href="../classes/Proc.html">Proc</a></li>
+        
+          <li class="class"><a href="../classes/Range.html">Range</a></li>
+        
+          <li class="class"><a href="../classes/Regexp.html">Regexp</a></li>
+        
+          <li class="module"><a href="../classes/Stackable.html">Stackable</a></li>
+        
+          <li class="class"><a href="../classes/String.html">String</a></li>
+        
+          <li class="class"><a href="../classes/Struct.html">Struct</a></li>
+        
+          <li class="class"><a href="../classes/Symbol.html">Symbol</a></li>
+        
+          <li class="class"><a href="../classes/Time.html">Time</a></li>
+        
+          <li class="class"><a href="../classes/TrueClass.html">TrueClass</a></li>
+        
+          <li class="class"><a href="../classes/UnboundMethod.html">UnboundMethod</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+    </div>
+
+    <div id="validator-badges">
+      
+      <div style="float: right; margin-right: 5px;">
+        <a href="http://validator.w3.org/check/referer"><img src="../assets/icon/check.png" alt="[Validate]" height="16" width="16" /></a>
+      </div>
+      Generated with <a href="http://github.com/proutils/webri">WebRI Redfish</a> 1.0.0
+      <br/><br/>
+    </div>
+  </div>
+
+  <div id="documentation">
+
+    <div id="description">
+      
+        <h1>Kernel</h1>
+      
+
+      
+    </div>
+
+    <!-- Constants -->
+    
+
+    <!-- Attributes -->
+    
+
+    <!-- Methods -->
+    
+    <div id="public-instance-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="-it-method" class="method-detail ">
+        <a name="M000868"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">Bit</span><span
+            class="method-args">(n)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Create a single bit bitmask.
+</p>
+<pre>
+  Bit(0)  #=&gt; 1
+  Bit(1)  #=&gt; 2
+  Bit(2)  #=&gt; 4
+</pre>
+<p>
+This is equivalent to n-shift: &#8220;1 << n&#8221;.
+</p>
+<p>
+CREDIT: Thomas Sawyer, George Moschovitis
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="-it-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/bitmask.rb, line 97</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-constant">Bit</span>(<span class="ruby-identifier">n</span>)
+    <span class="ruby-value">1</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">n</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="--method" class="method-detail ">
+        <a name="M000999"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">__DIR__</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Similar to <em>FILE</em>, <em>DIR</em> provides the directory path to the
+current executing script.
+</p>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/__dir__.rb, line 8</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">__DIR__</span>
+    <span class="ruby-identifier">c</span> = <span class="ruby-identifier">caller</span>.<span class="ruby-identifier">first</span>
+    <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">rindex</span>(<span class="ruby-regexp re">/:\d+(:in `.*')?$/</span>)
+    <span class="ruby-identifier">file</span> = <span class="ruby-identifier">$`</span> <span class="ruby-comment cmt"># File.dirname(c)</span>
+    <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">if</span> <span class="ruby-regexp re">/\A\((.*)\)/</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">file</span> <span class="ruby-comment cmt"># eval, etc.</span>
+    <span class="ruby-comment cmt">#File.expand_path(File.dirname(file))</span>
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">file</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="--method" class="method-detail ">
+        <a name="M000992"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">__HERE__</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Outputs the file, line and current method.
+</p>
+<pre>
+  caller(1).first
+  &quot;/usr/lib/ruby/1.8/irb/workspace.rb:52:in `irb_binding'&quot;
+</pre>
+<p>
+CREDIT: William Mason
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/__here__.rb, line 9</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">__HERE__</span>
+    <span class="ruby-identifier">caller</span>(<span class="ruby-value">1</span>).<span class="ruby-identifier">first</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="-callee--method" class="method-detail ">
+        <a name="M000988"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">__callee__</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Retreive the current running method name.
+</p>
+<pre>
+  def tester; __callee__; end
+  tester  #=&gt; :tester
+</pre>
+<p>
+Technically <em>callee</em> should provided alias names, where as
+<em>method</em> should not. But we&#8217;ll have to leave that distinction
+to Ruby 1.9+.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="-callee--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/__method__.rb, line 33</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">__callee__</span>
+      <span class="ruby-regexp re">/\`([^\']+)\'/</span>.<span class="ruby-identifier">match</span>(<span class="ruby-identifier">caller</span>(<span class="ruby-value">1</span>).<span class="ruby-identifier">first</span>)[<span class="ruby-value">1</span>].<span class="ruby-identifier">to_sym</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="-method--method" class="method-detail ">
+        <a name="M000986"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">__method__</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Retreive the current running method name.
+</p>
+<pre>
+  def tester; __method__; end
+  tester  #=&gt; :tester
+</pre>
+<p>
+Technically <em>callee</em> should provided alias names, where
+<em>method</em> should not. But we&#8217;ll have to leave that distinction
+to Ruby 1.9+.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="-method--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/__method__.rb, line 14</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">__method__</span>
+      <span class="ruby-regexp re">/\`([^\']+)\'/</span>.<span class="ruby-identifier">match</span>(<span class="ruby-identifier">caller</span>(<span class="ruby-value">1</span>).<span class="ruby-identifier">first</span>)[<span class="ruby-value">1</span>].<span class="ruby-identifier">to_sym</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="-extend-method" class="method-detail method-alias">
+        <a name="M001001"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">_extend</span><span
+            class="method-args">(*mod, &blk)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="Kernel.html#M001000">extend</a>
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="as-method" class="method-detail ">
+        <a name="M000930"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">as</span><span
+            class="method-args">(ancestor, &blk)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns a As-functor that allows one to call any ancestor&#8217;s method
+directly of the given object.
+</p>
+<pre>
+  class A
+    def x ; 1 ; end
+  end
+
+  class B &lt; A
+    def x ; 2 ; end
+  end
+
+  class C &lt; B
+    def x ; as(A).x ; end
+  end
+
+  C.new.x  #=&gt; 1
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="as-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/as.rb, line 22</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">as</span>(<span class="ruby-identifier">ancestor</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+    <span class="ruby-ivar">@__as</span> <span class="ruby-operator">||=</span> {}
+    <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">r</span> = <span class="ruby-ivar">@__as</span>[<span class="ruby-identifier">ancestor</span>]
+      <span class="ruby-identifier">r</span> = (<span class="ruby-ivar">@__as</span>[<span class="ruby-identifier">ancestor</span>] = <span class="ruby-constant">As</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">ancestor</span>))
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">r</span>.<span class="ruby-identifier">instance_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+    <span class="ruby-comment cmt">#yield(r) if block_given?</span>
+    <span class="ruby-identifier">r</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="ask-method" class="method-detail ">
+        <a name="M000935"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">ask</span><span
+            class="method-args">(question, answers=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Very simple convenience method to get a console reply.
+</p>
+<pre>
+  ask &quot;Are you happy?&quot;, &quot;Yn&quot;
+</pre>
+<p>
+On the command line one would see.
+</p>
+<pre>
+  $ Are you happy? [Yn]
+</pre>
+<p>
+Responding:
+</p>
+<pre>
+  $ Are you happy? [Yn] Y &lt;ENTER&gt;
+</pre>
+<p>
+The ask method would return &#8220;Y&#8221;.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="ask-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/ask.rb, line 19</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ask</span>(<span class="ruby-identifier">question</span>, <span class="ruby-identifier">answers</span>=<span class="ruby-keyword kw">nil</span>)
+    <span class="ruby-identifier">$stdout</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;#{question}&quot;</span>
+    <span class="ruby-identifier">$stdout</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot; [#{answers}] &quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">answers</span>
+    <span class="ruby-identifier">$stdout</span>.<span class="ruby-identifier">flush</span>
+    <span class="ruby-keyword kw">until</span> <span class="ruby-identifier">inp</span> = <span class="ruby-identifier">$stdin</span>.<span class="ruby-identifier">gets</span> ; <span class="ruby-identifier">sleep</span> <span class="ruby-value">1</span> ; <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">inp</span>.<span class="ruby-identifier">strip</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="attr-singleton-accessor-method" class="method-detail ">
+        <a name="M000994"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">attr_singleton_accessor</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Takes an array or hash with default values and creates singleton
+attr_accessors for each.
+</p>
+<pre>
+  attr_singleton_accessor { :x =&gt; 1, :y =&gt; 2 }
+  @x          #=&gt; 1
+  @y          #=&gt; 2
+  self.x = 3
+  self.y = 4
+  self.x      #=&gt; 3
+  self.y      #=&gt; 4
+</pre>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="attr-singleton-accessor-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/attr_singleton.rb, line 54</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">attr_singleton_accessor</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+    <span class="ruby-comment cmt">#h, a = *args.partition{|a| Hash===a}</span>
+    (<span class="ruby-keyword kw">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword kw">self</span> ; <span class="ruby-keyword kw">self</span> ; <span class="ruby-keyword kw">end</span>).<span class="ruby-identifier">send</span>( <span class="ruby-identifier">:attr_accessor</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span> )
+    <span class="ruby-comment cmt">#(class &lt;&lt; self ; self ; end).send( :attr_accessor, *h.keys )</span>
+    <span class="ruby-comment cmt">#h.each { |k,v| instance_variable_set(&quot;@#{k}&quot;, v) }</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="attr-singleton-reader-method" class="method-detail ">
+        <a name="M000991"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">attr_singleton_reader</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Takes an array or a hash with default values and creates singleton
+attr_readers for each.
+</p>
+<pre>
+  attr_singleton_reader {:x =&gt; 1, :y =&gt; 2}
+  @x       #=&gt; 1
+  @y       #=&gt; 2
+  self.x   #=&gt; 1
+  self.y   #=&gt; 2
+</pre>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="attr-singleton-reader-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/attr_singleton.rb, line 14</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">attr_singleton_reader</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+    <span class="ruby-comment cmt">#h, a = *args.partition{|a| Hash===a}</span>
+    (<span class="ruby-keyword kw">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword kw">self</span> ; <span class="ruby-keyword kw">self</span> ; <span class="ruby-keyword kw">end</span>).<span class="ruby-identifier">send</span>( <span class="ruby-identifier">:attr_reader</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span> )
+    <span class="ruby-comment cmt">#(class &lt;&lt; self ; self ; end).send( :attr_reader, *h.keys )</span>
+    <span class="ruby-comment cmt">#h.each { |k,v| instance_variable_set(&quot;@#{k}&quot;, v) }</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="attr-singleton-writer-method" class="method-detail ">
+        <a name="M000993"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">attr_singleton_writer</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Takes an array or a hash with default values and creates singleton
+attr_writers for each.
+</p>
+<pre>
+  attr_singleton_writer { :x =&gt; 1, :y =&gt; 2 }
+  @x           #=&gt; 1
+  @y           #=&gt; 2
+  self.x = 3
+  self.y = 4
+  @x           #=&gt; 3
+  @y           #=&gt; 4
+</pre>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="attr-singleton-writer-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/attr_singleton.rb, line 34</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">attr_singleton_writer</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+    <span class="ruby-comment cmt">#h, a = *args.partition{|a| Hash===a}</span>
+    (<span class="ruby-keyword kw">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword kw">self</span> ; <span class="ruby-keyword kw">self</span> ; <span class="ruby-keyword kw">end</span>).<span class="ruby-identifier">send</span>( <span class="ruby-identifier">:attr_writer</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span> )
+    <span class="ruby-comment cmt">#(class &lt;&lt; self ; self ; end).send( :attr_writer, *h.keys )</span>
+    <span class="ruby-comment cmt">#h.each { |k,v| instance_variable_set(&quot;@#{k}&quot;, v) }</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="blank--method" class="method-detail ">
+        <a name="M001268"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">blank?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+An object is blank if it&#8217;s nil, empty, or a whitespace string. For
+example, &#8220;&#8221;, &#8220; &#8220;, nil, [], and {} are blank.
+</p>
+<p>
+This simplifies
+</p>
+<pre>
+  if !address.nil? &amp;&amp; !address.empty?
+</pre>
+<p>
+to
+</p>
+<pre>
+  if !address.blank?
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="blank--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/blank.rb, line 14</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">blank?</span>
+    <span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:empty?</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">empty?</span> <span class="ruby-operator">:</span> <span class="ruby-operator">!</span><span class="ruby-keyword kw">self</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="bool--method" class="method-detail ">
+        <a name="M000837"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">bool?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns true is an object is class <a href="TrueClass.html">TrueClass</a>
+or <a href="FalseClass.html">FalseClass</a>, otherwise false.
+</p>
+<pre>
+  true.bool?   #=&gt; true
+  false.bool?  #=&gt; true
+  nil.bool?    #=&gt; false
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="bool--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/boolean.rb, line 127</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">bool?</span>
+    (<span class="ruby-keyword kw">true</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">self</span> <span class="ruby-keyword kw">or</span> <span class="ruby-keyword kw">false</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">self</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="callstack-method" class="method-detail ">
+        <a name="M001003"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">callstack</span><span
+            class="method-args">( level = 1 )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Parse a caller string and break it into its components, returning an array.
+Returns:
+</p>
+<ul>
+<li>file (<a href="String.html">String</a>)
+
+</li>
+<li>lineno (<a href="Integer.html">Integer</a>)
+
+</li>
+<li>method (<a href="Symbol.html">Symbol</a>)
+
+</li>
+</ul>
+<p>
+For example, from irb,
+</p>
+<pre>
+  call_stack(1)
+</pre>
+<p>
+<em>produces</em>
+</p>
+<p>
+[[&#8220;(irb)&#8221;, 2, :irb_binding],
+</p>
+<pre>
+ [&quot;/usr/lib/ruby/1.8/irb/workspace.rb&quot;, 52, :irb_binding],
+ [&quot;/usr/lib/ruby/1.8/irb/workspace.rb&quot;, 52, nil]]
+</pre>
+<p>
+Note: If the user decides to redefine caller() to output data in a
+different format, <em>prior</em> to requiring this, then the results will
+be indeterminate.
+</p>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="callstack-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/callstack.rb, line 27</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">callstack</span>( <span class="ruby-identifier">level</span> = <span class="ruby-value">1</span> )
+    <span class="ruby-identifier">call_str_array</span> = <span class="ruby-identifier">pp_callstack</span>(<span class="ruby-identifier">level</span>)
+    <span class="ruby-identifier">stack</span> = []
+    <span class="ruby-identifier">call_str_array</span>.<span class="ruby-identifier">each</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">call_str</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">file</span>, <span class="ruby-identifier">lineno</span>, <span class="ruby-identifier">method</span> = <span class="ruby-identifier">call_str</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">':'</span>)
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">method</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/in `(.*)'/</span> <span class="ruby-keyword kw">then</span>
+        <span class="ruby-identifier">method</span> = <span class="ruby-identifier">$1</span>.<span class="ruby-identifier">intern</span>()
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">stack</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">file</span>, <span class="ruby-identifier">lineno</span>.<span class="ruby-identifier">to_i</span>, <span class="ruby-identifier">method</span>]
+    }
+    <span class="ruby-identifier">stack</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="complete-method" class="method-detail ">
+        <a name="M000949"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">complete</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Repeat loop until it yeilds false or nil.
+</p>
+<pre>
+  a = [3, 2, 1]
+  complete do
+    b &lt;&lt; a.pop
+  end
+  b  #=&gt; [3, 2, 1, nil]
+</pre>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="complete-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/complete.rb, line 13</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">complete</span>
+    <span class="ruby-identifier">loop</span> { <span class="ruby-keyword kw">break</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-keyword kw">yield</span> }
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="constant-method" class="method-detail ">
+        <a name="M001008"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">constant</span><span
+            class="method-args">(const)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+This is similar to +Module#const_get+ but is accessible at all levels, and,
+unlike <tt>const_get</tt>, can handle module hierarchy.
+</p>
+<pre>
+  constant(&quot;Fixnum&quot;)                  # -&gt; Fixnum
+  constant(:Fixnum)                   # -&gt; Fixnum
+
+  constant(&quot;Process::Sys&quot;)            # -&gt; Process::Sys
+  constant(&quot;Regexp::MULTILINE&quot;)       # -&gt; 4
+
+  require 'test/unit'
+  Test.constant(&quot;Unit::Assertions&quot;)   # -&gt; Test::Unit::Assertions
+  Test.constant(&quot;::Test::Unit&quot;)       # -&gt; Test::Unit
+</pre>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="constant-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/constant.rb, line 18</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">constant</span>(<span class="ruby-identifier">const</span>)
+    <span class="ruby-identifier">const</span> = <span class="ruby-identifier">const</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">dup</span>
+    <span class="ruby-identifier">base</span> = <span class="ruby-identifier">const</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-regexp re">/^::/</span>, <span class="ruby-value str">''</span>) <span class="ruby-operator">?</span> <span class="ruby-constant">Object</span> <span class="ruby-operator">:</span> ( <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Module</span>) <span class="ruby-operator">?</span> <span class="ruby-keyword kw">self</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span> )
+    <span class="ruby-identifier">const</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp re">/::/</span>).<span class="ruby-identifier">inject</span>(<span class="ruby-identifier">base</span>){ <span class="ruby-operator">|</span><span class="ruby-identifier">mod</span>, <span class="ruby-identifier">name</span><span class="ruby-operator">|</span> <span class="ruby-identifier">mod</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-identifier">name</span>) }
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="d-method" class="method-detail ">
+        <a name="M000985"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">d</span><span
+            class="method-args">(*x)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Like <a href="Kernel.html#M000995">p</a> but gives file and line number.
+</p>
+<pre>
+  d(&quot;hi&quot;)
+</pre>
+<p>
+produces
+</p>
+<pre>
+  &quot;hi&quot; (/home/dave/projects/foo.rb, 38)
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="d-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/d.rb, line 11</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">d</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">x</span>)
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{x.inspect} #{caller[0]}&quot;</span>
+    <span class="ruby-keyword kw">return</span> <span class="ruby-operator">*</span><span class="ruby-identifier">x</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="deep-copy-method" class="method-detail ">
+        <a name="M000952"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">deep_copy</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Anything that can be marshaled can be copied in totality. This is also
+commonly called a deep_copy.
+</p>
+<pre>
+  &quot;ABC&quot;.copy  #=&gt; &quot;ABC&quot;
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="deep-copy-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/deep_copy.rb, line 8</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">deep_copy</span>
+    <span class="ruby-constant">Marshal</span><span class="ruby-operator">::</span><span class="ruby-identifier">load</span>(<span class="ruby-constant">Marshal</span><span class="ruby-operator">::</span><span class="ruby-identifier">dump</span>(<span class="ruby-keyword kw">self</span>))
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="demand-method" class="method-detail ">
+        <a name="M000786"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">demand</span><span
+            class="method-args">( promise )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Forces the result of a promise to be computed (if necessary) and returns
+the bare result object. Once evaluated, the result of the promise will be
+cached. Nested promises will be evaluated together, until the first
+non-promise result.
+</p>
+<p>
+If called on a value that is not a promise, it will simply return it.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="demand-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/lazy.rb, line 219</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">demand</span>( <span class="ruby-identifier">promise</span> )
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">promise</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-identifier">:__result__</span>
+      <span class="ruby-identifier">promise</span>.<span class="ruby-identifier">__result__</span>
+    <span class="ruby-keyword kw">else</span> <span class="ruby-comment cmt"># not really a promise</span>
+      <span class="ruby-identifier">promise</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="demo-method" class="method-detail ">
+        <a name="M000940"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">demo</span><span
+            class="method-args">(out=$stdout,&block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+For debugging and showing examples. Currently this takes an argument of a
+string in a block.
+</p>
+<pre>
+  demo {%{ a = [1,2,3] }}
+  demo {%{ a.slice(1,2) }}
+  demo {%{ a.map { |x| x**3 } }}
+</pre>
+<p>
+Produces:
+</p>
+<pre>
+  a = [1,2,3]             #=&gt;  [1, 2, 3]
+  a.slice(1,2)            #=&gt;  [2, 3]
+  a.map { |x| x**3 }      #=&gt;  [1, 8, 27]
+</pre>
+<p>
+TODO: Is there a way to do this without the eval string in block?
+Preferably just a block and no string.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="demo-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/demo.rb, line 19</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">demo</span>(<span class="ruby-identifier">out</span>=<span class="ruby-identifier">$stdout</span>,<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+    <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">sprintf</span>(<span class="ruby-value str">&quot;%-25s#=&gt;  %s\n&quot;</span>, <span class="ruby-identifier">expr</span> = <span class="ruby-identifier">block</span>.<span class="ruby-identifier">call</span>, <span class="ruby-identifier">eval</span>(<span class="ruby-identifier">expr</span>, <span class="ruby-identifier">block</span>.<span class="ruby-identifier">binding</span>).<span class="ruby-identifier">inspect</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="eigenclass-method" class="method-detail ">
+        <a name="M000735"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">eigenclass</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+During this trying time when no one can get their techie catchwords to
+stick to the refrigerator no matter how hard they slap it # with the
+enchanted magnetic spatula, it’s good to know that the contrived phrases
+really do fly, graceful and unclasped and bearing north toward chilled
+shrimp. I know what my Hallowe’en pumpkin is going to say.
+</p>
+<pre>
+                      -- why the lucky stiff
+</pre>
+<p>
+CREDIT: WhyTheLuckyStiff
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="eigenclass-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/metaid.rb, line 69</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">eigenclass</span>
+    (<span class="ruby-keyword kw">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword kw">self</span>; <span class="ruby-keyword kw">self</span>; <span class="ruby-keyword kw">end</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="enable-warnings-method" class="method-detail ">
+        <a name="M000959"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">enable_warnings</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Sets $VERBOSE to true for the duration of the block and back to its
+original value afterwards.
+</p>
+<p>
+CREDIT: David Heinemeier Hansson
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="enable-warnings-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/silence.rb, line 67</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">enable_warnings</span>
+    <span class="ruby-identifier">old_verbose</span>, <span class="ruby-identifier">$VERBOSE</span> = <span class="ruby-identifier">$VERBOSE</span>, <span class="ruby-keyword kw">true</span>
+    <span class="ruby-keyword kw">yield</span>
+  <span class="ruby-keyword kw">ensure</span>
+    <span class="ruby-identifier">$VERBOSE</span> = <span class="ruby-identifier">old_verbose</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="equate--method" class="method-detail ">
+        <a name="M000942"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">equate?</span><span
+            class="method-args">(x)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Broad equality.
+</p>
+<p>
+Checks to see if the object <tt>x</tt> is in any way equal to the reciever,
+starting with the identity equals? and ending with #===.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="equate--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/equate.rb, line 9</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">equate?</span>(<span class="ruby-identifier">x</span>)
+    <span class="ruby-identifier">equal?</span>(<span class="ruby-identifier">x</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">eql?</span>(<span class="ruby-identifier">x</span>) <span class="ruby-operator">||</span> <span class="ruby-keyword kw">self</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">x</span> <span class="ruby-operator">||</span> <span class="ruby-keyword kw">self</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">x</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="ergo-method" class="method-detail ">
+        <a name="M000947"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">ergo</span><span
+            class="method-args">(&b)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Yield self -or- return self.
+</p>
+<pre>
+  &quot;a&quot;.ergo.upcase #=&gt; &quot;A&quot;
+  nil.ergo.foobar #=&gt; nil
+
+  &quot;a&quot;.ergo{ |o| o.upcase } #=&gt; &quot;A&quot;
+  nil.ergo{ |o| o.foobar } #=&gt; nil
+</pre>
+<p>
+This is like <a href="Kernel.html#M000945">tap</a>, but tap yields self
+-and- returns self.
+</p>
+<p>
+CREDIT: Daniel DeLorme
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="ergo-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/ergo.rb, line 17</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ergo</span> <span class="ruby-operator">&amp;</span><span class="ruby-identifier">b</span>
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+      <span class="ruby-identifier">b</span>.<span class="ruby-identifier">arity</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span> <span class="ruby-operator">?</span> <span class="ruby-keyword kw">yield</span>(<span class="ruby-keyword kw">self</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">instance_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">b</span>)
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-keyword kw">self</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="extend-method" class="method-detail ">
+        <a name="M001000"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">extend</span><span
+            class="method-args">(*mod, &blk)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="extend-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/extend.rb, line 5</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">extend</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">mod</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+    <span class="ruby-identifier">_extend</span> <span class="ruby-operator">*</span><span class="ruby-identifier">mod</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">mod</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">_extend</span> <span class="ruby-constant">Module</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">blk</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Kernel.html#M001001">_extend</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="extension-method" class="method-detail ">
+        <a name="M000931"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">extension</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Don&#8217;t say it!
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="extension-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/extension.rb, line 4</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">extension</span>
+    <span class="ruby-keyword kw">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword kw">self</span>; <span class="ruby-keyword kw">self</span>; <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="false--method" class="method-detail ">
+        <a name="M000836"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">false?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns true is an object is class <a
+href="FalseClass.html">FalseClass</a>, otherwise false.
+</p>
+<pre>
+  true.false?   #=&gt; false
+  false.false?  #=&gt; true
+  nil.false?    #=&gt; false
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="false--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/boolean.rb, line 116</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">false?</span>
+    (<span class="ruby-keyword kw">false</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">self</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="future-method" class="method-detail ">
+        <a name="M000787"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">future</span><span
+            class="method-args">( )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Schedules a computation to be run asynchronously in a background thread and
+returns a promise for its result. An attempt to demand the result of the
+promise will block until the computation finishes.
+</p>
+<p>
+As with <a href="Kernel.html#M000785">Kernel.promise</a>, this passes the
+block a promise for its own result. Use wisely.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="future-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/lazy.rb, line 234</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">future</span>( <span class="ruby-operator">&amp;</span><span class="ruby-identifier">computation</span> ) <span class="ruby-comment cmt">#:yields: result</span>
+    <span class="ruby-constant">Lazy</span><span class="ruby-operator">::</span><span class="ruby-constant">Future</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">computation</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="in--method" class="method-detail ">
+        <a name="M001012"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">in?</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Is self included in other?
+</p>
+<pre>
+  5.in?(0..10)       #=&gt; true
+  5.in?([0,1,2,3])   #=&gt; false
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="in--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/in.rb, line 8</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">in?</span>(<span class="ruby-identifier">other</span>)
+    <span class="ruby-identifier">other</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-keyword kw">self</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="instance-assign-method" class="method-detail ">
+        <a name="M000973"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">instance_assign</span><span
+            class="method-args">(hash)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Set instance variables using a hash.
+</p>
+<pre>
+  instance_assign('@a'=&gt;1, '@b'=&gt;2)
+  @a   #=&gt; 1
+  @b   #=&gt; 2
+</pre>
+<p>
+WARNING: <a href="Kernel.html#M000973">instance_assign</a> will be
+deprecated. Use instance_vars.update instead.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="instance-assign-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/instance_assign.rb, line 32</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">instance_assign</span>(<span class="ruby-identifier">hash</span>)
+    <span class="ruby-identifier">hash</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">k</span> = <span class="ruby-node">&quot;@#{k}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">k</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp re">/^@/</span>
+      <span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span>)
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">self</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="instance-class-method" class="method-detail ">
+        <a name="M000989"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">instance_class</span><span
+            class="method-args">(&block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Easy access to an object qua class, otherwise known as the object&#8217;s
+metaclass or singleton class. This implemnetation alwasy returns the class,
+even if a block is provided to eval against it.
+</p>
+<pre>
+    It is what it is.
+    But I think I like this one best.
+</pre>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="instance-class-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/instance_class.rb, line 20</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">instance_class</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+    (<span class="ruby-keyword kw">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword kw">self</span>; <span class="ruby-keyword kw">self</span>; <span class="ruby-keyword kw">end</span>).<span class="ruby-identifier">module_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block</span>
+    (<span class="ruby-keyword kw">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword kw">self</span>; <span class="ruby-keyword kw">self</span>; <span class="ruby-keyword kw">end</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="instance-values-method" class="method-detail ">
+        <a name="M000970"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">instance_values</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Return instance variable values in an array.
+</p>
+<pre>
+  class X
+    def initialize(a,b)
+      @a, @b = a, b
+    end
+  end
+
+  x = X.new(1,2)
+
+  x.instance_values   #=&gt; { &quot;a&quot;=&gt;1, &quot;b&quot;=&gt;2 }
+</pre>
+<p>
+WARNING: <a href="Kernel.html#M000970">instance_values</a> will be
+deprecated. Use instance_vars.to_hash instead.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="instance-values-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/instance_assign.rb, line 17</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">instance_values</span>
+    <span class="ruby-identifier">instance_variables</span>.<span class="ruby-identifier">inject</span>({}) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">values</span>, <span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">values</span>[<span class="ruby-identifier">name</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>]] = <span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-identifier">name</span>)
+      <span class="ruby-identifier">values</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="instance-vars-method" class="method-detail ">
+        <a name="M000962"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">instance_vars</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="instance-vars-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/instance_variables.rb, line 3</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">instance_vars</span>
+    <span class="ruby-constant">InstanceVariables</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="load-local-method" class="method-detail method-alias">
+        <a name="M000939"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">load_local</span><span
+            class="method-args">(relative_feature, safe=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="Kernel.html#M000938">load_relative</a>
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="load-relative-method" class="method-detail ">
+        <a name="M000938"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">load_relative</span><span
+            class="method-args">(relative_feature, safe=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Load file from same dir as calling script.
+</p>
+<pre>
+  load_local 'templib'
+</pre>
+<p>
+CREDIT: Paul Brannan, Pragmatic Programmers
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="load-relative-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/require_relative.rb, line 35</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">load_relative</span>(<span class="ruby-identifier">relative_feature</span>, <span class="ruby-identifier">safe</span>=<span class="ruby-keyword kw">nil</span>)
+      <span class="ruby-identifier">c</span> = <span class="ruby-identifier">caller</span>.<span class="ruby-identifier">first</span>
+      <span class="ruby-identifier">fail</span> <span class="ruby-node">&quot;Can't parse #{c}&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">rindex</span>(<span class="ruby-regexp re">/:\d+(:in `.*')?$/</span>)
+      <span class="ruby-identifier">file</span> = <span class="ruby-identifier">$`</span> <span class="ruby-comment cmt"># File.dirname(c)</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-regexp re">/\A\((.*)\)/</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">file</span> <span class="ruby-comment cmt"># eval, etc.</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">LoadError</span>, <span class="ruby-node">&quot;require_relative is called in #{$1}&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">absolute</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">relative_feature</span>, <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">file</span>))
+      <span class="ruby-identifier">load</span> <span class="ruby-identifier">absolute</span>, <span class="ruby-identifier">safe</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Kernel.html#M000939">load_local</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="maybe-method" class="method-detail ">
+        <a name="M000941"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">maybe</span><span
+            class="method-args">(chance = 0.5, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Random generator that returns true or false. Can also take a block that has
+a 50/50 chance to being executed.
+</p>
+<pre>
+  maybe  #=&gt; true
+  maybe  #=&gt; false
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="maybe-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/maybe.rb, line 9</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">maybe</span>(<span class="ruby-identifier">chance</span> = <span class="ruby-value">0</span><span class="ruby-value">.5</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block</span> <span class="ruby-keyword kw">then</span>
+      <span class="ruby-keyword kw">yield</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">rand</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">chance</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">rand</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">chance</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="meta-alias-method" class="method-detail ">
+        <a name="M000730"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">meta_alias</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias a method defined in the metaclass (ie. singleton class).
+</p>
+<pre>
+  def X.y?; &quot;y?&quot; ; end
+  X.meta_alias &quot;ynot?&quot;, &quot;y?&quot;
+  X.ynot?  #=&gt; y?
+</pre>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="meta-alias-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/metaid.rb, line 11</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">meta_alias</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+    <span class="ruby-identifier">meta_class</span> <span class="ruby-keyword kw">do</span>
+      <span class="ruby-identifier">alias_method</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="meta-class-method" class="method-detail ">
+        <a name="M000733"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">meta_class</span><span
+            class="method-args">(&block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Easy access to an object&#8217;s &#8220;special&#8221; class, otherwise
+known as it&#8217;s metaclass or singleton class.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="meta-class-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/metaid.rb, line 47</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">meta_class</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+      (<span class="ruby-keyword kw">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword kw">self</span>; <span class="ruby-keyword kw">self</span>; <span class="ruby-keyword kw">end</span>).<span class="ruby-identifier">class_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+    <span class="ruby-keyword kw">else</span>
+      (<span class="ruby-keyword kw">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword kw">self</span>; <span class="ruby-keyword kw">self</span>; <span class="ruby-keyword kw">end</span>)
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Kernel.html#M000734">metaclass</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="meta-def-method" class="method-detail ">
+        <a name="M000732"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">meta_def</span><span
+            class="method-args">( name, &block )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Add method to a meta-class &#8212;i.e. a singleton method.
+</p>
+<pre>
+  class X; end
+  X.meta_def(:x){&quot;x&quot;}
+  X.x  #=&gt; &quot;x&quot;
+</pre>
+<p>
+CREDIT: WhyTheLuckyStiff
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="meta-def-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/metaid.rb, line 38</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">meta_def</span>( <span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span> )
+    <span class="ruby-identifier">meta_class</span> <span class="ruby-keyword kw">do</span>
+      <span class="ruby-identifier">define_method</span>( <span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span> )
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="meta-eval-method" class="method-detail ">
+        <a name="M000731"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">meta_eval</span><span
+            class="method-args">(str=nil, &blk)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Evaluate code in a metaclass. This is equivalent to
+&#8216;meta_class.instance_eval&#8217;.
+</p>
+<p>
+CREDIT: WhyTheLuckyStiff
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="meta-eval-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/metaid.rb, line 22</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">meta_eval</span>(<span class="ruby-identifier">str</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">str</span>
+      <span class="ruby-identifier">meta_class</span>.<span class="ruby-identifier">instance_eval</span>(<span class="ruby-identifier">str</span>)
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">meta_class</span>.<span class="ruby-identifier">instance_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="metaclass-method" class="method-detail method-alias">
+        <a name="M000734"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">metaclass</span><span
+            class="method-args">(&block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="Kernel.html#M000733">meta_class</a>
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="method--method" class="method-detail ">
+        <a name="M001009"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">method!</span><span
+            class="method-args">(s)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Easy access to method as object, and they retain state.
+</p>
+<pre>
+  def hello
+    puts &quot;Hello World!&quot;
+  end
+
+  m1 = method!(:hello)   #=&gt; &lt;Method: #hello&gt;
+
+  def m1.annotate
+    &quot;simple example&quot;
+  end
+
+  m2 = method!(:hello)
+  m2.annotate  #=&gt; &quot;simple example&quot;
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="method--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/method.rb, line 20</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">method!</span>(<span class="ruby-identifier">s</span>)
+    <span class="ruby-comment cmt">#( @__methods__ ||= {} )[s.to_sym] ||= method(s)</span>
+    <span class="ruby-identifier">$FIRST_CLASS_METHODS</span>[<span class="ruby-keyword kw">self</span>][<span class="ruby-identifier">s</span>.<span class="ruby-identifier">to_sym</span>] <span class="ruby-operator">||=</span> <span class="ruby-identifier">method</span>(<span class="ruby-identifier">s</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="non-nil--method" class="method-detail method-alias">
+        <a name="M000951"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">non_nil?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="Kernel.html#M000950">not_nil?</a>
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="not-nil--method" class="method-detail ">
+        <a name="M000950"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">not_nil?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+The opposite of nil?.
+</p>
+<pre>
+  &quot;hello&quot;.not_nil?     # -&gt; true
+  nil.not_nil?         # -&gt; false
+</pre>
+<p>
+CREDIT: Gavin Sinclair
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="not-nil--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/not_nil.rb, line 10</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">not_nil?</span>
+    <span class="ruby-keyword kw">not</span> <span class="ruby-identifier">nil?</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Kernel.html#M000951">non_nil?</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="object-hexid-method" class="method-detail ">
+        <a name="M000943"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">object_hexid</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns the object id as a string in hexideciaml, which is how Ruby reports
+them with inspect.
+</p>
+<pre>
+  &quot;ABC&quot;.object_hexid  #=&gt; &quot;0x402d359c&quot;
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="object-hexid-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/object_hexid.rb, line 10</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">object_hexid</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-value str">&quot;0x&quot;</span> <span class="ruby-operator">&lt;&lt;</span> ((<span class="ruby-value str">'%.x'</span> <span class="ruby-operator">%</span> (<span class="ruby-value">2</span><span class="ruby-operator">*</span><span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">__id__</span>))[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>])
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="object-hexid-method" class="method-detail ">
+        <a name="M000944"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">object_hexid</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns the object id as a string in hexideciaml, which is how Ruby reports
+them with inspect.
+</p>
+<pre>
+  &quot;ABC&quot;.object_hexid  #=&gt; &quot;0x402d359c&quot;
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="object-hexid-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/object_hexid.rb, line 21</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">object_hexid</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-value str">&quot;0x&quot;</span> <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-value str">'%.x'</span> <span class="ruby-operator">%</span> (<span class="ruby-value">2</span><span class="ruby-operator">*</span><span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">__id__</span>))  <span class="ruby-comment cmt">#[1..-1]</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="object-send-method" class="method-detail ">
+        <a name="M000946"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">object_send</span><span
+            class="method-args">(name,*args,&blk)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Send only to public methods.
+</p>
+<pre>
+  class X
+    private
+    def foo; end
+  end
+
+  X.new.object_send(:foo)
+  =&gt; NoMethodError: private method `foo' called for #&lt;X:0xb7ac6ba8&gt;
+</pre>
+<p>
+TODO: <a href="Kernel.html#M000946">object_send</a> needs to change for
+1.9.
+</p>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="object-send-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/object_send.rb, line 20</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">object_send</span>(<span class="ruby-identifier">name</span>,<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>,<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+    <span class="ruby-comment cmt">#instance_eval &quot;self.#{name}(*args)&quot;</span>
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">name</span>)
+      <span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">name</span>,<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>,<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+    <span class="ruby-keyword kw">else</span> <span class="ruby-comment cmt">#if respond_to?(:method_missing)</span>
+      <span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">:method_missing</span>,<span class="ruby-identifier">name</span>,<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>,<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+    <span class="ruby-comment cmt">#else</span>
+    <span class="ruby-comment cmt">#  raise NoMethodError</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="p-method" class="method-detail ">
+        <a name="M000995"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">p</span><span
+            class="method-args">(*x)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alternate to standard <a href="Kernel.html#M000995">p</a> method that
+outputs Kernel#inspect to stdout, but also passes through the orginal
+argument(s).
+</p>
+<pre>
+  x = 1
+  r = 4 + q(1)
+  p r
+</pre>
+<p>
+produces
+</p>
+<pre>
+  1
+  5
+</pre>
+<p>
+TODO: DEPRECATE as of 1.9, <em>if</em> it will do this.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="p-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/p.rb, line 18</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">p</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">x</span>)
+    <span class="ruby-identifier">x</span>.<span class="ruby-identifier">each</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-identifier">puts</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">inspect</span> } <span class="ruby-comment cmt">#p(*x)</span>
+    <span class="ruby-identifier">x</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">x</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">last</span> <span class="ruby-comment cmt">#x.last</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="populate-method" class="method-detail ">
+        <a name="M001005"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">populate</span><span
+            class="method-args">(data=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Assign via accessor methods using a hash, associative array or block.
+</p>
+<pre>
+  object.populate( :a =&gt; 1, :b =&gt; 2 )
+  object.populate( :a, 1, :b, 2 )
+  object.populate( [:a, 1], [:b, 2] )
+  object.populate( *[[:a, 1], [:b, 2]] )
+  object.populate{ |s| s.a = 1; s.b = 2 }
+</pre>
+<p>
+These are all the same as doing:
+</p>
+<pre>
+  object.a = 1
+  object.b = 2
+</pre>
+<p>
+Using an associative array instead of hash guarentees order of assignemnt.
+</p>
+<p>
+Using a hash or array will not raise an error if the accessor does not
+exits &#8212; it will simply be skipped.
+</p>
+<p>
+(See also: instance_vars.update, which sets instance variables directly,
+bypassing accessor method.)
+</p>
+<p>
+TODO: Better name, set_with ?
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="populate-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/populate.rb, line 27</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">populate</span>(<span class="ruby-identifier">data</span>=<span class="ruby-keyword kw">nil</span>) <span class="ruby-comment cmt">#:yield:</span>
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">data</span>
+      <span class="ruby-identifier">data</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{k}=&quot;</span>, <span class="ruby-identifier">v</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">respond_to?</span>(<span class="ruby-node">&quot;#{k}=&quot;</span>)
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">yield</span>(<span class="ruby-keyword kw">self</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+    <span class="ruby-keyword kw">self</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="promise-method" class="method-detail ">
+        <a name="M000785"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">promise</span><span
+            class="method-args">( )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+The promise() function is used together with demand() to implement lazy
+evaluation. It returns a promise to evaluate the provided block at a future
+time. Evaluation can be demanded and the block&#8217;s result obtained via
+the demand() function.
+</p>
+<p>
+Implicit evaluation is also supported: the first message sent to it will
+demand evaluation, after which that message and any subsequent messages
+will be forwarded to the result object.
+</p>
+<p>
+As an aid to circular programming, the block will be passed a promise for
+its own result when it is evaluated. Be careful not to force that promise
+during the computation, lest the computation diverge.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="promise-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/lazy.rb, line 208</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">promise</span>( <span class="ruby-operator">&amp;</span><span class="ruby-identifier">computation</span> ) <span class="ruby-comment cmt">#:yields: result</span>
+    <span class="ruby-constant">Lazy</span><span class="ruby-operator">::</span><span class="ruby-constant">Promise</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">computation</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="qua-class-method" class="method-detail ">
+        <a name="M000960"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">qua_class</span><span
+            class="method-args">(&block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Easy access to an object qua class, otherwise known as the object&#8217;s
+singleton class.
+</p>
+<p>
+Yes, another one.
+</p>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="qua-class-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/qua_class.rb, line 10</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">qua_class</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+      (<span class="ruby-keyword kw">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword kw">self</span>; <span class="ruby-keyword kw">self</span>; <span class="ruby-keyword kw">end</span>).<span class="ruby-identifier">class_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+    <span class="ruby-keyword kw">else</span>
+      (<span class="ruby-keyword kw">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword kw">self</span>; <span class="ruby-keyword kw">self</span>; <span class="ruby-keyword kw">end</span>)
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="require-all-method" class="method-detail ">
+        <a name="M000954"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">require_all</span><span
+            class="method-args">(pat)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Require a pattern of files. This make is easy to require an entire
+directory, for instance.
+</p>
+<pre>
+  require_all 'facets/time/*'
+</pre>
+<p>
+You can also you <a href="Kernel.html#M000954">require_all</a> relative to
+the current script simply by using <em>DIR</em>.
+</p>
+<pre>
+  require_all(__DIR__ + '/foo/*')
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="require-all-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/require_all.rb, line 13</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">require_all</span>(<span class="ruby-identifier">pat</span>)
+    <span class="ruby-identifier">$LOAD_PATH</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">fs</span> = <span class="ruby-constant">Dir</span>[<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">path</span>,<span class="ruby-identifier">pat</span>)]
+      <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">fs</span>.<span class="ruby-identifier">empty?</span>
+        <span class="ruby-identifier">fs</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+          <span class="ruby-constant">Kernel</span>.<span class="ruby-identifier">require</span>(<span class="ruby-identifier">f</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">f</span>)
+        }
+        <span class="ruby-keyword kw">break</span>;
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="require-local-method" class="method-detail method-alias">
+        <a name="M000937"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">require_local</span><span
+            class="method-args">(relative_feature)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="Kernel.html#M000936">require_relative</a>
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="require-relative-method" class="method-detail ">
+        <a name="M000936"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">require_relative</span><span
+            class="method-args">(relative_feature)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Require file from same dir as calling script.
+</p>
+<pre>
+  require_local 'templib'
+</pre>
+<p>
+CREDIT: Paul Brannan, Pragmatic Programmers
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="require-relative-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/require_relative.rb, line 11</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">require_relative</span>(<span class="ruby-identifier">relative_feature</span>)
+      <span class="ruby-identifier">c</span> = <span class="ruby-identifier">caller</span>.<span class="ruby-identifier">first</span>
+      <span class="ruby-identifier">fail</span> <span class="ruby-node">&quot;Can't parse #{c}&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">rindex</span>(<span class="ruby-regexp re">/:\d+(:in `.*')?$/</span>)
+      <span class="ruby-identifier">file</span> = <span class="ruby-identifier">$`</span> <span class="ruby-comment cmt"># File.dirname(c)</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-regexp re">/\A\((.*)\)/</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">file</span> <span class="ruby-comment cmt"># eval, etc.</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">LoadError</span>, <span class="ruby-node">&quot;require_relative is called in #{$1}&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">absolute</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">relative_feature</span>, <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">file</span>))
+      <span class="ruby-identifier">require</span> <span class="ruby-identifier">absolute</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Kernel.html#M000937">require_local</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="resc-method" class="method-detail ">
+        <a name="M000961"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">resc</span><span
+            class="method-args">(str)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Provides a shortcut to the Regexp.escape module method.
+</p>
+<pre>
+  resc(&quot;H..LO&quot;)   #=&gt; &quot;H\\.\\.LO&quot;
+
+  TODO: Should this be deprecated in favor of String#to_re/to_rx ?
+</pre>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="resc-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/resc.rb, line 11</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">resc</span>(<span class="ruby-identifier">str</span>)
+    <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">escape</span>(<span class="ruby-identifier">str</span>.<span class="ruby-identifier">to_s</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="respond-method" class="method-detail ">
+        <a name="M001010"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">respond</span><span
+            class="method-args">(sym, *args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Like respond_to? but returns the result of the call if it does indeed
+respond.
+</p>
+<pre>
+  class X
+    def f; &quot;f&quot;; end
+  end
+
+  x = X.new
+  x.respond(:f)  #=&gt; &quot;f&quot;
+  x.respond(:g)  #=&gt; nil
+</pre>
+<p>
+CREDIT: Trans
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="respond-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/respond.rb, line 16</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">respond</span>(<span class="ruby-identifier">sym</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+    <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">not</span> <span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">sym</span>)
+    <span class="ruby-identifier">send</span>(<span class="ruby-identifier">sym</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Kernel.html#M001011">respond_with_value</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="respond-with-value-method" class="method-detail method-alias">
+        <a name="M001011"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">respond_with_value</span><span
+            class="method-args">(sym, *args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="Kernel.html#M001010">respond</a>
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="returning-method" class="method-detail ">
+        <a name="M001002"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">returning</span><span
+            class="method-args">(obj=self)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+A Ruby-ized realization of the K combinator.
+</p>
+<pre>
+  returning Book.new do |book|
+    book.title = &quot;Imperium&quot;
+    book.author = &quot;Ulick Varange&quot;
+  end
+</pre>
+<p>
+Technically, <a href="Kernel.html#M001002">returning</a> probably should
+force the return of the stated object irregardless of any return statements
+that might appear within it&#8217;s block. This might differentiate <a
+href="Kernel.html#M001002">returning</a> from <a
+href="Kernel.html#M000978">with</a>, however it also would require
+implementation in Ruby itself.
+</p>
+<p>
+CREDIT: Mikael Brockman
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="returning-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/returning.rb, line 18</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">returning</span>(<span class="ruby-identifier">obj</span>=<span class="ruby-keyword kw">self</span>) <span class="ruby-comment cmt">#:yield:</span>
+    <span class="ruby-keyword kw">yield</span> <span class="ruby-identifier">obj</span>
+    <span class="ruby-identifier">obj</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="send-as-method" class="method-detail ">
+        <a name="M000932"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">send_as</span><span
+            class="method-args">(ancestor, sym, *args, &blk)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Call parent class/module methods once bound to self.
+</p>
+<p>
+TODO: Does this have the proper scope for send?
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="send-as-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/as.rb, line 36</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">send_as</span>(<span class="ruby-identifier">ancestor</span>, <span class="ruby-identifier">sym</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+    <span class="ruby-identifier">ancestor</span>.<span class="ruby-identifier">instance_method</span>(<span class="ruby-identifier">sym</span>).<span class="ruby-identifier">bind</span>(<span class="ruby-keyword kw">self</span>).<span class="ruby-identifier">call</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>,<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="set-from-method" class="method-detail ">
+        <a name="M001006"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">set_from</span><span
+            class="method-args">(obj, *fields)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Set setter methods using a another object.
+</p>
+<pre>
+  class X
+    attr_accessor :a, :b
+    def initialize( a, b )
+       @a,@b = a,b
+    end
+  end
+
+  obj1 = X.new( 1, 2 )
+  obj2 = X.new
+
+  obj2.set_from(obj1)
+
+  obj2.a  #=&gt; 1
+  obj2.b  #=&gt; 2
+</pre>
+<p>
+TODO: populate_from(obj) ?
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="set-from-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/populate.rb, line 56</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">set_from</span>(<span class="ruby-identifier">obj</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">fields</span>)
+    <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">fields</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">fields</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">send</span>( <span class="ruby-node">&quot;#{k}=&quot;</span>, <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{k}&quot;</span>) )  <span class="ruby-comment cmt">#if self.respond_to?(&quot;#{k}=&quot;) &amp;&amp; obj.respond_to?(&quot;#{k}&quot;)</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">setters</span> = <span class="ruby-identifier">methods</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span> <span class="ruby-identifier">m</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/=$/</span> }
+      <span class="ruby-identifier">setters</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">setter</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">getter</span> = <span class="ruby-identifier">setter</span>.<span class="ruby-identifier">chomp</span>(<span class="ruby-value str">'='</span>)
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">getter</span>)
+          <span class="ruby-identifier">send</span>( <span class="ruby-identifier">setter</span>, <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">getter</span>) )
+          <span class="ruby-identifier">fields</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">getter</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">fields</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="silence-stderr-method" class="method-detail ">
+        <a name="M000955"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">silence_stderr</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="silence-stderr-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/silence.rb, line 27</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">silence_stderr</span> <span class="ruby-comment cmt">#:yeild:</span>
+    <span class="ruby-identifier">silence_stream</span>(<span class="ruby-constant">STDERR</span>) { <span class="ruby-keyword kw">yield</span> }
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="silence-stdout-method" class="method-detail ">
+        <a name="M000956"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">silence_stdout</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="silence-stdout-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/silence.rb, line 32</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">silence_stdout</span> <span class="ruby-comment cmt">#:yeild:</span>
+    <span class="ruby-identifier">silence_stream</span>(<span class="ruby-constant">STDOUT</span>) { <span class="ruby-keyword kw">yield</span> }
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="silence-stream-method" class="method-detail ">
+        <a name="M000953"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">silence_stream</span><span
+            class="method-args">(*streams)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Silences any stream for the duration of the block.
+</p>
+<pre>
+  silence_stream(STDOUT) do
+    puts 'This will never be seen'
+  end
+
+  puts 'But this will'
+</pre>
+<p>
+CREDIT: David Heinemeier Hansson
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="silence-stream-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/silence.rb, line 13</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">silence_stream</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">streams</span>) <span class="ruby-comment cmt">#:yeild:</span>
+    <span class="ruby-identifier">on_hold</span> = <span class="ruby-identifier">streams</span>.<span class="ruby-identifier">collect</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">stream</span><span class="ruby-operator">|</span> <span class="ruby-identifier">stream</span>.<span class="ruby-identifier">dup</span> }
+    <span class="ruby-identifier">streams</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">stream</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">stream</span>.<span class="ruby-identifier">reopen</span>(<span class="ruby-constant">RUBY_PLATFORM</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/mswin/</span> <span class="ruby-operator">?</span> <span class="ruby-value str">'NUL:'</span> <span class="ruby-operator">:</span> <span class="ruby-value str">'/dev/null'</span>)
+      <span class="ruby-identifier">stream</span>.<span class="ruby-identifier">sync</span> = <span class="ruby-keyword kw">true</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">yield</span>
+  <span class="ruby-keyword kw">ensure</span>
+    <span class="ruby-identifier">streams</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">stream</span>, <span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">stream</span>.<span class="ruby-identifier">reopen</span>(<span class="ruby-identifier">on_hold</span>[<span class="ruby-identifier">i</span>])
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="silence-warnings-method" class="method-detail ">
+        <a name="M000958"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">silence_warnings</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Sets $VERBOSE to nil for the duration of the block and back to its original
+value afterwards.
+</p>
+<pre>
+  silence_warnings do
+    value = noisy_call # no warning voiced
+  end
+
+  noisy_call  # no warning is voiced
+</pre>
+<p>
+CREDIT: David Heinemeier Hansson
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="silence-warnings-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/silence.rb, line 55</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">silence_warnings</span>
+    <span class="ruby-identifier">old_verbose</span>, <span class="ruby-identifier">$VERBOSE</span> = <span class="ruby-identifier">$VERBOSE</span>, <span class="ruby-keyword kw">nil</span>
+    <span class="ruby-keyword kw">yield</span>
+  <span class="ruby-keyword kw">ensure</span>
+    <span class="ruby-identifier">$VERBOSE</span> = <span class="ruby-identifier">old_verbose</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="silently-method" class="method-detail ">
+        <a name="M000957"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">silently</span><span
+            class="method-args">(*streams)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Just like <a href="Kernel.html#M000953">silence_stream</a>, but will
+default to STDOUT, STDERR if no streams are given.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="silently-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/silence.rb, line 39</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">silently</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">streams</span>) <span class="ruby-comment cmt">#:yeild:</span>
+    <span class="ruby-identifier">streams</span> = [<span class="ruby-constant">STDOUT</span>, <span class="ruby-constant">STDERR</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">streams</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">silence_stream</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">streams</span>){ <span class="ruby-keyword kw">yield</span> }
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="singleton-method" class="method-detail method-alias">
+        <a name="M000997"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">singleton</span><span
+            class="method-args">(&block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Alias for <a href="Kernel.html#M000996">singleton_class</a>
+</p>
+          
+
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="singleton-class-method" class="method-detail ">
+        <a name="M000996"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">singleton_class</span><span
+            class="method-args">(&block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Easy access to an object&#8217;s &#8220;special&#8221; class,
+</p>
+<p>
+One day these names must be reconciled!
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="singleton-class-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/singleton_class.rb, line 7</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">singleton_class</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+      (<span class="ruby-keyword kw">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword kw">self</span>; <span class="ruby-keyword kw">self</span>; <span class="ruby-keyword kw">end</span>).<span class="ruby-identifier">class_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+    <span class="ruby-keyword kw">else</span>
+      (<span class="ruby-keyword kw">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword kw">self</span>; <span class="ruby-keyword kw">self</span>; <span class="ruby-keyword kw">end</span>)
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Kernel.html#M000997">singleton</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="source-location-method" class="method-detail ">
+        <a name="M000987"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">source_location</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p class="missing-docs">(Not documented)</p>
+          
+
+          
+          <div class="method-source-code"
+            id="source-location-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/source_location.rb, line 5</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">source_location</span>
+      <span class="ruby-identifier">file</span>, <span class="ruby-identifier">line</span>, <span class="ruby-identifier">meth</span> = <span class="ruby-operator">*</span><span class="ruby-identifier">caller</span>(<span class="ruby-value">1</span>).<span class="ruby-identifier">first</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">':'</span>)
+      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">file</span>, <span class="ruby-identifier">line</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="super-as-method" class="method-detail ">
+        <a name="M000934"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">super_as</span><span
+            class="method-args">(klass=self.class.superclass, *args, &blk)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Like super but skips to a specific ancestor module or class.
+</p>
+<pre>
+  class A
+    def x ; 1 ; end
+  end
+
+  class B &lt; A
+    def x ; 2 ; end
+  end
+
+  class C &lt; B
+    def x ; super_as(A) ; end
+  end
+
+  C.new.x  #=&gt; 1
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="super-as-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/as.rb, line 73</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">super_as</span>(<span class="ruby-identifier">klass</span>=<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">superclass</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+    <span class="ruby-keyword kw">unless</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">ancestors</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">klass</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">called</span> = <span class="ruby-regexp re">/\`([^\']+)\'/</span>.<span class="ruby-identifier">match</span>(<span class="ruby-identifier">caller</span>(<span class="ruby-value">1</span>).<span class="ruby-identifier">first</span>)[<span class="ruby-value">1</span>].<span class="ruby-identifier">to_sym</span>
+    <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">instance_method</span>(<span class="ruby-identifier">called</span>).<span class="ruby-identifier">bind</span>(<span class="ruby-keyword kw">self</span>).<span class="ruby-identifier">call</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>,<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="super-method-method" class="method-detail ">
+        <a name="M000933"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">super_method</span><span
+            class="method-args">(klass, meth)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns method of a parent class bound to self.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="super-method-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/as.rb, line 50</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">super_method</span>(<span class="ruby-identifier">klass</span>, <span class="ruby-identifier">meth</span>)
+    <span class="ruby-keyword kw">unless</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">ancestors</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">klass</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Not an ancestor for super_method-- #{klass}&quot;</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">instance_method</span>(<span class="ruby-identifier">meth</span>).<span class="ruby-identifier">bind</span>(<span class="ruby-keyword kw">self</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="tap-method" class="method-detail ">
+        <a name="M000945"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">tap</span><span
+            class="method-args">(&b)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+The tap K-Combinator. This yields self -and- returns self.
+</p>
+<p>
+Note, Ruby 1.9+ does not appear to support the zero arity instance_eval
+option.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="tap-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/tap.rb, line 10</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">tap</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">b</span>)
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+        <span class="ruby-identifier">b</span>.<span class="ruby-identifier">arity</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span> <span class="ruby-operator">?</span> <span class="ruby-keyword kw">yield</span>(<span class="ruby-keyword kw">self</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">instance_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">b</span>)
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">self</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="to-b-method" class="method-detail ">
+        <a name="M000834"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">to_b</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Boolean conversion for not being nil or false. Other classes may redefine
+this to suite the particular need.
+</p>
+<pre>
+  &quot;abc&quot;.to_b   #=&gt; true
+  true.to_b    #=&gt; true
+  false.to_b   #=&gt; false
+  nil.to_b     #=&gt; false
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="to-b-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/boolean.rb, line 94</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_b</span>
+    <span class="ruby-keyword kw">self</span> <span class="ruby-operator">?</span> <span class="ruby-keyword kw">true</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">false</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="true--method" class="method-detail ">
+        <a name="M000835"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">true?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns true is an object is class <a href="TrueClass.html">TrueClass</a>,
+otherwise false.
+</p>
+<pre>
+  true.true?   #=&gt; true
+  false.true?  #=&gt; false
+  nil.true?    #=&gt; false
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="true--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/boolean.rb, line 105</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">true?</span>
+    (<span class="ruby-keyword kw">true</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">self</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="try-method" class="method-detail ">
+        <a name="M000998"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">try</span><span
+            class="method-args">(method, default=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Try a method.
+</p>
+<pre>
+  @person ? @person.name : nil
+</pre>
+<p>
+vs
+</p>
+<pre>
+  @person.try(:name)
+</pre>
+<p>
+CREDIT: Chris Wanstrath
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="try-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/try.rb, line 12</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">try</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">default</span>=<span class="ruby-keyword kw">nil</span>)
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">respond_to?</span> <span class="ruby-identifier">method</span>
+      <span class="ruby-identifier">send</span> <span class="ruby-identifier">method</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">default</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="val--method" class="method-detail ">
+        <a name="M001007"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">val?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Tests to see if something has value. An object is considered to have value
+if it is not nil? and if it responds to empty?, is not empty.
+</p>
+<pre>
+  nil.val?     #=&gt; false
+  [].val?      #=&gt; false
+  10.val?      #=&gt; true
+  [nil].val?   #=&gt; true
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="val--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/val.rb, line 12</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">val?</span>
+    <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">nil?</span>
+    <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">empty?</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:empty?</span>)
+    <span class="ruby-keyword kw">true</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="with-method" class="method-detail ">
+        <a name="M000978"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">with</span><span
+            class="method-args">(obj=self, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Like returning but exectues the block via instance_eval.
+</p>
+<pre>
+  def foo
+    with values = [] do
+      self &lt;&lt; 'bar'
+      self &lt;&lt; 'baz'
+    end
+  end
+
+  foo # =&gt; ['bar', 'baz']
+</pre>
+          
+
+          
+          <div class="method-source-code"
+            id="with-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/kernel/with.rb, line 15</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">with</span>(<span class="ruby-identifier">obj</span>=<span class="ruby-keyword kw">self</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+    <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">instance_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+
+  </div>
+
+
+  <div id="rdoc-debugging-section-dump" class="debugging-section">
+  
+    <p>Disabled; run with --debug to generate this.</p>
+  
+  </div>
+
+</main>
+</body>
+</html>
+
