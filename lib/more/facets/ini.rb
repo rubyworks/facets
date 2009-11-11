@@ -142,6 +142,11 @@ class Ini
   end
 
   #
+  def to_h
+    @inihash.dup
+  end
+
+  #
   # Reading data from file
   #
   # +path+ is a path to the ini file
