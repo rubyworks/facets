@@ -1,3 +1,5 @@
+warn "IORedirect is being deprecated. It is not a robust solution. If you use this library, please consider contributing to Facets by rewritting the library so we can keep it in Facets."
+
 # = IORedirect
 #
 # IORedirect was ported from Paul Brannan's Ruby Treasures.
