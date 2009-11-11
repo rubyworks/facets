@@ -7,8 +7,15 @@
 
 == Introduction
 
-At the heart of Facets is the core extensions library. This a sizable collection
-of methods that augment Ruby's own core classes and modules.
+At the heart of Ruby Facets is the CORE extensions library. CORE provides
+a sizable collection of generally useful methods, along with a few
+supporting classes, that extend the functionality of 
+Ruby's core classes and modules.
+
+By definition CORE contains anything that will load automatically when
+issuing:
+
+  require 'facets'
 
 
 == Usage
@@ -76,6 +83,15 @@ For reference, here is the chart.
      []   => op_fetch
 
 Facets simply takes the '*' and translates it into a string acceptable to all file systems. Also, if a method ends in '=', '?' or '!' it is simply removed.
+
+
+== Authors
+
+This library more than any other part of Facets is full of contributions
+from sources all across the Ruby community. For all who have code here,
+the Facets Team salutes you.
+
+For a list of names, look to the README in Facet's main documetation.
 
 
 == License

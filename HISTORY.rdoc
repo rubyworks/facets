@@ -716,306 +716,98 @@ Changes:
     * Deprecated paramix.rb. A better way is to use a capitialized methods. (Perhaps a lib for that?)
     * Brought back a few web related libs, htmlfilter.rb and cssfilter.rb in particular.
     * camelcase and snakecase are core extensions. For specialized styles use String#style in style.rb.
-    * This was a fairly large and fast-paced update, so unfortunately not all changes are listed this time.
-
-    * Moved test/test_one_nine.rb to test/test_ruby.rb.
-    * Removed use of Console namepspace. command.rb and arguments.rb now use CLI.
     * Renamed ArgVector to CLI::Arguments
-    * Removed rdoc script (will replace in future).
-    * Added ri generation to setup.rb.
-    * Added site/doc soft link to doc/html.
     * Moved one_nine.rb to ruby.rb
-    * Update d requires for "one_nine" to just "ruby" b/c of backports to 1.8.7.
-    * Renamed task/ to script/, since the community is used to it b/c of Rails.
-
-    * Added the new split-off tests.
-    * Splinter remaining clumped tests.
-    * Removed test_array.
-    * Splintered array tests.
-    * Added some finer-grain to core method.
-    * Some deprecated libs added to work/old.
-    * Tests are now to th epoint of passing again. Yea!
-
-    * Continued touching up tests.
-    * Moved some old tests to proper place in work/old.
-    * Deprecated files moved to work/old.
-    * Coninuted work on tests.
-
-    * Adjusted module tests.
-    * Removed cli directory.
-    * Removed prime test directory and moved cli test up a level.
-    * Adjust test to match lib (again).
-    * Some deprecated extensions place in work/old for possible future reference.
-
-    * Make way for class extensions.
+    * Moved test/test_one_nine.rb to test/test_ruby.rb.
+    * Updated requires for "one_nine" to just "ruby" b/c of backports to 1.8.7.
     * Added warning to Rick Kilmers's unit system.
-      * Moving Rich Kilmers's units system to it's own package.
-      * Three are alternate unit systems available and Facets should work with any of them.
-      * Will keep a fair amount of the Time extensions though.
-
-    * Move core method decisions (I sware there are only a few more!)
-    * Moved cli libs to toplevel. Added a few methods to prime library.
-
-    * Cleandup symbol and class extra extensions.
+        * Moving Rich Kilmers's units system to it's own package.
+        * Three are alternate unit systems available and Facets should work with any of them.
+        * Will keep a fair amount of the Time extensions though.
     * Moved nil/status.rb to nilstatus.rb
     * Got rid of Method#curry and Method#partial since they just convert to Procs.
-    * Divied prime methods to sepearate files after all.
-
-    * General cleanup pushing toward 3.0 release.
-    * Finished the reorganization of Enumerable extensions.
-    * Move integer tests cleanup.
-    * Removed old core/more test directories.
-    * Moved remaining tests to top test directory.
-    * MOved extra extension test to toplevel.
-    * Again moved more files to top level.
-    * MOved more test to toplevel.
-    * Moved remaining core test to top test level.
-    * Moved ext/core to prime/.
-      * Will not combine the per-method tests for the moment.
-      * Will save that for later (unless we decide to div prime again :p)
-    * Fixed requires for prime/ directory.
-    * Moved all "prime" libs to subdir (yes, like they were).
-    * Cleaned up remaining extranerous files.
-
-    * Further touchups to website.
-    * Added some extra pages to website.
-    * OVerhaul website for version 3.
-
     * Made op_esc.rb a separate module rather thanan extension.
-    * REmoved more extraneous files and moved a few to work area.
-
-    * Added some tasks and a couple of file to work old.
-    * Cleaned up extra binding extensions.
-    * Continued considations (almost there).
-    * Continued consolidation and removing extraneous files.
     * Deprecated with_reader, with_writer and with_accessor for attr_singleton_reader, &c.
-    * Removed extraneous Enumerable files.
-
-    * Removed extraneous module alias and attr files.
     * Deprecated Hash#pairs_at. Use Hash#slice instead from core.
-    * Removed extraneous kernel extension files.
-    * Removed extraneous String extextion files.
-    * Removed some work folders.
-    * Partial adjustments for work area dure to organization changes.
-    * Scrap code.
-    * Removed vestiges of transfers to core extensions and consolidations.
-    * Fixed require in core libraries.
     * Fixed the namespaces of some extensions.
-    * It is finished!
-    * Move all "prime" libs to top.
-    * Removed extra/.
-    * Moved extra/continuation to top.
-    * Move the rest of extra directories.
-    * Moved all "extra" extensions to top facets/ directory.
-    * Few more.
-    * Added some file that were added before in the transition.
-
-    * Removed remains vestigaes of old organization. (Now just ot fix the new one!)
-    * The big wadoozy.
-    * Remove empty directories for more/ext.
-    * Move add classes and module to facets/.
-    * Move more extensions to facets/extra.
-    * Move a few more/ext to prime.
-    * Moved core/facets to facets/extra.
-    * Removed empty ext directories.
     * Added prime directory and files.
-    * Removed some dir methods that are now in prime.
-    * Remove some now empty directories from core/ext, due to the "prime" transfer.
     * Removed all "prime" extension files.
     * Move mattr to module.
-
     * Fixed require bug in time methods.
     * Reverted memomize.rb back to original code --will come back to later.
-    * Moved random.rb to sys/.
     * Added stylizer.rb to replace stylize.rb
-    * Removed old stylize.rb library --see new stylizer.rb.
     * Array #recursively is not only called #traverse.
     * Added case/stylize methods to more/facets/string.
     * Renamed more/string/facets/titlecase to captialize_all.
-
     * Added uri and xoxo tests.
-    * Some more reorganization in test/core.
-    * Removed finaly vestage of old dir structure.
-    * Moved remaing test to more/add.
-    * Removed some outdated test and organized.
-    * Moved more/ext tests out of more/add/.
-    * Added ext, cli and sys to test/more/.
-    * Move text/core to test/ext.
-    * Updated .roll file for new organization.
-    * Updated .reap file.
-    * Updated metadata to fit new organization. (Happy Days!)
-    * Moved facets.rb up a level.
-    * Temporarily moved console libs to cli --mainly to ease working on them.
-    * Moved condole to add.
-    * Moved system to more/sys.
-    * Moved "lore" to add/. Yea!
-    * Moved libs to ext.
-    * Added more/ext directory.
     * Progressive work on memoize and elementor.
-    * Moved systematic libs from ext/ to sys/.
-    * Moved classes and modules from ext/ to add/.
-    * Added facets directory to add/ directory.
-    * dded add/ directory to core/.
-    * Moved facets/ to ext/.
-    * Added ext directory.
-    * Minor doc change.
     * Functor no longer privatizes =, == and =~.
-    * Minor doc fix.
     * Properly split conversion.rb.
     * Some string methods extracted from stylize.rb.
-
-    * Continued structuring.
-    * Moved lore/console up a notch.
-    * Moved lore/system up a notch.
     * Moved random.rb to more/.
     * Renamed namespace.eb to methodspace.rb.
     * Moved autoreload to more/facets/kernel.
-    * Moved four remaing web libs to common directory (use web/ subdir?).
-
-    * Moved some modules from system to common.
-    * Moved all mixins back in with classes.
-    * Moved class/facets up a level.
     * Removed old curry.rb.
-    * More as standard and extraneous core extensions is progressing.
-    * Added enumerable directory to more.
-    * Moved some libs from system to more.
-    * Added string directory to more.
-    * Added kernel directory to more extensions.
-    * Recreated more to house standard extensions.
-    * More as standard extensions, and Lore (?) for the rest.
-    * Added some web related libraries.
-
     * Added cgi.rb with some standard extensions.
-    * Fixed bug with #peek in stackable.
     * Deprecated paramix.rb.
-
     * Added xmlhash.rb and returned uri.rb extensions to the library.
-    * Moved getoptlong/rb to standard extensions folder.
     * Added #method_name to Date class.
-
-    * Removed extraneous level in doc.
-    * REmove cut-bases AOP, now in it's own library.
+    * Remove cut-bases AOP, now in it's own library.
     * Converted compare_on.rb to Paramtric Mixins.
-
     * Split fileutils up into individual methods.
-    * Update metadata to reflect organization changes.
-    * Moved standard library extensions to more/extend.
-    * Added facets directory to more/extend.
-    * Continued organization.
-    * Moved console related libs to more/console.
-    * Added facets subdir to console.
-    * Added more/console; trying something a bit different in organization.
-    * Added more/class/facets/net and moved set and ostruct to class as well.
-    * more/system, rather than systems.
-    * Moved class, mixin, and system to more.
-    * Added new more directory.
-    * Moved more to systems.
-
-    * Renamed console.rb to whate it should be consoleutils.rb.
+    * Renamed console.rb to what it should be consoleutils.rb.
     * Update to command.rb integrating MasterCommand and Command into a single class.
-      * The Console::Command is not nice and simple command parser I've been aiming torward.
-      * Barring some major oversite, this class will not change in an incompatible way ever again.
-      * Basic tests pass. More eleborate test will follow to ensure more complex designs also work.
-
-    * Added doc directory.
-    * Updated README and allowed doc/ to be included in package.
-    * Added site/rdoc, which is a symlink.
-    * Added log/Changelog.txt too.
-    * Update logs. (Should these even be under version control?)
-    * Added Rakefile to redirect to task/*.
-    * Fixed bug in Kernel#object_hexid.
-    * Fixed test for hash/collate.
-    * Added test task and temporary rdoc task.
     * Added options back into multiglob_r.
-    * Fixed bug in multiglob_r so it will NOT follow symlinks.
-    * Moved work/reference to work/ref.
-    * Moved work/current to new (can you tell I have a new naming scheme for work/?)
-    * Moved work/outdated to old.
-    * Added some outdated tasks to work. Will eventually delete.
-
-    * Moved doc/ to site/.
-    * Added remaining doc files.
-    * Converted website to XML.
-
-    * Automated learn and quick doc menus.
-    * Convert website from html to xml.
-    * Finishing touches for next release.
-    * Saved old rdoc script.
-
-    * Updates to tests as embedded tests are no more.
-    * Finally completed removal of all embedded tests.
-    * Organized tests according to new lib organization.
     * Improved cloneable.rb to be a true deep dup/clone mixin using Ken Bloom's suggestion.
-
-    * Working on end-user tasks.
-    * Added work/outdated/task.
-    * Updated the way rdocs are generated.
-    * Organized all libs between core, more, class and mixin.
-    * Moved class libraries to lib/class/facets.
-    * Added lib/class.
     * Added tasksystem.rb.
-    * Remove some admin task files no longer needed thanks to Reap.
-    * Move admin/ to work/outdated. We'll be using reap instead.
-    * Moved meta/facets.roll to .roll.
-      * This is related to an update of Rolls...
-      * It's better to have good SOC here regardless of some metadata redundancy.
-    * Added meta/authors.
-    * Moved old changelogs to log/ and move meta/config.yaml to .reap per new reap design.
-    * Updaed reap config and removed icli.yaml.
-    * Added doc/ads directory.
-    * Removed dev/ directory.
-    * Moved remaining dev files to work/ (will cleanup later).
-    * Moved dev/sandbox to work/.
-    * Moved dev/task and reference material to work directory.
     * Added enumerable/combinations.
     * Added openhash and tracepoint.
+
+* Bug Fixes
+
+    * Fixed bug with #peek in stackable.
+    * Fixed bug in Kernel#object_hexid.
+    * Fixed bug in multiglob_r so it will NOT follow symlinks.
+    * Fixed test_keyize.rb.
+
+* Adminstrative Changes
+
+    * This was a fairly large and fast-paced update, so unfortunately not all changes are listed this time.
+    * Added ri generation to setup.rb.
+    * Updated README and allowed doc/ to be included in package.
+    * Finally completed removal of all embedded tests.
+    * Organized all libs between core, more, class and mixin.
 
 
 == 2.3.0 / 2008-02-01
 
-Amoung other changes with this release, cloneable.rb is
-now a true deep dup/clone mixin; tracepoint.rb returns
-to the library.
+Amoung other changes with this release, cloneable.rb is now a true deep
+dup/clone mixin; tracepoint.rb returns to the library.
 
 Changes:
 
-    * Reorganized library into smaller groups: core, more, class and mixin.
-    * Added tracepoint.rb back to the library.
-    * Fixed multiglob_r bug, so it will NOT follow symlinks.
+* 4 Major Enhancements
 
-    * Remove admin/log.
-    * Convert changelog to pure ruby.
+    * Cloneable provides true deep cloning.
+    * Moved hash_keyize.rb to CORE as hash/keyize.rb.
+    * Added tracepoint.rb back to the library.
+    * Added hash/collate.
+
+* 3 Bug Fixes
+
+    * Fixed multiglob_r bug, so it will NOT follow symlinks.
+    * Added a couple of missing binding requires.
+    * Fixed test_keyize.rb.
+
+* 6 Admistrative Changes
+
+    * Reorganized library into smaller groups: core, more, class and mixin.
     * Remove admin/svn subdir.
-    * Organize admin tasks better.
+    * Remove admin/log.
     * Add admin tasks.
     * Moved admin tasks to admin directory.
     * Added admin directory.
-    * Removed task/doc subdir.
-    * Moved some tasks.
-    * Convert tasks to pure ruby.
 
-    * Move test/unit to test/core.
-    * Moved remaining more test to test/more.
-    * Added test/more/hash directory.
-    * Moved more tests to test/more directory.
-    * Added test/more.
-    * Fixed test_keyize.rb.
-    * binding/test_cflow renamed to test_caller
-
-    * Added test for new hash/collate.
-    * Added demo benchmarks.
-    * Update publish task.
-    * Update quick.html and wiki code.
-    * Added TODO to toplevel.
-    * Added a couple of missing binding requires to repo.
-    * Moved More lib hash_keyize.rb to hash/keyize.rb.
-
-    * Move source_material to just source.
-
-    * ANd so it goes with work reorganization.
-    * Moved dev/play to dev/sandbox.
-    * Further reorganiztion of work area.
-    * Some reorganization of developemnt area.
 
 
 == 2.2.1 / 2007-12-22
@@ -1257,7 +1049,7 @@ Changes:
     * Renamed old changelogs.
 
 
-== 2.0.5 / 2007-11-05
+== 2.0.5 / 2007-11-07
 
 Changes:
 
@@ -1357,50 +1149,41 @@ Changes:
     * update methods to eleminate duplicate file names between lib/core and lib/methods
 
 
+== 2.0.1 / 2007-10-06
+
+Changes:
+
+    * updated version to 2.0.1
+    * minor bugs fixes
+    * update methods task to display each file as it process it
+    * added benchmarks for some enumerable methods.
+    * moved demo/bench/bench_factorial to an demo/bench/integer subclass
+    * added Erik Veenstra to AUTHORS for work on enumerable/group_by and cluster_by
+    * minor improvement to test task to specifically read test_*.rb files
+    * removed enumerable/partition.rb
+    * move enumerable/partition.rb methods to collect.rb.
+    * Improved Integer#of.
+    * Minor improvements to collect.rb and partition.rb
+    * Deprecated nonuniq!, bug fixed cluster_by and aliased group_by and partition_by.
+    * Rennamed Enumerable#partition_by to group_by (like RUby 1.9) and fixed bug in cluster_by.
+
+
 == 2.0.0 / 2007-10-02
 
 Changes:
 
-2007-10-07  transami
-
-        * doc session - clean up array methods
-
-
-2007-10-06  transami
-
-        * fixed enumerable/test_collect.rb
-        * doc update some tasks
-        * updated version to 2.0.1
-        * minor bugs fixes
-        * update methods task to display each file as it process it
-        * added benchmarks for some enumerable methods.
-        * moved demo/bench/bench_factorial to an demo/bench/integer subclass
-        * added Erik Veenstra to AUHTORS for work on enumerable/group_by and cluster_by
-        * minor improvement to test task to specifically read test_*.rb files
-        * removed enumerable/partition.rb
-        * move enumerable/partition.rb methods to collect.rb.
-        * Improved Integer#of.
-        * Minor improvements to collect.rb and partition.rb
-        * Deprecated nonuniq!, bug fixed cluster_by and aliased group_by and partition_by.
-        * Rennamed Enumerable#partition_by to group_by (like RUby 1.9) and fixed bug in cluster_by.
-        * update quick docs
-        * Doc updates
-
-
-2007-10-02  transami
-
-        * Added Oliver Renaud to the AUTHORS list (oops!)
-        * update README to not use folded lines
-        * spellchecked README
-        * update test task and test_aop.rb
-        * minor update to meta/project.yaml
-        * updates to groups task and methods task and version to 'stable'
-        * updated test task to allow 'live' test
-        * update AUTHORS
-        * update test task and move AUTHORS file to toplevel
-        * moved note/ to doc/notes
-        * update tasks for core/fore move and moved todo to dev/
-        * moved fore to core (and core to methods)
+    * Added Oliver Renaud to the AUTHORS list (oops!)
+    * update README to not use folded lines
+    * spellchecked README
+    * update test task and test_aop.rb
+    * minor update to meta/project.yaml
+    * updates to groups task and methods task and version to 'stable'
+    * updated test task to allow 'live' test
+    * update AUTHORS
+    * update test task and move AUTHORS file to toplevel
+    * moved note/ to doc/notes
+    * update tasks for core/fore move and moved todo to dev/
+    * moved fore to core (and core to methods)
 
 
 2007-09-20  transami
@@ -2019,7 +1802,7 @@ Changes:
     * minor touchup to opencascade
 
 
-== 1.6.0
+== 1.6.0 / 2006-07-20
 
 Changes:
 
@@ -2208,6 +1991,9 @@ Changes:
 
 
 == 1.0.0 / 2005-12-04
+
+Okay. Now we've finally hit our 1.0.0 relase. Yea! Does it desrve 1.0 at this point?
+Ah, well close enough. Mainly there won't be anymore silly development names ;)
 
 Changes:
 
@@ -2539,6 +2325,13 @@ Changes:
     * Added services.rb, a lib for managing methods as first class objects
     * Fixed/cleaned-up orm_supprt.rb
 
+== 0.3.1
+
+Changes:
+
+    * Aliased #autoload_classes with #autorequire.
+    * Added #strfbits and #strfbytes to binary_multiplers.rb.
+
 
 == 0.3.0
 
@@ -2557,14 +2350,6 @@ Changes:
       Individually these methods could have very well ended up in Nano Methods,
       but given there quantity and interrelation they were more suitable to a
       module, and thus placed here.
-
-
-== 0.3.1
-
-Changes:
-
-    * Aliased #autoload_classes with #autorequire.
-    * Added #strfbits and #strfbytes to binary_multiplers.rb.
 
 
 == 0.2.0
