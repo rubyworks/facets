@@ -1,0 +1,58 @@
+--- 
+layout: post
+title: Facets 2.8 Release
+author: Trans
+tags:
+- Release
+---
+
+Facets 2.8 effectively completes the MORE library clean-up which peaked
+with the previous 2.7 release. In so doing, five additional libraries
+have been deprecated:
+
+* fileable.rb    (too esoteric)
+* ioredirect.rb  (needs better implementation)
+* coroutine.rb   (because of Fiber)
+* capsule.rb     (may be spun-off)
+* recorder.rb    (may be spun-off)
+
+Three other libraries have been deprecated, but have been spun-off
+to the new 'ansi' project:
+
+* ansicode.rb
+* progressbar.rb
+* logger.rb
+
+This version of Facets also reverts a few of the deprecations made before --
+reconsiderations made due to analysis of the code as suitable for release
+as separate projects. These libs will thus remain in Facets's MORE library
+at least for the forseeable future.
+
+* ini.rb
+* linkedlist.rb
+* matcher.rb
+* memoizer.rb
+* roman.rb
+* semaphore.rb
+
+Other minor enhancements have also been made in the release. These include:
+
+* Kernel#extend can now take a block
+* Fixed kernel#d so it is useable
+* Added method #at_rand to Range in random.rb (thanks to Tyler Rick).
+* Added method #map_detect to Enumerable (thanks to Scott Taylor).
+* Added method #/ to String, which calls File.join.
+* Added method #newlines and #cleanlines to String.
+* String#titlecase now handles apostrophes.
+* BasicObject/BlankSlate is more compliant with 1.9.1's design.
+* Enumerable#count can take multiple items, treats them as a logical Or.
+* Class#class_extend extends class level, rather than use class_eval.
+* Integer#succ(n) becomes Fixnum#succ(n) in succ.rb.
+* inheritor.rb has been rewritten.
+* The Shellwords extensions have been reworked.
+* Added #similarity method to String.
+* Added a Levenshtein edit_distance method to String.
+
+In addition to all this, we have recently set up a new Ruby 1.9 compliance procedure
+using RunCodeRun.com. Actually RunCodeRun helps us to ensure 1.8.6 compabiltiy as well.
+This is great tool for improving code quality, and comes highly recommended.

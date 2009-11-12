@@ -27,8 +27,6 @@ instance_methods:
 - !ruby/object:RDoc::RI::MethodSummary 
   name: commonality
 - !ruby/object:RDoc::RI::MethodSummary 
-  name: compact_collect
-- !ruby/object:RDoc::RI::MethodSummary 
   name: compact_map
 - !ruby/object:RDoc::RI::MethodSummary 
   name: count

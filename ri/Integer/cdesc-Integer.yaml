@@ -4,12 +4,6 @@ attributes: []
 class_methods: []
 
 comment: 
-- !ruby/struct:RDoc::Markup::Flow::P 
-  body: Calculate the number of digits in an integer.
-- !ruby/struct:RDoc::Markup::Flow::P 
-  body: "1.length #=&gt; 1 10.length #=&gt; 2 100.length #=&gt; 3"
-- !ruby/struct:RDoc::Markup::Flow::P 
-  body: "CREDIT: Victor H. Goff III"
 constants: []
 
 full_name: Integer
@@ -36,8 +30,6 @@ instance_methods:
   name: fac
 - !ruby/object:RDoc::RI::MethodSummary 
   name: factorial
-- !ruby/object:RDoc::RI::MethodSummary 
-  name: length
 - !ruby/object:RDoc::RI::MethodSummary 
   name: multiple?
 - !ruby/object:RDoc::RI::MethodSummary 

@@ -11,4 +11,4 @@ full_name: Module#ancestor?
 is_singleton: false
 name: ancestor?
 params: ( mod )
-visibility: public
+visibility: private

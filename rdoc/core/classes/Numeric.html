@@ -61,6 +61,9 @@
             <li class="file"><a href="../files/lib/core/facets/numeric/approx_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
               class="thickbox" title="lib/core/facets/numeric/approx.rb">lib/core/facets/numeric/approx.rb</a></li>
           
+            <li class="file"><a href="../files/lib/core/facets/numeric/length_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/core/facets/numeric/length.rb">lib/core/facets/numeric/length.rb</a></li>
+          
             <li class="file"><a href="../files/lib/core/facets/boolean_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
               class="thickbox" title="lib/core/facets/boolean.rb">lib/core/facets/boolean.rb</a></li>
           
@@ -106,42 +109,47 @@
           
             
             <li class="method">
-              <a href="#M000792">#approx?</a>
+              <a href="#M000067">#approx?</a>
             </li>
           
             
             <li class="method">
-              <a href="#M001279">#blank?</a>
+              <a href="#M000554">#blank?</a>
             </li>
           
             
             <li class="method">
-              <a href="#M001075">#clone?</a>
+              <a href="#M000350">#clone?</a>
             </li>
           
             
             <li class="method">
-              <a href="#M000779">#distance</a>
+              <a href="#M000052">#distance</a>
             </li>
           
             
             <li class="method">
-              <a href="#M001074">#dup?</a>
+              <a href="#M000349">#dup?</a>
             </li>
           
             
             <li class="method">
-              <a href="#M000784">#round_at</a>
+              <a href="#M000068">#length</a>
             </li>
           
             
             <li class="method">
-              <a href="#M000786">#round_to</a>
+              <a href="#M000058">#round_at</a>
             </li>
           
             
             <li class="method">
-              <a href="#M000831">#to_b</a>
+              <a href="#M000059">#round_to</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000106">#to_b</a>
             </li>
           
         </ul>
@@ -285,7 +293,16 @@
         <h1>Numeric</h1>
       
 
-      
+      <p>
+Calculate the number of digits in an integer.
+</p>
+<p>
+1.length #=> 1 10.length #=> 2 100.length #=> 3
+</p>
+<p>
+CREDIT: Victor H. Goff III
+</p>
+
     </div>
 
     <!-- Constants -->
@@ -301,7 +318,7 @@
 
     
       <div id="approx--method" class="method-detail ">
-        <a name="M000792"></a>
+        <a name="M000067"></a>
 
         <div class="method-heading">
         
@@ -340,7 +357,7 @@ CREDIT: Trans
 
     
       <div id="blank--method" class="method-detail ">
-        <a name="M001279"></a>
+        <a name="M000554"></a>
 
         <div class="method-heading">
         
@@ -372,7 +389,7 @@ CREDIT: Trans
 
     
       <div id="clone--method" class="method-detail ">
-        <a name="M001075"></a>
+        <a name="M000350"></a>
 
         <div class="method-heading">
         
@@ -402,7 +419,7 @@ CREDIT: Trans
 
     
       <div id="distance-method" class="method-detail ">
-        <a name="M000779"></a>
+        <a name="M000052"></a>
 
         <div class="method-heading">
         
@@ -440,7 +457,7 @@ but it provides an alternative for common naming between variant classes.
 
     
       <div id="dup--method" class="method-detail ">
-        <a name="M001074"></a>
+        <a name="M000349"></a>
 
         <div class="method-heading">
         
@@ -469,8 +486,42 @@ but it provides an alternative for common naming between variant classes.
       </div>
 
     
+      <div id="length-method" class="method-detail ">
+        <a name="M000068"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">length</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Returns the length of an integer as an integer.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="length-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/numeric/length.rb, line 11</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">length</span>
+    <span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">length</span>
+  <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
       <div id="round-at-method" class="method-detail ">
-        <a name="M000784"></a>
+        <a name="M000058"></a>
 
         <div class="method-heading">
         
@@ -491,7 +542,7 @@ lib is in the numeric folder, but we&#8217;ll add this here for
 convenience.
 </p>
 <p>
-See <a href="Float.html#M000790">Float#round_at</a>.
+See <a href="Float.html#M000062">Float#round_at</a>.
 </p>
           
 
@@ -512,7 +563,7 @@ See <a href="Float.html#M000790">Float#round_at</a>.
 
     
       <div id="round-to-method" class="method-detail ">
-        <a name="M000786"></a>
+        <a name="M000059"></a>
 
         <div class="method-heading">
         
@@ -525,7 +576,7 @@ See <a href="Float.html#M000790">Float#round_at</a>.
         <div class="method-description">
           
           <p>
-See <a href="Float.html#M000791">Float#round_to</a>.
+See <a href="Float.html#M000065">Float#round_to</a>.
 </p>
           
 
@@ -546,7 +597,7 @@ See <a href="Float.html#M000791">Float#round_to</a>.
 
     
       <div id="to-b-method" class="method-detail ">
-        <a name="M000831"></a>
+        <a name="M000106"></a>
 
         <div class="method-heading">
         

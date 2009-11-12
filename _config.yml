@@ -1,0 +1,6 @@
+---
+source      : .
+destination : output-sample
+markdown    : rdiscount
+pygments    : true
+

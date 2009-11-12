@@ -13,4 +13,4 @@ full_name: Module#prepend
 is_singleton: false
 name: prepend
 params: (aspect)
-visibility: public
+visibility: private

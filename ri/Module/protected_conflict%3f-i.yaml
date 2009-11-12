@@ -9,4 +9,4 @@ full_name: Module#protected_conflict?
 is_singleton: false
 name: protected_conflict?
 params: (other)
-visibility: private
+visibility: public

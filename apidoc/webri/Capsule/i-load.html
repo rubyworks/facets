@@ -1,8 +1,0 @@
-<br/><b>Capsule#load</b><hr />
-load(file, wrap = false)<br />
-<p />
-From /home/trans/Documents/programs/current/facets/doc/ri/Capsule/cdesc-Capsule.yaml<hr />
-Loads <i>file</i> into the capsule. Searches relative to the local dir, that is, the dir of the file given in the original call to <tt>Capsule.load(file)</tt>, loads the file, if found, into this Capsule's scope, and returns true. If the file is not found, falls back to <tt>Kernel.load</tt>, which searches on <tt>$LOAD_PATH</tt>, loads the file, if found, into global scope, and returns true. Otherwise, raises <tt>LoadError</tt>.<p />
-The <i>wrap</i> argument is passed to <tt>Kernel.load</tt> in the fallback case, when the file is not found locally.<p />
-Typically called from within the main file to load additional sub files, or from those sub files.<p />
-<br/><br/>
