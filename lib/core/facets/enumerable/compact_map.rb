@@ -3,15 +3,13 @@ module Enumerable
   # A more versitle #compact method. It can be used to
   # collect and filter items out in one single step.
   #
-  #   [1,2,3].compact_map do |n|
+  #   (1..3).compact_map do |n|
   #     n < 1 ? nil : n
   #   end
   #
   # _produces_
   #
   #   [2,3]
-  #
-  # NOTE: Perhaps nicer to have as added functionality for #compact.
   #
   # CREDIT: Trans
 
@@ -30,6 +28,5 @@ module Enumerable
     y
   end
 
-  alias_method :compact_collect, :compact_map
 end
 
