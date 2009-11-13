@@ -3,4 +3,4 @@ source      : .
 destination : output-sample
 markdown    : rdiscount
 pygments    : true
-
+url         : http://rubyworks.github.com/facets
