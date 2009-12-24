@@ -208,7 +208,7 @@ class DateTime
   # self will just be returned unaltered, since there's no clean way
   # to map it to a Time
   def to_time
-    self.offset == 0 ? ::Time.utc_time(year, month, day, hour, min, sec) : self
+    self.offset == 0 ? ::Time.utc(year, month, day, hour, min, sec) : self
   end
 
   # To be able to keep Times, Dates and DateTimes interchangeable on conversions
