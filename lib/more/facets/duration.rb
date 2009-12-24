@@ -128,7 +128,7 @@ class Duration
     self.class.new(@seconds - other.to_i, segments)
   end
 
-  def +(other)
+  def *(other)
     self.class.new(@seconds * other.to_i, segments)
   end
 
