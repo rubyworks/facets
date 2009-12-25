@@ -2,7 +2,7 @@ class Numeric
 
   # Returns +self+.
 
-  def length
+  def size
     self
   end
 
