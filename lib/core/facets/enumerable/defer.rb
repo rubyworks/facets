@@ -23,10 +23,6 @@ module Enumerable
   #     take(10).
   #     each { |i| puts i }
   #
-  # Using with a block, defer(&b), is equivalent to:
-  #
-  #   defer.filter(&b)
-  #
   # Use a method like to_a or to_h at the end of the chain when you want an
   # Array or Hash built with the results, or each{...} if you just want
   # to output each result and discard it.

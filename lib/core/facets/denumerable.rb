@@ -3,8 +3,8 @@ require 'facets/enumerator'
 
 # = Denumerable
 #
-# Classes which include Enumerable::Filterable will get versions
-# of map, select etc. which return a Filter, so that they work
+# Classes which include Denumerable will get versions
+# of map, select etc. which return a Denumerator, so that they work
 # horizontally without creating intermediate arrays.
 #
 module Denumerable
