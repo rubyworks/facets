@@ -1,6 +1,4 @@
-# Test for facets/enumerable/collect
-
-require 'facets/enumerable/collect.rb'
+require 'facets/enumerable/compact_map.rb'
 require 'test/unit'
 
 class TestEnumerable < Test::Unit::TestCase
@@ -14,14 +12,9 @@ class TestEnumerable < Test::Unit::TestCase
   #  assert_equal( e, a )
   #end
 
-  def test_compact_collect
-    a = [1,2,nil,4].compact_collect { |e| e }
+  def test_compact_map
+    a = [1,2,nil,4].compact_map { |e| e }
     assert_equal( [1,2,4], a )
-  end
-
-  def test_collect_with_index
-    a = [1,2,3].collect_with_index{ |e,i| e*i }
-    assert_equal( [0,2,6], a )
   end
 
 =begin

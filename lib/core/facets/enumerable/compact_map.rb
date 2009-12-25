@@ -28,5 +28,7 @@ module Enumerable
     y
   end
 
+  alias_method :compact_collect, :compact_map
+
 end
 
