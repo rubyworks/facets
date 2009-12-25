@@ -113,14 +113,14 @@ class FileList
 
   # List of array methods (that are not in +Object+) that need to be
   # delegated.
-  ARRAY_METHODS = (Array.instance_methods - Object.instance_methods).map(&:to_sym)
+  ARRAY_METHODS = (Array.instance_methods - Object.instance_methods).map(&:to_s)
 
   # List of additional methods that must be delegated.
-  MUST_DEFINE = %w[to_a inspect].map(&:to_sym)
+  MUST_DEFINE = %w[to_a inspect].map(&:to_s)
 
   # List of methods that should not be delegated here (we define
   # special versions of them explicitly below).
-  MUST_NOT_DEFINE = %w[to_a to_ary partition *].map(&:to_sym)
+  MUST_NOT_DEFINE = %w[to_a to_ary partition *].map(&:to_s)
 
   # List of delegated methods that return new array values which
   # need wrapping.
@@ -128,7 +128,7 @@ class FileList
     map collect sort sort_by select find_all reject grep
     compact flatten uniq values_at
     + - & |
-  ].map(&:to_sym)
+  ].map(&:to_s)
 
   DELEGATING_METHODS = (ARRAY_METHODS + MUST_DEFINE - MUST_NOT_DEFINE).sort.uniq
 
