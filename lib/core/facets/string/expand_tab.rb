@@ -4,9 +4,12 @@ class String
   # then tabs are simply removed. Raises an exception if +n+
   # is negative.
   #
-  #   "\t\tHey".expand_tab(2)  #=> "    Hey"
+  #   "\t\tHey".expand_tabs(2)  #=> "    Hey"
   #
   # Thanks to GGaramuno for a more efficient algorithm. Very nice.
+  #
+  # TODO: Don't much care for the name String#expand_tab.
+  # What about a more concise name like #detab?
   #
   # CREDIT: Gavin Sinclair, Noah Gibbs, GGaramuno
 
@@ -27,9 +30,6 @@ class String
 
   # Pluralized form of #expand_tab.
   alias_method :expand_tabs, :expand_tab
-
-  # NOTE: Don't much care for the name String#expand_tab.
-  # What about a more concise name like #detab?
 
 end
 
