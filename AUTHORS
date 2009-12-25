@@ -9,6 +9,9 @@
 The following developers have recently contributed to the development of Facets.
 They are held in the highest regard for their efforts.
 
+* Roger Pack          Added generational depth to Class#descendants.
+* Marco Otte-Witte    Fixed return value of Kernel#extend.
+* Mauro Tortonesi     Fixed issues with duration.rb and date.rb.
 * Sandor Szücs        Fixes for String#align_right and #align_left.
 * Tyler Rick          Fixed bug in Time#hence and #ago.
 * Brian Candler       Provided Enumerator::Filter.
@@ -64,6 +67,8 @@ All of their hard work is greatly appreciated.
 * Jan Molic
 * George Moschovitis
 * Michael Neumann
+* Marco Otte-Witte
+* Roger Pack
 * Tim Pease
 * Jonas Pfenniger
 * Ryan Platte
@@ -75,6 +80,7 @@ All of their hard work is greatly appreciated.
 * Gavin Sinclair
 * Tilo Sloboda
 * Phil Tomson
+* Mauro Tortonesi
 * Peter Vanbroekhoven
 * Jim Weirich
 * Jeff Wood
