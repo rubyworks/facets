@@ -24,14 +24,29 @@
 # ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
 # FOR A PARTICULAR PURPOSE.
 
-#
+require 'facets/kernel/false'
+require 'facets/kernel/true'
+
 class String
 
   # Interpret common affirmative string meanings as true,
-  # otherwise false. Balnk sapce and case are ignored.
+  # otherwise nil or false. Blank space and case are ignored.
   # The following strings that will return true:
   #
-  #   <tt>true</tt>,<tt>yes</tt>,<tt>on</tt>,<tt>t</tt>,<tt>1</tt>,<tt>y</tt>,<tt>==</tt>
+  #   true
+  #   yes
+  #   on
+  #   t
+  #   1
+  #   y
+  #   ==
+  #
+  # The following strings will return nil:
+  #
+  #   nil
+  #   null
+  #
+  # All other strings return false.
   #
   # Examples:
   #
@@ -93,28 +108,6 @@ module Kernel
   #
   def to_b
     self ? true : false
-  end
-
-  # Returns true is an object is class TrueClass,
-  # otherwise false.
-  #
-  #   true.true?   #=> true
-  #   false.true?  #=> false
-  #   nil.true?    #=> false
-  #
-  def true?
-    (true == self)
-  end
-
-  # Returns true is an object is class FalseClass,
-  # otherwise false.
-  #
-  #   true.false?   #=> false
-  #   false.false?  #=> true
-  #   nil.false?    #=> false
-  #
-  def false?
-    (false == self)
   end
 
   # Returns true is an object is class TrueClass
