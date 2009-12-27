@@ -3,9 +3,9 @@ require 'facets/enumerator'
 
 # = Denumerable
 #
-# Classes which include Denumerable will get versions
-# of map, select etc. which return a Denumerator, so that they work
-# horizontally without creating intermediate arrays.
+# Classes which include Denumerable will get versions of map,
+# select, and so on, which return a Denumerator, so that they
+# work horizontally without creating intermediate arrays.
 #
 module Denumerable
 
