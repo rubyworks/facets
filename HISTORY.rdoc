@@ -1,9 +1,20 @@
 = Facets Release History
 
+== 2.8.1 / 2009-12-25
+
+This release simply fixes a few minor issues.
+
+Changes:
+
+* Added Pathname#glob_relative to pathanme.rb.
+* Loading string/tab.rb no longer loads margin.rb or expand_tab.rb.
+* Fixed FileList method delegations.
+* Numeric#length and #size return +self+, not to_s.length.
+
 
 == 2.8.0 / 2009-11-05
 
-acets 2.8 effectively completes the MORE library clean-up which peaked
+Facets 2.8 effectively completes the MORE library clean-up which peaked
 with the previous 2.7 release. Another eight libraries have been deprecated,
 a few of them spun-off to a separate project. However, this verison also
 reverts a few of the deprecations made in the last version. These libs 
