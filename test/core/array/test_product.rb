@@ -19,11 +19,6 @@ class TC_Array_Product < Test::Unit::TestCase
     assert_equal( r, z )
   end
 
-  def test_op_product
-    a = [1,2,3] ** [4,5,6]
-    assert_equal( [[1, 4],[1, 5],[1, 6],[2, 4],[2, 5],[2, 6],[3, 4],[3, 5],[3, 6]], a )
-  end
-
   #def test_product_01
   #  i = [[1,2], [4], ["apple", "banana"]]
   #  o = [[1, 4, "apple"], [1, 4, "banana"], [2, 4, "apple"], [2, 4, "banana"]]
