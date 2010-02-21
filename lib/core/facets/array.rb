@@ -1,6 +1,7 @@
-dir, base = *File.split(__FILE__)
-base = base.chomp('.rb')
-Dir[File.join(dir, base, '*')].each do |lib|
+path = __FILE__.chomp('.rb')
+base = File.basename(path)
+Dir[File.join(path, '*.rb')].each do |lib|
+  #require lib # why is this so much slower?
   require "facets/#{base}/#{File.basename(lib)}"
 end
 
