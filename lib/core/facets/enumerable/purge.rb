@@ -30,11 +30,11 @@ module Enumerable
     if block_given?
       each do |e|
         y = yield(e)
-        r << e unless trash.any?( |t| t == y }
+        r << e unless trash.any?{|t| t == y}
       end
     else
       each do |e|
-        r << e unless trash.any?( |t| t == e }
+        r << e unless trash.any?{|t| t == e}
       end
     end
     r
