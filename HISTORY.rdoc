@@ -1,15 +1,58 @@
 = Facets Release History
 
+== 2.8.2 / 2009-02-22
+
+This release fixes a bug by removing Numeric#size. Turns out that was a
+core method already. It includes an "auditing" of the core enumerable
+method which has led to a few modifications most noteable amoung them
+renaming #map_detect to #find_yield and #compact_map to #purge.
+
+Changes:
+
+* 7 New Core Extensions
+
+  * Add Enumerable#each_with_object.
+  * Add #collapse which is a shortcut for flatten.compact.
+  * Add Numeric#spacing (Mr. Groff)
+  * Add Array#uniq_by! to complement Enumerable#uniq_by.
+  * Add String#exclude? as opposite of #include?
+  * Add Enumerable#exclude? as opposite of #include?
+  * Add Proc#bind_to 
+
+* 2 Extensions Renamed
+
+  * Rename Enumerable#compact_map to #purge.
+  * Rename Enumerable#map_detect to #find_yield.
+
+* 4 Deprecations
+
+  * Deprecate #inject!/#injecting in favor of #filter.
+  * Deprecate Array#** as alias of #product.
+  * Remove Numeric#size, as it was already used by core.
+  * Spun tracepoint.rb off as a seprate library.
+
+* 3 Other Changes
+
+  * Integer#multiple? handles zero as an argument.
+  * facets.rb is now dynamically loaded instead of code generated.
+  * General imporvements to date.rb.
+
+
 == 2.8.1 / 2009-12-25
 
 This release simply fixes a few minor issues.
 
 Changes:
 
-* Added Pathname#glob_relative to pathanme.rb.
-* Loading string/tab.rb no longer loads margin.rb or expand_tab.rb.
-* Fixed FileList method delegations.
-* Numeric#length and #size return +self+, not to_s.length.
+* 1 New Standard Extension
+
+  * Added Pathname#glob_relative to pathanme.rb.
+
+* 3 Adjustments
+
+  * Loading string/tab.rb no longer loads margin.rb or expand_tab.rb.
+  * Fixed FileList method delegations.
+  * Numeric#length and #size return +self+, not +to_s.length+.
 
 
 == 2.8.0 / 2009-11-05
@@ -823,40 +866,41 @@ Changes:
 
 == 2.2.1 / 2007-12-22
 
-(2.2.1) This release get rid of the underlying methods subdir.
-All method redirects are now in core, to ensure
-there are no more name clashes.
+This release get rid of the underlying methods subdir.
+All method redirects are now in core, to ensure there
+are no more name clashes.
 
 Changes:
 
-    * Got rid of methods subdir. All method redirects are in core/.
+* Method Renames
 
-    * Moved doc/wiki to apiwiki b/c of Rubyforge's wiki.
-    * Removed doc/api dir.
-    * Added wiki.
-    * Prepare for 2.2.1 release.
-    * Update per-module/class files.
-    * Moved binding/cflow.rb to caller.rb.
-    * Fixed up binding extensions.
-    * Update tests and prepare for next version.
-    * Ditto.
-    * Renamed a couple test tasks.
+  * Moved string/format.rb to string/wrap.rb.
+  * Updated String#brief.
+  * Moved binding/cflow.rb to caller.rb.
+  * Moved core hash/keyize to more.
 
-    * Moved methods and groups task to trash.
-    * Moved core hash/keyize to more.
-    * Added test class/remove_descendents.rb.
-    * Added all remaining per-method require libs from methods/ --will need to wrok through these over time.
-    * Added trash work directory.
+* Other Enhancements
 
-    * Adjust text according to per-method file changes.
-    * All hash method, but the conversion methods, are now rpresented in core/facets/hash.
-    * Added a few more Hash per-method files.
-    * Add per-method libs for hash.
-    * Updated facets/string.rb.
-    * Moved string/format.rb to string/wrap.rb.
-    * Updated String#brief.
+  * Fixed up binding extensions.
 
-    * Renamed ROLLRC to facets.roll.
+* Administrative Adjustments
+
+  * Got rid of methods subdir. All method redirects are in core/.
+  * Moved doc/wiki to apiwiki b/c of Rubyforge's wiki.
+  * Removed doc/api dir.
+  * Added wiki.
+  * Renamed a couple test tasks.
+  * Update per-module/class files.
+  * Moved methods and groups task to trash.
+  * Added test class/remove_descendents.rb.
+  * Added all remaining per-method require libs from methods/ (will need to wrok through these over time).
+  * Added trash work directory.
+  * Adjust text according to per-method file changes.
+  * All hash method, but the conversion methods, are now represented in core/facets/hash.
+  * Added a few more Hash per-method files.
+  * Add per-method libs for hash.
+  * Updated facets/string.rb.
+  * Renamed ROLLRC to facets.roll.
 
 
 == 2.2.0 / 2007-12-13
@@ -866,31 +910,53 @@ It also adds Matthew Harris' duration.rb library. Bug thanks to Matthew!
 
 Changes:
 
-    * A lot of rdoc updates to core extensions --as promised ;)
-    * Just about every method now has at least a brief explinaiton and an example.
-    * integer/bitmask.rb has changed a bit --pun intended ;) Deprecated some methods and now use "~" instead of "-" to clear bits.
+* Additions
+
+    * Added Matthew Harris' Duration class.
+    * Added Hash#slice and Hash#except (didn't we have this before?)
+    * Added registerable.rb, updated history.
+    * Added #include_as to facets/namespace.rb.
+    * Added op.rb to string.rb.
+    * Added String/op.rb with String#- method.
+
+* Method Renames and Reorganizations
+
     * The name Array#unzip didn't makes sense, it was renamed to #modulate (though #collate seems better?)
     * Renamed Enumerable#collate to #mash (Map hASH); #collate and #graph remain aliases for the time being.
+    * Renamed accessor #attributes to #instance_attributes.
+    * Renamed Enumerable #collate to #mash. (old name, along with graph, will be an alias for time being)
+    * Divided enumerable/collect into split.rb and each.rb as well.
+    * Moved mapsend.rb to thread.rb.
+    * Updated mapsend.rb to focus on threads.
+    * Moved continuation extensions to more lib.
+
+* Deprecations
+
     * Deprecated Module#include_and_extend. Just use both silly.
     * More lib pp_s.rb has been removed. Use #pretty_inspect instead.
+    * Removed continuation from core.
+    * Removed pp_s.rb (use pretty_inspect) add continuation.rb.
+    * Remove kernel/require_esc.rb.
+
+* Other Enhancements
+
+    * integer/bitmask.rb has changed a bit --pun intended ;) Deprecated some methods and now use "~" instead of "-" to clear bits.
     * Split binding extensions up a bit more finely --eval.rb sprouted here.rb, self.rb and defined.rb.
     * Move Time#stamp out of conversion.rb and into time/ dir, and remove to_s alias.
     * Preliminary addition of Matthew Harris' excellent duration.rb lib (will integrate with times.rb better in future).
+    * Minor edit to basicobject.rb in light of 1.9.
+    * Minor adjustments to lazy.rb to fix warnings by Ruby 1.9.
     * Added if clauses to handle upcoming Ruby 1.9 gracefully. Facets should now be just about ready for use with 1.9.
 
-    * Fixed project.yaml summary.
-    * Update AUTHORS list.
-    * Update release notes.
-    * Update CHANGES for 2.2.0.
-    * VERSION 2.2.0
-    * Added some missing tests dur to recent separations.
-    * Minor update to test/general.
-    * Updated tests to reflect recent changes.
-    * Fixed test for continuation and removed test for pp_s.rb.
-    * Move task/docpkg to task/doc/zip.
+* Documentation Enhancements
+
+    * A lot of rdoc updates to core extensions --as promised ;)
+    * Just about every method now has at least a brief explinaiton and an example.
+
+* Administrative Adjustments
+
     * Moved task/config.yaml to meta/ per new Ratch.
     * Moved task/special to task/doc.
-    * Minor updates to test and install tasks.
     * Updated todo list (in dev/).
     * Copied log/history.rd to CHANGES.
     * Removed log/history.rd and log/todo.rd
@@ -901,59 +967,12 @@ Changes:
     * Divided binding up into a few more pieces.
     * Fixed kernel/instance to play nice with 1.9.
     * Added test for string/op.rb.
-
-    * Renamed accessor #attributes to #instance_attributes.
-
-    * Removed continuation from core.
-    * Removed pp_s.rb (use pretty_inspect) add continuation.rb.
-    * Documentaiton improvements and moved continuation extension to more lib.
+    * Added test_collect.rb split-offs and test_mash inplace of test_collate.
+    * Cleanup test headers.
     * Added 1.9 check in continuation/create.rb.
-    * Added op.rb to string.rb.
-    * Added String/op.rb with String#- method.
-
-    * Minor edit to basicobject.rb in light of 1.9.
-    * Minor adjustments to lazy.rb to fix warnings by Ruby 1.9.
-    * Added Matthew Harris' Duration class.
-
-    * Added Hash#slice and Hash#except (didn't we have this before?)
-
-    * Minor adjust to website.
-    * Improved on tests in relation to doc work.
-    * Handled some minor bugs found while documenting.
-    * Mode doc improvements.
-
     * Add a couple new task for rdoc gen.
     * Added nbsp to quickopts task.
-    * Website updates.
     * Work on website using siteparts.
-    * Added registerable.rb, updated history.
-    * Added #include_as to facets/namespace.rb.
-    * Cleanup test hearders.
-    * Rdoc improvements.
-
-    * Removed test for kernel/require_esc.rb
-    * Remove kernel/require_esc.rb.
-    * Updated integer docs.
-    * Updates to kernel test headers.
-    * Documentation updates to kernel extensions.
-
-    * Update docs continued.
-    * Update hash test headers.
-    * Updated hash extension docs.
-    * Updated docs.
-    * Added some missing tests.
-    * Continued docs update.
-    * Update docs.
-    * Added test_collect.rb split-offs and test_mash inplace of test_collate.
-    * Updated lots of test headers.
-    * Renamed Enumerable #collate to #mash. (old name, along with graph, will be an alias for time being)
-    * Lots of doc updates.
-    * Updated documentation for array extensions.
-
-    * Updated AUTHORS.
-    * Divided enumerable/collect into split.rb and each.rb as well.
-    * Moved mapsend.rb to thread.rb.
-    * Updated mapsend.rb to focus on threads.
 
 
 == 2.1.3 / 2007-11-28
