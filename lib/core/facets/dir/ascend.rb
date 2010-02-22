@@ -15,7 +15,7 @@ class Dir
   #   /
   #
   # CREDIT: Daniel Berger, Jeffrey Schwab
-
+  #
   # TODO: make it work with windows too
   # use FileTest.root?
 
@@ -57,3 +57,4 @@ class Dir
   end
 
 end
+

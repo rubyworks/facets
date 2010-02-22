@@ -5,8 +5,3 @@ by simply:
 
   require 'facets'
 
-QED.
-
----
-require 'ae/should'
-

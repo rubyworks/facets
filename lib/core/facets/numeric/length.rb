@@ -1,7 +1,7 @@
 class Numeric
 
-  # Returns +self+.
-
+  # Returns +self+, useful for polymorphic cases.
+  #
   def length
     self
   end

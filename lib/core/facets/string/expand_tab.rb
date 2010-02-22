@@ -8,12 +8,12 @@ class String
   #
   # Thanks to GGaramuno for a more efficient algorithm. Very nice.
   #
-  # TODO: Don't much care for the name String#expand_tab.
-  # What about a more concise name like #detab?
-  #
   # CREDIT: Gavin Sinclair, Noah Gibbs, GGaramuno
+  #
+  # TODO: Don't much care for the name String#expand_tabs.
+  # What about a more concise name like #detab?
 
-  def expand_tab(n=8)
+  def expand_tabs(n=8)
     n = n.to_int
     raise ArgumentError, "n must be >= 0" if n < 0
     return gsub(/\t/, "") if n == 0
@@ -28,8 +28,8 @@ class String
     str
   end
 
-  # Pluralized form of #expand_tab.
-  alias_method :expand_tabs, :expand_tab
+  # Singular form of #expand_tabs.
+  alias_method :expand_tab, :expand_tabs
 
 end
 

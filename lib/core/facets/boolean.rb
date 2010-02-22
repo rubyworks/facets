@@ -24,8 +24,65 @@
 # ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
 # FOR A PARTICULAR PURPOSE.
 
-require 'facets/kernel/false'
 require 'facets/kernel/true'
+require 'facets/kernel/false'
+
+module Kernel
+
+  # Boolean conversion for not being nil or false.
+  # Other classes may redefine this to suite the
+  # particular need.
+  #
+  #   "abc".to_b   #=> true
+  #   true.to_b    #=> true
+  #   false.to_b   #=> false
+  #   nil.to_b     #=> false
+  #
+  def to_b
+    self ? true : false
+  end
+
+  # Returns true is an object is class TrueClass
+  # or FalseClass, otherwise false.
+  #
+  #   true.bool?   #=> true
+  #   false.bool?  #=> true
+  #   nil.bool?    #=> false
+  #
+  def bool?
+    (true == self or false == self)
+  end
+
+end
+
+
+class Object
+  def to_bool
+    true
+  end
+end
+
+
+class TrueClass
+  def to_bool
+    self
+  end
+end
+
+
+class FalseClass
+  def to_bool
+    self
+  end
+end
+
+
+class NilClass
+  def to_bool
+    false
+  end
+end
+
 
 class String
 
@@ -94,56 +151,3 @@ class Numeric
 
 end
 
-
-module Kernel
-
-  # Boolean conversion for not being nil or false.
-  # Other classes may redefine this to suite the
-  # particular need.
-  #
-  #   "abc".to_b   #=> true
-  #   true.to_b    #=> true
-  #   false.to_b   #=> false
-  #   nil.to_b     #=> false
-  #
-  def to_b
-    self ? true : false
-  end
-
-  # Returns true is an object is class TrueClass
-  # or FalseClass, otherwise false.
-  #
-  #   true.bool?   #=> true
-  #   false.bool?  #=> true
-  #   nil.bool?    #=> false
-  #
-  def bool?
-    (true == self or false == self)
-  end
-
-end
-
-
-class Object
-  def to_bool
-    return true
-  end
-end
-
-class TrueClass
-  def to_bool
-    self
-  end
-end
-
-class FalseClass
-  def to_bool
-    self
-  end
-end
-
-class NilClass
-  def to_bool
-    false
-  end
-end

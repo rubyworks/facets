@@ -135,7 +135,7 @@ class Pathname
 
   #
   def empty?
-    Dir.glob(::File.join(self.to_s, '*')).empty?
+    Dir.glob(::File.join(to_s, '*')).empty?
   end
 
   #
