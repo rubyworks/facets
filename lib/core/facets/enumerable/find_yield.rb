@@ -30,7 +30,7 @@ module Enumerable
 
   # DEPRECATE: This has been renamed to #find_yield.
   def map_detect(fallback=nil)
-    find_yeild(fallback)
+    find_yield(fallback)
   end
 
 end
