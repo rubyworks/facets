@@ -34,11 +34,5 @@ module Enumerable
 
   end
 
-  # OLD NAME
-  # CREDIT: David Black, Louis J Scoras
-  #def injecting(k)
-  #  each{ |i| yield(k, i) }; k
-  #end
-
 end
 

@@ -31,19 +31,20 @@ module Enumerable
     if block_given?
       Denumerator.new do |output|
         each do |*input|
-          yield output, *input
+          yield(output, *input)
         end
       end
     else
       Denumerator.new do |output|
         each do |*input|
-          output.yield *input
+          output.yield(*input)
         end
       end
     end
   end
 
 end
+
 
 =begin
   

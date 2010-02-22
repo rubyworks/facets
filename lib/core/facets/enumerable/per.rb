@@ -1,7 +1,7 @@
 require 'facets/functor'
 
 #--
-# TODO: Consider Enumerator methods
+# TODO: Consider Enumerator methods.
 #++
 
 module Enumerable
@@ -22,7 +22,7 @@ module Enumerable
       #  __send__(enum_method, *enum_args){ |x| x.__send__(op, *args) } #, &blk) }
       #end
     else
-      @__per__ ||= Functor.new do |enum_method, *enum_args|
+      Functor.new do |enum_method, *enum_args|
         Permeator.new(self, enum_method, *enum_args)
         #Functor.new do |op, *args|
         #  __send__(enum_method, *enum_args){ |x| x.__send__(op, *args) } #, &blk) }

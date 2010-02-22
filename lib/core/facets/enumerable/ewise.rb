@@ -2,20 +2,20 @@ require 'facets/functor'
 
 module Enumerable
 
-  # Returns an elementwise Functor designed to make R-like
-  # elementwise operations possible.
-  #
-  #   [1,2].elementwise + 3          #=> [4,5]
-  #   [1,2].elementwise + [4,5]      #=> [5,7]
-  #   [1,2].elementwise + [[4,5],3]  #=> [[5,7],[4,5]
-  #
-  #--
-  # Special thanks to Martin DeMello for helping to develop this.
-  #++
+  EWISE = {}
 
-  def elementwise(count=1)
-    @_elementwise_functor ||= []
-    @_elementwise_functor[count] ||= Functor.new do |op,*args|
+  # Returns an elementwise Functor designed to make R-like
+  # elementwise operations possible. This is very much like
+  # the #every method, but it treats array argument specially.
+  #
+  #   [1,2].ewise + 3          #=> [4,5]
+  #   [1,2].ewise + [4,5]      #=> [5,7]
+  #   [1,2].ewise + [[4,5],3]  #=> [[5,7],[4,5]
+  #
+  # Special thanks to Martin DeMello for helping to develop this.
+
+  def ewise(count=1)
+    EWISE[[self,count]] ||= Functor.new do |op,*args|
       if args.empty?
         r = self
         count.times do
@@ -46,16 +46,22 @@ module Enumerable
     end
   end
 
-  # Concise alias for #elementwise.
+  # Long-term for #ewise.
   #
   #   a = [1,2]
-  #   a.ewise + 3          #=> [4,5]
-  #   a.ewise + [4,5]      #=> [5,7]
-  #   a.ewise + [[4,5],3]  #=> [[5,7],[4,5]
+  #   a.elementwise + 3          #=> [4,5]
+  #   a.elementwise + [4,5]      #=> [5,7]
+  #   a.elementwise + [[4,5],3]  #=> [[5,7],[4,5]
   #
-  # Note this used to be #ew as weel as the '%' operator.
-  # Both of whihc are deprecated.
+  alias_method :elementwise, :ewise
 
-  alias_method :ewise, :elementwise
+  # Operator equivalent of #elementwise.
+  #
+  # This was deprecated along with it's file "op_tilde.rb".
+  #
+  #def ~@
+  #  ewise
+  #end
 
 end
+
