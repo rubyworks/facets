@@ -76,6 +76,7 @@ class Date
     #::Time.send("#{form}_time", year, month, day)
   end
 
+  #
   def xmlschema
     to_time.xmlschema
   end
@@ -198,17 +199,25 @@ class DateTime
     ::Time.local(2007).utc_offset.to_r / 86400
   end
 
+  def future?
+    self > ::DateTime.current
+  end
+
+  def past?
+    self < ::DateTime.current
+  end
+
   # Converts self to a Ruby Date object; time portion is discarded
   def to_date
     ::Date.new(year, month, day)
   end
 
   # Attempts to convert self to a Ruby Time object; returns self if
-  # out of range of Ruby Time class, If self has an offset other than 0,
+  # out of range of Ruby Time class. If self has an offset other than 0,
   # self will just be returned unaltered, since there's no clean way
-  # to map it to a Time
+  # to map it to a Time.
   def to_time
-    self.offset == 0 ? ::Time.utc(year, month, day, hour, min, sec) : self
+    self.offset == 0 ? ::Time.utc_time(year, month, day, hour, min, sec) : self
   end
 
   # To be able to keep Times, Dates and DateTimes interchangeable on conversions
@@ -309,6 +318,7 @@ class DateTime
   #
   #   DateTime.civil(2005, 2, 21, 10, 11, 12, Rational(-6, 24))       # => Mon, 21 Feb 2005 10:11:12 -0600
   #   DateTime.civil(2005, 2, 21, 10, 11, 12, Rational(-6, 24)).utc   # => Mon, 21 Feb 2005 16:11:12 +0000
+  #
   def utc
     new_offset(0)
   end
@@ -340,6 +350,24 @@ end
 
 class Time
 
+  #
+  def self.local_time(*args)
+    time_with_datetime_fallback(:local, *args)
+  end
+
+  #
+  def self.utc_time(*args)
+    time_with_datetime_fallback(:utc, *args)
+  end
+
+  #
+  def self.time_with_datetime_fallback(utc_or_local, year, month=1, day=1, hour=0, min=0, sec=0, usec=0)
+    ::Time.send(utc_or_local, year, month, day, hour, min, sec, usec)
+  rescue
+    offset = utc_or_local.to_sym == :local ? ::DateTime.local_offset : 0
+    ::DateTime.civil(year, month, day, hour, min, sec, offset)
+  end
+
   public :to_date
   public :to_datetime
 
@@ -350,6 +378,7 @@ class Time
   #
   #   your_time = Time.parse("1/13/2009 1:13:03 P.M.")  # => Tue Jan 13 13:13:03 -0500 2009
   #   your_time.to_date                                 # => Tue, 13 Jan 2009
+  #
   def to_date
     ::Date.new(year, month, day)
   end
@@ -371,6 +400,7 @@ class Time
   #
   #   your_time = Time.parse("1/13/2009 1:13:03 P.M.")  # => Tue Jan 13 13:13:03 -0500 2009
   #   your_time.to_datetime                             # => Tue, 13 Jan 2009 13:13:03 -0500
+  #
   def to_datetime
     ::DateTime.civil(year, month, day, hour, min, sec, Rational(utc_offset, 86400))
   end
@@ -379,6 +409,11 @@ end
 
 
 class String
+
+  #
+  def to_time(form = :utc)
+    ::Time.__send__("#{form}_time", *::Date._parse(self, false).values_at(:year, :mon, :mday, :hour, :min, :sec).map{|arg| arg || 0 })
+  end
 
   # Convert string to DateTime.
   def to_datetime
