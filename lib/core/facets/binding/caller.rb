@@ -4,43 +4,39 @@ require 'facets/binding/callstack'
 class Binding
 
   # Returns the call stack, same format as Kernel#caller()
+  #
   def caller( skip=0 )
     eval("caller(#{skip})")
   end
 
-  # Returns line number.
+  # Return the line number on which the binding was created.
+  #
   def __LINE__
-    eval("__LINE__")
+    Kernel.eval("__LINE__", self)
   end
 
-  # Returns file name.
+  # Returns file name in which the binding was created.
+  #
   def __FILE__
-    eval("__FILE__")
+    Kernel.eval("__FILE__", self)
   end
 
-  # Return the directory of the file.
-  def __DIR__
-    eval("File.dirname(__FILE__)")
+  # Return the directory of the file in which the binding was created.
+  #
+  def __DIR__  
+    File.dirname(self.__FILE__)
   end
 
   # Retreive the current running method.
   #
-  #   def tester; p called; end
-  #   tester  #=> :tester
-  #
   def __callee__
-    eval('__callee__')
+    Kernel.eval("__callee__", self)
   end
 
-  # There is a lot of debate on what to call this.
-  # +method_name+ differs from #called only by the fact
-  # that it returns a string, rather then a symbol.
-  #
-  #   def tester; p methodname; end
-  #   tester  #=> "tester"
+  # Retreive the current running method.
   #
   def __method__
-    eval('__method__')
+    Kernel.eval("__method__", self)
   end
 
 end
