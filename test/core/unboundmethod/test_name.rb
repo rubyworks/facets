@@ -8,7 +8,7 @@ class Test_UnboundMethod_Name < Test::Unit::TestCase
 
   def test_name
     meth = X.instance_method(:foo)
-    assert_equal(:foo, meth.name)
+    assert_equal(:foo, meth.name.to_sym)
   end
 
 end
