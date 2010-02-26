@@ -9,8 +9,8 @@ module Enumerable
 
   def map_with_index
     r = []
-    each_index do |i|
-      r << yield(self[i], i)
+    each_with_index do |e, i|
+      r << yield(e, i)
     end
     r
   end
