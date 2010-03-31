@@ -148,6 +148,38 @@ class Pathname
     ::FileUtils.outofdate?(to_s, sources.flatten)
   end
 
+  # Recursively visit a directory located by its path, yielding each resource
+  # as its full matching pathname object. If called on a file, yield the file.
+  #
+  # call-seq:
+  #   visit => yield each file
+  #   visit(all: true) => yield visited directories as well
+  #   visit(hidden: true) => yield hidden files and directories as well
+  #
+  # Example use case:
+  #
+  #   # get rid of any file but *.haml within app/**/*
+  #   Pathname.new("app").visit do |f|
+  #     FileUtils.rm_f(f) unless f.to_s =~ /\.haml$/
+  #     puts "!!! deleting #{f}"
+  #   end 
+  #
+  # CREDIT: Jean-Denis Vauguet
+  def visit(options = {:all => false, :hidden => false})
+    if self.directory?
+      children.each do |entry|
+        next if entry.basename.to_s[0] == "." && !options[:hidden]
+        yield(entry) unless entry.directory? && !options[:all]
+        #entry.visit(:all => options[:all]) { |sub_entry| yield sub_entry } if entry.directory?
+        entry.visit(:all => options[:all], :hidden => options[:hidden]) do |sub_entry|
+          yield(sub_entry)
+        end if entry.directory?
+      end
+    else
+      yield self
+    end
+  end
+
 #   # Already included in 1.8.4+ version of Ruby (except for inclusion flag)
 #   if not instance_methods.include?(:ascend)
 #
