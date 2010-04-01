@@ -25,6 +25,10 @@ require 'facets/file/rootname'
 
 class Pathname
 
+  # Alias #to_s to #to_str when #to_str is not defined.
+  #
+  alias_method(:to_str, :to_s) unless method_defined?(:to_str)
+
   # Alternate to Pathname#new.
   #
   #   Pathname['/usr/share']
