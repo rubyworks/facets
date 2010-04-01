@@ -1,11 +1,12 @@
 module Kernel
+  INSTANCES = {}
 
   # Returns an instance of Instance for +self+,
   # which allows convenient access to an object's
   # internals.
 
   def instance
-    Instance.new(self)
+    INSTANCES[self] ||= Instance.new(self)
   end
 
 end
@@ -28,49 +29,95 @@ class Instance
 
   include Enumerable
 
+  #
   def initialize(delegate)
     @delegate = delegate
   end
 
+  #
   def instance_delegate
     @delegate
   end
 
+  #
   def each
     @delegate.instance_variables.each do |name|
       yield(name[1..-1].to_sym, @delegate.instance_variable_get(name))
     end
   end
 
-  def to_hash
+  # Return instance variables with values as a hash.
+  #
+  #   class X
+  #     def initialize(a,b)
+  #       @a, @b = a, b
+  #     end
+  #   end
+  #
+  #   x = X.new(1,2)
+  #
+  #   x.instance.to_h  #=> { :a=>1, :b=>2 }
+  #
+  def to_h(at=false)
     h = {}
-    each do |name, value|
-      h[name] = value
+    if at
+      @delegate.instance_variables.each do |name|
+        h[name] = @delegate.instance_variable_get(name)
+      end
+    else
+      each do |key, value|
+        h[key] = value
+      end
     end
     h
   end
 
+  # TODO: Not sure if this should be used.
+  alias_method :to_hash, :to_h
+
+  #
   def [](name)
     name = atize(name)
     @delegate.instance_variable_get(name)
   end
 
+  #
   def []=(name, value)
     name = atize(name)
     @delegate.instance_variable_set(name,value)
   end
 
+  #
   def <<(pair)
     name, value = *pair
     name = atize(name)
     @delegate.instance_variable_set(name, value)
   end
 
+  # Set instance variables given a +hash+.
+  #
+  #   instance.update('@a'=>1, '@b'=>2)
+  #   @a   #=> 1
+  #   @b   #=> 2
+  #
+  # Also, +@+ sign is not neccessary.
+  #
+  #   instance.update(:a=>1, :b=>2)
+  #   @a   #=> 1
+  #   @b   #=> 2
   #
   def update(hash)
     hash.each do |pair|
       self << pair
     end
+  end
+
+  # A hold-over from the the old #instance_assign method.
+  alias_method :assign, :update
+
+  # Same as #instance_variables.
+  def variables
+    @delegate.instance_variables
   end
 
   # Instance vairable names as symbols.
@@ -102,7 +149,7 @@ class Instance
   private
 
     def atize(name)
-      name !~ /^@/ ? "@#{name}" : name
+      name.to_s !~ /^@/ ? "@#{name}" : name
     end
 
 end
