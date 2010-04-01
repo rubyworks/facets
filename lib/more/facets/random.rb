@@ -111,16 +111,7 @@ module Random
         return s if Random.number > 0.5
       end
       exclude_end ? first : last
-      #if Numeric===first && Numeric===last
-      #  if exclude_end?
-      #    o = last - first - 1
-      #  else
-      #    o = last - first
-      #  end
-      #  x = first + (Random.number * o).to_i
-      #else
-      #  to_a.at(Random.number(array.size))
-      #end
+      #to_a.at(Random.number(array.size))
     end
 
   end
