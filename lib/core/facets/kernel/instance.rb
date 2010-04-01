@@ -1,13 +1,30 @@
 module Kernel
 
-  def instance_vars
-    InstanceVariables.new(self)
+  # Returns an instance of Instance for +self+,
+  # which allows convenient access to an object's
+  # internals.
+
+  def instance
+    Instance.new(self)
   end
 
 end
 
-
-class InstanceVariables
+# = Instance Class
+#
+#   class Friend
+#     attr_accessor :name, :age, :phone
+#     def initialize(name, age, phone)
+#       @name, @age, @phone = name, age, phone
+#     end
+#   end
+#
+#   f1 = Friend.new("John", 30, "555-1212")
+#   p f1.instance
+#   f1.instance.update({:name=>'Jerry'})
+#   p f1.instance
+#
+class Instance
 
   include Enumerable
 
@@ -49,29 +66,37 @@ class InstanceVariables
     @delegate.instance_variable_set(name, value)
   end
 
-  # (See also: Kernel#populate, which uses accessor method rather than setting instance variables directly.)
+  #
   def update(hash)
     hash.each do |pair|
       self << pair
     end
   end
 
+  # Instance vairable names as symbols.
   def keys
     @delegate.instance_variables.collect do |name|
       name[1..-1].to_sym
     end
   end
 
+  # Instance variable names as strings.
   def names
     @delegate.instance_variables.collect do |name|
       name[1..-1]
     end
   end
 
+  # Instance variable values.
   def values
     @delegate.instance_variables.collect do |name|
       @delegate.instance_variable_get(name)
     end
+  end
+
+  # Instance evaluation.
+  def eval(*a,&b)
+    @delegate.instance_eval(*a,&b)
   end
 
   private
@@ -82,16 +107,3 @@ class InstanceVariables
 
 end
 
-=begin demo
-  class Friend
-    attr_accessor :name, :age, :phone
-    def initialize(name, age, phone)
-      @name, @age, @phone = name, age, phone
-    end
-  end
-
-  f1 = Friend.new("John", 30, "555-1212")
-  p f1.instance_vars
-  f1.instance_vars.update({:name=>'Jerry'})
-  p f1.instance_vars
-=end
