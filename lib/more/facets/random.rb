@@ -107,8 +107,20 @@ module Random
     #   (1..4).at_rand           #=> 4
     #
     def at_rand
-      array = to_a
-      array.at(Random.number(array.size))
+      each do |s|
+        return s if Random.number > 0.5
+      end
+      exclude_end ? first : last
+      #if Numeric===first && Numeric===last
+      #  if exclude_end?
+      #    o = last - first - 1
+      #  else
+      #    o = last - first
+      #  end
+      #  x = first + (Random.number * o).to_i
+      #else
+      #  to_a.at(Random.number(array.size))
+      #end
     end
 
   end
