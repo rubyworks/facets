@@ -1,5 +1,58 @@
 = Facets Release History
 
+== 2.8.3 / 2009-04-02
+
+New release which makes a few adjustments in Kernel core extensions,
+adds a few new extensions and additions, plus other small improvements.
+
+Changes:
+
+* 7 New Core Extensions
+
+  * Module#set has been added (from Sinatra).
+  * Symbol#/ is added to be like String#/.
+  * Struct#to_h is added and will ultimately replace Struct#attributes.
+  * ObjectSpace#reflect routes method calls to Kernel context.
+  * Hash#to_module converts a hash to mixin module (Jay Fields).
+  * Kernel#dup! is same as #try_dup from extlib.
+  * Add File#ext which is a useful variation of #extname (Lavir the Whiolet).
+
+* 3 Core Extensions Renamed
+
+  * renamed #set_from to #assign_from (alias remains until Kernel#set is considerd).
+  * rename #populate to #assign and improve.
+  * Kernel#instance_vars is now Kernel#instance and also more useful.
+
+* 1 Core Deprecation
+
+  * Removed #instance_eval hack.
+
+* 2 Core Bug Fixes
+
+  * #map_with_index now uses #each_with_index.
+  * #to_proc_with_response spelling correction.
+
+* 1 Core Adjustment
+
+  * Aliased #metadef to #meta_def.
+
+* 3 New More Libraries
+
+  * casting_hash.rb provides CastingHash class, a hash with flexible keys and values.
+  * prepend.rb allows for AOP-like inclusion of modules.
+  * roman.rb provides simple roman numeral extensions to String and Integer.
+
+* 5 More Improvements
+
+  * Pathname#visit for iterating all entries beneath a path (chikamichi).
+  * Pathname#to_str, b/c Pathname is basically a type of String (from extlib).
+  * Range#at_rand in random.rb handles Float ranges (Lavir the Whiolet).
+  * FileUtils#cp_rx provides controlled copies.
+  * Stash class in stash.rb is improved and is now available as a stand-alone library.
+  * ioredirect.rb has been removed as IORedirect no longer worked.
+  * plugin_manager.rb has been removed. Use 'plugin' gem instead.
+
+
 == 2.8.2 / 2009-02-22
 
 This release fixes a bug by removing Numeric#size. Turns out that was a
