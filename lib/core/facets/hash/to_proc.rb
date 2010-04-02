@@ -24,11 +24,11 @@ class Hash
   # A fault-tolerent version of #to_proc.
   #
   # It works just like #to_proc, but the block will make
-  # sure# the object responds to the assignment.
+  # sure the object responds to the assignment.
   #
   # CREDIT: Trans
 
-  def to_proc_with_reponse
+  def to_proc_with_response
     lambda do |o|
       self.each do |k,v|
         ke = "#{k}="
