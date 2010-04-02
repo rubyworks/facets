@@ -1,2 +1,2 @@
-reqiure 'facets/kernel/assign'
+require 'facets/kernel/assign'
 
