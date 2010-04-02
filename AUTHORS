@@ -9,17 +9,19 @@
 The following developers have recently contributed to the development of Facets.
 They are held in the highest regard for their efforts.
 
-* Roger Pack          Added generational depth to Class#descendants.
-* Marco Otte-Witte    Fixed return value of Kernel#extend.
-* Mauro Tortonesi     Fixed issues with duration.rb and date.rb.
-* Sandor Szücs        Fixes for String#align_right and #align_left.
-* Tyler Rick          Fixed bug in Time#hence and #ago.
-* Brian Candler       Provided Enumerator::Filter.
-* Jeena Paradies      Provided INI implementation.
-* Robert Klemme       Fix for Enumerable#mode.
-* Daniel Schierbeck   Speed imporvements to odd? and even?
-* Ken Bloom           For DictionaryMatcher class (class might be renamed in future).
-* Matthew Harris      Incorporated very useful Duration class.
+* Lavir the Whiolet    Improved Range#at_rand and added File#ext.
+* Jean-Denis Vauguet   Added Pathname#visit.
+* Roger Pack           Added generational depth to Class#descendants.
+* Marco Otte-Witte     Fixed return value of Kernel#extend.
+* Mauro Tortonesi      Fixed issues with duration.rb and date.rb.
+* Sandor Szücs         Fixes for String#align_right and #align_left.
+* Tyler Rick           Fixed bug in Time#hence and #ago.
+* Brian Candler        Provided Enumerator::Filter.
+* Jeena Paradies       Provided INI implementation.
+* Robert Klemme        Fix for Enumerable#mode.
+* Daniel Schierbeck    Speed imporvements to odd? and even?
+* Ken Bloom            For DictionaryMatcher class (class might be renamed in future).
+* Matthew Harris       Incorporated very useful Duration class.
 
 == Recent Bug Reports
 
