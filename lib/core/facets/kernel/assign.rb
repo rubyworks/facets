@@ -36,7 +36,9 @@ module Kernel
   # Using an associative array instead of hash guarentees
   # order of assignemnt for older versions of Ruby (< 1.8.7).
   #
-  # TODO: Should this be called #set instead?
+  # TODO: Should this be called #set instead? Consider
+  # Module#set in this question, and also #set_from as
+  # the alias of #assign_from.
 
   def assign(data=nil, value=Exception) #:yield:
     if data
