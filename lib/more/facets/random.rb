@@ -53,7 +53,7 @@ require 'facets/string/shatter'
 module Random
 
   class << self
-    # alias to Kernel method #rand.
+    # Alias for Kernel#rand.
     alias_method :number, :rand
     public :number
   end
@@ -78,6 +78,8 @@ module Random
       raise TypeError
     end
   end
+
+  #
 
   module Object
 
@@ -112,22 +114,16 @@ module Random
     #   ('a'..'z').at_rand       #=> 'q'
     #   ('a'..'z').at_rand       #=> 'f'
     #
-    def at_rand
-      first, last = self.begin, self.end
-      if first > last
-        first, last = last, first
-        first = first.succ if exclude_end?
-      end
+    # CREDIT: Lavir the Whiolet
 
-      if Float===first || Float===last
-        r = (last - first) * Random.number + first
-        r == last ? first : r
+    def at_rand
+      if first.respond_to?(:succ)
+        to_a.at_rand
+      elsif Numeric===first && Numeric===last
+        number = (last - first) * Random.number + first
+        (number == last && exclude_end?) ? first : number
       else
-        #to_a.at(Random.number(array.size))
-        each do |s|
-          return s if Random.number > 0.5
-        end
-        exclude_end? ? first : last
+        nil
       end
     end
 

@@ -36,18 +36,23 @@ class TestRangeRandom < Test::Unit::TestCase
 
   def test_at_rand_reverse
     20.times do
-      assert((1..4).include?((4..1).at_rand))
-      assert((-4...-1).include?((-1...-4).at_rand))
-      assert((-4..-1).include?((-1..-4).at_rand))
+      assert_equal(nil,(4..1).at_rand)
+      assert_equal(nil,(4...1).at_rand)
+      assert_equal(nil,(-1..-4).at_rand)
+      assert_equal(nil,(-1...-4).at_rand)
+      #assert((1..4).include?((4..1).at_rand))
+      #assert((-4...-1).include?((-1...-4).at_rand))
+      #assert((-4..-1).include?((-1..-4).at_rand))
     end
   end
 
   # I'd rather it return the first sentinel than +nil+.
-  # Really, Ruby should be raising an error as an invalid range value.
-  def test_at_rand_invalid
-    20.times do
-      assert_equal(5, (5...5).at_rand)
-    end
+  # Really, ruby should be raising an error as an invalid range value.
+  def test_at_rand_exclusive
+    assert_equal(nil,(5...5).at_rand)
+    #assert_raises(RangeError) do
+    #  (5...5).at_rand
+    #end
   end
 
 end
