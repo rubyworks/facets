@@ -106,12 +106,29 @@ module Random
     #   (1..4).at_rand           #=> 2
     #   (1..4).at_rand           #=> 4
     #
+    #   (1.5..2.5).at_rand       #=> 2.06309842754533
+    #   (1.5..2.5).at_rand       #=> 1.74976944931541
+    #
+    #   ('a'..'z').at_rand       #=> 'q'
+    #   ('a'..'z').at_rand       #=> 'f'
+    #
     def at_rand
-      each do |s|
-        return s if Random.number > 0.5
+      first, last = self.begin, self.end
+      if first > last
+        first, last = last, first
+        first = first.succ if exclude_end?
       end
-      exclude_end ? first : last
-      #to_a.at(Random.number(array.size))
+
+      if Float===first || Float===last
+        r = (last - first) * Random.number + first
+        r == last ? first : r
+      else
+        #to_a.at(Random.number(array.size))
+        each do |s|
+          return s if Random.number > 0.5
+        end
+        exclude_end? ? first : last
+      end
     end
 
   end
