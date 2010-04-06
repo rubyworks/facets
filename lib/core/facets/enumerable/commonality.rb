@@ -4,7 +4,7 @@ module Enumerable
   # If no block is given objects are considered to be equal if they
   # return the same value for Object#hash and if obj1 == obj2.
   #
-  #   [1, 2, 2, 3, 4, 4].commonality # => { 2 => [2], 4 => [4] }
+  #   [1, 2, 2, 3, 4, 4].commonality # => { 2 => [2, 2], 4 => [4, 4] }
   #
   #   ["foo", "bar", "a"].commonality { |str| str.length }
   #   # => { 3 => ["foo, "bar"] }
@@ -14,7 +14,7 @@ module Enumerable
   #
   # CREDIT: Florian Gross
 
-  def commonality( &block )
+  def commonality(&block)
     had_no_block = !block
     block ||= lambda { |item| item }
     result = Hash.new { |hash, key| hash[key] = Array.new }
@@ -28,6 +28,8 @@ module Enumerable
     #return had_no_block ? result.values.flatten : result
     return result
   end
+
+  alias_method :collisions, :commonality
 
 end
 
