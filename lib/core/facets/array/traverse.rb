@@ -1,22 +1,5 @@
-class Array
+require 'facets/array/recursive_map'
 
-  #
-
-  def traverse(&block)
-    map do |item|
-      if item.is_a?(self.class)
-        item.traverse(&block)
-      else
-        yield item
-      end
-    end
-  end
-
-  #
-
-  def traverse!(&block)
-    replace(traverse(&block))
-  end
-
-end
+alias_method :traverse,  :recursive_map
+alias_method :traverse!, :recursive_map!
 
