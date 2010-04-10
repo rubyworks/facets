@@ -11,7 +11,7 @@ class Hash
     if block
       h = inject({}) do |hash, (key, value)|
         if value.is_a?(Hash)
-          hash[key] = value.recursively(&block)
+          hash[key] = value.recursive(&block)
         else
           hash[key] = value
         end

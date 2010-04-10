@@ -13,7 +13,7 @@ class Array
     if block
       a = inject([]) do |array, value|
         if value.is_a?(Array)
-          array << value.recursively(&block)
+          array << value.recursive(&block)
         else
           array << value
         end
