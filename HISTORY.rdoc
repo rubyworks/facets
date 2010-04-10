@@ -1,6 +1,6 @@
 = Facets Release History
 
-== 2.8.3 / 2009-04-02
+== 2.8.3 / 2009-04-10
 
 New release which makes a few adjustments in Kernel core extensions,
 adds a few new extensions and additions, plus other small improvements.
