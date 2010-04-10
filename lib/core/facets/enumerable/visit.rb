@@ -1,5 +1,3 @@
-require 'facets/enumerable/recursive_map'
-
 module Enumerable
 
   # Recursively iterate over all Enumerable elements, or
