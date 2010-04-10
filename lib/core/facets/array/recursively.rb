@@ -7,9 +7,8 @@ class Array
   #   arr.recursively{|a| a.compact! }
   #   => ["a", ["b", "c"]]
   #
-  # TODO: Can this be generalized in Enumerbale?
-
   def recursively(&block)
+    warn "Use #recusive instead of #recursively for future versions"
     a = inject([]) do |array, value|
       if value.is_a?(Array)
         array << value.recursively(&block)

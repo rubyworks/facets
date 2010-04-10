@@ -1,20 +1,30 @@
+require 'facets/enumerable/recursive_map'
+
 module Enumerable
 
-  # Recursively iterate over the Enumerable's elements.
-  # If an element is also Enumerable, then it will also
-  # be visited, and so on.
+  # Recursively iterate over all Enumerable elements, or
+  # subset given <code>:type=>[type1, type2, ...]</code>.
+  #
+  #   [1, 2, 8..9].visit{ |x| x.succ }
+  #   # => [2, 3, [9, 10]]
+  #
+  def visit(opts={}, &block)
+    type = opts[:type] ? [opts[:type]].flatten : [Enumerable]
+    skip = opts[:skip]
 
-  def visit(&block)
-    if block_given?
-      each do |e|
-        if Enumerable === e
-          e.visit(&block)
+    map do |v|
+      case v
+      when String # b/c of 1.8
+        b.call(v)
+      when *type
+        v.recursive(opts).send(op,&b)
+      else
+        if skip && Enumerable === v
+          v
         else
-          block.call(*e)
+          b.call(v)
         end
       end
-    else
-      to_enum(:visit, type)
     end
   end
 

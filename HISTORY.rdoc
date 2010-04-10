@@ -4,11 +4,16 @@
 
 New release which makes a few adjustments in Kernel core extensions,
 adds a few new extensions and additions, plus other small improvements.
+The biggest change is the addition of Recusor, which is created via
+Enumerable#recursive. This class is somewhat like Enumerator and
+provides a number of recursive methods.
 
 Changes:
 
-* 7 New Core Extensions
+* 9 New Core Extensions
 
+  * Enumerable#recursive provides a number of other recursive methods.
+  * Enumerable#visit can be used to recursively iterate any Enumerable.
   * Module#set has been added (from Sinatra).
   * Symbol#/ is added to be like String#/.
   * Struct#to_h is added and will ultimately replace Struct#attributes.

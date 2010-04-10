@@ -1,6 +1,9 @@
 class Hash
 
   # Same as Hash#merge but recursively merges sub-hashes.
+  #
+  # DEPRECATE: This method will be deprecated in favor of
+  # <code>recursive.merge</code>.
 
   def recursive_merge(other)
     hash = self.dup
@@ -16,6 +19,9 @@ class Hash
   end
 
   # Same as Hash#merge! but recursively merges sub-hashes.
+  #
+  # DEPRECATE: This method will be deprecated in favor of
+  # <code>recursive.merge!</code>.
 
   def recursive_merge!(other)
     other.each do |key, value|
