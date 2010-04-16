@@ -1,6 +1,6 @@
 require 'facets/functor'
 
-class << ObjectSpace
+class ObjectSpace
 
   # Reflection ensures that information about an object
   # is actual according to Ruby's Kernel definitions, just
@@ -12,7 +12,7 @@ class << ObjectSpace
   # There is also a global short-cut for this method to ease
   # meta-programming with it.
   #
-  #   $ref[obj].id
+  #   $ref[obj].class
   #++
   #
   # Typically theis method will be used to gather the object's
@@ -30,7 +30,7 @@ class << ObjectSpace
   # But obviously, in this case there is the risk that #as has
   # be overridden too.
   #
-  def reflect(obj)
+  def self.reflect(obj)
     Functor.new do |meth, *a, &b|
       Kernel.instance_method(meth).bind(obj).call(*a, &b)
     end
@@ -38,8 +38,10 @@ class << ObjectSpace
 
 end
 
-# TODO: Consider this "Shorcut for +ObjectSpace.reflect+."
-#$ref = lambda do |obj|
-#  ObjectSpace.reflect(obj)
-#end
+# Shorcut for +ObjectSpace.reflect+.
+$ref = lambda do |obj|
+  Functor.new do |meth, *a, &b|
+    Kernel.instance_method(meth).bind(obj).call(*a, &b)
+  end
+end
 
