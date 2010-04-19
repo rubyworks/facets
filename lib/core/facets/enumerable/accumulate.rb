@@ -19,7 +19,7 @@ module Enumerable
 
   def accumulate(iterations = 1)
     return self if iterations == 0
-    @_accumulate ||= Functor.new do |op, *args|
+    Functor.new do |op, *args|
       result = inject([]) { |a, x| a << x.send(op, *args) }.flatten
       result.accumulate(iterations - 1)
     end
