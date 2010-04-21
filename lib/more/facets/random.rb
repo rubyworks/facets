@@ -115,15 +115,22 @@ module Random
     #   ('a'..'z').at_rand       #=> 'f'
     #
     # CREDIT: Lavir the Whiolet
-
+    # 
     def at_rand
       if first.respond_to?(:succ)
-        to_a.at_rand
-      elsif Numeric===first && Numeric===last
-        number = (last - first) * Random.number + first
-        (number == last && exclude_end?) ? first : number
+        # Try optimized algorithm.
+        if [first, last].all? { |x| x.class == Fixnum || x.class == Bignum }
+          last_included = (exclude_end?) ? (last - 1) : (last)
+          return nil if last_included < first
+          return Random.number(last_included - first + 1) + first
+        end
+        # Reliable algorithm.
+        return to_a.at_rand
+      elsif Numeric === first && Numeric === last
+        return nil if last < first || (exclude_end? && last == first)
+        return (last - first) * Random.number + first
       else
-        nil
+        return nil
       end
     end
 

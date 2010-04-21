@@ -31,6 +31,11 @@ class TestRangeRandom < Test::Unit::TestCase
       assert_random_range('a'..'d')
       assert_random_range('a'...'d')
       assert_equal(5, (5..5).at_rand)
+      assert_equal(nil, (5...5).at_rand)
+      assert_equal(nil, (5..-1).at_rand)
+      assert_equal(5.0, (5.0..5.0).at_rand)
+      assert_equal(nil, (5.0...5.0).at_rand)
+      assert_equal(nil, (5.0...-1.0).at_rand)
     end
   end
 
