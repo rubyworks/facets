@@ -4,7 +4,7 @@
 # Copyright 2004 by Jim Weirich (jim@weirichhouse.org).
 # All rights reserved.
 #
-# Since Ruby 1.9 has a BasicObject class this will of course be 
+# Since Ruby 1.9 has a BasicObject class this will of course be
 # deprecated as 1.9 goes mainstream.
 
 unless defined? BasicObject  # just in case it already exists!
@@ -27,12 +27,13 @@ unless defined? BasicObject  # just in case it already exists!
       # * #==
       # * #!
       # * #!=
+      # * respond_to?
       #
       # Seems to me it should have #__id__ too.
       def hide(name)
         undef_method name if
           instance_methods.include?(name.to_s) and
-          name !~ /^(__|instance_eval$|instance_exec$|equal\?$|\=\=$)/
+          name !~ /^(__|respond_to\?|instance_eval$|instance_exec$|equal\?$|\=\=$)/
       end
     end
     instance_methods.each { |m| hide(m) }
