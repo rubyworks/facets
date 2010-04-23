@@ -27,6 +27,8 @@ class String
   #   "xyz".cmp("abc")   #=>  1
   #
   # CREDIT: Peter Vanbroekhoven
+  #
+  # TODO: Move String#cmp to string/ directory.
 
   def cmp(other)
     return -1 if length < other.length
