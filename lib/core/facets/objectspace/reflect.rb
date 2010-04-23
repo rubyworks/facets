@@ -1,6 +1,6 @@
 require 'facets/functor'
 
-class ObjectSpace
+module ObjectSpace
 
   # Reflection ensures that information about an object
   # is actual according to Ruby's Kernel definitions, just
