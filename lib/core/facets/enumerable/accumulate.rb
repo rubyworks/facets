@@ -2,20 +2,26 @@ require 'facets/functor'
 
 module Enumerable
 
-  # Accumulate a set of a set.
-  #
-  # For example, in an ORM design if Group
-  # has_many User then
+  # Accumulate a set of a set. For example, in an ORM design
+  # where <code>Group has_many User</code> then
   #
   #   groups.accumulate.users
   #
   # will return a list of users from all groups.
-  # 
-  # you may pass an argument to perform chains, e.g.
-  #  groups.accumulate(2).users.name #=> names of users from all groups
-  #  OR groups.accumulate(2).users.friends #=> all the friends of all users in groups
+  # You may pass an argument to perform chains, e.g. 
   #
-  # CREDIT: George Moshchovitis
+  #   groups.accumulate(2).users.name
+  #
+  # returns the names of users from all groups, or
+  #
+  #   groups.accumulate(2).users.friends
+  #
+  # returns all the friends of all users in groups.
+  # This is more convenient then the equivalent.
+  #
+  #   groups.accumulate.users.accumulate.friends
+  #
+  # CREDIT: George Moshchovitis, Daniel Emirikol
 
   def accumulate(iterations = 1)
     return self if iterations == 0
