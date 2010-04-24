@@ -7,7 +7,7 @@
 # Since Ruby 1.9 has a BasicObject class this will of course be
 # deprecated as 1.9 goes mainstream.
 
-unless defined? BasicObject  # just in case it already exists!
+unless defined? BasicObject  # in case it already exists!
 
   # BasicObject provides an abstract base class with no predefined
   # methods (except for <tt>\_\_send__</tt> and <tt>\_\_id__</tt>).
@@ -36,7 +36,7 @@ unless defined? BasicObject  # just in case it already exists!
           name !~ /^(__|respond_to\?|instance_eval$|instance_exec$|equal\?$|\=\=$)/
       end
     end
-    instance_methods.each { |m| hide(m) }
+    instance_methods.each{ |m| hide(m) }
   end
 
   # Since Ruby is very dynamic, methods added to the ancestors of

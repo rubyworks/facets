@@ -1,6 +1,4 @@
-# Test facets/openobject.rb
-
-require 'facets/openobject.rb'
+require 'facets/openobject'
 require 'test/unit'
 
 class TestOpenObject1 < Test::Unit::TestCase
@@ -11,7 +9,8 @@ class TestOpenObject1 < Test::Unit::TestCase
   end
 
   def test_1_02
-    assert_instance_of( OpenObject, OpenObject[{}] )
+    assert  OpenObject[{}].is_a?(Hash)
+    assert  OpenObject[{}].is_a?(OpenObject)
   end
 
   def test_1_03
@@ -35,18 +34,18 @@ end
 
 class TestOpenObject2 < Test::Unit::TestCase
 
-  def test_2_01
+  def test_merge
     f0 = OpenObject[:f0=>"f0"]
     h0 = { :h0=>"h0" }
-    assert_equal( OpenObject[:f0=>"f0", :h0=>"h0"], f0.send(:merge,h0) )
-    assert_equal( {:f0=>"f0", :h0=>"h0"}, h0.merge( f0 ) )
+    assert_equal( OpenObject[:f0=>"f0", :h0=>"h0"], f0.as_hash.merge(h0) )
+    assert_equal( {:f0=>"f0", :h0=>"h0"}, h0.merge(f0) )
   end
 
-  def test_2_02
+  def test_update
     f1 = OpenObject[:f1=>"f1"]
     h1 = { :h1=>"h1" }
-    f1.send(:update,h1)
-    h1.update( f1 )
+    f1.as_hash.update(h1)
+    h1.update(f1)
     assert_equal( OpenObject[:f1=>"f1", :h1=>"h1"], f1 )
     assert_equal( {:f1=>"f1", :h1=>"h1"}, h1 )
   end
@@ -72,9 +71,9 @@ end
 class TestOpenObject3 < Test::Unit::TestCase
   def test_3_01
     fo = OpenObject.new
-    9.times{ |i| fo.send( "n#{i}=", 1 ) }
+    9.times{ |i| fo.__send__( "n#{i}=", 1 ) }
     9.times{ |i|
-      assert_equal( 1, fo.send( "n#{i}" ) )
+      assert_equal( 1, fo.__send__( "n#{i}" ) )
     }
   end
 end
@@ -85,7 +84,7 @@ class TestOpenObject4 < Test::Unit::TestCase
     ho = {}
     fo = OpenObject.new
     5.times{ |i| ho["n#{i}".to_sym]=1 }
-    5.times{ |i| fo.send( "n#{i}=", 1 ) }
+    5.times{ |i| fo.__send__( "n#{i}=", 1 ) }
     assert_equal(ho, fo.to_h)
   end
 
