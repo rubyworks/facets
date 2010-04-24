@@ -120,7 +120,8 @@ module Random
       first, last = first(), last()
       if first.respond_to?(:succ)
         # optimized algorithm
-        if Integer === first && Integer === last
+        if (Fixnum === first || Bignum === first) &&
+           (Fixnum === last  || Bignum === last)
           last -= 1 if exclude_end?
           return nil if last < first
           return Random.number(last - first + 1) + first
