@@ -1,0 +1,21 @@
+= QueryHash
+
+A QueryHash is a Hash that provides open access much like
+an OpenHash, but it limits readers to query methods (i.e.
+method ending in ?-marks).
+
+  require 'hashery/queryhash'
+
+  q = QueryHash.new
+  q.a = 1
+  q.b = 2
+  q.a?.assert == 1
+  q.b?.assert == 2
+
+Writers always use Symbols for entry keys.
+
+  q.assert == { :a=>1, :b=>2 }
+
+A QueryHash is compatible with Ruby's standard Hash in
+every other respect.
+

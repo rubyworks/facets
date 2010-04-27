@@ -1,0 +1,13 @@
+= CastingHash
+
+A CastingHash is a Hash that allows _casting_ procedures to
+defined that the keys and values pass through upon assignment.
+
+  require 'hashery/castinghash'
+
+  c = CastingHash.new{ |x| x.to_s }
+
+  c[:a] = 1
+
+  c.assert == {'a'=>1}
+

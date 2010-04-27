@@ -1,17 +1,14 @@
-# Test facets/dictionary.rb
+require 'hashery/dictionary.rb'
+require 'ae/legacy'
 
-require 'facets/dictionary.rb'
+TestCase Dictionary do
 
-require 'test/unit'
-
-class TC_Dictionary < Test::Unit::TestCase
-
-  def test_create
+  Unit :create do
     d = Dictionary['z', 1, 'a', 2, 'c', 3]
     assert_equal( ['z','a','c'], d.keys )
   end
 
-  def test_op_store
+  Unit :[]= do
     d = Dictionary.new
     d['z'] = 1
     d['a'] = 2
@@ -19,7 +16,7 @@ class TC_Dictionary < Test::Unit::TestCase
     assert_equal( ['z','a','c'], d.keys )
   end
 
-  def test_push
+  Unit :push do
     d = Dictionary['a', 1, 'c', 2, 'z', 3]
     assert( d.push('end', 15) )
     assert_equal( 15, d['end'] )
@@ -33,7 +30,7 @@ class TC_Dictionary < Test::Unit::TestCase
     assert_equal( ["begin", 50], d.shift )
   end
 
-  def test_insert
+  Unit :insert do
     # front
     d = Dictionary['a', 1, 'b', 2, 'c', 3]
     r = Dictionary['d', 4, 'a', 1, 'b', 2, 'c', 3]
@@ -46,7 +43,7 @@ class TC_Dictionary < Test::Unit::TestCase
     assert_equal( r, d )
   end
 
-  def test_update
+  Unit :update do
     # with other orderred hash
     d = Dictionary['a', 1, 'b', 2, 'c', 3]
     c = Dictionary['d', 4]
@@ -61,7 +58,7 @@ class TC_Dictionary < Test::Unit::TestCase
     assert_equal( r, d )
   end
 
-  def test_merge
+  Unit :merge do
     # with other orderred hash
     d = Dictionary['a', 1, 'b', 2, 'c', 3]
     c = Dictionary['d', 4]
@@ -74,14 +71,14 @@ class TC_Dictionary < Test::Unit::TestCase
     assert_equal( r, d.merge(c) )
   end
 
-  def test_order_by
+  Unit :order_by do
     d = Dictionary['a', 3, 'b', 2, 'c', 1]
     d.order_by{ |k,v| v }
     assert_equal( [1,2,3], d.values )
     assert_equal( ['c','b','a'], d.keys )
   end
 
-  def test_op_store_again
+  Unit :[]= do
     d = Dictionary[]
     d[:a] = 1
     d[:c] = 3
@@ -91,20 +88,20 @@ class TC_Dictionary < Test::Unit::TestCase
     assert_equal( [:a,:b,:c], d.keys )
   end
 
-  def test_reverse!
+  Unit :reverse! do
     d = Dictionary['z', 1, 'a', 2, 'c', 3]
     d.reverse!
     assert_equal( ['c','a','z'], d.keys )
   end
 
-  def test_enumerable
+  Unit :enumerable do
     d = Dictionary[]
     d[:a] = "a"
     d[:c] = "b"
     assert_equal( ["A","B"], d.collect{|k,v| v.capitalize} )
   end
 
-  def test_autohash
+  Unit :autohash do
     d = Dictionary.new{ |hash,key| hash[key] = 0 }
     d[:a] = 0
     d[:b] += 1
@@ -112,14 +109,14 @@ class TC_Dictionary < Test::Unit::TestCase
     assert_equal([:a,:b], d.keys)
   end
 
-  def test_dup_with_array_values
+  Unit :dup => "with array values" do
     d = Dictionary.new
     d.dup
     d[:a]=['t',5]
     assert_equal(d, d.dup)
   end
 
-  def test_first
+  Unit :first do
     d = Dictionary[]
     d[:a] = "a"
     d[:b] = "b"
@@ -130,7 +127,7 @@ class TC_Dictionary < Test::Unit::TestCase
     assert_equal( ["a", "b"]  , d.first(2) )
   end
 
-  def test_last
+  Unit :last do
     d = Dictionary[]
     d[:a] = "a"
     d[:b] = "b"

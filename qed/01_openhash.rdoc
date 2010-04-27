@@ -1,0 +1,57 @@
+= OpenHash
+
+An OpenHash is a Hash that provides +open+ access to its entries via method
+calls. Writers (methods ending in =-marks) assign entries. Methods without
+special puncuation will retrieve entries. 
+
+  require 'hashery/openhash'
+
+  o = OpenHash.new
+  o.a = 1
+  o.b = 2
+  o.a.assert == 1
+  o.b.assert == 2
+
+Writers always use a Symbol for keys in the underlying Hash.
+
+  o.to_h.assert == { :a=>1, :b=>2 }
+
+All the usual Hash methods are still available in an OpenHash.
+
+  o.map{ |k,v| [k,v] }
+
+And they are protected from being overridden by writers.
+
+  o.map = 3
+  o.map{ |k,v| [k,v] }
+
+Even so, the underlying Hash object does contain the entry even 
+when it can not be accessed via a reader method.
+
+  o.to_h.assert == {:a=>1, :b=>2, :map=>3 }
+
+For some usecases it may be necessary to give up access to one or
+more Hash methods in favor of access to the hash entries. This can
+be done using the #omit! method.
+
+  o.omit!(:map, :merge)
+  o.map.assert == 3
+  o.merge = 4
+  o.merge.assert == 4
+
+Becuase of nature of a writer, a certain set of Hash methods are always
+protected, namely any of those ending in a puctuation mark. In addition,
+the implementation protects all shadow methods (e.g. __id__).
+
+  o.__id__ = 4
+  o.__id__.assert! == 4
+
+Even though writers alwasy use Symbols as keys, because an OpenHash
+is a true Hash object, any object can be used as a key internally.
+
+  o = OpenHash.new
+  o[nil] = "Nothing"
+  o.to_h.assert == { nil=>"Nothing" }
+
+It simply will not be accessible via a reader method.
+
