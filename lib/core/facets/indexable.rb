@@ -7,30 +7,13 @@
 # These methods work in harmony. Where #index returns a
 # position of a given element, #slice returns elements
 # for given positions. #splice is like #slice but replaces
-# the given position with new values. This method is not
-# part of ruby core, but it generally just an alias for #[]=,
-# just as #slice is an alias of #[]. #size of course simply
-# returns the total length of the indexable object.
-#
-# == Authors
-#
-# * Thomas Sawyer
-
-
-# = Indexable
-#
-# Indexable is a mixin that provides index based methods,
-# working soley with four methods: #index, #slice, #splice
-# and #size.
-#
-# These methods work in harmony. Where #index returns a
-# position of a given element, #slice returns elements
-# for given positions. #splice is like #slice but replaces
 # the given position with new values. This mehtod is not
 # part of ruby core, but it generally just an alias for #[]=,
 # just as #slice is an alias of #[]. #size of course simply
 # returns the total length of the indexable object.
 #
+# CREDIT: Thomas Sawyer
+
 module Indexable
 
   # Like #first but returns the first element
@@ -121,6 +104,24 @@ module Indexable
       i += 1
     end
     a
+  end
+
+  # Returns last _n_ elements.
+  #
+  #   "Hello World".last(3)  #=> "rld"
+  #
+  def from(n)
+    n = n.to_i
+    return self if n > size
+    slice(-n, n) #slice(-n..-1)
+  end
+
+  # Returns first _n_ elements.
+  #
+  #   "Hello World".first(3)  #=> "Hel"
+  #
+  def upto(n)
+    slice(0, n.to_i)
   end
 
   # Returns first _n_ elements.
