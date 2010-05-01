@@ -1,25 +1,3 @@
-# = Inheritor
-#
-#  Inheritor providse a means to store and inherit data via
-#  the class heirarchy.
-#
-# == Authors
-#
-# * Thomas Sawyer
-#
-# == Copying
-#
-# Copyright (c) 2005 Thomas Sawyer
-#
-# Ruby License
-#
-# This module is free software. You may use, modify, and/or redistribute this
-# software under the same terms as Ruby.
-#
-# This program is distributed in the hope that it will be useful, but WITHOUT
-# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-# FOR A PARTICULAR PURPOSE.
-
 require 'facets/class_extend'
 
 class Object
@@ -63,6 +41,8 @@ class Object
   # not do what is expected. Thankfully that usecase is likely a YAGNI,
   # but in anycase it is even more likely that it is not possible with
   # this code.
+  #
+  # CREDIT: Thomas Sawyer
 
   def inheritor(key, obj, op=nil, &fop)
     raise ArgumentError if op && fop
@@ -93,6 +73,32 @@ class Object
         end
       end
 
+    end
+  end
+
+end
+
+
+class Module
+
+  # Like #inheritor but non-dynamic. The value of the inheritor
+  # is copied from the immediate ancestor on first read.
+  #
+  # CREDIT: Thomas Sawyer
+
+  def copy_inheritor(name, default={})
+    class_extend do
+      define_method(name) do
+        if instance_variable_defined?("@#{name}")
+          instance_variable_get("@#{name}")
+        else
+          if ancestors[1].respond_to?(name)
+            instance_variable_set("@#{name}", ancestors[1].__send__(name).dup)
+          else
+            instance_variable_set("@#{name}", default)
+          end
+        end
+      end
     end
   end
 
