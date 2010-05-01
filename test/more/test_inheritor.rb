@@ -146,3 +146,31 @@ class TC_Inheritor_06 < Test::Unit::TestCase
   end
 end
 
+class TC_Inheritor_07 < Test::Unit::TestCase
+  module MM
+    copy_inheritor :koko, []
+    koko << 1
+  end
+  class CC1
+    include MM
+    #inheritor :koko, [], :+
+    koko << 2
+    koko << 3
+  end
+  class CC2
+    include MM
+    #inheritor :koko, [], :+
+    koko << 4
+  end
+
+  def test_06_001
+    assert_equal( [1], MM.koko )
+  end
+  def test_06_002
+    assert_equal( [1,2,3], CC1.koko )
+  end
+  def test_06_003
+    assert_equal( [1,4], CC2.koko )
+  end
+end
+
