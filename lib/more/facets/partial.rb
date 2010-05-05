@@ -27,7 +27,7 @@ end
 
 # X class is used to represent an argument "slot".
 
-class X < ArgumentError
+class X < ArgumentError #:nodoc:
 end
 
 # Convenience method for an argument slot.
