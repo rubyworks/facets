@@ -1,8 +1,3 @@
-# = Blank
-#
-# Core extension method #blank? added to core clesses.
-
-#
 module Kernel
   # An object is blank if it's nil, empty, or a whitespace string.
   # For example, "", "   ", nil, [], and {} are blank.

@@ -1,39 +1,3 @@
-# = Autoreload
-#
-# Autoreload feature files.
-#
-# Automatically reload, at regular intervals, any previously loaded features,
-# and/or other files not already loaded, if they have been modified since the last
-# interval check. A numeric parameter sets the reload interval in seconds
-# and the file parameter can either be a glob string or an array
-# of file paths. If a glob string, it is expanded only once on the initial
-# method call. Supplying a boolean parameter of 'false' will force autreload to
-# skip previously loaded features and only reload the specified files.
-# Also keeps a "dirty" flag.
-#
-# == Authors
-#
-#   - Michael Neumann
-#   - George Moschovitis
-#
-# == TODO
-#
-# * Create tests for autoreload.
-#
-# == Copying
-#
-# Copyright (c) 2003 Michael Neumann
-#
-# Ruby License
-#
-# This module is free software. You may use, modify, and/or redistribute this
-# software under the same terms as Ruby.
-#
-# This program is distributed in the hope that it will be useful, but WITHOUT
-# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-# FOR A PARTICULAR PURPOSE.
-
-#
 module Kernel
 
   # Autoreload feature files.
@@ -46,6 +10,8 @@ module Kernel
   # method call. Supplying a boolean parameter of 'false' will force autreload to
   # skip previously loaded features and only reload the specified files.
   # Also keeps a "dirty" flag.
+  #
+  # Copyright (c) 2003 Michael Neumann
 
   def autoreload( *args )
 
@@ -109,16 +75,15 @@ module Kernel
   # Same as #autoreload, but does not include previously loaded features.
   # This is equivalent to as adding a 'false' parameter to #autoreload.
   #
-  def autoreload_files( *args )
-    autoreload( false, *args )
+  def autoreload_files(*args)
+    autoreload(false, *args)
   end
 
-  # deprecate
+  # deprecated
   #def autoreload_glob(*args)
   #  warn "autoreload_glob will be deprecated. Use autoreload_files instead."
   #  autoreload_files(*args)
   #end
-
 end
 
 #--
