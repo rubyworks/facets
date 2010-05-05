@@ -1,4 +1,5 @@
-require 'facets/array/permutation'
+Covers 'facets/array/permutation'
+
 require 'set'
 
 TestCase Array do

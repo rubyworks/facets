@@ -1,4 +1,4 @@
-require 'facets/integer/bitmask'
+Covers 'facets/integer/bitmask'
 
 Case Integer do
 

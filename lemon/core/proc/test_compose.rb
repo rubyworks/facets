@@ -1,4 +1,4 @@
-require 'facets/proc/compose'
+Covers 'facets/proc/compose'
 
 Case Proc do
 

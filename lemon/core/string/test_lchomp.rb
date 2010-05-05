@@ -1,4 +1,4 @@
-require 'facets/string/lchomp'
+Covers 'facets/string/lchomp'
 
 Case String do
 

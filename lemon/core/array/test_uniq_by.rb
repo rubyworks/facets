@@ -1,6 +1,6 @@
-require 'facets/array/uniq_by'
+Covers 'facets/array/uniq_by'
 
-Case Enumerable do
+Case Array do
 
   Unit :uniq_by! do
     e = [-5, -4, -3, -2, -1, 0]

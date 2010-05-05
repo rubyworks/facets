@@ -1,4 +1,4 @@
-require 'facets/binding/eval'
+Covers 'facets/binding/eval'
 
 TestCase Binding do
 

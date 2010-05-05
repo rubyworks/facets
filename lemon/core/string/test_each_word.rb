@@ -1,4 +1,4 @@
-require 'facets/string/each_word.rb'
+Covers 'facets/string/each_word.rb'
 
 Case String do
 

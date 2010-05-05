@@ -1,4 +1,4 @@
-require 'facets/string/interpolate'
+Covers 'facets/string/interpolate'
 
 Case String do
 

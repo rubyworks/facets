@@ -1,4 +1,4 @@
-require 'facets/binding/opvars'
+Covers 'facets/binding/opvars'
 
 TestCase Binding do
 

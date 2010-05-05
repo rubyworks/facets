@@ -1,4 +1,4 @@
-require 'facets/array/product'
+Covers 'facets/array/product'
 
 TestCase Array do
 

@@ -1,4 +1,4 @@
-require 'facets/time/elapse'
+Covers 'facets/time/elapse'
 
 Case Time do
 

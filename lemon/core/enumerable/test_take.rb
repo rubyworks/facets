@@ -1,4 +1,4 @@
-require 'facets/enumerable/take'
+Covers 'facets/enumerable/take'
 
 Case Enumerable do
 

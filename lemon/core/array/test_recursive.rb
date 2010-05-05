@@ -1,4 +1,4 @@
-require 'facets/array/recursive'
+Covers 'facets/array/recursive'
 
 TestCase Array do
 

@@ -1,4 +1,4 @@
-require 'facets/binding/caller.rb'
+Covers 'facets/binding/caller'
 
 TestCase Binding do
 

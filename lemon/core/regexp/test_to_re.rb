@@ -1,4 +1,4 @@
-require 'facets/regexp/to_re'
+Covers 'facets/regexp/to_re'
 
 Case Regexp do
 

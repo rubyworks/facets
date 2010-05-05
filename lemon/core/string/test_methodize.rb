@@ -1,4 +1,4 @@
-require 'facets/string/methodize'
+Covers 'facets/string/methodize'
 
 Case String do
 
@@ -14,7 +14,7 @@ Case String do
     a.methodize.assert == r
   end
 
-  Unit :methodize => "name space"
+  Unit :methodize => "name space" do
     a = "Foo::Base"
     r = "foo__base"
     a.methodize.assert == r

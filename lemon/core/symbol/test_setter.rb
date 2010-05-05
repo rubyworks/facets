@@ -1,4 +1,4 @@
-require 'facets/symbol/setter'
+Covers 'facets/symbol/setter'
 
 Case Symbol do
 

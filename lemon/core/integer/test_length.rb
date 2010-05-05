@@ -1,4 +1,4 @@
-require 'facets/integer/length'
+Covers 'facets/integer/length'
 
 Case Integer do
 

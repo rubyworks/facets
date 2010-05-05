@@ -1,4 +1,4 @@
-require 'facets/string/fold'
+Covers 'facets/string/fold'
 
 Case String do
 

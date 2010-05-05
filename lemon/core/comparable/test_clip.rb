@@ -1,4 +1,4 @@
-require 'facets/comparable/clip'
+Covers 'facets/comparable/clip'
 
 TestCase Comparable do
 

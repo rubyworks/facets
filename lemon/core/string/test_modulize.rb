@@ -1,4 +1,4 @@
-require 'facets/string/modulize'
+Covers 'facets/string/modulize'
 
 Case String do
 

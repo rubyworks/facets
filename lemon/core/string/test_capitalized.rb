@@ -1,4 +1,4 @@
-require 'facets/string/capitalized'
+Covers 'facets/string/capitalized'
 
 Case String do
 

@@ -1,4 +1,4 @@
-require 'facets/array/rotate'
+Covers 'facets/array/rotate'
 
 TestCase Array do
 

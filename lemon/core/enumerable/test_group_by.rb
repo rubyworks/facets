@@ -1,4 +1,4 @@
-require 'facets/enumerable/group_by'
+Covers 'facets/enumerable/group_by'
 
 Case Enumerable do
 

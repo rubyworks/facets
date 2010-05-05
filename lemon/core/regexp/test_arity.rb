@@ -1,4 +1,4 @@
-require 'facets/regexp/arity'
+Covers 'facets/regexp/arity'
 
 Case Regexp do
 

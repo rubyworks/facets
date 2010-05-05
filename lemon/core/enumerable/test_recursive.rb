@@ -1,4 +1,4 @@
-require 'facets/enumerable/recursive'
+Covers 'facets/enumerable/recursive'
 
 Case Enumerable do
 

@@ -1,4 +1,4 @@
-require 'facets/string/titlecase'
+Covers 'facets/string/titlecase'
 
 Case String do
 

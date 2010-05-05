@@ -1,4 +1,4 @@
-require 'facets/string/rewrite'
+Covers 'facets/string/rewrite'
 
 Case String do
 

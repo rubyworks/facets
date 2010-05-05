@@ -1,4 +1,4 @@
-require 'facets/integer/even'
+Covers 'facets/integer/even'
 
 Case Integer do
 

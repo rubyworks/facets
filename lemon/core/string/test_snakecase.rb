@@ -1,4 +1,4 @@
-require 'facets/string/snakecase'
+Covers 'facets/string/snakecase'
 
 Case String do
 

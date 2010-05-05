@@ -1,4 +1,4 @@
-require 'facets/string/camelcase'
+Covers 'facets/string/camelcase'
 
 Case String do
 

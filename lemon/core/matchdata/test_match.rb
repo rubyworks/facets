@@ -1,4 +1,4 @@
-require 'facets/matchdata/match'
+Covers 'facets/matchdata/match'
 
 Case MatchData do
 

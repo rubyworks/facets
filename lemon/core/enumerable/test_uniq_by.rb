@@ -1,4 +1,4 @@
-require 'facets/enumerable/uniq_by'
+Covers 'facets/enumerable/uniq_by'
 
 Case Enumerable do
 

@@ -1,4 +1,4 @@
-require 'facets/enumerable/split'
+Covers 'facets/enumerable/split'
 
 Case Enumerable do
 

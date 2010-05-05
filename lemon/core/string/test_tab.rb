@@ -1,4 +1,4 @@
-require 'facets/string/tab'
+Covers 'facets/string/tab'
 
 Case String do
 

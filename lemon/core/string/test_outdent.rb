@@ -1,4 +1,4 @@
-require 'facets/string/outdent'
+Covers 'facets/string/outdent'
 
 Case String do
 

@@ -1,4 +1,4 @@
-require 'facets/string/cleave'
+Covers 'facets/string/cleave'
 
 Case String do
 

@@ -1,4 +1,4 @@
-require 'facets/array/pad'
+Covers 'facets/array/pad'
 
 TestCase Array do
 

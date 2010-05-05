@@ -1,4 +1,4 @@
-require 'facets/enumerable/modulate'
+Covers 'facets/enumerable/modulate'
 
 Case Enumerable do
 

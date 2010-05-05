@@ -1,4 +1,4 @@
-require 'facets/time/trunc'
+Covers 'facets/time/trunc'
 
 Case Time do
 

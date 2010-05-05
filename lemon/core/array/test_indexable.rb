@@ -1,4 +1,4 @@
-require 'facets/array/indexable'
+Covers 'facets/array/indexable'
 
 TestCase Array do
 

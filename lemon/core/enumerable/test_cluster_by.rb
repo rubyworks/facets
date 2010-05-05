@@ -1,4 +1,4 @@
-require 'facets/enumerable/cluster_by'
+Covers 'facets/enumerable/cluster_by'
 
 Case Enumerable do
 

@@ -1,4 +1,4 @@
-require 'facets/string/mscan'
+Covers 'facets/string/mscan'
 
 Case String do
 

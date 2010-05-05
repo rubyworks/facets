@@ -1,4 +1,4 @@
-require 'facets/string/bytes'
+Covers 'facets/string/bytes'
 
 Case String do
 

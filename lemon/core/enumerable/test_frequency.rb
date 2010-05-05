@@ -1,4 +1,4 @@
-require 'facets/enumerable/frequency'
+Covers 'facets/enumerable/frequency'
 
 Case Enumerable do
 

@@ -1,4 +1,4 @@
-require 'facets/range/combine'
+Covers 'facets/range/combine'
 
 Case Range do
 

@@ -1,46 +1,41 @@
-require 'facets/dir/multiglob'
-require 'ae/legacy'
+Covers 'facets/dir/multiglob'
+
 require 'fileutils'
 require 'tmpdir'
 
 Case Dir do
 
-  MULTIGLOB_TESTDIR = File.join(Dir.tmpdir, 'facets', 'dir', 'multiglob', Time.now.usec.to_s)
-  MULTIGLOB_DIRS  = %w{A A/B}
-  MULTIGLOB_FILES = %w{A.txt A/B.txt A/B/C.txt}
+  test_directory = File.join(Dir.tmpdir, 'facets', 'dir', 'multiglob', Time.now.usec.to_s)
+  multiglob_dirs  = %w{A A/B}
+  multiglob_files = %w{A.txt A/B.txt A/B/C.txt}
+
+  Before :multiglob, :multiglob_r do
+    multiglob_dirs.each do |x|
+      FileUtils.mkdir_p(File.join(test_directory, x))
+    end
+    multiglob_files.each do |x|
+      File.open(File.join(test_directory, x), 'w'){ |f| f << "SPINICH" }
+    end
+  end
+
+  After :multiglob, :multiglob_r do
+    FileUtils.rm_r(test_directory)
+  end
 
   Unit :multiglob do
-   multiglob_setup
-   Dir.chdir MULTIGLOB_TESTDIR do
-     rs = %w{A A.txt}
-     fs = Dir.multiglob('*').sort
-     assert_equal( rs, fs, Dir.pwd  )
-   end
-
+    Dir.chdir test_directory do
+      x = %w{A A.txt}
+      r = Dir.multiglob('*').sort
+      r.assert == x
+    end
   end
 
   Unit :multiglob_r do
-    multiglob_setup
-    Dir.chdir MULTIGLOB_TESTDIR do
-      rs = (MULTIGLOB_DIRS + MULTIGLOB_FILES).sort
-      fs = Dir.multiglob_r('*').sort
-      assert_equal( rs, fs, Dir.pwd  )
+    Dir.chdir test_directory do
+      x = (multiglob_dirs + multiglob_files).sort
+      r = Dir.multiglob_r('*').sort
+      r.assert == x
     end
-    multiglob_teardown
-  end
-
-  #
-  def multiglob_setup
-    MULTIGLOB_DIRS.each do |x|
-      FileUtils.mkdir_p(File.join(MULTIGLOB_TESTDIR, x))
-    end
-    MULTIGLOB_FILES.each do |x|
-      File.open(File.join(MULTIGLOB_TESTDIR, x), 'w'){ |f| f << "SPINICH" }
-    end
-  end
-
-  def multiglob_teardown
-    FileUtils.rm_r(MULTIGLOB_TESTDIR)
   end
 
 end

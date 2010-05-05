@@ -1,4 +1,4 @@
-require 'facets/string/pathize'
+Covers 'facets/string/pathize'
 
 Case String do
 

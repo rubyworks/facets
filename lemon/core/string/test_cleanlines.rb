@@ -1,4 +1,4 @@
-require 'facets/string/cleanlines'
+Covers 'facets/string/cleanlines'
 
 Case String do
 

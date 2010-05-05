@@ -1,4 +1,4 @@
-require 'facets/proc/to_method'
+Covers 'facets/proc/to_method'
 
 Case Proc do
 

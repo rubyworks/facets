@@ -1,4 +1,4 @@
-require 'facets/string/shatter'
+Covers 'facets/string/shatter'
 
 Case String do
 

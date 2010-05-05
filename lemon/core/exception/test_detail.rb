@@ -1,4 +1,4 @@
-require 'facets/exception/detail'
+Covers 'facets/exception/detail'
 
 Case Exception do
 

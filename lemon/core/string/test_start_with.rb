@@ -1,4 +1,4 @@
-require 'facets/string/start_with'
+Covers 'facets/string/start_with'
 
 Case String do
 

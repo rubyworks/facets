@@ -1,4 +1,4 @@
-require 'facets/string/subtract'
+Covers 'facets/string/subtract'
 
 Case String do
 

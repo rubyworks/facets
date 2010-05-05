@@ -1,4 +1,4 @@
-require 'facets/string/each_char'
+Covers 'facets/string/each_char'
 
 Case String do
 

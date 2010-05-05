@@ -1,4 +1,4 @@
-require 'facets/array/only.rb'
+Covers 'facets/array/only.rb'
 
 TestCase Array do
 

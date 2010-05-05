@@ -1,4 +1,4 @@
-require 'facets/binding/self'
+Covers 'facets/binding/self'
 
 TestCase Binding do
 

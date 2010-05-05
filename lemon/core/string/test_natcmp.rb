@@ -1,4 +1,4 @@
-require 'facets/string/natcmp'
+Covers 'facets/string/natcmp'
 
 Case String do
 

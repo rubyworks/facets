@@ -1,4 +1,4 @@
-require 'facets/string/margin'
+Covers 'facets/string/margin'
 
 Case String do
 

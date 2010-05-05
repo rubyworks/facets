@@ -1,11 +1,10 @@
-require 'facets/class/to_proc'
-
-Person = Struct.new(:name)
+Covers 'facets/class/to_proc'
 
 TestCase Class do
 
   Unit :to_proc do
-    people = ["joe"].map(&Person)
+    person = Struct.new(:name)
+    people = ["joe"].map(&person)
     people[0].name.assert == "joe"
   end
 

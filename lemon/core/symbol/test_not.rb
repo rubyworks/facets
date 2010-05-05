@@ -1,4 +1,4 @@
-require 'facets/symbol/not'
+Covers 'facets/symbol/not'
 
 Case Symbol do
 

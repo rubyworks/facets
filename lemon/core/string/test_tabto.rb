@@ -1,4 +1,4 @@
-require 'facets/string/tabto'
+Covers 'facets/string/tabto'
 
 Case String do
 

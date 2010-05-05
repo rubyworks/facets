@@ -1,5 +1,4 @@
-require 'facets/string/line_wrap'
-require 'test/unit'
+Covers 'facets/string/line_wrap'
 
 Case String do
 

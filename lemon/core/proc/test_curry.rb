@@ -1,4 +1,4 @@
-require 'facets/proc/curry'
+Covers 'facets/proc/curry'
 
 Case Proc do
 

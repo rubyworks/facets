@@ -1,4 +1,5 @@
-require 'facets/time.rb'
+Covers 'facets/time/stamp'
+
 require 'time' # for parse method
 
 Case Time do

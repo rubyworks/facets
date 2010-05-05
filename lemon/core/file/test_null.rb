@@ -1,9 +1,9 @@
-require 'facets/file/null'
+Covers 'facets/file/null'
 
 Case File do
 
   # FIXME
-  Unit :null do
+  MetaUnit :null do
     assert File.null
   end
 

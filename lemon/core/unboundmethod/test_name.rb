@@ -1,4 +1,4 @@
-require 'facets/unboundmethod/name'
+Covers 'facets/unboundmethod/name'
 
 Case UnboundMethod do
 
@@ -6,7 +6,7 @@ Case UnboundMethod do
     def foo; "bar"; end
   end
 
-  def test_name
+  Unit :name do
     meth = X.instance_method(:foo)
     meth.name.to_sym.assert == :foo
   end

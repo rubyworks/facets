@@ -1,13 +1,13 @@
-require 'facets/class/descendents.rb'
-
-class A ; end
-class B < A ; end
-class C < B ; end
+Covers 'facets/class/descendents'
 
 TestCase Class do
 
+  a = Class.new
+  b = Class.new(a)
+  c = Class.new(b)
+
   Unit :descendents do
-    A.descendents.assert == [C,B]
+    a.descendents.assert == [c,b]
   end
 
 end

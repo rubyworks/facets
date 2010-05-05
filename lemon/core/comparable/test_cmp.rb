@@ -1,4 +1,4 @@
-require 'facets/comparable/cmp'
+Covers 'facets/comparable/cmp'
 
 Case Comparable do
 

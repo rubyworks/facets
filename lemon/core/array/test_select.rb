@@ -1,4 +1,4 @@
-require 'facets/array/select'
+Covers 'facets/array/select'
 
 TestCase Array do
 

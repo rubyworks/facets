@@ -1,4 +1,4 @@
-require 'facets/enumerable/map_with_index'
+Covers 'facets/enumerable/map_with_index'
 
 Case Enumerable do
 

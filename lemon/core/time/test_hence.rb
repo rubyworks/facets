@@ -1,4 +1,5 @@
-require 'facets/time/hence'
+Covers 'facets/time/hence'
+
 #require 'time' # for parse method
 
 Case Time do

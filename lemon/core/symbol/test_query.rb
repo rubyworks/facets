@@ -1,4 +1,4 @@
-require 'facets/symbol/query'
+Covers 'facets/symbol/query'
 
 Case Symbol do
 

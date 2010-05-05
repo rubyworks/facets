@@ -1,4 +1,4 @@
-require 'facets/numeric/spacing'
+Covers 'facets/numeric/spacing'
 
 Case Numeric do
 

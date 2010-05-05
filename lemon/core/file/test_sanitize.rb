@@ -1,27 +1,28 @@
-require 'facets/file'
+Covers 'facets/file'
+
 require File.dirname(__FILE__) + '/test_helper'
 
 Case File do
 
   # TODO: Write file identity tests.
 
-  Unit :sanitize => "spaces become underscores" do
+  MetaUnit :sanitize => "spaces become underscores" do
     MockFile.sanitize('This is a test').assert == "This_is_a_test"
   end
 
-  Unit :sanitize => "Windows-style path dividers" do
+  MetaUnit :sanitize => "Windows-style path dividers" do
     MockFile.sanitize('This\is\test').assert == "test"
   end
 
-  Unit :sanitize => "Unix-style path dividers" do
+  MetaUnit :sanitize => "Unix-style path dividers" do
     MockFile.sanitize('This/is/test').assert == "test"
   end
 
-  Unit :sanitize => "non-word characters" do
+  MetaUnit :sanitize => "non-word characters" do
     MockFile.sanitize('This/te#$#@!st').assert == "te_____st"
   end
 
-  Unit :sanitize => "initial dot" do
+  MetaUnit :sanitize => "initial dot" do
     MockFile.sanitize('.').assert == "_."
     MockFile.sanitize('....').assert == "_...."
   end

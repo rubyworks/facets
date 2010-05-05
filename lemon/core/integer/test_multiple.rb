@@ -1,4 +1,4 @@
-require 'facets/integer/multiple'
+Covers 'facets/integer/multiple'
 
 Case Integer do
 

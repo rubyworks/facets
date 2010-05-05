@@ -1,4 +1,4 @@
-require 'facets/enumerable/count'
+Covers 'facets/enumerable/count'
 
 Case Enumerable do
 

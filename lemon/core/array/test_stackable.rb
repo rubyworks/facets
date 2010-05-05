@@ -1,4 +1,4 @@
-require 'facets/array/stackable.rb'
+Covers 'facets/array/stackable.rb'
 
 TestCase Array do
 

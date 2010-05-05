@@ -1,10 +1,9 @@
-require 'facets/comparable/op_get'
+Covers 'facets/comparable/op_get'
 
 TestCase Comparable do
 
   Unit :[] do
 
-    # TODO: For some reason lemon is saying these methods are uncovered. Why?
     c = Class.new do
       include Comparable[:a,:b]
 

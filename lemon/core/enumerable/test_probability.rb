@@ -1,4 +1,4 @@
-require 'facets/enumerable/probability'
+Covers 'facets/enumerable/probability'
 
 Case Enumerable do
 

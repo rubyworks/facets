@@ -1,4 +1,4 @@
-require 'facets/array/merge'
+Covers 'facets/array/merge'
 
 TestCase Array do
 

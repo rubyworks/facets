@@ -1,4 +1,4 @@
-require 'facets/time/to_time'
+Covers 'facets/time/to_time'
 
 Case Time do
 

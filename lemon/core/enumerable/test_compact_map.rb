@@ -1,4 +1,4 @@
-require 'facets/enumerable/compact_map.rb'
+Covers 'facets/enumerable/compact_map.rb'
 
 Case Enumerable do
 

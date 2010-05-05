@@ -1,5 +1,5 @@
-require 'facets/dir/ascend'
-require 'ae/legacy'
+Covers 'facets/dir/ascend'
+
 require 'tmpdir'
 
 Case Dir do
@@ -16,7 +16,7 @@ Case Dir do
      end
      rdir = test_directory
      c.each do |d|
-       assert_equal(rdir, d)
+       d.assert == rdir
        rdir = File.dirname(rdir)
      end
    end
@@ -28,7 +28,7 @@ Case Dir do
      end
      rdir = File.dirname(test_directory)
      c.each do |d|
-       assert_equal(rdir, d)
+       d.assert == rdir
        rdir = File.dirname(rdir)
      end
    end

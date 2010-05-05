@@ -1,4 +1,4 @@
-require 'facets/array/combination'
+Covers 'facets/array/combination'
 
 TestCase Array do
 

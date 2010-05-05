@@ -1,4 +1,4 @@
-require 'facets/binding/local_variables'
+Covers 'facets/binding/local_variables'
 
 TestCase Binding do
 

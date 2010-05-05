@@ -1,4 +1,4 @@
-require 'facets/range/overlap'
+Covers 'facets/range/overlap'
 
 Case Range do
 

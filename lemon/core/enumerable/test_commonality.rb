@@ -1,4 +1,4 @@
-require 'facets/enumerable/commonality.rb'
+Covers 'facets/enumerable/commonality.rb'
 
 Case Enumerable do
 

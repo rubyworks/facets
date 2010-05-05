@@ -1,4 +1,4 @@
-require 'facets/enumerable/occur'
+Covers 'facets/enumerable/occur'
 
 Case Enumerable do
 

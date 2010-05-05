@@ -1,4 +1,4 @@
-require 'facets/string/indent'
+Covers 'facets/string/indent'
 
 Case String do
 

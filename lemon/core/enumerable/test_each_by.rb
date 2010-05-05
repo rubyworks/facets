@@ -1,4 +1,4 @@
-require 'facets/enumerable/each_by'
+Covers 'facets/enumerable/each_by'
 
 Case Enumerable do
 

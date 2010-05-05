@@ -1,4 +1,4 @@
-require 'facets/string/unfold'
+Covers 'facets/string/unfold'
 
 Case String do
 

@@ -1,4 +1,4 @@
-require 'facets/symbol/chomp'
+Covers 'facets/symbol/chomp'
 
 Case Symbol do
 

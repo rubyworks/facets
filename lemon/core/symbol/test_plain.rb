@@ -1,4 +1,4 @@
-require 'facets/symbol/plain'
+Covers 'facets/symbol/plain'
 
 Case Symbol do
 

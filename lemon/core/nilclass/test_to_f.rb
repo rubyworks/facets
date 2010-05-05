@@ -1,6 +1,6 @@
-require 'facets/nilclass/to_f'
+Covers 'facets/nilclass/to_f'
 
-Case NilClass
+Case NilClass do
 
   Unit :to_f do
     nil.to_f.assert == 0

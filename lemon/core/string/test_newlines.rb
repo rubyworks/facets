@@ -1,4 +1,4 @@
-require 'facets/string/newlines'
+Covers 'facets/string/newlines'
 
 Case String do
 

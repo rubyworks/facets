@@ -1,4 +1,4 @@
-require 'facets/string/splice'
+Covers 'facets/string/splice'
 
 Case String do
 

@@ -1,4 +1,4 @@
-require 'facets/proc/bind'
+Covers 'facets/proc/bind'
 
 Case Proc do
 

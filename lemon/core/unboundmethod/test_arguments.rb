@@ -1,4 +1,4 @@
-require 'facets/unboundmethod/arguments'
+Covers 'facets/unboundmethod/arguments'
 
 Case UnboundMethod do
 

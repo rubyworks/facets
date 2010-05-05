@@ -1,4 +1,4 @@
-require 'facets/array/delete'
+Covers 'facets/array/delete'
 
 TestCase Array do
 

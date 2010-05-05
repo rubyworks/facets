@@ -1,4 +1,4 @@
-require 'facets/string/divide'
+Covers 'facets/string/divide'
 
 Case String do
 

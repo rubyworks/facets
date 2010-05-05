@@ -1,4 +1,4 @@
-require 'facets/numeric/distance'
+Covers 'facets/numeric/distance'
 
 Case Numeric do
 

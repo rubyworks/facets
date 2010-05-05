@@ -1,4 +1,4 @@
-require 'facets/string/op_sub'
+Covers 'facets/string/op_sub'
 
 Case String do
 

@@ -1,9 +1,10 @@
-require 'facets/file/writelines'
+Covers 'facets/file/writelines'
+
 require File.dirname(__FILE__) + '/test_helper'
 
 Case File do
 
-  Unit :writelines do
+  MetaUnit :writelines do
     test_file = File.join(Dir::tmpdir, 'facets', 'file', 'writelines')
     FileUtils.mkdir_p(File.dirname(test_file))
 

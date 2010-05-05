@@ -1,4 +1,4 @@
-require 'facets/numeric/approx'
+Covers 'facets/numeric/approx'
 
 Case Numeric do
 

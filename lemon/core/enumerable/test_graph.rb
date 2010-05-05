@@ -1,4 +1,4 @@
-require 'facets/enumerable/graph'
+Covers 'facets/enumerable/graph'
 
 Case Enumerable do
 

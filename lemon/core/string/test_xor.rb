@@ -1,4 +1,4 @@
-require 'facets/string/xor'
+Covers 'facets/string/xor'
 
 Case String do
 

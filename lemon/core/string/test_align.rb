@@ -1,4 +1,4 @@
-require 'facets/string/align'
+Covers 'facets/string/align'
 
 Case String do
 

@@ -1,4 +1,4 @@
-require 'facets/string/expand_tab'
+Covers 'facets/string/expand_tab'
 
 Case String do
 

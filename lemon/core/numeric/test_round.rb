@@ -1,4 +1,4 @@
-require 'facets/numeric/round'
+Covers 'facets/numeric/round'
 
 Case Numeric do
 

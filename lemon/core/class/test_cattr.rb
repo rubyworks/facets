@@ -1,4 +1,4 @@
-require 'facets/class/cattr.rb'
+Covers 'facets/class/cattr'
 
 class MockObject
   def initialize

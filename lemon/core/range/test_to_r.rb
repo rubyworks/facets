@@ -1,4 +1,4 @@
-require 'facets/range/to_r'
+Covers 'facets/range/to_r'
 
 Case Range do
 

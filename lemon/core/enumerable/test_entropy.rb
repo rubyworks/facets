@@ -1,4 +1,4 @@
-require 'facets/enumerable/entropy'
+Covers 'facets/enumerable/entropy'
 
 Case Enumerable do
 

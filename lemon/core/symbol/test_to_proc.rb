@@ -1,4 +1,4 @@
-require 'facets/symbol/to_proc'
+Covers 'facets/symbol/to_proc'
 
 Case Symbol do
 

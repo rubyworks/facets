@@ -1,4 +1,4 @@
-require 'facets/string/variablize'
+Covers 'facets/string/variablize'
 
 Case String do
 

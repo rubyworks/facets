@@ -1,4 +1,4 @@
-require 'facets/enumerable/find_yield'
+Covers 'facets/enumerable/find_yield'
 
 Case Enumerable do
   

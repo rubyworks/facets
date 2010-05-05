@@ -1,4 +1,4 @@
-require 'facets/symbol/succ'
+Covers 'facets/symbol/succ'
 
 Case Symbol do
 

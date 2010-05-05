@@ -1,4 +1,4 @@
-require 'facets/enumerable/inject'
+Covers 'facets/enumerable/inject'
 
 Case Enumerable do
 

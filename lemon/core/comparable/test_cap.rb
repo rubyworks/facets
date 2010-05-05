@@ -1,4 +1,4 @@
-require 'facets/comparable/bound'
+Covers 'facets/comparable/bound'
 
 TestCase Comparable do
 

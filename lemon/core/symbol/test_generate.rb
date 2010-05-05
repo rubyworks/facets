@@ -1,4 +1,4 @@
-require 'facets/symbol/generate'
+Covers 'facets/symbol/generate'
 
 Case Symbol do
 

@@ -1,4 +1,4 @@
-require 'facets/filetest/root'
+Covers 'facets/filetest/root'
 
 Case FileTest do
 
