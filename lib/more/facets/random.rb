@@ -62,6 +62,7 @@ module Random
   #  ::Kernel.rand(*args)
   #end
 
+=begin
   #
   def self.append_features(mod)
     if mod == ::Object
@@ -74,10 +75,15 @@ module Random
       mod.send(:include, Random::Hash)
     elsif mod == ::String
       mod.send(:include, Random::String)
+    elsif mod == ::Integer
+      mod.send(:include, Random::Integer)
+    elsif mod == ::Numeric
+      mod.send(:include, Random::Numeric)
     else
       raise TypeError
     end
   end
+=end
 
   #
 
@@ -114,27 +120,60 @@ module Random
     #   ('a'..'z').at_rand       #=> 'q'
     #   ('a'..'z').at_rand       #=> 'f'
     #
-    # CREDIT: Lavir the Whiolet
+    # CREDIT: Lavir the Whiolet, Thomas Sawyer
 
     def at_rand
       first, last = first(), last()
-      if first.respond_to?(:succ)
-        # optimized algorithm
-        if (Fixnum === first || Bignum === first) &&
-           (Fixnum === last  || Bignum === last)
-          last -= 1 if exclude_end?
-          return nil if last < first
-          return Random.number(last - first + 1) + first
+      if first.respond_to?(:random_delta)  # TODO: work on this!!!
+        begin
+          first.random_delta(last, exclude_end?)
+        rescue
+          to_a.at_rand
         end
-        # standard algorithm
-        return to_a.at_rand
-      elsif Numeric === first && Numeric === last
-        return nil if last < first
-        return nil if exclude_end? && last == first
-        return (last - first) * Random.number + first
       else
-        return nil
+        to_a.at_rand
       end
+      #elsif first.respond_to?(:succ)
+      #  # optimized algorithm
+      #  if (Fixnum === first || Bignum === first) &&
+      #     (Fixnum === last  || Bignum === last)
+      #    last -= 1 if exclude_end?
+      #    return nil if last < first
+      #    return Random.number(last - first + 1) + first
+      #  end
+      #  # standard algorithm
+      #  return to_a.at_rand
+      #elsif Numeric === first && Numeric === last
+      #  return nil if last < first
+      #  return nil if exclude_end? && last == first
+      #  return (last - first) * Random.number + first
+      #else
+      #  return nil
+      #end
+    end
+
+  end
+
+  #
+  module Integer
+
+    def random_delta(last, exclude_end)
+      first = self
+      last -= 1 if exclude_end
+      return nil if last < first
+      return Random.number(last - first + 1) + first
+    end
+
+  end
+
+  #
+  module Numeric
+
+    def random_delta(last, exclude_end)
+      first = self
+      return nil if last < first
+      return nil if exclude_end && last == first
+      return (last - first) * Random.number + first
     end
 
   end
@@ -477,23 +516,11 @@ module Random
 
 end
 
-class Object
-  include Random
-end
-
-class Range
-  include Random
-end
-
-class Array
-  include Random
-end
-
-class Hash
-  include Random
-end
-
-class String
-  include Random
-end
+class Object  ; include Random::Object  ; end
+class Range   ; include Random::Range   ; end
+class Array   ; include Random::Array   ; end
+class Hash    ; include Random::Hash    ; end
+class String  ; include Random::String  ; end
+class Integer ; include Random::Integer ; end
+class Numeric ; include Random::Numeric ; end
 
