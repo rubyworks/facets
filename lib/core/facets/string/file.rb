@@ -8,8 +8,8 @@ class String
   #  
   def file
     f = self
-    Functor.new do |op, *a|
-      File.send(op, f, *a)
+    Functor.new do |op, *a, &b|
+      File.send(op, f, *a, &b)
     end
   end
 
