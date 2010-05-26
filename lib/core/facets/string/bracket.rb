@@ -2,7 +2,7 @@ class String
 
   BRA2KET = { '['=>']', '('=>')', '{'=>'}', '<'=>'>' }
 
-  # Return a new string embraced by given brakets.
+  # Return a new string embraced by given brackets.
   # If only one bracket char is given it will be placed
   # on either side.
   #
@@ -17,7 +17,7 @@ class String
     "#{bra}#{self}#{ket ? ket : bra}"
   end
 
-  # Inplace version of #braket.
+  # Inplace version of #bracket.
   #
   # CREDIT: Trans
 
@@ -25,9 +25,9 @@ class String
     self.replace(bracket(bra, ket))
   end
 
-  # Return a new string embraced by given brakets.
-  # If only one bracket char is given it will be placed
-  # on either side.
+  # Return a new string with the given brackets removed.
+  # If only one bracket char is given it will be removed
+  # from either side.
   #
   #   "{unwrap me}".debracket('{')        #=> "unwrap me"
   #   "--unwrap me!".debracket('--','!')  #=> "unwrap me!"
@@ -50,7 +50,7 @@ class String
     return self.dup  # if nothing else
   end
 
-  # Inplace version of #debraket.
+  # Inplace version of #unbracket.
   #
   # CREDIT: Trans
 
@@ -81,7 +81,7 @@ class String
 
   # Remove quotes from string.
   #
-  #   "'hi'".dequite    #=> "hi"
+  #   "'hi'".dequote    #=> "hi"
   #
   # CREDIT: Trans
 
