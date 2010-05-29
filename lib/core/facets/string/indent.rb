@@ -13,12 +13,52 @@ class String
     end
   end
 
-  # Outdent just indents a negative number of spaces.
-  #
-  # CREDIT: Noah Gibbs
+  # Equivalent to String#indent, but modifies the receiver in place.
 
-  def outdent(n)
-    indent(-n)
+  def indent!(n, c=' ')
+    replace(indent(n,c))
+  end
+
+  # Remove excessive indentation. Useful for multi-line strings embeded in
+  # already indented code.
+  #
+  #   puts <<-END.unindent
+  #     ohaie
+  #       wurld
+  #   END
+  #
+  #   # outputs:
+  #   ohaie
+  #     wurld
+  #
+  #   # instead of:
+  #     ohaie
+  #       wurld
+  #
+  # CREDIT: Noah Gibbs, mynyml
+
+  def unindent(size=nil)
+    if size
+      indent(-size)
+    else
+      char = ' '
+      self.scan(/^[\ \t]*\S/) do |m|
+        if size.nil? || m.size < size
+          size = m.size
+          char = m[0...-1]
+        end
+      end
+      size -= 1
+      indent(-size, char)
+    end
+  end
+
+  # Equivalent to String#unindent, but modifies the receiver in place.
+  #
+  # CREDIT: mynyml
+
+  def unindent!
+    self.replace(self.unindent)
   end
 
 end
