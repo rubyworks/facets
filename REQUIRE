@@ -1,0 +1,7 @@
+development:
+  - syckle
+
+development/test:
+  - lemon
+  - qed
+
