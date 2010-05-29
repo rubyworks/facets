@@ -12,10 +12,10 @@ class Module
   #
   # CREDIT: Trans
 
-  def abstract( *sym )
-    sym.each { |s|
-      define_method( s ) { raise TypeError, "undefined abstraction ##{s}" }
-    }
+  def abstract(*sym)
+    sym.each do |s|
+      define_method(s){ raise TypeError, "undefined abstraction ##{s}" }
+    end
   end
 
 end

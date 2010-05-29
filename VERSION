@@ -1,0 +1,7 @@
+name : facets
+major: 3
+monor: 0
+patch: 0
+date : 2010-05-14
+paths: lib/core lib/more lib/std
+
