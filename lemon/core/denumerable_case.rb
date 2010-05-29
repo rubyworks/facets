@@ -49,8 +49,8 @@ Case Enumerable do
 
   Unit :other_enumerable do
     a = SOURCE.defer
-    assert_equal 5, a.take(5).max
-    assert_equal 2, a.map { |i| i*2 }.take(5).min
+    a.take(5).max.assert == 5
+    a.map{ |i| i*2 }.take(5).min.assert == 2
     a.take(5).sort_by { |x| -x }.assert == [5,4,3,2,1]
   end
 

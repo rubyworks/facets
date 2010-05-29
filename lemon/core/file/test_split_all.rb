@@ -1,6 +1,6 @@
 Covers 'facets/file/split_all'
 
-require File.dirname(__FILE__) + '/test_helper'
+require File.dirname(__FILE__) + '/helpers/mockfile'
 
 Case File do
 

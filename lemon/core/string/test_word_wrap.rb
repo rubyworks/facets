@@ -5,23 +5,23 @@ Case String do
   Unit :word_wrap do
     e = "abcde\n12345\nxyzwu\n"
     r = "abcde 12345 xyzwu".word_wrap(5)
-    r.asset = e
+    r.assert == e
 
     e = "abcd\n1234\nxyzw\n"
     r = "abcd 1234 xyzw".word_wrap(4)
-    r.asset = e
+    r.assert == e
 
     e = "abc\n123\n"
     r = "abc 123".word_wrap(4)
-    r.asset = e
+    r.assert == e
 
     e = "abc \n123\n"
     r = "abc  123".word_wrap(4)
-    r.asset = e
+    r.assert == e
 
     e = "abc \n123\n"
     r = "abc     123".word_wrap(4)
-    r.asset = e
+    r.assert == e
   end
 
   Unit :word_wrap! do
