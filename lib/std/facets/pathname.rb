@@ -216,6 +216,16 @@ class Pathname
 #
 #   end
 
+  # Does a directory contain a matching entry?
+  # Or if the pathname is a file, same as #fnmatch.
+  def include?(pattern,*opts)
+    if directory?
+      glob_first(pattern,*opts)
+    else
+      fnmatch(pattern,*opts)
+    end
+  end
+
 end
 
 class NilClass
