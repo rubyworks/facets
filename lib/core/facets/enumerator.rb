@@ -1,7 +1,9 @@
-begin
+unless defined?(::Enumerator)
+
   require 'enumerator' #if RUBY_VERSION < 1.9
+
   # for Ruby 1.8 -> 1.9 transition
-  Enumerator = Enumerable::Enumerator unless defined? ::Enumerator
+  Enumerator = Enumerable::Enumerator unless defined?(::Enumerator)
 
   class Enumerator
 
@@ -58,7 +60,6 @@ begin
 
   end
 
-rescue LoadError # Ruby 1.9 already has it built-in.
 end
 
 path = __FILE__.chomp('.rb')

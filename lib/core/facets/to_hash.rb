@@ -207,11 +207,10 @@ class Hash
 
   def to_h; rehash; end
 
-  # Returns _self_.
-  #
-  # CREDIT: Trans
-
-  def to_hash; self; end
+  unless method_defined?(:to_hash) # 1.9.?+
+    # Returns _self_.
+    def to_hash; self; end
+  end
 
 end
 

@@ -1,15 +1,5 @@
 class File
 
-  # Read in a file as binary data.
-  #
-  # CREDIT: George Moschovitis
-
-  def self.read_binary(fname)
-    open(fname, 'rb') {|f|
-      return f.read
-    }
-  end
-
   # Reads in a file, removes blank lines and remarks
   # (lines starting with '#') and then returns
   # an array of all the remaining lines.

@@ -1,5 +1,3 @@
-require 'facets/enumerable/count'
-
 class Hash
 
   # Like Enumerable#count, but counts hash values.
@@ -11,4 +9,5 @@ class Hash
   end
 
 end
+
 

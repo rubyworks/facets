@@ -1,6 +1,6 @@
 module Kernel
 
-  unless method_defined?(:__method__)  # 1.8.7+
+  unless defined?(__method__) == "method"  # 1.8.7+
 
     # Retreive the current running method name.
     #
@@ -19,7 +19,7 @@ module Kernel
 
   end
 
-  unless method_defined?(:__callee__)  # 1.9+
+  unless defined?(__callee__) == "method"  # 1.9+
 
     # Retreive the current running method name.
     #

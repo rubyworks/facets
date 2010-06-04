@@ -1,5 +1,3 @@
-require 'facets/array/uniq_by'
-
 class Array
 
   # Like #uniq, but determines uniqueness based on a given block.

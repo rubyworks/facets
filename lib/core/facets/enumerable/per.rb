@@ -22,8 +22,8 @@ module Enumerable
       #  __send__(enum_method, *enum_args){ |x| x.__send__(op, *args) } #, &blk) }
       #end
     else
-      Functor.new do |enum_method, *enum_args|
-        Permeator.new(self, enum_method, *enum_args)
+      Functor.new do |enumr_method, *enumr_args|
+        Permeator.new(self, enumr_method, *enumr_args)
         #Functor.new do |op, *args|
         #  __send__(enum_method, *enum_args){ |x| x.__send__(op, *args) } #, &blk) }
         #end
