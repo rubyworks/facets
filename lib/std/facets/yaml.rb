@@ -59,8 +59,8 @@ class File
   #
   # Note this isn't perfect. At present it depends on the use
   # use of an initial document separator (eg. '---'). With
-  # YAML 1.1 the %YAML delaration will be manditory, so in the
-  # future this can be adapted to fit that standard.
+  # YAML 1.1 the %YAML delaration is supposed to be manditory,
+  # so in the future this can be adapted to fit that standard.
   #
   def self.yaml?(file)
     File.open(file) do |f|
@@ -70,6 +70,15 @@ class File
         break false unless line =~ /^(\s*#.*?|\s*)$/
       end
     end
+  end
+end
+
+module YAML
+  # Shortcut for
+  #   YAML.load(File.new(file))
+  #
+  def self.read(file)
+    load(File.new(file))
   end
 end
 
