@@ -1,6 +1,6 @@
 module Enumerable
 
-  unless method_defined?(:exclude?) or defined?(::ActiveSupport)  # 1.9 or ActiveSupport
+  unless method_defined?(:exclude?) # 1.9
 
     # The inverse of #include?.
     #

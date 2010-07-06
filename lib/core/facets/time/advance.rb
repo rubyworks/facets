@@ -4,8 +4,6 @@ class Time
   # The +options+ parameter takes a hash with any of these keys: <tt>:years</tt>,
   # <tt>:months</tt>, <tt>:weeks</tt>, <tt>:days</tt>, <tt>:hours</tt>,
   # <tt>:minutes</tt>, <tt>:seconds</tt>.
-  #
-  # CREDIT: ActiveSupport Team
 
   def advance(options)
     d = to_date.advance(options)

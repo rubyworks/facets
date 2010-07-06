@@ -1,6 +1,6 @@
 module Enumerable
 
-  unless method_defined?(:group_by) or defined?(::ActiveSupport)  # 1.9 or ActiveSupport
+  unless method_defined?(:group_by) # 1.9
 
     # #group_by is used to group items in a collection by something they
     # have in common.  The common factor is the key in the resulting hash, the

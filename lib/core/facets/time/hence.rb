@@ -1,13 +1,9 @@
 require 'facets/time/set'
+require 'facets/time/dst_adjustment'
 
 class Time
 
-  if defined?(::ActiveSupport) && method_defined?(:since)
-
-    alias_method :in, :since
-    alias_method :hence, :since
-
-  else
+  unless method_defined?(:ago)
 
     # Returns a new Time representing the time
     # a number of time-units ago.
@@ -39,10 +35,13 @@ class Time
       )
       dst_adjustment(time)
     end
-    #
-    # Returns a new Time representing the time
-    # a number of time-units hence.
 
+  end
+
+  unless method_defined?(:hence)
+
+    # Returns a new Time representing the time a number of
+    # time-units hence.
     def hence(number, units=:seconds)
       return ago(-number, units) if number < 0
 
@@ -71,27 +70,13 @@ class Time
       dst_adjustment(time)
     end
 
-    alias_method :in, :hence
-    alias_method :since, :hence
-
-    # Adjust DST
-    #
-    # TODO: Can't seem to get this to pass ActiveSupport tests.
-    # Even though it is essentially identical to the
-    # ActiveSupport code (see Time#since in time/calculations.rb).
-    # It handles all but 4 tests.
-    def dst_adjustment(time)
-      self_dst = self.dst? ? 1 : 0
-      time_dst = time.dst? ? 1 : 0
-      seconds  = (self - time).abs
-      if (seconds >= 86400 && self_dst != time_dst)
-        time + ((self_dst - time_dst) * 60 * 60)
-      else
-        time
-      end
-    end
-
   end
+
+  # Alias for #hence.
+  alias_method :in, :hence unless method_defined?(:in)
+
+  # Alias for #hence.
+  alias_method :since, :hence unless method_defined?(:since)
 
 end
 
