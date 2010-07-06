@@ -1,6 +1,6 @@
 module Kernel
 
-  unless defined?(require_relative) == "method" # 1.9
+  unless private_method_defined?(:require_relative) # 1.9
 
     # Require file from same dir as calling script.
     #
@@ -24,7 +24,7 @@ module Kernel
   # DEPRECATED
   #alias_method :require_local, :require_relative
 
-  unless defined?(load_relative) == "method" # 1.9
+  unless private_method_defined?(:load_relative) # 1.9
 
     # Load file from same dir as calling script.
     #
