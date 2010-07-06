@@ -187,6 +187,12 @@ class OpenStruct
     o.__update__(other)
     o
   end
+
+  #
+  def to_ostruct
+    self
+  end
+
 end
 
 
@@ -233,5 +239,12 @@ class Hash
   # for inspiring recursive improvements.
   #++
 
+end
+
+class NilClass
+  # Create an empty OpenStruct object.
+  def to_ostruct
+    OpenStruct.new
+  end
 end
 
