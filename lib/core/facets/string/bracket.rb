@@ -58,48 +58,7 @@ class String
     self.replace( unbracket(bra, ket) )
   end
 
-  # Return a new string embraced by given quotes.
-  # If no quotes are specified, then assumes single quotes.
-  #
-  #   "quote me".quote     #=> "'quote me'"
-  #   "quote me".quote(2)  #=> "\"quote me\""
-  #
-  # CREDIT: Trans
-
-  def quote(type=:s)
-    case type.to_s.downcase
-    when 's', 'single'
-      bracket("'")
-    when 'd', 'double'
-      bracket('"')
-    when 'b', 'back'
-      bracket('`')
-    else
-      bracket("'")
-    end
-  end
-
-  # Remove quotes from string.
-  #
-  #   "'hi'".dequote    #=> "hi"
-  #
-  # CREDIT: Trans
-
-  def dequote
-    s = self.dup
-
-    case self[0,1]
-    when "'", '"', '`'
-      s[0] = ''
-    end
-
-    case self[-1,1]
-    when "'", '"', '`'
-      s[-1] = ''
-    end
-
-    return s
-  end
+  # TODO: rename #bracket to #embrace ?
 
 end
 

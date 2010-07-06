@@ -1,5 +1,6 @@
 class String
 
+  #
   def align(direction, n, sep="\n", c=' ')
     case direction
     when :right
