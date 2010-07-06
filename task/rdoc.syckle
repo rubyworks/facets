@@ -1,21 +1,31 @@
 ---
-rdoccore:
+rdoc-core:
   service : RDoc
   template: redfish #hanna
   output  : doc/rdoc/core
   title   : Facets Core API
   main    : doc/README.core
   extra   : "-a"
-  include : [doc/README.core, README.rdoc, lib/core]
+  include : [doc/README.core, README.rdoc, lib]
   active  : true
 
-rdocmore:
+rdoc-more:
   service : RDoc
   template: redfish #hanna
   output  : doc/rdoc/more
   title   : Facets More API
   main    : doc/README.more
   extra   : "-a"
-  include : [doc/README.more, README.rdoc, lib/more]
+  include : [doc/README.more, README.rdoc, lib.more]
+  active  : true
+
+rdoc-stnd:
+  service : RDoc
+  template: redfish #hanna
+  output  : doc/rdoc/standard
+  title   : Facets Standard API
+  main    : doc/README.stnd
+  extra   : "-a"
+  include : [doc/README.stnd, README.rdoc, lib.stnd]
   active  : true
 

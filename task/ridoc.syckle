@@ -3,5 +3,5 @@
 ridoc:
   service : RiDoc
   output  : doc/ri
-  include : [lib/core/facets, lib/more/facets]
+  include : [lib/facets, lib.more/facets, lib.stnd/facets]
 
