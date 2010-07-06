@@ -1,0 +1,7 @@
+== String#tabto
+
+  require 'facets/string/tabto'
+
+  a = "xyz".tabto(4)
+  a[0..3].assert ==  '    '
+

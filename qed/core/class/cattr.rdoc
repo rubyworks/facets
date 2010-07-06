@@ -1,0 +1,43 @@
+== Class#cattr
+
+  require 'facets/class/cattr'
+
+  class CAttrMockObject
+    def initialize
+      @@a = 10
+    end
+    def b ; @@b ; end
+  end
+
+  Exception.refute.raised? do
+    CAttrMockObject.class_eval{ cattr :a }
+  end
+  t = CAttrMockObject.new
+  t.a.assert == 10
+
+== Class#cattr_reader
+
+  Exception.refute.raised? do
+    CAttrMockObject.class_eval { cattr_reader :a }
+  end
+  t = CAttrMockObject.new
+  t.a.assert == 10
+
+== Class#cattr_writer
+
+  Exception.refute.raised? do
+    CAttrMockObject.class_eval { cattr_writer :b }
+  end
+  t = CAttrMockObject.new
+  t.b = 5
+  t.b.assert == 5
+
+== Class#cattr_accessor
+
+  Exception.refute.raised? do
+    CAttrMockObject.class_eval { cattr_accessor :c }
+  end
+  t = CAttrMockObject.new
+  t.c = 50
+  t.c.assert == 50
+

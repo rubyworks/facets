@@ -1,0 +1,6 @@
+== String#dequote
+
+  require 'facets/string/dequote'
+
+  "'this'".dequote.assert == "this"
+

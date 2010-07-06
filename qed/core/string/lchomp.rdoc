@@ -1,0 +1,14 @@
+== String#lchomp
+
+  require 'facets/string/lchomp'
+
+  s = "xxboo"
+  r = s.lchomp("xx")
+  r.assert == "boo"
+
+== String#lchomp!
+
+  s = "xxboo"
+  s.lchomp!("xx")
+  s.assert == "boo"
+

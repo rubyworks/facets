@@ -1,0 +1,8 @@
+== Binding#eval
+
+  require 'facets/binding/eval'
+
+  x = "hello"
+
+  binding.eval("x").assert == "hello"
+

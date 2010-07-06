@@ -1,0 +1,14 @@
+== Array#index
+
+  require 'facets/array/index'
+
+can handle a block
+
+  i = [1,2,3].index{ |e| e == 2 }
+  i.assert == 1
+
+when no element is found
+
+  i = [1,2,3].index{ |e| e == 5 }
+  i.assert.nil?
+

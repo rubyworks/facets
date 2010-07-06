@@ -1,0 +1,20 @@
+= Stackable
+
+Stackable it a module, like Enumerable, but provides methods specific
+to working with stacks. The Stackable module can be used independently,
+but Facets can also automatically use it to extend Array.
+
+  require 'facets/array/stackable'
+
+== Stackable#poke
+
+  a = [2,3]
+  a.poke(1).assert == [1,2,3]
+  a.poke(4).assert == [4,1,2,3]
+
+== Stackable#pull
+
+  a = [1,2,3]
+  a.pull.assert == 1
+  a.assert == [2,3]
+

@@ -1,0 +1,6 @@
+= String#end_with?
+
+  require 'facets/string/end_with'
+
+  "xxboo".assert.end_with?('boo')
+

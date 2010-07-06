@@ -1,0 +1,24 @@
+== String#quote
+
+  require 'facets/string/quote'
+
+The default is single quotes.
+
+  'hi'.quote.assert == %{"hi"}
+
+The type of quotes can be specified by name.
+
+  'hi'.quote(:single).assert == %{'hi'}
+  'hi'.quote(:double).assert == %{"hi"}
+  'hi'.quote(:back).assert == %{`hi`}
+
+They can also be specified by the first character of the name.
+
+  'hi'.quote(:s).assert == %{'hi'}
+  'hi'.quote(:d).assert == %{"hi"}
+  'hi'.quote(:b).assert == %{`hi`}
+
+Raise error on bad arguments.
+
+  ArgumentError.assert.raised?{ 'hi'.quote(1,2) }
+

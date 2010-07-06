@@ -1,0 +1,7 @@
+== String#tab
+
+  require 'facets/string/tab'
+
+  a = "xyz".tab(4)
+  a[0..3].assert == '    '
+

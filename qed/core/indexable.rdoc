@@ -1,0 +1,95 @@
+= Indexable
+
+Indexable it a module, like Enumerable, but provides methods specific
+to an indexable collection. The Indexable module can be used independently,
+but Facets can also automatically use it to extend Array.
+
+  require 'facets/string/indexable'
+
+== Indexable#head
+
+  a = [1,2,3,4,5]
+  a.head.assert == [1]
+
+== Indexable#tail
+
+  a = [1,2,3,4,5]
+  a.tail.assert == [2,3,4,5]
+
+== Indexable#foot
+
+  a = [1,2,3,4,5]
+  a.foot.assert == [5]
+
+== Indexable#body
+
+  a = [1,2,3,4,5]
+  a.body.assert == [1,2,3,4]
+
+== Indexable#mid
+
+    a = [1,2,3,4,5]
+    b = [1,2,3,4,5,6]
+    a.mid.assert == 3
+    b.mid.assert == 4
+    a.mid(1).assert == 4
+    b.mid(1).assert == 5
+    b.mid(2).assert == 6
+    b.mid(-1).assert == 3
+
+== Indexable#middle
+
+  a = [1,2,3,4,5]
+  b = [1,2,3,4,5,6]
+  a.middle == 3
+  b.middle == [3,4]
+
+== Indexable#thru
+
+  [0,1,2,3,4,5].thru(2,4).assert == [2,3,4]
+  [0,1,2,3,4,5].thru(0,1).assert == [0,1]
+
+== Indexable#first=
+
+  a = [1,2]
+  a.first = 0
+  a.assert == [0,2]
+
+== Indexable#last=
+
+  a = [1,2]
+  a.last = 3
+  a.assert == [1,3]
+
+== Indexable#ends
+
+  [1,2,3,4,5].ends.assert == 4
+
+== Indexable#pos
+
+  a = [1,2,3,4,5]
+  a.pos(1)  == 0
+  a.pos(-1) == 4
+
+== Indexable#range
+
+  a = [1,2,3,4,5]
+  b = [1,2,3,4,5,6]
+  a.range.assert == (0..4)
+  b.range.assert == (0..5)
+  a.range(2,4).assert == (1..3)
+  b.range(2,3).assert == (1..2)
+  b.range(4,2).assert == (3..1)
+
+== Indexable#first!
+
+  a = [1,2,3]
+  a.first! == 1
+  a.assert == [2,3]
+
+== Indexable#last!
+
+  a = [1,2,3]
+  a.last!.assert == 3
+  a.assert == [1,2]
+

@@ -1,0 +1,59 @@
+The caller.rb script includes a few related methods.
+We will use the following code to demonstrate their use.
+
+  require 'facets/binding/caller'
+
+  a = 1
+  b = 2
+  x = "hello"
+  
+  @bind = binding
+  @line = __LINE__  # the line number must be updated if it moves
+  @file = __FILE__  # why does it equal basename only?
+
+== Binding#caller
+
+  Exception.refute.raised? do
+    @bind.caller
+  end
+
+== Binding#callstack
+
+  @bind.callstack.assert.is_a?(Array)
+
+== Binding#__LINE__
+
+  @bind.__LINE__.assert == @line - 1
+
+== Binding#__FILE__
+
+  @bind.__FILE__.assert == @file
+
+== Binding#__DIR__
+
+  @bind.__DIR__.assert == File.dirname(@file)
+
+== Binding#__callee__
+
+This only works for certain versions.
+
+  def alternate_callee
+    binding
+  end
+
+  unless RUBY_VERSION < "1.9"
+    alternate_callee.__callee__.assert == :alternate_callee
+  end
+
+== Binding#__method__
+
+This only works for certain versions.
+
+  def alternate_method
+    binding
+  end
+
+  unless RUBY_VERSION < "1.8.7"
+    alternate_method.__method__.assert == :alternate_method
+  end
+

@@ -1,0 +1,30 @@
+== Array#rotate
+
+  require 'facets/array/rotate'
+
+clockwise
+
+  a = [1,2,3]
+  r = a.rotate
+  r.assert == [3,1,2]
+
+counter-clockwise
+
+  a = [1,2,3]
+  r = a.rotate(-1)
+  r.assert == [2,3,1]
+
+== Array#rotate!
+
+clockwise
+
+  a = [1,2,3]
+  a.rotate!
+  a.assert == [3,1,2]
+
+counter-clockwise
+
+  a = [1,2,3]
+  a.rotate!(-1)
+  a.assert == [2,3,1]
+

@@ -1,0 +1,32 @@
+== Dir#multiglob
+
+Dir#multglob is like Dir#glob but it can handle more than one match
+parameter at a time.
+
+Given a directory structure containing ...
+
+  A.txt
+  A/B.txt
+  A/B/C.txt
+
+We can use #multglob to find multiple matches.
+
+  require 'facets/dir/multiglob'
+
+  Dir.chdir temporary_directory do
+    x = %w{A A.txt}
+    r = Dir.multiglob('A', 'A.*').sort
+    r.assert == x
+  end
+
+== Dir#multiglob_r
+
+Dir#multiglob_r is like #multiglob but automatically searches
+directories recrusively.
+
+  Dir.chdir temporary_directory do
+    x = %w{A A/B A.txt A/B.txt A/B/C.txt}.sort
+    r = Dir.multiglob_r('*').sort
+    r.assert == x
+  end
+

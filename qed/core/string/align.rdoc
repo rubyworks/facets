@@ -1,0 +1,34 @@
+== String#align
+
+  require 'facets/string/align'
+
+Align a string to a given position. This method simply delegates
+to the other three more specific align methods.
+
+  "xxx".align(:right, 9).assert == "      xxx"
+  "xxx".align(:left,  9).assert == "xxx      "
+
+== String#align_right
+
+Align a string to the right. The default alignment separation is
+a newline ("\n"). This can be changed as can be the padding string
+which defaults to a single space (' ').
+
+  "xxx".align_right(9).assert == "      xxx"
+
+== String#align_left
+
+Align a string to the left. The default alignment separation is a
+newline ("\n"). This can be changed as can be the padding string
+which defaults to a single space (' ').
+
+  "xxx".align_left(9).assert == "xxx      "
+
+== String#align_center
+
+Centers each line of a string. The default alignment separation is
+a new line ("\n"). This can be changed as can be the padding string
+which defaults to a single space (' ').
+
+  "xxx".align_center(9).assert == "   xxx   "
+

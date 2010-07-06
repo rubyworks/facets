@@ -1,0 +1,6 @@
+== FileTest#root?
+
+  require 'facets/filetest/root'
+
+  FileTest.assert.root?('/')
+

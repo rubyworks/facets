@@ -1,0 +1,11 @@
+== String#chars
+
+The String#chars methods simply splits a string into
+an Array of character strings.
+
+  require 'facets/string/chars'
+
+  "abc".chars.assert == ["a","b","c"]
+
+  "ab\nc".chars.assert == ["a","b","\n","c"]
+

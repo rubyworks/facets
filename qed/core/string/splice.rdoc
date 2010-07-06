@@ -1,0 +1,28 @@
+== String#splice
+
+  require 'facets/string/splice'
+
+  a = "HELLO"
+  a.splice(1).assert == "E"
+  a.assert == "HLLO"
+
+range
+
+  a = "HELLO"
+  a.splice(1..2).assert == "EL"
+  a.assert == "HLO"
+
+store
+
+  a = "HELLO"
+  a.splice(1, "X")
+  a.assert == "HXLLO"
+
+This could be done if class of 2nd arg is checked.
+
+  #Unit :splice_length
+  #  a = "HELLO"
+  #  a.splice(1,2).assert == "EL"
+  #  a.assert == "HLO"
+  #end
+

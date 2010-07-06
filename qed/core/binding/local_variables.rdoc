@@ -1,0 +1,18 @@
+== Binding#local_variables
+
+  require 'facets/binding/local_variables'
+
+  a = 1
+  b = 2
+  x = "hello"
+
+  unless RUBY_VERSION > "1.9"
+
+    binding.local_variables.assert == ["x", "b", "a"]
+
+  else
+
+    binding.local_variables.assert == [:x, :b, :a]
+
+  end
+
