@@ -4,11 +4,29 @@ module Shellwords
 
   module_function
 
-  # Escape special characters used in most
-  # unix shells to use it, eg. with system().
-
-  def escape(cmdline)
+  # Escape special characters used in most unix shells
+  # to use it, eg. with system().
+  #
+  # This differs from Ruby's #escape in that it does not
+  # escape shell variables, e.g. $0.
+  def alt_escape(cmdline)
     cmdline.gsub(/([\\\t\| &`<>)('"])/) { |s| '\\' << s }
+  end
+
+  unless method_defined?(:escape)
+    def escape(cmdline)
+      cmdline.gsub(/([\\\t\| &`<>)('"])/) { |s| '\\' << s }
+    end
+  end
+
+  # Escape special character used in DOS-based shells.
+  #
+  # TODO: How to integrate with rest of system?
+  # 1. Use platform condition?
+  # 2. Use separate dos_xxx methods?
+  # 3. Put in separate PowerShellwords module?
+  def dos_escape(cmdline)
+    '"' + cmdline.gsub(/\\(?=\\*\")/, "\\\\\\").gsub(/\"/, "\\\"").gsub(/\\$/, "\\\\\\").gsub("%", "%%") + '"'
   end
 
 end
