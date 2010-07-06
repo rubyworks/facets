@@ -1,15 +1,12 @@
-require "facets/hash/except"
-
 class Hash
 
   # Returns a new hash with only the given keys.
-
   def slice(*keep_keys)
-    h = {}
+    hash = {}
     keep_keys.each do |key|
-      h[key] = fetch(key)
+      hash[key] = fetch(key)
     end
-    h
+    hash
   end
 
   # Replaces hash with a new hash having only the given keys.
@@ -19,9 +16,11 @@ class Hash
   #   h.slice!(:a)  #=> {:a=>1}
   #   h             #=> {:b=>2}
   #
+  # Returns a Hash of the removed pairs.
   def slice!(*keep_keys)
-    removed = except(*keep_keys)
-    replace(slice(*keep_keys))
+    rejected = keys - keep_keys
+    removed = {}
+    rejected.each{ |k| removed[k] = delete(k) }
     removed
   end
 
