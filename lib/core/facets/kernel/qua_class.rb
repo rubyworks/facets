@@ -15,5 +15,7 @@ module Kernel
     end
   end
 
+  alias_method :quaclass, :qua_class
+
 end
 
