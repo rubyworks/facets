@@ -2,13 +2,13 @@ class Symbol
 
   # Generate a unique symbol.
   #
-  #   Symbol.generate => :-1
+  #   Symbol.generate  #=> :"-1"
   #
   # If +key+ is given the new symbol will be prefixed with it.
   #
-  #   Symbol.generate(:foo) => :foo-1
+  #   Symbol.generate(:foo)  #=> :"foo-1"
   #
-  #   TODO: Is the generated symbol format acceptable?
+  # TODO: Is the generated symbol format acceptable?
   #
   # CREDIT: Trans
 

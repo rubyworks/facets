@@ -6,12 +6,16 @@ class Symbol
     # the symbol to a string uses String#succ and then
     # converts it back to a symbol.
     #
-    #   :a.succ => :b
+    #   :a.succ  #=> :b
     #
     # TODO: Make this work more like a simple character dial?
 
-    def succ
-      self.to_s.succ.intern
+    def succ(n=1)
+      s = self.to_s
+      n.times do
+        s = s.succ
+      end
+      s.to_sym
     end
 
   end
