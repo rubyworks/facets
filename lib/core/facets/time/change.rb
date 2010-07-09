@@ -7,8 +7,11 @@ class Time
   # minute, sec, and usec is set to 0. If the hour and
   # minute is passed, then sec and usec is set to 0.
   #
-  #  t = Time.now            #=> Sat Dec 01 14:10:15 -0500 2007
-  #  t.change(:hour => 11)   #=> Sat Dec 01 11:00:00 -0500 2007
+  #   t1 = Time.at(10000)
+  #   t1.to_s   #=> "Wed Dec 31 21:46:40 -0500 1969"
+  #
+  #   t2 = t1.change(:hour => 11)
+  #   t2.to_s   #=> "Wed Dec 31 11:00:00 -0500 1969"
   #
   def change(options)
     opts=options; #{}; options.each_pair{ |k,v| opts[k] = v.to_i }
@@ -24,18 +27,20 @@ class Time
     )
   end
 
-  #def change(options)
-  #  ::Time.send(
-  #    self.utc? ? :utc_time : :local_time,
-  #    options[:year]  || self.year,
-  #    options[:month] || self.month,
-  #    options[:day]   || self.day,
-  #    options[:hour]  || self.hour,
-  #    options[:min]   || (options[:hour] ? 0 : self.min),
-  #    options[:sec]   || ((options[:hour] || options[:min]) ? 0 : self.sec),
-  #    options[:usec]  || ((options[:hour] || options[:min] || options[:sec]) ? 0 : self.usec)
-  #  )
-  #end
+  # Old Version ...
+  #
+  #   def change(options)
+  #     ::Time.send(
+  #       self.utc? ? :utc_time : :local_time,
+  #       options[:year]  || self.year,
+  #       options[:month] || self.month,
+  #       options[:day]   || self.day,
+  #       options[:hour]  || self.hour,
+  #       options[:min]   || (options[:hour] ? 0 : self.min),
+  #       options[:sec]   || ((options[:hour] || options[:min]) ? 0 : self.sec),
+  #       options[:usec]  || ((options[:hour] || options[:min] || options[:sec]) ? 0 : self.usec)
+  #     )
+  #  end
 
 end
 

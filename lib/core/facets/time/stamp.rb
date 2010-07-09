@@ -27,7 +27,8 @@ class Time
 
   # Create a time stamp.
   #
-  #   Time.now.stamp(:short)    #=> "01 Dec 15:15"
+  #   t = Time.at(10000)
+  #   t.stamp(:short)    #=> "31 Dec 21:46"
   #
   # Supported formats come from the Time::FORMAT constant.
   #
