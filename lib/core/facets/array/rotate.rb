@@ -6,7 +6,6 @@ class Array
     #
     #   [1,2,3].rotate      #=> [3,1,2]
     #   [3,1,2].rotate      #=> [2,3,1]
-    #   [3,1,2].rotate      #=> [1,2,3]
     #   [1,2,3].rotate(3)   #=> [1,2,3]
     #
     # A negative parameter reverses the order from front to back.

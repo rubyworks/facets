@@ -5,8 +5,9 @@ class Array
   #
   #   arr = ["a", ["b", "c", nil], nil]
   #   arr.recursively{|a| a.compact! }
-  #   => ["a", ["b", "c"]]
+  #   #=> ["a", ["b", "c"]]
   #
+  # DEPRECATE: recursive is a more powerful solution.
   def recursively(&block)
     warn "Use #recusive instead of #recursively for future versions"
     a = inject([]) do |array, value|

@@ -3,7 +3,7 @@ class Array
   # Inverse of #delete_if.
   #
   #   [1,2,3].delete_unless{ |x| x < 2 }
-  #   => [1,2]
+  #   #=> [1]
   #
   # CREDIT: Daniel Schierbeck
 

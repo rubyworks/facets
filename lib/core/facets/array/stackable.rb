@@ -5,9 +5,8 @@ class Array
 
   include Stackable
 
-  # "Put On Top". This is an alias for unshift
-  # which puts an object# on top of the stack.
-  # It is the converse of push.
+  # "Put On Top". This is an alias for unshift which puts an object
+  # on top of the stack. It is the converse of push.
   #
   #   a=[1,2,3]
   #   a.poke(9)   #=> [9,1,2,3]
@@ -17,9 +16,8 @@ class Array
 
   alias_method :poke, :unshift
 
-  # Alias for shift which removes an object
-  # off first slot of an array. This is
-  # the contrary of pop.
+  # Alias for shift which removes an object off first slot of an array.
+  # This is the opposite of pop.
   #
   #   a=[1,2,3]
   #   a.pull  #=> 1

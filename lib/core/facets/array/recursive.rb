@@ -6,8 +6,8 @@ class Array
   # to each subarray.
   #
   #   arr = ["a", ["b", "c", nil], nil]
-  #   arr.recursively{|a| a.compact! }
-  #   => ["a", ["b", "c"]]
+  #   arr.recursive{ |a| a.compact! }
+  #   #=> ["a", ["b", "c"]]
   #
   def recursive(opts={}, &block)
     if block
@@ -89,3 +89,4 @@ class Array
   end
 
 end
+

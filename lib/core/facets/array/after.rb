@@ -1,1 +1,1 @@
-require 'facets/array/after'
+require 'facets/array/before'

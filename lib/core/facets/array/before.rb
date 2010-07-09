@@ -24,10 +24,10 @@ class Array
   # Examples
   #
   #   sequence = ['a', 'b', 'c']
-  #   sequence.after('a')           => 'b'
-  #   sequence.after('b')           => 'c'
-  #   sequence.after('c')           => 'a'
-  #   sequence.after('d')           => nil
+  #   sequence.after('a')           #=> 'b'
+  #   sequence.after('b')           #=> 'c'
+  #   sequence.after('c')           #=> 'a'
+  #   sequence.after('d')           #=> nil
   #
   # CREDIT: Tyler Rick
   def after(value)

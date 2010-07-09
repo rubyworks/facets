@@ -6,6 +6,8 @@ class Array
     # Each is indexed by a permutation number. The maximum number of
     # arrangements is the factorial of the size of the array.
     #
+    #    [1,2].permutation(2).to_a #=> [[1,2], [2,1]]
+    #
     # CREDIT: Shin-ichiro Hara
 
     def permutation(n=size)

@@ -1,3 +1,5 @@
+require 'facets/array/store'
+
 class Array
 
   # Splice acts a combination of #slice! and #store.
@@ -22,9 +24,4 @@ class Array
     end
   end
 
-  # Store a value at a givne index.
-  # Store is an alias for #[]=.
-  alias_method :store, :[]=
-
 end
-
