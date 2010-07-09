@@ -2,12 +2,15 @@ class Integer
 
   # Set a bit.
   #
-  #   0.bit!(4)  #=> 8
+  #   0.bit(4)  #=> 16
   #
-  # Using an inverted bit will clear a bit.
+  # Using a negative figure will clear a bit.
   #
-  #   10.bit!(~3)      #=> 2
-  #   0xb0100.bit(~3)  #=> 0
+  #   10.bit(-4)      #=> 2
+  #
+  # This is more easily seen using binary.
+  #
+  #   0b0100.bit(-3)  #=> 0
   #
   # CREDIT: Thomas Sawyer, George Moschovitis
 
@@ -21,16 +24,19 @@ class Integer
     end
   end
 
-  # Old name. Probably will be deprecated.
-  alias_method :bit!, :bit
-
   # Clear bit.
   #
   # CREDIT: George Moschovitis
 
-  def clear_bit(bit)
+  def bit_clear(bit)
     mask = (1 << bit)
     self & ~mask
+  end
+
+  # DEPRECATE: Previous name.
+  def clear_bit(bit)
+    warn "Use #bit_clear for future versions"
+    bit_clear(bit)
   end
 
   # Is a bit set?
@@ -64,9 +70,6 @@ class Integer
     end
   end
 
-  # Old name. Probably will be deprecated.
-  alias_method :bitmask!, :bitmask
-
   # Is bitmask set?
   #
   #   7.bitmask?(7) #=> true
@@ -99,3 +102,4 @@ module Kernel
   end
 
 end
+

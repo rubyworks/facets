@@ -4,7 +4,7 @@ class Integer
   #
   #   2.factorial  #=> 2
   #   3.factorial  #=> 6
-  #   3.factorial  #=> 24
+  #   4.factorial  #=> 24
   #
   # CREDIT: Malte Milatz
 
@@ -16,15 +16,6 @@ class Integer
   end
 
   alias_method( :fac, :factorial )
-
-  #-- OLD CODE
-  #def factorial
-  #  return 1 if self == 0
-  #  #self == 0 ? 1 : ( self * (self-1).factorial )
-  #  f = (1..self.abs).inject { |state, item| state * item }
-  #  return self < 0 ? -f : f
-  #end
-  #++
 
 end
 

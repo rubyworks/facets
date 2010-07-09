@@ -3,7 +3,7 @@ class Integer
   # Like #times but returns a collection of the yield results.
   #
   #   a = 3.of { |i| "#{i+1}" }
-  #   a => [ "1", "2", "3" ]
+  #   a #=> [ "1", "2", "3" ]
   #
 
   def of(&block)

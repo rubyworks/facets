@@ -13,8 +13,7 @@ class Integer
     # CREDIT: Daniel Schierbeck
 
     def odd?
-      #self % 2 == 1
-      self & 1 == 1
+      self & 1 == 1  #self % 2 == 1
     end
 
   end
@@ -29,8 +28,7 @@ class Integer
     # CREDIT: Daniel Schierbeck
 
     def even?
-      #self % 2 == 0
-      self & 1 == 0
+      self & 1 == 0  #self % 2 == 0
     end
 
   end
