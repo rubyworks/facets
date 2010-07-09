@@ -13,7 +13,7 @@ class UnboundMethod
     #
     #   meth = X.instance_method(:foo)
     #
-    #   meth.name  #=> :foo
+    #   meth.name.to_sym  #=> :foo
     #
     # CREDIT: Trans
 
