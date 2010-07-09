@@ -2,17 +2,24 @@ class Module
 
   #private  # (we'll leave this one public for AOP-like uses).
 
-  # Creates a new method wrapping the previous of
-  # the same name. Reference to the old method
-  # is passed into the new definition block
-  # as the first parameter.
+  # Creates a new method wrapping the previous of the same name.
+  # Reference to the old method is passed into the new definition
+  # block as the first parameter.
   #
-  #   wrap_method( sym ) { |old_meth, *args|
-  #     old_meth.call
-  #     ...
-  #   }
+  #   class WrapExample
+  #     def foo
+  #       "foo"
+  #     end
   #
-  # Keep in mind that this can not be used to wrap methods
+  #     wrap_method(:foo) do |old_meth, *args|
+  #       old_meth.call + '!'
+  #     end
+  #   end
+  #
+  #   example = WrapExample.new
+  #   example.foo #=> 'foo!'
+  #
+  # Keep in mind that this cannot be used to wrap methods
   # that take a block.
   #
   # CREDIT: Trans

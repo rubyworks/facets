@@ -2,11 +2,24 @@ require 'facets/module/redirect_method'
 require 'facets/module/redefine_method'
 require 'facets/module/rename_method'
 require 'facets/module/wrap_method'
+require 'facets/module/nodef'
 
 class Module
 
-  # Return a new module based on another.
-  # This includes the original module into the new one.
+  # Return a new module based on another. This includes the original module
+  # into the new revised module.
+  #
+  #   module ReviseExample
+  #     def foo; "foo"; end
+  #   end
+  #
+  #   ReviseExample2 = ReviseExample.revise do
+  #     alias_method :bar, :foo
+  #   end
+  #
+  #   object = Object.new
+  #   object.extend ReviseExample2
+  #   object.bar  #=> 'foo'
   #
   # CREDIT: Trans
 
@@ -18,45 +31,11 @@ class Module
   end
 
   alias_method :revisal, :revise
-
-  # Using integrate is just like using include except the
-  # module included is a reconstruction of the one given
-  # altered by the commands given in the block.
-  #
-  # Convenient commands available are: #rename, #redef,
-  # #remove, #nodef and #wrap. But any module method
-  # can be used.
-  #
-  #   module W
-  #     def q ; "q" ; end
-  #     def y ; "y" ; end
-  #   end
-  #
-  #   class X
-  #     integrate W do
-  #       nodef :y
-  #     end
-  #   end
-  #
-  #   x = X.new
-  #   x.q  #=> "q"
-  #   x.y  #=> missing method error
-  #
-  # This is like #revisal, but #revisal only
-  # returns the reconstructred module. It does not
-  # include it.
-  #
-  # CREDIT: Trans
-
-  def integrate(mod, &block)
-    #include mod.revisal( &blk )
-    m = Module.new{ include mod }
-    m.class_eval(&block)
-    include m
-  end
-
-  alias_method :remove, :remove_method
-  alias_method :nodef,  :undef_method
-
 end
+
+class Class
+  undef_method :revise
+  undef_method :revisal
+end
+
 

@@ -1,11 +1,10 @@
 class Class
 
-  # Rubinius
-  if defined?(Class.__subclasses__)
+  if defined?(Class.__subclasses__) # Rubinius
 
     # Returns an array with the direct children of +self+.
     #
-    #   Integer.subclasses # => [Bignum, Fixnum]
+    #   Integer.subclasses # => [Fixnum, Bignum]
     #
     alias_method :subclasses, :__subclasses__
 
@@ -13,7 +12,7 @@ class Class
 
     # Returns an array with the direct children of +self+.
     #
-    #   Integer.subclasses # => [Bignum, Fixnum]
+    #   Integer.subclasses # => [Fixnum, Bignum]
     #
     def subclasses
       list = []

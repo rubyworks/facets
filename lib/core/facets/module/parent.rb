@@ -4,7 +4,15 @@ class Module
 
   # Returns the name of the module containing this one.
   #
-  #   M::N.parent_name # => "M"
+  #   module ::ParentExample
+  #     module M
+  #       module N
+  #       end
+  #     end
+  #   end
+  #
+  #   ParentExample::M::N.parent_name # => "ParentExample::M"
+  #
   def parent_name
     unless defined? @parent_name
       @parent_name = name =~ /::[^:]+\Z/ ? $`.freeze : nil
@@ -14,19 +22,19 @@ class Module
 
   # Returns the module which contains this one according to its name.
   #
-  #   module M
-  #     module N
+  #   module ::ParentExample
+  #     module M
+  #       module N
+  #       end
   #     end
   #   end
-  #   X = M::N
   #
-  #   M::N.parent # => M
-  #   X.parent    # => M
+  #   ParentExample::M::N.parent # => ParentExample::M
   #
   # The parent of top-level and anonymous modules is Object.
   #
-  #   M.parent          # => Object
-  #   Module.new.parent # => Object
+  #   ParentExample.parent  # => Object
+  #   Module.new.parent     # => Object
   #
   def parent
     parent_name ? constant(parent_name) : Object
@@ -35,15 +43,15 @@ class Module
   # Returns all the parents of this module according to its name, ordered from
   # nested outwards. The receiver is not contained within the result.
   #
-  #   module M
-  #     module N
+  #   module ::ParentExample
+  #     module M
+  #       module N
+  #       end
   #     end
   #   end
-  #   X = M::N
   #
-  #   M.parents    # => [Object]
-  #   M::N.parents # => [M, Object]
-  #   X.parents    # => [M, Object]
+  #   ParentExample.parents    # => [Object]
+  #   ParentExample::M.parents # => [ParentExample, Object]
   #
   def parents
     parents = []

@@ -12,7 +12,9 @@ class Class
   #     end
   #   end
   #
-  #   %w(john bob jane hans).map(&Person) => [john, bob, jane, hans]
+  #   persons = %w(john bob jane hans).map(&Person)
+  #
+  #   persons.map{ |p| p.inspect }  #=> ['john', 'bob', 'jane', 'hans']
   #
   # CREDIT: Daniel Schierbeck
   def to_proc
@@ -20,3 +22,4 @@ class Class
   end
 
 end
+

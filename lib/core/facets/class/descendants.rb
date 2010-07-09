@@ -4,19 +4,19 @@ class Class
 
   # List all descedents of this class.
   #
-  #   class X ; end
-  #   class A < X; end
-  #   class B < X; end
-  #   X.descendents  #=> [A,B]
+  #   class A ; end
+  #   class B < A; end
+  #   class C < A; end
+  #   A.descendants  #=> [B,C]
   #
   # You may also limit the generational distance the subclass may be from
   # the parent class.
   #
   #   class X ; end
-  #   class A < X; end
-  #   class B < A; end
-  #   X.descendents    #=> [A, B]
-  #   X.descendents(1) #=> [A]
+  #   class Y < X; end
+  #   class Z < Y; end
+  #   X.descendants    #=> [Y,Z]
+  #   X.descendants(1) #=> [Y]
   #
   # NOTE: This is a intensive operation. Do not expect it to be very fast.
 
@@ -24,7 +24,7 @@ class Class
     descendants = []
     subclasses.each do |k|
       descendants << k
-      if generations != 0
+      if generations != 1
         descendants.concat(k.descendants(generations - 1))
       end
     end

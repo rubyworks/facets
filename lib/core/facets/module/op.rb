@@ -2,29 +2,29 @@ class Module
 
   # Combine modules.
   #
-  #   module A
+  #   module APlus
   #     def a; "a"; end
   #   end
   #
-  #   module B
+  #   module BPlus
   #     def b; "b"; end
   #   end
   #
-  #   C = A + B
+  #   CPlus = APlus + BPlus
   #
-  #   class X; include C; end
+  #   class XPlus; include CPlus; end
   #
-  #   X.new.a    #=> "a"
-  #   X.new.b    #=> "b"
+  #   XPlus.new.a    #=> "a"
+  #   XPlus.new.b    #=> "b"
   #
   # Note that in the old version of traits.rb we cloned
-  # modules and altered their copies. Eg.
+  # modules and altered their copies...
   #
-  #     def +(other)
-  #       mod1 = other.clone
-  #       mod2 = clone
-  #       mod1.module_eval{ include mod2 }
-  #     end
+  #   def +(other)
+  #     mod1 = other.clone
+  #     mod2 = clone
+  #     mod1.module_eval{ include mod2 }
+  #   end
   #
   # Later it was realized that this thwarted the main
   # benefit that Ruby's concept of modules has over
@@ -42,7 +42,22 @@ class Module
 
   # Subtract modules.
   #
-  #   TODO: Should this use all instance_methods, not just public?
+  #   module AMinus
+  #     def a; "a"; end
+  #     def b; "b"; end
+  #   end
+  #
+  #   CMinus = AMinus - [:a]
+  #
+  #   class XMinus; include CMinus; end
+  #
+  #   expect NameError do
+  #     XMinus.new.a
+  #   end
+  #
+  #   XMinus.new.b    #=> "b"
+  #
+  # TODO: Should this use all instance methods, not just public?
   #
   # CREDIT: Thomas Sawyer, Robert Dober
 
@@ -64,18 +79,17 @@ class Module
 
   # Rename methods.
   #
-  #   module A
+  #   module AStar
   #     def a; "a"; end
   #   end
   #
-  #   B = A * { :a => :b }
+  #   BStar = AStar * { :a => :b }
   #
-  #   class X; include B; end
+  #   class XStar; include BStar; end
   #
-  #   X.new.b    #=> "a"
+  #   XStar.new.b    #=> "a"
   #
-  #
-  # Thomas Sawyer, Robert Dober
+  # CREDIT: Thomas Sawyer, Robert Dober
 
   def *(rename_map)
     base = self

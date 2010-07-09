@@ -4,7 +4,17 @@ class Module
 
   # Aliases a method and undefines the original.
   #
-  #   rename_method( :to_method, :from_method  )
+  #   class RenameExample
+  #     def foo; "foo"; end
+  #     rename_method(:bar, :foo)
+  #   end
+  # 
+  #   example = RenameExample.new
+  #   example.bar  #=> 'foo'
+  #
+  #   expect NameError do
+  #     example.foo
+  #   end
   #
   # CREDIT: Trans
 

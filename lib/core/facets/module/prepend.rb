@@ -3,17 +3,17 @@ class Module
   # Prepend an +aspect+ module to a module.
   # This only works at the module level.
   #
-  #   module X
+  #   module ::PreX
   #     def x; "x"; end
   #   end
   #
-  #   module U
+  #   module ::PreU
   #     def x; '{' + super + '}'; end
   #   end
   #
-  #   X.prepend U
+  #   PreX.prepend(PreU)
   #
-  #   X.x  # => "{x}"
+  #   PreX.x  # => "{x}"
   #
   # CREDIT Trans
 
