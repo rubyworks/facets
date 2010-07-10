@@ -9,7 +9,7 @@ class Hash
   #
   #   foo = { :name=>'Gavin', 'wife'=>:Lisa }
   #   foo.symbolize_keys    #=>  { :name=>"Gavin", :wife=>:Lisa }
-  #   foo.inspect           #=>  { "name" =>"Gavin", "wife"=>:Lisa }
+  #   foo                   #=>  { :name =>"Gavin", "wife"=>:Lisa }
   #
   # If the key does not respond to #to_sym, then #to_s will be used first.
   #
@@ -25,7 +25,7 @@ class Hash
   #
   #   foo = { 'name'=>'Gavin', 'wife'=>:Lisa }
   #   foo.symbolize_keys!    #=>  { :name=>"Gavin", :wife=>:Lisa }
-  #   foo.inspect            #=>  { :name=>"Gavin", :wife=>:Lisa }
+  #   foo                    #=>  { :name=>"Gavin", :wife=>:Lisa }
   #
   # If the key does not respond to #to_sym, then #to_s will be used first.
   #
@@ -36,7 +36,7 @@ class Hash
       keys.each do |key|
         if select[key]
           new_key = (key.to_sym rescue key.to_s.to_sym)
-          self[(new_key] = delete(key)
+          self[new_key] = delete(key)
         end
       end       
     else
@@ -54,7 +54,7 @@ class Hash
   #
   #   foo = { :name=>'Gavin', :wife=>:Lisa }
   #   foo.stringify_keys    #=>  { "name"=>"Gavin", "wife"=>:Lisa }
-  #   foo.inspect           #=>  { :name =>"Gavin", :wife=>:Lisa }
+  #   foo                   #=>  { :name =>"Gavin", :wife=>:Lisa }
   #
   # This method is considered archaic. Use #rekey instead.
 
@@ -69,7 +69,7 @@ class Hash
   #
   #   foo = { :name=>'Gavin', :wife=>:Lisa }
   #   foo.stringify_keys!    #=>  { "name"=>"Gavin", "wife"=>:Lisa }
-  #   foo.inspect            #=>  { "name"=>"Gavin", "wife"=>:Lisa }
+  #   foo                    #=>  { "name"=>"Gavin", "wife"=>:Lisa }
   #
   # This method is considered archaic. Use #rekey instead.
 
@@ -87,14 +87,6 @@ class Hash
     end
     self
   end
-
-  # These were the original names used by Facets but
-  # have been deprecated in favor of the Railisms.
-
-  #alias_method( :keys_to_sym,  :symbolize_keys )
-  #alias_method( :keys_to_sym!, :symbolize_keys! )
-  #alias_method( :keys_to_s,  :stringify_keys)
-  #alias_method( :keys_to_s!, :stringify_keys!)
 
 end
 

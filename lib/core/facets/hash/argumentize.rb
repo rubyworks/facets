@@ -1,11 +1,17 @@
 class Hash
 
-  # Turn a hash into arguments.
+  # Turn a hash into a method arguments.
   #
   #   h = { :list => [1,2], :base => "HI" }
-  #   h.argumentize #=> [ [], { :list => [1,2], :base => "HI" } ]
-  #   h.argumentize(:list)   #=> [ [1,2], { :base => "HI" } ]
-  #   h.argumentize(:base)   #=> [ ["HI"], { :list => [1,2] } ]
+  #
+  # Without an argument field.
+  #
+  #   h.argumentize #=> [ { :list => [1,2], :base => "HI" } ]
+  #
+  # With an argument field.
+  #
+  #   h.argumentize(:list)   #=> [ 1, 2, { :base => "HI" } ]
+  #   h.argumentize(:base)   #=> [ "HI", { :list => [1,2] } ]
   #
   def argumentize(args_field=nil)
     config = dup

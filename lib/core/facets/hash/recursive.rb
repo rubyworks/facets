@@ -4,8 +4,10 @@ class Hash
   # to each subhash.
   #
   #   h = {:a=>1, :b=>{:b1=>1, :b2=>2}}
-  #   h.recursively{|h| h.rekey(&:to_s) }
-  #   => {"a"=>1, "b"=>{"b1"=>1, "b2"=>2}}
+  #
+  #   h.recursive{|h| h.inject({}){|h,(k,v)| h[k.to_s] = v; h} }
+  #
+  #   #=> {"a"=>1, "b"=>{"b1"=>1, "b2"=>2}}
   #
   def recursive(opts={}, &block)
     if block
@@ -24,14 +26,6 @@ class Hash
   end
 
   #
-
-  def recursive!(&block)
-    r = recursive(&block)
-    raise TypeError unless Hash === r
-    replace(r)
-  end
-
-  #
   class Recursor
 
     #
@@ -44,18 +38,14 @@ class Hash
     # executing the given block on the key and value. The block should
     # return a 2-element array of the form +[key, value]+.
     #
-    #   h = { "A"=>"A", "B"=>"B", { "X"=>"X" } }
+    #   h = {"A"=>"A", "B"=>"B", "C"=>{"X"=>"X"}}
     #
-    #   h.recursive_each{ |k,v| p [k.downcase, v] }
+    #   a = []
     #
-    # produces
+    #   h.recursive.each{ |k,v| a << [k.downcase, v] }
     #
-    #   ["a", "A"]
-    #   ["b", "B"]
-    #   ["x", "X"]
+    #   a  #=> [["a", "A"],["b", "B"],["x", "X"],["c", {"X"=>"X"}]]
     #
-    # CREDIT: Trans
-
     def each(&block)
       @enum.each do |k,v|
         if Hash === v
@@ -65,27 +55,18 @@ class Hash
         end
         block.call(k,v)
       end
-      #@enum.each do |k,v|
-      #  if Hash === v
-      #    v.recursive.each(&block)
-      #  else
-      #    block.call(k,v)
-      #  end
-      #end
     end
 
     # Returns a new hash created by traversing the hash and its subhashes,
     # executing the given block on the key and value. The block should
     # return a 2-element array of the form +[key, value]+.
     #
-    #   h = { "A"=>"A", "B"=>"B", { "X"=>"X" } }
+    #   h = { "A"=>"A", "B"=>"B", "C"=>{ "X"=>"X" } }
     #
-    #   g = h.recursive_map{ |k,v| [k.downcase, v] }
+    #   g = h.recursive.map{ |k,v| [k.downcase, v] }
     #
-    #   g  #=> [["a", "A"], ["b", "B"], [["x", "X"]]]
+    #   g  #=> [["a", "A"], ["b", "B"], ["c", [["x", "X"]]]]
     #
-    # CREDIT: Trans
-
     def map(&block)
       @enum.inject([]) do |a,(k,v)|
         if Hash === v
@@ -99,7 +80,7 @@ class Hash
       end
     end
 
-    # In-place rendition of #recursive_map.
+    # In-place rendition of #recursive.map.
 
     def map!(&b)
       @enum.replace(map(&b))
@@ -109,14 +90,12 @@ class Hash
     # executing the given block on the key and value. The block should
     # return a 2-element array of the form +[key, value]+.
     #
-    #   h = {"A"=>"A", "B"=>"B", {"X"=>"X"}}
+    #   h = {"A"=>"A", "B"=>"B", "C"=>{"X"=>"X"}}
     #
-    #   g = h.recursive_graph{ |k,v| [k.downcase, v] }
+    #   g = h.recursive.graph{ |k,v| [k.downcase, v] }
     #
-    #   g  #=> {"a"=>"A", "b"=>"B", {"x"=>"X"}}
+    #   g  #=> {"a"=>"A", "b"=>"B", "c"=>{"x"=>"X"}}
     #
-    # CREDIT: Trans
-
     def graph(&block)
       @enum.inject({}) do |h,(k,v)|
         if Hash === v
@@ -133,20 +112,25 @@ class Hash
     # In place version of traverse, which traverses the hash and its
     # subhashes, executing the given block on the key and value.
     #
-    #   h = { "A"=>"A", "B"=>"B" }
+    #   h = { "A"=>"A", "B"=>"B", "C"=>{"X"=>"X"} }
     #
-    #   h.traverse! { |k,v| [k.downcase, v] }
+    #   h.recursive.graph! { |k,v| [k.downcase, v] }
     #
-    #   h  #=> { "a"=>"A", "b"=>"B" }
+    #   h  #=> { "a"=>"A", "b"=>"B", "c"=>{"x"=>"X"} }
     #
-    # CREDIT: Trans
-
     def graph!(&block)
       @enum.replace(graph(&block))
     end
 
     # Same as Hash#merge but recursively merges sub-hashes.
-
+    #
+    #   h1 = { :a=>1, :c=>{:x=>10} }
+    #   h2 = { :b=>2, :c=>{:y=>11} }
+    #
+    #   h = h1.recursive.merge(h2)
+    #
+    #   h  #=> {:a=>1, :b=>2, :c=>{:x=>10, :y=>11} }
+    #
     def merge(other)
       hash = @enum.dup
       other.each do |key, value|
@@ -161,7 +145,14 @@ class Hash
     end
 
     # Same as Hash#merge! but recursively merges sub-hashes.
-
+    #
+    #   h1 = { :a=>1, :c=>{:x=>10} }
+    #   h2 = { :b=>2, :c=>{:y=>11} }
+    #
+    #   h1.recursive.merge!(h2)
+    #
+    #   h1  #=> {:a=>1, :b=>2, :c=>{:x=>10, :y=>11} }
+    #
     def merge!(other)
       other.each do |key, value|
         myval = @enum[key]

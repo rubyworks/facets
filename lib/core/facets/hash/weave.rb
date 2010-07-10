@@ -6,9 +6,8 @@ class Hash
   #
   # Two hashes are weaved together to produce a new hash.
   # The two hashes need to be compatible according to the
-  # following rules for each node:
+  # following rules for each node: ...
   #
-  #   <tt>
   #   hash,   hash    => hash (recursive +)
   #   hash,   array   => error
   #   hash,   value   => error
@@ -18,18 +17,14 @@ class Hash
   #   value,  hash    => error
   #   value,  array   => array.unshift(valueB)
   #   value1, value2  => value2
-  #   </tt>
   #
   # Here is a basic example:
   #
   #   h1 = { :a => 1, :b => [ 1 ], :c => { :x => 1 } }
-  #   => {:b=>[1], :c=>{:x=>1}, :a=>1}
-  #
   #   h2 = { :a => 2, :b => [ 2 ], :c => { :x => 2 } }
-  #   => {:b=>[2], :c=>{:x=>2}, :a=>2}
   #
   #   h1.weave(h2)
-  #   => {:b=>[1, 2], :c=>{:x=>2}, :a=>2}
+  #   #=> {:b=>[1, 2], :c=>{:x=>2}, :a=>2}
   #
   # Weave follows the most expected pattern of unifying two complex
   # hashes. It is especially useful for implementing overridable

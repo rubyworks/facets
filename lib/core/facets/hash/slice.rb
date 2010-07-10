@@ -1,6 +1,10 @@
 class Hash
 
   # Returns a new hash with only the given keys.
+  #
+  #   h = {:a=>1, :b=>2}
+  #   h.slice(:a)  #=> {:a=>1}
+  #
   def slice(*keep_keys)
     hash = {}
     keep_keys.each do |key|
@@ -13,8 +17,8 @@ class Hash
   # This return the hash of keys removed.
   #
   #   h = {:a=>1, :b=>2}
-  #   h.slice!(:a)  #=> {:a=>1}
-  #   h             #=> {:b=>2}
+  #   h.slice!(:a)  #=> {:b=>2}
+  #   h             #=> {:a=>1}
   #
   # Returns a Hash of the removed pairs.
   def slice!(*keep_keys)

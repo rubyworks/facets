@@ -1,18 +1,19 @@
 class Hash
 
-  # Constructs a Proc object from a hash such that
-  # the parameter of the Proc is assigned the hash
-  # keys as attributes.
+  # Constructs a Proc object from a hash such that the parameter
+  # of the Proc is assigned the hash keys as attributes.
   #
-  #   h = { :a => 1 }
-  #   p = h.to_proc
-  #   o = OpenStruct.new
-  #   p.call(o)
+  #   c = Class.new do
+  #     attr_accessor :a
+  #   end
+  #
+  #   h = {:a => 1}
+  #   o = c.new
+  #   h.to_proc.call(o)
   #   o.a  #=> 1
   #
-  # If +response+ is set to +true+, then assignment
-  # will only occur if receiver responds_to? the
-  # writer method.
+  # If +response+ is set to +true+, then assignment will only occur
+  # if receiver responds_to? the writer method.
   #
   # CREDIT: Trans
 

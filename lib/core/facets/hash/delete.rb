@@ -28,9 +28,7 @@ class Hash
   # Minor modification to Ruby's Hash#delete method
   # allowing it to take multiple keys.
   #
-  # This works niely with hash#[] and Hash#[]= facets.
-  #
-  #    hsh[:a, :b, :c] = 1, 2, 3
+  #    hsh = {:a=>1, :b=>2, :c=>3}
   #
   #    a, b, c = hsh.delete_values_at(:a, :b, :c)
   #

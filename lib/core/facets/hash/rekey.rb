@@ -2,11 +2,11 @@ require 'facets/symbol/to_proc'
 
 class Hash
 
-  # Rekey a hash.
+  # Rekey a hash, ...
   #
   #   rekey()
   #   rekey(to_key, from_key)
-  #   rekey{ |key| ... }
+  #   rekey{|from_key| to_key}
   #
   # If no arguments or block are given, then all keys are converted
   # to Symbols.
@@ -16,8 +16,8 @@ class Hash
   #
   #   foo = { :a=>1, :b=>2 }
   #   foo.rekey('a',:a)       #=> { 'a'=>1, :b=>2 }
-  #   foo.rekey('b',:b)       #=> { 'a'=>1, 'b'=>2 }
-  #   foo.rekey('foo','bar')  #=> { 'a'=>1, 'b'=>2 }
+  #   foo.rekey(:x,:b)        #=> { :a =>1, :x=>2 }
+  #   foo.rekey('foo','bar')  #=> { :a =>1, :b=>2 }
   #
   # If a block is given, converts all keys in the Hash accroding
   # to the given block. If the block returns +nil+ for given key,
@@ -25,7 +25,7 @@ class Hash
   #
   #   foo = { :name=>'Gavin', :wife=>:Lisa }
   #   foo.rekey{ |k| k.to_s }  #=>  { "name"=>"Gavin", "wife"=>:Lisa }
-  #   foo.inspect              #=>  { :name =>"Gavin", :wife=>:Lisa }
+  #   foo                      #=>  { :name =>"Gavin", :wife=>:Lisa }
   #
   # CREDIT: Trans, Gavin Kistner
 
@@ -37,7 +37,7 @@ class Hash
   #
   #   foo = { :name=>'Gavin', :wife=>:Lisa }
   #   foo.rekey!{ |k| k.to_s }  #=>  { "name"=>"Gavin", "wife"=>:Lisa }
-  #   foo.inspect               #=>  { "name"=>"Gavin", "wife"=>:Lisa }
+  #   foo                       #=>  { "name"=>"Gavin", "wife"=>:Lisa }
   #
   # CREDIT: Trans, Gavin Kistner
 
