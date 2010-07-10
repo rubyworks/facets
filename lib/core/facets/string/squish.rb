@@ -3,9 +3,9 @@ class String
   # the string, and then changing remaining consecutive whitespace
   # groups into one space each.
   #
-  # Examples:
   #   %{ Multi-line
   #      string }.squish                   # => "Multi-line string"
+  #
   #   " foo   bar    \n   \t   boo".squish # => "foo bar boo"
   #
   def squish

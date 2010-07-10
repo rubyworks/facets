@@ -1,15 +1,12 @@
 class String
 
-  # This is basically the same as #store,
-  # but it acts like slice! when given only
-  # one argument.
-  #
-  # Essentlay #slice, but writes rather than
-  # reads.
+  # String#slice is essentially the same as #store.
   #
   #   a = "HELLO"
-  #   a.splice("X", 1)
+  #   a.splice(1, "X")
   #   a                #=> "HXLLO"
+  #
+  # But it acts like #slice! when given a single argument.
   #
   #   a = "HELLO"
   #   a.splice(1)    #=> "E"
@@ -29,9 +26,6 @@ class String
       end
     end
   end
-
-  # Alias for []=.
-  alias_method :store, :[]=
 
 end
 

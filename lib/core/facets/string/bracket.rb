@@ -29,8 +29,8 @@ class String
   # If only one bracket char is given it will be removed
   # from either side.
   #
-  #   "{unwrap me}".debracket('{')        #=> "unwrap me"
-  #   "--unwrap me!".debracket('--','!')  #=> "unwrap me!"
+  #   "{unwrap me}".unbracket('{')        #=> "unwrap me"
+  #   "--unwrap me!".unbracket('--','!')  #=> "unwrap me"
   #
   # CREDIT: Trans
 

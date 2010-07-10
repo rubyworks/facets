@@ -26,9 +26,9 @@ class String
   #     so on
   #   EOS
   #
-  #   puts s.align_right(14)
+  #   s.align_right(14)
   #
-  # _produces_
+  # _produces_ ...
   #
   #   This is a test
   #              and
@@ -56,9 +56,9 @@ class String
   #     so on
   #   EOS
   #
-  #   puts s.align_left(20, "\n", '.')
+  #   s.align_left(20, "\n", '.')
   #
-  # _produces_
+  # _produces_ ...
   #
   #   This is a test......
   #   and.................
@@ -86,9 +86,9 @@ class String
   #     so on
   #   EOS
   #
-  #   puts s.align_center(14)
+  #   s.align_center(14)
   #
-  # _produces_
+  # _produces_ ...
   #
   #   This is a test
   #        and

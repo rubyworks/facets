@@ -2,13 +2,17 @@ class String
 
   # Like #index but returns a Range.
   #
-  #   "This is a test!".range('test')  #=> 10..13
+  #   "This is a test!".range('test')  #=> (10..13)
   #
   # CREDIT: Trans
 
-  def range(s, offset=0)
-    if index(s, offset)
-      return ($~.begin(0))..($~.end(0)-1)
+  def range(pattern, offset=0)
+    unless Regexp === pattern
+      pattern = Regexp.new(Regexp.escape(pattern.to_s))
+    end
+    string = self[offset..-1]
+    if md = pattern.match(string)
+      return (md.begin(0)+offset)..(md.end(0)+offset-1)
     end
     nil
   end
@@ -17,14 +21,14 @@ class String
   #
   #   "abc123abc123".range_all('abc')  #=> [0..2, 6..8]
   #
-  #   TODO: Add offset, perhaps ?
+  # TODO: Add offset ?
   #
   # CREDIT: Trans
 
-  def range_all(s, reuse=false)
+  def range_all(pattern, reuse=false)
     r = []; i = 0
     while i < self.length
-      rng = range(s, i)
+      rng = range(pattern, i)
       if rng
         r << rng
         i += reuse ? 1 : rng.end + 1

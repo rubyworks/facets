@@ -2,7 +2,7 @@
 # = Developer's Notes
 #
 # Old definition of start_with? written by Lucas Carlson
-# and Blaine Cook was:
+# and Blaine Cook was ...
 #
 #   index(prefix) == 0
 # 
@@ -28,8 +28,8 @@ class String
     # CREDIT: Juris Galang
 
     def start_with?(prefix)
-      suffix = Regexp.escape(suffix.to_s) unless Regexp===suffix
-      /^#{suffix}/.match(self) ? true : false
+      prefix = Regexp.escape(prefix.to_s) unless Regexp===prefix
+      /^#{prefix}/.match(self) ? true : false
     end
 
   #end

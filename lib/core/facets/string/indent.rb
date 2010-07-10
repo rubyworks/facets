@@ -22,18 +22,20 @@ class String
   # Remove excessive indentation. Useful for multi-line strings embeded in
   # already indented code.
   #
-  #   puts <<-END.unindent
-  #     ohaie
-  #       wurld
+  #   <<-END.unindent
+  #       ohaie
+  #         wurld
   #   END
   #
-  #   # outputs:
+  # Outputs ...
+  #
   #   ohaie
   #     wurld
   #
-  #   # instead of:
-  #     ohaie
-  #       wurld
+  # Instead of ...
+  #
+  #       ohaie
+  #         wurld
   #
   # CREDIT: Noah Gibbs, mynyml
 

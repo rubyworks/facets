@@ -4,7 +4,7 @@ class String
 
   # Use fluent notation for making file directives.
   #
-  #    '~/trans/Desktop/notes.txt'.file.mtime
+  #    'README.rdoc'.file.mtime
   #  
   def file
     f = self
