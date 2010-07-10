@@ -1,8 +1,10 @@
-module Enumerable
+class Array
 
   # Returns a list on non-unique,
   #
   #   [1,1,2,2,3,4,5].nonuniq  #=> [1,2]
+  #
+  #   { :a=>1, :b=>2, :c=>2}.nonuniq  #=> []
   #
   # CREDIT: Martin DeMello
 

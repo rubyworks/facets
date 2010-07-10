@@ -1,4 +1,4 @@
-module Enumerable
+class Array
 
   # Split on matching pattern. Unlike #divide this does not include matching elements.
   #
