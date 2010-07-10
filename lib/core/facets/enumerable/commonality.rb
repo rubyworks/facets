@@ -4,12 +4,14 @@ module Enumerable
   # If no block is given objects are considered to be equal if they
   # return the same value for Object#hash and if obj1 == obj2.
   #
-  #   [1, 2, 2, 3, 4, 4].commonality # => { 2 => [2, 2], 4 => [4, 4] }
+  #   [1, 2, 2, 3, 4, 4].commonality  #=> { 2 => [2, 2], 4 => [4, 4] }
   #
   #   ["foo", "bar", "a"].commonality { |str| str.length }
-  #   # => { 3 => ["foo, "bar"] }
+  #   #=> { 3 => ["foo", "bar"] }
   #
-  #   # Returns all persons that share their last name with another person.
+  # This can be useful, for instance, in determining all persons that share
+  # their last name with another person ...
+  #
   #   persons.collisions { |person| person.last_name }
   #
   # CREDIT: Florian Gross
@@ -25,7 +27,7 @@ module Enumerable
     result.reject! do |key, values|
       values.size <= 1
     end
-    #return had_no_block ? result.values.flatten : result
+    # -- return had_no_block ? result.values.flatten : result
     return result
   end
 

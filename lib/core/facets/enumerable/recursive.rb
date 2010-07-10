@@ -7,7 +7,6 @@ module Enumerable
   # Recursor "functor".
   #
   # NOTE: THIS IS A WORK IN PROGRESS!
-  #
   class Recursor
 
     def initialize(enum, opts)
@@ -17,14 +16,11 @@ module Enumerable
 
     # Recursive iteration over enumerables.
     #
-    #   [1, 2, [3, 4]].recursive.each{ |e| p e }
+    #   a = []
     #
-    # produces
+    #   [1, 2, [3, 4]].recursive.each{ |e| a << e }
     #
-    #   1
-    #   2
-    #   3
-    #   4
+    #   a  #=> [1,2,3,4]
     #
     # NOTE: Technically this should check for the proper conversion
     # method if applicable, eg. #to_ary for Array, rather than
@@ -40,16 +36,19 @@ module Enumerable
     # Recursive map.
     #
     #   [1, 2, ['a', 'b']].recursive.map{ |e| e.succ }
-    #   #=> [1, 2, ['b', 'c']]
+    #   #=> [2, 3, ['b', 'c']]
     #
     def map(&b)
       @enum.map{ |*v| process(:map, *v, &b) }
     end
 
+    #--
+    # I don't think this can work ...
     #
-    #def graph(&b)
-    #  @enum.graph{ |*v| process(:graph, *v, &b) }
-    #end
+    #   def graph(&b)
+    #     @enum.graph{ |*v| process(:graph, *v, &b) }
+    #   end
+    #++
 
     private
 
@@ -61,11 +60,16 @@ module Enumerable
       when @enum.class
         v.recursive(@opts).send(op,&b)
       else
-        #if @opts[:skip] && Enumerable === v
-        #  v
-        #else
-          b.call(v)
-        #end
+        b.call(v)
+        #--
+        # What about ... 
+        #
+        #  if @opts[:skip] && Enumerable === v
+        #    v
+        #  else
+        #    b.call(v)
+        #  end
+        #++
       end
     end
 

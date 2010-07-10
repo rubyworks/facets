@@ -4,6 +4,9 @@ module Enumerable
 
     # The inverse of #include?.
     #
+    #  [:a, :b].exclude?(:c)  #=> true
+    #  [:a, :b].exclude?(:a)  #=> false
+    #
     def exclude?(object)
       !include?(object)
     end

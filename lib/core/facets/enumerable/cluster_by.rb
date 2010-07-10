@@ -6,10 +6,7 @@ module Enumerable
   # Returned elements are sorted by block.
   #
   #    %w{this is a test}.cluster_by {|x| x[0]}
-  #
-  # _produces_
-  #
-  #    [ ['a'], ['is'], ['this', 'test'] ]
+  #    #=> [ ['a'], ['is'], ['this', 'test'] ]
   #
   # CREDIT: Erik Veenstra
 

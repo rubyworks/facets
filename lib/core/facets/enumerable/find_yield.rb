@@ -4,15 +4,20 @@ module Enumerable
   # of the block when that result evaluates as true,
   # terminating early like #detect and #find.
   # 
-  #   obj1.foo? #=> false
-  #   obj2.foo? #=> true
-  #   obj2.foo  #=> "value"
+  #   obj1 = Object.new
+  #   obj2 = Object.new
   #
-  #   [obj1, obj2].find_yield{ |obj| obj.foo if obj.foo? }     #=> "value"
+  #   def obj1.foo?; false; end
+  #   def obj2.foo?; true ; end
   #
-  # Another example:
+  #   def obj1.foo ; "foo1"; end
+  #   def obj2.foo ; "foo2"; end
   #
-  #   [1,2,3,4,5].find_yield{ |i| j = i+1; j if j % 4 == 0 }   #=> "5"
+  #   [obj1, obj2].find_yield{ |obj| obj.foo if obj.foo? }  #=> "foo2"
+  #
+  # Another example.
+  #
+  #   [1,2,3,4,5].find_yield{ |i| j = i+1; j if j % 4 == 0 }  #=> 4
   #
   # If the block is never true, return the object given in the first parameter,
   # or nil if none specified.
@@ -28,6 +33,8 @@ module Enumerable
     fallback
   end
 
+  # Alias for #find_yield.
+  #
   # DEPRECATE: This has been renamed to #find_yield.
   def map_detect(fallback=nil)
     find_yield(fallback)

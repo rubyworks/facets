@@ -2,7 +2,7 @@ module Enumerable
 
   # Modulate. Divide an array into groups by modulo of the index.
   #
-  # [2,4,6,8].modulate(2)  #=> [[2,6],[4,8]]
+  #   [2,4,6,8].modulate(2)  #=> [[2,6],[4,8]]
   #
   # CREDIT: Trans
   #

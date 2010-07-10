@@ -1,7 +1,7 @@
 module Enumerable
 
-  # Like <tt>#map</tt>/<tt>#collect</tt>, but generates a Hash. The block
-  # is expected to return two values: the key and the value for the new hash.
+  # Like `#map`/`#collect`, but generates a Hash. The block is expected
+  # to return two values: the key and the value for the new hash.
   #
   #   numbers  = (1..3)
   #   squares  = numbers.graph{ |n| [n, n*n] }   # { 1=>1, 2=>4, 3=>9 }

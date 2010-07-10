@@ -3,13 +3,11 @@ module Enumerable
   # A more versitle #compact method. It can be used to
   # collect and filter items out in one single step.
   #
-  #   [1,2,3].compact_map do |n|
-  #     n < 1 ? nil : n
+  #   c = [1,2,3].compact_map do |n|
+  #     n < 2 ? nil : n
   #   end
   #
-  # _produces_
-  #
-  #   [2,3]
+  #   c  #=> [2,3]
   #
   # CREDIT: Trans
   #
