@@ -4,15 +4,13 @@ class Dir
 
   # Ascend a directory path.
   #
+  #   a = []
+  #
   #   Dir.ascend("/var/log") do |path|
-  #     p path
+  #     a << path
   #   end
   #
-  # _produces_
-  #
-  #   /var/log
-  #   /var
-  #   /
+  #   a  #=> ['/var/log', '/var', '/']
   #
   # CREDIT: Daniel Berger, Jeffrey Schwab
   #
@@ -35,15 +33,13 @@ class Dir
 
   # Descend a directory path.
   #
+  #   d = []
+  #
   #   Dir.descend("/var/log") do |path|
-  #     p path
+  #     d << path
   #   end
   #
-  # _produces_
-  #
-  #   /
-  #   /var
-  #   /var/log
+  #   d  #=> ['/', '/var', '/var/log']
   #
   # CREDIT: Daniel Berger, Jeffrey Schwab
 

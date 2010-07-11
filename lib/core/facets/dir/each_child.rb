@@ -1,6 +1,6 @@
 class Dir
 
-  # Like each(), except the "." and ".." special files are ignored.
+  # Like #each, except the "." and ".." special files are ignored.
   #
   # CREDIT: Tyler Rick
   def each_child

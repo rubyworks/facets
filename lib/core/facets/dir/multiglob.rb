@@ -2,10 +2,10 @@ class Dir
 
   # Like +glob+ but can take multiple patterns.
   #
-  #   Dir.multiglob( '*.rb', '*.py' )
+  #   Dir.multiglob('tmp/*.rb', 'tmp/*.py')
   #
   # Rather then constants for options multiglob accepts a trailing options
-  # hash of symbol keys.
+  # hash of symbol keys...
   #
   #   :noescape    File::FNM_NOESCAPE
   #   :casefold    File::FNM_CASEFOLD
@@ -13,30 +13,18 @@ class Dir
   #   :dotmatch    File::FNM_DOTMATCH
   #   :strict      File::FNM_PATHNAME && File::FNM_DOTMATCH
   #
-  # It also has an option for recurse.
+  # It also has an option for recurse...
   #
   #   :recurse     Recurively include contents of directories.
   #
   # For example
   #
-  #   Dir.multiglob( '*', :recurse => true )
+  #   Dir.multiglob( 'tmp/*', :recurse => true )
   #
   # would have the same result as
   #
-  #   Dir.multiglob('**/*')
+  #   Dir.multiglob('tmp/**/*')
   #
-  #--
-  # DEPRECATED
-  #
-  # Multiglob also accepts '+' and '-' prefixes. Any entry that begins with a '-'
-  # is treated as an exclusion glob and will be removed from the final result.
-  # For example, to collect all files in the current directory, less ruby scripts:
-  #
-  #   Dir.multiglob( '*', '-*.rb' )
-  #
-  # This is very useful in collecting files as specificed by a configuration
-  # parameter.
-  #++
   def self.multiglob(*patterns)
     options  = (Hash === patterns.last ? patterns.pop : {})
 
@@ -65,15 +53,15 @@ class Dir
 
   # The same as +multiglob+, but recusively includes directories.
   #
-  #   Dir.multiglob_r( 'folder' )
+  #   Dir.multiglob_r( 'tmp' )
   #
   # is equivalent to
   #
-  #   Dir.multiglob( 'folder', :recurse=>true )
+  #   Dir.multiglob( 'tmp', :recurse=>true )
   #
   # The effect of which is
   #
-  #   Dir.multiglob( 'folder', 'folder/**/**' )
+  #   Dir.multiglob( 'tmp', 'tmp/**/**' )
   #
   def self.multiglob_r(*patterns)
     options = (Hash === patterns.last ? patterns.pop : {})
