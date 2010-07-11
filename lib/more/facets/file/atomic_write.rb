@@ -1,16 +1,18 @@
+require 'tmpdir'
+
 class File
 
-  # Write to a file atomically.  Useful for situations where you don't
+  # Write to a file atomically. Useful for situations where you don't
   # want other processes or threads to see half-written files.
   #
-  #   File.atomic_write("important.file") do |file|
+  #   File.atomic_write("tmp/important.file") do |file|
   #     file.write("hello")
   #   end
   #
-  # If your temp directory is not on the same filesystem as the file you're
+  # If your temporary directory is not on the same filesystem as the file you're
   # trying to write, you can provide a different temporary directory.
   #
-  #   File.atomic_write("/data/something.important", "/data/tmp") do |file|
+  #   File.atomic_write("something.important", "tmp") do |file|
   #     file.write("hello")
   #   end
   #
