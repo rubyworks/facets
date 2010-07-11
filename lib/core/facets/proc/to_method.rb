@@ -4,9 +4,13 @@ class Proc
 
   # Convert Proc to method.
   #
-  #   plusproc = lambda { |x| x + 1 }
-  #   plusproc.to_method(self, 'foo')
-  #   X.new.foo(1)  #=> 2
+  #   object = Object.new
+  #
+  #   function = lambda { |x| x + 1 }
+  #
+  #   function.to_method(object, 'foo')
+  #
+  #   object.foo(1)  #=> 2
   #
   def to_method(object, name=nil)
     #object = object || eval("self", self)

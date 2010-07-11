@@ -3,7 +3,7 @@ class Array
   # Divide on matching pattern.
   #
   #   ['a1','b1','a2','b2'].divide(/^a/)
-  #   #=> [['a1,'b1'],['a2','b2']]
+  #   #=> [['a1','b1'],['a2','b2']]
   #
   # CREDIT: Trans
 

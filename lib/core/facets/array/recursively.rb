@@ -7,9 +7,9 @@ class Array
   #   arr.recursively{|a| a.compact! }
   #   #=> ["a", ["b", "c"]]
   #
-  # DEPRECATE: recursive is a more powerful solution.
+  # DEPRECATE: Enumerable#recursive is a more powerful solution.
   def recursively(&block)
-    warn "Use #recusive instead of #recursively for future versions"
+    #warn "Use #recusive instead of #recursively for future versions"
     a = inject([]) do |array, value|
       if value.is_a?(Array)
         array << value.recursively(&block)

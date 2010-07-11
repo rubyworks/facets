@@ -12,7 +12,7 @@ class Exception
   # CREDIT: George Moschovitis
 
   def detail
-    return %{#{class.name}: #{message}\n  #{backtrace.join("\n  ")}\n  LOGGED FROM: #{caller[0]}}
+    return %{#{self.class.name}: #{message}\n  #{backtrace.join("\n  ")}\n  LOGGED FROM: #{caller[0]}}
   end
 
 end

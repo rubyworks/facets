@@ -21,9 +21,10 @@ end
 #   end
 #
 #   f1 = Friend.new("John", 30, "555-1212")
-#   p f1.instance
+#   f1.instance
+#
 #   f1.instance.update({:name=>'Jerry'})
-#   p f1.instance
+#   f1.instance
 #
 class Instance
 

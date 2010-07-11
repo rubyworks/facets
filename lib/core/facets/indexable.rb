@@ -12,6 +12,15 @@
 # just as #slice is an alias of #[]. #size of course simply
 # returns the total length of the indexable object.
 #
+# NOTE: To test the folowing methods Indexable needs to be
+# included into Array and array must have #splice defined.
+#
+#   require 'facets/array/splice'
+#
+#   class ::Array
+#     include Indexable
+#   end
+# 
 # CREDIT: Thomas Sawyer
 
 module Indexable
@@ -108,7 +117,7 @@ module Indexable
 
   # Returns last _n_ elements.
   #
-  #   "Hello World".last(3)  #=> "rld"
+  #   %w{W o r l d}.last(3)  #=> %w{r l d}
   #
   def from(n)
     n = n.to_i
@@ -118,7 +127,7 @@ module Indexable
 
   # Returns first _n_ elements.
   #
-  #   "Hello World".first(3)  #=> "Hel"
+  #   %w{H e l l o}.upto(3)  #=> %w{H e l}
   #
   def upto(n)
     slice(0, n.to_i)
@@ -126,7 +135,7 @@ module Indexable
 
   # Returns first _n_ elements.
   #
-  #   "Hello World".first(3)  #=> "Hel"
+  #   %w{H e l l o}.first(3)  #=> %w{H e l}
   #
   def first(n=1)
     slice(0, n.to_i)
@@ -134,7 +143,7 @@ module Indexable
 
   # Returns last _n_ elements.
   #
-  #   "Hello World".last(3)  #=> "rld"
+  #   %w{H e l l o}.last(3)  #=> %w{l l o}
   #
   def last(n=1)
     n = n.to_i
@@ -146,7 +155,7 @@ module Indexable
   #
   #   a = ["a","y","z"]
   #   a.first = "x"
-  #   p a           #=> ["x","y","z"]
+  #   a           #=> ["x","y","z"]
   #
   def first=(x)
     splice(0,x)
@@ -156,7 +165,7 @@ module Indexable
   #
   #   a = [1,2,5]
   #   a.last = 3
-  #   p a           #=> [1,2,3]
+  #   a           #=> [1,2,3]
 
   def last=(x)
     splice(-1,x)
@@ -233,18 +242,17 @@ module Indexable
 
   # TODO Maybe #range could use a little error catch code (todo).
 
-  # Returns the index range between two elements.
-  # If no elements are given, returns the range
-  # from first to last.
+  # Returns the index range between two elements. If no elements are
+  # given, returns the range from first to last.
   #
-  #   ['a','b','c','d'].range            #=> 0..3
-  #   ['a','b','c','d'].range('b','d')   #=> 1..2
+  #   ['a','b','c','d'].range            #=> (0..3)
+  #   ['a','b','c','d'].range('b','d')   #=> (1..3)
   #
-  def range(a=nil,z=nil)
-    if !a
-      0..(size-1)
-    else
+  def range(a=nil,z=-1)
+    if a
       index(a)..index(z)
+    else
+      (0..(size-1))
     end
   end
 

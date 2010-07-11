@@ -6,14 +6,12 @@ module ObjectSpace
   # is actual according to Ruby's Kernel definitions, just
   # in case such methods have been overridden.
   #
-  #  ObjectSpace.reflect(obj).id
+  #  ObjectSpace.reflect("object").object_id
   #
-  #--
   # There is also a global short-cut for this method to ease
   # meta-programming with it.
   #
-  #   $ref[obj].class
-  #++
+  #   $ref["object"].class
   #
   # Typically theis method will be used to gather the object's
   # id, as in the example given, or it's class, but any Kernel
@@ -23,7 +21,7 @@ module ObjectSpace
   # cases it is not needed, but in certain cases is useful
   # for improving the robustness of meta-programming solutions.
   #
-  # Note that this is also equivalent to using +as(Kernel)+:
+  # Note that this is also equivalent to using +as(Kernel)+ ...
   #
   #   obj.as(Kernel).id
   #

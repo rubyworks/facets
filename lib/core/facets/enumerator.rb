@@ -12,9 +12,9 @@ unless defined?(::Enumerator)
     # Provides the ruby-1.9 block form of Enumerator, where you can write:
     #
     #    obj = Enumerator.new do |yielder|
-    #       .. do stuff
-    #       yielder.yield data      # or: yielder << data
-    #       .. etc
+    #      # ...
+    #      yielder.yield data  # or: yielder << data
+    #      # ...
     #    end
     #
     # When obj.each is called, the block is run once. It should call
@@ -30,8 +30,8 @@ unless defined?(::Enumerator)
     #     }
     #   }  
     #
-    #   assert_equal [1, 1, 2, 3, 5, 8, 13, 21, 34, 55], fib.take(10)
-                                                  
+    #   fib.take(10)  #=> [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
+    #                                                 
     def initialize(*args, &block)
       if block_given?
         @body = block

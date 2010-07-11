@@ -3,9 +3,9 @@ class Proc
   # Bind a Proc to an object returning a Method.
   #
   # NOTE: This version comes from Rails. The old Facets
-  #       version used thread.rb, but I no longer think
-  #       the implementaiton is thread critical. Please
-  #       make a bug report if this proves wrong.
+  # version used thread.rb, but I no longer think
+  # the implementaiton is thread critical. Please
+  # make a bug report if this proves wrong.
   #
   def bind(object)
     block, time = self, Time.now
