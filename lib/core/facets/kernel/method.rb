@@ -8,7 +8,7 @@ module Kernel
   #     puts "Hello World!"
   #   end
   #
-  #   m1 = method!(:hello)   #=> <Method: #hello>
+  #   m1 = method!(:hello)
   #
   #   def m1.annotate
   #     "simple example"
@@ -16,7 +16,7 @@ module Kernel
   #
   #   m2 = method!(:hello)
   #   m2.annotate  #=> "simple example"
-
+  #
   def method!(s)
     #( @__methods__ ||= {} )[s.to_sym] ||= method(s)
     $FIRST_CLASS_METHODS[self][s.to_sym] ||= method(s)
@@ -24,6 +24,7 @@ module Kernel
 
 end
 
+#--
 # Should 1st Class Methods be part of Ruby proper?
 #
 # Perhaps the best solution would be using the notation
@@ -32,7 +33,7 @@ end
 # parantheticals revert back to the actual method invocation.
 # Although this later stipulation means capitalized methods
 # would not be accessible in this way b/c they would intefere with
-# constant lookup. It's a trade off.
+# constant lookup. It's a trade off. ...
 #
 #                   Current           Proposed           Alternate
 #                   ----------------- ------------------ -------------------
@@ -46,4 +47,4 @@ end
 #     Foo::bar      method call       1st class method   1st class method
 #
 # Then again this dosen't address bound versus unbound.
-
+#++

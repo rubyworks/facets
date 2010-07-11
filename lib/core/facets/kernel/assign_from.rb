@@ -1,19 +1,18 @@
 module Kernel
 
-  # Set attribute writers using like readers
-  # from another object.
+  # Set attribute writers using like readers from another object.
   #
-  #   class X
+  #   class AssignExample
   #     attr_accessor :a, :b
-  #     def initialize( a, b )
-  #        @a,@b = a,b
+  #     def initialize(a, b)
+  #        @a, @b = a, b
   #     end
   #   end
   #
-  #   obj1 = X.new(1, 2)
-  #   obj2 = X.new
+  #   obj1 = AssignExample.new(1,2)
+  #   obj2 = AssignExample.new(3,4)
   #
-  #   obj2.assign_from(obj1)
+  #   obj2.assign_from(obj1, :a, :b)
   #
   #   obj2.a  #=> 1
   #   obj2.b  #=> 2
@@ -21,21 +20,9 @@ module Kernel
   # TODO: Should this be called #set_from ?
 
   def assign_from(obj, *fields)
-    unless fields.empty?
-      fields.each do |k|
-        send( "#{k}=", obj.send("#{k}") )  #if self.respond_to?("#{k}=") && obj.respond_to?("#{k}")
-      end
-    else
-      setters = methods.collect { |m| m =~ /=$/ }
-      setters.each do |setter|
-        getter = setter.chomp('=')
-        if obj.respond_to?(getter)
-          send( setter, obj.send(getter) )
-          fields < getter
-        end
-      end
+    fields.each do |k|
+      send("#{k}=", obj.__send__("#{k}"))  #if self.respond_to?("#{k}=") && obj.respond_to?("#{k}")
     end
-    fields
   end
 
   # Original name for #assign_from.

@@ -1,12 +1,12 @@
 module Kernel
 
   # Require a pattern of files. This make is easy
-  # to require an entire directory, for instance.
+  # to require an entire directory, for instance...
   #
   #   require_all 'facets/time/*'
   #
   # You can also you #require_all relative to the
-  # current script simply by using __DIR__.
+  # current script simply by using __DIR__...
   #
   #   require_all(__DIR__ + '/foo/*')
   #

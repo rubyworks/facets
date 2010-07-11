@@ -30,11 +30,6 @@ class Object #module Kernel
       end
     end
 
-    # OLD VERSION
-    #def instance_exec(*arguments, &block)
-    #  block.bind(self)[*arguments]
-    #end
-
   end
 
 end

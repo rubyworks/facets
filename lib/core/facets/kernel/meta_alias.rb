@@ -1,10 +1,16 @@
+require 'facets/kernel/meta_class'
+
 module Kernel
 
   # Alias a method defined in the metaclass (ie. singleton class).
   #
-  #   def X.y?; "y?" ; end
-  #   X.meta_alias "ynot?", "y?"
-  #   X.ynot?  #=> y?
+  #   class MetaExample
+  #     def self.y?; "y?" ; end
+  #   end
+  #
+  #   MetaExample.meta_alias "ynot?", "y?"
+  #
+  #   MetaExample.ynot?  #=> "y?"
   #
   # CREDIT: Trans
 

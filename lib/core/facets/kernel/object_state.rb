@@ -1,12 +1,29 @@
 class Object
   # Get or set state of object.
   #
+  #   class StateExample
+  #     attr_reader :a, :b
+  #     def initialize(a,b)
+  #       @a, @b = a, b
+  #     end
+  #   end
+  #
+  #   obj = StateExample.new(1,2)
+  #   obj.a  #=> 1
+  #   obj.b  #=> 2
+  #
+  #   obj.object_state(:a=>3, :b=>4)
+  #   obj.a  #=> 3
+  #   obj.b  #=> 4
+  #
   # TODO: Would #instance_state be a more appropriate name?
+  #
+  # TODO: Consider how this relates to #instance.
   def object_state(data=nil)
     if data
       instance_variables.each do |iv|
         name = iv.to_s.sub(/^[@]/, '').to_sym
-        instance_variable_set(iv, snap[name])
+        instance_variable_set(iv, data[name])
       end
     else
       data = {}
@@ -56,8 +73,8 @@ class Struct
     end
   end
 
-  def replace(snap)
-    snap.each_pair {|k,v| send(k.to_s + "=", v)}
+  def replace(data)
+    data.each_pair {|k,v| send(k.to_s + "=", v)}
   end
 end
 

@@ -1,6 +1,58 @@
 module Kernel
 
-  # Silences any stream for the duration of the block.
+  # Silence a stream and/or warnings...
+  #
+  #   silence(:stdout, :verbose) do
+  #     puts "won't see me"
+  #     warn "won't see me either"
+  #   end
+  #
+  # Supported +streams+ are +stderr+, +stdout+, +verbose+, +debug+,
+  # and +warnings+, which is the same as +verbose+. You can also
+  # use the actual streams, STDERR and STDOUT.
+  def silence(*streams) #:yield:
+    streams = streams.map do |stream|
+      case stream
+      when :stderr
+        STDERR
+      when :stdout
+        STDOUT
+      when :debug, :debugging
+        :debug
+      when :verbose, :warnings, :warning
+        :verbose
+      else
+        stream
+      end
+    end
+
+    debug   = $DEBUG
+    verbose = $VERBOSE
+
+    $DEBUG   = false if streams.delete(:debug)
+    $VERBOSE = false if streams.delete(:verbose)
+
+    begin
+      if streams.empty?
+        yield
+      else
+        silence_stream(*streams){ yield }
+      end
+    ensure
+      $DEBUG   = debug
+      $VERBOSE = verbose
+    end
+  end
+
+  # Just like silence_stream, but will default to
+  # STDOUT, STDERR if no streams are given.
+
+  def silently(*streams) #:yeild:
+    streams = [STDOUT, STDERR] if streams.empty?
+    silence_stream(*streams){ yield }
+  end
+
+  # Silences any stream for the duration of the block...
   #
   #   silence_stream(STDOUT) do
   #     puts 'This will never be seen'
@@ -23,26 +75,18 @@ module Kernel
     end
   end
 
-  #
+  # Equivalent to `silence_stream(STDERR)`.
   def silence_stderr #:yeild:
     silence_stream(STDERR) { yield }
   end
 
-  #
+  # Equivalent to `silence_stream(STDOUT)`.
   def silence_stdout #:yeild:
     silence_stream(STDOUT) { yield }
   end
 
-  # Just like silence_stream, but will default to
-  # STDOUT, STDERR if no streams are given.
-
-  def silently(*streams) #:yeild:
-    streams = [STDOUT, STDERR] if streams.empty?
-    silence_stream(*streams){ yield }
-  end
-
   # Sets $VERBOSE to nil for the duration of the block
-  # and back to its original value afterwards.
+  # and back to its original value afterwards...
   #
   #   silence_warnings do
   #     value = noisy_call # no warning voiced

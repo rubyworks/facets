@@ -3,15 +3,11 @@ module Kernel
   # This is similar to +Module#const_get+ but is accessible at all levels,
   # and, unlike +const_get+, can handle module hierarchy.
   #
-  #   constant("Fixnum")                  # -> Fixnum
-  #   constant(:Fixnum)                   # -> Fixnum
+  #   constant("Fixnum")                  # => Fixnum
+  #   constant(:Fixnum)                   # => Fixnum
   #
-  #   constant("Process::Sys")            # -> Process::Sys
-  #   constant("Regexp::MULTILINE")       # -> 4
-  #
-  #   require 'test/unit'
-  #   Test.constant("Unit::Assertions")   # -> Test::Unit::Assertions
-  #   Test.constant("::Test::Unit")       # -> Test::Unit
+  #   constant("Process::Sys")            # => Process::Sys
+  #   constant("Regexp::MULTILINE")       # => 4
   #
   # CREDIT: Trans
 

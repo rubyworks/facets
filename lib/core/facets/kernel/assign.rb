@@ -1,37 +1,28 @@
 module Kernel
 
-  # Assign via writer using a arguments, hash or
-  # associative array, and son on, or assign via 
+  # Assign via writer using arguments, hash or
+  # associative array, and so on, or assign via 
   # a block.
   #
   # Using name-value arguments:
+  #
+  #   object = Object.new
   #
   #   object.assign(:a, 1)
   #   object.assign(:b, 2)
   #
   # Using a hash:
   #
-  #   object.assign( :a => 1, :b => 2 )
+  #   object.assign(:a => 1, :b => 2)
   #
   # Use an associative array:
   #
-  #   object.assign( [[:a, 1], [:b, 2]] )
-  #
-  # Using a block:
-  #
-  #   object.assign do |s|
-  #     s.a = 1
-  #     s.b = 2
-  #   end
+  #   object.assign([[:a, 1], [:b, 2]])
   #
   # These are all equivalent to:
   #
-  #   object.a = 1
-  #   object.b = 2
-  #
-  # Unless assigned via a block, undefined setters will not
-  # raise an error if they do not exist. They will simply be
-  # skipped.
+  #   object.a = 1 if object.respond_to?(:a=)
+  #   object.b = 2 if object.respond_to?(:b=)
   #
   # Using an associative array instead of hash guarentees
   # order of assignemnt for older versions of Ruby (< 1.8.7).
@@ -50,7 +41,6 @@ module Kernel
         __send__("#{data}=", value) if respond_to?("#{data}=")
       end
     end
-    yield(self) if block_given?
     self
   end
 

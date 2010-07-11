@@ -1,7 +1,17 @@
 module Kernel
 
-  # Easy access to an object qua class, otherwise
-  # known as the object's singleton class.
+  # Easy access to an object qua class, otherwise known as the object's
+  # singleton class. #qua_class can also take a block.
+  #
+  #   string = "Hello World"
+  #
+  #   string.qua_class do
+  #     def important
+  #        self + "!"
+  #     end
+  #   end
+  #
+  #   string.important  #=> "Hello World!"
   #
   # Yes, another one.
   #
@@ -15,7 +25,7 @@ module Kernel
     end
   end
 
+  # The +qua_class+ method can also be written +quaclass+.
   alias_method :quaclass, :qua_class
 
 end
-

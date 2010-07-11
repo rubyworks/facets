@@ -5,27 +5,26 @@ module Kernel
   # Returns a As-functor that allows one to call any
   # ancestor's method directly of the given object.
   #
-  #   class A
+  #   class AsExample1
   #     def x ; 1 ; end
   #   end
   #
-  #   class B < A
+  #   class AsExample2 < AsExample1
   #     def x ; 2 ; end
   #   end
   #
-  #   class C < B
-  #     def x ; as(A).x ; end
+  #   class AsExample3 < AsExample2
+  #     def x ; as(AsExample1).x ; end
   #   end
   #
-  #   C.new.x  #=> 1
+  #   AsExample1.new.x  #=> 1
   #
   def as(ancestor, &blk)
     @__as ||= {}
     unless r = @__as[ancestor]
       r = (@__as[ancestor] = As.new(self, ancestor))
     end
-    r.instance_eval(&blk) if block_given?
-    #yield(r) if block_given?
+    r.instance_eval(&blk) if block_given? #yield(r) if block_given?
     r
   end
 
@@ -38,6 +37,8 @@ module Kernel
   end
 
   #--
+  # Old version ...
+  #
   #   def send_as(klass, meth, *args, &blk)
   #     selfclass = Kernel.instance_method(:class).bind(self).call
   #     raise ArgumentError if ! selfclass.ancestors.include?(klass)
@@ -56,19 +57,19 @@ module Kernel
 
   # Like super but skips to a specific ancestor module or class.
   #
-  #   class A
+  #   class SuperAsExample1
   #     def x ; 1 ; end
   #   end
   #
-  #   class B < A
+  #   class SuperAsExample2 < SuperAsExample1
   #     def x ; 2 ; end
   #   end
   #
-  #   class C < B
-  #     def x ; super_as(A) ; end
+  #   class SuperAsExample3 < SuperAsExample2
+  #     def x ; super_as(SuperAsExample1) ; end
   #   end
   #
-  #   C.new.x  #=> 1
+  #   SuperAsExample3.new.x  #=> 1
   #
   def super_as(klass=self.class.superclass, *args, &blk)
     unless self.class.ancestors.include?(klass)
@@ -82,7 +83,7 @@ end
 
 # Support class for Kernel#as.
 #
-# TODO: Deprecate this and use Functor (HigherOrderMessage) instead.
+# TODO: Deprecate this and use Functor (HigherOrderMessage) instead ?
 
 class As #:nodoc:
   # Privatize all methods except #binding an operators.

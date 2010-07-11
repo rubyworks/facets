@@ -2,9 +2,9 @@ module Kernel
 
   unless private_method_defined?(:require_relative) # 1.9
 
-    # Require file from same dir as calling script.
+    # Require file from same dir as calling script...
     #
-    #   require_local 'templib'
+    #   require_local 'myscript'
     #
     # CREDIT: Paul Brannan, Pragmatic Programmers
     #
@@ -22,13 +22,13 @@ module Kernel
   end
 
   # DEPRECATED
-  #alias_method :require_local, :require_relative
+  # alias_method :require_local, :require_relative
 
   unless private_method_defined?(:load_relative) # 1.9
 
-    # Load file from same dir as calling script.
+    # Load file from same dir as calling script...
     #
-    #   load_local 'templib'
+    #   load_local 'myscript'
     #
     # CREDIT: Paul Brannan, Pragmatic Programmers
     #
@@ -46,7 +46,7 @@ module Kernel
   end
 
   # DEPRECATED
-  #alias_method :load_local, :load_relative
+  # alias_method :load_local, :load_relative
 
 end
 

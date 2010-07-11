@@ -2,11 +2,11 @@ module Kernel
   # An object is blank if it's nil, empty, or a whitespace string.
   # For example, "", "   ", nil, [], and {} are blank.
   #
-  # This simplifies
+  # This simplifies...
   #
   #   if !address.nil? && !address.empty?
   #
-  # to
+  # to...
   #
   #   if !address.blank?
   #
@@ -24,13 +24,13 @@ module Kernel
   #
   # This is handy for any representation of objects where blank is the same
   # as not present at all.  For example, this simplifies a common check for
-  # HTTP POST/query parameters:
+  # HTTP POST/query parameters...
   #
   #   state   = params[:state]   if params[:state].present?
   #   country = params[:country] if params[:country].present?
   #   region  = state || country || 'US'
   #
-  # becomes
+  # becomes...
   #
   #   region = params[:state].presence || params[:country].presence || 'US'
   #

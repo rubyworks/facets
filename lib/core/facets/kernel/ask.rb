@@ -4,17 +4,17 @@ module Kernel
 
   # Very simple convenience method to get user input
   # via the console. A prompt will be sent to $stdout,
-  # if given, and the input taken from $stdin.
+  # if given, and the input taken from $stdin...
   #
   #   ask "Are you happy? [Yn]"
   #
-  # On the command line one would see.
+  # On the command line one would see...
   #
-  #   $ Are you happy? [Yn]
+  #   Are you happy? [Yn]
   #
-  # Responding:
+  # Responding...
   #
-  #   $ Are you happy? [Yn] Y <ENTER>
+  #   Are you happy? [Yn] Y <ENTER>
   #
   # The ask method would return "Y".
 

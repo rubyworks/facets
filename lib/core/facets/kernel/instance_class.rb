@@ -10,7 +10,7 @@ module Kernel
   # Easy access to an object qua class, otherwise known
   # as the object's metaclass or singleton class. This
   # implemnetation alwasy returns the class, even if a
-  # block is provided to eval against it.
+  # block is provided to eval against it...
   #
   #     It is what it is.
   #     But I think I like this one best.
@@ -23,3 +23,4 @@ module Kernel
   end
 
 end
+

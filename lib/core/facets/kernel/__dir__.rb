@@ -14,9 +14,13 @@ module Kernel
     File.dirname(file)
   end
 
-  #def __DIR__
-  #  (/^(.+)?:\d+/ =~ caller[0]) ? File.dirname($1) : nil
-  #end
+  #--
+  # Old defintion ...
+  #
+  #  def __DIR__
+  #    (/^(.+)?:\d+/ =~ caller[0]) ? File.dirname($1) : nil
+  #  end
+  #++
 
 end
 

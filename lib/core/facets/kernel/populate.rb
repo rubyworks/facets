@@ -1,2 +1,1 @@
 require 'facets/kernel/assign'
-
