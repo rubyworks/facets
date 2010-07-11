@@ -1,21 +1,23 @@
-# DEPRECATE
-require 'facets/file/create'
-require 'facets/file/append'
-require 'facets/file/writelines'
-
 class File
 
-  # Writes the given data to the given path and closes the file.  This is
-  # done in binary mode, complementing <tt>IO.read</tt> in standard Ruby.
-  #
-  # Returns the number of bytes written.
-  #
-  # CREDIT: Gavin Sinclair
+  unless defined?(write)  # 1.9+
 
-  def self.write(path, data)
-    File.open(path, "wb") do |file|
-      return file.write(data)
+    # Writes the given data to the given path and closes the file.  This is
+    # done in binary mode, complementing <tt>IO.read</tt> in standard Ruby.
+    #
+    #   str = 'The content for the file'
+    #   File.write('tmp/write.txt', str)
+    #
+    # Returns the number of bytes written.
+    #
+    # CREDIT: Gavin Sinclair
+
+    def self.write(path, data)
+      File.open(path, "wb") do |file|
+        return file.write(data)
+      end
     end
+
   end
 
 end

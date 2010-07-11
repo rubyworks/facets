@@ -9,16 +9,16 @@ class File
   # With a new extension argument, changes the exension of the file
   # name to the new extension and returns it.
   #
-  # Examples:
+  # Examples
   #
-  #   File.ext('file.rb')          => 'rb'
-  #   File.ext('file.rb', 'txt')   => 'file.txt'
-  #   File.ext('file.rb', '.txt')  => 'file.txt'
-  #   File.ext('file.rb', '')      => 'file'
+  #   File.ext('file.rb')          # => 'rb'
+  #   File.ext('file.rb', 'txt')   # => 'file.txt'
+  #   File.ext('file.rb', '.txt')  # => 'file.txt'
+  #   File.ext('file.rb', '')      # => 'file'
   #
   # This method can be used with String#file for more object-oriented notation.
   #
-  #   'file.rb'.file.ext('txt')   => 'file.txt'
+  #   'file.rb'.file.ext('txt')    # => 'file.txt'
   #
   # CREDIT: Lavir the Whiolet
 

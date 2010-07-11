@@ -13,11 +13,13 @@ class File
   # binary mode (no mapping of the plattform's newlines to "\n" is
   # done) or to append to it.
   #
-  #   # Reverse contents of "message"
-  #   File.rewrite("message") { |str| str.reverse }
+  # Assuming we had a file 'message.txt' and had a binary file 'binary.dat'.
   #
-  #   # Replace "foo" by "bar" in "binary"
-  #   File.rewrite("binary", "b") { |str| str.gsub("foo", "bar") }
+  #   # Reverse contents of "message.txt"
+  #   File.rewrite("tmp/message.txt") { |str| str.reverse }
+  #
+  #   # Replace "foo" by "bar" in "binary.dat".
+  #   File.rewrite("tmp/binary.dat", "b") { |str| str.gsub("foo", "bar") }
   #
   # IMPORTANT: The old version of this method required in place modification
   # of the file string. The new version will write whatever the block
@@ -54,10 +56,10 @@ class File
   # string be modified in place within the block.
   #
   #   # Reverse contents of "message"
-  #   File.rewrite("message") { |str| str.reverse! }
+  #   File.rewrite("tmp/message.txt") { |str| str.reverse! }
   #
   #   # Replace "foo" by "bar" in "binary"
-  #   File.rewrite("binary", "b") { |str| str.gsub!("foo", "bar") }
+  #   File.rewrite("tmp/binary.dat", "b") { |str| str.gsub!("foo", "bar") }
   #
   def self.rewrite!(name, mode = "") #:yield:
     unless block_given?

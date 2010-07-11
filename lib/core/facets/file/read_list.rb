@@ -1,8 +1,7 @@
 class File
 
-  # Reads in a file, removes blank lines and remarks
-  # (lines starting with '#') and then returns
-  # an array of all the remaining lines.
+  # Reads in a file, removes blank lines and removes lines starting
+  # with '#' and then returns an array of all the remaining lines.
   #
   # CREDIT: Trans
 

@@ -4,8 +4,8 @@ class File
   #
   # CREDIT: George Moschovitis
 
-  def self.append( file, str )
-    File.open( file, 'ab' ) { |f|
+  def self.append(file, str)
+    File.open(file, 'ab') { |f|
       f << str
     }
   end

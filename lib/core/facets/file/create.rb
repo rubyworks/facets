@@ -6,7 +6,7 @@ class File
   # string is writ.
   #
   #   str = 'The content for the file'
-  #   File.create('myfile.txt', str)
+  #   File.create('tmp/myfile.txt', str)
   #
   # CREDIT: George Moschovitis
 
