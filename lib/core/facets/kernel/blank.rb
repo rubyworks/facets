@@ -11,7 +11,8 @@ module Kernel
   #   if !address.blank?
   #
   def blank?
-    respond_to?(:empty?) ? empty? : !self
+    return empty? if respond_to?(:empty?)
+    !self
   end
 
   # An object is present if it's not blank.
@@ -71,7 +72,7 @@ class String
   #   "abc".blank?  #=> false
   #   "   ".blank?  #=> true
   def blank?
-    self !~ /\S/
+    /\S/ !~ self
   end
 end
 
