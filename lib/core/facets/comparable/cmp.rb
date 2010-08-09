@@ -14,6 +14,7 @@ module Comparable
   def cmp(o)
     self<=>o
   end
+
 end
 
 class String
