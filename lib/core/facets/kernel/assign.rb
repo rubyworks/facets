@@ -1,8 +1,6 @@
 module Kernel
 
-  # Assign via writer using arguments, hash or
-  # associative array, and so on, or assign via 
-  # a block.
+  # Assign via writer using arguments, hash or associative array.
   #
   # Using name-value arguments:
   #
@@ -24,12 +22,15 @@ module Kernel
   #   object.a = 1 if object.respond_to?(:a=)
   #   object.b = 2 if object.respond_to?(:b=)
   #
-  # Using an associative array instead of hash guarentees
-  # order of assignemnt for older versions of Ruby (< 1.8.7).
+  # Using an associative array instead of hash guarantees order of assignemnt
+  # for older versions of Ruby (< 1.8.7).
   #
-  # TODO: Should this be called #set instead? Consider
-  # Module#set in this question, and also #set_from as
-  # the alias of #assign_from.
+  # NOTE: This method used to allow a block which would yield on +self+.
+  # This feature has been deprecated. There are plenty of other ways to
+  # handle this, such as #tap.
+  #
+  # TODO: Should this be called #set instead? Consider Module#set in this
+  # question, and also #set_from as the alias of #assign_from.
 
   def assign(data=nil, value=Exception) #:yield:
     if data
