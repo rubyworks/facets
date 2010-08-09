@@ -28,15 +28,21 @@ class Module
   # before becoming a method.
   #
   def instance_function(*meths)
+    this = self
     if meths.empty?
       extend InstanceFunction
     else
       meths.each do |meth|
-        class_eval %{
-          def #{meth}(*args)
-            #{self.name}.#{meth}(self,*args)
+        module_eval do
+          define_method(meth) do |*args|
+            this.__send__(meth, self, *args)
           end
-        }
+        end
+        #class_eval %{
+        #  def #{meth}(*args)
+        #    #{self.name}.#{meth}(self,*args)
+        #  end
+        #}
       end
     end
   end
@@ -44,17 +50,23 @@ class Module
   module InstanceFunction #:nodoc
     #
     def singleton_method_added(meth)
-      module_eval %{
-        def #{meth}(*args)
-          #{self.name}.#{meth}(self,*args)
+      this = self
+      #module_eval %{
+      #  def #{meth}(*args)
+      #    #{self.name}.#{meth}(self,*args)
+      #  end
+      #}
+      module_eval do
+        define_method(meth) do |*args|
+          this.__send__(meth, self, *args)
         end
-      }
-      #self.class_eval d
+      end
       super(meth)
     end
   end
 
 end #class Module
+
 
 =begin
 module Instantize
