@@ -111,14 +111,13 @@ class Module
 end
 
 class Class
-  # For Class, #class_extend is the same as class_eval.
+  # For Class, #class_extend is similar to class_eval.
   # The alternative is to "undef_method :class_extend",
   # but this seems uneccessarily limited.
-  #
   def class_extend(*mods, &block)
     m = Module.new
     m.__send__(:include, *mods)
-    m.module_eval(&block)
+    m.module_eval(&block) if block
     extend(m)
     m
   end
