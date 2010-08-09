@@ -9,7 +9,7 @@ class Array
   #   arr.recursive{ |a| a.compact! }
   #   #=> ["a", ["b", "c"]]
   #
-  def recursive(opts={}, &block)
+  def recursive(*types, &block)
     if block
       a = inject([]) do |array, value|
         if value.is_a?(Array)
@@ -21,19 +21,18 @@ class Array
       end
       yield a
     else
-      Recursor.new(self, opts)
+      Recursor.new(self, *types)
     end
   end
 
   # In place form of #recursive.
-
   def recursive!(&block)
     r = recursive(&block)
     raise TypeError unless Array === r
     replace(r)
   end
 
- 
+=begin
   #
   class Recursor < ::Enumerable::Recursor
 
@@ -87,6 +86,7 @@ class Array
     end
 
   end
+=end
 
 end
 

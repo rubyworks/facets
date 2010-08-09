@@ -1,7 +1,13 @@
 module Enumerable
 
-  def recursive(opts={})
-    Recursor.new(self, opts)
+  # Returns a Recursor, a recrusive functor, that allows enumerable methods
+  # to iterate through enumerable sub-elements. By default it only recurses
+  # over only elements of thes same type.
+  #--
+  # TODO: Add limiting +depth+ option to Enumerable#recursive
+  #++
+  def recursive(*types)
+    Recursor.new(self, *types)
   end
 
   # Recursor "functor".
@@ -9,9 +15,9 @@ module Enumerable
   # NOTE: THIS IS A WORK IN PROGRESS!
   class Recursor
 
-    def initialize(enum, opts)
-      @enum = enum
-      @opts = opts
+    def initialize(enum, *types)
+      @enum  = enum
+      @types = types.empty? ? [enum.class] : types
     end
 
     # Recursive iteration over enumerables.
@@ -22,13 +28,6 @@ module Enumerable
     #
     #   a  #=> [1,2,3,4]
     #
-    # NOTE: Technically this should check for the proper conversion
-    # method if applicable, eg. #to_ary for Array, rather than
-    # just checking the class type. In the future this may be 
-    # generally supported if Facets ever adds a "class know-thy-self"
-    # library. In the meantime override in classes are required to
-    # incorporate this.
-
     def each(&b)
       @enum.each{ |*v| process(:each, *v, &b) }
     end
@@ -50,15 +49,29 @@ module Enumerable
     #   end
     #++
 
+    # In place #map. This will raise an error if the enumerator
+    # does not respond to #replace.
+    def map!(&b)
+      @enum.replace(map(&b))
+    end
+
     private
 
-    #
+    # NOTE: Technically this should check for the proper conversion
+    # method if applicable, eg. #to_ary for Array, rather than
+    # just checking the class type. In the future this may be 
+    # generally supported if Facets ever adds a "class know-thy-self"
+    # library. In the meantime override in classes are required to
+    # incorporate this.
+
     def process(op, v, &b)
       case v
       when String # b/c of 1.8
         b.call(v)
-      when @enum.class
-        v.recursive(@opts).send(op,&b)
+      #when @enum.class
+      #  v.recursive(*@types).__send__(op,&b)
+      when *@types
+        v.recursive(*@types).__send__(op,&b)
       else
         b.call(v)
         #--

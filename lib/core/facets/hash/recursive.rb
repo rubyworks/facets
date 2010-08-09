@@ -1,3 +1,5 @@
+require 'facets/enumerable/recursive'
+
 class Hash
 
   # Apply a block to hash, and recursively apply that block
@@ -26,13 +28,13 @@ class Hash
   end
 
   #
-  class Recursor
+  class Recursor < Enumerable::Recursor
 
     #
-    def initialize(enum, opts)
-      @enum = enum
-      @opts = opts
-    end
+    #def initialize(enum, opts)
+    #  @enum = enum
+    #  @opts = opts
+    #end
 
     # Returns a new hash created by traversing the hash and its subhashes,
     # executing the given block on the key and value. The block should
@@ -163,6 +165,20 @@ class Hash
         end
       end
       @enum
+    end
+
+    private
+
+    #
+    def process(op, k, v, &b)
+      case v
+      when String # b/c of 1.8
+        b.call(k, v)
+      when *@types
+        v.recursive(*@types).__send__(op,&b)
+      else
+        b.call(k, v)
+      end
     end
 
   end
