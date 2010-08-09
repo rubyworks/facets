@@ -485,8 +485,8 @@ Changes:
 
 Facets 2.4.5 is a maintaince release. This release is notable however in that
 it will likely be the last that to use SVN. Facets will be switching to Git.
-Also, some libraries that have been flagged "to be deprecated" for some time will
-finally be so.
+Also, some libraries that have been flagged "to be deprecated" for some time
+will finally be so.
 
 Changes:
 
@@ -620,40 +620,50 @@ This release give special thanks to the following people for their contributions
 
 And of course, to anyone else I failed to mention that has contributed.
 
+(NOTE: 2.4.3's changes may actually be long to 2.4.2. Notice the releases are
+only two days apart. There was an issue with 2.4.2 and it had to be replaced
+immediately. So take the distinct with a grain of salt.)
+
 Changes:
+
+* Additions
+
+    * Add Time#trunc and Time#round to Core.
+    * Add Array#recursively and fixed bug in Hash#recursively.
+    * Add Kernel#instance method which provides a fluent interface to private object space.
+    * Add Symbol#plain?, Symbol#query? and Symbol#setter?
+    * Add Hash#symbolize_keys and #stringify_keys.
+    * Add File#split_root.
+    * Add #glob and #glob_first as extensions to Pathname.
+    * Add NilClass#ergo whic points back to kernel/ergo.
+    * Add #bump method to VersionNumber class.
+    * Add String#mask providing powerful string manipulation.
+    * Add Ken Bloom's DictionaryMatcher class (will be renamed in future version)
+
+* Deprecations
+
+    * Deprecate Hash#keys_to_s and Hash#keys_to_sym.
+      * These are the original versions of these methods.
+      * But now we can use #rekey(:to_s) and #rekey(:to_sym) instead.
+    * Deprecat ruby.rb, which was a sort 1.9 compatibility layer.
 
 * 22 Major Enhancements
 
     * Changed File#rewrite to not use the in-place change of the string.
-    * Deprecate Hash#keys_to_s and Hash#keys_to_sym.
     * Renamed Class#to_pathname and #to_methodname to #pathize and #methodize.
-    * Deprecated Console:: namespace for ANSICode.
-    * Added Time#trunc and Time#round to Core.
-    * Added Ken Bloom's DictionaryMatcher class (will be renamed in future version)
-    * Added Array#recursively and fixed bug in Hash#recursively.
-    * Added kernel/instance method which provides a fluent interface to private object space.
+    * Removed Console:: namespace for ANSICode.
     * Moved Mentalguy's lazy.rb to core!
     * Added Indexable and Stackable to core.
-    * Deprecated ruby.rb, which was a sort 1.9 compatibility layer.
-    * The ruby.rb methods were moved to core, wrapped in a 1.9 condition.
     * BasicObject is now just a synonm for BlankSlate unless Ruby 1.9.  [major]
     * Moved Indexable and Stackable to core.
-    * Deprecated Console:: namespace for ANSICode.
-    * Added Symbol#plain?, Symbol#query? and Symbol#setter?  [major]
-    * Deprecate Hash#keys_to_s and Hash#keys_to_sym.
-      * These are the original versions of these methods.
-      * But now we can use #rekey(:to_s) and #rekey(:to_sym) instead.
     * Renamed arguments.rb and CLI::Arguments to argvector.rb and Argvector.
     * Added optional argument to Dictionary#first and #last.
     * Moved binding/opvars from core to more.
-    * Added hash/symbolize_keys and stringify_keys.
-    * Added file/split_root.
 
-* 20 Minor Enhancements
+* 19 Minor Enhancements
 
     * Improved File#rootname --it is now more robust.
     * Made FileUtils#whereis a module_function again.
-    * While not perceptible to an end user, there are now 3 divisions: lib/core, lib/lore, lib/more.
     * Created Lore library to house extensions to Ruby's standard library.
     * Re-added facets class files (eg. facets/string) and are now dynamic.
     * Added block to Array#index.
@@ -662,17 +672,11 @@ Changes:
     * Added Jim Weirich's BlankSlate class.
       * This is a temporary measure be compatible w/ AcitveSupport's BasicObject.
     * Split kernel/load.rb into require_all.rb and require_local.rb.
-    * Modified script/test to display $LOAD_PATH before running tests.
     * Split module/alias.rb up into alias_accessor, alias_module_function and alias_method_chain.
-    * Added #bump method to VersionNumber class.
-    * Module#instance_method_defined? now only applies to public methods.  [minor]
     * Renamed string/subtract to string/op_sub.
       Old name will remain for time being for compatability. [minor]
-    * Added #glob and #glob_first as extensions to Pathname.
     * Moved style.rb to string/stylize.rb  [minor]
-    * Added string/mask providing powerful string manipulation.  [major]
     * Added warning to bytes to use RichUnits instead.
-    * Added niclass/ergo whic points back to kernel/ergo.
     * Updated warn line fore eventual deprecation of fileshell and arguments.*
     * Added facets-load.rb to allow old school cherry picking.*
       * Between 2.0 and 2.4 require 'facets' simply added core to LOAD_PATH.
@@ -683,13 +687,18 @@ Changes:
             require 'symbol/to_proc'
       * This adds the path to the end of LOAD_PATH to prevent any load conflicts.
 
-* 4 Bug Fixes
+* 5 Bug Fixes
 
     * Fixed Time#hence changed years when changing months.
     * Fixed Time#hence to flip year correctly when adding months.
     * Hash#<< returns self
-    * Fixed string/pathize.
+    * Fixed String#pathize.
+    * Module#instance_method_defined? now only applies to public methods.
 
+* Administrative Enhancements
+
+    * While not perceptible to an end user, there are now 3 divisions: lib/core, lib/lore, lib/more.
+    * Modified script/test to display $LOAD_PATH before running tests.
 
 == 2.4.2 / 2008-08-12
 
@@ -1035,12 +1044,16 @@ Changes:
 
 == 2.1.3 / 2007-11-28
 
+This release fixes four bugs --one being fairly serious, as it prevented
+require 'facets' from working at all.
+
 Changes:
 
-    * Fixed minor oddity in Enumerable/collate.
-    * Fixed major issue with 2.1.2 where it would not core facets correctly.
-    * Array#to_h used flatten, but it needs to be flatten(1).
-    * Fixed minor issue with collate.
+* 4 Bug Fixes
+
+    * Fixed oddity in Enumerable/collate.
+    * Fixed issue that prevented loading of facets.rb.
+    * Array#to_h used flatten, but it needed to be flatten(1).
     * Move core/main.rb back to core/facets.rb as it conflicts with lib in more/.
 
 
@@ -1053,6 +1066,7 @@ Changes:
     * Added copyright notice to COPYING file.
     * Renamed LICENSE to COPYING according to offical GPL policy.
     * Added exception#details.
+    * Improved task/changes.
 
 
 == 2.1.1 / 2007-11-16
@@ -1139,13 +1153,23 @@ Changes:
 
 == 2.0.5 / 2007-11-07
 
+Minor release that fixes a couple of bugs and adds the last of adopted
+methods from Gavin Sinclair's Extensions project.
+
 Changes:
 
+* Additions
+
     * Added final methods Gavin Sinclair's Extensions project (contributed by Noah Gibbs).
+
+* 1 General Improvement
+
+    * Made #alias_method_chain compatible with current ActiveSupport version.
+
+* 2 Bug Fixes
+
     * Fixes bug with Dictionary#initialize
     * Fixes bug with Hash#-
-    * Also improves changelog production.
-    * Made #alias_method_chain compatible with current ActiveSupport version.
 
 
 == 2.0.4 / 2007-11-04
@@ -2254,9 +2278,7 @@ Changes:
     * Fixed bug with string/capitalized? which wasn't always giving the correct result.
 
 
-== 0.7.2 / 2005-05-22
-
-George II
+== 0.7.2 | 2005-05-22 | George II
 
 Changes:
 
@@ -2265,9 +2287,7 @@ Changes:
     * Changed array/permute to array/each_permutation.
 
 
-== 0.7.1
-
-Quick George
+== 0.7.1 | Quick George
 
 Changes:
 
@@ -2277,9 +2297,7 @@ Changes:
       These will see a great deal of continued improvement in the future.
 
 
-== 0.7.0
-
-Georgian Transform
+== 0.7.0 | Georgian Transform
 
 Changes:
 
@@ -2298,9 +2316,7 @@ Changes:
     * Added array/permute.
 
 
-== 0.6.3
-
-Gemstone
+== 0.6.3 | Gemstone
 
 Changes:
 
@@ -2321,9 +2337,7 @@ Changes:
     * Added array/last_index. (Thanks goes to Jabari)
 
 
-== 0.6.2
-
-Refinement I
+== 0.6.2 | Refinement I
 
 Changes:
 
@@ -2347,9 +2361,7 @@ Changes:
     * Added string/shatter which is similar to split but includes
       the matched portions of text.
 
-== 0.6.1
-
-Florian's Mixes
+== 0.6.1 | Florian's Mixes
 
 Changes:
 
@@ -2357,9 +2369,7 @@ Changes:
       version 0.5.0. (2004-12-31)
 
 
-== 0.6.0
-
-Florian's Onslaught
+== 0.6.0 | Florian's Onslaught
 
 Changes:
 
@@ -2367,9 +2377,7 @@ Changes:
     * First general public release.
 
 
-== 0.5.0
-
-Fit for First
+== 0.5.0 | Fit for First
 
 Changes:
 
@@ -2378,9 +2386,7 @@ Changes:
     * Changed layout to be completely atomic! (2004-10-30)
 
 
-== 0.4.0
-
-Raspberry
+== 0.4.0 | Raspberry
 
 Changes:
 
@@ -2393,9 +2399,7 @@ Changes:
     * Removed services.rb unitl in gets fixed and a better name.
 
 
-== 0.3.3
-
-Mega2
+== 0.3.3 | Mega2
 
 Changes:
 
@@ -2404,9 +2408,7 @@ Changes:
       methods esspecially. It is built on top of inheritable.rb.
 
 
-== 0.3.2
-
-Mega
+== 0.3.2 | Mega
 
 Changes:
 
@@ -2421,9 +2423,7 @@ Changes:
     * Added #strfbits and #strfbytes to binary_multiplers.rb.
 
 
-== 0.3.0
-
-ABC
+== 0.3.0 | ABC
 
 Changes:
 
@@ -2440,9 +2440,7 @@ Changes:
       module, and thus placed here.
 
 
-== 0.2.0
-
-Succ
+== 0.2.0 | Succ
 
 Changes:
 
@@ -2451,20 +2449,16 @@ Changes:
     * Initial public release
 
 
-== 0.1.0
-
-Carats
+== 0.1.0 | Carats
 
 Changes:
 
     * Early Development as Ruby Carats
 
 
-== 0.0.0
-
-TomsLib
+== 0.0.0 | 2002-07-01 | TomsLib
 
 Changes:
 
-    * Tomslib's just a few useful methods. (2002-07-01)
+    * Tomslib's just a few useful methods.
 

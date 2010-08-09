@@ -1,0 +1,156 @@
+= Multiton
+
+The Multion pattern is essentially the same as the Singleton pattern, but
+unlike it's fully unique brethren Multiton's are identical if their
+initialization parameters are identical.
+
+To demontrate we first need to load the Facets multiton.rb script.
+
+  require 'facets/multiton'
+
+Now for the various exmples.
+
+
+== EXAMPLE A - STANDARD USAGE
+
+    class SomeMultitonClass
+      include Multiton
+
+      attr :arg
+      def initialize(arg)
+        @arg = arg
+      end
+    end
+
+    a = SomeMultitonClass.instance(4)
+    b = SomeMultitonClass.instance(4)     # a and b are same object
+    c = SomeMultitonClass.instance(2)     # c is a different object
+
+    a.assert == b 
+
+    x = [a.arg, b.arg].max * 10 + c.arg
+    x.assert == 42
+
+
+== EXAMPLE B - MODIFY AN EXISTING CLASS
+
+We can modify an existing class (if we are so bold), for example we can
+add shared filehandles to the File class.
+
+    class ::File
+      include Multiton
+    end
+
+    lineno = __LINE__
+    # HERE1
+    # HERE2
+
+    a = File.instance(__FILE__)
+    b = File.instance(__FILE__)
+
+    b.assert == a
+
+    lineno.times{ a.gets }
+
+    a.gets.strip.assert == "# HERE1"
+    b.gets.strip.assert == "# HERE2"
+
+
+== EXAMPLE C - INHERITENCE
+
+  class A < String
+    include Multiton
+  end
+
+  # B is also a multiton - with it's OWN object cache
+  class B < A; end
+
+  # w is the same object as x, y is the same object as z
+  w,x,y,z = A.instance('A'), A.instance('A'), B.instance('B'), B.instance('B')
+
+  x.object_id.assert == w.object_id
+  z.object_id.assert == y.object_id
+
+  a = B.instance('A')
+  b = B.instance('A')
+
+  w.object_id.refute == a.object_id   # (each class has it's own pool)
+  b.object_id.assert == a.object_id
+
+
+== EXAMPLE D - MULTIPLE MODULE INCLUSION (does nothing)
+
+  class A < String
+    include Multiton
+  end
+
+  # B is also a multiton - with it's OWN object cache
+  class B < A; end
+
+
+  # w is the same object as x, y is the same object as z
+  w,x,y,z = A.instance('A'), A.instance('A'), B.instance('B'), B.instance('B')
+
+  yz_id = y.object_id || z.object_id
+
+If we include Multiton again, it will have to effect.
+
+  B.class_eval {
+    include Multiton
+  }
+
+  # y is not only the same object as z, but they are both the same object(s)
+  # as from EXAMPLE C
+
+  y,z = B.instance('B'), B.instance('B')
+
+  yz_id.assert == y.object_id
+  yz_id.assert == z.object_id
+
+
+== EXAMPLE E - SO YOU WANNA USE NEW INSTEAD OF INSTANCE
+
+  module K
+    # use an inner class which is itself a multiton
+    class K < String; include Multiton; end
+
+    # define a new which returns a mutltion using #instance...
+    class << self
+      def new(*args, &block)
+        K.instance(*args, &block)
+      end
+    end
+  end
+
+  the = K.new '4'
+  answer = K.new '2'
+
+  x = sprintf( "%s%s", the, answer )
+  x.assert == "42"
+  the.class.assert == K::K
+
+
+== EXAMPLE F - using Klass.multiton_id
+
+  class Klass
+    include Multiton
+
+    def initialize( important, not_important )
+      @important, @not_important = important, not_important
+    end
+
+    def Klass.multiton_id(*args, &block)
+      # we consider only the first arg
+      important, not_important = *args
+      important
+    end
+  end
+
+  a = Klass.instance( :a, :b )
+  b = Klass.instance( :a, :c )
+  c = Klass.instance( :b, :b )
+
+  a.assert == b
+  c.refute == a
+  c.refute == b
+

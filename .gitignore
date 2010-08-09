@@ -1,11 +1,12 @@
 .cache
 .yardoc
-MANIFEST
 log
-doc/rdoc
-doc/ri
+site/doc
+ri
 doc/webri
 doc/yard
 pkg
 site
 facets.gemspec
+.gemspec
+tmp
