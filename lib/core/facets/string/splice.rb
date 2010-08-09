@@ -1,3 +1,5 @@
+require 'facets/string/store'
+
 class String
 
   # String#slice is essentially the same as #store.

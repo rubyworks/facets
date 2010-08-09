@@ -4,3 +4,4 @@ class String
   alias_method :store, :[]=
 
 end
+
