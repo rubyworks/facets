@@ -1,4 +1,4 @@
-require 'facets/integer/length'
+require 'facets/numeric/length'
 require 'test/unit'
 
 
