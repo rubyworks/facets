@@ -1,30 +1,31 @@
-require 'facets/enumerable/group_by'
-require 'test/unit'
+Covers 'facets/enumerable/group_by'
 
-class TC_Enumerable < Test::Unit::TestCase
+Case Enumerable do
 
-  def test_group_by_for_array
+  Unit :group_by => "for array" do
     a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-    r = {0=>[0, 2, 4, 6, 8], 1=>[1, 3, 5, 7, 9]}
-    assert_equal(r, a.group_by{ |e| e % 2 }) #.each{|k, v| v.sort!})
+    e = {0=>[0, 2, 4, 6, 8], 1=>[1, 3, 5, 7, 9]}
+    r = a.group_by{ |x| x % 2 }  #.each{|k, v| v.sort!})
+    r.assert == e
   end
 
-  def test_group_by_for_hash
+  Unit :group_by => "for hash" do
     h = {0=>0, 1=>1, 2=>2, 3=>3, 4=>4, 5=>5, 6=>6, 7=>7, 8=>8, 9=>9}
-    r = {0=>[[0, 0], [2, 2], [4, 4], [6, 6], [8, 8]], 1=>[[1, 1], [3, 3], [5, 5], [7, 7], [9, 9]]}
-    assert_equal(r, h.group_by{|k, v| v%2}.each{|k, v| v.sort!})
+    e = {0=>[[0, 0], [2, 2], [4, 4], [6, 6], [8, 8]], 1=>[[1, 1], [3, 3], [5, 5], [7, 7], [9, 9]]}
+    r = h.group_by{|k, v| v%2}.each{|k, v| v.sort!}
+    r.assert == e
   end
 
-  def test_group_by_for_range
-    x = (1..5).group_by{ |n| n % 3 }
-    o = { 0 => [3], 1 => [1, 4], 2 => [2,5] }
-    assert_equal( o, x )
+  Unit :group_by => "for range" do
+    r = (1..5).group_by{ |n| n % 3 }
+    e = { 0 => [3], 1 => [1, 4], 2 => [2,5] }
+    r.assert == e
   end
 
-  def test_group_by_for_array_of_string
-    x = ["I had", 1, "dollar and", 50, "cents"].group_by{ |e| e.class }
-    o = { String => ["I had","dollar and","cents"], Fixnum => [1,50] }
-    assert_equal( o, x )
+  Unit :group_by => "for array of string" do
+    r = ["I had", 1, "dollar and", 50, "cents"].group_by{ |e| e.class }
+    e = { String => ["I had","dollar and","cents"], Fixnum => [1,50] }
+    r.assert == e
   end
 
 end

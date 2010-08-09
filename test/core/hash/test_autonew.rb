@@ -1,11 +1,8 @@
-require 'facets/hash/autonew'
-require 'test/unit'
+Covers 'facets/hash/autonew'
 
-class TC_Hash_AutoNew < Test::Unit::TestCase
+Case Hash do
 
-  def test_autonew
-    # TODO
-  end
+  Unit :autonew
 
 end
 

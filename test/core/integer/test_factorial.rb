@@ -1,14 +1,13 @@
-require 'facets/integer/factorial'
-require 'test/unit'
+Covers 'facets/integer/factorial'
 
-class TC_Integer_Factorial < Test::Unit::TestCase
+Case Integer do
 
-  def test_factorial
-    assert_equal(  1, 0.factorial )
-    assert_equal(  1, 1.factorial )
-    assert_equal(  2, 2.factorial )
-    assert_equal(  6, 3.factorial )
-    assert_equal( 24, 4.factorial )
+  Unit :factorial do
+    0.factorial.assert == 1
+    1.factorial.assert == 1
+    2.factorial.assert == 2
+    3.factorial.assert == 6
+    4.factorial.assert == 24
   end
 
 end

@@ -1,17 +1,16 @@
-require 'facets/array/recursive'
-require 'test/unit'
+Covers 'facets/array/recursive'
 
-class TestArrayRecursive < Test::Unit::TestCase
+TestCase Array do
 
-  def test_each
-    a = []
-    [1,2,['a','b']].recursive.each{ |v| a << v }
-    assert_equal([1,2,'a','b'], a)
+  Unit :recursive => "each" do
+    r = []
+    [1,2,['a','b']].recursive.each{ |v| r << v }
+    r.assert == [1,2,'a','b']
   end
 
-  def test_map
-    a = [1,2,['a','b']].recursive.map{ |v| v.succ }
-    assert_equal([2,3,['b','c']], a)
+  Unit :recursive => "map" do
+    r = [1,2,['a','b']].recursive.map{ |v| v.succ }
+    r.assert == [2,3,['b','c']]
   end
 
 end

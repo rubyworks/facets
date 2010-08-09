@@ -1,14 +1,13 @@
-require 'facets/symbol/chomp'
-require 'test/unit'
+Covers 'facets/symbol/chomp'
 
-class TestSymbolChomp < Test::Unit::TestCase
+Case Symbol do
 
-  def test_chomp
-    assert_equal( :a, :ab.chomp(:b) )
+  Unit :chomp do
+    :ab.chomp(:b).assert == :a
   end
 
-  def test_lchomp
-    assert_equal( :b, :ab.lchomp(:a) )
+  Unit :lchomp do
+     :ab.lchomp(:a).assert == :b
   end
 
 end

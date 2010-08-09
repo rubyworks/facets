@@ -1,24 +1,23 @@
-require 'facets/string/pathize'
-require 'test/unit'
+Covers 'facets/string/pathize'
 
-class TC_String_Methodize < Test::Unit::TestCase
+Case String do
 
-  def test_pathize_modulename
+  Unit :pathize => "module name" do
     a = "Foo::Base"
-    r = "foo/base"
-    assert_equal(r, a.pathize)
+    x = "foo/base"
+    a.pathize.assert == x
   end
 
-  def test_pathize_pathname
+  Unit :pathize => "path name" do
     a = "foo/base"
-    r = "foo/base"
-    assert_equal(r, a.pathize)
+    x = "foo/base"
+    a.pathize.assert == x
   end
 
-  def test_pathize_namespace
+  Unit :pathize => "name space" do
     a = "foo__base"
-    r = "foo/base"
-    assert_equal(r, a.pathize)
+    x = "foo/base"
+    a.pathize.assert == x
   end
 
 end

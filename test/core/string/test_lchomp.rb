@@ -1,18 +1,17 @@
-require 'facets/string/chomp' # FIXME
-require 'test/unit'
+Covers 'facets/string/lchomp'
 
-class Test_String < Test::Unit::TestCase
+Case String do
 
-  def test_lchomp
+  Unit :lchomp do
     s = "xxboo"
     r = s.lchomp("xx")
-    assert_equal( "boo", r )
+    r.assert == "boo"
   end
 
-  def test_lchomp!
+  Unit :lchomp! do
     s = "xxboo"
     s.lchomp!("xx")
-    assert_equal( "boo", s )
+    s.assert == "boo"
   end
 
 end

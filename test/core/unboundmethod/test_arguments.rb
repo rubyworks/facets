@@ -1,20 +1,20 @@
-require 'facets/unboundmethod/arguments'
+Covers 'facets/unboundmethod/arguments'
 
-class Test_UnboundMethod_Arguments  < Test::Unit::TestCase
+Case UnboundMethod do
 
   class X
     def foo(a, b); end
     def bar(a, b=1); end
   end
 
-  def test_arguments
+  Unit :arguments do
     foomethod = X.instance_method(:foo)
     arguments  = foomethod.arguments
-    assert_equal( "a0, a1", arguments )
+    arguments.assert == "a0, a1"
 
     barmethod = X.instance_method(:bar)
     arguments = barmethod.arguments
-    assert_equal( "a0, *args", arguments )
+    arguments.assert == "a0, *args"
   end
 
 end

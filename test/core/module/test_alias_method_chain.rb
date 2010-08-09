@@ -1,29 +1,30 @@
-require 'facets/module/alias_method_chain'
-require 'test/unit'
+Covers 'facets/module/alias_method_chain'
 
-class Test_Module_Alias_Method_Chain < Test::Unit::TestCase
+Case Module do
 
-  module X
-    def self.included(base)
-      base.module_eval {
-        alias_method_chain :foo, :feature
-      }
+  Unit :alias_method_chian do
+
+    x = Module.new do
+      def self.included(base)
+        base.module_eval {
+          alias_method_chain :foo, :feature
+        }
+      end
+      def foo_with_feature
+        foo_without_feature + '!'
+      end
     end
-    def foo_with_feature
-      foo_without_feature + '!'
-    end
-  end
 
-  class Y
-    def foo
-      "FOO"
+    y = Class.new do
+      def foo
+        "FOO"
+      end
+      include x
     end
-    include X
-  end
 
-  def test_alias_method_chian
-    y = Y.new
-    assert_equal( "FOO!", y.foo )
+    iy = y.new
+
+    iy.foo.assert == "FOO!"
   end
 
 end

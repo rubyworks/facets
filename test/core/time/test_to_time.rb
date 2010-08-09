@@ -1,11 +1,10 @@
-require 'facets/time/to_time'
-require 'test/unit'
+Covers 'facets/time/to_time'
 
-class TestTimeConversion < Test::Unit::TestCase
+Case Time do
 
-  def test_to_time
+  Unit :to_time do
     t = Time.now #parse('4/20/2005 15:37')
-    assert_instance_of( ::Time, t.to_time )
+    t.to_time.assert.is_a?(Time)
   end
 
 end

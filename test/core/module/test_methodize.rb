@@ -1,10 +1,11 @@
-require 'facets/module/methodize'
-require 'test/unit'
+Covers 'facets/module/methodize'
 
-class Test_Module_Methodize < Test::Unit::TestCase
+require File.dirname(__FILE__) + '/test_helper.rb'
 
-  def test_methodize
-    assert_equal( "test__unit__test_case", ::Test::Unit::TestCase.methodize )
+Case Module do
+
+  Unit :methodize do
+    ExampleModule::ExampleClass.methodize.assert == "example_module__example_class"
   end
 
 end

@@ -1,16 +1,15 @@
-require 'test/unit'
-require 'facets/array/index'
+Covers 'facets/array/index'
 
-class TC_Array_Index < Test::Unit::TestCase
+TestCase Array do
 
-  def test_index_with_block
+  Unit :index => "can handle a block" do
     i = [1,2,3].index{ |e| e == 2 }
-    assert_equal(1, i)
+    i.assert == 1
   end
 
-  def test_when_no_element_is_found
+  Unit :index => "when no element is found" do
     i = [1,2,3].index{ |e| e == 5 }
-    assert_equal(nil, i)
+    i.assert.nil?
   end
 
 end

@@ -1,23 +1,20 @@
-# Test for facets/module/abstract
+Covers 'facets/module/abstract'
 
-require 'facets/module/abstract.rb'
-
-require 'test/unit'
-
-class TestAttrTester < Test::Unit::TestCase
+Case Module do
 
   class Aq
     abstract :q
   end
 
-  def test_abstract_01
+  Unit :abstract do
     ac = Aq.new
-    assert_raises( TypeError ) { ac.q }
+    TypeError.assert.raised?{ ac.q }
   end
 
-  def test_abstract_02
+  Unit :abstract => "in an anonymous class" do
     ac = Class.new { abstract :q }.new
-    assert_raises( TypeError ) { ac.q }
+    TypeError.assert.raised?{ ac.q }
   end
 
 end
+

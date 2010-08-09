@@ -1,22 +1,29 @@
-require 'facets/array/rotate'
-require 'test/unit'
+Covers 'facets/array/rotate'
 
-class TC_Array_Rotate < Test::Unit::TestCase
+TestCase Array do
 
-  # rotate
-
-  def test_rotate
+  Unit :rotate => "clockwise" do
     a = [1,2,3]
-    assert_equal( [3,1,2], a.rotate, 'clockwise' )
-    assert_equal( [2,3,1], a.rotate(-1), 'counter-clockwise' )
+    r = a.rotate
+    r.assert == [3,1,2]
   end
 
-  def test_rotate!
+  Unit :rotate => "counter-clockwise" do
+    a = [1,2,3]
+    r = a.rotate(-1)
+    r.assert == [2,3,1]
+  end
+
+  Unit :rotate! => "clockwise" do
     a = [1,2,3]
     a.rotate!
-    assert_equal( [3,1,2], a, 'clockwise' )
+    a.assert == [3,1,2]
+  end
+
+  Unit :rotate! => "counter-clockwise" do
+    a = [1,2,3]
     a.rotate!(-1)
-    assert_equal( [1,2,3], a, 'counter-clockwise' )
+    a.assert == [2,3,1]
   end
 
 end

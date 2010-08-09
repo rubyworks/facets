@@ -1,58 +1,57 @@
-require 'facets/string/camelcase'
-require 'test/unit'
+Covers 'facets/string/camelcase'
 
-class StringCamelCaseTest < Test::Unit::TestCase
+Case String do
 
-  def test_camelcase
-    assert_equal("camelCase", "Camel_case".camelcase(false))
+  Unit :camelcase do
+    "Camel_case".camelcase(false).assert == "camelCase"
   end
 
-  def test_camelcase_converts_underscore_to_captialized
-    assert_equal( "abcXyz", "abc_xyz".camelcase  )
-    assert_equal( "abcXyz", "abc____xyz".camelcase  )
+  Unit :camelcase => "converts underscore to captialized" do
+    "abc_xyz".camelcase.assert == "abcXyz"
+    "abc____xyz".camelcase.assert == "abcXyz"
   end
 
-  #def test_camelcase_converts_spaces_to_captialized
-  #  assert_equal( "AbcXyz", "abc xyz".camelcase  )
-  #  assert_equal( "AbcXyz", "abc  xyz".camelcase )
-  #  assert_equal( "AbcXyz", "abc\txyz".camelcase )
-  #  assert_equal( "AbcXyz", "abc\nxyz".camelcase )
+  #Unit :camelcase => "converts spaces to captialized" do
+  #  "abc xyz".camelcase.assert  == "AbcXyz"
+  #  "abc  xyz".camelcase.assert == "AbcXyz"
+  #  "abc\txyz".camelcase.assert == "AbcXyz"
+  #  "abc\nxyz".camelcase.assert == "AbcXyz"
   #end
 
-  def test_camelcase_true_converts_underscore_to_captialized
-    assert_equal( "AbcXyz", "abc_xyz".camelcase(true) )
-    assert_equal( "AbcXyz", "abc____xyz".camelcase(true) )
+  Unit :camelcase => "true argument converts underscore to captialized" do
+    "abc_xyz".camelcase(true).assert == "AbcXyz"
+    "abc____xyz".camelcase(true).assert == "AbcXyz"
   end
 
-  def test_camelcase_false_converts_underscore_to_captialized
-    assert_equal( "abcXyz", "abc_xyz".camelcase(false) )
-    assert_equal( "abcXyz", "abc____xyz".camelcase(false) )
+  Unit :camelcase => "false argument converts underscore to captialized" do
+    "abc_xyz".camelcase(false).assert == "abcXyz"
+    "abc____xyz".camelcase(false).assert == "abcXyz"
   end
 
-  #def test_camelcase_false_converts_spaces_to_captialized
-  #  assert_equal( "abcXyz", "abc xyz".camelcase(false)    )
-  #  assert_equal( "abcXyz", "abc  xyz".camelcase(false)   )
-  #  assert_equal( "abcXyz", "abc\txyz".camelcase(false)   )
-  #  assert_equal( "abcXyz", "abc\nxyz".camelcase(false)   )
+  #Unit :camelcase => "false converts spaces to captialized" do
+  #  "abc xyz".camelcase(false).assert == "abcXyz"
+  #  "abc  xyz".camelcase(false).assert == "abcXyz"
+  #  "abc\txyz".camelcase(false).assert == "abcXyz"
+  #  "abc\nxyz".camelcase(false).assert == "abcXyz"
   #end
 
-  def test_camelcase_converts_paths_to_module_names
-    assert_equal( 'ThisIsIt', 'this_is_it'.camelcase(true) )
-    assert_equal( 'MyModule::MyClass',   'my_module/my_class'.camelcase(true) )
-    assert_equal( '::MyModule::MyClass', '/my_module/my_class'.camelcase(true) )
+  Unit :camelcase => "converts paths to module names" do
+    'this_is_it'.camelcase(true).assert == 'ThisIsIt'
+    'my_module/my_class'.camelcase(true).assert == 'MyModule::MyClass'
+    '/my_module/my_class'.camelcase(true).assert == '::MyModule::MyClass'
   end
 
-  #def test_camelcase_converts_methods_to_module_names
-  #  assert_equal( 'MyModule::MyClass',   'my_module__my_class'.camelcase   )
-  #  assert_equal( '::MyModule::MyClass', '__my_module__my_class'.camelcase )
+  #Unit :camelcase => "converts methods to module names" do
+  #  'my_module__my_class'.camelcase.assert == 'MyModule::MyClass'
+  #  '__my_module__my_class'.camelcase.assert == '::MyModule::MyClass'
   #end
 
-  def test_lower_camelcase
-    assert_equal( "abcXyz", "abc_xyz".lower_camelcase  )
+  Unit :lower_camelcase do
+    "abc_xyz".lower_camelcase.assert == "abcXyz"
   end
 
-  def test_upper_camelcase
-    assert_equal( "AbcXyz", "abc_xyz".upper_camelcase  )
+  Unit :upper_camelcase do
+    "abc_xyz".upper_camelcase.assert == "AbcXyz"
   end
 
 end

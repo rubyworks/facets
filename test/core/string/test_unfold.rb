@@ -1,13 +1,12 @@
-require 'test/unit'
-require 'facets/string/unfold'
+Covers 'facets/string/unfold'
 
-class TC_String_Unfold < Test::Unit::TestCase
+Case String do
 
-  def test_unfold
+  Unit :unfold do
     str = "This is a test of\nparagraph folding."
     res = str.unfold
     exp = "This is a test of paragraph folding."
-    assert_equal(exp, res)
+    res.assert == exp
   end
 
 end

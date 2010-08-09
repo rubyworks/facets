@@ -1,13 +1,12 @@
-require 'facets/hash/replace_each'
-require 'test/unit'
+Covers 'facets/hash/replace_each'
 
-class Test_Hash_Replace_Each < Test::Unit::TestCase
+Case Hash do
 
-  def test_replace_each
+  Unit :replace_each do
     a = { :a => 1, :b => 2, :c => 3 }
-    e = { :a => 2, :b => 3, :c => 4 }
+    x = { :a => 2, :b => 3, :c => 4 }
     a.replace_each{ |k,v| { k => v+1 } }
-    assert_equal( e, a )
+    a.assert == x
   end
 
 end

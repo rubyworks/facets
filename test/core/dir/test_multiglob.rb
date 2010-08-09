@@ -1,42 +1,42 @@
-require 'facets/dir/multiglob'
-require 'test/unit'
+Covers 'facets/dir/multiglob'
+
 require 'fileutils'
 require 'tmpdir'
 
-class TC_Dir_Multiglob < Test::Unit::TestCase
+Case Dir do
 
-   DIRS  = %w{A A/B}
-   FILES = %w{A.txt A/B.txt A/B/C.txt}
+  test_directory = File.join(Dir.tmpdir, 'facets', 'dir', 'multiglob', Time.now.usec.to_s)
+  multiglob_dirs  = %w{A A/B}
+  multiglob_files = %w{A.txt A/B.txt A/B/C.txt}
 
-   def setup
-     @location = File.join(Dir.tmpdir, self.class.name, Time.now.usec.to_s)
-     DIRS.each do |x|
-       FileUtils.mkdir_p(File.join(@location, x))
-     end
-     FILES.each do |x|
-       File.open(File.join(@location, x), 'w'){ |f| f << "SPINICH" }
-     end
-   end
+  Before :multiglob, :multiglob_r do
+    multiglob_dirs.each do |x|
+      FileUtils.mkdir_p(File.join(test_directory, x))
+    end
+    multiglob_files.each do |x|
+      File.open(File.join(test_directory, x), 'w'){ |f| f << "SPINICH" }
+    end
+  end
 
-   def teardown
-     FileUtils.rm_r(@location)
-   end
+  After :multiglob, :multiglob_r do
+    FileUtils.rm_r(test_directory)
+  end
 
-   def test_multiglob
-     Dir.chdir @location do
-       rs = %w{A A.txt}
-       fs = Dir.multiglob('*').sort
-       assert_equal( rs, fs, Dir.pwd  )
-     end
-   end
+  Unit :multiglob do
+    Dir.chdir test_directory do
+      x = %w{A A.txt}
+      r = Dir.multiglob('*').sort
+      r.assert == x
+    end
+  end
 
-   def test_multiglob_r
-     Dir.chdir @location do
-       rs = (DIRS + FILES).sort
-       fs = Dir.multiglob_r('*').sort
-       assert_equal( rs, fs, Dir.pwd  )
-     end
-   end
+  Unit :multiglob_r do
+    Dir.chdir test_directory do
+      x = (multiglob_dirs + multiglob_files).sort
+      r = Dir.multiglob_r('*').sort
+      r.assert == x
+    end
+  end
 
 end
 

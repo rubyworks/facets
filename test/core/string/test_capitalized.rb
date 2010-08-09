@@ -1,26 +1,25 @@
-require 'facets/string/capitalized.rb'
-require 'test/unit'
+Covers 'facets/string/capitalized'
 
-class TestStringCapitalized < Test::Unit::TestCase
+Case String do
 
-  def test_capitalized?
-    assert( 'Abc'.capitalized? )
+  Unit :capitalized? do
+    'Abc'.assert.capitalized?
   end
 
-  def test_downcase?
-    assert( 'abc'.downcase? )
+  Unit :downcase? do
+    'abc'.assert.downcase?
   end
 
-  #def test_lowercase?
-  #  assert( 'abc'.lowercase? )
+  Unit :upcase? do
+    'ABC'.assert.upcase?
+  end
+
+  #Unit :lowercase? do
+  #  'abc'.assert.lowercase?
   #end
 
-  def test_upcase?
-    assert( 'ABC'.upcase? )
-  end
-
-  #def test_uppercase?
-  #  assert( 'ABC'.uppercase? )
+  #Unit :uppercase? do
+  #  'ABC'.assert.uppercase?
   #end
 
 end

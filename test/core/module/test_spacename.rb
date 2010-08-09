@@ -1,13 +1,12 @@
-require 'facets/module/spacename.rb'
-require 'test/unit'
+Covers 'facets/module/spacename'
 
-class TestModuleSpaceName < Test::Unit::TestCase
+require File.dirname(__FILE__) + '/test_helper.rb'
 
-  def test_spacename
-    assert_equal( 'Test::Unit', Test::Unit::TestCase.spacename )
-    assert_equal( 'Test::Unit', ::Test::Unit::TestCase.spacename )
-    assert_equal( '', Test.spacename )
-    assert_equal( '', ::Test.spacename )
+Case Module do
+
+  Unit :spacename do
+    ExampleModule::ExampleClass.spacename.assert == 'ExampleModule'
+    ExampleModule.spacename.assert == ''  # should this be nil ?
   end
 
 end

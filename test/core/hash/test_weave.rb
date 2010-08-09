@@ -1,16 +1,12 @@
-# Test for facets/hash/weave
+Covers 'facets/hash/weave'
 
-require 'facets/hash/weave.rb'
+Case Hash do
 
-require 'test/unit'
-
-class TestHashWeave < Test::Unit::TestCase
-
-  def test_weave
+  Unit :weave do
     b = { :a=>1, :b=>[1,2,3], :c=>{ :x=>'X' } }
     c = { :a=>2, :b=>[4,5,6], :c=>{ :x=>'A', :y => 'B' } }
-    r = { :a=>2, :b=>[1,2,3,4,5,6], :c=>{ :x => 'A', :y => 'B' } }
-    assert_equal( r, b.weave(c) )
+    x = { :a=>2, :b=>[1,2,3,4,5,6], :c=>{ :x => 'A', :y => 'B' } }
+    b.weave(c).assert == x
   end
 
 end

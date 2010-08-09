@@ -1,14 +1,14 @@
-require 'facets/class/descendents.rb'
-require 'test/unit'
+Covers 'facets/class/descendents'
 
-class TestClassDescendents < Test::Unit::TestCase
+TestCase Class do
 
-  class A ; end
-  class B < A ; end
-  class C < B ; end
+  a = Class.new
+  b = Class.new(a)
+  c = Class.new(b)
 
-  def test_descendents
-    assert_equal( [C,B], A.descendents )
+  Unit :descendents do
+    a.descendents.assert == [c,b]
   end
 
 end
+

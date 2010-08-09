@@ -1,24 +1,23 @@
-require 'facets/time.rb'
-require 'test/unit'
-require 'time'
+Covers 'facets/time/stamp'
 
-class TC_Time_Stamp < Test::Unit::TestCase
+require 'time' # for parse method
+
+Case Time do
 
   # TODO: Problem with TIMEZONE.
-
-  #def test_stamp_01
+  #Unit :stamp do
   #  t = Time.parse('4/20/2005 15:37')
-  #  assert_equal( "Wed Apr 20 15:37:00 PDT 2005", t.stamp )
+  #  t.stamp.assert == "Wed Apr 20 15:37:00 PDT 2005"
   #end
 
-  def test_stamp_02
+  Unit :stamp => "long format" do
     t = Time.parse('2005-04-20 15:37')
-    assert_equal( "April 20, 2005 15:37", t.stamp(:long) )
+    t.stamp(:long).assert == "April 20, 2005 15:37"
   end
 
-  def test_stamp_03
+  Unit :stamp => "short format" do
     t = Time.parse('2005-04-20 15:37')
-    assert_equal( "20 Apr 15:37", t.stamp(:short) )
+    t.stamp(:short).assert == "20 Apr 15:37"
   end
 
 end

@@ -1,12 +1,11 @@
-require 'facets/symbol/succ'
-require 'test/unit'
+Covers 'facets/symbol/succ'
 
-class TestSymbol < Test::Unit::TestCase
+Case Symbol do
 
-  def test_succ
-    assert_equal( :b, :a.succ )
-    assert_equal( :aab, :aaa.succ )
-    assert_equal( :"2", :"1".succ )
+  Unit :succ do
+    :a.succ.assert == :b
+    :aaa.succ.assert == :aab
+    :"1".succ.assert == :"2"
   end
 
 end

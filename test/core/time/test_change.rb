@@ -1,14 +1,14 @@
-require 'facets/time/change.rb'
-require 'test/unit'
-require 'time'
+Covers 'facets/time/change'
 
-class TC_Time_Change < Test::Unit::TestCase
+require 'time' # for parse method
 
-  def test_change
+Case Time do
+
+  Unit :change do
     t = Time.parse('2006-04-20 15:37')
     n = Time.now
     n = n.change( :month=>4, :day=>20, :hour=>15, :min=>37, :year=>2006 )
-    assert_equal( t, n )
+    n.assert == t
   end
 
 end

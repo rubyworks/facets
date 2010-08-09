@@ -1,19 +1,17 @@
-require 'test/unit'
-require 'facets/module/is'
+Covers 'facets/module/is'
 
-class Test_Module_Is < Test::Unit::TestCase
+Case Module do
 
-  module M ; end
+  Unit :is? do
+    m = Module.new
+    x = Class.new
+    y = Class.new(x) do
+      is m
+    end
 
-  class X ; end
-  class Y < X ; is M ;end
-
-  def test_is?
-    assert(Y.is?(X))
-  end
-
-  def test_is
-    assert(Y.is?(M))
+    y.assert.is?(x)
+    y.assert.is?(m)
   end
 
 end
+

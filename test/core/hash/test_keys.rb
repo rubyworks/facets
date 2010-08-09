@@ -1,23 +1,22 @@
-require 'facets/hash/keys'
-require 'test/unit'
+Covers 'facets/hash/keys'
 
-class TC_Hash_Keys < Test::Unit::TestCase
+Case Hash do
 
-  def test_each_with_key
-    h1 = { :a=>1, :b=>2 }
+  Unit :each_with_key do
+    h1 = {:a=>1, :b=>2}
     h2 = {}
     h1.each_with_key { |v,k| h2[v] = k }
-    assert_equal( {1=>:a, 2=>:b}, h2 )
+    h2.assert == {1=>:a, 2=>:b}
   end
 
-  def test_has_keys?
-    assert( { :a=>1,:b=>2,:c=>3 }.has_keys?(:a,:b) )
-    assert( ! { :a=>1,:b=>2,:c=>3 }.has_keys?(:a,:b,:d) )
+  Unit :has_keys? do
+    {:a=>1,:b=>2,:c=>3}.assert.has_keys?(:a,:b)
+    {:a=>1,:b=>2,:c=>3 }.refute.has_keys?(:a,:b,:d)
   end
 
-  def test_has_only_keys?
-    assert( { :a=>1,:b=>2,:c=>3 }.has_only_keys?(:a,:b,:c) )
-    assert( ! { :a=>1,:b=>2,:c=>3 }.has_only_keys?(:a,:b) )
+  Unit :has_only_keys? do
+    {:a=>1,:b=>2,:c=>3}.assert.has_only_keys?(:a,:b,:c)
+    {:a=>1,:b=>2,:c=>3}.refute.has_only_keys?(:a,:b)
   end
 
 end

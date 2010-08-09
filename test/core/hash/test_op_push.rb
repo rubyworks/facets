@@ -1,29 +1,29 @@
-require 'facets/hash/op_push'
-require 'test/unit'
+Covers 'facets/hash/op_push'
 
-class TC_Hash_Op < Test::Unit::TestCase
+Case Hash do
 
-  def test_op_push_two_element_array
+  Unit :<< => "two element array" do
     h = {}
     a = [:b, 2]
-    r = {:b => 2}
-    assert_equal(h, h << a)
-    assert_equal(r, h)
+    x = {:b => 2}
+    (h << a).assert == h
+    h.assert == x
   end
 
-  def test_op_push_hash
-    h1 = {:a => 1}
-    h2 = {:b => 2, :c => 3 }
-    r = { :a => 1, :b => 2, :c => 3 }
-    assert_equal(h1, h1 << h2)
-    assert_equal(r, h1)
+  Unit :<< => "update new entries" do
+    a = {:a => 1}
+    b = {:b => 2, :c => 3 }
+    x = {:a => 1, :b => 2, :c => 3}
+    (a << b).assert == x
+    a.assert == x
   end
 
-  def test_shift_update
-    a = { :a => 1, :b => 2, :c => 3 }
-    b = { :a => 0, :d => 4 }
-    e = { :a => 0, :b => 2, :c => 3, :d => 4 }
-    assert_equal( e, a << b )
+  Unit :<< => "update overwrite" do
+    a = {:a => 1, :b => 2, :c => 3}
+    b = {:a => 0, :d => 4}
+    x = {:a => 0, :b => 2, :c => 3, :d => 4}
+    (a << b).assert == x 
+    a.assert == x
   end
 
 end

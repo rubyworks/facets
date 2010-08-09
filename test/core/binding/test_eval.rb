@@ -1,15 +1,12 @@
-require 'facets/binding/eval'
-require 'test/unit'
+Covers 'facets/binding/eval'
 
-class TC_Binding < Test::Unit::TestCase
+TestCase Binding do
 
-  def setup
-    x = "hello"
-    @bind = binding
-  end
+  x = "hello"
+  @bind = binding
 
-  def test_eval
-    assert_equal( "hello", @bind.eval("x") )
+  Unit :eval do
+    @bind.eval("x").assert == "hello"
   end
 
 end

@@ -1,24 +1,24 @@
-require 'facets/module/wrap_method'
-require 'test/unit'
+Covers 'facets/module/wrap_method'
 
-class Test_Module_WrapMethod < Test::Unit::TestCase
+Case Module do
 
-  def a; "A"; end
+  Unit :wrap_method do
+    c = Class.new do
+      def a; "A"; end
+      wrap_method(:a) { |old| old.call + "B" }
+    end
 
-  wrap_method(:a) { |old| old.call + "B" }
-
-  def test_wrap_method
-    assert_equal( "AB", a )
+    c.new.a.assert == "AB"
   end
 
-  # wrap
+  Unit :wrap do
+    c = Class.new do
+      def b; "B"; end
+      wrap(:b) { |old| old.call + "C" }
+    end
 
-  def b; "B"; end
-
-  wrap(:b) { |old| old.call + "C" }
-
-  def test_wrap
-    assert_equal( "BC", b )
+    c.new.b.assert == "BC"
   end
 
 end
+

@@ -1,17 +1,28 @@
-require 'facets/kernel/constant.rb'
-require 'test/unit'
+Covers 'facets/kernel/constant'
 
-class TCKernel < Test::Unit::TestCase
+Case Kernel do
 
-  def test_constant
-    c = ::Test::Unit::TestCase.name
-    assert_equal( ::Test::Unit::TestCase, constant(c) )
-    c = "Test::Unit::TestCase"
-    assert_equal( ::Test::Unit::TestCase, constant(c) )
-    c = "Unit::TestCase"
-    assert_equal( ::Test::Unit::TestCase, Test.constant(c) )
-    c = "TestCase"
-    assert_equal( ::Test::Unit::TestCase, Test::Unit.constant(c) )
+  module ConstantHelpers
+    module A
+      module B
+        module C
+        end
+      end
+    end
+  end
+
+  Unit :constant do
+    c = ConstantHelpers::A::B::C.name
+    constant(c).assert == ConstantHelpers::A::B::C
+
+    c = "A::B::C"
+    ConstantHelpers.constant(c).assert == ConstantHelpers::A::B::C
+
+    c = "B::C"
+    ConstantHelpers::A.constant(c).assert == ConstantHelpers::A::B::C
+
+    c = "C"
+    ConstantHelpers::A::B.constant(c).assert == ConstantHelpers::A::B::C
   end
 
 end

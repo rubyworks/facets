@@ -1,14 +1,14 @@
-require 'facets/unboundmethod/name'
+Covers 'facets/unboundmethod/name'
 
-class Test_UnboundMethod_Name < Test::Unit::TestCase
+Case UnboundMethod do
 
   class X
     def foo; "bar"; end
   end
 
-  def test_name
+  Unit :name do
     meth = X.instance_method(:foo)
-    assert_equal(:foo, meth.name.to_sym)
+    meth.name.to_sym.assert == :foo
   end
 
 end

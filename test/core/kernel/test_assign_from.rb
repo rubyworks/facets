@@ -1,19 +1,17 @@
-require 'facets/kernel/assign_from.rb'
-require 'test/unit'
+Covers 'facets/kernel/assign_from'
 
-class TestKernelAssignFrom < Test::Unit::TestCase
+Case Kernel do
 
-  C = Struct.new(:name, :address, :zip)
-
-  def test_assign_from
-    bob = C.new("Bob Sawyer", "123 Maple, Anytown NC", 12345)
-    joe = C.new("Joe Pitare")
+  Unit :assign_from do
+    c = Struct.new(:name, :address, :zip)
+    bob = c.new("Bob Sawyer", "123 Maple, Anytown NC", 12345)
+    joe = c.new("Joe Pitare")
 
     joe.assign_from(bob, :address, :zip)
 
-    assert_equal("Joe Pitare", joe.name)
-    assert_equal("123 Maple, Anytown NC", joe.address)
-    assert_equal(12345, joe.zip)
+    joe.name.assert == "Joe Pitare"
+    joe.address. == "123 Maple, Anytown NC"
+    joe.zip.assert == 12345
   end
 
 end

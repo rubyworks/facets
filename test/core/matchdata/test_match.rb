@@ -1,14 +1,10 @@
-# Test for lib/facets/matchdata/matchset
+Covers 'facets/matchdata/match'
 
-require 'facets/matchdata/match.rb'
+Case MatchData do
 
-require 'test/unit'
-
-class Test_MatchData_Match < Test::Unit::TestCase
-
-  def test_match
+  Unit :match do
     md = /X(a)(b)(c)X/.match("YXabcXY")
-    assert_equal( "XabcX", md.match )
+    md.match.assert == "XabcX"
   end
 
 end

@@ -1,11 +1,10 @@
-require 'facets/string/variablize'
-require 'test/unit'
+Covers 'facets/string/variablize'
 
-class Test_String < Test::Unit::TestCase
+Case String do
 
-  def test_variablize
+  Unit :variablize do
     s = "a"
-    assert_equal( "@a", s.variablize )
+    s.variablize.assert == "@a"
   end
 
 end

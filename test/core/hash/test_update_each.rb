@@ -1,13 +1,12 @@
-require 'facets/hash/update_each'
-require 'test/unit'
+Covers 'facets/hash/update_each'
 
-class TC_Hash_Update_Each < Test::Unit::TestCase
+Case Hash do
 
-  def test_update_each
+  Unit :update_each do
     a = { :a => 1, :b => 2, :c => 3 }
-    e = { :a => 2, :b => 3, :c => 4 }
+    x = { :a => 2, :b => 3, :c => 4 }
     a.update_each{ |k,v| { k => v+1 } }
-    assert_equal( e, a )
+    a.assert == x
   end
 
 end

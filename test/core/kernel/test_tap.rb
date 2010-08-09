@@ -1,18 +1,17 @@
-require 'facets/kernel/tap'
-require 'test/unit'
+Covers 'facets/kernel/tap'
 
-class TestKernelTap < Test::Unit::TestCase
+Case Kernel do
 
-  def test_tap
+  Unit :tap do
     x = "foo"
     r = ("foobar".tap{ |x| x.gsub!(/bar/, '') })
-    assert_equal(x, r)
+    r.assert == x
   end
 
-  def test_tap_array
+  Unit :tap => "check internal value" do
     x = [1,2,3]
     x.tap{ |a|
-      assert_equal(x, a)
+      a.assert == x
     }
   end
 

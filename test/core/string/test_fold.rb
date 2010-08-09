@@ -1,18 +1,17 @@
-require 'facets/string/fold.rb'
-require 'test/unit'
+Covers 'facets/string/fold'
 
-class Test_String_Fold < Test::Unit::TestCase
+Case String do
 
-  def test_fold_1
+  Unit :fold do
     s = "This is\na test.\n\nIt clumps\nlines of text."
     o = "This is a test.\n\nIt clumps lines of text."
-    assert_equal( o, s.fold )
+    s.fold.assert == o
   end
 
-  def test_fold_2
+  Unit :fold => "leave spaces" do
     s = "This is\na test.\n\n  This is pre.\n  Leave alone.\n\nIt clumps\nlines of text."
     o = "This is a test.\n\n  This is pre.\n  Leave alone.\n\nIt clumps lines of text."
-    assert_equal( o, s.fold(true) )
+    s.fold(true).assert == o
   end
 
 end

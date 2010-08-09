@@ -1,11 +1,10 @@
-require 'facets/string/end_with'
-require 'test/unit'
+Covers 'facets/string/end_with'
 
-class Test_String < Test::Unit::TestCase
+Case String do
 
-  def test_end_with?
+  Unit :end_with? do
     s = "xxboo"
-    assert( s.end_with?('boo') )
+    s.assert.end_with?('boo')
   end
 
 end

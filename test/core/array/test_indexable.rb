@@ -1,64 +1,51 @@
-require 'facets/array/indexable.rb'
-require 'test/unit'
+Covers 'facets/array/indexable'
 
-class TestArray < Test::Unit::TestCase
+TestCase Array do
 
-  #def test_op_mod
-  #  a = [:A,:B,:C]
-  #  assert_equal( a[1], a/1 )
-  #  assert_equal( :B, a/1 )
-  #end
-  #
-  #def test_op_div
-  #  a = [:A,:B,:C]
-  #  assert_equal( a[1], a/1 )
-  #  assert_equal( :B, a/1 )
-  #end
-
-  def test_head
+  Unit :head do
     a = [1,2,3,4,5]
-    assert_equal( [1], a.head )
+    a.head.assert == [1]
   end
 
-  def test_tail
+  Unit :tail do
     a = [1,2,3,4,5]
-    assert_equal( [2,3,4,5], a.tail )
+    a.tail.assert == [2,3,4,5]
   end
 
-  def test_foot
+  Unit :foot do
     a = [1,2,3,4,5]
-    assert_equal( [5], a.foot )
+    a.foot.assert == [5]
   end
 
-  def test_body
+  Unit :body do
     a = [1,2,3,4,5]
-    assert_equal( [1,2,3,4], a.body )
+    a.body.assert == [1,2,3,4]
   end
 
-  def test_mid
+  Unit :mid do
     a = [1,2,3,4,5]
     b = [1,2,3,4,5,6]
-    assert_equal( 3, a.mid )
-    assert_equal( 4, b.mid )
-    assert_equal( 4, a.mid(1) )
-    assert_equal( 5, b.mid(1) )
-    assert_equal( 6, b.mid(2) )
-    assert_equal( 3, b.mid(-1) )
+    a.mid.assert == 3
+    b.mid.assert == 4
+    a.mid(1).assert == 4
+    b.mid(1).assert == 5
+    b.mid(2).assert == 6
+    b.mid(-1).assert == 3
   end
 
-  def test_middle
+  Unit :middle do
     a = [1,2,3,4,5]
     b = [1,2,3,4,5,6]
-    assert_equal( 3, a.middle )
-    assert_equal( [3,4], b.middle )
+    a.middle == 3
+    b.middle == [3,4]
   end
 
-  #def test_op_fetch
+  #Unit :op_fetch do
   #  a = ['a','b','c','d','e','f']
   #  assert_equal( ['b','f'], a[[1,-1]] )
   #end
   #
-  #def test_op_store
+  #Unit :op_store do
   #  a = ['a','o','z']
   #  a[[0,2]] = ['A','Z']
   #  assert_equal( ['A','o','Z'], a )
@@ -66,53 +53,54 @@ class TestArray < Test::Unit::TestCase
   #  assert_equal( ['W','o','Y'], a )
   #end
 
-  def test_thru
-    assert_equal( [2,3,4], [0,1,2,3,4,5].thru(2,4) )
-    assert_equal( [0,1], [0,1,2,3,4,5].thru(0,1) )
+  Unit :thru do
+    [0,1,2,3,4,5].thru(2,4).assert == [2,3,4]
+    [0,1,2,3,4,5].thru(0,1).assert == [0,1]
   end
 
-  def test_first_eq
+  Unit :first= do
     a = [1,2]
     a.first = 0
-    assert_equal( [0,2], a )
+    a.assert == [0,2]
   end
 
-  def test_last_eq
+  Unit :last= do
     a = [1,2]
     a.last = 3
-    assert_equal( [1,3], a )
+    a.assert == [1,3]
   end
 
-  def test_ends
-    assert_equal( [1,2,3,4,5].ends, 4 )
+  Unit :ends do
+    [1,2,3,4,5].ends.assert == 4
   end
 
-  def test_pos
+  Unit :pos do
     a = [1,2,3,4,5]
-    assert_equal( 0, a.pos(1) )
-    assert_equal( 4, a.pos(-1) )
+    a.pos(1)  == 0
+    a.pos(-1) == 4
   end
 
-  def test_range
+  Unit :range do
     a = [1,2,3,4,5]
     b = [1,2,3,4,5,6]
-    assert_equal( (0..4), a.range )
-    assert_equal( (0..5), b.range )
-    assert_equal( (1..3), a.range(2,4) )
-    assert_equal( (1..2), b.range(2,3) )
-    assert_equal( (3..1), b.range(4,2) )
+    a.range.assert == (0..4)
+    b.range.assert == (0..5)
+    a.range(2,4).assert == (1..3)
+    b.range(2,3).assert == (1..2)
+    b.range(4,2).assert == (3..1)
   end
 
-  def test_first!
+  Unit :first! do
     a = [1,2,3]
-    assert_equal( 1, a.first! )
-    assert_equal( [2,3], a )
+    a.first! == 1
+    a.assert == [2,3]
   end
 
-  def test_last!
+  Unit :last! do
     a = [1,2,3]
-    assert_equal( 3, a.last! )
-    assert_equal( [1,2], a )
+    a.last!.assert == 3
+    a.assert == [1,2]
   end
 
 end
+

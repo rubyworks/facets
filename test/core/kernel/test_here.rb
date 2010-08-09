@@ -1,15 +1,9 @@
-require 'facets/kernel/here.rb'
-require 'test/unit'
+Covers 'facets/kernel/here'
 
-class TC_Binding_Here < Test::Unit::TestCase
+Case Kernel do
 
-  def setup
-    x = "hello"
-    @bind = binding; @this_line_no = __LINE__
-  end
-
-  def test_here
-    assert_instance_of( Binding, here )
+  Unit :here do
+    here.assert.is_a?(Binding)
   end
 
 end

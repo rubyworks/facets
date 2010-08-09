@@ -1,13 +1,12 @@
-require 'facets/string/snakecase.rb'
-require 'test/unit'
+Covers 'facets/string/snakecase'
 
-class TestStringCase < Test::Unit::TestCase
+Case String do
 
-  def test_snakecase
-    assert_equal( 'my_module/my_class',   'MyModule::MyClass'.snakecase )
-    assert_equal( 'uri',                  'URI'.snakecase )
-    assert_equal( '/my_class',            '::MyClass'.snakecase )
-    assert_equal( '/my_module/my_class/', '/my_module/my_class/'.snakecase )
+  Unit :snakecase do
+    '/my_module/my_class/'.snakecase.assert == '/my_module/my_class/'
+    'MyModule::MyClass'.snakecase.assert == 'my_module/my_class'
+    '::MyClass'.snakecase.assert == '/my_class'
+    'URI'.snakecase.assert == 'uri'
   end
 
 end

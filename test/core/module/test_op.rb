@@ -1,43 +1,41 @@
-require 'facets/module/op.rb'
-require 'test/unit'
+Covers 'facets/module/op.rb'
 
-class TestModuleOperators < Test::Unit::TestCase
+Case Module do
 
-  module A
+  a = Module.new do
     def x; "x"; end
     def z; "zA"; end
   end
 
-  module B
+  b = Module.new do
     def y; "y"; end
     def z; "zB"; end
   end
 
-  Q = A + B
-  R = A - B
-  Z = A * { :x => :y }
+  Unit :+ do
+    q = a + b
+    q.extend q
 
-  def test_add
-    assert(Q)
-    Q.extend Q
-    assert_equal(  "x", Q.x )
-    assert_equal(  "y", Q.y )
-    assert_equal( "zB", Q.z )
+    q.x.assert == "x"
+    q.y.assert == "y"
+    q.z.assert == "zB"
   end
 
-  def test_minus
-    assert(R)
-    R.extend R
-    assert_equal( "x", R.x )
-    assert_raises(NoMethodError){ R.z }
+  Unit :- do
+    r = a - b
+    r.extend r
+
+    r.x.assert == "x"
+    NoMethodError.assert.raised?{ r.z }
   end
 
-  def test_rename
-    assert(Z)
-    Z.extend Z
-    assert_raise(NoMethodError){ Z.x }
-    assert_equal(  "x", Z.y )
-    assert_equal( "zA", Z.z )
+  Unit :* do
+    z = a * { :x => :y }
+    z.extend z
+
+    z.y.assert == "x"
+    z.z.assert == "zA"
+    NoMethodError.assert.raised?{ z.x }
   end
 
 end

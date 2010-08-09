@@ -1,12 +1,11 @@
-require 'facets/string/tab'
-require 'test/unit'
+Covers 'facets/string/tab'
 
-class TC_String_Tab < Test::Unit::TestCase
+Case String do
 
-  def test_tab
+  # TODO: Need to expand on #tab tests.
+  Unit :tab do
     a = "xyz".tab(4)
-    assert_equal( '    ', a[0..3] )
-    # Need to expand on this
+    a[0..3].assert == '    '
   end
 
 end

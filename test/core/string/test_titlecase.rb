@@ -1,12 +1,11 @@
-require 'facets/string/titlecase.rb'
-require 'test/unit'
+Covers 'facets/string/titlecase'
 
-class StringTitleCaseTest < Test::Unit::TestCase
+Case String do
 
-  def test_titlecase
+  Unit :titlecase do
     r = "try this out".titlecase
     x = "Try This Out"
-    assert_equal(x,r)
+    r.assert == x
   end
 
 end

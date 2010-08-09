@@ -1,50 +1,53 @@
-require 'facets/binding/caller.rb'
-require 'test/unit'
+Covers 'facets/binding/caller'
 
-class TestBindingCallStack < Test::Unit::TestCase
+TestCase Binding do
 
-  def setup
-    a = 1
-    b = 2
-    x = "hello"
-    # the line number must be updated if it moves
-    @bind = binding; @this_line_no = __LINE__
-    @this_file_name = File.basename( __FILE__ ) # why does it equal basename only?
+  a = 1
+  b = 2
+  x = "hello"
+  
+  @bind = binding
+  @line = __LINE__  # the line number must be updated if it moves
+  @file = __FILE__  # why does it equal basename only?
+
+  Unit :__LINE__ do
+    @bind.__LINE__.assert == @line - 1
   end
 
-  def test___LINE__
-    assert_equal( @this_line_no, @bind.__LINE__ )
+  Unit :__FILE__ do
+    @bind.__FILE__.assert == @file
   end
 
-  def test___FILE__
-    assert_equal( @this_file_name, File.basename( @bind.__FILE__ ) )
+  Unit :__DIR__ do
+    @bind.__DIR__.assert == File.dirname(@file)
   end
 
-  def test___DIR__
-    assert_equal( File.dirname( @bind.__FILE__ ), @bind.__DIR__ )
+  Unit :callstack do
+    @bind.callstack.assert.is_a?(Array)
   end
 
-  def test_callstack
-    assert_instance_of( Array, @bind.callstack )
-  end
-
-  def test_caller
-    # how to test?
-    assert_nothing_raised{ @bind.caller }
+  Unit :caller do
+    Exception.refute.raised? do
+      @bind.caller
+    end
   end
 
   # These only work for certain versions, which is okay.
 
   unless RUBY_VERSION < "1.9"
-    def test_callee
-      assert_equal(:setup, @bind.__callee__)
+    Unit :__callee__ do
+      alternate.__callee__.assert == :alternate
     end
   end
 
   unless RUBY_VERSION < "1.8.7"
-    def test_method
-      assert_equal(:setup, @bind.__method__)
+    Unit :__method__ do
+      alternate.__method__.assert == :alternate
     end
+  end
+
+  def alternate
+    binding
   end
 
 end

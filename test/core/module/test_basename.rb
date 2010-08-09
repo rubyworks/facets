@@ -1,10 +1,11 @@
-require 'facets/module/basename.rb'
-require 'test/unit'
+Covers 'facets/module/basename.rb'
 
-class TestModuleBasename < Test::Unit::TestCase
+require File.dirname(__FILE__) + '/test_helper.rb'
 
-  def test_basename
-    assert_equal( "TestCase", ::Test::Unit::TestCase.basename )
+Case Module do
+
+  Unit :basename do
+    ExampleModule::ExampleClass.basename.assert == "ExampleClass"
   end
 
 end

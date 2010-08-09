@@ -1,24 +1,23 @@
-require 'facets/string/modulize'
-require 'test/unit'
+Covers 'facets/string/modulize'
 
-class TC_String_Modulize < Test::Unit::TestCase
+Case String do
 
-  def test_modulize_snakecase
+  Unit :modulize => "snakecase" do
     a = "foo_bar"
     r = "FooBar"
-    assert_equal(r, a.modulize)
+    a.modulize.assert == r
   end
 
-  def test_modulize_pathname
+  Unit :modulize => "path name" do
     a = "foo/bar"
     r = "Foo::Bar"
-    assert_equal(r, a.modulize)
+    a.modulize.assert == r
   end
 
-  def test_modulize_on_methodized_string
+  Unit :modulize => "on methodized string" do
     a = "foo__bar"
     r = "Foo::Bar"
-    assert_equal(r, a.modulize)
+    a.modulize.assert == r
   end
 
 end

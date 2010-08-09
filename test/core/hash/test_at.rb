@@ -1,12 +1,11 @@
-require 'facets/hash/at'
-require 'test/unit'
+Covers 'facets/hash/at'
 
-class TC_Hash_At < Test::Unit::TestCase
+Case Hash do
 
-  def test_at
+  Unit :at do
     h = { :a=>1, :b=>2 }
-    assert_equal( 1, h.at(:a) )
-    assert_equal( 2, h.at(:b) )
+    h.at(:a).assert == 1
+    h.at(:b).assert == 2
   end
 
 end

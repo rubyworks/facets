@@ -1,12 +1,10 @@
-require 'facets/enumerable/take'
-require 'test/unit'
+Covers 'facets/enumerable/take'
 
-class TC_Enumerable_Take < Test::Unit::TestCase
+Case Enumerable do
 
-  SOURCE = (1..1/0.0)   # infinite Enumerable object
-
-  def test_finite
-    assert_equal [1,2,3,4,5], SOURCE.take(5)
+  Unit :take => 'is finite' do
+    infinite = (1..1/0.0) # infinite Enumerable
+    infinite.take(5).assert == [1,2,3,4,5]
   end
 
 end

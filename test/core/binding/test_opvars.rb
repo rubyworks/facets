@@ -1,24 +1,20 @@
-require 'facets/binding/opvars'
-require 'test/unit'
+Covers 'facets/binding/opvars'
 
-class TestBindingVariables < Test::Unit::TestCase
+TestCase Binding do
 
-  def setup
-    a = 1
-    b = 2
-    x = "hello"
-    # the line number must be updated if it moves
-    @bind = binding; @this_line_no = __LINE__
-    @this_file_name = File.basename( __FILE__ ) # why does it equal basename only?
+  a = 1
+  b = 2
+  x = "hello"
+
+  @bind = binding
+
+  Unit :[] do
+    @bind["x"].assert == "hello"
   end
 
-  def test_op_store
-    assert_nothing_raised{ @bind["x"] = "goodbye" }
-    assert_equal( "goodbye", @bind["x"] )
-  end
-
-  def test_op_fetch
-    assert_equal( "hello", @bind["x"] )
+  Unit :[]= do
+    @bind["x"] = "goodbye"
+    @bind["x"].assert == "goodbye"
   end
 
 end

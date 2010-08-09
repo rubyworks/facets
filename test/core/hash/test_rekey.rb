@@ -1,72 +1,65 @@
-require 'facets/hash/rekey'
-require 'test/unit'
+Covers 'facets/hash/rekey'
 
-class Test_Hash_Rekey < Test::Unit::TestCase
+Case Hash do
 
-  def test_rekey
-    foo = { :a=>1, :b=>2 }
-    foo = foo.rekey(:c, :a)
-    assert_equal( 1, foo[:c] )
-    assert_equal( 2, foo[:b] )
-    assert_equal( nil, foo[:a] )
+  Unit :rekey => "specific key" do
+    bar = { :a=>1, :b=>2 }
+    foo = bar.rekey(:c, :a)
+    foo[:c].assert == 1
+    foo[:b].assert == 2
+    foo[:a].assert == nil
   end
 
-  def test_rekey!
+  Unit :rekey! => "specific key" do
     foo = { :a=>1, :b=>2 }
     foo.rekey!(:c, :a)
-    assert_equal( 1, foo[:c] )
-    assert_equal( 2, foo[:b] )
-    assert_equal( nil, foo[:a] )
+    foo[:c].assert == 1
+    foo[:b].assert == 2
+    foo[:a].assert == nil
   end
 
-  def test_rekey_with_block
-    foo = { :a=>1, :b=>2 }
-    foo = foo.rekey{ |k| k.to_s }
-    assert_equal( 1, foo['a'] )
-    assert_equal( 2, foo['b'] )
-    assert_equal( nil, foo[:a] )
-    assert_equal( nil, foo[:b] )
+  Unit :rekey => "with block" do
+    bar = { :a=>1, :b=>2 }
+    foo = bar.rekey{ |k| k.to_s }
+    foo['a'].assert == 1
+    foo['b'].assert == 2
+    foo[:a].assert  == nil
+    foo[:b].assert  == nil
+    foo.assert == { 'a'=>1, 'b'=>2 }
   end
 
-  def test_rekey_with_block!
+  Unit :rekey! => "with block" do
     foo = { :a=>1, :b=>2 }
     foo.rekey!{ |k| k.to_s }
-    assert_equal( 1, foo['a'] )
-    assert_equal( 2, foo['b'] )
-    assert_equal( nil, foo[:a] )
-    assert_equal( nil, foo[:b] )
+    foo['a'].assert == 1
+    foo['b'].assert == 2
+    foo[:a].assert == nil
+    foo[:b].assert == nil
+    foo.assert == { 'a'=>1, 'b'=>2 }
   end
 
-  #
-
-  def test_rekey_01
+  Unit :rekey => "symbol argument" do
     foo = { :a=>1, :b=>2 }
-    assert_equal( { "a"=>1, "b"=>2 }, foo.rekey{|k|k.to_s} )
-    assert_equal( { :a =>1, :b=>2 }, foo  )
+    foo.rekey(:to_s).assert == { "a"=>1, "b"=>2 }
+    foo.assert == { :a =>1, :b=>2 }
   end
 
-  def test_rekey_02
+  Unit :rekey! => "symbol argument" do
     foo = { :a=>1, :b=>2 }
-    assert_equal( { "a"=>1, "b"=>2 }, foo.rekey!{|k|k.to_s}  )
-    assert_equal( { "a"=>1, "b"=>2 }, foo )
+    foo.rekey!(:to_s).assert == { "a"=>1, "b"=>2 }
+    foo.assert == { "a"=>1, "b"=>2 }
   end
 
-  def test_rekey_03
-    foo = { :a=>1, :b=>2 }
-    assert_equal( { "a"=>1, "b"=>2 }, foo.rekey(:to_s) )
-    assert_equal( { :a =>1, :b=>2 }, foo  )
-  end
-
-  def test_rekey_04
-    foo = { :a=>1, :b=>2 }
-    assert_equal( { "a"=>1, "b"=>2 }, foo.rekey!(:to_s) )
-    assert_equal( { "a"=>1, "b"=>2 }, foo )
-  end
-
-  def test_rekey_05
+  Unit :rekey => "default" do
     foo = { "a"=>1, "b"=>2 }
-    assert_equal( { :a=>1, :b=>2 }, foo.rekey! )
-    assert_equal( { :a=>1, :b=>2 }, foo )
+    foo.rekey!.assert == { :a=>1, :b=>2 }
+    foo.assert == { :a=>1, :b=>2 }
+  end
+
+  Unit :rekey! => "default" do
+    foo = { "a"=>1, "b"=>2 }
+    foo.rekey!.assert == { :a=>1, :b=>2 }
+    foo.assert == { :a=>1, :b=>2 }
   end
 
 end

@@ -1,17 +1,12 @@
-require 'facets/binding/self'
-require 'test/unit'
+Covers 'facets/binding/self'
 
-class TC_Binding_Self < Test::Unit::TestCase
+TestCase Binding do
 
-  def setup
-    a = 1
-    b = 2
-    x = "hello"
-    @bind = binding
-  end
+  @bind = binding
+  @self = self
 
-  def test_self
-    assert_equal( self, @bind.self )
+  Unit :self do
+    @bind.self == @self
   end
 
 end

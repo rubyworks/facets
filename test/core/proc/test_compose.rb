@@ -1,20 +1,19 @@
-require 'facets/proc/compose.rb'
-require 'test/unit'
+Covers 'facets/proc/compose'
 
-class TestProc < Test::Unit::TestCase
+Case Proc do
 
-  def test_compose
+  Unit :compose do
     a = lambda { |x| x + 4 }
     b = lambda { |y| y / 2 }
-    assert_equal( 6, (a.compose(b)).call(4) )
-    assert_equal( 4, (b.compose(a)).call(4) )
+    (a.compose(b)).call(4).assert == 6
+    (b.compose(a)).call(4).assert == 4
   end
 
-  def test_compose_op
+  Unit :* do
     a = lambda { |x| x + 4 }
     b = lambda { |y| y / 2 }
-    assert_equal( 6, (a * b).call(4) )
-    assert_equal( 4, (b * a).call(4) )
+    (a * b).call(4).assert == 6
+    (b * a).call(4).assert == 4
   end
 
 end

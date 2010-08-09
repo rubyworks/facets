@@ -1,14 +1,13 @@
-require 'facets/integer/even'
-require 'test/unit'
+Covers 'facets/integer/even'
 
-class TC_Integer < Test::Unit::TestCase
+Case Integer do
 
-  def test_even?
+  Unit :even? do
     (-100..100).step(2) do |n|
-      assert(n.even? == true)
+      n.even?.assert == true
     end
     (-101..101).step(2) do |n|
-      assert(n.even? == false)
+      n.even?.assert == false
     end
   end
 

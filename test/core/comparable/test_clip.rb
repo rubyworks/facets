@@ -1,22 +1,27 @@
-require 'facets/comparable/clip.rb'
-require 'test/unit'
+Covers 'facets/comparable/clip'
 
-class TestComparable < Test::Unit::TestCase
+TestCase Comparable do
 
-  def test_clip
-    assert_equal( 4, 3.clip(4) )
-    assert_equal( 4, 4.clip(4) )
-    assert_equal( 5, 5.clip(4) )
-    assert_equal( 4, 4.clip(3,5) )
-    assert_equal( 3, 3.clip(3,5) )
-    assert_equal( 5, 5.clip(3,5) )
-    assert_equal( 3, 2.clip(3,5) )
-    assert_equal( 5, 6.clip(3,5) )
-    assert_equal( 'd', 'd'.clip('c','e') )
-    assert_equal( 'c', 'c'.clip('c','e') )
-    assert_equal( 'e', 'e'.clip('c','e') )
-    assert_equal( 'c', 'b'.clip('c','e') )
-    assert_equal( 'e', 'f'.clip('c','e') )
+  Unit :clip => 'single argument' do
+    3.clip(4).assert == 4
+    4.clip(4).assert == 4
+    5.clip(4).assert == 5
+  end
+
+  Unit :clip => 'two arguments' do
+    4.clip(3,5).assert == 4
+    3.clip(3,5).assert == 3
+    5.clip(3,5).assert == 5
+    2.clip(3,5).assert == 3
+    6.clip(3,5).assert == 5
+  end
+
+  Unit :clip => 'on strings' do
+    'd'.clip('c','e').assert == 'd'
+    'c'.clip('c','e').assert == 'c'
+    'e'.clip('c','e').assert == 'e'
+    'b'.clip('c','e').assert == 'c'
+    'f'.clip('c','e').assert == 'e'
   end
 
 end

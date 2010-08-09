@@ -1,21 +1,17 @@
-# Test for lib/facets/string/align.rb
+Covers 'facets/string/align'
 
-require 'facets/string/align.rb'
+Case String do
 
-require 'test/unit'
-
-class TestStringAlign < Test::Unit::TestCase
-
-  def test_align_right
-    assert_equal( "      xxx", "xxx".align_right(9) )
+  Unit :align_right do
+    "xxx".align_right(9) == "      xxx"
   end
 
-  def test_align_left
-    assert_equal( "xxx      ", "xxx".align_left(9) )
+  Unit :align_left do
+    "xxx".align_left(9).assert == "xxx      "
   end
 
-  def test_align_center
-    assert_equal( "   xxx   ", "xxx".align_center(9) )
+  Unit :align_center do
+    "xxx".align_center(9).assert == "   xxx   "
   end
 
 end

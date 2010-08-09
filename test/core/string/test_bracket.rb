@@ -1,64 +1,56 @@
-# Test for facets/string/bracket
+Covers 'facets/string/bracket'
 
-require 'facets/string/bracket.rb'
+Case String do
 
-require 'test/unit'
-
-class TestStringBracket < Test::Unit::TestCase
-
-  def test_bracket
-    assert_equal( '#X#', 'X'.bracket('#') )
-    assert_equal( 'xX!', 'X'.bracket('x','!') )
-    assert_equal( '{X}', 'X'.bracket('{','}') )
-    assert_equal( '<X>', 'X'.bracket('<') )
-    assert_equal( '(X)', 'X'.bracket('(') )
-    assert_equal( '[X]', 'X'.bracket('[') )
-    assert_equal( '{X}', 'X'.bracket('{') )
+  Unit :bracket do
+    'X'.bracket('#').assert == '#X#'
+    'X'.bracket('x','!').assert == 'xX!'
+    'X'.bracket('{','}').assert == '{X}'
+    'X'.bracket('<').assert == '<X>'
+    'X'.bracket('(').assert == '(X)'
+    'X'.bracket('[').assert == '[X]'
+    'X'.bracket('{').assert == '{X}'
   end
 
-  def test_braket!
+  Unit :braket! do
     a = 'X' ; a.bracket!('#')
-    assert_equal( '#X#', a )
+    a.assert == '#X#'
     a = 'X' ; a.bracket!('x','!')
-    assert_equal( 'xX!', a )
+    a.assert == 'xX!'
     a = 'X' ; a.bracket!('{','}')
-    assert_equal( '{X}', a )
+    a.assert == '{X}'
     a = 'X' ; a.bracket!('<')
-    assert_equal( '<X>', a )
+    a.assert == '<X>'
     a = 'X' ; a.bracket!('(')
-    assert_equal( '(X)', a )
+    a.assert == '(X)'
     a = 'X' ; a.bracket!('[')
-    assert_equal( '[X]', a )
+    a.assert == '[X]'
     a = 'X' ; a.bracket!('{')
-    assert_equal( '{X}', a )
+    a.assert == '{X}'
   end
 
-  def test_quote_01
-    a =  "hi"
-    assert_raises( ArgumentError ) { a.quote(1,2) }
+  Unit :quote do
+    ArgumentError.assert.raised?{ 'hi'.quote(1,2) }
   end
 
-  def test_quote_02
-    a =  "hi"
-    assert_equal( %{'hi'}, a.quote )
+  Unit :quote => "default single quotes" do
+    'hi'.quote.assert == %{'hi'}
   end
 
-  def test_quote_03
-    a =  "hi"
-    assert_equal( %{"hi"}, a.quote(:d) )
-    assert_equal( %{"hi"}, a.quote(:double) )
+  Unit :quote => "single quotes" do
+    'hi'.quote(:s).assert == %{'hi'}
+    'hi'.quote(:single).assert == %{'hi'}
   end
 
-  def test_quote_04
-    a =  "hi"
-    assert_equal( %{'hi'}, a.quote(:s) )
-    assert_equal( %{'hi'}, a.quote(:single) )
+  Unit :quote => "double quotes" do
+    'hi'.quote(:d).assert == %{"hi"}
+    'hi'.quote(:double).assert == %{"hi"}
   end
 
-  def test_quote_05
-    a =  "hi"
-    assert_equal( %{`hi`}, a.quote(:b) )
-    assert_equal( %{`hi`}, a.quote(:back) )
+  Unit :quote => "back quotes" do
+    'hi'.quote(:b).assert == %{`hi`}
+    'hi'.quote(:back).assert == %{`hi`}
   end
 
 end
+

@@ -1,7 +1,6 @@
-require 'facets/enumerable/compact_map.rb'
-require 'test/unit'
+Covers 'facets/enumerable/compact_map.rb'
 
-class TestEnumerable < Test::Unit::TestCase
+Case Enumerable do
 
   #def test_filter_collect
   #  e = [3,4]
@@ -12,9 +11,9 @@ class TestEnumerable < Test::Unit::TestCase
   #  assert_equal( e, a )
   #end
 
-  def test_compact_map
-    a = [1,2,nil,4].compact_map { |e| e }
-    assert_equal( [1,2,4], a )
+  Unit :compact_map do
+    r = [1,2,nil,4].compact_map { |e| e }
+    r.assert == [1,2,4]
   end
 
 =begin

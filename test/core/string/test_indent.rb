@@ -1,75 +1,71 @@
-require 'facets/string/indent'
-require 'test/unit'
+Covers 'facets/string/indent'
 
-class TC_String_Indent < Test::Unit::TestCase
+Case String do
 
-  def test_positive_indent
-    assert_equal '    xyz', "xyz".  indent(4)
-    assert_equal '    xyz', "  xyz".indent(2)
+  Unit :indent => "positive" do
+    "xyz".indent(4).assert == '    xyz'
+    "  xyz".indent(2).assert == '    xyz'
   end
 
-  def test_multi_line_positive_indent
-    assert_equal  "  abc\n" +
-                  "  xyz"   , 
-                 ("abc\n"   +
-                  "xyz"     ).indent(2)
+  Unit :indent => "multiline positive" do
+    "abc\nxyz".indent(2).assert ==  "  abc\n  xyz"
   end
 
-  def test_0_indent
-    assert_equal 'xyz', 'xyz'.indent(0)
+  Unit :indent => "zero" do
+    'xyz'.indent(0).assert == 'xyz'
   end
 
-  def test_negative_indent
-    assert_equal '  xyz', '    xyz'.indent(-2)
-    assert_equal 'xyz',   '  xyz'.  indent(-2)
+  Unit :indent => "negative" do
+    '    xyz'.indent(-2).assert == '  xyz'
+    '  xyz'.  indent(-2).assert == 'xyz'
   end
 
-  def test_multi_line_negative_indent
-    assert_equal  "  abc\n" +
-                  "  xyz"   , 
-                 ("    abc\n"   +
-                  "    xyz"     ).indent(-2)
+  Unit :indent => "multiline negative" do
+    "    abc\n    xyz".indent(-2).assert == "  abc\n  xyz"
   end
 
-  def test_outdent_is_alias_for_negative_indent
-    assert_equal 'xyz', '  xyz'.outdent(2)
+  Unit :outdent => "is an alias for negative indent" do
+    '  xyz'.outdent(2).assert == 'xyz'
   end
 
-  def test_negative_indent_more_than_is_possible
-    assert_equal 'xyz', '  xyz'.indent(-3)
+  Unit :indent => "negative more than is possible" do
+    '  xyz'.indent(-3).assert == 'xyz'
   end
 
-  #-----------------------------------
-  # Using a character other than space
-
-  def test_nonspace_positive__indent
-    assert_equal '----xyz', "xyz".indent(4, '-')
+  Unit :indent => "non-space positive" do
+    "xyz".indent(4, '-').assert == '----xyz'
   end
 
-  def test_nonspace_0_indent
-    assert_equal 'xyz', 'xyz'.indent(0, '-')
+  Unit :indent => "non-space zero" do
+    'xyz'.indent(0, '-').assert == 'xyz'
   end
 
-  def test_nonspace_negative_indent_nonmatching_character
-    assert_equal '    xyz', '    xyz'.indent(-2, '-')
-    assert_equal '  xyz',   '  xyz'.  indent(-2, '-')
+  Unit :indent => "non-space negative non-matching character" do
+    '    xyz'.indent(-2, '-').assert == '    xyz'
+    '  xyz'.  indent(-2, '-').assert == '  xyz'
   end
 
-  def test_nonspace_negative_indent
-    assert_equal '--xyz', '----xyz'.indent(-2, '-')
-    assert_equal 'xyz',   '--xyz'.indent(-2, '-')
+  Unit :indent => "non-space negative" do
+    '----xyz'.indent(-2, '-').assert == '--xyz'
+    '--xyz'.indent(-2, '-').assert == 'xyz'
   end
 
-  def test_special_regexp_characters_are_escaped
-    # make sure . is treated as a literal '.' and not an "any character" wildcard
-    assert_equal '  xyz', '  xyz'.indent(-2, '.')
-    assert_equal 'xyz',   '..xyz'.indent(-2, '.')
+  Concern "Special regular expresion characters are escaped."
 
-    assert_equal '  xyz', '  xyz'.indent(-2, '^')
-    assert_equal 'xyz',   '^^xyz'.indent(-2, '^')
-
-    assert_equal '  xyz', '  xyz'.indent(-2, '*')
-    assert_equal 'xyz',   '**xyz'.indent(-2, '*')
+  Unit :indent => "ensure '.' is treated literally and not as wildcard" do
+    '  xyz'.indent(-2, '.').assert == '  xyz'
+    '..xyz'.indent(-2, '.').assert == 'xyz'
   end
+
+  Unit :indent => "ensure '*' is treated literally and not as wildcard" do
+    '  xyz'.indent(-2, '*').assert == '  xyz'
+    '**xyz'.indent(-2, '*').assert == 'xyz'
+  end
+
+  Unit :indent => "ensure '^' is treated literally and not as line start" do
+    '  xyz'.indent(-2, '^').assert == '  xyz'
+    '^^xyz'.indent(-2, '^').assert == 'xyz'
+  end
+
 end
 

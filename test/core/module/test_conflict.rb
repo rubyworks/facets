@@ -1,24 +1,35 @@
-require 'facets/module/conflict'
-require 'test/unit'
+Covers 'facets/module/conflict'
 
-class Test_Module_Conflict < Test::Unit::TestCase
-
-  class X
-    def q; "qx"; end
-  end
-
-  class Y
-    def q; "qy"; end
-  end
+Case Module do
 
   if RUBY_VERSION < '1.9'
-    def test_conflict?
-      assert_equal( ["q"], X.conflict?(Y) )
+
+    Unit :conflict? do
+      x = Class.new do
+        def q; "qx"; end
+      end
+
+      y = Class.new do
+        def q; "qy"; end
+      end
+
+      x.conflict?(y).assert == ["q"]
     end
+
   else
-    def test_conflict?
-      assert_equal( [:q], X.conflict?(Y) )
+
+    Unit :conflict? do
+      x = Class.new do
+        def q; "qx"; end
+      end
+
+      y = Class.new do
+        def q; "qy"; end
+      end
+
+      x.conflict?(y).assert == [:q]
     end
+
   end
 end
 

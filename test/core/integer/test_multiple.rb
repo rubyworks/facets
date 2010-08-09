@@ -1,9 +1,8 @@
-require 'facets/integer/multiple'
-require 'test/unit'
+Covers 'facets/integer/multiple'
 
-class TC_Integer_Multiple < Test::Unit::TestCase
+Case Integer do
 
-  def test_multiple?
+  Unit :multiple? do
     assert( ! 1.multiple?(2) )
     assert(   2.multiple?(2) )
     assert( ! 5.multiple?(3) )

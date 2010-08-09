@@ -1,15 +1,12 @@
-require 'facets/module/pathize'
-require 'test/unit'
+Covers 'facets/module/pathize'
 
-class TestClassPathize < Test::Unit::TestCase
+require File.dirname(__FILE__) + '/test_helper.rb'
 
-  def test_pathize
-    assert_equal( Test::Unit::TestCase.pathize, 'test/unit/test_case' )
+Case Module do
+
+  Unit :pathize do
+    ExampleModule::ExampleClass.pathize.assert == 'example_module/example_class'
   end
-
-  #def test_methodize
-  #  assert_equal( Test::Unit::TestCase.methodize, 'test__unit__test_case' )
-  #end
 
 end
 

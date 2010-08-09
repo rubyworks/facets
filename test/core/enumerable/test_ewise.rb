@@ -1,9 +1,16 @@
-require 'facets/enumerable/ewise'
-require 'test/unit'
+Covers 'facets/enumerable/ewise'
 
-class TestElementWise < Test::Unit::TestCase
+Case Enumerable do
 
-  #def test_elementwise
+  Unit :ewise do
+    a = [1,2,3]
+    (a.ewise + 3).assert == [4,5,6]
+    (a.ewise + [4,5]).assert == [5,7]
+    (a.ewise.+([4,5],2)).assert == [[5,7],[3,4,5]]
+    (a.ewise.+([4,5],3)).assert == [[5,7],[4,5,6]]
+  end
+
+  #Unit :elementwise do
   #  a = [1,2,3]
   #  b = [4,5]
   #  assert_equal( [4,5,6], a.elementwise + 3 )
@@ -12,12 +19,5 @@ class TestElementWise < Test::Unit::TestCase
   #  assert_equal( [[5,7],[4,5,6]], a.elementwise.+(b,3) )
   #end
 
-  def test_ewise
-    a = [1,2,3]
-    assert_equal( [4,5,6], a.ewise + 3 )
-    assert_equal( [5,7], a.ewise + [4,5] )
-    assert_equal( [[5,7],[3,4,5]], a.ewise.+([4,5],2) )
-    assert_equal( [[5,7],[4,5,6]], a.ewise.+([4,5],3) )
-  end
-
 end
+

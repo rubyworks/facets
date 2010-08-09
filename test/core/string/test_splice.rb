@@ -1,31 +1,30 @@
-require 'facets/string/splice'
-require 'test/unit'
+Covers 'facets/string/splice'
 
-class TC_String < Test::Unit::TestCase
+Case String do
 
-  def test_splice
+  Unit :splice do
     a = "HELLO"
-    assert_equal( "E", a.splice(1) )
-    assert_equal( "HLLO", a )
+    a.splice(1).assert == "E"
+    a.assert == "HLLO"
   end
 
   # This could be done if class of 2nd arg is checked.
-  #def test_splice_length
+  #Unit :splice_length
   #  a = "HELLO"
-  #  assert_equal( "EL", a.splice(1,2) )
-  #  assert_equal( "HLO", a )
+  #  a.splice(1,2).assert == "EL"
+  #  a.assert == "HLO"
   #end
 
-  def test_splice_range
+  Unit :splice => "range" do
     a = "HELLO"
-    assert_equal( "EL", a.splice(1..2) )
-    assert_equal( "HLO", a )
+    a.splice(1..2).assert == "EL"
+    a.assert == "HLO"
   end
 
-  def test_splice_store
+  Unit :splice => "store" do
     a = "HELLO"
     a.splice(1, "X")
-    assert_equal("HXLLO", a)
+    a.assert == "HXLLO"
   end
 
 end

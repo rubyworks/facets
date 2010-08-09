@@ -1,12 +1,11 @@
-require 'facets/string/xor.rb'
-require 'test/unit'
+Covers 'facets/string/xor'
 
-class StringXorTest < Test::Unit::TestCase
+Case String do
 
-  def test_xor
+  Unit :"^" do
     r = "try this out" ^ "puddingsnacks"
     x = "\004\a\035D\035\006\016\000N\016\026\037"
-    assert_equal(x,r)
+    r.assert == x
   end
 
 end

@@ -1,10 +1,12 @@
-require 'facets/symbol/not'
-require 'test/unit'
+Covers 'facets/symbol/not'
 
-class TestSymbolNot < Test::Unit::TestCase
+Case Symbol do
 
-  def test_not
-    assert_equal( :"~a", ~:a )
+  Unit :~@ do
+    ~:a.assert == :"~a"
+  end
+
+  Unit :not? do
     a = :a
     n = ~a
     assert( n.not? )

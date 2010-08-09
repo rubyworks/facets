@@ -1,11 +1,10 @@
-require 'facets/string/bytes'
-require 'test/unit'
+Covers 'facets/string/bytes'
 
-class TC_String_Bytes < Test::Unit::TestCase
+Case String do
 
-  def test_bytes
+  Unit :bytes do
     s = "abc"
-    assert_equal( s.unpack('C*'), s.bytes.to_a )
+    s.bytes.to_a.assert == s.unpack('C*')
   end
 
 end

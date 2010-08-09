@@ -1,12 +1,11 @@
-require 'facets/numeric/distance.rb'
-require 'test/unit'
+Covers 'facets/numeric/distance'
 
-class TestNumericDistance < Test::Unit::TestCase
+Case Numeric do
 
-  def test_distance
-    assert_equal( 4, 10.distance(6) )
-    assert_equal( 2, 10.distance(8) )
-    assert_equal( -2, 7.distance(9) )
+  Unit :distance do
+    10.distance(6).assert == 4
+    10.distance(8).assert == 2
+     7.distance(9).assert == -2
   end
 
 end

@@ -1,25 +1,24 @@
-require 'facets/enumerable/every'
-require 'test/unit'
+Covers 'facets/enumerable/every'
 
-class TCEvery < Test::Unit::TestCase
+Case Enumerable do
 
-  def test_every
+  Unit :every do
     a = [1,2,3]
-    assert_equal( [4,5,6], a.every + 3 )
-    assert_equal( [0,1,2], a.every - 1 )
-    assert_equal( ['1','2','3'], a.every.to_s )
+    (a.every + 3 ).assert == [4,5,6]
+    (a.every - 1).assert == [0,1,2]
+    (a.every.to_s).assert == ['1','2','3']
   end
 
-  def test_every!
+  Unit :every! do
     a = [1,2,3]
     a.every! + 3
-    assert_equal( [4,5,6], a )
+    a.assert == [4,5,6]
   end
 
-  def test_to_enum_every
+  Unit :every => "on Enumerator" do
     e = [1,2,3].to_enum(:map)
-    w = e.every + 3
-    assert_equal( [4,5,6], w )
+    r = e.every + 3
+    r.assert == [4,5,6]
   end
 
 end

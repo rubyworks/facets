@@ -1,13 +1,12 @@
-require 'facets/hash/op_add'
-require 'test/unit'
+Covers 'facets/hash/op_add'
 
-class TC_Hash_Op < Test::Unit::TestCase
+Case Hash do
 
-  def test_op_and
+  Unit :+ do
     a = { :a => 1, :b => 2 }
     b = { :b => 3, :c => 4 }
-    r = { :a => 1, :b => 3, :c => 4 }
-    assert_equal( r, a + b )
+    x = { :a => 1, :b => 3, :c => 4 }
+    (a + b).assert == x
   end
 
 end

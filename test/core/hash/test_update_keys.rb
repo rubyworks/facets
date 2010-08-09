@@ -1,18 +1,17 @@
-require 'facets/hash/update_keys'
-require 'test/unit'
+Covers 'facets/hash/update_keys'
 
-class TC_Hash_Update_Keys < Test::Unit::TestCase
+Case Hash do
 
-  def test_update_keys_01
+  Unit :update_keys do
     h = { 'A' => 1, 'B' => 2 }
     h.update_keys{ |k| k.downcase }
-    assert_equal( { 'a' => 1, 'b' => 2 }, h)
+    h.assert == {'a' => 1, 'b' => 2}
   end
 
-  def test_update_keys_02
+  Unit :update_keys do
     h = { :a => 1, :b => 2 }
     h.update_keys{ |k| "#{k}!" }
-    assert_equal( { "a!" => 1, "b!" => 2 }, h)
+    h.assert == {'a!' => 1, 'b!' => 2}
   end
 
 end

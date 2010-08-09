@@ -1,31 +1,16 @@
-require 'facets/file/create'
-require 'test/unit'
-#require 'tempfile'
+require File.dirname(__FILE__) + '/helpers/mockfile'
 
-class Tets_File_Create < Test::Unit::TestCase
+Covers 'facets/file/create'
 
-   class MockFile < ::File
-     def self.open( fname, mode, &blk )
-       blk.call(self)
-     end
-     def self.read( fname=nil )
-       @mock_content.clone
-     end
-     def self.write( str )
-       @mock_content = str
-     end
-     def self.<<( str )
-       (@mock_content ||="") << str
-     end
-   end
+TestCase File do
 
-   def test_create
-     f = "not-a-real-file.txt"
-     t = 'This is a test!'
-     MockFile.create( f, t )
-     s = MockFile.read( f )
-     assert_equal( t, s )
-   end
+  MetaUnit :create do
+    f = "not-a-real-file.txt"
+    t = 'This is a test!'
+    MockFile.create(f, t)
+    s = MockFile.read(f)
+    s.assert == t
+  end
 
 end
 

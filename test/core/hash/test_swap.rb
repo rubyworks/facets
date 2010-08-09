@@ -1,11 +1,11 @@
-require 'facets/hash/swap.rb'
-require 'test/unit'
+Covers 'facets/hash/swap'
 
-class TestHashSwap < Test::Unit::TestCase
+Case Hash do
 
-  def test_swap!
+  Unit :swap! do
     h = { :a=>1, :b=>2 }
-    assert_equal( { :a=>2, :b=>1 }, h.swap!(:a, :b) )
+    h.swap!(:a, :b).assert == { :a=>2, :b=>1 }
   end
 
 end
+

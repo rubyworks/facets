@@ -1,24 +1,23 @@
-require 'facets/comparable/bound.rb'
-require 'test/unit'
+Covers 'facets/comparable/bound'
 
-class TestComparable < Test::Unit::TestCase
+TestCase Comparable do
 
-  def test_at_most
-    assert_equal( 3, 3.at_most(4) )
-    assert_equal( 4, 4.at_most(4) )
-    assert_equal( 4, 5.at_most(4) )
+  unit :at_most do
+    3.at_most(4).assert == 3
+    4.at_most(4).assert == 4
+    5.at_most(4).assert == 4
   end
 
-  def test_at_least
-    assert_equal( 4, 3.at_least(4) )
-    assert_equal( 4, 4.at_least(4) )
-    assert_equal( 5, 5.at_least(4) )
+  unit :at_least do
+    3.at_least(4).assert == 4
+    4.at_least(4).assert == 4
+    5.at_least(4).assert == 5
   end
 
-  def test_cap
-    assert_equal( 3, 3.cap(4) )
-    assert_equal( 4, 4.cap(4) )
-    assert_equal( 4, 5.cap(4) )
+  unit :cap do
+    3.cap(4).assert == 3
+    4.cap(4).assert == 4
+    5.cap(4).assert == 4
   end
 
 end

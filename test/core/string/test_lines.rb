@@ -1,11 +1,10 @@
-require 'facets/string/lines'
-require 'test/unit'
+Covers 'facets/string/lines'
 
-class TC_String_Lines < Test::Unit::TestCase
+Case String do
 
   # Ruby 1.9 defined #lines to keep the newline character. Yuk!
-  def test_lines
-    assert_equal( ["a\n","b\n","c"], "a\nb\nc".lines.to_a )
+  Unit :lines do
+    "a\nb\nc".lines.to_a.assert == ["a\n","b\n","c"]
   end
 
 end

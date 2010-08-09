@@ -1,34 +1,19 @@
-require 'facets/comparable/cmp.rb'
-require 'test/unit'
+Covers 'facets/comparable/cmp'
 
-class TestComparable < Test::Unit::TestCase
+Case Comparable do
 
-  def test_cmp
-    assert_equal( -1, 3.cmp(4) )
-    assert_equal(  0, 3.cmp(3) )
-    assert_equal(  1, 3.cmp(2) )
+  Unit :cmp => 'on integers' do
+    3.cmp(4).assert == -1
+    3.cmp(3).assert ==  0
+    3.cmp(2).assert ==  1
   end
 
-end
-
-class TestNumericCompare < Test::Unit::TestCase
-
-  def test_cmp
-    assert_equal( -1, 3.cmp(4) )
-    assert_equal(  0, 3.cmp(3) )
-    assert_equal(  1, 3.cmp(2) )
-  end
-
-end
-
-class TestStringCompare < Test::Unit::TestCase
-
-  def test_cmp
-    assert_equal( 0, "abc".cmp("abc") )
-    assert_equal( -1, "abc".cmp("abcd") )
-    assert_equal( 1, "abcd".cmp("abc") )
-    assert_equal( -1, "abc".cmp("bcd") )
-    assert_equal( 1, "bcd".cmp("abc") )
+  Unit :cmp => 'on strings' do
+    "abc".cmp("abc").assert == 0
+    "abc".cmp("abcd").assert == -1
+    "abcd".cmp("abc").assert ==  1
+    "abc".cmp("bcd").assert == -1
+    "bcd".cmp("abc").assert ==  1
   end
 
 end

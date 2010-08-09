@@ -1,56 +1,55 @@
-require 'facets/kernel/assign.rb'
-require 'test/unit'
+Covers 'facets/kernel/assign'
 
-class TestKernelAssign < Test::Unit::TestCase
+Case Kernel do
 
-  C = Struct.new(:name, :address, :zip)
+  c = Struct.new(:name, :address, :zip)
 
-  def test_assign_with_arguments
-    bob = C.new
+  Unit :assign => "with arguments" do
+    bob = c.new
 
     bob.assign(:name, "Bob Sawyer")
     bob.assign(:address, "123 Maple, Anytown NC")
     bob.assign(:zip, 12345)
 
-    assert_equal("Bob Sawyer", bob.name)
-    assert_equal("123 Maple, Anytown NC", bob.address)
-    assert_equal(12345, bob.zip)
+    bob.name.assert == "Bob Sawyer"
+    bob.address.assert == "123 Maple, Anytown NC"
+    bob.zip.assert == 12345
   end
 
-  def test_assign_with_hash
-    bob = C.new
+  Unit :assign => "with hash" do
+    bob = c.new
 
     x = { :name => "Bob Sawyer", :address => "123 Maple, Anytown NC", :zip => 12345 }
 
     bob.assign(x)
 
-    assert_equal(x[:name], bob.name)
-    assert_equal(x[:address], bob.address)
-    assert_equal(x[:zip], bob.zip)
+    bob.name.assert == x[:name]
+    bob.address.assert == x[:address]
+    bob.zip.assert == x[:zip]
   end
 
-  def test_assign_with_assoc_array
-    bob = C.new
+  Unit :assign => "with associative array" do
+    bob = c.new
 
     x = [[:name, "Bob Sawyer"], [:address, "123 Maple, Anytown NC"], [:zip, 12345]]
 
     bob.assign(x)
 
-    assert_equal("Bob Sawyer", bob.name)
-    assert_equal("123 Maple, Anytown NC", bob.address)
-    assert_equal(12345, bob.zip)
+    bob.name.assert == "Bob Sawyer"
+    bob.address.assert == "123 Maple, Anytown NC"
+    bob.zip.assert == 12345
   end
 
-  def test_assign_with_block
-    bob = C.new
+  Unit :assign => "with block" do
+    bob = c.new
 
     x = lambda {|s| s.name = "Bob Sawyer"; s.address = "123 Maple, Anytown NC"; s.zip = 12345 }
 
     bob.assign(&x)
 
-    assert_equal("Bob Sawyer", bob.name)
-    assert_equal("123 Maple, Anytown NC", bob.address)
-    assert_equal(12345, bob.zip)
+    bob.name.assert == "Bob Sawyer"
+    bob.address.assert == "123 Maple, Anytown NC"
+    bob.zip.assert == 12345
   end
 
 end

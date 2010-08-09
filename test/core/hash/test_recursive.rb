@@ -1,22 +1,21 @@
-require 'facets/hash/recursive'
-require 'test/unit'
+Covers 'facets/hash/recursive'
 
-class TestHashRecursive < Test::Unit::TestCase
+Case Hash do
 
-  def test_each
+  Unit :recursive => "each" do
     a = []
     {:a=>1,:b=>{:c=>3}}.recursive.each{ |k,v| a << [k,v] }
-    assert_equal([[:a,1],[:c,3], [:b,{:c=>3}]], a)
+    a.assert == [[:a,1],[:c,3], [:b,{:c=>3}]]
   end
 
-  def test_map_moot
-    a = {:a=>1,:b=>{:c=>3}}.recursive.map{ |k,v| [k, v] }
-    assert_equal([[:a,1],[:b,[[:c,3]]]], a)
-  end
-
-  def test_map
+  Unit :recursive => "map" do
     a = {:a=>1,:b=>{:c=>3}}.recursive.map{ |k,v| Hash===v ? [k, v.succ] : [k,v] }
-    assert_equal([[:a,1],[:b,[[:c,3]]]], a)
+    a.assert == [[:a,1],[:b,[[:c,3]]]]
+  end
+
+  Unit :recursive => "map (moot)" do
+    a = {:a=>1,:b=>{:c=>3}}.recursive.map{ |k,v| [k, v] }
+    a.assert == [[:a,1],[:b,[[:c,3]]]]
   end
 
 end

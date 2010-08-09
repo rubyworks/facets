@@ -1,29 +1,26 @@
-require 'facets/module/prepend'
-require 'test/unit'
+Covers 'facets/module/prepend'
 
-class Test_Module_Prepend < Test::Unit::TestCase
+Case Module do
 
-  module M
-    def q; "qm"; end
-  end
+  Unit :prepend => "module method" do
+    m = Module.new do
+      def q; "qm"; end
+    end
 
-  module N
-    prepend M
-    def q; "qn"; end
-  end
+    n = Module.new do
+      prepend m
+      def q; "qn"; end
+    end
 
-  class X
-    include N
-  end
+    x = Class.new do
+      include n
+    end
 
-  def test_prepend_module_method
-    assert_equal( "qm", N.q )
+    n.q.assert == "qm"
   end
 
   # Wish this worked. 
-  #def test_prepend_instance_method
-  #  assert_equal( "qm", X.new.q )
-  #end
+  # x.new.q.assert == "qm"
 
 end
 

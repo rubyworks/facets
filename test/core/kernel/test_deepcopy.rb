@@ -1,27 +1,27 @@
-require 'facets/kernel/deep_copy.rb'
-require 'test/unit'
+Covers 'facets/kernel/deep_copy'
 
-class TestKernelDeepCopy < Test::Unit::TestCase
+Case Kernel do
 
-  # fixtures for copy / deep_copy
-  class A
-    attr_reader :a
-    def initialize
-      @a = 1
+  module DeepCopyHelpers
+    class A
+      attr_reader :a
+      def initialize
+        @a = 1
+      end
+    end
+
+    class B
+      attr_reader :b
+      def initialize
+        @b = A.new
+      end
     end
   end
 
-  class B
-    attr_reader :b
-    def initialize
-      @b = A.new
-    end
-  end
-
-  def test_deep_copy
-    o = B.new
+  Unit :deep_copy do
+    o = DeepCopyHelpers::B.new
     oc = o.deep_copy
-    assert_equal( 1, o.b.a  )
+    o.b.a.assert == 1
   end
 
 end

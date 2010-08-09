@@ -1,40 +1,40 @@
-require 'facets/dir/recurse'
-require 'test/unit'
+Covers 'facets/dir/recurse'
+
 require 'fileutils'
 require 'tmpdir'
 
-class TC_Dir_Recurse < Test::Unit::TestCase
+Case Dir do
 
-   DIRS  = %w{A A/B}
-   FILES = %w{A.txt A/B.txt A/B/C.txt}
+   test_directory = File.join(Dir.tmpdir, 'facets', 'dir', 'recurse', Time.now.usec.to_s)
+   recurse_dirs  = %w{A A/B}
+   recurse_files = %w{A.txt A/B.txt A/B/C.txt}
 
-   def setup
-     @location = File.join(Dir.tmpdir, self.class.name, Time.now.usec.to_s)
-     DIRS.each do |x|
-       FileUtils.mkdir_p(File.join(@location, x))
+   Before :recurse, :ls_r do
+     recurse_dirs.each do |x|
+       FileUtils.mkdir_p(File.join(test_directory, x))
      end
-     FILES.each do |x|
-       File.open(File.join(@location, x), 'w'){ |f| f << "SPINICH" }
-     end
-   end
-
-   def teardown
-     FileUtils.rm_r(@location)
-   end
-
-   def test_recurse
-     Dir.chdir @location do
-       rs = (DIRS + FILES).sort
-       fs = Dir.recurse.sort
-       assert_equal( rs, fs, Dir.pwd  )
+     recurse_files.each do |x|
+       File.open(File.join(test_directory, x), 'w'){ |f| f << "SPINICH" }
      end
    end
 
-   def test_ls_r
-     Dir.chdir @location do
-       rs = (DIRS + FILES).sort
-       fs = Dir.ls_r.sort
-       assert_equal( rs, fs, Dir.pwd  )
+   After :recurse, :ls_r do
+     FileUtils.rm_r(test_directory)
+   end
+
+   Unit :recurse do
+     Dir.chdir test_directory do
+       x = (recurse_dirs + recurse_files).sort
+       r = Dir.recurse.sort
+       r.assert == x
+     end
+   end
+
+   Unit :ls_r do
+     Dir.chdir test_directory do
+       x = (recurse_dirs + recurse_files).sort
+       r = Dir.ls_r.sort
+       r.assert == x
      end
    end
 

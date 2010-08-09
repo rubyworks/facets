@@ -1,30 +1,27 @@
-require 'facets/time/round'
-require 'test/unit'
+Covers 'facets/time/round'
 
-class Test_Time_Round < Test::Unit::TestCase
+Case Time do
 
-  def setup
-    @t = Time.local(2000,03,03,3,37,23)
+  t = Time.local(2000,03,03,3,37,23)
+
+  Unit :round => "hour" do
+    t.round(60 * 60).assert == Time.local(2000,03,03,4, 0)
   end
 
-  def test_round_hour
-    assert_equal Time.local(2000,03,03,4, 0), @t.round(60 * 60)
-  end
-
-  #def test_round_month
-  #  assert_equal Time.local(2000,03,03,3, 0), @t.round( 1.month   )
+  #Unit :round => "month" do
+  #  t.round(1.month).assert == Time.local(2000,03,03,3, 0)
   #end
 
-  def test_round_15_minutes
-    assert_equal Time.local(2000,03,03,3,30), @t.round(15 * 60)
+  Unit :round => "15 minutes" do
+    t.round(15 * 60).assert == Time.local(2000,03,03,3,30)
   end
 
-  def test_round_10_minutes
-    assert_equal Time.local(2000,03,03,3,40), @t.round(10 * 60)
+  Unit :round => "10 minutes" do
+    t.round(10 * 60).assert == Time.local(2000,03,03,3,40)
   end
 
-  def test_round_05_minutes
-    assert_equal Time.local(2000,03,03,3,35), @t.round( 5 * 60)
+  Unit :round => "5 minutes" do
+    t.round( 5 * 60).assert == Time.local(2000,03,03,3,35)
   end
   
 end

@@ -1,14 +1,15 @@
-require 'facets/array/permutation'
-require 'test/unit'
+Covers 'facets/array/permutation'
+
 require 'set'
 
-class TestEnumerablePermutation < Test::Unit::TestCase
+TestCase Array do
 
-  def test_permutation
-    o = Set.new
-    %w[a b c].permutation{ |x| o << x.join('') }
-    r = Set.new(['abc','acb','bac','bca','cab','cba'])
-    assert_equal( r, o )
+  Unit :permutation do
+    r = Set.new
+    %w[a b c].permutation{ |x| r << x.join('') }
+    x = Set.new(['abc','acb','bac','bca','cab','cba'])
+    r.assert == x
   end
 
 end
+

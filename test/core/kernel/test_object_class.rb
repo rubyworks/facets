@@ -1,15 +1,14 @@
-require 'facets/kernel/object_class.rb'
-require 'facets/kernel/__class__.rb'
-require 'test/unit'
+Covers 'facets/kernel/object_class'
+Covers 'facets/kernel/__class__'
 
-class TCKernel < Test::Unit::TestCase
+Case Kernel do
 
-  def test_object_class
-    assert_equal( self.class, self.object_class )
+  Unit :object_class do
+    self.object_class.assert == self.class
   end
 
-  def test__class__
-    assert_equal( self.class, self.__class__ )
+  Unit :__class__ do
+    self.__class__.assert == self.class
   end
 
 end

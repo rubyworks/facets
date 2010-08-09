@@ -1,10 +1,9 @@
-require 'facets/dir.rb'
-require 'test/unit'
+Covers 'facets/dir/parent'
 
-class TC_Dir_Parent < Test::Unit::TestCase
+Case Dir do
 
-  def test_parent
-    assert( Dir.parent?( "a/b/c", "a/b/c/d" ) )
+  Unit :parent do
+    Dir.assert.parent?("a/b/c", "a/b/c/d")
   end
 
 end

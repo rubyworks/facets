@@ -1,10 +1,10 @@
-require 'facets/kernel/callstack.rb'
-require 'test/unit'
+Covers 'facets/kernel/callstack'
 
-class TestCallStack < Test::Unit::TestCase
+Case Kernel do
 
-  def test_callstack
-    assert_nothing_raised{ callstack }
+  # TODO: How to test #callstack ?
+  Unit :callstack do
+    callstack
   end
 
 end

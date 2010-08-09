@@ -1,17 +1,16 @@
-require 'facets/enumerable/recursive'
-require 'test/unit'
+Covers 'facets/enumerable/recursive'
 
-class TestEnumerableRecursive < Test::Unit::TestCase
+Case Enumerable do
 
-  def test_each
+  Unit :recursive => "each" do
     a = []
     [1,2,['a','b']].recursive.each{ |v| a << v }
-    assert_equal([1,2,'a','b'], a)
+    a.assert == [1,2,'a','b']
   end
 
-  def test_map
+  Unit :recursive => "map" do
     a = [1,2,['a','b']].recursive.map{ |v| v.succ }
-    assert_equal([2,3,['b','c']], a)
+    a.assert == [2,3,['b','c']]
   end
 
 end

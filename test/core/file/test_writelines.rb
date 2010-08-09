@@ -1,21 +1,19 @@
-require 'facets/file/write'
-require 'test/unit'
-require 'tempfile'
+Covers 'facets/file/writelines'
 
-class TC_File_Writelines < Test::Unit::TestCase
+require File.dirname(__FILE__) + '/helpers/mockfile'
 
-  def setup
-    tmp_dir = Dir::tmpdir # ENV["TMP"] || ENV["TEMP"] || "/tmp"
-    raise "Can't find temporary directory" unless File.directory?(tmp_dir)
-    @path = File.join(tmp_dir, "ruby_io_test")
-  end
+Case File do
 
-  # Test File.writelines
-  def test_file_writelines
+  MetaUnit :writelines do
+    test_file = File.join(Dir::tmpdir, 'facets', 'file', 'writelines')
+    FileUtils.mkdir_p(File.dirname(test_file))
+
     data_in = %w[one two three four five]
-    File.writelines(@path, data_in)
-    data_out = File.readlines(@path)     # This is standard class method.
-    assert_equal(data_in, data_out.map { |l| l.chomp })
+
+    File.writelines(test_file, data_in)
+
+    data_out = File.readlines(test_file)
+    data_out.map{ |l| l.chomp }.assert == data_in
   end
 
 end

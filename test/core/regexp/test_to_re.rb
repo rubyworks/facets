@@ -1,16 +1,15 @@
-require 'facets/regexp/to_re'
-require 'test/unit'
+Covers 'facets/regexp/to_re'
 
-class TestRegexpToRe < Test::Unit::TestCase
+Case Regexp do
 
-  def test_to_re
+  Unit :to_re do
     r = /0..10/
-    assert_equal( r, r.to_re )
+    r.to_re.assert == r.to_re
   end
 
-  def test_to_regexp
+  Unit :to_regexp do
     r = /0..10/
-    assert_equal( r, r.to_regexp )
+    r.to_regexp.assert == r
   end
 
 end

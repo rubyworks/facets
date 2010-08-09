@@ -1,12 +1,12 @@
-require 'facets/module/modspace.rb'
-require 'test/unit'
+Covers 'facets/module/modspace'
 
-class TestModuleModSpace < Test::Unit::TestCase
+require File.dirname(__FILE__) + '/test_helper.rb'
 
-  def test_modspace
-    assert_equal( Test::Unit, Test::Unit::TestCase.modspace )
-    assert_equal( ::Test::Unit, ::Test::Unit::TestCase.modspace )
-    assert_equal( Object, ::Test.modspace )
+Case Module do
+
+  Unit :modspace do
+    ExampleModule::ExampleClass.modspace.assert == ExampleModule
+    ExampleModule.modspace.assert == Object
   end
 
 end

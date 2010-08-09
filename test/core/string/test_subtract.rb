@@ -1,12 +1,11 @@
-require 'facets/string/subtract'
-require 'test/unit'
+Covers 'facets/string/subtract'
 
-class TC_String_Subtract < Test::Unit::TestCase
+Case String do
 
-  def test_subtract
-    assert_equal("fbar", "foobar" - "oo")
-    assert_equal("pia pia!", "pizza pizza!" - "zz")
-    assert_equal("", "letters" - /[a-z]+/)
+  Unit :subtract do
+    ("foobar" - "oo").assert == "fbar"
+    ("pizza pizza!" - "zz").assert == "pia pia!"
+    ("letters" - /[a-z]+/).assert == ""
   end
 
 end

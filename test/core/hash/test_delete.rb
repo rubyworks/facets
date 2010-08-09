@@ -1,27 +1,29 @@
-require 'facets/hash/delete'
-require 'test/unit'
+Covers 'facets/hash/delete'
 
-class TC_Hash_Delete < Test::Unit::TestCase
+Case Hash do
 
-  def test_delete_unless
+  Unit :delete_unless do
     a = { :a => 1, :b => 2, :c => 3 }
-    e = { :a => 1 }
+    x = { :a => 1 }
     r = a.delete_unless{|k,v| v == 1}
-    assert_equal( e, a )
+    r.assert == x
+    a.assert == x
   end
 
-  def test_delete_values
+  Unit :delete_values do
     a = { :a => 1, :b => 2, :c => 3 }
-    e = { :b => 2, :c => 3 }
+    x = { :b => 2, :c => 3 }
     r = a.delete_values(1)
-    assert_equal( e, a )
+    #r.assert == x
+    a.assert == x
   end
 
-  def test_delete_values_at
+  Unit :delete_values_at do
     a = { :a => 1, :b => 2, :c => 3 }
-    e = { :b => 2, :c => 3 }
+    x = { :b => 2, :c => 3 }
     r = a.delete_values_at(:a)
-    assert_equal( e, a )
+    r.assert == [1]
+    a.assert == x
   end
 
 end

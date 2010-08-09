@@ -1,16 +1,15 @@
-require 'facets/range/to_r'
-require 'test/unit'
+Covers 'facets/range/to_r'
 
-class TestRangeConversion < Test::Unit::TestCase
+Case Range do
 
-  def test_to_r
+  Unit :to_r do
     a = (0..10)
-    assert_equal( a, a.to_r )
+    a.to_r.assert == a
   end
 
-  def test_to_range
+  Unit :to_range do
     a = (0..10)
-    assert_equal( a, a.to_range )
+    a.to_range.assert == a
   end
 
 end

@@ -1,35 +1,33 @@
-# Test lib/more/ext/facets/proc/curry.rb
+Covers 'facets/proc/curry'
 
-require 'facets/proc/curry.rb'
-require 'test/unit'
+Case Proc do
 
-class TestProcCurry < Test::Unit::TestCase
-
-  def test_curry_simple
+  Unit :curry do
     f = Proc.new{ |a,b,c| a + b + c }
     c = f.curry
-    assert_equal( 6, c[1][2][3] )
+    c[1][2][3].assert == 6
   end
 
-  def test_curry_arguments
+  Unit :curry => "with arguments" do
     f = Proc.new{ |a,b| a**b }
     c = f.curry(0)
-    assert_equal( 8, c[2][3] )
+    c[2][3].assert == 8
 
     f = Proc.new{ |a,b| a**b }
     c = f.curry(1)
-    assert_equal( 9, c[2][3] )
+    c[2][3].assert == 9
   end
 
-  def test_inclass_scope
+  Unit :curry => "with in class scope" do
     # first test the lambda
     org = lambda{ |y, x| x + " " + y }
     foo = org.curry['yeah']
-    assert_equal('boo yeah', foo['boo'])
+    foo['boo'].assert == 'boo yeah'
+
     # now test it as a method definition
     baz = Class.new
     baz.__send__(:define_method, 'foo', foo)
-    assert_equal('boo yeah',baz.new.foo('boo'))
+    baz.new.foo('boo').assert == 'boo yeah'
   end
 
 end

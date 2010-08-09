@@ -1,47 +1,47 @@
-require 'facets/class/cattr.rb'
-require 'test/unit'
+Covers 'facets/class/cattr'
 
-class TC_Class_CAttr < Test::Unit::TestCase
+class MockObject
+  def initialize
+    @@a = 10
+  end
+  def b ; @@b ; end
+end
 
-  class MockObject
-    def initialize
-      @@a = 10
+TestCase Class do
+
+  Unit :cattr do
+    Exception.refute.raised? do
+      MockObject.class_eval{ cattr :a }
     end
-    def b ; @@b ; end
-  end
-
-  def test_cattr
-    assert_nothing_raised {
-      MockObject.class_eval { cattr :a }
-    }
     t = MockObject.new
-    assert_equal( 10, t.a )
+    t.a.assert == 10
   end
 
-  def test_cattr_reader
-    assert_nothing_raised {
+  Unit :cattr_reader do
+    Exception.refute.raised? do
       MockObject.class_eval { cattr_reader :a }
-    }
+    end
     t = MockObject.new
-    assert_equal( 10, t.a )
+    t.a.assert == 10
   end
 
-  def test_cattr_writer
-    assert_nothing_raised {
+  Unit :cattr_writer do
+    Exception.refute.raised? do
       MockObject.class_eval { cattr_writer :b }
-    }
+    end
     t = MockObject.new
     t.b = 5
-    assert_equal( 5, t.b )
+    t.b.assert == 5
   end
 
-  def test_cattr_accessor
-    assert_nothing_raised {
+  Unit :cattr_accessor do
+    Exception.refute.raised? do
       MockObject.class_eval { cattr_accessor :c }
-    }
+    end
     t = MockObject.new
     t.c = 50
-    assert_equal( 50, t.c )
+    t.c.assert == 50
   end
 
 end
+

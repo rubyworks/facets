@@ -1,14 +1,13 @@
-require 'facets/integer/odd'
-require 'test/unit'
+Covers 'facets/integer/odd'
 
-class TC_Integer < Test::Unit::TestCase
+Case Integer do
 
-  def test_odd?
+  Unit :odd? do
     (-101..101).step(2) do |n|
-      assert(n.odd? == true)
+      n.odd?.assert == true
     end
     (-100..100).step(2) do |n|
-      assert(n.odd? == false)
+      n.odd?.assert == false
     end
   end
 

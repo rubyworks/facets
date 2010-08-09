@@ -1,20 +1,24 @@
-require 'facets/enumerable/cluster_by'
-require 'test/unit'
+Covers 'facets/enumerable/cluster_by'
 
-class TC_Enumerable_Prime < Test::Unit::TestCase
+Case Enumerable do
 
-  def test_cluster_by
+  Unit :cluster_by => "on an array" do
     a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-    r = [[0, 2, 4, 6, 8], [1, 3, 5, 7, 9]]
-    assert_equal(r, a.cluster_by{|e| e%2}.each{|a| a.sort!})
-    h = {0=>0, 1=>1, 2=>2, 3=>3, 4=>4, 5=>5, 6=>6, 7=>7, 8=>8, 9=>9}
-    r = [[[0, 0], [2, 2], [4, 4], [6, 6], [8, 8]], [[1, 1], [3, 3], [5, 5], [7, 7], [9, 9]]]
-    assert_equal(r, h.cluster_by{|k, v| v%2}.each{|a| a.sort!})
+    e = [[0, 2, 4, 6, 8], [1, 3, 5, 7, 9]]
+    r = a.cluster_by{|x| x % 2} #.each{|a| a.sort!}
+    r.assert == e
   end
 
-  def test_cluster_by_empty
+  Unit :cluster_by => "on a hash" do
+    h = {0=>0, 1=>1, 2=>2, 3=>3, 4=>4, 5=>5, 6=>6, 7=>7, 8=>8, 9=>9}
+    e = [[[0, 0], [2, 2], [4, 4], [6, 6], [8, 8]], [[1, 1], [3, 3], [5, 5], [7, 7], [9, 9]]]
+    r = h.cluster_by{|k, v| v % 2}.each{|a| a.sort!}
+    r.assert == e
+  end
+
+  Unit :cluster_by => "on an empty array" do
     r = [].cluster_by{ |a| a }
-    assert_equal([], r)
+    r.assert == []
   end
 
 end

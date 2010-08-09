@@ -1,86 +1,85 @@
-require 'facets/string/margin'
-require 'test/unit'
+Covers 'facets/string/margin'
 
-class TC_String_Margin < Test::Unit::TestCase
+Case String do
 
-  def test_margin
+  Unit :margin do
     s = %q{
           |ABC
           |123
           |TEST
           }.margin
-    assert_equal( "ABC\n123\nTEST", s )
+    s.assert == "ABC\n123\nTEST"
 
     s = %q{
             |ABC
           |123
                 |TEST
           }.margin
-    assert_equal( "ABC\n123\nTEST", s )
+    s.assert == "ABC\n123\nTEST"
 
     s = %q{|ABC
           |123
           |TEST
     }.margin
-    assert_equal( "ABC\n123\nTEST", s )
+    s.assert == "ABC\n123\nTEST"
 
     s = %q{
           |ABC
           |123
           |TEST}.margin
-    assert_equal( "ABC\n123\nTEST", s )
+    s.assert == "ABC\n123\nTEST"
 
     s = %q{|ABC
           |123
           |TEST}.margin
-    assert_equal( "ABC\n123\nTEST", s )
+    s.assert == "ABC\n123\nTEST"
 
     s = %q{   |ABC
           |123
           |TEST}.margin
-    assert_equal( "ABC\n123\nTEST", s )
+    s.assert == "ABC\n123\nTEST"
 
     s = %q{ABC
           |123
           |TEST
           }.margin
-    assert_equal( "ABC\n123\nTEST", s )
+    s.assert == "ABC\n123\nTEST"
   end
 
   #
 
-  def test_spacing
+  Unit :margin => "spacing" do
     s = %q{
           | ABC
           | 123
           | TEST
           }.margin
-    assert_equal( " ABC\n 123\n TEST", s )
+    s.assert == " ABC\n 123\n TEST"
 
     s = %q{
           |ABC
           |123
           |TEST
           }.margin(1)
-    assert_equal( " ABC\n 123\n TEST", s )
+    s.assert == " ABC\n 123\n TEST"
 
     s = %q{
           |ABC
           |123
           |TEST
           }.margin(2)
-    assert_equal( "  ABC\n  123\n  TEST", s )
+    s.assert == "  ABC\n  123\n  TEST"
 
     s = %q{ ABC
           - 123
           - TEST
           }.margin
-    assert_equal( " ABC\n 123\n TEST", s )
+    s.assert == " ABC\n 123\n TEST"
   end
 
   #
 
-  def test_random_placement
+  Unit :margin => "random_placement" do
     @volly = {}
     100.times{ |n|
       k = []
@@ -92,7 +91,7 @@ class TC_String_Margin < Test::Unit::TestCase
       @volly[k.join("\n")] = a.join("\n")
     }
     @volly.each{ |k,v|
-      assert_equal( v, k.margin )
+      k.margin.assert == v
     }
   end
 

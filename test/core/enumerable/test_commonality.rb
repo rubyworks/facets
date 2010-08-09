@@ -1,15 +1,19 @@
-require 'facets/enumerable/commonality.rb'
-require 'test/unit'
+Covers 'facets/enumerable/commonality.rb'
 
-class Test_Enumerable_Commonality < Test::Unit::TestCase
+Case Enumerable do
 
-  def test_commonality
+  Unit :commonality do
     a = [1,2,2,3,3,3]
-    r = { 2 => [2,2], 3 => [3,3,3] }
-    assert_equal( r, a.commonality )
+    e = { 2 => [2,2], 3 => [3,3,3] }
+    r = a.commonality
+    r.assert == e
+  end
+
+  Unit :commonality => "with block" do
     a = [1,2,2,3,3,3]
-    r = {false=>[1, 2, 2], true=>[3, 3, 3]}
-    assert_equal( r, a.commonality { |x| x > 2 } )
+    e = {false=>[1, 2, 2], true=>[3, 3, 3]}
+    r = a.commonality{ |x| x > 2 }
+    r.assert == e
   end
 
 end

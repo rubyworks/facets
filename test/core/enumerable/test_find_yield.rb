@@ -1,48 +1,55 @@
-require 'facets/enumerable/find_yield'
-require 'test/unit'
+Covers 'facets/enumerable/find_yield'
 
-class TestEnumerable < Test::Unit::TestCase
+Case Enumerable do
   
-  def test_find_yields_a_value
-    assert_equal true, [true].find_yield { |value| value }
+  Unit :find_yield => "a value" do
+    r = [true].find_yield { |value| value }
+    r.assert == true
   end
 
-  def test_find_yield_detects_correct_value
-    assert_equal 1, [1].find_yield { |value| value }
+  Unit :find_yield => "detects correct value" do
+    r = [1].find_yield { |value| value }
+    r.assert == 1
   end
 
-  def test_find_yield_returns_value_of_block
-    assert_equal 4, [1].find_yield { |v| v + 3 }
+  Unit :find_yield => "returns value of block" do
+    r = [1].find_yield { |v| v + 3 }
+    r.assert == 4
   end
 
-  def test_find_yield_detects_first_truthy_value
-    assert_equal 1, [false, false, 1].find_yield { |value| value }
+  Unit :find_yield => "detects first truthy value" do
+    r = [false, false, 1].find_yield { |value| value }
+    r.assert == 1
   end
 
-  def test_find_yield_returns_value_when_block_is_true
-    assert_equal true, [false].find_yield { |value| true }
+  Unit :find_yield => "returns value when block is true" do
+    r = [false].find_yield { |value| true }
+    r.assert == true
   end
 
-  def test_find_yield_returns_early_when_block_is_true
-    val1 = lambda { :something }
-    val2 = lambda { raise "This shouldn't be called" }
-
-    assert_equal :something, [val1, val2].find_yield { |obj| obj.call }
+  Unit :find_yield => "returns early when block is true" do
+    v1 = lambda { :something }
+    v2 = lambda { raise "This shouldn't be called" }
+    r = [v1, v2].find_yield { |obj| obj.call }
+    r.assert == :something
   end
 
-  def test_find_yield_returns_nil_when_block_returns_false_for_all_elements
-    assert_equal nil, [1,2,3,4].find_yield { |value| false }
+  Unit :find_yield => "returns nil when block returns false for all elements" do
+    r = [1,2,3,4].find_yield { |value| false }
+    r.assert == nil
   end
 
-  def test_find_yield_returns_nil_when_no_elements_in_collection
-    assert_equal nil, [].find_yield { |v| }
+  Unit :find_yield => "returns nil when no elements in collection" do
+    r = [].find_yield { |v| }
+    r.assert == nil
   end
 
-  def test_find_yield_can_have_return_value_specified_when_block_isnt_true
-    assert_equal :a_value, [1,2,3].find_yield(:a_value) { |value| false }
+  Unit :find_yield => "can have return value specified when block isnt true" do
+    r = [1,2,3].find_yield(:a_value){ |value| false }
+    r.assert == :a_value
   end
 
-  def test_find_yield_documentation_correct
+  Unit :find_yield => "documentation correct" do
     obj1, obj2 = Object.new, Object.new
 
     class << obj1
@@ -65,11 +72,12 @@ class TestEnumerable < Test::Unit::TestCase
       end
     end
 
-    assert_equal false, obj1.foo?
-    assert_equal true, obj2.foo?
-    assert_equal "a value", obj2.foo
+    obj1.foo?.assert == false
+    obj2.foo?.assert == true
+    obj2.foo.assert == "a value"
 
     result = [obj1, obj2].find_yield { |obj| obj.foo if obj.foo? }
-    assert_equal result, "a value"
+    result.assert == "a value"
   end
 end
+

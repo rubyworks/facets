@@ -1,13 +1,12 @@
-require 'facets/class/to_proc.rb'
-require 'test/unit'
+Covers 'facets/class/to_proc'
 
-class TC_Class_ToProc < Test::Unit::TestCase
+TestCase Class do
 
-  Person = Struct.new(:name)
-
-  def test_to_proc
-    people = ["joe"].map(&Person)
-    assert_equal("joe", people[0].name)
+  Unit :to_proc do
+    person = Struct.new(:name)
+    people = ["joe"].map(&person)
+    people[0].name.assert == "joe"
   end
 
 end
+

@@ -1,27 +1,26 @@
-require 'facets/hash/op_and'
-require 'test/unit'
+Covers 'facets/hash/op_and'
 
-class TC_Hash_Op < Test::Unit::TestCase
+Case Hash do
 
-  def test_op_and_hash
+  Unit :& => "hash and hash" do
     a = { :a => 1, :b => 2 }
     b = { :a => 1 }
-    r = { :a => 1 }
-    assert_equal( r, a & b )
+    x = { :a => 1 }
+    (a & b).assert == x 
   end
 
-  def test_op_and_hash_subarray
+  Unit :& => "hashes with sub-array" do
     a = { :a => [1], :b => [2] }
     b = { :a => [1] }
-    r = { :a => [1] }
-    assert_equal( r, a & b )
+    x = { :a => [1] }
+    (a & b).assert == x
   end
 
-  def test_op_and_array
+  Unit :& => "hash and array" do
     a = { :a => 1, :b => 2 }
     b = [ :a ]
-    r = { :a => 1 }
-    assert_equal( r, a & b )
+    x = { :a => 1 }
+    (a & b).assert == x
   end
 
 end

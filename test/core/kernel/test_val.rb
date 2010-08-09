@@ -1,27 +1,26 @@
-require 'facets/kernel/val.rb'
-require 'test/unit'
+Covers 'facets/kernel/val'
 
-class TestKernelVal < Test::Unit::TestCase
+Case Kernel do
 
-  def test_val_1
+  Unit :val? => "of nil" do
     f = nil
     t = 1
-    assert( ! f.val? )
-    assert( t.val? )
+    f.refute.val?
+    t.assert.val?
   end
 
-  def test_val_2
+  Unit :val? => "of empty array" do
     f = []
     t = [1]
-    assert( ! f.val? )
-    assert( t.val? )
+    f.refute.val?
+    t.assert.val?
   end
 
-  def test_val_3
+  Unit :val? => "of empty string" do
     f = ''
     t = '1'
-    assert( ! f.val? )
-    assert( t.val? )
+    f.refute.val?
+    t.assert.val? 
   end
 
 end

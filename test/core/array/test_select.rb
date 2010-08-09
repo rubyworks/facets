@@ -1,17 +1,12 @@
-require 'facets/array/select'
-require 'test/unit'
+Covers 'facets/array/select'
 
-class TC_Array_Select < Test::Unit::TestCase
+TestCase Array do
 
-  # select!
-
-  def test_select!
+  Unit :select! do
     a = [1,2,3,4,5,6,7,8,9,10]
     a.select!{ |e| e % 2 == 0 }
-    assert_equal( [2,4,6,8,10], a)
+    a.assert == [2,4,6,8,10]
   end
 
 end
-
-
 

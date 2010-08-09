@@ -1,20 +1,11 @@
-require 'facets/module/nesting.rb'
-require 'test/unit'
+Covers 'facets/module/nesting'
 
-class TestModuleNesting < Test::Unit::TestCase
+require File.dirname(__FILE__) + '/test_helper.rb'
 
-  module M
-    module N
-      class C
-        def n
-          self.class.nesting
-        end
-      end
-    end
-  end
+Case Module do
 
-  def test_nesting
-    assert_equal( [TestModuleNesting, M, M::N, M::N::C], M::N::C.new.n )
+  Unit :nesting do
+    ExampleModule::ExampleClass.nest.assert == [ExampleModule, ExampleModule::ExampleClass]
   end
 
 end

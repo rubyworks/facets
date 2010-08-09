@@ -1,30 +1,27 @@
-require 'facets/enumerable/count'
-require 'test/unit'
+Covers 'facets/enumerable/count'
 
-class TC_Enumerable_Count < Test::Unit::TestCase
+Case Enumerable do
 
-  def test_count_strings
+  Unit :count => "strings" do
     e = ['a','1','a']
     r = e.count('1')
-    assert_equal(1, r)
-  end
+    r.assert == 1
 
-  def test_count_strings_again
     e = ['a','1','a']
     r = e.count('a')
-    assert_equal(2, r)
+    r.assert == 2
   end
 
-  def test_count_array_elements
+  Unit :count => "array of arrays" do
     e = [['a',2],['a',2],['a',2],['b',1]]
     r = e.count(['a',2])
-    assert_equal(3, r)
+    r.assert == 3
   end
 
-  def test_count_hash
+  Unit :count => "hash" do
     e = { :a=>2, 'b'=>1, :c=>2 }
     r = e.count(2)
-    assert_equal(2, r)
+    r.assert == 2
   end
 
 end

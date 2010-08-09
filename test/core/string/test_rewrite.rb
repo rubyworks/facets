@@ -1,13 +1,12 @@
-require 'facets/string/rewrite'
-require 'test/unit'
+Covers 'facets/string/rewrite'
 
-class TC_String < Test::Unit::TestCase
+Case String do
 
-  def test_rewrite
+  Unit :rewrite do
     s = "HELLO TOMMY!"
     rules = [[ /TOMMY/, 'MAN' ]]
-    x = s.rewrite(rules)
-    assert_equal("HELLO MAN!", x)
+    r = s.rewrite(rules)
+    r.assert == "HELLO MAN!"
   end
 
 end

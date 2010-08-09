@@ -1,20 +1,12 @@
-#  _____         _
-# |_   _|__  ___| |_
-#   | |/ _ \/ __| __|
-#   | |  __/\__ \ |
-#   |_|\___||___/\__|
-#
-require 'facets/array/only.rb'
+Covers 'facets/array/only.rb'
 
-require 'test/unit'
+TestCase Array do
 
-class TestArrayOnly < Test::Unit::TestCase
-
-  def test_only
-    assert_equal(5,   [5].only)
-    assert_equal(nil, [nil].only)
-    assert_raise(IndexError) { [].only }
-    assert_raise(IndexError) { [1,2,3].only }
+  Unit :only do
+    [5].only.assert == 5
+    [nil].only.assert == nil
+    expect(IndexError){ [].only }
+    expect(IndexError){ [1,2,3].only }
   end
 
 end

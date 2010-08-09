@@ -1,12 +1,8 @@
-# Test for facets/kernel/silence
+Covers 'facets/kernel/silence'
 
-require 'facets/kernel/silence.rb'
+Case Kernel do
 
-require 'test/unit'
-
-class TestKernelError < Test::Unit::TestCase
-
-  def test_silence_warnings
+  Unit :silence_warnings do
     silence_warnings do
       assert( ! $VERBOSE )
     end

@@ -1,21 +1,17 @@
-# Test facets/array/stackable.rb
+Covers 'facets/array/stackable.rb'
 
-require 'facets/array/stackable.rb'
+TestCase Array do
 
-require 'test/unit'
-
-class TestArray < Test::Unit::TestCase
-
-  def test_poke
+  Unit :poke do
     a = [2,3]
-    assert_equal( [1,2,3], a.poke(1) )
-    assert_equal( [4,1,2,3], a.poke(4) )
+    a.poke(1).assert == [1,2,3]
+    a.poke(4).assert == [4,1,2,3]
   end
 
-  def test_pull
+  Unit :pull do
     a = [1,2,3]
-    assert_equal( 1, a.pull )
-    assert_equal( [2,3], a )
+    a.pull.assert == 1
+    a.assert == [2,3]
   end
 
 end
