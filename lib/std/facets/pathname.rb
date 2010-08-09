@@ -37,10 +37,9 @@ class Pathname
     new(path)
   end
 
-  # Active path separator.
+  # Start a path.
   #
-  #   p1 = Pathname.new('/')
-  #   p2 = p1 / 'usr' / 'share'   #=> Pathname:/usr/share
+  #   Pathname / 'usr' #=> Pathname:usr
   #
   def self./(path)
     new(path)
@@ -65,13 +64,9 @@ class Pathname
     Pathname.new('.')
   end
 
-  # Try to get this into standard Pathname class.
-  alias_method :/, :+
-
-  # CREDIT Daniel Burger
-
   # Platform dependent null device.
   #
+  # CREDIT Daniel Burger
   def self.null
     case RUBY_PLATFORM
     when /mswin/i
@@ -84,6 +79,9 @@ class Pathname
       '/dev/null'
     end
   end
+
+  # Try to get this into standard Pathname class.
+  alias_method :/, :+
 
   #
   def rootname
