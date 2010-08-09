@@ -33,12 +33,6 @@ class Integer
     self & ~mask
   end
 
-  # DEPRECATE: Previous name.
-  def clear_bit(bit)
-    warn "Use #bit_clear for future versions"
-    bit_clear(bit)
-  end
-
   # Is a bit set?
   #
   #   8.bit?(3)  #=> true
