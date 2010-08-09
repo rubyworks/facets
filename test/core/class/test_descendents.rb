@@ -1,4 +1,4 @@
-Covers 'facets/class/descendents'
+Covers 'facets/class/descendants'
 
 TestCase Class do
 
@@ -6,8 +6,9 @@ TestCase Class do
   b = Class.new(a)
   c = Class.new(b)
 
-  Unit :descendents do
-    a.descendents.assert == [c,b]
+  Unit :descendants do
+    a.descendants.assert.include?(b)
+    a.descendants.assert.include?(c)
   end
 
 end

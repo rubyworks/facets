@@ -9,7 +9,7 @@ Case Dir do
    recurse_dirs  = %w{A A/B}
    recurse_files = %w{A.txt A/B.txt A/B/C.txt}
 
-   Before :recurse, :ls_r do
+   Context do
      recurse_dirs.each do |x|
        FileUtils.mkdir_p(File.join(test_directory, x))
      end
@@ -18,11 +18,7 @@ Case Dir do
      end
    end
 
-   After :recurse, :ls_r do
-     FileUtils.rm_r(test_directory)
-   end
-
-   Unit :recurse do
+   MetaUnit :recurse do
      Dir.chdir test_directory do
        x = (recurse_dirs + recurse_files).sort
        r = Dir.recurse.sort
@@ -30,12 +26,16 @@ Case Dir do
      end
    end
 
-   Unit :ls_r do
+   MetaUnit :ls_r do
      Dir.chdir test_directory do
        x = (recurse_dirs + recurse_files).sort
        r = Dir.ls_r.sort
        r.assert == x
      end
+   end
+
+   Teardown do
+     FileUtils.rm_r(test_directory)
    end
 
 end

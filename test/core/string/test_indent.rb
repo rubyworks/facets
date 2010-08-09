@@ -24,10 +24,6 @@ Case String do
     "    abc\n    xyz".indent(-2).assert == "  abc\n  xyz"
   end
 
-  Unit :outdent => "is an alias for negative indent" do
-    '  xyz'.outdent(2).assert == 'xyz'
-  end
-
   Unit :indent => "negative more than is possible" do
     '  xyz'.indent(-3).assert == 'xyz'
   end
@@ -66,6 +62,10 @@ Case String do
     '  xyz'.indent(-2, '^').assert == '  xyz'
     '^^xyz'.indent(-2, '^').assert == 'xyz'
   end
+
+  #Unit :unindent => "is an alias for negative indent" do
+  #  '  xyz'.unindent(2).assert == 'xyz'
+  #end
 
 end
 

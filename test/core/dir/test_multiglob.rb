@@ -9,7 +9,7 @@ Case Dir do
   multiglob_dirs  = %w{A A/B}
   multiglob_files = %w{A.txt A/B.txt A/B/C.txt}
 
-  Before :multiglob, :multiglob_r do
+  Context do
     multiglob_dirs.each do |x|
       FileUtils.mkdir_p(File.join(test_directory, x))
     end
@@ -18,11 +18,7 @@ Case Dir do
     end
   end
 
-  After :multiglob, :multiglob_r do
-    FileUtils.rm_r(test_directory)
-  end
-
-  Unit :multiglob do
+  MetaUnit :multiglob do
     Dir.chdir test_directory do
       x = %w{A A.txt}
       r = Dir.multiglob('*').sort
@@ -30,12 +26,16 @@ Case Dir do
     end
   end
 
-  Unit :multiglob_r do
+  MetaUnit :multiglob_r do
     Dir.chdir test_directory do
       x = (multiglob_dirs + multiglob_files).sort
       r = Dir.multiglob_r('*').sort
       r.assert == x
     end
+  end
+
+  Teardown do
+    FileUtils.rm_r(test_directory)
   end
 
 end

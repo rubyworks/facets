@@ -1,6 +1,6 @@
-Covers 'facets/enumerable/probability'
+Covers 'facets/array/probability'
 
-Case Enumerable do
+Case Array do
 
   Unit :probability do
     %w{a b}.probability.assert == {'a'=>0.5, 'b'=>0.5}

@@ -6,29 +6,29 @@ TestCase Binding do
   b = 2
   x = "hello"
   
-  @bind = binding
-  @line = __LINE__  # the line number must be updated if it moves
-  @file = __FILE__  # why does it equal basename only?
+  bind = binding
+  line = __LINE__  # the line number must be updated if it moves
+  file = __FILE__  # why does it equal basename only?
 
   Unit :__LINE__ do
-    @bind.__LINE__.assert == @line - 1
+    bind.__LINE__.assert == line - 1
   end
 
   Unit :__FILE__ do
-    @bind.__FILE__.assert == @file
+    bind.__FILE__.assert == file
   end
 
   Unit :__DIR__ do
-    @bind.__DIR__.assert == File.dirname(@file)
+    bind.__DIR__.assert == File.dirname(file)
   end
 
   Unit :callstack do
-    @bind.callstack.assert.is_a?(Array)
+    bind.callstack.assert.is_a?(Array)
   end
 
   Unit :caller do
     Exception.refute.raised? do
-      @bind.caller
+      bind.caller
     end
   end
 

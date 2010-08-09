@@ -2,18 +2,18 @@ Covers 'facets/module/abstract'
 
 Case Module do
 
-  class Aq
-    abstract :q
+  Unit :abstract => "in a module" do
+    m = Module.new{ abstract :q }
+    c = Class.new{ include m }
+    x = c.new
+    TypeError.assert.raised?{ x.q }
   end
 
-  Unit :abstract do
-    ac = Aq.new
-    TypeError.assert.raised?{ ac.q }
-  end
-
-  Unit :abstract => "in an anonymous class" do
-    ac = Class.new { abstract :q }.new
-    TypeError.assert.raised?{ ac.q }
+  Unit :abstract => "in a class" do
+    c = Class.new{ abstract :q }
+    #c.pry.abstract :q
+    x = c.new
+    TypeError.assert.raised?{ x.q }
   end
 
 end

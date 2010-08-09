@@ -1,6 +1,6 @@
 Covers 'facets/kernel/returning'
 
-Case String do
+Case Object do
 
   Unit :returning do
     foo = returning( values = [] ) do

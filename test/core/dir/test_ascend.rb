@@ -9,7 +9,7 @@ Case Dir do
 
    test_directory = File.join(Dir.tmpdir, 'facets', 'dir', 'ascend', Time.now.usec.to_s)
 
-   Unit :ascend do
+   MetaUnit :ascend do
      c = []
      Dir.ascend(test_directory) do |path|
        c << path
@@ -21,7 +21,7 @@ Case Dir do
      end
    end
 
-   Unit :ascend => "exclude current" do
+   MetaUnit :ascend => "exclude current" do
      c = []
      Dir.ascend(test_directory, false) do |path|
        c << path

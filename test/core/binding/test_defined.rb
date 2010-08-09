@@ -6,10 +6,10 @@ TestCase Binding do
   b = 2
   x = "hello"
 
-  @bind = binding
+  bind = binding
 
   Unit :defined? do
-    @bind.assert.defined?("x")
+    bind.assert.defined?("x")
   end
 
 end

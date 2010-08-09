@@ -2,7 +2,7 @@ Covers 'facets/module/alias_method_chain'
 
 Case Module do
 
-  Unit :alias_method_chian do
+  Unit :alias_method_chain do
 
     x = Module.new do
       def self.included(base)

@@ -1,6 +1,6 @@
-Covers 'facets/enumerable/split'
+Covers 'facets/array/split'
 
-Case Enumerable do
+Case Array do
 
   Unit :split do
     ['a','b','c'].split('b').assert == [['a'], ['c']]

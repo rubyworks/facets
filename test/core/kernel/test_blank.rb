@@ -63,7 +63,13 @@ Case Numeric do
 
   Unit :blank? do
     0.refute.blank?
+  end
+
+  Unit :blank? do
     10.refute.blank?
+  end
+
+  Unit :blank? do
     10.0.refute.blank?
   end
 

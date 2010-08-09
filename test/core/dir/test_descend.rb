@@ -6,7 +6,7 @@ Case Dir do
 
    test_directory = File.join(Dir.tmpdir, 'facets', 'dir', 'descend', Time.now.usec.to_s)
 
-   Unit :descend do
+   MetaUnit :descend do
      c = []
      Dir.descend(test_directory) do |path|
        c << path

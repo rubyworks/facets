@@ -2,7 +2,7 @@ Covers 'facets/filetest/root'
 
 Case FileTest do
 
-  Unit :root do
+  MetaUnit :root? do
     assert FileTest.root?('/')
   end
 

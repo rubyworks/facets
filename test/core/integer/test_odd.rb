@@ -1,6 +1,8 @@
 Covers 'facets/integer/odd'
 
-Case Integer do
+# NOTE: Can't test on Integer directly b/c Ruby 1.8.7 defines separate
+# methods for Fixnum.
+Case Fixnum do
 
   Unit :odd? do
     (-101..101).step(2) do |n|

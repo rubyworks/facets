@@ -1,10 +1,10 @@
-Covers 'facets/integer/length'
+Covers 'facets/numeric/length'
 
-Case Integer do
+Case Numeric do
 
   Unit :length do
     (0..10).each do |power|
-      (10 ** power).length.assert == power + 1
+      power.length.assert == power
     end
   end
 

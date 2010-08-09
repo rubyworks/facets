@@ -6,18 +6,18 @@ TestCase Binding do
   b = 2
   x = "hello"
 
-  @bind = binding
+  bind = binding
 
   unless RUBY_VERSION > "1.9"
 
     Unit :local_variables do
-      @bind.local_variables.assert == ["x", "b", "a"]
+      bind.local_variables.assert == ["bind", "x", "b", "a"]
     end
 
   else
 
     Unit :local_variables do
-      @bind.local_variables.assert == [:x, :b, :a]
+      bind.local_variables.assert == [:bind, :x, :b, :a]
     end
 
   end

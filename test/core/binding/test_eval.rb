@@ -3,10 +3,10 @@ Covers 'facets/binding/eval'
 TestCase Binding do
 
   x = "hello"
-  @bind = binding
+  bind = binding
 
   Unit :eval do
-    @bind.eval("x").assert == "hello"
+    bind.eval("x").assert == "hello"
   end
 
 end

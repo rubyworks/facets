@@ -1,6 +1,6 @@
-Covers 'facets/enumerable/entropy'
+Covers 'facets/array/entropy'
 
-Case Enumerable do
+Case Array do
 
   Unit :entropy do
     %w{ a b }.entropy.assert == 1.0
@@ -12,3 +12,4 @@ Case Enumerable do
   end
 
 end
+

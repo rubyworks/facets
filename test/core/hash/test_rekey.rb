@@ -2,6 +2,18 @@ Covers 'facets/hash/rekey'
 
 Case Hash do
 
+  Unit :rekey => "default" do
+    foo = { "a"=>1, "b"=>2 }
+    foo.rekey.assert == { :a=>1, :b=>2 }
+    foo.assert == { "a"=>1, "b"=>2 }
+  end
+
+  Unit :rekey! => "default" do
+    foo = { "a"=>1, "b"=>2 }
+    foo.rekey!.assert == { :a=>1, :b=>2 }
+    foo.assert == { :a=>1, :b=>2 }
+  end
+
   Unit :rekey => "specific key" do
     bar = { :a=>1, :b=>2 }
     foo = bar.rekey(:c, :a)
@@ -48,18 +60,6 @@ Case Hash do
     foo = { :a=>1, :b=>2 }
     foo.rekey!(:to_s).assert == { "a"=>1, "b"=>2 }
     foo.assert == { "a"=>1, "b"=>2 }
-  end
-
-  Unit :rekey => "default" do
-    foo = { "a"=>1, "b"=>2 }
-    foo.rekey!.assert == { :a=>1, :b=>2 }
-    foo.assert == { :a=>1, :b=>2 }
-  end
-
-  Unit :rekey! => "default" do
-    foo = { "a"=>1, "b"=>2 }
-    foo.rekey!.assert == { :a=>1, :b=>2 }
-    foo.assert == { :a=>1, :b=>2 }
   end
 
 end

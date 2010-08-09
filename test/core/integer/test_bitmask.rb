@@ -16,11 +16,11 @@ Case Integer do
     8.bit(~3).assert == 0
   end
 
-  Unit :clear_bit do
-    1.clear_bit(0).assert == 0
-    2.clear_bit(1).assert == 0
-    4.clear_bit(2).assert == 0
-    8.clear_bit(3).assert == 0
+  Unit :bit_clear do
+    1.bit_clear(0).assert == 0
+    2.bit_clear(1).assert == 0
+    4.bit_clear(2).assert == 0
+    8.bit_clear(3).assert == 0
   end
 
   Unit :bit? do

@@ -38,5 +38,63 @@ Case String do
     str.assert == "abc"
   end
 
+  Concern "Complex examples"
+
+  ex1 = <<-EOF
+    I must go down to the seas again
+      The lonely sea and the sky
+    And all I want is a tall ship
+      And a star to steer her by
+  EOF
+
+  ex2 = <<-EOF
+     "Eek!"
+  She cried
+    As the mouse quietly scurried
+by.
+  EOF
+
+  Unit :unindent => "simple examples" do
+    "   xyz".unindent(-1).assert == "    xyz"
+    "   xyz".unindent(0).assert  == "   xyz"
+    "   xyz".unindent(1).assert  == "  xyz"
+    "   xyz".unindent(2).assert  == " xyz"
+    "   xyz".unindent(3).assert  == "xyz"
+    "   xyz".unindent(4).assert  == "xyz"
+  end
+
+  Unit :unindent => "large example unindented one space" do
+    expected = <<-EOF
+   I must go down to the seas again
+     The lonely sea and the sky
+   And all I want is a tall ship
+     And a star to steer her by
+    EOF
+    actual = ex1.unindent(1)
+    actual.assert == expected
+  end
+
+  Unit :unindent => "large example unindented four spaces" do
+    expected = <<-EOF
+I must go down to the seas again
+  The lonely sea and the sky
+And all I want is a tall ship
+  And a star to steer her by
+    EOF
+    actual = ex1.unindent(4)
+    actual.assert == expected
+  end
+
+  Unit :unindent => "unindent larger than current indention" do
+    expected = <<-EOF
+"Eek!"
+She cried
+As the mouse quietly scurried
+by.
+    EOF
+    actual = ex2.unindent(100)
+    actual.assert == expected
+  end
+
 end
 

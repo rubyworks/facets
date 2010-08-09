@@ -2,11 +2,11 @@ Covers 'facets/binding/self'
 
 TestCase Binding do
 
-  @bind = binding
-  @self = self
+  bind = binding
+  this = self
 
   Unit :self do
-    @bind.self == @self
+    bind.self == this
   end
 
 end

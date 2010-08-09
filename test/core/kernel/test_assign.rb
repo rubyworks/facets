@@ -40,17 +40,17 @@ Case Kernel do
     bob.zip.assert == 12345
   end
 
-  Unit :assign => "with block" do
-    bob = c.new
-
-    x = lambda {|s| s.name = "Bob Sawyer"; s.address = "123 Maple, Anytown NC"; s.zip = 12345 }
-
-    bob.assign(&x)
-
-    bob.name.assert == "Bob Sawyer"
-    bob.address.assert == "123 Maple, Anytown NC"
-    bob.zip.assert == 12345
-  end
+  #Unit :assign => "with block" do
+  #  bob = c.new
+  #
+  #  x = lambda {|s| s.name = "Bob Sawyer"; s.address = "123 Maple, Anytown NC"; s.zip = 12345 }
+  #
+  #  bob.assign(&x)
+  #
+  #  bob.name.assert == "Bob Sawyer"
+  #  bob.address.assert == "123 Maple, Anytown NC"
+  #  bob.zip.assert == 12345
+  #end
 
 end
 

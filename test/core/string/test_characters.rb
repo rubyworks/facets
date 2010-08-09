@@ -1,10 +1,10 @@
-Covers 'facets/string/chars'
+Covers 'facets/string/characters'
 
 Case String do
 
-  Unit :chars do
-    "abc".chars.assert == ["a","b","c"]
-    "ab\nc".chars.assert == ["a","b","\n","c"]
+  Unit :characters do
+    "abc".characters.assert == ["a","b","c"]
+    "ab\nc".characters.assert == ["a","b","\n","c"]
   end
 
 end

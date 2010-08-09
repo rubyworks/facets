@@ -9,17 +9,18 @@ Case String do
     "a+bc".to_re(true).assert == /a\+bc/
   end
 
-  Unit :to_re => "escaped characters" do
-    a = "?"
-    b = /#{a.to_rx}/
-    assert( b =~ "?" )
-  end
-
   Unit :to_rx do
     "abc".to_rx.assert == /abc/
     "a+bc".to_rx.assert == /a\+bc/
     "a+bc".to_rx(false).assert == /a+bc/
     "a+bc".to_rx(true).assert == /a\+bc/
+  end
+
+  Unit :to_rx => "escaped characters" do
+    a = "?"
+    b = /#{a.to_rx}/
+    b.assert =~ "?"
+    b.refute =~ "X"
   end
 
 end
