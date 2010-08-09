@@ -1,6 +1,7 @@
 module Kernel
 
   alias_method :pp_callstack, :caller
+  alias_method :pp_call_stack, :caller
 
   # Parse a caller string and break it into its components,
   # returning an array composed of:
@@ -26,7 +27,7 @@ module Kernel
   # CREDIT: Trans
 
   def call_stack(level = 1)
-    call_str_array = pp_callstack(level)
+    call_str_array = pp_call_stack(level)
     stack = []
     call_str_array.each{ |call_str|
       file, lineno, method = call_str.split(':')
