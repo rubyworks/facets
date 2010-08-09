@@ -35,12 +35,15 @@ module Enumerable
   #
   #   groups.accumulate.users.accumulate.friends  #=> ['Jill','Jack','Jim']
   #
+  # NOTE: The return value of accumulate used to use #uniq. This hase been
+  # removed. To get the previous results, you will need to apply #uniq manually.
+  #
   # CREDIT: George Moshchovitis, Daniel Emirikol
 
-  def accumulate(iterations = 1)
+  def accumulate(iterations=1)
     return self if iterations == 0
     Functor.new do |op, *args|
-      result = inject([]) { |a, x| a << x.send(op, *args) }.flatten.uniq
+      result = inject([]) { |a, x| a << x.send(op, *args) }.flatten #.uniq
       result.accumulate(iterations - 1)
     end
   end
