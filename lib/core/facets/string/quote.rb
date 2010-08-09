@@ -15,10 +15,10 @@ class String
   #
   # Symbols can be used to describe the type.
   #
-  #   "quote me".quote(:single)         #=> %q{'quote me'}
-  #   "quote me".quote(:double)         #=> %q{"quote me"}
-  #   "quote me".quote(:back)           #=> %q{`quote me`}
-  #   "quote me".quote(:single_bracket) #=> %q{`quote me'}
+  #   "quote me".quote(:single)    #=> %q{'quote me'}
+  #   "quote me".quote(:double)    #=> %q{"quote me"}
+  #   "quote me".quote(:back)      #=> %q{`quote me`}
+  #   "quote me".quote(:bracket)   #=> %q{`quote me'}
   #
   # Or the character itself.
   #
@@ -50,7 +50,7 @@ class String
     when '`', 'back', 'b', -1
       f = '`' * count
       b = f
-    when "`'", 'single_bracket', 'sb'
+    when "`'", 'bracket', 'sb'
       f = "`" * count
       b = "'" * count
     when "'\"", 'mixed', "m", Integer
