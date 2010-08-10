@@ -12,21 +12,23 @@ module Kernel
   #
   # For example, without try
   #
-  #   @person && @person.name
+  #   @example = Struct.new(:name).new("bob")
   #
-  # or
+  #   @example && @example.name
   #
-  #   @person ? @person.name : nil
+  # or:
+  #
+  #   @example? @example.name : nil
   #
   # But with try
   #
-  #   @person.try(:name)
+  #   @example.try(:name)  #=> "bob"
   #
   # or
   #
-  #   @person.try.name
+  #   @example.try.name  #=> "bob"
   #
-  # It also accepts arguments and/or a block, for the method it is trying.
+  # It also accepts arguments and/or a block, for the method it is trying:
   #
   #   @people.try(:collect){ |p| p.name }
   #

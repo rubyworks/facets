@@ -8,12 +8,12 @@
 # its behavior accorrding to the operation applied to it.
 #
 #   f = Functor.new { |op, x| x.send(op, x) }
-#   f + 1  #=> 2
-#   f + 2  #=> 4
-#   f + 3  #=> 6
-#   f * 1  #=> 1
-#   f * 2  #=> 4
-#   f * 3  #=> 9
+#   (f + 1)  #=> 2
+#   (f + 2)  #=> 4
+#   (f + 3)  #=> 6
+#   (f * 1)  #=> 1
+#   (f * 2)  #=> 4
+#   (f * 3)  #=> 9
 #
 # == Author
 #

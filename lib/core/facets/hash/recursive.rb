@@ -30,11 +30,10 @@ class Hash
   #
   class Recursor < Enumerable::Recursor
 
-    #
-    #def initialize(enum, opts)
-    #  @enum = enum
-    #  @opts = opts
-    #end
+    ##def initialize(enum, opts)
+    ##  @enum = enum
+    ##  @opts = opts
+    ##end
 
     # Returns a new hash created by traversing the hash and its subhashes,
     # executing the given block on the key and value. The block should

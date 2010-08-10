@@ -2,10 +2,10 @@ class Symbol
 
   # Symbol does not end in `!`, `=`, or `?`.
   #
-  #   :a.plain?  #=> true
-  #   :a?.plain? #=> false
-  #   :a!.plain? #=> false
-  #   :a=.plain? #=> false
+  #   :a.plain?   #=> true
+  #   :a?.plain?  #=> false
+  #   :a!.plain?  #=> false
+  #   :a=.plain?  #=> false
   #
   def plain?
     c = to_s[-1,1]

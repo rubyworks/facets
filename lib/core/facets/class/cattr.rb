@@ -21,13 +21,13 @@ class Class
   # Creates a class-variable attr_reader that can
   # be accessed both on an instance and class level.
   #
-  #   class MyClass
+  #   class CARExample
   #     @@a = 10
   #     cattr_reader :a
   #   end
   #
-  #   MyClass.a           #=> 10
-  #   MyClass.new.a       #=> 10
+  #   CARExample.a           #=> 10
+  #   CARExample.new.a       #=> 10
   #
   # CREDIT: David Heinemeier Hansson
   def cattr_reader( *syms )
@@ -52,17 +52,17 @@ class Class
   # Creates a class-variable attr_writer that can
   # be accessed both on an instance and class level.
   #
-  #   class MyClass
+  #   class CAWExample
   #     cattr_writer :a
-  #     def a
+  #     def self.a
   #       @@a
   #     end
   #   end
   #
-  #   MyClass.a = 10
-  #   MyClass.a            #=> 10
-  #   MyClass.new.a = 29
-  #   MyClass.a            #=> 29
+  #   CAWExample.a = 10
+  #   CAWExample.a            #=> 10
+  #   CAWExample.new.a = 29
+  #   CAWExample.a            #=> 29
   #
   # CREDIT: David Heinemeier Hansson
   def cattr_writer(*syms)
@@ -87,14 +87,14 @@ class Class
   # Creates a class-variable attr_accessor that can
   # be accessed both on an instance and class level.
   #
-  #   class MyClass
+  #   class CAAExample
   #     cattr_accessor :a
   #   end
   #
-  #   MyClass.a = 10
-  #   MyClass.a           #=> 10
-  #   mc = MyClass.new
-  #   mc.a                #=> 10
+  #   CAAExample.a = 10
+  #   CAAExample.a           #=> 10
+  #   mc = CAAExample.new
+  #   mc.a                   #=> 10
   #
   # CREDIT: David Heinemeier Hansson
   def cattr_accessor(*syms)
@@ -103,10 +103,14 @@ class Class
 
 end
 
+#--
+# TODO: Look into #mattr usage more to be sure of this.
 # Not properly applicable to modules, so these have been deprecated.
 #class Module
-  #alias_method :mattr,          :cattr            # deprecate
-  #alias_method :mattr_reader,   :cattr_reader     # deprecate
-  #alias_method :mattr_writer,   :cattr_writer     # deprecate
-  #alias_method :mattr_accessor, :cattr_accessor   # deprecate
+#  alias_method :mattr,          :cattr            # deprecate
+#  alias_method :mattr_reader,   :cattr_reader     # deprecate
+#  alias_method :mattr_writer,   :cattr_writer     # deprecate
+#  alias_method :mattr_accessor, :cattr_accessor   # deprecate
 #end
+#++
+

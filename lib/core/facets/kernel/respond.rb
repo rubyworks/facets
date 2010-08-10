@@ -5,11 +5,11 @@ module Kernel
   # Like #respond_to? but returns the result of the call
   # if it does indeed respond.
   #
-  #   class X
+  #   class RespondExample
   #     def f; "f"; end
   #   end
   #
-  #   x = X.new
+  #   x = RespondExample.new
   #   x.respond(:f)  #=> "f"
   #   x.respond(:g)  #=> nil
   #

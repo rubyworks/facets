@@ -35,12 +35,12 @@ class Module
   # Alias an accessor. This create an alias for
   # both a reader and a writer.
   #
-  #   class X
+  #   class AttrSetterExample
   #     attr_accessor :a
   #     alias_accessor :b, :a
   #   end
   #
-  #   x = X.new
+  #   x = AttrSetterExample.new
   #   x.b = 1
   #   x.a        #=> 1
   #

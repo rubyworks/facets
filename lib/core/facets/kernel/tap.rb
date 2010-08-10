@@ -6,15 +6,22 @@ module Kernel
     #
     # Note, Ruby 1.9+ does not support the zero arity #instance_eval
     # variation so it has been deprecated.
-    #
     def tap #:yield:
       yield(self)
-      #if block_given?
-      #  b.arity == 1 ? yield(self) : instance_eval(&b)
-      #end
-      return self
+      self
     end
 
+    #--
+    # == Old definition
+    #
+    #
+    #   def tap #:yield:
+    #     if block_given?
+    #       b.arity == 1 ? yield(self) : instance_eval(&b)
+    #     end
+    #     return self
+    #   end
+    #
     # == Future definition?
     #
     # This is a consideration for a future #tap using Functor:
@@ -33,6 +40,7 @@ module Kernel
     # It would allow a single call, before returning the original.
     # However there are not very many useful things you can do with
     # that.
+    #++
 
   end
 

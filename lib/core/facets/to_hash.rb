@@ -152,7 +152,7 @@ class Array
   # the value will be set to the last occuring value.
   #
   #   a = [ :x, [:x], [:x,1,2], [:x,3], [:x,4] ]
-  #   a.to_h_assoc  #=> { :x=>4 }
+  #   a.to_h_assoc  #=> { :x=>[4] }
   #
   def to_h_assoc
     h = {}

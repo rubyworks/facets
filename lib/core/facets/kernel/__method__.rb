@@ -4,8 +4,11 @@ module Kernel
 
     # Retreive the current running method name.
     #
-    #   def tester; __method__; end
-    #   tester  #=> :tester
+    #   def method_example
+    #     __method__
+    #   end
+    #
+    #   method_example  #=> :method_example
     #
     # Technically __callee__ should provided alias names,
     # where __method__ should not. But we'll have to
@@ -23,8 +26,11 @@ module Kernel
 
     # Retreive the current running method name.
     #
-    #   def tester; __callee__; end
-    #   tester  #=> :tester
+    #   def callee_example
+    #     __callee__
+    #   end
+    #
+    #   callee_example  #=> :callee_example
     #
     # Technically __callee__ should provided alias names,
     # where as __method__ should not. But we'll have to

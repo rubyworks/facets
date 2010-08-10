@@ -12,7 +12,7 @@ class Module
   #   example = RenameExample.new
   #   example.bar  #=> 'foo'
   #
-  #   expect NameError do
+  #   expect NoMethodError do
   #     example.foo
   #   end
   #

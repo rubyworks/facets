@@ -68,8 +68,8 @@ module Enumerable
       case v
       when String # b/c of 1.8
         b.call(v)
-      #when @enum.class
-      #  v.recursive(*@types).__send__(op,&b)
+      ## when @enum.class
+      ##  v.recursive(*@types).__send__(op,&b)
       when *@types
         v.recursive(*@types).__send__(op,&b)
       else

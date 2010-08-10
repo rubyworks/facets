@@ -5,7 +5,7 @@ module Enumerable
   # their is a tie.
   #
   #   [:a, :b, :c, :b, :d].mode  #=> [:b]
-  #   [:a, :b, :c, :b, :a].mode  #=> [:a, :b]
+  #   [:a, :b, :c, :b, :a].mode  #=> [:b, :a]
   #
   # Returns an Array of most common elements.
   #

@@ -9,7 +9,7 @@
 # I like the simplicity of this definition, but I could not
 # find a way define #end_with? in similar terms and still
 # accept regular expressions for the suffix. So I had to use
-# Regexp match. On th upside, it can return MatchData
+# Regexp match. On th upside, we can get MatchData
 # which might be more useful.
 #++
 
