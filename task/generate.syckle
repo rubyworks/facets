@@ -1,0 +1,11 @@
+#facets.rb:
+#  service : Custom
+#  pipeline: main
+#  generate: |
+#    sh 'till lib/core/facets.rb'
+#  active: false
+
+till:
+  service: Till
+  active: false
+

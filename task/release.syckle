@@ -1,4 +1,8 @@
 ---
+email:
+  service: Email
+  mailto: transfire@gmail.com
+
 rubyforge:
   service: Rubyforge
   groupid: 804

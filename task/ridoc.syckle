@@ -1,7 +1,0 @@
----
-# divide this up into two as well?
-ridoc:
-  service : RiDoc
-  output  : doc/ri
-  include : [lib/facets, lib.more/facets, lib.stnd/facets]
-

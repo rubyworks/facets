@@ -1,0 +1,56 @@
+---
+ridoc:
+  service : RiDoc
+  output  : ri
+  include : [lib/core/facets, lib/more/facets, lib/std/facets]
+
+rdoc-core:
+  service : RDoc
+  template: redfish #hanna
+  output  : site/doc/api/core
+  title   : Facets Core API
+  main    : doc/README.core
+  extra   : "-a"
+  include : [doc/README.core, README.rdoc, lib/core]
+  active  : true
+
+rdoc-more:
+  service : RDoc
+  template: redfish
+  output  : site/doc/api/more
+  title   : Facets More API
+  main    : doc/README.more
+  extra   : "-a"
+  include : [doc/README.more, README.rdoc, lib/more]
+  active  : true
+
+rdoc-stnd:
+  service : RDoc
+  template: redfish #hanna
+  output  : site/doc/api/std
+  title   : Facets Standard API
+  main    : doc/README.stnd
+  extra   : "-a"
+  include : [doc/README.stnd, README.rdoc, lib/std]
+  active  : true
+
+yardcore:
+  service : Yard
+  active  : false
+  #template: ~
+  output  : site/doc/yard/core
+  title   : Facets Core API
+  readme  : doc/README.core
+  #extra   : "-a"
+  include : [doc/README.core, README.rdoc, lib/core]
+
+yardmore:
+  service : Yard
+  active  : false
+  #template: ~
+  output  : site/doc/yard/more
+  title   : Facets More API
+  readme  : doc/README.more
+  #extra   : "-a"
+  include : [doc/README.more, README.rdoc, lib/more]
+
