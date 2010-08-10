@@ -2,52 +2,59 @@ Covers 'facets/kernel/as'
 
 Case Kernel do
 
-  module SuperMethodHelpers
-    class X ; def x ; 1 ; end ; end
-    class Y < X ; def x ; 2 ; end ; end
-    class Z < Y ; def x ; super_as(X) ; end ; end
+  #Context "class heirarchy" do
+  #  x = Class.new{ def x ; 1 ; end }
+  #  y = Class.new(x){ def x ; 2 ; end }
+  #  z = Class.new(y){ define_method(:x){ super_as(x) } }
+  #  z
+  #end
 
-    def test_super_as
-      z = Z.new
-      assert_equal( 1, z.x )
-    end
+  #unit :super_as do |z|
+  #  o = z.new
+  #  o.x.assert == 1
+  #end
 
-    class X2 ; def x ; 1 ; end ; end
-    class Y2 < X2 ; def x ; 2 ; end ; end
-    class Z2 < Y2 ; def x ; 3 ; end ; end
+  Context "class heirarchy" do
+    q1 = Class.new{ def x ; 1 ; end }
+    q2 = Class.new(q1){ def x ; 2 ; end }
+    q3 = Class.new(q2){ def x ; 3 ; end }
+    [q1,q2,q3]
   end
 
-  Unit :super_method do
-    x = SuperMethodHelpers::X2.new
-    z = SuperMethodHelpers::Z2.new
-    s0 = x.method( :x )
-    s1 = z.super_method( SuperMethodHelpers::X2, :x )
+  Unit :super_method do |q1,q2,q3|
+    x = q1.new
+    z = q3.new
+    s0 = x.method(:x)
+    s1 = z.super_method(q1, :x)
     s1.call.assert == s0.call
   end
 
-  module AsHelpers
-    class A
-      def x; "A.x"; end
-      def y; "A.y"; end
+  Context "class heirarchy" do
+    a = Class.new do
+      def x; "a.x"; end
+      def y; "a.y"; end
     end
-    class B < A
-      def x; "B.x" end
-      def y; "B.y" end
+    b = Class.new(a) do
+      def x; "b.x" end
+      def y; "b.y" end
     end
-    class C < B
-      def x; "C.x"; end
-      def y; as(B).x ; end
+    c = Class.new(b) do
+      def x; "c.x"; end
+      define_method(:y){ as(a).x }
     end
   end
 
-  Unit :as do
-    c = AsHelpers::C.new
-    c.y.assert == "B.x"
-    c.x.assert == "C.x"
+  Unit :as do |c|
+    o = c.new
+    o.x.assert == "c.x"
+    o.y.assert == "a.x"
   end
 
   Unit :send_as do
-    "A".send_as(Object, :class).assert == String
+    s = "a"
+    def s.class; nil; end
+    s.class.refute == String
+    s.send_as(Object, :class).assert == String
   end
 
 end

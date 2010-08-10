@@ -55,30 +55,33 @@ module Kernel
     klass.instance_method(meth).bind(self)
   end
 
-  # Like super but skips to a specific ancestor module or class.
-  #
-  #   class SuperAsExample1
-  #     def x ; 1 ; end
-  #   end
-  #
-  #   class SuperAsExample2 < SuperAsExample1
-  #     def x ; 2 ; end
-  #   end
-  #
-  #   class SuperAsExample3 < SuperAsExample2
-  #     def x ; super_as(SuperAsExample1) ; end
-  #   end
-  #
-  #   SuperAsExample3.new.x  #=> 1
-  #
-  def super_as(klass=self.class.superclass, *args, &blk)
-    unless self.class.ancestors.include?(klass)
-      raise ArgumentError
-    end
-    called = /\`([^\']+)\'/.match(caller(1).first)[1].to_sym
-    klass.instance_method(called).bind(self).call(*args,&blk)
-  end
-
+  ## DEPRECATED: There's no reliable way to get method name of caller.
+  ## This needs to have the same knowledge that #super itself has. 
+  ##
+  ## Like super but skips to a specific ancestor module or class.
+  ##
+  ##   class SuperAsExample1
+  ##     def x ; 1 ; end
+  ##   end
+  ##
+  ##   class SuperAsExample2 < SuperAsExample1
+  ##     def x ; 2 ; end
+  ##   end
+  ##
+  ##   class SuperAsExample3 < SuperAsExample2
+  ##     def x ; super_as(SuperAsExample1) ; end
+  ##   end
+  ##
+  ##   SuperAsExample3.new.x  #=> 1
+  ##
+  #def super_as(klass=self.class.superclass, *args, &blk)
+  #  unless self.class.ancestors.include?(klass)
+  #    raise ArgumentError
+  #  end
+  #  #called = /\`([^\']+)\'/.match(caller(1).first)[1].to_sym
+  #  called = File.basename(caller(1).first)
+  #  klass.instance_method(called).bind(self).call(*args,&blk)
+  #end
 end
 
 # Support class for Kernel#as.
