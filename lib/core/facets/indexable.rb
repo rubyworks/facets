@@ -127,10 +127,10 @@ module Indexable
 
   # Returns first _n_ elements.
   #
-  #   %w{H e l l o}.upto(3)  #=> %w{H e l}
+  #   %w{H e l l o}.upto(3)  #=> %w{H e l l}
   #
   def upto(n)
-    slice(0, n.to_i)
+    slice(0, n.to_i+1)
   end
 
   # Returns first _n_ elements.
