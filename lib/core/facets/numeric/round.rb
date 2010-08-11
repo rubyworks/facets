@@ -1,10 +1,8 @@
 class Numeric
 
   # Conceptually, rounding is expected to apply to floating point numbers.
-  # However it can actually be applied to pretty much and Numeric object.
-  # For example, one could round an Integer to the nearest kilo. So the
-  # actual round.rb lib is in the numeric folder, but we'll add this
-  # here for convenience.
+  # However it can actually be applied to pretty much any Numeric object.
+  # For example, one could round an Integer to the nearest kilo.
   #
   # See Float#round_at.
 
@@ -20,6 +18,7 @@ class Numeric
 
 end
 
+=begin
 class Integer
 
   # See Float#round_at.
@@ -35,6 +34,7 @@ class Integer
   end
 
 end
+=end
 
 class Float
 

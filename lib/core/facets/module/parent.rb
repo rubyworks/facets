@@ -2,6 +2,8 @@ require 'facets/kernel/constant'
 
 class Module
 
+  # TODO: +parent+ is probably the wrong term for this --look at #nesting instead.
+
   # Returns the name of the module containing this one.
   #
   #   module ::ParentExample

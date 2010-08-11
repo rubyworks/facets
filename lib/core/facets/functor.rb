@@ -55,7 +55,7 @@
 #   (f * 2)  #=> 4
 #   (f * 3)  #=> 9
 #
-class Functor
+class Functor #< BasicObject
 
   # Privatize all methods except vital methods and #binding.
   private(*instance_methods.select { |m| m !~ /(^__|^binding$)/ })
@@ -67,6 +67,8 @@ class Functor
   def to_proc
     @function
   end
+
+  private
 
   # Any action against the functor is processesd by the function.
   def method_missing(op, *args, &blk)

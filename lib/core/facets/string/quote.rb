@@ -67,5 +67,27 @@ class String
     "#{f}#{self}#{b}"
   end
 
+  # Remove quotes from string.
+  #
+  #   "'hi'".unquote    #=> "hi"
+  #
+  # CREDIT: Trans
+
+  def unquote
+    s = self.dup
+
+    case self[0,1]
+    when "'", '"', '`'
+      s[0] = ''
+    end
+
+    case self[-1,1]
+    when "'", '"', '`'
+      s[-1] = ''
+    end
+
+    return s
+  end
+
 end
 

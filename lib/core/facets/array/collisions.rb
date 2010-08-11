@@ -1,1 +1,1 @@
-require 'facets/enumerable/commonality'
+require 'facets/array/commonality'

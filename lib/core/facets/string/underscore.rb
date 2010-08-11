@@ -5,6 +5,7 @@ class String
   # Changes '::' to '/' to convert namespaces to paths.
   #
   # Examples
+  #
   #   "SnakeCase".underscore           #=> "snake_case"
   #   "Snake-Case".underscore          #=> "snake_case"
   #   "SnakeCase::Errors".underscore   #=> "snake_case/errors"

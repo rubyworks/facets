@@ -8,7 +8,7 @@ class Symbol
   #   :HELLO.as_s.downcase  #=> :hello
   #
   def as_s
-    @re_s ||= Functor.new do |op, *a|
+    Functor.new do |op, *a|
       to_s.send(op, *a).to_sym
     end
   end

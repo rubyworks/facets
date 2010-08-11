@@ -7,6 +7,8 @@ unless defined?(::Enumerator)
 
   class Enumerator
 
+    private
+
     alias :old_initialize :initialize
 
     # Provides the ruby-1.9 block form of Enumerator, where you can write:

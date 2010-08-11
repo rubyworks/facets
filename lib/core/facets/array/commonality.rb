@@ -1,4 +1,4 @@
-module Enumerable
+class Array
 
   # Returns all items that are equal in terms of the supplied block.
   # If no block is given objects are considered to be equal if they
@@ -20,7 +20,7 @@ module Enumerable
     had_no_block = !block
     block ||= lambda { |item| item }
     result = Hash.new { |hash, key| hash[key] = Array.new }
-    self.each do |item|
+    each do |item|
       key = block.call(item)
       result[key] << item
     end

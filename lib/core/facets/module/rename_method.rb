@@ -24,7 +24,7 @@ class Module
     undef_method( from_sym )
   end
 
-  alias_method :rename,   :rename_method
+  alias_method :rename, :rename_method
 
 end
 

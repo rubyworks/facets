@@ -1,4 +1,4 @@
-module Enumerable
+class Array
 
   # Generates a hash mapping each unique element in the array to the
   # relative frequency, i.e. the probablity, of it appearence.
