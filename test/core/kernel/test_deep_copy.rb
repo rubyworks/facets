@@ -2,26 +2,32 @@ Covers 'facets/kernel/deep_copy'
 
 Case Kernel do
 
-  module DeepCopyHelpers
-    class A
-      attr_reader :a
+  Context "a class with reference to another class" do
+    xC = Class.new do
+      attr_reader :x
       def initialize
-        @a = 1
+        @x = 1
       end
     end
 
-    class B
-      attr_reader :b
-      def initialize
-        @b = A.new
+    Class.new do
+      attr_reader :y
+      define_method(:initialize) do
+        @y = xC.new
       end
     end
   end
 
-  Unit :deep_copy do
-    o = DeepCopyHelpers::B.new
-    oc = o.deep_copy
-    o.b.a.assert == 1
+  Omit :deep_copy => "doesn't handle annonymous classes" do |c|
+    o = c.new
+    d = o.deep_copy
+    d.y.x.assert == 1
+  end
+
+  Unit :deep_clone do |c|
+    o = c.new
+    d = o.deep_clone
+    d.y.x.assert == 1
   end
 
 end

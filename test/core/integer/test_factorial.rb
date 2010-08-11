@@ -10,5 +10,13 @@ Case Integer do
     4.factorial.assert == 24
   end
 
+  Unit :fac do
+    0.fac.assert == 1
+    1.fac.assert == 1
+    2.fac.assert == 2
+    3.fac.assert == 6
+    4.fac.assert == 24
+  end
+
 end
 

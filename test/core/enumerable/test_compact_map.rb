@@ -1,18 +1,14 @@
-Covers 'facets/enumerable/compact_map.rb'
+covers 'facets/enumerable/compact_map'
 
-Case Enumerable do
+tests Enumerable do
 
-  #def test_filter_collect
-  #  e = [3,4]
-  #  a = [1,2,3,4].filter_collect { |n|
-  #    throw(:skip) if n < 3
-  #    n
-  #  }
-  #  assert_equal( e, a )
-  #end
-
-  Unit :compact_map do
+  unit :compact_map do
     r = [1,2,nil,4].compact_map { |e| e }
+    r.assert == [1,2,4]
+  end
+
+  unit :compact_collect do
+    r = [1,2,nil,4].compact_collect { |e| e }
     r.assert == [1,2,4]
   end
 
@@ -27,5 +23,14 @@ Case Enumerable do
     assert_equal(r, [3,4,5])
   end
 =end
+
+  #def test_filter_collect
+  #  e = [3,4]
+  #  a = [1,2,3,4].filter_collect { |n|
+  #    throw(:skip) if n < 3
+  #    n
+  #  }
+  #  assert_equal( e, a )
+  #end
 
 end

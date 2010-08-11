@@ -14,5 +14,11 @@ Case Integer do
     b.assert == [0,2,4,6]
   end
 
+  Unit :times_map do
+    a = 4
+    b = a.times_map{ |i| i*2 }
+    b.assert == [0,2,4,6]
+  end
+
 end
 

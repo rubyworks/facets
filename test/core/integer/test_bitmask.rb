@@ -41,6 +41,12 @@ Case Integer do
     assert( a.bitmask?(m) )
   end
 
+  Unit :bitmask? do
+    7.assert.bitmask?(7)
+    7.assert.bitmask?(5)
+    8.refute.bitmask?(3)
+  end
+
 end
 
 Case Kernel do

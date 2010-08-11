@@ -13,5 +13,11 @@ TestCase Array do
     r.assert == [2,3,['b','c']]
   end
 
+  Unit :recursive! => "map" do
+    a = [1,2,['a','b']]
+    a.recursive!.map{ |v| v.succ }
+    a.assert == [2,3,['b','c']]
+  end
+
 end
 

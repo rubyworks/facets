@@ -79,5 +79,11 @@ Case Enumerable do
     result = [obj1, obj2].find_yield { |obj| obj.foo if obj.foo? }
     result.assert == "a value"
   end
+
+  unit :map_detect => "old alias for #find_yield" do
+    r = [true].map_detect{ |value| value }
+    r.assert == true
+  end
+
 end
 

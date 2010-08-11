@@ -19,14 +19,23 @@ Case Module do
     NoMethodError.assert.raised?{ ic.x }
   end
 
-  Unit :nodef do
-    c = Class.new do
-      def the_undefined_method ; 'not here' ; end
-      nodef :the_undefined_method
+  Unit :revise do
+    m = Module.new do
+      def x ; 1 ; end
     end
 
-    c.new.refute.respond_to?(:the_undefined_method)
+    c = Class.new do
+      include m.revise {
+        rename :y, :x
+      }
+    end
+
+    ic = c.new
+
+    ic.y.assert == 1
+    NoMethodError.assert.raised?{ ic.x }
   end
+
 
   Unit :remove do
     c = Class.new do

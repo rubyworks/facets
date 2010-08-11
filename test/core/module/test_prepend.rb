@@ -1,8 +1,8 @@
-Covers 'facets/module/prepend'
+covers 'facets/module/prepend'
 
-Case Module do
+tests Module do
 
-  Unit :prepend => "module method" do
+  unit :prepend => "module method" do
     m = Module.new do
       def q; "qm"; end
     end
@@ -21,6 +21,4 @@ Case Module do
 
   # Wish this worked. 
   # x.new.q.assert == "qm"
-
 end
-
