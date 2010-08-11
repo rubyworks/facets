@@ -7,8 +7,11 @@ class Array
   # default the terminating separator to " and ". This is no longer
   # the case. You must specifically provide these parameters.
   #
+  # If no paramters are given, it acts like #join but will a space
+  # separator.
+  #
   #   [1,2,3].conjoin
-  #   #=> "123"
+  #   #=> "1 2 3"
   #
   # Use comma+space and 'and' on tail.
   #
@@ -34,6 +37,9 @@ class Array
   #
   #   [1,1,2,2].conjoin{ |i, a, b| a == b ? '=' : ' != ' }
   #   #=> "1=1 != 2=2"
+  #
+  #   [1,2,3,4].conjoin{ |i, x, y| "<#{i} #{x} #{y}>" }
+  #   #=> "1<0 1 2>2<1 2 3>3<2 3 4>4"
   #
   # There are also spacing options. Providing the :space option
   # pads the separators.
@@ -64,7 +70,7 @@ class Array
         sep << space + yield(i, *slice(i,2)) + space
       end
     else
-      separator   = args.shift || ""
+      separator   = args.shift || " "
       options[-1] = args.shift if args.first
 
       options[0]  = options.delete(:first) if options.key?(:first)
