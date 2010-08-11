@@ -1,26 +1,33 @@
 class Array
 
-  # Returns the tail of the array from +position+.
+  # Returns last _n_ elements.
   #
-  #   %w( a b c d ).from(0)  # => %w( a b c d )
-  #   %w( a b c d ).from(2)  # => %w( c d )
-  #   %w( a b c d ).from(10) # => nil
-  #   %w().from(0)           # => %w()
+  #   %w{W o r l d}.from(3)  #=> %w{l d}
   #
-  def from(position)
-    self[position..-1]
-  end
+  def from(i)
+    return self if i >= size
+    self[i, size - i]
+  end unless method_defined?(:from)
 
-  # Returns the beginning of the array up to +position+.
+  # Fetch values from a start index thru an end index.
   #
-  #   %w( a b c d ).upto(0)  # => %w( a )
-  #   %w( a b c d ).upto(2)  # => %w( a b c )
-  #   %w( a b c d ).upto(10) # => %w( a b c d )
-  #   %w().upto(0)           # => %w()
+  #   [1,2,3,4,5].thru(0,2)  #=> [1,2,3]
+  #   [1,2,3,4,5].thru(2,4)  #=> [3,4,5]
   #
-  def upto(position)
-    self[0..position]
-  end
+  #   [1,2,3,4,5].thru(2)  #=> [1,2,3]
+  #   [1,2,3,4,5].thru(4)  #=> [1,2,3,4,5]
+  #
+  def thru(from, to=nil)
+    from, to = 0, from unless to
+    to = size - 1 if to >= size
+    a = []
+    i = from
+    while i <= to
+      a << self[i]
+      i += 1
+    end
+    a
+  end unless method_defined?(:thru)
 
 end
 

@@ -82,21 +82,26 @@ module Indexable
     slice((size / 2) + offset)
   end
 
-  # Returns the middle element(s) of an array. Even-sized arrays,
-  # not having an exact middle, returns a two-element array
-  # of the two middle elements.
+  # Returns an Array of the middle element(s) of an array.
+  # Even-sized arrays, not having an exact middle, return
+  # a two-element array of the two middle elements.
   #
-  #   [1,2,3,4,5].middle        #=> 3
+  #   [1,2,3,4,5].middle        #=> [3]
   #   [1,2,3,4,5,6].middle      #=> [3,4]
+  #
+  # A +birth+ can be give to widen the middle on either side.
+  #
+  #   [1,2,3,4,5].middle(1)   #=> [2,3,4]
+  #   [1,2,3,4,5,6].middle(1)   #=> [2,3,4,5]
   #
   # In contrast to #mid which utilizes an offset.
   #
-  def middle
+  def middle(birth=0)
+    i = size / 2 - birth
     if size % 2 == 0
-     slice( (size / 2) - 1, 2 )
-     #[slice((size / 2) - 1, 1), slice(size / 2, 1)]
+      slice(i - 1, 2 + (2 * birth))
     else
-      slice(size / 2)
+      slice(i, 1 + (2 * birth))
     end
   end
 
@@ -105,7 +110,12 @@ module Indexable
   #   [1,2,3,4,5].thru(0,2)  #=> [1,2,3]
   #   [1,2,3,4,5].thru(2,4)  #=> [3,4,5]
   #
-  def thru(from, to)
+  #   [1,2,3,4,5].thru(2)  #=> [1,2,3]
+  #   [1,2,3,4,5].thru(4)  #=> [1,2,3,4,5]
+  #
+  def thru(from, to=nil)
+    from, to = 0, from unless to
+    to = size - 1 if to >= size
     a = []
     i = from
     while i <= to
@@ -117,21 +127,21 @@ module Indexable
 
   # Returns last _n_ elements.
   #
-  #   %w{W o r l d}.last(3)  #=> %w{r l d}
+  #   %w{W o r l d}.from(3)  #=> %w{l d}
   #
-  def from(n)
-    n = n.to_i
-    return self if n > size
-    slice(-n, n) #slice(-n..-1)
+  def from(i)
+    return self if i >= size
+    slice(i, size - i) #slice(-n..-1)
   end
 
+  # DEPRECATED: use #thru instead
   # Returns first _n_ elements.
   #
   #   %w{H e l l o}.upto(3)  #=> %w{H e l l}
   #
-  def upto(n)
-    slice(0, n.to_i+1)
-  end
+  #def upto(n)
+  #  slice(0, n.to_i+1)
+  #end
 
   # Returns first _n_ elements.
   #
