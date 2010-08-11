@@ -1,13 +1,13 @@
 class Time
 
   #
-  def past?
-    self < ::Time.current
+  def past?(other=nil)
+    self < (other || ::Time.now)
   end
 
   #
-  def future?
-    self < ::Time.current
+  def future?(other=nil)
+    self > (other || ::Time.now)
   end
 
 end
