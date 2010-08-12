@@ -25,8 +25,8 @@ module Kernel
     end
   end
 
-  # Original name for #assign_from.
-  alias_method :set_from, :assign_from
+  # DEPRECATED: Original name for #assign_from.
+  #alias_method :set_from, :assign_from
 
 end
 
