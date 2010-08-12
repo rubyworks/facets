@@ -11,7 +11,8 @@ module Kernel
     ! nil?
   end
 
-  alias_method :non_nil?, :not_nil?
+  # DEPRECATED: #not_nil? it enough.
+  #alias_method :non_nil?, :not_nil?
 
 end
 
