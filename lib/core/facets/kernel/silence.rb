@@ -2,9 +2,8 @@ module Kernel
 
   # Silence a stream and/or warnings...
   #
-  #   silence(:stdout, :verbose) do
+  #   silence(:stdout) do
   #     puts "won't see me"
-  #     warn "won't see me either"
   #   end
   #
   # Supported +streams+ are +stderr+, +stdout+, +verbose+, +debug+,
@@ -17,30 +16,15 @@ module Kernel
         STDERR
       when :stdout
         STDOUT
-      when :debug, :debugging
-        :debug
-      when :verbose, :warnings, :warning
-        :verbose
       else
         stream
       end
     end
 
-    debug   = $DEBUG
-    verbose = $VERBOSE
-
-    $DEBUG   = false if streams.delete(:debug)
-    $VERBOSE = false if streams.delete(:verbose)
-
-    begin
-      if streams.empty?
-        yield
-      else
-        silence_stream(*streams){ yield }
-      end
-    ensure
-      $DEBUG   = debug
-      $VERBOSE = verbose
+    if streams.empty?
+      yield
+    else
+      silence_stream(*streams){ yield }
     end
   end
 
@@ -85,6 +69,7 @@ module Kernel
     silence_stream(STDOUT) { yield }
   end
 
+=begin
   # Sets $VERBOSE to nil for the duration of the block
   # and back to its original value afterwards...
   #
@@ -103,6 +88,8 @@ module Kernel
     $VERBOSE = old_verbose
   end
 
+  alias_method :disable_warnings, :silence_warnings
+
   # Sets $VERBOSE to true for the duration of the block
   # and back to its original value afterwards.
   #
@@ -114,6 +101,7 @@ module Kernel
   ensure
     $VERBOSE = old_verbose
   end
+=end
 
 end
 
