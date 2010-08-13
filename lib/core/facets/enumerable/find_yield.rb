@@ -36,9 +36,7 @@ module Enumerable
   # Alias for #find_yield.
   #
   # DEPRECATE: This has been renamed to #find_yield.
-  def map_detect(fallback=nil)
-    find_yield(fallback)
-  end
+  alias_method :map_detect, :find_yield
 
 end
 
