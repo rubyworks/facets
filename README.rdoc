@@ -1,8 +1,8 @@
 = Ruby Facets
 
-* home: http://facets.rubyforge.com
-* source: http://github.com/rubyworks/facets
-* forum: http://groups.google.com/group/facets-universal
+* home: http://rubyworks.github.com/facets
+* code: http://github.com/rubyworks/facets
+* talk: http://groups.google.com/group/facets-universal
 
 "ALL YOUR BASE ARE BELONG TO RUBY"
 
