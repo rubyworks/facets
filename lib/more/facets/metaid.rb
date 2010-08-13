@@ -4,4 +4,3 @@ require 'facets/kernel/meta_def'
 require 'facets/kernel/meta_eval'
 require 'facets/kernel/eigenclass'
 require 'facets/module/class_def'
-

@@ -34,8 +34,7 @@ module Kernel
     end
   end
 
-  # DEPRECATE: #respond is enough.
-  alias_method :respond_with_value, :respond
+  # DEPRECATED: #respond is enough.
+  #alias_method :respond_with_value, :respond
 
 end
-

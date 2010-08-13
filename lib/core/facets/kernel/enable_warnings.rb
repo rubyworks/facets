@@ -1,1 +1,1 @@
-require 'facets/kernel/disable'
+require 'facets/kernel/disable_warnings'

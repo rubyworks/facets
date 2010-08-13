@@ -2,6 +2,8 @@ module Kernel
 
   alias_method :_extend, :extend
 
+  private :_extend
+
   # Extend an object with a module.
   #
   # If a block is given, it will be evaluated into an anonymous

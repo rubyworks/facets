@@ -1,3 +1,5 @@
+require 'facets/kernel/singleton_class'
+
 module Kernel
 
   # Calling #class_eval on an object acts just like

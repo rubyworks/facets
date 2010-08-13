@@ -5,7 +5,7 @@ class Module
     # Sets an option to the given value. If the value is a proc,
     # the proc will be called every time the option is accessed.
     #
-    # CREDIT: ? (Sinatra)
+    # CREDIT: Blake Mizerany (Sinatra)
 
     def set(option, value=self, &block)
       raise ArgumentError if block && value != self

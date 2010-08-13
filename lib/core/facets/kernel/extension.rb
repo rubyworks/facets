@@ -2,7 +2,7 @@ module Kernel
 
   # Don't say it!
   #
-  # TODO: Must reduce the number of singlton method methods.
+  # TODO: Must reduce the number of singleton method methods.
   #
   def extension
     class << self; self; end

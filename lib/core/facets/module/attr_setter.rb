@@ -1,11 +1,11 @@
 class Module
 
   # Create an attribute method for both getting
-  # and setting an instance variable.
+  # and setting an instance variable:
   #
   #   attr_setter :a
   #
-  # _is equivalent to_
+  # is equivalent to:
   #
   #   def a(*args)
   #     if args.size > 0
@@ -36,8 +36,8 @@ class Module
   # both a reader and a writer.
   #
   #   class AttrSetterExample
-  #     attr_accessor :a
-  #     alias_accessor :b, :a
+  #     attr_setter :a
+  #     alias_setter :b, :a
   #   end
   #
   #   x = AttrSetterExample.new
@@ -46,12 +46,7 @@ class Module
   #
   # CREDIT: Trans
 
-  def alias_setter(*args)
-    args = args - [orig]
-    args.each do |name|
-      alias_method(name, orig)
-    end
-  end
+  alias_method :alias_setter, :alias_method
 
 end
 

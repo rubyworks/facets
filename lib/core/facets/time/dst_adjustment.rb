@@ -22,4 +22,3 @@ class Time
   end
 
 end
-
