@@ -20,10 +20,13 @@ module Kernel
   #   AsExample1.new.x  #=> 1
   #
   def as(ancestor, &blk)
-    @__as ||= {}
-    unless r = @__as[ancestor]
-      r = (@__as[ancestor] = As.new(self, ancestor))
-    end
+    #this = self
+    r = As.new(self, ancestor)
+    #unless r
+      #r = As.cache[self][ancestor] = Functor.new do |op, *a, &b|
+      #  ancestor.instance_method(op).bind(this).call(*a,&b)
+      #end
+    #end
     r.instance_eval(&blk) if block_given? #yield(r) if block_given?
     r
   end
@@ -31,7 +34,6 @@ module Kernel
   # Call parent class/module methods once bound to self.
   #
   # TODO: Does this have the proper scope for #send?
-
   def send_as(ancestor, sym, *args, &blk)
     ancestor.instance_method(sym).bind(self).call(*args,&blk)
   end
@@ -46,17 +48,9 @@ module Kernel
   #   end
   #++
 
-  # Returns method of a parent class bound to self.
-
-  def super_method(klass, meth)
-    unless self.class.ancestors.include?(klass)
-      raise ArgumentError, "Not an ancestor for super_method-- #{klass}"
-    end
-    klass.instance_method(meth).bind(self)
-  end
-
   ## DEPRECATED: There's no reliable way to get method name of caller.
-  ## This needs to have the same knowledge that #super itself has. 
+  ## This needs to have the same knowledge that #super itself has and
+  ## I do not thin that is possbile in pure Ruby.
   ##
   ## Like super but skips to a specific ancestor module or class.
   ##
@@ -89,6 +83,22 @@ end
 # TODO: Deprecate this and use Functor (HigherOrderMessage) instead ?
 
 class As #:nodoc:
+ 
+  class << self
+    alias_method :_new, :new
+
+    def new(subject, ancestor)
+      cache[subject][ancestor] ||= _new(subject, ancestor)
+    end
+    
+    def cache
+      @cache ||= Hash.new{|h,k| h[k]={} }
+    end
+
+    private :_new
+    private :cache
+  end
+
   # Privatize all methods except #binding an operators.
   private(*instance_methods.select { |m| m !~ /(^__|^\W|^binding$)/ })
 
@@ -97,6 +107,7 @@ class As #:nodoc:
     @ancestor = ancestor
   end
 
+  private
   def method_missing(sym, *args, &blk)
     @ancestor.instance_method(sym).bind(@subject).call(*args,&blk)
   end
