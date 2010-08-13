@@ -1,12 +1,10 @@
-Covers 'facets/module/spacename'
+covers 'facets/module/spacename'
 
-require File.dirname(__FILE__) + '/test_helper.rb'
+tests Module do
 
-Case Module do
-
-  Unit :spacename do
-    ExampleModule::ExampleClass.spacename.assert == 'ExampleModule'
-    ExampleModule.spacename.assert == ''  # should this be nil ?
+  unit :spacename do
+    Lemon::TestCase.spacename.assert == 'Lemon'
+    Lemon.spacename.assert == ''  # should this be nil ?
   end
 
 end

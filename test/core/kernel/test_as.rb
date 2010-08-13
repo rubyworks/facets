@@ -1,6 +1,6 @@
-Covers 'facets/kernel/as'
+covers 'facets/kernel/as'
 
-Case Kernel do
+tests Kernel do
 
   #Context "class heirarchy" do
   #  x = Class.new{ def x ; 1 ; end }
@@ -55,6 +55,20 @@ Case Kernel do
     def s.class; nil; end
     s.class.refute == String
     s.send_as(Object, :class).assert == String
+  end
+
+end
+
+tests As do
+
+  c = Class.new(String) do
+    def to_s; "denied"; end
+  end
+
+  meta :new do
+    o = c.new("hi")
+    o.to_s.assert == "denied"
+    As.new(o, String).to_s.assert == "hi"
   end
 
 end

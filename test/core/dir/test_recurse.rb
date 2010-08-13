@@ -1,41 +1,17 @@
-Covers 'facets/dir/recurse'
+covers 'facets/dir/recurse'
 
-require 'fileutils'
-require 'tmpdir'
+tests Dir do
 
-Case Dir do
-
-   test_directory = File.join(Dir.tmpdir, 'facets', 'dir', 'recurse', Time.now.usec.to_s)
-   recurse_dirs  = %w{A A/B}
-   recurse_files = %w{A.txt A/B.txt A/B/C.txt}
-
-   Context do
-     recurse_dirs.each do |x|
-       FileUtils.mkdir_p(File.join(test_directory, x))
-     end
-     recurse_files.each do |x|
-       File.open(File.join(test_directory, x), 'w'){ |f| f << "SPINICH" }
-     end
+   metaunit :recurse do
+     r = Dir.recurse('test')
+     r.assert.include?('test/core/dir')
+     r.assert.include?('test/core/dir/test_recurse.rb')
    end
 
-   MetaUnit :recurse do
-     Dir.chdir test_directory do
-       x = (recurse_dirs + recurse_files).sort
-       r = Dir.recurse.sort
-       r.assert == x
-     end
-   end
-
-   MetaUnit :ls_r do
-     Dir.chdir test_directory do
-       x = (recurse_dirs + recurse_files).sort
-       r = Dir.ls_r.sort
-       r.assert == x
-     end
-   end
-
-   Teardown do
-     FileUtils.rm_r(test_directory)
+   metaunit :ls_r do
+     r = Dir.ls_r('test')
+     r.assert.include?('test/core/dir')
+     r.assert.include?('test/core/dir/test_recurse.rb')
    end
 
 end

@@ -1,20 +1,17 @@
-Covers 'facets/module/pathize'
+covers 'facets/module/pathize'
 
-require File.dirname(__FILE__) + '/test_helper.rb'
+tests Module do
 
-Case Module do
-
-  Unit :pathize do
-    ExampleModule.pathize.assert == 'example_module'
+  unit :pathize do
+    Lemon.pathize.assert == 'lemon'
   end
 
 end
 
-Case Class do
+tests Class do
 
-  Unit :pathize do
-    ExampleModule::ExampleClass.pathize.assert == 'example_module/example_class'
+  unit :pathize do
+    Lemon::TestCase.pathize.assert == 'lemon/test_case'
   end
 
 end
-

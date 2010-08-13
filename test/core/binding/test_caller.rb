@@ -23,6 +23,10 @@ tests Binding do
   end
 
   unit :callstack do
+    bind.callstack.assert.is_a?(Array)
+  end
+
+  unit :call_stack do
     bind.call_stack.assert.is_a?(Array)
   end
 

@@ -1,22 +1,22 @@
-Covers 'facets/file/ext'
+covers 'facets/file/ext'
 
-Case File do
+tests File do
 
-  MetaUnit :ext => "typical filename" do
+  metaunit :ext => "typical filename" do
     s = 'file.txt'
     File.ext(s).assert == 'txt'
     File.ext(s, 'old').assert == 'file.old'
     File.ext(s, '').assert == 'file'
   end
 
-  MetaUnit :ext => "no extension" do
+  metaunit :ext => "no extension" do
     s = 'file'
     File.ext(s).assert == ''
     File.ext(s, 'txt').assert == 'file.txt'
     File.ext(s, '').assert == 'file'
   end 
 
-  MetaUnit :ext => "non-standard extensions" do
+  metaunit :ext => "non-standard extensions" do
     s = '.profile'
     File.ext(s).assert == ''
     File.ext(s, 'new').assert == '.profile.new'

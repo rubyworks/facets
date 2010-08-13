@@ -1,41 +1,16 @@
-Covers 'facets/dir/multiglob'
+covers 'facets/dir/multiglob'
 
-require 'fileutils'
-require 'tmpdir'
+tests Dir do
 
-Case Dir do
-
-  test_directory = File.join(Dir.tmpdir, 'facets', 'dir', 'multiglob', Time.now.usec.to_s)
-  multiglob_dirs  = %w{A A/B}
-  multiglob_files = %w{A.txt A/B.txt A/B/C.txt}
-
-  Context do
-    multiglob_dirs.each do |x|
-      FileUtils.mkdir_p(File.join(test_directory, x))
-    end
-    multiglob_files.each do |x|
-      File.open(File.join(test_directory, x), 'w'){ |f| f << "SPINICH" }
-    end
+  metaunit :multiglob do
+    r = Dir.multiglob('test/c*', 'test/m*').sort
+    r.assert == ['test/core', 'test/more']
   end
 
-  MetaUnit :multiglob do
-    Dir.chdir test_directory do
-      x = %w{A A.txt}
-      r = Dir.multiglob('*').sort
-      r.assert == x
-    end
-  end
-
-  MetaUnit :multiglob_r do
-    Dir.chdir test_directory do
-      x = (multiglob_dirs + multiglob_files).sort
-      r = Dir.multiglob_r('*').sort
-      r.assert == x
-    end
-  end
-
-  Teardown do
-    FileUtils.rm_r(test_directory)
+  metaunit :multiglob_r do
+    r = Dir.multiglob_r('test').sort
+    r.assert.include?('test/core/dir')
+    r.assert.include?('test/core/dir/test_multiglob.rb')
   end
 
 end

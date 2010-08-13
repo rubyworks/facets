@@ -1,16 +1,13 @@
-require File.dirname(__FILE__) + '/helpers/mockfile'
+covers 'facets/file/create'
 
-Covers 'facets/file/create'
+tests File do
 
-TestCase File do
+  test_file = 'tmp/rewrite.txt'
+  test_data = 'This is a test!'
 
-  MetaUnit :create do
-    f = "not-a-real-file.txt"
-    t = 'This is a test!'
-    MockFile.create(f, t)
-    s = MockFile.read(f)
-    s.assert == t
+  metaunit :create do
+    File.create(test_file, test_data)
+    File.read(test_file).assert == test_data
   end
 
 end
-

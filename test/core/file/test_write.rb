@@ -1,20 +1,17 @@
-Covers 'facets/file/write'
+covers 'facets/file/write'
 
-require File.dirname(__FILE__) + '/helpers/mockfile'
+tests File do
 
-Case File do
+  test_file = 'tmp/write.txt'
 
-  MetaUnit :write do
-    test_file = File.join(Dir::tmpdir, 'facets', 'file', 'write')
-    FileUtils.mkdir_p(File.dirname(test_file))
+  metaunit :write do
+    data = "Test data\n"
 
-    data_in = "Test data\n"
+    nbytes = File.write(test_file, data)
 
-    nbytes = File.write(test_file, data_in)
-    data_out = File.read(test_file)
-
-    data_out.assert == data_in
-    data_out.size.assert == nbytes
+    out = File.read(test_file)
+    out.assert == data
+    out.size.assert == nbytes
   end
 
 end

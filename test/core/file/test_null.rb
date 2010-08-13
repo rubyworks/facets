@@ -1,9 +1,8 @@
-Covers 'facets/file/null'
+covers 'facets/file/null'
 
-Case File do
+tests File do
 
-  # FIXME
-  MetaUnit :null do
+  metaunit :null do
     assert File.null
   end
 

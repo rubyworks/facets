@@ -1,6 +1,6 @@
-Covers 'facets/string/expand_tab'
+covers 'facets/string/expand_tab'
 
-Case String do
+tests String do
 
     tabs = <<-EOF
 
@@ -10,7 +10,7 @@ Case String do
     EOF
 
 
-  Unit :expand_tabs => "0" do
+  unit :expand_tabs => "0" do
     expected = <<-EOF
 
 One tab
@@ -21,7 +21,7 @@ One tab
   end
 
 
-  Unit :expand_tabs => "1" do
+  unit :expand_tabs => "1" do
     expected = <<-EOF
 
  One tab
@@ -32,7 +32,7 @@ One tab
   end
 
 
-  Unit :expand_tabs => "4" do
+  unit :expand_tabs => "4" do
     expected = <<-EOF
 
     One tab
@@ -43,7 +43,7 @@ One tab
   end
 
 
-  Unit :expand_tabs => "8" do
+  unit :expand_tabs => "8" do
     expected = <<-EOF
 
         One tab
@@ -55,7 +55,7 @@ One tab
   end
 
 
-  Unit :expand_tabs => "16" do
+  unit :expand_tabs => "16" do
     expected = <<-EOF
 
                 One tab
@@ -63,6 +63,17 @@ One tab
                  Six spaces, a tab, and a space
     EOF
     tabs.expand_tabs(16).assert == expected
+  end
+
+
+  unit :expand_tab => "0 (alias for #expand_tabs)" do
+    expected = <<-EOF
+
+One tab
+ One space and one tab
+     Six spaces, a tab, and a space
+    EOF
+    tabs.expand_tab(0).assert == expected
   end
 
 end

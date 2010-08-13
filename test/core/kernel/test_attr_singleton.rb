@@ -1,9 +1,8 @@
-Covers 'facets/kernel/attr_singleton'
+covers 'facets/kernel/attr_singleton'
 
-Case Kernel do
+tests Kernel do
 
-  # Fixture :AttrSingletonMock
-  class AttrSingletonMock
+  c = Class.new do
     def initialize
       attr_singleton_reader :foo #=> "FOO"
       attr_singleton_writer :bar #=> "BAR"
@@ -12,26 +11,25 @@ Case Kernel do
       self.bar = "BAR"
       self.baz = "BAZ"
     end
-
     def get_bar
       @bar
     end
   end
 
-  Unit :attr_singleton_reader do
-    t = AttrSingletonMock.new
+  unit :attr_singleton_reader do
+    t = c.new
     t.foo.assert == "FOO"
   end
 
-  Unit :attr_singleton_writer do
-    t = AttrSingletonMock.new
+  unit :attr_singleton_writer do
+    t = c.new
     t.get_bar.assert == "BAR"
     t.bar = "BAR2"
     t.get_bar.assert == "BAR2"
   end
 
-  Unit :attr_singleton_accessor do
-    t = AttrSingletonMock.new
+  unit :attr_singleton_accessor do
+    t = c.new
     t.baz.assert == "BAZ"
     t.baz = "BAZ2"
     t.baz.assert == "BAZ2"

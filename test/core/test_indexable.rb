@@ -1,7 +1,7 @@
-Covers 'facets/indexable'
-Covers 'facets/array/indexable'
+covers 'facets/indexable'
+covers 'facets/array/indexable'
 
-TestCase Indexable do
+tests Indexable do
 
   unit :head do
     [1,2,3].head.assert == [1]
@@ -23,6 +23,22 @@ TestCase Indexable do
     %w{W o r l d}.mid.assert == 'r'
     %w{W o r l d}.mid(1).assert == 'l'
     %w{W o r l d}.mid(-1).assert == 'o'
+  end
+
+  unit :mid do
+    a = [1,2,3,4,5]
+    b = [1,2,3,4,5,6]
+    a.mid.assert == 3
+    b.mid.assert == 4
+    a.mid(1).assert == 4
+    b.mid(1).assert == 5
+    b.mid(2).assert == 6
+    b.mid(-1).assert == 3
+  end
+
+  unit :middle do
+    [1,2,3,4,5].middle.assert == [3]
+    [1,2,3,4,5,6].middle.assert == [3,4]
   end
 
   unit :middle do
@@ -49,6 +65,11 @@ TestCase Indexable do
     a = [1,2,3,4,5]
     r = a.thru(3,4)
     r.assert == [4,5]
+  end
+
+  unit :thru do
+    [0,1,2,3,4,5].thru(2,4).assert == [2,3,4]
+    [0,1,2,3,4,5].thru(0,1).assert == [0,1]
   end
 
   # to be deprecated
@@ -81,6 +102,16 @@ TestCase Indexable do
   unit :range do
     ['a','b','c','d'].range.assert == (0..3)
     ['a','b','c','d'].range('b','d').assert == (1..3)
+  end
+
+  unit :range do
+    a = [1,2,3,4,5]
+    b = [1,2,3,4,5,6]
+    a.range.assert == (0..4)
+    b.range.assert == (0..5)
+    a.range(2,4).assert == (1..3)
+    b.range(2,3).assert == (1..2)
+    b.range(4,2).assert == (3..1)
   end
 
   # We can't use an Array to test the following methods b/c
@@ -128,6 +159,19 @@ TestCase Indexable do
     c.new(1,2,3,4).index{ |e| e == 3 }.assert == 2
     c.new(1,2,3,4).index{ |e| e > 3 }.assert == 3
   end
+
+  #unit :op_fetch do
+  #  a = ['a','b','c','d','e','f']
+  #  assert_equal( ['b','f'], a[[1,-1]] )
+  #end
+  #
+  #unit :op_store do
+  #  a = ['a','o','z']
+  #  a[[0,2]] = ['A','Z']
+  #  assert_equal( ['A','o','Z'], a )
+  #  a[[0,-1]] = ['W','Y']
+  #  assert_equal( ['W','o','Y'], a )
+  #end
 
 end
 

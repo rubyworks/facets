@@ -1,13 +1,13 @@
-Covers 'facets/unboundmethod/name'
+covers 'facets/unboundmethod/name'
 
-Case UnboundMethod do
+tests UnboundMethod do
 
-  class X
+  x = Class.new do
     def foo; "bar"; end
   end
 
-  Unit :name do
-    meth = X.instance_method(:foo)
+  unit :name do
+    meth = x.instance_method(:foo)
     meth.name.to_sym.assert == :foo
   end
 

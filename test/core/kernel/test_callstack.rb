@@ -1,10 +1,13 @@
-Covers 'facets/kernel/callstack'
+covers 'facets/kernel/callstack'
 
-Case Kernel do
+tests Kernel do
 
-  # TODO: How to test #call_stack ?
-  Unit :call_stack do
+  unit :call_stack do
     call_stack
+  end
+
+  unit :callstack do
+    callstack
   end
 
 end

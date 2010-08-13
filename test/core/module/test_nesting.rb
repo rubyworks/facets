@@ -1,12 +1,14 @@
-Covers 'facets/module/nesting'
+covers 'facets/module/nesting'
 
-require File.dirname(__FILE__) + '/test_helper.rb'
+tests Module do
 
-Case Module do
+  # TODO: how to test this without introducing a named constant
+  # for the namespace? Don't want to do this to prevent it from
+  # showing up in coverage report.
 
-  Unit :nesting do
-    nest = ExampleModule::ExampleClass.nesting
-    nest.assert == [ExampleModule]
+  omit :nesting do
+    #nest = ExampleModule::ExampleClass.nesting
+    #nest.assert == [ExampleModule]
   end
 
 end

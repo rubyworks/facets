@@ -1,11 +1,9 @@
-Covers 'facets/module/basename.rb'
+covers 'facets/module/basename.rb'
 
-require File.dirname(__FILE__) + '/test_helper.rb'
+tests Module do
 
-Case Module do
-
-  Unit :basename do
-    ExampleModule::ExampleClass.basename.assert == "ExampleClass"
+  unit :basename do
+    Lemon::TestCase.basename.assert == "Lemon"
   end
 
 end

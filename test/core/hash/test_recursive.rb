@@ -1,6 +1,6 @@
-Covers 'facets/hash/recursive'
+covers 'facets/hash/recursive'
 
-Case Hash do
+tests Hash do
 
   Unit :recursive => "each" do
     h = {:a=>1,:b=>{:c=>3}}
@@ -26,4 +26,36 @@ Case Hash do
   end
 
 end
+
+tests Hash::Recursor do
+
+  unit :each do
+  end
+
+  unit :map do
+  end
+
+  unit :map! do
+  end
+
+  unit :merge do
+  end
+
+  unit :merge! do
+  end
+
+  unit :graph do
+  end
+
+  unit :graph! do
+  end
+
+  unit :mash do
+  end
+
+  unit :mash! do
+  end
+
+end
+
 

@@ -1,6 +1,6 @@
-Covers 'facets/kernel/returning'
+covers 'facets/kernel/returning'
 
-Case Object do
+tests Kernel do
 
   Unit :returning do
     foo = returning( values = [] ) do

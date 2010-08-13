@@ -1,12 +1,10 @@
-Covers 'facets/module/modspace'
+covers 'facets/module/modspace'
 
-require File.dirname(__FILE__) + '/test_helper.rb'
+tests Module do
 
-Case Module do
-
-  Unit :modspace do
-    ExampleModule::ExampleClass.modspace.assert == ExampleModule
-    ExampleModule.modspace.assert == Object
+  unit :modspace do
+    Lemon::TestCase.modspace.assert == Lemon
+    Lemon.modspace.assert == Object
   end
 
 end

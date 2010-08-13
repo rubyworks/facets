@@ -27,3 +27,16 @@ Case Enumerable do
 
 end
 
+tests Enumerable::Recursor do
+
+  unit :each do
+  end
+
+  unit :map do
+  end
+
+  unit :map! do
+  end
+
+end
+

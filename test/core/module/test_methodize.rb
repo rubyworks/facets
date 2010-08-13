@@ -1,19 +1,17 @@
-Covers 'facets/module/methodize'
+covers 'facets/module/methodize'
 
-require File.dirname(__FILE__) + '/test_helper.rb'
+tests Module do
 
-Case Module do
-
-  Unit :methodize do
-    ExampleModule.methodize.assert == "example_module"
+  unit :methodize do
+    Lemon.methodize.assert == 'lemon'
   end
 
 end
 
-Case Class do
+tests Class do
 
-  Unit :methodize do
-    ExampleModule::ExampleClass.methodize.assert == "example_module__example_class"
+  unit :methodize do
+    Lemon::TestCase.methodize.assert == 'lemon__test_case'
   end
 
 end

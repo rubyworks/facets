@@ -1,8 +1,8 @@
-Covers 'facets/dir/parent'
+covers 'facets/dir/parent'
 
-Case Dir do
+tests Dir do
 
-  MetaUnit :parent? do
+  metaunit :parent? do
     Dir.assert.parent?("a/b/c", "a/b/c/d")
   end
 

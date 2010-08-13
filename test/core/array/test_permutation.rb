@@ -1,14 +1,15 @@
-Covers 'facets/array/permutation'
+covers 'facets/array/permutation'
 
-require 'set'
+tests Array do
 
-TestCase Array do
-
-  Unit :permutation do
-    r = Set.new
+  unit :permutation do
+    r = []
     %w[a b c].permutation{ |x| r << x.join('') }
-    x = Set.new(['abc','acb','bac','bca','cab','cba'])
-    r.assert == x
+
+    x = ['abc','acb','bac','bca','cab','cba']
+    x.each do |e|
+      r.assert.include?(e)
+    end
   end
 
 end

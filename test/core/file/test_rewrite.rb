@@ -1,17 +1,22 @@
-Covers 'facets/file/rewrite'
+covers 'facets/file/rewrite'
 
-require File.dirname(__FILE__) + '/helpers/mockfile'
+tests File do
 
-Case File do
+  test_file = 'tmp/rewrite.txt'
+  test_data = 'This is a test!'
 
-   MetaUnit :rewrite do
-     f = "not-a-real-file.txt"
-     t = 'This is a test!'
-     MockFile.write( t )
-     MockFile.rewrite(f) { |s| s.reverse }
-     s = MockFile.read(f)
-     s.assert == t.reverse
-   end
+  context do
+    File.open(test_file, 'w'){ |w| w << test_data }
+  end
+
+  metaunit :rewrite do
+    File.rewrite(test_file){ |s| s.reverse }
+    File.read(test_file).assert == test_data.reverse
+  end
+
+  metaunit :rewrite! do
+    File.rewrite!(test_file){ |s| s.reverse! }
+    File.read(test_file).assert == test_data.reverse
+  end
 
 end
-

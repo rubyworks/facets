@@ -1,8 +1,8 @@
-Covers 'facets/kernel/here'
+covers 'facets/kernel/here'
 
-Case Kernel do
+tests Kernel do
 
-  Unit :here do
+  unit :here do
     here.assert.is_a?(Binding)
   end
 

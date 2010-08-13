@@ -1,28 +1,13 @@
-Covers 'facets/kernel/constant'
+covers 'facets/kernel/constant'
 
-Case Kernel do
+tests Kernel do
 
-  module ConstantHelpers
-    module A
-      module B
-        module C
-        end
-      end
-    end
-  end
+  unit :constant do
+    c = Lemon::TestCase.name
+    constant(c).assert == Lemon::TestCase
 
-  Unit :constant do
-    c = ConstantHelpers::A::B::C.name
-    constant(c).assert == ConstantHelpers::A::B::C
-
-    c = "A::B::C"
-    ConstantHelpers.constant(c).assert == ConstantHelpers::A::B::C
-
-    c = "B::C"
-    ConstantHelpers::A.constant(c).assert == ConstantHelpers::A::B::C
-
-    c = "C"
-    ConstantHelpers::A::B.constant(c).assert == ConstantHelpers::A::B::C
+    c = "TestCase"
+    Lemon.constant(c).assert == Lemon::TestCase
   end
 
 end

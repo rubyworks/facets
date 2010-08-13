@@ -1,12 +1,10 @@
-Covers 'facets/file/split_all'
+covers 'facets/file/split_all'
 
-require File.dirname(__FILE__) + '/helpers/mockfile'
+tests File do
 
-Case File do
-
-  MetaUnit :split_all do
-    fp = "this/is/test"
-    MockFile.split_all(fp).assert == ['this', 'is', 'test']
+  metaunit :split_all do
+    fp = "test/core/file"
+    File.split_all(fp).assert == ['test', 'core', 'file']
   end
 
 end

@@ -1,44 +1,45 @@
-Covers 'facets/class/cattr'
+covers 'facets/class/cattr'
 
-class MockObject
-  def initialize
-    @@a = 10
-  end
-  def b ; @@b ; end
-end
+tests Class do
 
-TestCase Class do
-
-  Unit :cattr do
-    Exception.refute.raised? do
-      MockObject.class_eval{ cattr :a }
+  mock_class = Class.new do
+    def initialize
+      @@a = 10
+      @@b = nil
     end
-    t = MockObject.new
+    def b ; @@b ; end
+  end
+
+  unit :cattr do
+    Exception.refute.raised? do
+      mock_class.class_eval{ cattr :a }
+    end
+    t = mock_class.new
     t.a.assert == 10
   end
 
-  Unit :cattr_reader do
+  unit :cattr_reader do
     Exception.refute.raised? do
-      MockObject.class_eval { cattr_reader :a }
+      mock_class.class_eval { cattr_reader :a }
     end
-    t = MockObject.new
+    t = mock_class.new
     t.a.assert == 10
   end
 
-  Unit :cattr_writer do
+  unit :cattr_writer do
     Exception.refute.raised? do
-      MockObject.class_eval { cattr_writer :b }
+      mock_class.class_eval { cattr_writer :b }
     end
-    t = MockObject.new
+    t = mock_class.new
     t.b = 5
     t.b.assert == 5
   end
 
-  Unit :cattr_accessor do
+  unit :cattr_accessor do
     Exception.refute.raised? do
-      MockObject.class_eval { cattr_accessor :c }
+      mock_class.class_eval { cattr_accessor :c }
     end
-    t = MockObject.new
+    t = mock_class.new
     t.c = 50
     t.c.assert == 50
   end

@@ -1,12 +1,10 @@
-Covers 'facets/dir/ascend'
+covers 'facets/dir/ascend'
 
-require 'tmpdir'
+tests Dir do
 
-Case Dir do
+   test_directory = 'test/core/dir'
 
-   test_directory = File.join(Dir.tmpdir, 'facets', 'dir', 'descend', Time.now.usec.to_s)
-
-   MetaUnit :descend do
+   metaunit :descend do
      c = []
      Dir.descend(test_directory) do |path|
        c << path

@@ -1,15 +1,10 @@
-Covers 'facets/dir/ascend'
+covers 'facets/dir/ascend'
 
-require 'tmpdir'
+tests Dir do
 
-Case Dir do
+   test_directory = 'test/core/dir'
 
-   #DIRS  = %w{A A/B}
-   #FILES = %w{A.txt A/B.txt A/B/C.txt}
-
-   test_directory = File.join(Dir.tmpdir, 'facets', 'dir', 'ascend', Time.now.usec.to_s)
-
-   MetaUnit :ascend do
+   metaunit :ascend do
      c = []
      Dir.ascend(test_directory) do |path|
        c << path
@@ -21,7 +16,7 @@ Case Dir do
      end
    end
 
-   MetaUnit :ascend => "exclude current" do
+   metaunit :ascend => "exclude current" do
      c = []
      Dir.ascend(test_directory, false) do |path|
        c << path

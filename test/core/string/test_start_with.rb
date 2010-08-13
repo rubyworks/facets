@@ -1,10 +1,15 @@
-Covers 'facets/string/start_with'
+covers 'facets/string/start_with'
 
-Case String do
+tests String do
 
-  Unit :start_with? do
+  unit :start_with? do
     s = "xxboo"
     s.assert.start_with?('xx')
+  end
+
+  unit :starts_with? do
+    s = "xxboo"
+    s.assert.starts_with?('xx')
   end
 
 end

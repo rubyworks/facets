@@ -1,6 +1,6 @@
 covers 'facets/module/parent'
 
-testcase Module do
+tests Module do
 
   unit :parent do
     Lemon::TestCase.parent.assert == Lemon
