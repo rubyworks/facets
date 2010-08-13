@@ -1,74 +1,56 @@
 class Module
 
-  # Detect conflicts.
+  # Detect method name clash between modules and/or classes, regardless of
+  # method visibility.
   #
-  #   module ConflictExample
+  #   module MethodClashExample
   #
   #     module A
   #       def c; end
   #     end
   #
   #     module B
+  #       private
   #       def c; end
   #     end
   #
-  #     A.conflict?(B)  #=> ["c"]
+  #     A.method_clash(B)  #=> [:c]
   #
   #   end
   #
-  # TODO: All instance methods, or just public?
-  #
   # CREDIT: Thomas Sawyer, Robert Dober
-
-  def conflict?(other)
+  #--
+  # TODO: Should method_clash just be public methods? ...
+  #++
+  def method_clash(other)
     common_ancestor = (ancestors & other.ancestors).first
-    c = []
-    c += (public_instance_methods(true) & other.public_instance_methods(true))
-    c += (private_instance_methods(true) & other.private_instance_methods(true))
-    c += (protected_instance_methods(true) & other.protected_instance_methods(true))
+
+    s = []
+    s += public_instance_methods(true)
+    s += private_instance_methods(true)
+    s += protected_instance_methods(true)
+
+    o = []
+    o += other.public_instance_methods(true)
+    o += other.private_instance_methods(true)
+    o += other.protected_instance_methods(true)
+
+    c = s & o
+
     if common_ancestor
       c -= common_ancestor.public_instance_methods(true)
       c -= common_ancestor.private_instance_methods(true)
       c -= common_ancestor.protected_instance_methods(true)
     end
-    c.empty? ? false : c
+
+    return c
   end
 
-  # Should conflict? just be public methods? ...
-  #
-  #  def conflict?(other)
-  #    c = instance_methods & other.instance_methods
-  #    c.empty ? false : c
-  #  end
-
-  # Like #conflict?, but checks only public methods.
-  def public_conflict?(other)
-    common_ancestor = (ancestors & other.ancestors).first
-    c = public_instance_methods(true) & other.public_instance_methods(true)
-    if common_ancestor
-      c -= common_ancestor.public_instance_methods(true)
-    end
-    c.empty? ? false : c
-  end
-
-  # Like #conflict?, but checks only private methods.
-  def private_conflict?(other)
-    common_ancestor = (ancestors & other.ancestors).first
-    c = private_instance_methods(true) & other.private_instance_methods(true)
-    if common_ancestor
-      c -= common_ancestor.private_instance_methods(true)
-    end
-    c.empty? ? false : c
-  end
-
-  # Like #conflict?, but checks only protected methods.
-  def protected_conflict?(other)
-    common_ancestor = (ancestors & other.ancestors).first
-    c = protected_instance_methods(true) & other.protected_instance_methods(true)
-    if common_ancestor
-      c -= common_ancestor.protected_instance_methods(true)
-    end
-    c.empty? ? false : c
+  # Uses #method_clash to return +true+ or +false+ if there
+  # are method name clashes.
+  def method_clash?(other) 
+    c = method_clash(other) 
+    !c.empty?
   end
 
 end
