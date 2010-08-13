@@ -2,7 +2,7 @@ class Exception
 
   # Does a block raise an a given +exception+.
   #
-  def raised? #:yeild:
+  def self.raised? #:yeild:
     begin
       yield
       false
