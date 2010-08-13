@@ -49,6 +49,8 @@ unless defined?(::Enumerator)
 
     # Wrapper to allow yielder.yield(output) or yielder << output
     # in the same way as ruby-1.9
+    #
+    # TODO: Why can't Yielder take a block instead of a proc argument?
 
     class Yielder #:nodoc:
       def initialize(proc)
