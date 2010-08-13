@@ -5,22 +5,61 @@ module Kernel
   #   class WritersExample
   #     attr_reader :a, :b
   #     attr_accessor :x, :y
+  #     private
+  #     def q=(q); @q=q; end
   #   end
   #
   #   we = WritersExample.new
   #
-  #   we.writers              # -> [:x=, :y=]
-  #   we.writers(true, true)  # -> [:y, :x]
+  #   we.writers  #=> [:x=, :y=]
   #
-  # By default this methoid excludes all writers defined in Object or Kernel.
-  # To include these set +ancestors+ to Object or Kernel.
+  # If the +chomp+ option is true, then the trailing '=' will be removed.
+  #
+  #   we.writers(:chomp=>true)  #=> [:y, :x]
+  #
+  # By default #writers only includes public methods. To see private or
+  # protected methods use the +:access+ option.
+  #
+  #   we.writers(:access=>:private)  #=> [:q=]
+  #
+  # Or multiple access options,
+  #
+  #   we.writers(:access=>[:public,:private])  #=> [:x=,:y=,:q=]
+  #
+  # You can simply supply `:all` to get all method regardless accessibility.
+  #
+  # Also, by default this method excludes all writers defined in Object 
+  # or Kernel. To include these set +ancestors+ to Object or Kernel.
   #
   #   we.writers(Object)
   #
-  # TODO: This method could use a bit of refinement with respect to
-  # prublic, private and protected visibility.
-  def writers(ancestors=false, chomp=false)
-    writers = public_methods(ancestors).select{ |m| /=$/ =~ m.to_s  }
+  # TODO: Create Module#instance_writers.
+
+  def writers(*ancestors_and_options)
+    options   = (Hash === ancestors_and_options.last ? ancestors_and_options.pop : {})
+    chomp     = options[:chomp]
+    access    = options[:access]
+    ancestors = ancestors_and_options.first
+
+    access = [access].flatten
+    if access.include?(:all)
+      access.concat([:public, :protected, :private])
+    end
+    access << :public if access.empty?
+
+    writers = []
+
+    if access.include?(:private)
+      writers += private_methods(ancestors).select{ |m| /=$/ =~ m.to_s  }
+    end
+
+    if access.include?(:protected)
+      writers += protected_methods(ancestors).select{ |m| /=$/ =~ m.to_s  }
+    end
+
+    if access.include?(:public)
+      writers += public_methods(ancestors).select{ |m| /=$/ =~ m.to_s  }
+    end
 
     if ancestors == Kernel
       exclude = nil
@@ -40,4 +79,3 @@ module Kernel
   end
 
 end
-
