@@ -11,12 +11,12 @@ module Kernel
     cache = {}
     settings.each do |var, val|
       cache[var] = eval("var")
-      eval "proc{ |v| #{var} = v }").call(val)
+      eval("proc{ |v| #{var} = v }").call(val)
     end
     yield
   ensure
     cache.each do |var, val|
-      eval "proc{ |v| #{var} = v }").call(val)
+      eval("proc{ |v| #{var} = v }").call(val)
     end
   end
 
