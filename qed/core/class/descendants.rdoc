@@ -1,10 +1,10 @@
-== Class#descendents
+== Class#descendants
 
-  require 'facets/class/descendents'
+  require 'facets/class/descendants'
 
   a = Class.new
   b = Class.new(a)
   c = Class.new(b)
 
-  a.descendents.assert == [c,b]
+  a.descendants.assert == [b,c]
 

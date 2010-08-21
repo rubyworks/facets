@@ -18,7 +18,3 @@ They can also be specified by the first character of the name.
   'hi'.quote(:d).assert == %{"hi"}
   'hi'.quote(:b).assert == %{`hi`}
 
-Raise error on bad arguments.
-
-  ArgumentError.assert.raised?{ 'hi'.quote(1,2) }
-

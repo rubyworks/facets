@@ -1,14 +1,10 @@
-Covers 'facets/integer/factorial'
+== Integer#factorial
 
-Case Integer do
+    require 'facets/integer/factorial'
 
-  Unit :factorial do
     0.factorial.assert == 1
     1.factorial.assert == 1
     2.factorial.assert == 2
     3.factorial.assert == 6
     4.factorial.assert == 24
-  end
-
-end
 

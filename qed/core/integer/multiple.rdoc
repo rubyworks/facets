@@ -1,13 +1,10 @@
-Covers 'facets/integer/multiple'
+== Integer#multiple?
 
-Case Integer do
+    require 'facets/integer/multiple'
 
-  Unit :multiple? do
-    assert( ! 1.multiple?(2) )
-    assert(   2.multiple?(2) )
-    assert( ! 5.multiple?(3) )
-    assert(   6.multiple?(3) )
-  end
+    1.multiple?(2)  #=> false
+    5.multiple?(3)  #=> false
 
-end
+    2.multiple?(2)  #=> true
+    6.multiple?(3)  #=> true
 

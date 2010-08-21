@@ -1,10 +1,11 @@
-#
+require 'fileutils'
+
 def temporary_directory
-  @temporary_directory ||= 'tmp'
+  @temporary_directory ||= 'tmp/qed'
 end
 
 When /Given a directory structure containing/ do |text|
-  @temporary_directory = 'tmp/multiglob'
+  @temporary_directory = 'tmp/qed/multiglob'
   text.lines.each do |file|
     next if file =~ /^\s*$/
     file = File.join(@temporary_directory, file.strip)
@@ -18,5 +19,6 @@ After :document do
   if File.exist?(temporary_directory)
     FileUtils.rm_r(temporary_directory)
   end
+  @temporary_directory = 'tmp/qed'
 end
 

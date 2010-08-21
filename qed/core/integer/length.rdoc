@@ -1,12 +1,7 @@
-Covers 'facets/integer/length'
+== Numeric#length
 
-Case Integer do
+    require 'facets/numeric/length'
 
-  Unit :length do
-    (0..10).each do |power|
-      (10 ** power).length.assert == power + 1
-    end
-  end
-
-end
+    10.length.assert == 10
+    10.0.length.assert == 10
 
