@@ -16,7 +16,7 @@ Case Hash do
 
   Unit :rekey => "specific key" do
     bar = { :a=>1, :b=>2 }
-    foo = bar.rekey(:c, :a)
+    foo = bar.rekey(:a=>:c)
     foo[:c].assert == 1
     foo[:b].assert == 2
     foo[:a].assert == nil
@@ -24,7 +24,7 @@ Case Hash do
 
   Unit :rekey! => "specific key" do
     foo = { :a=>1, :b=>2 }
-    foo.rekey!(:c, :a)
+    foo.rekey!(:a=>:c)
     foo[:c].assert == 1
     foo[:b].assert == 2
     foo[:a].assert == nil
@@ -50,17 +50,22 @@ Case Hash do
     foo.assert == { 'a'=>1, 'b'=>2 }
   end
 
-  Unit :rekey => "symbol argument" do
+  Unit :rekey => "symbol proc" do
     foo = { :a=>1, :b=>2 }
-    foo.rekey(:to_s).assert == { "a"=>1, "b"=>2 }
+    foo.rekey(&:to_s).assert == { "a"=>1, "b"=>2 }
     foo.assert == { :a =>1, :b=>2 }
   end
 
-  Unit :rekey! => "symbol argument" do
+  Unit :rekey! => "symbol proc" do
     foo = { :a=>1, :b=>2 }
-    foo.rekey!(:to_s).assert == { "a"=>1, "b"=>2 }
+    foo.rekey!(&:to_s).assert == { "a"=>1, "b"=>2 }
     foo.assert == { "a"=>1, "b"=>2 }
   end
 
-end
+  Unit :rekey! => "no conflict between keys" do
+    r = {1 => :a, 2 => :b}.rekey!{ |k| k + 1 }
+    r.refute = {3 => :a}
+    r.assert = {2 => :a, 3 => :b}  
+  end
 
+end
