@@ -41,7 +41,7 @@ class Module
   #   end
   #
   #   x = AttrSetterExample.new
-  #   x.b = 1
+  #   x.b(1)
   #   x.a        #=> 1
   #
   # CREDIT: Trans

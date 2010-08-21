@@ -20,13 +20,13 @@ module Kernel
   #   AsExample1.new.x  #=> 1
   #
   def as(ancestor, &blk)
-    #this = self
+    ##this = self
     r = As.new(self, ancestor)
-    #unless r
-      #r = As.cache[self][ancestor] = Functor.new do |op, *a, &b|
-      #  ancestor.instance_method(op).bind(this).call(*a,&b)
-      #end
-    #end
+    ##unless r
+    ##  r = As.cache[self][ancestor] = Functor.new do |op, *a, &b|
+    ##    ancestor.instance_method(op).bind(this).call(*a,&b)
+    ##  end
+    ##end
     r.instance_eval(&blk) if block_given? #yield(r) if block_given?
     r
   end
@@ -68,14 +68,14 @@ module Kernel
   ##
   ##   SuperAsExample3.new.x  #=> 1
   ##
-  #def super_as(klass=self.class.superclass, *args, &blk)
-  #  unless self.class.ancestors.include?(klass)
-  #    raise ArgumentError
-  #  end
-  #  #called = /\`([^\']+)\'/.match(caller(1).first)[1].to_sym
-  #  called = File.basename(caller(1).first)
-  #  klass.instance_method(called).bind(self).call(*args,&blk)
-  #end
+  ##def super_as(klass=self.class.superclass, *args, &blk)
+  ##  unless self.class.ancestors.include?(klass)
+  ##    raise ArgumentError
+  ##  end
+  ##  #called = /\`([^\']+)\'/.match(caller(1).first)[1].to_sym
+  ##  called = File.basename(caller(1).first)
+  ##  klass.instance_method(called).bind(self).call(*args,&blk)
+  ##end
 end
 
 # Support class for Kernel#as.

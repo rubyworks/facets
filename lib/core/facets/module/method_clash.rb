@@ -1,7 +1,7 @@
 class Module
 
   # Detect method name clash between modules and/or classes, regardless of
-  # method visibility.
+  # method visibility:
   #
   #   module MethodClashExample
   #
@@ -19,6 +19,7 @@ class Module
   #   end
   #
   # CREDIT: Thomas Sawyer, Robert Dober
+  #
   #--
   # TODO: Should method_clash just be public methods? ...
   #++

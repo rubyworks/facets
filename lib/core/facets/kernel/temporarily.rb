@@ -10,7 +10,7 @@ module Kernel
   def temporarily(settings) #:yield:
     cache = {}
     settings.each do |var, val|
-      cache[var] = eval("var")
+      cache[var] = eval("#{var}")
       eval("proc{ |v| #{var} = v }").call(val)
     end
     yield

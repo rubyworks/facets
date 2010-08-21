@@ -6,7 +6,7 @@ class Time
   # Returns a new Time representing the time a number of
   # time-units in the futue.
   #
-  #   t = Time.utc(2010,10,10,12,0,0)
+  #   t = Time.utc(2010,10,10,0,0,0)
   #
   #   t.in(4, :days)             #=>  Time.utc(2010,10,14,0,0,0)
   #
@@ -23,7 +23,7 @@ class Time
     time_units << :seconds if time_units.size % 2 == 1
     time_hash.each{ |units, number| time_units << [number, units] }
     time = self
-    time_units.each_slice(2) do |number, units|
+    time_units.flatten.each_slice(2) do |number, units|
       next time = time.ago(-number, units) if number < 0
       time = (
         case units.to_s.downcase.to_sym

@@ -11,7 +11,7 @@ module Kernel
   #
   #   we = WritersExample.new
   #
-  #   we.writers  #=> [:x=, :y=]
+  #   we.writers  #=> [:y=, :x=]
   #
   # If the +chomp+ option is true, then the trailing '=' will be removed.
   #
@@ -24,7 +24,7 @@ module Kernel
   #
   # Or multiple access options,
   #
-  #   we.writers(:access=>[:public,:private])  #=> [:x=,:y=,:q=]
+  #   we.writers(:access=>[:public,:private])  #=> [:q=,:y=,:x=]
   #
   # You can simply supply `:all` to get all method regardless accessibility.
   #
@@ -38,7 +38,7 @@ module Kernel
   def writers(*ancestors_and_options)
     options   = (Hash === ancestors_and_options.last ? ancestors_and_options.pop : {})
     chomp     = options[:chomp]
-    access    = options[:access]
+    access    = options[:access] || []
     ancestors = ancestors_and_options.first
 
     access = [access].flatten

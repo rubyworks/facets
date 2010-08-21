@@ -45,11 +45,11 @@ module Kernel
     self
   end
 
-  # DEPRECATED: Use #assign instead.
-  #def populate(*a,&b)
-  #  warn 'use #assign instead of #populate for future versions'
-  #  assign(*a,&b)
-  #end
+  ## DEPRECATED: Use #assign instead.
+  ##def populate(*a,&b)
+  ##  warn 'use #assign instead of #populate for future versions'
+  ##  assign(*a,&b)
+  ##end
 
   # Set attribute writers using like readers from another object.
   #
@@ -76,7 +76,7 @@ module Kernel
     end
   end
 
-  # DEPRECATED: Original name for #assign_from.
-  #alias_method :set_from, :assign_from
+  ## DEPRECATED: Original name for #assign_from.
+  ##alias_method :set_from, :assign_from
 end
 
