@@ -5,32 +5,59 @@ class Hash
   # Rekey a hash, ...
   #
   #   rekey()
-  #   rekey(to_key, from_key)
+  #   rekey(from_key => to_key, ...)
   #   rekey{|from_key| to_key}
   #
-  # If no arguments or block are given, then all keys are converted
+  # If no key map or block is given, then all keys are converted
   # to Symbols.
   #
-  # If two keys are given, then the second key is changed to
-  # the first. You can think of it as +alias+ for hash keys.
+  # If a key map is given, then the first key is changed to the second key.
   #
   #   foo = { :a=>1, :b=>2 }
-  #   foo.rekey('a',:a)       #=> { 'a'=>1, :b=>2 }
-  #   foo.rekey(:x,:b)        #=> { :a =>1, :x=>2 }
-  #   foo.rekey('foo','bar')  #=> { :a =>1, :b=>2 }
+  #   foo.rekey(:a=>'a')       #=> { 'a'=>1, :b=>2 }
+  #   foo.rekey(:b=>:x)        #=> { :a =>1, :x=>2 }
+  #   foo.rekey('foo'=>'bar')  #=> { :a =>1, :b=>2 }
   #
-  # If a block is given, converts all keys in the Hash accroding
-  # to the given block. If the block returns +nil+ for given key,
+  # If a block is given, converts all keys in the Hash accroding to the
+  # given block procedure. If the block returns +nil+ for given key,
   # then that key will be left intact.
   #
   #   foo = { :name=>'Gavin', :wife=>:Lisa }
   #   foo.rekey{ |k| k.to_s }  #=>  { "name"=>"Gavin", "wife"=>:Lisa }
   #   foo                      #=>  { :name =>"Gavin", :wife=>:Lisa }
   #
+  # Note that if both a +key_map+ and a block are given, the +key_map+ is 
+  # applied first then the block.
+  #
   # CREDIT: Trans, Gavin Kistner
 
-  def rekey(*args, &block)
-    dup.rekey!(*args, &block)
+  def rekey(key_map={}, &block)
+    if key_map.empty? && !block
+      block = lambda{|k| k.to_sym}
+    end
+
+    hash = {}
+
+    (keys - key_map.keys).each do |key|
+      hash[key] = self[key]
+    end
+
+    key_map.each do |from, to|
+      hash[to] = self[from]
+    end
+
+    hash2 = {}
+
+    if block
+      hash.each do |k, v|
+        nk = block[k]
+        hash2[nk || k] = v
+      end
+    else
+      hash2 = hash
+    end
+
+    hash2
   end
 
   # Synonym for Hash#rekey, but modifies the receiver in place (and returns it).
@@ -41,23 +68,8 @@ class Hash
   #
   # CREDIT: Trans, Gavin Kistner
 
-  def rekey!(*args, &block)
-    # for backward comptability (TODO: DEPRECATE).
-    block = args.pop.to_sym.to_proc if args.size == 1
-    # if no args use block.
-    if args.empty?
-      block = lambda{|k| k.to_sym} unless block
-      keys.each do |k|
-        nk = block[k]
-        self[nk]=delete(k) if nk
-      end
-    else
-      raise ArgumentError, "3 for 2" if block
-      to, from = *args
-      self[to] = self.delete(from) if self.has_key?(from)
-    end
-    self
+  def rekey!(key_map={}, &block)
+    replace(rekey(key_map, &block))
   end
 
 end
-
