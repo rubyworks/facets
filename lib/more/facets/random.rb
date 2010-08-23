@@ -1,47 +1,11 @@
-# = Random
-#
-# Randomization core extension methods.
-#
-# This library extends Object, Array, String, Hash, and Range with randomization
-# methods. Most of the methods are of one of two kinds. Either they "pick"
-# a random element from the reciever or they randomly "shuffle" the receiver.
-#
-# The most common example is Array#shuffle, which simply randmomizes the
-# order of an array's elements.
-#
-#   [1,2,3].shuffle  #=> [2,3,1]
-#
-# The other methods do similar things for their respective classes.
-#
-# == Authors
-#
-# * Ilmari Heikkinen <mailto:kig@misfiring.net>
-# * Christian Neukirchen <mailto:chneukirchen@gmail.com>
-# * Thomas Sawyer
-#
-# == Copying
-#
-# Copyright (c) 2005 Ilmari Heikkinen, Christian Neukirchen, Thomas Sawyer
-#
-# Ruby License
-#
-# This module is free software. You may use, modify, and/or redistribute this
-# software under the same terms as Ruby.
-#
-# This program is distributed in the hope that it will be useful, but WITHOUT
-# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-# FOR A PARTICULAR PURPOSE.
-
 require 'facets/hash/zipnew'
 require 'facets/string/shatter'
 
-# = Random
+# = Randomization Extensions
 #
-# Randomization core extension methods.
-#
-# This library extends Array, String and Hash with randomization methods.
-# Most of the methods are of one of two kinds. Either they "pick" a random
-# element from the reciever or they randomly "shuffle" the reciever.
+# This library extends Array, String, Hash and other classes with randomization
+# methods. Most of the methods are of one of two kinds. Either they "pick" a
+# random element from the reciever or they randomly "shuffle" the reciever.
 #
 # The most common example is Array#shuffle, which simply randmomizes the
 # order of an array's elements.
@@ -50,11 +14,21 @@ require 'facets/string/shatter'
 #
 # The other methods do similar things for their respective classes.
 #
-module Random
+# The classes are all extended via mixins which have been created within
+# Ruby's Random class.
+#
+# Credit for this work is due to:
+#
+# * Ilmari Heikkinen
+# * Christian Neukirchen
+# * Thomas Sawyer
+#
+class Random
 
   class << self
     # Alias for Kernel#rand.
     alias_method :number, :rand
+
     public :number
   end
 
@@ -62,33 +36,8 @@ module Random
   #  ::Kernel.rand(*args)
   #end
 
-=begin
   #
-  def self.append_features(mod)
-    if mod == ::Object
-      mod.send(:include, Random::Object)
-    elsif mod == ::Range
-      mod.send(:include, Random::Range)
-    elsif mod == ::Array
-      mod.send(:include, Random::Array)
-    elsif mod == ::Hash
-      mod.send(:include, Random::Hash)
-    elsif mod == ::String
-      mod.send(:include, Random::String)
-    elsif mod == ::Integer
-      mod.send(:include, Random::Integer)
-    elsif mod == ::Numeric
-      mod.send(:include, Random::Numeric)
-    else
-      raise TypeError
-    end
-  end
-=end
-
-  #
-
-  module Object
-
+  module ObjectExtensions
     # Random generator that returns true or false.
     # Can also take a block that has a 50/50 chance to being executed.
     #
@@ -102,13 +51,10 @@ module Random
         rand < chance
       end
     end
-
   end
 
   #
-
-  module Range
-
+  module RangeExtensions
     # Return a random element from the range.
     #
     #   (1..4).at_rand           #=> 2
@@ -121,7 +67,6 @@ module Random
     #   ('a'..'z').at_rand       #=> 'f'
     #
     # CREDIT: Lavir the Whiolet, Thomas Sawyer
-
     def at_rand
       first, last = first(), last()
       if first.respond_to?(:random_delta)  # TODO: work on this!!!
@@ -133,55 +78,50 @@ module Random
       else
         to_a.at_rand
       end
-      #elsif first.respond_to?(:succ)
-      #  # optimized algorithm
-      #  if (Fixnum === first || Bignum === first) &&
-      #     (Fixnum === last  || Bignum === last)
-      #    last -= 1 if exclude_end?
-      #    return nil if last < first
-      #    return Random.number(last - first + 1) + first
-      #  end
-      #  # standard algorithm
-      #  return to_a.at_rand
-      #elsif Numeric === first && Numeric === last
-      #  return nil if last < first
-      #  return nil if exclude_end? && last == first
-      #  return (last - first) * Random.number + first
-      #else
-      #  return nil
-      #end
+      ##elsif first.respond_to?(:succ)
+      ##  # optimized algorithm
+      ##  if (Fixnum === first || Bignum === first) &&
+      ##     (Fixnum === last  || Bignum === last)
+      ##    last -= 1 if exclude_end?
+      ##    return nil if last < first
+      ##    return Random.number(last - first + 1) + first
+      ##  end
+      ##  # standard algorithm
+      ##  return to_a.at_rand
+      ##elsif Numeric === first && Numeric === last
+      ##  return nil if last < first
+      ##  return nil if exclude_end? && last == first
+      ##  return (last - first) * Random.number + first
+      ##else
+      ##  return nil
+      ##end
     end
-
   end
 
   #
-  module Integer
-
+  module IntegerExtensions
+    #
     def random_delta(last, exclude_end)
       first = self
       last -= 1 if exclude_end
       return nil if last < first
       return Random.number(last - first + 1) + first
     end
-
   end
 
   #
-  module Numeric
-
+  module NumericExtensions
+    #
     def random_delta(last, exclude_end)
       first = self
       return nil if last < first
       return nil if exclude_end && last == first
       return (last - first) * Random.number + first
     end
-
   end
 
   #
-
-  module Array
-
+  module ArrayExtensions
     # Return a random element from the array.
     #
     #   [1, 2, 3, 4].at_rand           #=> 2
@@ -278,10 +218,10 @@ module Random
     #
     #   a = [1,2,3,4]
     #   a.shuffle!
+    #
     #   a  #=> [2,4,1,3]
     #
     # CREDIT Niel Spring
-
     def shuffle!
       s = size
       each_index do |j|
@@ -297,9 +237,7 @@ module Random
   end
 
   #
-
-  module Hash
-
+  module HashExtensions
     # Returns a random key.
     #
     #   {:one => 1, :two => 2, :three => 3}.pick_key  #=> :three
@@ -395,31 +333,24 @@ module Random
   end
 
   #
+  module StringExtensions
 
-  module String
-
+    #
     def self.included(base)
       base.extend(Self)
     end
 
     # Class-level methods.
-
     module Self
-
       # Returns a randomly generated string. One possible use is
       # password initialization. Takes a max legnth of characters
       # (default 8) and an optional valid char Regexp (default /\w\d/).
       #
-      #--
       # CREDIT George Moschovitis
-      #
-      # NOTE This is not very efficient. Better way?
+      #--
+      # TODO: This is not very efficient. Better way?
       #++
-
       def random(max_length = 8, char_re = /[\w\d]/)
-        # gmosx: this is a nice example of input parameter checking.
-        # this is NOT a real time called method so we can add this
-        # check. Congrats to the author.
         raise ArgumentError.new('char_re must be a regular expression!') unless char_re.is_a?(Regexp)
         string = ""
         while string.length < max_length
@@ -438,7 +369,6 @@ module Random
       def rand_letter
         (Random.number(26) + (Random.number(2) == 0 ? 65 : 97) ).chr
       end
-
     end
 
     # Return a random separation of the string.
@@ -516,11 +446,12 @@ module Random
 
 end
 
-class Object  ; include Random::Object  ; end
-class Range   ; include Random::Range   ; end
-class Array   ; include Random::Array   ; end
-class Hash    ; include Random::Hash    ; end
-class String  ; include Random::String  ; end
-class Integer ; include Random::Integer ; end
-class Numeric ; include Random::Numeric ; end
+class Object  ; include Random::ObjectExtensions  ; end
+class Range   ; include Random::RangeExtensions   ; end
+class Array   ; include Random::ArrayExtensions   ; end
+class Hash    ; include Random::HashExtensions    ; end
+class String  ; include Random::StringExtensions  ; end
+class Integer ; include Random::IntegerExtensions ; end
+class Numeric ; include Random::NumericExtensions ; end
 
+# Copyright (c) 2005 Ilmari Heikkinen, Christian Neukirchen, Thomas Sawyer
