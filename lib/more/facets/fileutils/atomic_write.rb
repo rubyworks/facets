@@ -1,6 +1,8 @@
-require 'tmpdir'
+require 'fileutils' unless defined?(FileUtils)
 
-class File
+module FileUtils
+
+  module_function
 
   # Write to a file atomically. Useful for situations where you don't
   # want other processes or threads to see half-written files.
@@ -16,9 +18,8 @@ class File
   #     file.write("hello")
   #   end
   #
-  def self.atomic_write(file_name, temp_dir = Dir.tmpdir)
+  def atomic_write(file_name, temp_dir = Dir.tmpdir)
     require 'tempfile'  unless defined?(Tempfile)
-    require 'fileutils' unless defined?(FileUtils)
 
     temp_file = Tempfile.new(basename(file_name), temp_dir)
     yield temp_file
@@ -45,3 +46,9 @@ class File
 
 end
 
+class File
+  #
+  def atomic_write(file_name, temp_dir = Dir.tmpdir)
+    FileUtils.atomic(file_name, temp_dir)
+  end
+end

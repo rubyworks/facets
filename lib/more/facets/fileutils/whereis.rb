@@ -8,6 +8,8 @@ module FileUtils
     Win32Exts = %w{.exe .com .bat .cmd}
   end
 
+  module_function
+
   # In block form, yields each ((*program*)) within ((*path*)).  In non-block
   # form, returns an array of each ((*program*)) within ((*path*)).  Returns
   # (({nil})) if not found.
@@ -19,7 +21,6 @@ module FileUtils
   #
   # CREDIT Daniel J. Berger
 
-  module_function
   def whereis(prog, path=ENV['PATH']) #:yield:
     dirs = []
     path.split(File::PATH_SEPARATOR).each{|dir|

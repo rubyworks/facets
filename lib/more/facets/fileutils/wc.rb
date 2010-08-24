@@ -2,6 +2,8 @@ require 'fileutils'
 
 module FileUtils
 
+  module_function
+
   # With no arguments, returns a four element array consisting of the number
   # of bytes, characters, words and lines in _filename_, respectively.
   #
