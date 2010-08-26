@@ -21,4 +21,3 @@ module Kernel
   end
 
 end
-
