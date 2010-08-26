@@ -1,6 +1,4 @@
-# Test facets/class_extension.rb.
-
-Covers 'facets/class_extend'
+Covers 'facets/module/class_extend'
 
 TestCase Module do
 
