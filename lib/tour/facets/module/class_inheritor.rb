@@ -1,10 +1,10 @@
-require 'facets/class_extend'
+require 'facets/module/class_extend'
 
-class Object
+class Module
 
-  # = Inheritor
+  # = Class Inheritor
   #
-  # Create an inheritor "class attribute".
+  # Create an dynamic class inheritable attribute.
   #
   # Inheritor providse a means to store and inherit data via the class
   # heirarchy. An inheritor creates two methods one named after the key
@@ -32,11 +32,6 @@ class Object
   #   X.x => [:a]
   #   Y.x => [:a, :b]
   #
-  # It is interesting to note that the only reason inheritor is needed
-  # at all is becuase Ruby does not allow modules to be "inherited" at
-  # the class-level, or conversely that the class-level is not a module
-  # instead. Otherwise using #super at the class-level would suffice.
-  #
   # NOTE: Adding an inheritor directly to Module or Class will probably
   # not do what is expected. Thankfully that usecase is likely a YAGNI,
   # but in anycase it is even more likely that it is not possible with
@@ -44,7 +39,7 @@ class Object
   #
   # CREDIT: Thomas Sawyer
 
-  def inheritor(key, obj, op=nil, &fop)
+  def class_inheritor(key, obj, op=nil, &fop)
     raise ArgumentError if op && fop
 
     if !fop
@@ -77,30 +72,3 @@ class Object
   end
 
 end
-
-
-class Module
-
-  # Like #inheritor but non-dynamic. The value of the inheritor
-  # is copied from the immediate ancestor on first read.
-  #
-  # CREDIT: Thomas Sawyer
-
-  def copy_inheritor(name, default={})
-    class_extend do
-      define_method(name) do
-        if instance_variable_defined?("@#{name}")
-          instance_variable_get("@#{name}")
-        else
-          if ancestors[1].respond_to?(name)
-            instance_variable_set("@#{name}", ancestors[1].__send__(name).dup)
-          else
-            instance_variable_set("@#{name}", default)
-          end
-        end
-      end
-    end
-  end
-
-end
-
