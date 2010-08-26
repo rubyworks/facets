@@ -24,9 +24,13 @@ which constitute an ever improving source of reusable components. This set of
 libraries is kept light and focused on useful to a wide variety of usecases.
 
 
-== Release Notes
+== Resources
 
-Please see Facets Blog (http://facets.rubyforge.org).
+* Homepage: http://rubyworks.github.com/facets
+* Report Bugs: http://github.com/rubyworks/facets/issues
+* Mailing List: http://groups.google.com/group/facets-universal/topics
+* Wiki: http://wiki.github.com/rubyworks/facets
+* Source Code: http://github.com/rubyworks/facets
 
 
 == Documentation
@@ -46,6 +50,10 @@ disk folks!), so you will find them in the doc/ directory of whatever package
 you have choosen to install. In fact, a good package installer should give you
 the option to install those in the appropriate place in your system anyway
 (eg. in /usr/share/doc/facets/).
+
+* CORE: http://rubyworks/github.com/facetrs/doc/api/core/index.html
+* MORE: http://rubyworks/github.com/facetrs/doc/api/more/index.html
+* STORE: http://rubyworks/github.com/facetrs/doc/api/store/index.html
 
 
 == Installation
