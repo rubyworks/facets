@@ -1,69 +1,3 @@
-# = Timer
-#
-# Provides a strightforward means for controlling time critical execution.
-# Can be used as a "stop watch" timer or as a "time bomb" timer.
-#
-# == Usage
-#
-#   t = Timer.new(10) { raise TimeoutError, "timeout!" }
-#   t.start
-#     :      # done within 10sec timeout
-#   t.stop
-#   t.start
-#     :
-#   if condition then
-#     t.reset       #--> restart timer
-#   end
-#
-# A Kernel method is also provided for easily timing the exectuion of a block.
-#
-#   timed { |timer|
-#
-#      timer.total_time.round #=> 0
-#
-#      sleep 1
-#      timer.total_time.round #=> 1
-#
-#      timer.stop
-#      timer.total_time.round #=> 1
-#
-#      sleep 2
-#      timer.total_time.round #=> 1
-#
-#      timer.start
-#      timer.total_time.round #=> 1
-#
-#      sleep 1
-#      timer.total_time.round #=> 2
-#
-#   }
-#
-# == HISTORY
-#
-# Thanks to Paul Brannan for TimeLimit and Minero Aoki for Timer.
-# These two libraries served as models for building this class.
-#
-# == AUTHORS
-#
-# * Thomas Sawyer
-# * Minero Aoki
-# * Paul Brannan
-#
-# == COPYRIGHT
-#
-#   Copyright (c) 2004 Thomas Sawyer
-#
-# == LICENSE
-#
-#   Ruby License
-#
-#   This module is free software. You may use, modify, and/or redistribute this
-#   software under the same terms as Ruby.
-#
-#   This program is distributed in the hope that it will be useful, but WITHOUT
-#   ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-#   FOR A PARTICULAR PURPOSE.
-
 require 'timeout'  # for TimeoutError
 
 # = Timer
@@ -81,9 +15,9 @@ require 'timeout'  # for TimeoutError
 #     t.reset       #--> restart timer
 #   end
 #
-# A Kernel method is also provided for easily timing the exectuion of a block.
+# A class method is also provided for easily timing the exectuion of a block.
 #
-#   timed { |timer|
+#   Timer.time do |timer|
 #      timer.total_time.round #=> 0
 #
 #      sleep 1
@@ -100,14 +34,15 @@ require 'timeout'  # for TimeoutError
 #
 #      sleep 1
 #      timer.total_time.round #=> 2
-#   }
+#   end
+#
+# Thanks to Paul Brannan for TimeLimit and Minero Aoki for Timer.
+# These two libraries served as models for building this class.
 
 class Timer
 
-  attr_reader :start_time, :end_time
-  attr_accessor :time_limit
-
-  def initialize( time_limit=nil, &block )
+  #
+  def initialize(time_limit=nil, &block)
     # standard timer
     @start_time = nil
     @end_time = nil
@@ -120,6 +55,20 @@ class Timer
     @timer_thread = nil
   end
 
+  #
+  attr_accessor :time_limit
+
+  #
+  def start_time
+    @start_time
+  end
+
+  #
+  def end_time
+    @end_time
+  end
+
+  #
   def on_timeout( &block )
     if block then
       @on_timeout = block
@@ -130,7 +79,6 @@ class Timer
   end
 
   # Start the timer.
-
   def start
     @running = true
     @start_time = Time.now
@@ -151,7 +99,6 @@ class Timer
   end
 
   # Establish a time limit on execution.
-
   def limit( time_limit=nil )
     if @time_limit || time_limit
       @current_thread = Thread.current
@@ -167,7 +114,6 @@ class Timer
   end
 
   # Kill time limit thread, if any.
-
   def defuse
     if @timer_thread
       Thread.kill @timer_thread
@@ -177,7 +123,6 @@ class Timer
 
   # Stops timer and returns total time.
   # If timer was not running returns false.
-
   def stop
     if @running
       defuse
@@ -192,7 +137,6 @@ class Timer
 
   # Stops and resets the timer. If the timer was running
   # returns the total time. If not returns 0.
-
   def reset
     if running?
       r = stop
@@ -208,7 +152,6 @@ class Timer
   #   t.stop
   #   t.start
   #
-
   def reset_limit
     #stop
     #start
@@ -217,19 +160,16 @@ class Timer
   end
 
   # Queries whether the timer is still running.
-
   def running?
     return @running
   end
 
   # Queries whether the timer is still not running.
-
   def stopped?
     return !@running
   end
 
   # Queries total recorded time of timer.
-
   def total_time
     if running? then
       return @total_time + (Time.now - @start_time)
@@ -238,12 +178,16 @@ class Timer
     end
   end
 
-  #
+  # Takes a block and returns the total time it took to execute.
+  def self.time
+    yield( timer = Timer.new.start )
+    return timer.total_time
+  end
+
   # Timer::Dummy - Dummy Timer (i.e. no real time limit)
   #--
-  # NEEDS WORK!
+  # TODO: Timer::Dummy needs some work.
   #++
-
   class Dummy < self
     def start
       if block_given? then
@@ -260,15 +204,4 @@ class Timer
 
 end #class Timer
 
-
-module Kernel
-
-  # Takes a block and returns the total time it took to execute.
-
-  def timed
-    yield( timer = Timer.new.start )
-    return timer.total_time
-  end
-
-end
-
+# Copyright (c) 2004 Thomas Sawyer (Ruby License)
