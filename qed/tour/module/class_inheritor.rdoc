@@ -1,0 +1,122 @@
+== Module#class_inheritor
+
+  require 'facets/module/class_inheritor'
+
+Subclass with inheritor
+
+    c = Class.new do
+      class_inheritor :koko, [], :+
+      koko! << 1
+    end
+
+    d = Class.new(c) do
+      class_inheritor :koko, [], :+
+      koko! << 2
+    end
+
+We can see that
+
+    c.koko!.assert == [1]
+    c.koko.assert  == [1]
+
+    d.koko!.assert == [2]
+    d.koko.assert  == [1,2]
+
+Subclass without class_inheritor
+
+    c = Class.new do
+      class_inheritor :koko, [], :+
+      koko! << 1
+    end
+
+    d = Class.new(c)
+
+Likewise
+
+    c.koko!.assert == [1]
+    c.koko.assert  == [1]
+
+    d.koko!.assert == []
+    d.koko.assert  == [1]
+
+
+Include module with class_inheritor
+
+    c = Class.new do
+      class_inheritor :x, {}, :merge
+      x![:a] = 1
+    end
+
+    m = Module.new do
+      class_inheritor :x, {}, :merge
+      x![:b] = 2
+    end
+
+    d = Class.new(c) do
+      include m
+      class_inheritor :x, {}, :merge
+      x![:c] = 3
+    end
+
+Then
+
+    c.x.assert == {:a=>1}
+
+    m.x[:b].assert == 2
+
+    d.x.assert == {:a=>1,:b=>2,:c=>3}
+
+    c.x[:a].assert == 1
+    c.x[:b].assert == nil
+    c.x[:c].assert == nil
+
+    d.x[:a].assert == 1
+    d.x[:b].assert == 2
+    d.x[:c].assert == 3
+
+And
+
+    d.x![:d] = 4
+    d.x[:d].assert == 4
+
+
+Using #concat as the class_inheritor operator
+
+    c = Class.new do
+      class_inheritor :relations, [], :concat
+    end
+
+    d = Class.new(c) do
+      #class_inheritor :relations, [], :concat
+    end
+
+    c.relations! << 1
+    c.relations! << 2
+    d.relations! << 3
+
+Notice
+
+    c.relations.assert == [1,2]
+    d.relations.assert == [1,2,3]
+
+
+On Module
+
+    m = Module.new do
+      class_inheritor :koko, [], :+
+      koko! << 1
+    end
+
+    c1 = Class.new do
+      include m
+      #class_inheritor :koko, [], :+
+      koko! << 2
+      koko! << 3
+    end
+
+    c2 = Class.new do
+      include m
+      #class_inheritor :koko, [], :+
+      koko! << 4
+    end
+
