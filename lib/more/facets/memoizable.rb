@@ -42,7 +42,7 @@ module Memoizable
 
   #
   def self.append_features(base)
-    Module == base ? super(base) :  base.extend(self)
+    Module == base ? super(base) : base.extend(self)
   end
 
   # Directive for making your functions faster by trading space for time.
