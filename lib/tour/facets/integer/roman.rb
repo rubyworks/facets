@@ -45,7 +45,7 @@ class String
   # Considers string a Roman numeral numeral,
   # and converts it to the corresponding integer.
   def roman
-    roman = self
+    roman = upcase
     raise unless roman?
     last = roman[-1,1]
     roman.reverse.split('').inject(0) do |result, c|
@@ -60,7 +60,7 @@ class String
 
   # Returns true iif the subject is a valid Roman numeral.
   def roman?
-    ROMAN =~ self
+    ROMAN =~ upcase
   end
 
 end
