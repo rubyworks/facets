@@ -19,11 +19,12 @@ class Module
   #
   # CREDIT: Trans
 
-  def attr_switch_accessor(*args)
+  def attr_accessor!(*args)
     attr_reader!(*args) + attr_writer!(*args)
   end
 
   alias_method :attr_toggler,  :attr_accessor!
+  alias_method :alias_switcher, :alias_accessor!
 
   # Create aliases for flag accessors.
   #
@@ -37,8 +38,6 @@ class Module
       alias_method("#{name}!", "#{orig}!")
     end
   end
-  alias_method :alias_switcher, :alias_accessor!
-  alias_method :alias_toggler,  :alias_accessor!
 
   # Create a flaggable attribute. This creates a single methods
   # used to set an attribute to "true".
