@@ -1,9 +1,10 @@
-require 'facets/memoize'
+require 'facets/memoizable'
 
 TestCase Class do
 
   Instance "class with memoized attribuite" do
     Class.new do
+      include Memoizable
       def initialize(a)
         @a = a
       end
