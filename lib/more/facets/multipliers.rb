@@ -1,41 +1,6 @@
-# = Multipliers
-#
-# == Synopsis
-#
-# Adds methods to Numeric to make working with magnitudes
-# (kilo, mega, giga, milli, micro, etc.)
-#
-# == History
-#
-#   Thanks to Rich Kilmer and bytes.rb which inspired this library.
-#
-# == Notes
-#
-# * This library is not compatible with STICK's units.rb (an spin-off
-#   of Facets old units.rb library). Do not attempt to use both at
-#   the same time.
-#
-# == Authors
-#
-# * Thomas Sawyer
-#
-# == Copying
-#
-# Copyright (c) 2005 Thomas Sawyer
-#
-# Ruby License
-#
-# This module is free software. You may use, modify, and/or redistribute this
-# software under the same terms as Ruby.
-#
-# This program is distributed in the hope that it will be useful, but WITHOUT
-# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-# FOR A PARTICULAR PURPOSE.
-
-#
 class Numeric
 
-  # = Multipliers
+  # = Numeric::Multipliers
   #
   # Adds methods to Numeric to make working with
   # magnitudes (kilo, mega, giga, milli, micro, etc.)
@@ -51,6 +16,8 @@ class Numeric
   #   1000 / 1.kilo        #=> 1
   #   1024 / 1.kibi        #=> 1
   #
+  # Thanks to Rich Kilmer and bytes.rb which inspired this library.
+
   module Multipliers
 
     # SI Multipliers
@@ -95,3 +62,4 @@ class Numeric
   include Multipliers
 end
 
+# Copyright (c) 2005 Thomas Sawyer
