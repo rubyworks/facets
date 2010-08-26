@@ -25,8 +25,6 @@ class Module
     made
   end
 
-  alias_method :attr_reader?, :attr_tester
-
   # Create aliases for flag reader.
   #
   # CREDIT: Trans
@@ -38,7 +36,6 @@ class Module
       alias_method("#{name}?", "#{orig}?")
     end
   end
-  alias_method :alias_reader?, :alias_tester
 
 end
 
