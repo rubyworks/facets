@@ -1,7 +1,7 @@
 require 'facets/platform'
 
-# An extended rendition of the Ruby's standard Config module.
-module Config
+# An extended rendition of the Ruby's standard RbConfig module.
+module RbConfig
 
   #
   def self.inspect
