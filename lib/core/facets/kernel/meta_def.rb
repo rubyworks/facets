@@ -16,7 +16,5 @@ module Kernel
     end
   end
 
-  alias_method :metadef, :meta_def
-
 end
 
