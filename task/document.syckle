@@ -2,36 +2,36 @@
 ridoc:
   service : RiDoc
   output  : ri
-  include : [lib/core/facets, lib/more/facets, lib/std/facets]
+  include : [lib/core/facets, lib/more/facets, lib/store/facets]
 
 rdoc-core:
   service : RDoc
-  template: redfish #hanna
+  template: tabfish
   output  : site/doc/api/core
-  title   : Facets Core API
-  main    : doc/README.core
+  title   : Facets Core
+  main    : README.rdoc
   extra   : "-a"
-  include : [doc/README.core, README.rdoc, lib/core]
+  include : [README.rdoc, lib/core]
   active  : true
 
 rdoc-more:
   service : RDoc
-  template: redfish
+  template: tabfish
   output  : site/doc/api/more
-  title   : Facets More API
-  main    : doc/README.more
+  title   : Facets More
+  main    : README.rdoc
   extra   : "-a"
-  include : [doc/README.more, README.rdoc, lib/more]
+  include : [README.rdoc, lib/more]
   active  : true
 
-rdoc-stnd:
+rdoc-tour:
   service : RDoc
-  template: redfish #hanna
-  output  : site/doc/api/std
-  title   : Facets Standard API
-  main    : doc/README.stnd
+  template: tabfish
+  output  : site/doc/api/tour
+  title   : Facets Tour
+  main    : README.rdoc
   extra   : "-a"
-  include : [doc/README.stnd, README.rdoc, lib/std]
+  include : [README.rdoc, lib/tour]
   active  : true
 
 yardcore:

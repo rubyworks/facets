@@ -8,6 +8,6 @@ rubyforge:
   groupid: 804
   sitemap:
     site    : '.'
-  #  doc/rdoc: rdoc
-  #  doc/yard: yard
+    #doc/rdoc: rdoc
+    #doc/yard: yard
   active: false

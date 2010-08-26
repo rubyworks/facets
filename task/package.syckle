@@ -3,6 +3,4 @@ box:
   service : Box
   types   : [gem, gz]
   spec    : true
-  include : [demo, lib, meta, task, test, "[A-Z]*"]
-  exclude : []
 
