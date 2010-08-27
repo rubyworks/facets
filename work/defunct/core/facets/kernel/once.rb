@@ -1,9 +1,8 @@
-module Kernel #:nodoc:
+module Kernel
 
-  # Directive for making your functions faster by trading
-  # space for time. When you "memoize" a method/function
-  # using #once its results are cached so that later calls
-  # with the same arguments return results from the cache
+  # Simple directive for making your functions faster by trading space for time.
+  # When you "memoize" a method/function using #once its results are cached so
+  # that later calls with the same arguments return results from the cache
   # instead of recalculating them.
   #
   #   class T
@@ -13,18 +12,23 @@ module Kernel #:nodoc:
   #     def a
   #       "#{@a ^ 3 + 4}"
   #     end
-  #     memoize :a
+  #     once :a
   #   end
   #
   #   t = T.new
   #   t.a.__id__ == t.a.__id__  #=> true
   #
-  # This method can also be used at the instance level
-  # to cache singleton/eigen methods.
+  # Results are cached in an instance variable, so they are per-object.
+  #
+  # This method can also be used at the instance level to cache singleton
+  # methods.
+  #
+  # Note, this method also used to be aliased as #memoize, but this has been
+  # deprecated in favor of the more robust Memoizable mixin module.
   #
   # CREDIT Robert Feldt
 
-  def memoize(*ids)
+  def once(*ids)
     if ids.empty?
       @_once ||= Hash::new{|h,k| h[k]={}}
     else
@@ -35,7 +39,7 @@ module Kernel #:nodoc:
           private '#{ m }:once'
           def #{ m }(*__a__,&__b__)
             c = once['#{ m }']
-            k = [__a__,__b__]
+            k = [__a__, block_given?]
             if c.has_key? k
               c[k]
             else
@@ -47,8 +51,4 @@ module Kernel #:nodoc:
     end
   end
 
-  # +once+ is the term used in the PickAxe so it has been adopted also.
-  alias_method :once, :memoize
-
 end
-
