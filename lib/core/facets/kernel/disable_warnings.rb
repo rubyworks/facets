@@ -10,6 +10,9 @@ module Kernel
     $VERBOSE = verbose
   end
 
+  # DEPRECATE: Use #disable_warnings instead.
+  alias_method :silence_warnings, :disable_warnings
+
   #
   # CREDIT: Trans
 
