@@ -1,16 +1,13 @@
 class Hash
 
   # Same as Hash#merge but recursively merges sub-hashes.
-  #
-  # DEPRECATE: This method will be deprecated in favor of
-  # <code>recursive.merge</code>.
 
-  def recursive_merge(other)
+  def deep_merge(other)
     hash = self.dup
     other.each do |key, value|
       myval = self[key]
       if value.is_a?(Hash) && myval.is_a?(Hash)
-        hash[key] = myval.recursive_merge(value)
+        hash[key] = myval.deep_merge(value)
       else
         hash[key] = value
       end
@@ -19,15 +16,12 @@ class Hash
   end
 
   # Same as Hash#merge! but recursively merges sub-hashes.
-  #
-  # DEPRECATE: This method will be deprecated in favor of
-  # <code>recursive.merge!</code>.
 
-  def recursive_merge!(other)
+  def deep_merge!(other)
     other.each do |key, value|
       myval = self[key]
       if value.is_a?(Hash) && myval.is_a?(Hash)
-        myval.recursive_merge!(value)
+        myval.deep_merge!(value)
       else
         self[key] = value
       end
