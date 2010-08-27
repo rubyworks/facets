@@ -24,6 +24,8 @@ class Array
       yld = yld   || lambda{ |v| v }  # ? to_enum
       __send__(op) do |v|
         case v
+        when String # b/c of 1.8
+          yld.call(v)
         when *types
           res = v.recursively(*types, &block).__send__(op,&yld)
           rec.call(res)
