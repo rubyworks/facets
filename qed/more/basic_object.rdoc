@@ -1,0 +1,22 @@
+== BasicObject
+
+  require 'facets/basicobject'
+
+  o = Class.new(BasicObject).new
+
+Should ignore new kernel methods.
+
+  Kernel.module_eval { def xxx ; end }
+
+  expect NoMethodError do
+    o.xxx
+  end
+
+Should ignore new object methods.
+
+  Object.class_eval { def yyy ; end }
+
+  expect NoMethodError do
+    o.yyy
+  end
+
