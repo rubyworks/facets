@@ -1,4 +1,4 @@
-Covers 'facets/enumerable/recursive'
+Covers 'facets/enumerable/recursively'
 
 Case Enumerable do
 
@@ -12,30 +12,17 @@ Case Enumerable do
     end
   end
 
-  Unit :recursive => "each" do
+  Unit :recursively => "each" do
     e = c.new [1,2,['a','b']]
     a = []
-    e.recursive(Enumerable).each{ |v| a << v }
+    e.recursively(Enumerable).each{ |v| a << v }
     a.assert == [1,2,'a','b']
   end
 
-  Unit :recursive => "map" do
+  Unit :recursively => "map" do
     e = c.new [1,2,['a','b']]
-    a = e.recursive(Enumerable).map{ |v| v.succ }
+    a = e.recursively(Enumerable).map{ |v| v.succ }
     a.assert == [2,3,['b','c']]
-  end
-
-end
-
-tests Enumerable::Recursor do
-
-  unit :each do
-  end
-
-  unit :map do
-  end
-
-  unit :map! do
   end
 
 end

@@ -1,21 +1,24 @@
 covers 'facets/kernel/silence'
 
-# TODO: need to write tests for #silence and related methods
 tests Kernel do
 
-  unit :silence do
+  # TODO: figure out how to test silence methods
+
+  context "Not straight foward to test since they effect output."
+
+  omit :silence do
   end
 
-  unit :silence_stream do
+  omit :silence_stream do
   end
 
-  unit :silence_stderr do
+  omit :silence_stderr do
   end
 
-  unit :silence_stdout do
+  omit :silence_stdout do
   end
 
-  unit :silently do
+  omit :silently do
   end
 
 end

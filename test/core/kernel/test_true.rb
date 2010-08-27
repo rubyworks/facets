@@ -2,23 +2,19 @@ covers 'facets/kernel/true'
 
 testcase Kernel do
 
-  unit :true? do
+  unit :true? => "nothing is true? but true itself" do
     true.assert.true?
-    1.assert.true?
-    :a.assert.true?
-  end
 
-  unit :true? do
     nil.refute.true?
     false.refute.true?
+    1.refute.true?
+    :a.refute.true?
   end
 
-  unit :false? do
-    nil.assert.false?
+  unit :false? => "nothing is false? but false itself" do
     false.assert.false?
-  end
 
-  unit :false? do
+    nil.refute.false?
     true.refute.false?
     1.refute.false?
     :a.refute.false?

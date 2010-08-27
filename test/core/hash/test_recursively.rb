@@ -6,7 +6,7 @@ tests Hash do
   Unit :recursively => "each" do
     h = {:a=>1,:b=>{:c=>3}}
     r = []
-    h.recursive.each{ |k,v| r << [k,v] }
+    h.recursively.each{ |k,v| r << [k,v] }
     r.assert.include? [:a,1]
     r.assert.include? [:b,{:c=>3}]
     r.assert.include? [:c,3]

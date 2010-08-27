@@ -15,7 +15,7 @@ tests Class do
   end
 
   c.class_eval do
-    preallocate M
+    preallocate m
   end
 
   #

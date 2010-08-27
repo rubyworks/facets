@@ -8,12 +8,12 @@ tests Kernel do
 
   unit :qua_class do |o|
     s = (class << o; self; end)
-    o.qua_class.assert == o
+    o.qua_class.assert == s
   end
 
   unit :quaclass do |o|
     s = (class << o; self; end)
-    o.quaclass.assert == o
+    o.quaclass.assert == s
   end
 
 end

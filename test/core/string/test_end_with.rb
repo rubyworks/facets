@@ -9,7 +9,7 @@ tests String do
 
   unit :ends_with? do
     s = "xxboo"
-    s.assert.end_with?('boo')
+    s.assert.ends_with?('boo')
   end
 
 end

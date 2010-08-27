@@ -29,51 +29,51 @@ tests Object do
 end
 
 tests TrueClass do
-  unit :dup? do |o|
+  unit :dup? do
     true.refute.dup?
   end
 
-  unit :clone? do |o|
+  unit :clone? do
     true.refute.clone?
   end
 end
 
 tests FalseClass do
-  unit :dup? do |o|
+  unit :dup? do
     false.refute.dup?
   end
 
-  unit :clone? do |o|
+  unit :clone? do
     false.refute.clone?
   end
 end
 
 tests NilClass do
-  unit :dup? do |o|
+  unit :dup? do
     nil.refute.dup?
   end
 
-  unit :clone? do |o|
+  unit :clone? do
     nil.refute.clone?
   end
 end
 
 tests Symbol do
-  unit :dup? do |o|
+  unit :dup? do
     :a.refute.dup?
   end
 
-  unit :clone? do |o|
+  unit :clone? do
     :a.refute.clone?
   end
 end
 
 tests Numeric do
-  unit :dup? do |o|
+  unit :dup? do
     1.refute.dup?
   end
 
-  unit :clone? do |o|
+  unit :clone? do
     1.refute.clone?
   end
 end

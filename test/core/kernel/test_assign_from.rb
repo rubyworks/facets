@@ -31,7 +31,7 @@ tests Kernel do
     o1.b = 2
 
     o2 = c2.new
-    o2.assign_from(c1)
+    o2.assign_from(o1, :a, :b)
 
     o2.a.assert == 1
     o2.b.assert == 2
