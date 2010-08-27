@@ -1,6 +1,6 @@
 name: facets
 version: 3.0.0
-path: [lib/core, lib/more, lib/std]
+path: [lib/core, lib/more, lib/tour]
 
 requires:
   - syckle (build)
