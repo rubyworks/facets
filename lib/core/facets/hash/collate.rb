@@ -8,31 +8,18 @@ class Hash
   #
   # CREDIT: Tilo Sloboda, Gavin Kistner (Phrogz)
 
-  def collate(other_hash)
+  def collate(other)
     h = Hash.new
-    # -- Prepare, ensuring every existing key is already an Array
+    (keys + other.keys).each do |key|
+      h[key] = []
+    end
     each do |key, value|
-      if value.is_a?(Array)
-        h[key] = value
-      else
-        h[key] = [value]
-      end
+      h[key] << value
     end
-    # -- Collate with values from other_hash
-    other_hash.each do |key, value|
-      if h[key]
-        if value.is_a?(Array)
-          h[key].concat(value)
-        else
-          h[key] << value
-        end
-      elsif value.is_a?(Array)
-        h[key] = value
-      else
-        h[key] = [value]
-      end
+    other.each do |key, value|
+      h[key] << value
     end
-    # -- each{ |key, value| value.uniq! } if options[ :uniq ]
+    h.each{ |k,v| v.flatten! }
     h
   end
 
