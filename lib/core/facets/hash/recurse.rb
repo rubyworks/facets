@@ -1,19 +1,18 @@
 class Hash
 
   # Apply a block to hash, and recursively apply that block
-  # to each subhash.
+  # to each sub-hash or +types+.
   #
   #   h = {:a=>1, :b=>{:b1=>1, :b2=>2}}
-  #
-  #   g = h.recursively{|h| h.inject({}){|h,(k,v)| h[k.to_s] = v; h} }
-  #
+  #   g = h.recurse{|h| h.inject({}){|h,(k,v)| h[k.to_s] = v; h} }
   #   g  #=> {"a"=>1, "b"=>{"b1"=>1, "b2"=>2}}
   #
-  # WARNING: Use #recusive instead of #recursively for future versions.
-  def recursively(&block)
+  def recurse(*types, &block)
+    types = [self.class] if types.empty?
     h = inject({}) do |hash, (key, value)|
-      if value.is_a?(Hash)
-        hash[key] = value.recursively(&block)
+      case value
+      when *types
+        hash[key] = value.recurse(&block)
       else
         hash[key] = value
       end
@@ -22,9 +21,9 @@ class Hash
     yield h
   end
 
-  # In place form of #recursively.
-  def recursively!(&block)
-    replace(recursively(&block))
+  # In place form of #recurse.
+  def recurse!(&block)
+    replace(recurse(&block))
   end
 
 end

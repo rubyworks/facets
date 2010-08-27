@@ -1,18 +1,18 @@
 class Array
 
   # Apply a block to array, and recursively apply that block
-  # to each subarray.
+  # to each sub-array or +types+.
   #
   #   arr = ["a", ["b", "c", nil], nil]
-  #   arr.recursively{|a| a.compact! }
+  #   arr.recurse{ |a| a.compact! }
   #   #=> ["a", ["b", "c"]]
   #
-  # DEPRECATE: Enumerable#recursive is a more powerful solution.
-  def recursively(&block)
-    #warn "Use #recusive instead of #recursively for future versions"
+  def recurse(*types, &block)
+    types = [self.class] if types.empty?
     a = inject([]) do |array, value|
-      if value.is_a?(Array)
-        array << value.recursively(&block)
+      case value
+      when *types
+        array << value.recurse(&block)
       else
         array << value
       end
@@ -21,11 +21,9 @@ class Array
     yield a
   end
 
-  # In place form of #recursively.
-
-  def recursively!(&block)
-    replace(recursively(&block))
+  # In place form of #recurse.
+  def recurse!(&block)
+    replace(recurse(&block))
   end
 
 end
-
