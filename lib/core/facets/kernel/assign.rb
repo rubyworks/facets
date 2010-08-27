@@ -45,12 +45,6 @@ module Kernel
     self
   end
 
-  ## DEPRECATED: Use #assign instead.
-  ##def populate(*a,&b)
-  ##  warn 'use #assign instead of #populate for future versions'
-  ##  assign(*a,&b)
-  ##end
-
   # Set attribute writers using like readers from another object.
   #
   #   class AssignExample
@@ -71,7 +65,7 @@ module Kernel
   # TODO: Should this be called #set_from ?
 
   def assign_from(obj, *fields)
-    fields.each do |k|
+    fields.flatten.each do |k|
       send("#{k}=", obj.__send__("#{k}"))  #if self.respond_to?("#{k}=") && obj.respond_to?("#{k}")
     end
   end
