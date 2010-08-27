@@ -8,10 +8,4 @@ tests Kernel do
     x.x.assert == "x"
   end
 
-  unit :metadef do
-    x = Class.new
-    x.metadef(:x){"x"}
-    x.x.assert == "x"
-  end
-
 end
