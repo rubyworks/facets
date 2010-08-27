@@ -81,7 +81,7 @@ class File
       yield(new_str)
     ensure
       if old_str != new_str
-        open(name, "w#{mode}") { |file| file.write(str) }
+        open(name, "w#{mode}") { |file| file.write(new_str) }
       end
     end
   end
