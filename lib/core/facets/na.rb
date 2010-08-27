@@ -1,4 +1,3 @@
-
 # N/A exception is useful for specifying non-argument defaults when +nil+
 # is a valid value.
 #
@@ -10,5 +9,7 @@
 # NA is a subclass of ArgumentError.
 
 class NA < ArgumentError
+  class << self
+    def method_missing(*); self; end
+  end
 end
-
