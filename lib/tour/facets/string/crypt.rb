@@ -13,10 +13,4 @@ class String
     _crypt(salt)
   end
 
-  # Common Unix cryptography in-place method.
-
-  def crypt!(salt=nil)
-    replace(crypt(salt))
-  end
-
 end
