@@ -9,19 +9,20 @@
 
 == Introduction
 
-Ruby Facets is the single largest collection of general purpose method
-extensions and system additions for the Ruby programming language.
+Ruby Facets is the premiere collection of general purpose method
+extensions and standard additions for the Ruby programming language.
 
-The CORE extensions is a large collection of methods which extend the
-core capabilities of Ruby's built-in classes and modules. This collection
-of extension methods are unique by virtue of their atomicity. The methods
-are generally stored in individual files so that each can be required
-independently. This gives developers the potential for much finer control
-over which extra methods to bring into their code.
+Facets houses the largest single collection of methods available for
+extending the core capabilities of Ruby's built-in classes and modules.
+This collection of extension methods are unique by virtue of their atomicity.
+The methods are stored in individual files so that each can be required
+independently. This gives developers the potential for much finer control over
+which extra methods to bring into their code.
 
-The MORE additions are a collection of classes, modules and lightweight systems
-which constitute an ever improving source of reusable components. This set of
-libraries is kept light and focused on useful to a wide variety of usecases.
+In addition Facets provides a collection of extensions to Ruby standard library
+plus a small collection of add-on classes and modules. Together these
+libraries constitute an ever improving source of reusable components, suitable
+to a wide variety of usecases.
 
 
 == Resources
@@ -29,31 +30,21 @@ libraries is kept light and focused on useful to a wide variety of usecases.
 * Homepage: http://rubyworks.github.com/facets
 * Report Bugs: http://github.com/rubyworks/facets/issues
 * Mailing List: http://groups.google.com/group/facets-universal/topics
-* Wiki: http://wiki.github.com/rubyworks/facets
+* Wiki Pages: http://wiki.github.com/rubyworks/facets
 * Source Code: http://github.com/rubyworks/facets
 
 
 == Documentation
 
 Facets has special documentation needs due to it's extensive bredth.
-The RDocs generated when installing via RubyGems, are unweildly because it
-combines all of Facets in one set of docs. Hopefully we can remedy this in
-the future. In the mean time the gem package includes better documentation
---divided into two sections in the doc/rdoc directory.
-
-Online documentaiton is available at http://facets.rubyforge.org/learn.html.
-There is a "Quick Doc" feature that can be a bit more convenient then the usual
-RDocs. Prior to 2.3.1 off-line docs had to be downloaded via a separate package,
-but this is no longer the case. I've seen past the stigma of not including
-documentation along with the package itself (the extra 500K isn't even a floppy
-disk folks!), so you will find them in the doc/ directory of whatever package
-you have choosen to install. In fact, a good package installer should give you
-the option to install those in the appropriate place in your system anyway
-(eg. in /usr/share/doc/facets/).
+The RDocs generated when installing via RubyGems are unweildly because it
+combines all of Facets in one set of docs. (Hopefully we can remedy this in
+the future). In the mean time better organized online documentation 
+is available at http://rubyworks.github.com/facets/learn.html.
 
 * CORE: http://rubyworks/github.com/facetrs/doc/api/core/index.html
 * MORE: http://rubyworks/github.com/facetrs/doc/api/more/index.html
-* STORE: http://rubyworks/github.com/facetrs/doc/api/store/index.html
+* TOUR: http://rubyworks/github.com/facetrs/doc/api/tour/index.html
 
 
 == Installation
@@ -70,16 +61,6 @@ Then download and unpack the .tar.gz package and run:
   $ sudo setup.rb
 
 
-== Compatibility w/ 1.x
-
-Prior to 2.0, Facets was divided between CORE and MORE --core extensions 
-vs. classes and modules, respectively. With 2.0, the notion of "CORE" has taken
-on a slightly different meaning. Instead CORE now consists of the libraries that
-are thought "essential" and as such are loaded automatically when using 
-++require "facets"++. While still primarily made up of extension methods, some 
-modules and classes may now belong to core as well.
-
-
 == Mission
 
 Facets holds to the notion that the more we can reasonably integrate into
@@ -94,15 +75,40 @@ will be able to serve the community. There are a number of advantages here:
 
 == Usage
 
-For information in usage, please see the special README for the specific
-set of libraries:
+=== CORE Library
 
-  README.core     Core Extensions
-  README.more     Standard Extensions & Additions
+At the heart of Ruby Facets is the CORE extensions library. CORE provides
+a sizable collection of generally useful methods, along with a few supporting
+classes, that extend the functionality of Ruby's core classes and modules.
 
-General usage of the CORE library is provided via:
+By definition CORE contains anything that will load automatically when
+issuing:
 
   require 'facets'
+
+If you plan to use more then a few of Facets core method it is recommended that you require the main facility.
+
+  require 'facets'
+
+This loads all the CORE functionality at once.
+
+Of course you can use the CORE library piecemeal if you prefer. The general require statement for a core extensions library is:
+
+  require 'facets/<class|module>/<method-lib>'
+
+For example:
+
+  require 'facets/time/stamp'
+
+Most "atoms" contain only one method, but a few exceptions occur when methods are closely tied together.
+
+You can load per-class or per-module groups of core methods by requiring the class or module by name. For example"
+
+  require 'facets/time'
+
+Will require all the core Time method extensions.
+
+Note that some methods that were part of CORE in 1.8 and earlier are now part of MORE libraries. A good example is 'random.rb'. There were separated because they had more specialized use cases, where as CORE extensions are intended as general purpose.
 
 This is the recommended usage. However, you can also "cherry pick" core
 methods. While there are exceptions the rule of thumb for loading a core
@@ -110,7 +116,32 @@ method is:
 
   require 'facets/{class|module}/{method}'
 
-See README.core for more information.
+
+=== MORE Library
+
+On top of the extensive Core library, Facet provides a small collection
+of additional modules and classes, as well as extended versions of
+modules and classes in Ruby's Standard library.
+
+Use the More library like you would any other 3rd party library.
+The only difference between Facets More library and other libraries
+is the lack of any enclosing @Facets::@ namespace. This is becuase
+the libraries provided by Facets are considerd fairly low-level.
+
+When using Facets' extended versions of Ruby's standard libraries,
+the More libraries have to loaded manually, of course. However you
+do not need to load Ruby's library first, as the Facets' library
+will do that automatically.
+
+For example, normally one load Ruby's OpenStruct class via:
+
+  require 'ostruct'
+
+To load 'ostruct.rb' plus Facets extensions for it simply use:
+
+  require 'facets/ostruct'
+
+instead.
 
 Using the Facets/MORE library of modules, classes or microframeworks is
 essentially the same. For example:
@@ -119,6 +150,40 @@ essentially the same. For example:
 
 Again, for details pertaining to the functionality of each feature, please see
 the API Docs.
+
+
+== Method File Names
+
+Operator method redirect files are stored using English names. For instance for Proc#* is 'proc/op_mul'.
+
+For reference, here is the chart.
+
+     +@   => op_plus_self
+     -@   => op_minus_self
+     +    => op_plus
+     -    => op_minus
+     **   => op_pow
+     *    => op_mul
+     /    => op_div
+     %    => op_mod
+     ~    => op_tilde
+     <=>  => op_cmp
+     <<   => op_lshift
+     >>   => op_rshift
+     <    => op_lt
+     >    => op_gt
+     ===  => op_case_eq
+     ==   => op_equal
+     =~   => op_apply
+     <=   => op_lt_eq
+     >=   => op_gt_eq
+     |    => op_or
+     &    => op_and
+     ^    => op_xor
+     []=  => op_store
+     []   => op_fetch
+
+Facets simply takes the '*' and translates it into a string acceptable to all file systems. Also, if a method ends in '=', '?' or '!' it is simply removed.
 
 
 == Contribute
@@ -159,7 +224,7 @@ right away. Thanks.
 The collection PER COLLECTION is licensed as follows:
 
   Ruby Facets
-  Copyright (c) 2004-2006 Thomas Sawyer
+  Copyright (c) 2004,2010 Thomas Sawyer
 
   Distributed under the terms of the Ruby license.
 
@@ -172,9 +237,8 @@ with the Ruby license (namely the GPL) or the original author has given
 permission for inclusion of their code under such license.
 
 
-Ruby Facets, Copyright (c)2005,2006,2007,2008 Thomas Sawyer / Tiger Ops
+"ALL YOUR BASE ARE BELONG TO RUBY!"
 
-ALL YOUR BASE ARE BELONG TO RUBY!
+Ruby Facets, Copyright (c)2005,2006,2007,2008,2009,2010 Thomas Sawyer
 
 Do you Ruby? (http://ruby-lang.org)
-
