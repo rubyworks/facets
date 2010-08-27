@@ -69,39 +69,5 @@ module Kernel
     silence_stream(STDOUT) { yield }
   end
 
-=begin
-  # Sets $VERBOSE to nil for the duration of the block
-  # and back to its original value afterwards...
-  #
-  #   silence_warnings do
-  #     value = noisy_call # no warning voiced
-  #   end
-  #
-  #   noisy_call  # no warning is voiced
-  #
-  # CREDIT: David Heinemeier Hansson
-
-  def silence_warnings
-    old_verbose, $VERBOSE = $VERBOSE, nil
-    yield
-  ensure
-    $VERBOSE = old_verbose
-  end
-
-  alias_method :disable_warnings, :silence_warnings
-
-  # Sets $VERBOSE to true for the duration of the block
-  # and back to its original value afterwards.
-  #
-  # CREDIT: David Heinemeier Hansson
-
-  def enable_warnings
-    old_verbose, $VERBOSE = $VERBOSE, true
-    yield
-  ensure
-    $VERBOSE = old_verbose
-  end
-=end
-
 end
 
