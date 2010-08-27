@@ -1,8 +1,8 @@
-require 'facets/instance_function'
+covers 'facets/instance_function'
 
-TestCase Module do
+tests Module do
 
-  Instance "using instance_function" do
+  instance "using instance_function" do
     Module.new do
       instance_function
       def self.jumble(obj, arg)
@@ -24,4 +24,3 @@ TestCase Module do
   end
 
 end
-

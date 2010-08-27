@@ -1,6 +1,6 @@
-Covers 'facets/module/class_extend'
+covers 'facets/module/class_extend'
 
-TestCase Module do
+tests Module do
 
   instance "module using class_extend" do
     Module.new do

@@ -1,6 +1,6 @@
-Covers 'facets/thread.rb'
+covers 'facets/thread.rb'
 
-TestCase Array do
+tests Array do
 
   unit :threaded_map do
     r = [1,2,3].threaded_map{ |e| e + 1 }

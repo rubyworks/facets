@@ -1,6 +1,6 @@
-Covers 'facets/partial.rb'
+covers 'facets/partial.rb'
 
-TestCase Proc do
+tests Proc do
 
   unit :partial => "first argument" do
     f = Proc.new{ |a,b,c| a + b + c }
@@ -21,4 +21,3 @@ TestCase Proc do
   end
 
 end
-

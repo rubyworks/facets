@@ -1,6 +1,6 @@
-Covers 'facets/methodspace'
+covers 'facets/method_space'
 
-TestCase Class do
+tests Class do
 
   unit :method_space => "via a block" do
     c = Class.new do
