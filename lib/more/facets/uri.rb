@@ -21,8 +21,7 @@
 
 require 'uri'
 #require 'cgi'
-
-require 'facets/blank'
+require 'facets/kernel/blank'
 
 module URI
 
