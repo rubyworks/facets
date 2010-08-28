@@ -1,6 +1,6 @@
 require 'facets/kernel/try_dup'
 
-class Object
+class Object  # module Kernel ?
   # Can you safely call #dup on this object?
   # False for nil, false, true, symbols, and numbers; true otherwise.
   def dup?   ; true ; end

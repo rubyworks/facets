@@ -1,4 +1,4 @@
-class Object
+class Object  # module Kernel ?
   # Get or set state of object.
   #
   #   class StateExample
