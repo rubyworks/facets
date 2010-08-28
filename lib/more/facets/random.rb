@@ -1,5 +1,6 @@
 require 'facets/hash/zipnew'
 require 'facets/string/shatter'
+require 'facets/kernel/maybe'
 
 # = Randomization Extensions
 #
@@ -35,23 +36,6 @@ class Random
   #def self.number(*args)
   #  ::Kernel.rand(*args)
   #end
-
-  #
-  module ObjectExtensions
-    # Random generator that returns true or false.
-    # Can also take a block that has a 50/50 chance to being executed.
-    #
-    #   maybe  #=> true
-    #   maybe  #=> false
-    #
-    def maybe(chance = 0.5, &block)
-      if block then
-        yield if rand < chance
-      else
-        rand < chance
-      end
-    end
-  end
 
   #
   module RangeExtensions
@@ -446,7 +430,6 @@ class Random
 
 end
 
-class Object  ; include Random::ObjectExtensions  ; end
 class Range   ; include Random::RangeExtensions   ; end
 class Array   ; include Random::ArrayExtensions   ; end
 class Hash    ; include Random::HashExtensions    ; end

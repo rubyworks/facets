@@ -8,7 +8,7 @@ module Kernel
   #   maybe  #=> false
   #
   def maybe(chance = 0.5, &block)
-    if block then
+    if block
       yield if rand < chance
     else
       rand < chance
