@@ -42,9 +42,9 @@ combines all of Facets in one set of docs. (Hopefully we can remedy this in
 the future). In the mean time better organized online documentation 
 is available at http://rubyworks.github.com/facets/learn.html.
 
-* CORE: http://rubyworks/github.com/facetrs/doc/api/core/index.html
-* MORE: http://rubyworks/github.com/facetrs/doc/api/more/index.html
-* TOUR: http://rubyworks/github.com/facetrs/doc/api/tour/index.html
+* Core API: http://rubyworks/github.com/facets/doc/api/core/index.html
+* More API: http://rubyworks/github.com/facets/doc/api/more/index.html
+* Tour API: http://rubyworks/github.com/facets/doc/api/tour/index.html
 
 
 == Installation
@@ -59,6 +59,8 @@ Then download and unpack the .tar.gz package and run:
   $ tar -xvzf facets-2.x.x.tar.gz
   $ cd facets-2.x.x
   $ sudo setup.rb
+
+Facets 2.8+ requires Ruby 1.8.7 or higher.
 
 
 == Mission
@@ -86,13 +88,15 @@ issuing:
 
   require 'facets'
 
-If you plan to use more then a few of Facets core method it is recommended that you require the main facility.
+If you plan to use more then a few of Facets core method it is recommended that
+you require the main facility.
 
   require 'facets'
 
 This loads all the CORE functionality at once.
 
-Of course you can use the CORE library piecemeal if you prefer. The general require statement for a core extensions library is:
+Of course you can use the CORE library piecemeal if you prefer. The general
+require statement for a core extensions library is:
 
   require 'facets/<class|module>/<method-lib>'
 
@@ -100,21 +104,61 @@ For example:
 
   require 'facets/time/stamp'
 
-Most "atoms" contain only one method, but a few exceptions occur when methods are closely tied together.
+Most "atoms" contain only one method, but a few exceptions occur when methods
+are closely tied together.
 
-You can load per-class or per-module groups of core methods by requiring the class or module by name. For example"
+You can load per-class or per-module groups of core methods by requiring the
+class or module by name. For example"
 
   require 'facets/time'
 
 Will require all the core Time method extensions.
 
-Note that some methods that were part of CORE in 1.8 and earlier are now part of MORE libraries. A good example is 'random.rb'. There were separated because they had more specialized use cases, where as CORE extensions are intended as general purpose.
+Note that some methods that were part of CORE in 1.8 and earlier are now part
+of MORE libraries. A good example is 'random.rb'. There were separated because
+they had more specialized use cases, where as CORE extensions are intended as
+general purpose.
 
 This is the recommended usage. However, you can also "cherry pick" core
 methods. While there are exceptions the rule of thumb for loading a core
 method is:
 
   require 'facets/{class|module}/{method}'
+
+==== Method File Names
+
+Operator method redirect files are stored using English names. For instance for
+Proc#* is 'proc/op_mul'.
+
+For reference, here is the chart.
+
+     +@   => op_plus_self
+     -@   => op_minus_self
+     +    => op_plus
+     -    => op_minus
+     **   => op_pow
+     *    => op_mul
+     /    => op_div
+     %    => op_mod
+     ~    => op_tilde
+     <=>  => op_cmp
+     <<   => op_lshift
+     >>   => op_rshift
+     <    => op_lt
+     >    => op_gt
+     ===  => op_case_eq
+     ==   => op_equal
+     =~   => op_apply
+     <=   => op_lt_eq
+     >=   => op_gt_eq
+     |    => op_or
+     &    => op_and
+     ^    => op_xor
+     []=  => op_store
+     []   => op_fetch
+
+Facets simply takes the '*' and translates it into a string acceptable to all
+file systems. Also, if a method ends in '=', '?' or '!' it is simply removed.
 
 
 === MORE Library
@@ -150,40 +194,6 @@ essentially the same. For example:
 
 Again, for details pertaining to the functionality of each feature, please see
 the API Docs.
-
-
-== Method File Names
-
-Operator method redirect files are stored using English names. For instance for Proc#* is 'proc/op_mul'.
-
-For reference, here is the chart.
-
-     +@   => op_plus_self
-     -@   => op_minus_self
-     +    => op_plus
-     -    => op_minus
-     **   => op_pow
-     *    => op_mul
-     /    => op_div
-     %    => op_mod
-     ~    => op_tilde
-     <=>  => op_cmp
-     <<   => op_lshift
-     >>   => op_rshift
-     <    => op_lt
-     >    => op_gt
-     ===  => op_case_eq
-     ==   => op_equal
-     =~   => op_apply
-     <=   => op_lt_eq
-     >=   => op_gt_eq
-     |    => op_or
-     &    => op_and
-     ^    => op_xor
-     []=  => op_store
-     []   => op_fetch
-
-Facets simply takes the '*' and translates it into a string acceptable to all file systems. Also, if a method ends in '=', '?' or '!' it is simply removed.
 
 
 == Contribute

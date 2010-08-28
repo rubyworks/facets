@@ -155,7 +155,7 @@ end
 
 desc "show test coverage"
 task "cov" do
-  sh "lemon -Ilib/core:lib/more:lib/tour -c lib/core lib/more lib/tour"
+  sh "lemon -Ilib/core:lib/more:lib/tour -c test/core test/more test/tour"
 end
 
 desc "show core test coverage"
