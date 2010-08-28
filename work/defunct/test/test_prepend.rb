@@ -1,28 +1,19 @@
-require 'test/unit'
-require 'facets/prepend'
+covers 'facets/class/prepend'
 
-class TC_Class_Prepend < Test::Unit::TestCase
+tests Class do
 
-   class C
-     def f
-       "f"
-     end
-   end
+  unit :prepend => "class method" do
+    m = Module.new do
+      def q; "qm"; end
+    end
 
-   module M
-     def f
-       '{' + super + '}'
-     end
-   end
+    x = Class.new do
+      prepend m
+      def q; "qx"; end
+    end
 
-   class C
-     prepend M
-   end
-
-   #
-   def test_prepend
-     c = C.new
-     assert_equal("{f}", c.f)
-   end
+    x.new.q.assert == "qm"
+  end
 
 end
+

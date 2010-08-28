@@ -1,19 +1,5 @@
 covers 'facets/kernel/dup'
 
-#tests Kernel do
-#  instance "ordinary object" do
-#    Object.new
-#  end
-#
-#  unit :dup? do |o|
-#    o.assert.dup?
-#  end
-#
-#  unit :clone? do |o|
-#    o.clone.dup?
-#  end
-#end
-
 tests Object do
   instance "ordinary object" do
     Object.new
@@ -24,7 +10,7 @@ tests Object do
   end
 
   unit :clone? do |o|
-    o.clone.dup?
+    o.assert.clone?
   end
 end
 

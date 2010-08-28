@@ -2,10 +2,8 @@ covers 'facets/kernel/ask'
 
 tests Kernel do
 
-  #unit :ask => "requires user input" do
-  #end
-
-  meta :ask => "requires user input" do
+  # TODO: how to omit a meta method?
+  omit :ask => "requires user input" do
   end
 
 end

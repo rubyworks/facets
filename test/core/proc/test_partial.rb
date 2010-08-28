@@ -1,4 +1,4 @@
-covers 'facets/partial.rb'
+covers 'facets/proc/partial'
 
 tests Proc do
 

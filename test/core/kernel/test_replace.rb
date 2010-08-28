@@ -1,6 +1,6 @@
 covers 'facets/kernel/replace'
 
-tests Kernel do
+tests Object do
 
   unit :replace do
     c = Class.new do

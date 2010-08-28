@@ -1,4 +1,4 @@
-covers 'facets/memoize'
+covers 'facets/module/memoize'
 
 tests Module do
 

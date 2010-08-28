@@ -1,16 +1,4 @@
-require 'facets/random.rb'
-
-TestCase Kernel do
-  metaunit :maybe do
-    Kernel.maybe
-  end
-end
-
-TestCase Object do
-  unit :maybe do
-    maybe
-  end
-end
+Covers 'facets/random'
 
 TestCase Range do
 
