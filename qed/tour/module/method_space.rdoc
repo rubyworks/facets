@@ -1,0 +1,26 @@
+== Module#method_space
+
+  module T
+    def t ; p self ; end
+    def r ; p self ; end
+    def q ; super ; end
+  end
+
+  class N
+    def q ; puts "ho" ; end
+  end
+
+  class X < N
+    include_as :test => T
+
+    def n ; p test ; end
+    def m ; test.t ; end
+    def o ; test.r ; end
+  end
+
+  x = X.new
+  x.n
+  x.m
+  x.o
+  x.q
+
