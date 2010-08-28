@@ -31,4 +31,3 @@ class Proc
   end
 
 end
-

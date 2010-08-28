@@ -4,24 +4,6 @@ class Module
 
   # TODO: +parent+ is probably the wrong term for this --look at #nesting instead.
 
-  # Returns the name of the module containing this one.
-  #
-  #   module ::ParentExample
-  #     module M
-  #       module N
-  #       end
-  #     end
-  #   end
-  #
-  #   ParentExample::M::N.parent_name # => "ParentExample::M"
-  #
-  def parent_name
-    unless defined? @parent_name
-      @parent_name = name =~ /::[^:]+\Z/ ? $`.freeze : nil
-    end
-    @parent_name
-  end
-
   # Returns the module which contains this one according to its name.
   #
   #   module ::ParentExample
@@ -40,6 +22,24 @@ class Module
   #
   def parent
     parent_name ? constant(parent_name) : Object
+  end
+
+  # Returns the name of the module containing this one.
+  #
+  #   module ::ParentExample
+  #     module M
+  #       module N
+  #       end
+  #     end
+  #   end
+  #
+  #   ParentExample::M::N.parent_name # => "ParentExample::M"
+  #
+  def parent_name
+    unless defined? @parent_name
+      @parent_name = name =~ /::[^:]+\Z/ ? $`.freeze : nil
+    end
+    @parent_name
   end
 
   # Returns all the parents of this module according to its name, ordered from
