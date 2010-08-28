@@ -38,11 +38,11 @@ class Module
             this.__send__(meth, self, *args)
           end
         end
-        #class_eval %{
-        #  def #{meth}(*args)
-        #    #{self.name}.#{meth}(self,*args)
-        #  end
-        #}
+        ##class_eval %{
+        ##  def #{meth}(*args)
+        ##    #{self.name}.#{meth}(self,*args)
+        ##  end
+        ##}
       end
     end
   end
@@ -51,11 +51,11 @@ class Module
     #
     def singleton_method_added(meth)
       this = self
-      #module_eval %{
-      #  def #{meth}(*args)
-      #    #{self.name}.#{meth}(self,*args)
-      #  end
-      #}
+      ##module_eval %{
+      ##  def #{meth}(*args)
+      ##    #{self.name}.#{meth}(self,*args)
+      ##  end
+      ##}
       module_eval do
         define_method(meth) do |*args|
           this.__send__(meth, self, *args)

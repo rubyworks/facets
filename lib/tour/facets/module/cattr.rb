@@ -6,11 +6,12 @@ class Module
   # CREDIT: David Heinemeier Hansson
   def cattr( *syms )
     writers, readers = syms.flatten.partition{ |a| a.to_s =~ /=$/ }
-    writers = writers.collect{ |e| e.to_s.chomp('=').to_sym }
+    writers = writers.map{ |e| e.to_s.chomp('=').to_sym }
+
     #readers.concat( writers ) # writers also get readers
 
-    cattr_writer( *writers )
-    cattr_reader( *readers )
+    cattr_reader(*readers)
+    cattr_writer(*writers)
 
     return readers + writers
   end
@@ -27,7 +28,7 @@ class Module
   #   CARExample.new.a       #=> 10
   #
   # CREDIT: David Heinemeier Hansson
-  def cattr_reader( *syms )
+  def cattr_reader(*syms)
     syms.flatten.each do |sym|
       class_eval(<<-EOS, __FILE__, __LINE__)
         unless defined? @@#{sym}
@@ -109,7 +110,8 @@ class Module
   def mattr( *syms )
     writers, readers = syms.flatten.partition{ |a| a.to_s =~ /=$/ }
     writers = writers.collect{ |e| e.to_s.chomp('=').to_sym }
-    readers.concat( writers ) # writers also get readers
+
+    #readers.concat( writers ) # writers also get readers
 
     mattr_writer( *writers )
     mattr_reader( *readers )
@@ -201,4 +203,3 @@ class Module
   end
 
 end
-

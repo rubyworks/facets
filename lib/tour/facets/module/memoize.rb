@@ -5,7 +5,8 @@ class Module
   # This is here for backward compatibility.
   def memoize(*args)
     include Memoizable
-    super(*args)
+    Memoizable.instance_method(:memoize).bind(self).call(*args)
+    #super(*args)  # TODO: why is super not working here?
   end
 
 end
