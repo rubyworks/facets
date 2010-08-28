@@ -10,7 +10,7 @@ tests URI do
 
 end
 
-tests Kernel do
+tests Object do
 
   unit :uri do
     "abc%3Fxyz".assert == uri("abc?xyz")

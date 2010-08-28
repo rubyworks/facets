@@ -14,12 +14,11 @@ tests Class do
     end
   end
 
-  c.class_eval do
-    preallocate m
-  end
-
   #
   unit :preallocate do
+    c.class_eval do
+      preallocate m
+    end
     x = c.new
     x.f.assert == "{f}"
   end

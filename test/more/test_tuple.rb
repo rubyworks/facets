@@ -29,21 +29,25 @@ tests Tuple do
   unit :<< do
     t1 = Tuple[1,2,3]
     t1 = t1 << 4
-    t1.assert.case? Tuple
+    t1.assert.is_a? Tuple
     t2 = Tuple[1,2,3,4]
     t1.object_id.assert == t2.object_id
   end
 
+end
+
+tests String do
+
   unit :to_t do
     t1 = "1.2.3".to_t
-    t1.assert.case? Tuple
+    t1.assert.is_a? Tuple
     t2 = Tuple[1,2,3]
     t1.object_id.assert == t2.object_id
   end
 
-  def :to_t do
+  unit :to_t do
     t1 = "1.2.3a".to_t
-    t1.assert.case? Tuple
+    t1.assert.is_a? Tuple
     t2 = Tuple[1,2,'3a']
     t1.assert == t2
     t1.object_id.assert == t2.object_id

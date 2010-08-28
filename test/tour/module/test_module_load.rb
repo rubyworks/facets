@@ -2,16 +2,18 @@ covers 'facets/module/module_load'
 
 tests Module do
 
-  unit :module_load do
+  # TODO: need to use a ruby fixture file to test module_load.rb
+
+  omit :module_load do
   end
 
-  unit :module_require do
+  omit :module_require do
   end
 
-  unit :class_load do
+  omit :class_load do
   end
 
-  unit :class_requires do
+  omit :class_require do
   end
 
 end

@@ -2,7 +2,7 @@ covers 'facets/memoize'
 
 tests Module do
 
-  metaunit :memoize  do
+  unit :memoize  do
     tc = Class.new do
       def initialize(a)
         @a = a

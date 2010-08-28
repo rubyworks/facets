@@ -1,4 +1,4 @@
-covers 'facets/instance_function'
+covers 'facets/module/instance_function'
 
 tests Module do
 

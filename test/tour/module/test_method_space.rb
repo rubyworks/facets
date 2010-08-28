@@ -1,4 +1,4 @@
-covers 'facets/method_space'
+covers 'facets/module/method_space'
 
 tests Class do
 

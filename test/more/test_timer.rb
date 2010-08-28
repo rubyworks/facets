@@ -1,9 +1,9 @@
-Covers 'facets/timer.rb'
+covers 'facets/timer'
 
-TestCase Kernel do
+tests Timer do
 
-  unit :timed do
-    timed { |timer|
+  meta :time do
+    Timer.time { |timer|
       timer.total_time.round.assert == 0
       sleep 1
       timer.total_time.round.assert == 1
@@ -17,10 +17,6 @@ TestCase Kernel do
       timer.total_time.round.assert == 2
     }
   end
-
-end
-
-TestCase Timer do
 
   unit :start => "out of time", :stop => "out to time" do
     t = Timer.new(1)
