@@ -26,7 +26,7 @@ We recommend instead that you use the pre-generated rdocs on the website.
 ## Site Install
 
 If you would like to install from source, you can download the tarball
-package from <a href="http://github.com/proutils/facets/download">GitHub</a>
+package from <a href="http://github.com/rubyworks/facets/download">GitHub</a>
 and use <a href="http://proutils.github.com/setup">Ruby Setup</a>, e.g.
 
     $ tar -xvzf facets-2.9.0.tgz
@@ -47,7 +47,7 @@ and TOUR, for extra extensions.
 
 ## Core API
 
-The <a href="{{ root }}/doc/api/core/index.html">CORE API</a> includes all
+The <a href="{{ root }}doc/api/core/index.html">CORE API</a> includes all
 the "prime" extensions. These methods are at the heart of Facets. Any
 application or library that makes use of Facets, you can be sure, supports
 these methods. Also include is the Functor class, which is a Higher Order
@@ -55,13 +55,13 @@ Message class. It is used by a number of methods to provide fluid interfaces.
 
 ## More API
 
-The <a href="{{ root }}/doc/api/more/index.html">MORE API</a> documents the
+The <a href="{{ root }}doc/api/more/index.html">MORE API</a> documents the
 variety of extension methods to Ruby's standard library, and additional
 classes, modules and micro-frameworks Facets provides as optional libraries.
 
 ## Tour API
 
-The <a href="{{ root }}/doc/api/tour/index.html">TOUR API</a> documents a small
+The <a href="{{ root }}doc/api/tour/index.html">TOUR API</a> documents a small
 collection of extensions and occasionally class and module additions "on tour"
 as possible inclusions into CORE or MORE proper. This has been created as an
 easy way for Facets vet new ideas. In a few cases some extensions might reside
