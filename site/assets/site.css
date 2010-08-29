@@ -1,0 +1,312 @@
+/*
+ * FACETS STYLESHEET
+ * Thomas Sawyer, 2007
+ *
+ */
+
+
+/* GENERAL */
+
+* {
+  margin          : 0;
+  padding         : 0;
+  border          : none;
+}
+
+body {
+  margin          : 0;
+  padding         : 0;
+  color           : black;
+  background      : white;
+  text-align      : center; /* for IE */
+  /*background       : url(../media/RubyFacetsShadow2.png) bottom no-repeat white;*/
+  font-size       : 12px;
+}
+
+p {
+  font-size       : 1em;
+  color           : #222222;
+  text-align      : justify;
+  margin          : 10px 10px 15px 0px;
+  line-height     : 1.5em;
+}
+
+a {
+  font-weight     : bold;
+  text-decoration : underline;
+  color           : #660066;
+}
+
+pre {
+  background      : white;
+  font-size       : 0.8em;
+  padding         : 5px 0 10px 20px;
+  color           : #333;
+}
+
+blockquote {
+  margin          : 5px 0px 0px 5px;
+  font-style      : italic;
+  font-weight     : bold;
+  font-size       : 0.8em;
+  color           : #999;
+}
+
+p a {
+  font-weight     : normal;
+}
+
+td {
+  vertical-align: top;
+}
+
+ul { margin-left: 30px; margin-bottom: 30px; }
+li { color: black; font-family: monospace; font-size: 0.9em; }
+
+h3 { font-weight: normal; }
+
+td { padding: 5px; }
+
+#container {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+/* HEADER */
+
+#header {
+  width            : 100%;
+  height           : 120px;
+  color            : white;
+  text-align       : center;
+  font-weight      : bold;
+  font-size        : 4em;
+  letter-spacing   : -1px;
+  /* background       : url(../media/fade_red_up.png) bottom repeat-x white; */
+  /* border-bottom    : 1px solid #553333; */
+}
+
+#logo { z-index: 2; width: 480px; }
+
+/* MENU BAR */
+
+#menu {
+  color            : gray;
+  padding          : 10px 0 5px 0;
+  font-size        : 12px;
+  z-index          : 0;
+  text-align       : center;
+  /*border-bottom    : 2px solid #553333;*/
+  /*border-top       : 2px solid #773333;*/
+}
+
+#menu a {
+  font-weight      : normal;
+  font-size        : 12px;
+  font-family      : sans-serif, monospace;
+  color            : #660066;
+  text-decoration  : none;
+}
+
+#menu a:hover {
+  text-decoration  : underline;
+}
+
+/*
+#drop_shadow {
+  height           : 32px;
+  background       : url(../media/RubyFacetsShadow.png) top repeat-x white;
+  margin-bottom    : -22px;
+}
+*/
+
+/* Content */
+
+#content {
+  text-align  : left;             /* counter the body center */
+  padding     : 0;
+  background  : url(../media/RubyFacetsShadowFade.png) top center repeat-x;
+  /* background  : white; */
+}
+
+.page {
+  width       : 480px;
+  margin      : 0 auto;
+  padding     : 10px 0;
+  text-align  : left;             /* counter the body center */
+}
+
+.sell {
+  margin           : 15px auto;
+  text-align       : center;
+  padding          : 10px 10px 10px 10px;
+  font-size        : 1.5em;
+  font-family      : sans-serif, serif;
+  color            : #222222;
+  -moz-border-radius-topleft     : 1em; border-topleft-radius     : 1em;
+  -moz-border-radius-topright    : 1em; border-topright-radius    : 1em;
+  -moz-border-radius-bottomleft  : 1em; border-bottomleft-radius  : 1em;
+  -moz-border-radius-bottomright : 1em; border-bottomright-radius : 1em;
+}
+
+.ico img {
+  -moz-border-radius: 5px;
+  border-radius     : 5px;
+  width: 72px;
+  background: white;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.sm{
+  font-size        : 1em;
+  font-family      : sans-serif, serif;
+  color            : #222222;
+}
+
+#copyright {
+  color:          #444444;
+  text-align:     center;
+  font-size:      0.6em;
+  padding:        30px 0;
+  font-family   : sans-serif;
+  font-weight   : normal;
+  width         : 480px;
+  margin        : 0 auto;
+}
+
+#doctable td {
+  text-align    : center;
+  border        : 2px solid #cccccc;
+  padding-right : 10px;
+  background    : white;
+  -moz-border-radius : 1em;
+  border-radius      : 1em;
+}
+
+/* CLASSES */
+
+.r { color: pink; }
+.g { color: yellow; }
+.b { color: skyblue; }
+
+.red { color: #ff0044; }
+
+
+.spotlight {
+  padding-bottom : 10px;
+  padding-top    : 5px;
+  margin         : 5px;
+  /*
+    background: #FFFFEE;
+    border: 1px solid gray;
+    -moz-border-radius-topleft: 1em; border-topleft-radius: 1em;
+    -moz-border-radius-topright: 1em; border-topright-radius: 1em;
+    -moz-border-radius-bottomleft: 1em; border-bottomleft-radius: 1em;
+    -moz-border-radius-bottomright: 1em; border-bottomright-radius: 1em;
+  */
+}
+
+.blurb {
+  text-align  : center;
+  padding     : 5px 0 10px 0;
+  color       : #333333;
+  font-size   : 2.7em;
+  font-weight : bold;
+  background  : url(../media/fade_yellow_up.jpg) bottom repeat-x;
+  border-top    : 1px solid #999;
+  border-bottom : 1px solid #999;
+}
+
+.desc {
+  font-size   : .4em;
+  padding     : 15px 15px 20px 15px;
+  width       : 480px;
+  margin      : 0 auto;
+  /*
+  background  : white;
+  border      : 1px solid #cccccc;
+  -moz-border-radius    :10px;
+  -webkit-border-radius :10px;
+  */
+}
+
+.desc h1 {
+  margin: 0 0 15px 0;
+  color: #FF0077;
+  color: #770077;
+}
+
+.desc .small {
+  padding-top: 20px;
+  font-size: 0.7em;
+  font-family: sans-serif;
+}
+
+div.section {
+  margin: 10px;
+  padding-bottom: 10px;
+}
+
+div.page h1 {
+  margin: 40px 0 15px 0;
+  color: #442244;
+}
+
+/*
+.spotlights a {
+  color: #4444AA;
+  text-decoration: none;
+  font: normal 1.5em monospace;
+}
+
+.spotlights a:hover {
+  text-decoration: underline;
+}
+
+.spy {
+  padding-top      : 20px;
+  padding-bottom   : 10px;
+  font-size        : 2em;
+  font-weight      : bold;
+  color            : #222222;
+  text-align       : left;
+}
+
+spy img { width: 30px; }
+*/
+
+.spot { font-weight: bold; color: #FF0077; text-align: left; }
+
+.emblem {
+  margin      : 0 auto;
+  border      : 1px solid black;
+  margin-top  : 20px;
+  background  : gray;
+  font-size   : 0.9em;
+  width       : 125px;
+  height      : 20px;
+  line-height : 20px;
+}
+
+.heading {
+  font: 48pt helvetica; color: #dd00aa;
+  width: 620px;
+  margin: 0 auto;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.item {
+  margin-bottom: 10px;
+}
+
+
+/* MISCELLANEOUS */
+
+#apidocs td a {
+  text-decoration: none;
+  padding-right: 5px;
+
+}
+

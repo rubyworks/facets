@@ -2,17 +2,17 @@
 
 == 2.9.0 / 2010-09-01
 
-This release is fairly extensive as it was orginally intended to be v3.0.
+This release is fairly extensive as it was originally intended to be v3.0.
 After further consideration it was decided to reserve 3.0 for the
-polish that only real world feedback can provide. The primrary thrust
+polish that only real world feedback can provide. The primary thrust
 of this release was to finish trimming Facets to be primarily a core
-extensions library. With this release almost all addon classes and mixins
-have now been spu-off to other projects. Only the most general purposes
+extensions library. With this release almost all add-on classes and mixins
+have now been spun-off to other projects. Only the most general purposes
 classes and mixins remain.
 
 A new TOUR division has been added to complement CORE and MORE. This
 lib division houses purely optional core extensions. The new division serves
-a couple of useful puposes. In particular, it helps separates the standard
+a couple of useful purposes. In particular, it helps separates the standard
 library extensions for optional core extension in the RDocs and thus makes
 the perfect place to vet new extension ideas.
 
@@ -23,7 +23,7 @@ ActiveSupport 3.0 library which extends core classes directly instead of
 using mixins. One need only require 'facets' in Rails' config/preinitializer.rb
 file, and ActiveSupport will take precedence over Facets. For older versions
 of ActiveSupport, the best approach is to cherry pick from Facets just the
-extensions you want, thus avoiding any conflicts. There are actaully only a
+extensions you want, thus avoiding any conflicts. There are actually only a
 dozen or so overlaps and all are intended to compatible, but it doesn't hurt
 to be sure.
 

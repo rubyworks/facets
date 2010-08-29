@@ -1,0 +1,36 @@
+--- 
+title  : Facets 2.9 Release
+author : Trans
+tags   : [release]
+layout : post
+
+--- markdown
+
+Facets 2.9 is fairly extensive as it was originally intended to be v3.0.
+After further consideration it was decided to reserve v3.0 for something a
+little bolder (to be announced). The primary goal of this release was to
+trim Facets down to a true core extensions library. All tertiary add-on classes
+and mixins have now been spun-off to other projects. Only a very select set of
+general purposes classes and mixins remain.
+
+A new *TOUR* library division has been added to complement *CORE* and *MORE*.
+This division houses purely optional extensions. The new division serves
+a couple of useful purposes. In particular, it helps separates the standard
+library extensions from optional core extension in the RDocs and thus makes
+the perfect place to vet new extension ideas.
+
+One important change that will effect anyone using Facets along side
+ActiveSupport is that Facets no longer tries to conditionally avoid
+method overlaps with ActiveSupport. This is fine for the upcoming
+ActiveSupport 3.0 library which extends core classes directly instead of
+using mixins. One need only require 'facets' in Rails' config/preinitializer.rb
+file, and ActiveSupport will take precedence over Facets. For older versions
+of ActiveSupport, the best approach is to cherry pick from Facets just the
+extensions you want, thus avoiding any conflicts. There are actually only a
+dozen or so overlaps and all are intended to compatible, but it doesn't hurt
+to be sure.
+
+I won't detail each change here, have a look at the HISTORY.rdoc file for that.
+Needless to say, it's a good idea to read it over to see what changes might
+effect you usage --and it also gives you a glimpse at what other extensions are
+available that you might not yet be familiar.

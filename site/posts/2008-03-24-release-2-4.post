@@ -1,0 +1,58 @@
+--- 
+title  : Facets 2.4.3
+author : Trans
+tags   : [release]
+layout : post
+
+--- markdown
+
+Facets 2.4.3 is now out in the wild. The release is primarily a maintenance
+release &#8212;fixing a handful of small bugs and adding some small feature
+improvements, but a few significant changes are also present.
+
+* Moved Mentalguy's lazy.rb to CORE!
+* Moved Indexable and Stackable to core.
+* Added Time#trunc and Time#round to CORE.
+* Added Ken Bloom's DictionaryMatcher class (maybe renamed in future version)
+* Added Array#recursively and fixed bug in Hash#recursively.
+* Added kernel/instance method which provides a fluent interface to private object space.
+* Renamed Class#to_pathname and #to_methodname to #pathize and #methodize.
+* Changed File#rewrite to not use the in-place change of the string.
+* Changed Dictionary#first and #last to take optional arguments.
+* Deprecated Hash#keys_to_s and Hash#keys_to_sym (use #rekey).
+* Deprecated Console:: namespace for ANSICode.
+* Deprecated ruby.rb, which was a sort 1.9 compatibility layer.
+* The ruby.rb methods were moved to core, wrapped in a 1.9 condition.
+* Fixed Time#hence changed years when changing months.
+* Fixed Time#hence to flip year correctly when adding months.
+* Improved File#rootname, it is now more robust.
+* Made FileUtils#whereis a module_function again.
+* Use "lib/lore" to separate extensions to Ruby's standard library.
+
+Note that this release does not include a setup.rb script. We are working
+on a new version of this script, which we plan to include in the next
+release.
+
+Special thanks to:
+
+* Ken Bloom
+* Nick Caruso
+* Evgeniy Dolzhenko
+* Andy Freeman
+* Tomasz Muras
+* Dave Myron
+
+And of course, to anyone else I failed to mention that has contributed.
+
+Finally, Facets 2.4+ now encourages using:
+
+    require 'facets'
+
+when testing, even if you are cherry-picking methods. It may seem counter-intuitive,
+but it actually proves more advantages to do this for the sake of improved
+interoperability. The practice of cherry-picking can become problematic if
+other dependent libraries have cherry-picked different methods, and the
+the different choices go unaccounted and untested.
+
+Facets is almost fully interoperable with ActiveSupport and Ruby 1.9. We
+will continue to improve this interoperability in upcoming releases.

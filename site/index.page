@@ -1,0 +1,96 @@
+---
+title   : About - Ruby Facets
+layout  : default
+stencil : liquid
+blurb   : Library Fantastic
+detail  :
+  Ruby Facets is the premiere collection of method extension
+  and standard library additions for the Ruby programming language.
+
+--- markdown
+
+<img src="/media/ruby-lg.png" width="100px" align="right" style=""/>
+
+# Facets is the Premiere Ruby Extensions Library
+
+Ruby Facets was first released in 2005. Since then it has evolved into the
+single largest and most refined core extensions library for the Ruby programming
+language. All <i>facets</i> can be loaded with the single require or cherry-picked
+individually. There are hundreds of quality methods in the collection which
+have been derived from years of experience of dozens of top Ruby programmers.
+
+In addition to the core libraries, Facets provides extensions to Ruby standard
+library, as well as as a small collection of add-on classes and mixins.
+Together with core extensions these libraries provide a broad general-purpose
+set of components commonly useful across a wide variety of applications.
+
+
+# Facets is for Every Ruby Developer
+
+Who uses Facets? Lots of Rubyists do!
+
+Many developers use Facets as a copy-and-paste resource, others use it as a dependency
+cheery-picking just the methods they need, and still others use the library whole-clothe.
+How you use Ruby Facets to facilitate your Ruby development is completely yours to decide.
+
+
+<img src="/media/lightbulb.jpg" width="70px" align="right" style=""/>
+
+# Facets is a Bright Idea
+
+The philosophy of <span class="red">Facets</span> can be summed
+up in a simple mantra, <b>ALL BASE COMMON</b>. The idea being, that by sharing a broad foundation
+of general purpose code, the Ruby community will be better severd. There are a number of
+advantages to this approach. Among them: name consistency, better code-reuse, collaborative
+improvements and reduced installation requirements.
+
+Facets also embodies the idea of "having it your way". You can use as much or as little
+of Facets as you see fit. In fact, Ruby Facets originated the idea cherry-pickable extensions.
+
+
+# Facets is a Community Effort
+
+Facets is not the sole achievement of one person, but was made possible by the hard
+work of many excellent programmers. Some persons contributed code directly, other's simply
+had their code picked-up from another open resource. In either case, three cheeers
+for all!
+
+      Thibaut Barrère        Daniel J. Berger          Ken Bloom
+      Rich Bradley           Paul Brannan              Mikael Brockman
+      Jamis Buck             Renald Buter              Brian Candler
+      Shashank Date          Robert Feldt              Mauricio Fernandez
+      Florian Frank          Hal Fulton                Noah Gibbs
+      Michael Granger        Florian Gross             Sean O'Halpin
+      Michael Harmer         Matthew Harris            David Heinemeier Hansson
+      Thomas-Ivo Heinen      Dave Hoover               Ara T. Howard
+      MenTaLguY              Mohammad Khan             Robert Klemme
+      Richard Laugesen       Lavir the Whiolet         Derek Lewis
+      Jan Molic              George Moschovitis        Michael Neumann
+      Marco Otte-Witte       Roger Pack                Jeena Paradies
+      Tim Pease              Jonas Pfenniger           Ryan Platte
+      Oliver Renaud          Tyler Rick                Christoph Rippel
+      Daniel Schierbeck      Louis J Scoras            Gavin Sinclair
+      Tilo Sloboda           Sandor Szücs              Phil Tomson
+      Mauro Tortonesi        Peter Vanbroekhoven       Jim Weirich
+      Jeff Wood              Jean-Denis Vauguet        Erik Veenstra
+      Austin Ziegler         Why The Lucky Stiff
+
+
+# Facets is Open Source Software
+
+Facets is true open source software. Ruby Facets is distributed under the terms of the
+<a href="http://www.ruby-lang.org/en/LICENSE.txt" style="color: red;">Ruby License</a>,
+just like Ruby.
+
+Ruby Facets, Copyright (c) 2005-2010 Thomas Sawyer
+
+Credit and any additional copyrights for particular code fragments are
+given in their respective source. All secondary licenses are either compatible
+with the Ruby license or the original author has given permission for
+inclusion of their code under this license.
+
+<div style="text-align: center; margin-top: 40px;">
+  <i>"Lots of cool stuff... There's just so much there!"</i><br/>
+  <span style="font-size: 10pt;">--Austin Ziegler</span>
+</div>
+

@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <title>Ruby Facets</title>
+
+  <!-- google verification-->
+  <meta name="verify-v1" content="p14vW7GGMohDo2YKUHm0SXXTL+tzyPbKxxp35/WIQLA=" />
+
+  <meta name="DESCRIPTION"
+        content="Ruby Facets is a large collection of libraries for the Ruby programming lanaguage."/>
+
+  <link rel="icon" href="/media/favicon.ico" type="image/x-icon" />
+
+  <link href="http://rubyworks.github.com/facets/atom.xml" rel="alternate" title="blog.facets.rubyforge.org" type="application/atom+xml" />
+
+<!--
+  <link href="/assets/styles/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <link href="/assets/styles/print.css"  media="print" rel="stylesheet" type="text/css" />
+-->
+
+  <!--[if IE]>
+      <link href="/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <![endif]-->
+
+  <link href="/assets/site.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/syntax.css" rel="stylesheet" type="text/css" />
+
+  <!-- <script src="/js/rdocs.js" type="text/javascript"></script> -->
+</head>
+
+<body>
+
+<div id="sidebar">
+</div>
+
+<div id="container">
+
+  <div id="header">
+    <img id="logo" src="/media/RubyFacets.png" align="middle" />
+  </div>
+
+  <!-- <div id="drop_shadow"></div> -->
+
+  <div id="content">
+
+  <div class="blurb">
+    <div id="menu">
+      <a href="/index.html">Overview</a> &middot;
+      <a href="/news.html">News/Blog</a> &middot;
+      <a href="/learn.html">Documentation</a> &middot;
+      <a href="/source.html">Development</a>
+      <img style="width: 20px; height: 1px;" src="/media/clear.gif"/>
+    </div>
+
+    <div class="desc">
+      <h1>Easy to Learn</h1>
+      Learn Facets as you program, these resources make it a snap. Hook up with other users and broaden the scope of your usage. Ruby Facets has a moto, "All Base Common".
+    </div>
+  </div>
+
+
+  <div class="page">
+    <h1>Installation</h1>
+
+<h2>RubyGems</h2>
+
+<p>Facets can be dowloaded and installed easily using RubyGems:</p>
+
+<pre><code>$ gem install facets
+</code></pre>
+
+<p>Gems will automatically generate rdocs on installation. Unfortunately
+the Gem generated rdocs are very poor --in fact Facets only allows them
+to be generated to ensure the creation of ri docs (ruby api index files).
+We recommend instead that you use the pre-generated rdocs on the website.</p>
+
+<h2>Site Install</h2>
+
+<p>If you would like to install from source, you can download the tarball
+package from <a href="http://github.com/proutils/facets/download">GitHub</a>
+and use <a href="http://proutils.github.com/setup">Ruby Setup</a>, e.g.</p>
+
+<pre><code>$ tar -xvzf facets-2.9.0.tgz
+$ cd facets-2.9.0
+$ setup.rb
+</code></pre>
+
+<p>The last step may require super-user permissions (eg. use <code>sudo</code>).</p>
+
+<p>Of course, to use Facets you also need <em>Ruby</em>. The 2.x versions of Facets are
+designed to work with Ruby 1.8.6 and up. Facets is fully compatible with Ruby 1.9.</p>
+
+<h1>API Documentation</h1>
+
+<p>Facets API is divided into three documentation sets, one for each library group,
+CORE for the core extensions, MORE for the addtions and standard library extensions
+and TOUR, for extra extensions.</p>
+
+<h2>Core API</h2>
+
+<p>The <a href="/doc/api/core/index.html">CORE API</a> includes all the "prime" extensions.
+These methods are at the heart of Facets. Any application or library that makes use
+of Facets, you can be sure, supports these methods. Also include is the Functor class,
+which is a Higher Order Message class. It is used by a number of methods to provide
+fluid interfaces.</p>
+
+<h2>More API</h2>
+
+<p>The <a href="/doc/api/more/index.html">MORE API</a> documents the variety of extension
+methods to Ruby's standard library, and additional classes, modules and micro-frameworks
+Facets provides as optional libraries.</p>
+
+<h2>Tour API</h2>
+
+<p>The <a href="/doc/api/tour/index.html">TOUR API</a> documents a small collection
+of extensions and occasionally class and module additions "on tour" as possible
+inclusions into CORE or MORE proper. This has been created as an easy way for
+Facets vet new ideas. In a few cases some extensions might reside here indefinitely
+if they are useful, but not suited for inclusion in CORE.</p>
+
+<h1>Wiki</h1>
+
+<p>The Wiki is a place for end-users to create their own documentation. Ultimately,
+it is hoped, this documentaiton will make a great source for sharing real-world
+use cases. However, a full Wiki solution isn't in place yetand we are simply
+using Google Pages, provided along side the Google mailing list interface.</p>
+
+<p>Facets has a community wiki that anyone can use to help document Facets at
+<a href="http://wiki.github.com/rubyworks/facets">Facets Wiki</a>.</p>
+
+<h1>Mailing List</h1>
+
+<p>Facets has a dedicated mailing list hosted via Rubyforge.org, used by
+developers and end-users alike. You can subscribe to it directly,
+or subscribe via the Google Groups archive of the list.</p>
+
+<p>  http://groups.google.com/group/facets-universal/topics?hl=en</p>
+
+  </div>
+
+  </div>
+
+</div>
+
+<div id="copyright">
+  <img src="/media/abc1.png"/>
+
+  <br/><br/><br/>
+
+  Copyright (c) 2005-2008 Thomas Sawyer &amp; Contributors <br/><br/>
+
+  Ruby Facets was created by Thomas Sawyer (7rans), either written by hand or collected from a variety of Ruby resources.<br/>
+  The system continues to be extended and improved by a diverse cast of open-source contributors.<br/><br/>
+
+  Facets is released under the terms of the Ruby license, just like Ruby.<br/>
+  The Ruby license is a dual GPLv2 license.<br/><br/>
+
+  "Facets", "Ruby Facets" and "All Base Common" are trademarks of Thomas Sawyer. All rights reserved.
+
+  <br/><br/>
+
+  THIS SOFTWARE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR
+  IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
+  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE.
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-2883355-2";
+urchinTracker();
+</script>
+
+</body>
+</html>
