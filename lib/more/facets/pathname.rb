@@ -37,9 +37,9 @@ class Pathname
     new(path)
   end
 
-  # Start a path.
+  # Start a path. Another alias for #new.
   #
-  #   Pathname / 'usr' #=> Pathname:usr
+  #   Pathname / 'usr'
   #
   def self./(path)
     new(path)
@@ -160,19 +160,21 @@ class Pathname
   #
   # Example use case:
   #
-  #   # get rid of any file but *.haml within app/**/*
+  #   # Locate any file but *.haml within app/**/*
   #   Pathname.new("app").visit do |f|
-  #     FileUtils.rm_f(f) unless f.to_s =~ /\.haml$/
-  #     puts "!!! deleting #{f}"
+  #     next unless f.to_s =~ /\.haml$/
+  #     f
   #   end 
   #
+  # TODO: Use #map instead of #each ?
+  # 
   # CREDIT: Jean-Denis Vauguet
   def visit(options = {:all => false, :hidden => false})
     if self.directory?
       children.each do |entry|
         next if entry.basename.to_s[0] == "." && !options[:hidden]
         yield(entry) unless entry.directory? && !options[:all]
-        #entry.visit(:all => options[:all]) { |sub_entry| yield sub_entry } if entry.directory?
+        ##entry.visit(:all => options[:all]) { |sub_entry| yield sub_entry } if entry.directory?
         entry.visit(:all => options[:all], :hidden => options[:hidden]) do |sub_entry|
           yield(sub_entry)
         end if entry.directory?
@@ -182,37 +184,37 @@ class Pathname
     end
   end
 
-#   # Already included in 1.8.4+ version of Ruby (except for inclusion flag)
-#   if not instance_methods.include?(:ascend)
-#
-#     # Calls the _block_ for every successive parent directory of the
-#     # directory path until the root (absolute path) or +.+ (relative path)
-#     # is reached.
-#     def ascend(inclusive=false,&block) # :yield:
-#       cur_dir = self
-#       yield( cur_dir.cleanpath ) if inclusive
-#       until cur_dir.root? or cur_dir == Pathname.new(".")
-#         cur_dir = cur_dir.parent
-#         yield cur_dir
-#       end
-#     end
-#
-#   end
-#
-#   # Already included in 1.8.4+ version of Ruby
-#   if ! instance_methods.include?(:descend)
-#
-#     # Calls the _block_ for every successive subdirectory of the
-#     # directory path from the root (absolute path) until +.+
-#     # (relative path) is reached.
-#     def descend()
-#       @path.scan(%r{[^/]*/?})[0...-1].inject('') do |path, dir|
-#         yield Pathname.new(path << dir)
-#       path
-#       end
-#     end
-#
-#   end
+##   # Already included in 1.8.4+ version of Ruby (except for inclusion flag)
+##   if not instance_methods.include?(:ascend)
+##
+##     # Calls the _block_ for every successive parent directory of the
+##     # directory path until the root (absolute path) or +.+ (relative path)
+##     # is reached.
+##     def ascend(inclusive=false,&block) # :yield:
+##       cur_dir = self
+##       yield( cur_dir.cleanpath ) if inclusive
+##       until cur_dir.root? or cur_dir == Pathname.new(".")
+##         cur_dir = cur_dir.parent
+##         yield cur_dir
+##       end
+##     end
+##
+##   end
+##
+##   # Already included in 1.8.4+ version of Ruby
+##   if ! instance_methods.include?(:descend)
+##
+##     # Calls the _block_ for every successive subdirectory of the
+##     # directory path from the root (absolute path) until +.+
+##     # (relative path) is reached.
+##     def descend()
+##       @path.scan(%r{[^/]*/?})[0...-1].inject('') do |path, dir|
+##         yield Pathname.new(path << dir)
+##       path
+##       end
+##     end
+##
+##   end
 
   # Does a directory contain a matching entry?
   # Or if the pathname is a file, same as #fnmatch.
