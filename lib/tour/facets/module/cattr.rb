@@ -3,12 +3,19 @@ class Module
   # Creates a class-variable attribute that can
   # be accessed both on an instance and class level.
   #
+  #   class CARExample
+  #     @@a = 10
+  #     cattr :a
+  #   end
+  #
+  #   CARExample.a           #=> 10
+  #   CARExample.new.a       #=> 10
+  #
   # CREDIT: David Heinemeier Hansson
-  def cattr( *syms )
+  def cattr(*syms)
     writers, readers = syms.flatten.partition{ |a| a.to_s =~ /=$/ }
     writers = writers.map{ |e| e.to_s.chomp('=').to_sym }
-
-    #readers.concat( writers ) # writers also get readers
+    ##readers.concat( writers ) # writers also get readers
 
     cattr_reader(*readers)
     cattr_writer(*writers)
@@ -30,7 +37,7 @@ class Module
   # CREDIT: David Heinemeier Hansson
   def cattr_reader(*syms)
     syms.flatten.each do |sym|
-      class_eval(<<-EOS, __FILE__, __LINE__)
+      module_eval(<<-EOS, __FILE__, __LINE__)
         unless defined? @@#{sym}
           @@#{sym} = nil
         end
@@ -65,7 +72,7 @@ class Module
   # CREDIT: David Heinemeier Hansson
   def cattr_writer(*syms)
     syms.flatten.each do |sym|
-      class_eval(<<-EOS, __FILE__, __LINE__)
+      module_eval(<<-EOS, __FILE__, __LINE__)
         unless defined? @@#{sym}
           @@#{sym} = nil
         end
@@ -102,16 +109,25 @@ class Module
   # Creates a class-variable attribute that can
   # be accessed both on an instance and class level.
   #
+  #   c = Class.new do
+  #     mattr :a
+  #     def initialize
+  #       @@a = 10
+  #     end
+  #   end
+  #
+  #   c.new.a       #=> 10
+  #   c.a           #=> 10
+  #
   # NOTE: The #mattr methods may not be as useful for modules as the #cattr
   # methods are for classes, becuase class-level methods are not "inherited"
   # across the metaclass for included modules.
   #
   # CREDIT: David Heinemeier Hansson
-  def mattr( *syms )
+  def mattr(*syms)
     writers, readers = syms.flatten.partition{ |a| a.to_s =~ /=$/ }
     writers = writers.collect{ |e| e.to_s.chomp('=').to_sym }
-
-    #readers.concat( writers ) # writers also get readers
+    ##readers.concat( writers ) # writers also get readers
 
     mattr_writer( *writers )
     mattr_reader( *readers )
@@ -122,13 +138,13 @@ class Module
   # Creates a class-variable attr_reader that can
   # be accessed both on an instance and class level.
   #
-  #   module MARExample
+  #   c = Class.new do
   #     @@a = 10
   #     mattr_reader :a
   #   end
   #
-  #   MARExample.a           #=> 10
-  #   MARExample.new.a       #=> 10
+  #   c.a           #=> 10
+  #   c.new.a       #=> 10
   #
   # CREDIT: David Heinemeier Hansson
   def mattr_reader( *syms )
@@ -153,17 +169,18 @@ class Module
   # Creates a class-variable attr_writer that can
   # be accessed both on an instance and class level.
   #
-  #   module MAWExample
+  #   c = Class.new do
   #     mattr_writer :a
   #     def self.a
   #       @@a
   #     end
   #   end
   #
-  #   MAWExample.a = 10
-  #   MAWExample.a            #=> 10
-  #   MAWExample.new.a = 29
-  #   MAWExample.a            #=> 29
+  #   c.a = 10
+  #   c.a            #=> 10
+  #
+  #   c.new.a = 29
+  #   c.a            #=> 29
   #
   # CREDIT: David Heinemeier Hansson
   def mattr_writer(*syms)
@@ -188,14 +205,15 @@ class Module
   # Creates a class-variable attr_accessor that can
   # be accessed both on an instance and class level.
   #
-  #   module MAAExample
+  #   c = Class.new do
   #     mattr_accessor :a
   #   end
   #
-  #   MAAExample.a = 10
-  #   MAAExample.a           #=> 10
-  #   mc = MAAExample.new
-  #   mc.a                   #=> 10
+  #   c.a = 10
+  #   c.a           #=> 10
+  #
+  #   x = c.new
+  #   x.a           #=> 10
   #
   # CREDIT: David Heinemeier Hansson
   def mattr_accessor(*syms)
@@ -203,3 +221,20 @@ class Module
   end
 
 end
+
+# Consider the issue where a module's metaclass is not inherited.
+#
+#   m = Module.new do
+#     @@a = 10
+#     mattr_reader :a
+#   end
+#
+#   c = Class.new do
+#     include m
+#   end
+#
+#   expect NoMethodError do
+#     c.a
+#   end
+#
+# Ideally this would work.
