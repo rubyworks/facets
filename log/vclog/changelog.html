@@ -1,0 +1,648 @@
+<html>
+<head>
+  <title>Changelog</title>
+  <style>
+    body{font-family: sans-serif;}
+    #changelog{width:800px;margin:0 auto;}
+    li{padding: 10px;}
+    .date{font-weight: bold; color: gray; float: left; padding: 0 5px;}
+    .author{color: red;}
+    .message{padding: 5 0; font-weight: bold;}
+    .revison{font-size: 0.8em;}
+  </style>
+  <link rel="stylesheet" href="" type="text/css">
+</head>
+<body>
+  <div id="changelog">
+    <h1>ChangeLog</h1>
+    <ul class="log">
+  <li class="entry">
+    <div class="date">Sat Feb 28 05:10:35 -0500 2009</div>
+    <div class="author"> Sandor Szücs &lt;sandor.szuecs@fu-berlin.de&gt;</div>
+    <div class="type"></div>
+    <div class="message">fixed: Hash#dearray_singluar_values
+added: tests for Hash#dearray_singluar_values and Hash#dearray_values
+Signed-off-by: trans &lt;transfire@gmail.com&gt;</div>
+    <div class="revison">#938e5cf1d7a1dcecda96a8390b7e484cdcda7a9a</div>
+  </li>
+  <li class="entry">
+    <div class="date">Fri Feb 27 10:10:52 -0500 2009</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">added String#file</div>
+    <div class="revison">#952399f7d437f26aee3c4e9747a61e76b7e89735</div>
+  </li>
+  <li class="entry">
+    <div class="date">Fri Feb 27 10:09:56 -0500 2009</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">added to_h_auto and fixed return bug</div>
+    <div class="revison">#d7d5b02a219f850bc4a3b396de67e63cf005df5c</div>
+  </li>
+  <li class="entry">
+    <div class="date">Fri Feb 27 05:41:46 -0500 2009</div>
+    <div class="author"> Sandor Szücs &lt;sandor.szuecs@fu-berlin.de&gt;</div>
+    <div class="type"></div>
+    <div class="message">added tests for Array#to_h vs Array#to_h_* dispatch
+Signed-off-by: trans &lt;transfire@gmail.com&gt;</div>
+    <div class="revison">#a301757b9394355cd473a5e31565053a61ef84cf</div>
+  </li>
+  <li class="entry">
+    <div class="date">Thu Feb 26 16:15:16 -0500 2009</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type">minor</div>
+    <div class="message">corrected ostruct.rb to test for frozen state on updates </div>
+    <div class="revison">#1170dd9e1fdd552a98a01056547531ac6c9ee9f4</div>
+  </li>
+  <li class="entry">
+    <div class="date">Wed Feb 11 10:09:58 -0500 2009</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">overhauled to_hash.rb, now has multiple methods</div>
+    <div class="revison">#5ba2fb2bef735af8afec1b27cf381787baad3a8f</div>
+  </li>
+  <li class="entry">
+    <div class="date">Sun Feb 08 08:24:39 -0500 2009</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">added Hash#new_with (Pit Capitan)</div>
+    <div class="revison">#2dca37952e9803e816efc62514e8027fc2e1bf12</div>
+  </li>
+  <li class="entry">
+    <div class="date">Tue Feb 03 23:13:11 -0500 2009</div>
+    <div class="author"> Sandor Szücs &lt;sandor.szuecs@fu-berlin.de&gt;</div>
+    <div class="type"></div>
+    <div class="message">fixed doc on Array#product</div>
+    <div class="revison">#7c70691940766f6f05924dbbb249aff19154e4cc</div>
+  </li>
+  <li class="entry">
+    <div class="date">Tue Feb 03 21:39:19 -0500 2009</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">Merge: cd6fd7d... 7c70691...
+Merge commit &apos;origin/master&apos;</div>
+    <div class="revison">#a5a7976b2890988ee4b850f709c902dad3694b21</div>
+  </li>
+  <li class="entry">
+    <div class="date">Tue Feb 03 21:38:51 -0500 2009</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">added module/extend.rb, now can take a block.</div>
+    <div class="revison">#cd6fd7dea22a4ca57712773331ca495d1fb46b86</div>
+  </li>
+  <li class="entry">
+    <div class="date">Tue Feb 03 14:39:14 -0500 2009</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">Merge: 20022d2... fa22296...
+removed block from Array#product.rb</div>
+    <div class="revison">#2475e71433516c16778172c8b6724189d355acd5</div>
+  </li>
+  <li class="entry">
+    <div class="date">Tue Feb 03 14:36:11 -0500 2009</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">updated product.rb</div>
+    <div class="revison">#20022d2a286d374ea23567955db3e53610afda29</div>
+  </li>
+  <li class="entry">
+    <div class="date">Mon Feb 02 18:36:25 -0500 2009</div>
+    <div class="author"> Sandor Szücs &lt;sandor.szuecs@fu-berlin.de&gt;</div>
+    <div class="type"></div>
+    <div class="message">fixed test of Module#conflict according ruby19</div>
+    <div class="revison">#fa2229603f423925d10488bfa090a4c7fb138947</div>
+  </li>
+  <li class="entry">
+    <div class="date">Mon Feb 02 18:27:36 -0500 2009</div>
+    <div class="author"> Sandor Szücs &lt;sandor.szuecs@fu-berlin.de&gt;</div>
+    <div class="type"></div>
+    <div class="message">fixed: Array#to_h, h={} was not initialized</div>
+    <div class="revison">#67deaed1b1dff94ccde641917861ec3b1b5ba643</div>
+  </li>
+  <li class="entry">
+    <div class="date">Mon Feb 02 18:00:56 -0500 2009</div>
+    <div class="author"> Sandor Szücs &lt;sandor.szuecs@fu-berlin.de&gt;</div>
+    <div class="type"></div>
+    <div class="message">ruby19 compatability: return symbols instead of strings</div>
+    <div class="revison">#b8fa8dddb9e4bcd5dedb9e9afcebff9f4cf93f43</div>
+  </li>
+  <li class="entry">
+    <div class="date">Mon Feb 02 17:59:38 -0500 2009</div>
+    <div class="author"> Sandor Szücs &lt;sandor.szuecs@fu-berlin.de&gt;</div>
+    <div class="type"></div>
+    <div class="message">changed product to make it compatible to ruby 19, deleted block parameter</div>
+    <div class="revison">#28170c739f5c033d5172835fa50b81db83fc1e88</div>
+  </li>
+  <li class="entry">
+    <div class="date">Thu Jan 29 09:26:22 -0500 2009</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">fixed coruption of reciever by Hash#collate (thanks to Tilo Sloboda)</div>
+    <div class="revison">#de5fd8002d5c2452b5dd46051d02d27044506e9b</div>
+  </li>
+  <li class="entry">
+    <div class="date">Thu Jan 29 09:18:02 -0500 2009</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">added test for enumerable/split</div>
+    <div class="revison">#599f152f3a0651b0c5aa387f36844e572575066c</div>
+  </li>
+  <li class="entry">
+    <div class="date">Thu Jan 29 09:17:08 -0500 2009</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">improvements to website</div>
+    <div class="revison">#5bf7f37c1c72373426b56666952d312035bfe96d</div>
+  </li>
+  <li class="entry">
+    <div class="date">Thu Jan 29 09:16:24 -0500 2009</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">association.rb stores refernce when using #new</div>
+    <div class="revison">#4ca00a54bab0850436e769931b3d39e52d1fc9e6</div>
+  </li>
+  <li class="entry">
+    <div class="date">Tue Jan 27 15:16:43 -0500 2009</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">fixed Enumreable#split when reciever is empty array</div>
+    <div class="revison">#11bb453a7e9cf98a8dc698e8a8a10cdb81f69050</div>
+  </li>
+  <li class="entry">
+    <div class="date">Tue Jan 27 15:15:45 -0500 2009</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">added Hash#group_by_value (thanks to Erik Veenstra)</div>
+    <div class="revison">#131d6c81a5411fb21f005ae8d2051311b0e3e9c5</div>
+  </li>
+  <li class="entry">
+    <div class="date">Tue Jan 27 08:59:34 -0500 2009</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">fixed conflict between test_name.rb and test_arguments.rb</div>
+    <div class="revison">#5f33a45aff80f42f1644d46d9bd0746a2ae84b6b</div>
+  </li>
+  <li class="entry">
+    <div class="date">Tue Jan 27 08:51:50 -0500 2009</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">Doc&apos;d that UnboundMethod#name returns Symbol in 1.9, but String in 1.8</div>
+    <div class="revison">#88efec19f49fa048d936e93d07ab01b38b94d2c6</div>
+  </li>
+  <li class="entry">
+    <div class="date">Mon Jan 26 17:41:12 -0500 2009</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">added suggestion</div>
+    <div class="revison">#355efc3b8bec08e9fa2df7f5fa38350ffc77eaaf</div>
+  </li>
+  <li class="entry">
+    <div class="date">Mon Jan 26 17:40:48 -0500 2009</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">move test_to_hash.rb from more to core</div>
+    <div class="revison">#06d1fce988e2d3f6372fe68897ccb045450dac6d</div>
+  </li>
+  <li class="entry">
+    <div class="date">Mon Jan 26 17:40:07 -0500 2009</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">applied sandor&apos;s patch to test task</div>
+    <div class="revison">#e167e1ee7ef76f26a2564216b0e27ddaa268329c</div>
+  </li>
+  <li class="entry">
+    <div class="date">Mon Jan 26 17:39:17 -0500 2009</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">applied sander&apos;s patch to to_hash.rb</div>
+    <div class="revison">#af9283cf87dde154d11f1d6d2a5538c60686eae5</div>
+  </li>
+  <li class="entry">
+    <div class="date">Sun Jan 04 12:34:05 -0500 2009</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">Dictionary#replace can take regular Hash too</div>
+    <div class="revison">#69d6d8cc132564979e6af774bc252e4320f27d4c</div>
+  </li>
+  <li class="entry">
+    <div class="date">Sun Jan 04 10:16:20 -0500 2009</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">improved Array#to_h for 1.9 using flatten(1)</div>
+    <div class="revison">#a9e7f024b2a589c87b1313c4addc5d7e1f5df524</div>
+  </li>
+  <li class="entry">
+    <div class="date">Fri Dec 05 21:30:37 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">added hook.rb</div>
+    <div class="revison">#928f39446a01278e9587586fb6c684f3e1b1e36f</div>
+  </li>
+  <li class="entry">
+    <div class="date">Mon Dec 01 08:46:44 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">updated AUTHORS</div>
+    <div class="revison">#b16235f98d628690bc70b7b9e7330b8c34f868db</div>
+  </li>
+  <li class="entry">
+    <div class="date">Sun Nov 30 19:25:51 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">fixed String#left_align</div>
+    <div class="revison">#743d17d08f81ff1b4eb69d640a993865a8292335</div>
+  </li>
+  <li class="entry">
+    <div class="date">Sun Nov 30 19:25:17 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">Merge: ad7e8fa... a917218...
+Merge branch &apos;master&apos; of gitosis@rubyforge.org:facets</div>
+    <div class="revison">#6e245a4203f204b28d04ca8dcc7939af0d5d7a4f</div>
+  </li>
+  <li class="entry">
+    <div class="date">Sun Nov 30 19:24:55 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">fixed source link in website</div>
+    <div class="revison">#ad7e8fa86e501af52c1674cc74a75d9f1f7e0469</div>
+  </li>
+  <li class="entry">
+    <div class="date">Sun Nov 30 07:00:45 -0500 2008</div>
+    <div class="author"> T. Sawyer &lt;trans@di1525.(none)&gt;</div>
+    <div class="type"></div>
+    <div class="message">split enumerable/collect into map_with_index and comapct_map</div>
+    <div class="revison">#a917218ab39cc15fbba6137a9b27911317dc64f2</div>
+  </li>
+  <li class="entry">
+    <div class="date">Thu Nov 27 07:44:44 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">updated README</div>
+    <div class="revison">#b68ff4af2e860bf61c9f615254e54547ad69b5be</div>
+  </li>
+  <li class="entry">
+    <div class="date">Thu Nov 27 07:16:26 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">added MANIFEST to .gitignore</div>
+    <div class="revison">#f5970062bfb1c7c2209f0d49a908912a334a6213</div>
+  </li>
+  <li class="entry">
+    <div class="date">Thu Nov 27 07:09:07 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">time/hence.rb, added extra precaution to activesupport clause</div>
+    <div class="revison">#0ef19ed2a2757cf792fe41d90ecb0b21a8cb81ba</div>
+  </li>
+  <li class="entry">
+    <div class="date">Thu Nov 27 06:47:27 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">fixed namespace issure with filter.rb</div>
+    <div class="revison">#32d82e4d94c0b890e58ca387753e9f39f1b34fdb</div>
+  </li>
+  <li class="entry">
+    <div class="date">Wed Nov 26 23:42:46 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">separated hash update operator tests</div>
+    <div class="revison">#6ec91c0a981e082e52ae32eae02fec757dd6993a</div>
+  </li>
+  <li class="entry">
+    <div class="date">Wed Nov 26 23:30:32 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">one last edit of the RELEASE file</div>
+    <div class="revison">#e081163979406af73f7fcf970ecf4998478a363e</div>
+  </li>
+  <li class="entry">
+    <div class="date">Wed Nov 26 17:33:50 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">removed RichUnits namespace from Duration class</div>
+    <div class="revison">#1311970162359df7bce6f8fbaf1617f7c7c2861a</div>
+  </li>
+  <li class="entry">
+    <div class="date">Wed Nov 26 17:10:47 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">removed multiplers.rb from deprecation list</div>
+    <div class="revison">#2ee3fd5a501358789788e8aa8ca58f9fb58e3bcb</div>
+  </li>
+  <li class="entry">
+    <div class="date">Wed Nov 26 17:08:22 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">old duration is in work/deprecated for now</div>
+    <div class="revison">#1681e7eef2f80c390e599ab24381e9cf6661f304</div>
+  </li>
+  <li class="entry">
+    <div class="date">Wed Nov 26 17:07:46 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">rewrote duration class (as used in RichUnits)</div>
+    <div class="revison">#ec7928dd5b861150481f05788081c325f93967b8</div>
+  </li>
+  <li class="entry">
+    <div class="date">Wed Nov 26 16:22:35 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">added stash.rb to more library</div>
+    <div class="revison">#ec3b05c2c6aee5848cb05b462ee5a03e97e9b577</div>
+  </li>
+  <li class="entry">
+    <div class="date">Sun Nov 23 18:46:11 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">remove empty config file</div>
+    <div class="revison">#5ab56ddb15bfc03f1495c069ea50e90aa31153b4</div>
+  </li>
+  <li class="entry">
+    <div class="date">Sun Nov 23 18:45:36 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">closing in on 2.5 release</div>
+    <div class="revison">#33e0c9f4cb52d418102886e45a2f0ab4ac377241</div>
+  </li>
+  <li class="entry">
+    <div class="date">Sun Nov 23 15:15:15 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">update RELEASE</div>
+    <div class="revison">#2b8754c9e168aac7cdff25be7c846398f3c4a81f</div>
+  </li>
+  <li class="entry">
+    <div class="date">Sat Nov 22 12:22:37 -0500 2008</div>
+    <div class="author"> T. Sawyer &lt;trans@di1525.(none)&gt;</div>
+    <div class="type"></div>
+    <div class="message">pathlist, minor spacing adjusment</div>
+    <div class="revison">#f033d39210ccb32bc00d7f321f5d7a9fa2b79ddd</div>
+  </li>
+  <li class="entry">
+    <div class="date">Tue Nov 18 09:41:14 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">added sparse_array.rb (was old harray.rb)</div>
+    <div class="revison">#52e277a14a4cf377e2c20a26597ffe62bd35e39d</div>
+  </li>
+  <li class="entry">
+    <div class="date">Mon Nov 17 20:12:41 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">added work/suggestions.txt</div>
+    <div class="revison">#e944f9fbeea538f6fd5492b89c8aadc6ed35cbd2</div>
+  </li>
+  <li class="entry">
+    <div class="date">Mon Nov 17 20:09:36 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type">major</div>
+    <div class="message">deprecated uploadutils.rb &amp; renamed cachedelegator to memoizer </div>
+    <div class="revison">#fce69653d3b40ad16738bbe366494a587b53cb28</div>
+  </li>
+  <li class="entry">
+    <div class="date">Sun Nov 16 20:21:07 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">moved reap service configs</div>
+    <div class="revison">#3f76241ad016088d46fdeee181a07563a6bab2c8</div>
+  </li>
+  <li class="entry">
+    <div class="date">Sun Nov 16 20:20:13 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">updated reap service configs</div>
+    <div class="revison">#af975097d1da4029281b761b1d366e1df9616f5a</div>
+  </li>
+  <li class="entry">
+    <div class="date">Sun Nov 16 20:19:02 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">deprecated eventhook.rb</div>
+    <div class="revison">#95cab67716ed5132409c8dae0848abbf83036e0e</div>
+  </li>
+  <li class="entry">
+    <div class="date">Sat Nov 15 16:06:03 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">removed lingering .svn directories</div>
+    <div class="revison">#e22bb8ce1154a6a6c66ee4358a15fc29a62b6c06</div>
+  </li>
+  <li class="entry">
+    <div class="date">Sat Nov 15 14:18:42 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">collected notes into doc/guide/notes.rd</div>
+    <div class="revison">#063c61e560c44528b7d194d1dea68a0d1a58dbc0</div>
+  </li>
+  <li class="entry">
+    <div class="date">Fri Nov 14 17:22:51 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">adjusted docs for eventhook.rb</div>
+    <div class="revison">#cddd022ba77c910aa6c8c3f4f258f6fbb429f67f</div>
+  </li>
+  <li class="entry">
+    <div class="date">Fri Nov 14 17:13:10 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">Merge: 805a1e7... 6713f9e...
+Merge branch &apos;master&apos; of gitosis@rubyforge.org:facets</div>
+    <div class="revison">#b6bd3fbeb09aa7c84d503b529ffaf14a2a57188f</div>
+  </li>
+  <li class="entry">
+    <div class="date">Fri Nov 14 17:12:50 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">update authors</div>
+    <div class="revison">#805a1e7dd8be36063a7ad580279fd12525a48ae2</div>
+  </li>
+  <li class="entry">
+    <div class="date">Thu Nov 13 12:00:13 -0500 2008</div>
+    <div class="author"> Tyler Rick &lt;github.com@tylerrick.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">Fixed some bugs with Time#ago/Time#hence not changing years correctly when you changed months.
+(For example, Time.utc(2008, 1, 1).ago(12, :months) incorrectly returned 2009-01-01 instead of 2007-01-01.)
+Added a bunch of tests for Time#ago/Time#hence.
+Changed Time#ago/Time#hence to still work if passed negative number.</div>
+    <div class="revison">#6713f9ed3ac045ce7ab26f336b375167f09fbed1</div>
+  </li>
+  <li class="entry">
+    <div class="date">Thu Nov 13 08:35:03 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">added test for filter.rb</div>
+    <div class="revison">#d1b683f891f9b6a536fdf8ee39ff28a1867d1171</div>
+  </li>
+  <li class="entry">
+    <div class="date">Thu Nov 13 08:33:34 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">uploadutils.rb, added deprecation warning</div>
+    <div class="revison">#85b8796a2391ab1b3f4b7c24abea51f1d75407f0</div>
+  </li>
+  <li class="entry">
+    <div class="date">Thu Nov 13 08:28:46 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">removed some old work material</div>
+    <div class="revison">#fe44485a97e582f9d7fb269ed5215358f16bc870</div>
+  </li>
+  <li class="entry">
+    <div class="date">Thu Nov 13 07:21:24 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">consoleutils.rb and ziputils.rb, added deprecation warning</div>
+    <div class="revison">#3393df26d085e43e5f23707e9a44744ad12c9a34</div>
+  </li>
+  <li class="entry">
+    <div class="date">Thu Nov 13 07:19:05 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">fixed missing require in string/tabto and minor doc adjustments</div>
+    <div class="revison">#033bee47b8e77180018fffc9cf937e05f0ef15b0</div>
+  </li>
+  <li class="entry">
+    <div class="date">Thu Nov 13 07:14:06 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type">major</div>
+    <div class="message">Added Brian Candler&apos;s Enumerator::Filter </div>
+    <div class="revison">#1f69ed9924af80b71328eec3509f7ccc280435c6</div>
+  </li>
+  <li class="entry">
+    <div class="date">Thu Nov 13 07:12:05 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">removed more/chain.rb; it was expiremental</div>
+    <div class="revison">#21ee88ae808daf4e94c0f918776068f6b93ca00c</div>
+  </li>
+  <li class="entry">
+    <div class="date">Sun Nov 09 19:00:24 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">removed tests of deprecated libraries</div>
+    <div class="revison">#c40eb89ac84eb6968bf3ca5b63255361e401dc3d</div>
+  </li>
+  <li class="entry">
+    <div class="date">Sun Nov 09 18:06:53 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">improved docs for Hash#rekey</div>
+    <div class="revison">#6f8eb8ac265613ca25d1f91f17bb87eeeaa30f17</div>
+  </li>
+  <li class="entry">
+    <div class="date">Sun Nov 09 18:05:57 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">renamed DictionaryMatcher to just Matcher</div>
+    <div class="revison">#7170ecfdfd650d7477974c28ed3e7aeeafbe37e8</div>
+  </li>
+  <li class="entry">
+    <div class="date">Sun Nov 09 18:05:14 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">moved Hash#symolize_keys to core and removed tagiter.rb</div>
+    <div class="revison">#99a43a648411bb27a5473e2feb049476d2fe8158</div>
+  </li>
+  <li class="entry">
+    <div class="date">Sun Nov 09 14:38:42 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type">major</div>
+    <div class="message">finalized deprecation of buildable.rb, bytes.rb and times.rb </div>
+    <div class="revison">#e290ea855cceefd0033bb3b7fe2ff23fb6beb29a</div>
+  </li>
+  <li class="entry">
+    <div class="date">Sun Nov 09 11:22:55 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">minor touch up to a few tests</div>
+    <div class="revison">#c15d569c5ff44770291490a06ec280765f0b23ae</div>
+  </li>
+  <li class="entry">
+    <div class="date">Sun Nov 09 11:21:59 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">fixed some credits</div>
+    <div class="revison">#46a2e5e0cd235b40b6c8dd7ac6f0c1a5d28b3bb3</div>
+  </li>
+  <li class="entry">
+    <div class="date">Sun Nov 09 11:20:20 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">binding/caller.rb, fixed require for callstack.rb</div>
+    <div class="revison">#3c8c51271854a308be35118e69f97c85767fade7</div>
+  </li>
+  <li class="entry">
+    <div class="date">Thu Nov 06 18:14:44 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">updated all CREDIT: comments elminating any indent</div>
+    <div class="revison">#26e439aa7cd825443470071ad28fe3ae00d7041d</div>
+  </li>
+  <li class="entry">
+    <div class="date">Wed Nov 05 21:33:11 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">deprecated annotations.rb --use Anise project instead</div>
+    <div class="revison">#ffd083e355ac069aacb7bd6a18d9ab3609f0aec8</div>
+  </li>
+  <li class="entry">
+    <div class="date">Wed Nov 05 20:25:35 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">added lazyenum.rb to work/consider</div>
+    <div class="revison">#26ed9bd74574df80752f243610e77d5b2e19e278</div>
+  </li>
+  <li class="entry">
+    <div class="date">Wed Nov 05 20:24:11 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">add string/outdent.rb file</div>
+    <div class="revison">#a4c7cf513d4a37f8230392917f57eb48c4560c45</div>
+  </li>
+  <li class="entry">
+    <div class="date">Wed Nov 05 20:23:33 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">updated AUTHORS and README</div>
+    <div class="revison">#d793ab0df2fbbe5b3947dadf2ab612a5f0b54253</div>
+  </li>
+  <li class="entry">
+    <div class="date">Wed Nov 05 20:22:53 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">deactivated reap test services temporarily</div>
+    <div class="revison">#0495409de664c53293b64d50316b8a1ad59b803c</div>
+  </li>
+  <li class="entry">
+    <div class="date">Wed Nov 05 20:20:00 -0500 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">fixed outdent test and demo in instance_variables.rb</div>
+    <div class="revison">#d207eadbd9bc43936e63730a9d0a93e6c9c3c45b</div>
+  </li>
+  <li class="entry">
+    <div class="date">Wed Oct 29 13:04:09 -0400 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">aliased Comparable#cap to at_most and separated bound methods into files</div>
+    <div class="revison">#576e36a3e709c1512477084ceab962cde10aafba</div>
+  </li>
+  <li class="entry">
+    <div class="date">Wed Oct 29 12:41:02 -0400 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type">major</div>
+    <div class="message">memoize.rb, bug had cache working at class-level, fixed to work at instance-level </div>
+    <div class="revison">#f5c3b659591b85ff55d0a82ec65316126b01e210</div>
+  </li>
+  <li class="entry">
+    <div class="date">Wed Oct 29 07:37:27 -0400 2008</div>
+    <div class="author"> trans &lt;transfire@gmail.com&gt;</div>
+    <div class="type"></div>
+    <div class="message">switched to git as of 2.4.4</div>
+    <div class="revison">#9677fbda269f205ff5ab07eabca70fe419b7b485</div>
+  </li>
+    </ul>
+  </div>
+</body>
+</html>

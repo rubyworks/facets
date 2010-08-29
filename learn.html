@@ -1,221 +1,184 @@
----
-layout: default
----
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-<div class="blurb">
-  <div class="desc">
-    <h1>Easy to Learn</h1>
-    Learn Facets as you program, these resources make it a snap.
-  </div>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <title>Ruby Facets</title>
+
+  <!-- google verification-->
+  <meta name="verify-v1" content="p14vW7GGMohDo2YKUHm0SXXTL+tzyPbKxxp35/WIQLA=" />
+
+  <meta name="DESCRIPTION"
+        content="Ruby Facets is a large collection of libraries for the Ruby programming lanaguage."/>
+
+  <link rel="icon" href="/media/favicon.ico" type="image/x-icon" />
+
+  <link href="http://rubyworks.github.com/facets/atom.xml" rel="alternate" title="blog.facets.rubyforge.org" type="application/atom+xml" />
+
+<!--
+  <link href="/assets/styles/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <link href="/assets/styles/print.css"  media="print" rel="stylesheet" type="text/css" />
+-->
+
+  <!--[if IE]>
+      <link href="/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <![endif]-->
+
+  <link href="/assets/site.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/syntax.css" rel="stylesheet" type="text/css" />
+
+  <!-- <script src="/js/rdocs.js" type="text/javascript"></script> -->
+</head>
+
+<body>
+
+<div id="forkme">
+  <img src="/media/forkme.png" />
 </div>
 
-<div class="page">
+<div id="container">
 
- <!--
-  <div class="heading">
-    <img src="APIdocs.png" align="top"/>
+  <div id="header">
+    <a href="http://github.com/rubyworks/facets">
+      <img id="logo" src="/media/RubyFacets.png" align="middle" />
+    </a>
   </div>
- -->
-  <br/>
 
-  <table id="doctable" style="width: 80%; margin: 0 auto;">
-    <tr>
-      <td style="text-align: center; border: 0px solid #cccccc;">
-        <a class="big" href="{{ site.url }}/apidoc/index.html">
-          <img src="{{ site.url }}/assets/images/candy-s.jpg" height="150px" style="padding: 1px;" align="middle"/>
-        </a> <br/><br/>
-        <a class="big" href="{{ site.url }}/apidoc/index.html">
-          APIdocs
-        </a>
-      </td>
-      <td style="text-align: center; border: 0px solid #cccccc;">
-        <a class="big" href="{{ site.url }}/apidoc/quick.html">
-          <img src="{{ site.url }}/assets/images/appleslice.jpg" width="130px" height="150px" style="padding: 1px;" align="middle"/>
-        </a> <br/><br/>
-        <a class="big" href="{{ site.url }}/apidoc/quick.html">
-          Sidebar
-        </a>
-      </td>
-      <td style="text-align: center; border: 0px solid #cccccc;">
-        <a class="big" href="doc/api/core/index.html">
-          <img src="{{ site.url }}/assets/images/apple_core.jpg" height="150px" align="middle"/>
-        </a> <br/><br/>
-        <a class="big" href="{{ site.url }}/apidoc/api/core/index.html">
-          Core <b>API</b>
-        </a>
-      </td>
-      <td style="text-align: center; border: 0px solid #cccccc;">
-        <a class="big" href="doc/api/more/index.html">
-          <img src="{{ site.url }}/assets/images/apples3.jpg" height="150px" align="middle"/>
-        </a> <br/><br/>
-        <a class="big" href="{{ site.url }}/apidoc/api/more/index.html">
-          More <b>API</b>
-        </a>
-      </td>
-<!--
-      <td style="text-align: center; border: 0px solid #cccccc;">
-        <a class="big" href="http://groups.google.com/group/facets-universal/web?hl=en">
-          <img src="assets/images/applewik.jpg" height="150px" align="middle"/>
-        </a> <br/><br/>
-        <a class="big" href="http://groups.google.com/group/facets-universal/web?hl=en">
-          Wiki Wiki
-        </a>
-      </td>
--->
-      <td style="text-align: center; border: 0px solid #cccccc;">
-        <a class="big" href="#books">
-          <img src="{{ site.url }}/assets/images/ruby-lg.png" width="150px" height="150px" style="padding: 1px;" align="middle"/>
-        </a> <br/><br/>
-        <a class="big" href="#books">
-          Learn Ruby
-        </a>
-      </td>
-    </tr>
-  </table>
+  <!-- <div id="drop_shadow"></div> -->
+
+  <div id="content">
+
+  <div class="blurb">
+    <div id="menu">
+      <a href="/index.html">Overview</a> &middot;
+      <a href="/news.html">News/Blog</a> &middot;
+      <a href="/learn.html">Documentation</a> &middot;
+      <a href="/source.html">Development</a>
+      <img style="width: 20px; height: 1px;" src="/media/clear.gif"/>
+    </div>
+
+    <div class="desc">
+      <h1>Easy to Learn</h1>
+      Learn Facets as you program, these resources make it a snap. Hook up with other users and broaden the scope of your usage. Ruby Facets has a moto, "All Base Common".
+    </div>
+  </div>
+
+
+  <div class="page">
+    <h1>Installation</h1>
+
+<h2>RubyGems</h2>
+
+<p>Facets can be dowloaded and installed easily using RubyGems:</p>
+
+<pre><code>$ gem install facets
+</code></pre>
+
+<p>Gems will automatically generate rdocs on installation. Unfortunately
+the Gem generated rdocs are very poor --in fact Facets only allows them
+to be generated to ensure the creation of ri docs (ruby api index files).
+We recommend instead that you use the pre-generated rdocs on the website.</p>
+
+<h2>Site Install</h2>
+
+<p>If you would like to install from source, you can download the tarball
+package from <a href="http://github.com/proutils/facets/download">GitHub</a>
+and use <a href="http://proutils.github.com/setup">Ruby Setup</a>, e.g.</p>
+
+<pre><code>$ tar -xvzf facets-2.9.0.tgz
+$ cd facets-2.9.0
+$ setup.rb
+</code></pre>
+
+<p>The last step may require super-user permissions (eg. use <code>sudo</code>).</p>
+
+<p>Of course, to use Facets you also need <em>Ruby</em>. The 2.x versions of Facets are
+designed to work with Ruby 1.8.6 and up. Facets is fully compatible with Ruby 1.9.</p>
+
+<h1>API Documentation</h1>
+
+<p>Facets API is divided into three documentation sets, one for each library group,
+CORE for the core extensions, MORE for the addtions and standard library extensions
+and TOUR, for extra extensions.</p>
+
+<h2>Core API</h2>
+
+<p>The <a href="/doc/api/core/index.html">CORE API</a> includes all the "prime" extensions.
+These methods are at the heart of Facets. Any application or library that makes use
+of Facets, you can be sure, supports these methods. Also include is the Functor class,
+which is a Higher Order Message class. It is used by a number of methods to provide
+fluid interfaces.</p>
+
+<h2>More API</h2>
+
+<p>The <a href="/doc/api/more/index.html">MORE API</a> documents the variety of extension
+methods to Ruby's standard library, and additional classes, modules and micro-frameworks
+Facets provides as optional libraries.</p>
+
+<h2>Tour API</h2>
+
+<p>The <a href="/doc/api/tour/index.html">TOUR API</a> documents a small collection
+of extensions and occasionally class and module additions "on tour" as possible
+inclusions into CORE or MORE proper. This has been created as an easy way for
+Facets vet new ideas. In a few cases some extensions might reside here indefinitely
+if they are useful, but not suited for inclusion in CORE.</p>
+
+<h1>Wiki</h1>
+
+<p>The Wiki is a place for end-users to create their own documentation. Ultimately,
+it is hoped, this documentaiton will make a great source for sharing real-world
+use cases. However, a full Wiki solution isn't in place yetand we are simply
+using Google Pages, provided along side the Google mailing list interface.</p>
+
+<p>Facets has a community wiki that anyone can use to help document Facets at
+<a href="http://wiki.github.com/rubyworks/facets">Facets Wiki</a>.</p>
+
+<h1>Mailing List</h1>
+
+<p>Facets has a dedicated mailing list hosted via Rubyforge.org, used by
+developers and end-users alike. You can subscribe to it directly,
+or subscribe via the Google Groups archive of the list.</p>
+
+<p>  http://groups.google.com/group/facets-universal/topics?hl=en</p>
+
+  </div>
+
+  </div>
+
+</div>
+
+<div id="copyright">
+  <img src="/media/abc1.png"/>
+
+  <br/><br/><br/>
+
+  Copyright (c) 2005-2008 Thomas Sawyer &amp; Contributors <br/><br/>
+
+  Ruby Facets was created by Thomas Sawyer (7rans), either written by hand or collected from a variety of Ruby resources.<br/>
+  The system continues to be extended and improved by a diverse cast of open-source contributors.<br/><br/>
+
+  Facets is released under the terms of the Ruby license, just like Ruby.<br/>
+  The Ruby license is a dual GPLv2 license.<br/><br/>
+
+  "Facets", "Ruby Facets" and "All Base Common" are trademarks of Thomas Sawyer. All rights reserved.
 
   <br/><br/>
 
-  <div class="section">
-
-    <h1>
-      <a class="big" href="{{ site.url }}/apidoc/index.html">
-        <img src="{{ site.url }}/assets/images/candy.gif" width="60px;" align="absmiddle"/>
-      </a>
-      APIdocs
-    </h1>
-
-    <p>
-      The <a href="{{ site.url }}/apidoc/index.html">APIdocs</a> provides a comprehensive interface with access
-      package documents, such as the README and Release Notes as well as convenient access to
-      both the Core and More RDoc APIs.
-    </p>
-
-  </div>
-
-  <div class="section">
-
-    <h1>
-      <a class="big" href="{{ site.url }}/apidoc/quick.html">
-        <img src="{{ site.url }}/assets/images/appleslice.jpg" width="60px;" align="absmiddle"/>
-      </a>
-      Sidebar
-    </h1>
-
-    <p>
-      <a class="big"
-         href="javascript: window.open('{{ site.url }}/{{ site.url }}/apidoc/quick.html', 'facets_quickdocs',
-               config='height=470, width=551, toolbar=no, menubar=no, scrollbars=no, status=0,
-               resizable=no, location=no, directories=no'); void(0);">
-        <img src="assets/images/mini.png" align="right" style="margin: -15px 3px;"/>
-      </a>
-
-      The <a href="{{ site.url }}/apidoc/quick.html">Sidebar</a> provides a convenient "quick reference" interface
-      to the RDoc API documentation. It is especailly useful for browsers that support sidebar pages,
-      such as Firefox. Simply drag-and-drop the "apple slice image" (left of this text) to a toolbar,
-      then alter it's properties to open as a <i>sidebar</i>. If your browser doesn't support sidebars,
-      or if you simply prefer, you can use the
-      <a href="javascript: window.open('{{ site.url }}/apidoc/quick.html', 'facets_quickdocs',
-               config='height=470, width=551, toolbar=no, menubar=no, scrollbars=no, status=0,
-               resizable=no, location=no, directories=no'); void(0);">Mini API</a> instead.
-      This offers the same interface, but in a small stand-alone window.
-    </p>
-
-  </div>
-
-  <div class="section">
-
-    <h1>
-      <a class="big" href="{{ site.url }}/apidoc/api/core/index.html">
-        <img src="{{ site.url }}/assets/images/apple_core.jpg" width="60px;" align="absmiddle"/>
-      </a>
-      Core API
-    </h1>
-
-    <p>The CORE API includes all the "prime" extensions. These methods are at the heart of
-       Facets. Any application or library that makes use of Facets, you can be sure, supports
-       these methods. Also include is the Functor class, which is a Higher Order Message class.
-       It is used by a number of methods to provide fluid interfaces.</p>
-
-    <p style="color: white;">
-      <a href="{{ site.url }}/apidoc/api/core/classes/Array.html">         Array</a> |
-      <a href="{{ site.url }}/apidoc/api/core/classes/Binding.html">       Binding</a> |
-      <a href="{{ site.url }}/apidoc/api/core/classes/Class.html">         Class</a> |
-      <a href="{{ site.url }}/apidoc/api/core/classes/Comparable.html">    Comparable</a> |
-      <!-- <a href="{{ site.url }}/apidoc/api/core/classes/Continuation.html">  Continuation</a> | -->
-      <a href="{{ site.url }}/apidoc/api/core/classes/Dir.html">           Dir</a> |
-      <a href="{{ site.url }}/apidoc/api/core/classes/Enumerable.html">    Enumerable</a> |
-      <a href="{{ site.url }}/apidoc/api/core/classes/Exception.html">     Exception</a> |
-      <a href="{{ site.url }}/apidoc/api/core/classes/FalseClass.html">    FalseClass</a> |
-      <a href="{{ site.url }}/apidoc/api/core/classes/File.html">          File</a> |
-      <a href="{{ site.url }}/apidoc/api/core/classes/FileTest.html">      FileTest</a> |
-      <a href="{{ site.url }}/apidoc/api/core/classes/Float.html">         Float</a> |
-      <a href="{{ site.url }}/apidoc/api/core/classes/Functor.html">       Functor</a> |
-      <a href="{{ site.url }}/apidoc/api/core/classes/Hash.html">          Hash</a> |
-      <a href="{{ site.url }}/apidoc/api/core/classes/Indexable.html">     Indexable</a> |
-      <a href="{{ site.url }}/apidoc/api/core/classes/Integer.html">       Integer</a> |
-      <a href="{{ site.url }}/apidoc/api/core/classes/Kernel.html">        Kernel</a> |
-      <a href="{{ site.url }}/apidoc/api/core/classes/MatchData.html">     MatchData</a> |
-      <a href="{{ site.url }}/apidoc/api/core/classes/Module.html">        Module</a> |
-      <a href="{{ site.url }}/apidoc/api/core/classes/NilClass.html">      NilClass</a> |
-      <a href="{{ site.url }}/apidoc/api/core/classes/Numeric.html">       Numeric</a> |
-      <a href="{{ site.url }}/apidoc/api/core/classes/Object.html">        Object</a> |
-      <a href="{{ site.url }}/apidoc/api/core/classes/Proc.html">          Proc</a> |
-      <a href="{{ site.url }}/apidoc/api/core/classes/Range.html">         Range</a> |
-      <a href="{{ site.url }}/apidoc/api/core/classes/Regexp.html">        Regexp</a> |
-      <a href="{{ site.url }}/apidoc/api/core/classes/Stackable.html">     Stackable</a> |
-      <a href="{{ site.url }}/apidoc/api/core/classes/String.html">        String</a> |
-      <a href="{{ site.url }}/apidoc/api/core/classes/Symbol.html">        Symbol</a> |
-      <a href="{{ site.url }}/apidoc/api/core/classes/Time.html">          Time</a> |
-      <a href="{{ site.url }}/apidoc/api/core/classes/TrueClass.html">     TrueClass</a> |
-      <a href="{{ site.url }}/apidoc/api/core/classes/UnboundMethod.html"> UnboundMethod</a>
-    </p>
-
-  </div>
-
-  <div class="section">
-
-    <h1>
-      <a class="big" href="{{ site.url }}/apidoc/api/more/index.html">
-        <img src="assets/images/apples3.jpg" width="60px;" align="absmiddle"/>
-      </a>
-      More API
-    </h1>
-
-    <p>The "More" API consists of RDocs for the variety of addon classes, modules and mini-frameworks
-       provided by Facets. To list just a few:
-    </p>
-
-    <p style="color: white;">
-      <a href="{{ site.url }}/apidoc/api/more/classes/Inheritor.html">   Inheritor</a> |
-      <a href="{{ site.url }}/apidoc/api/more/classes/Multiton.html">    Multiton</a> |
-      <a href="{{ site.url }}/apidoc/api/more/classes/OpenObject.html">  OpenObject</a> |
-      <a href="{{ site.url }}/apidoc/api/more/classes/Random.html">      Random</a> |
-      <a href="{{ site.url }}/apidoc/api/more/classes/Reference.html">   Reference</a> |
-      <a href="{{ site.url }}/apidoc/api/more/classes/Tuple.html">       Tuple</a>
-    </p>
-
-  </div>
-
-  <div class="section">
-
-    <h1>
-      <a class="big" href="{{ site.url }}/apidoc/api/more/index.html">
-        <img src="assets/images/apples3.jpg" width="60px;" align="absmiddle"/>
-      </a>
-      WebRI
-    </h1>
-
-    <p>Facets documentation is now also available via WebRI, and online RI browser.</p>
-    
-    <p><a href="{{ site.url }}/apidoc/webri">WebRI Docs</a></p>
-
-  </div>
-
-  <div class="section" id="books">
-    <h1><img src="assets/images/ruby-lg.png" width="60px;" align="absmiddle"/> Learn Ruby</h1>
-
-    <iframe src="assets/adverts/amazon.html" style="height: 200px; width: 100%;" scrolling="no"></iframe>
-  </div>
-
+  THIS SOFTWARE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR
+  IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
+  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE.
 </div>
 
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-2883355-2";
+urchinTracker();
+</script>
+
+</body>
+</html>

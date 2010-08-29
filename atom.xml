@@ -1,23 +1,59 @@
----
-layout: nil
----
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>blog.crantastic.org</title>
  <link href="http://blog.crantastic.org/atom.xml" rel="self"/>
  <link href="http://blog.crantastic.org/"/>
- <updated>{{ site.time | date_to_xmlschema }}</updated>
+ <updated></updated>
  <id>http://blog.crantastic.org/</id>
 
- {% for post in site.posts %}
+ 
  <entry>
-   <title>{{ post.title | xml_escape }}</title>
-   <link href="{{ site.url }}{{ post.url }}"/>
-   <updated>{{ post.date | date_to_xmlschema }}</updated>
-   <id>{{ site.url }}{{ post.id }}</id>
-   <content type="html">{{ post.content | xml_escape }}</content>
+   <title>Facets 2.9 Release</title>
+   <link href="http://rubyworks.github.com/facetshttp://rubyworks.github.com/facets/posts/2010-09-01-release-2-9.html"/>
+   <updated>2010-09-01</updated>
+   <id>http://rubyworks.github.com/facets</id>
+   <content type="html"></content>
  </entry>
- {% endfor %}
+ 
+ <entry>
+   <title>Facets 2.8 Release</title>
+   <link href="http://rubyworks.github.com/facetshttp://rubyworks.github.com/facets/posts/2009-11-09-release-2-8.html"/>
+   <updated>2009-11-09</updated>
+   <id>http://rubyworks.github.com/facets</id>
+   <content type="html"></content>
+ </entry>
+ 
+ <entry>
+   <title>Facets 2.7 is a Significant Release</title>
+   <link href="http://rubyworks.github.com/facetshttp://rubyworks.github.com/facets/posts/2009-08-22-release-2-7.html"/>
+   <updated>2009-08-22</updated>
+   <id>http://rubyworks.github.com/facets</id>
+   <content type="html"></content>
+ </entry>
+ 
+ <entry>
+   <title>New Website with Jekyll</title>
+   <link href="http://rubyworks.github.com/facetshttp://rubyworks.github.com/facets/posts/2009-07-21-new-website.html"/>
+   <updated>2009-07-01</updated>
+   <id>http://rubyworks.github.com/facets</id>
+   <content type="html"></content>
+ </entry>
+ 
+ <entry>
+   <title>Facets 2.4.3</title>
+   <link href="http://rubyworks.github.com/facetshttp://rubyworks.github.com/facets/posts/2008-03-24-release-2-4.html"/>
+   <updated>2008-03-24</updated>
+   <id>http://rubyworks.github.com/facets</id>
+   <content type="html"></content>
+ </entry>
+ 
+ <entry>
+   <title>How Facets Was Born</title>
+   <link href="http://rubyworks.github.com/facetshttp://rubyworks.github.com/facets/posts/2008-01-01-how-facets-was-born.html"/>
+   <updated>2008-01-01</updated>
+   <id>http://rubyworks.github.com/facets</id>
+   <content type="html"></content>
+ </entry>
+ 
 </feed>
-

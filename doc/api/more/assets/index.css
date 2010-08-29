@@ -1,0 +1,49 @@
+#index {
+  padding: 0 40px;
+}
+
+#index h2 {
+  border-bottom: 1px solid #ccc;
+}
+
+#index li {
+  padding-left: 20px;
+  background: url(icon/bullet.png) no-repeat left 4px;
+  color: #666;
+}
+
+#index li.method {
+  padding-left: 20px;
+  background: url(icon/method.png) no-repeat left 2px;
+}
+
+#index li.singleton {
+  padding-left: 20px;
+  background: url(icon/singleton.png) no-repeat left 2px;
+}
+
+#index li.module {
+  padding-left: 20px;
+  background: url(icon/module.png) no-repeat left 2px;
+}
+
+#index li.method .small {
+  font-size: 0.8em;
+  color: #777;
+}
+
+#index li.class {
+  padding-left: 20px;
+  background: url(icon/class.png) no-repeat left 2px;
+}
+
+#index li.file {
+  background: url(icon/file.png) no-repeat left 2px;
+  padding-left: 20px;
+  float: left;
+  min-width: 150px;
+}
+
+#index ul.file-listing {
+  list-style: none;
+}

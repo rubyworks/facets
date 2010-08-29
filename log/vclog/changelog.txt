@@ -1,0 +1,217 @@
+2009-02-28   Sandor Szücs <sandor.szuecs@fu-berlin.de>
+
+        * fixed: Hash#dearray_singluar_values
+          added: tests for Hash#dearray_singluar_values and Hash#dearray_values
+          Signed-off-by: trans <transfire@gmail.com>
+
+
+2009-02-27   Sandor Szücs <sandor.szuecs@fu-berlin.de>
+
+        * added tests for Array#to_h vs Array#to_h_* dispatch
+          Signed-off-by: trans <transfire@gmail.com>
+2009-02-27   trans <transfire@gmail.com>
+
+        * added String#file
+        * added to_h_auto and fixed return bug
+
+
+2009-02-26   trans <transfire@gmail.com>
+
+        * corrected ostruct.rb to test for frozen state on updates  [minor]
+
+
+2009-02-11   trans <transfire@gmail.com>
+
+        * overhauled to_hash.rb, now has multiple methods
+
+
+2009-02-08   trans <transfire@gmail.com>
+
+        * added Hash#new_with (Pit Capitan)
+
+
+2009-02-03   Sandor Szücs <sandor.szuecs@fu-berlin.de>
+
+        * fixed doc on Array#product
+2009-02-03   trans <transfire@gmail.com>
+
+        * Merge: cd6fd7d... 7c70691...
+          Merge commit 'origin/master'
+        * added module/extend.rb, now can take a block.
+        * Merge: 20022d2... fa22296...
+          removed block from Array#product.rb
+        * updated product.rb
+
+
+2009-02-02   Sandor Szücs <sandor.szuecs@fu-berlin.de>
+
+        * fixed test of Module#conflict according ruby19
+        * fixed: Array#to_h, h={} was not initialized
+        * ruby19 compatability: return symbols instead of strings
+        * changed product to make it compatible to ruby 19, deleted block parameter
+
+
+2009-01-29   trans <transfire@gmail.com>
+
+        * fixed coruption of reciever by Hash#collate (thanks to Tilo Sloboda)
+        * added test for enumerable/split
+        * improvements to website
+        * association.rb stores refernce when using #new
+
+
+2009-01-27   trans <transfire@gmail.com>
+
+        * fixed Enumreable#split when reciever is empty array
+        * added Hash#group_by_value (thanks to Erik Veenstra)
+        * fixed conflict between test_name.rb and test_arguments.rb
+        * Doc'd that UnboundMethod#name returns Symbol in 1.9, but String in 1.8
+
+
+2009-01-26   trans <transfire@gmail.com>
+
+        * added suggestion
+        * move test_to_hash.rb from more to core
+        * applied sandor's patch to test task
+        * applied sander's patch to to_hash.rb
+
+
+2009-01-04   trans <transfire@gmail.com>
+
+        * Dictionary#replace can take regular Hash too
+        * improved Array#to_h for 1.9 using flatten(1)
+
+
+2008-12-05   trans <transfire@gmail.com>
+
+        * added hook.rb
+
+
+2008-12-01   trans <transfire@gmail.com>
+
+        * updated AUTHORS
+
+
+2008-11-30   trans <transfire@gmail.com>
+
+        * fixed String#left_align
+        * Merge: ad7e8fa... a917218...
+          Merge branch 'master' of gitosis@rubyforge.org:facets
+        * fixed source link in website
+2008-11-30   T. Sawyer <trans@di1525.(none)>
+
+        * split enumerable/collect into map_with_index and comapct_map
+
+
+2008-11-27   trans <transfire@gmail.com>
+
+        * updated README
+        * added MANIFEST to .gitignore
+        * time/hence.rb, added extra precaution to activesupport clause
+        * fixed namespace issure with filter.rb
+
+
+2008-11-26   trans <transfire@gmail.com>
+
+        * separated hash update operator tests
+        * one last edit of the RELEASE file
+        * removed RichUnits namespace from Duration class
+        * removed multiplers.rb from deprecation list
+        * old duration is in work/deprecated for now
+        * rewrote duration class (as used in RichUnits)
+        * added stash.rb to more library
+
+
+2008-11-23   trans <transfire@gmail.com>
+
+        * remove empty config file
+        * closing in on 2.5 release
+        * update RELEASE
+
+
+2008-11-22   T. Sawyer <trans@di1525.(none)>
+
+        * pathlist, minor spacing adjusment
+
+
+2008-11-18   trans <transfire@gmail.com>
+
+        * added sparse_array.rb (was old harray.rb)
+
+
+2008-11-17   trans <transfire@gmail.com>
+
+        * added work/suggestions.txt
+        * deprecated uploadutils.rb & renamed cachedelegator to memoizer  [major]
+
+
+2008-11-16   trans <transfire@gmail.com>
+
+        * moved reap service configs
+        * updated reap service configs
+        * deprecated eventhook.rb
+
+
+2008-11-15   trans <transfire@gmail.com>
+
+        * removed lingering .svn directories
+        * collected notes into doc/guide/notes.rd
+
+
+2008-11-14   trans <transfire@gmail.com>
+
+        * adjusted docs for eventhook.rb
+        * Merge: 805a1e7... 6713f9e...
+          Merge branch 'master' of gitosis@rubyforge.org:facets
+        * update authors
+
+
+2008-11-13   Tyler Rick <github.com@tylerrick.com>
+
+        * Fixed some bugs with Time#ago/Time#hence not changing years correctly when you changed months.
+          (For example, Time.utc(2008, 1, 1).ago(12, :months) incorrectly returned 2009-01-01 instead of 2007-01-01.)
+          Added a bunch of tests for Time#ago/Time#hence.
+          Changed Time#ago/Time#hence to still work if passed negative number.
+2008-11-13   trans <transfire@gmail.com>
+
+        * added test for filter.rb
+        * uploadutils.rb, added deprecation warning
+        * removed some old work material
+        * consoleutils.rb and ziputils.rb, added deprecation warning
+        * fixed missing require in string/tabto and minor doc adjustments
+        * Added Brian Candler's Enumerator::Filter  [major]
+        * removed more/chain.rb; it was expiremental
+
+
+2008-11-09   trans <transfire@gmail.com>
+
+        * removed tests of deprecated libraries
+        * improved docs for Hash#rekey
+        * renamed DictionaryMatcher to just Matcher
+        * moved Hash#symolize_keys to core and removed tagiter.rb
+        * finalized deprecation of buildable.rb, bytes.rb and times.rb  [major]
+        * minor touch up to a few tests
+        * fixed some credits
+        * binding/caller.rb, fixed require for callstack.rb
+
+
+2008-11-06   trans <transfire@gmail.com>
+
+        * updated all CREDIT: comments elminating any indent
+
+
+2008-11-05   trans <transfire@gmail.com>
+
+        * deprecated annotations.rb --use Anise project instead
+        * added lazyenum.rb to work/consider
+        * add string/outdent.rb file
+        * updated AUTHORS and README
+        * deactivated reap test services temporarily
+        * fixed outdent test and demo in instance_variables.rb
+
+
+2008-10-29   trans <transfire@gmail.com>
+
+        * aliased Comparable#cap to at_most and separated bound methods into files
+        * memoize.rb, bug had cache working at class-level, fixed to work at instance-level  [major]
+        * switched to git as of 2.4.4
+

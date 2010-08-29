@@ -1,0 +1,2431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+  <title>Random::IntegerExtensions [Facets More]</title>
+
+  <link rel="SHORTCUT ICON" href="../assets/icon/file.png">
+
+  <link type="text/css" rel="stylesheet" href="../assets/rdoc.css" media="screen" />
+  <link type="text/css" rel="stylesheet" href="../assets/nav.css"  media="screen" />
+  <link type="text/css" rel="stylesheet" href="../assets/quicksearch.css" media="screen" />
+  <link type="text/css" rel="stylesheet" href="../assets/highlight/styles/github.css" title="GitHub" />
+
+  <script type="text/javascript" charset="utf-8" src="../assets/jquery.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/highlight/highlight.pack.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/quicksearch.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../assets/main.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready( function() {
+      hookHighlightSyntax();
+	    hookSourceViews();
+	    hookDebuggingToggle();
+	    hookQuickSearch();
+	    highlightLocationTarget();
+
+	    $('ul.link-list a').bind("click", highlightClickTarget);
+    });
+  </script>
+</head>
+
+<body class="class"> <!-- .file-popup is no more -->
+<div id="main">
+
+<!-- DROPDOWN MENUS -->
+<div class="dropdown">
+
+  <button onclick="toggleMenu('#fileindex-section');">File List</button>
+  <button onclick="toggleMenu('#classindex-section');">Class List</button>
+  <button onclick="toggleMenu('#methodindex-section');">Method List</button>
+
+  <!-- FILES -->
+
+  
+    <div id="fileindex-section" class="nav section project-section" style="display: none;">
+      <h3 class="section-header">Information</h3>
+      <ul>
+      
+        <li class="file">
+          <a href="../README_rdoc.html">README.rdoc</a>
+        </li>
+      
+      </ul>
+    </div>
+  
+
+  <!-- CLASSES/MODULES -->
+
+  <div id="classindex-section" class="nav section project-section" style="display: none;">
+    <h3 class="section-header">Class Index
+      <span class="search-toggle">
+        <img src="../assets/icon/find.png" height="16" width="16" alt="[+]" title="show/hide quicksearch" />
+      </span>
+    </h3>
+    <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+    <fieldset>
+      <legend>Quicksearch</legend>
+      <input type="text" name="quicksearch" value="" class="quicksearch-field" />
+    </fieldset>
+    </form>
+
+    <ul class="link-list">
+    
+      <li class="class">
+        <a href="../Random.html">Random</a>
+      </li>
+    
+      <li class="module">
+        <a href="../Random/ArrayExtensions.html">Random::ArrayExtensions</a>
+      </li>
+    
+      <li class="module">
+        <a href="../Random/HashExtensions.html">Random::HashExtensions</a>
+      </li>
+    
+      <li class="module">
+        <a href="../Random/IntegerExtensions.html">Random::IntegerExtensions</a>
+      </li>
+    
+      <li class="module">
+        <a href="../Random/NumericExtensions.html">Random::NumericExtensions</a>
+      </li>
+    
+      <li class="module">
+        <a href="../Random/RangeExtensions.html">Random::RangeExtensions</a>
+      </li>
+    
+      <li class="module">
+        <a href="../Random/StringExtensions.html">Random::StringExtensions</a>
+      </li>
+    
+      <li class="module">
+        <a href="../Random/StringExtensions/Self.html">Random::StringExtensions::Self</a>
+      </li>
+    
+      <li class="module">
+        <a href="../Multiton.html">Multiton</a>
+      </li>
+    
+      <li class="module">
+        <a href="../Multiton/Inclusive.html">Multiton::Inclusive</a>
+      </li>
+    
+      <li class="module">
+        <a href="../Multiton/Inclusive/base.html">Multiton::Inclusive::base</a>
+      </li>
+    
+      <li class="module">
+        <a href="../Multiton/MetaMethods.html">Multiton::MetaMethods</a>
+      </li>
+    
+      <li class="module">
+        <a href="../URI.html">URI</a>
+      </li>
+    
+      <li class="module">
+        <a href="../URI/Hash.html">URI::Hash</a>
+      </li>
+    
+      <li class="module">
+        <a href="../URI/Kernel.html">URI::Kernel</a>
+      </li>
+    
+      <li class="module">
+        <a href="../ERB.html">ERB</a>
+      </li>
+    
+      <li class="class">
+        <a href="../ERB/OpenTemplate.html">ERB::OpenTemplate</a>
+      </li>
+    
+      <li class="class">
+        <a href="../GetoptLong.html">GetoptLong</a>
+      </li>
+    
+      <li class="class">
+        <a href="../GetoptLong/DSL.html">GetoptLong::DSL</a>
+      </li>
+    
+      <li class="module">
+        <a href="../Memoizable.html">Memoizable</a>
+      </li>
+    
+      <li class="module">
+        <a href="../Memoizable/Copy.html">Memoizable::Copy</a>
+      </li>
+    
+      <li class="class">
+        <a href="../Numeric.html">Numeric</a>
+      </li>
+    
+      <li class="module">
+        <a href="../Numeric/Multipliers.html">Numeric::Multipliers</a>
+      </li>
+    
+      <li class="class">
+        <a href="../Timer.html">Timer</a>
+      </li>
+    
+      <li class="class">
+        <a href="../Timer/Dummy.html">Timer::Dummy</a>
+      </li>
+    
+      <li class="module">
+        <a href="../Zlib.html">Zlib</a>
+      </li>
+    
+      <li class="module">
+        <a href="../Zlib/output.html">Zlib::output</a>
+      </li>
+    
+      <li class="class">
+        <a href="../Argvector.html">Argvector</a>
+      </li>
+    
+      <li class="class">
+        <a href="../Array.html">Array</a>
+      </li>
+    
+      <li class="class">
+        <a href="../BasicObject.html">BasicObject</a>
+      </li>
+    
+      <li class="class">
+        <a href="../CGI.html">CGI</a>
+      </li>
+    
+      <li class="class">
+        <a href="../Continuation.html">Continuation</a>
+      </li>
+    
+      <li class="class">
+        <a href="../Date.html">Date</a>
+      </li>
+    
+      <li class="class">
+        <a href="../DateTime.html">DateTime</a>
+      </li>
+    
+      <li class="module">
+        <a href="../Enumerable.html">Enumerable</a>
+      </li>
+    
+      <li class="class">
+        <a href="../File.html">File</a>
+      </li>
+    
+      <li class="module">
+        <a href="../FileUtils.html">FileUtils</a>
+      </li>
+    
+      <li class="module">
+        <a href="../Find.html">Find</a>
+      </li>
+    
+      <li class="class">
+        <a href="../Integer.html">Integer</a>
+      </li>
+    
+      <li class="class">
+        <a href="../NilClass.html">NilClass</a>
+      </li>
+    
+      <li class="class">
+        <a href="../NullClass.html">NullClass</a>
+      </li>
+    
+      <li class="module">
+        <a href="../OpEsc.html">OpEsc</a>
+      </li>
+    
+      <li class="class">
+        <a href="../OpenStruct.html">OpenStruct</a>
+      </li>
+    
+      <li class="class">
+        <a href="../Pathname.html">Pathname</a>
+      </li>
+    
+      <li class="class">
+        <a href="../Platform.html">Platform</a>
+      </li>
+    
+      <li class="class">
+        <a href="../Range.html">Range</a>
+      </li>
+    
+      <li class="module">
+        <a href="../RbConfig.html">RbConfig</a>
+      </li>
+    
+      <li class="class">
+        <a href="../Reference.html">Reference</a>
+      </li>
+    
+      <li class="class">
+        <a href="../Set.html">Set</a>
+      </li>
+    
+      <li class="module">
+        <a href="../Shellwords.html">Shellwords</a>
+      </li>
+    
+      <li class="class">
+        <a href="../String.html">String</a>
+      </li>
+    
+      <li class="class">
+        <a href="../Time.html">Time</a>
+      </li>
+    
+      <li class="class">
+        <a href="../Tuple.html">Tuple</a>
+      </li>
+    
+      <li class="module">
+        <a href="../YAML.html">YAML</a>
+      </li>
+    
+    </ul>
+    <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+  </div>
+
+
+  <!-- METHODS -->
+
+  <div id="methodindex-section" class="nav section project-section" style="display: none;">
+    <h3 class="section-header">Method Index
+      <span class="search-toggle">
+        <img src="../assets/icon/find.png" height="16" width="16" alt="[+]" title="show/hide quicksearch" />
+      </span>
+    </h3>
+    <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+    <fieldset>
+      <legend>Quicksearch</legend>
+      <input type="text" name="quicksearch" value="" class="quicksearch-field" />
+    </fieldset>
+    </form>
+    <ul>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Pathname</span>
+        <a href="../Pathname.html#method-c-%2F">::/</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-c-%5B%5D">::[]</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Pathname</span>
+        <a href="../Pathname.html#method-c-%5B%5D">::[]</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Memoizable</span>
+        <a href="../Memoizable.html#method-c-append_features">::append_features</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">RbConfig</span>
+        <a href="../RbConfig.html#method-c-big_endian%3F">::big_endian?</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">RbConfig</span>
+        <a href="../RbConfig.html#method-c-byte_order">::byte_order</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">RbConfig</span>
+        <a href="../RbConfig.html#method-c-byteorder">::byteorder</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Memoizable</span>
+        <a href="../Memoizable.html#method-c-cache">::cache</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-c-cast_from_array">::cast_from_array</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-c-cast_from_string">::cast_from_string</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Zlib::output</span>
+        <a href="../Zlib/output.html#method-c-close">::close</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Zlib</span>
+        <a href="../Zlib.html#method-c-compress">::compress</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-c-constraint_to_lambda">::constraint_to_lambda</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">RbConfig</span>
+        <a href="../RbConfig.html#method-c-cpu">::cpu</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Continuation</span>
+        <a href="../Continuation.html#method-c-create">::create</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Date</span>
+        <a href="../Date.html#method-c-current">::current</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">RbConfig</span>
+        <a href="../RbConfig.html#method-c-datadir">::datadir</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Zlib</span>
+        <a href="../Zlib.html#method-c-decompress">::decompress</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Zlib</span>
+        <a href="../Zlib.html#method-c-deflate">::deflate</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">OpEsc</span>
+        <a href="../OpEsc.html#method-c-escape">::escape</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">BasicObject</span>
+        <a href="../BasicObject.html#method-c-hide">::hide</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Pathname</span>
+        <a href="../Pathname.html#method-c-home">::home</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Random::StringExtensions</span>
+        <a href="../Random/StringExtensions.html#method-c-included">::included</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Memoizable::Copy</span>
+        <a href="../Memoizable/Copy.html#method-c-included">::included</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Zlib</span>
+        <a href="../Zlib.html#method-c-inflate">::inflate</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">RbConfig</span>
+        <a href="../RbConfig.html#method-c-inspect">::inspect</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">RbConfig</span>
+        <a href="../RbConfig.html#method-c-java%3F">::java?</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">RbConfig</span>
+        <a href="../RbConfig.html#method-c-jruby%3F">::jruby?</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">RbConfig</span>
+        <a href="../RbConfig.html#method-c-linux%3F">::linux?</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">RbConfig</span>
+        <a href="../RbConfig.html#method-c-little_endian%3F">::little_endian?</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Platform</span>
+        <a href="../Platform.html#method-c-local">::local</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">DateTime</span>
+        <a href="../DateTime.html#method-c-local_offset">::local_offset</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Time</span>
+        <a href="../Time.html#method-c-local_time">::local_time</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Platform</span>
+        <a href="../Platform.html#method-c-match">::match</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">RbConfig</span>
+        <a href="../RbConfig.html#method-c-method_missing">::method_missing</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">OpEsc</span>
+        <a href="../OpEsc.html#method-c-method_to_filename">::method_to_filename</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-c-multiton_id">::multiton_id</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-c-new">::new</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">OpenStruct</span>
+        <a href="../OpenStruct.html#method-c-new">::new</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">ERB::OpenTemplate</span>
+        <a href="../ERB/OpenTemplate.html#method-c-new">::new</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Platform</span>
+        <a href="../Platform.html#method-c-new">::new</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Timer</span>
+        <a href="../Timer.html#method-c-new">::new</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">NullClass</span>
+        <a href="../NullClass.html#method-c-new">::new</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">GetoptLong::DSL</span>
+        <a href="../GetoptLong/DSL.html#method-c-new">::new</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">GetoptLong</span>
+        <a href="../GetoptLong.html#method-c-new">::new</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Argvector</span>
+        <a href="../Argvector.html#method-c-new">::new</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Reference</span>
+        <a href="../Reference.html#method-c-new">::new</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Pathname</span>
+        <a href="../Pathname.html#method-c-null">::null</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">RbConfig</span>
+        <a href="../RbConfig.html#method-c-os">::os</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Argvector</span>
+        <a href="../Argvector.html#method-c-parameters">::parameters</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-c-parse_constraint">::parse_constraint</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">RbConfig</span>
+        <a href="../RbConfig.html#method-c-platform">::platform</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">YAML</span>
+        <a href="../YAML.html#method-c-read">::read</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Pathname</span>
+        <a href="../Pathname.html#method-c-root">::root</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Find</span>
+        <a href="../Find.html#method-c-select">::select</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Platform</span>
+        <a href="../Platform.html#method-c-supported">::supported</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Timer</span>
+        <a href="../Timer.html#method-c-time">::time</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Time</span>
+        <a href="../Time.html#method-c-time_with_datetime_fallback">::time_with_datetime_fallback</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Date</span>
+        <a href="../Date.html#method-c-tomorrow">::tomorrow</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Time</span>
+        <a href="../Time.html#method-c-utc_time">::utc_time</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">RbConfig</span>
+        <a href="../RbConfig.html#method-c-windows%3F">::windows?</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Pathname</span>
+        <a href="../Pathname.html#method-c-work">::work</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">File</span>
+        <a href="../File.html#method-c-yaml%3F">::yaml?</a>
+      </li>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Date</span>
+        <a href="../Date.html#method-c-yesterday">::yesterday</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-i-%3C%3C">#<<</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-i-%3C%3D%3E">#<=></a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Platform</span>
+        <a href="../Platform.html#method-i-%3D%3D">#==</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Platform</span>
+        <a href="../Platform.html#method-i-%3D%3D%3D">#===</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Platform</span>
+        <a href="../Platform.html#method-i-%3D%7E">#=~</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-i-%3D%7E">#=~</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-i-%5B%5D">#[]</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">NullClass</span>
+        <a href="../NullClass.html#method-i-%5B%5D">#[]</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">OpenStruct</span>
+        <a href="../OpenStruct.html#method-i-%5B%5D">#[]</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">OpenStruct</span>
+        <a href="../OpenStruct.html#method-i-%5B%5D%3D">#[]=</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-i-%5B%5D%3D">#[]=</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">OpenStruct</span>
+        <a href="../OpenStruct.html#method-i-__merge__">#__merge__</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">OpenStruct</span>
+        <a href="../OpenStruct.html#method-i-__update__">#__update__</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Reference</span>
+        <a href="../Reference.html#method-i-__value__">#__value__</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Multiton</span>
+        <a href="../Multiton.html#method-i-_dump">#_dump</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Multiton::MetaMethods</span>
+        <a href="../Multiton/MetaMethods.html#method-i-_load">#_load</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">DateTime</span>
+        <a href="../DateTime.html#method-i-advance">#advance</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Date</span>
+        <a href="../Date.html#method-i-advance">#advance</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">DateTime</span>
+        <a href="../DateTime.html#method-i-ago">#ago</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Date</span>
+        <a href="../Date.html#method-i-ago">#ago</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Shellwords</span>
+        <a href="../Shellwords.html#method-i-alt_escape">#alt_escape</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Argvector</span>
+        <a href="../Argvector.html#method-i-arguments">#arguments</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Argvector</span>
+        <a href="../Argvector.html#method-i-assoc_options">#assoc_options</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Random::StringExtensions</span>
+        <a href="../Random/StringExtensions.html#method-i-at_rand">#at_rand</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Random::ArrayExtensions</span>
+        <a href="../Random/ArrayExtensions.html#method-i-at_rand">#at_rand</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Random::RangeExtensions</span>
+        <a href="../Random/RangeExtensions.html#method-i-at_rand">#at_rand</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Random::HashExtensions</span>
+        <a href="../Random/HashExtensions.html#method-i-at_rand">#at_rand</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Random::StringExtensions</span>
+        <a href="../Random/StringExtensions.html#method-i-at_rand%21">#at_rand!</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Random::ArrayExtensions</span>
+        <a href="../Random/ArrayExtensions.html#method-i-at_rand%21">#at_rand!</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Random::HashExtensions</span>
+        <a href="../Random/HashExtensions.html#method-i-at_rand%21">#at_rand!</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">FileUtils</span>
+        <a href="../FileUtils.html#method-i-atomic_write">#atomic_write</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">File</span>
+        <a href="../File.html#method-i-atomic_write">#atomic_write</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Numeric::Multipliers</span>
+        <a href="../Numeric/Multipliers.html#method-i-atto">#atto</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Reference</span>
+        <a href="../Reference.html#method-i-become">#become</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">DateTime</span>
+        <a href="../DateTime.html#method-i-beginning_of_day">#beginning_of_day</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Date</span>
+        <a href="../Date.html#method-i-beginning_of_day">#beginning_of_day</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Platform</span>
+        <a href="../Platform.html#method-i-big_endian%3F">#big_endian?</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Platform</span>
+        <a href="../Platform.html#method-i-byte_order">#byte_order</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Platform</span>
+        <a href="../Platform.html#method-i-byteorder">#byteorder</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Numeric::Multipliers</span>
+        <a href="../Numeric/Multipliers.html#method-i-centi">#centi</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">URI</span>
+        <a href="../URI.html#method-i-cgi_escape">#cgi_escape</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">URI</span>
+        <a href="../URI.html#method-i-cgi_parse">#cgi_parse</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">URI</span>
+        <a href="../URI.html#method-i-cgi_unescape">#cgi_unescape</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Date</span>
+        <a href="../Date.html#method-i-change">#change</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">DateTime</span>
+        <a href="../DateTime.html#method-i-change">#change</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">URI</span>
+        <a href="../URI.html#method-i-chomp_query_string">#chomp_query_string</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Multiton</span>
+        <a href="../Multiton.html#method-i-clone">#clone</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">FileUtils</span>
+        <a href="../FileUtils.html#method-i-copy_entryx">#copy_entryx</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">FileUtils</span>
+        <a href="../FileUtils.html#method-i-cp_rx">#cp_rx</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Date</span>
+        <a href="../Date.html#method-i-days_in_month">#days_in_month</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Date</span>
+        <a href="../Date.html#method-i-days_of_month">#days_of_month</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Numeric::Multipliers</span>
+        <a href="../Numeric/Multipliers.html#method-i-deci">#deci</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">URI</span>
+        <a href="../URI.html#method-i-decode">#decode</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Timer</span>
+        <a href="../Timer.html#method-i-defuse">#defuse</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Numeric::Multipliers</span>
+        <a href="../Numeric/Multipliers.html#method-i-deka">#deka</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-i-divider">#divider</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Shellwords</span>
+        <a href="../Shellwords.html#method-i-dos_escape">#dos_escape</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Multiton</span>
+        <a href="../Multiton.html#method-i-dup">#dup</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-i-each">#each</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">OpenStruct</span>
+        <a href="../OpenStruct.html#method-i-each">#each</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-i-each_index">#each_index</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Pathname</span>
+        <a href="../Pathname.html#method-i-empty%3F">#empty?</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-i-empty%3F">#empty?</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">DateTime</span>
+        <a href="../DateTime.html#method-i-end_of_day">#end_of_day</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Timer</span>
+        <a href="../Timer.html#method-i-end_time">#end_time</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-i-eql%3F">#eql?</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">ERB::OpenTemplate</span>
+        <a href="../ERB/OpenTemplate.html#method-i-erb_result">#erb_result</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">CGI</span>
+        <a href="../CGI.html#method-i-esc">#esc</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Shellwords</span>
+        <a href="../Shellwords.html#method-i-escape">#escape</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">CGI</span>
+        <a href="../CGI.html#method-i-escformat">#escformat</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Numeric::Multipliers</span>
+        <a href="../Numeric/Multipliers.html#method-i-exa">#exa</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Numeric::Multipliers</span>
+        <a href="../Numeric/Multipliers.html#method-i-exbi">#exbi</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Numeric::Multipliers</span>
+        <a href="../Numeric/Multipliers.html#method-i-femto">#femto</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-i-first">#first</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">GetoptLong::DSL</span>
+        <a href="../GetoptLong/DSL.html#method-i-flag">#flag</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Argvector</span>
+        <a href="../Argvector.html#method-i-flags">#flags</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Argvector</span>
+        <a href="../Argvector.html#method-i-format_options">#format_options</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">DateTime</span>
+        <a href="../DateTime.html#method-i-future%3F">#future?</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">URI</span>
+        <a href="../URI.html#method-i-get_query_string">#get_query_string</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">DateTime</span>
+        <a href="../DateTime.html#method-i-getutc">#getutc</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Numeric::Multipliers</span>
+        <a href="../Numeric/Multipliers.html#method-i-gibi">#gibi</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Numeric::Multipliers</span>
+        <a href="../Numeric/Multipliers.html#method-i-giga">#giga</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Pathname</span>
+        <a href="../Pathname.html#method-i-glob">#glob</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Pathname</span>
+        <a href="../Pathname.html#method-i-glob_first">#glob_first</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Pathname</span>
+        <a href="../Pathname.html#method-i-glob_flags">#glob_flags</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Pathname</span>
+        <a href="../Pathname.html#method-i-glob_relative">#glob_relative</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-i-hash">#hash</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">URI</span>
+        <a href="../URI.html#method-i-hash_to_query">#hash_to_query</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">URI</span>
+        <a href="../URI.html#method-i-hash_to_query_string">#hash_to_query_string</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">FileUtils</span>
+        <a href="../FileUtils.html#method-i-head">#head</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Numeric::Multipliers</span>
+        <a href="../Numeric/Multipliers.html#method-i-hecto">#hecto</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Date</span>
+        <a href="../Date.html#method-i-in">#in</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">DateTime</span>
+        <a href="../DateTime.html#method-i-in">#in</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Pathname</span>
+        <a href="../Pathname.html#method-i-include%3F">#include?</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Multiton::Inclusive</span>
+        <a href="../Multiton/Inclusive.html#method-i-included">#included</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-i-index">#index</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">GetoptLong</span>
+        <a href="../GetoptLong.html#method-i-init">#init</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Memoizable::Copy</span>
+        <a href="../Memoizable/Copy.html#method-i-initialize_copy">#initialize_copy</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Multiton::MetaMethods</span>
+        <a href="../Multiton/MetaMethods.html#method-i-initialized%3F">#initialized?</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">NullClass</span>
+        <a href="../NullClass.html#method-i-inspect">#inspect</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Platform</span>
+        <a href="../Platform.html#method-i-inspect">#inspect</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-i-inspect">#inspect</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Multiton::MetaMethods</span>
+        <a href="../Multiton/MetaMethods.html#method-i-instance">#instance</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Reference</span>
+        <a href="../Reference.html#method-i-instance_delegate">#instance_delegate</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">OpenStruct</span>
+        <a href="../OpenStruct.html#method-i-instance_delegate">#instance_delegate</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Numeric::Multipliers</span>
+        <a href="../Numeric/Multipliers.html#method-i-kibi">#kibi</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Numeric::Multipliers</span>
+        <a href="../Numeric/Multipliers.html#method-i-kilo">#kilo</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-i-last">#last</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-i-length">#length</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Timer</span>
+        <a href="../Timer.html#method-i-limit">#limit</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Platform</span>
+        <a href="../Platform.html#method-i-little_endian%3F">#little_endian?</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-i-major">#major</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">CGI</span>
+        <a href="../CGI.html#method-i-marshal_from_cgi">#marshal_from_cgi</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">CGI</span>
+        <a href="../CGI.html#method-i-marshal_to_cgi">#marshal_to_cgi</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Numeric::Multipliers</span>
+        <a href="../Numeric/Multipliers.html#method-i-mebi">#mebi</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Numeric::Multipliers</span>
+        <a href="../Numeric/Multipliers.html#method-i-mega">#mega</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Memoizable</span>
+        <a href="../Memoizable.html#method-i-memoize">#memoize</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Reference</span>
+        <a href="../Reference.html#method-i-method_missing">#method_missing</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">NullClass</span>
+        <a href="../NullClass.html#method-i-method_missing">#method_missing</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Numeric::Multipliers</span>
+        <a href="../Numeric/Multipliers.html#method-i-micro">#micro</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Date</span>
+        <a href="../Date.html#method-i-midnight">#midnight</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">DateTime</span>
+        <a href="../DateTime.html#method-i-midnight">#midnight</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Numeric::Multipliers</span>
+        <a href="../Numeric/Multipliers.html#method-i-milli">#milli</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-i-minor">#minor</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Date</span>
+        <a href="../Date.html#method-i-month_name">#month_name</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Argvector</span>
+        <a href="../Argvector.html#method-i-multi_flag">#multi_flag</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Multiton::MetaMethods</span>
+        <a href="../Multiton/MetaMethods.html#method-i-multiton_id">#multiton_id</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Multiton::MetaMethods</span>
+        <a href="../Multiton/MetaMethods.html#method-i-multiton_instance">#multiton_instance</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Multiton::MetaMethods</span>
+        <a href="../Multiton/MetaMethods.html#method-i-multiton_mutex">#multiton_mutex</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Numeric::Multipliers</span>
+        <a href="../Numeric/Multipliers.html#method-i-nano">#nano</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Multiton::MetaMethods</span>
+        <a href="../Multiton/MetaMethods.html#method-i-new">#new</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">NullClass</span>
+        <a href="../NullClass.html#method-i-nil%3F">#nil?</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">NullClass</span>
+        <a href="../NullClass.html#method-i-null%3F">#null?</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Timer</span>
+        <a href="../Timer.html#method-i-on_timeout">#on_timeout</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Argvector</span>
+        <a href="../Argvector.html#method-i-operands">#operands</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">GetoptLong::DSL</span>
+        <a href="../GetoptLong/DSL.html#method-i-optional">#optional</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Argvector</span>
+        <a href="../Argvector.html#method-i-options">#options</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">GetoptLong::DSL</span>
+        <a href="../GetoptLong/DSL.html#method-i-opts">#opts</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">OpenStruct</span>
+        <a href="../OpenStruct.html#method-i-ostruct_delegate">#ostruct_delegate</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">OpenStruct</span>
+        <a href="../OpenStruct.html#method-i-ostruct_merge">#ostruct_merge</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">OpenStruct</span>
+        <a href="../OpenStruct.html#method-i-ostruct_update">#ostruct_update</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Pathname</span>
+        <a href="../Pathname.html#method-i-outofdate%3F">#outofdate?</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Argvector</span>
+        <a href="../Argvector.html#method-i-parameters">#parameters</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Argvector</span>
+        <a href="../Argvector.html#method-i-parameters_without_duplicates">#parameters_without_duplicates</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Argvector</span>
+        <a href="../Argvector.html#method-i-parse">#parse</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Argvector</span>
+        <a href="../Argvector.html#method-i-parse_arity">#parse_arity</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Argvector</span>
+        <a href="../Argvector.html#method-i-parse_line">#parse_line</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Argvector</span>
+        <a href="../Argvector.html#method-i-parse_preoptions">#parse_preoptions</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">DateTime</span>
+        <a href="../DateTime.html#method-i-past%3F">#past?</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Numeric::Multipliers</span>
+        <a href="../Numeric/Multipliers.html#method-i-pebi">#pebi</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Numeric::Multipliers</span>
+        <a href="../Numeric/Multipliers.html#method-i-peta">#peta</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Random::HashExtensions</span>
+        <a href="../Random/HashExtensions.html#method-i-pick">#pick</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Random::ArrayExtensions</span>
+        <a href="../Random/ArrayExtensions.html#method-i-pick">#pick</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Random::ArrayExtensions</span>
+        <a href="../Random/ArrayExtensions.html#method-i-pick%21">#pick!</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Random::HashExtensions</span>
+        <a href="../Random/HashExtensions.html#method-i-pick_key">#pick_key</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Random::HashExtensions</span>
+        <a href="../Random/HashExtensions.html#method-i-pick_pair">#pick_pair</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Numeric::Multipliers</span>
+        <a href="../Numeric/Multipliers.html#method-i-pico">#pico</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-i-pop">#pop</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-i-pot">#pot</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Array</span>
+        <a href="../Array.html#method-i-power_set">#power_set</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Set</span>
+        <a href="../Set.html#method-i-power_set">#power_set</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Argvector</span>
+        <a href="../Argvector.html#method-i-preflags">#preflags</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Argvector</span>
+        <a href="../Argvector.html#method-i-preoptions">#preoptions</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-i-pull">#pull</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-i-push">#push</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">URI</span>
+        <a href="../URI.html#method-i-query_string_to_hash">#query_string_to_hash</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">URI</span>
+        <a href="../URI.html#method-i-query_to_hash">#query_to_hash</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Random::StringExtensions</span>
+        <a href="../Random/StringExtensions.html#method-i-rand_byte">#rand_byte</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Random::StringExtensions</span>
+        <a href="../Random/StringExtensions.html#method-i-rand_byte%21">#rand_byte!</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Random::ArrayExtensions</span>
+        <a href="../Random/ArrayExtensions.html#method-i-rand_index">#rand_index</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Random::StringExtensions</span>
+        <a href="../Random/StringExtensions.html#method-i-rand_index">#rand_index</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Random::HashExtensions</span>
+        <a href="../Random/HashExtensions.html#method-i-rand_key">#rand_key</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Random::HashExtensions</span>
+        <a href="../Random/HashExtensions.html#method-i-rand_key%21">#rand_key!</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Random::StringExtensions::Self</span>
+        <a href="../Random/StringExtensions/Self.html#method-i-rand_letter">#rand_letter</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Random::HashExtensions</span>
+        <a href="../Random/HashExtensions.html#method-i-rand_pair">#rand_pair</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Random::HashExtensions</span>
+        <a href="../Random/HashExtensions.html#method-i-rand_pair%21">#rand_pair!</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Random::ArrayExtensions</span>
+        <a href="../Random/ArrayExtensions.html#method-i-rand_subset">#rand_subset</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Random::HashExtensions</span>
+        <a href="../Random/HashExtensions.html#method-i-rand_value">#rand_value</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Random::HashExtensions</span>
+        <a href="../Random/HashExtensions.html#method-i-rand_value%21">#rand_value!</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Random::StringExtensions::Self</span>
+        <a href="../Random/StringExtensions/Self.html#method-i-random">#random</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Random::NumericExtensions</span>
+        <a href="../Random/NumericExtensions.html#method-i-random_delta">#random_delta</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Random::IntegerExtensions</span>
+        <a href="../Random/IntegerExtensions.html#method-i-random_delta">#random_delta</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Multiton::MetaMethods</span>
+        <a href="../Multiton/MetaMethods.html#method-i-reinitialize">#reinitialize</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Memoizable</span>
+        <a href="../Memoizable.html#method-i-rememoize">#rememoize</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">GetoptLong::DSL</span>
+        <a href="../GetoptLong/DSL.html#method-i-reqs">#reqs</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">GetoptLong::DSL</span>
+        <a href="../GetoptLong/DSL.html#method-i-required">#required</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Timer</span>
+        <a href="../Timer.html#method-i-reset">#reset</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Timer</span>
+        <a href="../Timer.html#method-i-reset_limit">#reset_limit</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-i-rindex">#rindex</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Pathname</span>
+        <a href="../Pathname.html#method-i-rootname">#rootname</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Timer</span>
+        <a href="../Timer.html#method-i-running%3F">#running?</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">FileUtils</span>
+        <a href="../FileUtils.html#method-i-safe_ln">#safe_ln</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">DateTime</span>
+        <a href="../DateTime.html#method-i-seconds_since_midnight">#seconds_since_midnight</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Array</span>
+        <a href="../Array.html#method-i-shelljoin">#shelljoin</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Array</span>
+        <a href="../Array.html#method-i-shellwords">#shellwords</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-i-shift">#shift</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Random::ArrayExtensions</span>
+        <a href="../Random/ArrayExtensions.html#method-i-shuffle">#shuffle</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Random::StringExtensions</span>
+        <a href="../Random/StringExtensions.html#method-i-shuffle">#shuffle</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Random::HashExtensions</span>
+        <a href="../Random/HashExtensions.html#method-i-shuffle">#shuffle</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Random::ArrayExtensions</span>
+        <a href="../Random/ArrayExtensions.html#method-i-shuffle%21">#shuffle!</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Random::StringExtensions</span>
+        <a href="../Random/StringExtensions.html#method-i-shuffle%21">#shuffle!</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Random::HashExtensions</span>
+        <a href="../Random/HashExtensions.html#method-i-shuffle%21">#shuffle!</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">DateTime</span>
+        <a href="../DateTime.html#method-i-since">#since</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Date</span>
+        <a href="../Date.html#method-i-since">#since</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Multiton::MetaMethods</span>
+        <a href="../Multiton/MetaMethods.html#method-i-singleton_method_added">#singleton_method_added</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-i-size">#size</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">FileUtils</span>
+        <a href="../FileUtils.html#method-i-slice">#slice</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Pathname</span>
+        <a href="../Pathname.html#method-i-split_root">#split_root</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Date</span>
+        <a href="../Date.html#method-i-stamp">#stamp</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">DateTime</span>
+        <a href="../DateTime.html#method-i-stamp">#stamp</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Timer</span>
+        <a href="../Timer.html#method-i-start">#start</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Timer::Dummy</span>
+        <a href="../Timer/Dummy.html#method-i-start">#start</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Timer</span>
+        <a href="../Timer.html#method-i-start_time">#start_time</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Timer</span>
+        <a href="../Timer.html#method-i-stop">#stop</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Timer::Dummy</span>
+        <a href="../Timer/Dummy.html#method-i-stop">#stop</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Timer</span>
+        <a href="../Timer.html#method-i-stopped%3F">#stopped?</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Argvector</span>
+        <a href="../Argvector.html#method-i-subcommand">#subcommand</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Argvector</span>
+        <a href="../Argvector.html#method-i-subcommand_with_arguments">#subcommand_with_arguments</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Argvector</span>
+        <a href="../Argvector.html#method-i-subcommand_with_parameters">#subcommand_with_parameters</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Argvector</span>
+        <a href="../Argvector.html#method-i-subcommand_with_preoptions">#subcommand_with_preoptions</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">FileUtils</span>
+        <a href="../FileUtils.html#method-i-tail">#tail</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Numeric::Multipliers</span>
+        <a href="../Numeric/Multipliers.html#method-i-tebi">#tebi</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-i-teeny">#teeny</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Numeric::Multipliers</span>
+        <a href="../Numeric/Multipliers.html#method-i-tera">#tera</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Enumerable</span>
+        <a href="../Enumerable.html#method-i-threaded_map">#threaded_map</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Enumerable</span>
+        <a href="../Enumerable.html#method-i-threaded_map_send">#threaded_map_send</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-i-to_a">#to_a</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Platform</span>
+        <a href="../Platform.html#method-i-to_a">#to_a</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-i-to_ary">#to_ary</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Date</span>
+        <a href="../Date.html#method-i-to_date">#to_date</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Time</span>
+        <a href="../Time.html#method-i-to_date">#to_date</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">String</span>
+        <a href="../String.html#method-i-to_date">#to_date</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">DateTime</span>
+        <a href="../DateTime.html#method-i-to_date">#to_date</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">String</span>
+        <a href="../String.html#method-i-to_datetime">#to_datetime</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">DateTime</span>
+        <a href="../DateTime.html#method-i-to_datetime">#to_datetime</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Date</span>
+        <a href="../Date.html#method-i-to_datetime">#to_datetime</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Time</span>
+        <a href="../Time.html#method-i-to_datetime">#to_datetime</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">DateTime</span>
+        <a href="../DateTime.html#method-i-to_f">#to_f</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">OpenStruct</span>
+        <a href="../OpenStruct.html#method-i-to_h">#to_h</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">NilClass</span>
+        <a href="../NilClass.html#method-i-to_ostruct">#to_ostruct</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">OpenStruct</span>
+        <a href="../OpenStruct.html#method-i-to_ostruct">#to_ostruct</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">NilClass</span>
+        <a href="../NilClass.html#method-i-to_path">#to_path</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Platform</span>
+        <a href="../Platform.html#method-i-to_s">#to_s</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-i-to_s">#to_s</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">String</span>
+        <a href="../String.html#method-i-to_t">#to_t</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-i-to_t">#to_t</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Array</span>
+        <a href="../Array.html#method-i-to_t">#to_t</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">DateTime</span>
+        <a href="../DateTime.html#method-i-to_time">#to_time</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">String</span>
+        <a href="../String.html#method-i-to_time">#to_time</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Date</span>
+        <a href="../Date.html#method-i-to_time">#to_time</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-i-to_tuple">#to_tuple</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">URI::Hash</span>
+        <a href="../URI/Hash.html#method-i-to_uri">#to_uri</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Date</span>
+        <a href="../Date.html#method-i-tomorrow">#tomorrow</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Timer</span>
+        <a href="../Timer.html#method-i-total_time">#total_time</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Memoizable</span>
+        <a href="../Memoizable.html#method-i-unmemoize">#unmemoize</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-i-unshift">#unshift</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">URI::Kernel</span>
+        <a href="../URI/Kernel.html#method-i-unuri">#unuri</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">URI</span>
+        <a href="../URI.html#method-i-update_query_string">#update_query_string</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">URI</span>
+        <a href="../URI.html#method-i-update_request_uri">#update_request_uri</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Pathname</span>
+        <a href="../Pathname.html#method-i-uptodate%3F">#uptodate?</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">URI::Kernel</span>
+        <a href="../URI/Kernel.html#method-i-uri">#uri</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">DateTime</span>
+        <a href="../DateTime.html#method-i-utc">#utc</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">DateTime</span>
+        <a href="../DateTime.html#method-i-utc%3F">#utc?</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">DateTime</span>
+        <a href="../DateTime.html#method-i-utc_offset">#utc_offset</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Tuple</span>
+        <a href="../Tuple.html#method-i-values">#values</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Pathname</span>
+        <a href="../Pathname.html#method-i-visit">#visit</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">FileUtils</span>
+        <a href="../FileUtils.html#method-i-wc">#wc</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">FileUtils</span>
+        <a href="../FileUtils.html#method-i-whereis">#whereis</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">FileUtils</span>
+        <a href="../FileUtils.html#method-i-which">#which</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">DateTime</span>
+        <a href="../DateTime.html#method-i-xmlschema">#xmlschema</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Date</span>
+        <a href="../Date.html#method-i-xmlschema">#xmlschema</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Date</span>
+        <a href="../Date.html#method-i-yesterday">#yesterday</a>
+      </li>
+    
+    </ul>
+  </div>
+
+</div>
+
+
+<div class="head">
+  <h1>
+    
+      <img src="assets/icon/module.png" align="absmiddle">&nbsp;
+    
+    <a href="../index.html">Facets More</a>&nbsp;
+    <a href="/">Random::IntegerExtensions</a>
+  </h1>
+</div>
+
+<div id="documentation">
+
+  <div id="description">
+    
+      <h1>IntegerExtensions</h1>
+    
+
+    
+  </div>
+
+  <!-- Parent Class -->
+  
+
+  <!-- Namespace Contents -->
+  
+
+  <!-- Included Modules -->
+  
+
+  <!-- Constants -->
+  
+
+  <!-- Attributes -->
+  
+
+  <!-- Methods -->
+  
+  <div id="public-instance-method-details" class="method-section section">
+    <h3 class="section-header">Public Instance Methods</h3>
+
+  
+    <div id="random-delta-method" class="method-detail ">
+      <a name="method-i-random_delta"></a>
+
+      <div class="method-heading">
+      
+        <span class="method-name">random_delta</span><span
+          class="method-args">(last, exclude_end)</span>
+        <span class="method-click-advice">click to toggle source</span>
+      
+      </div>
+
+      <div class="method-description">
+        
+        
+        
+
+        
+        <div class="method-source-code"
+          id="random-delta-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/more/facets/random.rb, line 88</span>
+88:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">random_delta</span>(<span class="ruby-identifier">last</span>, <span class="ruby-identifier">exclude_end</span>)
+89:       <span class="ruby-identifier">first</span> = <span class="ruby-keyword kw">self</span>
+90:       <span class="ruby-identifier">last</span> <span class="ruby-operator">-=</span> <span class="ruby-value">1</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">exclude_end</span>
+91:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">last</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">first</span>
+92:       <span class="ruby-keyword kw">return</span> <span class="ruby-constant">Random</span>.<span class="ruby-identifier">number</span>(<span class="ruby-identifier">last</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">first</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">first</span>
+93:     <span class="ruby-keyword kw">end</span></pre>
+        </div>
+        
+      </div>
+
+      
+    </div>
+
+  
+  </div>
+
+
+  <!-- In Files -->
+  <div id="file-list-section" class="section">
+    <h3 class="section-header">In Files</h3>
+    <div class="section-body">
+      <ul>
+      
+        <li class="file"><a href="../lib/more/facets/random_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+          class="thickbox" title="lib/more/facets/random.rb">lib/more/facets/random.rb</a></li>
+      
+      </ul>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
+

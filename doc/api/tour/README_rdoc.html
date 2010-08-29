@@ -1,0 +1,825 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+  <title>File: README.rdoc [Facets Tour]</title>
+
+  <link rel="SHORTCUT ICON" href="./assets/icon/file.png">
+
+  <link type="text/css" rel="stylesheet" href="./assets/rdoc.css" media="screen" />
+  <link type="text/css" rel="stylesheet" href="./assets/nav.css"  media="screen" />
+  <link type="text/css" rel="stylesheet" href="./assets/quicksearch.css" media="screen" />
+  <link type="text/css" rel="stylesheet" href="./assets/highlight/styles/github.css" title="GitHub" />
+
+  <script type="text/javascript" charset="utf-8" src="./assets/jquery.js"></script>
+  <script type="text/javascript" charset="utf-8" src="./assets/highlight/highlight.pack.js"></script>
+  <script type="text/javascript" charset="utf-8" src="./assets/quicksearch.js"></script>
+  <script type="text/javascript" charset="utf-8" src="./assets/main.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready( function() {
+      hookHighlightSyntax();
+	    hookSourceViews();
+	    hookDebuggingToggle();
+	    hookQuickSearch();
+	    highlightLocationTarget();
+
+	    $('ul.link-list a').bind("click", highlightClickTarget);
+    });
+  </script>
+</head>
+
+<body class="file">
+<div id="main">
+
+  <!-- DROPDOWN MENUS -->
+  <div class="dropdown">
+
+  <button onclick="toggleMenu('#fileindex-section');">File List</button>
+  <button onclick="toggleMenu('#classindex-section');">Class List</button>
+  <button onclick="toggleMenu('#methodindex-section');">Method List</button>
+
+  <!-- FILES -->
+
+  
+    <div id="fileindex-section" class="nav section project-section" style="display: none;">
+      <h3 class="section-header">Information</h3>
+      <ul>
+      
+        <li class="file">
+          <a href="./README_rdoc.html">README.rdoc</a>
+        </li>
+      
+      </ul>
+    </div>
+  
+
+  <!-- CLASSES/MODULES -->
+
+  <div id="classindex-section" class="nav section project-section" style="display: none;">
+    <h3 class="section-header">Class Index
+      <span class="search-toggle">
+        <img src="./assets/icon/find.png" height="16" width="16" alt="[+]" title="show/hide quicksearch" />
+      </span>
+    </h3>
+    <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+    <fieldset>
+      <legend>Quicksearch</legend>
+      <input type="text" name="quicksearch" value="" class="quicksearch-field" />
+    </fieldset>
+    </form>
+
+    <ul class="link-list">
+    
+      <li class="class">
+        <a href="./Method.html">Method</a>
+      </li>
+    
+      <li class="module">
+        <a href="./Method/receiver;.html">Method::receiver;</a>
+      </li>
+    
+      <li class="class">
+        <a href="./Module.html">Module</a>
+      </li>
+    
+      <li class="module">
+        <a href="./Module/InstanceFunction.html">Module::InstanceFunction</a>
+      </li>
+    
+      <li class="class">
+        <a href="./Array.html">Array</a>
+      </li>
+    
+      <li class="class">
+        <a href="./Class.html">Class</a>
+      </li>
+    
+      <li class="class">
+        <a href="./Integer.html">Integer</a>
+      </li>
+    
+      <li class="module">
+        <a href="./Kernel.html">Kernel</a>
+      </li>
+    
+      <li class="class">
+        <a href="./Regexp.html">Regexp</a>
+      </li>
+    
+      <li class="class">
+        <a href="./String.html">String</a>
+      </li>
+    
+    </ul>
+    <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+  </div>
+
+
+  <!-- METHODS -->
+
+  <div id="methodindex-section" class="nav section project-section" style="display: none;">
+    <h3 class="section-header">Method Index
+      <span class="search-toggle">
+        <img src="./assets/icon/find.png" height="16" width="16" alt="[+]" title="show/hide quicksearch" />
+      </span>
+    </h3>
+    <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+    <fieldset>
+      <legend>Quicksearch</legend>
+      <input type="text" name="quicksearch" value="" class="quicksearch-field" />
+    </fieldset>
+    </form>
+    <ul>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">String</span>
+        <a href="./String.html#method-i-_crypt">#_crypt</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module</span>
+        <a href="./Module.html#method-i-alias_tester">#alias_tester</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module</span>
+        <a href="./Module.html#method-i-alias_validator">#alias_validator</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module</span>
+        <a href="./Module.html#method-i-attr_class_accessor">#attr_class_accessor</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module</span>
+        <a href="./Module.html#method-i-attr_class_reader">#attr_class_reader</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module</span>
+        <a href="./Module.html#method-i-attr_class_writer">#attr_class_writer</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module</span>
+        <a href="./Module.html#method-i-attr_inheritable_reader">#attr_inheritable_reader</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module</span>
+        <a href="./Module.html#method-i-attr_tester">#attr_tester</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module</span>
+        <a href="./Module.html#method-i-attr_validator">#attr_validator</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module</span>
+        <a href="./Module.html#method-i-cattr">#cattr</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module</span>
+        <a href="./Module.html#method-i-cattr_accessor">#cattr_accessor</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module</span>
+        <a href="./Module.html#method-i-cattr_reader">#cattr_reader</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module</span>
+        <a href="./Module.html#method-i-cattr_writer">#cattr_writer</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module</span>
+        <a href="./Module.html#method-i-class_accessor">#class_accessor</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module</span>
+        <a href="./Module.html#method-i-class_extend">#class_extend</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Class</span>
+        <a href="./Class.html#method-i-class_extend">#class_extend</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module</span>
+        <a href="./Module.html#method-i-class_extensions">#class_extensions</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module</span>
+        <a href="./Module.html#method-i-class_inheritor">#class_inheritor</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module</span>
+        <a href="./Module.html#method-i-class_load">#class_load</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module</span>
+        <a href="./Module.html#method-i-class_reader">#class_reader</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module</span>
+        <a href="./Module.html#method-i-class_require">#class_require</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module</span>
+        <a href="./Module.html#method-i-class_writer">#class_writer</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module</span>
+        <a href="./Module.html#method-i-copy_inheritor">#copy_inheritor</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">String</span>
+        <a href="./String.html#method-i-crypt">#crypt</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Kernel</span>
+        <a href="./Kernel.html#method-i-demo">#demo</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Kernel</span>
+        <a href="./Kernel.html#method-i-eigenclass">#eigenclass</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module</span>
+        <a href="./Module.html#method-i-include_as">#include_as</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module</span>
+        <a href="./Module.html#method-i-instance_function">#instance_function</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module</span>
+        <a href="./Module.html#method-i-mattr">#mattr</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module</span>
+        <a href="./Module.html#method-i-mattr_accessor">#mattr_accessor</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module</span>
+        <a href="./Module.html#method-i-mattr_reader">#mattr_reader</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module</span>
+        <a href="./Module.html#method-i-mattr_writer">#mattr_writer</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Array</span>
+        <a href="./Array.html#method-i-median">#median</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Kernel</span>
+        <a href="./Kernel.html#method-i-memo">#memo</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Method</span>
+        <a href="./Method.html#method-i-memoize">#memoize</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module</span>
+        <a href="./Module.html#method-i-memoize">#memoize</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module</span>
+        <a href="./Module.html#method-i-method_space">#method_space</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module</span>
+        <a href="./Module.html#method-i-module_load">#module_load</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module</span>
+        <a href="./Module.html#method-i-module_require">#module_require</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Array</span>
+        <a href="./Array.html#method-i-percentile">#percentile</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Class</span>
+        <a href="./Class.html#method-i-preallocate">#preallocate</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module</span>
+        <a href="./Module.html#method-i-prepend">#prepend</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">String</span>
+        <a href="./String.html#method-i-roman">#roman</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Integer</span>
+        <a href="./Integer.html#method-i-roman">#roman</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">String</span>
+        <a href="./String.html#method-i-roman%3F">#roman?</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module::InstanceFunction</span>
+        <a href="./Module/InstanceFunction.html#method-i-singleton_method_added">#singleton_method_added</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Kernel</span>
+        <a href="./Kernel.html#method-i-trap_chain">#trap_chain</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Regexp</span>
+        <a href="./Regexp.html#method-i-%7C">#|</a>
+      </li>
+    
+    </ul>
+  </div>
+
+</div>
+
+
+
+  <div class="head">
+    <h1>
+      <img src="./assets/icon/file.png" align="absmiddle">&nbsp;
+      <a href="./index.html">Facets Tour</a>&nbsp;
+      <a href="/">README.rdoc</a>
+    </h1>
+  </div>
+
+  <div id="file-stats-section" class="section" style="float: right; width: 300px;">
+    <h3 class="section-header">File Stats</h3>
+    <dl>
+      <dt class="modified-date">Last Modified</dt>
+      <dd class="modified-date">Sat Aug 28 10:55:45 -0400 2010</dd>
+
+      
+
+      
+    </dl>
+  </div>
+
+  <!-- .file-popup was wrapped:
+    <div id="documentation">
+      
+      <div class="description">
+          ... file.description ...
+      </div>
+      
+    </div>
+   So maybe that css is no longer needed.
+   -->
+
+  <div id="documentation">
+    <h1>Ruby Facets</h1>
+<ul>
+<li><p>
+home: <a
+href="http://rubyworks.github.com/facets">rubyworks.github.com/facets</a>
+</p>
+</li>
+<li><p>
+code: <a
+href="http://github.com/rubyworks/facets">github.com/rubyworks/facets</a>
+</p>
+</li>
+<li><p>
+talk: <a
+href="http://groups.google.com/group/facets-universal">groups.google.com/group/facets-universal</a>
+</p>
+</li>
+</ul>
+<p>
+&#8220;ALL YOUR BASE ARE BELONG TO RUBY&#8220;
+</p>
+<h2>Introduction</h2>
+<p>
+Ruby Facets is the premiere collection of general purpose method extensions
+and standard additions for the Ruby programming language.
+</p>
+<p>
+Facets houses the largest single collection of methods available for
+extending the core capabilities of Ruby&#8217;s built-in classes and
+modules. This collection of extension methods are unique by virtue of their
+atomicity. The methods are stored in individual files so that each can be
+required independently. This gives developers the potential for much finer
+control over which extra methods to bring into their code.
+</p>
+<p>
+In addition Facets provides a collection of extensions to Ruby standard
+library plus a small collection of add-on classes and modules. Together
+these libraries constitute an ever improving source of reusable components,
+suitable to a wide variety of usecases.
+</p>
+<h2>Resources</h2>
+<ul>
+<li><p>
+Homepage: <a
+href="http://rubyworks.github.com/facets">rubyworks.github.com/facets</a>
+</p>
+</li>
+<li><p>
+Report Bugs: <a
+href="http://github.com/rubyworks/facets/issues">github.com/rubyworks/facets/issues</a>
+</p>
+</li>
+<li><p>
+Mailing List: <a
+href="http://groups.google.com/group/facets-universal/topics">groups.google.com/group/facets-universal/topics</a>
+</p>
+</li>
+<li><p>
+Wiki Pages: <a
+href="http://wiki.github.com/rubyworks/facets">wiki.github.com/rubyworks/facets</a>
+</p>
+</li>
+<li><p>
+Source Code: <a
+href="http://github.com/rubyworks/facets">github.com/rubyworks/facets</a>
+</p>
+</li>
+</ul>
+<h2>Documentation</h2>
+<p>
+Facets has special documentation needs due to it&#8217;s extensive bredth.
+The RDocs generated when installing via RubyGems are unweildly because it
+combines all of Facets in one set of docs. (Hopefully we can remedy this in
+the future). In the mean time better organized online documentation  is
+available at <a
+href="http://rubyworks.github.com/facets/learn.html.">rubyworks.github.com/facets/learn.html.</a>
+</p>
+<ul>
+<li><p>
+Core API: <a
+href="http://rubyworks/github.com/facets/doc/api/core/index.html">rubyworks/github.com/facets/doc/api/core/index.html</a>
+</p>
+</li>
+<li><p>
+More API: <a
+href="http://rubyworks/github.com/facets/doc/api/more/index.html">rubyworks/github.com/facets/doc/api/more/index.html</a>
+</p>
+</li>
+<li><p>
+Tour API: <a
+href="http://rubyworks/github.com/facets/doc/api/tour/index.html">rubyworks/github.com/facets/doc/api/tour/index.html</a>
+</p>
+</li>
+</ul>
+<h2>Installation</h2>
+<p>
+The easiest way to install is via RubyGems.
+</p>
+<pre>
+  $ gem install facets
+</pre>
+<p>
+To install manually, your will need Ruby Setup (<a
+href="http::/setup.rubyforge.org">:/setup.rubyforge.org</a>). Then download
+and unpack the .tar.gz package and run:
+</p>
+<pre>
+  $ tar -xvzf facets-2.x.x.tar.gz
+  $ cd facets-2.x.x
+  $ sudo setup.rb
+</pre>
+<p>
+Facets 2.8+ requires Ruby 1.8.7 or higher.
+</p>
+<h2>Mission</h2>
+<p>
+Facets holds to the notion that the more we can reasonably integrate into a
+common foundation, directed toward general needs, the better that
+foundation will be able to serve the community. There are a number of
+advantages here:
+</p>
+<ul>
+<li><p>
+Better Code-reuse
+</p>
+</li>
+<li><p>
+Collaborative Improvements
+</p>
+</li>
+<li><p>
+Greater Name Consistency
+</p>
+</li>
+<li><p>
+One-stop Shop and Installation
+</p>
+</li>
+</ul>
+<h2>Usage</h2>
+<h3>CORE Library</h3>
+<p>
+At the heart of Ruby Facets is the CORE extensions library. CORE provides a
+sizable collection of generally useful methods, along with a few supporting
+classes, that extend the functionality of Ruby&#8217;s core classes and
+modules.
+</p>
+<p>
+By definition CORE contains anything that will load automatically when
+issuing:
+</p>
+<pre>
+  require 'facets'
+</pre>
+<p>
+If you plan to use more then a few of Facets core method it is recommended
+that you require the main facility.
+</p>
+<pre>
+  require 'facets'
+</pre>
+<p>
+This loads all the CORE functionality at once.
+</p>
+<p>
+Of course you can use the CORE library piecemeal if you prefer. The general
+require statement for a core extensions library is:
+</p>
+<pre>
+  require 'facets/&lt;class|module&gt;/&lt;method-lib&gt;'
+</pre>
+<p>
+For example:
+</p>
+<pre>
+  require 'facets/time/stamp'
+</pre>
+<p>
+Most &#8220;atoms&#8221; contain only one method, but a few exceptions
+occur when methods are closely tied together.
+</p>
+<p>
+You can load per-class or per-module groups of core methods by requiring
+the class or module by name. For example&#8220;
+</p>
+<pre>
+  require 'facets/time'
+</pre>
+<p>
+Will require all the core Time method extensions.
+</p>
+<p>
+Note that some methods that were part of CORE in 1.8 and earlier are now
+part of MORE libraries. A good example is &#8216;random.rb&#8217;. There
+were separated because they had more specialized use cases, where as CORE
+extensions are intended as general purpose.
+</p>
+<p>
+This is the recommended usage. However, you can also &#8220;cherry
+pick&#8221; core methods. While there are exceptions the rule of thumb for
+loading a core method is:
+</p>
+<pre>
+  require 'facets/{class|module}/{method}'
+</pre>
+<h4><a href="Method.html">Method</a> File Names</h4>
+<p>
+Operator method redirect files are stored using English names. For instance
+for Proc#* is &#8216;proc/op_mul&#8217;.
+</p>
+<p>
+For reference, here is the chart.
+</p>
+<pre>
+     +@   =&gt; op_plus_self
+     -@   =&gt; op_minus_self
+     +    =&gt; op_plus
+     -    =&gt; op_minus
+     **   =&gt; op_pow
+     *    =&gt; op_mul
+     /    =&gt; op_div
+     %    =&gt; op_mod
+     ~    =&gt; op_tilde
+     &lt;=&gt;  =&gt; op_cmp
+     &lt;&lt;   =&gt; op_lshift
+     &gt;&gt;   =&gt; op_rshift
+     &lt;    =&gt; op_lt
+     &gt;    =&gt; op_gt
+     ===  =&gt; op_case_eq
+     ==   =&gt; op_equal
+     =~   =&gt; op_apply
+     &lt;=   =&gt; op_lt_eq
+     &gt;=   =&gt; op_gt_eq
+     |    =&gt; op_or
+     &amp;    =&gt; op_and
+     ^    =&gt; op_xor
+     []=  =&gt; op_store
+     []   =&gt; op_fetch
+</pre>
+<p>
+Facets simply takes the &#8217;*&#8217; and translates it into a string
+acceptable to all file systems. Also, if a method ends in &#8217;=&#8217;,
+&#8217;?&#8217; or &#8217;!&#8217; it is simply removed.
+</p>
+<h3>MORE Library</h3>
+<p>
+On top of the extensive Core library, Facet provides a small collection of
+additional modules and classes, as well as extended versions of modules and
+classes in Ruby&#8217;s Standard library.
+</p>
+<p>
+Use the More library like you would any other 3rd party library. The only
+difference between Facets More library and other libraries is the lack of
+any enclosing @Facets::@ namespace. This is becuase the libraries provided
+by Facets are considerd fairly low-level.
+</p>
+<p>
+When using Facets&#8217; extended versions of Ruby&#8217;s standard
+libraries, the More libraries have to loaded manually, of course. However
+you do not need to load Ruby&#8217;s library first, as the Facets&#8217;
+library will do that automatically.
+</p>
+<p>
+For example, normally one load Ruby&#8217;s OpenStruct class via:
+</p>
+<pre>
+  require 'ostruct'
+</pre>
+<p>
+To load &#8216;ostruct.rb&#8217; plus Facets extensions for it simply use:
+</p>
+<pre>
+  require 'facets/ostruct'
+</pre>
+<p>
+instead.
+</p>
+<p>
+Using the Facets/MORE library of modules, classes or microframeworks is
+essentially the same. For example:
+</p>
+<pre>
+  require 'facets/basicobject'
+</pre>
+<p>
+Again, for details pertaining to the functionality of each feature, please
+see the API Docs.
+</p>
+<h2>Contribute</h2>
+<p>
+This project thrives on contribution.
+</p>
+<p>
+If you have any extension methods, classes, modules or small frameworks
+that you think have general applicability and would like to see them
+included in this project, don&#8217;t hesitiate to submit. Also, if you
+have better versions of any thing already included or simply have a patch,
+they are more than welcome. We want Ruby Facets to be of the highest
+quality.
+</p>
+<h2>Authors</h2>
+<p>
+This collection was put together by, and largely written by Thomas Sawyer
+(aka Trans). He can be reached via email at transfire at gmail.com.
+</p>
+<p>
+Some parts of this collection were written and/or inspired by other
+persons. Fortunately nearly all were copyrighted under the same open
+license, the Ruby License. In the few exceptions I have included the
+copyright notice with the source code.
+</p>
+<p>
+Any code file not specifically labeled shall fall under the Ruby License.
+</p>
+<p>
+In all cases, I have made every effort to give credit where credit is due.
+You will find these copyrights, thanks and acknowledgments embedded in the
+source code. You can see them in &#8220;CREDIT:&#8221; lines or as
+file-base &#8220;Author(s)&#8221; sections given in the RDocs. 
+</p>
+<p>
+Also see the AUTHORS file for a list of all contributing Rubyists. If
+anyone is missing from the list, please let me know and I will correct
+right away. Thanks.
+</p>
+<h2>License</h2>
+<p>
+The collection PER COLLECTION is licensed as follows:
+</p>
+<pre>
+  Ruby Facets
+  Copyright (c) 2004,2010 Thomas Sawyer
+
+  Distributed under the terms of the Ruby license.
+</pre>
+<p>
+The Ruby license is a dual license that also provides for use of the GPL.
+Complete texts of both licenses accompany this document (see LICENSE).
+</p>
+<p>
+Acknowledgments and Copyrights for particular snippets of borrowed code are
+given in their respective source. All licenses are either compatible with
+the Ruby license (namely the GPL) or the original author has given
+permission for inclusion of their code under such license.
+</p>
+<p>
+&#8220;ALL YOUR BASE ARE BELONG TO RUBY!&#8220;
+</p>
+<p>
+Ruby Facets, Copyright &#169;2005,2006,2007,2008,2009,2010 Thomas Sawyer
+</p>
+<p>
+Do you Ruby? (<a href="http://ruby-lang.org">ruby-lang.org</a>)
+</p>
+
+  </div>
+
+</div>
+</body>
+</html>
+

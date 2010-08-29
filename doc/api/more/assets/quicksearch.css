@@ -1,0 +1,33 @@
+.section-header {
+  margin-bottom: 10px;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+fieldset {
+  border: none;
+}
+
+#classindex-section form {
+  padding: 0 0 10px 0;
+}
+
+#methodindex-section form {
+  padding: 0 0 10px 0;
+}
+
+.initially-hidden {
+}
+
+.quicksearch-field {
+  width: 98%;
+  /* background: #ddd; */
+  border: 1px solid #ccc;
+  height: 1.5em;
+  -webkit-border-radius: 4px;
+}
+
+.quicksearch-field:focus {
+  background: #f1edba;
+}
+

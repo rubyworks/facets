@@ -1,74 +1,145 @@
----
-layout: default
----
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-<div class="blurb">
-  <div class="desc">
-    <h1>Under the Hood</h1>
-    Facets has moved it's source control system over to Git.
-    <div class="small">Git is a nice change of pace over the previous Subversion repository
-    for a project that originally used, and in many ways still misses, Darcs.</div>
-  </div>
-</div>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
-<div class="page">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <title>Ruby Facets</title>
+
+  <!-- google verification-->
+  <meta name="verify-v1" content="p14vW7GGMohDo2YKUHm0SXXTL+tzyPbKxxp35/WIQLA=" />
+
+  <meta name="DESCRIPTION"
+        content="Ruby Facets is a large collection of libraries for the Ruby programming lanaguage."/>
+
+  <link rel="icon" href="/media/favicon.ico" type="image/x-icon" />
+
+  <link href="http://rubyworks.github.com/facets/atom.xml" rel="alternate" title="blog.facets.rubyforge.org" type="application/atom+xml" />
 
 <!--
-  <div style="text-align: center; margin-top: 10px; margin-bottom: 30px;">
-    <img src="assets/images/SPYlights.png" style="padding-left: 30px;"/>
-  </div>
+  <link href="/assets/styles/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <link href="/assets/styles/print.css"  media="print" rel="stylesheet" type="text/css" />
 -->
 
-  <div class="section">
+  <!--[if IE]>
+      <link href="/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <![endif]-->
 
-    <h1>Contributor's Repository</h1>
+  <link href="/assets/site.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/syntax.css" rel="stylesheet" type="text/css" />
 
-    <p><a href="http://github.org">GitHub</a> houses our working <code>git</code> repository.
-    Anyone is welcome to fork this repository and contribute back to the master branch
-    via pull requests. If you are not familiar with using GitHub, here is a
-    <a href="http://github.com/guides/home">overview</a>.</p>
+  <!-- <script src="/js/rdocs.js" type="text/javascript"></script> -->
+</head>
 
-    <p>The master source is avaiable <a href="http://github.com/trans/facets/tree/master">here</a>.</p>
+<body>
 
+<div id="forkme">
+  <img src="/media/forkme.png" />
+</div>
+
+<div id="container">
+
+  <div id="header">
+    <a href="http://github.com/rubyworks/facets">
+      <img id="logo" src="/media/RubyFacets.png" align="middle" />
+    </a>
   </div>
 
-  <div class="section">
+  <!-- <div id="drop_shadow"></div> -->
 
-    <h1>Administrator's Repository</h1>
+  <div id="content">
 
-    <p>We also keep a master repository on <a href="http://rubyforge.org">Rubyforge</a>, that provides the master
-    copy only alterable by project administrators.</p>
+  <div class="blurb">
+    <div id="menu">
+      <a href="/index.html">Overview</a> &middot;
+      <a href="/news.html">News/Blog</a> &middot;
+      <a href="/learn.html">Documentation</a> &middot;
+      <a href="/source.html">Development</a>
+      <img style="width: 20px; height: 1px;" src="/media/clear.gif"/>
+    </div>
 
-    <br/>
-    <h2>Anonymous Git Access</h2>
+    <div class="desc">
+      <h1>Under the Hood</h1>
+      The source of Facets stregth is it's many contributors. Getting involved with Facets development is one of the best ways to get your ideas for Ruby extensions into the public forum.
+    </div>
+  </div>
 
-    <p>To pull the 'facets' repository anonymously, use:</p>
 
-    <pre style="padding-left: 40px;"><code>
-      git clone git://rubyforge.org/facets.git
-    </code></pre>
+  <div class="page">
+    <h1>Git Repository</h1>
 
-    <br/>
-    <h2>Developer Git Access via Gitosis</h2>
+<p><a href="http://github.org">GitHub</a> houses our working <code>git</code> repository.
+Anyone is welcome to fork this repository and contribute back to the master branch
+via pull requests. If you are not familiar with using GitHub, here is a
+<a href="http://github.com/guides/home">overview</a>.</p>
 
-    <p>Developers: You can push to the 'facets' repository using:</p>
+<p>The master source is avaiable <a href="http://github.com/rubyworks/facets/tree/master">here</a>.</p>
 
-    <pre style="padding-left: 40px;"><code>
-        gitosis@rubyforge.org:facets.git
-    </code></pre>
+<h1>Contribution Guidelines</h1>
 
-    <br/>
-    <h2>Browse Source</h2>
+<p>The widely accepted practice of contributing to GitHub projects entails:</p>
 
-    <p>Facets source code is hosted by RubyForge. You
-       <a href="http://rubyforge.org/scm/?group_id=804">SCM page</a>
-       may provide additional information.
-       You can
-       <a href="http://facets.rubyforge.org/git?p=facets.git;a=tree">browse the source</a>
-       thru the gitweb interface.
-    </p>
+<ul>
+<li>Fork rubyworks/facets</li>
+<li>Create a topic branch: git checkout -b my_fix</li>
+<li>Make your changes</li>
+<li>Push your branch: git push origin my_fix</li>
+<li>Open an Issue referencing your branch.</li>
+<li>Please do not push to master on your fork!</li>
+</ul>
+
+
+<p>Following this procedure will make everyone’s life easier.</p>
+
+<p>As with all good libraries, testing is vital. Facets handles testing via two different
+libraries. Lemon is used for unit tests. QED is used for documentation of behavior.</p>
+
+<p>Lemon was actaully designed specifially for Ruby Facets.</p>
+
+<p>QED is a ... In fact Facets inline docuemtation is fully executable via QED.</p>
+
+<h1>Contact</h1>
+
+<p>If you have any questions, suggestions or contributions you'd like to make privately,
+you can contact Trans &lt;transfire AT gmail DOT com&gt;.</p>
+
+  </div>
 
   </div>
 
 </div>
 
+<div id="copyright">
+  <img src="/media/abc1.png"/>
+
+  <br/><br/><br/>
+
+  Copyright (c) 2005-2008 Thomas Sawyer &amp; Contributors <br/><br/>
+
+  Ruby Facets was created by Thomas Sawyer (7rans), either written by hand or collected from a variety of Ruby resources.<br/>
+  The system continues to be extended and improved by a diverse cast of open-source contributors.<br/><br/>
+
+  Facets is released under the terms of the Ruby license, just like Ruby.<br/>
+  The Ruby license is a dual GPLv2 license.<br/><br/>
+
+  "Facets", "Ruby Facets" and "All Base Common" are trademarks of Thomas Sawyer. All rights reserved.
+
+  <br/><br/>
+
+  THIS SOFTWARE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR
+  IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
+  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE.
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-2883355-2";
+urchinTracker();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,935 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'><head><title>lib/more/facets/tuple.rb - C0 code coverage information</title>
+    <style type='text/css'>body { background-color: rgb(240, 240, 245); }</style>
+    <style type='text/css'>span.cross-ref-title {
+ font-size: 140%;
+}
+span.cross-ref a {
+ text-decoration: none;
+}
+span.cross-ref {
+ background-color:#f3f7fa;
+ border: 1px dashed #333;
+ margin: 1em;
+ padding: 0.5em;
+ overflow: hidden;
+}
+a.crossref-toggle {
+ text-decoration: none;
+}
+span.marked0 {
+ background-color: rgb(185, 210, 200);
+ display: block;
+}
+span.marked1 {
+ background-color: rgb(190, 215, 205);
+ display: block;
+}
+span.inferred0 {
+ background-color: rgb(175, 200, 200);
+ display: block;
+}
+span.inferred1 {
+ background-color: rgb(180, 205, 205);
+ display: block;
+}
+span.uncovered0 {
+ background-color: rgb(225, 110, 110);
+ display: block;
+}
+span.uncovered1 {
+ background-color: rgb(235, 120, 120);
+ display: block;
+}
+span.overview {
+ border-bottom: 8px solid black;
+}
+div.overview {
+ border-bottom: 8px solid black;
+}
+body {
+ font-family: verdana, arial, helvetica;
+}
+div.footer {
+ font-size: 68%;
+ margin-top: 1.5em;
+}
+h1, h2, h3, h4, h5, h6 {
+ margin-bottom: 0.5em;
+}
+h5 {
+ margin-top: 0.5em;
+}
+.hidden {
+ display: none;
+}
+div.separator {
+ height: 10px;
+}
+/* Commented out for better readability, esp. on IE */
+/*
+table tr td, table tr th {
+ font-size: 68%;
+}
+td.value table tr td {
+ font-size: 11px;
+}
+*/
+table.percent_graph {
+ height: 12px;
+ border: #808080 1px solid;
+ empty-cells: show;
+}
+table.percent_graph td.covered {
+ height: 10px;
+ background: #00f000;
+}
+table.percent_graph td.uncovered {
+ height: 10px;
+ background: #e00000;
+}
+table.percent_graph td.NA {
+ height: 10px;
+ background: #eaeaea;
+}
+table.report {
+ border-collapse: collapse;
+ width: 100%;
+}
+table.report td.heading {
+ background: #dcecff;
+ border: #d0d0d0 1px solid;
+ font-weight: bold;
+ text-align: center;
+}
+table.report td.heading:hover {
+ background: #c0ffc0;
+}
+table.report td.text {
+ border: #d0d0d0 1px solid;
+}
+table.report td.value,
+table.report td.lines_total,
+table.report td.lines_code {
+ text-align: right;
+ border: #d0d0d0 1px solid;
+}
+table.report tr.light {
+ background-color: rgb(240, 240, 245);
+}
+table.report tr.dark {
+ background-color: rgb(230, 230, 235);
+}
+</style>
+    <script type='text/javascript'>
+// <![CDATA[
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make cross-references hidden by default
+  document.writeln( "<style type=\"text/css\">span.cross-ref { display: none }</style>" )
+  // ]]>
+</script>
+    <style type='text/css'>span.run0 {
+  background-color: rgb(178, 204, 255);
+  display: block;
+}
+span.run1 {
+  background-color: rgb(178, 206, 255);
+  display: block;
+}
+span.run2 {
+  background-color: rgb(178, 209, 255);
+  display: block;
+}
+span.run3 {
+  background-color: rgb(178, 211, 255);
+  display: block;
+}
+span.run4 {
+  background-color: rgb(178, 214, 255);
+  display: block;
+}
+span.run5 {
+  background-color: rgb(178, 218, 255);
+  display: block;
+}
+span.run6 {
+  background-color: rgb(178, 220, 255);
+  display: block;
+}
+span.run7 {
+  background-color: rgb(178, 223, 255);
+  display: block;
+}
+span.run8 {
+  background-color: rgb(178, 225, 255);
+  display: block;
+}
+span.run9 {
+  background-color: rgb(178, 228, 255);
+  display: block;
+}
+span.run10 {
+  background-color: rgb(178, 232, 255);
+  display: block;
+}
+span.run11 {
+  background-color: rgb(178, 234, 255);
+  display: block;
+}
+span.run12 {
+  background-color: rgb(178, 237, 255);
+  display: block;
+}
+span.run13 {
+  background-color: rgb(178, 239, 255);
+  display: block;
+}
+span.run14 {
+  background-color: rgb(178, 242, 255);
+  display: block;
+}
+span.run15 {
+  background-color: rgb(178, 246, 255);
+  display: block;
+}
+span.run16 {
+  background-color: rgb(178, 248, 255);
+  display: block;
+}
+span.run17 {
+  background-color: rgb(178, 251, 255);
+  display: block;
+}
+span.run18 {
+  background-color: rgb(178, 253, 255);
+  display: block;
+}
+span.run19 {
+  background-color: rgb(178, 255, 253);
+  display: block;
+}
+span.run20 {
+  background-color: rgb(178, 255, 249);
+  display: block;
+}
+span.run21 {
+  background-color: rgb(178, 255, 247);
+  display: block;
+}
+span.run22 {
+  background-color: rgb(178, 255, 244);
+  display: block;
+}
+span.run23 {
+  background-color: rgb(178, 255, 242);
+  display: block;
+}
+span.run24 {
+  background-color: rgb(178, 255, 239);
+  display: block;
+}
+span.run25 {
+  background-color: rgb(178, 255, 235);
+  display: block;
+}
+span.run26 {
+  background-color: rgb(178, 255, 233);
+  display: block;
+}
+span.run27 {
+  background-color: rgb(178, 255, 230);
+  display: block;
+}
+span.run28 {
+  background-color: rgb(178, 255, 228);
+  display: block;
+}
+span.run29 {
+  background-color: rgb(178, 255, 225);
+  display: block;
+}
+span.run30 {
+  background-color: rgb(178, 255, 221);
+  display: block;
+}
+span.run31 {
+  background-color: rgb(178, 255, 219);
+  display: block;
+}
+span.run32 {
+  background-color: rgb(178, 255, 216);
+  display: block;
+}
+span.run33 {
+  background-color: rgb(178, 255, 214);
+  display: block;
+}
+span.run34 {
+  background-color: rgb(178, 255, 211);
+  display: block;
+}
+span.run35 {
+  background-color: rgb(178, 255, 207);
+  display: block;
+}
+span.run36 {
+  background-color: rgb(178, 255, 205);
+  display: block;
+}
+span.run37 {
+  background-color: rgb(178, 255, 202);
+  display: block;
+}
+span.run38 {
+  background-color: rgb(178, 255, 200);
+  display: block;
+}
+span.run39 {
+  background-color: rgb(178, 255, 197);
+  display: block;
+}
+span.run40 {
+  background-color: rgb(178, 255, 193);
+  display: block;
+}
+span.run41 {
+  background-color: rgb(178, 255, 191);
+  display: block;
+}
+span.run42 {
+  background-color: rgb(178, 255, 188);
+  display: block;
+}
+span.run43 {
+  background-color: rgb(178, 255, 186);
+  display: block;
+}
+span.run44 {
+  background-color: rgb(178, 255, 183);
+  display: block;
+}
+span.run45 {
+  background-color: rgb(178, 255, 179);
+  display: block;
+}
+span.run46 {
+  background-color: rgb(179, 255, 178);
+  display: block;
+}
+span.run47 {
+  background-color: rgb(182, 255, 178);
+  display: block;
+}
+span.run48 {
+  background-color: rgb(184, 255, 178);
+  display: block;
+}
+span.run49 {
+  background-color: rgb(187, 255, 178);
+  display: block;
+}
+span.run50 {
+  background-color: rgb(191, 255, 178);
+  display: block;
+}
+span.run51 {
+  background-color: rgb(193, 255, 178);
+  display: block;
+}
+span.run52 {
+  background-color: rgb(196, 255, 178);
+  display: block;
+}
+span.run53 {
+  background-color: rgb(198, 255, 178);
+  display: block;
+}
+span.run54 {
+  background-color: rgb(201, 255, 178);
+  display: block;
+}
+span.run55 {
+  background-color: rgb(205, 255, 178);
+  display: block;
+}
+span.run56 {
+  background-color: rgb(207, 255, 178);
+  display: block;
+}
+span.run57 {
+  background-color: rgb(210, 255, 178);
+  display: block;
+}
+span.run58 {
+  background-color: rgb(212, 255, 178);
+  display: block;
+}
+span.run59 {
+  background-color: rgb(215, 255, 178);
+  display: block;
+}
+span.run60 {
+  background-color: rgb(219, 255, 178);
+  display: block;
+}
+span.run61 {
+  background-color: rgb(221, 255, 178);
+  display: block;
+}
+span.run62 {
+  background-color: rgb(224, 255, 178);
+  display: block;
+}
+span.run63 {
+  background-color: rgb(226, 255, 178);
+  display: block;
+}
+span.run64 {
+  background-color: rgb(229, 255, 178);
+  display: block;
+}
+span.run65 {
+  background-color: rgb(233, 255, 178);
+  display: block;
+}
+span.run66 {
+  background-color: rgb(235, 255, 178);
+  display: block;
+}
+span.run67 {
+  background-color: rgb(238, 255, 178);
+  display: block;
+}
+span.run68 {
+  background-color: rgb(240, 255, 178);
+  display: block;
+}
+span.run69 {
+  background-color: rgb(243, 255, 178);
+  display: block;
+}
+span.run70 {
+  background-color: rgb(247, 255, 178);
+  display: block;
+}
+span.run71 {
+  background-color: rgb(249, 255, 178);
+  display: block;
+}
+span.run72 {
+  background-color: rgb(252, 255, 178);
+  display: block;
+}
+span.run73 {
+  background-color: rgb(255, 255, 178);
+  display: block;
+}
+span.run74 {
+  background-color: rgb(255, 252, 178);
+  display: block;
+}
+span.run75 {
+  background-color: rgb(255, 248, 178);
+  display: block;
+}
+span.run76 {
+  background-color: rgb(255, 246, 178);
+  display: block;
+}
+span.run77 {
+  background-color: rgb(255, 243, 178);
+  display: block;
+}
+span.run78 {
+  background-color: rgb(255, 240, 178);
+  display: block;
+}
+span.run79 {
+  background-color: rgb(255, 238, 178);
+  display: block;
+}
+span.run80 {
+  background-color: rgb(255, 234, 178);
+  display: block;
+}
+span.run81 {
+  background-color: rgb(255, 232, 178);
+  display: block;
+}
+span.run82 {
+  background-color: rgb(255, 229, 178);
+  display: block;
+}
+span.run83 {
+  background-color: rgb(255, 226, 178);
+  display: block;
+}
+span.run84 {
+  background-color: rgb(255, 224, 178);
+  display: block;
+}
+span.run85 {
+  background-color: rgb(255, 220, 178);
+  display: block;
+}
+span.run86 {
+  background-color: rgb(255, 218, 178);
+  display: block;
+}
+span.run87 {
+  background-color: rgb(255, 215, 178);
+  display: block;
+}
+span.run88 {
+  background-color: rgb(255, 212, 178);
+  display: block;
+}
+span.run89 {
+  background-color: rgb(255, 210, 178);
+  display: block;
+}
+span.run90 {
+  background-color: rgb(255, 206, 178);
+  display: block;
+}
+span.run91 {
+  background-color: rgb(255, 204, 178);
+  display: block;
+}
+span.run92 {
+  background-color: rgb(255, 201, 178);
+  display: block;
+}
+span.run93 {
+  background-color: rgb(255, 198, 178);
+  display: block;
+}
+span.run94 {
+  background-color: rgb(255, 196, 178);
+  display: block;
+}
+span.run95 {
+  background-color: rgb(255, 192, 178);
+  display: block;
+}
+span.run96 {
+  background-color: rgb(255, 189, 178);
+  display: block;
+}
+span.run97 {
+  background-color: rgb(255, 187, 178);
+  display: block;
+}
+span.run98 {
+  background-color: rgb(255, 184, 178);
+  display: block;
+}
+span.run99 {
+  background-color: rgb(255, 182, 178);
+  display: block;
+}
+span.run100 {
+  background-color: rgb(255, 178, 178);
+  display: block;
+}
+</style>
+    </head>
+  <body><h3>C0 code coverage information</h3>
+    <p>Generated on Thu Aug 13 15:05:30 -0400 2009 with <a href='http://eigenclass.org/hiki/rcov'>rcov 0.8.1.2</a>
+      </p>
+    <hr/>
+    <pre><span class='marked0'>Code reported as executed by Ruby looks like this...
+</span><span class='marked1'>and this: this line is also marked as covered.
+</span><span class='inferred0'>Lines considered as run by rcov, but not reported by Ruby, look like this,
+</span><span class='inferred1'>and this: these lines were inferred by rcov (using simple heuristics).
+</span><span class='uncovered0'>Finally, here&apos;s a line marked as not executed.
+</span></pre>                       
+<table class='report'><thead><tr><td class='heading'>Name</td>
+      <td class='heading'>Total lines</td>
+      <td class='heading'>Lines of code</td>
+      <td class='heading'>Total coverage</td>
+      <td class='heading'>Code coverage</td>
+      </tr>
+    </thead>
+  <tbody><tr class='light'><td><a href='lib-more-facets-tuple_rb.html'>lib/more/facets/tuple.rb</a>
+        </td>
+      <td class='lines_total'><tt>325</tt>
+        </td>
+      <td class='lines_code'><tt>150</tt>
+        </td>
+      <td><table cellspacing='0' cellpadding='0' align='right'><tr><td><tt class='coverage_total'>80.3%</tt>
+              &nbsp;</td>
+            <td><table cellspacing='0' class='percent_graph' cellpadding='0' width='100'><tr><td class='covered' width='80'/>
+                  <td class='uncovered' width='20'/>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      <td><table cellspacing='0' cellpadding='0' align='right'><tr><td><tt class='coverage_code'>61.3%</tt>
+              &nbsp;</td>
+            <td><table cellspacing='0' class='percent_graph' cellpadding='0' width='100'><tr><td class='covered' width='61'/>
+                  <td class='uncovered' width='39'/>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<pre><span class="inferred0"><a name="line1"></a>  1 # = Tuple
+</span><span class="inferred1"><a name="line2"></a>  2 #
+</span><span class="inferred0"><a name="line3"></a>  3 # Tuple is essentially an Array, but Comaparable and Immutable.
+</span><span class="inferred1"><a name="line4"></a>  4 #
+</span><span class="inferred0"><a name="line5"></a>  5 # A tuple can be made using #new or #[] just as one builds an array,
+</span><span class="inferred1"><a name="line6"></a>  6 # or using the #to_t method on a string or array. With a string tuple
+</span><span class="inferred0"><a name="line7"></a>  7 # remembers the first non-alphanumeric character as the tuple divider.
+</span><span class="inferred1"><a name="line8"></a>  8 #
+</span><span class="inferred0"><a name="line9"></a>  9 # == Usage
+</span><span class="inferred1"><a name="line10"></a> 10 #
+</span><span class="inferred0"><a name="line11"></a> 11 #   t1 = Tuple[1,2,3]
+</span><span class="inferred1"><a name="line12"></a> 12 #   t2 = Tuple[2,3,4]
+</span><span class="inferred0"><a name="line13"></a> 13 #
+</span><span class="inferred1"><a name="line14"></a> 14 #   t1 &lt; t2   #=&gt; true
+</span><span class="inferred0"><a name="line15"></a> 15 #   t1 &gt; t2   #=&gt; false
+</span><span class="inferred1"><a name="line16"></a> 16 #
+</span><span class="inferred0"><a name="line17"></a> 17 #   t1 = '1.2.3'.to_t
+</span><span class="inferred1"><a name="line18"></a> 18 #   t2 = '1-2-3'.to_t
+</span><span class="inferred0"><a name="line19"></a> 19 #
+</span><span class="inferred1"><a name="line20"></a> 20 #   puts t1  #=&gt; 1.2.3
+</span><span class="inferred0"><a name="line21"></a> 21 #   puts t2  #=&gt; 1-2-3
+</span><span class="inferred1"><a name="line22"></a> 22 #
+</span><span class="inferred0"><a name="line23"></a> 23 #   t1 == t2  #=&gt; true
+</span><span class="inferred1"><a name="line24"></a> 24 #
+</span><span class="inferred0"><a name="line25"></a> 25 # Keep in mind that Tuple[1,2,3] is not the same as Tuple['1','2','3'].
+</span><span class="inferred1"><a name="line26"></a> 26 #
+</span><span class="inferred0"><a name="line27"></a> 27 # == Todo
+</span><span class="inferred1"><a name="line28"></a> 28 #
+</span><span class="inferred0"><a name="line29"></a> 29 # * The #hash method needs a touch-up.
+</span><span class="inferred1"><a name="line30"></a> 30 #
+</span><span class="inferred0"><a name="line31"></a> 31 # * There are a few more methods yet to borrow from Array.
+</span><span class="inferred1"><a name="line32"></a> 32 #   Consider how #+, #-, etc. ought to work.
+</span><span class="inferred0"><a name="line33"></a> 33 #
+</span><span class="inferred1"><a name="line34"></a> 34 # == Author
+</span><span class="inferred0"><a name="line35"></a> 35 #
+</span><span class="inferred1"><a name="line36"></a> 36 # * Thomas Sawyer
+</span><span class="inferred0"><a name="line37"></a> 37 #
+</span><span class="inferred1"><a name="line38"></a> 38 # == Copying
+</span><span class="inferred0"><a name="line39"></a> 39 #
+</span><span class="inferred1"><a name="line40"></a> 40 # Copyright (c) 2005 Thomas Sawyer
+</span><span class="inferred0"><a name="line41"></a> 41 #
+</span><span class="inferred1"><a name="line42"></a> 42 # Ruby License
+</span><span class="inferred0"><a name="line43"></a> 43 #
+</span><span class="inferred1"><a name="line44"></a> 44 # This module is free software. You may use, modify, and/or
+</span><span class="inferred0"><a name="line45"></a> 45 # redistribute this software under the same terms as Ruby.
+</span><span class="inferred1"><a name="line46"></a> 46 #
+</span><span class="inferred0"><a name="line47"></a> 47 # This program is distributed in the hope that it will be useful,
+</span><span class="inferred1"><a name="line48"></a> 48 # but WITHOUT ANY WARRANTY; without even the implied warranty of
+</span><span class="inferred0"><a name="line49"></a> 49 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+</span><span class="inferred1"><a name="line50"></a> 50 
+</span><span class="marked0"><a name="line51"></a> 51 require 'facets/multiton'
+</span><span class="inferred1"><a name="line52"></a> 52 
+</span><span class="inferred0"><a name="line53"></a> 53 # = Tuple
+</span><span class="inferred1"><a name="line54"></a> 54 #
+</span><span class="inferred0"><a name="line55"></a> 55 # A tuple can be made using #new or #[] just as one builds an array,
+</span><span class="inferred1"><a name="line56"></a> 56 # or using the #to_t method on a string or array. With a string tuple
+</span><span class="inferred0"><a name="line57"></a> 57 # remembers the first non-alphanumeric character as the tuple divider.
+</span><span class="inferred1"><a name="line58"></a> 58 #
+</span><span class="inferred0"><a name="line59"></a> 59 # == Usage
+</span><span class="inferred1"><a name="line60"></a> 60 #
+</span><span class="inferred0"><a name="line61"></a> 61 #   t1 = Tuple[1,2,3]
+</span><span class="inferred1"><a name="line62"></a> 62 #   t2 = Tuple[2,3,4]
+</span><span class="inferred0"><a name="line63"></a> 63 #
+</span><span class="inferred1"><a name="line64"></a> 64 #   t1 &lt; t2   #=&gt; true
+</span><span class="inferred0"><a name="line65"></a> 65 #   t1 &gt; t2   #=&gt; false
+</span><span class="inferred1"><a name="line66"></a> 66 #
+</span><span class="inferred0"><a name="line67"></a> 67 #   t1 = '1.2.3'.to_t
+</span><span class="inferred1"><a name="line68"></a> 68 #   t2 = '1-2-3'.to_t
+</span><span class="inferred0"><a name="line69"></a> 69 #
+</span><span class="inferred1"><a name="line70"></a> 70 #   puts t1  #=&gt; 1.2.3
+</span><span class="inferred0"><a name="line71"></a> 71 #   puts t2  #=&gt; 1-2-3
+</span><span class="inferred1"><a name="line72"></a> 72 #
+</span><span class="inferred0"><a name="line73"></a> 73 #   t1 == t2  #=&gt; true
+</span><span class="inferred1"><a name="line74"></a> 74 #
+</span><span class="inferred0"><a name="line75"></a> 75 # Keep in mind that Tuple[1,2,3] is not the same as Tuple['1','2','3'].
+</span><span class="inferred1"><a name="line76"></a> 76 
+</span><span class="marked0"><a name="line77"></a> 77 class Tuple
+</span><span class="inferred1"><a name="line78"></a> 78 
+</span><span class="marked0"><a name="line79"></a> 79   include ::Multiton
+</span><span class="marked1"><a name="line80"></a> 80   include ::Enumerable
+</span><span class="marked0"><a name="line81"></a> 81   include ::Comparable
+</span><span class="inferred1"><a name="line82"></a> 82 
+</span><span class="marked0"><a name="line83"></a> 83   def self.multiton_id(arg=0, default=0, &amp;block)
+</span><span class="marked1"><a name="line84"></a> 84     if block_given?
+</span><span class="uncovered0"><a name="line85"></a> 85       values = []
+</span><span class="uncovered1"><a name="line86"></a> 86       arg.times { |i| values &lt;&lt; block[i] }
+</span><span class="uncovered0"><a name="line87"></a> 87     elseif Integer === arg
+</span><span class="uncovered1"><a name="line88"></a> 88       values = [ default ] * arg
+</span><span class="inferred0"><a name="line89"></a> 89     else
+</span><span class="marked1"><a name="line90"></a> 90       values = arg.to_ary
+</span><span class="inferred0"><a name="line91"></a> 91     end
+</span><span class="marked1"><a name="line92"></a> 92     values
+</span><span class="inferred0"><a name="line93"></a> 93   end
+</span><span class="inferred1"><a name="line94"></a> 94 
+</span><span class="marked0"><a name="line95"></a> 95   def initialize(arg=0, default=0, &amp;blk)
+</span><span class="marked1"><a name="line96"></a> 96     if block_given?
+</span><span class="uncovered0"><a name="line97"></a> 97       @values = []
+</span><span class="uncovered1"><a name="line98"></a> 98       arg.times { |i| @values &lt;&lt; blk[i] }
+</span><span class="uncovered0"><a name="line99"></a> 99     elseif Integer === arg
+</span><span class="uncovered1"><a name="line100"></a>100       @values = [ default ] * arg
+</span><span class="inferred0"><a name="line101"></a>101     else
+</span><span class="marked1"><a name="line102"></a>102       @values = arg.to_ary
+</span><span class="inferred0"><a name="line103"></a>103     end
+</span><span class="marked1"><a name="line104"></a>104     @default = default
+</span><span class="marked0"><a name="line105"></a>105     @divider = '.'
+</span><span class="inferred1"><a name="line106"></a>106   end
+</span><span class="inferred0"><a name="line107"></a>107 
+</span><span class="marked1"><a name="line108"></a>108   attr_accessor :default
+</span><span class="inferred0"><a name="line109"></a>109 
+</span><span class="marked1"><a name="line110"></a>110   def divider( set=nil )
+</span><span class="marked0"><a name="line111"></a>111     return @divider unless set
+</span><span class="marked1"><a name="line112"></a>112     @divider = set
+</span><span class="marked0"><a name="line113"></a>113     self
+</span><span class="inferred1"><a name="line114"></a>114   end
+</span><span class="inferred0"><a name="line115"></a>115 
+</span><span class="marked1"><a name="line116"></a>116 protected
+</span><span class="inferred0"><a name="line117"></a>117 
+</span><span class="marked1"><a name="line118"></a>118   def values() @values end
+</span><span class="inferred0"><a name="line119"></a>119 
+</span><span class="marked1"><a name="line120"></a>120 public
+</span><span class="inferred0"><a name="line121"></a>121 
+</span><span class="marked1"><a name="line122"></a>122   def inspect() to_a.inspect end
+</span><span class="inferred0"><a name="line123"></a>123 
+</span><span class="marked1"><a name="line124"></a>124   def to_t()     self end
+</span><span class="marked0"><a name="line125"></a>125   def to_tuple() self end
+</span><span class="inferred1"><a name="line126"></a>126 
+</span><span class="marked0"><a name="line127"></a>127   def to_a()   Array(@values) end
+</span><span class="marked1"><a name="line128"></a>128   def to_ary() Array(@values) end
+</span><span class="inferred0"><a name="line129"></a>129 
+</span><span class="marked1"><a name="line130"></a>130   def to_s( divider=nil )
+</span><span class="uncovered0"><a name="line131"></a>131     @values.join(divider||@divider)
+</span><span class="uncovered1"><a name="line132"></a>132   end
+</span><span class="inferred0"><a name="line133"></a>133 
+</span><span class="marked1"><a name="line134"></a>134   def size()   @values.size end
+</span><span class="marked0"><a name="line135"></a>135   def length() @values.size end
+</span><span class="inferred1"><a name="line136"></a>136 
+</span><span class="marked0"><a name="line137"></a>137   def empty?()
+</span><span class="uncovered1"><a name="line138"></a>138     return true if @values.empty?
+</span><span class="uncovered0"><a name="line139"></a>139     return true if @values == [ @default ] * @values.size
+</span><span class="uncovered1"><a name="line140"></a>140     false
+</span><span class="uncovered0"><a name="line141"></a>141   end
+</span><span class="inferred1"><a name="line142"></a>142 
+</span><span class="marked0"><a name="line143"></a>143   def each( &amp;block )
+</span><span class="uncovered1"><a name="line144"></a>144     @values.each( &amp;block )
+</span><span class="uncovered0"><a name="line145"></a>145   end
+</span><span class="inferred1"><a name="line146"></a>146 
+</span><span class="marked0"><a name="line147"></a>147   def each_index( &amp;block )
+</span><span class="uncovered1"><a name="line148"></a>148     @values.each_index( &amp;block )
+</span><span class="uncovered0"><a name="line149"></a>149   end
+</span><span class="inferred1"><a name="line150"></a>150 
+</span><span class="marked0"><a name="line151"></a>151   def [](i)
+</span><span class="marked1"><a name="line152"></a>152     @values.fetch(i,@default)
+</span><span class="marked0"><a name="line153"></a>153   end
+</span><span class="inferred1"><a name="line154"></a>154 
+</span><span class="marked0"><a name="line155"></a>155   def []=(i,v)
+</span><span class="uncovered1"><a name="line156"></a>156     @values[i] = v
+</span><span class="uncovered0"><a name="line157"></a>157   end
+</span><span class="inferred1"><a name="line158"></a>158 
+</span><span class="marked0"><a name="line159"></a>159   def index()  @values.index end
+</span><span class="marked1"><a name="line160"></a>160   def rindex() @values.rindex end
+</span><span class="inferred0"><a name="line161"></a>161 
+</span><span class="inferred1"><a name="line162"></a>162   # Unlike Array, Tuple#&lt;&lt; cannot act in place
+</span><span class="inferred0"><a name="line163"></a>163   # becuase Tuple's are immutable.
+</span><span class="marked1"><a name="line164"></a>164   def &lt;&lt;( obj )
+</span><span class="marked0"><a name="line165"></a>165     self.class.instance( to_a &lt;&lt; obj )
+</span><span class="marked1"><a name="line166"></a>166   end
+</span><span class="inferred0"><a name="line167"></a>167 
+</span><span class="marked1"><a name="line168"></a>168   def pop() Tuple.instance( to_a.pop ) end
+</span><span class="inferred0"><a name="line169"></a>169 
+</span><span class="marked1"><a name="line170"></a>170   def push( obj ) Tuple.instance( to_a.push(obj) ) end
+</span><span class="inferred0"><a name="line171"></a>171 
+</span><span class="inferred1"><a name="line172"></a>172   # Pulls a value off the beginning of a tuple.
+</span><span class="inferred0"><a name="line173"></a>173   # This method is otherwsie known as #shift.
+</span><span class="marked1"><a name="line174"></a>174   def pull() Tuple.instance( to_a.shift ) end
+</span><span class="inferred0"><a name="line175"></a>175 
+</span><span class="inferred1"><a name="line176"></a>176   # Stands for &quot;Put On Top&quot;. This method is the opposite of #pull and is
+</span><span class="inferred0"><a name="line177"></a>177   # otherwise known as #unshift.
+</span><span class="marked1"><a name="line178"></a>178   def pot( obj ) Tuple.instance( to_a.unshift(obj) ) end
+</span><span class="inferred0"><a name="line179"></a>179 
+</span><span class="marked1"><a name="line180"></a>180   alias_method :unshift, :pot
+</span><span class="marked0"><a name="line181"></a>181   alias_method :shift, :pull
+</span><span class="inferred1"><a name="line182"></a>182 
+</span><span class="inferred0"><a name="line183"></a>183   # Returns true if two tuple references are for the
+</span><span class="inferred1"><a name="line184"></a>184   # very same tuple.
+</span><span class="marked0"><a name="line185"></a>185   def eql?( other )
+</span><span class="uncovered1"><a name="line186"></a>186     return true if object_id == other.object_id
+</span><span class="uncovered0"><a name="line187"></a>187     #return true if values.eql? other.values
+</span><span class="uncovered1"><a name="line188"></a>188   end
+</span><span class="inferred0"><a name="line189"></a>189 
+</span><span class="marked1"><a name="line190"></a>190   def &lt;=&gt;( other )
+</span><span class="marked0"><a name="line191"></a>191     other = other.to_t
+</span><span class="marked1"><a name="line192"></a>192     [size, other.size].max.times do |i|
+</span><span class="marked0"><a name="line193"></a>193       c = self[i] &lt;=&gt; other[i]
+</span><span class="marked1"><a name="line194"></a>194       return c if c != 0
+</span><span class="inferred0"><a name="line195"></a>195     end
+</span><span class="uncovered1"><a name="line196"></a>196     0
+</span><span class="uncovered0"><a name="line197"></a>197   end
+</span><span class="inferred1"><a name="line198"></a>198 
+</span><span class="inferred0"><a name="line199"></a>199   # For pessimistic constraint (like '~&gt;' in gems)
+</span><span class="marked1"><a name="line200"></a>200   def =~( other )
+</span><span class="uncovered0"><a name="line201"></a>201     other = other.to_t
+</span><span class="uncovered1"><a name="line202"></a>202     upver = other.dup
+</span><span class="uncovered0"><a name="line203"></a>203     upver[0] += 1
+</span><span class="uncovered1"><a name="line204"></a>204     self &gt;= other and self &lt; upver
+</span><span class="uncovered0"><a name="line205"></a>205   end
+</span><span class="inferred1"><a name="line206"></a>206 
+</span><span class="marked0"><a name="line207"></a>207   def first() @values.first end
+</span><span class="marked1"><a name="line208"></a>208   def last()  @values.last end
+</span><span class="inferred0"><a name="line209"></a>209 
+</span><span class="inferred1"><a name="line210"></a>210   # These are useful for using a Tuple as a version.
+</span><span class="marked0"><a name="line211"></a>211   def major() @values.first end
+</span><span class="marked1"><a name="line212"></a>212   def minor() @values.at(1) end
+</span><span class="marked0"><a name="line213"></a>213   def teeny() @values.at(2) end
+</span><span class="inferred1"><a name="line214"></a>214 
+</span><span class="inferred0"><a name="line215"></a>215   # Unique hash value.
+</span><span class="marked1"><a name="line216"></a>216   def hash
+</span><span class="uncovered0"><a name="line217"></a>217     # TODO This needs to take into account the default
+</span><span class="uncovered1"><a name="line218"></a>218     #      and maybe the divider too.
+</span><span class="uncovered0"><a name="line219"></a>219     to_a.hash
+</span><span class="uncovered1"><a name="line220"></a>220   end
+</span><span class="inferred0"><a name="line221"></a>221 
+</span><span class="inferred1"><a name="line222"></a>222   # class-level -----------------------------------------------
+</span><span class="inferred0"><a name="line223"></a>223 
+</span><span class="marked1"><a name="line224"></a>224   class &lt;&lt; self
+</span><span class="inferred0"><a name="line225"></a>225 
+</span><span class="marked1"><a name="line226"></a>226     def []( *args )
+</span><span class="marked0"><a name="line227"></a>227       instance( args )
+</span><span class="marked1"><a name="line228"></a>228     end
+</span><span class="inferred0"><a name="line229"></a>229 
+</span><span class="inferred1"><a name="line230"></a>230     # Translates a string in the form on a set of numerical and/or
+</span><span class="inferred0"><a name="line231"></a>231     # alphanumerical characters separated by non-word characters (eg \W+)
+</span><span class="inferred1"><a name="line232"></a>232     # into a Tuple. The values of the tuple will be converted to integers
+</span><span class="inferred0"><a name="line233"></a>233     # if they are purely numerical.
+</span><span class="inferred1"><a name="line234"></a>234     #
+</span><span class="inferred0"><a name="line235"></a>235     #   Tuple.cast_from_string('1.2.3a')  #=&gt; [1,2,&quot;3a&quot;]
+</span><span class="inferred1"><a name="line236"></a>236     #
+</span><span class="inferred0"><a name="line237"></a>237     # It you would like to control the interpretation of each value
+</span><span class="inferred1"><a name="line238"></a>238     # as it is added to the tuple you can supply a block.
+</span><span class="inferred0"><a name="line239"></a>239     #
+</span><span class="inferred1"><a name="line240"></a>240     #   Tuple.cast_from_string('1.2.3a'){ |v| v.upcase }  #=&gt; [&quot;1&quot;,&quot;2&quot;,&quot;3A&quot;]
+</span><span class="inferred0"><a name="line241"></a>241     #
+</span><span class="inferred1"><a name="line242"></a>242     # This method is called by String#to_t.
+</span><span class="inferred0"><a name="line243"></a>243 
+</span><span class="marked1"><a name="line244"></a>244     def cast_from_string( str, &amp;yld )
+</span><span class="marked0"><a name="line245"></a>245       args = str.to_s.split(/\W+/)
+</span><span class="marked1"><a name="line246"></a>246       div = /\W+/.match( str.to_s )[0]
+</span><span class="marked0"><a name="line247"></a>247       if block_given?
+</span><span class="uncovered1"><a name="line248"></a>248         args = args.collect{ |a| yld[a] }
+</span><span class="inferred0"><a name="line249"></a>249       else
+</span><span class="marked1"><a name="line250"></a>250         args = args.collect { |i| /^[0-9]+$/ =~ i ? i.to_i : i }
+</span><span class="inferred0"><a name="line251"></a>251       end
+</span><span class="marked1"><a name="line252"></a>252       self.instance( args ).divider( div )
+</span><span class="inferred0"><a name="line253"></a>253     end
+</span><span class="inferred1"><a name="line254"></a>254 
+</span><span class="inferred0"><a name="line255"></a>255     #
+</span><span class="inferred1"><a name="line256"></a>256 
+</span><span class="marked0"><a name="line257"></a>257     def cast_from_array( arr )
+</span><span class="uncovered1"><a name="line258"></a>258       self.instance( arr )
+</span><span class="uncovered0"><a name="line259"></a>259     end
+</span><span class="inferred1"><a name="line260"></a>260 
+</span><span class="inferred0"><a name="line261"></a>261     # Parses a constraint returning the operation as a lambda.
+</span><span class="inferred1"><a name="line262"></a>262 
+</span><span class="marked0"><a name="line263"></a>263     def constraint_to_lambda( constraint, &amp;yld )
+</span><span class="uncovered1"><a name="line264"></a>264       op, val = *parse_constraint( constraint, &amp;yld )
+</span><span class="uncovered0"><a name="line265"></a>265       lambda { |t| t.send(op, val) }
+</span><span class="uncovered1"><a name="line266"></a>266     end
+</span><span class="inferred0"><a name="line267"></a>267 
+</span><span class="marked1"><a name="line268"></a>268     def parse_constraint( constraint, &amp;yld )
+</span><span class="uncovered0"><a name="line269"></a>269       constraint = constraint.strip
+</span><span class="uncovered1"><a name="line270"></a>270       re = %r{^(=~|~&gt;|&lt;=|&gt;=|==|=|&lt;|&gt;)?\s*(\d+(:?[-.]\d+)*)$}
+</span><span class="uncovered0"><a name="line271"></a>271       if md = re.match( constraint )
+</span><span class="uncovered1"><a name="line272"></a>272         if op = md[1]
+</span><span class="uncovered0"><a name="line273"></a>273           op = '=~' if op == '~&gt;'
+</span><span class="uncovered1"><a name="line274"></a>274           op = '==' if op == '='
+</span><span class="uncovered0"><a name="line275"></a>275           val = cast_from_string( md[2], &amp;yld ) #instance( md[2] )
+</span><span class="uncovered1"><a name="line276"></a>276         else
+</span><span class="uncovered0"><a name="line277"></a>277           op = '=='
+</span><span class="uncovered1"><a name="line278"></a>278           val = cast_from_string( constraint, &amp;yld ) #instance( constraint )
+</span><span class="uncovered0"><a name="line279"></a>279         end
+</span><span class="uncovered1"><a name="line280"></a>280       else
+</span><span class="uncovered0"><a name="line281"></a>281         raise ArgumentError, &quot;invalid constraint&quot;
+</span><span class="uncovered1"><a name="line282"></a>282       end
+</span><span class="uncovered0"><a name="line283"></a>283       return op, val
+</span><span class="uncovered1"><a name="line284"></a>284     end
+</span><span class="uncovered0"><a name="line285"></a>285 
+</span><span class="uncovered1"><a name="line286"></a>286   end
+</span><span class="uncovered0"><a name="line287"></a>287 
+</span><span class="uncovered1"><a name="line288"></a>288 end
+</span><span class="inferred0"><a name="line289"></a>289 
+</span><span class="inferred1"><a name="line290"></a>290 
+</span><span class="inferred0"><a name="line291"></a>291 # Conveniently turn a string into a tuple.
+</span><span class="inferred1"><a name="line292"></a>292 
+</span><span class="marked0"><a name="line293"></a>293 class ::String
+</span><span class="inferred1"><a name="line294"></a>294 
+</span><span class="inferred0"><a name="line295"></a>295   # Translates a string in the form on a set of numerical and/or
+</span><span class="inferred1"><a name="line296"></a>296   # alphanumerical characters separated by non-word characters (eg \W+)
+</span><span class="inferred0"><a name="line297"></a>297   # into a Tuple. The values of the tuple will be converted to integers
+</span><span class="inferred1"><a name="line298"></a>298   # if they are purely numerical.
+</span><span class="inferred0"><a name="line299"></a>299   #
+</span><span class="inferred1"><a name="line300"></a>300   #   '1.2.3a'.to_t  #=&gt; [1,2,&quot;3a&quot;]
+</span><span class="inferred0"><a name="line301"></a>301   #
+</span><span class="inferred1"><a name="line302"></a>302   # It you would like to control the interpretation of each value
+</span><span class="inferred0"><a name="line303"></a>303   # as it is added to the tuple you can supply a block.
+</span><span class="inferred1"><a name="line304"></a>304   #
+</span><span class="inferred0"><a name="line305"></a>305   #   '1.2.3a'.to_t { |v| v.upcase }  #=&gt; [&quot;1&quot;,&quot;2&quot;,&quot;3A&quot;]
+</span><span class="inferred1"><a name="line306"></a>306   #
+</span><span class="inferred0"><a name="line307"></a>307   # This method calls Tuple.cast_from_string.
+</span><span class="inferred1"><a name="line308"></a>308 
+</span><span class="marked0"><a name="line309"></a>309   def to_t( &amp;yld )
+</span><span class="marked1"><a name="line310"></a>310     Tuple.cast_from_string( self, &amp;yld )
+</span><span class="inferred0"><a name="line311"></a>311   end
+</span><span class="inferred1"><a name="line312"></a>312 
+</span><span class="inferred0"><a name="line313"></a>313 end
+</span><span class="inferred1"><a name="line314"></a>314 
+</span><span class="inferred0"><a name="line315"></a>315 
+</span><span class="inferred1"><a name="line316"></a>316 # Convert and array into a tuple.
+</span><span class="inferred0"><a name="line317"></a>317 
+</span><span class="marked1"><a name="line318"></a>318 class ::Array
+</span><span class="inferred0"><a name="line319"></a>319 
+</span><span class="marked1"><a name="line320"></a>320   def to_t
+</span><span class="uncovered0"><a name="line321"></a>321     Tuple.cast_from_array( self )
+</span><span class="uncovered1"><a name="line322"></a>322   end
+</span><span class="uncovered0"><a name="line323"></a>323 
+</span><span class="uncovered1"><a name="line324"></a>324 end
+</span><span class="inferred0"><a name="line325"></a>325 
+</span></pre><hr/>
+    <p>Generated using the <a href='http://eigenclass.org/hiki.rb?rcov'>rcov code coverage analysis tool for Ruby</a>
+   version 0.8.1.2.</p>
+<p><a href='http://validator.w3.org/check/referer'><img src='http://www.w3.org/Icons/valid-xhtml10' height='31' alt='Valid XHTML 1.0!' width='88'/>
+        </a>
+      <a href='http://jigsaw.w3.org/css-validator/check/referer'><img src='http://jigsaw.w3.org/css-validator/images/vcss' alt='Valid CSS!' style='border:0;width:88px;height:31px'/>
+        </a>
+      </p>
+    </body>
+  </html>

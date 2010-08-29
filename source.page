@@ -1,0 +1,48 @@
+---
+title   : Source - Ruby Facets
+layout  : default
+stencil : liquid
+blurb   : Under the Hood
+detail  : 
+  The source of Facets stregth is it's many contributors. Getting involved
+  with Facets development is one of the best ways to get your ideas
+  for Ruby extensions into the public forum.
+
+--- markdown
+
+# Git Repository
+
+<a href="http://github.org">GitHub</a> houses our working <code>git</code> repository.
+Anyone is welcome to fork this repository and contribute back to the master branch
+via pull requests. If you are not familiar with using GitHub, here is a
+<a href="http://github.com/guides/home">overview</a>.
+
+The master source is avaiable <a href="http://github.com/rubyworks/facets/tree/master">here</a>.
+
+
+# Contribution Guidelines
+
+The widely accepted practice of contributing to GitHub projects entails:
+
+* Fork rubyworks/facets
+* Create a topic branch: git checkout -b my_fix
+* Make your changes
+* Push your branch: git push origin my_fix
+* Open an Issue referencing your branch.
+* Please do not push to master on your fork!
+
+Following this procedure will make everyone’s life easier.
+
+As with all good libraries, testing is vital. Facets handles testing via two different
+libraries. Lemon is used for unit tests. QED is used for documentation of behavior.
+
+Lemon was actaully designed specifially for Ruby Facets.
+
+QED is a ... In fact Facets inline docuemtation is fully executable via QED.
+
+
+# Contact
+
+If you have any questions, suggestions or contributions you'd like to make privately,
+you can contact Trans &lt;transfire AT gmail DOT com&gt;.
+
