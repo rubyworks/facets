@@ -19,7 +19,7 @@ stencil: liquid
   <meta name="DESCRIPTION"
         content="Ruby Facets is a large collection of libraries for the Ruby programming lanaguage."/>
 
-  <link rel="icon" href="/media/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="{{ root }}/media/favicon.ico" type="image/x-icon" />
 
   <link href="{{ site.url }}/atom.xml" rel="alternate" title="blog.facets.rubyforge.org" type="application/atom+xml" />
 
@@ -32,8 +32,8 @@ stencil: liquid
       <link href="/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
   <![endif]-->
 
-  <link href="{{root}}/assets/site.css" rel="stylesheet" type="text/css" />
-  <link href="{{root}}/assets/syntax.css" rel="stylesheet" type="text/css" />
+  <link href="{{root}}assets/site.css" rel="stylesheet" type="text/css" />
+  <link href="{{root}}assets/syntax.css" rel="stylesheet" type="text/css" />
 
   <!-- <script src="/js/rdocs.js" type="text/javascript"></script> -->
 </head>
@@ -41,14 +41,14 @@ stencil: liquid
 <body>
 
 <div id="forkme">
-  <img src="{{root}}/media/forkme.png" />
+  <img src="{{root}}media/forkme.png" />
 </div>
 
 <div id="container">
 
   <div id="header">
     <a href="http://github.com/rubyworks/facets">
-      <img id="logo" src="{{root}}/media/RubyFacets.png" align="middle" />
+      <img id="logo" src="{{root}}media/RubyFacets.png" align="middle" />
     </a>
   </div>
 
@@ -58,10 +58,10 @@ stencil: liquid
 
   <div class="blurb">
     <div id="menu">
-      <a href="{{root}}/index.html">Overview</a> &middot;
-      <a href="{{root}}/news.html">News/Blog</a> &middot;
-      <a href="{{root}}/learn.html">Documentation</a> &middot;
-      <a href="{{root}}/source.html">Development</a>
+      <a href="{{root}}index.html">Overview</a> &middot;
+      <a href="{{root}}news.html">News/Blog</a> &middot;
+      <a href="{{root}}learn.html">Documentation</a> &middot;
+      <a href="{{root}}source.html">Development</a>
       <img style="width: 20px; height: 1px;" src="/media/clear.gif"/>
     </div>
 
@@ -81,7 +81,7 @@ stencil: liquid
 </div>
 
 <div id="copyright">
-  <img src="{{root}}/media/abc1.png"/>
+  <img src="{{root}}media/abc1.png"/>
 
   <br/><br/><br/>
 
