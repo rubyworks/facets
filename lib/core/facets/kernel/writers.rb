@@ -11,11 +11,11 @@ module Kernel
   #
   #   we = WritersExample.new
   #
-  #   we.writers  #=> [:y=, :x=]
+  #   we.writers  #=> [:x=, :y=]
   #
   # If the +chomp+ option is true, then the trailing '=' will be removed.
   #
-  #   we.writers(:chomp=>true)  #=> [:y, :x]
+  #   we.writers(:chomp=>true)  #=> [:x, :y]
   #
   # By default #writers only includes public methods. To see private or
   # protected methods use the +:access+ option.
@@ -24,7 +24,7 @@ module Kernel
   #
   # Or multiple access options,
   #
-  #   we.writers(:access=>[:public,:private])  #=> [:q=,:y=,:x=]
+  #   we.writers(:access=>[:public,:private])  #=> [:q=,:x=,:y=]
   #
   # You can simply supply `:all` to get all method regardless accessibility.
   #

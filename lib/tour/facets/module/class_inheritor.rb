@@ -18,19 +18,19 @@ class Module
   # that specifies how one hierarchical level "integrates" with the next.
   #
   #   class X
-  #     inheritor :foo, [], :+
+  #     class_inheritor :x, [], :+
   #   end
   #
   #   class Y < X
   #   end
   #
   #   X.x! << :a
-  #   X.x => [:a]
-  #   Y.x => [:a]
+  #   X.x  #=> [:a]
+  #   Y.x  #=> [:a]
   #
   #   Y.x! << :b
-  #   X.x => [:a]
-  #   Y.x => [:a, :b]
+  #   X.x  #=> [:a]
+  #   Y.x  #=> [:a, :b]
   #
   # NOTE: Adding an inheritor directly to Module or Class will probably
   # not do what is expected. Thankfully that usecase is likely a YAGNI,

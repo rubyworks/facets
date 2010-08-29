@@ -5,7 +5,7 @@ class Array
   # their is a tie.
   #
   #   [:a, :b, :c, :b, :d].mode  #=> [:b]
-  #   [:a, :b, :c, :b, :a].mode  #=> [:b, :a]
+  #   [:a, :b, :c, :b, :a].mode  #=> [:a, :b]
   #
   # Returns an Array of most common elements.
   #

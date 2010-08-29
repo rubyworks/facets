@@ -6,15 +6,15 @@ class Hash
   # to each sub-hash.
   #
   #   h = {:a=>1, :b=>{:x=>1, :y=>2}}
-  #   h.recursive.map{ |k,v| [k.to_s,v] }
-  #   #=> {"a"=>1, "b"=>{"x"=>1, "y"=>2}}
+  #   h.recursively.map{ |k,v| [k.to_s, v] }
+  #   #=> [["a", 1], ["b", [["y", 2], ["x", 1]]]]
   #
   # The recursive iteration can be treated separately from the non-recursive
   # iteration by passing a block to the #recursive method.
   #
   #   h = {:a=>1, :b=>{:x=>1, :y=>2}}
-  #   h.recursive{ |k,v| [k.to_s, v.to_s] }.map{ |k,v| [k.to_s,v] }
-  #   #=> {"a"=>"1", "b"=>{"x"=>"1", "y"=>"2"}}
+  #   h.recursively{ |k,v| [k.to_s, v] }.map{ |k,v| [k.to_s, v.to_s] }
+  #   #=> [["a", "1"], ["b", [["y", "2"], ["x", "1"]]]]
   #
   def recursively(*types, &block)
     types = types.empty? ? [self.class] : types

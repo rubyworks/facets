@@ -11,18 +11,16 @@ class Module
   #   module MyModule
   #     instance_function
   #
-  #     def self.jumble( obj, arg )
+  #     def self.jumble(obj, arg)
   #       obj + arg
   #     end
   #   end
   #
-  #   class String
-  #     include MyModule
-  #   end
+  #   MyModule.jumble("Try", "Me")  #=> "TryMe"
   #
-  #   MyModule.jumble( "Try", "Me" )  #=> "TryMe"
-  #
-  #   "Try".jumble( "Me" )            #=> 'TryMe'
+  #   s = "Try"
+  #   s.extend MyModule
+  #   s.jumble("Me")                #=> "TryMe"
   #
   # Note: This used to be a module called PromoteSelf and later Instantize,
   # before becoming a method.

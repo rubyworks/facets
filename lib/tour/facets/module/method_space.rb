@@ -1,37 +1,10 @@
-# = Method Namespaces
-#
-# Create method namespaces, allowing for method
-# chains but still accessing the object's instance.
-#
-# == Todo
-#
-# * May need to cahnge name, to avoid conflict with Rake's method by the same name.
-# * Maybe can become part of core once name is changed.
-#
-# == Authors
-#
-# * Thomas Sawyer
-# * Pit Captain
-#
-# == Copying
-#
-# Copyright (c) 2006 Thomas Sawyer, Pit Captain
-#
-# Ruby License
-#
-# This module is free software. You may use, modify, and/or redistribute this
-# software under the same terms as Ruby.
-#
-# This program is distributed in the hope that it will be useful, but WITHOUT
-# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-# FOR A PARTICULAR PURPOSE.
-
 require 'facets/functor'
-require 'facets/module' # for Module#basename
+require 'facets/module/basename'
 
 class Module
 
-  # Define a simple method namespace.
+  # Create method namespaces, allowing for method
+  # chains but still accessing the object's instance.
   #
   #   class A
   #     attr_writer :x
@@ -42,13 +15,17 @@ class Module
   #
   #   a = A.new
   #   a.x = 10
-  #   a.inside.x #=> 10
-  #   a.x  # no method error
-
+  #   a.inside.x  #=> 10
+  #
+  #   expect NoMethodError do
+  #     a.x
+  #   end
+  #
+  # CREDIT: Pit Captain
   def method_space(name, mod=nil, &blk)
 
-    # If block is given then create a module, otherwise
-    # get the name of the module.
+    ## If block is given then create a module, otherwise
+    ## get the name of the module.
     if block_given?
       name = name.to_s
       raise ArgumentError if mod
@@ -61,12 +38,12 @@ class Module
       mod  = mod.dup
     end
 
-    # Include the module. This is neccessary, otherwise
-    # Ruby won't let us bind the instance methods.
+    ## Include the module. This is neccessary, otherwise
+    ## Ruby won't let us bind the instance methods.
     include mod
 
-    # Save the instance methods of the module and
-    # replace them with a "transparent" version.
+    ## Save the instance methods of the module and
+    ## replace them with a "transparent" version.
     methods = {}
     mod.instance_methods(false).each do |m|
       methods[m.to_sym] = mod.instance_method(m)
@@ -75,15 +52,15 @@ class Module
           super(*a,&b)
         end
       }
-      #mod.instance_eval do
-        #define_method(m)
-        #  super
-        #end
-      #end
+      ##mod.instance_eval do
+      ##  define_method(m)
+      ##    super
+      ##  end
+      ##end
     end
 
-    # Add a method for the namespace that delegates
-    # via the Functor to the saved instance methods.
+    ## Add a method for the namespace that delegates
+    ## via the Functor to the saved instance methods.
     define_method(name) do
       mtab = methods
       Functor.new do |op, *args|

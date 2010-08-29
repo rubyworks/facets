@@ -1,7 +1,19 @@
+require 'facets/module/class_extend'
+
 class Module
 
-  # Like #inheritor but non-dynamic. The value of the inheritor
+  # Like #class_inheritor but non-dynamic. The value of the inheritor
   # is copied from the ancestor on first read.
+  #
+  #   c = Class.new do
+  #     def self.x; ['x']; end
+  #   end
+  #
+  #   d = Class.new(c) do
+  #     copy_inheritor :x
+  #   end
+  #
+  #   d.x  #=> ['x']
   #
   # CREDIT: Thomas Sawyer
 
