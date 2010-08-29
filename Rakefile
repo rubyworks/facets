@@ -23,36 +23,36 @@ end
 # RUN TESTS (requires Lemon)
 # ----------------------------------------------------------------------------
 
-task 'default' do
-  sh 'lemon -Ilib/core:lib/more:lib/tour test/core test/more test/tour'
+task "default" do
+  sh "lemon #{lemon_flags} -Ilib/core:lib/more:lib/tour test/core test/more test/tour"
 end
 
-task 'test' do
+task "test" do
   if tests = ENV['TESTS']
-    sh "lemon -Ilib/core:lib/more:lib/tour #{tests}"
+    sh "lemon #{lemon_flags} -Ilib/core:lib/more:lib/tour #{tests}"
   else
-    sh "lemon -Ilib/core:lib/more:lib/tour test/core test/more test/tour"
+    sh "lemon #{lemon_flags} -Ilib/core:lib/more:lib/tour test/core test/more test/tour"
   end
 end
 
 desc "run all unit tests"
-task 'test:all' do
-  sh 'lemon -Ilib/core:lib/more:lib/tour test/core test/more test/tour'
+task "test:all" do
+  sh "lemon #{lemon_flags} -Ilib/core:lib/more:lib/tour test/core test/more test/tour"
 end
 
 desc "run core unit tests"
-task 'test:core' do
-  sh 'lemon -Ilib/core test/core'
+task "test:core" do
+  sh "lemon#{lemon_flags}  -Ilib/core test/core"
 end
 
 desc "run more unit tests"
-task 'test:more' do
-  sh 'lemon -Ilib/core:lib/more test/more'
+task "test:more" do
+  sh "lemon #{lemon_flags} -Ilib/core:lib/more test/more"
 end
 
 desc "run tour unit tests"
-task 'test:tour' do
-  sh 'lemon -Ilib/core:lib/tour test/tour'
+task "test:tour" do
+  sh "lemon #{lemon_flags} -Ilib/core:lib/tour test/tour"
 end
 
 desc "run all unit tests with ActiveSupport loaded"
@@ -69,6 +69,14 @@ task 'test:more:activesupport' => [:include_activesupport, 'test:tour']
 
 task 'include_activesupport' do
   require 'activesupport'
+end
+
+def lemon_flags
+  flags = []
+  if ENV['verbose']
+    flags << '-v'
+  end
+  flags.join(' ')
 end
 
 #def add_loadpath(*paths)
@@ -211,27 +219,35 @@ end
 
 desc "run qed docs"
 task 'qed' do
-  sh "qed -Ilib/core:lib/more:lib/tour qed/core qed/more qed/tour"
+  sh "qed #{qed_flags} -Ilib/core:lib/more:lib/tour qed/core qed/more qed/tour"
 end
 
 desc "run core qed docs"
 task 'qed:core' do
-  sh "qed -Ilib/core qed/core"
+  sh "qed #{qed_flags} -Ilib/core qed/core"
 end
 
 desc "run more qed docs"
 task 'qed:more' do
-  sh "qed -Ilib/core:lib/more qed/more"
+  sh "qed #{qed_flags} -Ilib/core:lib/more qed/more"
 end
 
 desc "run tour qed docs"
 task 'qed:tour' do
-  sh "qed -Ilib/core:lib/tour qed/tour"
+  sh "qed #{qed_flags} -Ilib/core:lib/tour qed/tour"
 end
 
 desc "run core qed docs"
 task 'qed:code' do
-  sh "qed -c -Ilib/core lib/core"
+  sh "qed #{qed_flags} -c -Ilib/core lib/core"
+end
+
+def qed_flags
+  flags = []
+  if ENV['verbose']
+    flags << '-v'
+  end
+  flags.join(' ')
 end
 
 
