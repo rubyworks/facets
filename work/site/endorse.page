@@ -1,0 +1,65 @@
+---
+title  : Endorse - Ruby Facets
+layout : default
+stencil: liquid
+---
+
+<div class="blurb">
+  <div class="desc">
+    <h1>Facets is for Everyone</h1>
+    Who uses Facets? Lots of Rubyists do!
+    <div class="small">Whether by copy-and-paste or direct dependency,
+    the following is a brief list of just a few of the projects
+    that have benefited from Facets.</div>
+  </div>
+</div>
+
+<div class="page">
+
+  <div style="margin: 40px 20px;">
+    <a href="http://reap.rubyforge.org">
+      <img src="assets/images/reap.png" width="200px" align="left" style="margin-right: 20px;"/>
+    </a>
+    <a href="http://reap.rubyforge.org">Reap</a>
+    <p>Reap is the orginal Ruby project assistant application. Now with a whole new modern
+       design and increased automation, making it the easiest and more powerful tool ever.
+    </p>
+  </div>
+
+  <br/>
+
+  <div style="margin: 40px 20px;">
+    <a href="http://treetop.rubyforge.org">
+      <img src="{{ site.url }}/assets/images/treetop.jpg" width="200px" align="left" style="margin-right: 20px;"/>
+    </a>
+    <a href="http://treetop.rubyforge.org">Treetop</a>
+    <p>Treetop is a language for describing languages. Combining the elegance of Ruby
+       with cutting-edge parsing expression grammars, it helps you analyze syntax
+       with revolutionarily ease.
+    </p>
+  </div>
+
+  <br/>
+
+  <div style="margin: 40px 20px;">
+    <a href="http://nitroproject.org">
+      <img src="{{ site.url }}/assets/images/nitro.png" width="200px" align="left" style="margin-right: 20px;"/>
+    </a>
+    <a href="http://treetop.rubyforge.org">Nitro/Og</a>
+    <p>Nitro provides everything you need to create state-of-the-art
+       Web 2.0 applications with ease and joy. Nitro applications are written using
+       Ruby (server side) and Javascript (client side).
+    </p>
+
+    <p>Needs some help with Facets as it relates to Nitro/Og. Check out the
+    <a href="http://nitroproject.com/fora/view/Facets">Nitro Facets Fora</a>.</p>
+  </div>
+
+  <div style="clear: both; margin-bottom: 30px;"></div>
+
+  <div class="heading">
+    <img src="{{ site.url }}/assets/images/WeHeartFacets.png" align="top"/>
+  </div>
+
+</div>
+

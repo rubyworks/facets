@@ -1,0 +1,19 @@
+# Sidebar
+
+<a class="big"
+   href="javascript: window.open('{{ site.url }}/{{ site.url }}/apidoc/quick.html', 'facets_quickdocs',
+         config='height=470, width=551, toolbar=no, menubar=no, scrollbars=no, status=0,
+         resizable=no, location=no, directories=no'); void(0);">
+  <img src="assets/images/mini.png" align="right" style="margin: -15px 3px;"/>
+</a>
+
+The <a href="{{ site.url }}/apidoc/quick.html">Sidebar</a> provides a convenient "quick reference" interface
+to the RDoc API documentation. It is especailly useful for browsers that support sidebar pages,
+such as Firefox. Simply drag-and-drop the "apple slice image" (left of this text) to a toolbar,
+then alter it's properties to open as a <i>sidebar</i>. If your browser doesn't support sidebars,
+or if you simply prefer, you can use the
+<a href="javascript: window.open('{{ site.url }}/apidoc/quick.html', 'facets_quickdocs',
+         config='height=470, width=551, toolbar=no, menubar=no, scrollbars=no, status=0,
+         resizable=no, location=no, directories=no'); void(0);">Mini API</a> instead.
+This offers the same interface, but in a small stand-alone window.
+
