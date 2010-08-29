@@ -1,5 +1,6 @@
 --- 
 title  : Facets 2.4.3
+date   : 2008-03-24
 author : Trans
 tags   : [release]
 layout : post
@@ -32,6 +33,8 @@ improvements, but a few significant changes are also present.
 Note that this release does not include a setup.rb script. We are working
 on a new version of this script, which we plan to include in the next
 release.
+
+--- markdown
 
 Special thanks to:
 

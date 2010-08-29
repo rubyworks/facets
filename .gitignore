@@ -6,7 +6,6 @@ ri
 doc/webri
 doc/yard
 pkg
-site
 facets.gemspec
 .gemspec
 tmp

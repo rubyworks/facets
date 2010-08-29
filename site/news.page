@@ -14,8 +14,11 @@ detail  : Keep up with the latest news.
     <h3>{{ post.date | date_to_string }}</h3>
     {{ post.summary }}
     <!-- <small>Written by {{ post.author }}</small> -->
+    <div style="text-align: right;">
+      <a href="{{ post.url }}">Read More...</a>
+    </div>
   </div>
-  <br/>
+  <br/><br/>
 {% endfor %}
 
 </div>

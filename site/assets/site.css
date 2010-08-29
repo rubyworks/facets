@@ -33,7 +33,7 @@ p {
 
 a {
   font-weight     : bold;
-  text-decoration : underline;
+  text-decoration : none;
   color           : #660066;
 }
 
@@ -309,4 +309,16 @@ spy img { width: 30px; }
   padding-right: 5px;
 
 }
+
+#forkme {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#forkme img {
+  margin: 0;
+  padding: 0;
+}
+
 

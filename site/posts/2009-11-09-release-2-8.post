@@ -1,5 +1,6 @@
 --- 
 title  : Facets 2.8 Release
+date   : 2009-11-09
 author : Trans
 tags   : [release]
 layout : post
@@ -22,6 +23,8 @@ to the new 'ansi' project:
 * ansicode.rb
 * progressbar.rb
 * logger.rb
+
+--- markdown
 
 This version of Facets also reverts a few of the deprecations made before --
 reconsiderations made due to analysis of the code as suitable for release

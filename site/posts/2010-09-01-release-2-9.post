@@ -1,5 +1,6 @@
 --- 
 title  : Facets 2.9 Release
+date   : 2010-09-01
 author : Trans
 tags   : [release]
 layout : post
@@ -12,6 +13,8 @@ little bolder (to be announced). The primary goal of this release was to
 trim Facets down to a true core extensions library. All tertiary add-on classes
 and mixins have now been spun-off to other projects. Only a very select set of
 general purposes classes and mixins remain.
+
+--- markdown
 
 A new *TOUR* library division has been added to complement *CORE* and *MORE*.
 This division houses purely optional extensions. The new division serves
