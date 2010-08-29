@@ -1,1 +1,1 @@
-require 'facets/module/parent'
+require 'facets/module/enclosure'

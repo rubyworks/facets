@@ -1,71 +1,52 @@
 require 'facets/kernel/constant'
+require 'facets/module/namespace'
 
 class Module
 
-  # TODO: +parent+ is probably the wrong term for this --look at #nesting instead.
-
   # Returns the module which contains this one according to its name.
   #
-  #   module ::ParentExample
+  #   module ::EncExample
   #     module M
   #       module N
   #       end
   #     end
   #   end
   #
-  #   ParentExample::M::N.parent # => ParentExample::M
+  #   EncExample::M::N.enclosure  #=> EncExample::M
   #
   # The parent of top-level and anonymous modules is Object.
   #
-  #   ParentExample.parent  # => Object
-  #   Module.new.parent     # => Object
+  #   EncExample.enclosure   #=> Object
+  #   Module.new.enclosure   #=> Object
   #
-  def parent
-    parent_name ? constant(parent_name) : Object
-  end
-
-  # Returns the name of the module containing this one.
-  #
-  #   module ::ParentExample
-  #     module M
-  #       module N
-  #       end
-  #     end
-  #   end
-  #
-  #   ParentExample::M::N.parent_name # => "ParentExample::M"
-  #
-  def parent_name
-    unless defined? @parent_name
-      @parent_name = name =~ /::[^:]+\Z/ ? $`.freeze : nil
-    end
-    @parent_name
+  def enclosure
+    namespace ? constant(namespace) : Object
   end
 
   # Returns all the parents of this module according to its name, ordered from
   # nested outwards. The receiver is not contained within the result.
   #
-  #   module ::ParentExample
+  #   module ::EncExample
   #     module M
   #       module N
   #       end
   #     end
   #   end
   #
-  #   ParentExample.parents    # => [Object]
-  #   ParentExample::M.parents # => [ParentExample, Object]
+  #   EncExample.enclosures      #=> [Object]
+  #   EncExample::M.enclosures   #=> [EncExample, Object]
   #
-  def parents
-    parents = []
-    if parent_name
-      parts = parent_name.split('::')
+  def enclosures
+   enclosures = []
+    if namespace
+      parts = namespace.split('::')
       until parts.empty?
-        parents << constant(parts * '::')
+        enclosures << constant(parts * '::')
         parts.pop
       end
     end
-    parents << Object unless parents.include?(Object)
-    parents
+    enclosures << Object unless enclosures.include?(Object)
+    enclosures
   end
 
 end
