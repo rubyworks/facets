@@ -3,10 +3,10 @@ covers 'facets/kernel/load_relative'
 
 tests Kernel do
 
-  omit :require_relative do
+  omit unit :require_relative do
   end
 
-  omit :load_relative do
+  omit unit :load_relative do
   end
 
 end

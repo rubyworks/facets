@@ -2,7 +2,9 @@ covers 'facets/kernel/source_location'
 
 tests Kernel do
 
-  omit :source_location => "lemon seems to intefer will call stack" do
+  # TODO: lemon seems to intefer with call stack
+
+  omit unit :source_location do
     file, line, meth = source_location_example
     file.assert == __FILE__
     line.assert == 13

@@ -1,17 +1,16 @@
 == Binding#[]
 
-  require 'facets/binding/opvars'
+  require 'facets/binding/op'
 
   a = 1
   b = 2
   x = "hello"
-
-  @bind = binding
 
   binding["x"].assert == "hello"
 
 == Binding#[]=
 
   binding["x"] = "goodbye"
+
   binding["x"].assert == "goodbye"
 

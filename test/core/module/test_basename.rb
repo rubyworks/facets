@@ -1,4 +1,4 @@
-covers 'facets/module/basename.rb'
+covers 'facets/module/basename'
 
 tests Module do
 

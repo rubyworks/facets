@@ -85,7 +85,7 @@ tests Denumerator do
     d.assert == {1=>2,2=>4,3=>6,4=>8,5=>10}
   end
 
-  omit :inject => "can't use break in proc?" do
+  omit unit :inject => "can't use break in proc?" do
     d = (1..5).defer
     d = d.inject({}){ |h,v| h[v] = v*2; break h if v>=3; h }
     d.assert == {1=>2,2=>4,3=>6}

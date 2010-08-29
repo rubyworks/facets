@@ -1,6 +1,6 @@
 == Class#cattr
 
-  require 'facets/class/cattr'
+  require 'facets/module/cattr'
 
   class CAttrMockObject
     def initialize

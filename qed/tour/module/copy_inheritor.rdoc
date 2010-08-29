@@ -4,10 +4,6 @@
 
 We see copy_inheritor
 
-    m.koko.assert  == [1]
-    c1.koko.assert == [1,2,3]
-    c2.koko.assert == [1,4]
-
     m = Module.new do
       copy_inheritor :koko, []
       koko << 1

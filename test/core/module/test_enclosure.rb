@@ -1,9 +1,9 @@
-covers 'facets/module/parent'
+covers 'facets/module/enclosure'
 
 tests Module do
 
-  unit :parent do
-    Lemon::TestCase.parent.assert == Lemon
+  unit :enclosure do
+    Lemon::TestCase.enclosure.assert == Lemon
   end
 
 end

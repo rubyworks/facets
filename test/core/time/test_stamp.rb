@@ -5,7 +5,7 @@ require 'time' # for parse method
 Case Time do
 
   # TODO: Problem with TIMEZONE.
-  omit :stamp do
+  omit unit :stamp do
     t = Time.parse('4/20/2005 15:37')
     t.stamp.assert == "Wed Apr 20 15:37:00 PDT 2005"
   end

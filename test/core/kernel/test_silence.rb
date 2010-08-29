@@ -6,19 +6,19 @@ tests Kernel do
 
   context "Not straight foward to test since they effect output."
 
-  omit :silence do
+  omit unit :silence do
   end
 
-  omit :silence_stream do
+  omit unit :silence_stream do
   end
 
-  omit :silence_stderr do
+  omit unit :silence_stderr do
   end
 
-  omit :silence_stdout do
+  omit unit :silence_stdout do
   end
 
-  omit :silently do
+  omit unit :silently do
   end
 
 end

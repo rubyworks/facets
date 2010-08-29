@@ -22,12 +22,12 @@ tests Kernel do
     o.a.assert == 2
   end
 
-  omit :__set__ => "support is being considered" do |o|
+  omit unit :__set__ => "support is being considered" do |o|
     o.__set__(:a, 3)
     o.a.assert == 3
   end
 
-  omit :__get__ => "support is being considered" do
+  omit unit :__get__ => "support is being considered" do |o|
     o.__get__(:a).assert == 1
   end
 

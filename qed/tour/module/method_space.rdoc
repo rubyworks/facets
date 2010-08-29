@@ -1,26 +1,32 @@
 == Module#method_space
 
+== Module#include_as
+
+  require 'facets/module/include_as'
+
   module T
-    def t ; p self ; end
-    def r ; p self ; end
+    def t ; "Tt"  ; end
+    def r ; "Tr"  ; end
     def q ; super ; end
   end
 
   class N
-    def q ; puts "ho" ; end
+    def q ; "Nq" ; end
   end
 
   class X < N
     include_as :test => T
 
-    def n ; p test ; end
+    def n ; test.inspect ; end
     def m ; test.t ; end
     def o ; test.r ; end
   end
 
   x = X.new
+
   x.n
-  x.m
-  x.o
-  x.q
+
+  x.m.assert == "Tt"
+  x.o.assert == "Tr"
+  x.q.assert == "Nq"
 

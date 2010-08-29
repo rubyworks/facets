@@ -120,3 +120,7 @@ On Module
       koko! << 4
     end
 
+    m.koko.assert  == [1]
+    c1.koko.assert == [1,2,3]
+    c2.koko.assert == [1,4]
+

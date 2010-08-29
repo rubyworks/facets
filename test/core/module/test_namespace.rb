@@ -1,10 +1,9 @@
-covers 'facets/module/parent_name'
+covers 'facets/module/namespace'
 
 tests Module do
 
-  unit :parent_name do
-    Lemon::TestCase.parent_name.assert == "Lemon"
+  unit :namespace do
+    Lemon::TestCase.namespace.assert == "Lemon"
   end
 
 end
-

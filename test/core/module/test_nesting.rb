@@ -6,7 +6,7 @@ tests Module do
   # for the namespace? Don't want to do this to prevent it from
   # showing up in coverage report.
 
-  omit :nesting do
+  omit unit :nesting do
     #nest = ExampleModule::ExampleClass.nesting
     #nest.assert == [ExampleModule]
   end
