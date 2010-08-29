@@ -7,10 +7,10 @@ extension: '.xml'
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>blog.crantastic.org</title>
- <link href="http://blog.crantastic.org/atom.xml" rel="self"/>
- <link href="http://blog.crantastic.org/"/>
+ <link href="{{ site.url }}/atom.xml" rel="self"/>
+ <link href="{{ site.url }}"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>http://blog.crantastic.org/</id>
+ <id>{{ site.url }}</id>
 
  {% for post in site.posts %}
  <entry>

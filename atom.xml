@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>blog.crantastic.org</title>
- <link href="http://blog.crantastic.org/atom.xml" rel="self"/>
- <link href="http://blog.crantastic.org/"/>
+ <link href="http://rubyworks.github.com/facets/atom.xml" rel="self"/>
+ <link href="http://rubyworks.github.com/facets"/>
  <updated></updated>
- <id>http://blog.crantastic.org/</id>
+ <id>http://rubyworks.github.com/facets</id>
 
  
  <entry>

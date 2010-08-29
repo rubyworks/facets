@@ -9,7 +9,7 @@ detail  :
 
 --- markdown
 
-<img src="/media/ruby-lg.png" width="100px" align="right" style=""/>
+<img src="{{ root }}/media/ruby-lg.png" width="100px" align="right" style=""/>
 
 # Facets is the Premiere Ruby Extensions Library
 
@@ -34,7 +34,7 @@ cheery-picking just the methods they need, and still others use the library whol
 How you use Ruby Facets to facilitate your Ruby development is completely yours to decide.
 
 
-<img src="/media/lightbulb.jpg" width="70px" align="right" style=""/>
+<img src="{{ root }}/media/lightbulb.jpg" width="70px" align="right" style=""/>
 
 # Facets is a Bright Idea
 
