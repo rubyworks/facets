@@ -47,25 +47,25 @@ and TOUR, for extra extensions.
 
 ## Core API
 
-The <a href="/doc/api/core/index.html">CORE API</a> includes all the "prime" extensions.
-These methods are at the heart of Facets. Any application or library that makes use
-of Facets, you can be sure, supports these methods. Also include is the Functor class,
-which is a Higher Order Message class. It is used by a number of methods to provide
-fluid interfaces.
+The <a href="{{ root }}/doc/api/core/index.html">CORE API</a> includes all
+the "prime" extensions. These methods are at the heart of Facets. Any
+application or library that makes use of Facets, you can be sure, supports
+these methods. Also include is the Functor class, which is a Higher Order
+Message class. It is used by a number of methods to provide fluid interfaces.
 
 ## More API
 
-The <a href="/doc/api/more/index.html">MORE API</a> documents the variety of extension
-methods to Ruby's standard library, and additional classes, modules and micro-frameworks
-Facets provides as optional libraries.
+The <a href="{{ root }}/doc/api/more/index.html">MORE API</a> documents the
+variety of extension methods to Ruby's standard library, and additional
+classes, modules and micro-frameworks Facets provides as optional libraries.
 
 ## Tour API
 
-The <a href="/doc/api/tour/index.html">TOUR API</a> documents a small collection
-of extensions and occasionally class and module additions "on tour" as possible
-inclusions into CORE or MORE proper. This has been created as an easy way for
-Facets vet new ideas. In a few cases some extensions might reside here indefinitely
-if they are useful, but not suited for inclusion in CORE.
+The <a href="{{ root }}/doc/api/tour/index.html">TOUR API</a> documents a small
+collection of extensions and occasionally class and module additions "on tour"
+as possible inclusions into CORE or MORE proper. This has been created as an
+easy way for Facets vet new ideas. In a few cases some extensions might reside
+here indefinitely if they are useful, but not suited for inclusion in CORE.
 
 
 # Wiki
@@ -81,9 +81,8 @@ Facets has a community wiki that anyone can use to help document Facets at
 
 # Mailing List
 
-Facets has a dedicated mailing list hosted via Rubyforge.org, used by 
-developers and end-users alike. You can subscribe to it directly,
-or subscribe via the Google Groups archive of the list.
-
-  http://groups.google.com/group/facets-universal/topics?hl=en
+Facets has a dedicated mailing list hosted via
+<a href="http://groups.google.com/group/facets-universal/topics">Google Groups</a>. 
+The same list is used by developers and end-users alike. If you have a
+question or a suggestion the list is a good place to get feedback about it.
 
