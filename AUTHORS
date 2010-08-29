@@ -9,6 +9,7 @@
 The following developers have recently contributed to the development of Facets.
 They are held in the highest regard for their efforts.
 
+* Michael Harmer       Documentation Improvements
 * Lavir the Whiolet    Improved Range#at_rand and added File#ext.
 * Jean-Denis Vauguet   Added Pathname#visit.
 * Roger Pack           Added generational depth to Class#descendants.
