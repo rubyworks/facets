@@ -1,7 +1,6 @@
 ---
-email:
-  service: Email
-  mailto: transfire@gmail.com
+grancher:
+  active: true
 
 rubyforge:
   service: Rubyforge
@@ -11,3 +10,8 @@ rubyforge:
     #doc/rdoc: rdoc
     #doc/yard: yard
   active: false
+
+email:
+  service: Email
+  mailto: transfire@gmail.com
+

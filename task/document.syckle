@@ -16,7 +16,7 @@ rdoc-core:
 
 rdoc-more:
   service : RDoc
-  template: tabfish
+  template: tabfish  #redfish
   output  : site/doc/api/more
   title   : Facets More
   main    : README.rdoc
