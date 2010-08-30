@@ -12,8 +12,9 @@ class String
         block.call(line.strip)
       end
     else
-      Enumerator.new(self) do |output|
-        scan(/^.*?$/) do |line|
+      str = self
+      Enumerator.new do |output|
+        str.scan(/^.*?$/) do |line|
           output.yield(line.strip)
         end
       end
@@ -21,15 +22,4 @@ class String
   end
 
 end
-
-=begin test
-
-  "a \n b \n c".newlines.class.must == Enumerator
-  "a \n b \n c".newlines.to_a.must == %w{a b c}
-
-  a = []
-  "a \n b \n c".newlines{|nl| a << nl}
-  a.must == %w{a b c}
-
-=end
 
