@@ -1,6 +1,6 @@
-unless defined?(::Enumerator)
+if RUBY_VERSION < '1.9'
 
-  require 'enumerator' #if RUBY_VERSION < 1.9
+  require 'enumerator'
 
   # for Ruby 1.8 -> 1.9 transition
   Enumerator = Enumerable::Enumerator unless defined?(::Enumerator)
@@ -35,7 +35,7 @@ unless defined?(::Enumerator)
     #   fib.take(10)  #=> [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
     #                                                 
     def initialize(*args, &block)
-      if block_given?
+      if block
         @body = block
         old_initialize(self, :_start)
       else
