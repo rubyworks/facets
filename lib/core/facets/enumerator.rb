@@ -15,7 +15,7 @@ if RUBY_VERSION < '1.9'
     #
     #    obj = Enumerator.new do |yielder|
     #      # ...
-    #      yielder.yield data  # or: yielder << data
+    #      yielder.yield(data)  # or: yielder << data
     #      # ...
     #    end
     #
@@ -44,7 +44,7 @@ if RUBY_VERSION < '1.9'
     end
 
     def _start(*args,&receiver) #:nodoc:
-      @body.call(Yielder.new(receiver), *args)
+      @body.call(Yielder.new(&receiver), *args)
     end
 
     # Wrapper to allow yielder.yield(output) or yielder << output
@@ -53,7 +53,7 @@ if RUBY_VERSION < '1.9'
     # TODO: Why can't Yielder take a block instead of a proc argument?
 
     class Yielder #:nodoc:
-      def initialize(proc)
+      def initialize(&proc)
         @proc = proc
       end
       def yield(*args)
