@@ -14,13 +14,13 @@ module FileUtils
   # .bat and .com, which you may optionally include in the program name.
   # Returns <tt>nil</tt> if not found.
   #
-  # CREDIT Daniel J. Berger & Michael Granger
+  # CREDIT: Daniel J. Berger, Michael Granger
+  #
   #--
   # The which() method was adopted from Daniel J. Berger, via PTools
   # which in in turn was adopted fromt the FileWhich code posted by
   # Michael Granger on http://www.rubygarden.org.
   #++
-
   def which(prog, path=ENV['PATH'])
     path.split(File::PATH_SEPARATOR).each {|dir|
       # Windows checks against specific extensions
@@ -54,48 +54,4 @@ module FileUtils
   end
 
 end
-
-
-# TODO FileUtils#which This test needs a mock File.
-
-=begin #no test yet
-
-  require 'test/unit'
-  require 'rbconfig'
-
-  class TC_FileUtils_Which < Test::Unit::TestCase
-    include Config
-
-    def setup
-      @workdir = Dir.getwd
-      @thisdir = $TESTDIR
-
-      @expected_ruby_exe = File.join( CONFIG['bindir'], CONFIG['ruby_install_name'] )
-      if File::ALT_SEPARATOR
-          @expected_ruby_exe.gsub!(/\//,'\\')
-          @expected_ruby_exe += ".exe"
-      end
-    end
-
-    def test_method
-      assert_respond_to( FileUtils, :which )
-    end
-
-    # which
-
-    def test_which
-      Dir.chdir @thisdir
-      begin
-        ruby_exe = nil
-        assert_nothing_raised { ruby_exe = FileUtils.which(CONFIG['ruby_install_name']) }
-        assert_equal(@expected_ruby_exe, ruby_exe)
-        assert_equal(nil, FileUtils.which("blahblah"))
-      ensure
-        Dir.chdir @workdir
-      end
-    end
-
-  end
-
-=end
 

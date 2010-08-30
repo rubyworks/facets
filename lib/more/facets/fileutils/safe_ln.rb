@@ -9,8 +9,7 @@ module FileUtils
   # Attempt to do a normal file link, but fall back
   # to a copy if the link fails.
   #
-  # CREDIT Jim Weirich
-
+  # CREDIT: Jim Weirich
   def safe_ln(*args)
     unless LINKING_SUPPORTED[0]
       cp(*args)

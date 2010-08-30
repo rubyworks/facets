@@ -57,11 +57,14 @@ module URI
 
   alias_method :query_string_to_hash, :query_to_hash
 
+  #
+  KEY_VALUE_SEPARATOR = ";"  # "&"
+
   # Given a hash with parameter/value pairs construct a
   # standard query string.
   #
   #   URI.hash_to_query(:a => 1, :b => 2)
-  #   #=> "a=1&b=2"
+  #   #=> "a=1;b=2"
   #
   def hash_to_query(parameters)
     return '' unless parameters
@@ -69,8 +72,7 @@ module URI
     parameters.each do |param, value|
       pairs << "#{param}=#{cgi_escape(value.to_s)}"
     end
-    #return pairs.join('&')
-    return pairs.join(";")
+    return pairs.join(KEY_VALUE_SEPARATOR)
   end
 
   alias_method :hash_to_query_string, :hash_to_query

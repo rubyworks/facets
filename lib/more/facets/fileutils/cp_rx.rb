@@ -2,7 +2,7 @@ module FileUtils
 
   # Both of these are modified from the implementations in fileutils.rb from Ruby 1.9.1p378.
 
-  # Like FileUtils.cp_r, but takes a filter proc that can return false to skip a file.
+  # Like FileUtils.cp_r, but takes a filter proc that can return false to skip a file:
   #
   #   cp_rx "bigDirectoryTree", "dest", {:noop => true} do |name|
 	#     /dontCopyThis$/.match(name)

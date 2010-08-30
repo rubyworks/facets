@@ -15,11 +15,11 @@ module FileUtils
   # (({nil})) if not found.
   #
   # On the MS Windows platform, it looks for executables ending with .exe,
-  # .bat and .com, which you may optionally include in the program name.
+  # .bat and .com, which you may optionally include in the program name:
   #
-  #    FileUtils.whereis("ruby") -> ['/usr/local/bin/ruby','/opt/bin/ruby']
+  #    FileUtils.whereis("ruby")  #=> ['/usr/local/bin/ruby','/opt/bin/ruby']
   #
-  # CREDIT Daniel J. Berger
+  # CREDIT: Daniel J. Berger
 
   def whereis(prog, path=ENV['PATH']) #:yield:
     dirs = []

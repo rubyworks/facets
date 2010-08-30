@@ -4,18 +4,11 @@ module Kernel
 
   # The Kernel method #yaml is a shortcut to YAML::load.
   #
-  #   yaml %{
+  #   data = yaml %{
   #     a: 1
   #     b: 2
-  #   }
-  #
-  #   #=> {:a=>1, :b=>2}
-  #
-  # File.yaml? provides a way to check if a file is a YAML
-  # formatted file.
-  #
-  #   File.yaml?('project.yaml')  #=> true
-  #   File.yaml?('project.xml')   #=> false
+  #   }  
+  #   data #=> {"a"=>1, "b"=>2}
   #
   def yaml(*args,&blk)
     YAML.load(*args,&blk)
@@ -33,7 +26,11 @@ module Kernel
 end
 
 class File
-  # Is a file a YAML file?
+  # File.yaml? provides a way to check if a file is a YAML
+  # formatted file:
+  #
+  #   File.yaml?('project.yaml')  #=> true
+  #   File.yaml?('project.xml')   #=> false
   #
   # Note this isn't perfect. At present it depends on the use
   # use of an initial document separator (eg. '---'). With
