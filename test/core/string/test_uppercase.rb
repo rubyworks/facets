@@ -1,6 +1,6 @@
-Covers 'facets/string/uppercase'
+covers 'facets/string/uppercase'
 
-TestCase String do
+testcase String do
 
   unit :uppercase do
     "bob".uppercase.assert == "Bob"

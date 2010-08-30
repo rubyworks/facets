@@ -1,8 +1,8 @@
-Covers 'facets/module/alias_module_function'
+covers 'facets/module/alias_module_function'
 
-Case Module do
+testcase Module do
 
-  Unit :alias_module_function do
+  unit :alias_module_function do
     m = Module.new do
       def x ; 33 ; end
 

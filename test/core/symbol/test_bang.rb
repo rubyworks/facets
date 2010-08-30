@@ -1,6 +1,6 @@
-Covers 'facets/symbol/bang'
+covers 'facets/symbol/bang'
 
-TestCase Symbol do
+testcase Symbol do
 
   unit :bang? do
     :a.refute.bang?

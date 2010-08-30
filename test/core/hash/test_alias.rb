@@ -1,8 +1,8 @@
-Covers 'facets/hash/alias'
+covers 'facets/hash/alias'
 
-Case Hash do
+testcase Hash do
 
-  Unit :alias! do
+  unit :alias! do
     foo = { 'a'=>1, 'b'=>2 }
     foo.alias!('c','b').assert == { 'a'=>1, 'b'=>2, 'c'=>2 }
 

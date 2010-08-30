@@ -1,8 +1,8 @@
-Covers 'facets/string/rewrite'
+covers 'facets/string/rewrite'
 
-Case String do
+testcase String do
 
-  Unit :rewrite do
+  unit :rewrite do
     s = "HELLO TOMMY!"
     rules = [[ /TOMMY/, 'MAN' ]]
     r = s.rewrite(rules)

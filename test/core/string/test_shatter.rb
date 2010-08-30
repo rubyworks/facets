@@ -1,8 +1,8 @@
-Covers 'facets/string/shatter'
+covers 'facets/string/shatter'
 
-Case String do
+testcase String do
 
-  Unit :shatter do
+  unit :shatter do
     s = "<p>This<b>is</b>a test.</p>"
     r = s.shatter( /<.*?>/ )
     x = ["<p>", "This", "<b>", "is", "</b>", "a test.", "</p>"]

@@ -1,8 +1,8 @@
-Covers 'facets/module/redefine_method'
+covers 'facets/module/redefine_method'
 
-Case Module do
+testcase Module do
 
-  Unit :redefine_method do
+  unit :redefine_method do
     c = Class.new do
       def a; "a"; end
       redefine_method(:a){ nil }
@@ -10,7 +10,7 @@ Case Module do
     c.new.a.assert == nil
   end
 
-  Unit :redef do
+  unit :redef do
     c = Class.new do
       def b; "b"; end
       redef(:b){ "x" }

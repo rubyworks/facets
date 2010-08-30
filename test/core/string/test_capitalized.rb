@@ -1,24 +1,24 @@
-Covers 'facets/string/capitalized'
+covers 'facets/string/capitalized'
 
-Case String do
+testcase String do
 
-  Unit :capitalized? do
+  unit :capitalized? do
     'Abc'.assert.capitalized?
   end
 
-  Unit :downcase? do
+  unit :downcase? do
     'abc'.assert.downcase?
   end
 
-  Unit :upcase? do
+  unit :upcase? do
     'ABC'.assert.upcase?
   end
 
-  #Unit :lowercase? do
+  #unit :lowercase? do
   #  'abc'.assert.lowercase?
   #end
 
-  #Unit :uppercase? do
+  #unit :uppercase? do
   #  'ABC'.assert.uppercase?
   #end
 

@@ -3,7 +3,6 @@ covers 'facets/file/sanitize'
 tests File do
 
   # TODO: Write file identity tests.
-
   metaunit :sanitize => "spaces become underscores" do
     File.sanitize('This is a test').assert == "This_is_a_test"
   end

@@ -1,6 +1,6 @@
-Covers 'facets/enumerable/visit'
+covers 'facets/enumerable/visit'
 
-TestCase Enumerable do
+testcase Enumerable do
 
   unit :visit do
     r = [1, 2, 8..9].visit{ |x| x.succ }

@@ -1,8 +1,8 @@
-Covers 'facets/string/mscan'
+covers 'facets/string/mscan'
 
-Case String do
+testcase String do
 
-  Unit :mscan do
+  unit :mscan do
     r = 'abc,def,gh'.mscan(/[,]/)
     assert( r.all?{ |md| MatchData === md } )
     r.to_a.length.assert == 2

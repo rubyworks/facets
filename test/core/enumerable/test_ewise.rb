@@ -1,8 +1,8 @@
-Covers 'facets/enumerable/ewise'
+covers 'facets/enumerable/ewise'
 
-Case Enumerable do
+testcase Enumerable do
 
-  Unit :ewise do
+  unit :ewise do
     a = [1,2,3]
     (a.ewise + 3).assert == [4,5,6]
     (a.ewise + [4,5]).assert == [5,7]

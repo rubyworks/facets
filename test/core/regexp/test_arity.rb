@@ -1,8 +1,8 @@
-Covers 'facets/regexp/arity'
+covers 'facets/regexp/arity'
 
-Case Regexp do
+testcase Regexp do
 
-  Unit :arity do
+  unit :arity do
     r = /(1)(2)(3)/
     r.arity.assert == 3
 

@@ -118,7 +118,7 @@ tests Indexable do
   # Array handles them specially, either for efficency reasons,
   # or becuase the have been added to Ruby as of 1.8.7+.
 
-  Context "special Indexable object" do
+  context "special Indexable object" do
     Class.new do
       include Indexable
       def initialize(*a); @a = a; end

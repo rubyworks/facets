@@ -1,8 +1,8 @@
-Covers 'facets/enumerable/modulate'
+covers 'facets/enumerable/modulate'
 
-Case Enumerable do
+testcase Enumerable do
 
-  Unit :modulate do
+  unit :modulate do
     a = [2,4,6,8]
     r = a.modulate(2)
     x = [[2,6],[4,8]]

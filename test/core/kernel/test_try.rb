@@ -1,4 +1,4 @@
-covers 'facets/kernel/try_dup'
+covers 'facets/kernel/try'
 
 tests Kernel do
 

@@ -1,14 +1,14 @@
-Covers 'facets/hash/to_mod'
+covers 'facets/hash/to_mod'
 
-Case Hash do
+testcase Hash do
 
-  Unit :to_mod do
+  unit :to_mod do
     h = { :a=>1, :b=>2 }
     m = h.to_mod
     Module.assert === m
   end
 
-  Unit :to_mod => "check methods" do
+  unit :to_mod => "check methods" do
     h = { :a=>1, :b=>2 }
     m = h.to_mod
     x = Class.new{ include m }.new

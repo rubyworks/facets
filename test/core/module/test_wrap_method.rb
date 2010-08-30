@@ -1,8 +1,8 @@
-Covers 'facets/module/wrap_method'
+covers 'facets/module/wrap_method'
 
-Case Module do
+testcase Module do
 
-  Unit :wrap_method do
+  unit :wrap_method do
     c = Class.new do
       def a; "A"; end
       wrap_method(:a) { |old| old.call + "B" }
@@ -11,7 +11,7 @@ Case Module do
     c.new.a.assert == "AB"
   end
 
-  Unit :wrap do
+  unit :wrap do
     c = Class.new do
       def b; "B"; end
       wrap(:b) { |old| old.call + "C" }

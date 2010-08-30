@@ -1,8 +1,8 @@
-Covers 'facets/string/word_wrap'
+covers 'facets/string/word_wrap'
 
-Case String do
+testcase String do
 
-  Unit :word_wrap do
+  unit :word_wrap do
     e = "abcde\n12345\nxyzwu\n"
     r = "abcde 12345 xyzwu".word_wrap(5)
     r.assert == e
@@ -24,7 +24,7 @@ Case String do
     r.assert == e
   end
 
-  Unit :word_wrap! do
+  unit :word_wrap! do
     w = "abcde 12345 xyzwu"
     w.word_wrap!(5)
     w.assert == "abcde\n12345\nxyzwu\n"
@@ -46,7 +46,7 @@ Case String do
     w.assert == "abc \n123\n"
   end
 
-  # Unit :word_wrap do
+  # unit :word_wrap do
   #   assert_equal "abcde-\n12345-\nxyzwu\n", "abcde12345xyzwu".word_wrap(6,2)
   #   assert_equal "abcd-\n1234-\nxyzw\n", "abcd1234xyzw".word_wrap(5,2)
   #   assert_equal "abc \n123\n", "abc 123".word_wrap(4,2)

@@ -2,7 +2,7 @@ covers 'facets/kernel/returning'
 
 tests Kernel do
 
-  Unit :returning do
+  unit :returning do
     foo = returning( values = [] ) do
       values << 'bar'
       values << 'baz'

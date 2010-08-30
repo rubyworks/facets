@@ -1,7 +1,6 @@
 covers 'facets/file/writelines'
 
 #require File.dirname(__FILE__) + '/helpers/mockfile'
-
 tests File do
 
   test_file = 'tmp/writelines.txt'

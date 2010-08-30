@@ -1,8 +1,8 @@
-Covers 'facets/numeric/length'
+covers 'facets/numeric/length'
 
-Case Numeric do
+testcase Numeric do
 
-  Unit :length do
+  unit :length do
     (0..10).each do |power|
       power.length.assert == power
     end

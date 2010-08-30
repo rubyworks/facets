@@ -1,6 +1,6 @@
-Covers 'facets/symbol/variablize'
+covers 'facets/symbol/variablize'
 
-TestCase Symbol do
+testcase Symbol do
 
   unit :variablize do
     :a.variablize.assert == "@a".to_sym

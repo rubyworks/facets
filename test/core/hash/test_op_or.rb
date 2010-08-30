@@ -1,8 +1,8 @@
-Covers 'facets/hash/op_or'
+covers 'facets/hash/op_or'
 
-Case Hash do
+testcase Hash do
 
-  Unit :| do
+  unit :| do
     a = { :a => 1, :b => 2 }
     b = { :b => 3 }
     x = { :a => 1, :b => 2 }

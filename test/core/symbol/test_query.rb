@@ -1,8 +1,8 @@
-Covers 'facets/symbol/query'
+covers 'facets/symbol/query'
 
-Case Symbol do
+testcase Symbol do
 
-  Unit :query? do
+  unit :query? do
     assert( :try?.query? )
 
     assert( ! :try.query? )

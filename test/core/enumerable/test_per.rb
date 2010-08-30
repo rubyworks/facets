@@ -1,8 +1,8 @@
-Covers 'facets/enumerable/per'
+covers 'facets/enumerable/per'
 
-Case Enumerable do
+testcase Enumerable do
 
-  Unit :per => "map" do
+  unit :per => "map" do
     e = [1,2,3].per.map
 
     (e + 3).assert == [4,5,6]

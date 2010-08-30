@@ -1,8 +1,8 @@
-Covers 'facets/hash/insert'
+covers 'facets/hash/insert'
 
-Case Hash do
+testcase Hash do
 
-  Unit :insert do
+  unit :insert do
     h = {:a=>1, :b=>2}
 
     h.assert.insert(:c,3)

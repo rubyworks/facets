@@ -1,6 +1,6 @@
-Covers 'facets/comparable/cap'
+covers 'facets/comparable/cap'
 
-TestCase Comparable do
+testcase Comparable do
 
   unit :at_most do
     3.at_most(4).assert == 3

@@ -1,8 +1,8 @@
-Covers 'facets/symbol/setter'
+covers 'facets/symbol/setter'
 
-Case Symbol do
+testcase Symbol do
 
-  Unit :setter? do
+  unit :setter? do
     assert( :try=.setter? )
 
     assert( ! :try.setter? )

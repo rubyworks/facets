@@ -1,8 +1,8 @@
-Covers 'facets/string/titlecase'
+covers 'facets/string/titlecase'
 
-Case String do
+testcase String do
 
-  Unit :titlecase do
+  unit :titlecase do
     r = "try this out".titlecase
     x = "Try This Out"
     r.assert == x

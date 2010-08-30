@@ -1,9 +1,8 @@
-Covers 'facets/time/elapse'
+covers 'facets/time/elapse'
 
-Case Time do
+testcase Time do
 
-  MetaUnit :elapse do
-    #t = Time.parse('4/20/2006 15:37')
+  metaunit :elapse do
     t = Time.elapse { sleep 1 }
     assert( (t > 0.9) && (t < 2.1 ))
   end

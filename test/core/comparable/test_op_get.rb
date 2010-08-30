@@ -1,8 +1,8 @@
-Covers 'facets/comparable/op_get'
+covers 'facets/comparable/op_get'
 
-TestCase Comparable do
+testcase Comparable do
 
-  MetaUnit :[] do
+  metaunit :[] do
 
     c = Class.new do
       include Comparable[:a,:b]
@@ -31,7 +31,7 @@ TestCase Comparable do
   end
 
 =begin
-  MetaUnit :sort_on do
+  metaunit :sort_on do
     c = Class.new
     c.class_eval {
       def initialize(a,b)

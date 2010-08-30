@@ -1,8 +1,8 @@
-Covers 'facets/module/remove'
+covers 'facets/module/remove'
 
-Case Module do
+testcase Module do
 
-  Unit :remove do
+  unit :remove do
     c = Class.new do
       def the_removed_method ; 'not here' ; end
       remove :the_removed_method

@@ -1,20 +1,20 @@
-Covers 'facets/kernel/not_nil'
+covers 'facets/kernel/not_nil'
 
-Case Kernel do
+testcase Kernel do
 
-  Unit :not_nil? do
+  unit :not_nil? do
     5.assert.not_nil?
   end
 
-  Unit :not_nil? do
+  unit :not_nil? do
     :x.assert.not_nil?
   end
 
-  Unit :not_nil? do
+  unit :not_nil? do
     false.assert.not_nil?
   end
 
-  Unit :not_nil? do
+  unit :not_nil? do
     nil.refute.not_nil?
   end
 

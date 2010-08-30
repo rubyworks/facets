@@ -1,8 +1,8 @@
-Covers 'facets/enumerable/one'
+covers 'facets/enumerable/one'
 
-Case Enumerable do
+testcase Enumerable do
 
-  Unit :one? do
+  unit :one? do
     a = [nil, true]
     assert( a.one? )
 

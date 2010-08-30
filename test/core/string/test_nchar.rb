@@ -1,8 +1,8 @@
-Covers 'facets/string/nchar'
+covers 'facets/string/nchar'
 
-Case String do
+testcase String do
 
-  Unit :nchar do
+  unit :nchar do
     "abcxyz".nchar(3).assert == "abc"
     "abcxyz".nchar(-3).assert == "xyz"
     "abcxyz".nchar(3, 'HI').assert == "HIxyz"

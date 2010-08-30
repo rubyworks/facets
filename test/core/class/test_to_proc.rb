@@ -1,8 +1,8 @@
-Covers 'facets/class/to_proc'
+covers 'facets/class/to_proc'
 
-TestCase Class do
+testcase Class do
 
-  Unit :to_proc do
+  unit :to_proc do
     person = Struct.new(:name)
     people = ["joe"].map(&person)
     people[0].name.assert == "joe"

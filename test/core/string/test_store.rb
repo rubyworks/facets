@@ -1,8 +1,8 @@
-Covers 'facets/string/store'
+covers 'facets/string/store'
 
-Case String do
+testcase String do
 
-  Unit :store do
+  unit :store do
     a = "HELLO"
     a.store(1, "X")
     a.assert == "HXLLO"

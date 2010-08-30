@@ -1,8 +1,8 @@
-Covers 'facets/string/similarity'
+covers 'facets/string/similarity'
 
-TestCase String do
+testcase String do
 
-  Unit :similarity do
+  unit :similarity do
     "Alexsander".similarity("Aleksander").assert == 0.9
   end
 

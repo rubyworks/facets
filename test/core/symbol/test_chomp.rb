@@ -1,12 +1,12 @@
-Covers 'facets/symbol/chomp'
+covers 'facets/symbol/chomp'
 
-Case Symbol do
+testcase Symbol do
 
-  Unit :chomp do
+  unit :chomp do
     :ab.chomp(:b).assert == :a
   end
 
-  Unit :lchomp do
+  unit :lchomp do
      :ab.lchomp(:a).assert == :b
   end
 

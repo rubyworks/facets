@@ -1,8 +1,8 @@
-Covers 'facets/string/subtract'
+covers 'facets/string/subtract'
 
-Case String do
+testcase String do
 
-  Unit :- do
+  unit :- do
     ("foobar" - "oo").assert == "fbar"
     ("pizza pizza!" - "zz").assert == "pia pia!"
     ("letters" - /[a-z]+/).assert == ""

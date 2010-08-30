@@ -1,6 +1,6 @@
-Covers 'facets/time/ago'
+covers 'facets/time/ago'
 
-TestCase Time do
+testcase Time do
 
   instance "January 20th 2010 at Noon" do
     Time.utc(2010,01,20,12,00,00)

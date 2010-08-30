@@ -1,9 +1,9 @@
-Covers 'facets/proc/bind'
+covers 'facets/proc/bind'
 
-Case Proc do
+testcase Proc do
 
   # Not sure why this is thread critical?
-  Unit :bind => "thread critial" do
+  unit :bind => "thread critial" do
     a = 2
     tproc = lambda { |x| x + a }
     99.times {

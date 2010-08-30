@@ -1,6 +1,6 @@
-Covers 'facets/binding/local_variables'
+covers 'facets/binding/local_variables'
 
-TestCase Binding do
+testcase Binding do
 
   a = 1
   b = 2
@@ -10,13 +10,13 @@ TestCase Binding do
 
   unless RUBY_VERSION > "1.9"
 
-    Unit :local_variables do
+    unit :local_variables do
       bind.local_variables.assert == ["bind", "x", "b", "a"]
     end
 
   else
 
-    Unit :local_variables do
+    unit :local_variables do
       bind.local_variables.assert == [:bind, :x, :b, :a]
     end
 

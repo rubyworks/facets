@@ -1,8 +1,8 @@
-Covers 'facets/nilclass/to_f'
+covers 'facets/nilclass/to_f'
 
-Case NilClass do
+testcase NilClass do
 
-  Unit :to_f do
+  unit :to_f do
     nil.to_f.assert == 0
   end
 

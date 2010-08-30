@@ -1,8 +1,8 @@
-Covers 'facets/hash/autonew'
+covers 'facets/hash/autonew'
 
-Case Hash do
+testcase Hash do
 
-  MetaUnit :autonew do
+  metaunit :autonew do
     h = Hash.autonew
     h['s1']['p1'] = 4
     h['s1']['p2'] = 5

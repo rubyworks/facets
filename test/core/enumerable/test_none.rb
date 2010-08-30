@@ -1,8 +1,8 @@
-Covers 'facets/enumerable/none'
+covers 'facets/enumerable/none'
 
-Case Enumerable do
+testcase Enumerable do
 
-  Unit :none? do
+  unit :none? do
     a = [nil, nil]
     assert( a.none? )
 

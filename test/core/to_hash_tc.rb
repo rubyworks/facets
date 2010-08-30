@@ -1,6 +1,6 @@
-Covers 'facets/to_hash'
+covers 'facets/to_hash'
 
-TestCase Array do
+testcase Array do
 
   unit :to_h do
     a = [ [:a,1], [:b,2] ]
@@ -67,7 +67,7 @@ TestCase Array do
 
 end
 
-TestCase Hash do
+testcase Hash do
 
   unit :to_h do
     {"a"=>1,"b"=>2}.to_h.assert == {"b"=>2,"a"=>1}
@@ -80,7 +80,7 @@ TestCase Hash do
 
 end
 
-TestCase Enumerable do
+testcase Enumerable do
 
   unit :to_h do
     (1..4).to_h.assert == { 1=>2, 3=>4 }
@@ -112,7 +112,7 @@ TestCase Enumerable do
 
 end
 
-TestCase Enumerator do
+testcase Enumerator do
 
   unit :to_h do
     (1..4).to_enum.to_h.assert == { 1=>2, 3=>4 }
@@ -144,7 +144,7 @@ TestCase Enumerator do
 
 end
 
-TestCase Struct do
+testcase Struct do
 
   unit :to_h do
     s = Struct.new(:a,:b).new(1,2)
@@ -153,7 +153,7 @@ TestCase Struct do
 
 end
 
-TestCase NilClass do
+testcase NilClass do
 
   unit :to_h do
     nil.to_h.assert == {}

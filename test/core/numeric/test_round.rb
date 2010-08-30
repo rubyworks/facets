@@ -1,6 +1,6 @@
 covers 'facets/numeric/round'
 
-tests Numeric do
+testcase Numeric do
 
   f0 = [ 0, 10, 15, 105 ]
 
@@ -24,14 +24,14 @@ tests Numeric do
     fr.assert == [0,10,20,110]
   end
 
-  #Unit :round_off do
+  #unit :round_off do
   #  1.2.round_off.assert == 1.0
   #  1.8.round_off.assert == 2.0
   #end
 
 end
 
-Case Float do
+testcase Float do
 
   f1 = [ 10.1, 10.01, 10.9, 10.09, 10.5, 10.05, 10.49 ]
 

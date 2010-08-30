@@ -1,8 +1,8 @@
-Covers 'facets/module/redirect_method'
+covers 'facets/module/redirect_method'
 
-Case Module do
+testcase Module do
 
-  Unit :redirect_method do
+  unit :redirect_method do
     c = Class.new do
       def a1 ; 1 ; end
       redirect_method :a2 => :a1
@@ -11,7 +11,7 @@ Case Module do
     c.new.a2.assert == 1
   end
 
-  Unit :redirect do
+  unit :redirect do
     c = Class.new do
       def b1 ; 1 ; end
       redirect :b2 => :b1

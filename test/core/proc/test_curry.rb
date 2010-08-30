@@ -1,14 +1,14 @@
-Covers 'facets/proc/curry'
+covers 'facets/proc/curry'
 
-Case Proc do
+testcase Proc do
 
-  Unit :curry do
+  unit :curry do
     f = Proc.new{ |a,b,c| a + b + c }
     c = f.curry
     c[1][2][3].assert == 6
   end
 
-  Unit :curry => "with arguments" do
+  unit :curry => "with arguments" do
     f = Proc.new{ |a,b| a**b }
     c = f.curry(0)
     c[2][3].assert == 8
@@ -18,7 +18,7 @@ Case Proc do
     c[2][3].assert == 9
   end
 
-  Unit :curry => "with in class scope" do
+  unit :curry => "with in class scope" do
     # first test the lambda
     org = lambda{ |y, x| x + " " + y }
     foo = org.curry['yeah']

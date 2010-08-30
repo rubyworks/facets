@@ -1,22 +1,22 @@
-Covers 'facets/kernel/val'
+covers 'facets/kernel/val'
 
-Case Kernel do
+testcase Kernel do
 
-  Unit :val? => "of nil" do
+  unit :val? => "of nil" do
     f = nil
     t = 1
     f.refute.val?
     t.assert.val?
   end
 
-  Unit :val? => "of empty array" do
+  unit :val? => "of empty array" do
     f = []
     t = [1]
     f.refute.val?
     t.assert.val?
   end
 
-  Unit :val? => "of empty string" do
+  unit :val? => "of empty string" do
     f = ''
     t = '1'
     f.refute.val?

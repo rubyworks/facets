@@ -1,8 +1,8 @@
-Covers 'facets/string/variablize'
+covers 'facets/string/variablize'
 
-Case String do
+testcase String do
 
-  Unit :variablize do
+  unit :variablize do
     s = "a"
     s.variablize.assert == "@a"
   end

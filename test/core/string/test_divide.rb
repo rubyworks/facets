@@ -1,8 +1,8 @@
-Covers 'facets/string/divide'
+covers 'facets/string/divide'
 
-Case String do
+testcase String do
 
-  Unit :divide do
+  unit :divide do
     s = "<p>This<b>is</b>a test.</p>"
     d = s.divide( /<.*?>/ )
     e = ["<p>This", "<b>is", "</b>a test.", "</p>"]

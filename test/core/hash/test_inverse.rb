@@ -1,8 +1,8 @@
-Covers 'facets/hash/inverse'
+covers 'facets/hash/inverse'
 
-Case Hash do
+testcase Hash do
 
-  Unit :inverse do
+  unit :inverse do
     h1 = { :a=>1, :b=>2, :c=>2 }
     h2 = h1.inverse
 

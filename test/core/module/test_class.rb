@@ -1,8 +1,8 @@
-Covers 'facets/module/class'
+covers 'facets/module/class'
 
-Case Module do
+testcase Module do
 
-  Unit :class? do
+  unit :class? do
     x_class = Class.new
     y_class = Class.new(x_class)
 

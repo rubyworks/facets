@@ -39,7 +39,6 @@ tests Time do
     t.in(60, :seconds).sec.assert == 0
   end
 
-  
 
   unit :in => "change_years" do
     e = Time.utc(2008,11, 1, 18,30,57)

@@ -1,8 +1,8 @@
-Covers 'facets/kernel/in'
+covers 'facets/kernel/in'
 
-Case Kernel do
+tests Kernel do
 
-  Unit :in? do
+  unit :in? do
     5.assert.in?(0..10)
     5.assert.in?([1,2,3,4,5])
   end

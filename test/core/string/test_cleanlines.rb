@@ -1,8 +1,8 @@
-Covers 'facets/string/cleanlines'
+covers 'facets/string/cleanlines'
 
-Case String do
+testcase String do
 
-  Unit :cleanlines do
+  unit :cleanlines do
     "a \n b \nc".cleanlines.to_a.assert == ["a","b","c"]
   end
 

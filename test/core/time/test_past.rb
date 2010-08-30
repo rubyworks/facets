@@ -1,6 +1,6 @@
-Covers 'facets/time/past'
+covers 'facets/time/past'
 
-TestCase Time do
+testcase Time do
 
   #
   unit :past? do

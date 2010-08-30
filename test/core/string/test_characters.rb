@@ -1,8 +1,8 @@
-Covers 'facets/string/characters'
+covers 'facets/string/characters'
 
-Case String do
+testcase String do
 
-  Unit :characters do
+  unit :characters do
     "abc".characters.assert == ["a","b","c"]
     "ab\nc".characters.assert == ["a","b","\n","c"]
   end

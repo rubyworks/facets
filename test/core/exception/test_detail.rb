@@ -1,8 +1,8 @@
-Covers 'facets/exception/detail'
+covers 'facets/exception/detail'
 
-Case Exception do
+testcase Exception do
 
-  Unit :detail do
+  unit :detail do
     begin
       raise ArgumentError
     rescue ArgumentError => err

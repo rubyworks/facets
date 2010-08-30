@@ -1,11 +1,11 @@
-Covers 'facets/binding/self'
+covers 'facets/binding/self'
 
-TestCase Binding do
+testcase Binding do
 
   bind = binding
   this = self
 
-  Unit :self do
+  unit :self do
     bind.self == this
   end
 

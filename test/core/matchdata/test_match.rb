@@ -1,8 +1,8 @@
-Covers 'facets/matchdata/match'
+covers 'facets/matchdata/match'
 
-Case MatchData do
+testcase MatchData do
 
-  Unit :match do
+  unit :match do
     md = /X(a)(b)(c)X/.match("YXabcXY")
     md.match.assert == "XabcX"
   end

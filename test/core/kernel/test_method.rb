@@ -1,8 +1,8 @@
-Covers 'facets/kernel/method'
+covers 'facets/kernel/method'
 
-Case Kernel do
+tests Kernel do
 
-  Unit :method! do
+  unit :method! do
     c = Class.new do
       def foo ; 'foo' ; end
     end

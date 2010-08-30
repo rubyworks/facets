@@ -1,8 +1,8 @@
-Covers 'facets/hash/argumentize'
+covers 'facets/hash/argumentize'
 
-TestCase Hash do
+testcase Hash do
 
-  Instance do
+  instance do
     { :list => [1,2], :base => "HI" }
   end
 

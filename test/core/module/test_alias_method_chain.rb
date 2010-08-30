@@ -1,8 +1,8 @@
-Covers 'facets/module/alias_method_chain'
+covers 'facets/module/alias_method_chain'
 
-Case Module do
+testcase Module do
 
-  Unit :alias_method_chain do
+  unit :alias_method_chain do
 
     x = Module.new do
       def self.included(base)

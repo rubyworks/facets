@@ -1,9 +1,9 @@
-Covers 'facets/string/tab'
+covers 'facets/string/tab'
 
-Case String do
+testcase String do
 
   # TODO: Need to expand on #tab tests.
-  Unit :tab do
+  unit :tab do
     a = "xyz".tab(4)
     a[0..3].assert == '    '
   end

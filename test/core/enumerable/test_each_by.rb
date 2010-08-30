@@ -1,8 +1,8 @@
-Covers 'facets/enumerable/each_by'
+covers 'facets/enumerable/each_by'
 
-Case Enumerable do
+testcase Enumerable do
 
-  Unit :each_by => "infer groups of two" do
+  unit :each_by => "infer groups of two" do
     e = [[1,2], [3,4], [5,6]]
     a = [1,2,3,4,5,6]
     r = []
@@ -10,7 +10,7 @@ Case Enumerable do
     r.assert == e
   end
 
-  Unit :each_by => "infer groups of three" do
+  unit :each_by => "infer groups of three" do
     e = [[1,2,3],[4,5,nil]]
     a = [1,2,3,4,5]
     r = []
@@ -18,7 +18,7 @@ Case Enumerable do
     r.assert == e
   end
 
-  Unit :each_by => "specify groups of two" do
+  unit :each_by => "specify groups of two" do
     e = [[1,2],[3,4]]
     a = [1,2,3,4]
     r = []
@@ -26,7 +26,7 @@ Case Enumerable do
     r.assert == e
   end
 
-  Unit :each_by => "specify groups of three with splat argument" do
+  unit :each_by => "specify groups of three with splat argument" do
     e = [ [[1,2,3]], [[4,5,6]] ]
     a = [1,2,3,4,5,6]
     r = []
@@ -34,7 +34,7 @@ Case Enumerable do
     r.assert == e
   end
 
-  Unit :each_by => "specify groups of four with splat argument" do
+  unit :each_by => "specify groups of four with splat argument" do
     e = [ [[1,2,3,4]], [[5,6,7,8]] ]
     a = [1,2,3,4,5,6,7,8]
     r = []

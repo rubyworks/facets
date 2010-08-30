@@ -1,6 +1,6 @@
-Covers 'facets/time/future'
+covers 'facets/time/future'
 
-TestCase Time do
+testcase Time do
 
   #
   unit :future? do

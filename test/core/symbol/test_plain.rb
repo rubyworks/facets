@@ -1,8 +1,8 @@
-Covers 'facets/symbol/plain'
+covers 'facets/symbol/plain'
 
-Case Symbol do
+testcase Symbol do
 
-  Unit :plain? do
+  unit :plain? do
     assert( :try.plain? )
 
     assert( ! :try=.plain? )

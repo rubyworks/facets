@@ -1,11 +1,11 @@
-Covers 'facets/binding/eval'
+covers 'facets/binding/eval'
 
-TestCase Binding do
+testcase Binding do
 
   x = "hello"
   bind = binding
 
-  Unit :eval do
+  unit :eval do
     bind.eval("x").assert == "hello"
   end
 

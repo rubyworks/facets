@@ -1,8 +1,8 @@
-Covers 'facets/string/cmp'
+covers 'facets/string/cmp'
 
-Case String do
+testcase String do
 
-  Unit :cmp => 'on strings' do
+  unit :cmp => 'on strings' do
     "abc".cmp("abc").assert == 0
     "abc".cmp("abcd").assert == -1
     "abcd".cmp("abc").assert ==  1

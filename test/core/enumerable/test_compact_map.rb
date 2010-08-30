@@ -13,7 +13,7 @@ tests Enumerable do
   end
 
 =begin
-  def test_map_send
+  unit :map_send do
     r = [1,2,3].map_send(:+, 1)
     assert_equal(r, [2,3,4])
   end
@@ -24,7 +24,7 @@ tests Enumerable do
   end
 =end
 
-  #def test_filter_collect
+  #unit :filter_collect do
   #  e = [3,4]
   #  a = [1,2,3,4].filter_collect { |n|
   #    throw(:skip) if n < 3

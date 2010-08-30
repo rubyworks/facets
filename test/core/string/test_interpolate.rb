@@ -1,8 +1,8 @@
-Covers 'facets/string/interpolate'
+covers 'facets/string/interpolate'
 
-Case String do
+testcase String do
 
-  MetaUnit :interpolate do
+  metaunit :interpolate do
     a = 1
     String.interpolate{ 'this is #{a}' }.assert == 'this is 1'
   end

@@ -1,6 +1,6 @@
-Covers 'facets/binding/op'
+covers 'facets/binding/op'
 
-TestCase Binding do
+testcase Binding do
 
   a = 1
   b = 2
@@ -8,11 +8,11 @@ TestCase Binding do
 
   bind = binding
 
-  Unit :[] do
+  unit :[] do
     bind["x"].assert == "hello"
   end
 
-  Unit :[]= do
+  unit :[]= do
     bind["x"] = "goodbye"
     bind["x"].assert == "goodbye"
   end

@@ -1,6 +1,6 @@
-Covers 'facets/string/squish'
+covers 'facets/string/squish'
 
-Case String do
+testcase String do
 
   unit :squish do
     r = %{ Multi-line

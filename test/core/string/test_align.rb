@@ -1,22 +1,22 @@
-Covers 'facets/string/align'
+covers 'facets/string/align'
 
-Case String do
+testcase String do
 
-  Unit :align do
+  unit :align do
     "xxx".align(:right, 9) == "      xxx"
     "xxx".align(:left, 9).assert == "xxx      "
     "xxx".align(:center, 9).assert == "   xxx   "
   end
 
-  Unit :align_right do
+  unit :align_right do
     "xxx".align_right(9) == "      xxx"
   end
 
-  Unit :align_left do
+  unit :align_left do
     "xxx".align_left(9).assert == "xxx      "
   end
 
-  Unit :align_center do
+  unit :align_center do
     "xxx".align_center(9).assert == "   xxx   "
   end
 

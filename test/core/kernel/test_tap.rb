@@ -1,21 +1,21 @@
-Covers 'facets/kernel/tap'
+covers 'facets/kernel/tap'
 
-Case Kernel do
+testcase Kernel do
 
-  Unit :tap do
+  unit :tap do
     e = "foo"
     r = "foobar".tap{ |x| x.gsub!(/bar/, '') }
     r.assert == e
   end
 
-  Unit :tap => "check internal value" do
+  unit :tap => "check internal value" do
     x = [1,2,3]
     x.tap{ |a|
       a.assert == x
     }
   end
 
-  Unit :tap => "assign via tap block" do
+  unit :tap => "assign via tap block" do
     bob = Struct.new(:name, :address, :zip).new
 
     x = lambda do |s|

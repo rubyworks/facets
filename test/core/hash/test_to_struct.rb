@@ -1,6 +1,6 @@
-Covers 'facets/hash/to_struct'
+covers 'facets/hash/to_struct'
 
-TestCase Hash do
+testcase Hash do
 
   unit :to_struct do
     h = {:name=>"Dan","age"=>33,"rank"=>"SrA","grade"=>"E4"}

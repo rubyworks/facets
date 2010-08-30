@@ -1,8 +1,8 @@
-Covers 'facets/hash/op_push'
+covers 'facets/hash/op_push'
 
-Case Hash do
+testcase Hash do
 
-  Unit :<< => "two element array" do
+  unit :<< => "two element array" do
     h = {}
     a = [:b, 2]
     x = {:b => 2}
@@ -10,7 +10,7 @@ Case Hash do
     h.assert == x
   end
 
-  Unit :<< => "update new entries" do
+  unit :<< => "update new entries" do
     a = {:a => 1}
     b = {:b => 2, :c => 3 }
     x = {:a => 1, :b => 2, :c => 3}
@@ -18,7 +18,7 @@ Case Hash do
     a.assert == x
   end
 
-  Unit :<< => "update overwrite" do
+  unit :<< => "update overwrite" do
     a = {:a => 1, :b => 2, :c => 3}
     b = {:a => 0, :d => 4}
     x = {:a => 0, :b => 2, :c => 3, :d => 4}

@@ -1,8 +1,8 @@
-Covers 'facets/filetest/root'
+covers 'facets/filetest/root'
 
-Case FileTest do
+testcase FileTest do
 
-  MetaUnit :root? do
+  metaunit :root? do
     assert FileTest.root?('/')
   end
 

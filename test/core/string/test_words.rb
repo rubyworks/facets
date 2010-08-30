@@ -1,8 +1,8 @@
-Covers 'facets/string/words'
+covers 'facets/string/words'
 
-Case String do
+testcase String do
 
-  Unit :words do
+  unit :words do
     x = "a b c\nd e"
     x.words.assert == ['a','b','c','d','e']
 
@@ -10,7 +10,7 @@ Case String do
     x.words.assert == ['ab','cd','ef']
   end
 
-  Unit :words do
+  unit :words do
     x = "ab cd \n ef-gh"
     x.words.assert == ['ab','cd','ef-gh']
   end

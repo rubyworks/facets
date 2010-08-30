@@ -17,7 +17,6 @@ tests Hash do
     h.data.c.assert == 3
   end
 
-
   unit :data do
     h = {:a=>1, :b=>2}
 

@@ -1,8 +1,8 @@
-Covers 'facets/string/bytes'
+covers 'facets/string/bytes'
 
-Case String do
+testcase String do
 
-  Unit :bytes do
+  unit :bytes do
     s = "abc"
     s.bytes.to_a.assert == s.unpack('C*')
   end

@@ -1,9 +1,9 @@
-Covers 'facets/string/tabto'
+covers 'facets/string/tabto'
 
-Case String do
+testcase String do
 
   # TODO: Need to expand tabto tests
-  Unit :tabto do
+  unit :tabto do
     a = "xyz".tabto(4)
     a[0..3].assert ==  '    '
   end

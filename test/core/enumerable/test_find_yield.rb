@@ -1,55 +1,55 @@
-Covers 'facets/enumerable/find_yield'
+covers 'facets/enumerable/find_yield'
 
-Case Enumerable do
+testcase Enumerable do
   
-  Unit :find_yield => "a value" do
+  unit :find_yield => "a value" do
     r = [true].find_yield { |value| value }
     r.assert == true
   end
 
-  Unit :find_yield => "detects correct value" do
+  unit :find_yield => "detects correct value" do
     r = [1].find_yield { |value| value }
     r.assert == 1
   end
 
-  Unit :find_yield => "returns value of block" do
+  unit :find_yield => "returns value of block" do
     r = [1].find_yield { |v| v + 3 }
     r.assert == 4
   end
 
-  Unit :find_yield => "detects first truthy value" do
+  unit :find_yield => "detects first truthy value" do
     r = [false, false, 1].find_yield { |value| value }
     r.assert == 1
   end
 
-  Unit :find_yield => "returns value when block is true" do
+  unit :find_yield => "returns value when block is true" do
     r = [false].find_yield { |value| true }
     r.assert == true
   end
 
-  Unit :find_yield => "returns early when block is true" do
+  unit :find_yield => "returns early when block is true" do
     v1 = lambda { :something }
     v2 = lambda { raise "This shouldn't be called" }
     r = [v1, v2].find_yield { |obj| obj.call }
     r.assert == :something
   end
 
-  Unit :find_yield => "returns nil when block returns false for all elements" do
+  unit :find_yield => "returns nil when block returns false for all elements" do
     r = [1,2,3,4].find_yield { |value| false }
     r.assert == nil
   end
 
-  Unit :find_yield => "returns nil when no elements in collection" do
+  unit :find_yield => "returns nil when no elements in collection" do
     r = [].find_yield { |v| }
     r.assert == nil
   end
 
-  Unit :find_yield => "can have return value specified when block isnt true" do
+  unit :find_yield => "can have return value specified when block isnt true" do
     r = [1,2,3].find_yield(:a_value){ |value| false }
     r.assert == :a_value
   end
 
-  Unit :find_yield => "documentation correct" do
+  unit :find_yield => "documentation correct" do
     obj1, obj2 = Object.new, Object.new
 
     class << obj1

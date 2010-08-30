@@ -1,12 +1,12 @@
-Covers 'facets/symbol/not'
+covers 'facets/symbol/not'
 
-Case Symbol do
+testcase Symbol do
 
-  Unit :~@ do
+  unit :~@ do
     ~:a.assert == :"~a"
   end
 
-  Unit :not? do
+  unit :not? do
     a = :a
     n = ~a
     assert( n.not? )

@@ -1,20 +1,20 @@
-Covers 'facets/integer/of'
+covers 'facets/integer/of'
 
-Case Integer do
+testcase Integer do
 
-  Unit :of do
+  unit :of do
     a = 4
     b = a.of{ |i| i*2 }
     b.assert == [0,2,4,6]
   end
 
-  Unit :times_collect do
+  unit :times_collect do
     a = 4
     b = a.times_collect{ |i| i*2 }
     b.assert == [0,2,4,6]
   end
 
-  Unit :times_map do
+  unit :times_map do
     a = 4
     b = a.times_map{ |i| i*2 }
     b.assert == [0,2,4,6]

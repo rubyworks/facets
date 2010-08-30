@@ -1,6 +1,6 @@
-Covers 'facets/binding/defined'
+covers 'facets/binding/defined'
 
-TestCase Binding do
+tests Binding do
 
   a = 1
   b = 2
@@ -8,7 +8,7 @@ TestCase Binding do
 
   bind = binding
 
-  Unit :defined? do
+  unit :defined? do
     bind.assert.defined?("x")
   end
 

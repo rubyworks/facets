@@ -1,6 +1,6 @@
-Covers 'facets/enumerator/fx'
+covers 'facets/enumerator/fx'
 
-TestCase Enumerator do
+testcase Enumerator do
 
   unit :fx do
     e = [1,2,3].to_enum

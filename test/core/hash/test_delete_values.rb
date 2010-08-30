@@ -1,8 +1,8 @@
-Covers 'facets/hash/delete_values'
+covers 'facets/hash/delete_values'
 
-Case Hash do
+testcase Hash do
 
-  Unit :delete_values do
+  unit :delete_values do
     a = { :a => 1, :b => 2, :c => 3 }
     x = { :b => 2, :c => 3 }
     r = a.delete_values(1)
@@ -10,7 +10,7 @@ Case Hash do
     a.assert == x
   end
 
-  Unit :delete_values_at do
+  unit :delete_values_at do
     a = { :a => 1, :b => 2, :c => 3 }
     x = { :b => 2, :c => 3 }
     r = a.delete_values_at(:a)

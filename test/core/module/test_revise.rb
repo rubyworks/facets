@@ -1,8 +1,8 @@
-Covers 'facets/module/revise'
+covers 'facets/module/revise'
 
-Case Module do
+testcase Module do
 
-  Unit :revisal do
+  unit :revisal do
     m = Module.new do
       def x ; 1 ; end
     end
@@ -19,7 +19,7 @@ Case Module do
     NoMethodError.assert.raised?{ ic.x }
   end
 
-  Unit :revise do
+  unit :revise do
     m = Module.new do
       def x ; 1 ; end
     end
@@ -37,7 +37,7 @@ Case Module do
   end
 
 
-  Unit :remove do
+  unit :remove do
     c = Class.new do
       def the_removed_method ; 'not here' ; end
       remove :the_removed_method

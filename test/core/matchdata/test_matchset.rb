@@ -1,8 +1,8 @@
-Covers 'facets/matchdata/matchset'
+covers 'facets/matchdata/matchset'
 
-Case MatchData do
+testcase MatchData do
 
-  Unit :matchtree do
+  unit :matchtree do
     md = /(bb)(cc(dd))(ee)/.match "XXaabbccddeeffXX"
     md.matchtree.assert == [["bb"], ["cc", ["dd"]], ["ee"]]
 
@@ -10,7 +10,7 @@ Case MatchData do
     md.matchtree.assert == [["bb"], "c", ["c", ["dd"]], ["ee"]]
   end
 
-  Unit :matchset do
+  unit :matchset do
     md = /(bb)(cc(dd))(ee)/.match "XXaabbccddeeffXX"
     md.matchset.assert == ["XXaa", [["bb"], ["cc", ["dd"]], ["ee"]], "ffXX"]
   end

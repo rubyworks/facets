@@ -1,8 +1,8 @@
-Covers 'facets/kernel/instance_assign'
+covers 'facets/kernel/instance_assign'
 
-Case Kernel do
+testcase Kernel do
 
-  Unit :instance_assign do
+  unit :instance_assign do
     ahash = { "z"=>0, "@a"=>1, "@b"=>2 } #, "@@a"=>3 }
     instance_assign( ahash )
     @z.assert == 0

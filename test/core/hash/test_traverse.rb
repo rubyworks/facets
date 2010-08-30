@@ -1,8 +1,8 @@
-Covers 'facets/hash/traverse'
+covers 'facets/hash/traverse'
 
-Case Hash do
+testcase Hash do
 
-  Unit :traverse do
+  unit :traverse do
     h = { "A" => "x", "B" => "y" }
     j = h.traverse{ |k,v| [k.downcase, v.upcase] }
     x = { "a" => "X", "b" => "Y" }
@@ -10,7 +10,7 @@ Case Hash do
     j.assert == x
   end
 
-  Unit :traverse! do
+  unit :traverse! do
     h = { "A" => "x", "B" => "y" }
     h.traverse!{ |k,v| [k.downcase, v.upcase] }
     x = { "a" => "X", "b" => "Y" }

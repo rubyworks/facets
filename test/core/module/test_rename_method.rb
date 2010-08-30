@@ -1,8 +1,8 @@
-Covers 'facets/module/rename_method'
+covers 'facets/module/rename_method'
 
-Case Module do
+testcase Module do
 
-  Unit :rename_method do
+  unit :rename_method do
     c = Class.new do
       def a; "A" ; end
       rename_method :b, :a
@@ -12,7 +12,7 @@ Case Module do
     c.new.assert.respond_to?(:b)
   end
 
-  Unit :rename do
+  unit :rename do
     c = Class.new do
       def c; "C" ; end
       rename :d, :c

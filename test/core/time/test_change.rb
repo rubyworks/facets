@@ -1,13 +1,11 @@
-Covers 'facets/time/change'
+covers 'facets/time/change'
 
-require 'time' # for parse method
+testcase Time do
 
-Case Time do
-
-  Unit :change do
-    t = Time.parse('2006-04-20 15:37')
+  unit :change do
+    t = Time.local(2006,04,20,15,37)
     n = Time.now
-    n = n.change( :month=>4, :day=>20, :hour=>15, :min=>37, :year=>2006 )
+    n = n.change(:month=>4, :day=>20, :hour=>15, :min=>37, :year=>2006)
     n.assert == t
   end
 

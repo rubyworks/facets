@@ -1,8 +1,8 @@
-Covers 'facets/hash/zipnew'
+covers 'facets/hash/zipnew'
 
-Case Hash do
+testcase Hash do
 
-  MetaUnit :zipnew do
+  metaunit :zipnew do
     a = [1,2,3]
     b = [4,5,6]
     Hash.zipnew(a,b).assert == {1=>4,2=>5,3=>6}

@@ -1,6 +1,6 @@
-Covers 'facets/string/cleave'
+covers 'facets/string/cleave'
 
-Case String do
+testcase String do
 
   table = [
     [ 'no spaces short word'    , 'whole'                              , ['whole', ''] ],
@@ -15,7 +15,7 @@ Case String do
   ]
 
   table.each do |d, s, x|
-    Unit :cleave => d do
+    unit :cleave => d do
       s.cleave.assert == x
     end
   end

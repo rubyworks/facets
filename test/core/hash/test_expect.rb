@@ -1,6 +1,6 @@
-Covers 'facets/hash/except'
+covers 'facets/hash/except'
 
-TestCase Hash do
+testcase Hash do
 
   unit :except do
     h = {:a=>1, :b=>2, :c=>3}

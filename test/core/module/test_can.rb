@@ -1,8 +1,8 @@
-Covers 'facets/module/can'
+covers 'facets/module/can'
 
-Case Module do
+testcase Module do
 
-  Unit :can do
+  unit :can do
     m = Module.new do
       def x; "x"; end 
     end

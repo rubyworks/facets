@@ -1,6 +1,6 @@
-Covers 'facets/string/unbracket'
+covers 'facets/string/unbracket'
 
-Case String do
+testcase String do
 
   unit :unbracket do
     s = "{unwrap me}"

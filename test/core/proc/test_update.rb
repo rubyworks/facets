@@ -1,8 +1,8 @@
-Covers 'facets/proc/update'
+covers 'facets/proc/update'
 
-TestCase Proc do
+testcase Proc do
 
-  Unit :update => '' do
+  unit :update => '' do
     p1 = Proc.new{ 'here' }
     p1.update.assert == 'here'
   end

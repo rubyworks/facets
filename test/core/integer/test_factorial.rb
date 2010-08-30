@@ -1,8 +1,8 @@
-Covers 'facets/integer/factorial'
+covers 'facets/integer/factorial'
 
-Case Integer do
+testcase Integer do
 
-  Unit :factorial do
+  unit :factorial do
     0.factorial.assert == 1
     1.factorial.assert == 1
     2.factorial.assert == 2
@@ -10,7 +10,7 @@ Case Integer do
     4.factorial.assert == 24
   end
 
-  Unit :fac do
+  unit :fac do
     0.fac.assert == 1
     1.fac.assert == 1
     2.fac.assert == 2

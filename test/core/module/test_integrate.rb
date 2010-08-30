@@ -1,8 +1,8 @@
-Covers 'facets/module/integrate'
+covers 'facets/module/integrate'
 
-Case Module do
+testcase Module do
 
-  Unit :integrate do
+  unit :integrate do
     m = Module.new do
       def x ; 1 ; end
     end

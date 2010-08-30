@@ -1,10 +1,10 @@
-Covers 'facets/integer/even'
+covers 'facets/integer/even'
 
 # NOTE: Can't test on Integer directly b/c Ruby 1.8.7 defines separate
 # methods for Fixnum.
-Case Fixnum do
+testcase Fixnum do
 
-  Unit :even? do
+  unit :even? do
     (-100..100).step(2) do |n|
       n.even?.assert == true
     end

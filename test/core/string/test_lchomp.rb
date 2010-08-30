@@ -1,14 +1,14 @@
-Covers 'facets/string/lchomp'
+covers 'facets/string/lchomp'
 
-Case String do
+testcase String do
 
-  Unit :lchomp do
+  unit :lchomp do
     s = "xxboo"
     r = s.lchomp("xx")
     r.assert == "boo"
   end
 
-  Unit :lchomp! do
+  unit :lchomp! do
     s = "xxboo"
     s.lchomp!("xx")
     s.assert == "boo"

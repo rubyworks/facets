@@ -1,13 +1,13 @@
-Covers 'facets/range/to_r'
+covers 'facets/range/to_r'
 
-Case Range do
+testcase Range do
 
-  Unit :to_r do
+  unit :to_r do
     a = (0..10)
     a.to_r.assert == a
   end
 
-  Unit :to_range do
+  unit :to_range do
     a = (0..10)
     a.to_range.assert == a
   end

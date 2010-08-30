@@ -1,8 +1,8 @@
-Covers 'facets/integer/multiple'
+covers 'facets/integer/multiple'
 
-Case Integer do
+testcase Integer do
 
-  Unit :multiple? do
+  unit :multiple? do
     assert( ! 1.multiple?(2) )
     assert(   2.multiple?(2) )
     assert( ! 5.multiple?(3) )

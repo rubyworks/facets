@@ -1,9 +1,9 @@
-Covers 'facets/string/lines'
+covers 'facets/string/lines'
 
-Case String do
+testcase String do
 
   # Ruby 1.9 defined #lines to keep the newline character. Yuk!
-  Unit :lines do
+  unit :lines do
     "a\nb\nc".lines.to_a.assert == ["a\n","b\n","c"]
   end
 

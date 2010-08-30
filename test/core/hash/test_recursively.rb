@@ -3,7 +3,7 @@ covers 'facets/hash/graph'
 
 tests Hash do
 
-  Unit :recursively => "each" do
+  unit :recursively => "each" do
     h = {:a=>1,:b=>{:c=>3}}
     r = []
     h.recursively.each{ |k,v| r << [k,v] }
@@ -12,14 +12,14 @@ tests Hash do
     r.assert.include? [:c,3]
   end
 
-  Unit :recursively => "map" do
+  unit :recursively => "map" do
     h = {:a=>1,:b=>{:c=>3}}
     r = h.recursively{ |k,v| [k,v] }.map{ |k,v| [k, v.succ] }
     r.assert.include? [:a,2]
     r.assert.include? [:b,[[:c,4]]]
   end
 
-  Unit :recursively => "map (moot)" do
+  unit :recursively => "map (moot)" do
     h = {:a=>1,:b=>{:c=>3}}
     a = h.recursively.map{ |k,v| [k, v] }
     a.assert.include? [:a,1]

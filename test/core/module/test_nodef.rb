@@ -1,6 +1,6 @@
-Covers 'facets/module/nodef'
+covers 'facets/module/nodef'
 
-TestCase Module do
+testcase Module do
 
   unit :nodef do
     c = Class.new do

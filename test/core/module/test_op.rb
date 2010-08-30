@@ -1,6 +1,6 @@
-Covers 'facets/module/op.rb'
+covers 'facets/module/op.rb'
 
-Case Module do
+testcase Module do
 
   a = Module.new do
     def x; "x"; end
@@ -12,7 +12,7 @@ Case Module do
     def z; "zB"; end
   end
 
-  Unit :+ do
+  unit :+ do
     q = a + b
     q.extend q
 
@@ -21,7 +21,7 @@ Case Module do
     q.z.assert == "zB"
   end
 
-  Unit :- do
+  unit :- do
     r = a - b
     r.extend r
 
@@ -29,7 +29,7 @@ Case Module do
     NoMethodError.assert.raised?{ r.z }
   end
 
-  Unit :* do
+  unit :* do
     z = a * { :x => :y }
     z.extend z
 

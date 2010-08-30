@@ -1,8 +1,8 @@
-Covers 'facets/module/alias_accessor'
+covers 'facets/module/alias_accessor'
 
-Case Module do
+testcase Module do
 
-  Unit :alias_accessor do
+  unit :alias_accessor do
     c = Class.new do
       attr_accessor :x
       alias_accessor :y, :x

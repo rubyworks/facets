@@ -1,8 +1,8 @@
-Covers 'facets/proc/to_method'
+covers 'facets/proc/to_method'
 
-Case Proc do
+testcase Proc do
 
-  Unit :to_method do
+  unit :to_method do
     o = Object.new
     tproc = proc { |x| x + 2 }
 
@@ -13,7 +13,7 @@ Case Proc do
     o.tryit(1).assert == 3
   end
 
-  Unit :to_method => "with immutable object" do
+  unit :to_method => "with immutable object" do
     o = :foo
     tproc = proc{ self }
 
@@ -24,7 +24,7 @@ Case Proc do
     o.tryit.assert == :foo
   end
 
-  Unit :to_method => "ensure method is in object scope" do
+  unit :to_method => "ensure method is in object scope" do
     o = Struct.new(:a).new(1)
     tproc = proc{ a }
 

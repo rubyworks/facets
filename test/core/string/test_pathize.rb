@@ -1,20 +1,20 @@
-Covers 'facets/string/pathize'
+covers 'facets/string/pathize'
 
-Case String do
+testcase String do
 
-  Unit :pathize => "module name" do
+  unit :pathize => "module name" do
     a = "Foo::Base"
     x = "foo/base"
     a.pathize.assert == x
   end
 
-  Unit :pathize => "path name" do
+  unit :pathize => "path name" do
     a = "foo/base"
     x = "foo/base"
     a.pathize.assert == x
   end
 
-  Unit :pathize => "name space" do
+  unit :pathize => "name space" do
     a = "foo__base"
     x = "foo/base"
     a.pathize.assert == x

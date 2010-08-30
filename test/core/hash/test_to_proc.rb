@@ -1,6 +1,6 @@
-Covers 'facets/hash/to_proc'
+covers 'facets/hash/to_proc'
 
-TestCase Hash do
+testcase Hash do
 
   unit :to_proc do
     c = Class.new do

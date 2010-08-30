@@ -1,20 +1,20 @@
-Covers 'facets/string/methodize'
+covers 'facets/string/methodize'
 
-Case String do
+testcase String do
 
-  Unit :methodize => "module name" do
+  unit :methodize => "module name" do
     a = "FooBase"
     r = "foo_base"
     a.methodize.assert == r
   end
 
-  Unit :methodize => "path name"  do
+  unit :methodize => "path name"  do
     a = "foo/base"
     r = "foo__base"
     a.methodize.assert == r
   end
 
-  Unit :methodize => "name space" do
+  unit :methodize => "name space" do
     a = "Foo::Base"
     r = "foo__base"
     a.methodize.assert == r

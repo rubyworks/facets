@@ -1,6 +1,6 @@
-Covers 'facets/string/compress_lines'
+covers 'facets/string/compress_lines'
 
-TestCase String do
+testcase String do
 
   unit :compress_lines do
     string = <<-QUERY.compress_lines

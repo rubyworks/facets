@@ -1,8 +1,8 @@
-Covers 'facets/range/within'
+covers 'facets/range/within'
 
-Case Range do
+testcase Range do
 
-  Unit :within? do
+  unit :within? do
     assert( (4..5).within?(3..6) )
     assert( (3..6).within?(3..6) )
     assert(! (2..5).within?(3..6) )

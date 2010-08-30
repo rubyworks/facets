@@ -1,8 +1,8 @@
-require 'facets/proc/bind_to'
+covers 'facets/proc/bind_to'
 
-TestCase Proc do
+testcase Proc do
 
-  Unit :bind_to => '' do
+  unit :bind_to => '' do
      a = [1,2,3]
      p1 = Proc.new{ join(' ') }
      p2 = p1.bind_to(a)

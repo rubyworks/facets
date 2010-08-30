@@ -1,8 +1,8 @@
-Covers 'facets/string/unfold'
+covers 'facets/string/unfold'
 
-Case String do
+testcase String do
 
-  Unit :unfold do
+  unit :unfold do
     str = "This is a test of\nparagraph folding."
     res = str.unfold
     exp = "This is a test of paragraph folding."

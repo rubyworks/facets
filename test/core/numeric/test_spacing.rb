@@ -1,8 +1,8 @@
-Covers 'facets/numeric/spacing'
+covers 'facets/numeric/spacing'
 
-Case Numeric do
+testcase Numeric do
 
-  Unit :spacing do
+  unit :spacing do
     samples = [-10.5, -3, 3, 1.0e14, 10000, 14.5e10]
     samples.each do |numeric_item|
       numeric_item.spacing.assert == numeric_item.to_s.size

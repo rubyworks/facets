@@ -1,8 +1,8 @@
-Covers 'facets/enumerable/occur'
+covers 'facets/enumerable/occur'
 
-Case Enumerable do
+testcase Enumerable do
 
-  Unit :occur do
+  unit :occur do
     arr = [:a,:b,:a]
     arr.occur(1).assert == [:b]
     arr.occur(2).assert == [:a]

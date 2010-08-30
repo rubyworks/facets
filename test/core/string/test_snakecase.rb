@@ -1,8 +1,8 @@
-Covers 'facets/string/snakecase'
+covers 'facets/string/snakecase'
 
-Case String do
+testcase String do
 
-  Unit :snakecase do
+  unit :snakecase do
     '/my_module/my_class/'.snakecase.assert == '/my_module/my_class/'
     'MyModule::MyClass'.snakecase.assert == 'my_module/my_class'
     '::MyClass'.snakecase.assert == '/my_class'

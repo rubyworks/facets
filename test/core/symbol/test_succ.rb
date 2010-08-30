@@ -1,8 +1,8 @@
-Covers 'facets/symbol/succ'
+covers 'facets/symbol/succ'
 
-Case Symbol do
+testcase Symbol do
 
-  Unit :succ do
+  unit :succ do
     :a.succ.assert == :b
     :aaa.succ.assert == :aab
     :"1".succ.assert == :"2"

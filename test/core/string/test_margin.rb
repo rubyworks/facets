@@ -1,8 +1,8 @@
-Covers 'facets/string/margin'
+covers 'facets/string/margin'
 
-Case String do
+testcase String do
 
-  Unit :margin do
+  unit :margin do
     s = %q{
           |ABC
           |123
@@ -48,7 +48,7 @@ Case String do
 
   #
 
-  Unit :margin => "spacing" do
+  unit :margin => "spacing" do
     s = %q{
           | ABC
           | 123
@@ -79,7 +79,7 @@ Case String do
 
   #
 
-  Unit :margin => "random_placement" do
+  unit :margin => "random_placement" do
     @volly = {}
     100.times{ |n|
       k = []

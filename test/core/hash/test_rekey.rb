@@ -1,20 +1,20 @@
-Covers 'facets/hash/rekey'
+covers 'facets/hash/rekey'
 
-Case Hash do
+testcase Hash do
 
-  Unit :rekey => "default" do
+  unit :rekey => "default" do
     foo = { "a"=>1, "b"=>2 }
     foo.rekey.assert == { :a=>1, :b=>2 }
     foo.assert == { "a"=>1, "b"=>2 }
   end
 
-  Unit :rekey! => "default" do
+  unit :rekey! => "default" do
     foo = { "a"=>1, "b"=>2 }
     foo.rekey!.assert == { :a=>1, :b=>2 }
     foo.assert == { :a=>1, :b=>2 }
   end
 
-  Unit :rekey => "specific key" do
+  unit :rekey => "specific key" do
     bar = { :a=>1, :b=>2 }
     foo = bar.rekey(:a=>:c)
     foo[:c].assert == 1
@@ -22,7 +22,7 @@ Case Hash do
     foo[:a].assert == nil
   end
 
-  Unit :rekey! => "specific key" do
+  unit :rekey! => "specific key" do
     foo = { :a=>1, :b=>2 }
     foo.rekey!(:a=>:c)
     foo[:c].assert == 1
@@ -30,7 +30,7 @@ Case Hash do
     foo[:a].assert == nil
   end
 
-  Unit :rekey => "with block" do
+  unit :rekey => "with block" do
     bar = { :a=>1, :b=>2 }
     foo = bar.rekey{ |k| k.to_s }
     foo['a'].assert == 1
@@ -40,7 +40,7 @@ Case Hash do
     foo.assert == { 'a'=>1, 'b'=>2 }
   end
 
-  Unit :rekey! => "with block" do
+  unit :rekey! => "with block" do
     foo = { :a=>1, :b=>2 }
     foo.rekey!{ |k| k.to_s }
     foo['a'].assert == 1
@@ -50,19 +50,19 @@ Case Hash do
     foo.assert == { 'a'=>1, 'b'=>2 }
   end
 
-  Unit :rekey => "symbol proc" do
+  unit :rekey => "symbol proc" do
     foo = { :a=>1, :b=>2 }
     foo.rekey(&:to_s).assert == { "a"=>1, "b"=>2 }
     foo.assert == { :a =>1, :b=>2 }
   end
 
-  Unit :rekey! => "symbol proc" do
+  unit :rekey! => "symbol proc" do
     foo = { :a=>1, :b=>2 }
     foo.rekey!(&:to_s).assert == { "a"=>1, "b"=>2 }
     foo.assert == { "a"=>1, "b"=>2 }
   end
 
-  Unit :rekey! => "no conflict between keys" do
+  unit :rekey! => "no conflict between keys" do
     r = {1 => :a, 2 => :b}.rekey!{ |k| k + 1 }
     r.refute = {3 => :a}
     r.assert = {2 => :a, 3 => :b}  

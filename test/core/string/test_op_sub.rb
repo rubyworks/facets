@@ -1,8 +1,8 @@
-Covers 'facets/string/op_sub'
+covers 'facets/string/op_sub'
 
-Case String do
+testcase String do
 
-  Unit :"-" do
+  unit :"-" do
     s = "xxbooxxfoo"
     (s - "xx").assert == "boofoo"
   end

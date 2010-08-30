@@ -1,8 +1,8 @@
-Covers 'facets/numeric/approx'
+covers 'facets/numeric/approx'
 
-Case Numeric do
+testcase Numeric do
 
-  Unit :approx? do
+  unit :approx? do
     f = 10.006
     assert( f.approx?(10.01) )
     assert( f.approx?(10, 0.1) )
