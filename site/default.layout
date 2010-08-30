@@ -19,7 +19,7 @@ stencil: liquid
   <meta name="DESCRIPTION"
         content="Ruby Facets is a large collection of libraries for the Ruby programming lanaguage."/>
 
-  <link rel="icon" href="{{ root }}/media/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="{{ root }}media/favicon.ico" type="image/x-icon" />
 
   <link href="{{ site.url }}/atom.xml" rel="alternate" title="blog.facets.rubyforge.org" type="application/atom+xml" />
 
@@ -41,13 +41,15 @@ stencil: liquid
 <body>
 
 <div id="forkme">
-  <img src="{{root}}media/forkme.png" />
+  <a href="http://github.com/rubyworks/facets">
+    <img src="{{root}}media/forkme.png" />
+  </a>
 </div>
 
 <div id="container">
 
   <div id="header">
-    <a href="http://github.com/rubyworks/facets">
+    <a href="{{ site.url }}">
       <img id="logo" src="{{root}}media/RubyFacets.png" align="middle" />
     </a>
   </div>
