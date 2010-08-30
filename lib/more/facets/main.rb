@@ -27,9 +27,9 @@
 #
 # Noen of this would be needed if Main were just a self extended module.
 #
-#  == Authors
+# == Authors
 #
-#  * Thomas Sawyer
+# * Thomas Sawyer
 
 public
 

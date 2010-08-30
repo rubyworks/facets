@@ -24,7 +24,7 @@ if defined?(Continuation)
   #   # For simplicity's sake, this is not fully compatible with the real
   #   # inject. Make sure that you understand Array#inject before you try
   #   # to understand this.
-  #   class Array
+  #   class ::Array
   #     def cc_inject(value = nil)
   #       copy = self.clone
   #       cc, result, item = Continuation.create(value, nil)

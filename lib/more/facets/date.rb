@@ -53,10 +53,9 @@ class Date
   # Converts a Date instance to a DateTime, where the time is set to the beginning of the day
   # and UTC offset is set to 0.
   #
-  # ==== Example:
-  #   date = Date.new(2007, 11, 10)  # => Sat, 10 Nov 2007
+  #   date = Date.new(2007, 11, 10)  # Sat, 10 Nov 2007
+  #   date.to_datetime               # Sat, 10 Nov 2007 00:00:00 0000
   #
-  #   date.to_datetime               # => Sat, 10 Nov 2007 00:00:00 0000
   def to_datetime
     ::DateTime.civil(year, month, day, 0, 0, 0, 0)
   end unless method_defined?(:to_datetime) # 1.9+ ?
@@ -64,16 +63,16 @@ class Date
   # Converts a Date instance to a Time, where the time is set to the beginning of the day.
   # The timezone can be either :local or :utc (default :local).
   #
-  #   date = Date.new(2007, 11, 10)  # => Sat, 10 Nov 2007
+  #   date = Date.new(2007, 11, 10)  # Sat, 10 Nov 2007
   #
-  #   date.to_time                   # => Sat Nov 10 00:00:00 0800 2007
-  #   date.to_time(:local)           # => Sat Nov 10 00:00:00 0800 2007
+  #   date.to_time                   # Sat Nov 10 00:00:00 0800 2007
+  #   date.to_time(:local)           # Sat Nov 10 00:00:00 0800 2007
   #
-  #   date.to_time(:utc)             # => Sat Nov 10 00:00:00 UTC 2007
+  #   date.to_time(:utc)             # Sat Nov 10 00:00:00 UTC 2007
   #
   def to_time(form=:local)
     ::Time.send(form, year, month, day)
-    #::Time.send("#{form}_time", year, month, day)
+    ##::Time.send("#{form}_time", year, month, day)
   end
 
   #
@@ -83,10 +82,9 @@ class Date
 
   # Returns the number of days in the date's month.
   #
-  #   Date.new(2004,2).days_in_month #=> 28
+  #   Date.new(2004,2).days_in_month  #=> 29
   #
   # CREDIT: Ken Kunz.
-
   def days_in_month
      Date.civil(year, month, -1).day
   end
@@ -98,7 +96,6 @@ class Date
   # Get the month name for this date object
   #
   # CREDIT: Benjamin Oakes
-
   def month_name
     MONTHNAMES[self.month]
   end
@@ -107,13 +104,12 @@ class Date
   #
   # This method is aliased to <tt>to_s</tt>.
   #
-  # ==== Examples:
-  #   date = Date.new(2007, 11, 10)       # => Sat, 10 Nov 2007
+  #   date = Date.new(2007, 11, 10)   # Sat, 10 Nov 2007
   #
-  #   date.stamp(:db)            # => "2007-11-10"
-  #   date.stamp(:short)         # => "10 Nov"
-  #   date.stamp(:long)          # => "November 10, 2007"
-  #   date.stamp(:rfc822)        # => "10 Nov 2007"
+  #   date.stamp(:db)                 # => "2007-11-10"
+  #   date.stamp(:short)              # => "10 Nov"
+  #   date.stamp(:long)               # => "November 10, 2007"
+  #   date.stamp(:rfc822)             # => "10 Nov 2007"
   #
   # == Adding your own formats to stamp
   # You can add your own formats to the Date::FORMAT hash.
@@ -130,13 +126,14 @@ class Date
     end
   end
 
-  # Overrides the default inspect method with a human readable one, e.g., "Mon, 21 Feb 2005"
-  #def inspect
-  #  strftime("%a, %d %b %Y")
-  #end
+  ## Overrides the default inspect method with a human readable one, e.g., "Mon, 21 Feb 2005"
+  ##def inspect
+  ##  strftime("%a, %d %b %Y")
+  ##end
 
-  # Provides precise Date calculations for years, months, and days.  The +options+ parameter takes a hash with 
-  # any of these keys: <tt>:years</tt>, <tt>:months</tt>, <tt>:weeks</tt>, <tt>:days</tt>.
+  # Provides precise Date calculations for years, months, and days.
+  # The +options+ parameter takes a hash with  any of these keys:
+  # <tt>:years</tt>, <tt>:months</tt>, <tt>:weeks</tt>, <tt>:days</tt>.
   def advance(options)
     d = self
     d = d >> options.delete(:years) * 12 if options[:years]
@@ -146,12 +143,12 @@ class Date
     d
   end
 
-  # Returns a new Date where one or more of the elements have been changed according to the +options+ parameter.
+  # Returns a new Date where one or more of the elements have been changed
+  # according to the +options+ parameter.
   #
-  # Examples:
+  #   Date.new(2007, 5, 12).change(:day=>1)                 # Date.new(2007, 5, 1)
+  #   Date.new(2007, 5, 12).change(:year=>2005, :month=>1)  # Date.new(2005, 1, 12)
   #
-  #   Date.new(2007, 5, 12).change(:day => 1)                  # => Date.new(2007, 5, 1)
-  #   Date.new(2007, 5, 12).change(:year => 2005, :month => 1) # => Date.new(2005, 1, 12)
   def change(options)
     ::Date.new(
       options[:year]  || self.year,
@@ -160,31 +157,36 @@ class Date
     )
   end
 
-  # Converts Date to a Time (or DateTime if necessary) with the time portion set to the beginning of the day (0:00)
-  # and then subtracts the specified number of seconds
+  # Converts Date to a Time (or DateTime if necessary) with the time portion
+  # set to the beginning of the day (0:00) and then subtracts the specified
+  # number of seconds
   def ago(seconds)
     to_time.since(-seconds)
   end
 
-  # Converts Date to a Time (or DateTime if necessary) with the time portion set to the beginning of the day (0:00)
-  # and then adds the specified number of seconds
+  # Converts Date to a Time (or DateTime if necessary) with the time portion
+  # set to the beginning of the day (0:00) and then adds the specified number
+  # of seconds.
   def since(seconds)
     to_time.since(seconds)
   end
   alias :in :since
 
-  # Converts Date to a Time (or DateTime if necessary) with the time portion set to the beginning of the day (0:00)
+  # Converts Date to a Time (or DateTime if necessary) with the time portion
+  # set to the beginning of the day (0:00).
   def beginning_of_day
     to_time
   end
   alias :midnight :beginning_of_day
 
-  # Convenience method which returns a new Date/DateTime representing the time 1 day ago
+  # Convenience method which returns a new Date/DateTime representing the
+  # time 1 day ago.
   def yesterday
     self - 1
   end
 
-  # Convenience method which returns a new Date/DateTime representing the time 1 day since the instance time
+  # Convenience method which returns a new Date/DateTime representing
+  # the time 1 day since the instance time.
   def tomorrow
     self + 1
   end
@@ -229,8 +231,7 @@ class DateTime
   # 
   # This method is aliased to <tt>to_s</tt>.
   # 
-  # === Examples:
-  #   datetime = DateTime.civil(2007, 12, 4, 0, 0, 0, 0)   # => Tue, 04 Dec 2007 00:00:00 +0000
+  #   datetime = DateTime.civil(2007,12,4,0,0,0,0)   # Tue, 04 Dec 2007 00:00:00 +0000
   # 
   #   datetime.stamp(:db)            # => "2007-12-04 00:00:00"
   #   datetime.stamp(:db)            # => "2007-12-04 00:00:00"
@@ -240,6 +241,7 @@ class DateTime
   #   datetime.stamp(:rfc822)        # => "Tue, 04 Dec 2007 00:00:00 +0000"
   #
   # == Adding your own datetime formats to stamp
+  #
   # DateTime formats are shared with Time. You can add your own to the
   # Time::FORMAT hash. Use the format name as the hash key and
   # a strftime string as the value. Eg.
@@ -316,8 +318,8 @@ class DateTime
   #
   # Example:
   #
-  #   DateTime.civil(2005, 2, 21, 10, 11, 12, Rational(-6, 24))       # => Mon, 21 Feb 2005 10:11:12 -0600
-  #   DateTime.civil(2005, 2, 21, 10, 11, 12, Rational(-6, 24)).utc   # => Mon, 21 Feb 2005 16:11:12 +0000
+  #   DateTime.civil(2005,2,21,10,11,12,Rational(-6, 24))      # Mon, 21 Feb 2005 10:11:12 -0600
+  #   DateTime.civil(2005,2,21,10,11,12,Rational(-6, 24)).utc  # Mon, 21 Feb 2005 16:11:12 +0000
   #
   def utc
     new_offset(0)
@@ -373,33 +375,33 @@ class Time
 
   # Converts a Time object to a Date, dropping hour, minute, and second precision.
   #
-  #   my_time = Time.now  # => Mon Nov 12 22:59:51 -0500 2007
-  #   my_time.to_date     # => Mon, 12 Nov 2007
+  #   my_time = Time.now  # Mon Nov 12 22:59:51 -0500 2007
+  #   my_time.to_date     # Mon, 12 Nov 2007
   #
-  #   your_time = Time.parse("1/13/2009 1:13:03 P.M.")  # => Tue Jan 13 13:13:03 -0500 2009
-  #   your_time.to_date                                 # => Tue, 13 Jan 2009
+  #   your_time = Time.parse("1/13/2009 1:13:03 P.M.")  # Tue Jan 13 13:13:03 -0500 2009
+  #   your_time.to_date                                 # Tue, 13 Jan 2009
   #
   def to_date
     ::Date.new(year, month, day)
   end
 
-  #  # Convert a Time to a Date. Time is a superset of Date.
-  #  # It is the year, month and day that are carried over.
-  #
-  #  def to_date
-  #    require 'date' # just in case
-  #    jd = Date.__send__(:civil_to_jd, year, mon, mday, Date::ITALY)
-  #    Date.new!(Date.__send__(:jd_to_ajd, jd, 0, 0), 0, Date::ITALY)
-  #  end
+  ##  # Convert a Time to a Date. Time is a superset of Date.
+  ##  # It is the year, month and day that are carried over.
+  ##
+  ##  def to_date
+  ##    require 'date' # just in case
+  ##    jd = Date.__send__(:civil_to_jd, year, mon, mday, Date::ITALY)
+  ##    Date.new!(Date.__send__(:jd_to_ajd, jd, 0, 0), 0, Date::ITALY)
+  ##  end
 
 
   # Converts a Time instance to a Ruby DateTime instance, preserving UTC offset.
   #
-  #   my_time = Time.now    # => Mon Nov 12 23:04:21 -0500 2007
-  #   my_time.to_datetime   # => Mon, 12 Nov 2007 23:04:21 -0500
+  #   my_time = Time.now    # Mon Nov 12 23:04:21 -0500 2007
+  #   my_time.to_datetime   # Mon, 12 Nov 2007 23:04:21 -0500
   #
-  #   your_time = Time.parse("1/13/2009 1:13:03 P.M.")  # => Tue Jan 13 13:13:03 -0500 2009
-  #   your_time.to_datetime                             # => Tue, 13 Jan 2009 13:13:03 -0500
+  #   your_time = Time.parse("1/13/2009 1:13:03 P.M.")  # Tue Jan 13 13:13:03 -0500 2009
+  #   your_time.to_datetime                             # Tue, 13 Jan 2009 13:13:03 -0500
   #
   def to_datetime
     ::DateTime.civil(year, month, day, hour, min, sec, Rational(utc_offset, 86400))

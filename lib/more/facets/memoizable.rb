@@ -20,8 +20,8 @@
 #     memoize :a
 #   end
 #
-#   t = T.new
-#   t.a.__id__ == t.a.__id__  #=> true
+#   t = T.new(10)
+#   (t.a.__id__ == t.a.__id__)  #=> true
 #
 # This method can also be used at the instance level to cache singleton
 # (qua class) methods by including it in the singleton class.

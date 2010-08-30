@@ -48,16 +48,16 @@ class ERB::OpenTemplate
     ERB.new(str).result(binding)
   end
 
-  #
-  #def method_missing(sym, *args, &block)
-  #  #if @ioc.key?(sym)
-  #  #  @ioc[sym]
-  #  if obj = @objs.find{ |o| o.respond_to?(sym) }
-  #    obj.__send__(sym, *args, &block)
-  #  else
-  #    super
-  #  end
-  #end
+  ##
+  ##def method_missing(sym, *args, &block)
+  ##  #if @ioc.key?(sym)
+  ##  #  @ioc[sym]
+  ##  if obj = @objs.find{ |o| o.respond_to?(sym) }
+  ##    obj.__send__(sym, *args, &block)
+  ##  else
+  ##    super
+  ##  end
+  ##end
 
 end
 

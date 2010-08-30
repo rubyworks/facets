@@ -13,8 +13,8 @@ class Numeric
   # perform the inverse operation by placing the
   # multiplier called on unit (1) in the denominator.
   #
-  #   1000 / 1.kilo        #=> 1
-  #   1024 / 1.kibi        #=> 1
+  #   (1000 / 1.kilo)        #=> 1
+  #   (1024 / 1.kibi)        #=> 1
   #
   # Thanks to Rich Kilmer and bytes.rb which inspired this library.
 

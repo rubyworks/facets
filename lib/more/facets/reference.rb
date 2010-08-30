@@ -7,10 +7,10 @@
 #
 #   a = "HELLO"
 #   b = ref(a)
-#   puts b    #=> "HELLO"
+#   b.to_s    #=> "HELLO"
 #   c = 10
 #   b.become(c)
-#   puts b    #=> "10"
+#   b.to_s    #=> "10"
 #
 # == Authors
 #
@@ -29,6 +29,8 @@
 # ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
 # FOR A PARTICULAR PURPOSE.
 
+require 'facets/basicobject'
+
 # = Reference
 #
 # Reference provides a way to access object indirectly.
@@ -36,12 +38,12 @@
 #
 #   a = "HELLO"
 #   b = ref(a)
-#   puts b    #=> "HELLO"
+#   b.to_s    #=> "HELLO"
 #   c = 10
 #   b.become(c)
-#   puts b    #=> "10"
+#   b.to_s    #=> "10"
 #
-class Reference
+class Reference < BasicObject
 
   # Privatize most Kernel methods.
 
@@ -74,26 +76,9 @@ end
 module Kernel
 
   # Shortcut reference constructor.
-
   def ref(x)
     Reference.new(x)
   end
 
 end
 
-
-
-#  _____         _
-# |_   _|__  ___| |_
-#   | |/ _ \/ __| __|
-#   | |  __/\__ \ |_
-#   |_|\___||___/\__|
-#
-
-=begin #test
-
-  require 'test/unit'
-
-  # TODO
-
-=end

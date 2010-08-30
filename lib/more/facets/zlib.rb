@@ -3,9 +3,9 @@
 
 module Zlib
 
-  #class Stream < StringIO
-  #  def close; rewind; end
-  #end
+  ##class Stream < StringIO
+  ##  def close; rewind; end
+  ##end
 
   # Decompresses a gzipped string.
   def self.decompress(source)

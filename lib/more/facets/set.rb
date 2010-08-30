@@ -1,6 +1,8 @@
 require 'set'
 
 class Set
+
+  #
   def power_set
     if empty?
       Set[ self ]
@@ -13,6 +15,8 @@ class Set
 end
 
 class Array
+
+  #
   def power_set
     if empty?
       [self]
@@ -23,5 +27,6 @@ class Array
       subsubs.concat( subsubs.map{ |subset| subset + value } )
     end
   end
+
 end
 

@@ -60,7 +60,7 @@
 # the uniqueness of an object. To workaround this, define the _class_
 # method ::multiton_id.
 #
-#   def Klass.multiton_id(*args, &block)
+#   def SomeMultitonClass.multiton_id(*args, &block)
 #     # ...
 #   end
 #
@@ -121,7 +121,7 @@ require 'thread'
 # the uniqueness of an object. To workaround this, define the _class_
 # method ::multiton_id.
 #
-#   def Klass.multiton_id(*args, &block)
+#   def SomeMultitonClass.multiton_id(*args, &block)
 #     # ...
 #   end
 #
@@ -130,19 +130,19 @@ require 'thread'
 
 module Multiton
 
-  #  disable build-in copying methods
+  # Disable build-in copying methods.
 
   def clone
     raise TypeError, "can't clone Multiton #{self}"
-    #self
+    ##self
   end
 
   def dup
     raise TypeError, "can't dup Multiton #{self}"
-    #self
+    ##self
   end
 
-  # default marshalling strategy
+  # Default marshalling strategy.
 
   protected
 
@@ -170,13 +170,13 @@ module Multiton
     end
   end
 
-  # Multiton can be included in another module, in which case that module effectively becomes
-  # a multiton behavior distributor too. This is why we propogate #included to the base module.
-  # by putting it in another module.
+  # Multiton can be included in another module, in which case that module
+  # effectively becomes a multiton behavior distributor too. This is why we
+  # propogate #included to the base module by putting it in another module.
   #
   #--
   #    def append_features(mod)
-  #      #  help out people counting on transitive mixins
+  #      # help out people counting on transitive mixins
   #      unless mod.instance_of?(Class)
   #        raise TypeError, "Inclusion of Multiton in module #{mod}"
   #      end
@@ -275,7 +275,7 @@ end
 
 
 =begin
-# TODO Convert this into a real test and/or benchmark.
+# TODO: Convert this into a real test and/or benchmark.
 
 if $0 == __FILE__
 
@@ -384,3 +384,4 @@ if $0 == __FILE__
 
 end
 =end
+

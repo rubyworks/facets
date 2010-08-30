@@ -1,11 +1,4 @@
-# Title:: CGI Extensions
-# Authors:: Trans
-# Copying:: (c)2005 Trans
-# License:: Ruby Licens
-
 require 'cgi'
-
-# = CGI Extensions
 
 class CGI
 
@@ -24,9 +17,9 @@ class CGI
     end
   end
 
-  # RENAME!!!!
+  # TODO: Rename CGI#esc ?
 
-  # Are these two good enough to replace CGI.escape?
+  # TODO: Are these two good enough to replace CGI.escape?
 
   # Return an html "safe" version of the string,
   # where every &, < and > are replaced with appropriate entities.
@@ -48,3 +41,4 @@ class CGI
 
 end
 
+# Copyright (c) 2005 Thomas Sawyer (Ruby License)

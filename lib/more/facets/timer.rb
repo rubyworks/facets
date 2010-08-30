@@ -3,7 +3,7 @@ require 'timeout'  # for TimeoutError
 # = Timer
 #
 # Provides a strightforward means for controlling time critical execution.
-# Can be used as a "stop watch" timer or as a "time bomb" timer.
+# Can be used as a "stop watch" timer or as a "time bomb" timer:
 #
 #   t = Timer.new(10) { raise TimeoutError, "timeout!" }
 #   t.start
@@ -18,22 +18,22 @@ require 'timeout'  # for TimeoutError
 # A class method is also provided for easily timing the exectuion of a block.
 #
 #   Timer.time do |timer|
-#      timer.total_time.round #=> 0
+#    timer.total_time.round  #=> 0
 #
-#      sleep 1
-#      timer.total_time.round #=> 1
+#    sleep 1
+#    timer.total_time.round  #=> 1
 #
-#      timer.stop
-#      timer.total_time.round #=> 1
+#    timer.stop
+#    timer.total_time.round  #=> 1
 #
-#      sleep 2
-#      timer.total_time.round #=> 1
+#    sleep 1
+#    timer.total_time.round  #=> 1
 #
-#      timer.start
-#      timer.total_time.round #=> 1
+#    timer.start
+#    timer.total_time.round  #=> 1
 #
-#      sleep 1
-#      timer.total_time.round #=> 2
+#    sleep 1
+#    timer.total_time.round  #=> 2
 #   end
 #
 # Thanks to Paul Brannan for TimeLimit and Minero Aoki for Timer.
@@ -87,15 +87,15 @@ class Timer
 
     self
 
-    #if block_given? then
-    #  begin
-    #    yield( self )
-    #  ensure
-    #    stop
-    #  end
-    #else
-    #  @time_limit
-    #end
+    ##if block_given? then
+    ##  begin
+    ##    yield( self )
+    ##  ensure
+    ##    stop
+    ##  end
+    ##else
+    ##  @time_limit
+    ##end
   end
 
   # Establish a time limit on execution.

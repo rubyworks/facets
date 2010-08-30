@@ -12,7 +12,9 @@
 #
 #    op_lshift      -> op_push
 #    op_rshift      -> op_pull
-#
+#    op_store       -> op_index
+#    op_fetch       -> op_index  (b/c [] and []= in same file)
+
 module OpEsc
 
   OPERATORS = %w{ +@ -@ + - ** * / % ~ <=> << >> < > === == =~ <= >= | & ^ []= [] }
@@ -46,7 +48,7 @@ module OpEsc
 
   # Applies operator escape's according to OPERATORS_ESCAPE_TABLE.
   #
-  #   op_esc('-') #=> "op_minus"
+  #   OpEsc.escape('-') #=> "op_sub"
   #
   # CREDIT: Trans
 
@@ -61,17 +63,17 @@ module OpEsc
     fname
   end
 
-  #   # Require a file with puncuation marks escaped.
-  #   #
-  #   #   require_esc '[].rb'
-  #   #
-  #   # in actuality requires the file 'op_fetch.rb'.
-  #
-  #   def require_esc( fpath )
-  #     fdir, fname = File.split(fpath)
-  #     fname = method_to_filename(fname)
-  #     path = File.join(fdir, fname)
-  #     require(path)
-  #   end
+  ## Require a file with puncuation marks escaped.
+  ##
+  ##   require_esc '[].rb'
+  ##
+  ## in actuality requires the file 'op_fetch.rb'.
+  ##
+  ##   def require_esc( fpath )
+  ##     fdir, fname = File.split(fpath)
+  ##     fname = method_to_filename(fname)
+  ##     path = File.join(fdir, fname)
+  ##     require(path)
+  ##   end
 
 end

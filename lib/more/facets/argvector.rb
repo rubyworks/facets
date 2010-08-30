@@ -19,7 +19,7 @@
 #   cargs.flags         #=> ['a']
 #   cargs.preoptions    #=> {'a'=>true}
 #   cargs.preflags      #=> ['a']
-#   cargs.subcommand    #=> ['foo',{'b'=>'2'}]
+#   cargs.subcommand    #=> ['foo', [], {'b'=>'2'}]
 #
 # == Authors
 #
@@ -60,7 +60,7 @@ require 'shellwords'
 #   cargs.flags         #=> ['a']
 #   cargs.preoptions    #=> {'a'=>true}
 #   cargs.preflags      #=> ['a']
-#   cargs.subcommand    #=> ['foo',{'b'=>'2'}]
+#   cargs.subcommand    #=> ['foo', [], {'b'=>'2'}]
 #
 class Argvector
 
@@ -71,9 +71,9 @@ class Argvector
   attr :line
   attr :argv
   attr :arity
-  #attr :opts
+  ##attr :opts
 
-  #alias :flags :options
+  ##alias :flags :options
 
   # Takes the command line string (or array) and options.
   # Options have flags and end with a hash of option arity.
@@ -87,7 +87,6 @@ class Argvector
   public
 
   # Returns operand array.
-
   def operands
     @operands
   end
@@ -96,20 +95,17 @@ class Argvector
   alias arguments operands
 
   # Returns options hash.
-
   def options
     @options
   end
 
   # Returns [operands, options], which is good for plugging
   # directly into a method.
-
   def parameters
     return @operands, @options
   end
 
   # Return flags, which are true options.
-
   def flags
     f = []
     @options.each do |k, v|
@@ -123,7 +119,6 @@ class Argvector
   # Assumes the first operand is a "subcommand" and
   # returns it and the argments following it as
   # parameters.
-
   def subcommand_with_parameters
     opts, args = *parse_preoptions(argv)
     cmd = args.shift
@@ -163,7 +158,7 @@ class Argvector
   #   cargs = Argvector.new(line)
   #   opts = cargs.preoptions
   #   opts #=> {"trace"=>true}
-
+  #
   def preoptions
     preopts, remainder = *parse_preoptions(argv)
     return preopts
@@ -171,7 +166,6 @@ class Argvector
 
   # Same as +flags+ but only returns flags in the
   # preoptions.
-
   def preflags
     preopts, remainder = *parse_preoptions(argv)
     f = []
@@ -184,7 +178,6 @@ class Argvector
   end
 
   # Like parameters but without allowing for duplicate options.
-
   def parameters_without_duplicates
     opts = {}
     @options.each do |k,v|
@@ -197,15 +190,16 @@ class Argvector
     return @operands, opts
   end
 
-  private # ------------------
+  #private
 
   # Basic parser partitions the command line into options and
   # operands. Options are converted to a hash and the two 
   # parts are returned.
   #
   #   line = "--trace stamp --file=VERSION"
+  #   argv = Argvector.new(line)
   #
-  #   args, keys = *parse_command(line)
+  #   args, keys = *argv.parse
   #
   #   args #=> ["stamp"]
   #   keys #=> {"trace"=>true, "file"=>"VERSION"}
@@ -223,7 +217,6 @@ class Argvector
 
   # First pass parser to split the command line into an
   # array using Shellwords, if not already so divided.
-
   def parse_line(line=nil)
     if line
       case line
@@ -240,16 +233,15 @@ class Argvector
     return line, argv
   end
 
-  # Ensure opts are a uniform.
-  #
-  #def clean_opts( opts )
-  #  opts2 = opts.collect{ |o| o.to_sym }
-  #  opts2 = opts2 & [:simple, :repeat]  # valid options only
-  #  return opts2
-  #end
+  ## Ensure opts are a uniform.
+  ##
+  ##def clean_opts( opts )
+  ##  opts2 = opts.collect{ |o| o.to_sym }
+  ##  opts2 = opts2 & [:simple, :repeat]  # valid options only
+  ##  return opts2
+  ##end
 
   # Ensure arity is uniform.
-
   def parse_arity(arity)
     arity2 = {}
     arity.each{ |k,v| arity2[k.to_s] = v.to_i }
@@ -258,9 +250,8 @@ class Argvector
 
   # Parse preoptions. A "preoption" is one that
   # occurs before the first operans (if any).
-
   def parse_preoptions(args)
-    #args = args.dup
+    ##args = args.dup
     args = multi_flag(args) #unless opts.include?(:simple)
 
     flags = []
@@ -283,18 +274,18 @@ class Argvector
     return flags, args
   end
 
-  # Parse flags takes the command line and
-  # transforms it such that flags (eg. -x and --x)
-  # are elemental associative arrays.
+  # Parse flags takes the command line and transforms it such that
+  # flags (eg. -x and --x) are elemental associative arrays.
   #
   #   line = "--foo hello --try=this"
+  #   argv = Argvector.new(line)
   #
-  #   parse_flags(line) #=> [ [foo,true], hello, ["try","this"] ]
+  #   args = line.split(/\s/)
+  #   argv.assoc_options(args)  #=> [ ["foo",true], "hello", ["try","this"] ]
   #
   def assoc_options(args)
-    #args = args.dup
+    ##args = args.dup
     args = multi_flag(args) #unless opts.include?(:simple)
-
     i = 0
     while i < args.size
       arg = args[i]
@@ -322,7 +313,6 @@ class Argvector
 
   # Split single letter option groupings into separate options.
   # ie. -xyz => -x -y -z
-
   def multi_flag(args=nil)
     args ||= argv
     args.collect { |arg|
@@ -336,7 +326,6 @@ class Argvector
 
   # Format flag options. This converts the associative array of
   # options/flags into a hash. Repeat options will be placed in arrays.
-
   def format_options(assoc_options)
     opts = {}
     assoc_options.each do |k,v|
@@ -351,3 +340,4 @@ class Argvector
 
 end
 
+ArgVector = Argvector

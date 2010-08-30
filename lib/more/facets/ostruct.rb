@@ -1,29 +1,3 @@
-# = OpenStruct
-#
-# Ruby's standard OpenStruct with a few extensions added-in.
-#
-# == Auhtors
-#
-# * Thomas Sawyer
-#
-# == Copying
-#
-# Copyright (c) 2005 Thomas Sawyer, George Moschovitis
-#
-# Ruby License
-#
-# This module is free software. You may use, modify, and/or redistribute this
-# software under the same terms as Ruby.
-#
-# This program is distributed in the hope that it will be useful, but WITHOUT
-# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-# FOR A PARTICULAR PURPOSE.
-#
-# == History
-#
-# * 2006-11-04 trans  Deprecate #instance in favor of #instance_delegate.
-# * 2007-04-15 trans  Filled out with actual methods, used "ostruct_" for some accessors.
-
 require 'ostruct'
 
 class OpenStruct
@@ -54,7 +28,6 @@ class OpenStruct
   # the block. You can not provide both at the same time.
   #
   # CREDIT: Noah Gibbs, Gavin Sinclair
-  #
   def initialize(hash=nil, &block)
     if block && block.arity==2
       @table = Hash.new(&block)
@@ -106,37 +79,30 @@ class OpenStruct
     @table[key]=val
   end
 
-  # CREDIT: Robert J. Berger <rberger AT ibd.com>
-  # Thanks for reporting issues that this method resolved.
-
   # Provides access to an OpenStruct's inner table.
   #
   #   o = OpenStruct.new
   #   o.a = 1
   #   o.b = 2
-  #   o.instance_delegate.each { |k, v| puts "#{k} #{v}" }
-  #
-  # produces
-  #
-  #   a 1
-  #   b 2
-  #
+  #   o.instance_delegate.map { |k, v| "#{k} #{v}" }
+  #   #=> ["a 1", "b 2"]
   #
   def instance_delegate
     @table
   end
 
+  #
   alias ostruct_delegate instance_delegate
 
   # Insert/update hash data on the fly.
   #
   #   o = OpenStruct.new
-  #   o.ostruct_update { :a => 2 }
+  #   o.ostruct_update(:a => 2)
   #   o.a  #=> 2
   #
   def ostruct_update(other)
     raise TypeError, "can't modify frozen #{self.class}", caller(1) if self.frozen?
-    #other = other.to_hash  #to_h ?
+    ##other = other.to_hash  #to_h ?
     for k,v in other
       @table[k.to_sym] = v
     end
@@ -146,8 +112,8 @@ class OpenStruct
   # Merge hash data creating a new OpenStruct object.
   #
   #   o = OpenStruct.new
-  #   o.ostruct_merge { :a => 2 }
-  #   o.a  #=> 2
+  #   x = o.ostruct_merge(:a => 2)
+  #   x.a  #=> 2
   #
   def ostruct_merge(other)
     o = dup
@@ -155,21 +121,21 @@ class OpenStruct
     o
   end
 
-  ##
+  #--
   # TO BE DEPRECATED
   # Must consider that accessing instance_delegate instead can be dangerous.
   # Might we us a Functor to ensure the table keys are always symbols?
-  ##
+  #++
 
   # Insert/update hash data on the fly.
   #
   #   o = OpenStruct.new
-  #   o.ostruct_update { :a => 2 }
+  #   o.ostruct_update(:a => 2)
   #   o.a  #=> 2
   #
   def __update__(other)
     raise TypeError, "can't modify frozen #{self.class}", caller(1) if self.frozen?
-    #other = other.to_hash #to_h?
+    ##other = other.to_hash #to_h?
     for k,v in other
       @table[k.to_sym] = v
     end
@@ -179,8 +145,8 @@ class OpenStruct
   # Merge hash data creating a new OpenStruct object.
   #
   #   o = OpenStruct.new
-  #   o.ostruct_merge { :a => 2 }
-  #   o.a  #=> 2
+  #   x = o.ostruct_merge(:a => 2)
+  #   x.a  #=> 2
   #
   def __merge__(other)
     o = dup
@@ -200,7 +166,7 @@ class Hash
 
   # Turns a hash into a generic object using an OpenStruct.
   #
-  #   o = { 'a' => 1 }.to_ostruct
+  #   o = {'a' => 1}.to_ostruct
   #   o.a  #=> 1
   #
   def to_ostruct
@@ -209,8 +175,8 @@ class Hash
 
   # Like to_ostruct but recusively objectifies all hash elements as well.
   #
-  #     o = { 'a' => { 'b' => 1 } }.to_ostruct_recurse
-  #     o.a.b  #=> 1
+  #   o = {'a' => { 'b' => 1 }}.to_ostruct_recurse
+  #   o.a.b  #=> 1
   #
   # The +exclude+ parameter is used internally to prevent infinite
   # recursion and is not intended to be utilized by the end-user.
@@ -218,12 +184,11 @@ class Hash
   # would like to prevent from being converted to an OpoenStruct
   # then include it in the +exclude+ hash referencing itself. Eg.
   #
-  #     h = { 'a' => { 'b' => 1 } }
-  #     o = h.to_ostruct_recurse( { h['a'] => h['a'] } )
-  #     o.a['b']  #=> 1
+  #   h = { 'a' => { 'b' => 1 } }
+  #   o = h.to_ostruct_recurse( { h['a'] => h['a'] } )
+  #   o.a['b']  #=> 1
   #
   # CREDIT: Alison Rowland, Jamie Macey, Mat Schaffer
-
   def to_ostruct_recurse(exclude={})
     return exclude[self] if exclude.key?( self )
     o = exclude[self] = OpenStruct.new
@@ -233,12 +198,6 @@ class Hash
     end
     o.__update__(h)
   end
-
-  #--
-  # Special thanks to Alison Rowland, Jamie Macey and Mat Schaffer
-  # for inspiring recursive improvements.
-  #++
-
 end
 
 class NilClass
@@ -248,3 +207,4 @@ class NilClass
   end
 end
 
+# Copyright (c) 2005 Thomas Sawyer (Ruby License)
