@@ -1,8 +1,8 @@
-Covers 'facets/array/conjoin'
+covers 'facets/array/conjoin'
 
-TestCase Array do
+testcase Array do
 
-  Instance "any array" do
+  instance "any array" do
     [1,2,3,4]
   end
 

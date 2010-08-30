@@ -1,15 +1,15 @@
-Covers 'facets/array/combination'
+covers 'facets/array/combination'
 
-TestCase Array do
+testcase Array do
 
-  Unit :combination => "finds pairs of combinations" do
+  unit :combination => "finds pairs of combinations" do
     e = [[1, 2], [1, 3], [1, 4], [2, 3], [2, 4], [3, 4]]
     a = [1,2,3,4]
     r = a.combination(2).to_a
     r.assert == e
   end
 
-  Unit :combination => "can also take a block" do
+  unit :combination => "can also take a block" do
     e = [[1,2],[1,3],[1,4],[2,3],[2,4],[3,4]]
     r = []
     a = [1,2,3,4]

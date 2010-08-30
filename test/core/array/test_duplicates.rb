@@ -1,6 +1,6 @@
-Covers 'facets/array/duplicates'
+covers 'facets/array/duplicates'
 
-TestCase Array do
+testcase Array do
 
   unit :duplicates do
     a = [1,1,2,2,3,4,5]

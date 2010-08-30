@@ -1,14 +1,14 @@
-Covers 'facets/array/merge'
+covers 'facets/array/merge'
 
-TestCase Array do
+testcase Array do
 
-  Unit :merge do
+  unit :merge do
     a = [1,2,3]
     b = [3,4,5]
     a.merge(b).assert == [1,2,3,4,5]
   end
 
-  Unit :merge! do
+  unit :merge! do
     a = [1,2,3]
     b = [3,4,5]
     a.merge!(b)

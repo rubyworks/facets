@@ -1,6 +1,6 @@
-Covers 'facets/array/recurse'
+covers 'facets/array/recurse'
 
-TestCase Array do
+testcase Array do
 
   unit :recurse do
     a = ["a", ["b", "c", nil], nil]

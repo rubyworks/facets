@@ -1,6 +1,6 @@
-Covers 'facets/array/traverse'
+covers 'facets/array/traverse'
 
-TestCase Array do
+testcase Array do
 
   unit :traverse do
     a = ["A", "B", ["X", "Y"]]

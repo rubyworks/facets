@@ -1,8 +1,8 @@
-Covers 'facets/array/only.rb'
+covers 'facets/array/only.rb'
 
-TestCase Array do
+testcase Array do
 
-  Unit :only do
+  unit :only do
     [5].only.assert == 5
     [nil].only.assert == nil
     expect(IndexError){ [].only }

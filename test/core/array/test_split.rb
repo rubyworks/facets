@@ -1,16 +1,16 @@
-Covers 'facets/array/split'
+covers 'facets/array/split'
 
-Case Array do
+testcase Array do
 
-  Unit :split do
+  unit :split do
     ['a','b','c'].split('b').assert == [['a'], ['c']]
   end
 
-  Unit :split => "empty" do
+  unit :split => "empty" do
     [].split('a').assert == []
   end
 
-  Unit :split => "same" do
+  unit :split => "same" do
     ['a'].split('a').assert == []
   end
 

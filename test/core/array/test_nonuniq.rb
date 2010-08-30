@@ -1,6 +1,6 @@
-Covers 'facets/array/nonuniq'
+covers 'facets/array/nonuniq'
 
-TestCase Array do
+testcase Array do
 
   unit :nonuniq do
     a = [1,1,2,2,3,4,5]

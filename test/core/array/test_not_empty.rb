@@ -1,6 +1,6 @@
-Covers 'facets/array/not_empty'
+covers 'facets/array/not_empty'
 
-TestCase Array do
+testcase Array do
 
   unit :not_empty? do
     [].refute.not_empty?

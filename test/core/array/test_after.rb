@@ -1,6 +1,6 @@
-Covers 'facets/array/after'
+covers 'facets/array/after'
 
-TestCase Array do
+testcase Array do
 
   instance do
     ['a', 'b', 'c']

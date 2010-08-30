@@ -1,6 +1,6 @@
-Covers 'facets/array/contains'
+covers 'facets/array/contains'
 
-TestCase Array do
+testcase Array do
 
   unit :contains? do
     [1,2,3,4].assert.contains?(2)

@@ -1,8 +1,8 @@
-Covers 'facets/array/uniq_by'
+covers 'facets/array/uniq_by'
 
-Case Array do
+tests Array do
 
-  Unit :uniq_by! do
+  unit :uniq_by! do
     e = [-5, -4, -3, -2, -1, 0]
     r = (-5..5).to_a
     r.uniq_by!{ |i| i*i }

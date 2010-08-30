@@ -1,12 +1,12 @@
-Covers 'facets/array/entropy'
+covers 'facets/array/entropy'
 
-Case Array do
+testcase Array do
 
-  Unit :entropy do
+  unit :entropy do
     %w{ a b }.entropy.assert == 1.0
   end
 
-  Unit :ideal_entropy do
+  unit :ideal_entropy do
     %w{ a b }.ideal_entropy.assert == 1.0
     %w{ a a b b }.ideal_entropy.assert == 2.0
   end

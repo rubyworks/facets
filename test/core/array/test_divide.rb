@@ -1,6 +1,6 @@
-Covers 'facets/array/divide'
+covers 'facets/array/divide'
 
-TestCase Array do
+testcase Array do
 
   unit :divide do
     r = ['a1','b1','a2','b2'].divide(/^a/)

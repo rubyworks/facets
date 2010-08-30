@@ -1,8 +1,8 @@
-Covers 'facets/array/probability'
+covers 'facets/array/probability'
 
-Case Array do
+testcase Array do
 
-  Unit :probability do
+  unit :probability do
     %w{a b}.probability.assert == {'a'=>0.5, 'b'=>0.5}
     %w{a a a b}.probability.assert == {'a'=>0.75, 'b'=>0.25}
   end

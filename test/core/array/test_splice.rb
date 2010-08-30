@@ -1,6 +1,6 @@
-Covers 'facets/array/splice'
+covers 'facets/array/splice'
 
-TestCase Array do
+testcase Array do
 
   unit :splice do
     a = [1,2,3]

@@ -1,6 +1,6 @@
-Covers 'facets/array/store'
+covers 'facets/array/store'
 
-TestCase Array do
+testcase Array do
 
   instance do
      [1,2,3,4,5]

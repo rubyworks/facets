@@ -1,6 +1,6 @@
-Covers 'facets/array/collapse'
+covers 'facets/array/collapse'
 
-TestCase Array do
+testcase Array do
 
   unit :collapse do
     [1,nil,[1,2],nil,[[3]]].collapse.assert == [1,1,2,3]
