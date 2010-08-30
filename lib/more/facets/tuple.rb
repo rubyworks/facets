@@ -1,3 +1,5 @@
+require 'facets/multiton'
+
 # = Tuple
 #
 # Tuple is essentially an Array, but Comaparable and Immutable.
@@ -11,69 +13,25 @@
 #   t1 = Tuple[1,2,3]
 #   t2 = Tuple[2,3,4]
 #
-#   t1 < t2   #=> true
-#   t1 > t2   #=> false
+#   (t1 < t2)   #=> true
+#   (t1 > t2)   #=> false
 #
 #   t1 = '1.2.3'.to_t
 #   t2 = '1-2-3'.to_t
 #
-#   puts t1  #=> 1.2.3
-#   puts t2  #=> 1-2-3
+#   t1.to_s  #=> "1.2.3"
+#   t2.to_s  #=> "1.2.3"
 #
-#   t1 == t2  #=> true
-#
-# Keep in mind that Tuple[1,2,3] is not the same as Tuple['1','2','3'].
-#
-# == Todo
-#
-# * The #hash method needs a touch-up.
-#
-# * There are a few more methods yet to borrow from Array.
-#   Consider how #+, #-, etc. ought to work.
-#
-# == Author
-#
-# * Thomas Sawyer
-#
-# == Copying
-#
-# Copyright (c) 2005 Thomas Sawyer
-#
-# Ruby License
-#
-# This module is free software. You may use, modify, and/or
-# redistribute this software under the same terms as Ruby.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-
-require 'facets/multiton'
-
-# = Tuple
-#
-# A tuple can be made using #new or #[] just as one builds an array,
-# or using the #to_t method on a string or array. With a string tuple
-# remembers the first non-alphanumeric character as the tuple divider.
-#
-# == Usage
-#
-#   t1 = Tuple[1,2,3]
-#   t2 = Tuple[2,3,4]
-#
-#   t1 < t2   #=> true
-#   t1 > t2   #=> false
-#
-#   t1 = '1.2.3'.to_t
-#   t2 = '1-2-3'.to_t
-#
-#   puts t1  #=> 1.2.3
-#   puts t2  #=> 1-2-3
-#
-#   t1 == t2  #=> true
+#   (t1 == t2)  #=> true
 #
 # Keep in mind that Tuple[1,2,3] is not the same as Tuple['1','2','3'].
-
+#
+#--
+# TODO: The #hash method needs a touch-up.
+#
+# TODO: There are a few more methods yet to borrow from Array.
+# Consider how #+, #-, etc. ought to work.
+#++
 class Tuple
 
   include ::Multiton
@@ -102,22 +60,24 @@ class Tuple
       @values = arg.to_ary
     end
     @default = default
-    @divider = '.'
+    ##@divider = '.'
   end
 
   attr_accessor :default
 
-  def divider( set=nil )
-    return @divider unless set
-    @divider = set
-    self
-  end
+  ##def divider( set=nil )
+  ##  return @divider unless set
+  ##  @divider = set
+  ##  self
+  ##end
 
 protected
 
   def values() @values end
 
 public
+
+  SEGMENT_SEPARATOR = '.'
 
   def inspect() to_a.inspect end
 
@@ -127,8 +87,8 @@ public
   def to_a()   Array(@values) end
   def to_ary() Array(@values) end
 
-  def to_s( divider=nil )
-    @values.join(divider||@divider)
+  def to_s(divider=nil)
+    @values.join(divider || SEGMENT_SEPARATOR)
   end
 
   def size()   @values.size end
@@ -184,9 +144,10 @@ public
   # very same tuple.
   def eql?( other )
     return true if object_id == other.object_id
-    #return true if values.eql? other.values
+    ##return true if values.eql? other.values
   end
 
+  #
   def <=>( other )
     other = other.to_t
     [size, other.size].max.times do |i|
@@ -214,8 +175,8 @@ public
 
   # Unique hash value.
   def hash
-    # TODO This needs to take into account the default
-    #      and maybe the divider too.
+    # TODO: This needs to take into account the default
+    # and maybe the divider too.
     to_a.hash
   end
 
@@ -223,6 +184,7 @@ public
 
   class << self
 
+    #
     def []( *args )
       instance( args )
     end
@@ -240,7 +202,6 @@ public
     #   Tuple.cast_from_string('1.2.3a'){ |v| v.upcase }  #=> ["1","2","3A"]
     #
     # This method is called by String#to_t.
-
     def cast_from_string( str, &yld )
       args = str.to_s.split(/\W+/)
       div = /\W+/.match( str.to_s )[0]
@@ -249,22 +210,21 @@ public
       else
         args = args.collect { |i| /^[0-9]+$/ =~ i ? i.to_i : i }
       end
-      self.instance( args ).divider( div )
+      self.instance(args) #.divider( div )
     end
 
     #
-
     def cast_from_array( arr )
       self.instance( arr )
     end
 
     # Parses a constraint returning the operation as a lambda.
-
     def constraint_to_lambda( constraint, &yld )
       op, val = *parse_constraint( constraint, &yld )
       lambda { |t| t.send(op, val) }
     end
 
+    #
     def parse_constraint( constraint, &yld )
       constraint = constraint.strip
       re = %r{^(=~|~>|<=|>=|==|=|<|>)?\s*(\d+(:?[-.]\d+)*)$}
@@ -288,8 +248,6 @@ public
 end
 
 
-# Conveniently turn a string into a tuple.
-
 class ::String
 
   # Translates a string in the form on a set of numerical and/or
@@ -305,7 +263,6 @@ class ::String
   #   '1.2.3a'.to_t { |v| v.upcase }  #=> ["1","2","3A"]
   #
   # This method calls Tuple.cast_from_string.
-
   def to_t( &yld )
     Tuple.cast_from_string( self, &yld )
   end
@@ -313,13 +270,13 @@ class ::String
 end
 
 
-# Convert and array into a tuple.
-
 class ::Array
 
+  # Convert an array into a tuple.
   def to_t
     Tuple.cast_from_array( self )
   end
 
 end
 
+# Copyright (c) 2005 Thomas Sawyer (Ruby License)
