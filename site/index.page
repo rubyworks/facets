@@ -11,7 +11,7 @@ detail  :
 
 <img src="{{ root }}media/ruby-lg.png" width="100px" align="right" style=""/>
 
-# Facets is the Premiere Ruby Extensions Library
+# Facets is the Premier Ruby Extensions Library
 
 Ruby Facets was first released in 2005. Since then it has evolved into the
 single largest and most refined core extensions library for the Ruby programming
