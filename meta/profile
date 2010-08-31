@@ -1,6 +1,6 @@
 --- 
 title   : Facets
-summary : Premium Core Extensions and Standard Additions
+summary : Premium Ruby Extensions
 license : Ruby
 suite   : rubyworks
 authors : Thomas Sawyer <transfire@gmail.com>
@@ -9,18 +9,16 @@ contact : facets-universal@rubyforge.org
 created : 2004-12-16
 
 description:
-  Facets is the single largest collection of core extension methods
-  available for the Ruby programming language.
-  Facets is a large collection of core extension methods
-  and standard additions for the Ruby programming language.
-  The core extensions are unique by virtue of thier atomicity.
-  Methods are stored in small, tightly related collections,
-  allowing for highly granular control of requirements.
-  The modules include a variety of useful classes, mixins
-  and microframeworks, from the Functor to a complete
-  Annotations system.
+  Facets is the premier collection of extension methods for the Ruby
+  programming language. Facets extensions are unique by virtue of thier
+  atomicity. They are stored in individual files allowing for highly granular
+  control of requirements. In addition, Facets includes a few additional
+  classes and mixins suitable to wide variety of applications.
 
 resources:
-  homepage: http://rubyworks.github.com/facets
-  repository: git@github.com:rubyworks/facets.git
-
+  home: http://rubyworks.github.com/facets
+  code: http://github.com/rubyworks/facets
+  docs: http://rubyworks.github.com/facets/learn.html
+  wiki: http://wiki.github.com/rubyworks/facets
+  talk: http://groups.google.com/group/facets-universal
+  repo: git@github.com:rubyworks/facets.git

@@ -137,11 +137,11 @@ endeavering into more extensive work for the next major release.
 
 * Deprecations
 
- * Deprecated BlankSlate (use BasicObject)
- * Deprecate hashbuilder.rb
- * Removed casting_hash.rb, moved to new library
- * Removed opencollection.rb, moved to new library
- * Removed ansicode.rb, use ansi gem
+  * Deprecated BlankSlate (use BasicObject)
+  * Deprecate hashbuilder.rb
+  * Removed casting_hash.rb, moved to new library
+  * Removed opencollection.rb, moved to new library
+  * Removed ansicode.rb, use ansi gem
 
 * Bug Fixes
 

@@ -29,10 +29,11 @@ end
 
 task "test" do
   if tests = ENV['TESTS']
-    sh "lemon #{lemon_flags} -Ilib/core:lib/more:lib/tour #{tests}"
+    stat = sh "lemon #{lemon_flags} -Ilib/core:lib/more:lib/tour #{tests}"
   else
-    sh "lemon #{lemon_flags} -Ilib/core:lib/more:lib/tour test/core test/more test/tour"
+    stat = sh "lemon #{lemon_flags} -Ilib/core:lib/more:lib/tour test/core test/more test/tour"
   end
+  p stat
 end
 
 desc "run all unit tests"
