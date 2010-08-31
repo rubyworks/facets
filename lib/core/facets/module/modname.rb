@@ -2,20 +2,21 @@ class Module
 
   # Returns the name of the module containing this one.
   #
-  #   module ::ParentExample
+  #   module ::NSExample
   #     module M
   #       module N
   #       end
   #     end
   #   end
   #
-  #   ParentExample::M::N.namespace  #=> "ParentExample::M"
+  #   NSExample::M::N.modname  #=> "NSExample::M"
   #
-  def namespace
-    unless defined? @_namespace
-      @_namespace = name =~ /::[^:]+\Z/ ? $`.freeze : nil
+  # See also Module#basename.
+  def modname
+    unless defined? @_modname
+      @_modname = name =~ /::[^:]+\Z/ ? $`.freeze : nil
     end
-    @_namespace
+    @_modname
   end
 
 end
