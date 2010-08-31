@@ -11,13 +11,19 @@ testcase Binding do
   unless RUBY_VERSION > "1.9"
 
     unit :local_variables do
-      bind.local_variables.assert == ["bind", "x", "b", "a"]
+      bind.local_variables.assert.include? "bind"
+      bind.local_variables.assert.include? "x"
+      bind.local_variables.assert.include? "a"
+      bind.local_variables.assert.include? "b"
     end
 
   else
 
     unit :local_variables do
-      bind.local_variables.assert == [:bind, :x, :b, :a]
+      bind.local_variables.assert.include? :bind
+      bind.local_variables.assert.include? :x
+      bind.local_variables.assert.include? :a
+      bind.local_variables.assert.include? :b
     end
 
   end
