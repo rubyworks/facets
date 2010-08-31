@@ -1,6 +1,3 @@
-require 'facets/kernel/constant'
-require 'facets/module/namespace'
-
 class Module
 
   # Returns the module which contains this one according to its name.
@@ -14,17 +11,31 @@ class Module
   #
   #   EncExample::M::N.enclosure  #=> EncExample::M
   #
-  # The parent of top-level and anonymous modules is Object.
+  # The enclosure of top-level and anonymous modules is Object.
   #
   #   EncExample.enclosure   #=> Object
   #   Module.new.enclosure   #=> Object
   #
   def enclosure
-    namespace ? constant(namespace) : Object
+    name = /::[^:]+\Z/ =~ self.name ? $` : nil
+    if name
+      #base = name.sub!(/^::/, '') ? Object : self
+      name.split(/::/).inject(self) do |mod, cref|
+        if /\:(0x.*?)\>$/ =~ cref   # TODO: does this ever happen?
+          #p $1.to_i(16)
+          ObjectSpace._idref($1.to_i(16))
+        else
+          mod.const_get(cref)
+        end
+      end
+    else
+      Object
+    end
   end
 
-  # Returns all the parents of this module according to its name, ordered from
-  # nested outwards. The receiver is not contained within the result.
+  # Returns all the namespaces of this module according ordered from
+  # nearest and moving outwards. The receiver is not contained within
+  # the result.
   #
   #   module ::EncExample
   #     module M
@@ -33,20 +44,18 @@ class Module
   #     end
   #   end
   #
-  #   EncExample.enclosures      #=> [Object]
-  #   EncExample::M.enclosures   #=> [EncExample, Object]
+  #   EncExample.enclosures        #=> [Object]
+  #   EncExample::M.enclosures     #=> [EncExample, Object]
+  #   EncExample::M::N.enclosures  #=> [EncExample::M, EncExample, Object]
   #
   def enclosures
-   enclosures = []
-    if namespace
-      parts = namespace.split('::')
-      until parts.empty?
-        enclosures << constant(parts * '::')
-        parts.pop
-      end
+    n = []
+    name.split(/::/).inject(self) do |mod, cref|
+      c = mod.const_get(cref) ; n.unshift(c) ; c
     end
-    enclosures << Object unless enclosures.include?(Object)
-    enclosures
+    n << Object # ?
+    n.shift # we really don't need +self+ too.
+    n
   end
 
 end
