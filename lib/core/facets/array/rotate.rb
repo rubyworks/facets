@@ -5,7 +5,9 @@ class Array
     # Rotates an array's elements from back to front n times.
     #
     #   [1,2,3].rotate      #=> [2,3,1]
-    #   [3,1,2].rotate      #=> [3,1,2]
+    #   [2,3,1].rotate      #=> [3,1,2]
+    #   [3,1,2].rotate      #=> [1,2,3]
+    #
     #   [1,2,3].rotate(3)   #=> [1,2,3]
     #
     # A negative parameter reverses the order from front to back.
@@ -26,7 +28,7 @@ class Array
     #
     #   a = [1,2,3]
     #   a.rotate!
-    #   a  #=> [3,1,2]
+    #   a  #=> [2,3,1]
     #
     # CREDIT: Florian Gross, Thomas Sawyer
 
@@ -44,4 +46,3 @@ class Array
   end
 
 end
-
