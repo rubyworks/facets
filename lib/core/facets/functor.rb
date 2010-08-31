@@ -13,7 +13,7 @@
 #
 class Functor #< BasicObject
 
-  EXCEPTIONS = [:binding, :inspect]
+  EXCEPTIONS = [:binding, :inspect, :object_id]
   if defined?(::BasicObject)
     EXCEPTIONS.concat(::BasicObject.instance_methods)
     EXCEPTIONS.uniq!

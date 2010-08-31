@@ -9,8 +9,12 @@ module Enumerable
     #   (1..5).group_by { |n| n % 3 }
     #   #=> { 0 => [3], 1 => [1, 4], 2 => [2,5] }
     #
+    # Applied to an array.
+    #
     #   ["I had", 1, "dollar and", 50, "cents"].group_by { |e| e.class }
     #   #=> { String => ["I had","dollar and","cents"], Fixnum => [1,50] }
+    #
+    # Applied to a hash:
     #
     #   {:a=>1, :b=>2, :c=>1}.group_by{ |k,v| v }
     #   #=> { 1=>[[:c,1], [:a,1]], 2=>[[:b,2]] }
