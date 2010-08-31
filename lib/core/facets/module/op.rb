@@ -52,7 +52,7 @@ class Module
   #   class XMinus; include CMinus; end
   #
   #   expect NameError do
-  #     XMinus.new.a
+  #     XMinus.new.a  #=> "a"
   #   end
   #
   #   XMinus.new.b    #=> "b"
@@ -62,13 +62,14 @@ class Module
   # CREDIT: Thomas Sawyer, Robert Dober
 
   def -(other)
+    instance_methods = instance_methods(true).map{|m| m.to_sym}
     case other
     when Array
-      subtract = instance_methods(true) & other.collect{|m| m.to_s}
+      subtract = instance_methods & other.map{|m| m.to_sym}
     when Module
-      subtract = instance_methods(true) & other.instance_methods(true)  # false?
+      subtract = instance_methods & other.instance_methods(true).map{|m| m.to_sym}  # false?
     when String, Symbol
-      subtract = instance_methods(true) & [other.to_s]
+      subtract = instance_methods & [other.to_sym]
     end
     base = self
     Module.new do
