@@ -8,10 +8,10 @@ class Time
   # minute is passed, then sec and usec is set to 0.
   #
   #   t1 = Time.at(10000)
-  #   t1.to_s   #=> "Wed Dec 31 21:46:40 -0500 1969"
+  #   t1.ctime   #=> "Wed Dec 31 21:46:40 1969"
   #
   #   t2 = t1.change(:hour => 11)
-  #   t2.to_s   #=> "Wed Dec 31 11:00:00 -0500 1969"
+  #   t2.ctime   #=> "Wed Dec 31 11:00:00 1969"
   #
   def change(options)
     opts=options; #{}; options.each_pair{ |k,v| opts[k] = v.to_i }
