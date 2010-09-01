@@ -27,6 +27,10 @@ extensions you want, thus avoiding any conflicts. There are actually only a
 dozen or so overlaps and all are intended to compatible, but it doesn't hurt
 to be sure.
 
+Lastly, it is worth mentioning that this release has been more thuroughly
+tested than any version of Facets to date. Thanks to RVM this release runs
+green on Ruby 1.8.6, 1.8.7 and 1.9.2.
+
 Changes:
 
 * New Features
