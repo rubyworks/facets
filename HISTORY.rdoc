@@ -3,25 +3,25 @@
 == 2.9.0 / 2010-09-01
 
 This release is fairly extensive as it was originally intended to be v3.0.
-After further consideration it was decided to reserve 3.0 for the
-polish that only real world feedback can provide. The primary thrust
-of this release was to finish trimming Facets to be primarily a core
+After further consideration it was decided to reserve v3.0 for the
+polish of real world feedback and more progressive changes. The primary
+focus of this release has been the completion of migrating Facets into a true
 extensions library. With this release almost all add-on classes and mixins
 have now been spun-off to other projects. Only the most general purposes
-classes and mixins remain.
+add-on classes and mixins remain.
 
-A new TOUR division has been added to complement CORE and MORE. This
-lib division houses purely optional core extensions. The new division serves
+A new TOUR library division has also been added to complement CORE and MORE.
+This division houses purely optional extensions. The new division serves
 a couple of useful purposes. In particular, it helps separates the standard
-library extensions for optional core extension in the RDocs and thus makes
+library extensions from optional core extension in the RDocs and thus makes
 the perfect place to vet new extension ideas.
 
 One important change that will effect anyone using Facets along side
 ActiveSupport is that Facets no longer tries to conditionally avoid
 method overlaps with ActiveSupport. This is fine for the upcoming
 ActiveSupport 3.0 library which extends core classes directly instead of
-using mixins. One need only require 'facets' in Rails' config/preinitializer.rb
-file, and ActiveSupport will take precedence over Facets. For older versions
+using mixins. One need only require 'facets' in the Rails config/preinitializer.rb
+file and ActiveSupport will take precedence over Facets. For older versions
 of ActiveSupport, the best approach is to cherry pick from Facets just the
 extensions you want, thus avoiding any conflicts. There are actually only a
 dozen or so overlaps and all are intended to compatible, but it doesn't hurt
@@ -72,63 +72,65 @@ Changes:
 
 * Renamed Features
 
-  * Module#enclosure        was Module#parent
-  * Module#enclosures       was Module#parents
-  * Module#modname          was Module#parent_name
-  * Array#recurse           was Array#recurisvely       
-  * Hash#recurse            was Hash#recurisvely
-  * Enumerable#recursively  was Enumerable#recursive
-  * Array#recursively       was Array#recursive
-  * Hash#recursively        was Hash#recursive           
-  * Kernel#disable_warnings was Kernel#silence_warnings
-  * Hash#deep_merge         was Hash#recursive_merge
-  * Class#preallocate       was Class#prepend
-  * FileUtils#atomic_write  was File#atomic_write
-  * Module#method_clash     was Module#conflict
-  * Module#class_inheritor  was Class#inheritor   ? TODO
-  * Symbol#as_s             was Symbol#re_s
-  * String#characters       was String#chars
-  * String#unindent         was String#outdent
-  * Hash#reverse_merge      was Hash#merge
-  * Time#round_to           was Time#round
+  * Rename Module#parent            to Module#enclosure
+  * Rename Module#parents           to Module#enclosures
+  * Rename Module#parent_name       to Module#modname
+  * Rename Array#recurisvely        to Array#recurse  
+  * Rename Hash#recurisvely         to Hash#recurse
+  * Rename Enumerable#recursive     to Enumerable#recursively
+  * Rename Array#recursive          to Array#recursively
+  * Rename Hash#recursive           to Hash#recursively        
+  * Rename Kernel#silence_warnings  to Kernel#disable_warnings
+  * Rename Hash#recursive_merge     to Hash#deep_merge
+  * Rename Class#prepend            to Class#preallocate
+  * Rename File#atomic_write        to FileUtils#atomic_write
+  * Rename Module#conflict          to Module#method_clash
+  * Rename Class#inheritor          to Module#class_inheritor
+  * Rename Symbol#re_s              to Symbol#as_s
+  * Rename String#chars             to String#characters
+  * Rename String#outdent           to String#unindent
+  * Rename Time#round               to Time#round_to
 
 * Moved Libraries
 
-  * roman.rb has been moved to integer/roman and string/roman.rb
-  * blank.rb has been moved to kernel/blank.rb
-  * facets-live.rb has been moved to facets/auto_core.rb
-  * Moved cattr.rb to More library
-  * Moved duplicable.rb to kernel/dup.rb
-  * Moved bitmask.rb to integer/bitmask.rb
+  * Move roman.rb to integer/roman and string/roman.rb
+  * Move blank.rb to kernel/blank.rb
+  * Move facets-live.rb to facets/auto_core.rb
+  * Move cattr.rb to MORE library
+  * Move duplicable.rb to kernel/dup.rb
+  * Move bitmask.rb to integer/bitmask.rb
+  * Move enumerable/divide.rb to array/divide.rb
+  * Move enumerable/split.rb to array/split.rb
+  * Move enumerable/entropy.rb to array/entropy.rb
+  * Move enumerable/probability.rb to array/probability.rb
+  * Move enumerable/duplicates.rb array/duplicates.rb
+  * Move module/enclosure.rb to optional TOUR libs
 
 * Bug Fixes
 
-  * Fixed Hash#rekey! from clobbering previous keys
-  * Exception#raised? is a class method
-  * Enumerator#fx should use #map instead of #each
-  * String#splice needs String#store
-  * Kernel#blank? empty condition was faulty
-  * Comparable#bound needs clip.rb, not cap.rb
-  * String#file needs to pass block
-  * String#edit_distance use new encodings for Ruby 1.9
+  * Fix Fixed Hash#rekey! from clobbering previous keys
+  * Fix Exception#raised? is a class method
+  * Fix Enumerator#fx should use #map instead of #each
+  * Fix String#splice needs String#store
+  * Fix Kernel#blank? empty condition was faulty
+  * Fix Comparable#bound needs clip.rb, not cap.rb
+  * Fix String#file needs to pass block
+  * Fix String#edit_distance use new encodings for Ruby 1.9
 
-* Other Imrpovements
+* Improved Features
 
-  * New `tour` division of lib
+  * New lib/tour division of libraries
   * Module#class_extend synamically creates append_features method
   * Kernel#require_all is only for relative requires
   * __DIR__ can take subdirectory arguments
   * Hash#join has more sensible default separator (' ')
   * A few OpEsc escapes have been renamed
   * Kernel#assign does not accept a block
-  * Moved #divide and #split from Enumerable to Array
-  * Moved #entropy, #probability and #duplicates from Enumerable to Array
-  * Kernel#try is like ActiveSupport version. 
+  * Kernel#try is like ActiveSupport version
   * Improved #respond (which is like old #try)
-  * Dot not use if defined?(ActiveSupport)
+  * Remove all `if defined?(ActiveSupport)`
   * Use #random_range to support specialized Range#at_rand functionality
   * Use Comparable.[] instead of Comparable()
-  * Moved module/enclosure.rb to optional tour lib
   * Array#rotate rotates in opposite direction than before (b/c or Ruby 1.9)
 
 
