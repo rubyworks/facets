@@ -1,27 +1,30 @@
+require 'thread'    unless defined?(Thread)
+require 'tempfile'  unless defined?(Tempfile)
 require 'fileutils' unless defined?(FileUtils)
 
-module FileUtils
-
-  module_function
+# This is a precursor to the possibility of a more extensive Atomic File I/O
+# system. For now it simply provides a means for atomic file writing.
+class AtomicFile
 
   # Write to a file atomically. Useful for situations where you don't
   # want other processes or threads to see half-written files.
   #
-  #   File.atomic_write("tmp/important.file") do |file|
+  #   AtomicFile.write("tmp/important.file") do |file|
   #     file.write("hello")
   #   end
   #
   # If your temporary directory is not on the same filesystem as the file you're
   # trying to write, you can provide a different temporary directory.
   #
-  #   File.atomic_write("something.important", "tmp") do |file|
+  #   AtomicFile.write("something.important", "tmp") do |file|
   #     file.write("hello")
   #   end
   #
-  def atomic_write(file_name, temp_dir = Dir.tmpdir)
-    require 'tempfile'  unless defined?(Tempfile)
+  def self.write(file_name, temp_dir=nil)
 
+    temp_dir  = temp_dir || Dir.tmpdir
     temp_file = Tempfile.new(basename(file_name), temp_dir)
+
     yield temp_file
     temp_file.close
 
@@ -46,9 +49,3 @@ module FileUtils
 
 end
 
-class File
-  #
-  def atomic_write(file_name, temp_dir = Dir.tmpdir)
-    FileUtils.atomic(file_name, temp_dir)
-  end
-end
