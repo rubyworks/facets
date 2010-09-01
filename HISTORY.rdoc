@@ -105,6 +105,7 @@ Changes:
   * Move enumerable/probability.rb to array/probability.rb
   * Move enumerable/duplicates.rb array/duplicates.rb
   * Move module/enclosure.rb to optional TOUR libs
+  * Move kernel/instance_exec to option TOUR libs
 
 * Bug Fixes
 
