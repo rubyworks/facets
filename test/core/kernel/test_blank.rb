@@ -1,9 +1,15 @@
 covers 'facets/kernel/blank'
 
+# NOTE: Using x.assert.blank? here caused AE some issues
+# b/c of problems with Assertor. Basically Assertor needs
+# to subclass BasicObject, but Ruby 1.9 has constant lookup
+# issues with BasicObject that need address. So in this case
+# we'll just use the old-school `assert foo` syntax.
+
 testcase Kernel do
 
   unit :blank? do
-    Object.new.refute.blank?
+    refute Object.new.blank?
   end
 
 end
@@ -11,7 +17,7 @@ end
 testcase NilClass do
 
   unit :blank? do
-    nil.assert.blank?
+    assert nil.blank?
   end
 
 end
@@ -19,7 +25,7 @@ end
 testcase FalseClass do
 
   unit :blank? do
-    false.assert.blank?
+    assert false.blank?
   end
 
 end
@@ -27,7 +33,7 @@ end
 testcase TrueClass do
 
   unit :blank? do
-    true.refute.blank?
+    refute true.blank?
   end
 
 end
@@ -35,8 +41,8 @@ end
 testcase Array do
 
   unit :blank? do
-    [ ].assert.blank?
-    [1].refute.blank?
+    assert [].blank?
+    refute [1].blank?
   end
 
 end
@@ -44,8 +50,8 @@ end
 testcase Hash do
 
   unit :blank? do
-    {}.assert.blank?
-    {:a=>1}.refute.blank?
+    assert( {}.blank? )
+    refute( {:a=>1}.blank? )
   end
 
 end
@@ -53,8 +59,8 @@ end
 testcase String do
 
   unit :blank? do
-    "xyz".refute.blank?
-    "   ".assert.blank?
+    refute "xyz".blank?
+    assert "   ".blank?
   end
 
 end
@@ -62,15 +68,15 @@ end
 testcase Numeric do
 
   unit :blank? do
-    0.refute.blank?
+    refute 0.blank?
   end
 
   unit :blank? do
-    10.refute.blank?
+    refute 10.blank?
   end
 
   unit :blank? do
-    10.0.refute.blank?
+    refute 10.0.blank?
   end
 
 end

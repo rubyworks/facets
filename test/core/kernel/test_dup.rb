@@ -6,61 +6,61 @@ tests Object do
   end
 
   unit :dup? do |o|
-    o.assert.dup?
+    assert o.dup?
   end
 
   unit :clone? do |o|
-    o.assert.clone?
+    assert o.clone?
   end
 end
 
 tests TrueClass do
   unit :dup? do
-    true.refute.dup?
+    refute true.dup?
   end
 
   unit :clone? do
-    true.refute.clone?
+    refute true.clone?
   end
 end
 
 tests FalseClass do
   unit :dup? do
-    false.refute.dup?
+    refute false.dup?
   end
 
   unit :clone? do
-    false.refute.clone?
+    refute false.clone?
   end
 end
 
 tests NilClass do
   unit :dup? do
-    nil.refute.dup?
+    refute nil.dup?
   end
 
   unit :clone? do
-    nil.refute.clone?
+    refute nil.clone?
   end
 end
 
 tests Symbol do
   unit :dup? do
-    :a.refute.dup?
+    refute :a.dup?
   end
 
   unit :clone? do
-    :a.refute.clone?
+    refute :a.clone?
   end
 end
 
 tests Numeric do
   unit :dup? do
-    1.refute.dup?
+    refute 1.dup?
   end
 
   unit :clone? do
-    1.refute.clone?
+    refute 1.clone?
   end
 end
 
