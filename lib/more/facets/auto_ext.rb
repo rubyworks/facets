@@ -1,18 +1,33 @@
 require 'facets/opesc'
 
-module Kernel
+module Facets
 
-  # This will automatically load (most) core methods
-  # if they are not present when called.
+  # Incuding this module in a class or module will automatically load
+  # (most) Facets core methods as needed, if they are not already present
+  # when called.
+  #
+  #   class Example
+  #     include Facets::AutoExtensions
+  #   end
+  #
+  # THIS IS AN INTERESTING IDEA, BUT CANNOT WORK AS DESIGNED.
+  module AutoExtensions
 
-  def method_missing(methodname, *a, &b)
-    methodname = OpEsc.escape(methodname)
-    begin
-      require "facets/#{class}/#{methodname}"
-      __send__(methodname, *a, &b)  # retry ?
-    rescue LoadError
-      super(methodname, *a, &b)
-    end  
+    def method_missing(sym, *a, &b)
+      sym = OpEsc.escape(sym)
+      begin
+        success = require "facets/#{self.class.name.downcase}/#{sym}"
+      rescue LoadError
+        super(sym, *a, &b)
+      end
+
+      if success
+        __send__(sym, *a, &b)
+      else
+        super(sym, *a, &b)
+      end
+    end
+
   end
 
 end
