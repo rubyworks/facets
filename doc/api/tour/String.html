@@ -91,6 +91,10 @@
       </li>
     
       <li class="class">
+        <a href="./Object.html">Object</a>
+      </li>
+    
+      <li class="class">
         <a href="./Array.html">Array</a>
       </li>
     
@@ -294,7 +298,25 @@
       
       <li class="method" style="clear: both;">
         <span class="method-parent-aside">Module</span>
+        <a href="./Module.html#method-i-enclosure">#enclosure</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module</span>
+        <a href="./Module.html#method-i-enclosures">#enclosures</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module</span>
         <a href="./Module.html#method-i-include_as">#include_as</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Object</span>
+        <a href="./Object.html#method-i-instance_exec">#instance_exec</a>
       </li>
     
       
@@ -389,20 +411,20 @@
     
       
       <li class="method" style="clear: both;">
-        <span class="method-parent-aside">String</span>
-        <a href="./String.html#method-i-roman">#roman</a>
-      </li>
-    
-      
-      <li class="method" style="clear: both;">
         <span class="method-parent-aside">Integer</span>
         <a href="./Integer.html#method-i-roman">#roman</a>
       </li>
     
       
       <li class="method" style="clear: both;">
-        <span class="method-parent-aside">String</span>
-        <a href="./String.html#method-i-roman%3F">#roman?</a>
+        <span class="method-parent-aside">Object</span>
+        <a href="./Object.html#method-i-roman">#roman</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Object</span>
+        <a href="./Object.html#method-i-roman%3F">#roman?</a>
       </li>
     
       
@@ -455,7 +477,8 @@
     <h3 class="section-header">Parent</h3>
     <ul>
       
-      <li class="class">Object</li>
+      <!-- why was this class="link" ? -->
+      <li class="class"><a href="Object.html">Object</a></li>
       
     </ul>
   </div>
@@ -561,85 +584,6 @@ crypt method.
       <div class="aliases">
         Also aliased as: <a href="String.html#method-i-_crypt">_crypt</a>
       </div>
-      
-    </div>
-
-  
-    <div id="roman-method" class="method-detail ">
-      <a name="method-i-roman"></a>
-
-      <div class="method-heading">
-      
-        <span class="method-name">roman</span><span
-          class="method-args">()</span>
-        <span class="method-click-advice">click to toggle source</span>
-      
-      </div>
-
-      <div class="method-description">
-        
-        <p>
-Considers string a Roman numeral numeral, and converts it to the
-corresponding integer.
-</p>
-        
-
-        
-        <div class="method-source-code"
-          id="roman-source">
-<pre>
-    <span class="ruby-comment cmt"># File lib/tour/facets/integer/roman.rb, line 47</span>
-47:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">roman</span>
-48:     <span class="ruby-identifier">roman</span> = <span class="ruby-identifier">upcase</span>
-49:     <span class="ruby-identifier">raise</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">roman?</span>
-50:     <span class="ruby-identifier">last</span> = <span class="ruby-identifier">roman</span>[<span class="ruby-value">1</span>,<span class="ruby-value">1</span>]
-51:     <span class="ruby-identifier">roman</span>.<span class="ruby-identifier">reverse</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">''</span>).<span class="ruby-identifier">inject</span>(<span class="ruby-value">0</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">result</span>, <span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
-52:       <span class="ruby-keyword kw">if</span> <span class="ruby-constant">ROMAN_VALUES</span>[<span class="ruby-identifier">c</span>] <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ROMAN_VALUES</span>[<span class="ruby-identifier">last</span>]
-53:         <span class="ruby-identifier">result</span> <span class="ruby-operator">-=</span> <span class="ruby-constant">ROMAN_VALUES</span>[<span class="ruby-identifier">c</span>]
-54:       <span class="ruby-keyword kw">else</span>
-55:         <span class="ruby-identifier">last</span> = <span class="ruby-identifier">c</span>
-56:         <span class="ruby-identifier">result</span> <span class="ruby-operator">+=</span> <span class="ruby-constant">ROMAN_VALUES</span>[<span class="ruby-identifier">c</span>]
-57:       <span class="ruby-keyword kw">end</span>
-58:     <span class="ruby-keyword kw">end</span>
-59:   <span class="ruby-keyword kw">end</span></pre>
-        </div>
-        
-      </div>
-
-      
-    </div>
-
-  
-    <div id="roman--method" class="method-detail ">
-      <a name="method-i-roman%3F"></a>
-
-      <div class="method-heading">
-      
-        <span class="method-name">roman?</span><span
-          class="method-args">()</span>
-        <span class="method-click-advice">click to toggle source</span>
-      
-      </div>
-
-      <div class="method-description">
-        
-        <p>
-Returns true iif the subject is a valid Roman numeral.
-</p>
-        
-
-        
-        <div class="method-source-code"
-          id="roman--source">
-<pre>
-    <span class="ruby-comment cmt"># File lib/tour/facets/integer/roman.rb, line 62</span>
-62:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">roman?</span>
-63:     <span class="ruby-constant">ROMAN</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">upcase</span>
-64:   <span class="ruby-keyword kw">end</span></pre>
-        </div>
-        
-      </div>
-
       
     </div>
 

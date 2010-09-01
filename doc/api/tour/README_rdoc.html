@@ -91,6 +91,10 @@
       </li>
     
       <li class="class">
+        <a href="./Object.html">Object</a>
+      </li>
+    
+      <li class="class">
         <a href="./Array.html">Array</a>
       </li>
     
@@ -294,7 +298,25 @@
       
       <li class="method" style="clear: both;">
         <span class="method-parent-aside">Module</span>
+        <a href="./Module.html#method-i-enclosure">#enclosure</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module</span>
+        <a href="./Module.html#method-i-enclosures">#enclosures</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module</span>
         <a href="./Module.html#method-i-include_as">#include_as</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Object</span>
+        <a href="./Object.html#method-i-instance_exec">#instance_exec</a>
       </li>
     
       
@@ -389,20 +411,20 @@
     
       
       <li class="method" style="clear: both;">
-        <span class="method-parent-aside">String</span>
-        <a href="./String.html#method-i-roman">#roman</a>
-      </li>
-    
-      
-      <li class="method" style="clear: both;">
         <span class="method-parent-aside">Integer</span>
         <a href="./Integer.html#method-i-roman">#roman</a>
       </li>
     
       
       <li class="method" style="clear: both;">
-        <span class="method-parent-aside">String</span>
-        <a href="./String.html#method-i-roman%3F">#roman?</a>
+        <span class="method-parent-aside">Object</span>
+        <a href="./Object.html#method-i-roman">#roman</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Object</span>
+        <a href="./Object.html#method-i-roman%3F">#roman?</a>
       </li>
     
       
@@ -442,7 +464,7 @@
     <h3 class="section-header">File Stats</h3>
     <dl>
       <dt class="modified-date">Last Modified</dt>
-      <dd class="modified-date">Sat Aug 28 10:55:45 -0400 2010</dd>
+      <dd class="modified-date">Tue Aug 31 23:06:12 -0400 2010</dd>
 
       
 
@@ -676,10 +698,10 @@ for Proc#* is &#8216;proc/op_mul&#8217;.
 For reference, here is the chart.
 </p>
 <pre>
-     +@   =&gt; op_plus_self
-     -@   =&gt; op_minus_self
-     +    =&gt; op_plus
-     -    =&gt; op_minus
+     +@   =&gt; op_plus
+     -@   =&gt; op_minus
+     +    =&gt; op_add
+     -    =&gt; op_sub
      **   =&gt; op_pow
      *    =&gt; op_mul
      /    =&gt; op_div
@@ -690,7 +712,7 @@ For reference, here is the chart.
      &gt;&gt;   =&gt; op_rshift
      &lt;    =&gt; op_lt
      &gt;    =&gt; op_gt
-     ===  =&gt; op_case_eq
+     ===  =&gt; op_case
      ==   =&gt; op_equal
      =~   =&gt; op_apply
      &lt;=   =&gt; op_lt_eq
