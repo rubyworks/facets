@@ -45,34 +45,36 @@ Changes:
   * Add Module#copy_inheritor
   * Add Indexable#from and Indexable#upto
   * Add Array#from and Array#upto
-  * na.rb provides NA class
-  * Memoizable in memoizable.rb provides a more robust memoization system
-  * thread.rb adds Module#safe_memo for thread safe memoization
+  * Add NA class via na.rb
+  * Add Memoizable in memoizable.rb for a more robust memoization system
+  * Add Module#safe_memo in thread.rb for thread safe memoization
 
 * Deprecations
 
-  * Module#attr_toggler has been removed for YAGNI
-  * Kernel#class_eval has been removed b/c of it's confusing behavior
-  * Module#once is no longer an alias for #memoize
-  * Integer#succ(n) has been removed (for compatibility reasons)
-  * Deprecated Stackable, it's method were moved to CORE
-  * Deprecated Kernel#populate and #set_from (use #assign and #assign_from)
-  * partial.rb no longer defines X or #__, use NA instead
-  * autoreload.rb has been spun-off to a separate project
-  * Deprecated Kernel#non_nil? since #not_nil? is enough
-  * Deprecated #__HERE__ b/c implementation was unreliable
-  * Deprecated Array#upto and Indexable#upto, use #thru instead
-  * Deprecated Time#since, use #ago instead
-  * Deprecated Time#advance, use #in instead  TODO
-  * Deprecated Kernel#super_as (no good way to get callers method name)
-  * Deprecated Integer#clear_bit, use #bit_clear instead
-  * Deprecated Kernel#resc, use String#to_re or #to_rx instead
+  * Deprecate Module#attr_toggler as a YAGNI
+  * Deprecate Kernel#class_eval b/c of it's confusing behavior
+  * Deprecate Module#once is no longer an alias for #memoize
+  * Deprecate Integer#succ(n) (for compatibility reasons)
+  * Deprecate Stackable, it's method were moved to CORE
+  * Deprecate Kernel#populate and #set_from (use #assign and #assign_from)
+  * Deprecate Kernel#non_nil? since #not_nil? is enough
+  * Deprecate #__HERE__ b/c implementation was unreliable
+  * Deprecate Array#upto and Indexable#upto, use #thru instead
+  * Deprecate Time#since, use #ago instead
+  * Deprecate Time#advance, use #in instead  TODO
+  * Deprecate Kernel#super_as (no good way to get callers method name)
+  * Deprecate Integer#clear_bit, use #bit_clear instead
+  * Deprecate Kernel#resc, use String#to_re or #to_rx instead
+  * Deprecate Module#modspace
+  * Deprecate Kernel#__ and class X for Proc#partial, use NA instead
+  * Deprecate autoreload.rb has been spun-off to a separate project
+  * Deprecate Module#nesting, b/c redundant and overlap with Module.nesting
 
 * Renamed Features
 
   * Module#enclosure        was Module#parent
   * Module#enclosures       was Module#parents
-  * Module#namespace        was Module#parent_name
+  * Module#modname          was Module#parent_name
   * Array#recurse           was Array#recurisvely       
   * Hash#recurse            was Hash#recurisvely
   * Enumerable#recursively  was Enumerable#recursive
@@ -88,6 +90,7 @@ Changes:
   * String#characters       was String#chars
   * String#unindent         was String#outdent
   * Hash#reverse_merge      was Hash#merge
+  * Time#round_to           was Time#round
 
 * Moved Libraries
 
@@ -107,6 +110,7 @@ Changes:
   * Kernel#blank? empty condition was faulty
   * Comparable#bound needs clip.rb, not cap.rb
   * String#file needs to pass block
+  * String#edit_distance use new encodings for Ruby 1.9
 
 * Other Imrpovements
 
@@ -124,6 +128,8 @@ Changes:
   * Dot not use if defined?(ActiveSupport)
   * Use #random_range to support specialized Range#at_rand functionality
   * Use Comparable.[] instead of Comparable()
+  * Moved module/enclosure.rb to optional tour lib
+  * Array#rotate rotates in opposite direction than before (b/c or Ruby 1.9)
 
 
 == 2.8.4 / 2010-04-27

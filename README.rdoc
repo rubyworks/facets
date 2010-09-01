@@ -132,10 +132,10 @@ Proc#* is 'proc/op_mul'.
 
 For reference, here is the chart.
 
-     +@   => op_plus_self
-     -@   => op_minus_self
-     +    => op_plus
-     -    => op_minus
+     +@   => op_plus
+     -@   => op_minus
+     +    => op_add
+     -    => op_sub
      **   => op_pow
      *    => op_mul
      /    => op_div
@@ -146,7 +146,7 @@ For reference, here is the chart.
      >>   => op_rshift
      <    => op_lt
      >    => op_gt
-     ===  => op_case_eq
+     ===  => op_case
      ==   => op_equal
      =~   => op_apply
      <=   => op_lt_eq
