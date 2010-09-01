@@ -26,16 +26,16 @@ class Platform
   #
   attr_accessor :version
 
-  #RbConfig = Config unless defined? ::RbConfig
+  ##RbConfig = Config unless defined? ::RbConfig
 
-  #DEPRECATED_CONSTS = [
-  #  :DARWIN,
-  #  :LINUX_586,
-  #  :MSWIN32,
-  #  :PPC_DARWIN,
-  #  :WIN32,
-  #  :X86_LINUX
-  #]
+  ##DEPRECATED_CONSTS = [
+  ##  :DARWIN,
+  ##  :LINUX_586,
+  ##  :MSWIN32,
+  ##  :PPC_DARWIN,
+  ##  :WIN32,
+  ##  :X86_LINUX
+  ##]
 
   # Array of supported platforms (ie. pure-Ruby and local platform).
 
@@ -43,13 +43,13 @@ class Platform
     @suported ||= [Platform::RUBY, Platform.local]
   end
 
-  #def self.const_missing(name) # TODO remove six months from 2007/12
-  #  if DEPRECATED_CONSTS.include? name then
-  #    raise NameError, "#{name} has been removed, use CURRENT instead"
-  #  else
-  #    super
-  #  end
-  #end
+  ##def self.const_missing(name) # TODO remove six months from 2007/12
+  ##  if DEPRECATED_CONSTS.include? name then
+  ##    raise NameError, "#{name} has been removed, use CURRENT instead"
+  ##  else
+  ##    super
+  ##  end
+  ##end
 
   #
   def self.local
@@ -199,13 +199,14 @@ class Platform
 
   # Byte order of CPU.
   #
-  # TODO: Need chart for possible cpu's.
+  # TODO: This doesn't work well apearently. We need to use a chart for possible
+  # cpus instead, maybe.
   def byte_order
-    #if [0x12345678].pack("L") == "\x12\x34\x56\x78"
-    #  BigEndian
-    #else
-    #  LittleEndian
-    #end
+    if [0x12345678].pack("L") == "\x12\x34\x56\x78"
+      BigEndian
+    else
+      LittleEndian
+    end
   end
 
   #

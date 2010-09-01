@@ -23,14 +23,29 @@ module ObjectSpace
   #
   # Note that this is also equivalent to using +as(Kernel)+ ...
   #
-  #   obj.as(Kernel).id
+  #   "object".as(Kernel).object_id
   #
   # But obviously, in this case there is the risk that #as has
   # be overridden too.
   #
   def self.reflect(obj)
-    Functor.new do |meth, *a, &b|
-      Kernel.instance_method(meth).bind(obj).call(*a, &b)
+    ## TODO: use this after 1.8.6 support discontinued
+    ## Functor.new do |op, *a, &b|
+    ##   Kernel.instance_method(op).bind(obj).call(*a, &b)
+    ## end
+    Reflector.new(obj)
+  end
+
+  #
+  class Reflector #:nodoc:
+    instance_methods(true).each{ |m| private m unless /^(__|object_id$)/ =~ m.to_s }
+
+    def initialize(obj)
+      @obj = obj
+    end
+
+    def method_missing(op, *args, &yld)
+      Kernel.instance_method(op).bind(@obj).call(*args, &yld)
     end
   end
 
@@ -38,8 +53,10 @@ end
 
 # Shorcut for +ObjectSpace.reflect+.
 $ref = lambda do |obj|
-  Functor.new do |meth, *a, &b|
-    Kernel.instance_method(meth).bind(obj).call(*a, &b)
-  end
+  ## TODO: use this after 1.8.6 support discontinued
+  ## Functor.new do |meth, *a, &b|
+  ##  Kernel.instance_method(meth).bind(obj).call(*a, &b)
+  ## end
+  ObjectSpace.reflect(obj)
 end
 

@@ -1,6 +1,14 @@
-Covers 'facets/random'
+covers 'facets/random'
 
-TestCase Range do
+tests Random do
+
+  metaunit :letter do
+    100.times { |i| /[a-zA-z]/.assert =~ Random.letter }
+  end
+
+end
+
+tests Range do
 
   # helper method
   def assert_at_rand_table(table)
@@ -58,7 +66,7 @@ TestCase Range do
 
 end
 
-TestCase Array do
+tests Array do
 
   unit :at_rand do
     a = [1,2,3,4,5]
@@ -118,7 +126,7 @@ TestCase Array do
 
 end
 
-TestCase Hash do
+tests Hash do
 
   unit :rand_key do
     h = { :a=>1, :b=>2, :c=>3 }
@@ -147,11 +155,7 @@ TestCase Hash do
 
 end
 
-TestCase String do
-
-  metaunit :rand_letter do
-    100.times { |i| /[a-zA-z]/.assert =~ String.rand_letter }
-  end
+tests String do
 
   unit :at_rand do
     a = '12345'

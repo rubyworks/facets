@@ -1,5 +1,7 @@
 == Integer#even?
 
+    require 'facets/integer/even'
+
     (-100..100).step(2) do |n|
       n.even?.assert == true
     end

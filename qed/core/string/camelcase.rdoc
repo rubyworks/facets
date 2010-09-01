@@ -2,33 +2,32 @@
 
   require 'facets/string/camelcase'
 
-The `camelcase` method converts snakecase strings into
-camelcase strings.
+The `camelcase` method converts snakecase strings into camelcase strings.
 
-  "abc_xyz".camelcase.assert == "abcXyz"
+  "abc_xyz".camelcase.assert == "AbcXyz"
 
-Continious underscore characters are treated as if a single
-underscore character.
+Continious underscore characters are treated as if a single underscore
+character.
 
-  "abc____xyz".camelcase.assert == "abcXyz"
+  "abc____xyz".camelcase.assert == "AbcXyz"
 
-Without an argument the first character is left in the case
-it was given.
+Without an argument the first character is capitalized.
 
   "Camel_case".camelcase.assert == "CamelCase"
 
-Passing true to #camelcase captializes the first letter. This is
-known as upper-camelcase.
+Passing +true+ to #camelcase uncaptializes the first letter. This is
+known as lower-camelcase.
 
-  "abc_xyz".camelcase(true).assert == "AbcXyz"
-  "abc____xyz".camelcase(true).assert == "AbcXyz"
+  "Abc_xyz".camelcase(true).assert == "abcXyz"
+  "Abc____xyz".camelcase(true).assert == "abcXyz"
 
-Where as passing false converts the first letter to lowercase, known
-as lower-camelcase.
+Where as passing +false+ leaves the first as it was given, known as
+inter-camelcase.
 
   "abc_xyz".camelcase(false).assert == "abcXyz"
   "abc____xyz".camelcase(false).assert == "abcXyz"
-
+  "Abc_xyz".camelcase(false).assert == "AbcXyz"
+  "Abc____xyz".camelcase(false).assert == "AbcXyz"
 
 The #camelcase method applies to each word in a string.
 
@@ -49,9 +48,9 @@ The #camelcase method applies to each word in a string.
 In addition #camelcase converts path separators ('/') to module name
 separators ('::').
 
-  'this_is_it'.camelcase(true).assert == 'ThisIsIt'
-  'my_module/my_class'.camelcase(true).assert == 'MyModule::MyClass'
-  '/my_module/my_class'.camelcase(true).assert == '::MyModule::MyClass'
+  'this_is_it'.camelcase.assert == 'ThisIsIt'
+  'my_module/my_class'.camelcase.assert == 'MyModule::MyClass'
+  '/my_module/my_class'.camelcase.assert == '::MyModule::MyClass'
 
   #Unit :camelcase => "converts methods to module names" do
   #  'my_module__my_class'.camelcase.assert == 'MyModule::MyClass'

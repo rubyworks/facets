@@ -1,4 +1,5 @@
 require 'facets/functor'
+require 'facets/enumerable/recursively'
 
 class Array
 
@@ -18,22 +19,29 @@ class Array
   #
   # TODO: Return Enumerator if no +yld+ block is given ?
   def recursively(*types, &block)
-    types = types.empty? ? [self.class] : types
-    Functor.new do |op, &yld|
-      rec = block || lambda{ |a| a }
-      yld = yld   || lambda{ |v| v }  # ? to_enum
-      __send__(op) do |v|
-        case v
-        when String # b/c of 1.8
-          yld.call(v)
-        when *types
-          res = v.recursively(*types, &block).__send__(op,&yld)
-          rec.call(res)
-        else
-          yld.call(v)
-        end
-      end
-    end
+    Recursor.new(self, *types, &block)
   end
+
+  ## TODO: When no longer needing to support 1.8.6 we could get rid of
+  ## the Recursor class and use:
+  ##
+  ## def recursively(*types, &block)
+  ##   types = types.empty? ? [self.class] : types
+  ##   Functor.new do |op, &yld|
+  ##     rec = block || lambda{ |a| a }
+  ##     yld = yld   || lambda{ |v| v }  # ? to_enum
+  ##     __send__(op) do |v|
+  ##       case v
+  ##       when String # b/c of 1.8
+  ##         yld.call(v)
+  ##       when *types
+  ##         res = v.recursively(*types, &block).__send__(op,&yld)
+  ##         rec.call(res)
+  ##       else
+  ##         yld.call(v)
+  ##       end
+  ##     end
+  ##   end
+  ## end
 
 end

@@ -2,6 +2,8 @@ class Object #module Kernel
 
   unless method_defined?(:instance_exec) # 1.9
 
+    require 'thread'
+
     module InstanceExecMethods #:nodoc:
     end
 
@@ -24,7 +26,7 @@ class Object #module Kernel
       end
 
       begin
-        send(method_name, *args)
+        __send__(method_name, *args)
       ensure
         InstanceExecMethods.module_eval { remove_method(method_name) } rescue nil
       end

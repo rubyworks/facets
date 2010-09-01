@@ -48,8 +48,6 @@ module Enumerable
 end
 
 class Array
-  if method_defined?(:count)
-    remove_method(:count)
-  end
+  remove_method(:count) rescue nil
 end
 

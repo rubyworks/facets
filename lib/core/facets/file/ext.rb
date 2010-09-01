@@ -16,7 +16,7 @@ class File
   #   File.ext('file.rb', '.txt')  # => 'file.txt'
   #   File.ext('file.rb', '')      # => 'file'
   #
-  # This method can be used with String#file for more object-oriented notation.
+  # This method can be used with String#file for more object-oriented notation:
   #
   #   'file.rb'.file.ext('txt')    # => 'file.txt'
   #

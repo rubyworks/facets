@@ -188,8 +188,8 @@ module Multiton
     private
     def included(base)
       class << base
-        #alias_method(:new!, :new) unless method_defined?(:new!)
-        # gracefully handle multiple inclusions of Multiton
+        ##alias_method(:new!, :new) unless method_defined?(:new!)
+        ## gracefully handle multiple inclusions of Multiton
         unless include?(Multiton::MetaMethods)
           alias_method :new!, :new
           private :allocate #, :new

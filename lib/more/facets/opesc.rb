@@ -53,7 +53,7 @@ module OpEsc
   # CREDIT: Trans
 
   def self.escape(str)
-    str.gsub(OPERATORS_REGEXP){ OPERATORS_ESC_TABLE[$1] }
+    str.to_s.gsub(OPERATORS_REGEXP){ OPERATORS_ESC_TABLE[$1] }
   end
 
   #

@@ -8,11 +8,19 @@
 
   unless RUBY_VERSION > "1.9"
 
-    binding.local_variables.assert == ["x", "b", "a"]
+    lvars = binding.local_variables
+
+    lvars.assert.include?('a')
+    lvars.assert.include?('b')
+    lvars.assert.include?('x')
 
   else
 
-    binding.local_variables.assert == [:x, :b, :a]
+    lvars = binding.local_variables
+
+    lvars.assert.include?(:a)
+    lvars.assert.include?(:b)
+    lvars.assert.include?(:x)
 
   end
 

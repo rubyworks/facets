@@ -17,7 +17,7 @@ if defined?(Continuation)
   #
   #   # Count from 0 to 10
   #   cc, counter = Continuation.create(0)
-  #   puts counter
+  #   counter   #~> 0..10
   #   cc.call(counter + 1) if counter < 10
   #
   #   # Implement something similar to Array#inject using Continuations.

@@ -64,7 +64,12 @@ class Module
     define_method(name) do
       mtab = methods
       Functor.new do |op, *args|
-        mtab[op].bind(self).call(*args)
+        if meth = mtab[op.to_sym]
+          meth.bind(self).call(*args)
+        else
+          #self.__send__(op, *args)
+          raise NoMethodError, "undefined method `#{m}'"
+        end
       end
     end
   end

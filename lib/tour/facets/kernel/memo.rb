@@ -1,3 +1,6 @@
+require 'facets/binding/eval'
+require 'facets/kernel/__method__'
+
 module Kernel
 
   # Global memo cache.

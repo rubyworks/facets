@@ -13,10 +13,24 @@ class Enumerator
 
   #
   def fx
-    Functor.new do |op, *a, &b|
-      map{ |e| e.send(op, *a, &b) }
-    end
+    Functor.new(&method(:fx_send).to_proc)
   end
+
+  private
+
+  #
+  def fx_send(op, *a, &b)
+    map{ |e| e.send(op, *a, &b) }
+  end
+
+  ## TODO: When no longer needed to support 1.8.6 we can use:
+  ##
+  ## #
+  ## def fx
+  ##   Functor.new do |op, *a, &b|
+  ##     map{ |e| e.send(op, *a, &b) }
+  ##   end
+  ## end
 
 end
 

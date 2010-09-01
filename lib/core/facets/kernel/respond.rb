@@ -28,9 +28,11 @@ module Kernel
       return nil if not respond_to?(sym)
       __send__(sym, *args, &blk)
     else
-      Functor.new do |op, *a, &b|
-        respond(op, *a, &b)
-      end
+      ## TODO: use after 1.8.6 not supported anymore
+      ##Functor.new do |op, *a, &b|
+      ##  respond(op, *a, &b)
+      ##end
+      Functor.new(&method(:respond).to_proc)
     end
   end
 

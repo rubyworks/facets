@@ -11,7 +11,7 @@ require 'facets/kernel/maybe'
 # The most common example is Array#shuffle, which simply randmomizes the
 # order of an array's elements.
 #
-#   [1,2,3].shuffle  #=> [2,3,1]
+#   [1,2,3].shuffle  #~> [2,3,1]
 #
 # The other methods do similar things for their respective classes.
 #
@@ -24,6 +24,10 @@ require 'facets/kernel/maybe'
 # * Christian Neukirchen
 # * Thomas Sawyer
 #
+# NOTE: Inline QED tests are almost pointless here b/c... yea, it's random.
+# So indtead of the usual `#=>` we use `#~>` which means approx. equal and
+# prevens QED from making a hard assertion.
+
 class Random
 
   class << self
@@ -33,22 +37,32 @@ class Random
     public :number
   end
 
-  #def self.number(*args)
-  #  ::Kernel.rand(*args)
-  #end
+  ##def self.number(*args)
+  ##  ::Kernel.rand(*args)
+  ##end
+
+  # Module method to generate a random letter.
+  #
+  #   Random.letter  #~> "q"
+  #   Random.letter  #~> "r"
+  #   Random.letter  #~> "a"
+  #
+  def self.letter
+    (Random.number(26) + (Random.number(2) == 0 ? 65 : 97) ).chr
+  end
 
   #
   module RangeExtensions
     # Return a random element from the range.
     #
-    #   (1..4).at_rand           #=> 2
-    #   (1..4).at_rand           #=> 4
+    #   (1..4).at_rand           #~> 2
+    #   (1..4).at_rand           #~> 4
     #
-    #   (1.5..2.5).at_rand       #=> 2.06309842754533
-    #   (1.5..2.5).at_rand       #=> 1.74976944931541
+    #   (1.5..2.5).at_rand       #~> 2.06309842754533
+    #   (1.5..2.5).at_rand       #~> 1.74976944931541
     #
-    #   ('a'..'z').at_rand       #=> 'q'
-    #   ('a'..'z').at_rand       #=> 'f'
+    #   ('a'..'z').at_rand       #~> 'q'
+    #   ('a'..'z').at_rand       #~> 'f'
     #
     # CREDIT: Lavir the Whiolet, Thomas Sawyer
     def at_rand
@@ -108,8 +122,8 @@ class Random
   module ArrayExtensions
     # Return a random element from the array.
     #
-    #   [1, 2, 3, 4].at_rand           #=> 2
-    #   [1, 2, 3, 4].at_rand           #=> 4
+    #   [1, 2, 3, 4].at_rand           #~> 2
+    #   [1, 2, 3, 4].at_rand           #~> 4
     #
     def at_rand
       at(Random.number(size))
@@ -119,8 +133,8 @@ class Random
     # random element from the array.
     #
     #   a = [1,2,3,4]
-    #   a.at_rand!       #=> 2
-    #   a                #=> [1,3,4]
+    #   a.at_rand!       #~> 2
+    #   a                #~> [1,3,4]
     #
     def at_rand!
       return delete_at( Random.number( size ) )
@@ -174,10 +188,10 @@ class Random
     # _number_ given is greater than the size of the array,
     # then all values are returned.
     #
-    #   [1, 2, 3, 4].rand_subset(1)        #=> [2]
-    #   [1, 2, 3, 4].rand_subset(4)        #=> [2, 1, 3, 4]
-    #   [1, 2, 3, 4].rand_subset           #=> [1, 3, 4]
-    #   [1, 2, 3, 4].rand_subset           #=> [2, 3]
+    #   [1, 2, 3, 4].rand_subset(1)        #~> [2]
+    #   [1, 2, 3, 4].rand_subset(4)        #~> [2, 1, 3, 4]
+    #   [1, 2, 3, 4].rand_subset           #~> [1, 3, 4]
+    #   [1, 2, 3, 4].rand_subset           #~> [2, 3]
     #
     def rand_subset( number=nil, exclusive=true )
       number = Random.number(size) unless number
@@ -190,7 +204,7 @@ class Random
 
     # Randomize the order of an array.
     #
-    #   [1,2,3,4].shuffle  #=> [2,4,1,3]
+    #   [1,2,3,4].shuffle  #~> [2,4,1,3]
     #
     def shuffle
       dup.shuffle!
@@ -203,7 +217,7 @@ class Random
     #   a = [1,2,3,4]
     #   a.shuffle!
     #
-    #   a  #=> [2,4,1,3]
+    #   a  #~> [2,4,1,3]
     #
     # CREDIT Niel Spring
     def shuffle!
@@ -224,7 +238,7 @@ class Random
   module HashExtensions
     # Returns a random key.
     #
-    #   {:one => 1, :two => 2, :three => 3}.pick_key  #=> :three
+    #   {:one => 1, :two => 2, :three => 3}.pick_key  #~> :three
     #
     def rand_key
       keys.at(Random.number(keys.size))
@@ -233,8 +247,8 @@ class Random
     # Delete a random key-value pair, returning the key.
     #
     #   a = {:one => 1, :two => 2, :three => 3}
-    #   a.pick_key!  #=> :two
-    #   a            #=> {:one => 1, :three => 3}
+    #   a.rand_key!  #~> :two
+    #   a            #~> {:one => 1, :three => 3}
     #
     def rand_key!
       k,v = rand_pair
@@ -246,7 +260,7 @@ class Random
 
     # Returns a random key-value pair.
     #
-    #   {:one => 1, :two => 2, :three => 3}.pick  #=> [:one, 1]
+    #   {:one => 1, :two => 2, :three => 3}.pick  #~> [:one, 1]
     #
     def rand_pair
       k = rand_key
@@ -256,8 +270,8 @@ class Random
     # Deletes a random key-value pair and returns that pair.
     #
     #   a = {:one => 1, :two => 2, :three => 3}
-    #   a.rand_pair!  #=> [:two, 2]
-    #   a             #=> {:one => 1, :three => 3}
+    #   a.rand_pair!  #~> [:two, 2]
+    #   a             #~> {:one => 1, :three => 3}
     #
     def rand_pair!
       k,v = rand_pair
@@ -269,8 +283,8 @@ class Random
 
     # Returns a random hash value.
     #
-    #   {:one => 1, :two => 2, :three => 3}.rand_value  #=> 2
-    #   {:one => 1, :two => 2, :three => 3}.rand_value  #=> 1
+    #   {:one => 1, :two => 2, :three => 3}.rand_value  #~> 2
+    #   {:one => 1, :two => 2, :three => 3}.rand_value  #~> 1
     #
     def rand_value
       fetch(rand_key)
@@ -279,8 +293,8 @@ class Random
     # Deletes a random key-value pair and returns the value.
     #
     #   a = {:one => 1, :two => 2, :three => 3}
-    #   a.at_rand!  #=> 2
-    #   a           #=> {:one => 1, :three => 3}
+    #   a.at_rand!  #~> 2
+    #   a           #~> {:one => 1, :three => 3}
     #
     def rand_value!
       k,v = rand_pair
@@ -297,7 +311,7 @@ class Random
     # in new random order.
     #
     #   h = {:a=>1, :b=>2, :c=>3}
-    #   h.shuffle_hash  #=> {:b=>2, :c=>1, :a>3}
+    #   h.shuffle  #~> {:b=>2, :c=>1, :a>3}
     #
     def shuffle
       ::Hash.zipnew( keys.sort_by{Random.number}, values.sort_by{Random.number} )
@@ -307,8 +321,8 @@ class Random
     # a new random order.
     #
     #   h = {:a => 1, :b => 2, :c => 3}
-    #   h.shuffle_hash!
-    #   h  #=> {:b=>2, :c=>1, :a=>3}
+    #   h.shuffle!
+    #   h  #~> {:b=>2, :c=>1, :a=>3}
     #
     def shuffle!
       self.replace(shuffle)
@@ -330,6 +344,8 @@ class Random
       # password initialization. Takes a max legnth of characters
       # (default 8) and an optional valid char Regexp (default /\w\d/).
       #
+      #   String.random    #~> 'dd4qed4r'
+      #
       # CREDIT George Moschovitis
       #--
       # TODO: This is not very efficient. Better way?
@@ -343,22 +359,12 @@ class Random
         end
         return string
       end
-
-      # Module method to generate a random letter.
-      #
-      #   String::Random.rand_letter  #=> "q"
-      #   String::Random.rand_letter  #=> "r"
-      #   String::Random.rand_letter  #=> "a"
-      #
-      def rand_letter
-        (Random.number(26) + (Random.number(2) == 0 ? 65 : 97) ).chr
-      end
     end
 
     # Return a random separation of the string.
     # Default separation is by charaacter.
     #
-    #   "Ruby rules".at_rand(' ')  #=> ["Ruby"]
+    #   "Ruby rules".at_rand(' ')  #~> ["Ruby"]
     #
     def at_rand( separator=// )
       #separator = self.class.patterns( separator )
@@ -369,8 +375,8 @@ class Random
     # from the string. Default separation is by character.
     #
     #   s = "Ruby rules"
-    #   s = at_rand!(' ')  #=> "Ruby"
-    #   s                  #=> "rules"
+    #   s.at_rand!(' ')    #~> "Ruby"
+    #   s                  #~> "rules"
     #
     def at_rand!( separator=// )
       #separator = self.class.patterns( separator )
@@ -384,7 +390,7 @@ class Random
 
     # Return a random byte of _self_.
     #
-    #   "Ruby rules".rand_byte  #=> 121
+    #   "Ruby rules".rand_byte  #~> 121
     #
     def rand_byte
       self[Random.number(size)]
@@ -393,8 +399,8 @@ class Random
     # Destructive rand_byte. Delete a random byte of _self_ and return it.
     #
     #   s = "Ruby rules"
-    #   s.rand_byte!      #=> 121
-    #   s                 #=> "Rub rules"
+    #   s.rand_byte!      #~> 121
+    #   s                 #~> "Rub rules"
     #
     def rand_byte!
       i = Random.number(size)
@@ -405,7 +411,7 @@ class Random
 
     # Return a random string index.
     #
-    #   "Ruby rules".rand_index  #=> 3
+    #   "Ruby rules".rand_index  #~> 3
     #
     def rand_index
       Random.number(size)
@@ -414,7 +420,7 @@ class Random
     # Return the string with seperated sections arranged
     # in a random order. The default seperation is by character.
     #
-    #   "Ruby rules".shuffle  #=> "e lybRsuur"
+    #   "Ruby rules".shuffle  #~> "e lybRsuur"
     #
     def shuffle(separator=//)
       split(separator).shuffle.join('')

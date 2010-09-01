@@ -20,7 +20,7 @@ class Dir
       list << filename
       block.call(filename) if block
       if FileTest.directory?(filename) and not FileTest.symlink?(filename)
-        list.concat( Dir.recurse(filename, &block) )
+        list.concat(Dir.recurse(filename, &block))
       end
     end
     list

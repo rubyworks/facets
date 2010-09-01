@@ -9,29 +9,39 @@ module Kernel
   #     def q=(q); @q=q; end
   #   end
   #
-  #   we = WritersExample.new
+  #   w = WritersExample.new
   #
-  #   we.writers  #=> [:x=, :y=]
+  #   syms = w.writers      # [:x=, :y=]
+  #
+  #   syms.include?(:x=)    #=> true
+  #   syms.include?(:y=)    #=> true
   #
   # If the +chomp+ option is true, then the trailing '=' will be removed.
   #
-  #   we.writers(:chomp=>true)  #=> [:x, :y]
+  #   syms = w.writers(:chomp=>true)
+  #
+  #   syms.include?(:x)     #=> true
+  #   syms.include?(:y)     #=> true
   #
   # By default #writers only includes public methods. To see private or
   # protected methods use the +:access+ option.
   #
-  #   we.writers(:access=>:private)  #=> [:q=]
+  #   w.writers(:access=>:private)  #=> [:q=]
   #
   # Or multiple access options,
   #
-  #   we.writers(:access=>[:public,:private])  #=> [:q=,:x=,:y=]
+  #   syms = w.writers(:access=>[:public,:private])    # [:q=,:x=,:y=]
+  #
+  #   syms.include?(:q=)    #=> true
+  #   syms.include?(:x=)    #=> true
+  #   syms.include?(:y=)    #=> true
   #
   # You can simply supply `:all` to get all method regardless accessibility.
   #
   # Also, by default this method excludes all writers defined in Object 
   # or Kernel. To include these set +ancestors+ to Object or Kernel.
   #
-  #   we.writers(Object)
+  #   w.writers(Object)
   #
   # TODO: Create Module#instance_writers.
 

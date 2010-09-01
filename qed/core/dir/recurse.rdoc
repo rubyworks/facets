@@ -1,6 +1,6 @@
 == Dir#recurse
 
-Given a directory structure containing ...
+Given a directory 'tmp/recurse' containing ...
 
   A.txt
   A/B.txt
@@ -11,20 +11,31 @@ list of all the entries.
 
   require 'facets/dir/recurse'
 
-  Dir.chdir temporary_directory do
-    x = %w{A A.txt A/B A/B.txt A/B/C.txt}.sort
-    r = Dir.recurse.sort
-    r.assert == x
-  end
+  x = %w{
+    tmp/recurse/A
+    tmp/recurse/A.txt
+    tmp/recurse/A/B
+    tmp/recurse/A/B.txt
+    tmp/recurse/A/B/C.txt
+  }.sort
+
+  r = Dir.recurse('tmp/recurse').sort
+
+  r.assert == x
 
 == Dir#ls_r
 
 Dir#ls_r is an alias for #recurse which can also be used to gather
 a complete recursive list of all the entries.
 
-  Dir.chdir temporary_directory do
-    x = %w{A A.txt A/B A/B.txt A/B/C.txt}.sort
-    r = Dir.ls_r.sort
-    r.assert == x
-  end
+  x = %w{
+    tmp/recurse/A
+    tmp/recurse/A.txt
+    tmp/recurse/A/B
+    tmp/recurse/A/B.txt
+    tmp/recurse/A/B/C.txt
+  }.sort
 
+  r = Dir.ls_r('tmp/recurse').sort
+
+  r.assert == x

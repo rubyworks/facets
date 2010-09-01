@@ -45,12 +45,12 @@ unless defined? BasicObject  # in case it already exists!
   # hook in the Object and Kernel classes that will hide any defined
   module Kernel #:nodoc:
     class << self
-      alias_method :blank_slate_method_added, :method_added
+      alias_method :facets_basic_object_method_added, :method_added
 
       # Detect method additions to Kernel and remove them in the
       # BlankSlate class.
       def method_added(name)
-        blank_slate_method_added(name)
+        facets_basic_object_method_added(name)
         return if self != Kernel
         BasicObject.hide(name)
       end
@@ -59,12 +59,12 @@ unless defined? BasicObject  # in case it already exists!
 
   class Object #:nodoc:
     class << self
-      alias_method :blank_slate_method_added, :method_added
+      alias_method :facets_basic_object_method_added, :method_added
 
       # Detect method additions to Object and remove them in the
       # BlankSlate class.
       def method_added(name)
-        blank_slate_method_added(name)
+        facets_basic_object_method_added(name)
         return if self != Object
         BasicObject.hide(name)
       end

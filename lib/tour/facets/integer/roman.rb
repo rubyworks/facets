@@ -1,7 +1,7 @@
 class Integer
 
   #
-  ROMAN_MAX = 3999
+  ROMAN_MAX = 3999 unless const_defined?(:ROMAN_MAX)
 
   #
   ROMAN_VALUES = [
@@ -18,7 +18,7 @@ class Integer
     ["V",    5],
     ["IV",   4],
     ["I",    1]
-  ]
+  ] unless const_defined?(:ROMAN_VALUES)
 
   # Converts this integer to a roman numeral.
   def roman
@@ -37,10 +37,11 @@ end
 class String
 
   # Taken from O'Reilly's Perl Cookbook 6.23. Regular Expression Grabbag.
-  ROMAN = /^M*(D?C{0,3}|C[DM])(L?X{0,3}|X[LC])(V?I{0,3}|I[VX])$/i
+  ROMAN = /^M*(D?C{0,3}|C[DM])(L?X{0,3}|X[LC])(V?I{0,3}|I[VX])$/i unless const_defined?(:ROMAN)
 
-  #
-  ROMAN_VALUES = Integer::ROMAN_VALUES.inject({}){ |h,(r,a)| h[r] = a; h }
+  ROMAN_VALUES = Integer::ROMAN_VALUES.inject({}) do |h,(r,a)|
+    h[r] = a; h
+  end unless const_defined?(:ROMAN_VALUES)
 
   # Considers string a Roman numeral numeral,
   # and converts it to the corresponding integer.

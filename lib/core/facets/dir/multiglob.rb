@@ -19,7 +19,7 @@ class Dir
   #
   # For example
   #
-  #   Dir.multiglob( 'tmp/*', :recurse => true )
+  #   Dir.multiglob('tmp/*', :recurse => true)
   #
   # would have the same result as
   #
@@ -29,7 +29,7 @@ class Dir
     options  = (Hash === patterns.last ? patterns.pop : {})
 
     if options.delete(:recurse)
-      #patterns += patterns.collect{ |f| File.join(f, '**', '**') }
+      ##patterns += patterns.collect{ |f| File.join(f, '**', '**') }
       multiglob_r(*patterns)
     end
 
@@ -53,26 +53,26 @@ class Dir
 
   # The same as +multiglob+, but recusively includes directories.
   #
-  #   Dir.multiglob_r( 'tmp' )
+  #   Dir.multiglob_r('tmp')
   #
   # is equivalent to
   #
-  #   Dir.multiglob( 'tmp', :recurse=>true )
+  #   Dir.multiglob('tmp', :recurse=>true)
   #
   # The effect of which is
   #
-  #   Dir.multiglob( 'tmp', 'tmp/**/**' )
+  #   Dir.multiglob('tmp', 'tmp/**/**')
   #
   def self.multiglob_r(*patterns)
-    options = (Hash === patterns.last ? patterns.pop : {})
+    options = Hash === patterns.last ? patterns.pop : {}
     matches = multiglob(*patterns)
     directories = matches.select{ |m| File.directory?(m) }
-    matches += directories.collect{ |d| multiglob_r(File.join(d, '**'), options) }.flatten
+    matches += directories.map{ |d| multiglob_r(File.join(d, '**'), options) }.flatten
     matches.uniq
-    #options = (Hash === patterns.last ? patterns.pop : {})
-    #options[:recurse] = true
-    #patterns << options
-    #multiglob(*patterns)
+    ##options = (Hash === patterns.last ? patterns.pop : {})
+    ##options[:recurse] = true
+    ##patterns << options
+    ##multiglob(*patterns)
   end
 
 end

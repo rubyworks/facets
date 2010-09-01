@@ -6,4 +6,3 @@ require 'facets/fileutils/slice'    # includes head and tail
 require 'facets/fileutils/wc'
 require 'facets/fileutils/whereis'
 require 'facets/fileutils/which'
-require 'facets/fileutils/atomic_write'

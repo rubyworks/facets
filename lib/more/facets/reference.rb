@@ -29,8 +29,6 @@
 # ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
 # FOR A PARTICULAR PURPOSE.
 
-require 'facets/basicobject'
-
 # = Reference
 #
 # Reference provides a way to access object indirectly.
@@ -43,10 +41,11 @@ require 'facets/basicobject'
 #   b.become(c)
 #   b.to_s    #=> "10"
 #
-class Reference < BasicObject
+# TODO: Use BasicObject for Ruby 1.9.
+
+class Reference #< BasicObject
 
   # Privatize most Kernel methods.
-
   private *instance_methods
 
   def self.new(obj)
