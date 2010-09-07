@@ -13,9 +13,7 @@ We will use the following code to demonstrate their use.
 
 == Binding#caller
 
-  Exception.refute.raised? do
-    @bind.caller
-  end
+  @bind.caller
 
 == Binding#callstack
 

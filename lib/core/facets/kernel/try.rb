@@ -18,7 +18,7 @@ module Kernel
   #
   # or:
   #
-  #   @example? @example.name : nil
+  #   @example ? @example.name : nil
   #
   # But with try
   #
@@ -26,9 +26,9 @@ module Kernel
   #
   # or
   #
-  #   @example.try.name  #=> "bob"
+  #   @example.try.name    #=> "bob"
   #
-  # It also accepts arguments and/or a block, for the method it is trying:
+  # It also accepts arguments and a block, for the method it is trying:
   #
   #   @people.try(:collect){ |p| p.name }
   #
