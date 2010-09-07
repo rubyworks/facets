@@ -1,5 +1,6 @@
-class Object  # module Kernel ?
-  # Get or set state of object.
+class Object
+  # Get or set state of object. You can think of #object_state as an in-code
+  # form of marshalling.
   #
   #   class StateExample
   #     attr_reader :a, :b
@@ -12,13 +13,18 @@ class Object  # module Kernel ?
   #   obj.a  #=> 1
   #   obj.b  #=> 2
   #
+  #   obj.object_state  #=> {:a=>1, :b=>2}
+  #
   #   obj.object_state(:a=>3, :b=>4)
   #   obj.a  #=> 3
   #   obj.b  #=> 4
   #
-  # TODO: Would #instance_state be a more appropriate name?
-  #
-  # TODO: Consider how this relates to #instance.
+  # For most object's this is essentially the same as <code>instance.to_h</code>.
+  # But for data structures like Array and Hash it returns a snapshot of their
+  # contents, not the state of their instance variables.
+  #--
+  # TODO: Should this be in module Kernel ?
+  #++
   def object_state(data=nil)
     if data
       instance_variables.each do |iv|
@@ -34,35 +40,31 @@ class Object  # module Kernel ?
       data
     end
   end
-
-  # Replace state of object.
-  def replace(data)
-    instance_variables.each do |iv|
-      name = iv.to_s.sub(/^[@]/, '').to_sym
-      instance_variable_set(iv, data[name])
-    end
-  end
 end
 
 class Array
+  #
   def object_state(data=nil)
     data ? replace(data) : dup
   end
 end
 
 class String
+  #
   def object_state(data=nil)
     data ? replace(data) : dup
   end
 end
 
 class Hash
+  #
   def object_state(data=nil)
     data ? replace(data) : dup
   end
 end
 
 class Struct
+  #
   def object_state(data=nil)
     if data
       data.each_pair {|k,v| send(k.to_s + "=", v)}
@@ -72,9 +74,4 @@ class Struct
       data
     end
   end
-
-  def replace(data)
-    data.each_pair {|k,v| send(k.to_s + "=", v)}
-  end
 end
-
