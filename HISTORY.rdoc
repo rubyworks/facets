@@ -48,10 +48,11 @@ Changes:
   * Add Module#anonymous?
   * Add Module#copy_inheritor
   * Add Indexable#from and Indexable#upto
-  * Add Array#from and Array#upto
+  * Add Array#from and Array#thru
   * Add NA class via na.rb
   * Add Memoizable in memoizable.rb for a more robust memoization system
   * Add Module#safe_memo in thread.rb for thread safe memoization
+  * Add Kernel#sandbox in thread.rb for threaded $SAFE=4 evaluation
 
 * Deprecations
 
@@ -63,9 +64,8 @@ Changes:
   * Deprecate Kernel#populate and #set_from (use #assign and #assign_from)
   * Deprecate Kernel#non_nil? since #not_nil? is enough
   * Deprecate #__HERE__ b/c implementation was unreliable
-  * Deprecate Array#upto and Indexable#upto, use #thru instead
-  * Deprecate Time#since, use #ago instead
-  * Deprecate Time#advance, use #in instead  TODO
+  * Deprecate Time#since, use #less instead
+  * Deprecate Time#advance, use #shift instead
   * Deprecate Kernel#super_as (no good way to get callers method name)
   * Deprecate Integer#clear_bit, use #bit_clear instead
   * Deprecate Kernel#resc, use String#to_re or #to_rx instead
@@ -94,6 +94,8 @@ Changes:
   * Rename String#chars             to String#characters
   * Rename String#outdent           to String#unindent
   * Rename Time#round               to Time#round_to
+  * Rename Time#hence               to Time#shift (but keep aliases)
+  * Rename Hash#zipnew              to Hash#zip
 
 * Moved Libraries
 
@@ -125,15 +127,15 @@ Changes:
 * Improved Features
 
   * New lib/tour division of libraries
-  * Module#class_extend synamically creates append_features method
+  * Module#class_extend dynamically creates append_features method
   * Kernel#require_all is only for relative requires
   * __DIR__ can take subdirectory arguments
   * Hash#join has more sensible default separator (' ')
-  * A few OpEsc escapes have been renamed
+  * Some OpEsc escapes have been renamed
   * Kernel#assign does not accept a block
-  * Kernel#try is like ActiveSupport version
+  * Kernel#try is now like ActiveSupport's
   * Improved #respond (which is like old #try)
-  * Remove all `if defined?(ActiveSupport)`
+  * Remove all `if defined?(ActiveSupport)` conditions
   * Use #random_range to support specialized Range#at_rand functionality
   * Use Comparable.[] instead of Comparable()
   * Array#rotate rotates in opposite direction than before (b/c or Ruby 1.9)
