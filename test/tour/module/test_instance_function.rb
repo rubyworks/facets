@@ -2,7 +2,7 @@ covers 'facets/module/instance_function'
 
 tests Module do
 
-  instance "using instance_function" do
+  setup "using instance_function" do
     Module.new do
       instance_function
       def self.jumble(obj, arg)

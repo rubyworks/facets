@@ -2,7 +2,7 @@ covers 'facets/time/shift'
 
 tests Time do
 
-  instance "January 1st 2010 at Noon" do
+  setup "January 1st 2010 at Noon" do
     Time.utc(2010,01,01, 12,00,00)
   end
 
@@ -40,7 +40,7 @@ tests Time do
   end
 
 
-  unit :shift => "change_years" do
+  unit :shift => "change years" do
     e = Time.utc(2008,11, 1, 18,30,57)
     r = Time.utc(2007,11, 1, 18,30,57).shift(1, :years)
     r.assert == e                 

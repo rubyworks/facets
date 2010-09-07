@@ -2,7 +2,7 @@ covers 'facets/hash/argumentize'
 
 testcase Hash do
 
-  instance do
+  setup do
     { :list => [1,2], :base => "HI" }
   end
 

@@ -3,7 +3,7 @@ covers 'facets/kernel/__set__'
 
 tests Kernel do
 
-  instance "an object with an instance variable" do
+  setup "an object with an instance variable" do
     c = Class.new do
       attr :a
       def initialize

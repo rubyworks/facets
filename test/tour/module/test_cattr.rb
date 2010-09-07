@@ -2,7 +2,7 @@ covers 'facets/module/cattr'
 
 tests Class do
 
-  instance do
+  setup do
     Class.new do
       def initialize
         @@a = 10

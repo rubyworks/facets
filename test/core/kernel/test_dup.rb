@@ -1,7 +1,7 @@
 covers 'facets/kernel/dup'
 
 tests Object do
-  instance "ordinary object" do
+  setup "ordinary object" do
     Object.new
   end
 

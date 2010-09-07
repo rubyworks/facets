@@ -2,7 +2,7 @@ covers 'facets/time/set'
 
 tests Time do
 
-  instance do
+  setup do
     Time.utc(2010,10,01,12,15,0)
   end
 

@@ -37,7 +37,7 @@ tests Class do
     expect(NoMethodError){ c.x }
   end
 
-  instance "using #include_as" do
+  setup "using #include_as" do
     m = Module.new do
       def x; "x"; end
       def y; @y; end

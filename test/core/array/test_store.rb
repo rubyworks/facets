@@ -2,7 +2,7 @@ covers 'facets/array/store'
 
 testcase Array do
 
-  instance do
+  setup do
      [1,2,3,4,5]
   end
 

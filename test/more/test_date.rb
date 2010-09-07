@@ -2,7 +2,7 @@ covers 'facets/date'
 
 tests Date do
 
-  instance "Date 2005-05-20" do
+  setup "Date 2005-05-20" do
     Date.civil(2005, 04, 20)
   end
 

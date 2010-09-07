@@ -2,7 +2,7 @@ covers 'facets/array/conjoin'
 
 testcase Array do
 
-  instance "any array" do
+  setup "any array" do
     [1,2,3,4]
   end
 

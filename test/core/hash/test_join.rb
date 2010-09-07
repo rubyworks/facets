@@ -2,7 +2,7 @@ covers 'facets/hash/join'
 
 tests Hash do
 
-  instance do
+  setup do
     {:a=>1, :b=>2}
   end
 

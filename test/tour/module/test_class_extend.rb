@@ -2,7 +2,7 @@ covers 'facets/module/class_extend'
 
 tests Module do
 
-  instance "module using class_extend" do
+  setup "module using class_extend" do
     Module.new do
       def i ; end
       class_extend do

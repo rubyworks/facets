@@ -2,7 +2,7 @@ covers 'facets/kernel/qua_class'
 
 tests Kernel do
 
-  instance "any object" do
+  setup "any object" do
     Object.new
   end
 

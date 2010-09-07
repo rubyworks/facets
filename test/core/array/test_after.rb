@@ -2,7 +2,7 @@ covers 'facets/array/after'
 
 testcase Array do
 
-  instance do
+  setup do
     ['a', 'b', 'c']
   end
 
