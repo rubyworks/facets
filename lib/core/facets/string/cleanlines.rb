@@ -6,7 +6,7 @@ class String
   # line of the string, stripped of whitespace on
   # either side.
   #
-  #   "this\nthat\nother\n".cleanlines  #=> ['this', 'that', 'other']
+  #   "this\nthat\nother\n".cleanlines.to_a  #=> ['this', 'that', 'other']
   #
   def cleanlines(&block)
     if block

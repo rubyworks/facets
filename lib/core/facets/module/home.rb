@@ -13,7 +13,7 @@ class Module
   #
   # The home of a top-level module/class is Object.
   #
-  #   HomeExample.enclosure   #=> Object
+  #   HomeExample.home   #=> Object
   #
   # This method is called *home* because techinally a module or class
   # is just a constant reference, and as such can reside with multiple

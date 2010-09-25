@@ -23,7 +23,7 @@ class Time
     time_hash = Hash===time_units.last ? time_units.pop : {}
     time_units = time_units.flatten
     time_units << :seconds if time_units.size % 2 == 1
-    time_hash.each{ |units, number| time_units << number; time_unit << units }
+    time_hash.each{ |units, number| time_units << number; time_units << units }
 
     time = self
     time_units.each_slice(2) do |number, units|
@@ -80,7 +80,7 @@ class Time
 
     time_units << :seconds if time_units.size % 2 == 1
 
-    time_hash.each{ |units, number| time_units << number; time_unit << units }
+    time_hash.each{ |units, number| time_units << number; time_units << units }
 
     neg_times = []
     time_units.each_slice(2){ |number, units| neg_times << -number; neg_times << units }
