@@ -579,7 +579,7 @@ lib/tour/facets/module/instance_function.rb
 lib/tour/facets/module/memoize.rb
 lib/tour/facets/module/method_space.rb
 lib/tour/facets/module/module_load.rb
-lib/tour/facets/module/peapod.rb
+lib/tour/facets/module/preextend.rb
 lib/tour/facets/module/prepend.rb
 lib/tour/facets/regexp/op_or.rb
 lib/tour/facets/string/crypt.rb
