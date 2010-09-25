@@ -53,6 +53,8 @@ Changes:
   * Add Memoizable in memoizable.rb for a more robust memoization system
   * Add Module#safe_memo in thread.rb for thread safe memoization
   * Add Kernel#sandbox in thread.rb for threaded $SAFE=4 evaluation
+  * Add Hash#subset
+  * Add numerous Math extensions
 
 * Deprecations
 
