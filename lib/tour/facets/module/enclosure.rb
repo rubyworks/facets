@@ -58,5 +58,19 @@ class Module
     n
   end
 
-end
+  # Eclosure name.
+  #
+  #   module ::EncExample
+  #     module M
+  #       module N
+  #       end
+  #     end
+  #   end
+  #
+  #   EncExample::M::N.encname  #=> "EncExample::M"
+  #
+  def encname
+    /::[^:]+\Z/ =~ self.name ? $` : nil
+  end
 
+end
