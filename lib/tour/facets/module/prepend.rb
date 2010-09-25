@@ -1,25 +1,51 @@
+module Prependable
+
+  def self.included(base)
+    base.extend Self
+    base.instance_methods(false).each do |meth|
+      base.method_added(meth)
+    end
+  end
+
+  module Self
+    def prepend_module
+      @_prepend_module ||= Module.new
+    end
+
+    def method_added(meth)
+      return if meth.to_s[-2,2] == ':-'
+      alias_method "#{meth}:-", meth
+      remove_method(meth)
+      prepend_module.module_eval %{
+        def #{meth}(*a,&b); __send__("#{meth}:-",*a,&b); end
+      }
+      include prepend_module
+    end
+  end
+
+end
+
 class Module
 
-  # Prepend an +aspect+ module to a module.
-  # This only works at the module level.
+  # Prepend module.
   #
-  #   module ::PreX
-  #     def x; "x"; end
+  #   class X
+  #     def a; "Xa"; end
   #   end
   #
-  #   module ::PreU
-  #     def x; '{' + super + '}'; end
+  #   module M
+  #     def a; "M" + super ; end
   #   end
   #
-  #   PreX.prepend(PreU)
+  #   class X
+  #     prepend M
+  #   end
   #
-  #   PreX.x  # => "{x}"
+  #   X.new.a  #=> MXa
   #
-  # CREDIT Trans
-
-  def prepend(aspect)
-    aspect.__send__(:include, self)
-    extend aspect
+  def prepend(mod)
+    include Prependable
+    include mod
   end
 
 end
