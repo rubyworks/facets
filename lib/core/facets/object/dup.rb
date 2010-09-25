@@ -1,6 +1,4 @@
-require 'facets/kernel/try_dup'
-
-class Object  # module Kernel ?
+class Object
   # Override this in a child class if it cannot be dup'ed.
   #
   #   obj1 = Object.new

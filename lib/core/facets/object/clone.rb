@@ -1,1 +1,1 @@
-require 'facets/kernel/dup'
+require 'facets/object/dup'
