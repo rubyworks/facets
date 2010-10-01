@@ -54,6 +54,7 @@ Changes:
   * Add Module#safe_memo in thread.rb for thread safe memoization
   * Add Kernel#sandbox in thread.rb for threaded $SAFE=4 evaluation
   * Add Hash#subset
+  * Add Kernel#Y to tour library
   * Add numerous Math extensions
 
 * Deprecations
