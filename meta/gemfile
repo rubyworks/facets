@@ -1,6 +1,6 @@
 name: facets
-version: 2.9.0.pre.2
-date: 2010-09-01
+version: 2.9.0
+date: 2010-10-01
 path: [lib/core, lib/more, lib/tour]
 
 requires:
