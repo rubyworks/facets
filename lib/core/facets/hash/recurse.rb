@@ -12,7 +12,7 @@ class Hash
     h = inject({}) do |hash, (key, value)|
       case value
       when *types
-        hash[key] = value.recurse(&block)
+        hash[key] = value.recurse(*types, &block)
       else
         hash[key] = value
       end

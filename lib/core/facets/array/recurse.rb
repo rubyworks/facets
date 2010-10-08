@@ -12,7 +12,7 @@ class Array
     a = inject([]) do |array, value|
       case value
       when *types
-        array << value.recurse(&block)
+        array << value.recurse(*types, &block)
       else
         array << value
       end
