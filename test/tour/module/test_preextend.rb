@@ -1,22 +1,22 @@
-covers 'facets/module/prepend'
+covers 'facets/module/preextend'
 
 tests Module do
 
-  unit :prepend  do
+  unit :preextend => "module method" do
     m = Module.new do
       def q; "qm"; end
     end
 
     n = Module.new do
+      preextend m
       def q; "qn"; end
-      prepend m
     end
 
     x = Class.new do
       include n
     end
 
-    x.new.q.assert == "qm"
+    n.q.assert == "qm"
   end
 
 end

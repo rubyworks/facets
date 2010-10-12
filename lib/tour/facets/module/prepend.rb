@@ -43,6 +43,12 @@ class Module
   #
   #   X.new.a  #=> MXa
   #
+  # IMPORTANT! #prepend is not dynamic, rather it copies all methods
+  # when included on a class or module. For this reason one must be careful
+  # to invoke #prepend AFTER any method definitions that are to be effected.
+  # Ideally this would not be necessary, but it would require support in
+  # Ruby's C+ source to make it possible.
+
   def prepend(mod)
     include Prependable
     include mod
