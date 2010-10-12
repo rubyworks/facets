@@ -562,6 +562,7 @@ lib/tour/facets/kernel/eigenclass.rb
 lib/tour/facets/kernel/instance_exec.rb
 lib/tour/facets/kernel/memo.rb
 lib/tour/facets/kernel/trap_chain.rb
+lib/tour/facets/kernel/y.rb
 lib/tour/facets/method/memoize.rb
 lib/tour/facets/module/attr_class_accessor.rb
 lib/tour/facets/module/attr_inheritor.rb
@@ -585,7 +586,7 @@ lib/tour/facets/regexp/op_or.rb
 lib/tour/facets/string/crypt.rb
 lib/tour/facets/string/roman.rb
 meta/data.rb
-meta/gemfile
+meta/package
 meta/profile
 qed/applique/file_helpers.rb
 qed/core/array/combination.rdoc
