@@ -6,10 +6,10 @@ module Facets
     File.dirname(__FILE__)
   end
 
-  def self.gemfile
-    @gemfile ||= (
+  def self.package
+    @package ||= (
       require 'yaml'
-      YAML.load(File.new(__DIR__ + '/gemfile'))
+      YAML.load(File.new(__DIR__ + '/package'))
     )
   end
 
@@ -22,7 +22,7 @@ module Facets
 
   def self.const_missing(name)
     key = name.to_s.downcase
-    gemfile[key] || profile[key] || super(name)
+    package[key] || profile[key] || super(name)
   end
 
 end
