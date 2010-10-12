@@ -94,6 +94,14 @@
         <a href="./Object.html">Object</a>
       </li>
     
+      <li class="module">
+        <a href="./Prependable.html">Prependable</a>
+      </li>
+    
+      <li class="module">
+        <a href="./Prependable/Self.html">Prependable::Self</a>
+      </li>
+    
       <li class="class">
         <a href="./Array.html">Array</a>
       </li>
@@ -138,6 +146,18 @@
     </fieldset>
     </form>
     <ul>
+    
+      
+      <li class="singleton" style="clear: both;">
+        <span class="method-parent-aside">Prependable</span>
+        <a href="./Prependable.html#method-c-included">::included</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Kernel</span>
+        <a href="./Kernel.html#method-i-Y">#Y</a>
+      </li>
     
       
       <li class="method" style="clear: both;">
@@ -310,6 +330,12 @@
       
       <li class="method" style="clear: both;">
         <span class="method-parent-aside">Module</span>
+        <a href="./Module.html#method-i-encname">#encname</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module</span>
         <a href="./Module.html#method-i-include_as">#include_as</a>
       </li>
     
@@ -363,14 +389,20 @@
     
       
       <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module</span>
+        <a href="./Module.html#method-i-memoize">#memoize</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
         <span class="method-parent-aside">Method</span>
         <a href="./Method.html#method-i-memoize">#memoize</a>
       </li>
     
       
       <li class="method" style="clear: both;">
-        <span class="method-parent-aside">Module</span>
-        <a href="./Module.html#method-i-memoize">#memoize</a>
+        <span class="method-parent-aside">Prependable::Self</span>
+        <a href="./Prependable/Self.html#method-i-method_added">#method_added</a>
       </li>
     
       
@@ -406,7 +438,19 @@
       
       <li class="method" style="clear: both;">
         <span class="method-parent-aside">Module</span>
+        <a href="./Module.html#method-i-preextend">#preextend</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Module</span>
         <a href="./Module.html#method-i-prepend">#prepend</a>
+      </li>
+    
+      
+      <li class="method" style="clear: both;">
+        <span class="method-parent-aside">Prependable::Self</span>
+        <a href="./Prependable/Self.html#method-i-prepend_module">#prepend_module</a>
       </li>
     
       
@@ -501,6 +545,10 @@
   <div id="includes-section" class="section">
     <h3 class="section-header">Included Modules</h3>
     <ul class="link-list">
+    
+    
+      <li class="module"><a class="include" href="Prependable.html">Prependable</a></li>
+    
     
     
       <li class="module"><span class="include">Memoizable</span></li>
@@ -1586,6 +1634,49 @@ and moving outwards. The receiver is not contained within the result.
     </div>
 
   
+    <div id="encname-method" class="method-detail ">
+      <a name="method-i-encname"></a>
+
+      <div class="method-heading">
+      
+        <span class="method-name">encname</span><span
+          class="method-args">()</span>
+        <span class="method-click-advice">click to toggle source</span>
+      
+      </div>
+
+      <div class="method-description">
+        
+        <p>
+Eclosure name.
+</p>
+<pre>
+  module ::EncExample
+    module M
+      module N
+      end
+    end
+  end
+
+  EncExample::M::N.encname  #=&gt; &quot;EncExample::M&quot;</pre>
+        
+
+        
+        <div class="method-source-code"
+          id="encname-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/tour/facets/module/enclosure.rb, line 72</span>
+72:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">encname</span>
+73:     <span class="ruby-regexp re">/::[^:]+\Z/</span> <span class="ruby-operator">=~</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">?</span> <span class="ruby-node">$`</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">nil</span>
+74:   <span class="ruby-keyword kw">end</span></pre>
+        </div>
+        
+      </div>
+
+      
+    </div>
+
+  
     <div id="include-as-method" class="method-detail ">
       <a name="method-i-include_as"></a>
 
@@ -2195,12 +2286,12 @@ CREDIT: Trans
     </div>
 
   
-    <div id="prepend-method" class="method-detail ">
-      <a name="method-i-prepend"></a>
+    <div id="preextend-method" class="method-detail ">
+      <a name="method-i-preextend"></a>
 
       <div class="method-heading">
       
-        <span class="method-name">prepend</span><span
+        <span class="method-name">preextend</span><span
           class="method-args">(aspect)</span>
         <span class="method-click-advice">click to toggle source</span>
       
@@ -2221,7 +2312,7 @@ module level.
     def x; '{' + super + '}'; end
   end
 
-  PreX.prepend(PreU)
+  PreX.preextend(PreU)
 
   PreX.x  # =&gt; &quot;{x}&quot;
 </pre>
@@ -2232,13 +2323,71 @@ CREDIT Trans
 
         
         <div class="method-source-code"
-          id="prepend-source">
+          id="preextend-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/tour/facets/module/prepend.rb, line 20</span>
-20:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">prepend</span>(<span class="ruby-identifier">aspect</span>)
+    <span class="ruby-comment cmt"># File lib/tour/facets/module/preextend.rb, line 20</span>
+20:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">preextend</span>(<span class="ruby-identifier">aspect</span>)
 21:     <span class="ruby-identifier">aspect</span>.<span class="ruby-identifier">__send__</span>(<span class="ruby-value">:include</span>, <span class="ruby-keyword kw">self</span>)
 22:     <span class="ruby-identifier">extend</span> <span class="ruby-identifier">aspect</span>
 23:   <span class="ruby-keyword kw">end</span></pre>
+        </div>
+        
+      </div>
+
+      
+    </div>
+
+  
+    <div id="prepend-method" class="method-detail ">
+      <a name="method-i-prepend"></a>
+
+      <div class="method-heading">
+      
+        <span class="method-name">prepend</span><span
+          class="method-args">(mod)</span>
+        <span class="method-click-advice">click to toggle source</span>
+      
+      </div>
+
+      <div class="method-description">
+        
+        <p>
+Prepend module.
+</p>
+<pre>
+  class X
+    def a; &quot;Xa&quot;; end
+  end
+
+  module M
+    def a; &quot;M&quot; + super ; end
+  end
+
+  class X
+    prepend M
+  end
+
+  X.new.a  #=&gt; MXa
+</pre>
+<p>
+IMPORTANT! <a href="Module.html#method-i-prepend">prepend</a> is not
+dynamic, rather it copies all methods when included on a class or module.
+For this reason one must be careful to invoke <a
+href="Module.html#method-i-prepend">prepend</a> AFTER any method
+definitions that are to be effected. Ideally this would not be necessary,
+but it would require support in Ruby&#8217;s C+ source to make it possible.
+</p>
+        
+
+        
+        <div class="method-source-code"
+          id="prepend-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/tour/facets/module/prepend.rb, line 52</span>
+52:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">prepend</span>(<span class="ruby-identifier">mod</span>)
+53:     <span class="ruby-identifier">include</span> <span class="ruby-constant">Prependable</span>
+54:     <span class="ruby-identifier">include</span> <span class="ruby-identifier">mod</span>
+55:   <span class="ruby-keyword kw">end</span></pre>
         </div>
         
       </div>
@@ -2279,6 +2428,9 @@ CREDIT Trans
       
         <li class="file"><a href="./lib/tour/facets/module/class_extend_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
           class="thickbox" title="lib/tour/facets/module/class_extend.rb">lib/tour/facets/module/class_extend.rb</a></li>
+      
+        <li class="file"><a href="./lib/tour/facets/module/preextend_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+          class="thickbox" title="lib/tour/facets/module/preextend.rb">lib/tour/facets/module/preextend.rb</a></li>
       
         <li class="file"><a href="./lib/tour/facets/module/instance_function_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
           class="thickbox" title="lib/tour/facets/module/instance_function.rb">lib/tour/facets/module/instance_function.rb</a></li>
