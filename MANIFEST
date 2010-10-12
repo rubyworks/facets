@@ -1074,6 +1074,7 @@ test/tour/module/test_instance_function.rb
 test/tour/module/test_memoize.rb
 test/tour/module/test_method_space.rb
 test/tour/module/test_module_load.rb
+test/tour/module/test_preextend.rb
 test/tour/module/test_prepend.rb
 Rakefile
 HISTORY.rdoc
