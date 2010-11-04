@@ -1,4 +1,4 @@
-require 'facets/hash/zipnew'
+require 'facets/hash/zip'
 require 'facets/string/shatter'
 require 'facets/kernel/maybe'
 
@@ -314,7 +314,7 @@ class Random
     #   h.shuffle  #~> {:b=>2, :c=>1, :a>3}
     #
     def shuffle
-      ::Hash.zipnew( keys.sort_by{Random.number}, values.sort_by{Random.number} )
+      ::Hash.zip( keys.sort_by{Random.number}, values.sort_by{Random.number} )
     end
 
     # Destructive shuffle_hash. Arrange the values in
