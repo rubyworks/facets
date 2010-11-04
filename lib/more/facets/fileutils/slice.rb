@@ -2,6 +2,20 @@ require 'fileutils'
 
 module FileUtils
 
+  module_function
+
+  # In block form, yields lines +from+-+to+.  In non-block form, returns
+  # an array of lines +from+-+to+:
+  #
+  #   # Returns lines 8-12 of 'myfile'
+  #   FileUtils.body("myfile",8,12)
+  #
+  # CREDIT Shashank Date, via Daniel Berger.
+
+  def slice(filename,from,to) #:yield:
+    IO.readlines(filename)[from-1..to-1]
+  end
+
   # In block form, yields the first number of +lines+ of file +filename+.
   # In non-block form, it returns an array of the first number of +lines+:
   #
@@ -35,18 +49,6 @@ module FileUtils
   # And no tail -f.
   def tail(filename,lines) #:yield
     IO.readlines(filename).reverse[0..lines-1].reverse
-  end
-
-  # In block form, yields lines +from+-+to+.  In non-block form, returns
-  # an array of lines +from+-+to+:
-  #
-  #   # Returns lines 8-12 of 'myfile'
-  #   FileUtils.body("myfile",8,12)
-  #
-  # CREDIT Shashank Date, via Daniel Berger.
-
-  def slice(filename,from,to) #:yield:
-    IO.readlines(filename)[from-1..to-1]
   end
 
 end

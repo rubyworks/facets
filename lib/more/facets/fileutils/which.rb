@@ -9,6 +9,8 @@ module FileUtils
     Win32Exts = %w{.exe .com .bat .cmd}
   end
 
+  module_function
+
   # Looks for the first occurrence of _program_ within _path_.
   #
   # On the MS Windows platform, it looks for executables ending with .exe,
