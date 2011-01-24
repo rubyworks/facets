@@ -6,6 +6,7 @@ module Enumerable
   #   [1, 2, "a"].has?(String)  #=> true
   #   [1, 2, "a"].has?(3)       #=> false
   # 
+  # CREDIT: Lavir the Whiolet
   def has?(what)
     any? { |x| what === x }
   end

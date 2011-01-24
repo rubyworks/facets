@@ -25,6 +25,8 @@ module Shellwords
   # 1. Use platform condition?
   # 2. Use separate dos_xxx methods?
   # 3. Put in separate PowerShellwords module?
+  #
+  # CREDIT: Lavir the Whiolet
   def dos_escape(cmdline)
     '"' + cmdline.gsub(/\\(?=\\*\")/, "\\\\\\").gsub(/\"/, "\\\"").gsub(/\\$/, "\\\\\\").gsub("%", "%%") + '"'
   end
