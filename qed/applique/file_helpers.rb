@@ -1,4 +1,5 @@
 require 'fileutils'
+require 'pathname'
 
 def temporary_directory
   @temporary_directory ||= 'tmp'
@@ -20,5 +21,14 @@ When /Given a directory '(.*?)' containing/ do |dir, text|
     FileUtils.mkdir_p(path)
     File.open(file, 'w'){ |f| f << "SPINICH" }
   end
+end
+
+# Return project root directory by looking for +lib+ directory.
+def root_directory
+  @root_directory ||= (
+    Pathname.new(Dir.pwd).ascend do |root|
+      break root if root.join('lib').directory?
+    end
+  )
 end
 
