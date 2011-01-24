@@ -1,5 +1,34 @@
 = Facets Release History
 
+== 2.9.1 / 2011-01-30
+
+Primary this release fixes a couple of small issues. In addition a handful of
+additonal methods have been added.
+
+Changes:
+
+* New Features:
+
+  * Add FileTest#absolute? and #relative?
+  * Add FileTest#contains?
+  * Add FileTest#safe?
+	* Add FileUtils#amass
+  * Add FileUtils#outofdate
+  * Add FileUtils#stage
+  * Add Kernel#yes? and Kernel#no?
+  * Add Enumerable#has? (TOUR library)
+
+* Improved Features
+
+  * Better OS detection in Platform class and RBConfig module
+  * Moved CPU byte order methods from RBConfig to Platform class
+
+* Bug Fixes
+
+  * Module#redefine_method need not check pre-existence of method
+
+
+
 == 2.9.0 / 2010-09-01
 
 This release is fairly extensive as it was originally intended to be v3.0.
