@@ -1,5 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
@@ -14,9 +13,9 @@
   <meta name="DESCRIPTION"
         content="Ruby Facets is a large collection of libraries for the Ruby programming lanaguage."/>
 
-  <link rel="icon" href="../media/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="<%= root %>media/favicon.ico" type="image/x-icon" />
 
-  <link href="http://rubyworks.github.com/facets/atom.xml" rel="alternate" title="blog.facets.rubyforge.org" type="application/atom+xml" />
+  <link href="<%= site.url %>/atom.xml" rel="alternate" title="blog.facets.rubyforge.org" type="application/atom+xml" />
 
 <!--
   <link href="/assets/styles/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
@@ -27,8 +26,8 @@
       <link href="/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
   <![endif]-->
 
-  <link href="../assets/site.css" rel="stylesheet" type="text/css" />
-  <link href="../assets/syntax.css" rel="stylesheet" type="text/css" />
+  <link href="<%=root%>assets/site.css" rel="stylesheet" type="text/css" />
+  <link href="<%=root%>assets/syntax.css" rel="stylesheet" type="text/css" />
 
   <!-- <script src="/js/rdocs.js" type="text/javascript"></script> -->
 </head>
@@ -37,15 +36,15 @@
 
 <div id="forkme">
   <a href="http://github.com/rubyworks/facets">
-    <img src="../media/forkme.png" />
+    <img src="<%= root %>media/forkme.png" />
   </a>
 </div>
 
 <div id="container">
 
   <div id="header">
-    <a href="http://rubyworks.github.com/facets">
-      <img id="logo" src="../media/RubyFacets.png" align="middle" />
+    <a href="<%= site.url %>">
+      <img id="logo" src="<%=root%>media/RubyFacets.png" align="middle" />
     </a>
   </div>
 
@@ -55,100 +54,22 @@
 
   <div class="blurb">
     <div id="menu">
-      <a href="../index.html">Overview</a> &middot;
-      <a href="../news.html">News/Blog</a> &middot;
-      <a href="../learn.html">Documentation</a> &middot;
-      <a href="../source.html">Development</a>
+      <a href="<%= root %>index.html">Overview</a> &middot;
+      <a href="<%= root %>news.html">News/Blog</a> &middot;
+      <a href="<%= root %>learn.html">Documentation</a> &middot;
+      <a href="<%= root %>source.html">Development</a>
       <img style="width: 20px; height: 1px;" src="/media/clear.gif"/>
     </div>
 
     <div class="desc">
-      <h1></h1>
-      
+      <h1><%= blurb %></h1>
+      <%= detail %>
     </div>
   </div>
 
 
   <div class="page">
-    
-<div class="page">
-
-  <h2>Facets 2.8 Release</h2>
-
-  <p>Facets 2.8 effectively completes the MORE library clean-up which peaked
-with the previous 2.7 release. In so doing, five additional libraries
-have been deprecated:</p>
-
-<ul>
-<li>fileable.rb    (too esoteric)</li>
-<li>ioredirect.rb  (needs better implementation)</li>
-<li>coroutine.rb   (because of Fiber)</li>
-<li>capsule.rb     (may be spun-off)</li>
-<li>recorder.rb    (may be spun-off)</li>
-</ul>
-
-
-<p>Three other libraries have been deprecated, but have been spun-off
-to the new 'ansi' project:</p>
-
-<ul>
-<li>ansicode.rb</li>
-<li>progressbar.rb</li>
-<li>logger.rb</li>
-</ul>
-
-
-<p>This version of Facets also reverts a few of the deprecations made before --
-reconsiderations made due to analysis of the code as suitable for release
-as separate projects. These libs will thus remain in Facets's MORE library
-at least for the forseeable future.</p>
-
-<ul>
-<li>ini.rb</li>
-<li>linkedlist.rb</li>
-<li>matcher.rb</li>
-<li>memoizer.rb</li>
-<li>roman.rb</li>
-<li>semaphore.rb</li>
-</ul>
-
-
-<p>Other minor enhancements have also been made in the release. These include:</p>
-
-<ul>
-<li>Kernel#extend can now take a block</li>
-<li>Fixed kernel#d so it is useable</li>
-<li>Added method #at_rand to Range in random.rb (thanks to Tyler Rick).</li>
-<li>Added method #map_detect to Enumerable (thanks to Scott Taylor).</li>
-<li>Added method #/ to String, which calls File.join.</li>
-<li>Added method #newlines and #cleanlines to String.</li>
-<li>String#titlecase now handles apostrophes.</li>
-<li>BasicObject/BlankSlate is more compliant with 1.9.1's design.</li>
-<li>Enumerable#count can take multiple items, treats them as a logical Or.</li>
-<li>Class#class_extend extends class level, rather than use class_eval.</li>
-<li>Integer#succ(n) becomes Fixnum#succ(n) in succ.rb.</li>
-<li>inheritor.rb has been rewritten.</li>
-<li>The Shellwords extensions have been reworked.</li>
-<li>Added #similarity method to String.</li>
-<li>Added a Levenshtein edit_distance method to String.</li>
-</ul>
-
-
-<p>In addition to all this, we have recently set up a new Ruby 1.9 compliance procedure
-using RunCodeRun.com. Actually RunCodeRun helps us to ensure 1.8.6 compabiltiy as well.
-This is great tool for improving code quality, and comes highly recommended.</p>
-
-
-  <small>Written by Trans, 2009-11-09</small>
-
-  <ul class="posts">
-    
-    
-  </ul>
-
-</div>
-
-
+    <%= yield %>
   </div>
 
   </div>
@@ -156,7 +77,7 @@ This is great tool for improving code quality, and comes highly recommended.</p>
 </div>
 
 <div id="copyright">
-  <img src="../media/abc1.png"/>
+  <img src="<%= root %>media/abc1.png"/>
 
   <br/><br/><br/>
 

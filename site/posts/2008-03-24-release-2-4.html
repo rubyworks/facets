@@ -1,5 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
@@ -14,9 +13,9 @@
   <meta name="DESCRIPTION"
         content="Ruby Facets is a large collection of libraries for the Ruby programming lanaguage."/>
 
-  <link rel="icon" href="../media/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="<%= root %>media/favicon.ico" type="image/x-icon" />
 
-  <link href="http://rubyworks.github.com/facets/atom.xml" rel="alternate" title="blog.facets.rubyforge.org" type="application/atom+xml" />
+  <link href="<%= site.url %>/atom.xml" rel="alternate" title="blog.facets.rubyforge.org" type="application/atom+xml" />
 
 <!--
   <link href="/assets/styles/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
@@ -27,8 +26,8 @@
       <link href="/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
   <![endif]-->
 
-  <link href="../assets/site.css" rel="stylesheet" type="text/css" />
-  <link href="../assets/syntax.css" rel="stylesheet" type="text/css" />
+  <link href="<%=root%>assets/site.css" rel="stylesheet" type="text/css" />
+  <link href="<%=root%>assets/syntax.css" rel="stylesheet" type="text/css" />
 
   <!-- <script src="/js/rdocs.js" type="text/javascript"></script> -->
 </head>
@@ -37,15 +36,15 @@
 
 <div id="forkme">
   <a href="http://github.com/rubyworks/facets">
-    <img src="../media/forkme.png" />
+    <img src="<%= root %>media/forkme.png" />
   </a>
 </div>
 
 <div id="container">
 
   <div id="header">
-    <a href="http://rubyworks.github.com/facets">
-      <img id="logo" src="../media/RubyFacets.png" align="middle" />
+    <a href="<%= site.url %>">
+      <img id="logo" src="<%=root%>media/RubyFacets.png" align="middle" />
     </a>
   </div>
 
@@ -55,95 +54,22 @@
 
   <div class="blurb">
     <div id="menu">
-      <a href="../index.html">Overview</a> &middot;
-      <a href="../news.html">News/Blog</a> &middot;
-      <a href="../learn.html">Documentation</a> &middot;
-      <a href="../source.html">Development</a>
+      <a href="<%= root %>index.html">Overview</a> &middot;
+      <a href="<%= root %>news.html">News/Blog</a> &middot;
+      <a href="<%= root %>learn.html">Documentation</a> &middot;
+      <a href="<%= root %>source.html">Development</a>
       <img style="width: 20px; height: 1px;" src="/media/clear.gif"/>
     </div>
 
     <div class="desc">
-      <h1></h1>
-      
+      <h1><%= blurb %></h1>
+      <%= detail %>
     </div>
   </div>
 
 
   <div class="page">
-    
-<div class="page">
-
-  <h2>Facets 2.4.3</h2>
-
-  <p>Facets 2.4.3 is now out in the wild. The release is primarily a maintenance
-release &#8212;fixing a handful of small bugs and adding some small feature
-improvements, but a few significant changes are also present.</p>
-
-<ul>
-<li>Moved Mentalguy's lazy.rb to CORE!</li>
-<li>Moved Indexable and Stackable to core.</li>
-<li>Added Time#trunc and Time#round to CORE.</li>
-<li>Added Ken Bloom's DictionaryMatcher class (maybe renamed in future version)</li>
-<li>Added Array#recursively and fixed bug in Hash#recursively.</li>
-<li>Added kernel/instance method which provides a fluent interface to private object space.</li>
-<li>Renamed Class#to_pathname and #to_methodname to #pathize and #methodize.</li>
-<li>Changed File#rewrite to not use the in-place change of the string.</li>
-<li>Changed Dictionary#first and #last to take optional arguments.</li>
-<li>Deprecated Hash#keys_to_s and Hash#keys_to_sym (use #rekey).</li>
-<li>Deprecated Console:: namespace for ANSICode.</li>
-<li>Deprecated ruby.rb, which was a sort 1.9 compatibility layer.</li>
-<li>The ruby.rb methods were moved to core, wrapped in a 1.9 condition.</li>
-<li>Fixed Time#hence changed years when changing months.</li>
-<li>Fixed Time#hence to flip year correctly when adding months.</li>
-<li>Improved File#rootname, it is now more robust.</li>
-<li>Made FileUtils#whereis a module_function again.</li>
-<li>Use "lib/lore" to separate extensions to Ruby's standard library.</li>
-</ul>
-
-
-<p>Note that this release does not include a setup.rb script. We are working
-on a new version of this script, which we plan to include in the next
-release.</p>
-
-<p>Special thanks to:</p>
-
-<ul>
-<li>Ken Bloom</li>
-<li>Nick Caruso</li>
-<li>Evgeniy Dolzhenko</li>
-<li>Andy Freeman</li>
-<li>Tomasz Muras</li>
-<li>Dave Myron</li>
-</ul>
-
-
-<p>And of course, to anyone else I failed to mention that has contributed.</p>
-
-<p>Finally, Facets 2.4+ now encourages using:</p>
-
-<pre><code>require 'facets'
-</code></pre>
-
-<p>when testing, even if you are cherry-picking methods. It may seem counter-intuitive,
-but it actually proves more advantages to do this for the sake of improved
-interoperability. The practice of cherry-picking can become problematic if
-other dependent libraries have cherry-picked different methods, and the
-the different choices go unaccounted and untested.</p>
-
-<p>Facets is almost fully interoperable with ActiveSupport and Ruby 1.9. We
-will continue to improve this interoperability in upcoming releases.</p>
-
-
-  <small>Written by Trans, 2008-03-24</small>
-
-  <ul class="posts">
-    
-    
-  </ul>
-
-</div>
-
-
+    <%= yield %>
   </div>
 
   </div>
@@ -151,7 +77,7 @@ will continue to improve this interoperability in upcoming releases.</p>
 </div>
 
 <div id="copyright">
-  <img src="../media/abc1.png"/>
+  <img src="<%= root %>media/abc1.png"/>
 
   <br/><br/><br/>
 

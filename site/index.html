@@ -1,5 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
@@ -14,9 +13,9 @@
   <meta name="DESCRIPTION"
         content="Ruby Facets is a large collection of libraries for the Ruby programming lanaguage."/>
 
-  <link rel="icon" href="media/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="<%= root %>media/favicon.ico" type="image/x-icon" />
 
-  <link href="http://rubyworks.github.com/facets/atom.xml" rel="alternate" title="blog.facets.rubyforge.org" type="application/atom+xml" />
+  <link href="<%= site.url %>/atom.xml" rel="alternate" title="blog.facets.rubyforge.org" type="application/atom+xml" />
 
 <!--
   <link href="/assets/styles/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
@@ -27,8 +26,8 @@
       <link href="/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
   <![endif]-->
 
-  <link href="assets/site.css" rel="stylesheet" type="text/css" />
-  <link href="assets/syntax.css" rel="stylesheet" type="text/css" />
+  <link href="<%=root%>assets/site.css" rel="stylesheet" type="text/css" />
+  <link href="<%=root%>assets/syntax.css" rel="stylesheet" type="text/css" />
 
   <!-- <script src="/js/rdocs.js" type="text/javascript"></script> -->
 </head>
@@ -37,15 +36,15 @@
 
 <div id="forkme">
   <a href="http://github.com/rubyworks/facets">
-    <img src="media/forkme.png" />
+    <img src="<%= root %>media/forkme.png" />
   </a>
 </div>
 
 <div id="container">
 
   <div id="header">
-    <a href="http://rubyworks.github.com/facets">
-      <img id="logo" src="media/RubyFacets.png" align="middle" />
+    <a href="<%= site.url %>">
+      <img id="logo" src="<%=root%>media/RubyFacets.png" align="middle" />
     </a>
   </div>
 
@@ -55,106 +54,22 @@
 
   <div class="blurb">
     <div id="menu">
-      <a href="index.html">Overview</a> &middot;
-      <a href="news.html">News/Blog</a> &middot;
-      <a href="learn.html">Documentation</a> &middot;
-      <a href="source.html">Development</a>
+      <a href="<%= root %>index.html">Overview</a> &middot;
+      <a href="<%= root %>news.html">News/Blog</a> &middot;
+      <a href="<%= root %>learn.html">Documentation</a> &middot;
+      <a href="<%= root %>source.html">Development</a>
       <img style="width: 20px; height: 1px;" src="/media/clear.gif"/>
     </div>
 
     <div class="desc">
-      <h1>Library Fantastic</h1>
-      Ruby Facets is the premiere collection of method extension and standard library additions for the Ruby programming language.
+      <h1><%= blurb %></h1>
+      <%= detail %>
     </div>
   </div>
 
 
   <div class="page">
-    <p><img src="media/ruby-lg.png" width="100px" align="right" style=""/></p>
-
-<h1>Facets is the Premier Ruby Extensions Library</h1>
-
-<p>Ruby Facets was first released in 2005. Since then it has evolved into the
-single largest and most refined core extensions library for the Ruby programming
-language. All <i>facets</i> can be loaded with the single require or cherry-picked
-individually. There are hundreds of quality methods in the collection which
-have been derived from years of experience of dozens of top Ruby programmers.</p>
-
-<p>In addition to the core libraries, Facets provides extensions to Ruby standard
-library, as well as as a small collection of add-on classes and mixins.
-Together with core extensions these libraries provide a broad general-purpose
-set of components commonly useful across a wide variety of applications.</p>
-
-<h1>Facets is for Every Ruby Developer</h1>
-
-<p>Who uses Facets? Lots of Rubyists do!</p>
-
-<p>Many developers use Facets as a copy-and-paste resource, others use it as a dependency
-cheery-picking just the methods they need, and still others use the library whole-clothe.
-How you use Ruby Facets to facilitate your Ruby development is completely yours to decide.</p>
-
-<p><img src="media/lightbulb.jpg" width="70px" align="right" style=""/></p>
-
-<h1>Facets is a Bright Idea</h1>
-
-<p>The philosophy of <span class="red">Facets</span> can be summed
-up in a simple mantra, <b>ALL BASE COMMON</b>. The idea being, that by sharing a broad foundation
-of general purpose code, the Ruby community will be better severd. There are a number of
-advantages to this approach. Among them: name consistency, better code-reuse, collaborative
-improvements and reduced installation requirements.</p>
-
-<p>Facets also embodies the idea of "having it your way". You can use as much or as little
-of Facets as you see fit. In fact, Ruby Facets originated the idea cherry-pickable extensions.</p>
-
-<h1>Facets is a Community Effort</h1>
-
-<p>Facets is not the sole achievement of one person, but was made possible by the hard
-work of many excellent programmers. Some persons contributed code directly, other's simply
-had their code picked-up from another open resource. In either case, three cheeers
-for all!</p>
-
-<pre><code>  Thibaut Barrère        Daniel J. Berger          Ken Bloom
-  Rich Bradley           Paul Brannan              Mikael Brockman
-  Jamis Buck             Renald Buter              Brian Candler
-  Shashank Date          Robert Feldt              Mauricio Fernandez
-  Florian Frank          Hal Fulton                Noah Gibbs
-  Michael Granger        Florian Gross             Sean O'Halpin
-  Michael Harmer         Matthew Harris            David Heinemeier Hansson
-  Thomas-Ivo Heinen      Dave Hoover               Ara T. Howard
-  MenTaLguY              Mohammad Khan             Robert Klemme
-  Richard Laugesen       Lavir the Whiolet         Derek Lewis
-  Jan Molic              George Moschovitis        Michael Neumann
-  Marco Otte-Witte       Roger Pack                Jeena Paradies
-  Tim Pease              Jonas Pfenniger           Ryan Platte
-  Oliver Renaud          Tyler Rick                Christoph Rippel
-  Daniel Schierbeck      Louis J Scoras            Gavin Sinclair
-  Tilo Sloboda           Sandor Szücs              Phil Tomson
-  Mauro Tortonesi        Peter Vanbroekhoven       Jim Weirich
-  Jeff Wood              Jean-Denis Vauguet        Erik Veenstra
-  Austin Ziegler         Why The Lucky Stiff
-</code></pre>
-
-<h1>Facets is Open Source Software</h1>
-
-<p>Facets is true open source software. Ruby Facets is distributed under the terms of the
-<a href="http://www.ruby-lang.org/en/LICENSE.txt" style="color: red;">Ruby License</a>,
-just like Ruby.</p>
-
-<p>Ruby Facets, Copyright (c) 2005-2010 Thomas Sawyer</p>
-
-<p>Credit and any additional copyrights for particular code fragments are
-given in their respective source. All secondary licenses are either compatible
-with the Ruby license or the original author has given permission for
-inclusion of their code under this license.</p>
-
-<div style="text-align: center; margin-top: 40px;">
-  <i>"Lots of cool stuff... There's just so much there!"</i><br/>
-  <span style="font-size: 10pt;">--Austin Ziegler</span>
-</div>
-
-
-
-
+    <%= yield %>
   </div>
 
   </div>
@@ -162,7 +77,7 @@ inclusion of their code under this license.</p>
 </div>
 
 <div id="copyright">
-  <img src="media/abc1.png"/>
+  <img src="<%= root %>media/abc1.png"/>
 
   <br/><br/><br/>
 

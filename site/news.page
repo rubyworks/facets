@@ -1,24 +1,22 @@
----
 title   : Ruby Facets
 layout  : default
-stencil : liquid
 blurb   : Fresh Facets
 detail  : Keep up with the latest news.
 ---
 
 <div style="padding-top: 40px;">
 
-{% for post in site.posts %}
+<% for post in site.posts %>
   <div class="post">
-    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-    <h3>{{ post.date | date_to_string }}</h3>
-    {{ post.summary }}
-    <!-- <small>Written by {{ post.author }}</small> -->
+    <h2><a href="<%= post.url %>"><%= post.title %></a></h2>
+    <h3><%= post.date %></h3>
+    <%= post.summary %>
+    <!-- <small>Written by <%= post.author %></small> -->
     <div style="text-align: right;">
-      <a href="{{ post.url }}">Read More...</a>
+      <a href="<%= post.url %>">Read More...</a>
     </div>
   </div>
   <br/><br/>
-{% endfor %}
+<% end %>
 
 </div>
