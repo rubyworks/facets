@@ -315,3 +315,25 @@ task :uninstall do
     puts "or 'gem install setup'."
   end
 end
+
+
+#
+# CHECK CHERRY PICKING
+# ----------------------------------------------------------------------------
+
+namespace :check do
+
+  desc 'check cherry pickability'
+  task 'cherry' do
+    files = Dir['lib/**/*.rb']
+    files.each do |file|
+      out = `ruby -Ilib #{file}`
+      if out != ''
+        puts file
+        puts out
+      end
+    end
+  end
+
+end
+
