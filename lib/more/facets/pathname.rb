@@ -22,6 +22,7 @@
 
 require 'pathname'
 require 'facets/file/rootname'
+require 'facets/fileutils/outofdate'
 
 class Pathname
 
