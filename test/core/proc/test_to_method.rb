@@ -1,25 +1,38 @@
-require 'facets/proc/to_method.rb'
-require 'test/unit'
+covers 'facets/proc/to_method'
 
-class TestProc < Test::Unit::TestCase
+testcase Proc do
 
-  def test_to_method
-    a = 2
-    tproc = proc { |x| x + a }
-    tmeth = tproc.to_method(self, :tryit)
+  unit :to_method do
+    o = Object.new
+    tproc = proc { |x| x + 2 }
 
-    assert_equal( 3, tmeth.call(1) )
-    assert_respond_to( self, :tryit )
-    assert_equal( 3, tryit(1) )
+    tmeth = tproc.to_method(o, :tryit)
+
+    tmeth.call(1).assert == 3
+    o.assert.respond_to?(:tryit)
+    o.tryit(1).assert == 3
   end
 
-  def test_to_method_with_immutable
+  unit :to_method => "with immutable object" do
+    o = :foo
     tproc = proc{ self }
-    tmeth = tproc.to_method(:foo, :tryit)
 
-    assert_equal(:foo, tmeth.call)
-    assert_respond_to( :foo, :tryit )
-    assert_equal( :foo, :foo.tryit )
+    tmeth = tproc.to_method(o, :tryit)
+
+    tmeth.call.assert == :foo
+    o.assert.respond_to?(:tryit)
+    o.tryit.assert == :foo
+  end
+
+  unit :to_method => "ensure method is in object scope" do
+    o = Struct.new(:a).new(1)
+    tproc = proc{ a }
+
+    tmeth = tproc.to_method(o, :tryit)
+
+    tmeth.call.assert == 1
+    o.assert.respond_to?(:tryit)
+    o.tryit.assert == 1
   end
 
 end

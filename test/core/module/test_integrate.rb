@@ -1,22 +1,23 @@
-require 'facets/module/integrate'
-require 'test/unit'
+covers 'facets/module/integrate'
 
-class Test_Module_Integrate < Test::Unit::TestCase
+testcase Module do
 
-  module M
-    def x ; 1 ; end
-  end
-
-  class C
-    integrate M do
-      rename :y, :x
+  unit :integrate do
+    m = Module.new do
+      def x ; 1 ; end
     end
-  end
 
-  def test_integrate
-    c = C.new
-    assert_raises( NoMethodError ) { c.x }
-    assert_equal( 1, c.y )
+    c = Class.new do
+      integrate m do
+        rename :y, :x
+      end
+    end
+
+    ic = c.new
+
+    NoMethodError.assert.raised?{ ic.x }
+
+    ic.y.assert == 1
   end
 
 end

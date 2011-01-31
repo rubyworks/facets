@@ -1,30 +1,27 @@
-require 'facets/time/trunc'
-require 'test/unit'
+covers 'facets/time/trunc'
 
-class Test_Time_Trunc < Test::Unit::TestCase
+testcase Time do
 
-  def setup
-    @t = Time.local(2000,03,03,3,37,23)
+  t = Time.local(2000,03,03,3,37,23)
+
+  unit :trunc => "hour" do
+    t.trunc(60 * 60).assert == Time.local(2000,03,03,3, 0)
   end
 
-  def test_trunc_hour
-    assert_equal Time.local(2000,03,03,3, 0), @t.trunc(60 * 60)
-  end
-
-  #def test_trunc_month
-  #  assert_equal Time.local(2000,03,01,0, 0), @t.trunc( 1.month  )  
+  #unit :trunc => "month" do
+  #  t.trunc(1.month).assert == Time.local(2000,03,01,0, 0)
   #end
 
-  def test_trunc_15_minutes
-    assert_equal Time.local(2000,03,03,3,30), @t.trunc(15 * 60)
+  unit :trunc => "15 minutes" do
+    t.trunc(15 * 60).assert == Time.local(2000,03,03,3,30)
   end
   
-  def test_trunc_10_minutes
-    assert_equal Time.local(2000,03,03,3,30), @t.trunc(10 * 60)
+  unit :trunc => "10 minutes" do
+    t.trunc(10 * 60).assert == Time.local(2000,03,03,3,30)
   end
 
-  def test_trunc_05_minutes
-    assert_equal Time.local(2000,03,03,3,35), @t.trunc( 5 * 60)
+  unit :trunc => "05 minutes" do
+    t.trunc(5 * 60).assert == Time.local(2000,03,03,3,35)
   end
 
 end

@@ -6,21 +6,21 @@ class Module
   # defines methods by the name of a hash key which
   # calls the method with the name of the hash's value.
   #
-  #   class Example
+  #   class RedirectExample
   #     redirect_method :hi => :hello, :hey => :hello
   #     def hello(name)
-  #       puts "Hello, #{name}."
+  #       "Hello, #{name}."
   #     end
   #   end
   #
-  #   e = Example.new
+  #   e = RedirectExample.new
   #   e.hello("Bob")    #=> "Hello, Bob."
   #   e.hi("Bob")       #=> "Hello, Bob."
   #   e.hey("Bob")      #=> "Hello, Bob."
   #
-  # The above class definition is equivalent to:
+  # The above class definition is equivalent to ...
   #
-  #   class Example
+  #   class RedirectExample
   #     def hi(*args)
   #       hello(*args)
   #     end

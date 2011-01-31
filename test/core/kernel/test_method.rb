@@ -1,16 +1,16 @@
-require 'facets/kernel/method'
-require 'test/unit'
+covers 'facets/kernel/method'
 
-class TestKernelMethod < Test::Unit::TestCase
+tests Kernel do
 
-  class TestWith
-    def foo ; end
-  end
+  unit :method! do
+    c = Class.new do
+      def foo ; 'foo' ; end
+    end
 
-  def test_method!
-    t = TestWith.new
-    assert_equal( t.method!(:foo).__id__, t.method!(:foo).__id__ )
-    assert_not_equal( t.method(:foo).__id__, t.method(:foo).__id__ )
+    ic = c.new
+    ic.method(:foo).__id__.refute == ic.method(:foo).__id__
+    ic.method!(:foo).__id__.assert == ic.method!(:foo).__id__
   end
 
 end
+

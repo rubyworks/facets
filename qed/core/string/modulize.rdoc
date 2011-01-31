@@ -1,0 +1,22 @@
+== String#modulize
+
+  require 'facets/string/modulize'
+
+snakecase
+
+  a = "foo_bar"
+  r = "FooBar"
+  a.modulize.assert == r
+
+path name
+
+  a = "foo/bar"
+  r = "Foo::Bar"
+  a.modulize.assert == r
+
+on methodized string
+
+  a = "foo__bar"
+  r = "Foo::Bar"
+  a.modulize.assert == r
+

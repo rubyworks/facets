@@ -1,0 +1,56 @@
+---
+ridoc:
+  service : RiDoc
+  output  : ri
+  include : [lib/core/facets, lib/more/facets, lib/store/facets]
+
+rdoc-core:
+  service : RDoc
+  template: tabfish
+  output  : site/doc/api/core
+  title   : Facets Core
+  main    : README.rdoc
+  extra   : "-a"
+  include : [README.rdoc, lib/core]
+  active  : true
+
+rdoc-more:
+  service : RDoc
+  template: tabfish  #redfish
+  output  : site/doc/api/more
+  title   : Facets More
+  main    : README.rdoc
+  extra   : "-a"
+  include : [README.rdoc, lib/more]
+  active  : true
+
+rdoc-tour:
+  service : RDoc
+  template: tabfish
+  output  : site/doc/api/tour
+  title   : Facets Tour
+  main    : README.rdoc
+  extra   : "-a"
+  include : [README.rdoc, lib/tour]
+  active  : true
+
+yardcore:
+  service : Yard
+  active  : false
+  #template: ~
+  output  : site/doc/yard/core
+  title   : Facets Core API
+  readme  : doc/README.core
+  #extra   : "-a"
+  include : [doc/README.core, README.rdoc, lib/core]
+
+yardmore:
+  service : Yard
+  active  : false
+  #template: ~
+  output  : site/doc/yard/more
+  title   : Facets More API
+  readme  : doc/README.more
+  #extra   : "-a"
+  include : [doc/README.more, README.rdoc, lib/more]
+

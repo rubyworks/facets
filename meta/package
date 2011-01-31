@@ -1,0 +1,10 @@
+name: facets
+version: 2.9.0
+date: 2010-10-01
+path: [lib/core, lib/more, lib/tour]
+
+requires:
+  - syckle (build)
+  - lemon  (test)
+  - qed    (test)
+

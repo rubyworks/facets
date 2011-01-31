@@ -1,0 +1,8 @@
+== String#lines
+
+Ruby 1.9 defined #lines to keep the newline character.
+
+  require 'facets/string/lines'
+
+  "a\nb\nc".lines.to_a.assert == ["a\n","b\n","c"]
+

@@ -1,21 +1,18 @@
-require 'facets/array/merge'
-require 'test/unit'
+covers 'facets/array/merge'
 
-class TC_Array_Merge < Test::Unit::TestCase
+testcase Array do
 
-  # merge
-
-  def test_merge
+  unit :merge do
     a = [1,2,3]
     b = [3,4,5]
-    assert_equal( [1,2,3,4,5], a.merge(b) )
+    a.merge(b).assert == [1,2,3,4,5]
   end
 
-  def test_merge!
+  unit :merge! do
     a = [1,2,3]
     b = [3,4,5]
     a.merge!(b)
-    assert_equal( [1,2,3,4,5], a )
+    a.assert == [1,2,3,4,5]
   end
 
 end

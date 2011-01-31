@@ -1,11 +1,14 @@
 module Kernel
 
-  unless method_defined?(:__method__)  # 1.8.7+
+  unless defined?(__method__) == "method"  # 1.8.7+
 
     # Retreive the current running method name.
     #
-    #   def tester; __method__; end
-    #   tester  #=> :tester
+    #   def method_example
+    #     __method__
+    #   end
+    #
+    #   method_example  #=> :method_example
     #
     # Technically __callee__ should provided alias names,
     # where __method__ should not. But we'll have to
@@ -19,12 +22,15 @@ module Kernel
 
   end
 
-  unless method_defined?(:__callee__)  # 1.9+
+  unless defined?(__callee__) == "method"  # 1.9+
 
     # Retreive the current running method name.
     #
-    #   def tester; __callee__; end
-    #   tester  #=> :tester
+    #   def callee_example
+    #     __callee__
+    #   end
+    #
+    #   callee_example  #=> :callee_example
     #
     # Technically __callee__ should provided alias names,
     # where as __method__ should not. But we'll have to

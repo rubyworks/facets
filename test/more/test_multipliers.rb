@@ -1,100 +1,97 @@
-# Test facets/multipliers.rb
-
 require 'facets/multipliers.rb'
-require 'test/unit'
 
-class TC_Multipliers < Test::Unit::TestCase
+TestCase Fixnum do
 
-  def test_deka
-    assert_equal( 10, 1.deka )
+  unit :deka do
+    1.deka.assert == 10
   end
 
-  def test_hecto
-    assert_equal( 100, 1.hecto )
+  unit :hecto do
+    1.hecto.assert == 100
   end
 
-  def test_kilo
-    assert_equal( 1000, 1.kilo )
+  unit :kilo do
+    1.kilo.assert == 1000
   end
 
-  def test_mega
-    assert_equal( 1000000, 1.mega )
+  unit :mega do
+    1.mega.assert == 1000000
   end
 
-  def test_giga
-    assert_equal( 1000000000, 1.giga )
+  unit :giga do
+    1.giga.assert == 1000000000
   end
 
-  def test_tera
-    assert_equal( 1000000000000, 1.tera )
+  unit :tera do
+    1.tera.assert == 1000000000000
   end
 
-  def test_peta
-    assert_equal( 1000000000000000, 1.peta )
+  unit :peta do
+    1.peta.assert == 1000000000000000
   end
 
-  def test_exa
-    assert_equal( 1000000000000000000, 1.exa )
+  unit :exa do
+    1.exa.assert == 1000000000000000000
   end
 
   # Fractional
 
-  def test_deci
-    assert_equal( 0.1, 1.deci )
+  unit :deci do
+    1.deci.assert == 0.1
   end
 
-  def test_centi
-    assert_equal( 0.01, 1.centi )
+  unit :centi do
+    1.centi.assert == 0.01
   end
 
-  def test_milli
-    assert_equal( 0.001, 1.milli )
+  unit :milli do
+    1.milli.assert == 0.001
   end
 
-  def test_micro
-    assert_equal( 0.000001, 1.micro )
+  unit :micro do
+    1.micro.assert == 0.000001
   end
 
-  def test_nano
-    assert_equal( 0.000000001, 1.nano )
+  unit :nano do
+    1.nano.assert == 0.000000001
   end
 
-  def test_pico
-    assert_equal( 0.000000000001, 1.pico )
+  unit :pico do
+    1.pico.assert == 0.000000000001
   end
 
-  def test_femto
-    assert_equal( 0.000000000000001, 1.femto )
+  unit :femto do
+    1.femto.assert == 0.000000000000001
   end
 
-  def test_atto
-    assert_equal( 0.000000000000000001, 1.atto )
+  unit :atto do
+    1.atto.assert == 0.000000000000000001
   end
 
   # SI Binary
 
-  def test_kibi
-    assert_equal( 1024, 1.kibi )
+  unit :kibi do
+    1.kibi.assert == 1024
   end
 
-  def test_mebi
-    assert_equal( 1024**2, 1.mebi )
+  unit :mebi do
+    1.mebi.assert == 1024**2
   end
 
-  def test_gibi
-    assert_equal( 1024**3, 1.gibi )
+  unit :gibi do
+    1.gibi.assert == 1024**3
   end
 
-  def test_tebi
-    assert_equal( 1024**4, 1.tebi )
+  unit :tebi do
+    1.tebi.assert == 1024**4
   end
 
-  def test_pebi
-    assert_equal( 1024**5, 1.pebi )
+  unit :pebi do
+    1.pebi.assert == 1024**5
   end
 
-  def test_exbi
-    assert_equal( 1024**6, 1.exbi )
+  unit :exbi do
+    1.exbi.assert == 1024**6
   end
 
 end

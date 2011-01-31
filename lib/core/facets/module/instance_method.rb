@@ -5,12 +5,13 @@ class Module
 
   # Access method as a singleton object and retain state.
   #
-  #   module K
+  #   module ::K
   #     def hello
   #       puts "Hello World!"
   #     end
   #   end
-  #   p K.instance_method!(:hello)   #=> <UnboundMethod: #hello>
+  #
+  #   K.instance_method!(:hello).inspect   #=> "#<UnboundMethod: K#hello>"
   #
   # NOTE: This is limited to the scope of the current module/class.
 

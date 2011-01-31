@@ -10,11 +10,12 @@ module Kernel
   #   "a".ergo{ |o| o.upcase } #=> "A"
   #   nil.ergo{ |o| o.foobar } #=> nil
   #
-  # This is like #tap, but tap yields self -and- returns self.
+  # This is like #tap, but #tap yields self and returns self,
+  # where as #ergo yields self buit return the result.
   #
   # CREDIT: Daniel DeLorme
 
-  def ergo &b
+  def ergo(&b)
     if block_given?
       b.arity == 1 ? yield(self) : instance_eval(&b)
     else
@@ -29,7 +30,7 @@ class NilClass
   # Compliments Kernel#ergo.
   #
   #   "a".ergo{ |o| o.upcase } #=> "A"
-  #   nil.ergo{ |o| o.bar } #=> nil
+  #   nil.ergo{ |o| o.bar }    #=> nil
   #
   # CREDIT: Daniel DeLorme
 

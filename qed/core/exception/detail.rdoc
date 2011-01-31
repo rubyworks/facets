@@ -1,0 +1,12 @@
+== Exception#detail
+
+  require 'facets/exception/detail'
+
+  begin
+    raise ArgumentError
+  rescue ArgumentError => err
+    e = 
+    r = err.detail
+    r.assert == e
+  end
+

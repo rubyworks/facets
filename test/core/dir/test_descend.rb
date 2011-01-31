@@ -1,22 +1,17 @@
-require 'facets/dir/ascend'
-require 'test/unit'
-require 'tmpdir'
+covers 'facets/dir/ascend'
 
-class TC_Dir_Descend < Test::Unit::TestCase
+tests Dir do
 
-   def setup
-     @location = File.join(Dir.tmpdir, self.class.name, Time.now.usec.to_s)
-     @startdir = File.join(@location)
-   end
+   test_directory = 'test/core/dir'
 
-   def test_descend
+   metaunit :descend do
      c = []
-     Dir.descend(@startdir) do |path|
+     Dir.descend(test_directory) do |path|
        c << path
      end
-     rdir = @startdir
+     rdir = test_directory
      c.reverse_each do |d|
-       assert_equal(rdir, d)
+       d.assert == rdir
        rdir = File.dirname(rdir)
      end
    end

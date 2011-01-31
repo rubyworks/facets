@@ -1,17 +1,13 @@
-require 'facets/kernel/constant.rb'
-require 'test/unit'
+covers 'facets/kernel/constant'
 
-class TCKernel < Test::Unit::TestCase
+tests Kernel do
 
-  def test_constant
-    c = ::Test::Unit::TestCase.name
-    assert_equal( ::Test::Unit::TestCase, constant(c) )
-    c = "Test::Unit::TestCase"
-    assert_equal( ::Test::Unit::TestCase, constant(c) )
-    c = "Unit::TestCase"
-    assert_equal( ::Test::Unit::TestCase, Test.constant(c) )
+  unit :constant do
+    c = Lemon::TestCase.name
+    constant(c).assert == Lemon::TestCase
+
     c = "TestCase"
-    assert_equal( ::Test::Unit::TestCase, Test::Unit.constant(c) )
+    Lemon.constant(c).assert == Lemon::TestCase
   end
 
 end

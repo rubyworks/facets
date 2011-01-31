@@ -9,7 +9,7 @@ class Module
   #   X.ancestor?(Y)
   #
   def ancestor?( mod )
-    ancestors.include? mod
+    ancestors.include?(mod)
   end
 
 end

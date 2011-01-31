@@ -1,40 +1,39 @@
-#require 'facets/string/cmp'
-#require 'facets/blank'
-#require 'facets/string/natcmp'
-
 class String
 
-  # A fuzzy matching mechanism. Returns a score from 0-1,
-  # based on the number of shared edges.
-  # To be effective, the strings must be of length 2 or greater.
+  # A fuzzy matching mechanism. Returns a score from 0-1, based
+  # on the number of shared edges. To be effective, the strings
+  # must be of length 2 or greater.
   #
-  #   "Alexsander".fuzzy_match( "Aleksander" )  #=> 0.9
+  #   "Alexsander".similarity("Aleksander")  #=> 0.9
   #
   # The way it works:
   #
-  # * Converts each string into a "graph like" object, with edges
+  # 1. Converts each string into a "graph like" object, with edges ...
+  #
   #     "alexsander" -> [ alexsander, alexsand, alexsan ... lexsand ... san ... an, etc ]
   #     "aleksander" -> [ aleksander, aleksand ... etc. ]
-  # * Perform match, then remove any subsets from this matched set (i.e. a hit
-  #   on "san" is a subset of a hit on "sander")
+  #
+  # 2. Perform match, then remove any subsets from this matched set (i.e. a hit
+  # on "san" is a subset of a hit on "sander") ...
+  #
   #     Above example, once reduced -> [ ale, sander ]
-  # * See's how many of the matches remain, and calculates a score based
-  #   on how many matches, their length, and compare to the length of the
-  #   larger of the two words.
+  #
+  # 3. See's how many of the matches remain, and calculates a score based
+  # on how many matches, their length, and compare to the length of the
+  # larger of the two words.
   #
   # Still a bit rough. Any suggestions for improvement are welcome.
   #
   # CREDIT: Derek Lewis.
-  #
   def similarity(str_in)
     return 0 if str_in == nil
     return 1 if self == str_in
 
-    # Make a graph of each word (okay, so its not a true graph, but is similar)
+    # -- make a graph of each word (okay, its not a true graph, but is similar)
     graph_A = Array.new
     graph_B = Array.new
 
-    # "graph" self
+    # -- "graph" self
     last = self.length
     (0..last).each do |ff|
       loc  = self.length
@@ -48,7 +47,7 @@ class String
       end
     end
 
-    # "graph" input string
+    # -- "graph" input string
     last = str_in.length
     (0..last).each{ |ff|
       loc  = str_in.length
@@ -60,17 +59,18 @@ class String
       end
     }
 
-    # count how many of these "graph edges" we have that are the same
+    # -- count how many of these "graph edges" we have that are the same
     matches = graph_A & graph_B
-    #matches = Array.new
-    #graph_A.each do |aa|
-    #  matches.push( aa ) if( graph_B.include?( aa ) )
-    #end
 
-    # For eliminating subsets, we want to start with the smallest hits.
+    #--
+    #matches = Array.new
+    #graph_A.each{ |aa| matches.push(aa) if( graph_B.include?(aa) ) }
+    #++
+
+    # -- for eliminating subsets, we want to start with the smallest hits.
     matches.sort!{|x,y| x.length <=> y.length}
 
-    # eliminate any subsets
+    # -- eliminate any subsets
     mclone = matches.dup
     mclone.each_index do |ii|
       reg = Regexp.compile( Regexp.escape(mclone[ii]) )
@@ -84,9 +84,6 @@ class String
     self.length > str_in.length ? largest = self.length : largest = str_in.length
     return score/largest
   end
-
-  # DEPRECATED alias
-  #alias_method :fuzzy_match, :similarity
 
 end
 

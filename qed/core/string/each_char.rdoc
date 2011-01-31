@@ -1,0 +1,9 @@
+== String#each_char
+
+  require 'facets/string/each_char'
+
+  a = []
+  i = "this"
+  i.each_char{ |w| a << w }
+  a.assert == ['t', 'h', 'i', 's']
+

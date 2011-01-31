@@ -3,7 +3,7 @@ class Hash
   # Instantiate a new hash with a default
   # value determined by the block.
   # 
-  # Hash.new_with { [] } 
+  # Hash.new_with{ [] } 
   #
   # CREDIT: Pit Capitan
 

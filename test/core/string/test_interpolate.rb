@@ -1,14 +1,10 @@
-# Test for facets/string/interpolate
+covers 'facets/string/interpolate'
 
-require 'facets/string/interpolate.rb'
+testcase String do
 
-require 'test/unit'
-
-class TestStringInterpolate < Test::Unit::TestCase
-
-  def test_interpolate
+  metaunit :interpolate do
     a = 1
-    assert_equal('this is 1', String.interpolate{ 'this is #{a}' })
+    String.interpolate{ 'this is #{a}' }.assert == 'this is 1'
   end
 
 end

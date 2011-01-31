@@ -1,18 +1,23 @@
-require 'facets/integer/of'
-require 'test/unit'
+covers 'facets/integer/of'
 
-class TC_Integer_Of < Test::Unit::TestCase
+testcase Integer do
 
-  def test_of
+  unit :of do
     a = 4
     b = a.of{ |i| i*2 }
-    assert_equal( [0,2,4,6], b )
+    b.assert == [0,2,4,6]
   end
 
-  def test_times_collect
+  unit :times_collect do
     a = 4
     b = a.times_collect{ |i| i*2 }
-    assert_equal( [0,2,4,6], b )
+    b.assert == [0,2,4,6]
+  end
+
+  unit :times_map do
+    a = 4
+    b = a.times_map{ |i| i*2 }
+    b.assert == [0,2,4,6]
   end
 
 end

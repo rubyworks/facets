@@ -1,13 +1,12 @@
-require 'facets/string/nchar'
-require 'test/unit'
+covers 'facets/string/nchar'
 
-class TC_String_NChar < Test::Unit::TestCase
+testcase String do
 
-  def test_nchar
-    assert_equal( "abc", "abcxyz".nchar(3) )
-    assert_equal( "xyz", "abcxyz".nchar(-3) )
-    assert_equal( "HIxyz", "abcxyz".nchar(3, 'HI') )
-    assert_equal( "abcHI", "abcxyz".nchar(-3, 'HI') )
+  unit :nchar do
+    "abcxyz".nchar(3).assert == "abc"
+    "abcxyz".nchar(-3).assert == "xyz"
+    "abcxyz".nchar(3, 'HI').assert == "HIxyz"
+    "abcxyz".nchar(-3, 'HI').assert == "abcHI"
   end
 
 end

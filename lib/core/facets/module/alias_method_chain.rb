@@ -1,21 +1,39 @@
 class Module
 
-  # Encapsulates the common pattern of:
+  # Encapsulates the common pattern of ...
   #
   #   alias_method :foo_without_feature, :foo
   #   alias_method :foo, :foo_with_feature
   #
-  # With this, you simply do:
+  # With this, you simply do ...
   #
   #   alias_method_chain :foo, :feature
   #
+  # For example
+  #
+  #   class AliasMethodChainExample
+  #     def foo 
+  #       "foo"
+  #     end
+  #
+  #     def foo_with_feature
+  #       "foo!"
+  #     end
+  #
+  #     alias_method_chain :foo, :feature
+  #   end
+  #
   # And both aliases are set up for you.
   #
-  # Query and bang methods (foo?, foo!) keep the same punctuation:
+  #   example = AliasMethodChainExample.new
+  #   example.foo #=> "foo!"
+  #   example.foo_without_feature #=> "foo"
+  #
+  # Query and bang methods (foo?, foo!) keep the same punctuation ...
   #
   #   alias_method_chain :foo?, :feature
   #
-  # is equivalent to
+  # is equivalent to ...
   #
   #   alias_method :foo_without_feature?, :foo?
   #   alias_method :foo?, :foo_with_feature?

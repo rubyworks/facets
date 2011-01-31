@@ -1,11 +1,15 @@
-require 'facets/string/start_with'
-require 'test/unit'
+covers 'facets/string/start_with'
 
-class Test_String < Test::Unit::TestCase
+tests String do
 
-  def test_start_with?
+  unit :start_with? do
     s = "xxboo"
-    assert( s.start_with?('xx') )
+    s.assert.start_with?('xx')
+  end
+
+  unit :starts_with? do
+    s = "xxboo"
+    s.assert.starts_with?('xx')
   end
 
 end

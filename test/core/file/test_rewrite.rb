@@ -1,32 +1,23 @@
-require 'facets/file/rewrite'
-require 'test/unit'
-#require 'tempfile'
+covers 'facets/file/rewrite'
 
-class Tets_File_Rewrite < Test::Unit::TestCase
+tests File do
 
-   class MockFile < ::File
-     def self.open( fname, mode, &blk )
-       blk.call(self)
-     end
-     def self.read( fname=nil )
-       @mock_content.clone
-     end
-     def self.write( str )
-       @mock_content = str
-     end
-     def self.<<( str )
-       (@mock_content ||="") << str
-     end
-   end
+  test_data = 'This is a test!'
 
-   def test_rewrite
-     f = "not-a-real-file.txt"
-     t = 'This is a test!'
-     MockFile.write( t )
-     MockFile.rewrite(f) { |s| s.reverse }
-     s = MockFile.read(f)
-     assert_equal( t.reverse, s )
-   end
+  context do
+    test_file = 'tmp/rewrite.txt'
+    File.open(test_file, 'w'){ |w| w << test_data }
+    test_file
+  end
+
+  metaunit :rewrite do |test_file|
+    File.rewrite(test_file){ |s| s.reverse }
+    File.read(test_file).assert == test_data.reverse
+  end
+
+  metaunit :rewrite! do |test_file|
+    File.rewrite!(test_file){ |s| s.reverse! }
+    File.read(test_file).assert == test_data.reverse
+  end
 
 end
-

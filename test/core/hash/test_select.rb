@@ -1,34 +1,39 @@
-require 'facets/hash/select'
-require 'test/unit'
+covers 'facets/hash/select'
 
-class TC_Hash_Select < Test::Unit::TestCase
+testcase Hash do
 
-  def test_select!
-    # Empty hash.
+  unit :select! => "empty hash" do
     a = {}
-    assert_equal(nil, a.select! {false}, "return nil if hash not changed")
-    assert_equal({}, a, "hash is not changed")
+    a.select!{false}.assert == nil
+    a.assert == {}
 
     a = {}
-    assert_equal(nil, a.select! {true}, "return nil if hash not changed")
-    assert_equal({}, a, "hash is not changed")
+    a.select!{true}.assert == nil
+    a.assert == {}
+  end
 
-      # Non-empty hash.
+  unit :select! => "select none" do
     a = {0 => 'a', 1 => 'b', 2 => 'c', 3 => 'd'}
-    assert_equal({0 => 'a', 2 => 'c'}, a.select! {|x,y| x % 2 == 0}, "select even numbers")
-    assert_equal({0 => 'a', 2 => 'c'}, a, "select even numbers")
+    a.select!{false}.assert == {}
+    a.assert == {}
+  end
 
+  unit :select! => "select one" do
     a = {0 => 'a', 1 => 'b', 2 => 'c', 3 => 'd'}
-    assert_equal({1 => 'b'}, a.select! {|x,y| y == 'b'}, "select one member")
-    assert_equal({1 => 'b'}, a, "select one member")
+    a.select! {|x,y| y == 'b'}.assert == {1 => 'b'}
+    a.assert == {1 => 'b'}
+  end
 
+  unit :select! => "select some" do
     a = {0 => 'a', 1 => 'b', 2 => 'c', 3 => 'd'}
-    assert_equal(nil, a.select! {true}, "return nil if hash not changed")
-    assert_equal({0 => 'a', 1 => 'b', 2 => 'c', 3 => 'd'}, a, "select all")
+    a.select! {|x,y| x % 2 == 0}.assert == {0 => 'a', 2 => 'c'}
+    a.assert == {0 => 'a', 2 => 'c'}
+  end
 
+  unit :select! => "select all" do
     a = {0 => 'a', 1 => 'b', 2 => 'c', 3 => 'd'}
-    assert_equal({}, a.select! {false}, "select none")
-    assert_equal({}, a, "select none")
+    a.select!{true}.assert == nil
+    a.assert == {0 => 'a', 1 => 'b', 2 => 'c', 3 => 'd'}
   end
 
 end

@@ -1,13 +1,12 @@
-require 'facets/string/each_char'
-require 'test/unit'
+covers 'facets/string/each_char'
 
-class TC_String_Each_Char < Test::Unit::TestCase
+testcase String do
 
-  def test_each_char
+  unit :each_char do
     a = []
     i = "this"
     i.each_char{ |w| a << w }
-    assert_equal( ['t', 'h', 'i', 's'], a )
+    a.assert == ['t', 'h', 'i', 's']
   end
 
 end

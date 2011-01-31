@@ -1,18 +1,17 @@
-require 'facets/module/can'
-require 'test/unit'
+covers 'facets/module/can'
 
-class Test_Module_Can < Test::Unit::TestCase
+testcase Module do
 
-  module M 
-    def x; "x"; end 
-  end
+  unit :can do
+    m = Module.new do
+      def x; "x"; end 
+    end
 
-  class X
-    can M
-  end
+    c = Class.new do
+      can m
+    end
 
-  def test_can
-    assert("x", X.x)
+    c.x.assert == "x"
   end
 
 end

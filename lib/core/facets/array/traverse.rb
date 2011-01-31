@@ -7,13 +7,12 @@ class Array
   #
   #   g = h.traverse{ |e| e.downcase }
   #
-  #   g = ["a", "b", ["x", "y"]]
+  #   g  #=> ["a", "b", ["x", "y"]]
   #
   # This is the same as <code>recursive.map</code> and will
   # likely be deprecated in the future because of it.
   #
   # CREDIT: Trans
-
   def traverse(&block)
     if block_given?
       map do |e|
@@ -28,9 +27,15 @@ class Array
     end
   end
 
-  # Like #recursive_map, but will change the
-  # array in place.
-
+  # Like #recursive_map, but will change the array in place.
+  #
+  #   h = ["A", "B", ["X", "Y"]]
+  #
+  #   h.traverse!{ |e| e.downcase }
+  #
+  #   h  #=> ["a", "b", ["x", "y"]]
+  #
+  # CREDIT: Trans
   def traverse!(&block)
     replace(traverse(&block))
   end

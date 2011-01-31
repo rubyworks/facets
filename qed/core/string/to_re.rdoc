@@ -1,0 +1,22 @@
+== String#to_re
+
+  require 'facets/string/to_re'
+
+  "abc".to_re.assert == /abc/
+  "a+bc".to_re.assert == /a+bc/
+  "a+bc".to_re(false).assert == /a+bc/
+  "a+bc".to_re(true).assert == /a\+bc/
+
+escaped characters
+
+    a = "?"
+    b = /#{a.to_rx}/
+    assert( b =~ "?" )
+
+== String#to_rx
+
+  "abc".to_rx.assert == /abc/
+  "a+bc".to_rx.assert == /a\+bc/
+  "a+bc".to_rx(false).assert == /a+bc/
+  "a+bc".to_rx(true).assert == /a\+bc/
+

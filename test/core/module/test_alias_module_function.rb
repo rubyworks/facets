@@ -1,18 +1,20 @@
-require 'facets/module/alias_module_function'
-require 'test/unit'
+covers 'facets/module/alias_module_function'
 
-class Test_Module_Alias_Module_Function < Test::Unit::TestCase
+testcase Module do
 
-  module MockModule
-    # for alias_module_method
-    def x ; 33 ; end
-    module_function :x
-    alias_module_function :y, :x
-  end
+  unit :alias_module_function do
+    m = Module.new do
+      def x ; 33 ; end
 
-  def test_alias_module_function
-    assert_equal( 33, MockModule.y )
-    #assert_equal( 33, @m.send(:y) ) # use send b/c private
+      module_function :x
+
+      alias_module_function :y, :x
+    end
+
+    m.y.assert == 33
+
+    # use send b/c private?
+    #@m.send(:y).assert == 33
   end
 
 end

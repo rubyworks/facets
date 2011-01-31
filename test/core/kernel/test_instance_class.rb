@@ -1,11 +1,10 @@
-require 'facets/kernel/instance_class.rb'
-require 'test/unit'
+covers 'facets/kernel/instance_class'
 
-class TestKernelInstanceClass < Test::Unit::TestCase
+testcase Kernel do
 
-  def test_instance_class
+  unit :instance_class do
     o = Object.new
-    assert_equal( (class << o; self; end), o.instance_class )
+    o.instance_class.assert == (class << o; self; end)
   end
 
 end

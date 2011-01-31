@@ -1,0 +1,22 @@
+== String#methodize
+
+  require 'facets/string/methodize'
+
+module name
+
+  a = "FooBase"
+  r = "foo_base"
+  a.methodize.assert == r
+
+path name
+
+  a = "foo/base"
+  r = "foo__base"
+  a.methodize.assert == r
+
+name space
+
+  a = "Foo::Base"
+  r = "foo__base"
+  a.methodize.assert == r
+

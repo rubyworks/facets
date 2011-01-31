@@ -1,1 +1,1 @@
-require 'facets/comparable/cap'
+require 'facets/comparable/clip'

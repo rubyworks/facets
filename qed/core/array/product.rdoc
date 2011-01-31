@@ -1,0 +1,26 @@
+== Array#product
+
+  require 'facets/array/product'
+
+single argument
+
+  r = [1,2,3].product([4,5,6])
+  x = [[1, 4],[1, 5],[1, 6],[2, 4],[2, 5],[2, 6],[3, 4],[3, 5],[3, 6]]
+  r.assert == x
+
+multiple arguments
+
+  a = %w|a b|
+  b = %w|a x|
+  c = %w|x y|
+  r = a.product(b, c)
+  x = [ ["a", "a", "x"],
+        ["a", "a", "y"],
+        ["a", "x", "x"],
+        ["a", "x", "y"],
+        ["b", "a", "x"],
+        ["b", "a", "y"],
+        ["b", "x", "x"],
+        ["b", "x", "y"] ]
+  r.assert == x
+

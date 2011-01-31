@@ -4,14 +4,14 @@ class Hash
   # executing the given block on the key and value. The block should
   # return a 2-element array of the form +[key, value]+.
   #
-  #   h = {"A"=>"A", "B"=>"B", {"X"=>"X"}}
+  #   h = {"A"=>"A", "B"=>"B", "C"=>{"X"=>"X"}}
   #
   #   g = h.traverse{ |k,v| [k.downcase, v] }
   #
-  #   g  #=> {"a"=>"A", "b"=>"B", {"x"=>"X"}}
+  #   g  #=> {"a"=>"A", "b"=>"B", "c"=>{"x"=>"X"}}
   #
-  # NOTE: Hash#traverse is the same as <code>recursive.graph</code> and
-  # will likely be deprecated in the future because of it.
+  # NOTE: Hash#traverse is the same as `recursive.graph` and
+  # might be deprecated in the future (if it ever works!)
   #
   # CREDIT: Trans
 

@@ -1,21 +1,19 @@
-require 'facets/matchdata/matchset'
-require 'test/unit'
+covers 'facets/matchdata/matchset'
 
-class Test_MatchData_Matchset < Test::Unit::TestCase
+testcase MatchData do
 
-  def test_matchtree_01
+  unit :matchtree do
     md = /(bb)(cc(dd))(ee)/.match "XXaabbccddeeffXX"
-    assert_equal( [["bb"], ["cc", ["dd"]], ["ee"]] , md.matchtree )
-  end
+    md.matchtree.assert == [["bb"], ["cc", ["dd"]], ["ee"]]
 
-  def test_matchtree_02
     md = /(bb)c(c(dd))(ee)/.match "XXaabbccddeeffXX"
-    assert_equal( [["bb"], "c", ["c", ["dd"]], ["ee"]] , md.matchtree )
+    md.matchtree.assert == [["bb"], "c", ["c", ["dd"]], ["ee"]]
   end
 
-  def test_matchset
+  unit :matchset do
     md = /(bb)(cc(dd))(ee)/.match "XXaabbccddeeffXX"
-    assert_equal( ["XXaa", [["bb"], ["cc", ["dd"]], ["ee"]], "ffXX"] , md.matchset )
+    md.matchset.assert == ["XXaa", [["bb"], ["cc", ["dd"]], ["ee"]], "ffXX"]
   end
 
 end
+

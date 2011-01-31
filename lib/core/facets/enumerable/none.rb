@@ -10,11 +10,11 @@ module Enumerable
     # if and only if _none_ of the elements have a true value
     # (i.e. not +nil+ or +false+).
     #
-    #   [].none?                      # true
-    #   [nil].none?                   # true
-    #   [5,8,9].none?                 # false
-    #   (1...10).none? { |n| n < 0 }  # true
-    #   (1...10).none? { |n| n > 0 }  # false
+    #   [].none?                      # => true
+    #   [nil].none?                   # => true
+    #   [5,8,9].none?                 # => false
+    #   (1...10).none? { |n| n < 0 }  # => true
+    #   (1...10).none? { |n| n > 0 }  # => false
     #
     # CREDIT: Gavin Sinclair
 

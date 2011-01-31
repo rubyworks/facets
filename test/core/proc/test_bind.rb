@@ -1,17 +1,16 @@
-require 'facets/proc/bind.rb'
-require 'test/unit'
+covers 'facets/proc/bind'
 
-class TestProc < Test::Unit::TestCase
+testcase Proc do
 
   # Not sure why this is thread critical?
-
-  def test_memory_leak
+  unit :bind => "thread critial" do
     a = 2
     tproc = lambda { |x| x + a }
     99.times {
       tmethod = tproc.bind(self) #to_method
-      assert_equal( 3, tmethod.call(1) )
+      tmethod.call(1).assert == 3
     }
+
     meths = (
       Object.instance_methods +
       Object.public_instance_methods +
@@ -20,7 +19,8 @@ class TestProc < Test::Unit::TestCase
     )
     meths = meths.select{ |s| s.to_s =~ /^_bind_/ }
     #meths = Symbol.all_symbols.select { |s| s.to_s =~ /^_bind_/ }  # why?
-    assert_equal( 0, meths.size )
+
+    meths.size.assert == 0
   end
 
 end

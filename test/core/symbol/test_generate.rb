@@ -1,19 +1,15 @@
-# Test for facets/symbol/generate
+covers 'facets/symbol/generate'
 
-require 'facets/symbol/generate.rb'
+testcase Symbol do
 
-require 'test/unit'
-
-class TestSymbol < Test::Unit::TestCase
-
-  def test_generate_nil
-    assert_equal( :'-1', Symbol.generate )
-    assert_equal( :'-2', Symbol.generate )
+  metaunit :generate => "without key" do
+    Symbol.generate.assert == :'-1'
+    Symbol.generate.assert == :'-2'
   end
 
-  def test_generate_with_key
-    assert_equal( :'orange-1', Symbol.generate('orange') )
-    assert_equal( :'orange-2', Symbol.generate('orange') )
+  metaunit :generate => "with prefix key" do
+    Symbol.generate('orange').assert == :'orange-1'
+    Symbol.generate('orange').assert == :'orange-2'
   end
 
 end

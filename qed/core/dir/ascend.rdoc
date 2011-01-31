@@ -1,0 +1,24 @@
+== Dir#ascend
+
+  require 'facets/dir/ascend'
+
+  path = 'A/B/C'
+
+  tmp = []
+
+  Dir.ascend(path) do |d|
+    tmp << d
+  end
+
+  tmp.assert == %w{A/B/C A/B A}
+
+Exclude current path.
+
+  tmp = []
+
+  Dir.ascend(path, false) do |d|
+    tmp << d
+  end
+  
+  tmp.assert == %w{A/B A}
+

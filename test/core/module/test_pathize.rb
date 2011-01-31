@@ -1,15 +1,17 @@
-require 'facets/module/pathize'
-require 'test/unit'
+covers 'facets/module/pathize'
 
-class TestClassPathize < Test::Unit::TestCase
+tests Module do
 
-  def test_pathize
-    assert_equal( Test::Unit::TestCase.pathize, 'test/unit/test_case' )
+  unit :pathize do
+    Lemon.pathize.assert == 'lemon'
   end
-
-  #def test_methodize
-  #  assert_equal( Test::Unit::TestCase.methodize, 'test__unit__test_case' )
-  #end
 
 end
 
+tests Class do
+
+  unit :pathize do
+    Lemon::TestCase.pathize.assert == 'lemon/test_case'
+  end
+
+end

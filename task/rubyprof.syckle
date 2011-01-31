@@ -1,8 +1,0 @@
----
-rubyprof:
-  service: RubyProf
-  active : false
-  output : ~
-  scripts: ~
-  options: ~
-

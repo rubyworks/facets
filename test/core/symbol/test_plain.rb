@@ -1,10 +1,9 @@
-require 'facets/symbol/plain'
-require 'test/unit'
+covers 'facets/symbol/plain'
 
-class TC_Symbol_Plain < Test::Unit::TestCase
+testcase Symbol do
 
-  def test_plain?
-    assert(:try.plain? )
+  unit :plain? do
+    assert( :try.plain? )
 
     assert( ! :try=.plain? )
     assert( ! :try?.plain? )

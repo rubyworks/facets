@@ -8,11 +8,9 @@ class Symbol
         yield
         true
       rescue ArgumentError => err     # 1.9 exception
-        #msg += ", not #{err.message.split(/ /).last}"
-        false
+        false  #msg += ", not #{err.message.split(/ /).last}"
       rescue NameError => err         # 1.8 exception
-        #msg += ", not #{err.name.inspect}"
-        false
+        false  #msg += ", not #{err.name.inspect}"
       end
     end
   end

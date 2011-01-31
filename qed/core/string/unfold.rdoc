@@ -1,0 +1,9 @@
+== String#unfold
+
+  require 'facets/string/unfold'
+
+  str = "This is a test of\nparagraph folding."
+  res = str.unfold
+  exp = "This is a test of paragraph folding."
+  res.assert == exp
+

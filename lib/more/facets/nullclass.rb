@@ -1,27 +1,3 @@
-# = NullClass
-#
-# NullClass is essentially NilClass but it differs in one
-# important way. When a method is called against it that it
-# deoesn't have, it will simply return null value rather then
-# raise an error.s
-#
-# == Authors
-#
-# * Thomas Sawyer
-#
-# = Copying
-#
-# Copyright (c) 2005 Thomas Sawyer
-#
-# Ruby License
-#
-# This module is free software. You may use, modify, and/or redistribute this
-# software under the same terms as Ruby.
-#
-# This program is distributed in the hope that it will be useful, but WITHOUT
-# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-# FOR A PARTICULAR PURPOSE.
-
 # = Nullclass
 #
 # NullClass is essentially NilClass but it differs in one
@@ -29,8 +5,8 @@
 # deoesn't have, it will simply return null value rather then
 # raise an error.
 #
-# TODO: Perhaps NullClass and NackClass should be one and the same?
-#
+# TODO: Perhaps NullClass should be called NackClass?
+
 class NullClass #< NilClass
   class << self
     def new
@@ -59,16 +35,4 @@ class Object
   end
 end
 
-
-
-#  _____         _
-# |_   _|__  ___| |_
-#   | |/ _ \/ __| __|
-#   | |  __/\__ \ |_
-#   |_|\___||___/\__|
-#
-
-# TODO
-
-=begin #testing
-=end
+# Copyright (c) 2005 Thomas Sawyer

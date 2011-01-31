@@ -1,14 +1,15 @@
-require 'facets/integer/odd'
-require 'test/unit'
+covers 'facets/integer/odd'
 
-class TC_Integer < Test::Unit::TestCase
+# NOTE: Can't test on Integer directly b/c Ruby 1.8.7 defines separate
+# methods for Fixnum.
+testcase Fixnum do
 
-  def test_odd?
+  unit :odd? do
     (-101..101).step(2) do |n|
-      assert(n.odd? == true)
+      n.odd?.assert == true
     end
     (-100..100).step(2) do |n|
-      assert(n.odd? == false)
+      n.odd?.assert == false
     end
   end
 

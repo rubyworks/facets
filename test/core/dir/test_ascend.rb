@@ -1,37 +1,29 @@
-require 'facets/dir/ascend'
-require 'test/unit'
-require 'tmpdir'
+covers 'facets/dir/ascend'
 
-class TC_Dir_Ascend < Test::Unit::TestCase
+tests Dir do
 
-   DIRS  = %w{A A/B}
-   FILES = %w{A.txt A/B.txt A/B/C.txt}
+   test_directory = 'test/core/dir'
 
-   def setup
-     @location = File.join(Dir.tmpdir, self.class.name, Time.now.usec.to_s)
-     @startdir = File.join(@location)
-   end
-
-   def test_ascend
+   metaunit :ascend do
      c = []
-     Dir.ascend(@startdir) do |path|
+     Dir.ascend(test_directory) do |path|
        c << path
      end
-     rdir = @startdir
+     rdir = test_directory
      c.each do |d|
-       assert_equal(rdir, d)
+       d.assert == rdir
        rdir = File.dirname(rdir)
      end
    end
 
-   def test_ascend_exclude_current
+   metaunit :ascend => "exclude current" do
      c = []
-     Dir.ascend(@startdir, false) do |path|
+     Dir.ascend(test_directory, false) do |path|
        c << path
      end
-     rdir = File.dirname(@startdir)
+     rdir = File.dirname(test_directory)
      c.each do |d|
-       assert_equal(rdir, d)
+       d.assert == rdir
        rdir = File.dirname(rdir)
      end
    end

@@ -8,13 +8,13 @@ module Enumerable
     # Say we want to count characters in a string. Using
     # the #each_with_object method we have:
     #
-    #    string.each_with_object(Hash.new(0)) do |c, h|
+    #    "string".each_with_object(Hash.new(0)) do |c, h|
     #      h[c] += 1
     #    end
     #
     # versus using #inject which would be:
     #
-    #    string.inject(Hash.new(0)) do |h, c|
+    #    "string".inject(Hash.new(0)) do |h, c|
     #      h[c] +=1
     #      h
     #    end

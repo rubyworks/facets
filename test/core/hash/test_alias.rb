@@ -1,15 +1,16 @@
-require 'facets/hash/alias.rb'
-require 'test/unit'
+covers 'facets/hash/alias'
 
-class TestHashRekey < Test::Unit::TestCase
+testcase Hash do
 
-  def test_alias!
+  unit :alias! do
     foo = { 'a'=>1, 'b'=>2 }
-    assert_equal( { 'a'=>1, 'b'=>2, 'c'=>2 }, foo.alias!('c','b') )
+    foo.alias!('c','b').assert == { 'a'=>1, 'b'=>2, 'c'=>2 }
+
     foo = { 'a'=>1, 'b'=>2 }
-    assert_equal( { :a=>1, 'a'=>1, 'b'=>2 }, foo.alias!(:a,'a') )
+    foo.alias!(:a,'a').assert == { :a=>1, 'a'=>1, 'b'=>2 }
+
     foo = { :a=>1, :b=>2 }
-    assert_equal( { :a=>1, :b=>2 }, foo.alias!('bar','foo') )
+    foo.alias!('bar','foo').assert == { :a=>1, :b=>2 }
   end
 
 end

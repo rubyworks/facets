@@ -1,5 +1,23 @@
 class String
 
+  # Alignment method dispatches to #align_right, #align_left
+  # or #align_center, accorging to the first +direction+ parameter.
+  #
+  #   s = <<-EOS
+  #   This is a test
+  #     and
+  #     so on
+  #   EOS
+  #
+  #   s.align(:right, 14)
+  #
+  # _produces_ ...
+  #
+  #   This is a test
+  #              and
+  #            so on
+  #
+  # Returns a String aligned right, left or center.
   def align(direction, n, sep="\n", c=' ')
     case direction
     when :right
@@ -25,9 +43,9 @@ class String
   #     so on
   #   EOS
   #
-  #   puts s.align_right(14)
+  #   s.align_right(14)
   #
-  # _produces_
+  # _produces_ ...
   #
   #   This is a test
   #              and
@@ -55,9 +73,9 @@ class String
   #     so on
   #   EOS
   #
-  #   puts s.align_left(20, "\n", '.')
+  #   s.align_left(20, "\n", '.')
   #
-  # _produces_
+  # _produces_ ...
   #
   #   This is a test......
   #   and.................
@@ -85,9 +103,9 @@ class String
   #     so on
   #   EOS
   #
-  #   puts s.align_center(14)
+  #   s.align_center(14)
   #
-  # _produces_
+  # _produces_ ...
   #
   #   This is a test
   #        and

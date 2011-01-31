@@ -9,6 +9,8 @@
 The following developers have recently contributed to the development of Facets.
 They are held in the highest regard for their efforts.
 
+* Alexey Petrushin     Some methods from `ruby-ext` project.
+* Michael Harmer       Documentation Improvements
 * Lavir the Whiolet    Improved Range#at_rand and added File#ext.
 * Jean-Denis Vauguet   Added Pathname#visit.
 * Roger Pack           Added generational depth to Class#descendants.
@@ -58,6 +60,7 @@ All of their hard work is greatly appreciated.
 * Sean O'Halpin
 * Matthew Harris
 * David Heinemeier Hansson
+* Ilmari Heikkinen
 * Thomas-Ivo Heinen
 * Dave Hoover
 * Ara T. Howard

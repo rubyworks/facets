@@ -1,18 +1,22 @@
-begin
-  require 'enumerator' #if RUBY_VERSION < 1.9
+if RUBY_VERSION < '1.9'
+
+  require 'enumerator'
+
   # for Ruby 1.8 -> 1.9 transition
-  Enumerator = Enumerable::Enumerator unless defined? ::Enumerator
+  Enumerator = Enumerable::Enumerator unless defined?(::Enumerator)
 
   class Enumerator
+
+    private
 
     alias :old_initialize :initialize
 
     # Provides the ruby-1.9 block form of Enumerator, where you can write:
     #
     #    obj = Enumerator.new do |yielder|
-    #       .. do stuff
-    #       yielder.yield data      # or: yielder << data
-    #       .. etc
+    #      # ...
+    #      yielder.yield(data)  # or: yielder << data
+    #      # ...
     #    end
     #
     # When obj.each is called, the block is run once. It should call
@@ -28,10 +32,10 @@ begin
     #     }
     #   }  
     #
-    #   assert_equal [1, 1, 2, 3, 5, 8, 13, 21, 34, 55], fib.take(10)
-                                                  
+    #   fib.take(10)  #=> [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
+    #                                                 
     def initialize(*args, &block)
-      if block_given?
+      if block
         @body = block
         old_initialize(self, :_start)
       else
@@ -40,14 +44,16 @@ begin
     end
 
     def _start(*args,&receiver) #:nodoc:
-      @body.call(Yielder.new(receiver), *args)
+      @body.call(Yielder.new(&receiver), *args)
     end
 
     # Wrapper to allow yielder.yield(output) or yielder << output
     # in the same way as ruby-1.9
+    #
+    # TODO: Why can't Yielder take a block instead of a proc argument?
 
     class Yielder #:nodoc:
-      def initialize(proc)
+      def initialize(&proc)
         @proc = proc
       end
       def yield(*args)
@@ -58,7 +64,6 @@ begin
 
   end
 
-rescue LoadError # Ruby 1.9 already has it built-in.
 end
 
 path = __FILE__.chomp('.rb')

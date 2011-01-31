@@ -1,52 +1,37 @@
-# Test facets/timer.rb
+covers 'facets/timer'
 
-require 'facets/timer.rb'
-require 'test/unit'
+tests Timer do
 
-class TC_Timer < Test::Unit::TestCase
-
-  def test_timed
-    timed { |timer|
-      assert_equal 0, timer.total_time.round
+  meta :time do
+    Timer.time { |timer|
+      timer.total_time.round.assert == 0
       sleep 1
-      assert_equal 1, timer.total_time.round
+      timer.total_time.round.assert == 1
       timer.stop
-      assert_equal 1, timer.total_time.round
+      timer.total_time.round.assert == 1
       sleep 1
-      assert_equal 1, timer.total_time.round
+      timer.total_time.round.assert == 1
       timer.start
-      assert_equal 1, timer.total_time.round
+      timer.total_time.round.assert == 1 
       sleep 1
-      assert_equal 2, timer.total_time.round
+      timer.total_time.round.assert == 2
     }
   end
 
-  def test_outoftime
+  unit :start => "out of time", :stop => "out to time" do
     t = Timer.new(1)
-    assert_raises( TimeoutError ) {
+    expect TimeoutError do
       t.start
       sleep 2
       t.stop
-    }
+    end
   end
 
-  # This has been removed becuase it is too close to call.
-  # Sometimes and error is returned sometimes it is not.
-  #def test_nickoftime
-  #  assert_raises( TimeoutError ) {
-  #    @t.start
-  #    sleep 2
-  #    @t.stop
-  #  }
-  #end
-
-  def test_intime
+  unit :start => "in time" do
     t = Timer.new(2)
-    assert_nothing_raised {
-      t.start
-      sleep 1
-      t.stop
-    }
+    t.start
+    sleep 1
+    t.stop
   end
 
 end

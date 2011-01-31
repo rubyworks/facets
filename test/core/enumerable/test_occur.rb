@@ -1,14 +1,13 @@
-require 'facets/enumerable/occur'
-require 'test/unit'
+covers 'facets/enumerable/occur'
 
-class TC_Enumerable_Occur < Test::Unit::TestCase
+testcase Enumerable do
 
-  def test_occur
+  unit :occur do
     arr = [:a,:b,:a]
-    assert_equal( [:b], arr.occur(1) )
-    assert_equal( [:a], arr.occur(2) )
-    assert_equal( [:b], arr.occur(1..1) )
-    assert_equal( [:a], arr.occur{ |n| n % 2 == 0 } )
+    arr.occur(1).assert == [:b]
+    arr.occur(2).assert == [:a]
+    arr.occur(1..1).assert == [:b]
+    arr.occur{ |n| n % 2 == 0 }.assert == [:a]
   end
 
 end

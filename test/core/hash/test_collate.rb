@@ -1,32 +1,50 @@
-require 'facets/hash/collate'
-require 'test/unit'
+covers 'facets/hash/collate'
 
-class TC_Hash_Collation < Test::Unit::TestCase
+tests Hash do
 
-  def setup
-    @a = { :a=>1, :b=>2, :z=>26, :all=>%w|a b z|, :stuff1=>%w|foo bar|, :whee=>%w|a b| }
-    @b = { :a=>1, :b=>4, :c=>9,  :all=>%w|a b c|, :stuff2=>%w|jim jam|, :whee=>%w|a b| }
-    @c = { :a=>1, :b=>8, :c=>27 }
+  a = { :a=>1, :b=>2, :z=>26, :all=>%w|a b z|, :stuff1=>%w|foo bar|, :whee=>%w|a b| }
+  b = { :a=>1, :b=>4, :c=>9,  :all=>%w|a b c|, :stuff2=>%w|jim jam|, :whee=>%w|a b| }
+  c = { :a=>1, :b=>8, :c=>27 }
+
+  unit :collate do
+    collated = a.collate(b)
+
+    collated.keys.length.assert == 8
+
+    collated[:a].assert == [1,1]
+    collated[:b].assert == [2,4]
+    collated[:c].assert == [9]
+    collated[:z].assert == [26]
+
+    collated[:all].assert == %w|a b z a b c|
+    collated[:stuff1].assert == %w|foo bar|
+    collated[:stuff2].assert == %w|jim jam|
+    collated[:whee].assert == %w|a b a b|
   end
 
-  def test_defaults
-    collated = @a.collate(@b)
-    assert_equal( 8, collated.keys.length, "There are 7 unique keys" )
-    assert_equal( [1,1], collated[ :a ] )
-    assert_equal( [2,4], collated[ :b ] )
-    assert_equal( [9],   collated[ :c ] )
-    assert_equal( [26],  collated[ :z ] )
-    assert_equal( %w|a b z a b c|,  collated[ :all ], "Arrays are merged by default." )
-    assert_equal( %w|foo bar|,  collated[ :stuff1 ] )
-    assert_equal( %w|jim jam|,  collated[ :stuff2 ] )
-    assert_equal( %w|a b a b|,  collated[ :whee ] )
+  unit :collate => "multiple times" do
+    collated = a.collate(b).collate(c)
+
+    collated[:a].assert == [1,1,1]
+    collated[:b].assert == [2,4,8]
+    collated[:c].assert == [9,27]
   end
 
-  def test_multi_collate
-    collated = @a.collate(@b).collate(@c)
-    assert_equal( [1,1,1], collated[ :a ] )
-    assert_equal( [2,4,8], collated[ :b ] )
-    assert_equal( [9,27],  collated[ :c ] )
+  unit :collate! => "in place variant of #collate" do
+    collated = a.dup
+    collated.collate!(b)
+
+    collated.keys.length.assert == 8
+
+    collated[:a].assert == [1,1]
+    collated[:b].assert == [2,4]
+    collated[:c].assert == [9]
+    collated[:z].assert == [26]
+
+    collated[:all].assert == %w|a b z a b c|
+    collated[:stuff1].assert == %w|foo bar|
+    collated[:stuff2].assert == %w|jim jam|
+    collated[:whee].assert == %w|a b a b|
   end
 
 end

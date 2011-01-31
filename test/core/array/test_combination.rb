@@ -1,29 +1,21 @@
-require 'facets/array/combination'
-require 'test/unit'
+covers 'facets/array/combination'
 
-class TestEnumerableCombination < Test::Unit::TestCase
+testcase Array do
 
-  def test_combination
+  unit :combination => "finds pairs of combinations" do
+    e = [[1, 2], [1, 3], [1, 4], [2, 3], [2, 4], [3, 4]]
     a = [1,2,3,4]
-    z = a.combination(2).to_a
-    r = [[1, 2], [1, 3], [1, 4], [2, 3], [2, 4], [3, 4]]
-    assert_equal( r, z )
+    r = a.combination(2).to_a
+    r.assert == e
   end
 
-  def test_combination_with_block
+  unit :combination => "can also take a block" do
+    e = [[1,2],[1,3],[1,4],[2,3],[2,4],[3,4]]
     r = []
     a = [1,2,3,4]
     a.combination(2){ |a,b| r << [a,b] }
-    assert_equal( [[1,2],[1,3],[1,4],[2,3],[2,4],[3,4]], r )
+    r.assert == e
   end
-
-#   DEPRECATED
-#   def test_each_unique_pair
-#     r = []
-#     a = [1,2,3,4]
-#     a.each_unique_pair{ |a,b| r << [a,b] }
-#     assert_equal( [[1,2],[1,3],[1,4],[2,3],[2,4],[3,4]], r )
-#   end
 
 end
 

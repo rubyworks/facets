@@ -1,12 +1,11 @@
-require 'facets/hash/zipnew'
-require 'test/unit'
+covers 'facets/hash/zipnew'
 
-class TC_Hash_ZipNew < Test::Unit::TestCase
+testcase Hash do
 
-  def test_zipnew
+  metaunit :zipnew do
     a = [1,2,3]
     b = [4,5,6]
-    assert_equal( {1=>4,2=>5,3=>6}, Hash.zipnew(a,b) )
+    Hash.zipnew(a,b).assert == {1=>4,2=>5,3=>6}
   end
 
 end

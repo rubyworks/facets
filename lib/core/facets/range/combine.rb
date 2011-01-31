@@ -5,7 +5,7 @@ class Range
   #   (1..2).combine(2..4)   #=> [1..4]
   #   (1..2).combine(3..4)   #=> [1..2, 3..4]
   #
-  #   TODO: Incorporate end-sentinal inclusion vs. exclusion.
+  # TODO: Incorporate end-sentinal inclusion vs. exclusion.
   #
   # CREDIT: Trans
 

@@ -1,13 +1,12 @@
-require 'facets/string/divide'
-require 'test/unit'
+covers 'facets/string/divide'
 
-class TC_String_Divide < Test::Unit::TestCase
+testcase String do
 
-  def test_divide
+  unit :divide do
     s = "<p>This<b>is</b>a test.</p>"
     d = s.divide( /<.*?>/ )
     e = ["<p>This", "<b>is", "</b>a test.", "</p>"]
-    assert_equal(e, d)
+    d.assert == e
   end
 
 end

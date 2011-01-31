@@ -1,20 +1,17 @@
-# Test facets/hash/stringify_keys.rb
+covers 'facets/hash/stringify_keys'
 
-require 'facets/hash/stringify_keys.rb'
-require 'test/unit'
+testcase Hash do
 
-class TestHashStringifyKeys < Test::Unit::TestCase
-
-  def test_stringify_keys
+  unit :stringify_keys do
     foo = { :a=>1, :b=>2 }
-    assert_equal( { "a"=>1, "b"=>2 }, foo.stringify_keys )
-    assert_equal( { :a =>1, :b=>2 }, foo  )
+    foo.stringify_keys.assert == { "a"=>1, "b"=>2 }
+    foo.assert == { :a =>1, :b=>2 }
   end
 
-  def test_stringify_keys!
+  unit :stringify_keys! do
     foo = { :a=>1, :b=>2 }
-    assert_equal( { "a"=>1, "b"=>2 }, foo.stringify_keys!  )
-    assert_equal( { "a"=>1, "b"=>2 }, foo )
+    foo.stringify_keys!.assert == { "a"=>1, "b"=>2 }
+    foo.assert == { "a"=>1, "b"=>2 }
   end
 
 end

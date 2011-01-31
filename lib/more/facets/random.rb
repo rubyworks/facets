@@ -1,152 +1,129 @@
-# = Random
-#
-# Randomization core extension methods.
-#
-# This library extends Object, Array, String, Hash, and Range with randomization
-# methods. Most of the methods are of one of two kinds. Either they "pick"
-# a random element from the reciever or they randomly "shuffle" the receiver.
-#
-# The most common example is Array#shuffle, which simply randmomizes the
-# order of an array's elements.
-#
-#   [1,2,3].shuffle  #=> [2,3,1]
-#
-# The other methods do similar things for their respective classes.
-#
-# == Authors
-#
-# * Ilmari Heikkinen <mailto:kig@misfiring.net>
-# * Christian Neukirchen <mailto:chneukirchen@gmail.com>
-# * Thomas Sawyer
-#
-# == Copying
-#
-# Copyright (c) 2005 Ilmari Heikkinen, Christian Neukirchen, Thomas Sawyer
-#
-# Ruby License
-#
-# This module is free software. You may use, modify, and/or redistribute this
-# software under the same terms as Ruby.
-#
-# This program is distributed in the hope that it will be useful, but WITHOUT
-# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-# FOR A PARTICULAR PURPOSE.
-
 require 'facets/hash/zipnew'
 require 'facets/string/shatter'
+require 'facets/kernel/maybe'
 
-# = Random
+# = Randomization Extensions
 #
-# Randomization core extension methods.
-#
-# This library extends Array, String and Hash with randomization methods.
-# Most of the methods are of one of two kinds. Either they "pick" a random
-# element from the reciever or they randomly "shuffle" the reciever.
+# This library extends Array, String, Hash and other classes with randomization
+# methods. Most of the methods are of one of two kinds. Either they "pick" a
+# random element from the reciever or they randomly "shuffle" the reciever.
 #
 # The most common example is Array#shuffle, which simply randmomizes the
 # order of an array's elements.
 #
-#   [1,2,3].shuffle  #=> [2,3,1]
+#   [1,2,3].shuffle  #~> [2,3,1]
 #
 # The other methods do similar things for their respective classes.
 #
-module Random
+# The classes are all extended via mixins which have been created within
+# Ruby's Random class.
+#
+# Credit for this work is due to:
+#
+# * Ilmari Heikkinen
+# * Christian Neukirchen
+# * Thomas Sawyer
+#
+# NOTE: Inline QED tests are almost pointless here b/c... yea, it's random.
+# So indtead of the usual `#=>` we use `#~>` which means approx. equal and
+# prevens QED from making a hard assertion.
+
+class Random
 
   class << self
     # Alias for Kernel#rand.
     alias_method :number, :rand
+
     public :number
   end
 
-  #def self.number(*args)
-  #  ::Kernel.rand(*args)
-  #end
+  ##def self.number(*args)
+  ##  ::Kernel.rand(*args)
+  ##end
 
+  # Module method to generate a random letter.
   #
-  def self.append_features(mod)
-    if mod == ::Object
-      mod.send(:include, Random::Object)
-    elsif mod == ::Range
-      mod.send(:include, Random::Range)
-    elsif mod == ::Array
-      mod.send(:include, Random::Array)
-    elsif mod == ::Hash
-      mod.send(:include, Random::Hash)
-    elsif mod == ::String
-      mod.send(:include, Random::String)
-    else
-      raise TypeError
-    end
+  #   Random.letter  #~> "q"
+  #   Random.letter  #~> "r"
+  #   Random.letter  #~> "a"
+  #
+  def self.letter
+    (Random.number(26) + (Random.number(2) == 0 ? 65 : 97) ).chr
   end
 
   #
-
-  module Object
-
-    # Random generator that returns true or false.
-    # Can also take a block that has a 50/50 chance to being executed.
-    #
-    #   maybe  #=> true
-    #   maybe  #=> false
-    #
-    def maybe(chance = 0.5, &block)
-      if block then
-        yield if rand < chance
-      else
-        rand < chance
-      end
-    end
-
-  end
-
-  #
-
-  module Range
-
+  module RangeExtensions
     # Return a random element from the range.
     #
-    #   (1..4).at_rand           #=> 2
-    #   (1..4).at_rand           #=> 4
+    #   (1..4).at_rand           #~> 2
+    #   (1..4).at_rand           #~> 4
     #
-    #   (1.5..2.5).at_rand       #=> 2.06309842754533
-    #   (1.5..2.5).at_rand       #=> 1.74976944931541
+    #   (1.5..2.5).at_rand       #~> 2.06309842754533
+    #   (1.5..2.5).at_rand       #~> 1.74976944931541
     #
-    #   ('a'..'z').at_rand       #=> 'q'
-    #   ('a'..'z').at_rand       #=> 'f'
+    #   ('a'..'z').at_rand       #~> 'q'
+    #   ('a'..'z').at_rand       #~> 'f'
     #
-    # CREDIT: Lavir the Whiolet
-
+    # CREDIT: Lavir the Whiolet, Thomas Sawyer
     def at_rand
       first, last = first(), last()
-      if first.respond_to?(:succ)
-        # optimized algorithm
-        if (Fixnum === first || Bignum === first) &&
-           (Fixnum === last  || Bignum === last)
-          last -= 1 if exclude_end?
-          return nil if last < first
-          return Random.number(last - first + 1) + first
+      if first.respond_to?(:random_delta)  # TODO: work on this!!!
+        begin
+          first.random_delta(last, exclude_end?)
+        rescue
+          to_a.at_rand
         end
-        # standard algorithm
-        return to_a.at_rand
-      elsif Numeric === first && Numeric === last
-        return nil if last < first
-        return nil if exclude_end? && last == first
-        return (last - first) * Random.number + first
       else
-        return nil
+        to_a.at_rand
       end
+      ##elsif first.respond_to?(:succ)
+      ##  # optimized algorithm
+      ##  if (Fixnum === first || Bignum === first) &&
+      ##     (Fixnum === last  || Bignum === last)
+      ##    last -= 1 if exclude_end?
+      ##    return nil if last < first
+      ##    return Random.number(last - first + 1) + first
+      ##  end
+      ##  # standard algorithm
+      ##  return to_a.at_rand
+      ##elsif Numeric === first && Numeric === last
+      ##  return nil if last < first
+      ##  return nil if exclude_end? && last == first
+      ##  return (last - first) * Random.number + first
+      ##else
+      ##  return nil
+      ##end
     end
-
   end
 
   #
+  module IntegerExtensions
+    #
+    def random_delta(last, exclude_end)
+      first = self
+      last -= 1 if exclude_end
+      return nil if last < first
+      return Random.number(last - first + 1) + first
+    end
+  end
 
-  module Array
+  #
+  module NumericExtensions
+    #
+    def random_delta(last, exclude_end)
+      first = self
+      return nil if last < first
+      return nil if exclude_end && last == first
+      return (last - first) * Random.number + first
+    end
+  end
 
+  #
+  module ArrayExtensions
     # Return a random element from the array.
     #
-    #   [1, 2, 3, 4].at_rand           #=> 2
-    #   [1, 2, 3, 4].at_rand           #=> 4
+    #   [1, 2, 3, 4].at_rand           #~> 2
+    #   [1, 2, 3, 4].at_rand           #~> 4
     #
     def at_rand
       at(Random.number(size))
@@ -156,8 +133,8 @@ module Random
     # random element from the array.
     #
     #   a = [1,2,3,4]
-    #   a.at_rand!       #=> 2
-    #   a                #=> [1,3,4]
+    #   a.at_rand!       #~> 2
+    #   a                #~> [1,3,4]
     #
     def at_rand!
       return delete_at( Random.number( size ) )
@@ -211,10 +188,10 @@ module Random
     # _number_ given is greater than the size of the array,
     # then all values are returned.
     #
-    #   [1, 2, 3, 4].rand_subset(1)        #=> [2]
-    #   [1, 2, 3, 4].rand_subset(4)        #=> [2, 1, 3, 4]
-    #   [1, 2, 3, 4].rand_subset           #=> [1, 3, 4]
-    #   [1, 2, 3, 4].rand_subset           #=> [2, 3]
+    #   [1, 2, 3, 4].rand_subset(1)        #~> [2]
+    #   [1, 2, 3, 4].rand_subset(4)        #~> [2, 1, 3, 4]
+    #   [1, 2, 3, 4].rand_subset           #~> [1, 3, 4]
+    #   [1, 2, 3, 4].rand_subset           #~> [2, 3]
     #
     def rand_subset( number=nil, exclusive=true )
       number = Random.number(size) unless number
@@ -227,7 +204,7 @@ module Random
 
     # Randomize the order of an array.
     #
-    #   [1,2,3,4].shuffle  #=> [2,4,1,3]
+    #   [1,2,3,4].shuffle  #~> [2,4,1,3]
     #
     def shuffle
       dup.shuffle!
@@ -239,10 +216,10 @@ module Random
     #
     #   a = [1,2,3,4]
     #   a.shuffle!
-    #   a  #=> [2,4,1,3]
+    #
+    #   a  #~> [2,4,1,3]
     #
     # CREDIT Niel Spring
-
     def shuffle!
       s = size
       each_index do |j|
@@ -258,12 +235,10 @@ module Random
   end
 
   #
-
-  module Hash
-
+  module HashExtensions
     # Returns a random key.
     #
-    #   {:one => 1, :two => 2, :three => 3}.pick_key  #=> :three
+    #   {:one => 1, :two => 2, :three => 3}.pick_key  #~> :three
     #
     def rand_key
       keys.at(Random.number(keys.size))
@@ -272,8 +247,8 @@ module Random
     # Delete a random key-value pair, returning the key.
     #
     #   a = {:one => 1, :two => 2, :three => 3}
-    #   a.pick_key!  #=> :two
-    #   a            #=> {:one => 1, :three => 3}
+    #   a.rand_key!  #~> :two
+    #   a            #~> {:one => 1, :three => 3}
     #
     def rand_key!
       k,v = rand_pair
@@ -285,7 +260,7 @@ module Random
 
     # Returns a random key-value pair.
     #
-    #   {:one => 1, :two => 2, :three => 3}.pick  #=> [:one, 1]
+    #   {:one => 1, :two => 2, :three => 3}.pick  #~> [:one, 1]
     #
     def rand_pair
       k = rand_key
@@ -295,8 +270,8 @@ module Random
     # Deletes a random key-value pair and returns that pair.
     #
     #   a = {:one => 1, :two => 2, :three => 3}
-    #   a.rand_pair!  #=> [:two, 2]
-    #   a             #=> {:one => 1, :three => 3}
+    #   a.rand_pair!  #~> [:two, 2]
+    #   a             #~> {:one => 1, :three => 3}
     #
     def rand_pair!
       k,v = rand_pair
@@ -308,8 +283,8 @@ module Random
 
     # Returns a random hash value.
     #
-    #   {:one => 1, :two => 2, :three => 3}.rand_value  #=> 2
-    #   {:one => 1, :two => 2, :three => 3}.rand_value  #=> 1
+    #   {:one => 1, :two => 2, :three => 3}.rand_value  #~> 2
+    #   {:one => 1, :two => 2, :three => 3}.rand_value  #~> 1
     #
     def rand_value
       fetch(rand_key)
@@ -318,8 +293,8 @@ module Random
     # Deletes a random key-value pair and returns the value.
     #
     #   a = {:one => 1, :two => 2, :three => 3}
-    #   a.at_rand!  #=> 2
-    #   a           #=> {:one => 1, :three => 3}
+    #   a.at_rand!  #~> 2
+    #   a           #~> {:one => 1, :three => 3}
     #
     def rand_value!
       k,v = rand_pair
@@ -336,7 +311,7 @@ module Random
     # in new random order.
     #
     #   h = {:a=>1, :b=>2, :c=>3}
-    #   h.shuffle_hash  #=> {:b=>2, :c=>1, :a>3}
+    #   h.shuffle  #~> {:b=>2, :c=>1, :a>3}
     #
     def shuffle
       ::Hash.zipnew( keys.sort_by{Random.number}, values.sort_by{Random.number} )
@@ -346,8 +321,8 @@ module Random
     # a new random order.
     #
     #   h = {:a => 1, :b => 2, :c => 3}
-    #   h.shuffle_hash!
-    #   h  #=> {:b=>2, :c=>1, :a=>3}
+    #   h.shuffle!
+    #   h  #~> {:b=>2, :c=>1, :a=>3}
     #
     def shuffle!
       self.replace(shuffle)
@@ -356,31 +331,26 @@ module Random
   end
 
   #
+  module StringExtensions
 
-  module String
-
+    #
     def self.included(base)
       base.extend(Self)
     end
 
     # Class-level methods.
-
     module Self
-
       # Returns a randomly generated string. One possible use is
       # password initialization. Takes a max legnth of characters
       # (default 8) and an optional valid char Regexp (default /\w\d/).
       #
-      #--
-      # CREDIT George Moschovitis
+      #   String.random    #~> 'dd4qed4r'
       #
-      # NOTE This is not very efficient. Better way?
+      # CREDIT George Moschovitis
+      #--
+      # TODO: This is not very efficient. Better way?
       #++
-
       def random(max_length = 8, char_re = /[\w\d]/)
-        # gmosx: this is a nice example of input parameter checking.
-        # this is NOT a real time called method so we can add this
-        # check. Congrats to the author.
         raise ArgumentError.new('char_re must be a regular expression!') unless char_re.is_a?(Regexp)
         string = ""
         while string.length < max_length
@@ -389,23 +359,12 @@ module Random
         end
         return string
       end
-
-      # Module method to generate a random letter.
-      #
-      #   String::Random.rand_letter  #=> "q"
-      #   String::Random.rand_letter  #=> "r"
-      #   String::Random.rand_letter  #=> "a"
-      #
-      def rand_letter
-        (Random.number(26) + (Random.number(2) == 0 ? 65 : 97) ).chr
-      end
-
     end
 
     # Return a random separation of the string.
     # Default separation is by charaacter.
     #
-    #   "Ruby rules".at_rand(' ')  #=> ["Ruby"]
+    #   "Ruby rules".at_rand(' ')  #~> ["Ruby"]
     #
     def at_rand( separator=// )
       #separator = self.class.patterns( separator )
@@ -416,8 +375,8 @@ module Random
     # from the string. Default separation is by character.
     #
     #   s = "Ruby rules"
-    #   s = at_rand!(' ')  #=> "Ruby"
-    #   s                  #=> "rules"
+    #   s.at_rand!(' ')    #~> "Ruby"
+    #   s                  #~> "rules"
     #
     def at_rand!( separator=// )
       #separator = self.class.patterns( separator )
@@ -431,7 +390,7 @@ module Random
 
     # Return a random byte of _self_.
     #
-    #   "Ruby rules".rand_byte  #=> 121
+    #   "Ruby rules".rand_byte  #~> 121
     #
     def rand_byte
       self[Random.number(size)]
@@ -440,8 +399,8 @@ module Random
     # Destructive rand_byte. Delete a random byte of _self_ and return it.
     #
     #   s = "Ruby rules"
-    #   s.rand_byte!      #=> 121
-    #   s                 #=> "Rub rules"
+    #   s.rand_byte!      #~> 121
+    #   s                 #~> "Rub rules"
     #
     def rand_byte!
       i = Random.number(size)
@@ -452,7 +411,7 @@ module Random
 
     # Return a random string index.
     #
-    #   "Ruby rules".rand_index  #=> 3
+    #   "Ruby rules".rand_index  #~> 3
     #
     def rand_index
       Random.number(size)
@@ -461,7 +420,7 @@ module Random
     # Return the string with seperated sections arranged
     # in a random order. The default seperation is by character.
     #
-    #   "Ruby rules".shuffle  #=> "e lybRsuur"
+    #   "Ruby rules".shuffle  #~> "e lybRsuur"
     #
     def shuffle(separator=//)
       split(separator).shuffle.join('')
@@ -477,23 +436,11 @@ module Random
 
 end
 
-class Object
-  include Random
-end
+class Range   ; include Random::RangeExtensions   ; end
+class Array   ; include Random::ArrayExtensions   ; end
+class Hash    ; include Random::HashExtensions    ; end
+class String  ; include Random::StringExtensions  ; end
+class Integer ; include Random::IntegerExtensions ; end
+class Numeric ; include Random::NumericExtensions ; end
 
-class Range
-  include Random
-end
-
-class Array
-  include Random
-end
-
-class Hash
-  include Random
-end
-
-class String
-  include Random
-end
-
+# Copyright (c) 2005 Ilmari Heikkinen, Christian Neukirchen, Thomas Sawyer

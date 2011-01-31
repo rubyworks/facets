@@ -1,16 +1,18 @@
+require 'facets/string/op_div'
+
 class Symbol
 
   # Join with _path_ as a file path.
   #
-  #   :merb / "core_ext"           #=> "merb/core_ext"
-  #   :merb / :core_ext / :string  #=> "merb/core_ext/string"
+  # * path - The path component(s) to append. [#to_s]
   #
-  # @param [#to_s] path The path component(s) to append.
+  # Examples
   #
-  # @return [String] The receiver (as path string), concatenated with _path_.
+  #   (:merb / "string")   #=> "merb/string"
+  #   (:merb / :symbol)    #=> "merb/symbol"
   #
-  # @api public
-
+  # Returns String of the receiver (as a path string), concatenated
+  # with _path_.
   def /(path)
     File.join(to_s, path.to_s)
   end

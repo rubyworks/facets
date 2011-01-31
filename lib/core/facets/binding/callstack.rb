@@ -1,1 +1,1 @@
-require 'facets/kernel/callstack'
+require 'facets/binding/call_stack'

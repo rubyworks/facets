@@ -1,181 +1,179 @@
-# Test for facets/random.rb
+covers 'facets/random'
 
-require 'facets/random.rb'
-require 'test/unit'
+tests Random do
 
-class TestKernelRandom < Test::Unit::TestCase
-
-  def test_maybe
-    assert_nothing_raised { maybe }
+  metaunit :letter do
+    100.times { |i| /[a-zA-z]/.assert =~ Random.letter }
   end
 
 end
 
-class TestRangeRandom < Test::Unit::TestCase
+tests Range do
 
-  def assert_random_range(range, *msg)
-    assert_nothing_raised{ range.at_rand }
-    assert(range.include?( range.at_rand ), *msg)
-  end
-
-  def test_at_rand_normal
-    20.times do
-      assert_random_range(1..4)
-      assert_random_range(1...4)
-      assert_random_range(1.5..2.5)
-      assert_random_range(1.5...2.5)
-      assert_random_range(-4..-1)
-      assert_random_range(-4...-1)
-      assert_random_range(-2.5..-1.5)
-      assert_random_range(-2.5...-1.5)
-      assert_random_range('a'..'d')
-      assert_random_range('a'...'d')
-      assert_equal(5, (5..5).at_rand)
-      assert_equal(nil, (5...5).at_rand)
-      assert_equal(nil, (5..-1).at_rand)
-      assert_equal(5.0, (5.0..5.0).at_rand)
-      assert_equal(nil, (5.0...5.0).at_rand)
-      assert_equal(nil, (5.0...-1.0).at_rand)
+  # helper method
+  def assert_at_rand_table(table)
+    table.each do |x, y|
+      20.times do
+        x.at_rand.assert == y
+      end
     end
   end
 
-  def test_at_rand_reverse
-    20.times do
-      assert_equal(nil,(4..1).at_rand)
-      assert_equal(nil,(4...1).at_rand)
-      assert_equal(nil,(-1..-4).at_rand)
-      assert_equal(nil,(-1...-4).at_rand)
-      #assert((1..4).include?((4..1).at_rand))
-      #assert((-4...-1).include?((-1...-4).at_rand))
-      #assert((-4..-1).include?((-1..-4).at_rand))
+  # helper method
+  def assert_random_range(range)
+    20.times do 
+      range.assert.include?( range.at_rand )
     end
+  end
+
+  unit :at_rand => "within range" do
+    list = [ 1..4, 1...4, 1.5..2.5, 1.5...2.5, -4..-1, -4...-1,
+             -2.5..-1.5, -2.5...-1.5, 'a'..'d', 'a'...'d' ]
+    list.each{ |rng| assert_random_range(rng) }
+  end
+
+  unit :at_rand => "within range special cases" do
+    assert_at_rand_table(
+      (5..5)       => 5,
+      (5...5)      => nil,
+      (5..-1)      => nil,
+      (5.0..5.0)   => 5.0,
+      (5.0...5.0)  => nil,
+      (5.0...-1.0) => nil
+    )
+  end
+
+  unit :at_rand => "reverse ranges" do
+    assert_at_rand_table(
+      (4..1) => nil,
+      (4...1) => nil,
+      (-1..-4) => nil,
+      (-1...-4) => nil
+    )
+    #assert((1..4).include?((4..1).at_rand))
+    #assert((-4...-1).include?((-1...-4).at_rand))
+    #assert((-4..-1).include?((-1..-4).at_rand))
   end
 
   # I'd rather it return the first sentinel than +nil+.
   # Really, ruby should be raising an error as an invalid range value.
-  def test_at_rand_exclusive
-    assert_equal(nil,(5...5).at_rand)
-    #assert_raises(RangeError) do
+  unit :at_rand => "exclusive range" do
+    (5...5).at_rand.assert == nil
+    #expect RangeError do
     #  (5...5).at_rand
     #end
   end
 
 end
 
-class TestArrayRandom < Test::Unit::TestCase
+tests Array do
 
-  def test_at_rand
+  unit :at_rand do
     a = [1,2,3,4,5]
-    20.times{ assert_nothing_raised{ a.at_rand } }
-    20.times{ assert( a.include?( a.at_rand ) ) }
+    20.times{ a.assert.include?( a.at_rand ) }
   end
 
-  def test_at_rand!
+  unit :at_rand! do
     a = ['a','b','c']
-    assert_equal( 1, a.at_rand!.length )
-    assert_equal( 2, a.length )
+    a.at_rand!.length.assert == 1
+    a.length.assert == 2
   end
 
-  def test_pick
+  unit :pick do
     a = ['a','b','c']
-    assert_equal( 3, a.pick(3).length )
-    assert_equal( 3, a.length )
+    a.pick(3).length.assert == 3
+    a.length.assert == 3
     a = ['a','b','c']
-    assert_equal( 3, a.pick(4).length )
-    assert_equal( 3, a.length )
+    a.pick(4).length.assert == 3
+    a.length.assert == 3
   end
 
-  def test_pick!
+  unit :pick! do
     a = ['a','b','c']
-    assert_equal( 3, a.pick!(3).length )
-    assert_equal( 0, a.length )
+    a.pick!(3).length.assert == 3
+    a.length.assert == 0
     a = ['a','b','c']
-    assert_equal( 3, a.pick!(4).length )
-    assert_equal( 0, a.length )
+    a.pick!(4).length.assert == 3
+    a.length.assert == 0
   end
 
-  def test_rand_index
+  unit :rand_index do
     10.times {
       i = [1,2,3].rand_index
-      assert( (0..2).include?(i) )
+      (0..2).assert.include?(i)
     }
   end
 
-  def test_rand_subset
+  unit :rand_subset do
     10.times {
       a = [1,2,3,4].rand_subset
-      assert( a.size <= 4 )
+      a.size.assert <= 4
     }
   end
 
-  def test_shuffle
+  unit :shuffle do
     a = [1,2,3,4,5]
     b = a.shuffle
-    assert_equal( a, b.sort )
+    b.sort.assert == a
   end
 
-  def test_shuffle!
+  unit :shuffle! do
     a = [1,2,3,4,5]
     b = a.dup
     b.shuffle!
-    assert_equal( a, b.sort )
+    b.sort.assert == a
   end
 
 end
 
-class TestHashRandom < Test::Unit::TestCase
+tests Hash do
 
-  def test_rand_key
+  unit :rand_key do
     h = { :a=>1, :b=>2, :c=>3 }
-    10.times { assert( h.keys.include?( h.rand_key ) ) }
+    10.times { h.keys.assert.include?( h.rand_key ) }
   end
 
-  def test_rand_pair
+  unit :rand_pair do
     h = { :a=>1, :b=>2, :c=>3 }
-    10.times { k,v = *h.rand_pair; assert_equal( v, h[k] ) }
+    10.times { k,v = *h.rand_pair; h[k].assert == v }
   end
 
-  def test_rand_value
+  unit :rand_value do
     h = { :a=>1, :b=>2, :c=>3 }
-    10.times { assert( h.values.include?( h.rand_value ) ) }
+    10.times { h.values.assert.include?( h.rand_value ) }
   end
 
-  def test_shuffle
+  unit :shuffle do
     h = {:a=>1, :b=>2, :c=>3 }
-    assert_nothing_raised { h.shuffle }
+    h.shuffle
   end
 
-  def test_shuffle!
+  unit :shuffle! do
     h = {:a=>1, :b=>2, :c=>3 }
-    assert_nothing_raised { h.shuffle! }
+    h.shuffle!
   end
 
 end
 
-class TestStringRandom < Test::Unit::TestCase
+tests String do
 
-  def test_String_rand_letter
-    100.times { |i| assert( /[a-zA-z]/ =~ String.rand_letter ) }
-  end
-
-  def test_at_rand
+  unit :at_rand do
     a = '12345'
-    20.times{ assert_nothing_raised{ a.at_rand } }
-    20.times{ assert( a.include?( a.at_rand ) ) }
+    20.times{ a.assert.include?( a.at_rand ) }
   end
 
-  def test_at_rand!
+  unit :at_rand! do
     x = 'ab'
     r = x.at_rand!
     assert( r == 'a' || r == 'b' )
     assert( x == 'a' || x == 'b' )
   end
 
-  def test_rand_index
-    10.times { assert( (0..2).include?( 'abc'.rand_index ) ) }
+  unit :rand_index do
+    10.times{ (0..2).assert.include?( 'abc'.rand_index ) }
   end
 
-  def test_rand_byte
+  unit :rand_byte do
     2.times do
       s = 'ab'
       r = s.rand_byte
@@ -187,9 +185,13 @@ class TestStringRandom < Test::Unit::TestCase
     end
   end
 
-  def test_shuffle
-    assert_nothing_raised { "abc 123".shuffle }
-    #assert_nothing_raised { "abc 123".shuffle! }
+  unit :shuffle do
+    "abc 123".shuffle
+    #"abc 123".shuffle!
+  end
+
+  unit :shuffle! do
+    "abc 123".shuffle!
   end
 
 end

@@ -1,11 +1,10 @@
-require 'facets/kernel/in.rb'
-require 'test/unit'
+covers 'facets/kernel/in'
 
-class TestKernelIn < Test::Unit::TestCase
+tests Kernel do
 
-  def test_in?
-    assert( 5.in?(0..10) )
-    assert( 5.in?([1,2,3,4,5]) )
+  unit :in? do
+    5.assert.in?(0..10)
+    5.assert.in?([1,2,3,4,5])
   end
 
 end

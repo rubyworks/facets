@@ -8,25 +8,20 @@ module Enumerable
 
   # Per element meta-functor.
   #
-  #   [1,2,3].per + 3             #=> [4,5,6]
-  #   [1,2,3].per(:map) + 3       #=> [4,5,6]
-  #   [1,2,3].per(:select) > 1    #=> [2,3]
+  #   ([1,2,3].per(:map) + 3)     #=> [4,5,6]
+  #   ([1,2,3].per(:select) > 1)  #=> [2,3]
   #
-  #   [1,2,3].per.map + 3       #=> [4,5,6]
-  #   [1,2,3].per.select > 1    #=> [2,3]
+  # Using fluid notation.
+  #
+  #   ([1,2,3].per.map + 3)       #=> [4,5,6]
+  #   ([1,2,3].per.select > 1)    #=> [2,3]
   #
   def per(enum_method=nil, *enum_args)
     if enum_method
       Permeator.new(self, enum_method, *enum_args)
-      #Functor.new do |op, *args|
-      #  __send__(enum_method, *enum_args){ |x| x.__send__(op, *args) } #, &blk) }
-      #end
     else
-      Functor.new do |enum_method, *enum_args|
-        Permeator.new(self, enum_method, *enum_args)
-        #Functor.new do |op, *args|
-        #  __send__(enum_method, *enum_args){ |x| x.__send__(op, *args) } #, &blk) }
-        #end
+      Functor.new do |enumr_method, *enumr_args|
+        Permeator.new(self, enumr_method, *enumr_args)
       end
     end
   end
@@ -58,6 +53,33 @@ module Enumerable
       @enum_object.__send__(@enum_method){ |x| x.__send__(sym, *args, &blk) }
     end
   end
+
+## TODO: Use this when 1.8.6 support is not longer needed.
+=begin
+    # Per element meta-functor.
+    #
+    #   ([1,2,3].per(:map) + 3)     #=> [4,5,6]
+    #   ([1,2,3].per(:select) > 1)  #=> [2,3]
+    #
+    # Using fluid notation.
+    #
+    #   ([1,2,3].per.map + 3)       #=> [4,5,6]
+    #   ([1,2,3].per.select > 1)    #=> [2,3]
+    #
+    def per(enum_method=nil, *enum_args)
+      if enum_method
+        Functor.new do |op, *args, &blk|
+          __send__(enum_method, *enum_args){ |x| x.__send__(op, *args, &blk) }
+        end
+      else
+        Functor.new do |enumr_method, *enumr_args|
+          Functor.new do |op, *args, &blk|
+            __send__(enumr_method, *enumr_args){ |x| x.__send__(op, *args, &blk) }
+          end
+        end
+      end
+    end
+=end
 
 end
 

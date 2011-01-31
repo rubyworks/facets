@@ -1,9 +1,8 @@
-require 'facets/symbol/setter'
-require 'test/unit'
+covers 'facets/symbol/setter'
 
-class TC_Symbol_Setter < Test::Unit::TestCase
+testcase Symbol do
 
-  def test_setter?
+  unit :setter? do
     assert( :try=.setter? )
 
     assert( ! :try.setter? )

@@ -3,8 +3,8 @@ class MatchData
   # Returns [ pre_match, matchtree, post_match ]. (see matchtree)
   #
   #   md = /(bb)(cc(dd))(ee)/.match "XXaabbccddeeffXX"
-  #   md.to_a      #=> ["XXaabbccddeeffXX", "bb", "ccdd", "dd", "ee"]
-  #   md.matchset  #=> ["XXaa", [["bb"], ["cc", ["dd"]], "ee"], "ffXX"]
+  #   md.to_a      #=> ["bbccddee", "bb", "ccdd", "dd", "ee"]
+  #   md.matchset  #=> ["XXaa", [["bb"], ["cc", ["dd"]], ["ee"]], "ffXX"]
   #
   # CREDIT: Trans
 
@@ -16,8 +16,8 @@ class MatchData
   # order corresponding with the regular expression.
   #
   #   md = /(bb)(cc(dd))(ee)/.match "XXaabbccddeeffXX"
-  #   md.to_a       #=> ["XXaabbccddeeffXX", "bb", "ccdd", "dd", "ee"]
-  #   md.matchtree  #=> [["bb"], ["cc", ["dd"]], "ee"]
+  #   md.to_a       #=> ["bbccddee", "bb", "ccdd", "dd", "ee"]
+  #   md.matchtree  #=> [["bb"], ["cc", ["dd"]], ["ee"]]
   #
   # CREDIT: Trans
 

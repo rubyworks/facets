@@ -1,24 +1,23 @@
-require 'facets/string/methodize'
-require 'test/unit'
+covers 'facets/string/methodize'
 
-class TC_String_Methodize < Test::Unit::TestCase
+testcase String do
 
-  def test_methodize_modulename
+  unit :methodize => "module name" do
     a = "FooBase"
     r = "foo_base"
-    assert_equal(r, a.methodize)
+    a.methodize.assert == r
   end
 
-  def test_methodize_pathname
+  unit :methodize => "path name"  do
     a = "foo/base"
     r = "foo__base"
-    assert_equal(r, a.methodize)
+    a.methodize.assert == r
   end
 
-  def test_methodize_namespace
+  unit :methodize => "name space" do
     a = "Foo::Base"
     r = "foo__base"
-    assert_equal(r, a.methodize)
+    a.methodize.assert == r
   end
 
 end

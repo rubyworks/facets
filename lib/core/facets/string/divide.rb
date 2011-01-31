@@ -5,10 +5,7 @@ class String
   #
   #   s = "<p>This<b>is</b>a test.</p>"
   #   s.divide( /\<.*?\>/ )
-  #
-  # _produces_
-  #
-  #   ["<p>This", "<b>is", "</b>a test.", "</p>"]
+  #   #=> ["<p>This", "<b>is", "</b>a test.", "</p>"]
   #
   # CREDIT: Trans
 

@@ -1,18 +1,17 @@
-require 'facets/hash/dearray_values'
-require 'test/unit'
+covers 'facets/hash/dearray_values'
 
-class TestHashDearrayValues < Test::Unit::TestCase
+testcase Hash do
 
-  def test_dearray_values
+  unit :dearray_values do
     h = { :a=>[1], :b=>[1,2], :c=>3, :d=>[] }
     x = { :a=>1, :b=>1, :c=>3, :d=>nil }
-    assert_equal(x, h.dearray_values)    
+     h.dearray_values.assert == x
   end
-  
-  def test_dearray_singular_values
+
+  unit :dearray_singular_values do
     h = { :a=>[1], :b=>[1,2], :c=>3, :d=>[] }
     x = { :a=>1, :b=>[1,2], :c=>3, :d=>nil }
-    assert_equal(x, h.dearray_singular_values )
+    h.dearray_singular_values.assert == x
   end
 
 end

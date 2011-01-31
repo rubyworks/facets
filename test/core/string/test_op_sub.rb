@@ -1,11 +1,10 @@
-require 'facets/string/op_sub'
-require 'test/unit'
+covers 'facets/string/op_sub'
 
-class Test_String < Test::Unit::TestCase
+testcase String do
 
-  def test_op_sub
+  unit :"-" do
     s = "xxbooxxfoo"
-    assert_equal( "boofoo", s - "xx" )
+    (s - "xx").assert == "boofoo"
   end
 
 end

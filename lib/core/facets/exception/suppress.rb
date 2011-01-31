@@ -10,7 +10,9 @@ class Exception
         raise ArgumentError, "exception #{e} not a subclass of #{self}"
       end
     end
-    begin yield
+    exception_classes = [self] | exception_classes
+    begin
+      yield
     rescue Exception => e
       raise unless exception_classes.any? { |cls| e.kind_of?(cls) }
     end

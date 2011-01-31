@@ -1,11 +1,11 @@
-require 'facets/enumerable/frequency.rb'
-require 'test/unit'
+covers 'facets/enumerable/frequency'
 
-class Test_Enumerable_Frequency < Test::Unit::TestCase
+testcase Enumerable do
 
-  def test_frequency
-    assert_equal( {'a'=>1,'b'=>1}, %w{a b}.frequency )
-    assert_equal( {'tom'=>1,'boy'=>1}, %w{tom boy}.frequency )
+  unit :frequency do
+    %w{a b}.frequency.assert == {'a'=>1,'b'=>1}
+    %w{a a b}.frequency.assert == {'a'=>2,'b'=>1}
   end
 
 end
+

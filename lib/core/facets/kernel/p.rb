@@ -2,13 +2,13 @@ module Kernel
 
   # Alternate to standard #p method that outputs
   # Kernel#inspect to stdout, but also passes through
-  # the orginal argument(s).
+  # the orginal argument(s) ...
   #
   #   x = 1
-  #   r = 4 + q(1)
+  #   r = 4 + p(1)
   #   p r
   #
-  # produces
+  # produces ...
   #
   #   1
   #   5

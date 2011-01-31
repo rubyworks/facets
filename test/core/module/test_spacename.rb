@@ -1,13 +1,10 @@
-require 'facets/module/spacename.rb'
-require 'test/unit'
+covers 'facets/module/spacename'
 
-class TestModuleSpaceName < Test::Unit::TestCase
+tests Module do
 
-  def test_spacename
-    assert_equal( 'Test::Unit', Test::Unit::TestCase.spacename )
-    assert_equal( 'Test::Unit', ::Test::Unit::TestCase.spacename )
-    assert_equal( '', Test.spacename )
-    assert_equal( '', ::Test.spacename )
+  unit :spacename do
+    Lemon::TestCase.spacename.assert == 'Lemon'
+    Lemon.spacename.assert == ''  # should this be nil ?
   end
 
 end

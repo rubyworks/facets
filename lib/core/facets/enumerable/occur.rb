@@ -3,15 +3,17 @@ module Enumerable
   # Returns an array of elements for the elements that occur n times.
   # Or according to the results of a given block.
   #
-  #   [1,1,2,3,3,4,5,5].occur(1)             #=> [2,4]
-  #   [1,1,2,3,3,4,5,5].occur(2)             #=> [1,3,5]
-  #   [1,1,2,3,3,4,5,5].occur(3)             #=> []
+  #   a = [1,1,2,3,3,4,5,5]
   #
-  #   [1,2,2,3,3,3].occur(1..1)              #=> [1]
-  #   [1,2,2,3,3,3].occur(2..3)              #=> [2,3]
+  #   a.occur(1).sort               #=> [2,4]
+  #   a.occur(2).sort               #=> [1,3,5]
+  #   a.occur(3).sort               #=> []
   #
-  #   [1,1,2,3,3,4,5,5].occur { |n| n == 1 } #=> [2,4]
-  #   [1,1,2,3,3,4,5,5].occur { |n| n > 1 }  #=> [1,3,5]
+  #   a.occur(1..1).sort            #=> [2,4]
+  #   a.occur(2..3).sort            #=> [1,3,5]
+  #
+  #   a.occur { |n| n == 1 }.sort   #=> [2,4]
+  #   a.occur { |n| n > 1 }.sort    #=> [1,3,5]
   #
   def occur(n=nil) #:yield:
     result = Hash.new { |hash, key| hash[key] = Array.new }

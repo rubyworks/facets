@@ -1,15 +1,24 @@
-# Test for facets/kernel/silence
+covers 'facets/kernel/silence'
 
-require 'facets/kernel/silence.rb'
+tests Kernel do
 
-require 'test/unit'
+  # TODO: figure out how to test silence methods
 
-class TestKernelError < Test::Unit::TestCase
+  context "Not straight foward to test since they effect output."
 
-  def test_silence_warnings
-    silence_warnings do
-      assert( ! $VERBOSE )
-    end
+  omit unit :silence do
+  end
+
+  omit unit :silence_stream do
+  end
+
+  omit unit :silence_stderr do
+  end
+
+  omit unit :silence_stdout do
+  end
+
+  omit unit :silently do
   end
 
 end

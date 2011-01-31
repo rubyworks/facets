@@ -9,7 +9,10 @@ class File
   # appends newlines if necessary.  In this small way, +readlines+ and
   # +writelines+ are not exact opposites.
   #
-  # Returns +nil+.
+  #   data = ['The content', ['for the file']]
+  #   File.writelines('tmp/writelines.txt', data)
+  #
+  # Returns number of lines written.
   #
   # CREDIT: Noah Gibbs, Gavin Sinclair
 
@@ -17,6 +20,7 @@ class File
     File.open(path, "wb") do |file|
       file.puts(data)
     end
+    data.size
   end
 
 end

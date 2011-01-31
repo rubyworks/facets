@@ -1,12 +1,15 @@
-require 'facets/hash/insert'
-require 'test/unit'
+covers 'facets/hash/insert'
 
-class TC_Hash_Prime < Test::Unit::TestCase
+testcase Hash do
 
-  def test_insert
-    h = { :a=>1, :b=>2 }
-    assert_equal( true  , h.insert(:c,3) )
-    assert_equal( false , h.insert(:a,0) )
+  unit :insert do
+    h = {:a=>1, :b=>2}
+
+    h.assert.insert(:c,3)
+    h.assert == {:a=>1, :b=>2, :c=>3}
+
+    h.refute.insert(:a,0)
+    h.assert == {:a=>1, :b=>2, :c=>3}
   end
 
 end

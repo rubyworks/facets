@@ -1,20 +1,18 @@
-# Test for facets/hash/symbolize_keys.rb
+covers 'facets/hash/symbolize_keys'
 
-require 'facets/hash/symbolize_keys.rb'
-require 'test/unit'
+testcase Hash do
 
-class TestSymbolizeKeys < Test::Unit::TestCase
-
-  def test_symbolize_keys
+  unit :symbolize_keys do
     foo = { 'a'=>1, 'b'=>2 }
-    assert_equal( { :a=>1, :b=>2 }, foo.symbolize_keys )
-    assert_equal( { "a" =>1, "b"=>2 }, foo )
+    foo.symbolize_keys == { :a=>1, :b=>2 }
+    foo.assert == { "a" =>1, "b"=>2 }
   end
 
-  def test_symbolize_keys!
+  unit :symbolize_keys! do
     foo = { 'a'=>1, 'b'=>2 }
-    assert_equal( { :a=>1, :b=>2 }, foo.symbolize_keys! )
-    assert_equal( { :a=>1, :b=>2 }, foo  )
+    foo.symbolize_keys!.assert == { :a=>1, :b=>2 }
+    foo.assert == { :a=>1, :b=>2 }
   end
 
 end
+

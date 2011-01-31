@@ -2,14 +2,17 @@ class String
 
   # Return true if the string is capitalized, otherwise false.
   #
-  #   "THIS".capitalized?  #=> true
   #   "This".capitalized?  #=> true
+  #   "THIS".capitalized?  #=> false
   #   "this".capitalized?  #=> false
+  #
+  # Note Ruby's strange concept of capitalized. See capitalcase
+  # for the more command conception.
   #
   # CREDIT: Phil Tomson
 
   def capitalized?
-    self =~ /^[A-Z]/
+    capitalize == self
   end
 
   # Return true if the string is lowercase (downcase), otherwise false.
@@ -25,7 +28,7 @@ class String
   end
 
   # Alias for #downcase? method.
-  #alias_method :lowercase?, :downcase?
+  # alias_method :lowercase?, :downcase?
 
   # Is the string upcase/uppercase?
   #
@@ -40,7 +43,7 @@ class String
   end
 
   # Alias for #upcase? method.
-  #alias_method :uppercase?, :upcase?
+  # alias_method :uppercase?, :upcase?
 
 end
 

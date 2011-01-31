@@ -1,0 +1,134 @@
+= Memoizable
+
+Memoizable allows
+
+  require 'facets/memoizable'
+
+The classic example is calculating the Fibonacci sequence.
+
+  class Fibonacci
+    include Memoizable
+
+    def fib( num )
+      return num if num < 2
+      fib(num - 1) + fib(num - 2)
+    end
+
+    memoize :fib
+  end
+
+The first time will take a moment to calculate.
+
+  f = Fibonacci.new
+  f.fib(100)
+
+The second time will be returned almost instantly.
+
+  f = Fibonacci.new
+  f.fib(100)
+
+The following example makes if very clear what memoize is doing.
+
+  class MemoExample
+    include Memoizable
+    attr_accessor :a
+    memoize :a
+  end
+
+  m = MemoExample.new
+  m.a = 10
+  m.a         #=> 10
+  m.a = 20
+  m.a         #=> 10
+
+Even though @a is assigned to 20, the method #a continues to return 10.
+
+Memoizable is designed to handle a number of typically problematic aspects
+of memoization implementations. First a memoizable object can be frozen.
+
+  f = Fibonacci.new
+  f.freeze
+  f.fib(100)
+
+Memoizable objects are freezable because it does not use an instance variable
+to store the memoized return values. Instead it uses a global class instance
+variable in +Memoizable.cache+.
+
+However, this also means the memoization cache is not preserved when an object
+is duplicated. If this behavior is desired an aditional module is provided
+called `Memoizable::Copy`. When the `Memoiazble::Copy` module is included into
+a class it not only adds the #memoize class methods but also includes
+an #initialize_copy method, which copies the appropriate cache entries when
+#dup or #clone is used. Keep this in mind. It is important to call #super if you
+override the #initialize_copy method in a class that uses `Memoizable::Copy`.
+
+  class MemoExample2
+    include Memoizable::Copy
+    attr_accessor :a
+    memoize :a
+  end
+
+  m = MemoExample2.new
+  m.a = 10
+  m.a         #=> 10
+
+  n = m.dup
+  n.a = 20
+  n.a         #=> 10
+
+The `#memoize` method also accepts a few options that can be used to modify
+the behvior of the memoizaiton. To memoize a method across all objects
+of the same class and not just per-object, set the `:class` option to true.
+
+  class MemoExample3
+    include Memoizable
+    attr_accessor :a
+    memoize :a, :class=>true
+  end
+
+  m = MemoExample3.new
+  m.a = 10
+  m.a         #=> 10
+
+  n = MemoExample3.new
+  n.a         #=> 10
+
+Memoization is indexed based on arguments passed to the method, as can be seen 
+in the Fibonacci example. Methods can also be memoized by name only, forgoing
+any indexing based on arguments passed. To do this, set the `:arguments`
+option to +false+.
+
+  class MemoExample4
+    include Memoizable
+    def f(n)
+      n + n
+    end
+    memoize :f, :arguments=>false
+  end
+
+  m = MemoExample4.new
+  m.f(1)
+  m.f(2)      #=> 2
+  m.f(3)      #=> 2
+
+Blocks passed to a method normally have only a present vs. non-present effect
+on the memoization index. In other words the return value of a method will be
+cached under one key if a block is passed to it and under a different index
+if not. It doesn't matter if blocks passed in actually differ, since
+the only way to compare blocks is by their +object_id+ and it is very rare
+for the exact same block object to be reused.
+
+Finally, the `:freeze` option can be used to freeze the memoized results.
+
+  class MemoExample5
+    include Memoizable
+    def f(n)
+      (n + n).to_s
+    end
+    memoize :f, :freeze=>true
+  end
+
+  m = MemoExample5.new
+  m.f(1).frozen?      #=> true
+  m.f(2).frozen?      #=> true
+

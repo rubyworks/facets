@@ -1,10 +1,11 @@
-require 'facets/module/ancestor.rb'
-require 'test/unit'
+covers 'facets/module/ancestor'
 
-class TestInclude < Test::Unit::TestCase
+testcase Module do
 
-  def test_ancestor
-    assert( self.class.ancestor?(::Test::Unit::TestCase) )
+  unit :ancestor? do
+    c1 = Class.new
+    c2 = Class.new(c1)
+    c2.assert.ancestor?(c1)
   end
 
 end

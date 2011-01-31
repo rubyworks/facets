@@ -1,18 +1,24 @@
-require 'facets/range/combine'
-require 'test/unit'
+covers 'facets/range/combine'
 
-class TestRangeCombine < Test::Unit::TestCase
+testcase Range do
 
-  def test_combine_ranges
-    r = Range.combine(0..4, 2..6, 6..10, 13..17, 12..19)
+  unit :combine do
+    r = 0..4
+    r = r.combine(2..6, 6..10, 13..17, 12..19)
     x = [0..10, 12..19]
-    assert_equal(x, r)
+    r.assert == x
   end
 
-  def test_combine_arrays_as_intervals
+  meta :combine do
+    r = Range.combine(0..4, 2..6, 6..10, 13..17, 12..19)
+    x = [0..10, 12..19]
+    r.assert == x
+  end
+
+  meta :combine => "arrays as intervals" do
     r = Range.combine([0, 4], [2, 6], [6, 10], [13, 17], [12, 19])
     x = [[0, 10], [12, 19]]
-    assert_equal(x, r)
+    r.assert == x
   end
 
 end

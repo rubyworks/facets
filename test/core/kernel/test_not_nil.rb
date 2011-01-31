@@ -1,13 +1,21 @@
-require 'facets/kernel/not_nil.rb'
-require 'test/unit'
+covers 'facets/kernel/not_nil'
 
-class TestKernelNotNil < Test::Unit::TestCase
+testcase Kernel do
 
-  def test_not_nil?
-    assert_equal(true,  5.not_nil?)
-    assert_equal(true,  :x.not_nil?)
-    assert_equal(false, nil.not_nil?)
-    assert_equal(true,  false.not_nil?)
+  unit :not_nil? do
+    5.assert.not_nil?
+  end
+
+  unit :not_nil? do
+    :x.assert.not_nil?
+  end
+
+  unit :not_nil? do
+    false.assert.not_nil?
+  end
+
+  unit :not_nil? do
+    nil.refute.not_nil?
   end
 
 end

@@ -1,0 +1,24 @@
+---
+layout : default
+stencil: liquid
+---
+
+<div class="page">
+
+  <h2>{{ page.title }}</h2>
+
+  {{ yield }}
+
+  <small>Written by {{ page.author }}, {{ page.date | date_to_string }}</small>
+
+  <ul class="posts">
+    {% assign p = page.previous %}{% if p %}
+    <li><span>Previous: {{ p.date | date_to_string }}</span> &raquo; <a href="{{ p.url }}">{{ p.title }}</a></li>
+    {% endif %}
+    {% assign p = page.next %}{% if p %}
+    <li><span> Next: {{ p.date | date_to_string }}</span> &raquo; <a href="{{ p.url }}">{{ p.title }}</a></li>
+    {% endif %}
+  </ul>
+
+</div>
+

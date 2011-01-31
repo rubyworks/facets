@@ -1,24 +1,23 @@
-require 'facets/module/redirect_method'
-require 'test/unit'
+covers 'facets/module/redirect_method'
 
-class Test_Module_RedirectMethod < Test::Unit::TestCase
+testcase Module do
 
-  def red1 ; 1 ; end
+  unit :redirect_method do
+    c = Class.new do
+      def a1 ; 1 ; end
+      redirect_method :a2 => :a1
+    end
 
-  redirect_method :red2 => :red1
-
-  def test_redirect_red
-    assert_equal( 1, red2 )
+    c.new.a2.assert == 1
   end
 
-  # redirect
+  unit :redirect do
+    c = Class.new do
+      def b1 ; 1 ; end
+      redirect :b2 => :b1
+    end
 
-  def blue1 ; 1 ; end
-
-  redirect :blue2 => :blue1
-
-  def test_redirect_blue
-    assert_equal( 1, blue2 )
+    c.new.b2.assert == 1
   end
 
 end

@@ -1,9 +1,8 @@
-require 'facets/kernel/attr_singleton.rb'
-require 'test/unit'
+covers 'facets/kernel/attr_singleton'
 
-class TestAttrSingleton < Test::Unit::TestCase
+tests Kernel do
 
-  class AttrSingletonMock
+  c = Class.new do
     def initialize
       attr_singleton_reader :foo #=> "FOO"
       attr_singleton_writer :bar #=> "BAR"
@@ -12,29 +11,28 @@ class TestAttrSingleton < Test::Unit::TestCase
       self.bar = "BAR"
       self.baz = "BAZ"
     end
-
     def get_bar
       @bar
     end
   end
 
-  def test_attr_singleton_reader
-    assert_nothing_raised { @t = AttrSingletonMock.new }
-    assert_equal("FOO", @t.foo)
+  unit :attr_singleton_reader do
+    t = c.new
+    t.foo.assert == "FOO"
   end
 
-  def test_attr_singleton_writer
-    assert_nothing_raised { @t = AttrSingletonMock.new }
-    assert_equal("BAR", @t.get_bar)
-    @t.bar = "BAR2"
-    assert_equal("BAR2", @t.get_bar)
+  unit :attr_singleton_writer do
+    t = c.new
+    t.get_bar.assert == "BAR"
+    t.bar = "BAR2"
+    t.get_bar.assert == "BAR2"
   end
 
-  def test_attr_singleton_accessor
-    assert_nothing_raised { @t = AttrSingletonMock.new }
-    assert_equal("BAZ", @t.baz)
-    @t.baz = "BAZ2"
-    assert_equal("BAZ2", @t.baz)
+  unit :attr_singleton_accessor do
+    t = c.new
+    t.baz.assert == "BAZ"
+    t.baz = "BAZ2"
+    t.baz.assert == "BAZ2"
   end
 
 end

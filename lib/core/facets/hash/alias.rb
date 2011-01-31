@@ -7,13 +7,13 @@ class Hash
   # Returns a reference to the Hash.
   #
   #   foo = { :name=>'Gavin', 'wife'=>:Lisa }
-  #   foo.alias!('name',:name)     => { :name=>'Gavin', 'name'=>'Gavin', 'wife'=>:Lisa }
+  #   foo.alias!('name',:name)     #=> { :name=>'Gavin', 'name'=>'Gavin', 'wife'=>:Lisa }
   #
   #   foo = { :name=>'Gavin', 'wife'=>:Lisa }
-  #   foo.alias!('spouse','wife')  => { :name=>'Gavin', 'wife'=>:Lisa, 'spouse'=>:Lisa }
+  #   foo.alias!('spouse','wife')  #=> { :name=>'Gavin', 'wife'=>:Lisa, 'spouse'=>:Lisa }
   #
   #   foo = { :name=>'Gavin', 'wife'=>:Lisa }
-  #   foo.alias!('bar','foo')      => { :name=>'Gavin', 'wife'=>:Lisa }
+  #   foo.alias!('bar','foo')      #=> { :name=>'Gavin', 'wife'=>:Lisa }
   #
   # Note that if the _oldkey_ is reassigned, the reference will no longer exist,
   # and the _newkey_ will remain as it was.

@@ -1,0 +1,9 @@
+== Array#only
+
+  require 'facets/array/only'
+
+  [5].only.assert == 5
+  [nil].only.assert == nil
+  expect(IndexError){ [].only }
+  expect(IndexError){ [1,2,3].only }
+

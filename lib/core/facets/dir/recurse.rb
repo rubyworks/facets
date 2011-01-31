@@ -1,7 +1,10 @@
 class Dir
 
-  # Recursively scan a directory and pass each file
-  # to the given block.
+  # Recursively scan a directory and pass each file to the given block.
+  #
+  #   Dir.recurse('tmp') do |path|
+  #     # ...
+  #   end
   #
   # CREDIT: George Moschovitis
   #
@@ -17,7 +20,7 @@ class Dir
       list << filename
       block.call(filename) if block
       if FileTest.directory?(filename) and not FileTest.symlink?(filename)
-        list.concat( Dir.recurse(filename, &block) )
+        list.concat(Dir.recurse(filename, &block))
       end
     end
     list

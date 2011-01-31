@@ -1,9 +1,8 @@
-require 'facets/numeric/approx'
-require 'test/unit'
+covers 'facets/numeric/approx'
 
-class TestRound < Test::Unit::TestCase
+testcase Numeric do
 
-  def test_approx?
+  unit :approx? do
     f = 10.006
     assert( f.approx?(10.01) )
     assert( f.approx?(10, 0.1) )
@@ -11,3 +10,4 @@ class TestRound < Test::Unit::TestCase
   end
 
 end
+

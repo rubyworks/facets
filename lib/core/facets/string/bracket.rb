@@ -2,7 +2,7 @@ class String
 
   BRA2KET = { '['=>']', '('=>')', '{'=>'}', '<'=>'>' }
 
-  # Return a new string embraced by given brakets.
+  # Return a new string embraced by given brackets.
   # If only one bracket char is given it will be placed
   # on either side.
   #
@@ -17,7 +17,7 @@ class String
     "#{bra}#{self}#{ket ? ket : bra}"
   end
 
-  # Inplace version of #braket.
+  # Inplace version of #bracket.
   #
   # CREDIT: Trans
 
@@ -25,12 +25,12 @@ class String
     self.replace(bracket(bra, ket))
   end
 
-  # Return a new string embraced by given brakets.
-  # If only one bracket char is given it will be placed
-  # on either side.
+  # Return a new string with the given brackets removed.
+  # If only one bracket char is given it will be removed
+  # from either side.
   #
-  #   "{unwrap me}".debracket('{')        #=> "unwrap me"
-  #   "--unwrap me!".debracket('--','!')  #=> "unwrap me!"
+  #   "{unwrap me}".unbracket('{')        #=> "unwrap me"
+  #   "--unwrap me!".unbracket('--','!')  #=> "unwrap me"
   #
   # CREDIT: Trans
 
@@ -50,7 +50,7 @@ class String
     return self.dup  # if nothing else
   end
 
-  # Inplace version of #debraket.
+  # Inplace version of #unbracket.
   #
   # CREDIT: Trans
 
@@ -58,48 +58,7 @@ class String
     self.replace( unbracket(bra, ket) )
   end
 
-  # Return a new string embraced by given quotes.
-  # If no quotes are specified, then assumes single quotes.
-  #
-  #   "quote me".quote     #=> "'quote me'"
-  #   "quote me".quote(2)  #=> "\"quote me\""
-  #
-  # CREDIT: Trans
-
-  def quote(type=:s)
-    case type.to_s.downcase
-    when 's', 'single'
-      bracket("'")
-    when 'd', 'double'
-      bracket('"')
-    when 'b', 'back'
-      bracket('`')
-    else
-      bracket("'")
-    end
-  end
-
-  # Remove quotes from string.
-  #
-  #   "'hi'".dequite    #=> "hi"
-  #
-  # CREDIT: Trans
-
-  def dequote
-    s = self.dup
-
-    case self[0,1]
-    when "'", '"', '`'
-      s[0] = ''
-    end
-
-    case self[-1,1]
-    when "'", '"', '`'
-      s[-1] = ''
-    end
-
-    return s
-  end
+  # TODO: rename #bracket to #embrace ?
 
 end
 

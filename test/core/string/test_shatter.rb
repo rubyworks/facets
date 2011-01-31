@@ -1,13 +1,12 @@
-require 'facets/string/shatter'
-require 'test/unit'
+covers 'facets/string/shatter'
 
-class TC_String_Shatter < Test::Unit::TestCase
+testcase String do
 
-  def test_shatter
+  unit :shatter do
     s = "<p>This<b>is</b>a test.</p>"
-    sh = s.shatter( /<.*?>/ )
-    e = ["<p>", "This", "<b>", "is", "</b>", "a test.", "</p>"]
-    assert_equal(e, sh)
+    r = s.shatter( /<.*?>/ )
+    x = ["<p>", "This", "<b>", "is", "</b>", "a test.", "</p>"]
+    r.assert == x
   end
 
 end

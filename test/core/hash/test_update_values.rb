@@ -1,12 +1,12 @@
-require 'facets/hash/update_values'
-require 'test/unit'
+covers 'facets/hash/update_values'
 
-class TC_Hash_Update_Values < Test::Unit::TestCase
+testcase Hash do
 
-  def test_update_values
-    h = { 1 => 'A', 2 => 'B' }
+  unit :update_values do
+    h = {1 => 'A', 2 => 'B'}
     h.update_values{ |v| v.downcase }
-    assert_equal( { 1 => 'a', 2 => 'b' }, h )
+    h.assert == {1 => 'a', 2 => 'b'}
   end
 
 end
+

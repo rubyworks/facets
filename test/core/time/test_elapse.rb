@@ -1,10 +1,8 @@
-require 'facets/time/elapse.rb'
-require 'test/unit'
+covers 'facets/time/elapse'
 
-class TC_Time_Elapse < Test::Unit::TestCase
+testcase Time do
 
-  def test_elapse
-    #t = Time.parse('4/20/2006 15:37')
+  metaunit :elapse do
     t = Time.elapse { sleep 1 }
     assert( (t > 0.9) && (t < 2.1 ))
   end

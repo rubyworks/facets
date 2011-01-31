@@ -1,13 +1,19 @@
-require 'test/unit'
-require 'facets/integer/ordinal'
+covers 'facets/integer/ordinal'
 
-class TestIntegerOrdinal < Test::Unit::TestCase
+testcase Integer do
 
-  def test_ordinal
-    assert_equal( '1st', 1.ordinal )
-    assert_equal( '2nd', 2.ordinal )
-    assert_equal( '3rd', 3.ordinal )
-    assert_equal( '4th', 4.ordinal )
+  unit :ordinal do
+    1.ordinal.assert == '1st'
+    2.ordinal.assert == '2nd'
+    3.ordinal.assert == '3rd'
+    4.ordinal.assert == '4th'
+  end
+
+  unit :ordinalize do
+    1.ordinalize.assert == '1st'
+    2.ordinalize.assert == '2nd'
+    3.ordinalize.assert == '3rd'
+    4.ordinalize.assert == '4th'
   end
 
 end

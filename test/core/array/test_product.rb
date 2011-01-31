@@ -1,14 +1,19 @@
-require 'facets/array/product'
-require 'test/unit'
+covers 'facets/array/product'
 
-class TC_Array_Product < Test::Unit::TestCase
+testcase Array do
 
-  def test_product
+  unit :product => "single argument" do
+    r = [1,2,3].product([4,5,6])
+    x = [[1, 4],[1, 5],[1, 6],[2, 4],[2, 5],[2, 6],[3, 4],[3, 5],[3, 6]]
+    r.assert == x
+  end
+
+  unit :product => "multiple arguments" do
     a = %w|a b|
     b = %w|a x|
     c = %w|x y|
-    z = a.product(b, c)
-    r = [ ["a", "a", "x"],
+    r = a.product(b, c)
+    x = [ ["a", "a", "x"],
           ["a", "a", "y"],
           ["a", "x", "x"],
           ["a", "x", "y"],
@@ -16,7 +21,7 @@ class TC_Array_Product < Test::Unit::TestCase
           ["b", "a", "y"],
           ["b", "x", "x"],
           ["b", "x", "y"] ]
-    assert_equal( r, z )
+    r.assert == x
   end
 
   #def test_product_01
@@ -24,11 +29,6 @@ class TC_Array_Product < Test::Unit::TestCase
   #  o = [[1, 4, "apple"], [1, 4, "banana"], [2, 4, "apple"], [2, 4, "banana"]]
   #  assert_equal( o, Enumerable.product(*i) )
   #end
-
-  def test_product_02
-    a = [1,2,3].product([4,5,6])
-    assert_equal( [[1, 4],[1, 5],[1, 6],[2, 4],[2, 5],[2, 6],[3, 4],[3, 5],[3, 6]], a )
-  end
 
   #     def test_op_mod
   #       a = [:A,:B,:C]
@@ -41,6 +41,19 @@ class TC_Array_Product < Test::Unit::TestCase
   #       assert_equal( a[1], a/1 )
   #       assert_equal( :B, a/1 )
   #     end
+
+
+  #def test_op_mod
+  #  a = [:A,:B,:C]
+  #  assert_equal( a[1], a/1 )
+  #  assert_equal( :B, a/1 )
+  #end
+  #
+  #def test_op_div
+  #  a = [:A,:B,:C]
+  #  assert_equal( a[1], a/1 )
+  #  assert_equal( :B, a/1 )
+  #end
 
 end
 

@@ -1,0 +1,16 @@
+== String#tab
+
+  require 'facets/string/tab'
+
+  a = "abc".tab(2)
+  a.assert == "  abc"
+
+If we add a new line we see that both are tabbed.
+
+  a = "abc\nxyz".tab(2)
+  a.assert == "  abc\n  xyz"
+
+Unlike #tabto, #tab indents all lines equally regardless of prior indention.
+
+  a = "abc\n  xyz".tab(2)
+  a.assert == "  abc\n  xyz"

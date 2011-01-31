@@ -1,0 +1,7 @@
+== String#variablize
+
+  require 'facets/string/variablize'
+
+  s = "a"
+  s.variablize.assert == "@a"
+

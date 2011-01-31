@@ -1,0 +1,10 @@
+== Array#permutation
+
+  require 'facets/array/permutation'
+  require 'set'
+
+  r = Set.new
+  %w[a b c].permutation{ |x| r << x.join('') }
+  x = Set.new(['abc','acb','bac','bca','cab','cba'])
+  r.assert == x
+

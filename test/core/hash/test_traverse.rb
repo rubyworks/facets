@@ -1,21 +1,20 @@
-require 'facets/hash/traverse'
-require 'test/unit'
+covers 'facets/hash/traverse'
 
-class TC_Hash_Traverse < Test::Unit::TestCase
+testcase Hash do
 
-  def test_traverse
+  unit :traverse do
     h = { "A" => "x", "B" => "y" }
-    h2 = h.traverse { |k,v| [k.downcase, v.upcase] }
-    e = { "a" => "X", "b" => "Y" }
-    assert_not_equal( h, h2 )
-    assert_equal( e, h2 )
+    j = h.traverse{ |k,v| [k.downcase, v.upcase] }
+    x = { "a" => "X", "b" => "Y" }
+    j.refute == h
+    j.assert == x
   end
 
-  def test_traverse!
+  unit :traverse! do
     h = { "A" => "x", "B" => "y" }
-    h.traverse! { |k,v| [k.downcase, v.upcase] }
-    e = { "a" => "X", "b" => "Y" }
-    assert_equal( e, h )
+    h.traverse!{ |k,v| [k.downcase, v.upcase] }
+    x = { "a" => "X", "b" => "Y" }
+    h.assert == x
   end
 
 end

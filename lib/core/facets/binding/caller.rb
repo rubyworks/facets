@@ -1,5 +1,6 @@
 require 'facets/binding/eval'
-require 'facets/binding/callstack'
+require 'facets/binding/call_stack'
+require 'facets/kernel/__method__'
 
 class Binding
 
@@ -29,14 +30,14 @@ class Binding
 
   # Retreive the current running method.
   #
-  def __callee__
-    Kernel.eval("__callee__", self)
+  def __method__
+    Kernel.eval("__method__", self)
   end
 
   # Retreive the current running method.
   #
-  def __method__
-    Kernel.eval("__method__", self)
+  def __callee__
+    Kernel.eval("__callee__", self)
   end
 
 end

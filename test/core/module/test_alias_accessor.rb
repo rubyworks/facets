@@ -1,21 +1,22 @@
-require 'facets/module/alias_accessor'
-require 'test/unit'
+covers 'facets/module/alias_accessor'
 
-class Test_Module_Alias_Accessor < Test::Unit::TestCase
+testcase Module do
 
-  class X
-    attr_accessor :x
-    alias_accessor :y, :x
-  end
+  unit :alias_accessor do
+    c = Class.new do
+      attr_accessor :x
+      alias_accessor :y, :x
+    end
 
-  def test_alias_accessor
-    x = X.new
+    x = c.new
+
     x.x = 10
-    assert_equal( 10, x.x )
-    assert_equal( 10, x.y )
+    x.x.assert == 10
+    x.y.assert == 10
+
     x.y = 20
-    assert_equal( 20, x.x )
-    assert_equal( 20, x.y )
+    x.x.assert == 20
+    x.y.assert == 20
   end
 
 end

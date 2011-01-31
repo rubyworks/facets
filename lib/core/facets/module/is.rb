@@ -3,10 +3,10 @@ class Module
   # Is a given class or module an ancestor of this
   # class or module?
   #
-  #  class X ; end
-  #  class Y < X ; end
+  #   class IsX ; end
+  #   class IsY < IsX ; end
   #
-  #  Y.is?(X)  #=> true
+  #   IsY.is?(IsX)  #=> true
   #
   # CREDIT: Trans
 
@@ -16,7 +16,7 @@ class Module
 
   # An alias for #include.
   #
-  #   class X
+  #   class IsExample
   #     is Enumerable
   #   end
   #
@@ -41,7 +41,7 @@ class Module
   # Expirmental idea for #is.
   #
   # If the module has #append_feature_function
-  # defined, this will use that instead of #include.
+  # defined, this will use that instead of #include ...
   #
   #   def is(*modules)
   #     module.each do { |m|

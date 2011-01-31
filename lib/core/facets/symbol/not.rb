@@ -13,7 +13,7 @@ class Symbol
 
   # Add a "not" sign to the front of a symbol.
   #
-  #   ~:friend    #=> :"~friend"
+  #   (~:friend)  #=> :"~friend"
   #
   # CREDIT: Trans
 

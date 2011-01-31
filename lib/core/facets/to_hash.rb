@@ -36,12 +36,11 @@ class Array
   # This has been left in for backward compatability.
   #
   # NOTE: The use of a +values+ parameter has been deprecated
-  # because that functionality is as simple as:
+  # because that functionality is as simple as ...
   #
   #   array1.zip(array2).to_h
   #
-  # CREDIT: Robert Klemme
-  # CREDIT: Trans
+  # CREDIT: Robert Klemme, Trans
   #
   #--
   # The +True+ option in the case statement provides some
@@ -75,19 +74,19 @@ class Array
   # #to_h_flat.
   #
   #   a = [ [:a,1], [:b,2] ]
-  #   a.to_h  #=> { :a=>1, :b=>2 }
+  #   a.to_h_auto  #=> { :a=>1, :b=>2 }
   #
   # If the array contains only arrays, but are not perfect pairs,
   # then #to_h_multi is called.
   #
   #   a = [ [:a,1,2], [:b,2], [:c], [:d] ]
-  #   a.to_h  #=> { :a=>[1,2], :b=>[2], :c=>[], :d=>[] }
+  #   a.to_h_auto  #=> { :a=>[1,2], :b=>[2], :c=>[], :d=>[] }
   #
   # If the array contians objects other then arrays then
   # the #to_h_splat method is called.
   #
   #   a = [ [:a,1,2], 2, :b, [:c,3], 9 ]
-  #   a.to_h  #=> { [:a,1,2]=>2, :b=>[:c,3], 9=>nil } 
+  #   a.to_h_auto  #=> { [:a,1,2]=>2, :b=>[:c,3], 9=>nil } 
   #
   def to_h_auto
     pairs = true
@@ -137,9 +136,11 @@ class Array
     Hash[*a]
   end
 
+  #--
   #def to_h_flat
   #  each_slice(2).inject({}) {|ha,(k,v)| ha[k]=v; ha}
   #end 
+  #++
 
   # When a mixed or multi-element accociative array
   # is used, the result is as follows:
@@ -151,7 +152,7 @@ class Array
   # the value will be set to the last occuring value.
   #
   #   a = [ :x, [:x], [:x,1,2], [:x,3], [:x,4] ]
-  #   a.to_h_assoc  #=> { :x=>4 }
+  #   a.to_h_assoc  #=> { :x=>[4] }
   #
   def to_h_assoc
     h = {}
@@ -182,6 +183,7 @@ class Array
     h
   end
 
+  #--
   #def to_h_multi
   #  inject({}) {|h,a| h[a.first] = a[1..-1]; h}
   #end
@@ -194,6 +196,7 @@ class Array
   #  end
   #  h
   #end
+  #++
 
 end
 
@@ -207,11 +210,10 @@ class Hash
 
   def to_h; rehash; end
 
-  # Returns _self_.
-  #
-  # CREDIT: Trans
-
-  def to_hash; self; end
+  unless method_defined?(:to_hash) # 1.9.?+
+    # Returns _self_.
+    def to_hash; self; end
+  end
 
 end
 
@@ -246,9 +248,11 @@ module Enumerable
     to_a.to_h_multi
   end
 
+  #--
   #def to_hash
   #  to_a.to_hash
   #end
+  #++
 
 end
 

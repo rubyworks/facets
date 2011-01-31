@@ -9,12 +9,12 @@ module Enumerable
     # and only if <em>exactly one</em> element has a true value
     # (i.e. not +nil+ or +false+).
     #
-    #   [].one?                      # false
-    #   [nil].one?                   # false
-    #   [5].one?                     # true
-    #   [5,8,9].one?                 # false
-    #   (1...10).one? { |n| n == 5 } # true
-    #   (1...10).one? { |n| n < 5 }  # false
+    #   [].one?                      # => false
+    #   [nil].one?                   # => false
+    #   [5].one?                     # => true
+    #   [5,8,9].one?                 # => false
+    #   (1...10).one? { |n| n == 5 } # => true
+    #   (1...10).one? { |n| n < 5 }  # => false
     #
     # CREDIT: Gavin Sinclair
 

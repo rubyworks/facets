@@ -2,10 +2,10 @@ class String
 
   # Translate a (class or module) name to a suitable method name.
   #
-  #   My::CoolClass.name.methodize => "my__cool_class"
+  #   "My::CoolClass".methodize  #=> "my__cool_class"
   #
   #--
-  # Rails definition:
+  # Rails definition ...
   #
   #    gsub(/\//, '__').
   #    gsub(/::/, '__').
@@ -13,6 +13,7 @@ class String
   #    gsub(/([a-z\d])([A-Z])/,'\1_\2').
   #    tr("-", "_").
   #    downcase
+  #
   #++
   def methodize
     gsub(/([A-Z]+)([A-Z])/,'\1_\2').

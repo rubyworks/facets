@@ -1,11 +1,10 @@
-require 'facets/kernel/object_hexid.rb'
-require 'test/unit'
+covers 'facets/kernel/object_hexid'
 
-class TCKernel < Test::Unit::TestCase
+testcase Kernel do
 
-  def test_object_hexid
+  unit :object_hexid do
     o = Object.new
-    assert_equal(o.inspect, "#<Object:#{o.object_hexid}>")
+    "#<Object:#{o.object_hexid}>".assert == o.inspect
     #assert(o.inspect.index(o.object_hexid))
   end
 

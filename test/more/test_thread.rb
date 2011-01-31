@@ -1,21 +1,20 @@
-require 'facets/thread.rb'
-require 'test/unit'
+covers 'facets/thread.rb'
 
-class TC_Thread < Test::Unit::TestCase
+tests Array do
 
-  def test_threaded_map
+  unit :threaded_map do
     r = [1,2,3].threaded_map{ |e| e + 1 }
-    assert_equal([2,3,4], r)
+    r.assert == [2,3,4]
   end
 
-  def test_threaded_map_send
+  unit :threaded_map_send do
     r = [1,2,3].threaded_map_send(:+, 1)
-    assert_equal([2,3,4], r)
+    r.assert == [2,3,4]
   end
 
-  def test_map_send_with_block
+  unit :threaded_map_send => "with_block" do
     r = [[1,2,3],[2,3,4],[3,4,5]].threaded_map_send(:select){ |x| x > 2 }
-    assert_equal([[3],[3,4],[3,4,5]], r)
+    r.assert == [[3],[3,4],[3,4,5]]
   end
 
 end

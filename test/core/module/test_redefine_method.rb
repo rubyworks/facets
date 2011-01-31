@@ -1,26 +1,21 @@
-require 'facets/module/redefine_method'
-require 'test/unit'
+covers 'facets/module/redefine_method'
 
-class Test_Module_RedefineMethod < Test::Unit::TestCase
+testcase Module do
 
-  # redef_method
-
-  def a; "a"; end
-
-  redefine_method(:a) { nil }
-
-  def test_redefine_method
-    assert_equal( nil, a )
+  unit :redefine_method do
+    c = Class.new do
+      def a; "a"; end
+      redefine_method(:a){ nil }
+    end
+    c.new.a.assert == nil
   end
 
-  # redef
-
-  def b; "b"; end
-
-  redef(:b) { "x" }
-
-  def test_redef
-    assert_equal( "x", b )
+  unit :redef do
+    c = Class.new do
+      def b; "b"; end
+      redef(:b){ "x" }
+    end
+    c.new.b.assert == "x"
   end
 
 end

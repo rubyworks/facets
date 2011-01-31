@@ -1,7 +1,7 @@
 module Enumerable
 
   # Recursively iterate over all Enumerable elements, or
-  # subset given <code>:type=>[type1, type2, ...]</code>.
+  # subset given :type=>[type1, type2, ...].
   #
   #   [1, 2, 8..9].visit{ |x| x.succ }
   #   # => [2, 3, [9, 10]]
@@ -13,14 +13,14 @@ module Enumerable
     map do |v|
       case v
       when String # b/c of 1.8
-        b.call(v)
+        block.call(v)
       when *type
-        v.recursive(opts).send(op,&b)
+        v.visit(opts, &block)
       else
         if skip && Enumerable === v
           v
         else
-          b.call(v)
+          block.call(v)
         end
       end
     end

@@ -1,50 +1,49 @@
-require 'facets/module/revise.rb'
-require 'test/unit'
+covers 'facets/module/revise'
 
-class TestModuleModifyRevisal < Test::Unit::TestCase
+testcase Module do
 
-  module M
-    def x ; 1 ; end
+  unit :revisal do
+    m = Module.new do
+      def x ; 1 ; end
+    end
+
+    c = Class.new do
+      include m.revisal {
+        rename :y, :x
+      }
+    end
+
+    ic = c.new
+
+    ic.y.assert == 1
+    NoMethodError.assert.raised?{ ic.x }
   end
 
-  class C
-    include M.revisal {
-      rename :y, :x
-    }
+  unit :revise do
+    m = Module.new do
+      def x ; 1 ; end
+    end
+
+    c = Class.new do
+      include m.revise {
+        rename :y, :x
+      }
+    end
+
+    ic = c.new
+
+    ic.y.assert == 1
+    NoMethodError.assert.raised?{ ic.x }
   end
 
-  def test_revisal
-    c = C.new
-    assert_raises( NoMethodError ) { c.x }
-    assert_equal( 1, c.y )
-  end
 
-end
+  unit :remove do
+    c = Class.new do
+      def the_removed_method ; 'not here' ; end
+      remove :the_removed_method
+    end
 
-# nodef
-
-class Test_Module_NoDef < Test::Unit::TestCase
-
-  def the_undefined_method ; 'not here' ; end
-
-  nodef :the_undefined_method
-
-  def test_nodef
-    assert( ! respond_to?( :the_undefined_method ) )
-  end
-
-end
-
-# remove method
-
-class Test_Module_Remove < Test::Unit::TestCase
-
-  def the_removed_method ; 'not here' ; end
-
-  remove :the_removed_method
-
-  def test_remove
-    assert( ! respond_to?( :the_removed_method ) )
+    c.new.refute.respond_to?(:the_removed_method)
   end
 
 end

@@ -1,32 +1,23 @@
-require 'facets/string/cleave.rb'
-require 'test/unit'
+covers 'facets/string/cleave'
 
-class TestStringWords < Test::Unit::TestCase
+testcase String do
 
-  def test_cleave_nospaces
-    assert_equal [ 'whole', '' ], 'whole'.cleave
-    assert_equal [ 'Supercalifragilisticexpialidocious', '' ],
-                'Supercalifragilisticexpialidocious'.cleave
-  end
+  table = [
+    [ 'no spaces short word'    , 'whole'                              , ['whole', ''] ],
+    [ 'no spaces long word'     , 'Supercalifragilisticexpialidocious' , ['Supercalifragilisticexpialidocious', ''] ],
+    [ 'exact middle two words'  , 'fancy split'                        , ['fancy', 'split'] ],
+    [ 'exact middle many words' , 'All good Rubyists know how to party', ['All good Rubyists', 'know how to party'] ],
+    [ 'closer to start'         , 'short splitter'                     , ['short', 'splitter'] ],
+    [ 'closer to start'         , 'Four score and seven years ago...'  , ['Four score and', 'seven years ago...'] ],
+    [ 'closer to start'         , 'abc def ghijklm nop'                , ['abc def', 'ghijklm nop'] ],
+    [ 'closer to end'           , 'extended split'                     , ['extended', 'split'] ],
+    [ 'closer to end'           , 'abc defghi jklm nop'                , [ 'abc defghi', 'jklm nop'] ]
+  ]
 
-  def test_cleave_exact_middle
-    assert_equal [ 'fancy', 'split' ], 'fancy split'.cleave
-    assert_equal [ 'All good Rubyists', 'know how to party' ],
-                'All good Rubyists know how to party'.cleave
-  end
-
-  def test_cleave_closer_to_start
-    assert_equal [ 'short', 'splitter' ], 'short splitter'.cleave
-    assert_equal [ 'Four score and', 'seven years ago...' ],
-                'Four score and seven years ago...'.cleave
-    assert_equal [ 'abc def', 'ghijklm nop' ],
-                'abc def ghijklm nop'.cleave
-  end
-
-  def test_cleave_closer_to_end
-    assert_equal [ 'extended', 'split' ], 'extended split'.cleave
-    assert_equal [ 'abc defghi', 'jklm nop' ],
-                'abc defghi jklm nop'.cleave
+  table.each do |d, s, x|
+    unit :cleave => d do
+      s.cleave.assert == x
+    end
   end
 
 end

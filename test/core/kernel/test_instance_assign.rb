@@ -1,15 +1,14 @@
-require 'facets/kernel/instance_assign.rb'
-require 'test/unit'
+covers 'facets/kernel/instance_assign'
 
-class TestKernelInstanceAssign < Test::Unit::TestCase
+testcase Kernel do
 
-  def test_instance_assign
+  unit :instance_assign do
     ahash = { "z"=>0, "@a"=>1, "@b"=>2 } #, "@@a"=>3 }
     instance_assign( ahash )
-    assert_equal( 0, @z )
-    assert_equal( 1, @a )
-    assert_equal( 2, @b )
-    #assert_equal( 3, @@a )
+    @z.assert == 0
+    @a.assert == 1
+    @b.assert == 2
+    #@@a.assert == 3
   end
 
 end

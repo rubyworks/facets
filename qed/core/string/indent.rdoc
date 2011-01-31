@@ -1,0 +1,65 @@
+== String#indent
+
+  require 'facets/string/indent'
+
+positive
+
+  "xyz".indent(4).assert == '    xyz'
+  "  xyz".indent(2).assert == '    xyz'
+
+multiline positive
+
+  "abc\nxyz".indent(2).assert ==  "  abc\n  xyz"
+
+zero
+
+  'xyz'.indent(0).assert == 'xyz'
+
+negative
+
+  '    xyz'.indent(-2).assert == '  xyz'
+  '  xyz'.  indent(-2).assert == 'xyz'
+
+multiline negative
+
+  "    abc\n    xyz".indent(-2).assert == "  abc\n  xyz"
+
+negative more than is possible
+
+  '  xyz'.indent(-3).assert == 'xyz'
+
+non-space positive
+
+  "xyz".indent(4, '-').assert == '----xyz'
+
+non-space zero
+
+  'xyz'.indent(0, '-').assert == 'xyz'
+
+non-space negative non-matching character
+
+  '    xyz'.indent(-2, '-').assert == '    xyz'
+  '  xyz'.  indent(-2, '-').assert == '  xyz'
+
+non-space negative
+
+  '----xyz'.indent(-2, '-').assert == '--xyz'
+  '--xyz'.indent(-2, '-').assert == 'xyz'
+
+Special regular expresion characters are escaped.
+
+ensure '.' is treated literally and not as wildcard
+
+  '  xyz'.indent(-2, '.').assert == '  xyz'
+  '..xyz'.indent(-2, '.').assert == 'xyz'
+
+ensure '*' is treated literally and not as wildcard
+
+  '  xyz'.indent(-2, '*').assert == '  xyz'
+  '**xyz'.indent(-2, '*').assert == 'xyz'
+
+ensure '^' is treated literally and not as line start
+
+  '  xyz'.indent(-2, '^').assert == '  xyz'
+  '^^xyz'.indent(-2, '^').assert == 'xyz'
+

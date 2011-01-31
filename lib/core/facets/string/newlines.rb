@@ -6,14 +6,22 @@ class String
   # line of the string, void of the termining newline
   # character, in contrast to #lines which retains it.
   #
+  #   "a\nb\nc".newlines.class.assert == Enumerator
+  #   "a\nb\nc".newlines.to_a.assert == %w{a b c}
+  #
+  #   a = []
+  #   "a\nb\nc".newlines{|nl| a << nl}
+  #   a.assert == %w{a b c}
+  #
   def newlines(&block)
     if block
       scan(/^.*?$/) do |line|
         block.call(line.chomp)
       end
     else
-      Enumerator.new(self) do |output|
-        scan(/^.*?$/) do |line|
+      str = self
+      Enumerator.new do |output|
+        str.scan(/^.*?$/) do |line|
           output.yield(line.chomp)
         end
       end
@@ -21,15 +29,4 @@ class String
   end
 
 end
-
-=begin test
-
-  "a\nb\nc".newlines.class.must == Enumerator
-  "a\nb\nc".newlines.to_a.must == %w{a b c}
-
-  a = []
-  "a\nb\nc".newlines{|nl| a << nl}
-  a.must == %w{a b c}
-
-=end
 

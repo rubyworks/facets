@@ -1,10 +1,9 @@
-require 'facets/module/basename.rb'
-require 'test/unit'
+covers 'facets/module/basename'
 
-class TestModuleBasename < Test::Unit::TestCase
+tests Module do
 
-  def test_basename
-    assert_equal( "TestCase", ::Test::Unit::TestCase.basename )
+  unit :basename do
+    Lemon::TestCase.basename.assert == "TestCase"
   end
 
 end

@@ -4,7 +4,7 @@ class File
   # This differs from <tt>File.split</tt>, which divides the path into
   # only two parts, directory path and basename.
   #
-  #   File.split_all("a/b/c") =>  ['a', 'b', 'c']
+  #   File.split_all("a/b/c")  #=> ['a', 'b', 'c']
   #
   # CREDIT: Trans
 

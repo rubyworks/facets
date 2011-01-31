@@ -1,17 +1,15 @@
-require 'facets/binding/defined'
-require 'test/unit'
+covers 'facets/binding/defined'
 
-class TC_Binding_Defined < Test::Unit::TestCase
+tests Binding do
 
-  def setup
-    a = 1
-    b = 2
-    x = "hello"
-    @bind = binding
-  end
+  a = 1
+  b = 2
+  x = "hello"
 
-  def test_defined?
-    assert( @bind.defined?("x") )
+  bind = binding
+
+  unit :defined? do
+    bind.assert.defined?("x")
   end
 
 end

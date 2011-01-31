@@ -1,13 +1,12 @@
-require 'facets/enumerable/modulate.rb'
-require 'test/unit'
+covers 'facets/enumerable/modulate'
 
-class Test_Enumerable_Modulate < Test::Unit::TestCase
+testcase Enumerable do
 
-  def test_compact_collect
+  unit :modulate do
     a = [2,4,6,8]
     r = a.modulate(2)
     x = [[2,6],[4,8]]
-    assert_equal(x, r)
+    r.assert == x
   end
 
 end

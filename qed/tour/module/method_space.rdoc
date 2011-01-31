@@ -1,0 +1,55 @@
+== Module#method_space
+
+  require 'facets/module/method_space'
+
+  class A
+    attr_writer :x
+    method_space :inside do
+      def x; @x; end
+    end
+  end
+
+  a = A.new
+  a.x = 10
+
+We can see that the `inside` method space has access to the instance space.
+
+  a.inside.x  #=> 10
+
+But there is no reader in the instance space.
+
+  expect NoMethodError do
+    a.x
+  end
+
+== Module#include_as
+
+  require 'facets/module/include_as'
+
+Module#include_as utilizes #method_space to allow modules to be included
+within a separated namespace.
+
+  module T
+    def t ; "Tt"  ; end
+    def r ; "Tr"  ; end
+    def q ; super ; end
+  end
+
+  class N
+    def q ; "Nq" ; end
+  end
+
+  class X < N
+    include_as :test => T
+
+    def n ; test.inspect ; end
+    def m ; test.t ; end
+    def o ; test.r ; end
+  end
+
+  x = X.new
+
+  x.m.assert == "Tt"
+  x.o.assert == "Tr"
+  x.q.assert == "Nq"
+

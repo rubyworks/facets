@@ -4,7 +4,7 @@ class String
 
     # Returns an array of characters.
     #
-    #   "abc\n123".lines  #=> ["abc\n","123"]
+    #   "abc\n123".lines.to_a  #=> ["abc\n","123"]
     #
     def lines(&blk)
       if block_given?

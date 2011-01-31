@@ -1,17 +1,20 @@
-require 'facets/regexp/arity'
-require 'test/unit'
+covers 'facets/regexp/arity'
 
-class TestRegexpArity < Test::Unit::TestCase
+testcase Regexp do
 
-  def test_arity
+  unit :arity do
     r = /(1)(2)(3)/
-    assert_equal( 3, r.arity )
+    r.arity.assert == 3
+
     r = /(1)(2)(3)(4)/
-    assert_equal( 4, r.arity )
+    r.arity.assert == 4
+
     r = /(1)(2)((a)3)/
-    assert_equal( 4, r.arity )
+    r.arity.assert == 4
+
     r = /(?#nothing)(1)(2)(3)(?=3)/
-    assert_equal( 3, r.arity )
+    r.arity.assert == 3
   end
 
 end
+

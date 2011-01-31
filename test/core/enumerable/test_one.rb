@@ -1,17 +1,20 @@
-require 'facets/enumerable/one'
-require 'test/unit'
+covers 'facets/enumerable/one'
 
-class TC_Enumerable < Test::Unit::TestCase
+testcase Enumerable do
 
-  def test_one?
+  unit :one? do
     a = [nil, true]
     assert( a.one? )
+
     a = [true, false]
     assert( a.one? )
+
     a = [true, true]
     assert( ! a.one? )
+
     a = [true, 1]
     assert( ! a.one? )
+
     a = [1, 1]
     assert( ! a.one? )
   end

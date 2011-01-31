@@ -4,7 +4,12 @@ class Class
 
   # Translate a class name to a suitable method name.
   #
-  #   My::CoolClass.methodize => "my__cool_class"
+  #   module ::Example
+  #     class MethodizeExample
+  #     end
+  #   end
+  #
+  #   Example::MethodizeExample.methodize  #=> "example__methodize_example"
   #
   def methodize
     name.methodize

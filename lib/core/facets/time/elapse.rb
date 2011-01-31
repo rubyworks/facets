@@ -2,7 +2,9 @@ class Time
 
   # Tracks the elapse time of a code block.
   #
-  #   Time.elapse { sleep 1 }  #=> 0.999188899993896
+  #   e = Time.elapse { sleep 1 }
+  #
+  #   e.assert > 1
   #
   # CREDIT: Hal Fulton
 

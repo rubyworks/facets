@@ -2,7 +2,7 @@ class String
 
   # Removes occurances of a string or regexp.
   #
-  #   "HELLO HELLO" - "LL"    #=> "HEO HEO"
+  #   ("HELLO HELLO" - "LL")    #=> "HEO HEO"
   #
   # CREDIT: Benjamin David Oakes
 

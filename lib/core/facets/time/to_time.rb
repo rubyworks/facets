@@ -9,8 +9,8 @@ class Time
       getlocal 
     end
 
-    # A method to keep Time, Date and DateTime instances interchangeable on conversions.
-    # In this case, it simply returns +self+.
+    # A method to keep Time, Date and DateTime instances interchangeable
+    # on conversions. In this case, it simply returns +self+.
     #def to_time
     #  self
     #end

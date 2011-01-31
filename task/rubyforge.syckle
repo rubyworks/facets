@@ -1,9 +1,0 @@
----
-rubyforge:
-  service: Rubyforge
-  groupid: 804
-  sitemap:
-    site    : '.'
-  #  doc/rdoc: rdoc
-  #  doc/yard: yard
-  active: false

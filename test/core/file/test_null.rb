@@ -1,11 +1,9 @@
-require 'test/unit'
-require 'facets/file/null'
+covers 'facets/file/null'
 
-class TC_File_Prime < Test::Unit::TestCase
+tests File do
 
-  # FIXME
-  def test_null
-    assert(File.null)
+  metaunit :null do
+    assert File.null
   end
 
 end

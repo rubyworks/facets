@@ -1,14 +1,15 @@
-require 'facets/hash/inverse'
-require 'test/unit'
+covers 'facets/hash/inverse'
 
-class TC_Hash_Inverse < Test::Unit::TestCase
+testcase Hash do
 
-  def test_inverse
+  unit :inverse do
     h1 = { :a=>1, :b=>2, :c=>2 }
     h2 = h1.inverse
-    assert_equal( :a, h2[1] )
-    assert( h2[2].include?(:b) )
-    assert( h2[2].include?(:c) )
+
+    h2[1].assert == :a
+
+    h2[2].assert.include?(:b)
+    h2[2].assert.include?(:c)
   end
 
 end

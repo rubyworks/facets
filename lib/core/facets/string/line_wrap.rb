@@ -2,12 +2,9 @@ class String
 
   # Line wrap at width.
   #
-  #   puts "1234567890".line_wrap(5)
+  #   s = "1234567890".line_wrap(5)
   #
-  # _produces_
-  #
-  #   12345
-  #   67890
+  #   s  #=> "12345\n67890\n"
   #
   # CREDIT: Trans
 

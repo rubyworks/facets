@@ -1,9 +1,8 @@
-require 'facets/symbol/query'
-require 'test/unit'
+covers 'facets/symbol/query'
 
-class TC_Symbol_Query < Test::Unit::TestCase
+testcase Symbol do
 
-  def test_query?
+  unit :query? do
     assert( :try?.query? )
 
     assert( ! :try.query? )

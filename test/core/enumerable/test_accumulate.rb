@@ -1,19 +1,35 @@
-require 'facets/enumerable/accumulate'
-require 'test/unit'
+covers 'facets/enumerable/accumulate'
 
-class TCAccumulate < Test::Unit::TestCase
+testcase Enumerable do
 
-  def test_accumulate
+  unit :accumulate do
     a = [1,2,3]
-    assert_equal( [2,3,4], a.accumulate.succ )
-    assert_equal( ['2','3','4'], a.accumulate(2).succ.to_s )
+    a.accumulate.succ.assert == [2,3,4]
+  end
 
+  unit :accumulate do
     a = [{:ab=>1},{22=>:c}]
-    assert_equal( [1,nil,nil,:c],a.accumulate.values_at(:ab,22) )
-    assert_equal( ['a', 'b', '2','2'] ,a.accumulate(3).keys.to_s.split(//) )
+    a.accumulate.values_at(:ab,22).assert == [1,nil,:c]
+  end
 
+  unit :accumulate => "chained twice" do
+    a = [1,2,3]
+    a.accumulate(2).succ.to_s.assert == ['2','3','4']
+  end
+
+  unit :accumulate => "chained three times" do
+    a = [{:ab=>1},{22=>:c}]
+    a.accumulate(3).keys.to_s.split(//).assert == ['a', 'b', '2']
+  end
+
+  unit :accumulate => "empty receiver" do
     a = []
-    assert_equal( [], a.accumulate.succ )
+    a.accumulate.succ.assert == []
+  end
+
+  unit :accumulate_all => "not uniq entries" do
+    a = [{:ab=>1},{22=>:c}]
+    a.accumulate_all(3).keys.to_s.split(//).assert == ['a', 'b', '2', '2']
   end
 
 end

@@ -1,16 +1,13 @@
-# Test for facets/kernel/returning.rb
+covers 'facets/kernel/returning'
 
-require 'facets/kernel/returning.rb'
-require 'test/unit'
+tests Kernel do
 
-class TC_Kernel < Test::Unit::TestCase
-
-  def test_returning
+  unit :returning do
     foo = returning( values = [] ) do
       values << 'bar'
       values << 'baz'
     end
-    assert_equal( ['bar', 'baz'], foo )
+    foo.assert == ['bar', 'baz']
   end
 
 end

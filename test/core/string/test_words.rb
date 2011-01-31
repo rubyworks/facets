@@ -1,33 +1,18 @@
-require 'facets/string/words.rb'
-require 'test/unit'
+covers 'facets/string/words'
 
-class Test_String_Words < Test::Unit::TestCase
+testcase String do
 
-  def test_words_01
+  unit :words do
     x = "a b c\nd e"
-    assert_equal( ['a','b','c','d','e'], x.words )
-  end
+    x.words.assert == ['a','b','c','d','e']
 
-  def test_words_02
     x = "ab cd\nef"
-    assert_equal( ['ab','cd','ef'], x.words )
+    x.words.assert == ['ab','cd','ef']
   end
 
-  def test_words_03
+  unit :words do
     x = "ab cd \n ef-gh"
-    assert_equal( ['ab','cd','ef-gh'], x.words )
+    x.words.assert == ['ab','cd','ef-gh']
   end
-
-  #def test_word_filter
-  #  s = "this is a test"
-  #  n = s.word_filter{ |w| "#{w}1" }
-  #  assert_equal( 'this1 is1 a1 test1', n )
-  #end
-
-  #def test_word_filter!
-  #  s = "this is a test"
-  #  s.word_filter!{ |w| "#{w}1" }
-  #  assert_equal( 'this1 is1 a1 test1', s )
-  #end
 
 end

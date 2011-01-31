@@ -7,13 +7,13 @@ class UnboundMethod
     # Be aware that in ruby 1.9 UnboundMethod#name is defined already,
     # but it returns a Symbol not a String.
     #
-    #   class X
+    #   class NameExample
     #     def foo; end
     #   end
     #
-    #   meth = X.instance_method(:foo)
+    #   meth = NameExample.instance_method(:foo)
     #
-    #   meth.name  #=> :foo
+    #   meth.name.to_sym  #=> :foo
     #
     # CREDIT: Trans
 

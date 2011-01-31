@@ -1,0 +1,22 @@
+---
+stats:
+  service: Stats
+
+vclog:
+  service : VClog
+  active: false
+
+rubyprof:
+  service: RubyProf
+  active : false
+  output : ~
+  scripts: ~
+  options: ~
+
+rcov:
+  service: RCov
+  active : false
+  output : ~
+  scripts: ~
+  options: ~
+

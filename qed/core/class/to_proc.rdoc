@@ -1,0 +1,8 @@
+== Class#to_proc
+
+  require 'facets/class/to_proc'
+
+  person = Struct.new(:name)
+  people = ["joe"].map(&person)
+  people[0].name.assert == "joe"
+

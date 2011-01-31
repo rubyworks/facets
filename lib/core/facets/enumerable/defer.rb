@@ -20,8 +20,7 @@ module Enumerable
   #   (1..1_000_000_000).
   #     defer { |out,i| out << i if i % 2 == 0 }.  # like select
   #     defer { |out,i| out << i + 100 }.          # like map
-  #     take(10).
-  #     each { |i| puts i }
+  #     take(10).to_a
   #
   # Use a method like to_a or to_h at the end of the chain when you want an
   # Array or Hash built with the results, or each{...} if you just want

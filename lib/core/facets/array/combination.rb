@@ -37,22 +37,6 @@ class Array
       end
     end
 
-    # OLD WAY
-    #a = []
-    #s = self
-    #n = s.size
-    #return unless (1..n) === k
-    #dx = (0...k).to_a
-    #loop do
-    #  a << s.values_at(*idx)
-    #  i = k - 1
-    #  i -= 1 while idx[i] == n - k + i
-    #  break if i < 0
-    #  idx[i] += 1
-    #  (i + 1 ... k).each {|j| idx[j] = idx[i] + j - i}
-    #end
-    #a
-
   end
 
 end

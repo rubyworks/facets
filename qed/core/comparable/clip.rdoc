@@ -1,0 +1,37 @@
+== Comparable#clip
+
+  require 'facets/comparable/clip'
+
+single argument
+
+  3.clip(4).assert == 4
+  4.clip(4).assert == 4
+  5.clip(4).assert == 5
+
+two arguments
+
+  4.clip(3,5).assert == 4
+  3.clip(3,5).assert == 3
+  5.clip(3,5).assert == 5
+  2.clip(3,5).assert == 3
+  6.clip(3,5).assert == 5
+
+on strings
+
+  'd'.clip('c','e').assert == 'd'
+  'c'.clip('c','e').assert == 'c'
+  'e'.clip('c','e').assert == 'e'
+  'b'.clip('c','e').assert == 'c'
+  'f'.clip('c','e').assert == 'e'
+
+== Comparable#bound
+
+The bound method is an alias for #clip. It is actually
+the original name of this method.
+
+  3.bound(4).assert == 4
+
+  4.bound(3,5).assert == 4
+
+  'd'.bound('c','e').assert == 'd'
+

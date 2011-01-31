@@ -1,31 +1,31 @@
-require 'facets/symbol/to_proc'
-require 'test/unit'
+covers 'facets/symbol/to_proc'
 
-class Test_Symbol < Test::Unit::TestCase
+testcase Symbol do
 
-  def test_to_proc
+  unit :to_proc do
     x = (1..10).inject(&:*)
-    assert_equal(3628800, x)
+    x.assert == 3628800
 
     x = %w{foo bar qux}.map(&:reverse)
-    assert_equal(%w{oof rab xuq}, x)
+    x.assert == %w{oof rab xuq}
 
     x = [1, 2, nil, 3, nil].reject(&:nil?)
-    assert_equal([1, 2, 3], x)
+    x.assert == [1, 2, 3]
 
     x = %w{ruby and world}.sort_by(&:reverse)
-    assert_equal(%w{world and ruby}, x)
+    x.assert == %w{world and ruby}
   end
 
-  def test_to_proc_call
-    assert_instance_of(Proc, up = :upcase.to_proc )
-    assert_equal( "HELLO", up.call("hello") )
+  unit :to_proc => "call" do
+    up = :upcase.to_proc
+    up.assert.is_a?(Proc)
+    up.call("hello").assert == "HELLO"
   end
 
-  def test_to_proc_map
+  unit :to_proc => "map" do
     q = [[1,2,3], [4,5,6], [7,8,9]].map(&:reverse)
     a = [[3, 2, 1], [6, 5, 4], [9, 8, 7]]
-    assert_equal( a, q )
+    q.assert == a
   end
 
 end

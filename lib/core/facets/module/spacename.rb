@@ -2,13 +2,13 @@ class Module
 
   # Returns the name of module's container module.
   #
-  #   module Example
-  #     class Demo
+  #   module ::SpaceName
+  #     class Example
   #     end
   #   end
   #
-  #   Demo.name         #=> "Example::Demo"
-  #   Demo.spacename    #=> "Example"
+  #   SpaceName::Example.name         #=> "SpaceName::Example"
+  #   SpaceName::Example.spacename    #=> "SpaceName"
   #
   # This used to be called +dirname+.
   #

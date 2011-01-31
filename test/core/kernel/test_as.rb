@@ -1,50 +1,59 @@
-require 'facets/kernel/as.rb'
-require 'test/unit'
+covers 'facets/kernel/as'
 
-class TestKernelSuper < Test::Unit::TestCase
+tests Kernel do
 
-  class X ; def x ; 1 ; end ; end
-  class Y < X ; def x ; 2 ; end ; end
-  class Z < Y ; def x ; super_as(X) ; end ; end
+  #context "class heirarchy" do
+  #  x = Class.new{ def x ; 1 ; end }
+  #  y = Class.new(x){ def x ; 2 ; end }
+  #  z = Class.new(y){ define_method(:x){ super_as(x) } }
+  #  z
+  #end
 
-  def test_super_as
-    z = Z.new
-    assert_equal( 1, z.x )
+  #unit :super_as do |z|
+  #  o = z.new
+  #  o.x.assert == 1
+  #end
+
+  context "class heirarchy" do
+    a = Class.new do
+      def x; "a.x"; end
+      def y; "a.y"; end
+    end
+    b = Class.new(a) do
+      def x; "b.x" end
+      def y; "b.y" end
+    end
+    c = Class.new(b) do
+      def x; "c.x"; end
+      define_method(:y){ as(a).x }
+    end
   end
 
-  class X2 ; def x ; 1 ; end ; end
-  class Y2 < X2 ; def x ; 2 ; end ; end
-  class Z2 < Y2 ; def x ; 3 ; end ; end
-
-  def test_super_method
-    x = X2.new
-    z = Z2.new
-    s0 = x.method( :x )
-    s1 = z.super_method( X2, :x )
-    assert_equal( s0.call, s1.call )
+  unit :as do |c|
+    o = c.new
+    o.x.assert == "c.x"
+    o.y.assert == "a.x"
   end
 
-  class A
-    def x; "A.x"; end
-    def y; "A.y"; end
-  end
-  class B < A
-    def x; "B.x" end
-    def y; "B.y" end
-  end
-  class C < B
-    def x; "C.x"; end
-    def y; as(B).x ; end
+  unit :send_as do
+    s = "a"
+    def s.class; nil; end
+    s.class.refute == String
+    s.send_as(Object, :class).assert == String
   end
 
-  def test_as
-    c = C.new
-    assert_equal("B.x", c.y)
-    assert_equal("C.x", c.x)
+end
+
+tests As do
+
+  c = Class.new(String) do
+    def to_s; "denied"; end
   end
 
-  def test_send_as
-    assert_equal( String, "A".send_as(Object, :class) )
+  meta :new do
+    o = c.new("hi")
+    o.to_s.assert == "denied"
+    As.new(o, String).to_s.assert == "hi"
   end
 
 end

@@ -1,20 +1,19 @@
-require 'facets/hash/op_sub'
-require 'test/unit'
+covers 'facets/hash/op_sub'
 
-class TC_Hash_Op < Test::Unit::TestCase
+testcase Hash do
 
-  def test_op_sub_array
+  unit :- => "hash minus array" do
     a = { :a => 1, :b => 2, :c => 3 }
     b = [ :a ]
-    e = { :b => 2, :c => 3 }
-    assert_equal( e, a - b )
+    x = { :b => 2, :c => 3 }
+    (a - b).assert == x
   end
 
-  def test_op_sub_hash
+  unit :- => "hash minus hash" do
     a = { :a => 1, :b => 2, :c => 3 }
     b = { :a => 1, :d => 4 }
-    e = { :b => 2, :c => 3 }
-    assert_equal( e, a - b )
+    x = { :b => 2, :c => 3 }
+    (a - b).assert == x
   end
 
 end

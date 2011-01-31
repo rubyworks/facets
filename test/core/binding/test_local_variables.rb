@@ -1,24 +1,32 @@
-require 'facets/binding/local_variables'
-require 'test/unit'
+covers 'facets/binding/local_variables'
 
-class TC_Binding_Local_Variables < Test::Unit::TestCase
+testcase Binding do
 
-  def setup
-    a = 1
-    b = 2
-    x = "hello"
-    @bind = binding
-  end
+  a = 1
+  b = 2
+  x = "hello"
+
+  bind = binding
 
   unless RUBY_VERSION > "1.9"
-      def test_local_variables
-        assert_equal( ["a","b","x"], @bind.local_variables )
-      end
-    else
-      def test_local_variables
-        assert_equal( [:a,:b,:x], @bind.local_variables )
-      end
+
+    unit :local_variables do
+      bind.local_variables.assert.include? "bind"
+      bind.local_variables.assert.include? "x"
+      bind.local_variables.assert.include? "a"
+      bind.local_variables.assert.include? "b"
     end
+
+  else
+
+    unit :local_variables do
+      bind.local_variables.assert.include? :bind
+      bind.local_variables.assert.include? :x
+      bind.local_variables.assert.include? :a
+      bind.local_variables.assert.include? :b
+    end
+
+  end
 
 end
 

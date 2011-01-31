@@ -1,0 +1,29 @@
+== String#tabto
+
+  require 'facets/string/tabto'
+
+String#tabto indeent lines relative to their current indentions. Using #tabto
+on a single line behaves just like #tab.
+
+  a = "xyz".tabto(2)
+  a.assert ==  "  xyz"
+
+  a = "    xyz".tabto(2)
+  a.assert ==  "  xyz"
+
+If the string has multiple lines, then each line will be indented
+accordingly.
+
+  a = "abc\nxyz".tabto(2)
+  a.assert ==  "  abc\n  xyz"
+
+Unlike #tab, the left margin of indention is determined by the first
+non-blank line.
+
+  a = "  abc\n    xyz".tabto(2)
+  a.assert ==  "  abc\n    xyz"
+
+If we add a blank line at the begining it will be the same.
+
+  a = " \n  abc\n    xyz".tabto(2)
+  a.assert ==  " \n  abc\n    xyz"

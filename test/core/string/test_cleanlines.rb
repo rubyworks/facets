@@ -1,10 +1,9 @@
-require 'facets/string/cleanlines'
-require 'test/unit'
+covers 'facets/string/cleanlines'
 
-class TC_String_CleanLines < Test::Unit::TestCase
+testcase String do
 
-  def test_cleanlines
-    assert_equal( ["a","b","c"], "a \n b \nc".cleanlines.to_a )
+  unit :cleanlines do
+    "a \n b \nc".cleanlines.to_a.assert == ["a","b","c"]
   end
 
 end

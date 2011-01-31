@@ -1,13 +1,9 @@
-require 'facets/range/overlap'
-require 'test/unit'
+covers 'facets/range/overlap'
 
-class TestRangeOverlap < Test::Unit::TestCase
+testcase Range do
 
-  def test_overlaps
+  unit :overlap? do
     assert( (4..5).overlap?(3..6) )
-  end
-
-  def test_does_not_overlap
     assert(! (7..9).overlap?(3..6) )
   end
 

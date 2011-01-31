@@ -1,20 +1,17 @@
-require 'facets/module/class'
-require 'test/unit'
+covers 'facets/module/class'
 
-class Test_Module_Class < Test::Unit::TestCase
+testcase Module do
 
-  class X
-  end
+  unit :class? do
+    x_class = Class.new
+    y_class = Class.new(x_class)
 
-  class Y < X
-  end
+    x = x_class.new
+    y = y_class.new
 
-  def test_class?
-    x = X.new
-    y = Y.new
-    assert( X.class?(x) )
-    assert( Y.class?(y) )
-    assert( Y.class?(y) )
+    x_class.assert.class?(x)
+    y_class.assert.class?(y)
+    y_class.assert.class?(y)
   end
 
 end

@@ -1,19 +1,16 @@
-require 'facets/hash/slice'
-require 'test/unit'
+covers 'facets/hash/slice'
 
-class TC_Hash_Slice < Test::Unit::TestCase
+testcase Hash do
 
-  def test_slice
+  unit :slice do
     h = {:a=>1,:b=>2,:c=>3}
-    e = {:b=>2, :a=>1}
-    assert_equal(e, h.slice(:a, :b))
+    h.slice(:a, :b).assert == {:b=>2, :a=>1}
   end
 
-  def test_slice!
+  unit :slice! do
     h = {:a=>1,:b=>2,:c=>3}
-    e = {:c=>3}
-    assert_equal(e, h.slice!(:a, :b))
-    assert_equal({:a=>1,:b=>2}, h)
+    h.slice!(:a, :b).assert == {:c=>3}
+    h.assert == {:a=>1,:b=>2}
   end
 
 end

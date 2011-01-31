@@ -1,0 +1,6 @@
+== Binding#self
+
+  require 'facets/binding/self'
+
+  binding.self == self
+

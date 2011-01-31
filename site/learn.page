@@ -1,0 +1,88 @@
+---
+title   : Learn - Ruby Facets
+layout  : default
+stencil : liquid
+blurb   : Easy to Learn
+detail  : 
+  Learn Facets as you program, these resources make it a snap.
+  Hook up with other users and broaden the scope of your usage.
+  Ruby Facets has a moto, "All Base Common".
+
+--- markdown
+
+# Installation
+
+## RubyGems
+
+Facets can be dowloaded and installed easily using RubyGems:
+
+    $ gem install facets
+
+Gems will automatically generate rdocs on installation. Unfortunately
+the Gem generated rdocs are very poor --in fact Facets only allows them
+to be generated to ensure the creation of ri docs (ruby api index files).
+We recommend instead that you use the pre-generated rdocs on the website.
+
+## Site Install
+
+If you would like to install from source, you can download the tarball
+package from <a href="http://github.com/rubyworks/facets/download">GitHub</a>
+and use <a href="http://proutils.github.com/setup">Ruby Setup</a>, e.g.
+
+    $ tar -xvzf facets-2.9.0.tgz
+    $ cd facets-2.9.0
+    $ setup.rb
+
+The last step may require super-user permissions (eg. use <code>sudo</code>).
+
+Of course, to use Facets you also need *Ruby*. The 2.x versions of Facets are
+designed to work with Ruby 1.8.6 and up. Facets is fully compatible with Ruby 1.9.
+
+
+# API Documentation
+
+Facets API is divided into three documentation sets, one for each library group,
+CORE for the core extensions, MORE for the addtions and standard library extensions
+and TOUR, for extra extensions.
+
+## Core API
+
+The <a href="{{ root }}doc/api/core/index.html">CORE API</a> includes all
+the "prime" extensions. These methods are at the heart of Facets. Any
+application or library that makes use of Facets, you can be sure, supports
+these methods. Also include is the Functor class, which is a Higher Order
+Message class. It is used by a number of methods to provide fluid interfaces.
+
+## More API
+
+The <a href="{{ root }}doc/api/more/index.html">MORE API</a> documents the
+variety of extension methods to Ruby's standard library, and additional
+classes, modules and micro-frameworks Facets provides as optional libraries.
+
+## Tour API
+
+The <a href="{{ root }}doc/api/tour/index.html">TOUR API</a> documents a small
+collection of extensions and occasionally class and module additions "on tour"
+as possible inclusions into CORE or MORE proper. This has been created as an
+easy way for Facets vet new ideas. In a few cases some extensions might reside
+here indefinitely if they are useful, but not suited for inclusion in CORE.
+
+
+# Wiki
+
+The Wiki is a place for end-users to create their own documentation. Ultimately,
+it is hoped, this documentaiton will make a great source for sharing real-world
+use cases. However, a full Wiki solution isn't in place yetand we are simply
+using Google Pages, provided along side the Google mailing list interface.
+
+Facets has a community wiki that anyone can use to help document Facets at
+<a href="http://wiki.github.com/rubyworks/facets">Facets Wiki</a>.
+
+
+# Mailing List
+
+Facets has a dedicated mailing list hosted via
+<a href="http://groups.google.com/group/facets-universal/topics">Google Groups</a>. 
+The same list is used by developers and end-users alike. If you have a
+question or a suggestion the list is a good place to get feedback about it.
+

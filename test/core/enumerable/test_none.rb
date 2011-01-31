@@ -1,15 +1,17 @@
-require 'facets/enumerable/none'
-require 'test/unit'
+covers 'facets/enumerable/none'
 
-class TC_Enumerable < Test::Unit::TestCase
+testcase Enumerable do
 
-  def test_none?
+  unit :none? do
     a = [nil, nil]
     assert( a.none? )
+
     a = [false, false]
     assert( a.none? )
+
     a = [true, false]
     assert( ! a.none? )
+
     a = [nil, 1]
     assert( ! a.none? )
   end

@@ -19,7 +19,7 @@ class Range
   # Returns a two element array of the relationship
   # between two Ranges.
   #
-  # Diagram:
+  # Diagram ...
   #
   #     Relationship     Returns
   #

@@ -1,23 +1,20 @@
-# Test for facets/module/abstract
+covers 'facets/module/abstract'
 
-require 'facets/module/abstract.rb'
+testcase Module do
 
-require 'test/unit'
-
-class TestAttrTester < Test::Unit::TestCase
-
-  class Aq
-    abstract :q
+  unit :abstract => "in a module" do
+    m = Module.new{ abstract :q }
+    c = Class.new{ include m }
+    x = c.new
+    TypeError.assert.raised?{ x.q }
   end
 
-  def test_abstract_01
-    ac = Aq.new
-    assert_raises( TypeError ) { ac.q }
-  end
-
-  def test_abstract_02
-    ac = Class.new { abstract :q }.new
-    assert_raises( TypeError ) { ac.q }
+  unit :abstract => "in a class" do
+    c = Class.new{ abstract :q }
+    #c.pry.abstract :q
+    x = c.new
+    TypeError.assert.raised?{ x.q }
   end
 
 end
+

@@ -1,14 +1,15 @@
-require 'facets/integer/even'
-require 'test/unit'
+covers 'facets/integer/even'
 
-class TC_Integer < Test::Unit::TestCase
+# NOTE: Can't test on Integer directly b/c Ruby 1.8.7 defines separate
+# methods for Fixnum.
+testcase Fixnum do
 
-  def test_even?
+  unit :even? do
     (-100..100).step(2) do |n|
-      assert(n.even? == true)
+      n.even?.assert == true
     end
     (-101..101).step(2) do |n|
-      assert(n.even? == false)
+      n.even?.assert == false
     end
   end
 

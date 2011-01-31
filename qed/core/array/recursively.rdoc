@@ -1,0 +1,16 @@
+== Array#recursive
+
+  require 'facets/array/recursively'
+
+each
+
+  r = []
+  [1,2,['a','b']].recursively.each{ |v| r << v }
+  r.assert == [1,2,'a','b']
+
+
+map
+
+  r = [1,2,['a','b']].recursively.map{ |v| v.succ }
+  r.assert == [2,3,['b','c']]
+

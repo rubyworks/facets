@@ -1,10 +1,9 @@
-require 'facets/nilclass/to_f'
-require 'test/unit'
+covers 'facets/nilclass/to_f'
 
-class TC_NilClass_To_F < Test::Unit::TestCase
+testcase NilClass do
 
-  def test_to_f
-    assert_equal( 0, nil.to_f )
+  unit :to_f do
+    nil.to_f.assert == 0
   end
 
 end
