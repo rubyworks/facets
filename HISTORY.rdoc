@@ -12,21 +12,25 @@ Changes:
   * Add FileTest#absolute? and #relative?
   * Add FileTest#contains?
   * Add FileTest#safe?
-	* Add FileUtils#amass
+  * Add FileUtils#amass
   * Add FileUtils#outofdate
   * Add FileUtils#stage
   * Add Kernel#yes? and Kernel#no?
   * Add Enumerable#has? (TOUR library)
+  * Add Digest#salted_digest, etc.
+  * Add Digest#base64digest (1.9.2 method)
+  * Add String#random_binary
 
 * Improved Features
 
   * Better OS detection in Platform class and RBConfig module
   * Moved CPU byte order methods from RBConfig to Platform class
+  * General improvements to Platform class API
 
 * Bug Fixes
 
   * Module#redefine_method need not check pre-existence of method
-
+  * Fix string/unquote.rb recursive require
 
 
 == 2.9.0 / 2010-09-01
