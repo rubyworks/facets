@@ -1,8 +1,8 @@
 module Kernel
 
-  arch_size = ['a'].pack('P').length > 4 ? 64 : 32
+  arch_size = (['a'].pack('P').length > 4 ? 64 : 32)
 
-  if arch_size = 32  #RUBY_VERSION < '1.9'
+  if arch_size == 64
 
     # Returns the object id as a string in hexideciaml,
     # which is how Ruby reports them with inspect...
