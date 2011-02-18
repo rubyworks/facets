@@ -16,7 +16,8 @@ task "rdoc" do
 
   system "rdoc -a -S -t'Facets Core API' -T #{TEMPLATE} -m README.rdoc --op '#{APIOUT}/core' README.rdoc lib/facets/core"
   system "rdoc -a -S -t'Facets More API' -T #{TEMPLATE} -m README.rdoc --op '#{APIOUT}/more' README.rdoc lib/facets/more"
-  system "rdoc -a -S -t'Facets Tour API' -T #{TEMPLATE} -m README.rdoc --op '#{APIOUT}/tour' README.rdoc lib/facets/tour"
+  system "rdoc -a -S -t'Facets Standard API' -T #{TEMPLATE} -m README.rdoc --op '#{APIOUT}/standard' README.rdoc lib/facets/standard"
+  system "rdoc -a -S -t'Facets Tertiary API' -T #{TEMPLATE} -m README.rdoc --op '#{APIOUT}/tertiary' README.rdoc lib/facets/tertiary"
 end
 
 #
@@ -24,20 +25,20 @@ end
 # ----------------------------------------------------------------------------
 
 task "default" do
-  sh "lemon #{lemon_flags} -Ilib/core:lib/more:lib/tour test/core test/more test/tour"
+  sh "lemon #{lemon_flags} -Ilib/core:lib/more:lib/standard:lib/tertiary test/core test/more test/standard test/tertiary"
 end
 
 task "test" do
   if tests = ENV['TESTS']
-    sh "lemon #{lemon_flags} -Ilib/core:lib/more:lib/tour #{tests}"
+    sh "lemon #{lemon_flags} -Ilib/core:lib/more:lib/standard:lib/tertiary #{tests}"
   else
-    sh "lemon #{lemon_flags} -Ilib/core:lib/more:lib/tour test/core test/more test/tour"
+    sh "lemon #{lemon_flags} -Ilib/core:lib/more:lib/standard:lib/tertiary test/core test/more test/standard test/tertiary"
   end
 end
 
 desc "run all unit tests"
 task "test:all" do
-  sh "lemon #{lemon_flags} -Ilib/core:lib/more:lib/tour test/core test/more test/tour"
+  sh "lemon #{lemon_flags} -Ilib/core:lib/more:lib/standard:lib/tertiary test/core test/more test/standard test/tertiary"
 end
 
 desc "run core unit tests"
@@ -50,9 +51,14 @@ task "test:more" do
   sh "lemon #{lemon_flags} -Ilib/core:lib/more test/more"
 end
 
-desc "run tour unit tests"
-task "test:tour" do
-  sh "lemon #{lemon_flags} -Ilib/core:lib/tour test/tour"
+desc "run standard unit tests"
+task "test:standard" do
+  sh "lemon #{lemon_flags} -Ilib/core:lib/standard test/standard"
+end
+
+desc "run tertiary unit tests"
+task "test:tertiary" do
+  sh "lemon #{lemon_flags} -Ilib/core:lib/standard test/tertiary"
 end
 
 desc "run all unit tests with ActiveSupport loaded"
@@ -64,8 +70,11 @@ task 'test:core:activesupport' => [:include_activesupport, 'test:core']
 desc "run more unit tests with ActiveSupport loaded"
 task 'test:more:activesupport' => [:include_activesupport, 'test:more']
 
-desc "run tour unit tests with ActiveSupport loaded"
-task 'test:more:activesupport' => [:include_activesupport, 'test:tour']
+desc "run standard unit tests with ActiveSupport loaded"
+task 'test:more:activesupport' => [:include_activesupport, 'test:standard']
+
+desc "run tertiary unit tests with ActiveSupport loaded"
+task 'test:more:activesupport' => [:include_activesupport, 'test:tertiary']
 
 task 'include_activesupport' do
   require 'activesupport'
@@ -176,9 +185,14 @@ task "cov:more" do
   sh "lemon -Ilib/more -c test/more"
 end
 
-desc "show tour test coverage"
+desc "show standard test coverage"
 task "cov:tour" do
-  sh "lemon -Ilib/tour -c test/tour"
+  sh "lemon -Ilib/standard -c test/standard"
+end
+
+desc "show tertiary test coverage"
+task "cov:tour" do
+  sh "lemon -Ilib/tertiary -c test/tertiary"
 end
 
 desc "show core coverage by file name"
@@ -219,7 +233,7 @@ end
 
 desc "run qed docs"
 task 'qed' do
-  sh "qed #{qed_flags} -Ilib/core:lib/more:lib/tour qed/core qed/more qed/tour"
+  sh "qed #{qed_flags} -Ilib/core:lib/more:lib/standard:lib/tertiary qed/core qed/more qed/standard qed/tertiary"
 end
 
 desc "run core qed docs"
@@ -232,9 +246,14 @@ task 'qed:more' do
   sh "qed #{qed_flags} -Ilib/core:lib/more qed/more"
 end
 
-desc "run tour qed docs"
+desc "run standard qed docs"
+task 'qed:standard' do
+  sh "qed #{qed_flags} -Ilib/core:lib/standard qed/standard"
+end
+
+desc "run tertiary qed docs"
 task 'qed:tour' do
-  sh "qed #{qed_flags} -Ilib/core:lib/tour qed/tour"
+  sh "qed #{qed_flags} -Ilib/core:lib/tertiary qed/tertiary"
 end
 
 desc "run core qed docs"
