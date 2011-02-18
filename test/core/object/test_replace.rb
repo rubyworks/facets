@@ -1,4 +1,4 @@
-covers 'facets/kernel/replace'
+covers 'facets/object/replace'
 
 tests Object do
 

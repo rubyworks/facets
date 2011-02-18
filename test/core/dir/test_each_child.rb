@@ -11,7 +11,7 @@ tests Dir do
        c << path
      end
      d.close
-     c.sort.assert == ['core', 'more', 'tour']
+     c.sort.assert == ['core', 'more', 'standard', 'tertiary']
    end
 
 end

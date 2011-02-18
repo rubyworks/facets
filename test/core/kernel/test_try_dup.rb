@@ -1,6 +1,6 @@
 covers 'facets/kernel/try_dup'
 
-tests Kernel do
+tests Object do
   unit :try_dup do
     obj1 = Object.new
     obj2 = obj1.try_dup
