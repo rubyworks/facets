@@ -15,10 +15,24 @@ description:
   control of requirements. In addition, Facets includes a few additional
   classes and mixins suitable to wide variety of applications.
 
+requires:
+  - syckle (build)
+  - lemon  (test)
+  - qed    (test)
+
 resources:
   home: http://rubyworks.github.com/facets
   code: http://github.com/rubyworks/facets
   docs: http://rubyworks.github.com/facets/learn.html
   wiki: http://wiki.github.com/rubyworks/facets
   talk: http://groups.google.com/group/facets-universal
-  repo: git@github.com:rubyworks/facets.git
+
+repositories:
+  public: git@github.com:rubyworks/facets.git
+
+loadpath:
+  - lib/core
+  - lib/more
+  - lib/standard
+  - lib/tertiary
+
