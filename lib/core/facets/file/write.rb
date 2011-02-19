@@ -6,7 +6,7 @@ class File
     # done in binary mode, complementing <tt>IO.read</tt> in standard Ruby.
     #
     #   str = 'The content for the file'
-    #   File.write('tmp/write.txt', str)
+    #   File.write('write.txt', str)
     #
     # Returns the number of bytes written.
     #

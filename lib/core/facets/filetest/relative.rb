@@ -20,8 +20,8 @@ module FileTest
 
   # List File.split, but preserves the file separators.
   #
-  #   chop_basename('/usr/lib') #=> ['/usr/', 'lib']
-  #   chop_basename('/') #=> nil
+  #   FileTest.chop_basename('/usr/lib') #=> ['/usr/', 'lib']
+  #   FileTest.chop_basename('/') #=> nil
   #
   # Returns Array of `[pre-basename, basename]` or `nil`.
   #

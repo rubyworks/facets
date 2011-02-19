@@ -2,9 +2,9 @@ class File
 
   # Read in a file as binary data.
   #
-  # Assuming we had a binary file 'tmp/binary.dat'.
+  # Assuming we had a binary file 'binary.dat'.
   #
-  #   File.read_binary('tmp/binary.dat')
+  #   File.read_binary('binary.dat')
   #
   # CREDIT: George Moschovitis
 

@@ -23,11 +23,11 @@ end
 
 # Used for File extensions
 When "had a file '(((.*?)))'" do |name|
-  name = name.sub(/^tmp\//, '')
-  File.open("tmp/#{name}", 'w'){|f| f << "Hello World"}
+  name = name.sub(/^tmp\//, '')  # b/c QED now runs from tmp/qed
+  File.open(name, 'w'){|f| f << "Hello World"}
 end
 
 When "had a binary file '(((.*?)))'" do |name|
-  name = name.sub(/^tmp\//, '')
-  File.open("tmp/#{name}", 'wb'){|f| f << "Hello\nWorld\n"}
+  name = name.sub(/^tmp\//, '')  # b/c QED now runs from tmp/qed
+  File.open(name, 'wb'){|f| f << "Hello\nWorld\n"}
 end

@@ -10,7 +10,7 @@ class File
   # +writelines+ are not exact opposites.
   #
   #   data = ['The content', ['for the file']]
-  #   File.writelines('tmp/writelines.txt', data)
+  #   File.writelines('writelines.txt', data)
   #
   # Returns number of lines written.
   #

@@ -4,8 +4,10 @@ class String
 
   # Use fluent notation for making file directives.
   #
-  #    'README.rdoc'.file.mtime
-  #  
+  # For instance, if we had a file 'foo.txt',
+  #
+  #    'foo.txt'.file.mtime
+  #
   def file
     Functor.new(&method(:file_send).to_proc)
   end

@@ -252,11 +252,11 @@ task 'qed:standard' do
 end
 
 desc "run tertiary qed docs"
-task 'qed:tour' do
+task 'qed:tertiary' do
   sh "qed #{qed_flags} -Ilib/core:lib/tertiary qed/tertiary"
 end
 
-desc "run core qed docs"
+desc "run core qed from code base"
 task 'qed:code' do
   sh "qed #{qed_flags} -c -Ilib/core lib/core"
 end

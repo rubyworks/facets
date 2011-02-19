@@ -2,7 +2,7 @@ class Dir
 
   # Recursively scan a directory and pass each file to the given block.
   #
-  #   Dir.recurse('tmp') do |path|
+  #   Dir.recurse('.') do |path|
   #     # ...
   #   end
   #
