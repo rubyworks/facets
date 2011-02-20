@@ -2,8 +2,8 @@
 
 == 2.9.1 / 2011-01-30
 
-Primary this release fixes a couple of small issues. In addition a handful of
-additonal methods have been added.
+Primarily this release fixes a couple of small issues. But also a handful of
+new methods have been added.
 
 Changes:
 
