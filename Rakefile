@@ -2,6 +2,8 @@
 
 require 'fileutils'
 
+PATH = "lib/core:lib/core-uncommon:lib/standard:lib/supplemental"
+
 #
 # GENERATE RDOCS
 # ----------------------------------------------------------------------------
@@ -15,9 +17,9 @@ task "rdoc" do
   FileUtils.rm_r(APIOUT)
 
   system "rdoc -a -S -t'Facets Core API' -T #{TEMPLATE} -m README.rdoc --op '#{APIOUT}/core' README.rdoc lib/facets/core"
-  system "rdoc -a -S -t'Facets More API' -T #{TEMPLATE} -m README.rdoc --op '#{APIOUT}/more' README.rdoc lib/facets/more"
+  system "rdoc -a -S -t'Facets More API' -T #{TEMPLATE} -m README.rdoc --op '#{APIOUT}/core-uncommon' README.rdoc lib/facets/core-uncommon"
   system "rdoc -a -S -t'Facets Standard API' -T #{TEMPLATE} -m README.rdoc --op '#{APIOUT}/standard' README.rdoc lib/facets/standard"
-  system "rdoc -a -S -t'Facets Tertiary API' -T #{TEMPLATE} -m README.rdoc --op '#{APIOUT}/tertiary' README.rdoc lib/facets/tertiary"
+  system "rdoc -a -S -t'Facets Supplemental API' -T #{TEMPLATE} -m README.rdoc --op '#{APIOUT}/supplemental' README.rdoc lib/facets/supplemental"
 end
 
 #
@@ -25,40 +27,40 @@ end
 # ----------------------------------------------------------------------------
 
 task "default" do
-  sh "lemon #{lemon_flags} -Ilib/core:lib/more:lib/standard:lib/tertiary test/core test/more test/standard test/tertiary"
+  sh "lemon #{lemon_flags} -Ilib/core:lib/core-uncommon:lib/standard:lib/supplemental test/core test/core-uncommon test/standard test/supplemental"
 end
 
 task "test" do
   if tests = ENV['TESTS']
-    sh "lemon #{lemon_flags} -Ilib/core:lib/more:lib/standard:lib/tertiary #{tests}"
+    sh "lemon #{lemon_flags} -I#{PATH} #{tests}"
   else
-    sh "lemon #{lemon_flags} -Ilib/core:lib/more:lib/standard:lib/tertiary test/core test/more test/standard test/tertiary"
+    sh "lemon #{lemon_flags} -I#{PATH} test/core test/core-uncommon test/standard test/supplemental"
   end
 end
 
 desc "run all unit tests"
 task "test:all" do
-  sh "lemon #{lemon_flags} -Ilib/core:lib/more:lib/standard:lib/tertiary test/core test/more test/standard test/tertiary"
+  sh "lemon #{lemon_flags} -I#{PATH} test/core test/core-uncommon test/standard test/supplemental"
 end
 
 desc "run core unit tests"
 task "test:core" do
-  sh "lemon#{lemon_flags}  -Ilib/core test/core"
+  sh "lemon#{lemon_flags} -I#{PATH} test/core"
 end
 
-desc "run more unit tests"
-task "test:more" do
-  sh "lemon #{lemon_flags} -Ilib/core:lib/more test/more"
+desc "run uncommon unit tests"
+task "test:uncommon" do
+  sh "lemon #{lemon_flags} -I#{PATH} test/core-uncommon"
 end
 
 desc "run standard unit tests"
 task "test:standard" do
-  sh "lemon #{lemon_flags} -Ilib/core:lib/standard test/standard"
+  sh "lemon #{lemon_flags} -I#{PATH} test/standard"
 end
 
-desc "run tertiary unit tests"
-task "test:tertiary" do
-  sh "lemon #{lemon_flags} -Ilib/core:lib/standard test/tertiary"
+desc "run supplemental unit tests"
+task "test:supplemental" do
+  sh "lemon #{lemon_flags} -I#{PATH} test/supplemental"
 end
 
 desc "run all unit tests with ActiveSupport loaded"
@@ -67,14 +69,14 @@ task 'test:all:activesupport' => [:include_activesupport, 'test:all']
 desc "run core unit tests with ActiveSupport loaded"
 task 'test:core:activesupport' => [:include_activesupport, 'test:core']
 
-desc "run more unit tests with ActiveSupport loaded"
-task 'test:more:activesupport' => [:include_activesupport, 'test:more']
+desc "run uncommon unit tests with ActiveSupport loaded"
+task 'test:uncommon:activesupport' => [:include_activesupport, 'test:uncommon']
 
 desc "run standard unit tests with ActiveSupport loaded"
-task 'test:more:activesupport' => [:include_activesupport, 'test:standard']
+task 'test:standard:activesupport' => [:include_activesupport, 'test:standard']
 
-desc "run tertiary unit tests with ActiveSupport loaded"
-task 'test:more:activesupport' => [:include_activesupport, 'test:tertiary']
+desc "run supplemental unit tests with ActiveSupport loaded"
+task 'test:supplemental:activesupport' => [:include_activesupport, 'test:supplemental']
 
 task 'include_activesupport' do
   require 'activesupport'
@@ -93,7 +95,7 @@ end
 #
 #  unless live
 #    # $LOAD_PATH.unshift(File.expand_path('lib/core'))
-#    # $LOAD_PATH.unshift(File.expand_path('lib/more'))
+#    # $LOAD_PATH.unshift(File.expand_path('lib/core-uncommon'))
 #    paths.each do |path|
 #      $LOAD_PATH.unshift(File.expand_path(path))
 #    end
@@ -122,7 +124,7 @@ end
 #end
 
 #def prepare_tests_all
-#  add_loadpath('lib/core','lib/more', 'lib/tour')
+#  add_loadpath('lib/core','lib/core-uncommon', 'lib/tour')
 #  files = get_tests
 #  run_tests(files)
 #end
@@ -138,7 +140,7 @@ end
 #
 #  unless live
 #    $LOAD_PATH.unshift(File.expand_path('lib/core'))
-#    $LOAD_PATH.unshift(File.expand_path('lib/more'))
+#    $LOAD_PATH.unshift(File.expand_path('lib/core-uncommon'))
 #  end
 #
 #  puts "RUBY VERSION: #{RUBY_VERSION}"
@@ -172,7 +174,7 @@ end
 
 desc "show test coverage"
 task "cov" do
-  sh "lemon -Ilib/core:lib/more:lib/tour -c test/core test/more test/tour"
+  sh "lemon -Ilib/core:lib/core-uncommon:lib/tour -c test/core test/core-uncommon test/tour"
 end
 
 desc "show core test coverage"
@@ -182,7 +184,7 @@ end
 
 desc "show more test coverage"
 task "cov:more" do
-  sh "lemon -Ilib/more -c test/more"
+  sh "lemon -Ilib/core-uncommon -c test/core-uncommon"
 end
 
 desc "show standard test coverage"
@@ -190,9 +192,9 @@ task "cov:tour" do
   sh "lemon -Ilib/standard -c test/standard"
 end
 
-desc "show tertiary test coverage"
+desc "show supplemental test coverage"
 task "cov:tour" do
-  sh "lemon -Ilib/tertiary -c test/tertiary"
+  sh "lemon -Ilib/supplemental -c test/supplemental"
 end
 
 desc "show core coverage by file name"
@@ -233,27 +235,27 @@ end
 
 desc "run qed docs"
 task 'qed' do
-  sh "qed #{qed_flags} -Ilib/core:lib/more:lib/standard:lib/tertiary qed/core qed/more qed/standard qed/tertiary"
+  sh "qed #{qed_flags} -I#{PATH} qed/core qed/core-uncommon qed/standard qed/supplemental"
 end
 
 desc "run core qed docs"
 task 'qed:core' do
-  sh "qed #{qed_flags} -Ilib/core qed/core"
+  sh "qed #{qed_flags} -I#{PATH} qed/core"
 end
 
 desc "run more qed docs"
 task 'qed:more' do
-  sh "qed #{qed_flags} -Ilib/core:lib/more qed/more"
+  sh "qed #{qed_flags} -I#{PATH} qed/core-uncommon"
 end
 
 desc "run standard qed docs"
 task 'qed:standard' do
-  sh "qed #{qed_flags} -Ilib/core:lib/standard qed/standard"
+  sh "qed #{qed_flags} -I#{PATH} qed/standard"
 end
 
-desc "run tertiary qed docs"
-task 'qed:tertiary' do
-  sh "qed #{qed_flags} -Ilib/core:lib/tertiary qed/tertiary"
+desc "run supplemental qed docs"
+task 'qed:supplemental' do
+  sh "qed #{qed_flags} -I#{PATH} qed/supplemental"
 end
 
 desc "run core qed from code base"

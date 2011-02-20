@@ -157,8 +157,8 @@ file systems. Also, if a method ends in '=', '?' or '!' it is simply removed.
 
 === MORE Library
 
-On top of the extensive Core library, Facets provides a extensions for Ruby's
-standard library as well as very small collection of additional modules and
+On top of the extensive CORE library, Facets provides extensions for Ruby's
+standard library, as well as very small collection of additional modules and
 classes to supplement it.
 
 Use the More library like you would any other 3rd party library.
