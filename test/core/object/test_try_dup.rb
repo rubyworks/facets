@@ -1,4 +1,4 @@
-covers 'facets/kernel/try_dup'
+covers 'facets/object/try_dup'
 
 tests Object do
   unit :try_dup do

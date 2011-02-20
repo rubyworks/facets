@@ -1,4 +1,4 @@
-covers 'facets/kernel/object_state'
+covers 'facets/object/object_state'
 
 #tests Kernel do
 #

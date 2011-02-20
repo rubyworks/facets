@@ -3,8 +3,8 @@ covers 'facets/dir/multiglob'
 tests Dir do
 
   metaunit :multiglob do
-    r = Dir.multiglob('test/c*', 'test/m*').sort
-    r.assert == ['test/core', 'test/more']
+    r = Dir.multiglob('test/c*').sort
+    r.assert == ['test/core', 'test/core-uncommon']
   end
 
   metaunit :multiglob_r do

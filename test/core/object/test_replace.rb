@@ -11,14 +11,12 @@ tests Object do
     end
 
     o = c.new(1,2)
-
     o.a.assert == 1
     o.b.assert == 2
 
-    o.replace(:a=>3, :b=>4)
-
-    o.a.assert == 3
-    o.b.assert == 4
+    expect ArgumentError do
+      o.replace(:a=>3, :b=>4)
+    end
   end
 
 end
@@ -34,14 +32,16 @@ tests Object do
       end
     end
  
-    o = c.new('bob', 60)
-    o.name.assert == 'bob'
-    o.age.assert == 60
+    a = c.new('bob', 60)
+    a.name.assert == 'bob'
+    a.age.assert == 60
 
-    o.replace(:name=>'tom', :age=>40)
+    b = c.new('tom', 40)
 
-    o.name.assert == 'tom'
-    o.age.assert == 40
+    a.replace(b)
+
+    a.name.assert == 'tom'
+    a.age.assert == 40
   end
 
 end

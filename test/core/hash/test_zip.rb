@@ -1,11 +1,11 @@
-covers 'facets/hash/zipnew'
+covers 'facets/hash/zip'
 
 testcase Hash do
 
-  metaunit :zipnew do
+  metaunit :zip do
     a = [1,2,3]
     b = [4,5,6]
-    Hash.zipnew(a,b).assert == {1=>4,2=>5,3=>6}
+    Hash.zip(a,b).assert == {1=>4,2=>5,3=>6}
   end
 
 end
