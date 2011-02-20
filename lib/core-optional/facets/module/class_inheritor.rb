@@ -37,6 +37,9 @@ class Module
   # but in anycase it is even more likely that it is not possible with
   # this code.
   #
+  # NOTE: This is not (presently) a common core extension and is not
+  # loaded automatically when using <code>require 'facets'</code>.
+  #
   # CREDIT: Thomas Sawyer
 
   def class_inheritor(key, obj, op=nil, &fop)

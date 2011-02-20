@@ -3,6 +3,9 @@ class Module
   # Like attr_writer, but the writer method validates the
   # setting against the given block.
   #
+  # NOTE: This is not (presently) a common core extension and is not
+  # loaded automatically when using <code>require 'facets'</code>.
+  #
   # CREDIT: ?
 
   def attr_validator(*symbols, &validator)
@@ -20,6 +23,9 @@ class Module
   end
 
   # Create aliases for validators.
+  #
+  # NOTE: This is not (presently) a common core extension and is not
+  # loaded automatically when using <code>require 'facets'</code>.
 
   def alias_validator(*args)
     orig = args.last

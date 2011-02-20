@@ -11,6 +11,9 @@ class Module
   #   CARExample.a           #=> 10
   #   CARExample.new.a       #=> 10
   #
+  # NOTE: This is not (presently) a common core extension and is not
+  # loaded automatically when using <code>require 'facets'</code>.
+  #
   # CREDIT: David Heinemeier Hansson
   def cattr(*syms)
     writers, readers = syms.flatten.partition{ |a| a.to_s =~ /=$/ }
@@ -33,6 +36,9 @@ class Module
   #
   #   CARExample.a           #=> 10
   #   CARExample.new.a       #=> 10
+  #
+  # NOTE: This is not (presently) a common core extension and is not
+  # loaded automatically when using <code>require 'facets'</code>.
   #
   # CREDIT: David Heinemeier Hansson
   def cattr_reader(*syms)
@@ -69,6 +75,9 @@ class Module
   #   CAWExample.new.a = 29
   #   CAWExample.a            #=> 29
   #
+  # NOTE: This is not (presently) a common core extension and is not
+  # loaded automatically when using <code>require 'facets'</code>.
+  #
   # CREDIT: David Heinemeier Hansson
   def cattr_writer(*syms)
     syms.flatten.each do |sym|
@@ -101,6 +110,9 @@ class Module
   #   mc = CAAExample.new
   #   mc.a                   #=> 10
   #
+  # NOTE: This is not (presently) a common core extension and is not
+  # loaded automatically when using <code>require 'facets'</code>.
+  #
   # CREDIT: David Heinemeier Hansson
   def cattr_accessor(*syms)
     cattr_reader(*syms) + cattr_writer(*syms)
@@ -122,6 +134,9 @@ class Module
   # NOTE: The #mattr methods may not be as useful for modules as the #cattr
   # methods are for classes, becuase class-level methods are not "inherited"
   # across the metaclass for included modules.
+  #
+  # NOTE: This is not (presently) a common core extension and is not
+  # loaded automatically when using <code>require 'facets'</code>.
   #
   # CREDIT: David Heinemeier Hansson
   def mattr(*syms)
@@ -145,6 +160,9 @@ class Module
   #
   #   c.a           #=> 10
   #   c.new.a       #=> 10
+  #
+  # NOTE: This is not (presently) a common core extension and is not
+  # loaded automatically when using <code>require 'facets'</code>.
   #
   # CREDIT: David Heinemeier Hansson
   def mattr_reader( *syms )
@@ -182,6 +200,9 @@ class Module
   #   c.new.a = 29
   #   c.a            #=> 29
   #
+  # NOTE: This is not (presently) a common core extension and is not
+  # loaded automatically when using <code>require 'facets'</code>.
+  #
   # CREDIT: David Heinemeier Hansson
   def mattr_writer(*syms)
     syms.flatten.each do |sym|
@@ -214,6 +235,9 @@ class Module
   #
   #   x = c.new
   #   x.a           #=> 10
+  #
+  # NOTE: This is not (presently) a common core extension and is not
+  # loaded automatically when using <code>require 'facets'</code>.
   #
   # CREDIT: David Heinemeier Hansson
   def mattr_accessor(*syms)

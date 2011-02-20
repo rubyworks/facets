@@ -4,6 +4,9 @@ class String
 
   # Common Unix cryptography method.
   # This adds a default salt to the built-in crypt method.
+  #
+  # NOTE: This is not (presently) a common core extension and is not
+  # loaded automatically when using <code>require 'facets'</code>.
 
   def crypt(salt=nil)
     salt ||= (

@@ -15,6 +15,9 @@ module Kernel
   #
   # TODO: Is there a way to do this without the eval string in block?
   # Preferably just a block and no string.
+  #
+  # NOTE: This is not (presently) a common core extension and is not
+  # loaded automatically when using <code>require 'facets'</code>.
 
   def demo(out=$stdout,&block)
     out << sprintf("%-25s#=>  %s\n", expr = block.call, eval(expr, block.binding).inspect)

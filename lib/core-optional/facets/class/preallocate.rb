@@ -26,6 +26,9 @@ class Class
   # of the class heirarchy instead. For this reason, this method has been
   # named #preallocate, rather than #prepend.
   #
+  # NOTE: This is not (presently) a common core extension and is not
+  # loaded automatically when using <code>require 'facets'</code>.
+  #
   # CREDIT: Trans
 
   def preallocate(aspect)

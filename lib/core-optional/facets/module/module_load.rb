@@ -7,6 +7,9 @@ class Module
   # and should generally not be used as a substitue for
   # Ruby's standard load system.
   #
+  # NOTE: This is not (presently) a common core extension and is not
+  # loaded automatically when using <code>require 'facets'</code>.
+  #
   # CREDIT: Trans
 
   def module_load( path )
@@ -35,6 +38,9 @@ class Module
   # It is best suited to loading plugin-type scripts,
   # and should generally not be used as a substitue for
   # Ruby's standard load system.
+  #
+  # NOTE: This is not a common core extension and is not loaded
+  # automatically when using <code>require 'facets'</code>.
   #
   # CREDIT: Trans
 

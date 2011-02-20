@@ -23,6 +23,9 @@ module Kernel
   #   ex.a = 20
   #   ex.m  #=> 10
   #
+  # NOTE: This is not (presently) a common core extension and is not
+  # loaded automatically when using <code>require 'facets'</code>.
+
   def memo(*args, &block)
     if args.empty?
       args = block.binding.eval('[self, __method__]')

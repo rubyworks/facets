@@ -25,6 +25,8 @@ class Module
   # Note: This used to be a module called PromoteSelf and later Instantize,
   # before becoming a method.
   #
+  # NOTE: This is not (presently) a common core extension and is not
+  # loaded automatically when using <code>require 'facets'</code>.
   def instance_function(*meths)
     this = self
     if meths.empty?

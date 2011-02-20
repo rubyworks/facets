@@ -15,6 +15,9 @@ class Module
   #
   #   PreX.x  # => "{x}"
   #
+  # NOTE: This is not a common core extension and is not loaded
+  # automatically when using <code>require 'facets'</code>.
+  #
   # CREDIT Trans
 
   def preextend(aspect)

@@ -29,6 +29,9 @@ class Module
   # to be done by hand. With #class_extend, that is no longer
   # the case.
   #
+  # NOTE: This is not (presently) a common core extension and is not
+  # loaded automatically when using <code>require 'facets'</code>.
+  #
   # CREDIT: Daniel Schierbeck, Thomas Sawyer
   #
   # THANKS: Nobu Nakada, Ulysses

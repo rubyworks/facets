@@ -16,6 +16,8 @@ class Module
   #   EncExample.enclosure   #=> Object
   #   Module.new.enclosure   #=> Object
   #
+  # NOTE: This is not (presently) a common core extension and is not
+  # loaded automatically when using <code>require 'facets'</code>.
   def enclosure
     name = /::[^:]+\Z/ =~ self.name ? $` : nil
     if name
@@ -48,6 +50,8 @@ class Module
   #   EncExample::M.enclosures     #=> [EncExample, Object]
   #   EncExample::M::N.enclosures  #=> [EncExample::M, EncExample, Object]
   #
+  # NOTE: This is not (presently) a common core extension and is not
+  # loaded automatically when using <code>require 'facets'</code>.
   def enclosures
     n = []
     name.split(/::/).inject(self) do |mod, cref|
@@ -69,6 +73,8 @@ class Module
   #
   #   EncExample::M::N.encname  #=> "EncExample::M"
   #
+  # NOTE: This is not (presently) a common core extension and is not
+  # loaded automatically when using <code>require 'facets'</code>.
   def encname
     /::[^:]+\Z/ =~ self.name ? $` : nil
   end

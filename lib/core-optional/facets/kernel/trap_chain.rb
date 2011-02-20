@@ -8,6 +8,9 @@ module Kernel
   # registered handler will be invoked. This can be called repeatedly
   # to create a "chain" of handlers. 
   #
+  # NOTE: This is not (presently) a common core extension and is not
+  # loaded automatically when using <code>require 'facets'</code>.
+  #
   # CREDIT: Tyler Rick
   def trap_chain(signal_name, *args, &block)
     previous_interrupt_handler = trap(signal_name, *args) {}

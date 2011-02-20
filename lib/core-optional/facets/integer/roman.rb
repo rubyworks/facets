@@ -21,6 +21,9 @@ class Integer
   ] unless const_defined?(:ROMAN_VALUES)
 
   # Converts this integer to a roman numeral.
+  #
+  # NOTE: This is not (presently) a common core extension and is not
+  # loaded automatically when using <code>require 'facets'</code>.
   def roman
     int = self
     #return nil if integer > ROMAN_MAX
@@ -45,6 +48,9 @@ class String
 
   # Considers string a Roman numeral numeral,
   # and converts it to the corresponding integer.
+  #
+  # NOTE: This is not (presently) a common core extension and is not
+  # loaded automatically when using <code>require 'facets'</code>.
   def roman
     roman = upcase
     raise unless roman?
@@ -60,6 +66,9 @@ class String
   end
 
   # Returns true iif the subject is a valid Roman numeral.
+  #
+  # NOTE: This is not (presently) a common core extension and is not
+  # loaded automatically when using <code>require 'facets'</code>.
   def roman?
     ROMAN =~ upcase
   end

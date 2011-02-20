@@ -21,6 +21,9 @@ class Module
   #     a.x
   #   end
   #
+  # NOTE: This is not (presently) a common core extension and is not
+  # loaded automatically when using <code>require 'facets'</code>.
+  #
   # CREDIT: Pit Captain
   def method_space(name, mod=nil, &blk)
 
@@ -87,6 +90,8 @@ class Module
   #
   #   X.new.t  #=> "HERE"
   #
+  # NOTE: This is not (presently) a common core extension and is not
+  # loaded automatically when using <code>require 'facets'</code>.
   def include_as(h)
     h.each{ |name, mod| method_space(name, mod) }
   end

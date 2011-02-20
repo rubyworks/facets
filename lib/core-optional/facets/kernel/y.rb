@@ -8,6 +8,9 @@ module Kernel
   #
   #  f.call(5, 1) #=> 120
   #
+  # NOTE: This is not (presently) a common core extension and is not
+  # loaded automatically when using <code>require 'facets'</code>.
+  #
   # CREDIT: Michael Fellinger
 
   def Y(*args, &block)

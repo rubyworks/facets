@@ -11,6 +11,11 @@ class Module
   #     @a ? true : @a
   #   end
   #
+  # NOTE: This is not (presently) a common core extension and is not
+  # loaded automatically when using <code>require 'facets'</code>.
+  #
+  # CREDIT: Trans
+
   def attr_tester(*args)
     code, made = '', []
     args.each do |a|
@@ -26,6 +31,9 @@ class Module
   end
 
   # Create aliases for flag reader.
+  #
+  # NOTE: This is not (presently) a common core extension and is not
+  # loaded automatically when using <code>require 'facets'</code>.
   #
   # CREDIT: Trans
 

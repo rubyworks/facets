@@ -8,6 +8,9 @@ module Kernel
   # unclasped and bearing north toward chilled shrimp.
   # I know what my Hallowe’en pumpkin is going to say.
   #
+  # NOTE: This is not (presently) a common core extension and is not
+  # loaded automatically when using <code>require 'facets'</code>.
+  #
   # CREDIT: WhyTheLuckyStiff
 
   def eigenclass

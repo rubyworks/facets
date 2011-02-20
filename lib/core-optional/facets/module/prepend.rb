@@ -48,6 +48,9 @@ class Module
   # to invoke #prepend AFTER any method definitions that are to be effected.
   # Ideally this would not be necessary, but it would require support in
   # Ruby's C+ source to make it possible.
+  #
+  # NOTE: This is not a common core extension and is not loaded
+  # automatically when using <code>require 'facets'</code>.
 
   def prepend(mod)
     include Prependable
