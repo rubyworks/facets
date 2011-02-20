@@ -1,9 +1,5 @@
 = Ruby Facets
 
-* home: http://rubyworks.github.com/facets
-* code: http://github.com/rubyworks/facets
-* talk: http://groups.google.com/group/facets-universal
-
 "ALL YOUR BASE ARE BELONG TO RUBY"
 
 
@@ -83,20 +79,18 @@ At the heart of Ruby Facets is the CORE extensions library. CORE provides
 a sizable collection of generally useful methods, along with a few supporting
 classes, that extend the functionality of Ruby's core classes and modules.
 
-By definition CORE contains anything that will load automatically when
-issuing:
+With the exception of a few *uncommon* extensions, CORE contains anything that
+will load automatically when issuing:
 
   require 'facets'
 
-If you plan to use more then a few of Facets core method it is recommended that
-you require the main facility.
+This loads all the CORE functionality at once. If you plan to use more then a
+handful of Facets core methods it is recommended that you require the library in
+this way.
 
-  require 'facets'
-
-This loads all the CORE functionality at once.
-
-Of course you can use the CORE library piecemeal if you prefer. The general
-require statement for a core extensions library is:
+Of course you can use the CORE library piecemeal if you prefer. And for uncommon
+extension this must be done. The general require statement for a core extensions
+library is:
 
   require 'facets/<class|module>/<method-lib>'
 
@@ -163,9 +157,9 @@ file systems. Also, if a method ends in '=', '?' or '!' it is simply removed.
 
 === MORE Library
 
-On top of the extensive Core library, Facet provides a small collection
-of additional modules and classes, as well as extended versions of
-modules and classes in Ruby's Standard library.
+On top of the extensive Core library, Facets provides a extensions for Ruby's
+standard library as well as very small collection of additional modules and
+classes to supplement it.
 
 Use the More library like you would any other 3rd party library.
 The only difference between Facets More library and other libraries
