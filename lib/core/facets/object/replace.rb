@@ -25,7 +25,7 @@ class Object
   # This is very similar to <code>instance.update</code>, but it is limited
   # by the class of objects, in the same manner as Array#replace.
   def replace(source)
-    raise ArgumentError, "not a #{self.class}" unless source.is_a?(self.class)
+    raise ArgumentError, "not a #{self.class} -- #{source}" unless source.is_a?(self.class)
     instance_variables.each do |iv|
       instance_variable_set(iv, source.instance_variable_get(iv))
     end
@@ -35,7 +35,7 @@ end
 
 class Struct
 
-  # Struct#replace can take a hash.
+  # Struct#replace can take any +source+ that responds to #each_pair.
   def replace(source)
     source.each_pair{ |k,v| send(k.to_s + "=", v) }
   end
