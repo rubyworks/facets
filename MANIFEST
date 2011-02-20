@@ -1,4 +1,4 @@
-#!mast lib meta qed test [A-Z]*
+#!mast lib qed test [A-Z]*
 lib/core/facets/applique/file_helpers.rb
 lib/core/facets/array/after.rb
 lib/core/facets/array/before.rb
