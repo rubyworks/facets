@@ -32,7 +32,7 @@ repositories:
 
 loadpath:
   - lib/core
-  - lib/core-optional
+  - lib/core-uncommon
   - lib/standard
   - lib/supplemental
 

@@ -2,55 +2,89 @@
 ridoc:
   service : RiDoc
   output  : ri
-  include : [lib/core/facets, lib/more/facets, lib/store/facets]
+  include :
+    - lib/core
+    - lib/core-uncommon
+    - lib/standard
+    - lib/supplemental
 
 rdoc-core:
   service : RDoc
-  template: tabfish
+  template: longfish
   output  : site/doc/api/core
-  title   : Facets Core
+  title   : Facets Core Extensions
   main    : README.rdoc
-  extra   : "-a"
-  include : [README.rdoc, lib/core]
+  extra   : ""
+  include : [README.rdoc, lib/core, lib/core-optional]
   active  : true
 
-rdoc-more:
+#rdoc-more:
+#  service : RDoc
+#  template: longfish
+#  output  : site/doc/api/more
+#  title   : Facets Core Extra Extensions
+#  main    : README.rdoc
+#  extra   : ""
+#  include : [README.rdoc, lib/core-optional]
+#  active  : true
+
+rdoc-standard:
   service : RDoc
-  template: tabfish  #redfish
-  output  : site/doc/api/more
-  title   : Facets More
+  template: longfish
+  output  : site/doc/api/standard
+  title   : Facets Standard Extensions
   main    : README.rdoc
-  extra   : "-a"
-  include : [README.rdoc, lib/more]
+  extra   : ""
+  include : [README.rdoc, lib/standard, lib/supplemental]
   active  : true
 
-rdoc-tour:
-  service : RDoc
-  template: tabfish
-  output  : site/doc/api/tour
-  title   : Facets Tour
-  main    : README.rdoc
-  extra   : "-a"
-  include : [README.rdoc, lib/tour]
-  active  : true
+#rdoc-supplemental:
+#  service : RDoc
+#  template: longfish
+#  output  : site/doc/api/tertiary
+#  title   : Facets Tertiary Libraries
+#  main    : README.rdoc
+#  extra   : ""
+#  include : [README.rdoc, lib/tertiary]
+#  active  : true
 
-yardcore:
+yard-core:
   service : Yard
   active  : false
   #template: ~
   output  : site/doc/yard/core
-  title   : Facets Core API
+  title   : Facets Core Extensions
   readme  : doc/README.core
   #extra   : "-a"
   include : [doc/README.core, README.rdoc, lib/core]
 
-yardmore:
+#yard-more:
+#  service : Yard
+#  active  : false
+#  #template: ~
+#  output  : site/doc/yard/more
+#  title   : Facets More API
+#  readme  : doc/README.more
+#  #extra   : "-a"
+#  include : [doc/README.more, README.rdoc, lib/more]
+
+yard-standard:
   service : Yard
   active  : false
   #template: ~
-  output  : site/doc/yard/more
-  title   : Facets More API
+  output  : site/doc/yard/standard
+  title   : Facets Standard Extensions
   readme  : doc/README.more
   #extra   : "-a"
-  include : [doc/README.more, README.rdoc, lib/more]
+  include : [doc/README.standard, README.rdoc, lib/standard]
+
+#yard-tertiary:
+#  service : Yard
+#  active  : false
+#  #template: ~
+#  output  : site/doc/yard/tertiary
+#  title   : Facets Tertiary Libraries
+#  readme  : doc/README.more
+#  #extra   : "-a"
+#  include : [README.rdoc, lib/tertiary]
 
