@@ -1,36 +1,74 @@
---- 
+--- !ruby/object:Gem::Specification 
 name: facets
-loadpath: 
-- lib/core
-- lib/core-uncommon
-- lib/standard
-- lib/supplemental
-repositories: 
-  public: git@github.com:rubyworks/facets.git
-slogan: ALL YOUR BASE ARE BELONG TO RUBY!
-title: Facets
-contact: facets-universal@rubyforge.org
-pom_verison: 1.0.0
-requires: 
-- group: 
-  - build
+version: !ruby/object:Gem::Version 
+  hash: 41
+  prerelease: false
+  segments: 
+  - 2
+  - 9
+  - 1
+  version: 2.9.1
+platform: ruby
+authors: 
+- Thomas Sawyer <transfire@gmail.com>
+autorequire: 
+bindir: bin
+cert_chain: []
+
+date: 2011-02-20 00:00:00 -05:00
+default_executable: 
+dependencies: 
+- !ruby/object:Gem::Dependency 
   name: syckle
-  version: 0+
-- group: 
-  - test
+  prerelease: false
+  requirement: &id001 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        hash: 3
+        segments: 
+        - 0
+        version: "0"
+  type: :development
+  version_requirements: *id001
+- !ruby/object:Gem::Dependency 
   name: lemon
-  version: 0+
-- group: 
-  - test
+  prerelease: false
+  requirement: &id002 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        hash: 3
+        segments: 
+        - 0
+        version: "0"
+  type: :development
+  version_requirements: *id002
+- !ruby/object:Gem::Dependency 
   name: qed
-  version: 0+
-resources: 
-  code: http://github.com/rubyworks/facets
-  talk: http://groups.google.com/group/facets-universal
-  docs: http://rubyworks.github.com/facets/learn.html
-  wiki: http://wiki.github.com/rubyworks/facets
-  home: http://rubyworks.github.com/facets
-manifest: 
+  prerelease: false
+  requirement: &id003 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        hash: 3
+        segments: 
+        - 0
+        version: "0"
+  type: :development
+  version_requirements: *id003
+description: Facets is the premier collection of extension methods for the Ruby programming language. Facets extensions are unique by virtue of thier atomicity. They are stored in individual files allowing for highly granular control of requirements. In addition, Facets includes a few additional classes and mixins suitable to wide variety of applications.
+email: facets-universal@rubyforge.org
+executables: []
+
+extensions: []
+
+extra_rdoc_files: 
+- README.rdoc
+files: 
 - lib/core/facets/applique/file_helpers.rb
 - lib/core/facets/array/after.rb
 - lib/core/facets/array/before.rb
@@ -1133,12 +1171,429 @@ manifest:
 - NOTICE
 - VERSION
 - COPYING
-version: 2.9.1
-suite: rubyworks
+has_rdoc: true
+homepage: http://rubyworks.github.com/facets
 licenses: 
 - Ruby
-description: Facets is the premier collection of extension methods for the Ruby programming language. Facets extensions are unique by virtue of thier atomicity. They are stored in individual files allowing for highly granular control of requirements. In addition, Facets includes a few additional classes and mixins suitable to wide variety of applications.
+post_install_message: 
+rdoc_options: 
+- --title
+- Facets API
+- --main
+- README.rdoc
+require_paths: 
+- lib/core
+- lib/core-uncommon
+- lib/standard
+- lib/supplemental
+required_ruby_version: !ruby/object:Gem::Requirement 
+  none: false
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      hash: 3
+      segments: 
+      - 0
+      version: "0"
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  none: false
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      hash: 3
+      segments: 
+      - 0
+      version: "0"
+requirements: []
+
+rubyforge_project: facets
+rubygems_version: 1.3.7
+signing_key: 
+specification_version: 3
 summary: Premium Ruby Extensions
-authors: 
-- Thomas Sawyer <transfire@gmail.com>
-created: 2004-12-16
+test_files: 
+- lib/core/facets/filetest.rb
+- lib/core-uncommon/facets/module/attr_tester.rb
+- test/core/array/test_after.rb
+- test/core/array/test_before.rb
+- test/core/array/test_collapse.rb
+- test/core/array/test_combination.rb
+- test/core/array/test_commonality.rb
+- test/core/array/test_conjoin.rb
+- test/core/array/test_contains.rb
+- test/core/array/test_delete.rb
+- test/core/array/test_divide.rb
+- test/core/array/test_duplicates.rb
+- test/core/array/test_entropy.rb
+- test/core/array/test_extract_options.rb
+- test/core/array/test_first.rb
+- test/core/array/test_index.rb
+- test/core/array/test_last.rb
+- test/core/array/test_merge.rb
+- test/core/array/test_mode.rb
+- test/core/array/test_nonuniq.rb
+- test/core/array/test_not_empty.rb
+- test/core/array/test_only.rb
+- test/core/array/test_pad.rb
+- test/core/array/test_peek.rb
+- test/core/array/test_permutation.rb
+- test/core/array/test_poke.rb
+- test/core/array/test_probability.rb
+- test/core/array/test_product.rb
+- test/core/array/test_pull.rb
+- test/core/array/test_recurse.rb
+- test/core/array/test_recursively.rb
+- test/core/array/test_rotate.rb
+- test/core/array/test_select.rb
+- test/core/array/test_splice.rb
+- test/core/array/test_split.rb
+- test/core/array/test_store.rb
+- test/core/array/test_traverse.rb
+- test/core/array/test_uniq_by.rb
+- test/core/binding/test_caller.rb
+- test/core/binding/test_defined.rb
+- test/core/binding/test_eval.rb
+- test/core/binding/test_local_variables.rb
+- test/core/binding/test_op.rb
+- test/core/binding/test_self.rb
+- test/core/class/test_descendents.rb
+- test/core/class/test_subclasses.rb
+- test/core/class/test_to_proc.rb
+- test/core/comparable/test_bound.rb
+- test/core/comparable/test_cap.rb
+- test/core/comparable/test_clip.rb
+- test/core/comparable/test_cmp.rb
+- test/core/comparable/test_op_get.rb
+- test/core/dir/test_ascend.rb
+- test/core/dir/test_descend.rb
+- test/core/dir/test_each_child.rb
+- test/core/dir/test_multiglob.rb
+- test/core/dir/test_parent.rb
+- test/core/dir/test_recurse.rb
+- test/core/enumerable/test_accumulate.rb
+- test/core/enumerable/test_cluster_by.rb
+- test/core/enumerable/test_compact_map.rb
+- test/core/enumerable/test_count.rb
+- test/core/enumerable/test_defer.rb
+- test/core/enumerable/test_each_by.rb
+- test/core/enumerable/test_each_with_object.rb
+- test/core/enumerable/test_every.rb
+- test/core/enumerable/test_ewise.rb
+- test/core/enumerable/test_exclude.rb
+- test/core/enumerable/test_expand.rb
+- test/core/enumerable/test_filter.rb
+- test/core/enumerable/test_find_yield.rb
+- test/core/enumerable/test_frequency.rb
+- test/core/enumerable/test_graph.rb
+- test/core/enumerable/test_group_by.rb
+- test/core/enumerable/test_map_by.rb
+- test/core/enumerable/test_map_send.rb
+- test/core/enumerable/test_map_with_index.rb
+- test/core/enumerable/test_mash.rb
+- test/core/enumerable/test_modulate.rb
+- test/core/enumerable/test_none.rb
+- test/core/enumerable/test_occur.rb
+- test/core/enumerable/test_one.rb
+- test/core/enumerable/test_per.rb
+- test/core/enumerable/test_purge.rb
+- test/core/enumerable/test_recursively.rb
+- test/core/enumerable/test_sum.rb
+- test/core/enumerable/test_take.rb
+- test/core/enumerable/test_uniq_by.rb
+- test/core/enumerable/test_visit.rb
+- test/core/enumerator/test_fx.rb
+- test/core/enumerator/test_new.rb
+- test/core/exception/test_detail.rb
+- test/core/exception/test_raised.rb
+- test/core/exception/test_suppress.rb
+- test/core/file/test_append.rb
+- test/core/file/test_create.rb
+- test/core/file/test_ext.rb
+- test/core/file/test_null.rb
+- test/core/file/test_read_binary.rb
+- test/core/file/test_read_list.rb
+- test/core/file/test_rewrite.rb
+- test/core/file/test_rootname.rb
+- test/core/file/test_sanitize.rb
+- test/core/file/test_split_all.rb
+- test/core/file/test_write.rb
+- test/core/file/test_writelines.rb
+- test/core/filetest/test_root.rb
+- test/core/hash/test_alias.rb
+- test/core/hash/test_argumentize.rb
+- test/core/hash/test_at.rb
+- test/core/hash/test_autonew.rb
+- test/core/hash/test_collate.rb
+- test/core/hash/test_count.rb
+- test/core/hash/test_data.rb
+- test/core/hash/test_dearray_values.rb
+- test/core/hash/test_deep_merge.rb
+- test/core/hash/test_delete_at.rb
+- test/core/hash/test_delete_unless.rb
+- test/core/hash/test_delete_values.rb
+- test/core/hash/test_diff.rb
+- test/core/hash/test_expect.rb
+- test/core/hash/test_graph.rb
+- test/core/hash/test_insert.rb
+- test/core/hash/test_inverse.rb
+- test/core/hash/test_join.rb
+- test/core/hash/test_keys.rb
+- test/core/hash/test_new_with.rb
+- test/core/hash/test_op_add.rb
+- test/core/hash/test_op_and.rb
+- test/core/hash/test_op_mul.rb
+- test/core/hash/test_op_or.rb
+- test/core/hash/test_op_push.rb
+- test/core/hash/test_op_sub.rb
+- test/core/hash/test_recurse.rb
+- test/core/hash/test_recursively.rb
+- test/core/hash/test_rekey.rb
+- test/core/hash/test_replace_each.rb
+- test/core/hash/test_reverse_merge.rb
+- test/core/hash/test_select.rb
+- test/core/hash/test_slice.rb
+- test/core/hash/test_stringify_keys.rb
+- test/core/hash/test_swap.rb
+- test/core/hash/test_symbolize_keys.rb
+- test/core/hash/test_to_mod.rb
+- test/core/hash/test_to_proc.rb
+- test/core/hash/test_to_struct.rb
+- test/core/hash/test_traverse.rb
+- test/core/hash/test_update_each.rb
+- test/core/hash/test_update_keys.rb
+- test/core/hash/test_update_values.rb
+- test/core/hash/test_weave.rb
+- test/core/hash/test_zip.rb
+- test/core/integer/test_bitmask.rb
+- test/core/integer/test_even.rb
+- test/core/integer/test_factorial.rb
+- test/core/integer/test_multiple.rb
+- test/core/integer/test_odd.rb
+- test/core/integer/test_of.rb
+- test/core/integer/test_ordinal.rb
+- test/core/kernel/test_as.rb
+- test/core/kernel/test_ask.rb
+- test/core/kernel/test_assign.rb
+- test/core/kernel/test_assign_from.rb
+- test/core/kernel/test_attr_singleton.rb
+- test/core/kernel/test_blank.rb
+- test/core/kernel/test_callstack.rb
+- test/core/kernel/test_class.rb
+- test/core/kernel/test_complete.rb
+- test/core/kernel/test_constant.rb
+- test/core/kernel/test_d.rb
+- test/core/kernel/test_deep_copy.rb
+- test/core/kernel/test_dir.rb
+- test/core/kernel/test_disable_warnings.rb
+- test/core/kernel/test_ergo.rb
+- test/core/kernel/test_extension.rb
+- test/core/kernel/test_get.rb
+- test/core/kernel/test_here.rb
+- test/core/kernel/test_in.rb
+- test/core/kernel/test_instance_assign.rb
+- test/core/kernel/test_instance_class.rb
+- test/core/kernel/test_instance_send.rb
+- test/core/kernel/test_maybe.rb
+- test/core/kernel/test_meta_alias.rb
+- test/core/kernel/test_meta_class.rb
+- test/core/kernel/test_meta_def.rb
+- test/core/kernel/test_meta_eval.rb
+- test/core/kernel/test_method.rb
+- test/core/kernel/test_not.rb
+- test/core/kernel/test_not_nil.rb
+- test/core/kernel/test_object_class.rb
+- test/core/kernel/test_object_hexid.rb
+- test/core/kernel/test_object_send.rb
+- test/core/kernel/test_presence.rb
+- test/core/kernel/test_qua_class.rb
+- test/core/kernel/test_require_all.rb
+- test/core/kernel/test_require_relative.rb
+- test/core/kernel/test_respond.rb
+- test/core/kernel/test_returning.rb
+- test/core/kernel/test_silence.rb
+- test/core/kernel/test_singleton_class.rb
+- test/core/kernel/test_source_location.rb
+- test/core/kernel/test_super_method.rb
+- test/core/kernel/test_tap.rb
+- test/core/kernel/test_temporarily.rb
+- test/core/kernel/test_true.rb
+- test/core/kernel/test_try.rb
+- test/core/kernel/test_val.rb
+- test/core/kernel/test_with.rb
+- test/core/kernel/test_writers.rb
+- test/core/matchdata/test_match.rb
+- test/core/matchdata/test_matchset.rb
+- test/core/module/test_abstract.rb
+- test/core/module/test_alias_accessor.rb
+- test/core/module/test_alias_method_chain.rb
+- test/core/module/test_alias_module_function.rb
+- test/core/module/test_all_instance_methods.rb
+- test/core/module/test_ancestor.rb
+- test/core/module/test_anonymous.rb
+- test/core/module/test_attr_setter.rb
+- test/core/module/test_basename.rb
+- test/core/module/test_can.rb
+- test/core/module/test_class.rb
+- test/core/module/test_class_def.rb
+- test/core/module/test_instance_method.rb
+- test/core/module/test_instance_method_defined.rb
+- test/core/module/test_integrate.rb
+- test/core/module/test_is.rb
+- test/core/module/test_method_clash.rb
+- test/core/module/test_methodize.rb
+- test/core/module/test_modname.rb
+- test/core/module/test_module_def.rb
+- test/core/module/test_nodef.rb
+- test/core/module/test_op.rb
+- test/core/module/test_pathize.rb
+- test/core/module/test_redefine_method.rb
+- test/core/module/test_redirect_method.rb
+- test/core/module/test_remove.rb
+- test/core/module/test_rename_method.rb
+- test/core/module/test_revise.rb
+- test/core/module/test_set.rb
+- test/core/module/test_spacename.rb
+- test/core/module/test_to_obj.rb
+- test/core/module/test_wrap_method.rb
+- test/core/nilclass/test_to_f.rb
+- test/core/numeric/test_approx.rb
+- test/core/numeric/test_distance.rb
+- test/core/numeric/test_length.rb
+- test/core/numeric/test_round.rb
+- test/core/numeric/test_spacing.rb
+- test/core/object/test_dup.rb
+- test/core/object/test_object_state.rb
+- test/core/object/test_replace.rb
+- test/core/object/test_try_dup.rb
+- test/core/proc/test_bind.rb
+- test/core/proc/test_bind_to.rb
+- test/core/proc/test_compose.rb
+- test/core/proc/test_curry.rb
+- test/core/proc/test_partial.rb
+- test/core/proc/test_to_method.rb
+- test/core/proc/test_update.rb
+- test/core/range/test_combine.rb
+- test/core/range/test_overlap.rb
+- test/core/range/test_to_r.rb
+- test/core/range/test_umbrella.rb
+- test/core/range/test_within.rb
+- test/core/regexp/test_arity.rb
+- test/core/regexp/test_multiline.rb
+- test/core/regexp/test_op_add.rb
+- test/core/regexp/test_op_or.rb
+- test/core/regexp/test_to_re.rb
+- test/core/string/test_align.rb
+- test/core/string/test_bracket.rb
+- test/core/string/test_bytes.rb
+- test/core/string/test_camelcase.rb
+- test/core/string/test_capitalized.rb
+- test/core/string/test_characters.rb
+- test/core/string/test_cleanlines.rb
+- test/core/string/test_cleave.rb
+- test/core/string/test_cmp.rb
+- test/core/string/test_compress_lines.rb
+- test/core/string/test_divide.rb
+- test/core/string/test_each_char.rb
+- test/core/string/test_each_word.rb
+- test/core/string/test_edit_distance.rb
+- test/core/string/test_end_with.rb
+- test/core/string/test_exclude.rb
+- test/core/string/test_expand_tabs.rb
+- test/core/string/test_file.rb
+- test/core/string/test_fold.rb
+- test/core/string/test_indent.rb
+- test/core/string/test_index_all.rb
+- test/core/string/test_interpolate.rb
+- test/core/string/test_lchomp.rb
+- test/core/string/test_line_wrap.rb
+- test/core/string/test_lines.rb
+- test/core/string/test_lowercase.rb
+- test/core/string/test_margin.rb
+- test/core/string/test_methodize.rb
+- test/core/string/test_modulize.rb
+- test/core/string/test_mscan.rb
+- test/core/string/test_natcmp.rb
+- test/core/string/test_nchar.rb
+- test/core/string/test_newlines.rb
+- test/core/string/test_op_div.rb
+- test/core/string/test_op_sub.rb
+- test/core/string/test_pathize.rb
+- test/core/string/test_quote.rb
+- test/core/string/test_range.rb
+- test/core/string/test_rewrite.rb
+- test/core/string/test_shatter.rb
+- test/core/string/test_similarity.rb
+- test/core/string/test_snakecase.rb
+- test/core/string/test_splice.rb
+- test/core/string/test_squish.rb
+- test/core/string/test_start_with.rb
+- test/core/string/test_store.rb
+- test/core/string/test_subtract.rb
+- test/core/string/test_tab.rb
+- test/core/string/test_tabto.rb
+- test/core/string/test_titlecase.rb
+- test/core/string/test_to_re.rb
+- test/core/string/test_unbracket.rb
+- test/core/string/test_underscore.rb
+- test/core/string/test_unfold.rb
+- test/core/string/test_unindent.rb
+- test/core/string/test_unquote.rb
+- test/core/string/test_uppercase.rb
+- test/core/string/test_variablize.rb
+- test/core/string/test_word_wrap.rb
+- test/core/string/test_words.rb
+- test/core/string/test_xor.rb
+- test/core/symbol/test_as_s.rb
+- test/core/symbol/test_bang.rb
+- test/core/symbol/test_chomp.rb
+- test/core/symbol/test_generate.rb
+- test/core/symbol/test_not.rb
+- test/core/symbol/test_op_div.rb
+- test/core/symbol/test_plain.rb
+- test/core/symbol/test_query.rb
+- test/core/symbol/test_setter.rb
+- test/core/symbol/test_succ.rb
+- test/core/symbol/test_to_proc.rb
+- test/core/symbol/test_variablize.rb
+- test/core/time/test_ago.rb
+- test/core/time/test_change.rb
+- test/core/time/test_dst_adjustment.rb
+- test/core/time/test_elapse.rb
+- test/core/time/test_future.rb
+- test/core/time/test_hence.rb
+- test/core/time/test_in.rb
+- test/core/time/test_less.rb
+- test/core/time/test_past.rb
+- test/core/time/test_round_to.rb
+- test/core/time/test_set.rb
+- test/core/time/test_shift.rb
+- test/core/time/test_stamp.rb
+- test/core/time/test_to_time.rb
+- test/core/time/test_trunc.rb
+- test/core/unboundmethod/test_arguments.rb
+- test/core/unboundmethod/test_name.rb
+- test/core-uncommon/array/test_median.rb
+- test/core-uncommon/array/test_percentile.rb
+- test/core-uncommon/class/test_preallocate.rb
+- test/core-uncommon/module/test_cattr.rb
+- test/core-uncommon/module/test_class_extend.rb
+- test/core-uncommon/module/test_class_inheritor.rb
+- test/core-uncommon/module/test_copy_inheritor.rb
+- test/core-uncommon/module/test_enclosure.rb
+- test/core-uncommon/module/test_instance_function.rb
+- test/core-uncommon/module/test_memoize.rb
+- test/core-uncommon/module/test_method_space.rb
+- test/core-uncommon/module/test_module_load.rb
+- test/core-uncommon/module/test_preextend.rb
+- test/core-uncommon/module/test_prepend.rb
+- test/standard/test_date.rb
+- test/standard/test_ostruct.rb
+- test/standard/test_random.rb
+- test/standard/test_shellwords.rb
+- test/standard/test_thread.rb
+- test/standard/test_timer.rb
+- test/standard/test_uri.rb
+- test/supplemental/test_argvector.rb
+- test/supplemental/test_memoizable.rb
+- test/supplemental/test_multipliers.rb
+- test/supplemental/test_tuple.rb
