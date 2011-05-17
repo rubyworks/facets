@@ -1,5 +1,13 @@
 = COPYRIGHT NOTICES
 
+== Ruby Facets
+
+Copyright (c) 2005,2011 Thomas Sawyer
+
+You may distribute this software under the same terms as Ruby (see the file
+RUBY.txt that was distributed with this library).
+
+
 == Ruby/Extensions
 
 Ruby/Extensions (extensions.rubyforge.org) is copyrighted free software created and maintained by Gavin Sinclair (gsinclair@soyabean.com.au) and released under the same license as Ruby.
@@ -58,7 +66,7 @@ Ruby Treasures 0.1
 Copyright (c) 2001 Paul Brannan <paul@atdesk.com>
 
 You may distribute this software under the same terms as Ruby (see the file
-COPYING that was distributed with this library).
+RUBY.txt that was distributed with this library).
 
 
 == Metaid
