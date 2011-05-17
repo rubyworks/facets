@@ -10,6 +10,8 @@ RUBY.txt that was distributed with this library).
 
 == Ruby/Extensions
 
+Copyright (c) 2004 Gavin Sinclair
+
 Ruby/Extensions (extensions.rubyforge.org) is copyrighted free software created and maintained by Gavin Sinclair (gsinclair@soyabean.com.au) and released under the same license as Ruby.
 
 Standard disclaimer:
