@@ -1,0 +1,42 @@
+#!/usr/bin/env ruby
+
+# yard core extensions
+file "lib/core/**/*.rb" do
+  cmd = "yard "
+  cmd << "-o site/doc/yard/core "
+  #cmd << "--title 'Facets Standard Extensions' "
+  cmd << "-r doc/README.core "
+  cmd << "lib/core - README.rdoc AUTHORS.rdoc NOTICE.rdoc "
+  abort unless system cmd
+end
+
+# yard core-uncommon extensions
+file "lib/core-uncommon/**/*.rb" do
+  cmd = "yard "
+  cmd << "-o site/doc/yard/core-uncommon "
+  #cmd << "--title 'Facets Uncommon Core Extensions' "
+  cmd << "-r doc/README.uncommon "
+  cmd << "lib/core-uncommon - README.rdoc AUTHORS.rdoc NOTICE.rdoc "
+  abort unless system cmd
+end
+
+# yard standard extensions
+file "lib/standard/**/*.rb" do
+  cmd = "yard "
+  cmd << "-o site/doc/yard/standard "
+  #cmd << "--title 'Facets Standard Extensions' "
+  cmd << "-r doc/README.standard "
+  cmd << "lib/standard - README.rdoc AUTHORS.rdoc NOTICE.rdoc "
+  abort unless system cmd
+end
+
+# yard supplemental library
+file "lib/supplemental/**/*.rb" do
+  cmd = "yard "
+  cmd << "-o site/doc/yard/supplemental "
+  #cmd << "--title 'Facets Supplemental Library' "
+  cmd << "-r doc/README.supplemental "
+  cmd << "lib/supplemental - README.rdoc AUTHORS.rdoc NOTICE.rdoc "
+  abort unless system cmd
+end
+
