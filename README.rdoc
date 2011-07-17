@@ -38,9 +38,9 @@ combines all of Facets in one set of docs. (Hopefully we can remedy this in
 the future). In the mean time better organized online documentation 
 is available at http://rubyworks.github.com/facets/learn.html.
 
-* Core API: http://rubyworks/github.com/facets/doc/api/core/index.html
-* More API: http://rubyworks/github.com/facets/doc/api/more/index.html
-* Tour API: http://rubyworks/github.com/facets/doc/api/tour/index.html
+* Core API: http://rubyworks.github.com/facets/doc/api/core/index.html
+* More API: http://rubyworks.github.com/facets/doc/api/more/index.html
+* Tour API: http://rubyworks.github.com/facets/doc/api/tour/index.html
 
 
 == Installation
