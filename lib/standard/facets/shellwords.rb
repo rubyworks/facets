@@ -31,6 +31,35 @@ module Shellwords
     '"' + cmdline.gsub(/\\(?=\\*\")/, "\\\\\\").gsub(/\"/, "\\\"").gsub(/\\$/, "\\\\\\").gsub("%", "%%") + '"'
   end
 
+  # The coolest little arguments parser in all of Rubyland.
+  #
+  # CREDIT: Michel Martens
+  def run(argv, opts)
+    argv = (String === argv ? shellwords(argv) : argv.to_a.dup)
+    args = []
+    while argv.any?
+      item = argv.shift
+      flag = opts[item]
+      if flag
+        # Work around lambda semantics in 1.8.7.
+        arity = [flag.arity, 0].max
+        # Raise if there are not enough parameters
+        # available for the flag.
+        if argv.size < arity
+          raise ArgumentError
+        end
+        # Call the lambda with N items from argv,
+        # where N is the lambda's arity.
+        flag.call(*argv.shift(arity))
+      else
+        # Collect the items that don't correspond to
+        # flags.
+        args << item
+      end
+    end
+    args
+  end
+
 end
 
 class Array
@@ -45,6 +74,7 @@ class Array
     opts.shellwords + args
   end
 
+  #
   def shelljoin
     Shellwords.shelljoin(shellwords)
   end
