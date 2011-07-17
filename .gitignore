@@ -1,5 +1,6 @@
 .cache
 .yardoc
+.reap/digest
 log
 site/doc
 ri
