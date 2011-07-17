@@ -7,10 +7,19 @@ class Hash
   #   hsh.delete_values(1)
   #   hsh  #=> { :b => 2 }
   #
+  # Returns a list of keys of the deleted entries.
+  #
   # CREDIT: Daniel Schierbeck
 
   def delete_values(*values)
-    keys.map{ |key| delete(key) if values.include?(fetch(key)) }
+    deleted_keys = []
+    keys.each do |key|
+      if values.include?(fetch(key))
+        deleted_keys << key
+        delete(key)
+      end
+    end
+    deleted_keys
   end
 
   # Minor modification to Ruby's Hash#delete method
