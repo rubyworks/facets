@@ -1,0 +1,50 @@
+---
+ridoc:
+  service : RiDoc
+  output  : .rdoc
+  include :
+    - lib/core
+    - lib/core-uncommon
+    - lib/standard
+    - lib/supplemental
+
+rdoc-core:
+  service : RDoc
+  template: longfish
+  output  : site/doc/api/core
+  title   : Facets Core Extensions
+  main    : README.rdoc
+  extra   : ""
+  include : [README.rdoc, lib/core, lib/core-optional]
+  active  : true
+
+rdoc-more:
+  service : RDoc
+  template: longfish
+  output  : site/doc/api/uncommon
+  title   : Facets Uncommon Core Extensions
+  main    : README.rdoc
+  extra   : ""
+  include : [README.rdoc, lib/core-uncommon]
+  active  : true
+
+rdoc-standard:
+  service : RDoc
+  template: longfish
+  output  : site/doc/api/standard
+  title   : Facets Standard Extensions
+  main    : README.rdoc
+  extra   : ""
+  include : [README.rdoc, lib/standard]
+  active  : true
+
+rdoc-supplemental:
+  service : RDoc
+  template: longfish
+  output  : site/doc/api/supplemental
+  title   : Facets Supplemental Libraries
+  main    : README.rdoc
+  extra   : ""
+  include : [README.rdoc, lib/supplemental]
+  active  : true
+

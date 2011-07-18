@@ -1,0 +1,44 @@
+---
+github:
+  active: true
+
+email:
+  service: Email
+  mailto:
+    - ruby-talk@ruby-lang.org
+    - rubyworks-mailinglist@googlegroups.com
+
+vclog:
+  service : VClog
+  active: false
+
+rubyprof:
+  service: RubyProf
+  active : false
+  output : ~
+  scripts: ~
+  options: ~
+
+erbside:
+  tool  : Custom
+  track : main
+  generate: |
+    sh 'erbside lib/core/'
+  active: false
+
+lemon:
+  tool  : Custom
+  track : main
+  test: |
+    sh 'lemon -Ilib test/'
+  active: false
+
+#rubyforge:
+#  service: Rubyforge
+#  groupid: 804
+#  sitemap:
+#    site    : '.'
+#    #doc/rdoc: rdoc
+#    #doc/yard: yard
+#  active: false
+
