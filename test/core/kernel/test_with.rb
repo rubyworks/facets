@@ -1,13 +1,17 @@
 covers 'facets/kernel/with'
 
-tests Kernel do
+test_case Kernel do
 
-  unit :with do
-    with values = [] do
-      self << 'bar'
-      self << 'baz'
+  method :with do
+
+    test do
+      with values = [] do
+        self << 'bar'
+        self << 'baz'
+      end
+      values.assert == ['bar', 'baz']
     end
-    values.assert == ['bar', 'baz']
+
   end
 
 end

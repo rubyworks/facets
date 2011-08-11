@@ -1,32 +1,36 @@
 covers 'facets/string/bracket'
 
-testcase String do
+test_case String do
 
-  unit :bracket do
-    'X'.bracket('#').assert == '#X#'
-    'X'.bracket('x','!').assert == 'xX!'
-    'X'.bracket('{','}').assert == '{X}'
-    'X'.bracket('<').assert == '<X>'
-    'X'.bracket('(').assert == '(X)'
-    'X'.bracket('[').assert == '[X]'
-    'X'.bracket('{').assert == '{X}'
+  method :bracket do
+    test do
+      'X'.bracket('#').assert == '#X#'
+      'X'.bracket('x','!').assert == 'xX!'
+      'X'.bracket('{','}').assert == '{X}'
+      'X'.bracket('<').assert == '<X>'
+      'X'.bracket('(').assert == '(X)'
+      'X'.bracket('[').assert == '[X]'
+      'X'.bracket('{').assert == '{X}'
+    end
   end
 
-  unit :bracket! do
-    a = 'X' ; a.bracket!('#')
-    a.assert == '#X#'
-    a = 'X' ; a.bracket!('x','!')
-    a.assert == 'xX!'
-    a = 'X' ; a.bracket!('{','}')
-    a.assert == '{X}'
-    a = 'X' ; a.bracket!('<')
-    a.assert == '<X>'
-    a = 'X' ; a.bracket!('(')
-    a.assert == '(X)'
-    a = 'X' ; a.bracket!('[')
-    a.assert == '[X]'
-    a = 'X' ; a.bracket!('{')
-    a.assert == '{X}'
+  method :bracket! do
+    test do
+      a = 'X' ; a.bracket!('#')
+      a.assert == '#X#'
+      a = 'X' ; a.bracket!('x','!')
+      a.assert == 'xX!'
+      a = 'X' ; a.bracket!('{','}')
+      a.assert == '{X}'
+      a = 'X' ; a.bracket!('<')
+      a.assert == '<X>'
+      a = 'X' ; a.bracket!('(')
+      a.assert == '(X)'
+      a = 'X' ; a.bracket!('[')
+      a.assert == '[X]'
+      a = 'X' ; a.bracket!('{')
+      a.assert == '{X}'
+    end
   end
 
 end

@@ -1,11 +1,13 @@
 covers 'facets/exception/raised'
 
-tests Exception do
+test_case Exception do
 
-  metaunit :raised? do
+  class_method :raised? do
 
-    NameError.raised? do
-      supercalafragalistic
+    test do
+      NameError.raised? do
+        supercalafragalistic
+      end
     end
 
   end

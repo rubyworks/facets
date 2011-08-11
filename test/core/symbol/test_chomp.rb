@@ -1,13 +1,21 @@
 covers 'facets/symbol/chomp'
 
-testcase Symbol do
+test_case Symbol do
 
-  unit :chomp do
-    :ab.chomp(:b).assert == :a
+  method :chomp do
+
+    test do
+      :ab.chomp(:b).assert == :a
+    end
+
   end
 
-  unit :lchomp do
+  method :lchomp do
+
+    test do
      :ab.lchomp(:a).assert == :b
+    end
+
   end
 
 end

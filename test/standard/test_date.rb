@@ -1,62 +1,82 @@
 covers 'facets/date'
 
-tests Date do
+test_case Date do
 
   setup "Date 2005-05-20" do
-    Date.civil(2005, 04, 20)
+    @d = Date.civil(2005, 04, 20)
   end
 
-  unit :to_date do |d|
-    d.to_date.assert.instance_of?(::Date)
+  method :to_date do
+    test do
+      @d.to_date.assert.instance_of?(::Date)
+    end
   end
 
-  unit :to_time do |d|
-    d.to_time.assert.instance_of?(::Time)
+  method :to_time do
+    test do
+      @d.to_time.assert.instance_of?(::Time)
+    end
   end
 
-  unit :to_s do |d|
-    d.to_s.assert == "2005-04-20"
+  method :to_s do
+    test do
+      @d.to_s.assert == "2005-04-20"
+    end
   end
 
-  unit :stamp do |d|
-    d.stamp.assert == "2005-04-20"
+  method :stamp do
+    test do
+      @d.stamp.assert == "2005-04-20"
+    end
   end
 
-  unit :stamp do |d|
-    d.stamp(:short).assert == "20 Apr"
+  method :stamp do
+    test do
+      @d.stamp(:short).assert == "20 Apr"
+    end
   end
 
-  unit :stamp do |d|
-    d.stamp(:long).assert == "April 20, 2005"
+  method :stamp do
+    test do
+      @d.stamp(:long).assert == "April 20, 2005"
+    end
   end
 
-  unit :days_in_month do |d|
-    d.days_in_month.assert == 30
+  method :days_in_month do
+    test do
+      @d.days_in_month.assert == 30
+    end
   end
 
-  unit :days_of_month do |d|
-    d.days_of_month.assert == (1..d.days_in_month).to_a
+  method :days_of_month do
+    test do
+      @d.days_of_month.assert == (1..(@d.days_in_month)).to_a
+    end
   end
 
 end
 
-tests String do
+test_case String do
 
-  unit :to_date do
-    s = "2005-10-31"
-    d = s.to_date
-    d.day.assert == 31
-    d.month.assert == 10
-    d.year.assert == 2005
+  method :to_date do
+    test do
+      s = "2005-10-31"
+      d = s.to_date
+      d.day.assert == 31
+      d.month.assert == 10
+      d.year.assert == 2005
+    end
   end
 
 end
 
-tests Time do
+test_case Time do
 
-  unit :to_date do
-    t = Time.now #parse('4/20/2005 15:37')
-    t.to_date.assert.instance_of?(::Date)
+  method :to_date do
+    test do
+      t = Time.now #parse('4/20/2005 15:37')
+      t.to_date.assert.instance_of?(::Date)
+    end
   end
 
 end

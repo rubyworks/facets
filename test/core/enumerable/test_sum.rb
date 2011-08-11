@@ -1,9 +1,13 @@
 covers 'facets/enumerable/sum'
 
-testcase Enumerable do
+test_case Enumerable do
 
-  unit :sum do
-    [1,2,3].sum.assert == 6
+  method :sum do
+
+    test do
+      [1,2,3].sum.assert == 6
+    end
+
   end
 
 end

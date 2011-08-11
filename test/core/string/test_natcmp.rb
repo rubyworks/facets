@@ -1,13 +1,17 @@
 covers 'facets/string/natcmp'
 
-testcase String do
+test_case String do
 
-  unit :natcmp do
-    "my_prog_v1.1.0".natcmp( "my_prog_v1.2.0").assert == -1
-    "my_prog_v1.2.0".natcmp("my_prog_v1.10.0").assert == -1
-    "my_prog_v1.2.0".natcmp( "my_prog_v1.1.0").assert == 1
-    "my_prog_v1.10.0".natcmp("my_prog_v1.2.0").assert == 1
-    "my_prog_v1.0.0".natcmp( "my_prog_v1.0.0").assert == 0
+  method :natcmp do
+
+    test do
+      "my_prog_v1.1.0".natcmp( "my_prog_v1.2.0").assert == -1
+      "my_prog_v1.2.0".natcmp("my_prog_v1.10.0").assert == -1
+      "my_prog_v1.2.0".natcmp( "my_prog_v1.1.0").assert == 1
+      "my_prog_v1.10.0".natcmp("my_prog_v1.2.0").assert == 1
+      "my_prog_v1.0.0".natcmp( "my_prog_v1.0.0").assert == 0
+    end
+
   end
 
 end

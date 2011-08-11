@@ -1,15 +1,23 @@
 covers 'facets/string/start_with'
 
-tests String do
+test_case String do
 
-  unit :start_with? do
-    s = "xxboo"
-    s.assert.start_with?('xx')
+  method :start_with? do
+
+    test do
+      s = "xxboo"
+      s.assert.start_with?('xx')
+    end
+
   end
 
-  unit :starts_with? do
-    s = "xxboo"
-    s.assert.starts_with?('xx')
+  method :starts_with? do
+
+    test do
+      s = "xxboo"
+      s.assert.starts_with?('xx')
+    end
+
   end
 
 end

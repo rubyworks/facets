@@ -1,10 +1,14 @@
 covers 'facets/string/variablize'
 
-testcase String do
+test_case String do
 
-  unit :variablize do
-    s = "a"
-    s.variablize.assert == "@a"
+  method :variablize do
+
+    test do
+      s = "a"
+      s.variablize.assert == "@a"
+    end
+
   end
 
 end

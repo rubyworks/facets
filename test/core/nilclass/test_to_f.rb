@@ -1,10 +1,13 @@
 covers 'facets/nilclass/to_f'
 
-testcase NilClass do
+test_case NilClass do
 
-  unit :to_f do
-    nil.to_f.assert == 0
+  method :to_f do
+
+    test do
+      nil.to_f.assert == 0
+    end
+
   end
 
 end
-

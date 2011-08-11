@@ -1,13 +1,17 @@
 covers 'facets/kernel/constant'
 
-tests Kernel do
+test_case Kernel do
 
-  unit :constant do
-    c = Lemon::TestCase.name
-    constant(c).assert == Lemon::TestCase
+  method :constant do
 
-    c = "TestCase"
-    Lemon.constant(c).assert == Lemon::TestCase
+    test do
+      c = Lemon::TestCase.name
+      constant(c).assert == Lemon::TestCase
+
+      c = "TestCase"
+      Lemon.constant(c).assert == Lemon::TestCase
+    end
+
   end
 
 end

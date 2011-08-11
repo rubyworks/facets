@@ -1,12 +1,16 @@
 covers 'facets/array/indexable'
 
-tests Array do
+test_case Array do
 
-  unit :first! => "alias of shift" do
-    a = [1,2,3]
-    r = a.first!
-    r.assert == 1
-    a.assert == [2,3]
+  method :first! do 
+
+    test "alias of shift" do
+      a = [1,2,3]
+      r = a.first!
+      r.assert == 1
+      a.assert == [2,3]
+    end
+
   end
 
 end

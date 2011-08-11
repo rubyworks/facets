@@ -1,18 +1,24 @@
 covers 'facets/string/words'
 
-testcase String do
+test_case String do
 
-  unit :words do
-    x = "a b c\nd e"
-    x.words.assert == ['a','b','c','d','e']
+  method :words do
 
-    x = "ab cd\nef"
-    x.words.assert == ['ab','cd','ef']
-  end
+    test do
+      x = "a b c\nd e"
+      x.words.assert == ['a','b','c','d','e']
+    end
 
-  unit :words do
-    x = "ab cd \n ef-gh"
-    x.words.assert == ['ab','cd','ef-gh']
+    test do
+      x = "ab cd\nef"
+      x.words.assert == ['ab','cd','ef']
+    end
+
+    test do
+      x = "ab cd \n ef-gh"
+      x.words.assert == ['ab','cd','ef-gh']
+    end
+
   end
 
 end

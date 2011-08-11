@@ -1,10 +1,14 @@
 covers 'facets/string/op_div'
 
-testcase String do
+test_case String do
 
-  unit :/ do
-    ('merb' / 'string').assert == "merb/string"
-    ('merb' / :symbol).assert == "merb/symbol"
+  method :/ do
+
+    test do
+      ('merb' / 'string').assert == "merb/string"
+      ('merb' / :symbol).assert == "merb/symbol"
+    end
+
   end
 
 end

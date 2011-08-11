@@ -1,18 +1,25 @@
 covers 'facets/kernel/source_location'
 
-tests Kernel do
+test_case Kernel do
 
-  # TODO: lemon seems to intefer with call stack
+  # TODO: lemon seems to interfer with call stack
 
-  omit unit :source_location do
-    file, line, meth = source_location_example
-    file.assert == __FILE__
-    line.assert == 13
-    meth.assert == :source_location_example
-  end
+  method :source_location do
 
-  def source_location_example
-    source_location
+    test do
+      raise Omission, "issue with call stack"
+
+      file, line, meth = source_location_example
+      file.assert == __FILE__
+      line.assert == 13
+      meth.assert == :source_location_example
+    end
+
+    # helper method
+    def source_location_example
+      source_location
+    end
+
   end
 
 end

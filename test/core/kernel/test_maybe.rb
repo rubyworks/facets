@@ -1,9 +1,13 @@
 covers 'facets/kernel/maybe'
 
-tests Kernel do
+test_case Kernel do
 
-  unit :maybe do
-    maybe
+  method :maybe do
+
+    test do
+      maybe
+    end
+
   end
 
 end

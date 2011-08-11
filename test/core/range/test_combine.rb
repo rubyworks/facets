@@ -1,24 +1,32 @@
 covers 'facets/range/combine'
 
-testcase Range do
+test_case Range do
 
-  unit :combine do
-    r = 0..4
-    r = r.combine(2..6, 6..10, 13..17, 12..19)
-    x = [0..10, 12..19]
-    r.assert == x
+  method :combine do
+
+    test do
+      r = 0..4
+      r = r.combine(2..6, 6..10, 13..17, 12..19)
+      x = [0..10, 12..19]
+      r.assert == x
+    end
+
   end
 
-  meta :combine do
-    r = Range.combine(0..4, 2..6, 6..10, 13..17, 12..19)
-    x = [0..10, 12..19]
-    r.assert == x
-  end
+  class_method :combine do
 
-  meta :combine => "arrays as intervals" do
-    r = Range.combine([0, 4], [2, 6], [6, 10], [13, 17], [12, 19])
-    x = [[0, 10], [12, 19]]
-    r.assert == x
+    test do
+      r = Range.combine(0..4, 2..6, 6..10, 13..17, 12..19)
+      x = [0..10, 12..19]
+      r.assert == x
+    end
+
+    test "arrays as intervals" do
+      r = Range.combine([0, 4], [2, 6], [6, 10], [13, 17], [12, 19])
+      x = [[0, 10], [12, 19]]
+      r.assert == x
+    end
+
   end
 
 end

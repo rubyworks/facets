@@ -1,14 +1,18 @@
 covers 'facets/string/compress_lines'
 
-testcase String do
+test_case String do
 
-  unit :compress_lines do
-    string = <<-QUERY.compress_lines
-      SELECT name
-      FROM users
-    QUERY
+  method :compress_lines do
 
-    string.assert == "SELECT name FROM users"
+    test do
+      string = <<-QUERY.compress_lines
+        SELECT name
+        FROM users
+      QUERY
+
+      string.assert == "SELECT name FROM users"
+    end
+
   end
 
 end

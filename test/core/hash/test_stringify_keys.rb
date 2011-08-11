@@ -1,17 +1,25 @@
 covers 'facets/hash/stringify_keys'
 
-testcase Hash do
+test_case Hash do
 
-  unit :stringify_keys do
-    foo = { :a=>1, :b=>2 }
-    foo.stringify_keys.assert == { "a"=>1, "b"=>2 }
-    foo.assert == { :a =>1, :b=>2 }
+  method :stringify_keys do
+
+    test do
+      foo = { :a=>1, :b=>2 }
+      foo.stringify_keys.assert == { "a"=>1, "b"=>2 }
+      foo.assert == { :a =>1, :b=>2 }
+    end
+
   end
 
-  unit :stringify_keys! do
-    foo = { :a=>1, :b=>2 }
-    foo.stringify_keys!.assert == { "a"=>1, "b"=>2 }
-    foo.assert == { "a"=>1, "b"=>2 }
+  method :stringify_keys! do
+
+    test do
+      foo = { :a=>1, :b=>2 }
+      foo.stringify_keys!.assert == { "a"=>1, "b"=>2 }
+      foo.assert == { "a"=>1, "b"=>2 }
+    end
+
   end
 
 end

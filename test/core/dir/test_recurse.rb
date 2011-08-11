@@ -1,18 +1,26 @@
 covers 'facets/dir/recurse'
 
-tests Dir do
+test_case Dir do
 
-   metaunit :recurse do
-     r = Dir.recurse('test')
-     r.assert.include?('test/core/dir')
-     r.assert.include?('test/core/dir/test_recurse.rb')
-   end
+  class_method :recurse do
 
-   metaunit :ls_r do
-     r = Dir.ls_r('test')
-     r.assert.include?('test/core/dir')
-     r.assert.include?('test/core/dir/test_recurse.rb')
-   end
+    test do
+      r = Dir.recurse('test')
+      r.assert.include?('test/core/dir')
+      r.assert.include?('test/core/dir/test_recurse.rb')
+    end
+
+  end
+
+  class_method :ls_r do
+
+    test do
+      r = Dir.ls_r('test')
+      r.assert.include?('test/core/dir')
+      r.assert.include?('test/core/dir/test_recurse.rb')
+    end
+
+  end
 
 end
 

@@ -1,13 +1,17 @@
 covers 'facets/file/create'
 
-tests File do
+test_case File do
 
-  test_file = 'tmp/rewrite.txt'
-  test_data = 'This is a test!'
+  class_method :create do
 
-  metaunit :create do
-    File.create(test_file, test_data)
-    File.read(test_file).assert == test_data
+    test_file = 'tmp/rewrite.txt'
+    test_data = 'This is a test!'
+
+    test do
+      File.create(test_file, test_data)
+      File.read(test_file).assert == test_data
+    end
+
   end
 
 end

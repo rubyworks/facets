@@ -6,77 +6,97 @@ covers 'facets/kernel/blank'
 # issues with BasicObject that need address. So in this case
 # we'll just use the old-school `assert foo` syntax.
 
-testcase Kernel do
+test_case Kernel do
 
-  unit :blank? do
-    refute Object.new.blank?
+  method :blank? do
+    test do
+      refute Object.new.blank?
+    end
   end
 
 end
 
-testcase NilClass do
+test_case NilClass do
 
-  unit :blank? do
-    assert nil.blank?
+  method :blank? do
+    test do
+      assert nil.blank?
+    end
   end
 
 end
 
-testcase FalseClass do
+test_case FalseClass do
 
-  unit :blank? do
-    assert false.blank?
+  method :blank? do
+    test do
+      assert false.blank?
+    end
   end
 
 end
 
-testcase TrueClass do
+test_case TrueClass do
 
-  unit :blank? do
-    refute true.blank?
+  method :blank? do
+    test do
+      refute true.blank?
+    end
   end
 
 end
 
-testcase Array do
+test_case Array do
 
-  unit :blank? do
-    assert [].blank?
-    refute [1].blank?
+  method :blank? do
+    test do
+      assert [].blank?
+      refute [1].blank?
+    end
   end
 
 end
 
-testcase Hash do
+test_case Hash do
 
-  unit :blank? do
-    assert( {}.blank? )
-    refute( {:a=>1}.blank? )
+  method :blank? do
+    test do
+      assert( {}.blank? )
+      refute( {:a=>1}.blank? )
+    end
   end
 
 end
 
-testcase String do
+test_case String do
 
-  unit :blank? do
-    refute "xyz".blank?
-    assert "   ".blank?
+  method :blank? do
+    test do
+      refute "xyz".blank?
+      assert "   ".blank?
+    end
   end
 
 end
 
-testcase Numeric do
+test_case Numeric do
 
-  unit :blank? do
-    refute 0.blank?
+  method :blank? do
+    test do
+      refute 0.blank?
+    end
   end
 
-  unit :blank? do
-    refute 10.blank?
+  method :blank? do
+    test do
+      refute 10.blank?
+    end
   end
 
-  unit :blank? do
-    refute 10.0.blank?
+  method :blank? do
+    test do
+      refute 10.0.blank?
+    end
   end
 
 end

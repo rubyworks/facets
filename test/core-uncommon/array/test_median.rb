@@ -1,10 +1,12 @@
 covers 'facets/array/median'
 
-testcase Array do
+test_case Array do
 
-  unit :median do
-    r = %w{a a b b c c c d}.median
-    r.assert == "b"
+  method :median do
+    test do
+      r = %w{a a b b c c c d}.median
+      r.assert == "b"
+    end
   end
 
 end

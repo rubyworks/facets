@@ -1,10 +1,14 @@
 covers 'facets/module/spacename'
 
-tests Module do
+test_case Module do
 
-  unit :spacename do
-    Lemon::TestCase.spacename.assert == 'Lemon'
-    Lemon.spacename.assert == ''  # should this be nil ?
+  method :spacename do
+
+    test do
+      Lemon::TestCase.spacename.assert == 'Lemon'
+      Lemon.spacename.assert == ''  # should this be nil ?
+    end
+
   end
 
 end

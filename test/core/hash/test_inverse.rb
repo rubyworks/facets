@@ -1,15 +1,19 @@
 covers 'facets/hash/inverse'
 
-testcase Hash do
+test_case Hash do
 
-  unit :inverse do
-    h1 = { :a=>1, :b=>2, :c=>2 }
-    h2 = h1.inverse
+  method :inverse do
 
-    h2[1].assert == :a
+    test do
+      h1 = { :a=>1, :b=>2, :c=>2 }
+      h2 = h1.inverse
 
-    h2[2].assert.include?(:b)
-    h2[2].assert.include?(:c)
+      h2[1].assert == :a
+
+      h2[2].assert.include?(:b)
+      h2[2].assert.include?(:c)
+    end
+
   end
 
 end

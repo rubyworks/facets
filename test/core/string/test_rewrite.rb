@@ -1,12 +1,16 @@
 covers 'facets/string/rewrite'
 
-testcase String do
+test_case String do
 
-  unit :rewrite do
-    s = "HELLO TOMMY!"
-    rules = [[ /TOMMY/, 'MAN' ]]
-    r = s.rewrite(rules)
-    r.assert == "HELLO MAN!"
+  method :rewrite do
+
+    test do
+      s = "HELLO TOMMY!"
+      rules = [[ /TOMMY/, 'MAN' ]]
+      r = s.rewrite(rules)
+      r.assert == "HELLO MAN!"
+    end
+
   end
 
 end

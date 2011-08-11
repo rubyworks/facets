@@ -1,17 +1,25 @@
 covers 'facets/module/pathize'
 
-tests Module do
+test_case Module do
 
-  unit :pathize do
-    Lemon.pathize.assert == 'lemon'
+  method :pathize do
+
+    test do
+      Lemon.pathize.assert == 'lemon'
+    end
+
   end
 
 end
 
-tests Class do
+test_case Class do
 
-  unit :pathize do
-    Lemon::TestCase.pathize.assert == 'lemon/test_case'
+  method :pathize do
+
+    test do
+      Lemon::TestCase.pathize.assert == 'lemon/test_case'
+    end
+
   end
 
 end

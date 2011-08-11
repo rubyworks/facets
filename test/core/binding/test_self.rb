@@ -1,13 +1,16 @@
 covers 'facets/binding/self'
 
-testcase Binding do
+test_case Binding do
 
   bind = binding
   this = self
 
-  unit :self do
-    bind.self == this
+  method :self do
+
+    test do
+      bind.self == this
+    end
+
   end
 
 end
-

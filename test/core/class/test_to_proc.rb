@@ -1,11 +1,15 @@
 covers 'facets/class/to_proc'
 
-testcase Class do
+test_case Class do
 
-  unit :to_proc do
-    person = Struct.new(:name)
-    people = ["joe"].map(&person)
-    people[0].name.assert == "joe"
+  method :to_proc do
+
+    test do
+      person = Struct.new(:name)
+      people = ["joe"].map(&person)
+      people[0].name.assert == "joe"
+    end
+
   end
 
 end

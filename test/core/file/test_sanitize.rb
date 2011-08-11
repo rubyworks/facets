@@ -1,27 +1,31 @@
 covers 'facets/file/sanitize'
 
-tests File do
+test_case File do
 
   # TODO: Write file identity tests.
-  metaunit :sanitize => "spaces become underscores" do
-    File.sanitize('This is a test').assert == "This_is_a_test"
-  end
+  class_method :sanitize do
 
-  metaunit :sanitize => "Windows-style path dividers" do
-    File.sanitize('This\is\test').assert == "test"
-  end
+    test "spaces become underscores" do
+      File.sanitize('This is a test').assert == "This_is_a_test"
+    end
 
-  metaunit :sanitize => "Unix-style path dividers" do
-    File.sanitize('This/is/test').assert == "test"
-  end
+    test "Windows-style path dividers" do
+      File.sanitize('This\is\test').assert == "test"
+    end
 
-  metaunit :sanitize => "non-word characters" do
-    File.sanitize('This/te#$#@!st').assert == "te_____st"
-  end
+    test "Unix-style path dividers" do
+      File.sanitize('This/is/test').assert == "test"
+    end
 
-  metaunit :sanitize => "initial dot" do
-    File.sanitize('.').assert == "_."
-    File.sanitize('....').assert == "_...."
+    test "non-word characters" do
+      File.sanitize('This/te#$#@!st').assert == "te_____st"
+    end
+
+    test "initial dot" do
+      File.sanitize('.').assert == "_."
+      File.sanitize('....').assert == "_...."
+    end
+
   end
 
 end

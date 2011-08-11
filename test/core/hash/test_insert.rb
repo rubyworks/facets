@@ -1,15 +1,19 @@
 covers 'facets/hash/insert'
 
-testcase Hash do
+test_case Hash do
 
-  unit :insert do
-    h = {:a=>1, :b=>2}
+  method :insert do
 
-    h.assert.insert(:c,3)
-    h.assert == {:a=>1, :b=>2, :c=>3}
+    test do
+      h = {:a=>1, :b=>2}
 
-    h.refute.insert(:a,0)
-    h.assert == {:a=>1, :b=>2, :c=>3}
+      h.assert.insert(:c,3)
+      h.assert == {:a=>1, :b=>2, :c=>3}
+
+      h.refute.insert(:a,0)
+      h.assert == {:a=>1, :b=>2, :c=>3}
+    end
+
   end
 
 end

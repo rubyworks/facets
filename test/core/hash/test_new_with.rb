@@ -1,13 +1,17 @@
 covers 'facets/hash/new_with'
 
-tests Hash do
+test_case Hash do
 
-  meta :new_with do
-    h = Hash.new_with{0}
+  class_method :new_with do
 
-    h[:ab].assert == 0
-    h[100].assert == 0
-    h["a"].assert == 0
+    test do
+      h = Hash.new_with{0}
+
+      h[:ab].assert == 0
+      h[100].assert == 0
+      h["a"].assert == 0
+    end
+
   end
 
 end

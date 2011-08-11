@@ -1,11 +1,15 @@
 covers 'facets/numeric/length'
 
-testcase Numeric do
+test_case Numeric do
 
-  unit :length do
-    (0..10).each do |power|
-      power.length.assert == power
+  method :length do
+
+    test do
+      (0..10).each do |power|
+        power.length.assert == power
+      end
     end
+
   end
 
 end

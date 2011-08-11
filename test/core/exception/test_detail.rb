@@ -1,15 +1,14 @@
 covers 'facets/exception/detail'
 
-testcase Exception do
+test_case Exception do
 
-  unit :detail do
-    begin
-      raise ArgumentError
-    rescue ArgumentError => err
-      e = 
-      r = err.detail
-      r.assert == e
+  method :detail do
+
+    test "at least it runs" do
+      err = ArgumentError.new("example error")
+      err.detail
     end
+
   end
 
 end

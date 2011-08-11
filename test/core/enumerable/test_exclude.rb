@@ -1,11 +1,15 @@
 covers 'facets/enumerable/exclude'
 
-tests Enumerable do
+test_case Enumerable do
 
-  unit :exclude? do
-    a = [1,2,2,3]
-    a.refute.exclude?(2)
-    a.assert.exclude?(4)
+  method :exclude? do
+
+    test do
+      a = [1,2,2,3]
+      a.refute.exclude?(2)
+      a.assert.exclude?(4)
+    end
+
   end
 
 end

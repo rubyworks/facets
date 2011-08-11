@@ -1,18 +1,22 @@
 covers 'facets/hash/argumentize'
 
-testcase Hash do
+test_case Hash do
 
-  setup do
-    { :list => [1,2], :base => "HI" }
-  end
+  method :argumentize do
 
-  unit :argumentize => "without an argument field" do |h|
-    h.argumentize.assert == [ { :list => [1,2], :base => "HI" } ]
-  end
+    setup do
+      @h = { :list => [1,2], :base => "HI" }
+    end
 
-  unit :argumentize => "with an argument field" do |h|
-    h.argumentize(:list).assert == [ 1, 2, { :base => "HI" } ]
-    h.argumentize(:base).assert == [ "HI", { :list => [1,2] } ]
+    test "without an argument field" do
+      @h.argumentize.assert == [ { :list => [1,2], :base => "HI" } ]
+    end
+
+    test "with an argument field" do
+      @h.argumentize(:list).assert == [ 1, 2, { :base => "HI" } ]
+      @h.argumentize(:base).assert == [ "HI", { :list => [1,2] } ]
+    end
+
   end
 
 end

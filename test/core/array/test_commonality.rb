@@ -1,26 +1,34 @@
 covers 'facets/array/commonality'
 
-tests Array do
+test_case Array do
 
-  unit :commonality do
-    a = [1,2,2,3,3,3]
-    e = { 2 => [2,2], 3 => [3,3,3] }
-    r = a.commonality
-    r.assert == e
+  method :commonality do
+
+    test do
+      a = [1,2,2,3,3,3]
+      e = { 2 => [2,2], 3 => [3,3,3] }
+      r = a.commonality
+      r.assert == e
+    end
+
+    test "with block" do
+      a = [1,2,2,3,3,3]
+      e = {false=>[1, 2, 2], true=>[3, 3, 3]}
+      r = a.commonality{ |x| x > 2 }
+      r.assert == e
+    end
+
   end
 
-  unit :commonality => "with block" do
-    a = [1,2,2,3,3,3]
-    e = {false=>[1, 2, 2], true=>[3, 3, 3]}
-    r = a.commonality{ |x| x > 2 }
-    r.assert == e
-  end
+  method :collisions do
 
-  unit :collisions => "alias for commonality" do
-    a = [1,2,2,3,3,3]
-    e = { 2 => [2,2], 3 => [3,3,3] }
-    r = a.collisions
-    r.assert == e
+    test "alias for commonality" do
+      a = [1,2,2,3,3,3]
+      e = { 2 => [2,2], 3 => [3,3,3] }
+      r = a.collisions
+      r.assert == e
+    end
+
   end
 
 end

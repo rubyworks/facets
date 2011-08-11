@@ -1,26 +1,30 @@
 covers 'facets/module/instance_function'
 
-tests Module do
+test_case Module do
 
-  setup "using instance_function" do
-    Module.new do
-      instance_function
-      def self.jumble(obj, arg)
-        obj + arg
+  method :instance_function do
+
+    setup "using instance_function" do
+      @m = Module.new do
+        instance_function
+        def self.jumble(obj, arg)
+          obj + arg
+        end
       end
     end
-  end
 
-  unit :instance_function => "class method" do |m|
-    r = m.jumble('Try', 'Me')
-    r.assert == 'TryMe'
-  end
+    test "class method" do
+      r = @m.jumble('Try', 'Me')
+      r.assert == 'TryMe'
+    end
 
-  unit :instance_function => "instance method" do |m|
-    s = 'Try'
-    s.extend m
-    r = s.jumble('Me')
-    r.assert == 'TryMe'
+    test "instance method" do
+      s = 'Try'
+      s.extend @m
+      r = s.jumble('Me')
+      r.assert == 'TryMe'
+    end
+
   end
 
 end

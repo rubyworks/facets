@@ -1,12 +1,16 @@
 covers 'facets/symbol/setter'
 
-testcase Symbol do
+test_case Symbol do
 
-  unit :setter? do
-    assert( :try=.setter? )
+  method :setter? do
+    test do
+      assert( :try=.setter? )
+    end
 
-    assert( ! :try.setter? )
-    assert( ! :try?.setter? )
+    test do
+      assert( ! :try.setter? )
+      assert( ! :try?.setter? )
+    end
   end
 
 end

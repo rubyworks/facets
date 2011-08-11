@@ -1,11 +1,15 @@
 covers 'facets/string/tabto'
 
-testcase String do
+test_case String do
 
   # TODO: Need to expand tabto tests
-  unit :tabto do
-    a = "xyz".tabto(4)
-    a[0..3].assert ==  '    '
+  method :tabto do
+
+    test do
+      a = "xyz".tabto(4)
+      a[0..3].assert ==  '    '
+    end
+
   end
 
 end

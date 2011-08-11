@@ -1,50 +1,51 @@
-=begin
 covers 'facets/time/less'
 
-Time.test do
+test_case Time do
 
-  unit :less do
+  method :less do
 
     setup "January 20th 2010 at Noon" do
-      Time.utc(2010,01,20,12,00,00)
+      @t = Time.utc(2010,01,20,12,00,00)
     end
 
-    test 'years' do |t|
-      t.less(1, :year).year.assert = 2009
-      t.less(2, :years).year.assert = 2008
+    test 'years' do
+      @t.less(1, :year).year.assert = 2009
+      @t.less(2, :years).year.assert = 2008
     end
 
-    test 'weeks' do |t|
-      t.less(1, :week).day.assert == 13
-      t.less(2, :weeks).day.assert == 6
+    test 'weeks' do
+      @t.less(1, :week).day.assert == 13
+      @t.less(2, :weeks).day.assert == 6
     end
 
-    test 'days' do |t|
-      t.less(1, :day).day.assert == 19
-      t.less(2, :days).day.assert == 18
+    test 'days' do
+      @t.less(1, :day).day.assert == 19
+      @t.less(2, :days).day.assert == 18
     end
 
-    test 'hours' do |t|
-      t.less(1, :hour).hour.assert == 11
-      t.less(2, :hours).hour.assert == 10
-      t.less(12, :hours).hour.assert == 0
+    test 'hours' do
+      @t.less(1, :hour).hour.assert == 11
+      @t.less(2, :hours).hour.assert == 10
+      @t.less(12, :hours).hour.assert == 0
     end
 
-    test 'minutes' do |t|
-      t.less(1, :minute).min.assert == 59
-      t.less(2, :minutes).min.assert == 58
-      t.less(60, :minutes).min.assert == 0
+    test 'minutes' do
+      @t.less(1, :minute).min.assert == 59
+      @t.less(2, :minutes).min.assert == 58
+      @t.less(60, :minutes).min.assert == 0
     end
 
-    test 'seconds' do |t|
-      t.less(1, :second).sec.assert == 59
-      t.less(2, :seconds).sec.assert == 58
-      t.less(60, :seconds).sec.assert == 0
+    test 'seconds' do
+      @t.less(1, :second).sec.assert == 59
+      @t.less(2, :seconds).sec.assert == 58
+      @t.less(60, :seconds).sec.assert == 0
     end
 
   end
 
-  unit :less, "verify via dates" do
+  method :less do
+
+    concern "verify via dates"
 
     test "change years" do
       e = Time.utc(2007,11, 1, 18,30,57)
@@ -84,7 +85,9 @@ Time.test do
 
   end
 
-  unit :less, "months do not have a fixed duration" do
+  method :less do
+
+    concern "months do not have a fixed duration"
 
     test "change month no year wrap" do
       e = Time.utc(2008,11, 1)
@@ -134,4 +137,3 @@ Time.test do
   end
 
 end
-=end

@@ -1,11 +1,15 @@
 covers 'facets/string/subtract'
 
-testcase String do
+test_case String do
 
-  unit :- do
-    ("foobar" - "oo").assert == "fbar"
-    ("pizza pizza!" - "zz").assert == "pia pia!"
-    ("letters" - /[a-z]+/).assert == ""
+  method :- do
+
+    test do
+      ("foobar" - "oo").assert == "fbar"
+      ("pizza pizza!" - "zz").assert == "pia pia!"
+      ("letters" - /[a-z]+/).assert == ""
+    end
+
   end
 
 end

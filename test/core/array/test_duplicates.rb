@@ -1,10 +1,14 @@
 covers 'facets/array/duplicates'
 
-testcase Array do
+test_case Array do
 
-  unit :duplicates do
-    a = [1,1,2,2,3,4,5]
-    a.duplicates.assert == [1,2]
+  method :duplicates do
+
+    test do
+      a = [1,1,2,2,3,4,5]
+      a.duplicates.assert == [1,2]
+    end
+
   end
 
 end

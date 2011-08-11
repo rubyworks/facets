@@ -1,19 +1,22 @@
 covers 'facets/file/append'
 
-tests File do
+test_case File do
 
-  context do
-    test_file = 'tmp/append.txt'
-    require 'fileutils'
-    FileUtils.rm(test_file) if File.exist?(test_file)
-    test_file
-  end
+  class_method :append do
 
-  metaunit :append do |test_file|
-    File.append(test_file, "line 1\n")
-    File.read(test_file).assert == "line 1\n"
-    File.append(test_file, "line 2\n")
-    File.read(test_file).assert == "line 1\nline 2\n"
+    setup do
+      require 'fileutils'
+      @test_file = 'tmp/append.txt'
+      FileUtils.rm(@test_file) if File.exist?(@test_file)
+    end
+
+    test do
+      File.append(@test_file, "line 1\n")
+      File.read(@test_file).assert == "line 1\n"
+      File.append(@test_file, "line 2\n")
+      File.read(@test_file).assert == "line 1\nline 2\n"
+    end
+
   end
 
 end

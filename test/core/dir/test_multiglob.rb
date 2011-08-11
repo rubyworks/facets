@@ -1,16 +1,24 @@
 covers 'facets/dir/multiglob'
 
-tests Dir do
+test_case Dir do
 
-  metaunit :multiglob do
-    r = Dir.multiglob('test/c*').sort
-    r.assert == ['test/core', 'test/core-uncommon']
+  class_method :multiglob do
+
+    test do
+      r = Dir.multiglob('test/c*').sort
+      r.assert == ['test/core', 'test/core-uncommon']
+    end
+
   end
 
-  metaunit :multiglob_r do
-    r = Dir.multiglob_r('test').sort
-    r.assert.include?('test/core/dir')
-    r.assert.include?('test/core/dir/test_multiglob.rb')
+  class_method :multiglob_r do
+
+    test do
+      r = Dir.multiglob_r('test').sort
+      r.assert.include?('test/core/dir')
+      r.assert.include?('test/core/dir/test_multiglob.rb')
+    end
+
   end
 
 end

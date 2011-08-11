@@ -1,9 +1,13 @@
 covers 'facets/string/unquote'
 
-tests String do
+test_case String do
 
-  unit :unquote do
-    "'here'".unquote.assert == "here"
+  method :unquote do
+
+    test do
+      "'here'".unquote.assert == "here"
+    end
+
   end
 
 end

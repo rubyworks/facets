@@ -1,13 +1,17 @@
 covers 'facets/array/mode'
 
-tests Array do
+test_case Array do
 
-  unit :mode do
-    [1, 1, 2, 3].mode.assert == [1]
-  end
+  method :mode do
 
-  unit :mode do
-    [1, 1, 2, 2, 3].mode.sort.assert == [1,2]
+    test do
+      [1, 1, 2, 3].mode.assert == [1]
+    end
+
+    test do
+      [1, 1, 2, 2, 3].mode.sort.assert == [1,2]
+    end
+
   end
 
 end

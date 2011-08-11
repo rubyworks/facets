@@ -1,20 +1,31 @@
 covers 'facets/time/future'
 
-testcase Time do
+test_case Time do
 
-  #
-  unit :future? do
-    t = Time.now + 1000
-    t.assert.future?
+  method :future? do
 
-    n = Time.now - 1000
-    n.refute.future?
+    test do
+      t = Time.now + 1000
+      t.assert.future?
+    end
 
-    n = Time.now + 1001
-    n.assert.future?(t)
+    test do
+      n = Time.now - 1000
+      n.refute.future?
+    end
 
-    n = Time.now + 999
-    n.refute.future?(t)
+    test do
+      n = Time.now + 1001
+      t = Time.now + 1000
+      n.assert.future?(t)
+    end
+
+    test do
+      n = Time.now + 999
+      t = Time.now + 1000
+      n.refute.future?(t)
+    end
+
   end
 
 end

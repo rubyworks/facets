@@ -1,22 +1,30 @@
 covers 'facets/string/squish'
 
-testcase String do
+test_case String do
 
-  unit :squish do
-    r = %{ Multi-line
-           string }.squish 
-    r.assert == "Multi-line string"
+  method :squish do
+
+    test do
+      r = %{ Multi-line
+             string }.squish 
+      r.assert == "Multi-line string"
+    end
+
+    test do
+      r = " foo   bar    \n   \t   boo".squish
+      r.assert == "foo bar boo"
+    end
+
   end
 
-  unit :squish do
-    r = " foo   bar    \n   \t   boo".squish
-    r.assert == "foo bar boo"
-  end
+  method :squish! do
 
-  unit :squish! do
-    s = " foo   bar    \n   \t   boo"
-    s.squish!
-    s.assert == "foo bar boo"
+    test do
+      s = " foo   bar    \n   \t   boo"
+      s.squish!
+      s.assert == "foo bar boo"
+    end
+
   end
 
 end

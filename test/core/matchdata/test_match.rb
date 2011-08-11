@@ -1,10 +1,14 @@
 covers 'facets/matchdata/match'
 
-testcase MatchData do
+test_case MatchData do
 
-  unit :match do
-    md = /X(a)(b)(c)X/.match("YXabcXY")
-    md.match.assert == "XabcX"
+  method :match do
+
+    test do
+      md = /X(a)(b)(c)X/.match("YXabcXY")
+      md.match.assert == "XabcX"
+    end
+
   end
 
 end

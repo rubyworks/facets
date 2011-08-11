@@ -1,9 +1,13 @@
 covers 'facets/string/similarity'
 
-testcase String do
+test_case String do
 
-  unit :similarity do
-    "Alexsander".similarity("Aleksander").assert == 0.9
+  method :similarity do
+
+    test do
+      "Alexsander".similarity("Aleksander").assert == 0.9
+    end
+
   end
 
 end

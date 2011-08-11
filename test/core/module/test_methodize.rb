@@ -1,17 +1,25 @@
 covers 'facets/module/methodize'
 
-tests Module do
+test_case Module do
 
-  unit :methodize do
-    Lemon.methodize.assert == 'lemon'
+  method :methodize do
+
+    test do
+      Lemon.methodize.assert == 'lemon'
+    end
+
   end
 
 end
 
-tests Class do
+test_case Class do
 
-  unit :methodize do
-    Lemon::TestCase.methodize.assert == 'lemon__test_case'
+  method :methodize do
+
+    test do
+      Lemon::TestCase.methodize.assert == 'lemon__test_case'
+    end
+
   end
 
 end

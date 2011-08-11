@@ -1,14 +1,18 @@
 covers 'facets/class/descendants'
 
-testcase Class do
+test_case Class do
 
-  a = Class.new
-  b = Class.new(a)
-  c = Class.new(b)
+  method :descendants do
 
-  unit :descendants do
-    a.descendants.assert.include?(b)
-    a.descendants.assert.include?(c)
+    a = Class.new
+    b = Class.new(a)
+    c = Class.new(b)
+
+    test do
+      a.descendants.assert.include?(b)
+      a.descendants.assert.include?(c)
+    end
+
   end
 
 end

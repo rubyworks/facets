@@ -1,14 +1,18 @@
 covers 'facets/unboundmethod/name'
 
-tests UnboundMethod do
+test_case UnboundMethod do
 
-  x = Class.new do
-    def foo; "bar"; end
-  end
+  method :name do
 
-  unit :name do
-    meth = x.instance_method(:foo)
-    meth.name.to_sym.assert == :foo
+    test do
+      x = Class.new do
+        def foo; "bar"; end
+      end
+
+      meth = x.instance_method(:foo)
+      meth.name.to_sym.assert == :foo
+    end
+
   end
 
 end

@@ -1,12 +1,18 @@
 covers 'facets/symbol/query'
 
-testcase Symbol do
+test_case Symbol do
 
-  unit :query? do
-    assert( :try?.query? )
+  method :query? do
 
-    assert( ! :try.query? )
-    assert( ! :try=.query? )
+    test do
+      assert( :try?.query? )
+    end
+
+    test do
+      assert( ! :try.query? )
+      assert( ! :try=.query? )
+    end
+
   end
 
 end

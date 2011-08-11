@@ -1,8 +1,9 @@
 covers 'facets/kernel/ask'
 
-tests Kernel do
+test_case Kernel do
 
-  omit unit :ask => "requires user input" do
+  # requires user input
+  method :ask do
   end
 
 end

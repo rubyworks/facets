@@ -1,14 +1,18 @@
 covers 'facets/module/anonymous'
 
-tests Module do
+test_case Module do
 
-  unit :anonymous? do
-    m = Module.new
-    m.assert.anonymous?
-  end
+  method :anonymous? do
 
-  unit :anonymous? do
-    Lemon.refute.anonymous?
+    test do
+      m = Module.new
+      m.assert.anonymous?
+    end
+
+    test do
+      Lemon.refute.anonymous?
+    end
+
   end
 
 end

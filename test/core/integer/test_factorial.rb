@@ -1,21 +1,29 @@
 covers 'facets/integer/factorial'
 
-testcase Integer do
+test_case Integer do
 
-  unit :factorial do
-    0.factorial.assert == 1
-    1.factorial.assert == 1
-    2.factorial.assert == 2
-    3.factorial.assert == 6
-    4.factorial.assert == 24
+  method :factorial do
+
+    test do
+      0.factorial.assert == 1
+      1.factorial.assert == 1
+      2.factorial.assert == 2
+      3.factorial.assert == 6
+      4.factorial.assert == 24
+    end
+
   end
 
-  unit :fac do
-    0.fac.assert == 1
-    1.fac.assert == 1
-    2.fac.assert == 2
-    3.fac.assert == 6
-    4.fac.assert == 24
+  method :fac do
+
+    test do
+      0.fac.assert == 1
+      1.fac.assert == 1
+      2.fac.assert == 2
+      3.fac.assert == 6
+      4.fac.assert == 24
+    end
+
   end
 
 end

@@ -1,9 +1,13 @@
 covers 'facets/kernel/here'
 
-tests Kernel do
+test_case Kernel do
 
-  unit :here do
-    here.assert.is_a?(Binding)
+  method :here do
+
+    test do
+      here.assert.is_a?(Binding)
+    end
+
   end
 
 end

@@ -1,9 +1,13 @@
 covers 'facets/string/index_all'
 
-testcase String do
+test_case String do
 
-  unit :index_all do
-    "axxxaxxxa".index_all('a').assert == [0,4,8]
+  method :index_all do
+
+    test do
+      "axxxaxxxa".index_all('a').assert == [0,4,8]
+    end
+
   end
 
 end

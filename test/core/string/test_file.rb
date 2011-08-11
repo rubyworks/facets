@@ -1,10 +1,14 @@
 covers 'facets/string/file'
 
-testcase String do
+test_case String do
 
-  unit :file do
-    "home/trans".file.dirname.assert == "home"
-    "home/trans".file.basename.assert == "trans"
+  method :file do
+
+    test do
+      "home/trans".file.dirname.assert == "home"
+      "home/trans".file.basename.assert == "trans"
+    end
+
   end
 
 end

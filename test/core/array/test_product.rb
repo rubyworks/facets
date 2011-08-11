@@ -1,27 +1,31 @@
 covers 'facets/array/product'
 
-testcase Array do
+test_case Array do
 
-  unit :product => "single argument" do
-    r = [1,2,3].product([4,5,6])
-    x = [[1, 4],[1, 5],[1, 6],[2, 4],[2, 5],[2, 6],[3, 4],[3, 5],[3, 6]]
-    r.assert == x
-  end
+  method :product do
 
-  unit :product => "multiple arguments" do
-    a = %w|a b|
-    b = %w|a x|
-    c = %w|x y|
-    r = a.product(b, c)
-    x = [ ["a", "a", "x"],
-          ["a", "a", "y"],
-          ["a", "x", "x"],
-          ["a", "x", "y"],
-          ["b", "a", "x"],
-          ["b", "a", "y"],
-          ["b", "x", "x"],
-          ["b", "x", "y"] ]
-    r.assert == x
+    test "single argument" do
+      r = [1,2,3].product([4,5,6])
+      x = [[1, 4],[1, 5],[1, 6],[2, 4],[2, 5],[2, 6],[3, 4],[3, 5],[3, 6]]
+      r.assert == x
+    end
+
+    test "multiple arguments" do
+      a = %w|a b|
+      b = %w|a x|
+      c = %w|x y|
+      r = a.product(b, c)
+      x = [ ["a", "a", "x"],
+            ["a", "a", "y"],
+            ["a", "x", "x"],
+            ["a", "x", "y"],
+            ["b", "a", "x"],
+            ["b", "a", "y"],
+            ["b", "x", "x"],
+            ["b", "x", "y"] ]
+      r.assert == x
+    end
+
   end
 
   #def test_product_01

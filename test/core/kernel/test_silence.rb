@@ -1,24 +1,24 @@
 covers 'facets/kernel/silence'
 
-tests Kernel do
+test_case Kernel do
 
   # TODO: figure out how to test silence methods
 
-  context "Not straight foward to test since they effect output."
+  concern "Not straight foward to test since they effect output."
 
-  omit unit :silence do
+  method :silence do
   end
 
-  omit unit :silence_stream do
+  method :silence_stream do
   end
 
-  omit unit :silence_stderr do
+  method :silence_stderr do
   end
 
-  omit unit :silence_stdout do
+  method :silence_stdout do
   end
 
-  omit unit :silently do
+  method :silently do
   end
 
 end

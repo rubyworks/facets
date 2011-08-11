@@ -1,10 +1,14 @@
 covers 'facets/string/op_sub'
 
-testcase String do
+test_case String do
 
-  unit :"-" do
-    s = "xxbooxxfoo"
-    (s - "xx").assert == "boofoo"
+  method :"-" do
+
+    test do
+      s = "xxbooxxfoo"
+      (s - "xx").assert == "boofoo"
+    end
+
   end
 
 end

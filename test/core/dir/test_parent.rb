@@ -1,9 +1,13 @@
 covers 'facets/dir/parent'
 
-tests Dir do
+test_case Dir do
 
-  metaunit :parent? do
-    Dir.assert.parent?("a/b/c", "a/b/c/d")
+  class_method :parent? do
+
+    test do
+      Dir.assert.parent?("a/b/c", "a/b/c/d")
+    end
+
   end
 
 end

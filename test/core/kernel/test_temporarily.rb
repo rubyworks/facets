@@ -1,21 +1,25 @@
 covers 'facets/kernel/temporarily'
 
-tests Kernel do
+test_case Kernel do
 
-  unit :temporarily => "global variable" do
-    $temporary_variable = true
-    temporarily('$temporary_variable'=>false) do
-      $temporary_variable.assert == false
-    end
-    $temporary_variable.assert == true
-  end
+  method :temporarily do
 
-  unit :temporarily => "instance variable" do
-    @x = 1
-    temporarily('@x'=>2) do
-      @x.assert == 2
+    test "global variable" do
+      $temporary_variable = true
+      temporarily('$temporary_variable'=>false) do
+        $temporary_variable.assert == false
+      end
+      $temporary_variable.assert == true
     end
-    @x.assert == 1
+
+    test "instance variable" do
+      @x = 1
+      temporarily('@x'=>2) do
+        @x.assert == 2
+      end
+      @x.assert == 1
+    end
+
   end
 
 end

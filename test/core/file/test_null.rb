@@ -1,9 +1,13 @@
 covers 'facets/file/null'
 
-tests File do
+test_case File do
 
-  metaunit :null do
-    assert File.null
+  class_method :null do
+
+    test do
+      assert File.null
+    end
+
   end
 
 end

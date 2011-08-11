@@ -1,23 +1,31 @@
 covers 'facets/string/align'
 
-testcase String do
+test_case String do
 
-  unit :align do
-    "xxx".align(:right, 9) == "      xxx"
-    "xxx".align(:left, 9).assert == "xxx      "
-    "xxx".align(:center, 9).assert == "   xxx   "
+  method :align do
+    test do
+      "xxx".align(:right, 9) == "      xxx"
+      "xxx".align(:left, 9).assert == "xxx      "
+      "xxx".align(:center, 9).assert == "   xxx   "
+    end
   end
 
-  unit :align_right do
-    "xxx".align_right(9) == "      xxx"
+  method :align_right do
+    test do
+      "xxx".align_right(9) == "      xxx"
+    end
   end
 
-  unit :align_left do
-    "xxx".align_left(9).assert == "xxx      "
+  method :align_left do
+    test do
+      "xxx".align_left(9).assert == "xxx      "
+    end
   end
 
-  unit :align_center do
-    "xxx".align_center(9).assert == "   xxx   "
+  method :align_center do
+    test do
+      "xxx".align_center(9).assert == "   xxx   "
+    end
   end
 
 end

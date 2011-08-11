@@ -1,15 +1,19 @@
 covers 'facets/regexp/multiline'
 
-tests Regexp do
+test_case Regexp do
 
-  unit :multiline? do
-    re = /x/m
-    re.assert.multiline?
-  end
+  method :multiline? do
 
-  unit :multiline? do
-    re = /x/
-    re.refute.multiline?
+    test do
+      re = /x/m
+      re.assert.multiline?
+    end
+
+    test do
+      re = /x/
+      re.refute.multiline?
+    end
+
   end
 
 end

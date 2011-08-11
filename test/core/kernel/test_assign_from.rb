@@ -1,40 +1,48 @@
 covers 'facets/kernel/assign_from'
 
-tests Kernel do
+test_case Kernel do
 
   c = Struct.new(:name, :address, :zip)
 
-  unit :assign_from do
-    bob = c.new("Bob Sawyer", "123 Maple, Anytown NC", 12345)
-    joe = c.new("Joe Pitare")
+  method :assign_from do
 
-    joe.assign_from(bob, :address, :zip)
+    test do
+      bob = c.new("Bob Sawyer", "123 Maple, Anytown NC", 12345)
+      joe = c.new("Joe Pitare")
 
-    joe.name.assert == "Joe Pitare"
-    joe.address. == "123 Maple, Anytown NC"
-    joe.zip.assert == 12345
+      joe.assign_from(bob, :address, :zip)
+
+      joe.name.assert == "Joe Pitare"
+      joe.address. == "123 Maple, Anytown NC"
+      joe.zip.assert == 12345
+    end
+
   end
 
-  c1 = Class.new do
-    attr_accessor :a
-    attr_accessor :b
-  end
+  method :assign_from do
 
-  c2 = Class.new do
-    attr_accessor :a
-    attr_accessor :b
-  end
+    c1 = Class.new do
+      attr_accessor :a
+      attr_accessor :b
+    end
 
-  unit :assign_from do
-    o1 = c1.new
-    o1.a = 1
-    o1.b = 2
+    c2 = Class.new do
+      attr_accessor :a
+      attr_accessor :b
+    end
 
-    o2 = c2.new
-    o2.assign_from(o1, :a, :b)
+    test do
+      o1 = c1.new
+      o1.a = 1
+      o1.b = 2
 
-    o2.a.assert == 1
-    o2.b.assert == 2
+      o2 = c2.new
+      o2.assign_from(o1, :a, :b)
+
+      o2.a.assert == 1
+      o2.b.assert == 2
+    end
+
   end
 
 end

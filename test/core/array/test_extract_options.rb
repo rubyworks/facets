@@ -1,20 +1,28 @@
 covers 'facets/array/extract_options'
 
-testcase Array do
+test_case Array do
 
-  unit :extract_options! do
-    h = { :x=>1, :y=>1 }
-    a = [:a, :b, h]
-    a.extract_options!.assert == h
+  method :extract_options! do
+
+    test do
+      h = { :x=>1, :y=>1 }
+      a = [:a, :b, h]
+      a.extract_options!.assert == h
+    end
+
   end
 
 end
 
-testcase Hash do
+test_case Hash do
 
-  unit :extractable_options? do
-    h = { :x=>1, :y=>1 }
-    h.assert.extractable_options?
+  method :extractable_options? do
+
+    test do
+      h = { :x=>1, :y=>1 }
+      h.assert.extractable_options?
+    end
+
   end
 
 end

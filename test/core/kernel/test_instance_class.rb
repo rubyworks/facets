@@ -1,10 +1,14 @@
 covers 'facets/kernel/instance_class'
 
-testcase Kernel do
+test_case Kernel do
 
-  unit :instance_class do
-    o = Object.new
-    o.instance_class.assert == (class << o; self; end)
+  method :instance_class do
+
+    test do
+      o = Object.new
+      o.instance_class.assert == (class << o; self; end)
+    end
+
   end
 
 end

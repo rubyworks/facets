@@ -1,9 +1,13 @@
 covers 'facets/file/rootname'
 
-tests File do
+test_case File do
 
-  metaunit :rootname do
-    File.rootname('test/core/file').assert == 'test'
+  class_method :rootname do
+
+    test do
+      File.rootname('test/core/file').assert == 'test'
+    end
+
   end
 
 end

@@ -1,29 +1,37 @@
 covers 'facets/kernel/presence'
 
-tests Kernel do
+test_case Kernel do
 
-  unit :presence do
-    "a".presence.assert == "a"
-    [1].presence.assert == [1]
-    {:a=>1}.presence.assert == {:a=>1}
+  method :presence do
+
+    test do
+      "a".presence.assert == "a"
+      [1].presence.assert == [1]
+      {:a=>1}.presence.assert == {:a=>1}
+    end
+
+    test do
+      "".presence.assert == nil
+      [].presence.assert == nil
+      {}.presence.assert == nil
+    end
+
   end
 
-  unit :presence do
-    "".presence.assert == nil
-    [].presence.assert == nil
-    {}.presence.assert == nil
-  end
+  method :present? do
 
-  unit :present? do
-    "a".assert.present?
-    [1].assert.present?
-    {:a=>1}.assert.present?
-  end
+    test "non-empty objects are present" do
+      "a".assert.present?
+      [1].assert.present?
+      {:a=>1}.assert.present?
+    end
 
-  unit :present? do
-    "".refute.present?
-    [].refute.present?
-    {}.refute.present?
+    test "empty object are not present" do
+      "".refute.present?
+      [].refute.present?
+      {}.refute.present?
+    end
+
   end
 
 end

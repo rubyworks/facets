@@ -1,26 +1,30 @@
 covers 'facets/kernel/val'
 
-testcase Kernel do
+test_case Kernel do
 
-  unit :val? => "of nil" do
-    f = nil
-    t = 1
-    f.refute.val?
-    t.assert.val?
-  end
+  method :val? do
 
-  unit :val? => "of empty array" do
-    f = []
-    t = [1]
-    f.refute.val?
-    t.assert.val?
-  end
+    test "of nil" do
+      f = nil
+      t = 1
+      f.refute.val?
+      t.assert.val?
+    end
 
-  unit :val? => "of empty string" do
-    f = ''
-    t = '1'
-    f.refute.val?
-    t.assert.val? 
+    test "of empty array" do
+      f = []
+      t = [1]
+      f.refute.val?
+      t.assert.val?
+    end
+
+    test "of empty string" do
+      f = ''
+      t = '1'
+      f.refute.val?
+      t.assert.val? 
+    end
+
   end
 
 end

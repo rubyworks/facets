@@ -1,11 +1,15 @@
 covers 'facets/hash/at'
 
-testcase Hash do
+test_case Hash do
 
-  unit :at do
-    h = { :a=>1, :b=>2 }
-    h.at(:a).assert == 1
-    h.at(:b).assert == 2
+  method :at do
+
+    test do
+      h = { :a=>1, :b=>2 }
+      h.at(:a).assert == 1
+      h.at(:b).assert == 2
+    end
+
   end
 
 end

@@ -1,12 +1,16 @@
 covers 'facets/string/each_char'
 
-testcase String do
+test_case String do
 
-  unit :each_char do
-    a = []
-    i = "this"
-    i.each_char{ |w| a << w }
-    a.assert == ['t', 'h', 'i', 's']
+  method :each_char do
+
+    test do
+      a = []
+      i = "this"
+      i.each_char{ |w| a << w }
+      a.assert == ['t', 'h', 'i', 's']
+    end
+
   end
 
 end

@@ -1,15 +1,19 @@
 covers 'facets/array/index'
 
-testcase Array do
+test_case Array do
 
-  unit :index => "can handle a block" do
-    i = [1,2,3].index{ |e| e == 2 }
-    i.assert == 1
-  end
+  method :index do
 
-  unit :index => "when no element is found" do
-    i = [1,2,3].index{ |e| e == 5 }
-    i.assert.nil?
+    test "can handle a block" do
+      i = [1,2,3].index{ |e| e == 2 }
+      i.assert == 1
+    end
+
+    test "when no element is found" do
+      i = [1,2,3].index{ |e| e == 5 }
+      i.assert.nil?
+    end
+
   end
 
 end

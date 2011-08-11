@@ -1,17 +1,21 @@
 covers 'facets/array/splice'
 
-testcase Array do
+test_case Array do
 
-  unit :splice do
-    a = [1,2,3]
-    a.splice(1).assert == 2
-    a.assert == [1,3]
-  end
+  method :splice do
 
-  unit :splice do
-    a = [1,2,3]
-    a.splice(1,4).assert == 4
-    a.assert == [1,4,3]
+    test do
+      a = [1,2,3]
+      a.splice(1).assert == 2
+      a.assert == [1,3]
+    end
+
+    test do
+      a = [1,2,3]
+      a.splice(1,4).assert == 4
+      a.assert == [1,4,3]
+    end
+
   end
 
 end

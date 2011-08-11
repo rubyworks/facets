@@ -1,19 +1,23 @@
 covers 'facets/module/enclosure'
 covers 'facets/module/enclosures'
 
-tests Module do
+test_case Module do
 
-  unit :enclosure do
-    Lemon::TestCase.enclosure.assert == Lemon
+  method :enclosure do
+    test do
+      Lemon::TestCase.enclosure.assert == Lemon
+    end
+
+    test "anonymous module" do
+      m = Module.new
+      m.enclosure.assert == Object
+    end
   end
 
-  unit :enclosure => "anonymous module" do
-    m = Module.new
-    m.enclosure.assert == Object
-  end
-
-  unit :enclosures do
-    Lemon::TestCase.enclosures.assert == [Lemon, Object]
+  method :enclosures do
+    test do
+      Lemon::TestCase.enclosures.assert == [Lemon, Object]
+    end
   end
 
 end

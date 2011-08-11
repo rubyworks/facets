@@ -1,45 +1,53 @@
 covers 'facets/module/cattr'
 
-tests Class do
+test_case Class do
 
   setup do
-    Class.new do
+    @c = Class.new do
+      cattr :xc
+      cattr_reader :xr
+      cattr_writer :xw
+      cattr_accessor :xa
       def initialize
-        @@a = 10
-        @@b = nil
+        @@xc = 10
+        @@xr = 10
+        @@xw = nil
       end
-      def b ; @@b ; end
+      def xw?; @@xw; end
     end
   end
 
-  unit :cattr do |c|
-    c.class_eval{ cattr :a }
-    t = c.new
-    c.a.assert == 10
-    t.a.assert == 10
+  method :cattr do
+    test do
+      t = @c.new
+      t.xc.assert  == 10
+      @c.xc.assert == 10
+    end
   end
 
-  unit :cattr_reader do |c|
-    c.class_eval{ cattr_reader :a }
-    t = c.new
-    c.a.assert == 10
-    t.a.assert == 10
+  method :cattr_reader do
+    test do
+      t = @c.new
+      t.xr.assert  == 10
+      @c.xr.assert == 10
+    end
   end
 
-  unit :cattr_writer do |c|
-    c.class_eval{ cattr_writer :b }
-    t = c.new
-    t.b = 5
-    t.b.assert == 5
+  method :cattr_writer do
+    test do
+      t = @c.new
+      t.xw = 5
+      t.xw?.assert == 5
+    end
   end
 
-  unit :cattr_accessor do |c|
-    c.class_eval{ cattr_accessor :c }
-    t = c.new
-    t.c = 50
-    t.c.assert == 50
-    c.c.assert == 50
+  method :cattr_accessor do
+    test do
+      @c.xa = 50
+      @c.xa.assert == 50
+      t = @c.new
+      t.xa.assert == 50
+    end
   end
 
 end
-

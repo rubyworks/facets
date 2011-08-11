@@ -1,33 +1,41 @@
 covers 'facets/uri'
 
-tests URI do
+test_case URI do
 
-  meta :hash_to_query do
-    h = { :a=>1, :b=>2 }
-    r = URI.hash_to_query(h)
-    assert(r == "a=1;b=2" || r == "b=2;a=1")
+  class_method :hash_to_query do
+    test do
+      h = { :a=>1, :b=>2 }
+      r = URI.hash_to_query(h)
+      assert(r == "a=1;b=2" || r == "b=2;a=1")
+    end
   end
 
 end
 
-tests Object do
+test_case Object do
 
-  unit :uri do
-    "abc%3Fxyz".assert == uri("abc?xyz")
+  method :uri do
+    test do
+      "abc%3Fxyz".assert == uri("abc?xyz")
+    end
   end
 
-  unit :unuri do
-    "abc?xyz".assert == unuri("abc%3Fxyz")
+  method :unuri do
+    test do
+      "abc?xyz".assert == unuri("abc%3Fxyz")
+    end
   end
 
 end
 
-tests Hash do
+test_case Hash do
 
-  unit :to_uri do
-    h = { :a=>1, :b=>2 }
-    r = h.to_uri
-    assert(r == "a=1;b=2" || r == "b=2;a=1")
+  method :to_uri do
+    test do
+      h = { :a=>1, :b=>2 }
+      r = h.to_uri
+      assert(r == "a=1;b=2" || r == "b=2;a=1")
+    end
   end
 
 end

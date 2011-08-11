@@ -1,17 +1,21 @@
 covers 'facets/file/write'
 
-tests File do
+test_case File do
 
-  test_file = 'tmp/write.txt'
+  class_method :write do
 
-  metaunit :write do
-    data = "Test data\n"
+    test_file = 'tmp/write.txt'
 
-    nbytes = File.write(test_file, data)
+    test do
+      data = "Test data\n"
 
-    out = File.read(test_file)
-    out.assert == data
-    out.size.assert == nbytes
+      nbytes = File.write(test_file, data)
+
+      out = File.read(test_file)
+      out.assert == data
+      out.size.assert == nbytes
+    end
+
   end
 
 end

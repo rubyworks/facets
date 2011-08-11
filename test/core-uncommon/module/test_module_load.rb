@@ -1,19 +1,23 @@
 covers 'facets/module/module_load'
 
-tests Module do
+test_case Module do
 
-  # TODO: need to use a ruby fixture file to test module_load.rb
+  # TODO: write tests for module_load
 
-  omit unit :module_load do
-  end
+  skip "need to use a ruby fixture file to test module_load.rb" do
 
-  omit unit :module_require do
-  end
+    method :module_load do
+    end
 
-  omit unit :class_load do
-  end
+    method :module_require do
+    end
 
-  omit unit :class_require do
+    method :class_load do
+    end
+
+    method :class_require do
+    end
+
   end
 
 end

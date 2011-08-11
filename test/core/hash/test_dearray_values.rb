@@ -1,17 +1,25 @@
 covers 'facets/hash/dearray_values'
 
-testcase Hash do
+test_case Hash do
 
-  unit :dearray_values do
-    h = { :a=>[1], :b=>[1,2], :c=>3, :d=>[] }
-    x = { :a=>1, :b=>1, :c=>3, :d=>nil }
-     h.dearray_values.assert == x
+  method :dearray_values do
+
+    test do
+      h = { :a=>[1], :b=>[1,2], :c=>3, :d=>[] }
+      x = { :a=>1, :b=>1, :c=>3, :d=>nil }
+      h.dearray_values.assert == x
+    end
+
   end
 
-  unit :dearray_singular_values do
-    h = { :a=>[1], :b=>[1,2], :c=>3, :d=>[] }
-    x = { :a=>1, :b=>[1,2], :c=>3, :d=>nil }
-    h.dearray_singular_values.assert == x
+  method :dearray_singular_values do
+
+    test do
+      h = { :a=>[1], :b=>[1,2], :c=>3, :d=>[] }
+      x = { :a=>1, :b=>[1,2], :c=>3, :d=>nil }
+      h.dearray_singular_values.assert == x
+    end
+
   end
 
 end

@@ -1,12 +1,18 @@
 covers 'facets/symbol/plain'
 
-testcase Symbol do
+test_case Symbol do
 
-  unit :plain? do
-    assert( :try.plain? )
+  method :plain? do
 
-    assert( ! :try=.plain? )
-    assert( ! :try?.plain? )
+    test do
+      assert( :try.plain? )
+    end
+
+    test do
+      assert( ! :try=.plain? )
+      assert( ! :try?.plain? )
+    end
+
   end
 
 end

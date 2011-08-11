@@ -1,16 +1,26 @@
 covers 'facets/array/before'
 
-testcase Array do
+test_case Array do
 
-  setup do
-    ['a', 'b', 'c']
-  end
+  method :before do
 
-  unit :before do |sequence|
-    sequence.before('a').assert == 'c'
-    sequence.before('b').assert == 'a'
-    sequence.before('c').assert == 'b'
-    sequence.before('d').assert == nil
+    setup do
+      @sequence = ['a', 'b', 'c']
+    end
+
+    test "returns the previous element" do
+      @sequence.before('b').assert == 'a'
+      @sequence.before('c').assert == 'b'
+    end
+
+    test "loops around from back to front" do
+      @sequence.before('a').assert == 'c'
+    end
+
+    test "non-member elements return nil" do
+      @sequence.before('d').assert == nil
+    end
+
   end
 
 end

@@ -1,11 +1,15 @@
 covers 'facets/string/store'
 
-testcase String do
+test_case String do
 
-  unit :store do
-    a = "HELLO"
-    a.store(1, "X")
-    a.assert == "HXLLO"
+  method :store do
+
+    test do
+      a = "HELLO"
+      a.store(1, "X")
+      a.assert == "HXLLO"
+    end
+
   end
 
 end

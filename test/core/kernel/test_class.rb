@@ -1,10 +1,14 @@
 covers 'facets/kernel/__class__'
 
-tests Kernel do
+test_case Kernel do
 
-  unit :__class__ do
-    o = Object.new
-    o.__class__.assert == o.class
+  method :__class__ do
+
+    test do
+      o = Object.new
+      o.__class__.assert == o.class
+    end
+
   end
 
 end

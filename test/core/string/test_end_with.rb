@@ -1,15 +1,23 @@
 covers 'facets/string/end_with'
 
-tests String do
+test_case String do
 
-  unit :end_with? do
-    s = "xxboo"
-    s.assert.end_with?('boo')
+  method :end_with? do
+
+    test do
+      s = "xxboo"
+      s.assert.end_with?('boo')
+    end
+  
   end
 
-  unit :ends_with? do
-    s = "xxboo"
-    s.assert.ends_with?('boo')
+  method :ends_with? do
+
+    test do
+      s = "xxboo"
+      s.assert.ends_with?('boo')
+    end
+
   end
 
 end

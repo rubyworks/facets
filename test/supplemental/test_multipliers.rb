@@ -1,98 +1,141 @@
-require 'facets/multipliers.rb'
+covers 'facets/multipliers'
 
-TestCase Fixnum do
+test_case Fixnum do
 
-  unit :deka do
-    1.deka.assert == 10
+  method :deka do
+    test do
+      1.deka.assert == 10
+    end
   end
 
-  unit :hecto do
-    1.hecto.assert == 100
+  method :hecto do
+    test do
+      1.hecto.assert == 100
+    end
   end
 
-  unit :kilo do
-    1.kilo.assert == 1000
+  method :kilo do
+    test do
+      1.kilo.assert == 1000
+    end
   end
 
-  unit :mega do
-    1.mega.assert == 1000000
+  method :mega do
+    test do
+      1.mega.assert == 1000000
+    end
   end
 
-  unit :giga do
-    1.giga.assert == 1000000000
+  method :giga do
+    test do
+      1.giga.assert == 1000000000
+    end
   end
 
-  unit :tera do
-    1.tera.assert == 1000000000000
+  method :tera do
+    test do
+      1.tera.assert == 1000000000000
+    end
   end
 
-  unit :peta do
-    1.peta.assert == 1000000000000000
+  method :peta do
+    test do
+      1.peta.assert == 1000000000000000
+    end
   end
 
-  unit :exa do
-    1.exa.assert == 1000000000000000000
+  method :exa do
+    test do
+      1.exa.assert == 1000000000000000000
+    end
   end
 
   # Fractional
 
-  unit :deci do
-    1.deci.assert == 0.1
+  method :deci do
+    test do
+      1.deci.assert == 0.1
+    end
   end
 
-  unit :centi do
-    1.centi.assert == 0.01
+  method :centi do
+    test do
+      1.centi.assert == 0.01
+    end
   end
 
-  unit :milli do
-    1.milli.assert == 0.001
+  method :milli do
+    test do
+      1.milli.assert == 0.001
+    end
   end
 
-  unit :micro do
-    1.micro.assert == 0.000001
+  method :micro do
+    test do
+      1.micro.assert == 0.000001
+    end
   end
 
-  unit :nano do
-    1.nano.assert == 0.000000001
+  method :nano do
+    test do
+      1.nano.assert == 0.000000001
+    end
   end
 
-  unit :pico do
-    1.pico.assert == 0.000000000001
+  method :pico do
+    test do
+      1.pico.assert == 0.000000000001
+    end
   end
 
-  unit :femto do
-    1.femto.assert == 0.000000000000001
+  method :femto do
+    test do
+      1.femto.assert == 0.000000000000001
+    end
   end
 
-  unit :atto do
-    1.atto.assert == 0.000000000000000001
+  method :atto do
+    test do
+      1.atto.assert == 0.000000000000000001
+    end
   end
 
   # SI Binary
 
-  unit :kibi do
-    1.kibi.assert == 1024
+  method :kibi do
+    test do
+      1.kibi.assert == 1024
+    end
   end
 
-  unit :mebi do
-    1.mebi.assert == 1024**2
+  method :mebi do
+    test do
+      1.mebi.assert == 1024**2
+    end
   end
 
-  unit :gibi do
-    1.gibi.assert == 1024**3
+  method :gibi do
+    test do
+      1.gibi.assert == 1024**3
+    end
   end
 
-  unit :tebi do
-    1.tebi.assert == 1024**4
+  method :tebi do
+    test do
+      1.tebi.assert == 1024**4
+    end
   end
 
-  unit :pebi do
-    1.pebi.assert == 1024**5
+  method :pebi do
+    test do
+      1.pebi.assert == 1024**5
+    end
   end
 
-  unit :exbi do
-    1.exbi.assert == 1024**6
+  method :exbi do
+    test do
+      1.exbi.assert == 1024**6
+    end
   end
 
 end
-

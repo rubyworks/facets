@@ -1,19 +1,29 @@
 covers 'facets/regexp/arity'
 
-testcase Regexp do
+test_case Regexp do
 
-  unit :arity do
-    r = /(1)(2)(3)/
-    r.arity.assert == 3
+  method :arity do
 
-    r = /(1)(2)(3)(4)/
-    r.arity.assert == 4
+    test do
+      r = /(1)(2)(3)/
+      r.arity.assert == 3
+    end
 
-    r = /(1)(2)((a)3)/
-    r.arity.assert == 4
+    test do
+      r = /(1)(2)(3)(4)/
+      r.arity.assert == 4
+    end
 
-    r = /(?#nothing)(1)(2)(3)(?=3)/
-    r.arity.assert == 3
+    test do
+      r = /(1)(2)((a)3)/
+      r.arity.assert == 4
+    end
+
+    test do
+      r = /(?#nothing)(1)(2)(3)(?=3)/
+      r.arity.assert == 3
+    end
+
   end
 
 end

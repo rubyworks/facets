@@ -1,10 +1,10 @@
 covers 'facets/kernel/d'
 
-tests Kernel do
+test_case Kernel do
 
-  # TODO: how to test #d silently? Need to redirect $stdout.
+  # TODO: how to test #d silently? Need to redirect $stderr.
 
-  omit unit :d do
+  method :d do
   end
 
 end

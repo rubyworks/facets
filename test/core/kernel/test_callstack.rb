@@ -1,13 +1,21 @@
 covers 'facets/kernel/callstack'
 
-tests Kernel do
+test_case Kernel do
 
-  unit :call_stack do
-    call_stack
+  method :call_stack do
+
+    test do
+      call_stack
+    end
+
   end
 
-  unit :callstack do
-    callstack
+  method :callstack do
+
+    test do
+      callstack
+    end
+
   end
 
 end

@@ -1,9 +1,11 @@
 covers 'facets/string/cleanlines'
 
-testcase String do
+test_case String do
 
-  unit :cleanlines do
-    "a \n b \nc".cleanlines.to_a.assert == ["a","b","c"]
+  method :cleanlines do
+    test do
+      "a \n b \nc".cleanlines.to_a.assert == ["a","b","c"]
+    end
   end
 
 end

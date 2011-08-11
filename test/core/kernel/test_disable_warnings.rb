@@ -2,24 +2,36 @@ covers 'facets/kernel/disable_warnings'
 covers 'facets/kernel/enable_warnings'
 covers 'facets/kernel/silence_warnings'
 
-tests Kernel do
+test_case Kernel do
 
-  unit :disable_warnings do
-    disable_warnings do
-      assert( ! $VERBOSE )
+  method :disable_warnings do
+
+    test do
+      disable_warnings do
+        assert( ! $VERBOSE )
+      end
     end
+
   end
 
-  unit :silence_warnings => "alias for backward compatibility" do
-    silence_warnings do
-      assert( ! $VERBOSE )
+  method :silence_warnings do
+
+    test "alias for backward compatibility" do
+      silence_warnings do
+        assert( ! $VERBOSE )
+      end
     end
+
   end
 
-  unit :enable_warnings do
-    enable_warnings do
-      assert( $VERBOSE )
+  method :enable_warnings do
+
+    test :enable_warnings do
+      enable_warnings do
+        assert( $VERBOSE )
+      end
     end
+
   end
 
 end

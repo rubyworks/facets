@@ -1,9 +1,13 @@
 covers 'facets/symbol/variablize'
 
-testcase Symbol do
+test_case Symbol do
 
-  unit :variablize do
-    :a.variablize.assert == "@a".to_sym
+  method :variablize do
+
+    test do
+      :a.variablize.assert == "@a".to_sym
+    end
+
   end
 
 end

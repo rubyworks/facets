@@ -1,26 +1,30 @@
 covers 'facets/hash/op_and'
 
-testcase Hash do
+test_case Hash do
 
-  unit :& => "hash and hash" do
-    a = { :a => 1, :b => 2 }
-    b = { :a => 1 }
-    x = { :a => 1 }
-    (a & b).assert == x 
-  end
+  method :& do
 
-  unit :& => "hashes with sub-array" do
-    a = { :a => [1], :b => [2] }
-    b = { :a => [1] }
-    x = { :a => [1] }
-    (a & b).assert == x
-  end
+    test "hash and hash" do
+      a = { :a => 1, :b => 2 }
+      b = { :a => 1 }
+      x = { :a => 1 }
+      (a & b).assert == x 
+    end
 
-  unit :& => "hash and array" do
-    a = { :a => 1, :b => 2 }
-    b = [ :a ]
-    x = { :a => 1 }
-    (a & b).assert == x
+    test "hashes with sub-array" do
+      a = { :a => [1], :b => [2] }
+      b = { :a => [1] }
+      x = { :a => [1] }
+      (a & b).assert == x
+    end
+
+    test "hash and array" do
+      a = { :a => 1, :b => 2 }
+      b = [ :a ]
+      x = { :a => 1 }
+      (a & b).assert == x
+    end
+
   end
 
 end

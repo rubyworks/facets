@@ -1,19 +1,29 @@
 covers 'facets/enumerable/none'
 
-testcase Enumerable do
+test_case Enumerable do
 
-  unit :none? do
-    a = [nil, nil]
-    assert( a.none? )
+  method :none? do
 
-    a = [false, false]
-    assert( a.none? )
+    test do
+      a = [nil, nil]
+      assert( a.none? )
+    end
 
-    a = [true, false]
-    assert( ! a.none? )
+    test do
+      a = [false, false]
+      assert( a.none? )
+    end
 
-    a = [nil, 1]
-    assert( ! a.none? )
+    test do
+      a = [true, false]
+      assert( ! a.none? )
+    end
+
+    test do
+      a = [nil, 1]
+      assert( ! a.none? )
+    end
+
   end
 
 end

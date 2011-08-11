@@ -1,11 +1,15 @@
 covers 'facets/symbol/succ'
 
-testcase Symbol do
+test_case Symbol do
 
-  unit :succ do
-    :a.succ.assert == :b
-    :aaa.succ.assert == :aab
-    :"1".succ.assert == :"2"
+  method :succ do
+
+    test do
+      :a.succ.assert == :b
+      :aaa.succ.assert == :aab
+      :"1".succ.assert == :"2"
+    end
+
   end
 
 end

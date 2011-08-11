@@ -1,12 +1,12 @@
 covers 'facets/kernel/require_relative'
 covers 'facets/kernel/load_relative'
 
-tests Kernel do
+test_case Kernel do
 
-  omit unit :require_relative do
+  method :require_relative do
   end
 
-  omit unit :load_relative do
+  method :load_relative do
   end
 
 end

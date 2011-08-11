@@ -1,13 +1,17 @@
 covers 'facets/string/lowercase'
 
-testcase String do
+test_case String do
 
-  unit :lowercase do
-    "Bob".lowercase.assert == "bob"
-  end
+  method :lowercase do
 
-  unit :lowercase do
-    "BOB".lowercase.assert == "bOB"
+    test do
+      "Bob".lowercase.assert == "bob"
+    end
+
+    test do
+      "BOB".lowercase.assert == "bOB"
+    end
+
   end
 
 end

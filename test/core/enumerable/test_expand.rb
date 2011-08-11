@@ -1,11 +1,15 @@
 covers 'facets/enumerable/expand'
 
-tests Enumerable do
+test_case Enumerable do
 
-  unit :expand do
-    a = [1,2,2,[1,2]]
-    r = a.expand
-    r == [1,2,2,1,2]
+  method :expand do
+
+    test do
+      a = [1,2,2,[1,2]]
+      r = a.expand
+      r == [1,2,2,1,2]
+    end
+
   end
 
 end

@@ -1,15 +1,19 @@
 covers 'facets/symbol/not'
 
-testcase Symbol do
+test_case Symbol do
 
-  unit :~@ do
-    ~:a.assert == :"~a"
+  method :~@ do
+    test do
+      ~:a.assert == :"~a"
+    end
   end
 
-  unit :not? do
-    a = :a
-    n = ~a
-    assert( n.not? )
+  method :not? do
+    test do
+      a = :a
+      n = ~a
+      assert( n.not? )
+    end
   end
 
 end

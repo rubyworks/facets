@@ -1,22 +1,26 @@
 covers 'facets/module/preextend'
 
-tests Module do
+test_case Module do
 
-  unit :preextend => "module method" do
-    m = Module.new do
-      def q; "qm"; end
+  method :preextend do
+
+    test "module method" do
+      m = Module.new do
+        def q; "qm"; end
+      end
+
+      n = Module.new do
+        preextend m
+        def q; "qn"; end
+      end
+
+      x = Class.new do
+        include n
+      end
+
+      n.q.assert == "qm"
     end
 
-    n = Module.new do
-      preextend m
-      def q; "qn"; end
-    end
-
-    x = Class.new do
-      include n
-    end
-
-    n.q.assert == "qm"
   end
 
 end

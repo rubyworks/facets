@@ -1,17 +1,25 @@
 covers 'facets/string/lchomp'
 
-testcase String do
+test_case String do
 
-  unit :lchomp do
-    s = "xxboo"
-    r = s.lchomp("xx")
-    r.assert == "boo"
+  method :lchomp do
+
+    test do
+      s = "xxboo"
+      r = s.lchomp("xx")
+      r.assert == "boo"
+    end
+
   end
 
-  unit :lchomp! do
-    s = "xxboo"
-    s.lchomp!("xx")
-    s.assert == "boo"
+  method :lchomp! do
+
+    test do
+      s = "xxboo"
+      s.lchomp!("xx")
+      s.assert == "boo"
+    end
+
   end
 
 end

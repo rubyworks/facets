@@ -1,17 +1,21 @@
 covers 'facets/string/underscore'
 
-tests String do
+test_case String do
 
-  unit :underscore => "from camelcase" do
-    "SnakeCase".underscore.assert == "snake_case"
-  end
+  method :underscore do
 
-  unit :underscore => "containing a dash" do
-    "Snake-Case".underscore.assert == "snake_case"
-  end
+    test "from camelcase" do
+      "SnakeCase".underscore.assert == "snake_case"
+    end
 
-  unit :underscore => "containing double colons" do
-    "SnakeCase::Errors".underscore.assert == "snake_case/errors"
+    test "containing a dash" do
+      "Snake-Case".underscore.assert == "snake_case"
+    end
+
+    test "containing double colons" do
+      "SnakeCase::Errors".underscore.assert == "snake_case/errors"
+    end
+
   end
 
 end

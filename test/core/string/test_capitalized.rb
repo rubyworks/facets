@@ -1,25 +1,35 @@
 covers 'facets/string/capitalized'
 
-testcase String do
+test_case String do
 
-  unit :capitalized? do
-    'Abc'.assert.capitalized?
+  method :capitalized? do
+    test do
+      'Abc'.assert.capitalized?
+    end
   end
 
-  unit :downcase? do
-    'abc'.assert.downcase?
+  method :downcase? do
+    test do
+      'abc'.assert.downcase?
+    end
   end
 
-  unit :upcase? do
-    'ABC'.assert.upcase?
+  method :upcase? do
+    test do
+      'ABC'.assert.upcase?
+    end
   end
 
-  #unit :lowercase? do
-  #  'abc'.assert.lowercase?
+  #method :lowercase? do
+  #  test do
+  #    'abc'.assert.lowercase?
+  #  end
   #end
 
-  #unit :uppercase? do
-  #  'ABC'.assert.uppercase?
+  #method :uppercase? do
+  #  test do
+  #    'ABC'.assert.uppercase?
+  #  end
   #end
 
 end

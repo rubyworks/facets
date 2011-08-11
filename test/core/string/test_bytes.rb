@@ -1,10 +1,12 @@
 covers 'facets/string/bytes'
 
-testcase String do
+test_case String do
 
-  unit :bytes do
-    s = "abc"
-    s.bytes.to_a.assert == s.unpack('C*')
+  method :bytes do
+    test do
+      s = "abc"
+      s.bytes.to_a.assert == s.unpack('C*')
+    end
   end
 
 end

@@ -1,33 +1,52 @@
 covers 'facets/hash/keys'
 
-tests Hash do
+test_case Hash do
 
-  unit :each_with_key do
-    h1 = {:a=>1, :b=>2}
-    h2 = {}
-    h1.each_with_key { |v,k| h2[v] = k }
-    h2.assert == {1=>:a, 2=>:b}
+  method :each_with_key do
+
+    test do
+      h1 = {:a=>1, :b=>2}
+      h2 = {}
+      h1.each_with_key { |v,k| h2[v] = k }
+      h2.assert == {1=>:a, 2=>:b}
+    end
+
   end
 
-  unit :keys? do
-    {:a=>1,:b=>2,:c=>3}.assert.keys?(:a,:b)
-    {:a=>1,:b=>2,:c=>3 }.refute.keys?(:a,:b,:d)
+  method :keys? do
+
+    test do
+      {:a=>1,:b=>2,:c=>3}.assert.keys?(:a,:b)
+      {:a=>1,:b=>2,:c=>3 }.refute.keys?(:a,:b,:d)
+    end
+
   end
 
-  unit :only_keys? do
-    {:a=>1,:b=>2,:c=>3}.assert.only_keys?(:a,:b,:c)
-    {:a=>1,:b=>2,:c=>3}.refute.only_keys?(:a,:b)
+  method :only_keys? do
+
+    test do
+      {:a=>1,:b=>2,:c=>3}.assert.only_keys?(:a,:b,:c)
+      {:a=>1,:b=>2,:c=>3}.refute.only_keys?(:a,:b)
+    end
+
   end
 
-  unit :has_keys? do
-    {:a=>1,:b=>2,:c=>3}.assert.has_keys?(:a,:b)
-    {:a=>1,:b=>2,:c=>3 }.refute.has_keys?(:a,:b,:d)
+  method :has_keys? do
+
+    test do
+      {:a=>1,:b=>2,:c=>3}.assert.has_keys?(:a,:b)
+      {:a=>1,:b=>2,:c=>3 }.refute.has_keys?(:a,:b,:d)
+    end
+
   end
 
-  unit :has_only_keys? do
-    {:a=>1,:b=>2,:c=>3}.assert.has_only_keys?(:a,:b,:c)
-    {:a=>1,:b=>2,:c=>3}.refute.has_only_keys?(:a,:b)
+  method :has_only_keys? do
+
+    test do
+      {:a=>1,:b=>2,:c=>3}.assert.has_only_keys?(:a,:b,:c)
+      {:a=>1,:b=>2,:c=>3}.refute.has_only_keys?(:a,:b)
+    end
+
   end
 
 end
-

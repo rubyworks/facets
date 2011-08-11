@@ -1,27 +1,35 @@
 covers 'facets/kernel/try'
 
-tests Kernel do
+test_case Kernel do
 
-  unit :try do
-    example = Struct.new(:name).new("bob")
-    example.try(:name).assert == "bob"
-  end
+  method :try do
 
-  unit :try => "without argument" do
-    example = Struct.new(:name).new("bob")
-    example.try.name.assert == "bob"
+    test do
+      example = Struct.new(:name).new("bob")
+      example.try(:name).assert == "bob"
+    end
+
+    test "without argument" do
+      example = Struct.new(:name).new("bob")
+      example.try.name.assert == "bob"
+    end
+
   end
 
 end
 
-tests NilClass do
+test_case NilClass do
 
-  unit :try do
-    nil.try(:name).assert == nil
-  end
+  method :try do
 
-  unit :try => "without argument" do
-    nil.try.name.assert == nil
+    test do
+      nil.try(:name).assert == nil
+    end
+
+    test "without argument" do
+      nil.try.name.assert == nil
+    end
+
   end
 
 end

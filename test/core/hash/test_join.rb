@@ -1,28 +1,32 @@
 covers 'facets/hash/join'
 
-tests Hash do
+test_case Hash do
 
-  setup do
-    {:a=>1, :b=>2}
-  end
+  method :join do
 
-  unit :join do |h|
-    s = h.join
-    s.assert.include?('b2')
-    s.assert.include?('a1')
-  end
+    setup do
+      @h = {:a=>1, :b=>2}
+    end
 
-  unit :join do |h|
-    s = h.join(',')
-    s.assert.include?('a,1')
-    s.assert.include?('b,2')
-  end
+    test do
+      s = @h.join
+      s.assert.include?('b2')
+      s.assert.include?('a1')
+    end
 
-  unit :join do |h|
-    s = h.join(',', ':')
-    s.assert.include?('a,1')
-    s.assert.include?('b,2')
-    s.assert.include?(':')
+    test do
+      s = @h.join(',')
+      s.assert.include?('a,1')
+      s.assert.include?('b,2')
+    end
+
+    test do
+      s = @h.join(',', ':')
+      s.assert.include?('a,1')
+      s.assert.include?('b,2')
+      s.assert.include?(':')
+    end
+
   end
 
 end

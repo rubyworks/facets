@@ -1,37 +1,41 @@
 covers 'facets/memoizable'
 
-tests Memoizable do
+test_case Memoizable do
 
-  unit :memoize => "returns expected values" do
-    c = Class.new do
-      include Memoizable
-      def initialize(a)
-        @a = a
+  method :memoize do
+
+    test "returns expected values" do
+      c = Class.new do
+        include Memoizable
+        def initialize(a)
+          @a = a
+        end
+        attr_accessor :a
+        memoize :a
       end
-      attr_accessor :a
-      memoize :a
+
+      o = c.new("A")
+      o.a.assert == "A"
+      o.a = "B"
+      o.a.assert == "A"
     end
 
-    o = c.new("A")
-    o.a.assert == "A"
-    o.a = "B"
-    o.a.assert == "A"
-  end
-
-  unit :memoize => "returns identical objects" do
-    c = Class.new do
-      include Memoizable
-      def initialize(a)
-        @a = a
+    test "returns identical objects" do
+      c = Class.new do
+        include Memoizable
+        def initialize(a)
+          @a = a
+        end
+        attr_accessor :a
+        memoize :a
       end
-      attr_accessor :a
-      memoize :a
+
+      o = c.new("A")
+      o.a.__id__.assert == o.a.__id__
+      o.a = "B"
+      o.a.__id__.assert == o.a.__id__
     end
 
-    o = c.new("A")
-    o.a.__id__.assert == o.a.__id__
-    o.a = "B"
-    o.a.__id__.assert == o.a.__id__
   end
 
 end

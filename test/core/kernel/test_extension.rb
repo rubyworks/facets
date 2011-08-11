@@ -1,13 +1,17 @@
 covers 'facets/kernel/extension'
 
-tests Kernel do
+test_case Kernel do
 
   # DEPRECATE ?
-  unit :extension do
-    c = Class.new
-    o = c.new
-    x = (class << o; self; end)
-    o.extension.assert == x
+  method :extension do
+
+    test do
+      c = Class.new
+      o = c.new
+      x = (class << o; self; end)
+      o.extension.assert == x
+    end
+
   end
 
 end

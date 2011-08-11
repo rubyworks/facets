@@ -1,15 +1,19 @@
 covers 'facets/string/edit_distance'
 
-tests String do
+test_case String do
 
-  unit :edit_distance do
-    d = "pretzel".edit_distance('pretzil')
-    d.assert = 1
-  end
+  method :edit_distance do
 
-  unit :edit_distance do
-    d = "zretzel".edit_distance('pretzil')
-    d.assert = 2
+    test do
+      d = "pretzel".edit_distance('pretzil')
+      d.assert = 1
+    end
+
+    test do
+      d = "zretzel".edit_distance('pretzil')
+      d.assert = 2
+    end
+
   end
 
 end

@@ -1,11 +1,13 @@
 covers 'facets/exception/suppress'
 
-tests Exception do
+test_case Exception do
 
-  meta :suppress do
+  class_method :suppress do
 
-    NameError.suppress do
-      supercalafragalistic
+    test do
+      NameError.suppress do
+        supercalafragalistic
+      end
     end
 
   end

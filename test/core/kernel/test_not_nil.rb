@@ -1,21 +1,25 @@
 covers 'facets/kernel/not_nil'
 
-testcase Kernel do
+test_case Kernel do
 
-  unit :not_nil? do
-    5.assert.not_nil?
-  end
+  method :not_nil? do
 
-  unit :not_nil? do
-    :x.assert.not_nil?
-  end
+    test do
+      5.assert.not_nil?
+    end
 
-  unit :not_nil? do
-    false.assert.not_nil?
-  end
+    test do
+      :x.assert.not_nil?
+    end
 
-  unit :not_nil? do
-    nil.refute.not_nil?
+    test do
+      false.assert.not_nil?
+    end
+
+    test do
+      nil.refute.not_nil?
+    end
+
   end
 
 end

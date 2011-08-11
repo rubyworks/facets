@@ -1,20 +1,31 @@
 covers 'facets/time/past'
 
-testcase Time do
+test_case Time do
 
-  #
-  unit :past? do
-    t = Time.now - 1000
-    t.assert.past?
+  method :past? do
 
-    n = Time.now + 1000
-    n.refute.past?
+    test do
+      t = Time.now - 1000
+      t.assert.past?
+    end
 
-    n = Time.now - 1001
-    n.assert.past?(t)
+    test do
+      n = Time.now + 1000
+      n.refute.past?
+    end
 
-    n = Time.now - 999
-    n.refute.past?(t)
+    test do
+      n = Time.now - 1001
+      t = Time.now - 1000
+      n.assert.past?(t)
+    end
+
+    test do
+      n = Time.now - 999
+      t = Time.now - 1000
+      n.refute.past?(t)
+    end
+
   end
 
 end

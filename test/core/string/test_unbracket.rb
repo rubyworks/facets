@@ -1,25 +1,37 @@
 covers 'facets/string/unbracket'
 
-testcase String do
+test_case String do
 
-  unit :unbracket do
-    s = "{unwrap me}"
-    z = s.unbracket('{')
-    z.assert == "unwrap me"
+  method :unbracket do
 
-    s = "--unwrap me!"
-    z = s.unbracket('--','!')
-    z.assert == "unwrap me"
+    test do
+      s = "{unwrap me}"
+      z = s.unbracket('{')
+      z.assert == "unwrap me"
+    end
+
+    test do
+      s = "--unwrap me!"
+      z = s.unbracket('--','!')
+      z.assert == "unwrap me"
+    end
+
   end
 
-  unit :unbracket! do
-    s = "{unwrap me}"
-    s.unbracket!('{')
-    s.assert == "unwrap me"
+  method :unbracket! do
 
-    s = "--unwrap me!"
-    s.unbracket!('--','!')
-    s.assert == "unwrap me"
+    test do
+      s = "{unwrap me}"
+      s.unbracket!('{')
+      s.assert == "unwrap me"
+    end
+
+    test do
+      s = "--unwrap me!"
+      s.unbracket!('--','!')
+      s.assert == "unwrap me"
+    end
+
   end
 
 end

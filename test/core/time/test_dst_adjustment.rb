@@ -1,10 +1,11 @@
 covers 'facets/time/dst_adjustment'
 
-tests Time do
+test_case Time do
 
   # TODO: test dst_adjustment
-
-  omit unit :dst_adjustment do
+  method :dst_adjustment do
+    test do
+    end
   end
 
 end

@@ -1,34 +1,54 @@
 covers 'facets/kernel/__get__'
 covers 'facets/kernel/__set__'
 
-tests Kernel do
+test_case Kernel do
 
-  setup "an object with an instance variable" do
-    c = Class.new do
-      attr :a
-      def initialize
-        @a = 1
+  method :__get__ do
+
+    setup "an object with an instance variable" do
+      c = Class.new do
+        attr :a
+        def initialize
+          @a = 1
+        end
       end
+      @o = c.new
     end
-    c.new
+
+    test do
+      @o.__get__('@a').assert == 1
+    end
+
+    # TODO: support is being considered
+    #test "wihtout at-sign" do |o|
+    #  o.__get__(:a).assert == 1
+    #end
+
   end
 
-  unit :__get__ do |o|
-    o.__get__('@a').assert == 1
-  end
+  method :__set__ do
 
-  unit :__set__ do |o|
-    o.__set__('@a', 2)
-    o.a.assert == 2
-  end
+    setup "an object with an instance variable" do
+      c = Class.new do
+        attr :a
+        def initialize
+          @a = 1
+        end
+      end
+      @o = c.new
+    end
 
-  omit unit :__set__ => "support is being considered" do |o|
-    o.__set__(:a, 3)
-    o.a.assert == 3
-  end
+    test do
+      @o.__set__('@a', 2)
+      @o.a.assert == 2
+    end
 
-  omit unit :__get__ => "support is being considered" do |o|
-    o.__get__(:a).assert == 1
+    # TODO: support is being considered
+    #test "without at-sign" do
+    #  @o.__set__(:a, 3)
+    #  @o.a.assert == 3
+    #end
+
   end
 
 end

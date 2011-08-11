@@ -1,10 +1,14 @@
 covers 'facets/proc/update'
 
-testcase Proc do
+test_case Proc do
 
-  unit :update => '' do
-    p1 = Proc.new{ 'here' }
-    p1.update.assert == 'here'
+  method :update do
+
+    test do
+      p1 = Proc.new{ 'here' }
+      p1.update.assert == 'here'
+    end
+
   end
 
 end

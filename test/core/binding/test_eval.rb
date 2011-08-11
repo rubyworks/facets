@@ -1,12 +1,14 @@
 covers 'facets/binding/eval'
 
-testcase Binding do
+test_case Binding do
 
   x = "hello"
   bind = binding
 
-  unit :eval do
-    bind.eval("x").assert == "hello"
+  method :eval do
+    test do
+      bind.eval("x").assert == "hello"
+    end
   end
 
 end

@@ -1,17 +1,25 @@
 covers 'facets/array/traverse'
 
-testcase Array do
+test_case Array do
 
-  unit :traverse do
-    a = ["A", "B", ["X", "Y"]]
-    g = a.traverse{ |e| e.downcase }
-    g.assert == ["a", "b", ["x", "y"]]
+  method :traverse do
+
+    test do
+      a = ["A", "B", ["X", "Y"]]
+      g = a.traverse{ |e| e.downcase }
+      g.assert == ["a", "b", ["x", "y"]]
+    end
+
   end
 
-  unit :traverse! do
-    a = ["A", "B", ["X", "Y"]]
-    a.traverse!{ |e| e.downcase }
-    a.assert == ["a", "b", ["x", "y"]]
+  method :traverse! do
+
+    test do
+      a = ["A", "B", ["X", "Y"]]
+      a.traverse!{ |e| e.downcase }
+      a.assert == ["a", "b", ["x", "y"]]
+    end
+
   end
 
 end

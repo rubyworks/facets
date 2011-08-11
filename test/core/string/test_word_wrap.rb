@@ -1,58 +1,80 @@
 covers 'facets/string/word_wrap'
 
-testcase String do
+test_case String do
 
-  unit :word_wrap do
-    e = "abcde\n12345\nxyzwu\n"
-    r = "abcde 12345 xyzwu".word_wrap(5)
-    r.assert == e
+  method :word_wrap do
 
-    e = "abcd\n1234\nxyzw\n"
-    r = "abcd 1234 xyzw".word_wrap(4)
-    r.assert == e
+    test do
+      e = "abcde\n12345\nxyzwu\n"
+      r = "abcde 12345 xyzwu".word_wrap(5)
+      r.assert == e
+    end
 
-    e = "abc\n123\n"
-    r = "abc 123".word_wrap(4)
-    r.assert == e
+    test do
+      e = "abcd\n1234\nxyzw\n"
+      r = "abcd 1234 xyzw".word_wrap(4)
+      r.assert == e
+    end
 
-    e = "abc \n123\n"
-    r = "abc  123".word_wrap(4)
-    r.assert == e
+    test do
+      e = "abc\n123\n"
+      r = "abc 123".word_wrap(4)
+      r.assert == e
+    end
 
-    e = "abc \n123\n"
-    r = "abc     123".word_wrap(4)
-    r.assert == e
+    test do
+      e = "abc \n123\n"
+      r = "abc  123".word_wrap(4)
+      r.assert == e
+    end
+
+    test do
+      e = "abc \n123\n"
+      r = "abc     123".word_wrap(4)
+      r.assert == e
+    end
+
+    # test do
+    #   assert_equal "abcde-\n12345-\nxyzwu\n", "abcde12345xyzwu".word_wrap(6,2)
+    #   assert_equal "abcd-\n1234-\nxyzw\n", "abcd1234xyzw".word_wrap(5,2)
+    #   assert_equal "abc \n123\n", "abc 123".word_wrap(4,2)
+    #   assert_equal "abc \n123\n", "abc  123".word_wrap(4,2)
+    #   assert_equal "abc \n123\n", "abc     123".word_wrap(4,2)
+    # end
   end
 
-  unit :word_wrap! do
-    w = "abcde 12345 xyzwu"
-    w.word_wrap!(5)
-    w.assert == "abcde\n12345\nxyzwu\n"
+  method :word_wrap! do
 
-    w = "abcd 1234 xyzw"
-    w.word_wrap!(4)
-    w.assert == "abcd\n1234\nxyzw\n"
+    test do
+      w = "abcde 12345 xyzwu"
+      w.word_wrap!(5)
+      w.assert == "abcde\n12345\nxyzwu\n"
+    end
 
-    w = "abc 123"
-    w.word_wrap!(4)
-    w.assert == "abc\n123\n"
+    test do
+      w = "abcd 1234 xyzw"
+      w.word_wrap!(4)
+      w.assert == "abcd\n1234\nxyzw\n"
+    end
 
-    w = "abc  123"
-    w.word_wrap!(4)
-    w.assert == "abc \n123\n"
+    test do
+      w = "abc 123"
+      w.word_wrap!(4)
+      w.assert == "abc\n123\n"
+    end
 
-    w = "abc     123"
-    w.word_wrap!(4)
-    w.assert == "abc \n123\n"
+    test do
+      w = "abc  123"
+      w.word_wrap!(4)
+      w.assert == "abc \n123\n"
+    end
+
+    test do
+      w = "abc     123"
+      w.word_wrap!(4)
+      w.assert == "abc \n123\n"
+    end
+
   end
-
-  # unit :word_wrap do
-  #   assert_equal "abcde-\n12345-\nxyzwu\n", "abcde12345xyzwu".word_wrap(6,2)
-  #   assert_equal "abcd-\n1234-\nxyzw\n", "abcd1234xyzw".word_wrap(5,2)
-  #   assert_equal "abc \n123\n", "abc 123".word_wrap(4,2)
-  #   assert_equal "abc \n123\n", "abc  123".word_wrap(4,2)
-  #   assert_equal "abc \n123\n", "abc     123".word_wrap(4,2)
-  # end
 
 end
-

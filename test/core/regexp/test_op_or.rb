@@ -1,11 +1,15 @@
 covers 'facets/regexp/op_or'
 
-tests Regexp do
+test_case Regexp do
 
-  unit :| do
-    re = /a/ | /b/
-    re.assert =~ "a"
-    re.assert =~ "b"
+  method :| do
+
+    test do
+      re = /a/ | /b/
+      re.assert =~ "a"
+      re.assert =~ "b"
+    end
+
   end
 
 end

@@ -1,31 +1,35 @@
 covers 'facets/hash/data'
 
-tests Hash do
+test_case Hash do
 
-  unit :data do
-    h = {:a=>1, :b=>2}
+  method :data do
 
-    h.data.a.assert == 1
-    h.data.b.assert == 2
-    h.data.c.assert == nil
-  end
+    test do
+      h = {:a=>1, :b=>2}
 
-  unit :data do
-    h = {:a=>1, :b=>2}
+      h.data.a.assert == 1
+      h.data.b.assert == 2
+      h.data.c.assert == nil
+    end
 
-    h.data.c = 3
-    h.data.c.assert == 3
-  end
+    test do
+      h = {:a=>1, :b=>2}
 
-  unit :data do
-    h = {:a=>1, :b=>2}
+      h.data.c = 3
+      h.data.c.assert == 3
+    end
 
-    # Note, we can't apply a functor to a functor.
-    #h.data.assert.a?
-    #h.data.refute.d?
+    test do
+      h = {:a=>1, :b=>2}
 
-    h.data.a?.assert == true
-    h.data.d?.assert == false
+      # Note, we can't apply a functor to a functor.
+      #h.data.assert.a?
+      #h.data.refute.d?
+
+      h.data.a?.assert == true
+      h.data.d?.assert == false
+    end
+
   end
 
 end

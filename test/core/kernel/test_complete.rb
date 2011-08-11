@@ -1,15 +1,19 @@
 covers 'facets/kernel/complete'
 
-tests Kernel do
+test_case Kernel do
 
-  unit :complete do
-    a = []
-    i = 0
-    complete do
-      i += 1
-      i == 3 ? nil : a << i
+  method :complete do
+
+    test do
+      a = []
+      i = 0
+      complete do
+        i += 1
+        i == 3 ? nil : a << i
+      end
+      a.assert == [1,2]
     end
-    a.assert == [1,2]
+
   end
 
 end

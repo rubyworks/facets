@@ -1,18 +1,22 @@
 covers 'facets/module/class_def'
 
-tests Module do
+test_case Module do
 
-  unit :class_def do
-    m = Module.new
-    m.class_def(:x){"x"}
-    c = Class.new{ include m }
-    c.new.x.assert == "x"
-  end
+  method :class_def do
 
-  unit :class_def do
-    c = Class.new
-    c.class_def(:x){"x"}
-    c.new.x.assert == "x"
+    test do
+      m = Module.new
+      m.class_def(:x){"x"}
+      c = Class.new{ include m }
+      c.new.x.assert == "x"
+    end
+
+    test do
+      c = Class.new
+      c.class_def(:x){"x"}
+      c.new.x.assert == "x"
+    end
+
   end
 
 end

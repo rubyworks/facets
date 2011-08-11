@@ -1,16 +1,24 @@
 covers 'facets/hash/alias'
 
-testcase Hash do
+test_case Hash do
 
-  unit :alias! do
-    foo = { 'a'=>1, 'b'=>2 }
-    foo.alias!('c','b').assert == { 'a'=>1, 'b'=>2, 'c'=>2 }
+  method :alias! do
 
-    foo = { 'a'=>1, 'b'=>2 }
-    foo.alias!(:a,'a').assert == { :a=>1, 'a'=>1, 'b'=>2 }
+    test do
+      foo = { 'a'=>1, 'b'=>2 }
+      foo.alias!('c','b').assert == { 'a'=>1, 'b'=>2, 'c'=>2 }
+    end
 
-    foo = { :a=>1, :b=>2 }
-    foo.alias!('bar','foo').assert == { :a=>1, :b=>2 }
+    test do
+      foo = { 'a'=>1, 'b'=>2 }
+      foo.alias!(:a,'a').assert == { :a=>1, 'a'=>1, 'b'=>2 }
+    end
+
+    test do
+      foo = { :a=>1, :b=>2 }
+      foo.alias!('bar','foo').assert == { :a=>1, :b=>2 }
+    end
+
   end
 
 end

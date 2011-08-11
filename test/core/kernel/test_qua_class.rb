@@ -1,19 +1,25 @@
 covers 'facets/kernel/qua_class'
 
-tests Kernel do
+test_case Kernel do
 
-  setup "any object" do
-    Object.new
+  method :qua_class do
+
+    test do
+      o = Object.new
+      s = (class << o; self; end)
+      o.qua_class.assert == s
+    end
+
   end
 
-  unit :qua_class do |o|
-    s = (class << o; self; end)
-    o.qua_class.assert == s
-  end
+  method :quaclass do
 
-  unit :quaclass do |o|
-    s = (class << o; self; end)
-    o.quaclass.assert == s
+    test do
+      o = Object.new
+      s = (class << o; self; end)
+      o.quaclass.assert == s
+    end
+
   end
 
 end

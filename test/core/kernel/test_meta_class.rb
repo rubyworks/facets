@@ -1,25 +1,33 @@
 covers 'facets/kernel/meta_class'
 
-tests Kernel do
+test_case Kernel do
 
-  unit :meta_class do
-    x = Class.new
-    m = (class << x; self; end)
-    x.meta_class.assert == m
-  end
+  method :meta_class do
 
-  unit :metaclass => "non-underscored alias" do
-    x = Class.new
-    m = (class << x; self; end)
-    x.metaclass.assert == m
-  end
-
-  unit :meta_class => "class_eval block on meta class" do
-    c = Class.new
-    c.meta_class do
-      def foo; "foo"; end
+    test do
+      x = Class.new
+      m = (class << x; self; end)
+      x.meta_class.assert == m
     end
-    c.foo.assert == "foo"
+
+    test "class_eval block on meta class" do
+      c = Class.new
+      c.meta_class do
+        def foo; "foo"; end
+      end
+      c.foo.assert == "foo"
+    end
+
+  end
+
+  method :metaclass do
+
+    test do
+      x = Class.new
+      m = (class << x; self; end)
+      x.metaclass.assert == m
+    end
+
   end
 
 end

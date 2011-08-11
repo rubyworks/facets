@@ -1,10 +1,12 @@
 covers 'facets/string/characters'
 
-testcase String do
+test_case String do
 
-  unit :characters do
-    "abc".characters.assert == ["a","b","c"]
-    "ab\nc".characters.assert == ["a","b","\n","c"]
+  method :characters do
+    test do
+      "abc".characters.assert == ["a","b","c"]
+      "ab\nc".characters.assert == ["a","b","\n","c"]
+    end
   end
 
 end

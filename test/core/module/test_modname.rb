@@ -1,9 +1,13 @@
 covers 'facets/module/modname'
 
-tests Module do
+test_case Module do
 
-  unit :modname do
-    Lemon::TestCase.modname.assert == "Lemon"
+  method :modname do
+
+    test do
+      Lemon::TestCase.modname.assert == "Lemon"
+    end
+
   end
 
 end

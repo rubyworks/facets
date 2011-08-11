@@ -1,6 +1,6 @@
 covers 'facets/binding/caller'
 
-tests Binding do
+test_case Binding do
 
   a = 1
   b = 2
@@ -10,40 +10,57 @@ tests Binding do
   line = __LINE__  # the line number must be updated if it moves
   file = __FILE__  # why does it equal basename only?
 
-  unit :__LINE__ do
-    bind.__LINE__.assert == line - 1
-  end
-
-  unit :__FILE__ do
-    bind.__FILE__.assert == file
-  end
-
-  unit :__DIR__ do
-    bind.__DIR__.assert == File.dirname(file)
-  end
-
-  unit :callstack do
-    bind.callstack.assert.is_a?(Array)
-  end
-
-  unit :call_stack do
-    bind.call_stack.assert.is_a?(Array)
-  end
-
-  unit :caller do
-    Exception.refute.raised? do
-      bind.caller
+  method :__LINE__ do
+    test do
+      bind.__LINE__.assert == line - 1
     end
   end
 
-  unit :__callee__ do
-    alternate.__callee__.assert == :alternate
+  method :__FILE__ do
+    test do
+      bind.__FILE__.assert == file
+    end
   end
 
-  unit :__method__ do
-    alternate.__method__.assert == :alternate
+  method :__DIR__ do
+    test do
+      bind.__DIR__.assert == File.dirname(file)
+    end
   end
 
+  method :callstack do
+    test do
+      bind.callstack.assert.is_a?(Array)
+    end
+  end
+
+  method :call_stack do
+    test do
+      bind.call_stack.assert.is_a?(Array)
+    end
+  end
+
+  method :caller do
+    test do
+      Exception.refute.raised? do
+        bind.caller
+      end
+    end
+  end
+
+  method :__callee__ do
+    test do
+      alternate.__callee__.assert == :alternate
+    end
+  end
+
+  method :__method__ do
+    test do
+      alternate.__method__.assert == :alternate
+    end
+  end
+
+  # helper method
   def alternate
     binding
   end

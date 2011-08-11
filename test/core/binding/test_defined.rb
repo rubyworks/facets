@@ -1,6 +1,6 @@
 covers 'facets/binding/defined'
 
-tests Binding do
+test_case Binding do
 
   a = 1
   b = 2
@@ -8,8 +8,10 @@ tests Binding do
 
   bind = binding
 
-  unit :defined? do
-    bind.assert.defined?("x")
+  method :defined? do
+    test do
+      bind.assert.defined?("x")
+    end
   end
 
 end

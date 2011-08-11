@@ -1,38 +1,42 @@
 covers 'facets/proc/to_method'
 
-testcase Proc do
+test_case Proc do
 
-  unit :to_method do
-    o = Object.new
-    tproc = proc { |x| x + 2 }
+  method :to_method do
 
-    tmeth = tproc.to_method(o, :tryit)
+    test do
+      o = Object.new
+      tproc = proc { |x| x + 2 }
 
-    tmeth.call(1).assert == 3
-    o.assert.respond_to?(:tryit)
-    o.tryit(1).assert == 3
-  end
+      tmeth = tproc.to_method(o, :tryit)
 
-  unit :to_method => "with immutable object" do
-    o = :foo
-    tproc = proc{ self }
+      tmeth.call(1).assert == 3
+      o.assert.respond_to?(:tryit)
+      o.tryit(1).assert == 3
+    end
 
-    tmeth = tproc.to_method(o, :tryit)
+    test "with immutable object" do
+      o = :foo
+      tproc = proc{ self }
 
-    tmeth.call.assert == :foo
-    o.assert.respond_to?(:tryit)
-    o.tryit.assert == :foo
-  end
+      tmeth = tproc.to_method(o, :tryit)
 
-  unit :to_method => "ensure method is in object scope" do
-    o = Struct.new(:a).new(1)
-    tproc = proc{ a }
+      tmeth.call.assert == :foo
+      o.assert.respond_to?(:tryit)
+      o.tryit.assert == :foo
+    end
 
-    tmeth = tproc.to_method(o, :tryit)
+    test "ensure method is in object scope" do
+      o = Struct.new(:a).new(1)
+      tproc = proc{ a }
 
-    tmeth.call.assert == 1
-    o.assert.respond_to?(:tryit)
-    o.tryit.assert == 1
+      tmeth = tproc.to_method(o, :tryit)
+
+      tmeth.call.assert == 1
+      o.assert.respond_to?(:tryit)
+      o.tryit.assert == 1
+    end
+
   end
 
 end

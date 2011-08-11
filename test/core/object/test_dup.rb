@@ -2,115 +2,114 @@ covers 'facets/object/dup'
 
 # TODO: Improve object/dup tests.
 
-tests Object do
+test_case Object do
   setup "ordinary object" do
-    Object.new
+    @o = Object.new
   end
 
-  unit :dup? do |o|
-    assert o.dup?
+  method :dup? do
+    test { assert @o.dup? }
   end
 
-  unit :clone? do |o|
-    assert o.clone?
+  method :clone? do
+    test { assert @o.clone? }
   end
 
-  unit :dup! do |o|
-    assert o.dup!
+  method :dup! do
+    test { assert @o.dup! }
   end
 
-  unit :try_dup do |o|
-    assert o.try_dup
-  end
-end
-
-tests TrueClass do
-  unit :dup? do
-    refute true.dup?
-  end
-
-  unit :clone? do
-    refute true.clone?
-  end
-
-  unit :dup! do
-    assert true.dup!
-  end
-
-  unit :try_dup do
-    assert true.try_dup
+  method :try_dup do |o|
+    test { assert @o.try_dup }
   end
 end
 
-tests FalseClass do
-  unit :dup? do
-    refute false.dup?
+test_case TrueClass do
+  method :dup? do
+    test { refute true.dup? }
   end
 
-  unit :clone? do
-    refute false.clone?
+  method :clone? do
+    test { refute true.clone? }
   end
 
-  unit :dup! do
-    false.dup!.assert == false
+  method :dup! do
+    test { assert true.dup! }
   end
 
-  unit :try_dup do
-    false.try_dup.assert == false
-  end
-end
-
-tests NilClass do
-  unit :dup? do
-    refute nil.dup?
-  end
-
-  unit :clone? do
-    refute nil.clone?
-  end
-
-  unit :dup! do
-    nil.dup!.assert == nil
-  end
-
-  unit :try_dup do
-    nil.try_dup.assert == nil
+  method :try_dup do
+    test { assert true.try_dup }
   end
 end
 
-tests Symbol do
-  unit :dup? do
-    refute :a.dup?
+test_case FalseClass do
+  method :dup? do
+    test { refute false.dup? }
   end
 
-  unit :clone? do
-    refute :a.clone?
+  method :clone? do
+    test { refute false.clone? }
   end
 
-  unit :dup! do
-    :a.dup!.assert == :a
+  method :dup! do
+    test { false.dup!.assert == false }
   end
 
-  unit :try_dup do
-    :a.try_dup.assert == :a
-  end
-end
-
-tests Numeric do
-  unit :dup? do
-    refute 1.dup?
-  end
-
-  unit :clone? do
-    refute 1.clone?
-  end
-
-  unit :dup! do
-    1.dup!.assert == 1
-  end
-
-  unit :try_dup do
-    1.try_dup.assert == 1
+  method :try_dup do
+    test { false.try_dup.assert == false }
   end
 end
 
+test_case NilClass do
+  method :dup? do
+    test { refute nil.dup? }
+  end
+
+  method :clone? do
+    test { refute nil.clone? }
+  end
+
+  method :dup! do
+    test { nil.dup!.assert == nil }
+  end
+
+  method :try_dup do
+    test { nil.try_dup.assert == nil }
+  end
+end
+
+test_case Symbol do
+  method :dup? do
+    test { refute :a.dup? }
+  end
+
+  method :clone? do
+    test { refute :a.clone? }
+  end
+
+  method :dup! do
+    test { :a.dup!.assert == :a }
+  end
+
+  method :try_dup do
+    test { :a.try_dup.assert == :a }
+  end
+end
+
+test_case Numeric do
+  method :dup? do
+    test { refute 1.dup? }
+  end
+
+  method :clone? do
+    test { refute 1.clone? }
+  end
+
+  method :dup! do
+    test { 1.dup!.assert == 1 }
+  end
+
+  method :try_dup do
+    test { 1.try_dup.assert == 1 }
+  end
+end

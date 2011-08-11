@@ -1,15 +1,19 @@
 covers 'facets/module/to_obj'
 
-tests Module do
+test_case Module do
 
-  unit :to_obj do
-    m = Module.new do
-      def x; "x"; end
-      def y; "y"; end
+  method :to_obj do
+
+    test do
+      m = Module.new do
+        def x; "x"; end
+        def y; "y"; end
+      end
+      o = m.to_obj
+      o.x.assert == "x"
+      o.y.assert == "y"
     end
-    o = m.to_obj
-    o.x.assert == "x"
-    o.y.assert == "y"
+
   end
 
 end

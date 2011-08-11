@@ -1,15 +1,19 @@
 covers 'facets/range/to_r'
 
-testcase Range do
+test_case Range do
 
-  unit :to_r do
-    a = (0..10)
-    a.to_r.assert == a
+  method :to_r do
+    test do
+      a = (0..10)
+      a.to_r.assert == a
+    end
   end
 
-  unit :to_range do
-    a = (0..10)
-    a.to_range.assert == a
+  method :to_range do
+    test do
+      a = (0..10)
+      a.to_range.assert == a
+    end
   end
 
 end

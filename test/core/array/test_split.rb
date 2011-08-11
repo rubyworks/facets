@@ -1,17 +1,21 @@
 covers 'facets/array/split'
 
-testcase Array do
+test_case Array do
 
-  unit :split do
-    ['a','b','c'].split('b').assert == [['a'], ['c']]
-  end
+  method :split do
 
-  unit :split => "empty" do
-    [].split('a').assert == []
-  end
+    test do
+      ['a','b','c'].split('b').assert == [['a'], ['c']]
+    end
 
-  unit :split => "same" do
-    ['a'].split('a').assert == []
+    test "empty" do
+      [].split('a').assert == []
+    end
+
+    test "same" do
+      ['a'].split('a').assert == []
+    end
+
   end
 
 end

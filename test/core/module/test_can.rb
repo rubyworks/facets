@@ -1,17 +1,21 @@
 covers 'facets/module/can'
 
-testcase Module do
+test_case Module do
 
-  unit :can do
-    m = Module.new do
-      def x; "x"; end 
+  method :can do
+
+    test do
+      m = Module.new do
+        def x; "x"; end 
+      end
+
+      c = Class.new do
+        can m
+      end
+
+      c.x.assert == "x"
     end
 
-    c = Class.new do
-      can m
-    end
-
-    c.x.assert == "x"
   end
 
 end

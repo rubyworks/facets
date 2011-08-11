@@ -1,14 +1,18 @@
 covers 'facets/enumerable/each_with_object'
 
-tests Enumerable do
+test_case Enumerable do
 
-  unit :each_with_object do
-    r = Hash.new(0)
-    a = [1,2,2,3]
+  method :each_with_object do
 
-    a.each_with_object(r){ |c, h| h[c] += 1 }
+    test do
+      r = Hash.new(0)
+      a = [1,2,2,3]
 
-    r.assert == { 1=>1, 2=>2, 3=>1 }
+      a.each_with_object(r){ |c, h| h[c] += 1 }
+
+      r.assert == { 1=>1, 2=>2, 3=>1 }
+    end
+
   end
 
 end

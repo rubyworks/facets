@@ -1,10 +1,14 @@
 covers 'facets/symbol/op_div'
 
-testcase Symbol do
+test_case Symbol do
 
-  unit :/ do
-    (:merb / "string").assert == "merb/string"
-    (:merb / :symbol).assert == "merb/symbol"
+  method :/ do
+
+    test do
+      (:merb / "string").assert == "merb/string"
+      (:merb / :symbol).assert == "merb/symbol"
+    end
+
   end
 
 end

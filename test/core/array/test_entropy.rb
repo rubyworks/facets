@@ -1,14 +1,22 @@
 covers 'facets/array/entropy'
 
-testcase Array do
+test_case Array do
 
-  unit :entropy do
-    %w{ a b }.entropy.assert == 1.0
+  method :entropy do
+
+    test do
+      %w{ a b }.entropy.assert == 1.0
+    end
+
   end
 
-  unit :ideal_entropy do
-    %w{ a b }.ideal_entropy.assert == 1.0
-    %w{ a a b b }.ideal_entropy.assert == 2.0
+  method :ideal_entropy do
+
+    test do
+      %w{ a b }.ideal_entropy.assert == 1.0
+      %w{ a a b b }.ideal_entropy.assert == 2.0
+    end
+
   end
 
 end

@@ -1,14 +1,27 @@
 covers 'facets/enumerable/occur'
 
-testcase Enumerable do
+test_case Enumerable do
 
-  unit :occur do
+  method :occur do
+
     arr = [:a,:b,:a]
-    arr.occur(1).assert == [:b]
-    arr.occur(2).assert == [:a]
-    arr.occur(1..1).assert == [:b]
-    arr.occur{ |n| n % 2 == 0 }.assert == [:a]
+
+    test do
+      arr.occur(1).assert == [:b]
+    end
+
+    test do
+      arr.occur(2).assert == [:a]
+    end
+
+    test do
+      arr.occur(1..1).assert == [:b]
+    end
+
+    test do
+      arr.occur{ |n| n % 2 == 0 }.assert == [:a]
+    end
+
   end
 
 end
-

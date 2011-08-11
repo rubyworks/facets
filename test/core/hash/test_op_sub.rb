@@ -1,19 +1,27 @@
 covers 'facets/hash/op_sub'
 
-testcase Hash do
+test_case Hash do
 
-  unit :- => "hash minus array" do
-    a = { :a => 1, :b => 2, :c => 3 }
-    b = [ :a ]
-    x = { :b => 2, :c => 3 }
-    (a - b).assert == x
+  method :- do
+
+    test "hash minus array" do
+      a = { :a => 1, :b => 2, :c => 3 }
+      b = [ :a ]
+      x = { :b => 2, :c => 3 }
+      (a - b).assert == x
+    end
+
   end
 
-  unit :- => "hash minus hash" do
-    a = { :a => 1, :b => 2, :c => 3 }
-    b = { :a => 1, :d => 4 }
-    x = { :b => 2, :c => 3 }
-    (a - b).assert == x
+  method :- do
+
+    test "hash minus hash" do
+      a = { :a => 1, :b => 2, :c => 3 }
+      b = { :a => 1, :d => 4 }
+      x = { :b => 2, :c => 3 }
+      (a - b).assert == x
+    end
+
   end
 
 end

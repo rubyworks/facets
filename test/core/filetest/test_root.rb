@@ -1,9 +1,13 @@
 covers 'facets/filetest/root'
 
-testcase FileTest do
+test_case FileTest do
 
-  metaunit :root? do
-    assert FileTest.root?('/')
+  class_method :root? do
+
+    test do
+      assert FileTest.root?('/')
+    end
+
   end
 
 end
