@@ -1,41 +1,44 @@
 ---
 yard-core:
   service : Yard
-  active  : false
   #template: ~
   output  : site/doc/yard/core
   title   : Facets Core Extensions
-  readme  : doc/README.core
-  #extra   : "-a"
-  include : [doc/README.core, README.rdoc, lib/core]
+  readme  : README.rdoc
+  extra   : "--protected"
+  include : [lib/core]
+  topfiles: [README.rdoc]
+  active  : false
 
 #yard-more:
 #  service : Yard
-#  active  : false
 #  #template: ~
 #  output  : site/doc/yard/more
 #  title   : Facets More API
-#  readme  : doc/README.more
-#  #extra   : "-a"
-#  include : [doc/README.more, README.rdoc, lib/more]
+#  readme  :README.rdoc
+#  extra   : "--protected"
+#  include : [lib/more]
+#  topfiles: [README.rdoc]
+#  active  : false
 
 yard-standard:
   service : Yard
-  active  : false
   #template: ~
   output  : site/doc/yard/standard
   title   : Facets Standard Extensions
-  readme  : doc/README.more
-  #extra   : "-a"
-  include : [doc/README.standard, README.rdoc, lib/standard]
+  readme  : README.rdoc
+  extra   : "--protected"
+  include : [lib/standard]
+  topfiles: [README.rdoc]
+  active  : false
 
 #yard-tertiary:
 #  service : Yard
-#  active  : false
 #  #template: ~
 #  output  : site/doc/yard/tertiary
 #  title   : Facets Tertiary Libraries
-#  readme  : doc/README.more
-#  #extra   : "-a"
-#  include : [README.rdoc, lib/tertiary]
-
+#  readme  : README.rdoc
+#  extra   : "--protected"
+#  include : [lib/supplemental]
+#  topfiles: [README.rdoc]
+#  active  : false

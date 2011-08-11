@@ -1,6 +1,6 @@
 ---
-ridoc:
-  service : RiDoc
+ri:
+  service : RI
   output  : .rdoc
   include :
     - lib/core

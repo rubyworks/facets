@@ -9,21 +9,18 @@ email:
     - rubyworks-mailinglist@googlegroups.com
 
 vclog:
-  service : VClog
+  output: log/ChangeLog.rdoc
   active: false
 
-rubyprof:
-  service: RubyProf
-  active : false
-  output : ~
-  scripts: ~
-  options: ~
+#ruby-prof:
+#  service: qed
+#  options: ~
 
 erbside:
   tool  : Custom
   track : main
   generate: |
-    sh 'erbside lib/core/'
+    sh 'erbside lib/core/*.rb'
   active: false
 
 lemon:
