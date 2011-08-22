@@ -26,7 +26,7 @@ We recommend instead that you use the pre-generated rdocs on the website.
 
 If you would like to install from source, you can download the tarball
 package from <a href="http://github.com/rubyworks/facets/download">GitHub</a>
-and use <a href="http://proutils.github.com/setup">Ruby Setup</a>, e.g.
+and use <a href="http://rubyworks.github.com/setup">Ruby Setup</a>, e.g.
 
     $ tar -xvzf facets-2.9.0.tgz
     $ cd facets-2.9.0
@@ -40,9 +40,8 @@ designed to work with Ruby 1.8.6 and up. Facets is fully compatible with Ruby 1.
 
 # API Documentation
 
-Facets API is divided into three documentation sets, one for each library group,
-CORE for the core extensions, MORE for the addtions and standard library extensions
-and TOUR, for extra extensions.
+Facets API is divided into two documentation sets, one for each library group,
+CORE for the core extensions and MORE for standard extensions and additions.
 
 ## Core API
 
@@ -54,17 +53,9 @@ Message class. It is used by a number of methods to provide fluid interfaces.
 
 ## More API
 
-The <a href="<%= root %>doc/api/more/index.html">MORE API</a> documents the
+The <a href="<%= root %>doc/api/standard/index.html">MORE API</a> documents the
 variety of extension methods to Ruby's standard library, and additional
 classes, modules and micro-frameworks Facets provides as optional libraries.
-
-## Tour API
-
-The <a href="<%= root %>doc/api/tour/index.html">TOUR API</a> documents a small
-collection of extensions and occasionally class and module additions "on tour"
-as possible inclusions into CORE or MORE proper. This has been created as an
-easy way for Facets vet new ideas. In a few cases some extensions might reside
-here indefinitely if they are useful, but not suited for inclusion in CORE.
 
 
 # Wiki
