@@ -10,8 +10,8 @@ module Kernel
     #   "ABC".object_hexid  #=> "0x402d359c"
     #
     def object_hexid
-      hex = (__id__ << 1) #.to_s(16)
-      "0x%x" % hex
+      hex = (__id__ << 1)
+      "0x%014x" % hex
     end
 
   else
@@ -22,8 +22,8 @@ module Kernel
     #   "ABC".object_hexid  #=> "0x402d359c"
     #
     def object_hexid
-      hex = (__id__ << 1)
-      "0x%014x" % hex
+      hex = (__id__ << 1) #.to_s(16)
+      "0x%x" % hex
     end
 
   end
