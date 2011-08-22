@@ -31,7 +31,7 @@ Changes:
 
   * Module#redefine_method need not check pre-existence of method
   * Fix string/unquote.rb recursive require
-  * Kernel#object_hexid varies on CPU arch, bot Ruby version.
+  * Kernel#object_hexid varies on CPU arch, not Ruby version.
 
 
 == 2.9.0 / 2010-09-01
