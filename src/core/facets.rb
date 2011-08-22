@@ -14,10 +14,9 @@ module Facets
   end
 
   #
-  VERSION = profile['version']
+  VERSION = '<%= File.read('Version').strip %>'  # profile['version']
 end
 
-=begin :erb+38:
 <%=
   dir  = File.dirname(__FILE__) + '/facets/'
   list = []
@@ -27,7 +26,8 @@ end
   end
   list.sort.join("\n")
 %>
-=end
+
+=begin
 require 'facets/array.rb'
 require 'facets/binding.rb'
 require 'facets/boolean.rb'
@@ -66,4 +66,5 @@ require 'facets/symbol.rb'
 require 'facets/time.rb'
 require 'facets/to_hash.rb'
 require 'facets/unboundmethod.rb'
+=end
 
