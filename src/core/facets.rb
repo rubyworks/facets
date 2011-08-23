@@ -14,7 +14,7 @@ module Facets
   end
 
   #
-  VERSION = '<%= File.read('Version').strip %>'  # profile['version']
+  VERSION = '<%= File.read('VERSION').strip %>'  # profile['version']
 end
 
 <%=

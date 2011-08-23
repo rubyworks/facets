@@ -40,6 +40,7 @@ class Module
     end
   end
 
+  #
   alias_method :redirect, :redirect_method
 
 end

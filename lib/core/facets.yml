@@ -1,58 +1,57 @@
---- 
-authors: 
+---
+authors:
 - name: Thomas Sawyer
   email: transfire@gmail.com
-copyrights: 
+copyrights:
 - holder: Thomas Sawyer
-  year: "2004"
+  year: '2004'
   license: Ruby
 replacements: []
-
 conflicts: []
-
-requirements: 
+requirements:
 - name: lemon
-  groups: 
+  groups:
   - test
   development: true
 - name: qed
-  groups: 
+  groups:
   - test
   development: true
 - name: detroit
-  groups: 
+  groups:
   - build
   development: true
 dependencies: []
-
-repositories: 
+repositories:
 - uri: git@github.com:rubyworks/facets.git
   scm: git
   name: upstream
-resources: 
+resources:
   home: http://rubyworks.github.com/facets
   code: http://github.com/rubyworks/facets
   docs: http://rubyworks.github.com/facets/learn.html
   wiki: http://wiki.github.com/rubyworks/facets
   talk: http://groups.google.com/group/facets-universal
-load_path: 
+load_path:
 - lib/core
 - lib/core-uncommon
 - lib/standard
 - lib/supplemental
-extra: 
+extra:
   slogan: ALL YOUR BASE ARE BELONG TO RUBY!
-  manifest: Manifest
+  manifest: MANIFEST
 source: []
-
 alternatives: []
-
 revision: 0
 title: Facets
+name: facets
 summary: Premium Ruby Extensions
-created: "2004-12-16"
-description: Facets is the premier collection of extension methods for the Ruby programming language. Facets extensions are unique by virtue of thier atomicity. They are stored in individual files allowing for highly granular control of requirements. In addition, Facets includes a few additional classes and mixins suitable to wide variety of applications.
+created: '2004-12-16'
+description: Facets is the premier collection of extension methods for the Ruby programming
+  language. Facets extensions are unique by virtue of thier atomicity. They are stored
+  in individual files allowing for highly granular control of requirements. In addition,
+  Facets includes a few additional classes and mixins suitable to wide variety of
+  applications.
 organization: rubyworks
-version: 2.9.1
-name: ruby_facets
-date: "2011-08-21"
+version: 2.9.2
+date: '2011-08-23'
