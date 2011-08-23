@@ -24,12 +24,14 @@ class Module
   # CREDIT: Trans
 
   def redefine_method(sym, aka=nil, &blk)
-    #raise ArgumentError, "method does not exist" unless method_defined?( sym )
     alias_method(aka, sym) if aka
-    undef_method(sym)
+    ## prevent warning about method overwrite
+    begin remove_method(sym) rescue NameError end
+    ## define replacelemt method
     define_method(sym, &blk)
   end
 
+  #
   alias_method :redef, :redefine_method
 
 end
