@@ -78,7 +78,7 @@ end
 
 desc "run core unit tests"
 task "test:core" do
-  sh "lemon#{lemon_flags} -I#{PATH} test/core"
+  sh "lemon #{lemon_flags} -I#{PATH} test/core"
 end
 
 desc "run uncommon unit tests"
