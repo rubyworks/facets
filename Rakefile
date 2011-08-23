@@ -7,6 +7,7 @@ PATH = "lib/core:lib/core-uncommon:lib/standard:lib/supplemental"
 #
 # GENERATE LIB
 # ----------------------------------------------------------------------------
+
 desc "generate lib"
 task "lib" do |tsk|
   require 'erb'
@@ -60,40 +61,40 @@ end
 # ----------------------------------------------------------------------------
 
 task "default" do
-  sh "lemon #{lemon_flags} -Ilib/core:lib/core-uncommon:lib/standard:lib/supplemental test/core test/core-uncommon test/standard test/supplemental"
+  sh "ruby-test #{test_flags} test/"
 end
 
 task "test" do
   if tests = ENV['TESTS']
-    sh "lemon #{lemon_flags} -I#{PATH} #{tests}"
+    sh "ruby-test #{test_flags} #{tests}"
   else
-    sh "lemon #{lemon_flags} -I#{PATH} test/core test/core-uncommon test/standard test/supplemental"
+    sh "ruby-test #{test_flags} test/"
   end
 end
 
 desc "run all unit tests"
 task "test:all" do
-  sh "lemon #{lemon_flags} -I#{PATH} test/core test/core-uncommon test/standard test/supplemental"
+  sh "ruby-test #{test_flags} test/"
 end
 
 desc "run core unit tests"
 task "test:core" do
-  sh "lemon #{lemon_flags} -I#{PATH} test/core"
+  sh "ruby-test #{test_flags} -Ilib/core test/core"
 end
 
 desc "run uncommon unit tests"
 task "test:uncommon" do
-  sh "lemon #{lemon_flags} -I#{PATH} test/core-uncommon"
+  sh "ruby-test #{test_flags} -Ilib/core-uncommon test/core-uncommon"
 end
 
 desc "run standard unit tests"
 task "test:standard" do
-  sh "lemon #{lemon_flags} -I#{PATH} test/standard"
+  sh "ruby-test #{test_flags} -Ilib/standard test/standard"
 end
 
 desc "run supplemental unit tests"
 task "test:supplemental" do
-  sh "lemon #{lemon_flags} -I#{PATH} test/supplemental"
+  sh "ruby-test #{ruby_flags} -Ilib/supplemental test/supplemental"
 end
 
 desc "run all unit tests with ActiveSupport loaded"
@@ -115,7 +116,7 @@ task 'include_activesupport' do
   require 'activesupport'
 end
 
-def lemon_flags
+def test_flags
   flags = []
   if ENV['verbose']
     flags << '-v'
@@ -207,27 +208,27 @@ end
 
 desc "show test coverage"
 task "cov" do
-  sh "lemon -Ilib/core:lib/core-uncommon:lib/tour -c test/core test/core-uncommon test/tour"
+  sh "lemon cov -I#{PATH} test"
 end
 
 desc "show core test coverage"
 task "cov:core" do
-  sh "lemon -Ilib/core -c test/core"
+  sh "lemon cov -Ilib/core test/core"
 end
 
 desc "show more test coverage"
 task "cov:more" do
-  sh "lemon -Ilib/core-uncommon -c test/core-uncommon"
+  sh "lemon cov -Ilib/core-uncommon test/core-uncommon"
 end
 
 desc "show standard test coverage"
 task "cov:tour" do
-  sh "lemon -Ilib/standard -c test/standard"
+  sh "lemon cov -Ilib/standard test/standard"
 end
 
 desc "show supplemental test coverage"
 task "cov:tour" do
-  sh "lemon -Ilib/supplemental -c test/supplemental"
+  sh "lemon cov -Ilib/supplemental test/supplemental"
 end
 
 desc "show core coverage by file name"
@@ -268,7 +269,7 @@ end
 
 desc "run qed docs"
 task 'qed' do
-  sh "qed #{qed_flags} -I#{PATH} qed/core qed/core-uncommon qed/standard qed/supplemental"
+  sh "qed #{qed_flags} -I#{PATH} qed"
 end
 
 desc "run core qed docs"
