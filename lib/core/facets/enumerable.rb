@@ -21,6 +21,7 @@ if RUBY_VERSION < '1.9'
   require "facets/enumerable/map_by.rb"
   require "facets/enumerable/map_detect.rb"
   require "facets/enumerable/map_send.rb"
+  require "facets/enumerable/map_with.rb"
   require "facets/enumerable/map_with_index.rb"
   require "facets/enumerable/mash.rb"
   require "facets/enumerable/modulate.rb"
@@ -34,6 +35,7 @@ if RUBY_VERSION < '1.9'
   require "facets/enumerable/take.rb"
   require "facets/enumerable/uniq_by.rb"
   require "facets/enumerable/visit.rb"
+  require "facets/enumerable/zip_map.rb"
 else
   require_relative "enumerable/accumulate.rb"
   require_relative "enumerable/cluster_by.rb"
@@ -55,6 +57,7 @@ else
   require_relative "enumerable/map_by.rb"
   require_relative "enumerable/map_detect.rb"
   require_relative "enumerable/map_send.rb"
+  require_relative "enumerable/map_with.rb"
   require_relative "enumerable/map_with_index.rb"
   require_relative "enumerable/mash.rb"
   require_relative "enumerable/modulate.rb"
@@ -68,5 +71,6 @@ else
   require_relative "enumerable/take.rb"
   require_relative "enumerable/uniq_by.rb"
   require_relative "enumerable/visit.rb"
+  require_relative "enumerable/zip_map.rb"
 end
 
