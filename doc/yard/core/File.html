@@ -1,0 +1,1314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<title>Class: File</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (F)</a> &raquo; 
+    
+    
+    <span class="title">File</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Class List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Class: File
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></span>
+      
+        <ul class="fullTree">
+          <li><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></li>
+          
+            <li class="next">File</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/core/facets/file/ext.rb<span class="defines">,<br />
+  lib/core/facets/file/null.rb,<br /> lib/core/facets/file/write.rb,<br /> lib/core/facets/file/append.rb,<br /> lib/core/facets/file/create.rb,<br /> lib/core/facets/file/rewrite.rb,<br /> lib/core/facets/file/sanitize.rb,<br /> lib/core/facets/file/rootname.rb,<br /> lib/core/facets/file/read_list.rb,<br /> lib/core/facets/file/split_all.rb,<br /> lib/core/facets/file/split_root.rb,<br /> lib/core/facets/file/writelines.rb,<br /> lib/core/facets/file/read_binary.rb</span>
+</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#append-class_method" title="append (class method)">+ (Object) <strong>append</strong>(file, str) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Append to a file.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create-class_method" title="create (class method)">+ (Object) <strong>create</strong>(path, str = '', &amp;blk) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Creates a new file, or overwrites an existing file, and writes a string
+into it.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ext-class_method" title="ext (class method)">+ (Object) <strong>ext</strong>(filename, new_ext = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Takes a file name string and returns or changes its extension.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#null-class_method" title="null (class method)">+ (Object) <strong>null</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Platform dependent null device.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#read_binary-class_method" title="read_binary (class method)">+ (Object) <strong>read_binary</strong>(fname) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Read in a file as binary data.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#read_list-class_method" title="read_list (class method)">+ (Object) <strong>read_list</strong>(filepath, options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Reads in a file, removes blank lines and removes lines starting with
+‘#’ and then returns an array of all the remaining lines.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#rewrite-class_method" title="rewrite (class method)">+ (Object) <strong>rewrite</strong>(name, mode = &quot;&quot;) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Opens a file as a string and writes back the string to the file at the end
+of the block.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#rewrite%21-class_method" title="rewrite! (class method)">+ (Object) <strong>rewrite!</strong>(name, mode = &quot;&quot;) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>In place version of #rewrite.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#rootname-class_method" title="rootname (class method)">+ (Object) <strong>rootname</strong>(path) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns only the first portion of the directory of a file path name.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sanitize-class_method" title="sanitize (class method)">+ (Object) <strong>sanitize</strong>(filename) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Cleans up a filename to ensure it will work on a filesystem.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#split_all-class_method" title="split_all (class method)">+ (Object) <strong>split_all</strong>(path) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Splits a file path into an array of individual path components.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#split_root-class_method" title="split_root (class method)">+ (Object) <strong>split_root</strong>(path) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Return the head of path from the rest of the path.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#write-class_method" title="write (class method)">+ (Object) <strong>write</strong>(path, data) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Writes the given data to the given path and closes the file.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#writelines-class_method" title="writelines (class method)">+ (Object) <strong>writelines</strong>(path, data) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Writes the given array of data to the given path and closes the file.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="append-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>append</strong>(file, str) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Append to a file.</p>
+
+<p>CREDIT: George Moschovitis</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+7
+8
+9
+10
+11</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/file/append.rb', line 7</span>
+
+<span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='append identifier id'>append</span><span class='lparen token'>(</span><span class='file identifier id'>file</span><span class='comma token'>,</span> <span class='str identifier id'>str</span><span class='rparen token'>)</span>
+  <span class='File constant id'>File</span><span class='dot token'>.</span><span class='open identifier id'>open</span><span class='lparen token'>(</span><span class='file identifier id'>file</span><span class='comma token'>,</span> <span class='string val'>'ab'</span><span class='rparen token'>)</span> <span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='f identifier id'>f</span><span class='bitor op'>|</span>
+    <span class='f identifier id'>f</span> <span class='lshft op'>&lt;&lt;</span> <span class='str identifier id'>str</span>
+  <span class='rbrace token'>}</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="create-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>create</strong>(path, str = '', &amp;blk) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Creates a new file, or overwrites an existing file, and writes a string
+into it. Can also take a block just like File#open, which is yielded
+<em>after</em> the string is writ.</p>
+
+<pre class="code"><span class='str identifier id'>str</span> <span class='assign token'>=</span> <span class='string val'>'The content for the file'</span>
+<span class='File constant id'>File</span><span class='dot token'>.</span><span class='create identifier id'>create</span><span class='lparen token'>(</span><span class='string val'>'myfile.txt'</span><span class='comma token'>,</span> <span class='str identifier id'>str</span><span class='rparen token'>)</span>
+</pre>
+
+<p>CREDIT: George Moschovitis</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+13
+14
+15
+16
+17
+18</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/file/create.rb', line 13</span>
+
+<span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='create identifier id'>create</span><span class='lparen token'>(</span><span class='path identifier id'>path</span><span class='comma token'>,</span> <span class='str identifier id'>str</span><span class='assign token'>=</span><span class='string val'>''</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+  <span class='open identifier id'>open</span><span class='lparen token'>(</span><span class='path identifier id'>path</span><span class='comma token'>,</span> <span class='string val'>'wb'</span><span class='rparen token'>)</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='f identifier id'>f</span><span class='bitor op'>|</span>
+    <span class='f identifier id'>f</span> <span class='lshft op'>&lt;&lt;</span> <span class='str identifier id'>str</span>
+    <span class='blk identifier id'>blk</span><span class='dot token'>.</span><span class='call identifier id'>call</span><span class='lparen token'>(</span><span class='f identifier id'>f</span><span class='rparen token'>)</span> <span class='if if_mod kw'>if</span> <span class='blk identifier id'>blk</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="ext-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>ext</strong>(filename, new_ext = nil) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Takes a file name string and returns or changes its extension.</p>
+
+<p>Without a new extension argument, returns the extension of the file name.
+In this respect #ext is like #extname, but unlike #extname it does not
+include the dot prefix.</p>
+
+<p>With a new extension argument, changes the exension of the file name to the
+new extension and returns it.</p>
+
+<p>Examples</p>
+
+<pre class="code"><span class='File constant id'>File</span><span class='dot token'>.</span><span class='ext identifier id'>ext</span><span class='lparen token'>(</span><span class='string val'>'file.rb'</span><span class='rparen token'>)</span>          <span class='comment val'># =&gt; 'rb'</span>
+<span class='File constant id'>File</span><span class='dot token'>.</span><span class='ext identifier id'>ext</span><span class='lparen token'>(</span><span class='string val'>'file.rb'</span><span class='comma token'>,</span> <span class='string val'>'txt'</span><span class='rparen token'>)</span>   <span class='comment val'># =&gt; 'file.txt'</span>
+<span class='File constant id'>File</span><span class='dot token'>.</span><span class='ext identifier id'>ext</span><span class='lparen token'>(</span><span class='string val'>'file.rb'</span><span class='comma token'>,</span> <span class='string val'>'.txt'</span><span class='rparen token'>)</span>  <span class='comment val'># =&gt; 'file.txt'</span>
+<span class='File constant id'>File</span><span class='dot token'>.</span><span class='ext identifier id'>ext</span><span class='lparen token'>(</span><span class='string val'>'file.rb'</span><span class='comma token'>,</span> <span class='string val'>''</span><span class='rparen token'>)</span>      <span class='comment val'># =&gt; 'file'</span>
+</pre>
+
+<p>This method can be used with String#file for more object-oriented notation:</p>
+
+<pre class="code"><span class='string val'>'file.rb'</span><span class='dot token'>.</span><span class='file identifier id'>file</span><span class='dot token'>.</span><span class='ext identifier id'>ext</span><span class='lparen token'>(</span><span class='string val'>'txt'</span><span class='rparen token'>)</span>    <span class='comment val'># =&gt; 'file.txt'</span>
+</pre>
+
+<p>CREDIT: Lavir the Whiolet</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+25
+26
+27
+28
+29
+30
+31
+32
+33</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/file/ext.rb', line 25</span>
+
+<span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='ext identifier id'>ext</span><span class='lparen token'>(</span><span class='filename identifier id'>filename</span><span class='comma token'>,</span> <span class='new_ext identifier id'>new_ext</span><span class='assign token'>=</span><span class='nil nil kw'>nil</span><span class='rparen token'>)</span>
+  <span class='old_ext identifier id'>old_ext</span> <span class='assign token'>=</span> <span class='extname identifier id'>extname</span><span class='lparen token'>(</span><span class='filename identifier id'>filename</span><span class='rparen token'>)</span>
+  <span class='if if kw'>if</span> <span class='new_ext identifier id'>new_ext</span> <span class='eq op'>==</span> <span class='nil nil kw'>nil</span>
+    <span class='old_ext identifier id'>old_ext</span><span class='dot token'>.</span><span class='sub identifier id'>sub</span><span class='lparen token'>(</span><span class='regexp val'>/^\./</span><span class='comma token'>,</span> <span class='string val'>''</span><span class='rparen token'>)</span>
+  <span class='else else kw'>else</span>
+    <span class='new_ext identifier id'>new_ext</span> <span class='assign token'>=</span> <span class='string val'>'.'</span> <span class='plus op'>+</span> <span class='new_ext identifier id'>new_ext</span> <span class='unless unless_mod kw'>unless</span> <span class='lparen token'>(</span><span class='new_ext identifier id'>new_ext</span><span class='dot token'>.</span><span class='empty? fid id'>empty?</span> <span class='orop op'>||</span> <span class='new_ext identifier id'>new_ext</span><span class='lbrack token'>[</span><span class='integer val'>0</span><span class='comma token'>,</span><span class='integer val'>1</span><span class='rbrack token'>]</span> <span class='eq op'>==</span> <span class='string val'>'.'</span><span class='rparen token'>)</span>
+    <span class='filename identifier id'>filename</span><span class='dot token'>.</span><span class='chomp identifier id'>chomp</span><span class='lparen token'>(</span><span class='old_ext identifier id'>old_ext</span><span class='rparen token'>)</span> <span class='plus op'>+</span> <span class='new_ext identifier id'>new_ext</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="null-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>null</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Platform dependent null device.</p>
+
+<p>CREDIT: Daniel Burger</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/file/null.rb', line 7</span>
+
+<span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='null identifier id'>null</span>
+  <span class='case case kw'>case</span> <span class='RUBY_PLATFORM constant id'>RUBY_PLATFORM</span>
+  <span class='when when kw'>when</span> <span class='regexp val'>/mswin/i</span>
+    <span class='string val'>'NUL'</span>
+  <span class='when when kw'>when</span> <span class='regexp val'>/amiga/i</span>
+    <span class='string val'>'NIL:'</span>
+  <span class='when when kw'>when</span> <span class='regexp val'>/openvms/i</span>
+    <span class='string val'>'NL:'</span>
+  <span class='else else kw'>else</span>
+    <span class='string val'>'/dev/null'</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="read_binary-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>read_binary</strong>(fname) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Read in a file as binary data.</p>
+
+<p>Assuming we had a binary file ‘binary.dat’.</p>
+
+<pre class="code"><span class='File constant id'>File</span><span class='dot token'>.</span><span class='read_binary identifier id'>read_binary</span><span class='lparen token'>(</span><span class='string val'>'binary.dat'</span><span class='rparen token'>)</span>
+</pre>
+
+<p>CREDIT: George Moschovitis</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+11
+12
+13
+14
+15</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/file/read_binary.rb', line 11</span>
+
+<span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='read_binary identifier id'>read_binary</span><span class='lparen token'>(</span><span class='fname identifier id'>fname</span><span class='rparen token'>)</span>
+  <span class='open identifier id'>open</span><span class='lparen token'>(</span><span class='fname identifier id'>fname</span><span class='comma token'>,</span> <span class='string val'>'rb'</span><span class='rparen token'>)</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='f identifier id'>f</span><span class='bitor op'>|</span>
+    <span class='return return kw'>return</span> <span class='f identifier id'>f</span><span class='dot token'>.</span><span class='read identifier id'>read</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="read_list-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>read_list</strong>(filepath, options = {}) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Reads in a file, removes blank lines and removes lines starting with
+‘#’ and then returns an array of all the remaining lines.</p>
+
+<p>Thr remark indicator can be overridden via the <tt>:omit:</tt> option,
+which can be a regualar expression or a string that is match against the
+start of a line.</p>
+
+<p>CREDIT: Trans</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/file/read_list.rb', line 12</span>
+
+<span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='read_list identifier id'>read_list</span><span class='lparen token'>(</span><span class='filepath identifier id'>filepath</span><span class='comma token'>,</span> <span class='options identifier id'>options</span><span class='assign token'>=</span><span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='rparen token'>)</span>
+  <span class='chomp identifier id'>chomp</span> <span class='assign token'>=</span> <span class='options identifier id'>options</span><span class='lbrack token'>[</span><span class='symbol val'>:chomp</span><span class='rbrack token'>]</span>
+  <span class='omit identifier id'>omit</span>  <span class='assign token'>=</span> <span class='case case kw'>case</span> <span class='options identifier id'>options</span><span class='lbrack token'>[</span><span class='symbol val'>:omit</span><span class='rbrack token'>]</span>
+          <span class='when when kw'>when</span> <span class='Regexp constant id'>Regexp</span>
+            <span class='omit identifier id'>omit</span>
+          <span class='when when kw'>when</span> <span class='nil nil kw'>nil</span>
+            <span class='regexp val'>/^\s*\#/</span>
+          <span class='else else kw'>else</span>
+            <span class='dregexp node'>/^\s*#{Regexp.escape(omit)}/</span>
+          <span class='end end kw'>end</span>
+
+  <span class='list identifier id'>list</span> <span class='assign token'>=</span> <span class='lbrack token'>[</span><span class='rbrack token'>]</span>
+  <span class='readlines identifier id'>readlines</span><span class='lparen token'>(</span><span class='filepath identifier id'>filepath</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='each identifier id'>each</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='line identifier id'>line</span><span class='bitor op'>|</span>
+    <span class='line identifier id'>line</span> <span class='assign token'>=</span> <span class='line identifier id'>line</span><span class='dot token'>.</span><span class='strip identifier id'>strip</span><span class='dot token'>.</span><span class='chomp identifier id'>chomp</span><span class='lparen token'>(</span><span class='chomp identifier id'>chomp</span><span class='rparen token'>)</span>
+    <span class='next next kw'>next</span> <span class='if if_mod kw'>if</span> <span class='line identifier id'>line</span><span class='dot token'>.</span><span class='empty? fid id'>empty?</span>
+    <span class='next next kw'>next</span> <span class='if if_mod kw'>if</span> <span class='omit identifier id'>omit</span> <span class='eqq op'>===</span> <span class='line identifier id'>line</span>
+    <span class='list identifier id'>list</span> <span class='lshft op'>&lt;&lt;</span> <span class='line identifier id'>line</span>
+  <span class='end end kw'>end</span>
+  <span class='list identifier id'>list</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="rewrite-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>rewrite</strong>(name, mode = &quot;&quot;) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Opens a file as a string and writes back the string to the file at the end
+of the block.</p>
+
+<p>Returns the number of written bytes or <tt>nil</tt> if the file wasn’t
+modified.</p>
+
+<p>Note that the file will even be written back in case the block raises an
+exception.</p>
+
+<p>Mode can either be “b” or “+” and specifies to open the file in
+binary mode (no mapping of the plattform’s newlines to “n” is done)
+or to append to it.</p>
+
+<p>Assuming we had a file ‘message.txt’ and had a binary file
+‘binary.dat’.</p>
+
+<pre class="code"><span class='comment val'># Reverse contents of &quot;message.txt&quot;</span>
+<span class='File constant id'>File</span><span class='dot token'>.</span><span class='rewrite identifier id'>rewrite</span><span class='lparen token'>(</span><span class='string val'>&quot;message.txt&quot;</span><span class='rparen token'>)</span> <span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='str identifier id'>str</span><span class='bitor op'>|</span> <span class='str identifier id'>str</span><span class='dot token'>.</span><span class='reverse identifier id'>reverse</span> <span class='rbrace token'>}</span>
+
+<span class='comment val'># Replace &quot;foo&quot; by &quot;bar&quot; in &quot;binary.dat&quot;.</span>
+<span class='File constant id'>File</span><span class='dot token'>.</span><span class='rewrite identifier id'>rewrite</span><span class='lparen token'>(</span><span class='string val'>&quot;binary.dat&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;b&quot;</span><span class='rparen token'>)</span> <span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='str identifier id'>str</span><span class='bitor op'>|</span> <span class='str identifier id'>str</span><span class='dot token'>.</span><span class='gsub identifier id'>gsub</span><span class='lparen token'>(</span><span class='string val'>&quot;foo&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;bar&quot;</span><span class='rparen token'>)</span> <span class='rbrace token'>}</span>
+</pre>
+
+<p>IMPORTANT: The old version of this method required in place modification of
+the file string. The new version will write whatever the block returns
+instead!!!</p>
+
+<p>CREDIT: George Moschovitis</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/file/rewrite.rb', line 30</span>
+
+<span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='rewrite identifier id'>rewrite</span><span class='lparen token'>(</span><span class='name identifier id'>name</span><span class='comma token'>,</span> <span class='mode identifier id'>mode</span> <span class='assign token'>=</span> <span class='string val'>&quot;&quot;</span><span class='rparen token'>)</span> <span class='comment val'>#:yield:</span>
+  <span class='unless unless kw'>unless</span> <span class='block_given? fid id'>block_given?</span>
+    <span class='raise identifier id'>raise</span><span class='lparen token'>(</span><span class='ArgumentError constant id'>ArgumentError</span><span class='comma token'>,</span> <span class='string val'>&quot;Need to supply block to File.rewrite&quot;</span><span class='rparen token'>)</span>
+  <span class='end end kw'>end</span>
+
+  <span class='if if kw'>if</span> <span class='mode identifier id'>mode</span><span class='dot token'>.</span><span class='is_a? fid id'>is_a?</span><span class='lparen token'>(</span><span class='Numeric constant id'>Numeric</span><span class='rparen token'>)</span> <span class='then then kw'>then</span>
+    <span class='flag identifier id'>flag</span><span class='comma token'>,</span> <span class='mode identifier id'>mode</span> <span class='assign token'>=</span> <span class='mode identifier id'>mode</span><span class='comma token'>,</span> <span class='string val'>&quot;&quot;</span>
+    <span class='mode identifier id'>mode</span> <span class='opasgn op'>+=</span> <span class='string val'>&quot;b&quot;</span> <span class='if if_mod kw'>if</span> <span class='flag identifier id'>flag</span> <span class='bitand op'>&amp;</span> <span class='File constant id'>File</span><span class='colon2 op'>::</span><span class='Constants constant id'>Constants</span><span class='colon2 op'>::</span><span class='BINARY constant id'>BINARY</span> <span class='neq op'>!=</span> <span class='integer val'>0</span>
+    <span class='mode identifier id'>mode</span> <span class='opasgn op'>+=</span> <span class='string val'>&quot;+&quot;</span> <span class='if if_mod kw'>if</span> <span class='flag identifier id'>flag</span> <span class='bitand op'>&amp;</span> <span class='File constant id'>File</span><span class='colon2 op'>::</span><span class='Constants constant id'>Constants</span><span class='colon2 op'>::</span><span class='APPEND constant id'>APPEND</span> <span class='neq op'>!=</span> <span class='integer val'>0</span>
+  <span class='else else kw'>else</span>
+    <span class='mode identifier id'>mode</span><span class='dot token'>.</span><span class='delete! fid id'>delete!</span><span class='lparen token'>(</span><span class='string val'>&quot;^b+&quot;</span><span class='rparen token'>)</span>
+  <span class='end end kw'>end</span>
+
+  <span class='old_str identifier id'>old_str</span> <span class='assign token'>=</span> <span class='open identifier id'>open</span><span class='lparen token'>(</span><span class='name identifier id'>name</span><span class='comma token'>,</span> <span class='dstring node'>&quot;r#{mode}&quot;</span><span class='rparen token'>)</span> <span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='file identifier id'>file</span><span class='bitor op'>|</span> <span class='file identifier id'>file</span><span class='dot token'>.</span><span class='read identifier id'>read</span> <span class='rbrace token'>}</span> <span class='comment val'>#rescue &quot;&quot;</span>
+  <span class='old_str identifier id'>old_str</span> <span class='assign token'>=</span> <span class='old_str identifier id'>old_str</span><span class='dot token'>.</span><span class='clone identifier id'>clone</span>
+
+  <span class='begin begin kw'>begin</span>
+    <span class='new_str identifier id'>new_str</span> <span class='assign token'>=</span> <span class='yield yield kw'>yield</span><span class='lparen token'>(</span><span class='old_str identifier id'>old_str</span><span class='rparen token'>)</span>
+  <span class='ensure ensure kw'>ensure</span>
+    <span class='if if kw'>if</span> <span class='old_str identifier id'>old_str</span> <span class='neq op'>!=</span> <span class='new_str identifier id'>new_str</span>
+      <span class='open identifier id'>open</span><span class='lparen token'>(</span><span class='name identifier id'>name</span><span class='comma token'>,</span> <span class='dstring node'>&quot;w#{mode}&quot;</span><span class='rparen token'>)</span> <span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='file identifier id'>file</span><span class='bitor op'>|</span> <span class='file identifier id'>file</span><span class='dot token'>.</span><span class='write identifier id'>write</span><span class='lparen token'>(</span><span class='new_str identifier id'>new_str</span><span class='rparen token'>)</span> <span class='rbrace token'>}</span>
+    <span class='end end kw'>end</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="rewrite!-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>rewrite!</strong>(name, mode = &quot;&quot;) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>In place version of #rewrite. This version of method requires that the
+string be modified in place within the block.</p>
+
+<pre class="code"><span class='comment val'># Reverse contents of &quot;message&quot;</span>
+<span class='File constant id'>File</span><span class='dot token'>.</span><span class='rewrite identifier id'>rewrite</span><span class='lparen token'>(</span><span class='string val'>&quot;message.txt&quot;</span><span class='rparen token'>)</span> <span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='str identifier id'>str</span><span class='bitor op'>|</span> <span class='str identifier id'>str</span><span class='dot token'>.</span><span class='reverse! fid id'>reverse!</span> <span class='rbrace token'>}</span>
+
+<span class='comment val'># Replace &quot;foo&quot; by &quot;bar&quot; in &quot;binary&quot;</span>
+<span class='File constant id'>File</span><span class='dot token'>.</span><span class='rewrite identifier id'>rewrite</span><span class='lparen token'>(</span><span class='string val'>&quot;binary.dat&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;b&quot;</span><span class='rparen token'>)</span> <span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='str identifier id'>str</span><span class='bitor op'>|</span> <span class='str identifier id'>str</span><span class='dot token'>.</span><span class='gsub! fid id'>gsub!</span><span class='lparen token'>(</span><span class='string val'>&quot;foo&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;bar&quot;</span><span class='rparen token'>)</span> <span class='rbrace token'>}</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/file/rewrite.rb', line 64</span>
+
+<span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='rewrite! fid id'>rewrite!</span><span class='lparen token'>(</span><span class='name identifier id'>name</span><span class='comma token'>,</span> <span class='mode identifier id'>mode</span> <span class='assign token'>=</span> <span class='string val'>&quot;&quot;</span><span class='rparen token'>)</span> <span class='comment val'>#:yield:</span>
+  <span class='unless unless kw'>unless</span> <span class='block_given? fid id'>block_given?</span>
+    <span class='raise identifier id'>raise</span><span class='lparen token'>(</span><span class='ArgumentError constant id'>ArgumentError</span><span class='comma token'>,</span> <span class='string val'>&quot;Need to supply block to File.rewrite&quot;</span><span class='rparen token'>)</span>
+  <span class='end end kw'>end</span>
+
+  <span class='if if kw'>if</span> <span class='mode identifier id'>mode</span><span class='dot token'>.</span><span class='is_a? fid id'>is_a?</span><span class='lparen token'>(</span><span class='Numeric constant id'>Numeric</span><span class='rparen token'>)</span> <span class='then then kw'>then</span>
+    <span class='flag identifier id'>flag</span><span class='comma token'>,</span> <span class='mode identifier id'>mode</span> <span class='assign token'>=</span> <span class='mode identifier id'>mode</span><span class='comma token'>,</span> <span class='string val'>&quot;&quot;</span>
+    <span class='mode identifier id'>mode</span> <span class='opasgn op'>+=</span> <span class='string val'>&quot;b&quot;</span> <span class='if if_mod kw'>if</span> <span class='flag identifier id'>flag</span> <span class='bitand op'>&amp;</span> <span class='File constant id'>File</span><span class='colon2 op'>::</span><span class='Constants constant id'>Constants</span><span class='colon2 op'>::</span><span class='BINARY constant id'>BINARY</span> <span class='neq op'>!=</span> <span class='integer val'>0</span>
+    <span class='mode identifier id'>mode</span> <span class='opasgn op'>+=</span> <span class='string val'>&quot;+&quot;</span> <span class='if if_mod kw'>if</span> <span class='flag identifier id'>flag</span> <span class='bitand op'>&amp;</span> <span class='File constant id'>File</span><span class='colon2 op'>::</span><span class='Constants constant id'>Constants</span><span class='colon2 op'>::</span><span class='APPEND constant id'>APPEND</span> <span class='neq op'>!=</span> <span class='integer val'>0</span>
+  <span class='else else kw'>else</span>
+    <span class='mode identifier id'>mode</span><span class='dot token'>.</span><span class='delete! fid id'>delete!</span><span class='lparen token'>(</span><span class='string val'>&quot;^b+&quot;</span><span class='rparen token'>)</span>
+  <span class='end end kw'>end</span>
+
+  <span class='old_str identifier id'>old_str</span> <span class='assign token'>=</span> <span class='open identifier id'>open</span><span class='lparen token'>(</span><span class='name identifier id'>name</span><span class='comma token'>,</span> <span class='dstring node'>&quot;r#{mode}&quot;</span><span class='rparen token'>)</span> <span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='file identifier id'>file</span><span class='bitor op'>|</span> <span class='file identifier id'>file</span><span class='dot token'>.</span><span class='read identifier id'>read</span> <span class='rbrace token'>}</span> <span class='comment val'>#rescue &quot;&quot;</span>
+  <span class='new_str identifier id'>new_str</span> <span class='assign token'>=</span> <span class='old_str identifier id'>old_str</span><span class='dot token'>.</span><span class='clone identifier id'>clone</span>
+
+  <span class='begin begin kw'>begin</span>
+    <span class='yield yield kw'>yield</span><span class='lparen token'>(</span><span class='new_str identifier id'>new_str</span><span class='rparen token'>)</span>
+  <span class='ensure ensure kw'>ensure</span>
+    <span class='if if kw'>if</span> <span class='old_str identifier id'>old_str</span> <span class='neq op'>!=</span> <span class='new_str identifier id'>new_str</span>
+      <span class='open identifier id'>open</span><span class='lparen token'>(</span><span class='name identifier id'>name</span><span class='comma token'>,</span> <span class='dstring node'>&quot;w#{mode}&quot;</span><span class='rparen token'>)</span> <span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='file identifier id'>file</span><span class='bitor op'>|</span> <span class='file identifier id'>file</span><span class='dot token'>.</span><span class='write identifier id'>write</span><span class='lparen token'>(</span><span class='new_str identifier id'>new_str</span><span class='rparen token'>)</span> <span class='rbrace token'>}</span>
+    <span class='end end kw'>end</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="rootname-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>rootname</strong>(path) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns only the first portion of the directory of a file path name.</p>
+
+<pre class="code"><span class='File constant id'>File</span><span class='dot token'>.</span><span class='rootname identifier id'>rootname</span><span class='lparen token'>(</span><span class='string val'>'lib/jump.rb'</span><span class='rparen token'>)</span>  <span class='comment val'>#=&gt; 'lib'</span>
+<span class='File constant id'>File</span><span class='dot token'>.</span><span class='rootname identifier id'>rootname</span><span class='lparen token'>(</span><span class='string val'>'/jump.rb'</span><span class='rparen token'>)</span>     <span class='comment val'>#=&gt; '/'</span>
+<span class='File constant id'>File</span><span class='dot token'>.</span><span class='rootname identifier id'>rootname</span><span class='lparen token'>(</span><span class='string val'>'jump.rb'</span><span class='rparen token'>)</span>      <span class='comment val'>#=&gt; '.'</span>
+</pre>
+
+<p>CREDIT: Trans</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/file/rootname.rb', line 12</span>
+
+<span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='rootname identifier id'>rootname</span><span class='lparen token'>(</span><span class='path identifier id'>path</span><span class='rparen token'>)</span>
+  <span class='comment val'># -- this should be fairly robust</span>
+  <span class='path_re identifier id'>path_re</span> <span class='assign token'>=</span> <span class='Regexp constant id'>Regexp</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='string val'>'['</span> <span class='plus op'>+</span> <span class='Regexp constant id'>Regexp</span><span class='dot token'>.</span><span class='escape identifier id'>escape</span><span class='lparen token'>(</span><span class='File constant id'>File</span><span class='colon2 op'>::</span><span class='Separator constant id'>Separator</span> <span class='plus op'>+</span> <span class='string val'>%q{\/}</span><span class='rparen token'>)</span> <span class='plus op'>+</span> <span class='string val'>']'</span><span class='rparen token'>)</span>
+
+  <span class='head identifier id'>head</span><span class='comma token'>,</span> <span class='tail identifier id'>tail</span> <span class='assign token'>=</span> <span class='path identifier id'>path</span><span class='dot token'>.</span><span class='split identifier id'>split</span><span class='lparen token'>(</span><span class='path_re identifier id'>path_re</span><span class='comma token'>,</span> <span class='integer val'>2</span><span class='rparen token'>)</span>
+  <span class='return return kw'>return</span> <span class='string val'>'.'</span> <span class='if if_mod kw'>if</span> <span class='path identifier id'>path</span> <span class='eq op'>==</span> <span class='head identifier id'>head</span>
+  <span class='return return kw'>return</span> <span class='string val'>'/'</span> <span class='if if_mod kw'>if</span> <span class='head identifier id'>head</span><span class='dot token'>.</span><span class='empty? fid id'>empty?</span>
+  <span class='return return kw'>return</span> <span class='head identifier id'>head</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="sanitize-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>sanitize</strong>(filename) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Cleans up a filename to ensure it will work on a filesystem.</p>
+
+<pre class="code"><span class='File constant id'>File</span><span class='dot token'>.</span><span class='sanitize identifier id'>sanitize</span><span class='lparen token'>(</span><span class='string val'>&quot;yo+baby!&quot;</span><span class='rparen token'>)</span>   <span class='comment val'>#=&gt; 'yo+baby_'</span>
+<span class='File constant id'>File</span><span class='dot token'>.</span><span class='sanitize identifier id'>sanitize</span><span class='lparen token'>(</span><span class='string val'>&quot;.what&amp;up&quot;</span><span class='rparen token'>)</span>  <span class='comment val'>#=&gt; '.what_up'</span>
+</pre>
+
+<p>CREDIT: George Moschovitis</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10
+11
+12
+13
+14
+15</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/file/sanitize.rb', line 10</span>
+
+<span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='sanitize identifier id'>sanitize</span><span class='lparen token'>(</span><span class='filename identifier id'>filename</span><span class='rparen token'>)</span>
+  <span class='filename identifier id'>filename</span> <span class='assign token'>=</span> <span class='File constant id'>File</span><span class='dot token'>.</span><span class='basename identifier id'>basename</span><span class='lparen token'>(</span><span class='filename identifier id'>filename</span><span class='dot token'>.</span><span class='gsub identifier id'>gsub</span><span class='lparen token'>(</span><span class='string val'>&quot;\\&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;/&quot;</span><span class='rparen token'>)</span><span class='rparen token'>)</span> <span class='comment val'># work-around for IE</span>
+  <span class='filename identifier id'>filename</span><span class='dot token'>.</span><span class='gsub! fid id'>gsub!</span><span class='lparen token'>(</span><span class='regexp val'>/[^a-zA-Z0-9\.\-\+_]/</span><span class='comma token'>,</span><span class='string val'>&quot;_&quot;</span><span class='rparen token'>)</span>
+  <span class='filename identifier id'>filename</span> <span class='assign token'>=</span> <span class='dstring node'>&quot;_#{filename}&quot;</span> <span class='if if_mod kw'>if</span> <span class='filename identifier id'>filename</span> <span class='match op'>=~</span> <span class='regexp val'>/^\.+$/</span>
+  <span class='filename identifier id'>filename</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="split_all-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>split_all</strong>(path) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Splits a file path into an array of individual path components. This
+differs from <tt>File.split</tt>, which divides the path into only two
+parts, directory path and basename.</p>
+
+<pre class="code"><span class='File constant id'>File</span><span class='dot token'>.</span><span class='split_all identifier id'>split_all</span><span class='lparen token'>(</span><span class='string val'>&quot;a/b/c&quot;</span><span class='rparen token'>)</span>  <span class='comment val'>#=&gt; ['a', 'b', 'c']</span>
+</pre>
+
+<p>CREDIT: Trans</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+11
+12
+13
+14
+15
+16</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/file/split_all.rb', line 11</span>
+
+<span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='split_all identifier id'>split_all</span><span class='lparen token'>(</span><span class='path identifier id'>path</span><span class='rparen token'>)</span>
+  <span class='head identifier id'>head</span><span class='comma token'>,</span> <span class='tail identifier id'>tail</span> <span class='assign token'>=</span> <span class='File constant id'>File</span><span class='dot token'>.</span><span class='split identifier id'>split</span><span class='lparen token'>(</span><span class='path identifier id'>path</span><span class='rparen token'>)</span>
+  <span class='return return kw'>return</span> <span class='lbrack token'>[</span><span class='tail identifier id'>tail</span><span class='rbrack token'>]</span> <span class='if if_mod kw'>if</span> <span class='head identifier id'>head</span> <span class='eq op'>==</span> <span class='string val'>'.'</span> <span class='orop op'>||</span> <span class='tail identifier id'>tail</span> <span class='eq op'>==</span> <span class='string val'>'/'</span>
+  <span class='return return kw'>return</span> <span class='lbrack token'>[</span><span class='head identifier id'>head</span><span class='comma token'>,</span> <span class='tail identifier id'>tail</span><span class='rbrack token'>]</span> <span class='if if_mod kw'>if</span> <span class='head identifier id'>head</span> <span class='eq op'>==</span> <span class='string val'>'/'</span>
+  <span class='return return kw'>return</span> <span class='split_all identifier id'>split_all</span><span class='lparen token'>(</span><span class='head identifier id'>head</span><span class='rparen token'>)</span> <span class='plus op'>+</span> <span class='lbrack token'>[</span><span class='tail identifier id'>tail</span><span class='rbrack token'>]</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="split_root-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>split_root</strong>(path) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Return the head of path from the rest of the path.</p>
+
+<pre class="code"><span class='File constant id'>File</span><span class='dot token'>.</span><span class='split_root identifier id'>split_root</span><span class='lparen token'>(</span><span class='string val'>'etc/xdg/gtk'</span><span class='rparen token'>)</span>  <span class='comment val'>#=&gt; ['etc', 'xdg/gtk']</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+7
+8
+9
+10</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/file/split_root.rb', line 7</span>
+
+<span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='split_root identifier id'>split_root</span><span class='lparen token'>(</span><span class='path identifier id'>path</span><span class='rparen token'>)</span>
+  <span class='path_re identifier id'>path_re</span> <span class='assign token'>=</span> <span class='Regexp constant id'>Regexp</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='string val'>'['</span> <span class='plus op'>+</span> <span class='Regexp constant id'>Regexp</span><span class='dot token'>.</span><span class='escape identifier id'>escape</span><span class='lparen token'>(</span><span class='File constant id'>File</span><span class='colon2 op'>::</span><span class='Separator constant id'>Separator</span> <span class='plus op'>+</span> <span class='string val'>%q{\/}</span><span class='rparen token'>)</span> <span class='plus op'>+</span> <span class='string val'>']'</span><span class='rparen token'>)</span>
+  <span class='path identifier id'>path</span><span class='dot token'>.</span><span class='split identifier id'>split</span><span class='lparen token'>(</span><span class='path_re identifier id'>path_re</span><span class='comma token'>,</span> <span class='integer val'>2</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="write-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>write</strong>(path, data) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Writes the given data to the given path and closes the file.  This is done
+in binary mode, complementing <tt>IO.read</tt> in standard Ruby.</p>
+
+<pre class="code"><span class='str identifier id'>str</span> <span class='assign token'>=</span> <span class='string val'>'The content for the file'</span>
+<span class='File constant id'>File</span><span class='dot token'>.</span><span class='write identifier id'>write</span><span class='lparen token'>(</span><span class='string val'>'write.txt'</span><span class='comma token'>,</span> <span class='str identifier id'>str</span><span class='rparen token'>)</span>
+</pre>
+
+<p>Returns the number of bytes written.</p>
+
+<p>CREDIT: Gavin Sinclair</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+15
+16
+17
+18
+19</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/file/write.rb', line 15</span>
+
+<span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='write identifier id'>write</span><span class='lparen token'>(</span><span class='path identifier id'>path</span><span class='comma token'>,</span> <span class='data identifier id'>data</span><span class='rparen token'>)</span>
+  <span class='File constant id'>File</span><span class='dot token'>.</span><span class='open identifier id'>open</span><span class='lparen token'>(</span><span class='path identifier id'>path</span><span class='comma token'>,</span> <span class='string val'>&quot;wb&quot;</span><span class='rparen token'>)</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='file identifier id'>file</span><span class='bitor op'>|</span>
+    <span class='return return kw'>return</span> <span class='file identifier id'>file</span><span class='dot token'>.</span><span class='write identifier id'>write</span><span class='lparen token'>(</span><span class='data identifier id'>data</span><span class='rparen token'>)</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="writelines-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>writelines</strong>(path, data) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Writes the given array of data to the given path and closes the file. This
+is done in binary mode, complementing <tt>IO.readlines</tt> in standard
+Ruby.</p>
+
+<p>Note that <tt>readlines</tt> (the standard Ruby method) returns an array of
+lines <em>with newlines intact</em>, whereas <tt>writelines</tt> uses
+<tt>puts</tt>, and so appends newlines if necessary.  In this small way,
+<tt>readlines</tt> and <tt>writelines</tt> are not exact opposites.</p>
+
+<pre class="code"><span class='data identifier id'>data</span> <span class='assign token'>=</span> <span class='lbrack token'>[</span><span class='string val'>'The content'</span><span class='comma token'>,</span> <span class='lbrack token'>[</span><span class='string val'>'for the file'</span><span class='rbrack token'>]</span><span class='rbrack token'>]</span>
+<span class='File constant id'>File</span><span class='dot token'>.</span><span class='writelines identifier id'>writelines</span><span class='lparen token'>(</span><span class='string val'>'writelines.txt'</span><span class='comma token'>,</span> <span class='data identifier id'>data</span><span class='rparen token'>)</span>
+</pre>
+
+<p>Returns number of lines written.</p>
+
+<p>CREDIT: Noah Gibbs, Gavin Sinclair</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+19
+20
+21
+22
+23
+24</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/file/writelines.rb', line 19</span>
+
+<span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='writelines identifier id'>writelines</span><span class='lparen token'>(</span><span class='path identifier id'>path</span><span class='comma token'>,</span> <span class='data identifier id'>data</span><span class='rparen token'>)</span>
+  <span class='File constant id'>File</span><span class='dot token'>.</span><span class='open identifier id'>open</span><span class='lparen token'>(</span><span class='path identifier id'>path</span><span class='comma token'>,</span> <span class='string val'>&quot;wb&quot;</span><span class='rparen token'>)</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='file identifier id'>file</span><span class='bitor op'>|</span>
+    <span class='file identifier id'>file</span><span class='dot token'>.</span><span class='puts identifier id'>puts</span><span class='lparen token'>(</span><span class='data identifier id'>data</span><span class='rparen token'>)</span>
+  <span class='end end kw'>end</span>
+  <span class='data identifier id'>data</span><span class='dot token'>.</span><span class='size identifier id'>size</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Tue May 17 02:26:21 2011 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.6.7 (ruby-1.8.7).
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,3232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<title>Class: Module</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (M)</a> &raquo; 
+    
+    
+    <span class="title">Module</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Class List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Class: Module
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></span>
+      
+        <ul class="fullTree">
+          <li><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></li>
+          
+            <li class="next">Module</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+      <dt class="r2">Includes:</dt>
+      <dd class="r2">Memoizable, <span class='object_link'><a href="Prependable.html" title="Prependable (module)">Prependable</a></span></dd>
+      
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/core-uncommon/facets/module/cattr.rb<span class="defines">,<br />
+  lib/core-uncommon/facets/module/prepend.rb,<br /> lib/core-uncommon/facets/module/memoize.rb,<br /> lib/core-uncommon/facets/module/enclosure.rb,<br /> lib/core-uncommon/facets/module/preextend.rb,<br /> lib/core-uncommon/facets/module/attr_tester.rb,<br /> lib/core-uncommon/facets/module/module_load.rb,<br /> lib/core-uncommon/facets/module/class_extend.rb,<br /> lib/core-uncommon/facets/module/method_space.rb,<br /> lib/core-uncommon/facets/module/copy_inheritor.rb,<br /> lib/core-uncommon/facets/module/attr_validator.rb,<br /> lib/core-uncommon/facets/module/class_accessor.rb,<br /> lib/core-uncommon/facets/module/attr_inheritor.rb,<br /> lib/core-uncommon/facets/module/class_inheritor.rb,<br /> lib/core-uncommon/facets/module/instance_function.rb,<br /> lib/core-uncommon/facets/module/attr_class_accessor.rb</span>
+</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Defined Under Namespace</h2>
+<p class="children">
+   
+    
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="Module/InstanceFunction.html" title="Module::InstanceFunction (module)">InstanceFunction</a></span>
+    
+   
+    
+  
+</p>
+
+
+  
+  
+  
+  
+  
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#alias_tester-instance_method" title="#alias_tester (instance method)">- (Object) <strong>alias_tester</strong>(*args) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Create aliases for flag reader.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#alias_validator-instance_method" title="#alias_validator (instance method)">- (Object) <strong>alias_validator</strong>(*args) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Create aliases for validators.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#attr_class_accessor-instance_method" title="#attr_class_accessor (instance method)">- (Object) <strong>attr_class_accessor</strong>(name) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#attr_class_reader-instance_method" title="#attr_class_reader (instance method)">- (Object) <strong>attr_class_reader</strong>(name) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#attr_class_writer-instance_method" title="#attr_class_writer (instance method)">- (Object) <strong>attr_class_writer</strong>(name) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#attr_inheritable_reader-instance_method" title="#attr_inheritable_reader (instance method)">- (Object) <strong>attr_inheritable_reader</strong>(name, default) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#attr_tester-instance_method" title="#attr_tester (instance method)">- (Object) <strong>attr_tester</strong>(*args) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Create an tester attribute.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#attr_validator-instance_method" title="#attr_validator (instance method)">- (Object) <strong>attr_validator</strong>(*symbols, &amp;validator) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Like attr_writer, but the writer method validates the setting against the
+given block.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#cattr-instance_method" title="#cattr (instance method)">- (Object) <strong>cattr</strong>(*syms) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Creates a class-variable attribute that can be accessed both on an instance
+and class level.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#cattr_accessor-instance_method" title="#cattr_accessor (instance method)">- (Object) <strong>cattr_accessor</strong>(*syms) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Creates a class-variable attr_accessor that can be accessed both on an
+instance and class level.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#cattr_reader-instance_method" title="#cattr_reader (instance method)">- (Object) <strong>cattr_reader</strong>(*syms) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Creates a class-variable attr_reader that can be accessed both on an
+instance and class level.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#cattr_writer-instance_method" title="#cattr_writer (instance method)">- (Object) <strong>cattr_writer</strong>(*syms) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Creates a class-variable attr_writer that can be accessed both on an
+instance and class level.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#class_accessor-instance_method" title="#class_accessor (instance method)">- (Object) <strong>class_accessor</strong>(name) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#class_extend-instance_method" title="#class_extend (instance method)">- (Object) <strong>class_extend</strong>(*mods, &amp;block) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Normally when including modules, class/module methods are not extended.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#class_extensions-instance_method" title="#class_extensions (instance method)">- (Object) <strong>class_extensions</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#class_inheritor-instance_method" title="#class_inheritor (instance method)">- (Object) <strong>class_inheritor</strong>(key, obj, op = nil, &amp;fop) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<h1>Class Inheritor.</h1>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#class_reader-instance_method" title="#class_reader (instance method)">- (Object) <strong>class_reader</strong>(name) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#class_writer-instance_method" title="#class_writer (instance method)">- (Object) <strong>class_writer</strong>(name) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#copy_inheritor-instance_method" title="#copy_inheritor (instance method)">- (Object) <strong>copy_inheritor</strong>(name, default = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Like #class_inheritor but non-dynamic.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#enclosure-instance_method" title="#enclosure (instance method)">- (Object) <strong>enclosure</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the module which contains this one according to its name.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#enclosures-instance_method" title="#enclosures (instance method)">- (Object) <strong>enclosures</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns all the namespaces of this module according ordered from nearest
+and moving outwards.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#encname-instance_method" title="#encname (instance method)">- (Object) <strong>encname</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Eclosure name.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#include_as-instance_method" title="#include_as (instance method)">- (Object) <strong>include_as</strong>(h) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Include a module via a specified space.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#instance_function-instance_method" title="#instance_function (instance method)">- (Object) <strong>instance_function</strong>(*meths) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Converts module methods into instance methods such that the first parameter
+is passed <tt>self</tt>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mattr-instance_method" title="#mattr (instance method)">- (Object) <strong>mattr</strong>(*syms) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Creates a class-variable attribute that can be accessed both on an instance
+and class level.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mattr_accessor-instance_method" title="#mattr_accessor (instance method)">- (Object) <strong>mattr_accessor</strong>(*syms) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Creates a class-variable attr_accessor that can be accessed both on an
+instance and class level.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mattr_reader-instance_method" title="#mattr_reader (instance method)">- (Object) <strong>mattr_reader</strong>(*syms) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Creates a class-variable attr_reader that can be accessed both on an
+instance and class level.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mattr_writer-instance_method" title="#mattr_writer (instance method)">- (Object) <strong>mattr_writer</strong>(*syms) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Creates a class-variable attr_writer that can be accessed both on an
+instance and class level.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#memoize-instance_method" title="#memoize (instance method)">- (Object) <strong>memoize</strong>(*args) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This is here for backward compatibility.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#method_space-instance_method" title="#method_space (instance method)">- (Object) <strong>method_space</strong>(name, mod = nil, &amp;blk) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Create method namespaces, allowing for method chains but still accessing
+the object’s instance.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#module_load-instance_method" title="#module_load (instance method)">- (Object) <strong>module_load</strong>(path) </a>
+    
+
+    
+      (also: #class_load)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Load file directly into module/class namespace.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#module_require-instance_method" title="#module_require (instance method)">- (Object) <strong>module_require</strong>(path) </a>
+    
+
+    
+      (also: #class_require)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Require file into module/class namespace.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#preextend-instance_method" title="#preextend (instance method)">- (Object) <strong>preextend</strong>(aspect) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Prepend an <tt>aspect</tt> module to a module.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#prepend-instance_method" title="#prepend (instance method)">- (Object) <strong>prepend</strong>(mod) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Prepend module.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Prependable.html" title="Prependable (module)">Prependable</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Prependable.html#included-class_method" title="Prependable.included (method)">included</a></span></p>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="alias_tester-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>alias_tester</strong>(*args) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Create aliases for flag reader.</p>
+
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+
+<p>CREDIT: Trans</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+40
+41
+42
+43
+44
+45
+46</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core-uncommon/facets/module/attr_tester.rb', line 40</span>
+
+<span class='def def kw'>def</span> <span class='alias_tester identifier id'>alias_tester</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='args identifier id'>args</span><span class='rparen token'>)</span>
+  <span class='orig identifier id'>orig</span> <span class='assign token'>=</span> <span class='args identifier id'>args</span><span class='dot token'>.</span><span class='last identifier id'>last</span>
+  <span class='args identifier id'>args</span> <span class='assign token'>=</span> <span class='args identifier id'>args</span> <span class='minus op'>-</span> <span class='lbrack token'>[</span><span class='orig identifier id'>orig</span><span class='rbrack token'>]</span>
+  <span class='args identifier id'>args</span><span class='dot token'>.</span><span class='each identifier id'>each</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='name identifier id'>name</span><span class='bitor op'>|</span>
+    <span class='alias_method identifier id'>alias_method</span><span class='lparen token'>(</span><span class='dstring node'>&quot;#{name}?&quot;</span><span class='comma token'>,</span> <span class='dstring node'>&quot;#{orig}?&quot;</span><span class='rparen token'>)</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="alias_validator-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>alias_validator</strong>(*args) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Create aliases for validators.</p>
+
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+30
+31
+32
+33
+34
+35
+36
+37</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core-uncommon/facets/module/attr_validator.rb', line 30</span>
+
+<span class='def def kw'>def</span> <span class='alias_validator identifier id'>alias_validator</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='args identifier id'>args</span><span class='rparen token'>)</span>
+  <span class='orig identifier id'>orig</span> <span class='assign token'>=</span> <span class='args identifier id'>args</span><span class='dot token'>.</span><span class='last identifier id'>last</span>
+  <span class='args identifier id'>args</span> <span class='assign token'>=</span> <span class='args identifier id'>args</span> <span class='minus op'>-</span> <span class='lbrack token'>[</span><span class='orig identifier id'>orig</span><span class='rbrack token'>]</span>
+  <span class='args identifier id'>args</span><span class='dot token'>.</span><span class='each identifier id'>each</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='name identifier id'>name</span><span class='bitor op'>|</span>
+    <span class='comment val'>#alias_method(name, orig)</span>
+    <span class='alias_method identifier id'>alias_method</span><span class='lparen token'>(</span><span class='dstring node'>&quot;#{name}=&quot;</span><span class='comma token'>,</span> <span class='dstring node'>&quot;#{orig}=&quot;</span><span class='rparen token'>)</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="attr_class_accessor-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>attr_class_accessor</strong>(name) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+6
+7
+8
+9</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core-uncommon/facets/module/attr_class_accessor.rb', line 6</span>
+
+<span class='def def kw'>def</span> <span class='attr_class_accessor identifier id'>attr_class_accessor</span><span class='lparen token'>(</span><span class='name identifier id'>name</span><span class='rparen token'>)</span>
+  <span class='attr_class_reader identifier id'>attr_class_reader</span><span class='lparen token'>(</span><span class='name identifier id'>name</span><span class='rparen token'>)</span>
+  <span class='attr_class_writer identifier id'>attr_class_writer</span><span class='lparen token'>(</span><span class='name identifier id'>name</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="attr_class_reader-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>attr_class_reader</strong>(name) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+14
+15
+16</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core-uncommon/facets/module/attr_class_accessor.rb', line 14</span>
+
+<span class='def def kw'>def</span> <span class='attr_class_reader identifier id'>attr_class_reader</span><span class='lparen token'>(</span><span class='name identifier id'>name</span><span class='rparen token'>)</span>
+  <span class='module_eval identifier id'>module_eval</span><span class='lparen token'>(</span><span class='string val'>&quot;def self.\#{name}\n@\#{name}\nend\ndef \#{name}\nself.class.\#{name}\nend\n&quot;</span><span class='comma token'>,</span> <span class='__FILE__ __file__ kw'>__FILE__</span><span class='comma token'>,</span> <span class='__LINE__ __line__ kw'>__LINE__</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="attr_class_writer-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>attr_class_writer</strong>(name) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+29
+30
+31</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core-uncommon/facets/module/attr_class_accessor.rb', line 29</span>
+
+<span class='def def kw'>def</span> <span class='attr_class_writer identifier id'>attr_class_writer</span><span class='lparen token'>(</span><span class='name identifier id'>name</span><span class='rparen token'>)</span>
+  <span class='module_eval identifier id'>module_eval</span><span class='lparen token'>(</span><span class='string val'>&quot;def self.\#{name}=(x)\n@\#{name} = x\nend\ndef \#{name}=(x)\nself.class.\#{name} = x\nend\n&quot;</span><span class='comma token'>,</span> <span class='__FILE__ __file__ kw'>__FILE__</span><span class='comma token'>,</span> <span class='__LINE__ __line__ kw'>__LINE__</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="attr_inheritable_reader-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>attr_inheritable_reader</strong>(name, default) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+6
+7
+8
+9</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core-uncommon/facets/module/attr_inheritor.rb', line 6</span>
+
+<span class='def def kw'>def</span> <span class='attr_inheritable_reader identifier id'>attr_inheritable_reader</span><span class='lparen token'>(</span><span class='name identifier id'>name</span><span class='comma token'>,</span> <span class='default identifier id'>default</span><span class='rparen token'>)</span>
+  <span class='copy_inheritor identifier id'>copy_inheritor</span><span class='lparen token'>(</span><span class='name identifier id'>name</span><span class='comma token'>,</span> <span class='default identifier id'>default</span><span class='rparen token'>)</span>
+  <span class='module_eval identifier id'>module_eval</span><span class='lparen token'>(</span><span class='string val'>&quot;def \#{name}\nself.class.\#{name}\nend\n&quot;</span><span class='comma token'>,</span> <span class='__FILE__ __file__ kw'>__FILE__</span><span class='comma token'>,</span> <span class='__LINE__ __line__ kw'>__LINE__</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="attr_tester-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>attr_tester</strong>(*args) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Create an tester attribute. This creates a single method used to test the
+attribute for truth.</p>
+
+<pre class="code"><span class='attr_tester identifier id'>attr_tester</span> <span class='symbol val'>:a</span>
+</pre>
+
+<p>is equivalent to</p>
+
+<pre class="code"><span class='def def kw'>def</span> <span class='a? fid id'>a?</span>
+  <span class='@a ivar id'>@a</span> <span class='question op'>?</span> <span class='true true kw'>true</span> <span class='colon op'>:</span> <span class='@a ivar id'>@a</span>
+<span class='end end kw'>end</span>
+</pre>
+
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+
+<p>CREDIT: Trans</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core-uncommon/facets/module/attr_tester.rb', line 19</span>
+
+<span class='def def kw'>def</span> <span class='attr_tester identifier id'>attr_tester</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='args identifier id'>args</span><span class='rparen token'>)</span>
+  <span class='code identifier id'>code</span><span class='comma token'>,</span> <span class='made identifier id'>made</span> <span class='assign token'>=</span> <span class='string val'>''</span><span class='comma token'>,</span> <span class='lbrack token'>[</span><span class='rbrack token'>]</span>
+  <span class='args identifier id'>args</span><span class='dot token'>.</span><span class='each identifier id'>each</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='a identifier id'>a</span><span class='bitor op'>|</span>
+    <span class='code identifier id'>code</span> <span class='lshft op'>&lt;&lt;</span> <span class='dstring node'>%{
+      def #{a}?(truth=nil)
+        @#{a} ? truth || @#{a} : @#{a}
+      end
+    }</span>
+    <span class='made identifier id'>made</span> <span class='lshft op'>&lt;&lt;</span> <span class='dstring node'>&quot;#{a}?&quot;</span><span class='dot token'>.</span><span class='to_sym identifier id'>to_sym</span>
+  <span class='end end kw'>end</span>
+  <span class='module_eval identifier id'>module_eval</span> <span class='code identifier id'>code</span>
+  <span class='made identifier id'>made</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="attr_validator-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>attr_validator</strong>(*symbols, &amp;validator) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Like attr_writer, but the writer method validates the setting against the
+given block.</p>
+
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+
+<p>CREDIT: ?</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core-uncommon/facets/module/attr_validator.rb', line 11</span>
+
+<span class='def def kw'>def</span> <span class='attr_validator identifier id'>attr_validator</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='symbols identifier id'>symbols</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='validator identifier id'>validator</span><span class='rparen token'>)</span>
+  <span class='made identifier id'>made</span> <span class='assign token'>=</span> <span class='lbrack token'>[</span><span class='rbrack token'>]</span>
+  <span class='symbols identifier id'>symbols</span><span class='dot token'>.</span><span class='each identifier id'>each</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='symbol identifier id'>symbol</span><span class='bitor op'>|</span>
+    <span class='define_method identifier id'>define_method</span> <span class='dstring node'>&quot;#{symbol}=&quot;</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='val identifier id'>val</span><span class='bitor op'>|</span>
+      <span class='unless unless kw'>unless</span> <span class='validator identifier id'>validator</span><span class='dot token'>.</span><span class='call identifier id'>call</span><span class='lparen token'>(</span><span class='val identifier id'>val</span><span class='rparen token'>)</span>
+        <span class='raise identifier id'>raise</span> <span class='ArgumentError constant id'>ArgumentError</span><span class='comma token'>,</span> <span class='dstring node'>&quot;Invalid value provided for #{symbol}&quot;</span>
+      <span class='end end kw'>end</span>
+      <span class='instance_variable_set identifier id'>instance_variable_set</span><span class='lparen token'>(</span><span class='dstring node'>&quot;@#{symbol}&quot;</span><span class='comma token'>,</span> <span class='val identifier id'>val</span><span class='rparen token'>)</span>
+    <span class='end end kw'>end</span>
+    <span class='made identifier id'>made</span> <span class='lshft op'>&lt;&lt;</span> <span class='dstring node'>&quot;#{symbol}=&quot;</span><span class='dot token'>.</span><span class='to_sym identifier id'>to_sym</span>
+  <span class='end end kw'>end</span>
+  <span class='made identifier id'>made</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="cattr-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>cattr</strong>(*syms) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Creates a class-variable attribute that can be accessed both on an instance
+and class level.</p>
+
+<pre class="code"><span class='class class kw'>class</span> <span class='CARExample constant id'>CARExample</span>
+  <span class='@@a ivar id'>@@a</span> <span class='assign token'>=</span> <span class='integer val'>10</span>
+  <span class='cattr identifier id'>cattr</span> <span class='symbol val'>:a</span>
+<span class='end end kw'>end</span>
+
+<span class='CARExample constant id'>CARExample</span><span class='dot token'>.</span><span class='a identifier id'>a</span>           <span class='comment val'>#=&gt; 10</span>
+<span class='CARExample constant id'>CARExample</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='dot token'>.</span><span class='a identifier id'>a</span>       <span class='comment val'>#=&gt; 10</span>
+</pre>
+
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+
+<p>CREDIT: David Heinemeier Hansson</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core-uncommon/facets/module/cattr.rb', line 18</span>
+
+<span class='def def kw'>def</span> <span class='cattr identifier id'>cattr</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='syms identifier id'>syms</span><span class='rparen token'>)</span>
+  <span class='writers identifier id'>writers</span><span class='comma token'>,</span> <span class='readers identifier id'>readers</span> <span class='assign token'>=</span> <span class='syms identifier id'>syms</span><span class='dot token'>.</span><span class='flatten identifier id'>flatten</span><span class='dot token'>.</span><span class='partition identifier id'>partition</span><span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='a identifier id'>a</span><span class='bitor op'>|</span> <span class='a identifier id'>a</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span> <span class='match op'>=~</span> <span class='regexp val'>/=$/</span> <span class='rbrace token'>}</span>
+  <span class='writers identifier id'>writers</span> <span class='assign token'>=</span> <span class='writers identifier id'>writers</span><span class='dot token'>.</span><span class='map identifier id'>map</span><span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='e identifier id'>e</span><span class='bitor op'>|</span> <span class='e identifier id'>e</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span><span class='dot token'>.</span><span class='chomp identifier id'>chomp</span><span class='lparen token'>(</span><span class='string val'>'='</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='to_sym identifier id'>to_sym</span> <span class='rbrace token'>}</span>
+  <span class='comment val'>##readers.concat( writers ) # writers also get readers</span>
+
+  <span class='cattr_reader identifier id'>cattr_reader</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='readers identifier id'>readers</span><span class='rparen token'>)</span>
+  <span class='cattr_writer identifier id'>cattr_writer</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='writers identifier id'>writers</span><span class='rparen token'>)</span>
+
+  <span class='return return kw'>return</span> <span class='readers identifier id'>readers</span> <span class='plus op'>+</span> <span class='writers identifier id'>writers</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="cattr_accessor-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>cattr_accessor</strong>(*syms) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Creates a class-variable attr_accessor that can be accessed both on an
+instance and class level.</p>
+
+<pre class="code"><span class='class class kw'>class</span> <span class='CAAExample constant id'>CAAExample</span>
+  <span class='cattr_accessor identifier id'>cattr_accessor</span> <span class='symbol val'>:a</span>
+<span class='end end kw'>end</span>
+
+<span class='CAAExample constant id'>CAAExample</span><span class='dot token'>.</span><span class='a identifier id'>a</span> <span class='assign token'>=</span> <span class='integer val'>10</span>
+<span class='CAAExample constant id'>CAAExample</span><span class='dot token'>.</span><span class='a identifier id'>a</span>           <span class='comment val'>#=&gt; 10</span>
+<span class='mc identifier id'>mc</span> <span class='assign token'>=</span> <span class='CAAExample constant id'>CAAExample</span><span class='dot token'>.</span><span class='new identifier id'>new</span>
+<span class='mc identifier id'>mc</span><span class='dot token'>.</span><span class='a identifier id'>a</span>                   <span class='comment val'>#=&gt; 10</span>
+</pre>
+
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+
+<p>CREDIT: David Heinemeier Hansson</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+119
+120
+121</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core-uncommon/facets/module/cattr.rb', line 119</span>
+
+<span class='def def kw'>def</span> <span class='cattr_accessor identifier id'>cattr_accessor</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='syms identifier id'>syms</span><span class='rparen token'>)</span>
+  <span class='cattr_reader identifier id'>cattr_reader</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='syms identifier id'>syms</span><span class='rparen token'>)</span> <span class='plus op'>+</span> <span class='cattr_writer identifier id'>cattr_writer</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='syms identifier id'>syms</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="cattr_reader-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>cattr_reader</strong>(*syms) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Creates a class-variable attr_reader that can be accessed both on an
+instance and class level.</p>
+
+<pre class="code"><span class='class class kw'>class</span> <span class='CARExample constant id'>CARExample</span>
+  <span class='@@a ivar id'>@@a</span> <span class='assign token'>=</span> <span class='integer val'>10</span>
+  <span class='cattr_reader identifier id'>cattr_reader</span> <span class='symbol val'>:a</span>
+<span class='end end kw'>end</span>
+
+<span class='CARExample constant id'>CARExample</span><span class='dot token'>.</span><span class='a identifier id'>a</span>           <span class='comment val'>#=&gt; 10</span>
+<span class='CARExample constant id'>CARExample</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='dot token'>.</span><span class='a identifier id'>a</span>       <span class='comment val'>#=&gt; 10</span>
+</pre>
+
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+
+<p>CREDIT: David Heinemeier Hansson</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+44
+45
+46
+47
+48
+49</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core-uncommon/facets/module/cattr.rb', line 44</span>
+
+<span class='def def kw'>def</span> <span class='cattr_reader identifier id'>cattr_reader</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='syms identifier id'>syms</span><span class='rparen token'>)</span>
+  <span class='syms identifier id'>syms</span><span class='dot token'>.</span><span class='flatten identifier id'>flatten</span><span class='dot token'>.</span><span class='each identifier id'>each</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='sym identifier id'>sym</span><span class='bitor op'>|</span>
+    <span class='module_eval identifier id'>module_eval</span><span class='lparen token'>(</span><span class='string val'>&quot;unless defined? @@\#{sym}\n@@\#{sym} = nil\nend\n\ndef self.\#{sym}\n@@\#{sym}\nend\n\ndef \#{sym}\n@@\#{sym}\nend\n&quot;</span><span class='comma token'>,</span> <span class='__FILE__ __file__ kw'>__FILE__</span><span class='comma token'>,</span> <span class='__LINE__ __line__ kw'>__LINE__</span><span class='rparen token'>)</span>
+  <span class='end end kw'>end</span>
+  <span class='return return kw'>return</span> <span class='syms identifier id'>syms</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="cattr_writer-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>cattr_writer</strong>(*syms) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Creates a class-variable attr_writer that can be accessed both on an
+instance and class level.</p>
+
+<pre class="code"><span class='class class kw'>class</span> <span class='CAWExample constant id'>CAWExample</span>
+  <span class='cattr_writer identifier id'>cattr_writer</span> <span class='symbol val'>:a</span>
+  <span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='a identifier id'>a</span>
+    <span class='@@a ivar id'>@@a</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+
+<span class='CAWExample constant id'>CAWExample</span><span class='dot token'>.</span><span class='a identifier id'>a</span> <span class='assign token'>=</span> <span class='integer val'>10</span>
+<span class='CAWExample constant id'>CAWExample</span><span class='dot token'>.</span><span class='a identifier id'>a</span>            <span class='comment val'>#=&gt; 10</span>
+<span class='CAWExample constant id'>CAWExample</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='dot token'>.</span><span class='a identifier id'>a</span> <span class='assign token'>=</span> <span class='integer val'>29</span>
+<span class='CAWExample constant id'>CAWExample</span><span class='dot token'>.</span><span class='a identifier id'>a</span>            <span class='comment val'>#=&gt; 29</span>
+</pre>
+
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+
+<p>CREDIT: David Heinemeier Hansson</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+83
+84
+85
+86
+87
+88</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core-uncommon/facets/module/cattr.rb', line 83</span>
+
+<span class='def def kw'>def</span> <span class='cattr_writer identifier id'>cattr_writer</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='syms identifier id'>syms</span><span class='rparen token'>)</span>
+  <span class='syms identifier id'>syms</span><span class='dot token'>.</span><span class='flatten identifier id'>flatten</span><span class='dot token'>.</span><span class='each identifier id'>each</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='sym identifier id'>sym</span><span class='bitor op'>|</span>
+    <span class='module_eval identifier id'>module_eval</span><span class='lparen token'>(</span><span class='string val'>&quot;unless defined? @@\#{sym}\n@@\#{sym} = nil\nend\n\ndef self.\#{sym}=(obj)\n@@\#{sym} = obj\nend\n\ndef \#{sym}=(obj)\n@@\#{sym}=(obj)\nend\n&quot;</span><span class='comma token'>,</span> <span class='__FILE__ __file__ kw'>__FILE__</span><span class='comma token'>,</span> <span class='__LINE__ __line__ kw'>__LINE__</span><span class='rparen token'>)</span>
+  <span class='end end kw'>end</span>
+  <span class='return return kw'>return</span> <span class='syms identifier id'>syms</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="class_accessor-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>class_accessor</strong>(name) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+6
+7
+8
+9</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core-uncommon/facets/module/class_accessor.rb', line 6</span>
+
+<span class='def def kw'>def</span> <span class='class_accessor identifier id'>class_accessor</span><span class='lparen token'>(</span><span class='name identifier id'>name</span><span class='rparen token'>)</span>
+  <span class='class_reader identifier id'>class_reader</span><span class='lparen token'>(</span><span class='name identifier id'>name</span><span class='rparen token'>)</span>
+  <span class='class_writer identifier id'>class_writer</span><span class='lparen token'>(</span><span class='name identifier id'>name</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="class_extend-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>class_extend</strong>(*mods, &amp;block) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Normally when including modules, class/module methods are not extended. To
+achieve this behavior requires some clever Ruby Karate. Instead
+#class_extend provides an easy to use and clean solution. Simply place the
+extending class methods in a block of the special module method
+#class_extend.</p>
+
+<pre class="code"><span class='module module kw'>module</span> <span class='Mix constant id'>Mix</span>
+  <span class='def def kw'>def</span> <span class='inst_meth identifier id'>inst_meth</span>
+    <span class='puts identifier id'>puts</span> <span class='string val'>'inst_meth'</span>
+  <span class='end end kw'>end</span>
+
+  <span class='class_extend identifier id'>class_extend</span> <span class='do do kw'>do</span>
+    <span class='def def kw'>def</span> <span class='class_meth identifier id'>class_meth</span>
+      <span class='string val'>&quot;Class Method!&quot;</span>
+    <span class='end end kw'>end</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+
+<span class='class class kw'>class</span> <span class='X constant id'>X</span>
+  <span class='include identifier id'>include</span> <span class='Mix constant id'>Mix</span>
+<span class='end end kw'>end</span>
+
+<span class='X constant id'>X</span><span class='dot token'>.</span><span class='class_meth identifier id'>class_meth</span>  <span class='comment val'>#=&gt; &quot;Class Method!&quot;</span>
+</pre>
+
+<p>NOTE: This old #class_extension version of this method did not extend the
+containing class automatically –it had to be done by hand. With
+#class_extend, that is no longer the case.</p>
+
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+
+<p>CREDIT: Daniel Schierbeck, Thomas Sawyer</p>
+
+<p>THANKS: Nobu Nakada, Ulysses</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core-uncommon/facets/module/class_extend.rb', line 39</span>
+
+<span class='def def kw'>def</span> <span class='class_extend identifier id'>class_extend</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='mods identifier id'>mods</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='block identifier id'>block</span><span class='rparen token'>)</span>
+  <span class='class_extension identifier id'>class_extension</span> <span class='assign token'>=</span> <span class='Module constant id'>Module</span><span class='dot token'>.</span><span class='new identifier id'>new</span>
+
+  <span class='class_extension identifier id'>class_extension</span><span class='dot token'>.</span><span class='__send__ identifier id'>__send__</span><span class='lparen token'>(</span><span class='symbol val'>:include</span><span class='comma token'>,</span> <span class='mult op'>*</span><span class='mods identifier id'>mods</span><span class='rparen token'>)</span>
+  <span class='class_extension identifier id'>class_extension</span><span class='dot token'>.</span><span class='module_eval identifier id'>module_eval</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='block identifier id'>block</span><span class='rparen token'>)</span> <span class='if if_mod kw'>if</span> <span class='block_given? fid id'>block_given?</span>
+
+  <span class='extend identifier id'>extend</span><span class='lparen token'>(</span><span class='class_extension identifier id'>class_extension</span><span class='rparen token'>)</span>  <span class='comment val'># extend this module too</span>
+
+  <span class='append_method identifier id'>append_method</span> <span class='assign token'>=</span> <span class='method identifier id'>method</span><span class='lparen token'>(</span><span class='symbol val'>:append_features</span><span class='rparen token'>)</span>
+
+  <span class='lparen token'>(</span><span class='class class kw'>class</span> <span class='lshft op'>&lt;&lt;</span> <span class='self self kw'>self</span><span class='semicolon token'>;</span> <span class='self self kw'>self</span><span class='semicolon token'>;</span> <span class='end end kw'>end</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='class_eval identifier id'>class_eval</span> <span class='do do kw'>do</span>
+    <span class='define_method identifier id'>define_method</span><span class='lparen token'>(</span><span class='symbol val'>:append_features</span><span class='rparen token'>)</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='mod identifier id'>mod</span><span class='bitor op'>|</span>
+      <span class='append_method identifier id'>append_method</span><span class='dot token'>.</span><span class='call identifier id'>call</span><span class='lparen token'>(</span><span class='mod identifier id'>mod</span><span class='rparen token'>)</span>
+      <span class='mod identifier id'>mod</span><span class='dot token'>.</span><span class='extend identifier id'>extend</span><span class='lparen token'>(</span><span class='class_extension identifier id'>class_extension</span><span class='rparen token'>)</span>
+      <span class='if if kw'>if</span> <span class='mod identifier id'>mod</span><span class='dot token'>.</span><span class='instance_of? fid id'>instance_of?</span><span class='lparen token'>(</span><span class='Module constant id'>Module</span><span class='rparen token'>)</span>
+        <span class='mod identifier id'>mod</span><span class='dot token'>.</span><span class='__send__ identifier id'>__send__</span><span class='lparen token'>(</span><span class='symbol val'>:class_extend</span><span class='comma token'>,</span> <span class='class_extension identifier id'>class_extension</span><span class='rparen token'>)</span>
+      <span class='end end kw'>end</span>
+    <span class='end end kw'>end</span>
+  <span class='end end kw'>end</span>
+
+  <span class='class_extensions identifier id'>class_extensions</span> <span class='lshft op'>&lt;&lt;</span> <span class='class_extension identifier id'>class_extension</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="class_extensions-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>class_extensions</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+65
+66
+67</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core-uncommon/facets/module/class_extend.rb', line 65</span>
+
+<span class='def def kw'>def</span> <span class='class_extensions identifier id'>class_extensions</span>
+  <span class='@class_extensions ivar id'>@class_extensions</span> <span class='opasgn op'>||=</span> <span class='lbrack token'>[</span><span class='rbrack token'>]</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="class_inheritor-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>class_inheritor</strong>(key, obj, op = nil, &amp;fop) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<h1>Class Inheritor</h1>
+
+<p>Create an dynamic class inheritable attribute.</p>
+
+<p>Inheritor providse a means to store and inherit data via the class
+heirarchy. An inheritor creates two methods one named after the key that
+provides a reader. And one named after key! which provides the writer.
+(Because of the unique nature of inheritor the reader and writer can’t be
+the same method.)</p>
+
+<p>The first argument is the inheritor’s name. The second argument is the
+archtype object. This object must be duplicable (via #dup). The last
+argument is either the symbolic operator/method or a block that specifies
+how one hierarchical level “integrates” with the next.</p>
+
+<pre class="code"><span class='class class kw'>class</span> <span class='X constant id'>X</span>
+  <span class='class_inheritor identifier id'>class_inheritor</span> <span class='symbol val'>:x</span><span class='comma token'>,</span> <span class='lbrack token'>[</span><span class='rbrack token'>]</span><span class='comma token'>,</span> <span class='symbol val'>:+</span>
+<span class='end end kw'>end</span>
+
+<span class='class class kw'>class</span> <span class='Y constant id'>Y</span> <span class='lt op'>&lt;</span> <span class='X constant id'>X</span>
+<span class='end end kw'>end</span>
+
+<span class='X constant id'>X</span><span class='dot token'>.</span><span class='x! fid id'>x!</span> <span class='lshft op'>&lt;&lt;</span> <span class='symbol val'>:a</span>
+<span class='X constant id'>X</span><span class='dot token'>.</span><span class='x identifier id'>x</span>  <span class='comment val'>#=&gt; [:a]</span>
+<span class='Y constant id'>Y</span><span class='dot token'>.</span><span class='x identifier id'>x</span>  <span class='comment val'>#=&gt; [:a]</span>
+
+<span class='Y constant id'>Y</span><span class='dot token'>.</span><span class='x! fid id'>x!</span> <span class='lshft op'>&lt;&lt;</span> <span class='symbol val'>:b</span>
+<span class='X constant id'>X</span><span class='dot token'>.</span><span class='x identifier id'>x</span>  <span class='comment val'>#=&gt; [:a]</span>
+<span class='Y constant id'>Y</span><span class='dot token'>.</span><span class='x identifier id'>x</span>  <span class='comment val'>#=&gt; [:a, :b]</span>
+</pre>
+
+<p>NOTE: Adding an inheritor directly to Module or Class will probably not do
+what is expected. Thankfully that usecase is likely a YAGNI, but in anycase
+it is even more likely that it is not possible with this code.</p>
+
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+
+<p>CREDIT: Thomas Sawyer</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Raises:</h3>
+<ul class="raise">
+  
+    <li>
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core-uncommon/facets/module/class_inheritor.rb', line 45</span>
+
+<span class='def def kw'>def</span> <span class='class_inheritor identifier id'>class_inheritor</span><span class='lparen token'>(</span><span class='key identifier id'>key</span><span class='comma token'>,</span> <span class='obj identifier id'>obj</span><span class='comma token'>,</span> <span class='op identifier id'>op</span><span class='assign token'>=</span><span class='nil nil kw'>nil</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='fop identifier id'>fop</span><span class='rparen token'>)</span>
+  <span class='raise identifier id'>raise</span> <span class='ArgumentError constant id'>ArgumentError</span> <span class='if if_mod kw'>if</span> <span class='op identifier id'>op</span> <span class='andop op'>&amp;&amp;</span> <span class='fop identifier id'>fop</span>
+
+  <span class='if if kw'>if</span> <span class='notop op'>!</span><span class='fop identifier id'>fop</span>
+    <span class='op identifier id'>op</span>  <span class='assign token'>=</span> <span class='op identifier id'>op</span> <span class='integer val'>? </span><span class='op identifier id'>op</span><span class='dot token'>.</span><span class='to_sym identifier id'>to_sym</span> <span class='colon op'>:</span> <span class='symbol val'>:+</span>
+    <span class='fop identifier id'>fop</span> <span class='assign token'>=</span> <span class='lambda identifier id'>lambda</span><span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='o identifier id'>o</span><span class='comma token'>,</span> <span class='x identifier id'>x</span><span class='bitor op'>|</span> <span class='o identifier id'>o</span><span class='dot token'>.</span><span class='__send__ identifier id'>__send__</span><span class='lparen token'>(</span><span class='op identifier id'>op</span><span class='comma token'>,</span> <span class='x identifier id'>x</span><span class='rparen token'>)</span> <span class='rbrace token'>}</span>
+  <span class='end end kw'>end</span>
+
+  <span class='comment val'>#(class &lt;&lt; self; self; end).module_eval do</span>
+  <span class='class_extend identifier id'>class_extend</span> <span class='do do kw'>do</span>
+
+    <span class='define_method identifier id'>define_method</span><span class='lparen token'>(</span><span class='key identifier id'>key</span><span class='rparen token'>)</span> <span class='do do kw'>do</span>
+      <span class='ancestors identifier id'>ancestors</span><span class='dot token'>.</span><span class='reverse identifier id'>reverse</span><span class='dot token'>.</span><span class='inject identifier id'>inject</span><span class='lparen token'>(</span><span class='obj identifier id'>obj</span><span class='dot token'>.</span><span class='dup identifier id'>dup</span><span class='rparen token'>)</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='o identifier id'>o</span><span class='comma token'>,</span> <span class='a identifier id'>a</span><span class='bitor op'>|</span>
+        <span class='if if kw'>if</span> <span class='a identifier id'>a</span><span class='dot token'>.</span><span class='respond_to? fid id'>respond_to?</span><span class='lparen token'>(</span><span class='dstring node'>&quot;#{key}!&quot;</span><span class='rparen token'>)</span>
+          <span class='fop identifier id'>fop</span><span class='dot token'>.</span><span class='call identifier id'>call</span><span class='lparen token'>(</span><span class='o identifier id'>o</span><span class='comma token'>,</span> <span class='a identifier id'>a</span><span class='dot token'>.</span><span class='__send__ identifier id'>__send__</span><span class='lparen token'>(</span><span class='dstring node'>&quot;#{key}!&quot;</span><span class='rparen token'>)</span><span class='rparen token'>)</span>
+        <span class='else else kw'>else</span>
+          <span class='o identifier id'>o</span>
+        <span class='end end kw'>end</span>
+      <span class='end end kw'>end</span>
+    <span class='end end kw'>end</span>
+
+    <span class='define_method identifier id'>define_method</span><span class='lparen token'>(</span><span class='dstring node'>&quot;#{key}!&quot;</span><span class='rparen token'>)</span> <span class='do do kw'>do</span>
+      <span class='if if kw'>if</span> <span class='instance_variable_defined? fid id'>instance_variable_defined?</span><span class='lparen token'>(</span><span class='dstring node'>&quot;@#{key}&quot;</span><span class='rparen token'>)</span>
+        <span class='instance_variable_get identifier id'>instance_variable_get</span><span class='lparen token'>(</span><span class='dstring node'>&quot;@#{key}&quot;</span><span class='rparen token'>)</span>
+      <span class='else else kw'>else</span>
+        <span class='instance_variable_set identifier id'>instance_variable_set</span><span class='lparen token'>(</span><span class='dstring node'>&quot;@#{key}&quot;</span><span class='comma token'>,</span> <span class='obj identifier id'>obj</span><span class='dot token'>.</span><span class='dup identifier id'>dup</span><span class='rparen token'>)</span>
+      <span class='end end kw'>end</span>
+    <span class='end end kw'>end</span>
+
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="class_reader-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>class_reader</strong>(name) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+14
+15
+16</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core-uncommon/facets/module/class_accessor.rb', line 14</span>
+
+<span class='def def kw'>def</span> <span class='class_reader identifier id'>class_reader</span><span class='lparen token'>(</span><span class='name identifier id'>name</span><span class='rparen token'>)</span>
+  <span class='module_eval identifier id'>module_eval</span><span class='lparen token'>(</span><span class='string val'>&quot;def self.\#{name}\n@\#{name}\nend\n&quot;</span><span class='comma token'>,</span> <span class='__FILE__ __file__ kw'>__FILE__</span><span class='comma token'>,</span> <span class='__LINE__ __line__ kw'>__LINE__</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="class_writer-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>class_writer</strong>(name) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+26
+27
+28</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core-uncommon/facets/module/class_accessor.rb', line 26</span>
+
+<span class='def def kw'>def</span> <span class='class_writer identifier id'>class_writer</span><span class='lparen token'>(</span><span class='name identifier id'>name</span><span class='rparen token'>)</span>
+  <span class='module_eval identifier id'>module_eval</span><span class='lparen token'>(</span><span class='string val'>&quot;def self.\#{name}=(x)\n@\#{name} = x\nend\n&quot;</span><span class='comma token'>,</span> <span class='__FILE__ __file__ kw'>__FILE__</span><span class='comma token'>,</span> <span class='__LINE__ __line__ kw'>__LINE__</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="copy_inheritor-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>copy_inheritor</strong>(name, default = {}) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Like #class_inheritor but non-dynamic. The value of the inheritor is copied
+from the ancestor on first read.</p>
+
+<pre class="code"><span class='c identifier id'>c</span> <span class='assign token'>=</span> <span class='Class constant id'>Class</span><span class='dot token'>.</span><span class='new identifier id'>new</span> <span class='do do kw'>do</span>
+  <span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='x identifier id'>x</span><span class='semicolon token'>;</span> <span class='lbrack token'>[</span><span class='string val'>'x'</span><span class='rbrack token'>]</span><span class='semicolon token'>;</span> <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+
+<span class='d identifier id'>d</span> <span class='assign token'>=</span> <span class='Class constant id'>Class</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='c identifier id'>c</span><span class='rparen token'>)</span> <span class='do do kw'>do</span>
+  <span class='copy_inheritor identifier id'>copy_inheritor</span> <span class='symbol val'>:x</span>
+<span class='end end kw'>end</span>
+
+<span class='d identifier id'>d</span><span class='dot token'>.</span><span class='x identifier id'>x</span>  <span class='comment val'>#=&gt; ['x']</span>
+</pre>
+
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+
+<p>CREDIT: Thomas Sawyer</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core-uncommon/facets/module/copy_inheritor.rb', line 23</span>
+
+<span class='def def kw'>def</span> <span class='copy_inheritor identifier id'>copy_inheritor</span><span class='lparen token'>(</span><span class='name identifier id'>name</span><span class='comma token'>,</span> <span class='default identifier id'>default</span><span class='assign token'>=</span><span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='rparen token'>)</span>
+  <span class='class_extend identifier id'>class_extend</span> <span class='do do kw'>do</span>
+    <span class='define_method identifier id'>define_method</span><span class='lparen token'>(</span><span class='name identifier id'>name</span><span class='rparen token'>)</span> <span class='do do kw'>do</span>
+      <span class='if if kw'>if</span> <span class='instance_variable_defined? fid id'>instance_variable_defined?</span><span class='lparen token'>(</span><span class='dstring node'>&quot;@#{name}&quot;</span><span class='rparen token'>)</span>
+        <span class='instance_variable_get identifier id'>instance_variable_get</span><span class='lparen token'>(</span><span class='dstring node'>&quot;@#{name}&quot;</span><span class='rparen token'>)</span>
+      <span class='else else kw'>else</span>
+        <span class='if if kw'>if</span> <span class='anc identifier id'>anc</span> <span class='assign token'>=</span> <span class='ancestors identifier id'>ancestors</span><span class='lbrack token'>[</span><span class='float val'>1</span><span class='dot2 op'>..</span><span class='integer val'>-1</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='find identifier id'>find</span><span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='a identifier id'>a</span><span class='bitor op'>|</span> <span class='a identifier id'>a</span><span class='dot token'>.</span><span class='respond_to? fid id'>respond_to?</span><span class='lparen token'>(</span><span class='name identifier id'>name</span><span class='rparen token'>)</span> <span class='rbrace token'>}</span>
+          <span class='value identifier id'>value</span> <span class='assign token'>=</span> <span class='anc identifier id'>anc</span><span class='dot token'>.</span><span class='__send__ identifier id'>__send__</span><span class='lparen token'>(</span><span class='name identifier id'>name</span><span class='rparen token'>)</span>
+          <span class='value identifier id'>value</span> <span class='assign token'>=</span> <span class='value identifier id'>value</span><span class='dot token'>.</span><span class='dup identifier id'>dup</span> <span class='rescue rescue kw'>rescue</span> <span class='value identifier id'>value</span>
+          <span class='instance_variable_set identifier id'>instance_variable_set</span><span class='lparen token'>(</span><span class='dstring node'>&quot;@#{name}&quot;</span><span class='comma token'>,</span> <span class='value identifier id'>value</span><span class='rparen token'>)</span>
+        <span class='else else kw'>else</span>
+          <span class='instance_variable_set identifier id'>instance_variable_set</span><span class='lparen token'>(</span><span class='dstring node'>&quot;@#{name}&quot;</span><span class='comma token'>,</span> <span class='default identifier id'>default</span><span class='rparen token'>)</span>
+        <span class='end end kw'>end</span>
+      <span class='end end kw'>end</span>
+    <span class='end end kw'>end</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="enclosure-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>enclosure</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the module which contains this one according to its name.</p>
+
+<pre class="code"><span class='module module kw'>module</span> <span class='colon3 op'>::</span><span class='EncExample constant id'>EncExample</span>
+  <span class='module module kw'>module</span> <span class='M constant id'>M</span>
+    <span class='module module kw'>module</span> <span class='N constant id'>N</span>
+    <span class='end end kw'>end</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+
+<span class='EncExample constant id'>EncExample</span><span class='colon2 op'>::</span><span class='M constant id'>M</span><span class='colon2 op'>::</span><span class='N constant id'>N</span><span class='dot token'>.</span><span class='enclosure identifier id'>enclosure</span>  <span class='comment val'>#=&gt; EncExample::M</span>
+</pre>
+
+<p>The enclosure of top-level and anonymous modules is Object.</p>
+
+<pre class="code"><span class='EncExample constant id'>EncExample</span><span class='dot token'>.</span><span class='enclosure identifier id'>enclosure</span>   <span class='comment val'>#=&gt; Object</span>
+<span class='Module constant id'>Module</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='dot token'>.</span><span class='enclosure identifier id'>enclosure</span>   <span class='comment val'>#=&gt; Object</span>
+</pre>
+
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core-uncommon/facets/module/enclosure.rb', line 21</span>
+
+<span class='def def kw'>def</span> <span class='enclosure identifier id'>enclosure</span>
+  <span class='name identifier id'>name</span> <span class='assign token'>=</span> <span class='regexp val'>/::[^:]+\Z/</span> <span class='match op'>=~</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='name identifier id'>name</span> <span class='integer val'>? </span><span class='$` back_ref id'>$`</span> <span class='colon op'>:</span> <span class='nil nil kw'>nil</span>
+  <span class='if if kw'>if</span> <span class='name identifier id'>name</span>
+    <span class='comment val'>#base = name.sub!(/^::/, '') ? Object : self</span>
+    <span class='name identifier id'>name</span><span class='dot token'>.</span><span class='split identifier id'>split</span><span class='lparen token'>(</span><span class='regexp val'>/::/</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='inject identifier id'>inject</span><span class='lparen token'>(</span><span class='self self kw'>self</span><span class='rparen token'>)</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='mod identifier id'>mod</span><span class='comma token'>,</span> <span class='cref identifier id'>cref</span><span class='bitor op'>|</span>
+      <span class='if if kw'>if</span> <span class='regexp val'>/\:(0x.*?)\&gt;$/</span> <span class='match op'>=~</span> <span class='cref identifier id'>cref</span>   <span class='comment val'># TODO: does this ever happen?</span>
+        <span class='comment val'>#p $1.to_i(16)</span>
+        <span class='ObjectSpace constant id'>ObjectSpace</span><span class='dot token'>.</span><span class='_idref identifier id'>_idref</span><span class='lparen token'>(</span><span class='$1 nth_ref id'>$1</span><span class='dot token'>.</span><span class='to_i identifier id'>to_i</span><span class='lparen token'>(</span><span class='integer val'>16</span><span class='rparen token'>)</span><span class='rparen token'>)</span>
+      <span class='else else kw'>else</span>
+        <span class='mod identifier id'>mod</span><span class='dot token'>.</span><span class='const_get identifier id'>const_get</span><span class='lparen token'>(</span><span class='cref identifier id'>cref</span><span class='rparen token'>)</span>
+      <span class='end end kw'>end</span>
+    <span class='end end kw'>end</span>
+  <span class='else else kw'>else</span>
+    <span class='Object constant id'>Object</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="enclosures-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>enclosures</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns all the namespaces of this module according ordered from nearest
+and moving outwards. The receiver is not contained within the result.</p>
+
+<pre class="code"><span class='module module kw'>module</span> <span class='colon3 op'>::</span><span class='EncExample constant id'>EncExample</span>
+  <span class='module module kw'>module</span> <span class='M constant id'>M</span>
+    <span class='module module kw'>module</span> <span class='N constant id'>N</span>
+    <span class='end end kw'>end</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+
+<span class='EncExample constant id'>EncExample</span><span class='dot token'>.</span><span class='enclosures identifier id'>enclosures</span>        <span class='comment val'>#=&gt; [Object]</span>
+<span class='EncExample constant id'>EncExample</span><span class='colon2 op'>::</span><span class='M constant id'>M</span><span class='dot token'>.</span><span class='enclosures identifier id'>enclosures</span>     <span class='comment val'>#=&gt; [EncExample, Object]</span>
+<span class='EncExample constant id'>EncExample</span><span class='colon2 op'>::</span><span class='M constant id'>M</span><span class='colon2 op'>::</span><span class='N constant id'>N</span><span class='dot token'>.</span><span class='enclosures identifier id'>enclosures</span>  <span class='comment val'>#=&gt; [EncExample::M, EncExample, Object]</span>
+</pre>
+
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+55
+56
+57
+58
+59
+60
+61
+62
+63</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core-uncommon/facets/module/enclosure.rb', line 55</span>
+
+<span class='def def kw'>def</span> <span class='enclosures identifier id'>enclosures</span>
+  <span class='n identifier id'>n</span> <span class='assign token'>=</span> <span class='lbrack token'>[</span><span class='rbrack token'>]</span>
+  <span class='name identifier id'>name</span><span class='dot token'>.</span><span class='split identifier id'>split</span><span class='lparen token'>(</span><span class='regexp val'>/::/</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='inject identifier id'>inject</span><span class='lparen token'>(</span><span class='self self kw'>self</span><span class='rparen token'>)</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='mod identifier id'>mod</span><span class='comma token'>,</span> <span class='cref identifier id'>cref</span><span class='bitor op'>|</span>
+    <span class='c identifier id'>c</span> <span class='assign token'>=</span> <span class='mod identifier id'>mod</span><span class='dot token'>.</span><span class='const_get identifier id'>const_get</span><span class='lparen token'>(</span><span class='cref identifier id'>cref</span><span class='rparen token'>)</span> <span class='semicolon token'>;</span> <span class='n identifier id'>n</span><span class='dot token'>.</span><span class='unshift identifier id'>unshift</span><span class='lparen token'>(</span><span class='c identifier id'>c</span><span class='rparen token'>)</span> <span class='semicolon token'>;</span> <span class='c identifier id'>c</span>
+  <span class='end end kw'>end</span>
+  <span class='n identifier id'>n</span> <span class='lshft op'>&lt;&lt;</span> <span class='Object constant id'>Object</span> <span class='comment val'># ?</span>
+  <span class='n identifier id'>n</span><span class='dot token'>.</span><span class='shift identifier id'>shift</span> <span class='comment val'># we really don't need +self+ too.</span>
+  <span class='n identifier id'>n</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="encname-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>encname</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Eclosure name.</p>
+
+<pre class="code"><span class='module module kw'>module</span> <span class='colon3 op'>::</span><span class='EncExample constant id'>EncExample</span>
+  <span class='module module kw'>module</span> <span class='M constant id'>M</span>
+    <span class='module module kw'>module</span> <span class='N constant id'>N</span>
+    <span class='end end kw'>end</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+
+<span class='EncExample constant id'>EncExample</span><span class='colon2 op'>::</span><span class='M constant id'>M</span><span class='colon2 op'>::</span><span class='N constant id'>N</span><span class='dot token'>.</span><span class='encname identifier id'>encname</span>  <span class='comment val'>#=&gt; &quot;EncExample::M&quot;</span>
+</pre>
+
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+78
+79
+80</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core-uncommon/facets/module/enclosure.rb', line 78</span>
+
+<span class='def def kw'>def</span> <span class='encname identifier id'>encname</span>
+  <span class='regexp val'>/::[^:]+\Z/</span> <span class='match op'>=~</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='name identifier id'>name</span> <span class='integer val'>? </span><span class='$` back_ref id'>$`</span> <span class='colon op'>:</span> <span class='nil nil kw'>nil</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="include_as-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>include_as</strong>(h) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Include a module via a specified space.</p>
+
+<pre class="code"><span class='module module kw'>module</span> <span class='T constant id'>T</span>
+  <span class='def def kw'>def</span> <span class='t identifier id'>t</span> <span class='semicolon token'>;</span> <span class='string val'>&quot;HERE&quot;</span> <span class='semicolon token'>;</span> <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+
+<span class='class class kw'>class</span> <span class='X constant id'>X</span>
+  <span class='include_as identifier id'>include_as</span> <span class='symbol val'>:test</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='T constant id'>T</span>
+  <span class='def def kw'>def</span> <span class='t identifier id'>t</span> <span class='semicolon token'>;</span> <span class='test identifier id'>test</span><span class='dot token'>.</span><span class='t identifier id'>t</span> <span class='semicolon token'>;</span> <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+
+<span class='X constant id'>X</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='dot token'>.</span><span class='t identifier id'>t</span>  <span class='comment val'>#=&gt; &quot;HERE&quot;</span>
+</pre>
+
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+95
+96
+97</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core-uncommon/facets/module/method_space.rb', line 95</span>
+
+<span class='def def kw'>def</span> <span class='include_as identifier id'>include_as</span><span class='lparen token'>(</span><span class='h identifier id'>h</span><span class='rparen token'>)</span>
+  <span class='h identifier id'>h</span><span class='dot token'>.</span><span class='each identifier id'>each</span><span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='name identifier id'>name</span><span class='comma token'>,</span> <span class='mod identifier id'>mod</span><span class='bitor op'>|</span> <span class='method_space identifier id'>method_space</span><span class='lparen token'>(</span><span class='name identifier id'>name</span><span class='comma token'>,</span> <span class='mod identifier id'>mod</span><span class='rparen token'>)</span> <span class='rbrace token'>}</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="instance_function-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>instance_function</strong>(*meths) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Converts module methods into instance methods such that the first parameter
+is passed <tt>self</tt>. This promotes DRY programming when wishing to
+offer both inheritable and module callable procedures.</p>
+
+<p>This method is modeled after <tt>module_function</tt> which essentially has
+the the opposite effect. Due to implementation limitations, this must use
+the callback #singleton_method_added to emulate <tt>module_function</tt>
+when no method names are given.</p>
+
+<pre class="code"><span class='module module kw'>module</span> <span class='MyModule constant id'>MyModule</span>
+  <span class='instance_function identifier id'>instance_function</span>
+
+  <span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='jumble identifier id'>jumble</span><span class='lparen token'>(</span><span class='obj identifier id'>obj</span><span class='comma token'>,</span> <span class='arg identifier id'>arg</span><span class='rparen token'>)</span>
+    <span class='obj identifier id'>obj</span> <span class='plus op'>+</span> <span class='arg identifier id'>arg</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+
+<span class='MyModule constant id'>MyModule</span><span class='dot token'>.</span><span class='jumble identifier id'>jumble</span><span class='lparen token'>(</span><span class='string val'>&quot;Try&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Me&quot;</span><span class='rparen token'>)</span>  <span class='comment val'>#=&gt; &quot;TryMe&quot;</span>
+
+<span class='s identifier id'>s</span> <span class='assign token'>=</span> <span class='string val'>&quot;Try&quot;</span>
+<span class='s identifier id'>s</span><span class='dot token'>.</span><span class='extend identifier id'>extend</span> <span class='MyModule constant id'>MyModule</span>
+<span class='s identifier id'>s</span><span class='dot token'>.</span><span class='jumble identifier id'>jumble</span><span class='lparen token'>(</span><span class='string val'>&quot;Me&quot;</span><span class='rparen token'>)</span>                <span class='comment val'>#=&gt; &quot;TryMe&quot;</span>
+</pre>
+
+<p>Note: This used to be a module called PromoteSelf and later Instantize,
+before becoming a method.</p>
+
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core-uncommon/facets/module/instance_function.rb', line 30</span>
+
+<span class='def def kw'>def</span> <span class='instance_function identifier id'>instance_function</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='meths identifier id'>meths</span><span class='rparen token'>)</span>
+  <span class='this identifier id'>this</span> <span class='assign token'>=</span> <span class='self self kw'>self</span>
+  <span class='if if kw'>if</span> <span class='meths identifier id'>meths</span><span class='dot token'>.</span><span class='empty? fid id'>empty?</span>
+    <span class='extend identifier id'>extend</span> <span class='InstanceFunction constant id'>InstanceFunction</span>
+  <span class='else else kw'>else</span>
+    <span class='meths identifier id'>meths</span><span class='dot token'>.</span><span class='each identifier id'>each</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='meth identifier id'>meth</span><span class='bitor op'>|</span>
+      <span class='module_eval identifier id'>module_eval</span> <span class='do do kw'>do</span>
+        <span class='define_method identifier id'>define_method</span><span class='lparen token'>(</span><span class='meth identifier id'>meth</span><span class='rparen token'>)</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='mult op'>*</span><span class='args identifier id'>args</span><span class='bitor op'>|</span>
+          <span class='this identifier id'>this</span><span class='dot token'>.</span><span class='__send__ identifier id'>__send__</span><span class='lparen token'>(</span><span class='meth identifier id'>meth</span><span class='comma token'>,</span> <span class='self self kw'>self</span><span class='comma token'>,</span> <span class='mult op'>*</span><span class='args identifier id'>args</span><span class='rparen token'>)</span>
+        <span class='end end kw'>end</span>
+      <span class='end end kw'>end</span>
+      <span class='comment val'>##class_eval %{</span>
+      <span class='comment val'>##  def #{meth}(*args)</span>
+      <span class='comment val'>##    #{self.name}.#{meth}(self,*args)</span>
+      <span class='comment val'>##  end</span>
+      <span class='comment val'>##}</span>
+    <span class='end end kw'>end</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="mattr-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>mattr</strong>(*syms) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Creates a class-variable attribute that can be accessed both on an instance
+and class level.</p>
+
+<pre class="code"><span class='c identifier id'>c</span> <span class='assign token'>=</span> <span class='Class constant id'>Class</span><span class='dot token'>.</span><span class='new identifier id'>new</span> <span class='do do kw'>do</span>
+  <span class='mattr identifier id'>mattr</span> <span class='symbol val'>:a</span>
+  <span class='def def kw'>def</span> <span class='initialize identifier id'>initialize</span>
+    <span class='@@a ivar id'>@@a</span> <span class='assign token'>=</span> <span class='integer val'>10</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+
+<span class='c identifier id'>c</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='dot token'>.</span><span class='a identifier id'>a</span>       <span class='comment val'>#=&gt; 10</span>
+<span class='c identifier id'>c</span><span class='dot token'>.</span><span class='a identifier id'>a</span>           <span class='comment val'>#=&gt; 10</span>
+</pre>
+
+<p>NOTE: The #mattr methods may not be as useful for modules as the #cattr
+methods are for classes, becuase class-level methods are not
+“inherited” across the metaclass for included modules.</p>
+
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+
+<p>CREDIT: David Heinemeier Hansson</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core-uncommon/facets/module/cattr.rb', line 144</span>
+
+<span class='def def kw'>def</span> <span class='mattr identifier id'>mattr</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='syms identifier id'>syms</span><span class='rparen token'>)</span>
+  <span class='writers identifier id'>writers</span><span class='comma token'>,</span> <span class='readers identifier id'>readers</span> <span class='assign token'>=</span> <span class='syms identifier id'>syms</span><span class='dot token'>.</span><span class='flatten identifier id'>flatten</span><span class='dot token'>.</span><span class='partition identifier id'>partition</span><span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='a identifier id'>a</span><span class='bitor op'>|</span> <span class='a identifier id'>a</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span> <span class='match op'>=~</span> <span class='regexp val'>/=$/</span> <span class='rbrace token'>}</span>
+  <span class='writers identifier id'>writers</span> <span class='assign token'>=</span> <span class='writers identifier id'>writers</span><span class='dot token'>.</span><span class='collect identifier id'>collect</span><span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='e identifier id'>e</span><span class='bitor op'>|</span> <span class='e identifier id'>e</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span><span class='dot token'>.</span><span class='chomp identifier id'>chomp</span><span class='lparen token'>(</span><span class='string val'>'='</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='to_sym identifier id'>to_sym</span> <span class='rbrace token'>}</span>
+  <span class='comment val'>##readers.concat( writers ) # writers also get readers</span>
+
+  <span class='mattr_writer identifier id'>mattr_writer</span><span class='lparen token'>(</span> <span class='mult op'>*</span><span class='writers identifier id'>writers</span> <span class='rparen token'>)</span>
+  <span class='mattr_reader identifier id'>mattr_reader</span><span class='lparen token'>(</span> <span class='mult op'>*</span><span class='readers identifier id'>readers</span> <span class='rparen token'>)</span>
+
+  <span class='return return kw'>return</span> <span class='readers identifier id'>readers</span> <span class='plus op'>+</span> <span class='writers identifier id'>writers</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="mattr_accessor-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>mattr_accessor</strong>(*syms) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Creates a class-variable attr_accessor that can be accessed both on an
+instance and class level.</p>
+
+<pre class="code"><span class='c identifier id'>c</span> <span class='assign token'>=</span> <span class='Class constant id'>Class</span><span class='dot token'>.</span><span class='new identifier id'>new</span> <span class='do do kw'>do</span>
+  <span class='mattr_accessor identifier id'>mattr_accessor</span> <span class='symbol val'>:a</span>
+<span class='end end kw'>end</span>
+
+<span class='c identifier id'>c</span><span class='dot token'>.</span><span class='a identifier id'>a</span> <span class='assign token'>=</span> <span class='integer val'>10</span>
+<span class='c identifier id'>c</span><span class='dot token'>.</span><span class='a identifier id'>a</span>           <span class='comment val'>#=&gt; 10</span>
+
+<span class='x identifier id'>x</span> <span class='assign token'>=</span> <span class='c identifier id'>c</span><span class='dot token'>.</span><span class='new identifier id'>new</span>
+<span class='x identifier id'>x</span><span class='dot token'>.</span><span class='a identifier id'>a</span>           <span class='comment val'>#=&gt; 10</span>
+</pre>
+
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+
+<p>CREDIT: David Heinemeier Hansson</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+247
+248
+249</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core-uncommon/facets/module/cattr.rb', line 247</span>
+
+<span class='def def kw'>def</span> <span class='mattr_accessor identifier id'>mattr_accessor</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='syms identifier id'>syms</span><span class='rparen token'>)</span>
+  <span class='mattr_reader identifier id'>mattr_reader</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='syms identifier id'>syms</span><span class='rparen token'>)</span> <span class='plus op'>+</span> <span class='mattr_writer identifier id'>mattr_writer</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='syms identifier id'>syms</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="mattr_reader-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>mattr_reader</strong>(*syms) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Creates a class-variable attr_reader that can be accessed both on an
+instance and class level.</p>
+
+<pre class="code"><span class='c identifier id'>c</span> <span class='assign token'>=</span> <span class='Class constant id'>Class</span><span class='dot token'>.</span><span class='new identifier id'>new</span> <span class='do do kw'>do</span>
+  <span class='@@a ivar id'>@@a</span> <span class='assign token'>=</span> <span class='integer val'>10</span>
+  <span class='mattr_reader identifier id'>mattr_reader</span> <span class='symbol val'>:a</span>
+<span class='end end kw'>end</span>
+
+<span class='c identifier id'>c</span><span class='dot token'>.</span><span class='a identifier id'>a</span>           <span class='comment val'>#=&gt; 10</span>
+<span class='c identifier id'>c</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='dot token'>.</span><span class='a identifier id'>a</span>       <span class='comment val'>#=&gt; 10</span>
+</pre>
+
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+
+<p>CREDIT: David Heinemeier Hansson</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+170
+171
+172
+173
+174
+175</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core-uncommon/facets/module/cattr.rb', line 170</span>
+
+<span class='def def kw'>def</span> <span class='mattr_reader identifier id'>mattr_reader</span><span class='lparen token'>(</span> <span class='mult op'>*</span><span class='syms identifier id'>syms</span> <span class='rparen token'>)</span>
+  <span class='syms identifier id'>syms</span><span class='dot token'>.</span><span class='flatten identifier id'>flatten</span><span class='dot token'>.</span><span class='each identifier id'>each</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='sym identifier id'>sym</span><span class='bitor op'>|</span>
+    <span class='module_eval identifier id'>module_eval</span><span class='lparen token'>(</span><span class='string val'>&quot;unless defined? @@\#{sym}\n@@\#{sym} = nil\nend\n\ndef self.\#{sym}\n@@\#{sym}\nend\n\ndef \#{sym}\n@@\#{sym}\nend\n&quot;</span><span class='comma token'>,</span> <span class='__FILE__ __file__ kw'>__FILE__</span><span class='comma token'>,</span> <span class='__LINE__ __line__ kw'>__LINE__</span><span class='rparen token'>)</span>
+  <span class='end end kw'>end</span>
+  <span class='return return kw'>return</span> <span class='syms identifier id'>syms</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="mattr_writer-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>mattr_writer</strong>(*syms) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Creates a class-variable attr_writer that can be accessed both on an
+instance and class level.</p>
+
+<pre class="code"><span class='c identifier id'>c</span> <span class='assign token'>=</span> <span class='Class constant id'>Class</span><span class='dot token'>.</span><span class='new identifier id'>new</span> <span class='do do kw'>do</span>
+  <span class='mattr_writer identifier id'>mattr_writer</span> <span class='symbol val'>:a</span>
+  <span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='a identifier id'>a</span>
+    <span class='@@a ivar id'>@@a</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+
+<span class='c identifier id'>c</span><span class='dot token'>.</span><span class='a identifier id'>a</span> <span class='assign token'>=</span> <span class='integer val'>10</span>
+<span class='c identifier id'>c</span><span class='dot token'>.</span><span class='a identifier id'>a</span>            <span class='comment val'>#=&gt; 10</span>
+
+<span class='c identifier id'>c</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='dot token'>.</span><span class='a identifier id'>a</span> <span class='assign token'>=</span> <span class='integer val'>29</span>
+<span class='c identifier id'>c</span><span class='dot token'>.</span><span class='a identifier id'>a</span>            <span class='comment val'>#=&gt; 29</span>
+</pre>
+
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+
+<p>CREDIT: David Heinemeier Hansson</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+210
+211
+212
+213
+214
+215</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core-uncommon/facets/module/cattr.rb', line 210</span>
+
+<span class='def def kw'>def</span> <span class='mattr_writer identifier id'>mattr_writer</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='syms identifier id'>syms</span><span class='rparen token'>)</span>
+  <span class='syms identifier id'>syms</span><span class='dot token'>.</span><span class='flatten identifier id'>flatten</span><span class='dot token'>.</span><span class='each identifier id'>each</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='sym identifier id'>sym</span><span class='bitor op'>|</span>
+    <span class='module_eval identifier id'>module_eval</span><span class='lparen token'>(</span><span class='string val'>&quot;unless defined? @@\#{sym}\n@@\#{sym} = nil\nend\n\ndef self.\#{sym}=(obj)\n@@\#{sym} = obj\nend\n\ndef \#{sym}=(obj)\n@@\#{sym}=(obj)\nend\n&quot;</span><span class='comma token'>,</span> <span class='__FILE__ __file__ kw'>__FILE__</span><span class='comma token'>,</span> <span class='__LINE__ __line__ kw'>__LINE__</span><span class='rparen token'>)</span>
+  <span class='end end kw'>end</span>
+  <span class='return return kw'>return</span> <span class='syms identifier id'>syms</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="memoize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>memoize</strong>(*args) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>This is here for backward compatibility.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+6
+7
+8
+9
+10</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core-uncommon/facets/module/memoize.rb', line 6</span>
+
+<span class='def def kw'>def</span> <span class='memoize identifier id'>memoize</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='args identifier id'>args</span><span class='rparen token'>)</span>
+  <span class='include identifier id'>include</span> <span class='Memoizable constant id'>Memoizable</span>
+  <span class='Memoizable constant id'>Memoizable</span><span class='dot token'>.</span><span class='instance_method identifier id'>instance_method</span><span class='lparen token'>(</span><span class='symbol val'>:memoize</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='bind identifier id'>bind</span><span class='lparen token'>(</span><span class='self self kw'>self</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='call identifier id'>call</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='args identifier id'>args</span><span class='rparen token'>)</span>
+  <span class='comment val'>#super(*args)  # TODO: why is super not working here?</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="method_space-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>method_space</strong>(name, mod = nil, &amp;blk) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Create method namespaces, allowing for method chains but still accessing
+the object’s instance.</p>
+
+<pre class="code"><span class='class class kw'>class</span> <span class='A constant id'>A</span>
+  <span class='attr_writer identifier id'>attr_writer</span> <span class='symbol val'>:x</span>
+  <span class='method_space identifier id'>method_space</span> <span class='symbol val'>:inside</span> <span class='do do kw'>do</span>
+    <span class='def def kw'>def</span> <span class='x identifier id'>x</span><span class='semicolon token'>;</span> <span class='@x ivar id'>@x</span><span class='semicolon token'>;</span> <span class='end end kw'>end</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+
+<span class='a identifier id'>a</span> <span class='assign token'>=</span> <span class='A constant id'>A</span><span class='dot token'>.</span><span class='new identifier id'>new</span>
+<span class='a identifier id'>a</span><span class='dot token'>.</span><span class='x identifier id'>x</span> <span class='assign token'>=</span> <span class='integer val'>10</span>
+<span class='a identifier id'>a</span><span class='dot token'>.</span><span class='inside identifier id'>inside</span><span class='dot token'>.</span><span class='x identifier id'>x</span>  <span class='comment val'>#=&gt; 10</span>
+
+<span class='expect identifier id'>expect</span> <span class='NoMethodError constant id'>NoMethodError</span> <span class='do do kw'>do</span>
+  <span class='a identifier id'>a</span><span class='dot token'>.</span><span class='x identifier id'>x</span>
+<span class='end end kw'>end</span>
+</pre>
+
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+
+<p>CREDIT: Pit Captain</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core-uncommon/facets/module/method_space.rb', line 28</span>
+
+<span class='def def kw'>def</span> <span class='method_space identifier id'>method_space</span><span class='lparen token'>(</span><span class='name identifier id'>name</span><span class='comma token'>,</span> <span class='mod identifier id'>mod</span><span class='assign token'>=</span><span class='nil nil kw'>nil</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+
+  <span class='comment val'>## If block is given then create a module, otherwise</span>
+  <span class='comment val'>## get the name of the module.</span>
+  <span class='if if kw'>if</span> <span class='block_given? fid id'>block_given?</span>
+    <span class='name identifier id'>name</span> <span class='assign token'>=</span> <span class='name identifier id'>name</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span>
+    <span class='raise identifier id'>raise</span> <span class='ArgumentError constant id'>ArgumentError</span> <span class='if if_mod kw'>if</span> <span class='mod identifier id'>mod</span>
+    <span class='mod identifier id'>mod</span>  <span class='assign token'>=</span> <span class='Module constant id'>Module</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+  <span class='else else kw'>else</span>
+    <span class='if if kw'>if</span> <span class='Module constant id'>Module</span> <span class='eqq op'>===</span> <span class='name identifier id'>name</span>
+      <span class='mod identifier id'>mod</span> <span class='assign token'>=</span> <span class='name identifier id'>name</span>
+      <span class='name identifier id'>name</span> <span class='assign token'>=</span> <span class='mod identifier id'>mod</span><span class='dot token'>.</span><span class='basename identifier id'>basename</span><span class='dot token'>.</span><span class='downcase identifier id'>downcase</span>
+    <span class='end end kw'>end</span>
+    <span class='mod identifier id'>mod</span>  <span class='assign token'>=</span> <span class='mod identifier id'>mod</span><span class='dot token'>.</span><span class='dup identifier id'>dup</span>
+  <span class='end end kw'>end</span>
+
+  <span class='comment val'>## Include the module. This is neccessary, otherwise</span>
+  <span class='comment val'>## Ruby won't let us bind the instance methods.</span>
+  <span class='include identifier id'>include</span> <span class='mod identifier id'>mod</span>
+
+  <span class='comment val'>## Save the instance methods of the module and</span>
+  <span class='comment val'>## replace them with a &quot;transparent&quot; version.</span>
+  <span class='methods identifier id'>methods</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span>
+  <span class='mod identifier id'>mod</span><span class='dot token'>.</span><span class='instance_methods identifier id'>instance_methods</span><span class='lparen token'>(</span><span class='false false kw'>false</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='each identifier id'>each</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='m identifier id'>m</span><span class='bitor op'>|</span>
+    <span class='methods identifier id'>methods</span><span class='lbrack token'>[</span><span class='m identifier id'>m</span><span class='dot token'>.</span><span class='to_sym identifier id'>to_sym</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='mod identifier id'>mod</span><span class='dot token'>.</span><span class='instance_method identifier id'>instance_method</span><span class='lparen token'>(</span><span class='m identifier id'>m</span><span class='rparen token'>)</span>
+    <span class='mod identifier id'>mod</span><span class='dot token'>.</span><span class='module_eval identifier id'>module_eval</span> <span class='dstring node'>%{
+      def #{m}(*a,&amp;b)
+        super(*a,&amp;b)
+      end
+    }</span>
+    <span class='comment val'>##mod.instance_eval do</span>
+    <span class='comment val'>##  define_method(m)</span>
+    <span class='comment val'>##    super</span>
+    <span class='comment val'>##  end</span>
+    <span class='comment val'>##end</span>
+  <span class='end end kw'>end</span>
+
+  <span class='comment val'>## Add a method for the namespace that delegates</span>
+  <span class='comment val'>## via the Functor to the saved instance methods.</span>
+  <span class='define_method identifier id'>define_method</span><span class='lparen token'>(</span><span class='name identifier id'>name</span><span class='rparen token'>)</span> <span class='do do kw'>do</span>
+    <span class='mtab identifier id'>mtab</span> <span class='assign token'>=</span> <span class='methods identifier id'>methods</span>
+    <span class='Functor constant id'>Functor</span><span class='dot token'>.</span><span class='new identifier id'>new</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='op identifier id'>op</span><span class='comma token'>,</span> <span class='mult op'>*</span><span class='args identifier id'>args</span><span class='bitor op'>|</span>
+      <span class='if if kw'>if</span> <span class='meth identifier id'>meth</span> <span class='assign token'>=</span> <span class='mtab identifier id'>mtab</span><span class='lbrack token'>[</span><span class='op identifier id'>op</span><span class='dot token'>.</span><span class='to_sym identifier id'>to_sym</span><span class='rbrack token'>]</span>
+        <span class='meth identifier id'>meth</span><span class='dot token'>.</span><span class='bind identifier id'>bind</span><span class='lparen token'>(</span><span class='self self kw'>self</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='call identifier id'>call</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='args identifier id'>args</span><span class='rparen token'>)</span>
+      <span class='else else kw'>else</span>
+        <span class='comment val'>#self.__send__(op, *args)</span>
+        <span class='raise identifier id'>raise</span> <span class='NoMethodError constant id'>NoMethodError</span><span class='comma token'>,</span> <span class='dstring node'>&quot;undefined method `#{m}'&quot;</span>
+      <span class='end end kw'>end</span>
+    <span class='end end kw'>end</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="module_load-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>module_load</strong>(path) 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='class_load-instance_method'>class_load</span></span>
+    </span>
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Load file directly into module/class namespace.</p>
+
+<p>Please use this with careful consideration. It is best suited to loading
+plugin-type scripts, and should generally not be used as a substitue for
+Ruby’s standard load system.</p>
+
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+
+<p>CREDIT: Trans</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Raises:</h3>
+<ul class="raise">
+  
+    <li>
+      
+        <span class='type'>(<tt>LoadError</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core-uncommon/facets/module/module_load.rb', line 15</span>
+
+<span class='def def kw'>def</span> <span class='module_load identifier id'>module_load</span><span class='lparen token'>(</span> <span class='path identifier id'>path</span> <span class='rparen token'>)</span>
+  <span class='if if kw'>if</span> <span class='path identifier id'>path</span> <span class='match op'>=~</span> <span class='regexp val'>/^[\/~.]/</span>
+    <span class='file identifier id'>file</span> <span class='assign token'>=</span> <span class='File constant id'>File</span><span class='dot token'>.</span><span class='expand_path identifier id'>expand_path</span><span class='lparen token'>(</span><span class='path identifier id'>path</span><span class='rparen token'>)</span>
+  <span class='else else kw'>else</span>
+    <span class='$LOAD_PATH gvar id'>$LOAD_PATH</span><span class='dot token'>.</span><span class='each identifier id'>each</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='lp identifier id'>lp</span><span class='bitor op'>|</span>
+      <span class='file identifier id'>file</span> <span class='assign token'>=</span> <span class='File constant id'>File</span><span class='dot token'>.</span><span class='join identifier id'>join</span><span class='lparen token'>(</span><span class='lp identifier id'>lp</span><span class='comma token'>,</span><span class='path identifier id'>path</span><span class='rparen token'>)</span>
+      <span class='break break kw'>break</span> <span class='if if_mod kw'>if</span> <span class='File constant id'>File</span><span class='dot token'>.</span><span class='exist? fid id'>exist?</span><span class='lparen token'>(</span><span class='file identifier id'>file</span><span class='rparen token'>)</span>
+      <span class='file identifier id'>file</span> <span class='assign token'>=</span> <span class='nil nil kw'>nil</span>
+    <span class='end end kw'>end</span>
+  <span class='end end kw'>end</span>
+  <span class='raise identifier id'>raise</span> <span class='LoadError constant id'>LoadError</span><span class='comma token'>,</span> <span class='dstring node'>&quot;no such file to load -- #{path}&quot;</span> <span class='unless unless_mod kw'>unless</span> <span class='file identifier id'>file</span>
+  <span class='module_eval identifier id'>module_eval</span><span class='lparen token'>(</span><span class='File constant id'>File</span><span class='dot token'>.</span><span class='read identifier id'>read</span><span class='lparen token'>(</span><span class='file identifier id'>file</span><span class='rparen token'>)</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="module_require-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>module_require</strong>(path) 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='class_require-instance_method'>class_require</span></span>
+    </span>
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Require file into module/class namespace.</p>
+
+<p>Unlike load this keeps a per-module cache and will not load the same file
+into the same module more than once despite repeated attempts.</p>
+
+<p>The cache is kept in a global var called <tt>$module_require</tt>.</p>
+
+<p>Please use this with careful consideration. It is best suited to loading
+plugin-type scripts, and should generally not be used as a substitue for
+Ruby’s standard load system.</p>
+
+<p>NOTE: This is not a common core extension and is not loaded automatically
+when using <tt>require 'facets'</tt>.</p>
+
+<p>CREDIT: Trans</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Raises:</h3>
+<ul class="raise">
+  
+    <li>
+      
+        <span class='type'>(<tt>LoadError</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core-uncommon/facets/module/module_load.rb', line 47</span>
+
+<span class='def def kw'>def</span> <span class='module_require identifier id'>module_require</span><span class='lparen token'>(</span> <span class='path identifier id'>path</span> <span class='rparen token'>)</span>
+  <span class='if if kw'>if</span> <span class='path identifier id'>path</span> <span class='match op'>=~</span> <span class='regexp val'>/^[\/~.]/</span>
+    <span class='file identifier id'>file</span> <span class='assign token'>=</span> <span class='File constant id'>File</span><span class='dot token'>.</span><span class='expand_path identifier id'>expand_path</span><span class='lparen token'>(</span><span class='path identifier id'>path</span><span class='rparen token'>)</span>
+  <span class='else else kw'>else</span>
+    <span class='$LOAD_PATH gvar id'>$LOAD_PATH</span><span class='dot token'>.</span><span class='each identifier id'>each</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='lp identifier id'>lp</span><span class='bitor op'>|</span>
+      <span class='file identifier id'>file</span> <span class='assign token'>=</span> <span class='File constant id'>File</span><span class='dot token'>.</span><span class='join identifier id'>join</span><span class='lparen token'>(</span><span class='lp identifier id'>lp</span><span class='comma token'>,</span><span class='path identifier id'>path</span><span class='rparen token'>)</span>
+      <span class='break break kw'>break</span> <span class='if if_mod kw'>if</span> <span class='File constant id'>File</span><span class='dot token'>.</span><span class='exist? fid id'>exist?</span><span class='lparen token'>(</span><span class='file identifier id'>file</span><span class='rparen token'>)</span>
+      <span class='file identifier id'>file</span> <span class='opasgn op'>+=</span> <span class='string val'>'.rb'</span>
+      <span class='break break kw'>break</span> <span class='if if_mod kw'>if</span> <span class='File constant id'>File</span><span class='dot token'>.</span><span class='exist? fid id'>exist?</span><span class='lparen token'>(</span><span class='file identifier id'>file</span><span class='rparen token'>)</span>
+      <span class='file identifier id'>file</span> <span class='assign token'>=</span> <span class='nil nil kw'>nil</span>
+    <span class='end end kw'>end</span>
+  <span class='end end kw'>end</span>
+  <span class='raise identifier id'>raise</span> <span class='LoadError constant id'>LoadError</span><span class='comma token'>,</span> <span class='dstring node'>&quot;no such file to load -- #{path}&quot;</span> <span class='unless unless_mod kw'>unless</span> <span class='file identifier id'>file</span>
+  <span class='comment val'># per-module load cache</span>
+  <span class='$module_require gvar id'>$module_require</span> <span class='opasgn op'>||=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span>
+  <span class='$module_require gvar id'>$module_require</span><span class='lbrack token'>[</span><span class='self self kw'>self</span><span class='rbrack token'>]</span> <span class='opasgn op'>||=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span>
+  <span class='loaded identifier id'>loaded</span> <span class='assign token'>=</span> <span class='$module_require gvar id'>$module_require</span><span class='lbrack token'>[</span><span class='self self kw'>self</span><span class='rbrack token'>]</span>
+  <span class='if if kw'>if</span> <span class='loaded identifier id'>loaded</span><span class='dot token'>.</span><span class='key? fid id'>key?</span><span class='lparen token'>(</span><span class='file identifier id'>file</span><span class='rparen token'>)</span>
+    <span class='false false kw'>false</span>
+  <span class='else else kw'>else</span>
+    <span class='loaded identifier id'>loaded</span><span class='lbrack token'>[</span><span class='file identifier id'>file</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='true true kw'>true</span>
+    <span class='script identifier id'>script</span> <span class='assign token'>=</span> <span class='File constant id'>File</span><span class='dot token'>.</span><span class='read identifier id'>read</span><span class='lparen token'>(</span><span class='file identifier id'>file</span><span class='rparen token'>)</span>
+    <span class='module_eval identifier id'>module_eval</span><span class='lparen token'>(</span><span class='script identifier id'>script</span><span class='rparen token'>)</span>
+    <span class='true true kw'>true</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="preextend-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>preextend</strong>(aspect) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Prepend an <tt>aspect</tt> module to a module. This only works at the
+module level.</p>
+
+<pre class="code"><span class='module module kw'>module</span> <span class='colon3 op'>::</span><span class='PreX constant id'>PreX</span>
+  <span class='def def kw'>def</span> <span class='x identifier id'>x</span><span class='semicolon token'>;</span> <span class='string val'>&quot;x&quot;</span><span class='semicolon token'>;</span> <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+
+<span class='module module kw'>module</span> <span class='colon3 op'>::</span><span class='PreU constant id'>PreU</span>
+  <span class='def def kw'>def</span> <span class='x identifier id'>x</span><span class='semicolon token'>;</span> <span class='string val'>'{'</span> <span class='plus op'>+</span> <span class='super super kw'>super</span> <span class='plus op'>+</span> <span class='string val'>'}'</span><span class='semicolon token'>;</span> <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+
+<span class='PreX constant id'>PreX</span><span class='dot token'>.</span><span class='preextend identifier id'>preextend</span><span class='lparen token'>(</span><span class='PreU constant id'>PreU</span><span class='rparen token'>)</span>
+
+<span class='PreX constant id'>PreX</span><span class='dot token'>.</span><span class='x identifier id'>x</span>  <span class='comment val'># =&gt; &quot;{x}&quot;</span>
+</pre>
+
+<p>NOTE: This is not a common core extension and is not loaded automatically
+when using <tt>require 'facets'</tt>.</p>
+
+<p>CREDIT Trans</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+23
+24
+25
+26</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core-uncommon/facets/module/preextend.rb', line 23</span>
+
+<span class='def def kw'>def</span> <span class='preextend identifier id'>preextend</span><span class='lparen token'>(</span><span class='aspect identifier id'>aspect</span><span class='rparen token'>)</span>
+  <span class='aspect identifier id'>aspect</span><span class='dot token'>.</span><span class='__send__ identifier id'>__send__</span><span class='lparen token'>(</span><span class='symbol val'>:include</span><span class='comma token'>,</span> <span class='self self kw'>self</span><span class='rparen token'>)</span>
+  <span class='extend identifier id'>extend</span> <span class='aspect identifier id'>aspect</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="prepend-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>prepend</strong>(mod) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Prepend module.</p>
+
+<pre class="code"><span class='class class kw'>class</span> <span class='X constant id'>X</span>
+  <span class='def def kw'>def</span> <span class='a identifier id'>a</span><span class='semicolon token'>;</span> <span class='string val'>&quot;Xa&quot;</span><span class='semicolon token'>;</span> <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+
+<span class='module module kw'>module</span> <span class='M constant id'>M</span>
+  <span class='def def kw'>def</span> <span class='a identifier id'>a</span><span class='semicolon token'>;</span> <span class='string val'>&quot;M&quot;</span> <span class='plus op'>+</span> <span class='super super kw'>super</span> <span class='semicolon token'>;</span> <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+
+<span class='class class kw'>class</span> <span class='X constant id'>X</span>
+  <span class='prepend identifier id'>prepend</span> <span class='M constant id'>M</span>
+<span class='end end kw'>end</span>
+
+<span class='X constant id'>X</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='dot token'>.</span><span class='a identifier id'>a</span>  <span class='comment val'>#=&gt; MXa</span>
+</pre>
+
+<p>IMPORTANT! #prepend is not dynamic, rather it copies all methods when
+included on a class or module. For this reason one must be careful to
+invoke #prepend AFTER any method definitions that are to be effected.
+Ideally this would not be necessary, but it would require support in
+Ruby’s C+ source to make it possible.</p>
+
+<p>NOTE: This is not a common core extension and is not loaded automatically
+when using <tt>require 'facets'</tt>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+55
+56
+57
+58</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core-uncommon/facets/module/prepend.rb', line 55</span>
+
+<span class='def def kw'>def</span> <span class='prepend identifier id'>prepend</span><span class='lparen token'>(</span><span class='mod identifier id'>mod</span><span class='rparen token'>)</span>
+  <span class='include identifier id'>include</span> <span class='Prependable constant id'>Prependable</span>
+  <span class='include identifier id'>include</span> <span class='mod identifier id'>mod</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Tue May 17 02:26:56 2011 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.6.7 (ruby-1.8.7).
+</div>
+
+  </body>
+</html>

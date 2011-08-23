@@ -1,5 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
@@ -14,9 +13,9 @@
   <meta name="DESCRIPTION"
         content="Ruby Facets is a large collection of libraries for the Ruby programming lanaguage."/>
 
-  <link rel="icon" href="media/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="<%= root %>media/favicon.ico" type="image/x-icon" />
 
-  <link href="http://rubyworks.github.com/facets/atom.xml" rel="alternate" title="blog.facets.rubyforge.org" type="application/atom+xml" />
+  <link href="<%= site.url %>/atom.xml" rel="alternate" title="blog.facets.rubyforge.org" type="application/atom+xml" />
 
 <!--
   <link href="/assets/styles/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
@@ -27,8 +26,8 @@
       <link href="/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
   <![endif]-->
 
-  <link href="assets/site.css" rel="stylesheet" type="text/css" />
-  <link href="assets/syntax.css" rel="stylesheet" type="text/css" />
+  <link href="<%=root%>assets/site.css" rel="stylesheet" type="text/css" />
+  <link href="<%=root%>assets/syntax.css" rel="stylesheet" type="text/css" />
 
   <!-- <script src="/js/rdocs.js" type="text/javascript"></script> -->
 </head>
@@ -37,15 +36,15 @@
 
 <div id="forkme">
   <a href="http://github.com/rubyworks/facets">
-    <img src="media/forkme.png" />
+    <img src="<%= root %>media/forkme.png" />
   </a>
 </div>
 
 <div id="container">
 
   <div id="header">
-    <a href="http://rubyworks.github.com/facets">
-      <img id="logo" src="media/RubyFacets.png" align="middle" />
+    <a href="<%= site.url %>">
+      <img id="logo" src="<%=root%>media/RubyFacets.png" align="middle" />
     </a>
   </div>
 
@@ -55,57 +54,22 @@
 
   <div class="blurb">
     <div id="menu">
-      <a href="index.html">Overview</a> &middot;
-      <a href="news.html">News/Blog</a> &middot;
-      <a href="learn.html">Documentation</a> &middot;
-      <a href="source.html">Development</a>
+      <a href="<%= root %>index.html">Overview</a> &middot;
+      <a href="<%= root %>news.html">News/Blog</a> &middot;
+      <a href="<%= root %>learn.html">Documentation</a> &middot;
+      <a href="<%= root %>source.html">Development</a>
       <img style="width: 20px; height: 1px;" src="/media/clear.gif"/>
     </div>
 
     <div class="desc">
-      <h1>Under the Hood</h1>
-      The source of Facets stregth is it's many contributors. Getting involved with Facets development is one of the best ways to get your ideas for Ruby extensions into the public forum.
+      <h1><%= blurb %></h1>
+      <%= detail %>
     </div>
   </div>
 
 
   <div class="page">
-    <h1>Git Repository</h1>
-
-<p><a href="http://github.org">GitHub</a> houses our working <code>git</code> repository.
-Anyone is welcome to fork this repository and contribute back to the master branch
-via pull requests. If you are not familiar with using GitHub, here is a
-<a href="http://github.com/guides/home">overview</a>.</p>
-
-<p>The master source is avaiable <a href="http://github.com/rubyworks/facets/tree/master">here</a>.</p>
-
-<h1>Contribution Guidelines</h1>
-
-<p>The widely accepted practice of contributing to GitHub projects entails:</p>
-
-<ul>
-<li>Fork rubyworks/facets</li>
-<li>Create a topic branch: git checkout -b my_fix</li>
-<li>Make your changes</li>
-<li>Push your branch: git push origin my_fix</li>
-<li>Open an Issue referencing your branch.</li>
-<li>Please do not push to master on your fork!</li>
-</ul>
-
-
-<p>Following this procedure will make everyone’s life easier.</p>
-
-<p>As with all good libraries, testing is vital. Facets handles testing via two different
-libraries. Lemon is used for unit testing and QED is used for behavior specifications.
-Lemon was actaully designed specifially for Ruby Facets which forces tests to be on
-a per-method basis. QED is a tool for literate BDD. In fact Facets inline
-docuemtation is fully executable via QED.</p>
-
-<h1>Contact</h1>
-
-<p>If you have any questions, suggestions or contributions you'd like to make privately,
-you can contact Trans &lt;transfire AT gmail DOT com&gt;.</p>
-
+    <%= yield %>
   </div>
 
   </div>
@@ -113,7 +77,7 @@ you can contact Trans &lt;transfire AT gmail DOT com&gt;.</p>
 </div>
 
 <div id="copyright">
-  <img src="media/abc1.png"/>
+  <img src="<%= root %>media/abc1.png"/>
 
   <br/><br/><br/>
 

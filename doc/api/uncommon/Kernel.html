@@ -1,0 +1,501 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+  <title>Facets Uncommon Core Extensions</title>
+
+  <link rel="shortcut icon" type="image/x-icon" href="./assets/favicon.ico" />
+
+  <link rel="stylesheet" type="text/css" href="./assets/long/css/low.css" />
+  <link rel="stylesheet" type="text/css" href="./assets/long/css/screen.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="./assets/long/css/print.css" media="print" />
+  <link rel="stylesheet" type="text/css" href="./assets/prettify.css" />
+
+  <link rel="alternate stylesheet" type="text/css" href="./assets/long/css/low_vision_screen.css" media="screen" title="Low vision" />
+
+  <script type="text/javascript" src="./assets/jquery.js" ></script>
+  <script type="text/javascript" src="./assets/prettify.js"></script>
+  <script type="text/javascript" src="./assets/quicksearch.js"></script>
+  <script type="text/javascript" src="./assets/main.js"></script>  
+
+  <script type="text/javascript">
+    $(document).ready( function() {
+	    hookHighlightSyntax();
+	    hookQuickSearch();
+	    // $('ul.link-list a').bind( "click", highlightClickTarget );
+    });
+  </script>
+</head>
+
+<body>
+  <div id="page">
+
+    <div id="header">
+      <div id="logo" style="font-size: 52px; font-family: times, serif; font-style: italic; color: black;">
+        <img src="./assets/long/img/logo.gif" alt="" title="" height="119" align="absmiddle">Facets Uncommon Core Extensions
+      </div>
+      <div class="site-links">
+<a href="./index.html">Index</a><span class="separator"> | </span>
+  <a href="http://rubyworks.github.com/facets">Home Page</a><span class="separator"> |</span>
+  <a href="http://wiki.github.com/rubyworks/facets">Community</a><span class="separator"> | </span>
+<a href="http://www.ruby-lang.org/en/about/">About Ruby</a>
+      </div>
+    </div>
+
+    <hr class="hidden-modern">
+
+    <div id="main-wrapper">
+      <div id="main">
+
+        
+
+<div id="content-wrapper">
+
+    <div id="head-wrapper-1">
+        <div id="head-wrapper-2">
+            <div id="head">
+                <h1>Kernel</h1>
+            </div>
+        </div>
+    </div>
+
+    <div id="content">
+
+        <!-- DESCRIPTION -->
+
+        
+
+        <!-- REQUIRES -->
+
+        
+
+        <!-- CONTENTS -->
+
+        
+        
+
+        <!-- INCLUDED MODULES -->
+
+        
+
+        <!-- DESCRIPTION (of what?) --->
+
+        
+
+        <!-- CLASSES AND MODULES -->
+
+        
+
+        <!-- CONSTANTS -->
+
+        
+
+        <!-- ATTRIBUTES -->
+
+        
+
+        <!-- METHODS -->
+
+        
+        
+                <h3>Instance Public methods</h3>
+                <dl>
+                
+                    <p class="source-link" style="float: right;">
+                        <a href="javascript:toggleSource('method-i-Y_source')" id="l_method-i-Y_source"><img src="./assets/long/img/rb.png" alt="[+]"></a>
+                        
+                    </p>
+
+                    <dt>
+                    
+                      <a name="method-i-Y"></a><b>Y</b>(*args, &amp;block)
+                    
+                    </dt>
+
+                    <dd>
+                    
+                      
+                        <div id="method-i-Y_source" style="display: none;">
+                            <pre class="code"><code><span class="ruby-comment"># File lib/core-uncommon/facets/kernel/y.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Y</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">y</span> = <span class="ruby-identifier">lambda</span>{<span class="ruby-operator">|</span>*<span class="ruby-identifier">args</span><span class="ruby-operator">|</span> <span class="ruby-identifier">block</span>.<span class="ruby-identifier">call</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">y</span>) }
+<span class="ruby-keyword">end</span></code></pre>
+                        </div>
+                    
+
+                    
+                      
+                      
+<p>Y-combinator.</p>
+
+<pre>f = Y do |n, acc, &amp;b|
+  n &lt; 2 ? acc : b.(n-1, n * acc) 
+end
+
+f.call(5, 1) #=&gt; 120</pre>
+
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+
+<p>CREDIT: Michael Fellinger</p>
+
+                    
+
+                    
+
+                    </dd>
+                
+                    <p class="source-link" style="float: right;">
+                        <a href="javascript:toggleSource('method-i-demo_source')" id="l_method-i-demo_source"><img src="./assets/long/img/rb.png" alt="[+]"></a>
+                        
+                    </p>
+
+                    <dt>
+                    
+                      <a name="method-i-demo"></a><b>demo</b>(out=$stdout,&amp;block)
+                    
+                    </dt>
+
+                    <dd>
+                    
+                      
+                        <div id="method-i-demo_source" style="display: none;">
+                            <pre class="code"><code><span class="ruby-comment"># File lib/core-uncommon/facets/kernel/demo.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">demo</span>(<span class="ruby-identifier">out</span>=<span class="ruby-identifier">$stdout</span>,&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">sprintf</span>(<span class="ruby-node">&quot;%-25s#=&gt;  %s\n&quot;</span>, <span class="ruby-identifier">expr</span> = <span class="ruby-identifier">block</span>.<span class="ruby-identifier">call</span>, <span class="ruby-identifier">eval</span>(<span class="ruby-identifier">expr</span>, <span class="ruby-identifier">block</span>.<span class="ruby-identifier">binding</span>).<span class="ruby-identifier">inspect</span>)
+<span class="ruby-keyword">end</span></code></pre>
+                        </div>
+                    
+
+                    
+                      
+                      
+<p>For debugging and showing examples. Currently this takes an argument of a
+string in a block…</p>
+
+<pre>demo {%{ a = [1,2,3] }}
+demo {%{ a.slice(1,2) }}
+demo {%{ a.map { |x| x**3 } }}</pre>
+
+<p>produces …</p>
+
+<pre>a = [1,2,3]             #=&gt;  [1, 2, 3]
+a.slice(1,2)            #=&gt;  [2, 3]
+a.map { |x| x**3 }      #=&gt;  [1, 8, 27]</pre>
+
+<p>TODO: Is there a way to do this without the eval string in block?
+Preferably just a block and no string.</p>
+
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+
+                    
+
+                    
+
+                    </dd>
+                
+                    <p class="source-link" style="float: right;">
+                        <a href="javascript:toggleSource('method-i-eigenclass_source')" id="l_method-i-eigenclass_source"><img src="./assets/long/img/rb.png" alt="[+]"></a>
+                        
+                    </p>
+
+                    <dt>
+                    
+                      <a name="method-i-eigenclass"></a><b>eigenclass</b>()
+                    
+                    </dt>
+
+                    <dd>
+                    
+                      
+                        <div id="method-i-eigenclass_source" style="display: none;">
+                            <pre class="code"><code><span class="ruby-comment"># File lib/core-uncommon/facets/kernel/eigenclass.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">eigenclass</span>
+  (<span class="ruby-keyword">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>; <span class="ruby-keyword">self</span>; <span class="ruby-keyword">end</span>)
+<span class="ruby-keyword">end</span></code></pre>
+                        </div>
+                    
+
+                    
+                      
+                      
+<p>During this trying time when no one can get their techie catchwords to
+stick to the refrigerator no matter how hard they slap it with the
+enchanted magnetic spatula, it’s good to know that the contrived phrases
+really do fly, graceful and unclasped and bearing north toward chilled
+shrimp. I know what my Hallowe’en pumpkin is going to say.</p>
+
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+
+<p>CREDIT: WhyTheLuckyStiff</p>
+
+                    
+
+                    
+
+                    </dd>
+                
+                    <p class="source-link" style="float: right;">
+                        <a href="javascript:toggleSource('method-i-memo_source')" id="l_method-i-memo_source"><img src="./assets/long/img/rb.png" alt="[+]"></a>
+                        
+                    </p>
+
+                    <dt>
+                    
+                      <a name="method-i-memo"></a><b>memo</b>(*args, &amp;block)
+                    
+                    </dt>
+
+                    <dd>
+                    
+                      
+                        <div id="method-i-memo_source" style="display: none;">
+                            <pre class="code"><code><span class="ruby-comment"># File lib/core-uncommon/facets/kernel/memo.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">memo</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">args</span> = <span class="ruby-identifier">block</span>.<span class="ruby-identifier">binding</span>.<span class="ruby-identifier">eval</span>(<span class="ruby-string">'[self, __method__]'</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">$MEMO</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">args</span>)
+    <span class="ruby-identifier">$MEMO</span>[<span class="ruby-identifier">args</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">$MEMO</span>[<span class="ruby-identifier">args</span>] = <span class="ruby-identifier">block</span>.<span class="ruby-identifier">call</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></code></pre>
+                        </div>
+                    
+
+                    
+                      
+                      
+<p>Memoize a method.</p>
+
+<pre>class MemoExample
+  attr_accessor :a
+  def m
+    memo{ @a }
+  end
+end
+
+ex = MemoExample.new
+
+ex.a = 10
+ex.m  #=&gt; 10
+
+ex.a = 20
+ex.m  #=&gt; 10</pre>
+
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+
+                    
+
+                    
+
+                    </dd>
+                
+                    <p class="source-link" style="float: right;">
+                        <a href="javascript:toggleSource('method-i-trap_chain_source')" id="l_method-i-trap_chain_source"><img src="./assets/long/img/rb.png" alt="[+]"></a>
+                        
+                    </p>
+
+                    <dt>
+                    
+                      <a name="method-i-trap_chain"></a><b>trap_chain</b>(signal_name, *args, &amp;block)
+                    
+                    </dt>
+
+                    <dd>
+                    
+                      
+                        <div id="method-i-trap_chain_source" style="display: none;">
+                            <pre class="code"><code><span class="ruby-comment"># File lib/core-uncommon/facets/kernel/trap_chain.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">trap_chain</span>(<span class="ruby-identifier">signal_name</span>, *<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">previous_interrupt_handler</span> = <span class="ruby-identifier">trap</span>(<span class="ruby-identifier">signal_name</span>, *<span class="ruby-identifier">args</span>) {}
+  <span class="ruby-identifier">trap</span>(<span class="ruby-identifier">signal_name</span>, *<span class="ruby-identifier">args</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">block</span>.<span class="ruby-identifier">call</span>
+    <span class="ruby-identifier">previous_interrupt_handler</span>.<span class="ruby-identifier">call</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">previous_interrupt_handler</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;DEFAULT&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></code></pre>
+                        </div>
+                    
+
+                    
+                      
+                      
+<p>Calling Kernel#trap() by itself will replace any previously registered
+handler code. <a
+href="Kernel.html#method-i-trap_chain">Kernel#trap_chain()</a>, on the
+other hand, will add the block you supply to the existing “list” of
+registered handler blocks. Similar to the way Kernel#at_exit() works, <a
+href="Kernel.html#method-i-trap_chain">Kernel#trap_chain()</a> will prepend
+the given block to the call chain for the given signal_name. When the
+signal occurs, your block will be executed first and then the previously
+registered handler will be invoked. This can be called repeatedly to create
+a “chain” of handlers.</p>
+
+<p>NOTE: This is not (presently) a common core extension and is not loaded
+automatically when using <tt>require 'facets'</tt>.</p>
+
+<p>CREDIT: Tyler Rick</p>
+
+                    
+
+                    
+
+                    </dd>
+                
+            
+        
+
+     </div>
+
+ </div>
+
+<hr class="hidden-modern" />
+
+<div id="sidebar-wrapper">
+
+    <div id="sidebar">
+
+        <div class="navigation" style="background-color: transparent;">
+          <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+          <fieldset>
+            <legend>Quicksearch</legend>
+            <input type="text" name="quicksearch" value="" class="quicksearch-field" style="width: 95%;" />
+          </fieldset>
+          </form>
+        </div>
+
+        <br/><br/>
+
+        <!-- PARENT -->
+        
+        <div class="navigation">
+          <h3>Parent</h3>
+          <ul>
+            <li><a href="lib/core-uncommon/facets/kernel/eigenclass_rb.html">eigenclass.rb</a></li>
+          </ul>
+        </div>
+        
+
+        <!-- SUPERCLASS -->
+        
+
+        <!-- INCLUDED MODULES -->
+
+        
+
+        <!-- CLASSES AND MODULES -->
+
+        
+
+        <!-- METHOD LIST -->
+        
+        
+        <div class="navigation">
+            <h3>Methods</h3>
+            <ul class="menu quicksearch-target">
+                
+                <li><a href="#method-i-Y">Y</a></li>
+                
+                <li><a href="#method-i-demo">demo</a></li>
+                
+                <li><a href="#method-i-eigenclass">eigenclass</a></li>
+                
+                <li><a href="#method-i-memo">memo</a></li>
+                
+                <li><a href="#method-i-trap_chain">trap_chain</a></li>
+                
+            </ul>
+        </div>
+        
+
+        <!-- IN FILES -->
+
+        <div class="navigation">
+          <h3>In Files</h3>
+          <ul>
+          
+            <li class="file">
+              <a href="./lib/core-uncommon/facets/kernel/trap_chain_rb.html" title="lib/core-uncommon/facets/kernel/trap_chain.rb">lib/core-uncommon/facets/kernel/trap_chain.rb</a>
+            </li>
+          
+            <li class="file">
+              <a href="./lib/core-uncommon/facets/kernel/demo_rb.html" title="lib/core-uncommon/facets/kernel/demo.rb">lib/core-uncommon/facets/kernel/demo.rb</a>
+            </li>
+          
+            <li class="file">
+              <a href="./lib/core-uncommon/facets/kernel/memo_rb.html" title="lib/core-uncommon/facets/kernel/memo.rb">lib/core-uncommon/facets/kernel/memo.rb</a>
+            </li>
+          
+            <li class="file">
+              <a href="./lib/core-uncommon/facets/kernel/y_rb.html" title="lib/core-uncommon/facets/kernel/y.rb">lib/core-uncommon/facets/kernel/y.rb</a>
+            </li>
+          
+            <li class="file">
+              <a href="./lib/core-uncommon/facets/kernel/eigenclass_rb.html" title="lib/core-uncommon/facets/kernel/eigenclass.rb">lib/core-uncommon/facets/kernel/eigenclass.rb</a>
+            </li>
+          
+          </ul>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+        <hr class="hidden-modern">
+
+        <div class="foot">
+          <div class="site-links">
+<a href="./index.html">Index</a><span class="separator"> | </span>
+  <a href="http://rubyworks.github.com/facets">Home Page</a><span class="separator"> |</span>
+  <a href="http://wiki.github.com/rubyworks/facets">Community</a><span class="separator"> | </span>
+<a href="http://www.ruby-lang.org/en/about/">About Ruby</a>
+          </div>
+        </div>
+
+      </div>
+    </div> <!-- end main-wrapper -->
+
+    <div id="search-box">
+<form id="search-form" action="http://www.google.com/cse">
+<table class="fieldset">
+  <tbody><tr>
+    <td>
+      <input class="field" name="q" size="31" style="background: white url(http://www.google.com/coop/intl/en/images/google_custom_search_watermark.gif) no-repeat scroll left center; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;" onfocus="this.style.background='white'" onblur="if (/^\s*$/.test(this.value)) this.style.background='white url(http://www.google.com/coop/intl/en/images/google_custom_search_watermark.gif) left no-repeat'" type="text">
+    </td>
+    <td>
+      <input name="cx" value="013598269713424429640:g5orptiw95w" type="hidden">
+      <input name="ie" value="UTF-8" type="hidden">
+      <input class="button" name="sa" value="Search" type="submit">
+    </td>
+  </tr>
+</tbody></table>
+</form>
+    </div> <!-- end search-box -->
+
+    <div id="footer">
+      <div class="fine-print">
+<!--
+        <p>Content available in <a href="http://www.ruby-lang.org/en/">English</a>, <a href="http://www.ruby-lang.org/fr/">French</a>, <a href="http://www.ruby-lang.org/ja/">Japanese</a>, <a href="http://www.ruby-lang.org/ko/">Korean</a>, <a href="http://www.ruby-lang.org/pl/">Polish</a>, <a href="http://www.ruby-lang.org/es/">Spanish</a>, <a href="http://www.ruby-lang.org/pt/">Portuguese</a>, <a href="http://www.ruby-lang.org/zh_cn/">Simplified Chinese</a>, <a href="http://www.ruby-lang.org/zh_TW/">Traditional Chinese</a>, <a href="http://www.ruby-lang.org/id/">Bahasa Indonesia</a>, <a href="http://www.ruby-lang.org/de/">German</a>, <a href="http://www.ruby-lang.org/it/">Italian</a> and <a href="http://www.ruby-lang.org/bg/">Bulgarian</a>.</p>
+-->
+
+        <p>This website is made with Ruby and powered by <a href="http://rdocidile.github.com/rdoc-rubyfaux">RubyFaux</a> v1.2.0.
+<!--
+          It is proudly maintained by <a href="http://rubyidentity.org/">members of the Ruby community</a>. Please contact
+          our <a href="mailto:webmaster@ruby-lang.org">webmaster</a> for questions or comments
+          concerning this website.</p>
+-->
+        </p>
+      </div>
+    </div>
+
+  </div> <!-- end page  -->
+</body>
+</html>

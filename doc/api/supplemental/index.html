@@ -1,0 +1,2255 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+  <title>Facets Supplemental Libraries</title>
+
+  <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico" />
+
+  <link rel="stylesheet" type="text/css" href="assets/long/css/low.css" />
+  <link rel="stylesheet" type="text/css" href="assets/long/css/screen.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="assets/long/css/print.css"  media="print" />
+  <link rel="stylesheet" type="text/css" href="assets/prettify.css" />
+
+  <link rel="alternate stylesheet" type="text/css" href="assets/long/css/low_vision_screen.css" media="screen" title="Low vision" />
+
+  <script type="text/javascript" src="assets/jquery.js"></script>
+  <script type="text/javascript" src="./assets/prettify.js"></script>
+  <script type="text/javascript" src="assets/quicksearch.js"></script>
+  <script type="text/javascript" src="assets/main.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready( function() {
+	    hookHighlightSyntax();
+	    hookQuickSearch();
+	    // $('ul.link-list a').bind( "click", highlightClickTarget );
+    });
+  </script>
+</head>
+
+<body>
+  <div id="page">
+
+    <div id="header">
+      <div id="logo" style="font-size: 52px; font-family: times, serif; font-style: italic; color: black;">
+        <img src="assets/long/img/logo.gif" alt="Facets Supplemental Libraries" title="" height="119" align="absmiddle">Facets Supplemental Libraries
+      </div>
+
+      <div class="site-links">
+<span><strong>Index</strong></span><span class="separator"> | </span>
+  <a href="http://rubyworks.github.com/facets">Home Page</a><span class="separator"> |</span>
+  <a href="http://wiki.github.com/rubyworks/facets">Community</a><span class="separator"> | </span>
+<a href="http://www.ruby-lang.org/en/about/">About Ruby</a>
+      </div>
+    </div>
+
+    <hr class="hidden-modern">
+
+    <div id="main-wrapper">
+      <div id="main">
+
+<div id="content-wrapper">
+
+    <div id="head-wrapper-1">
+        <div id="head-wrapper-2">
+            <div id="head">
+                <h1>Ruby Facets</h1>
+            </div>
+        </div>
+    </div>
+
+    <div id="content" style="clear: both;">
+      
+
+<p>"ALL YOUR BASE ARE BELONG TO RUBY"</p>
+
+<h2>Introduction</h2>
+
+<p>Ruby Facets is the premiere collection of general purpose method extensions
+and standard additions for the Ruby programming language.</p>
+
+<p>Facets houses the largest single collection of methods available for
+extending the core capabilities of Ruby’s built-in classes and modules.
+This collection of extension methods are unique by virtue of their
+atomicity. The methods are stored in individual files so that each can be
+required independently. This gives developers the potential for much finer
+control over which extra methods to bring into their code.</p>
+
+<p>In addition Facets provides a collection of extensions to Ruby standard
+library plus a small collection of add-on classes and modules. Together
+these libraries constitute an ever improving source of reusable components,
+suitable to a wide variety of usecases.</p>
+
+<h2>Resources</h2>
+<ul><li>
+<p>Homepage: <a
+href="http://rubyworks.github.com/facets">rubyworks.github.com/facets</a></p>
+</li><li>
+<p>Report Bugs: <a
+href="http://github.com/rubyworks/facets/issues">github.com/rubyworks/facets/issues</a></p>
+</li><li>
+<p>Mailing List: <a
+href="http://groups.google.com/group/facets-universal/topics">groups.google.com/group/facets-universal/topics</a></p>
+</li><li>
+<p>Wiki Pages: <a
+href="http://wiki.github.com/rubyworks/facets">wiki.github.com/rubyworks/facets</a></p>
+</li><li>
+<p>Source Code: <a
+href="http://github.com/rubyworks/facets">github.com/rubyworks/facets</a></p>
+</li></ul>
+
+<h2>Documentation</h2>
+
+<p>Facets has special documentation needs due to it’s extensive bredth. The
+RDocs generated when installing via RubyGems are unweildly because it
+combines all of Facets in one set of docs. (Hopefully we can remedy this in
+the future). In the mean time better organized online documentation  is
+available at <a
+href="http://rubyworks.github.com/facets/learn.html.">rubyworks.github.com/facets/learn.html.</a></p>
+<ul><li>
+<p>Core API: <a
+href="http://rubyworks.github.com/facets/doc/api/core/index.html">rubyworks.github.com/facets/doc/api/core/index.html</a></p>
+</li><li>
+<p>More API: <a
+href="http://rubyworks.github.com/facets/doc/api/more/index.html">rubyworks.github.com/facets/doc/api/more/index.html</a></p>
+</li><li>
+<p>Tour API: <a
+href="http://rubyworks.github.com/facets/doc/api/tour/index.html">rubyworks.github.com/facets/doc/api/tour/index.html</a></p>
+</li></ul>
+
+<h2>Installation</h2>
+
+<p>The easiest way to install is via RubyGems.</p>
+
+<pre>$ gem install facets</pre>
+
+<p>To install manually, your will need Ruby Setup (<a
+href="http::/setup.rubyforge.org">:/setup.rubyforge.org</a>). Then download
+and unpack the .tar.gz package and run:</p>
+
+<pre>$ tar -xvzf facets-2.x.x.tar.gz
+$ cd facets-2.x.x
+$ sudo setup.rb</pre>
+
+<p>Facets 2.8+ requires Ruby 1.8.7 or higher.</p>
+
+<h2>Mission</h2>
+
+<p>Facets holds to the notion that the more we can reasonably integrate into a
+common foundation, directed toward general needs, the better that
+foundation will be able to serve the community. There are a number of
+advantages here:</p>
+<ul><li>
+<p>Better Code-reuse</p>
+</li><li>
+<p>Collaborative Improvements</p>
+</li><li>
+<p>Greater Name Consistency</p>
+</li><li>
+<p>One-stop Shop and Installation</p>
+</li></ul>
+
+<h2>Usage</h2>
+
+<h3>CORE Library</h3>
+
+<p>At the heart of Ruby Facets is the CORE extensions library. CORE provides a
+sizable collection of generally useful methods, along with a few supporting
+classes, that extend the functionality of Ruby’s core classes and modules.</p>
+
+<p>With the exception of a few <b>uncommon</b> extensions, CORE contains
+anything that will load automatically when issuing:</p>
+
+<pre>require 'facets'</pre>
+
+<p>This loads all the CORE functionality at once. If you plan to use more then
+a handful of Facets core methods it is recommended that you require the
+library in this way.</p>
+
+<p>Of course you can use the CORE library piecemeal if you prefer. And for
+uncommon extension this must be done. The general require statement for a
+core extensions library is:</p>
+
+<pre>require 'facets/&lt;class|module&gt;/&lt;method-lib&gt;'</pre>
+
+<p>For example:</p>
+
+<pre>require 'facets/time/stamp'</pre>
+
+<p>Most “atoms” contain only one method, but a few exceptions occur when
+methods are closely tied together.</p>
+
+<p>You can load per-class or per-module groups of core methods by requiring
+the class or module by name. For example“</p>
+
+<pre>require 'facets/time'</pre>
+
+<p>Will require all the core Time method extensions.</p>
+
+<p>Note that some methods that were part of CORE in 1.8 and earlier are now
+part of MORE libraries. A good example is ‘random.rb’. There were separated
+because they had more specialized use cases, where as CORE extensions are
+intended as general purpose.</p>
+
+<p>This is the recommended usage. However, you can also “cherry pick” core
+methods. While there are exceptions the rule of thumb for loading a core
+method is:</p>
+
+<pre>require 'facets/{class|module}/{method}'</pre>
+
+<h4>Method File Names</h4>
+
+<p>Operator method redirect files are stored using English names. For instance
+for Proc#* is ‘proc/op_mul’.</p>
+
+<p>For reference, here is the chart.</p>
+
+<pre>+@   =&gt; op_plus
+-@   =&gt; op_minus
++    =&gt; op_add
+-    =&gt; op_sub
+**   =&gt; op_pow
+*    =&gt; op_mul
+/    =&gt; op_div
+%    =&gt; op_mod
+~    =&gt; op_tilde
+&lt;=&gt;  =&gt; op_cmp
+&lt;&lt;   =&gt; op_lshift
+&gt;&gt;   =&gt; op_rshift
+&lt;    =&gt; op_lt
+&gt;    =&gt; op_gt
+===  =&gt; op_case
+==   =&gt; op_equal
+=~   =&gt; op_apply
+&lt;=   =&gt; op_lt_eq
+&gt;=   =&gt; op_gt_eq
+|    =&gt; op_or
+&amp;    =&gt; op_and
+^    =&gt; op_xor
+[]=  =&gt; op_store
+[]   =&gt; op_fetch</pre>
+
+<p>Facets simply takes the ‘*’ and translates it into a string acceptable to
+all file systems. Also, if a method ends in ‘=’, ‘?’ or ‘!’ it is simply
+removed.</p>
+
+<h3>MORE Library</h3>
+
+<p>On top of the extensive CORE library, Facets provides extensions for Ruby’s
+standard library, as well as very small collection of additional modules
+and classes to supplement it.</p>
+
+<p>Use the More library like you would any other 3rd party library. The only
+difference between Facets More library and other libraries is the lack of
+any enclosing @Facets::@ namespace. This is becuase the libraries provided
+by Facets are considerd fairly low-level.</p>
+
+<p>When using Facets’ extended versions of Ruby’s standard libraries, the More
+libraries have to loaded manually, of course. However you do not need to
+load Ruby’s library first, as the Facets’ library will do that
+automatically.</p>
+
+<p>For example, normally one load Ruby’s OpenStruct class via:</p>
+
+<pre>require 'ostruct'</pre>
+
+<p>To load ‘ostruct.rb’ plus Facets extensions for it simply use:</p>
+
+<pre>require 'facets/ostruct'</pre>
+
+<p>instead.</p>
+
+<p>Using the Facets/MORE library of modules, classes or microframeworks is
+essentially the same. For example:</p>
+
+<pre>require 'facets/basicobject'</pre>
+
+<p>Again, for details pertaining to the functionality of each feature, please
+see the API Docs.</p>
+
+<h2>Contribute</h2>
+
+<p>This project thrives on contribution.</p>
+
+<p>If you have any extension methods, classes, modules or small frameworks
+that you think have general applicability and would like to see them
+included in this project, don’t hesitiate to submit. Also, if you have
+better versions of any thing already included or simply have a patch, they
+are more than welcome. We want Ruby Facets to be of the highest quality.</p>
+
+<h2>Authors</h2>
+
+<p>This collection was put together by, and largely written by Thomas Sawyer
+(aka Trans). He can be reached via email at transfire at gmail.com.</p>
+
+<p>Some parts of this collection were written and/or inspired by other
+persons. Fortunately nearly all were copyrighted under the same open
+license, the Ruby License. In the few exceptions I have included the
+copyright notice with the source code.</p>
+
+<p>Any code file not specifically labeled shall fall under the Ruby License.</p>
+
+<p>In all cases, I have made every effort to give credit where credit is due.
+You will find these copyrights, thanks and acknowledgments embedded in the
+source code. You can see them in “CREDIT:” lines or as file-base
+“Author(s)” sections given in the RDocs.</p>
+
+<p>Also see the AUTHORS file for a list of all contributing Rubyists. If
+anyone is missing from the list, please let me know and I will correct
+right away. Thanks.</p>
+
+<h2>License</h2>
+
+<p>The collection PER COLLECTION is licensed as follows:</p>
+
+<pre>Ruby Facets
+Copyright (c) 2004,2010 Thomas Sawyer
+
+Distributed under the terms of the Ruby license.</pre>
+
+<p>The Ruby license is a dual license that also provides for use of the GPL.
+Complete texts of both licenses accompany this document (see LICENSE).</p>
+
+<p>Acknowledgments and Copyrights for particular snippets of borrowed code are
+given in their respective source. All licenses are either compatible with
+the Ruby license (namely the GPL) or the original author has given
+permission for inclusion of their code under such license.</p>
+
+<p>"ALL YOUR BASE ARE BELONG TO RUBY!"</p>
+
+<p>Ruby Facets, Copyright ©2005,2006,2007,2008,2009,2010 Thomas Sawyer</p>
+
+<p>Do you Ruby? (<a href="http://ruby-lang.org">ruby-lang.org</a>)</p>
+
+    </div>
+
+</div> <!-- content-wrapper -->
+
+<hr class="hidden-modern" />
+
+<div id="sidebar-wrapper">
+
+    <div id="sidebar">
+
+      <div class="navigation" style="background-color: transparent;">
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value="" class="quicksearch-field" style="width: 95%;"/>
+        </fieldset>
+        </form>
+      </div>
+
+      <hr class="hidden-modern" /><br/><br/>
+
+      <!-- TOPLEVEL FILES -->
+      
+      
+      <div class="navigation">
+        <h3 class="section-header">Information</h3>
+        <ul class="quicksearch-target">
+        
+          <li class="file"><a href="README_rdoc.html">README.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <!-- CLASS INDEX -->
+      <div class="navigation">
+        <h3 class="section-header">Class Index</h3>
+        <ul class="quicksearch-target">
+        
+          <li class="class"><a href="Argvector.html">Argvector</a></li>
+        
+          <li class="class"><a href="Argvector.html">Argvector</a></li>
+        
+          <li class="class"><a href="Array.html">Array</a></li>
+        
+          <li class="class"><a href="AtomicFile.html">AtomicFile</a></li>
+        
+          <li class="module"><a href="Enumerable.html">Enumerable</a></li>
+        
+          <li class="module"><a href="Enumerable/Arguments.html">Enumerable::Arguments</a></li>
+        
+          <li class="class"><a href="Interval.html">Interval</a></li>
+        
+          <li class="module"><a href="Kernel.html">Kernel</a></li>
+        
+          <li class="module"><a href="Memoizable.html">Memoizable</a></li>
+        
+          <li class="module"><a href="Memoizable/Copy.html">Memoizable::Copy</a></li>
+        
+          <li class="module"><a href="Multiton.html">Multiton</a></li>
+        
+          <li class="module"><a href="Multiton/Inclusive.html">Multiton::Inclusive</a></li>
+        
+          <li class="module"><a href="Multiton/MetaMethods.html">Multiton::MetaMethods</a></li>
+        
+          <li class="class"><a href="NullClass.html">NullClass</a></li>
+        
+          <li class="class"><a href="Numeric.html">Numeric</a></li>
+        
+          <li class="module"><a href="Numeric/Multipliers.html">Numeric::Multipliers</a></li>
+        
+          <li class="class"><a href="Object.html">Object</a></li>
+        
+          <li class="class"><a href="Argvector.html">Object::ArgVector</a></li>
+        
+          <li class="module"><a href="OpEsc.html">OpEsc</a></li>
+        
+          <li class="class"><a href="Platform.html">Platform</a></li>
+        
+          <li class="class"><a href="Reference.html">Reference</a></li>
+        
+          <li class="class"><a href="String.html">String</a></li>
+        
+          <li class="class"><a href="Timer.html">Timer</a></li>
+        
+          <li class="class"><a href="Timer/Dummy.html">Timer::Dummy</a></li>
+        
+          <li class="class"><a href="Tuple.html">Tuple</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      <!-- METHOD INDEX -->
+      <div class="navigation">
+        <h3 class="section-header">Method Index</h3>
+        <ul class="quicksearch-target">
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Tuple.html#method-c-5B-5D" title="Tuple">
+                ::[]
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Tuple</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Interval.html#method-c-5B-5D" title="Interval">
+                ::[]
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Interval</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Memoizable.html#method-c-append_features" title="Memoizable">
+                ::append_features
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Memoizable</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Memoizable.html#method-c-cache" title="Memoizable">
+                ::cache
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Memoizable</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Tuple.html#method-c-cast_from_array" title="Tuple">
+                ::cast_from_array
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Tuple</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Tuple.html#method-c-cast_from_string" title="Tuple">
+                ::cast_from_string
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Tuple</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Tuple.html#method-c-constraint_to_lambda" title="Tuple">
+                ::constraint_to_lambda
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Tuple</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="OpEsc.html#method-c-escape" title="OpEsc">
+                ::escape
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">OpEsc</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Memoizable/Copy.html#method-c-included" title="Memoizable::Copy">
+                ::included
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Memoizable::Copy</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Platform.html#method-c-local" title="Platform">
+                ::local
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Platform</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Platform.html#method-c-match" title="Platform">
+                ::match
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Platform</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="OpEsc.html#method-c-method_to_filename" title="OpEsc">
+                ::method_to_filename
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">OpEsc</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Tuple.html#method-c-multiton_id" title="Tuple">
+                ::multiton_id
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Tuple</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-c-new" title="Argvector">
+                ::new
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Timer.html#method-c-new" title="Timer">
+                ::new
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Timer</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-c-new" title="Argvector">
+                ::new
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Reference.html#method-c-new" title="Reference">
+                ::new
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Reference</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Tuple.html#method-c-new" title="Tuple">
+                ::new
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Tuple</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="NullClass.html#method-c-new" title="NullClass">
+                ::new
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">NullClass</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-c-new" title="Argvector">
+                ::new
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Platform.html#method-c-new" title="Platform">
+                ::new
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Platform</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Interval.html#method-c-new" title="Interval">
+                ::new
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Interval</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-c-parameters" title="Argvector">
+                ::parameters
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-c-parameters" title="Argvector">
+                ::parameters
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-c-parameters" title="Argvector">
+                ::parameters
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Tuple.html#method-c-parse_constraint" title="Tuple">
+                ::parse_constraint
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Tuple</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Platform.html#method-c-supported" title="Platform">
+                ::supported
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Platform</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Timer.html#method-c-time" title="Timer">
+                ::time
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Timer</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Enumerable/Arguments.html#method-c-wrap_enumerable_method" title="Enumerable::Arguments">
+                ::wrap_enumerable_method
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Enumerable::Arguments</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="AtomicFile.html#method-c-write" title="AtomicFile">
+                ::write
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">AtomicFile</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Interval.html#method-i-2B-40" title="Interval">
+                #+@
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Interval</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Interval.html#method-i-2D-40" title="Interval">
+                #-@
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Interval</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Tuple.html#method-i-3C-3C" title="Tuple">
+                #<<
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Tuple</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Tuple.html#method-i-3C-3D-3E" title="Tuple">
+                #<=>
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Tuple</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Platform.html#method-i-3D-3D" title="Platform">
+                #==
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Platform</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Interval.html#method-i-3D-3D-3D" title="Interval">
+                #===
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Interval</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Platform.html#method-i-3D-3D-3D" title="Platform">
+                #===
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Platform</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Tuple.html#method-i-3D-7E" title="Tuple">
+                #=~
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Tuple</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Platform.html#method-i-3D-7E" title="Platform">
+                #=~
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Platform</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="NullClass.html#method-i-5B-5D" title="NullClass">
+                #[]
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">NullClass</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Tuple.html#method-i-5B-5D" title="Tuple">
+                #[]
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Tuple</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Tuple.html#method-i-5B-5D-3D" title="Tuple">
+                #[]=
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Tuple</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Reference.html#method-i-__value__" title="Reference">
+                #__value__
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Reference</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Multiton.html#method-i-_dump" title="Multiton">
+                #_dump
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Multiton</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Multiton/MetaMethods.html#method-i-_load" title="Multiton::MetaMethods">
+                #_load
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Multiton::MetaMethods</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-arguments" title="Argvector">
+                #arguments
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-arguments" title="Argvector">
+                #arguments
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-arguments" title="Argvector">
+                #arguments
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-assoc_options" title="Argvector">
+                #assoc_options
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-assoc_options" title="Argvector">
+                #assoc_options
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-assoc_options" title="Argvector">
+                #assoc_options
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Numeric/Multipliers.html#method-i-atto" title="Numeric::Multipliers">
+                #atto
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Numeric::Multipliers</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Reference.html#method-i-become" title="Reference">
+                #become
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Reference</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Interval.html#method-i-begin" title="Interval">
+                #begin
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Interval</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Platform.html#method-i-big_endian-3F" title="Platform">
+                #big_endian?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Platform</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Platform.html#method-i-bsd-3F" title="Platform">
+                #bsd?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Platform</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Platform.html#method-i-byte_order" title="Platform">
+                #byte_order
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Platform</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Platform.html#method-i-byteorder" title="Platform">
+                #byteorder
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Platform</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Platform.html#method-i-cardinal-3F" title="Platform">
+                #cardinal?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Platform</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Numeric/Multipliers.html#method-i-centi" title="Numeric::Multipliers">
+                #centi
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Numeric::Multipliers</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Multiton.html#method-i-clone" title="Multiton">
+                #clone
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Multiton</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Interval.html#method-i-closed" title="Interval">
+                #closed
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Interval</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Numeric/Multipliers.html#method-i-deci" title="Numeric::Multipliers">
+                #deci
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Numeric::Multipliers</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Timer.html#method-i-defuse" title="Timer">
+                #defuse
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Timer</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Interval.html#method-i-degenerate-3F" title="Interval">
+                #degenerate?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Interval</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Numeric/Multipliers.html#method-i-deka" title="Numeric::Multipliers">
+                #deka
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Numeric::Multipliers</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Enumerable/Arguments.html#method-i-detect" title="Enumerable::Arguments">
+                #detect
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Enumerable::Arguments</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Interval.html#method-i-direction" title="Interval">
+                #direction
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Interval</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Interval.html#method-i-distance" title="Interval">
+                #distance
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Interval</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Multiton.html#method-i-dup" title="Multiton">
+                #dup
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Multiton</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Tuple.html#method-i-each" title="Tuple">
+                #each
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Tuple</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Interval.html#method-i-each" title="Interval">
+                #each
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Interval</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Tuple.html#method-i-each_index" title="Tuple">
+                #each_index
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Tuple</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Tuple.html#method-i-empty-3F" title="Tuple">
+                #empty?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Tuple</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Interval.html#method-i-end" title="Interval">
+                #end
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Interval</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Timer.html#method-i-end_time" title="Timer">
+                #end_time
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Timer</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Platform.html#method-i-enterprise-3F" title="Platform">
+                #enterprise?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Platform</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Tuple.html#method-i-eql-3F" title="Tuple">
+                #eql?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Tuple</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Interval.html#method-i-eql-3F" title="Interval">
+                #eql?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Interval</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Numeric/Multipliers.html#method-i-exa" title="Numeric::Multipliers">
+                #exa
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Numeric::Multipliers</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Numeric/Multipliers.html#method-i-exbi" title="Numeric::Multipliers">
+                #exbi
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Numeric::Multipliers</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Interval.html#method-i-exclude_begin-3F" title="Interval">
+                #exclude_begin?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Interval</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Interval.html#method-i-exclude_end-3F" title="Interval">
+                #exclude_end?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Interval</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Interval.html#method-i-exclude_first-3F" title="Interval">
+                #exclude_first?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Interval</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Interval.html#method-i-exclude_last-3F" title="Interval">
+                #exclude_last?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Interval</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Numeric/Multipliers.html#method-i-femto" title="Numeric::Multipliers">
+                #femto
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Numeric::Multipliers</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Enumerable/Arguments.html#method-i-find" title="Enumerable::Arguments">
+                #find
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Enumerable::Arguments</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Interval.html#method-i-first" title="Interval">
+                #first
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Interval</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Tuple.html#method-i-first" title="Tuple">
+                #first
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Tuple</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Interval.html#method-i-first_closed" title="Interval">
+                #first_closed
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Interval</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Interval.html#method-i-first_opened" title="Interval">
+                #first_opened
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Interval</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-flags" title="Argvector">
+                #flags
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-flags" title="Argvector">
+                #flags
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-flags" title="Argvector">
+                #flags
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-format_options" title="Argvector">
+                #format_options
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-format_options" title="Argvector">
+                #format_options
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-format_options" title="Argvector">
+                #format_options
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Numeric/Multipliers.html#method-i-gibi" title="Numeric::Multipliers">
+                #gibi
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Numeric::Multipliers</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Numeric/Multipliers.html#method-i-giga" title="Numeric::Multipliers">
+                #giga
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Numeric::Multipliers</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Interval.html#method-i-half_closed" title="Interval">
+                #half_closed
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Interval</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Tuple.html#method-i-hash" title="Tuple">
+                #hash
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Tuple</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Numeric/Multipliers.html#method-i-hecto" title="Numeric::Multipliers">
+                #hecto
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Numeric::Multipliers</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Platform.html#method-i-host_os" title="Platform">
+                #host_os
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Platform</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Interval.html#method-i-include-3F" title="Interval">
+                #include?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Interval</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Tuple.html#method-i-index" title="Tuple">
+                #index
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Tuple</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Memoizable/Copy.html#method-i-initialize_copy" title="Memoizable::Copy">
+                #initialize_copy
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Memoizable::Copy</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Multiton/MetaMethods.html#method-i-initialized-3F" title="Multiton::MetaMethods">
+                #initialized?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Multiton::MetaMethods</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Platform.html#method-i-inspect" title="Platform">
+                #inspect
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Platform</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Tuple.html#method-i-inspect" title="Tuple">
+                #inspect
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Tuple</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="NullClass.html#method-i-inspect" title="NullClass">
+                #inspect
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">NullClass</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Multiton/MetaMethods.html#method-i-instance" title="Multiton::MetaMethods">
+                #instance
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Multiton::MetaMethods</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Reference.html#method-i-instance_delegate" title="Reference">
+                #instance_delegate
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Reference</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Platform.html#method-i-interpreter" title="Platform">
+                #interpreter
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Platform</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Platform.html#method-i-iron_ruby-3F" title="Platform">
+                #iron_ruby?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Platform</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Platform.html#method-i-ironruby-3F" title="Platform">
+                #ironruby?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Platform</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Platform.html#method-i-java-3F" title="Platform">
+                #java?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Platform</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Platform.html#method-i-jruby-3F" title="Platform">
+                #jruby?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Platform</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Numeric/Multipliers.html#method-i-kibi" title="Numeric::Multipliers">
+                #kibi
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Numeric::Multipliers</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Numeric/Multipliers.html#method-i-kilo" title="Numeric::Multipliers">
+                #kilo
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Numeric::Multipliers</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Tuple.html#method-i-last" title="Tuple">
+                #last
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Tuple</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Interval.html#method-i-last" title="Interval">
+                #last
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Interval</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Interval.html#method-i-last_closed" title="Interval">
+                #last_closed
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Interval</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Interval.html#method-i-last_opened" title="Interval">
+                #last_opened
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Interval</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Interval.html#method-i-length" title="Interval">
+                #length
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Interval</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Tuple.html#method-i-length" title="Tuple">
+                #length
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Tuple</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Timer.html#method-i-limit" title="Timer">
+                #limit
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Timer</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Platform.html#method-i-linux-3F" title="Platform">
+                #linux?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Platform</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Platform.html#method-i-little_endian-3F" title="Platform">
+                #little_endian?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Platform</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Platform.html#method-i-mac-3F" title="Platform">
+                #mac?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Platform</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Tuple.html#method-i-major" title="Tuple">
+                #major
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Tuple</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Interval.html#method-i-max" title="Interval">
+                #max
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Interval</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Numeric/Multipliers.html#method-i-mebi" title="Numeric::Multipliers">
+                #mebi
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Numeric::Multipliers</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Numeric/Multipliers.html#method-i-mega" title="Numeric::Multipliers">
+                #mega
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Numeric::Multipliers</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Interval.html#method-i-member-3F" title="Interval">
+                #member?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Interval</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Memoizable.html#method-i-memoize" title="Memoizable">
+                #memoize
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Memoizable</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Reference.html#method-i-method_missing" title="Reference">
+                #method_missing
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Reference</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="NullClass.html#method-i-method_missing" title="NullClass">
+                #method_missing
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">NullClass</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Numeric/Multipliers.html#method-i-micro" title="Numeric::Multipliers">
+                #micro
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Numeric::Multipliers</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Numeric/Multipliers.html#method-i-milli" title="Numeric::Multipliers">
+                #milli
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Numeric::Multipliers</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Interval.html#method-i-min" title="Interval">
+                #min
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Interval</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Tuple.html#method-i-minor" title="Tuple">
+                #minor
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Tuple</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Platform.html#method-i-mri-3F" title="Platform">
+                #mri?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Platform</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-multi_flag" title="Argvector">
+                #multi_flag
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-multi_flag" title="Argvector">
+                #multi_flag
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-multi_flag" title="Argvector">
+                #multi_flag
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Multiton/MetaMethods.html#method-i-multiton_instance" title="Multiton::MetaMethods">
+                #multiton_instance
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Multiton::MetaMethods</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Multiton/MetaMethods.html#method-i-multiton_mutex" title="Multiton::MetaMethods">
+                #multiton_mutex
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Multiton::MetaMethods</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Numeric/Multipliers.html#method-i-nano" title="Numeric::Multipliers">
+                #nano
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Numeric::Multipliers</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Multiton/MetaMethods.html#method-i-new" title="Multiton::MetaMethods">
+                #new
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Multiton::MetaMethods</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="NullClass.html#method-i-nil-3F" title="NullClass">
+                #nil?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">NullClass</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Kernel.html#method-i-null" title="Kernel">
+                #null
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Kernel</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Object.html#method-i-null-3F" title="Object">
+                #null?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Object</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Interval.html#method-i-null-3F" title="Interval">
+                #null?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Interval</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="NullClass.html#method-i-null-3F" title="NullClass">
+                #null?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">NullClass</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Platform.html#method-i-official_ruby-3F" title="Platform">
+                #official_ruby?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Platform</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Timer.html#method-i-on_timeout" title="Timer">
+                #on_timeout
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Timer</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Interval.html#method-i-opened" title="Interval">
+                #opened
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Interval</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-operands" title="Argvector">
+                #operands
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-operands" title="Argvector">
+                #operands
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-operands" title="Argvector">
+                #operands
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-options" title="Argvector">
+                #options
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-options" title="Argvector">
+                #options
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-options" title="Argvector">
+                #options
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-parameters" title="Argvector">
+                #parameters
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-parameters" title="Argvector">
+                #parameters
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-parameters" title="Argvector">
+                #parameters
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-parameters_without_duplicates" title="Argvector">
+                #parameters_without_duplicates
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-parameters_without_duplicates" title="Argvector">
+                #parameters_without_duplicates
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-parameters_without_duplicates" title="Argvector">
+                #parameters_without_duplicates
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Platform.html#method-i-parrot-3F" title="Platform">
+                #parrot?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Platform</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-parse" title="Argvector">
+                #parse
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-parse" title="Argvector">
+                #parse
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-parse" title="Argvector">
+                #parse
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-parse_arity" title="Argvector">
+                #parse_arity
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-parse_arity" title="Argvector">
+                #parse_arity
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-parse_arity" title="Argvector">
+                #parse_arity
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-parse_line" title="Argvector">
+                #parse_line
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-parse_line" title="Argvector">
+                #parse_line
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-parse_line" title="Argvector">
+                #parse_line
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-parse_preoptions" title="Argvector">
+                #parse_preoptions
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-parse_preoptions" title="Argvector">
+                #parse_preoptions
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-parse_preoptions" title="Argvector">
+                #parse_preoptions
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Numeric/Multipliers.html#method-i-pebi" title="Numeric::Multipliers">
+                #pebi
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Numeric::Multipliers</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Platform.html#method-i-perl-3F" title="Platform">
+                #perl?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Platform</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Numeric/Multipliers.html#method-i-peta" title="Numeric::Multipliers">
+                #peta
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Numeric::Multipliers</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Numeric/Multipliers.html#method-i-pico" title="Numeric::Multipliers">
+                #pico
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Numeric::Multipliers</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Tuple.html#method-i-pop" title="Tuple">
+                #pop
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Tuple</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Platform.html#method-i-posix-3F" title="Platform">
+                #posix?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Platform</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Tuple.html#method-i-pot" title="Tuple">
+                #pot
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Tuple</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-preflags" title="Argvector">
+                #preflags
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-preflags" title="Argvector">
+                #preflags
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-preflags" title="Argvector">
+                #preflags
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-preoptions" title="Argvector">
+                #preoptions
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-preoptions" title="Argvector">
+                #preoptions
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-preoptions" title="Argvector">
+                #preoptions
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Tuple.html#method-i-pull" title="Tuple">
+                #pull
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Tuple</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Tuple.html#method-i-push" title="Tuple">
+                #push
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Tuple</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Platform.html#method-i-rbx-3F" title="Platform">
+                #rbx?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Platform</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Platform.html#method-i-ree-3F" title="Platform">
+                #ree?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Platform</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Kernel.html#method-i-ref" title="Kernel">
+                #ref
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Kernel</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Multiton/MetaMethods.html#method-i-reinitialize" title="Multiton::MetaMethods">
+                #reinitialize
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Multiton::MetaMethods</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Memoizable.html#method-i-rememoize" title="Memoizable">
+                #rememoize
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Memoizable</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Timer.html#method-i-reset" title="Timer">
+                #reset
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Timer</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Timer.html#method-i-reset_limit" title="Timer">
+                #reset_limit
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Timer</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Interval.html#method-i-reversed" title="Interval">
+                #reversed
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Interval</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Tuple.html#method-i-rindex" title="Tuple">
+                #rindex
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Tuple</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Platform.html#method-i-rubinius-3F" title="Platform">
+                #rubinius?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Platform</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Platform.html#method-i-ruby-3F" title="Platform">
+                #ruby?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Platform</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Timer.html#method-i-running-3F" title="Timer">
+                #running?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Timer</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Interval.html#method-i-sentinels" title="Interval">
+                #sentinels
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Interval</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Tuple.html#method-i-shift" title="Tuple">
+                #shift
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Tuple</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Interval.html#method-i-size" title="Interval">
+                #size
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Interval</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Tuple.html#method-i-size" title="Tuple">
+                #size
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Tuple</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Platform.html#method-i-solaris-3F" title="Platform">
+                #solaris?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Platform</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Timer/Dummy.html#method-i-start" title="Timer::Dummy">
+                #start
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Timer::Dummy</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Timer.html#method-i-start" title="Timer">
+                #start
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Timer</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Timer.html#method-i-start_time" title="Timer">
+                #start_time
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Timer</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Interval.html#method-i-step" title="Interval">
+                #step
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Interval</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Timer/Dummy.html#method-i-stop" title="Timer::Dummy">
+                #stop
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Timer::Dummy</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Timer.html#method-i-stop" title="Timer">
+                #stop
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Timer</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Timer.html#method-i-stopped-3F" title="Timer">
+                #stopped?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Timer</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-subcommand" title="Argvector">
+                #subcommand
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-subcommand" title="Argvector">
+                #subcommand
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-subcommand" title="Argvector">
+                #subcommand
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-subcommand_with_arguments" title="Argvector">
+                #subcommand_with_arguments
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-subcommand_with_arguments" title="Argvector">
+                #subcommand_with_arguments
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-subcommand_with_arguments" title="Argvector">
+                #subcommand_with_arguments
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-subcommand_with_parameters" title="Argvector">
+                #subcommand_with_parameters
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-subcommand_with_parameters" title="Argvector">
+                #subcommand_with_parameters
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-subcommand_with_parameters" title="Argvector">
+                #subcommand_with_parameters
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-subcommand_with_preoptions" title="Argvector">
+                #subcommand_with_preoptions
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-subcommand_with_preoptions" title="Argvector">
+                #subcommand_with_preoptions
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Argvector.html#method-i-subcommand_with_preoptions" title="Argvector">
+                #subcommand_with_preoptions
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Argvector</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Platform.html#method-i-symbian-3F" title="Platform">
+                #symbian?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Platform</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Numeric/Multipliers.html#method-i-tebi" title="Numeric::Multipliers">
+                #tebi
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Numeric::Multipliers</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Tuple.html#method-i-teeny" title="Tuple">
+                #teeny
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Tuple</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Numeric/Multipliers.html#method-i-tera" title="Numeric::Multipliers">
+                #tera
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Numeric::Multipliers</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Tuple.html#method-i-to_a" title="Tuple">
+                #to_a
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Tuple</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Platform.html#method-i-to_a" title="Platform">
+                #to_a
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Platform</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Enumerable/Arguments.html#method-i-to_a" title="Enumerable::Arguments">
+                #to_a
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Enumerable::Arguments</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Tuple.html#method-i-to_ary" title="Tuple">
+                #to_ary
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Tuple</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Platform.html#method-i-to_s" title="Platform">
+                #to_s
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Platform</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Tuple.html#method-i-to_s" title="Tuple">
+                #to_s
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Tuple</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="String.html#method-i-to_t" title="String">
+                #to_t
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">String</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Array.html#method-i-to_t" title="Array">
+                #to_t
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Array</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Tuple.html#method-i-to_t" title="Tuple">
+                #to_t
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Tuple</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Tuple.html#method-i-to_tuple" title="Tuple">
+                #to_tuple
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Tuple</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Timer.html#method-i-total_time" title="Timer">
+                #total_time
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Timer</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Memoizable.html#method-i-unmemoize" title="Memoizable">
+                #unmemoize
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Memoizable</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Tuple.html#method-i-unshift" title="Tuple">
+                #unshift
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Tuple</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Tuple.html#method-i-values" title="Tuple">
+                #values
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Tuple</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Platform.html#method-i-windows-3F" title="Platform">
+                #windows?
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Platform</span>
+            </li>
+          
+            <li class="method" style="clear: both; overflow:hidden; white-space:nowrap;">
+              <a href="Interval.html#method-i-7E" title="Interval">
+                #~
+              </a>
+              &nbsp;<span style="font-size: 80%; color: #777;">Interval</span>
+            </li>
+          
+        </ul>
+      </div>
+
+      <!-- FILE INDEX -->
+      <!-- TODO -->
+
+    </div>
+
+</div> <!-- sidebar-wrapper -->
+
+        <hr class="hidden-modern">
+
+        <div class="foot">
+          <div class="site-links">
+<span><strong>Index</strong></span><span class="separator"> | </span>
+  <a href="http://rubyworks.github.com/facets">Home Page</a><span class="separator"> |</span>
+  <a href="http://wiki.github.com/rubyworks/facets">Community</a><span class="separator"> | </span>
+<a href="http://www.ruby-lang.org/en/about/">About Ruby</a>
+          </div>
+        </div>
+
+      </div>
+    </div> <!-- end main-wrapper -->
+
+    <div id="search-box">
+<form id="search-form" action="http://www.google.com/cse">
+<table class="fieldset">
+  <tbody><tr>
+    <td>
+      <input class="field" name="q" size="31" style="background: white url(http://www.google.com/coop/intl/en/images/google_custom_search_watermark.gif) no-repeat scroll left center; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;" onfocus="this.style.background='white'" onblur="if (/^\s*$/.test(this.value)) this.style.background='white url(http://www.google.com/coop/intl/en/images/google_custom_search_watermark.gif) left no-repeat'" type="text">
+    </td>
+    <td>
+      <input name="cx" value="013598269713424429640:g5orptiw95w" type="hidden">
+      <input name="ie" value="UTF-8" type="hidden">
+      <input class="button" name="sa" value="Search" type="submit">
+    </td>
+  </tr>
+</tbody></table>
+</form>
+    </div> <!-- end search-box -->
+
+    <div id="footer">
+      <div class="fine-print">
+
+<!--
+        <p>Content available in <a href="http://www.ruby-lang.org/en/">English</a>, <a href="http://www.ruby-lang.org/fr/">French</a>, <a href="http://www.ruby-lang.org/ja/">Japanese</a>, <a href="http://www.ruby-lang.org/ko/">Korean</a>, <a href="http://www.ruby-lang.org/pl/">Polish</a>, <a href="http://www.ruby-lang.org/es/">Spanish</a>, <a href="http://www.ruby-lang.org/pt/">Portuguese</a>, <a href="http://www.ruby-lang.org/zh_cn/">Simplified Chinese</a>, <a href="http://www.ruby-lang.org/zh_TW/">Traditional Chinese</a>, <a href="http://www.ruby-lang.org/id/">Bahasa Indonesia</a>, <a href="http://www.ruby-lang.org/de/">German</a>, <a href="http://www.ruby-lang.org/it/">Italian</a> and <a href="http://www.ruby-lang.org/bg/">Bulgarian</a>.</p>
+-->
+        <p>
+          
+          <a href="http://validator.w3.org/check/referer"><img src="assets/long/img/check.png" alt="[validate]" title="Validate" height="16" width="16" align="right" style="margin-left: 6px;" /></a>
+
+          This website is made with Ruby and powered by <a href="http://rdocidile.github.com/rubylang">RDoc RubyFaux</a> v1.2.0.
+          Please contact our <a href="">webmaster</a> for questions or comments concerning this website.
+        </p>
+      </div>
+
+    </div>
+
+  </div> <!-- end page  -->
+</body>
+</html>

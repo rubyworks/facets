@@ -1,0 +1,935 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<title>Module: URI</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (U)</a> &raquo; 
+    
+    
+    <span class="title">URI</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Class List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Module: URI
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/standard/facets/uri.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Defined Under Namespace</h2>
+<p class="children">
+   
+    
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="URI/Hash.html" title="URI::Hash (module)">Hash</a></span>, <span class='object_link'><a href="URI/Kernel.html" title="URI::Kernel (module)">Kernel</a></span>
+    
+   
+    
+  
+</p>
+
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="KEY_VALUE_SEPARATOR-constant" class="">KEY_VALUE_SEPARATOR =
+          
+        </dt>
+        <dd><pre class="code"><span class='string val'>&quot;;&quot;</span>
+</pre></dd>
+      
+    </dl>
+  
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#cgi_escape-instance_method" title="#cgi_escape (instance method)">- (Object) <strong>cgi_escape</strong>(string) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>CGI escape.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#cgi_parse-instance_method" title="#cgi_parse (instance method)">- (Object) <strong>cgi_parse</strong>(query) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#cgi_unescape-instance_method" title="#cgi_unescape (instance method)">- (Object) <strong>cgi_unescape</strong>(string) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#chomp_query_string-instance_method" title="#chomp_query_string (instance method)">- (Object) <strong>chomp_query_string</strong>(uri) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Removes the query string from a <tt>uri</tt>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#decode-instance_method" title="#decode (instance method)">- (Object) <strong>decode</strong>(uri) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Decode the uri components.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_query_string-instance_method" title="#get_query_string (instance method)">- (Object) <strong>get_query_string</strong>(uri) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This method returns the query string of a uri.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#hash_to_query-instance_method" title="#hash_to_query (instance method)">- (Object) <strong>hash_to_query</strong>(parameters) </a>
+    
+
+    
+      (also: #hash_to_query_string)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Given a hash with parameter/value pairs construct a standard query string.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#query_to_hash-instance_method" title="#query_to_hash (instance method)">- (Object) <strong>query_to_hash</strong>(query_string) </a>
+    
+
+    
+      (also: #query_string_to_hash)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Extend the basic query string parser provided by the cgi module.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#update_query_string-instance_method" title="#update_query_string (instance method)">- (Object) <strong>update_query_string</strong>(uri, parameters) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get a uri and a hash of parameters.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#update_request_uri-instance_method" title="#update_request_uri (instance method)">- (Object) <strong>update_request_uri</strong>(request, parameters) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Gets the request uri, injects extra parameters in the query string and
+returns a new uri.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="cgi_escape-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>cgi_escape</strong>(string) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>CGI escape</p>
+
+<p>TODO: How does this compare to URI.escape?</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+83
+84
+85
+86
+87</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/standard/facets/uri.rb', line 83</span>
+
+<span class='def def kw'>def</span> <span class='cgi_escape identifier id'>cgi_escape</span><span class='lparen token'>(</span><span class='string identifier id'>string</span><span class='rparen token'>)</span>
+  <span class='string identifier id'>string</span><span class='dot token'>.</span><span class='gsub identifier id'>gsub</span><span class='lparen token'>(</span><span class='regexp val'>/([^ a-zA-Z0-9_.-]+)/n</span><span class='rparen token'>)</span> <span class='do do kw'>do</span>
+    <span class='string val'>'%'</span> <span class='plus op'>+</span> <span class='$1 nth_ref id'>$1</span><span class='dot token'>.</span><span class='unpack identifier id'>unpack</span><span class='lparen token'>(</span><span class='string val'>'H2'</span> <span class='mult op'>*</span> <span class='$1 nth_ref id'>$1</span><span class='dot token'>.</span><span class='size identifier id'>size</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='join identifier id'>join</span><span class='lparen token'>(</span><span class='string val'>'%'</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='upcase identifier id'>upcase</span>
+  <span class='end end kw'>end</span><span class='dot token'>.</span><span class='tr identifier id'>tr</span><span class='lparen token'>(</span><span class='string val'>' '</span><span class='comma token'>,</span> <span class='string val'>'+'</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="cgi_parse-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>cgi_parse</strong>(query) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/standard/facets/uri.rb', line 97</span>
+
+<span class='def def kw'>def</span> <span class='cgi_parse identifier id'>cgi_parse</span><span class='lparen token'>(</span><span class='query identifier id'>query</span><span class='rparen token'>)</span>
+  <span class='params identifier id'>params</span> <span class='assign token'>=</span> <span class='Hash constant id'>Hash</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='lbrack token'>[</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='freeze identifier id'>freeze</span><span class='rparen token'>)</span>
+
+  <span class='query identifier id'>query</span><span class='dot token'>.</span><span class='split identifier id'>split</span><span class='lparen token'>(</span><span class='regexp val'>/[&amp;;]/n</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='each identifier id'>each</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='pairs identifier id'>pairs</span><span class='bitor op'>|</span>
+    <span class='key identifier id'>key</span><span class='comma token'>,</span> <span class='value identifier id'>value</span> <span class='assign token'>=</span> <span class='pairs identifier id'>pairs</span><span class='dot token'>.</span><span class='split identifier id'>split</span><span class='lparen token'>(</span><span class='string val'>'='</span><span class='comma token'>,</span><span class='integer val'>2</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='collect identifier id'>collect</span><span class='lbrace token'>{</span><span class='bitor op'>|</span><span class='v identifier id'>v</span><span class='bitor op'>|</span> <span class='cgi_unescape identifier id'>cgi_unescape</span><span class='lparen token'>(</span><span class='v identifier id'>v</span><span class='rparen token'>)</span> <span class='rbrace token'>}</span>
+    <span class='if if kw'>if</span> <span class='params identifier id'>params</span><span class='dot token'>.</span><span class='has_key? fid id'>has_key?</span><span class='lparen token'>(</span><span class='key identifier id'>key</span><span class='rparen token'>)</span>
+      <span class='params identifier id'>params</span><span class='lbrack token'>[</span><span class='key identifier id'>key</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='push identifier id'>push</span><span class='lparen token'>(</span><span class='value identifier id'>value</span><span class='rparen token'>)</span>
+    <span class='else else kw'>else</span>
+      <span class='params identifier id'>params</span><span class='lbrack token'>[</span><span class='key identifier id'>key</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='lbrack token'>[</span><span class='value identifier id'>value</span><span class='rbrack token'>]</span>
+    <span class='end end kw'>end</span>
+  <span class='end end kw'>end</span>
+
+  <span class='params identifier id'>params</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="cgi_unescape-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>cgi_unescape</strong>(string) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+90
+91
+92
+93
+94</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/standard/facets/uri.rb', line 90</span>
+
+<span class='def def kw'>def</span> <span class='cgi_unescape identifier id'>cgi_unescape</span><span class='lparen token'>(</span><span class='string identifier id'>string</span><span class='rparen token'>)</span>
+  <span class='string identifier id'>string</span><span class='dot token'>.</span><span class='tr identifier id'>tr</span><span class='lparen token'>(</span><span class='string val'>'+'</span><span class='comma token'>,</span> <span class='string val'>' '</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='gsub identifier id'>gsub</span><span class='lparen token'>(</span><span class='regexp val'>/((?:%[0-9a-fA-F]{2})+)/n</span><span class='rparen token'>)</span> <span class='do do kw'>do</span>
+    <span class='lbrack token'>[</span><span class='$1 nth_ref id'>$1</span><span class='dot token'>.</span><span class='delete identifier id'>delete</span><span class='lparen token'>(</span><span class='string val'>'%'</span><span class='rparen token'>)</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='pack identifier id'>pack</span><span class='lparen token'>(</span><span class='string val'>'H*'</span><span class='rparen token'>)</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="chomp_query_string-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>chomp_query_string</strong>(uri) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Removes the query string from a <tt>uri</tt>.</p>
+
+<p>Returns the chomped uri.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+135
+136
+137
+138
+139</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/standard/facets/uri.rb', line 135</span>
+
+<span class='def def kw'>def</span> <span class='chomp_query_string identifier id'>chomp_query_string</span><span class='lparen token'>(</span><span class='uri identifier id'>uri</span><span class='rparen token'>)</span>
+  <span class='return return kw'>return</span> <span class='nil nil kw'>nil</span> <span class='unless unless_mod kw'>unless</span> <span class='uri identifier id'>uri</span>
+  <span class='query_string identifier id'>query_string</span> <span class='assign token'>=</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='get_query_string identifier id'>get_query_string</span><span class='lparen token'>(</span><span class='uri identifier id'>uri</span><span class='rparen token'>)</span>
+  <span class='return return kw'>return</span> <span class='uri identifier id'>uri</span><span class='dot token'>.</span><span class='dup identifier id'>dup</span><span class='dot token'>.</span><span class='chomp identifier id'>chomp</span><span class='lparen token'>(</span><span class='dstring node'>&quot;?#{query_string}&quot;</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="decode-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>decode</strong>(uri) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Decode the uri components.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Raises:</h3>
+<ul class="raise">
+  
+    <li>
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/standard/facets/uri.rb', line 11</span>
+
+<span class='def def kw'>def</span> <span class='decode identifier id'>decode</span><span class='lparen token'>(</span><span class='uri identifier id'>uri</span><span class='rparen token'>)</span>
+  <span class='comment val'>## gmosx: hmm is this needed?</span>
+  <span class='comment val'>## guard against invalid filenames for example pictures with</span>
+  <span class='comment val'>## spaces uploaded by users</span>
+  <span class='escaped_uri identifier id'>escaped_uri</span> <span class='assign token'>=</span> <span class='uri identifier id'>uri</span><span class='dot token'>.</span><span class='gsub identifier id'>gsub</span><span class='lparen token'>(</span><span class='regexp val'>/ /</span><span class='comma token'>,</span> <span class='string val'>&quot;+&quot;</span><span class='rparen token'>)</span>
+
+  <span class='if if kw'>if</span> <span class='md identifier id'>md</span> <span class='assign token'>=</span> <span class='URI constant id'>URI</span><span class='colon2 op'>::</span><span class='REGEXP constant id'>REGEXP</span><span class='colon2 op'>::</span><span class='REL_URI constant id'>REL_URI</span><span class='dot token'>.</span><span class='match identifier id'>match</span><span class='lparen token'>(</span><span class='escaped_uri identifier id'>escaped_uri</span><span class='rparen token'>)</span>
+    <span class='path identifier id'>path</span> <span class='assign token'>=</span> <span class='dstring node'>&quot;#{md[5]}#{md[6]}&quot;</span>
+    <span class='type identifier id'>type</span> <span class='assign token'>=</span> <span class='File constant id'>File</span><span class='dot token'>.</span><span class='extname identifier id'>extname</span><span class='lparen token'>(</span><span class='path identifier id'>path</span><span class='rparen token'>)</span>
+    <span class='query_string identifier id'>query_string</span> <span class='assign token'>=</span> <span class='md identifier id'>md</span><span class='lbrack token'>[</span><span class='integer val'>7</span><span class='rbrack token'>]</span>
+
+    <span class='comment val'>## real_path = &quot;#{$root_dir}/#{path}&quot;</span>
+
+    <span class='parameters identifier id'>parameters</span> <span class='assign token'>=</span> <span class='URI constant id'>URI</span><span class='dot token'>.</span><span class='query_to_hash identifier id'>query_to_hash</span><span class='lparen token'>(</span><span class='query_string identifier id'>query_string</span><span class='rparen token'>)</span>
+    <span class='path identifier id'>path</span><span class='dot token'>.</span><span class='gsub! fid id'>gsub!</span><span class='lparen token'>(</span><span class='regexp val'>/\+/</span><span class='comma token'>,</span> <span class='string val'>&quot; &quot;</span><span class='rparen token'>)</span>
+
+    <span class='return return kw'>return</span> <span class='lbrack token'>[</span><span class='path identifier id'>path</span><span class='comma token'>,</span> <span class='type identifier id'>type</span><span class='comma token'>,</span> <span class='parameters identifier id'>parameters</span><span class='comma token'>,</span> <span class='query_string identifier id'>query_string</span><span class='rbrack token'>]</span>
+  <span class='end end kw'>end</span>
+
+  <span class='comment val'>## this is usefull for uncovering bugs!</span>
+  <span class='raise identifier id'>raise</span> <span class='ArgumentError constant id'>ArgumentError</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='dstring node'>&quot;the parameter '#{uri}' is not a valid uri&quot;</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="get_query_string-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>get_query_string</strong>(uri) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>This method returns the query string of a uri</p>
+
+<p>Input: the uri</p>
+
+<p>Output: the query string. returns nil if no query string</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/standard/facets/uri.rb', line 120</span>
+
+<span class='def def kw'>def</span> <span class='get_query_string identifier id'>get_query_string</span><span class='lparen token'>(</span><span class='uri identifier id'>uri</span><span class='rparen token'>)</span>
+  <span class='return return kw'>return</span> <span class='nil nil kw'>nil</span> <span class='unless unless_mod kw'>unless</span> <span class='uri identifier id'>uri</span>
+  <span class='comment val'># gmosx: INVESTIGATE ruby's URI seems to differently handle</span>
+  <span class='comment val'># abs and rel uris.</span>
+  <span class='if if kw'>if</span> <span class='md identifier id'>md</span> <span class='assign token'>=</span> <span class='URI constant id'>URI</span><span class='colon2 op'>::</span><span class='REGEXP constant id'>REGEXP</span><span class='colon2 op'>::</span><span class='ABS_URI constant id'>ABS_URI</span><span class='dot token'>.</span><span class='match identifier id'>match</span><span class='lparen token'>(</span><span class='uri identifier id'>uri</span><span class='rparen token'>)</span>
+    <span class='return return kw'>return</span> <span class='md identifier id'>md</span><span class='lbrack token'>[</span><span class='integer val'>8</span><span class='rbrack token'>]</span>
+  <span class='elsif elsif kw'>elsif</span> <span class='md identifier id'>md</span> <span class='assign token'>=</span> <span class='URI constant id'>URI</span><span class='colon2 op'>::</span><span class='REGEXP constant id'>REGEXP</span><span class='colon2 op'>::</span><span class='REL_URI constant id'>REL_URI</span><span class='dot token'>.</span><span class='match identifier id'>match</span><span class='lparen token'>(</span><span class='uri identifier id'>uri</span><span class='rparen token'>)</span>
+    <span class='return return kw'>return</span> <span class='md identifier id'>md</span><span class='lbrack token'>[</span><span class='integer val'>7</span><span class='rbrack token'>]</span>
+  <span class='end end kw'>end</span>
+  <span class='return return kw'>return</span> <span class='nil nil kw'>nil</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="hash_to_query-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>hash_to_query</strong>(parameters) 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='hash_to_query_string-instance_method'>hash_to_query_string</span></span>
+    </span>
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Given a hash with parameter/value pairs construct a standard query string.</p>
+
+<pre class="code"><span class='URI constant id'>URI</span><span class='dot token'>.</span><span class='hash_to_query identifier id'>hash_to_query</span><span class='lparen token'>(</span><span class='symbol val'>:a</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='integer val'>1</span><span class='comma token'>,</span> <span class='symbol val'>:b</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='integer val'>2</span><span class='rparen token'>)</span>
+<span class='comment val'>#=&gt; &quot;a=1;b=2&quot;</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+69
+70
+71
+72
+73
+74
+75
+76</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/standard/facets/uri.rb', line 69</span>
+
+<span class='def def kw'>def</span> <span class='hash_to_query identifier id'>hash_to_query</span><span class='lparen token'>(</span><span class='parameters identifier id'>parameters</span><span class='rparen token'>)</span>
+  <span class='return return kw'>return</span> <span class='string val'>''</span> <span class='unless unless_mod kw'>unless</span> <span class='parameters identifier id'>parameters</span>
+  <span class='pairs identifier id'>pairs</span> <span class='assign token'>=</span> <span class='lbrack token'>[</span><span class='rbrack token'>]</span>
+  <span class='parameters identifier id'>parameters</span><span class='dot token'>.</span><span class='each identifier id'>each</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='param identifier id'>param</span><span class='comma token'>,</span> <span class='value identifier id'>value</span><span class='bitor op'>|</span>
+    <span class='pairs identifier id'>pairs</span> <span class='lshft op'>&lt;&lt;</span> <span class='dstring node'>&quot;#{param}=#{cgi_escape(value.to_s)}&quot;</span>
+  <span class='end end kw'>end</span>
+  <span class='return return kw'>return</span> <span class='pairs identifier id'>pairs</span><span class='dot token'>.</span><span class='join identifier id'>join</span><span class='lparen token'>(</span><span class='KEY_VALUE_SEPARATOR constant id'>KEY_VALUE_SEPARATOR</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="query_to_hash-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>query_to_hash</strong>(query_string) 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='query_string_to_hash-instance_method'>query_string_to_hash</span></span>
+    </span>
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Extend the basic query string parser provided by the cgi module. converts
+single valued params (the most common case) to objects instead of arrays</p>
+
+<p>Returns hash of parameters, contains arrays for multivalued parameters
+(multiselect, checkboxes , etc).</p>
+
+<p>If no query string is provided (nil or “”) returns an empty hash.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/standard/facets/uri.rb', line 42</span>
+
+<span class='def def kw'>def</span> <span class='query_to_hash identifier id'>query_to_hash</span><span class='lparen token'>(</span><span class='query_string identifier id'>query_string</span><span class='rparen token'>)</span>
+  <span class='return return kw'>return</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span> <span class='unless unless_mod kw'>unless</span> <span class='query_string identifier id'>query_string</span>
+
+  <span class='query_parameters identifier id'>query_parameters</span> <span class='assign token'>=</span> <span class='cgi_parse identifier id'>cgi_parse</span><span class='lparen token'>(</span><span class='query_string identifier id'>query_string</span><span class='rparen token'>)</span>
+
+  <span class='query_parameters identifier id'>query_parameters</span><span class='dot token'>.</span><span class='each identifier id'>each</span> <span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='key identifier id'>key</span><span class='comma token'>,</span> <span class='val identifier id'>val</span><span class='bitor op'>|</span>
+    <span class='comment val'>## replace the array with an object</span>
+    <span class='query_parameters identifier id'>query_parameters</span><span class='lbrack token'>[</span><span class='key identifier id'>key</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='val identifier id'>val</span><span class='lbrack token'>[</span><span class='integer val'>0</span><span class='rbrack token'>]</span> <span class='if if_mod kw'>if</span> <span class='integer val'>1</span> <span class='eq op'>==</span> <span class='val identifier id'>val</span><span class='dot token'>.</span><span class='length identifier id'>length</span>
+  <span class='rbrace token'>}</span>
+
+  <span class='comment val'>## set default value to nil! cgi sets this to []</span>
+  <span class='query_parameters identifier id'>query_parameters</span><span class='dot token'>.</span><span class='default identifier id'>default</span> <span class='assign token'>=</span> <span class='nil nil kw'>nil</span>
+
+  <span class='return return kw'>return</span> <span class='query_parameters identifier id'>query_parameters</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="update_query_string-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>update_query_string</strong>(uri, parameters) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Get a uri and a hash of parameters. Inject the hash values as parameters in
+the query sting path. Returns the full uri.</p>
+
+<p>uri       - the uri to filter (String) parameter - hash of parameters to
+update</p>
+
+<p>Returns the full updated query string.</p>
+
+<p>TODO: optimize</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/standard/facets/uri.rb', line 150</span>
+
+<span class='def def kw'>def</span> <span class='update_query_string identifier id'>update_query_string</span><span class='lparen token'>(</span><span class='uri identifier id'>uri</span><span class='comma token'>,</span> <span class='parameters identifier id'>parameters</span><span class='rparen token'>)</span>
+  <span class='query_string identifier id'>query_string</span> <span class='assign token'>=</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='get_query_string identifier id'>get_query_string</span><span class='lparen token'>(</span><span class='uri identifier id'>uri</span><span class='rparen token'>)</span>
+  <span class='rest identifier id'>rest</span> <span class='assign token'>=</span> <span class='uri identifier id'>uri</span><span class='dot token'>.</span><span class='dup identifier id'>dup</span><span class='dot token'>.</span><span class='gsub identifier id'>gsub</span><span class='lparen token'>(</span><span class='dregexp node'>/\?#{query_string}/</span><span class='comma token'>,</span> <span class='string val'>&quot;&quot;</span><span class='rparen token'>)</span>
+
+  <span class='hash identifier id'>hash</span> <span class='assign token'>=</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='query_string_to_hash identifier id'>query_string_to_hash</span><span class='lparen token'>(</span><span class='query_string identifier id'>query_string</span><span class='rparen token'>)</span>
+  <span class='hash identifier id'>hash</span><span class='dot token'>.</span><span class='update identifier id'>update</span><span class='lparen token'>(</span><span class='parameters identifier id'>parameters</span><span class='rparen token'>)</span>
+  <span class='query_string identifier id'>query_string</span> <span class='assign token'>=</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='hash_to_query_string identifier id'>hash_to_query_string</span><span class='lparen token'>(</span><span class='hash identifier id'>hash</span><span class='rparen token'>)</span>
+
+  <span class='unless unless kw'>unless</span> <span class='query_string identifier id'>query_string</span><span class='dot token'>.</span><span class='blank? fid id'>blank?</span>
+    <span class='return return kw'>return</span> <span class='dstring node'>&quot;#{rest}?#{query_string}&quot;</span>
+  <span class='else else kw'>else</span>
+    <span class='return return kw'>return</span> <span class='rest identifier id'>rest</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="update_request_uri-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>update_request_uri</strong>(request, parameters) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Gets the request uri, injects extra parameters in the query string and
+returns a new uri. The request object is not modified. There is always a qs
+string so an extra test is skipped.</p>
+
+<p>TODO: find a better name?</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/standard/facets/uri.rb', line 170</span>
+
+<span class='def def kw'>def</span> <span class='update_request_uri identifier id'>update_request_uri</span><span class='lparen token'>(</span><span class='request identifier id'>request</span><span class='comma token'>,</span> <span class='parameters identifier id'>parameters</span><span class='rparen token'>)</span>
+  <span class='hash identifier id'>hash</span> <span class='assign token'>=</span> <span class='request identifier id'>request</span><span class='dot token'>.</span><span class='parameters identifier id'>parameters</span><span class='dot token'>.</span><span class='dup identifier id'>dup</span><span class='lparen token'>(</span><span class='rparen token'>)</span>
+  <span class='hash identifier id'>hash</span><span class='dot token'>.</span><span class='update identifier id'>update</span><span class='lparen token'>(</span><span class='parameters identifier id'>parameters</span><span class='rparen token'>)</span>
+
+  <span class='comment val'>## use this in hash_to_querystring.</span>
+  <span class='query_string identifier id'>query_string</span> <span class='assign token'>=</span> <span class='hash identifier id'>hash</span><span class='dot token'>.</span><span class='collect identifier id'>collect</span> <span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='k identifier id'>k</span><span class='comma token'>,</span> <span class='v identifier id'>v</span><span class='bitor op'>|</span>
+    <span class='dstring node'>&quot;#{k}=#{v}&quot;</span>
+  <span class='rbrace token'>}</span><span class='dot token'>.</span><span class='join identifier id'>join</span><span class='lparen token'>(</span><span class='string val'>&quot;;&quot;</span><span class='rparen token'>)</span>
+
+  <span class='comment val'>## return &quot;#{request.translated_uri}?#{query_string}&quot;</span>
+  <span class='return return kw'>return</span> <span class='dstring node'>&quot;#{request.path}?#{query_string}&quot;</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Tue May 17 02:27:09 2011 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.6.7 (ruby-1.8.7).
+</div>
+
+  </body>
+</html>

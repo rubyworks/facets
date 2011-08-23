@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<title>Module: ObjectSpace</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (O)</a> &raquo; 
+    
+    
+    <span class="title">ObjectSpace</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Class List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Module: ObjectSpace
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/core/facets/objectspace/classes.rb<span class="defines">,<br />
+  lib/core/facets/objectspace/reflect.rb</span>
+</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Defined Under Namespace</h2>
+<p class="children">
+   
+    
+   
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="ObjectSpace/Reflector.html" title="ObjectSpace::Reflector (class)">Reflector</a></span>
+    
+  
+</p>
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#classes-class_method" title="classes (class method)">+ (Array[Class]) <strong>classes</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>All the classes in the object space.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#reflect-class_method" title="reflect (class method)">+ (Object) <strong>reflect</strong>(obj) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Reflection ensures that information about an object is actual according to
+Ruby’s Kernel definitions, just in case such methods have been
+overridden.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="classes-class_method">
+  
+    + (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span>[<span class='object_link'><a href="Class.html" title="Class (class)">Class</a></span>]</tt>) <strong>classes</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>All the classes in the object space.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span>[<span class='object_link'><a href="Class.html" title="Class (class)">Class</a></span>]</tt>)</span>
+      
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>All the classes in the object space.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+4
+5
+6
+7
+8</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/objectspace/classes.rb', line 4</span>
+
+<span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='classes identifier id'>classes</span>
+  <span class='klasses identifier id'>klasses</span> <span class='assign token'>=</span> <span class='lbrack token'>[</span><span class='rbrack token'>]</span>
+  <span class='each_object identifier id'>each_object</span><span class='lparen token'>(</span><span class='Class constant id'>Class</span><span class='rparen token'>)</span><span class='lbrace token'>{</span><span class='bitor op'>|</span><span class='o identifier id'>o</span><span class='bitor op'>|</span> <span class='klasses identifier id'>klasses</span> <span class='lshft op'>&lt;&lt;</span> <span class='o identifier id'>o</span><span class='rbrace token'>}</span>
+  <span class='klasses identifier id'>klasses</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="reflect-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>reflect</strong>(obj) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Reflection ensures that information about an object is actual according to
+Ruby’s Kernel definitions, just in case such methods have been
+overridden.</p>
+
+<pre class="code"><span class='ObjectSpace constant id'>ObjectSpace</span><span class='dot token'>.</span><span class='reflect identifier id'>reflect</span><span class='lparen token'>(</span><span class='string val'>&quot;object&quot;</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='object_id identifier id'>object_id</span>
+</pre>
+
+<p>There is also a global short-cut for this method to ease meta-programming
+with it.</p>
+
+<pre class="code"><span class='$ref gvar id'>$ref</span><span class='lbrack token'>[</span><span class='string val'>&quot;object&quot;</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='class identifier id'>class</span>
+</pre>
+
+<p>Typically theis method will be used to gather the object’s id, as in the
+example given, or it’s class, but any Kernel method can be used.</p>
+
+<p>Care should be taken in utilizing this technique. In most cases it is not
+needed, but in certain cases is useful for improving the robustness of
+meta-programming solutions.</p>
+
+<p>Note that this is also equivalent to using <tt>as(Kernel)</tt> …</p>
+
+<pre class="code"><span class='string val'>&quot;object&quot;</span><span class='dot token'>.</span><span class='as identifier id'>as</span><span class='lparen token'>(</span><span class='Kernel constant id'>Kernel</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='object_id identifier id'>object_id</span>
+</pre>
+
+<p>But obviously, in this case there is the risk that #as has be overridden
+too.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+31
+32
+33
+34
+35
+36
+37</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/objectspace/reflect.rb', line 31</span>
+
+<span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='reflect identifier id'>reflect</span><span class='lparen token'>(</span><span class='obj identifier id'>obj</span><span class='rparen token'>)</span>
+  <span class='comment val'>## TODO: use this after 1.8.6 support discontinued</span>
+  <span class='comment val'>## Functor.new do |op, *a, &amp;b|</span>
+  <span class='comment val'>##   Kernel.instance_method(op).bind(obj).call(*a, &amp;b)</span>
+  <span class='comment val'>## end</span>
+  <span class='Reflector constant id'>Reflector</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='obj identifier id'>obj</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Tue May 17 02:26:24 2011 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.6.7 (ruby-1.8.7).
+</div>
+
+  </body>
+</html>

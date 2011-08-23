@@ -1,0 +1,1810 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<title>Class: Argvector</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (A)</a> &raquo; 
+    
+    
+    <span class="title">Argvector</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Class List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Class: Argvector
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></span>
+      
+        <ul class="fullTree">
+          <li><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></li>
+          
+            <li class="next">Argvector</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/supplemental/facets/argvector.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<h1>Argvector</h1>
+
+<p>Argvector provides a very simple means of parsing command line arguments.</p>
+
+<p>Unlike other more complex libs this provides only the most basic and
+standard parsing functionality. In many cases that’s all one really
+needs.</p>
+
+<p>Usage is straight foward. Simply instantiate the class and query it for the
+particular “views” of the command line you want.</p>
+
+<pre class="code"><span class='cargs identifier id'>cargs</span> <span class='assign token'>=</span> <span class='Argvector constant id'>Argvector</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='string val'>&quot;-a foo -b=2&quot;</span><span class='rparen token'>)</span>
+
+<span class='cargs identifier id'>cargs</span><span class='dot token'>.</span><span class='parameters identifier id'>parameters</span>    <span class='comment val'>#=&gt; [['foo'],{'a'=&gt;true,'b'=&gt;'2'}]</span>
+<span class='cargs identifier id'>cargs</span><span class='dot token'>.</span><span class='flags identifier id'>flags</span>         <span class='comment val'>#=&gt; ['a']</span>
+<span class='cargs identifier id'>cargs</span><span class='dot token'>.</span><span class='preoptions identifier id'>preoptions</span>    <span class='comment val'>#=&gt; {'a'=&gt;true}</span>
+<span class='cargs identifier id'>cargs</span><span class='dot token'>.</span><span class='preflags identifier id'>preflags</span>      <span class='comment val'>#=&gt; ['a']</span>
+<span class='cargs identifier id'>cargs</span><span class='dot token'>.</span><span class='subcommand identifier id'>subcommand</span>    <span class='comment val'>#=&gt; ['foo', [], {'b'=&gt;'2'}]</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div>
+
+  <h2>Instance Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#argv-instance_method" title="#argv (instance method)">- (Object) <strong>argv</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title readonly">readonly</span>
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute argv.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#arity-instance_method" title="#arity (instance method)">- (Object) <strong>arity</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title readonly">readonly</span>
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute arity.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#line-instance_method" title="#line (instance method)">- (Object) <strong>line</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title readonly">readonly</span>
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute line.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#parameters-class_method" title="parameters (class method)">+ (Object) <strong>parameters</strong>(*args) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#assoc_options-instance_method" title="#assoc_options (instance method)">- (Object) <strong>assoc_options</strong>(args) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Parse flags takes the command line and transforms it such that flags (eg.
+-x and –x) are elemental associative arrays.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#flags-instance_method" title="#flags (instance method)">- (Object) <strong>flags</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Return flags, which are true options.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#format_options-instance_method" title="#format_options (instance method)">- (Object) <strong>format_options</strong>(assoc_options) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Format flag options.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (Argvector) <strong>initialize</strong>(line = nil, arity = nil) </a>
+    
+
+    
+  </span>
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Takes the command line string (or array) and options.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#multi_flag-instance_method" title="#multi_flag (instance method)">- (Object) <strong>multi_flag</strong>(args = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Split single letter option groupings into separate options.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#operands-instance_method" title="#operands (instance method)">- (Object) <strong>operands</strong> </a>
+    
+
+    
+      (also: #arguments)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns operand array.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#options-instance_method" title="#options (instance method)">- (Object) <strong>options</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns options hash.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#parameters-instance_method" title="#parameters (instance method)">- (Object) <strong>parameters</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns [operands, options], which is good for plugging directly into a
+method.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#parameters_without_duplicates-instance_method" title="#parameters_without_duplicates (instance method)">- (Object) <strong>parameters_without_duplicates</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Like parameters but without allowing for duplicate options.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#parse-instance_method" title="#parse (instance method)">- (Object) <strong>parse</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Basic parser partitions the command line into options and operands.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#parse_arity-instance_method" title="#parse_arity (instance method)">- (Object) <strong>parse_arity</strong>(arity) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Ensure arity is uniform.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#parse_line-instance_method" title="#parse_line (instance method)">- (Object) <strong>parse_line</strong>(line = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>First pass parser to split the command line into an array using Shellwords,
+if not already so divided.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#parse_preoptions-instance_method" title="#parse_preoptions (instance method)">- (Object) <strong>parse_preoptions</strong>(args) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Parse preoptions.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#preflags-instance_method" title="#preflags (instance method)">- (Object) <strong>preflags</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Same as <tt>flags</tt> but only returns flags in the preoptions.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#preoptions-instance_method" title="#preoptions (instance method)">- (Object) <strong>preoptions</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a hash of options that occur before the first operand.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#subcommand_with_arguments-instance_method" title="#subcommand_with_arguments (instance method)">- (Object) <strong>subcommand_with_arguments</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Assumes the first operand is a “subcommand” and returns it and the
+argments following it as another Arguments object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#subcommand_with_parameters-instance_method" title="#subcommand_with_parameters (instance method)">- (Object) <strong>subcommand_with_parameters</strong> </a>
+    
+
+    
+      (also: #subcommand)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Assumes the first operand is a “subcommand” and returns it and the
+argments following it as parameters.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#subcommand_with_preoptions-instance_method" title="#subcommand_with_preoptions (instance method)">- (Object) <strong>subcommand_with_preoptions</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <p class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Argvector (class)">Argvector</a></span></tt>) <strong>initialize</strong>(line = nil, arity = nil) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Takes the command line string (or array) and options. Options have flags
+and end with a hash of option arity.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+81
+82
+83
+84
+85</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/supplemental/facets/argvector.rb', line 81</span>
+
+<span class='def def kw'>def</span> <span class='initialize identifier id'>initialize</span><span class='lparen token'>(</span><span class='line identifier id'>line</span><span class='assign token'>=</span><span class='nil nil kw'>nil</span><span class='comma token'>,</span> <span class='arity identifier id'>arity</span><span class='assign token'>=</span><span class='nil nil kw'>nil</span><span class='rparen token'>)</span>
+  <span class='@line ivar id'>@line</span><span class='comma token'>,</span> <span class='@argv ivar id'>@argv</span>  <span class='assign token'>=</span> <span class='parse_line identifier id'>parse_line</span><span class='lparen token'>(</span><span class='line identifier id'>line</span><span class='rparen token'>)</span>
+  <span class='@arity ivar id'>@arity</span> <span class='assign token'>=</span> <span class='parse_arity identifier id'>parse_arity</span><span class='lparen token'>(</span><span class='arity identifier id'>arity</span><span class='orop op'>||</span><span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='rparen token'>)</span>
+  <span class='parse identifier id'>parse</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id=""></span>
+      <span id="argv-instance_method"></span>
+      <div class="method_details first">
+  <p class="signature first" id="argv-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>argv</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute argv</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+72
+73
+74</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/supplemental/facets/argvector.rb', line 72</span>
+
+<span class='def def kw'>def</span> <span class='argv identifier id'>argv</span>
+  <span class='@argv ivar id'>@argv</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <span id="arity-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="arity-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>arity</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute arity</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+73
+74
+75</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/supplemental/facets/argvector.rb', line 73</span>
+
+<span class='def def kw'>def</span> <span class='arity identifier id'>arity</span>
+  <span class='@arity ivar id'>@arity</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <span id="line-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="line-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>line</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute line</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+71
+72
+73</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/supplemental/facets/argvector.rb', line 71</span>
+
+<span class='def def kw'>def</span> <span class='line identifier id'>line</span>
+  <span class='@line ivar id'>@line</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="parameters-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>parameters</strong>(*args) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+67
+68
+69</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/supplemental/facets/argvector.rb', line 67</span>
+
+<span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='parameters identifier id'>parameters</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='args identifier id'>args</span><span class='rparen token'>)</span>
+  <span class='new identifier id'>new</span><span class='dot token'>.</span><span class='parameters identifier id'>parameters</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='args identifier id'>args</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="assoc_options-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>assoc_options</strong>(args) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Parse flags takes the command line and transforms it such that flags (eg.
+-x and –x) are elemental associative arrays.</p>
+
+<pre class="code"><span class='line identifier id'>line</span> <span class='assign token'>=</span> <span class='string val'>&quot;--foo hello --try=this&quot;</span>
+<span class='argv identifier id'>argv</span> <span class='assign token'>=</span> <span class='Argvector constant id'>Argvector</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='line identifier id'>line</span><span class='rparen token'>)</span>
+
+<span class='args identifier id'>args</span> <span class='assign token'>=</span> <span class='line identifier id'>line</span><span class='dot token'>.</span><span class='split identifier id'>split</span><span class='lparen token'>(</span><span class='regexp val'>/\s/</span><span class='rparen token'>)</span>
+<span class='argv identifier id'>argv</span><span class='dot token'>.</span><span class='assoc_options identifier id'>assoc_options</span><span class='lparen token'>(</span><span class='args identifier id'>args</span><span class='rparen token'>)</span>  <span class='comment val'>#=&gt; [ [&quot;foo&quot;,true], &quot;hello&quot;, [&quot;try&quot;,&quot;this&quot;] ]</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/supplemental/facets/argvector.rb', line 286</span>
+
+<span class='def def kw'>def</span> <span class='assoc_options identifier id'>assoc_options</span><span class='lparen token'>(</span><span class='args identifier id'>args</span><span class='rparen token'>)</span>
+  <span class='comment val'>##args = args.dup</span>
+  <span class='args identifier id'>args</span> <span class='assign token'>=</span> <span class='multi_flag identifier id'>multi_flag</span><span class='lparen token'>(</span><span class='args identifier id'>args</span><span class='rparen token'>)</span> <span class='comment val'>#unless opts.include?(:simple)</span>
+  <span class='i identifier id'>i</span> <span class='assign token'>=</span> <span class='integer val'>0</span>
+  <span class='while while kw'>while</span> <span class='i identifier id'>i</span> <span class='lt op'>&lt;</span> <span class='args identifier id'>args</span><span class='dot token'>.</span><span class='size identifier id'>size</span>
+    <span class='arg identifier id'>arg</span> <span class='assign token'>=</span> <span class='args identifier id'>args</span><span class='lbrack token'>[</span><span class='i identifier id'>i</span><span class='rbrack token'>]</span>
+    <span class='case case kw'>case</span> <span class='arg identifier id'>arg</span>
+    <span class='when when kw'>when</span> <span class='regexp val'>/^-/</span>
+      <span class='arg identifier id'>arg</span> <span class='assign token'>=</span> <span class='arg identifier id'>arg</span><span class='dot token'>.</span><span class='sub identifier id'>sub</span><span class='lparen token'>(</span><span class='regexp val'>/^-{1,2}/</span><span class='comma token'>,</span><span class='string val'>''</span><span class='rparen token'>)</span>
+      <span class='if if kw'>if</span> <span class='arg identifier id'>arg</span><span class='dot token'>.</span><span class='index identifier id'>index</span><span class='lparen token'>(</span><span class='string val'>'='</span><span class='rparen token'>)</span>
+        <span class='key identifier id'>key</span><span class='comma token'>,</span> <span class='val identifier id'>val</span> <span class='assign token'>=</span> <span class='arg identifier id'>arg</span><span class='dot token'>.</span><span class='split identifier id'>split</span><span class='lparen token'>(</span><span class='string val'>'='</span><span class='rparen token'>)</span>
+        <span class='args identifier id'>args</span><span class='lbrack token'>[</span><span class='i identifier id'>i</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='lbrack token'>[</span><span class='key identifier id'>key</span><span class='comma token'>,</span> <span class='val identifier id'>val</span><span class='orop op'>||</span><span class='true true kw'>true</span><span class='rbrack token'>]</span>
+      <span class='elsif elsif kw'>elsif</span> <span class='arity identifier id'>arity</span><span class='dot token'>.</span><span class='key? fid id'>key?</span><span class='lparen token'>(</span><span class='arg identifier id'>arg</span><span class='rparen token'>)</span>
+        <span class='cnt identifier id'>cnt</span> <span class='assign token'>=</span> <span class='arity identifier id'>arity</span><span class='lbrack token'>[</span><span class='arg identifier id'>arg</span><span class='rbrack token'>]</span>
+        <span class='key identifier id'>key</span> <span class='assign token'>=</span> <span class='arg identifier id'>arg</span>
+        <span class='val identifier id'>val</span> <span class='assign token'>=</span> <span class='args identifier id'>args</span><span class='lbrack token'>[</span><span class='i identifier id'>i</span><span class='plus op'>+</span><span class='integer val'>1</span><span class='comma token'>,</span><span class='cnt identifier id'>cnt</span><span class='rbrack token'>]</span>
+        <span class='args identifier id'>args</span><span class='lbrack token'>[</span><span class='i identifier id'>i</span><span class='comma token'>,</span><span class='cnt identifier id'>cnt</span><span class='plus op'>+</span><span class='integer val'>1</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='lbrack token'>[</span><span class='lbrack token'>[</span><span class='key identifier id'>key</span><span class='comma token'>,</span> <span class='mult op'>*</span><span class='val identifier id'>val</span><span class='rbrack token'>]</span><span class='rbrack token'>]</span>
+        <span class='i identifier id'>i</span> <span class='opasgn op'>+=</span> <span class='lparen token'>(</span><span class='cnt identifier id'>cnt</span> <span class='minus op'>-</span> <span class='integer val'>1</span><span class='rparen token'>)</span>
+      <span class='else else kw'>else</span>
+        <span class='key identifier id'>key</span> <span class='assign token'>=</span> <span class='arg identifier id'>arg</span>
+        <span class='args identifier id'>args</span><span class='lbrack token'>[</span><span class='i identifier id'>i</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='lbrack token'>[</span><span class='key identifier id'>key</span><span class='comma token'>,</span><span class='true true kw'>true</span><span class='rbrack token'>]</span>
+      <span class='end end kw'>end</span>
+    <span class='end end kw'>end</span>
+    <span class='i identifier id'>i</span> <span class='opasgn op'>+=</span> <span class='integer val'>1</span>
+  <span class='end end kw'>end</span>
+  <span class='return return kw'>return</span> <span class='args identifier id'>args</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="flags-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>flags</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Return flags, which are true options.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+109
+110
+111
+112
+113
+114
+115
+116
+117</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/supplemental/facets/argvector.rb', line 109</span>
+
+<span class='def def kw'>def</span> <span class='flags identifier id'>flags</span>
+  <span class='f identifier id'>f</span> <span class='assign token'>=</span> <span class='lbrack token'>[</span><span class='rbrack token'>]</span>
+  <span class='@options ivar id'>@options</span><span class='dot token'>.</span><span class='each identifier id'>each</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='k identifier id'>k</span><span class='comma token'>,</span> <span class='v identifier id'>v</span><span class='bitor op'>|</span>
+    <span class='if if kw'>if</span> <span class='TrueClass constant id'>TrueClass</span><span class='eqq op'>===</span><span class='v identifier id'>v</span> <span class='or or kw'>or</span> <span class='FalseClass constant id'>FalseClass</span><span class='eqq op'>===</span><span class='v identifier id'>v</span>  <span class='comment val'># not that it's ever false</span>
+      <span class='f identifier id'>f</span> <span class='lshft op'>&lt;&lt;</span> <span class='k identifier id'>k</span>
+    <span class='end end kw'>end</span>
+  <span class='end end kw'>end</span>
+  <span class='return return kw'>return</span> <span class='f identifier id'>f</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="format_options-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>format_options</strong>(assoc_options) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Format flag options. This converts the associative array of options/flags
+into a hash. Repeat options will be placed in arrays.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/supplemental/facets/argvector.rb', line 329</span>
+
+<span class='def def kw'>def</span> <span class='format_options identifier id'>format_options</span><span class='lparen token'>(</span><span class='assoc_options identifier id'>assoc_options</span><span class='rparen token'>)</span>
+  <span class='opts identifier id'>opts</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span>
+  <span class='assoc_options identifier id'>assoc_options</span><span class='dot token'>.</span><span class='each identifier id'>each</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='k identifier id'>k</span><span class='comma token'>,</span><span class='v identifier id'>v</span><span class='bitor op'>|</span>
+    <span class='if if kw'>if</span> <span class='opts identifier id'>opts</span><span class='dot token'>.</span><span class='key? fid id'>key?</span><span class='lparen token'>(</span><span class='k identifier id'>k</span><span class='rparen token'>)</span>
+      <span class='opts identifier id'>opts</span><span class='lbrack token'>[</span><span class='k identifier id'>k</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='lbrack token'>[</span><span class='opts identifier id'>opts</span><span class='lbrack token'>[</span><span class='k identifier id'>k</span><span class='rbrack token'>]</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='flatten identifier id'>flatten</span> <span class='lshft op'>&lt;&lt;</span> <span class='v identifier id'>v</span>
+    <span class='else else kw'>else</span>
+      <span class='opts identifier id'>opts</span><span class='lbrack token'>[</span><span class='k identifier id'>k</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='v identifier id'>v</span>
+    <span class='end end kw'>end</span>
+  <span class='end end kw'>end</span>
+  <span class='return return kw'>return</span> <span class='opts identifier id'>opts</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="multi_flag-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>multi_flag</strong>(args = nil) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Split single letter option groupings into separate options. ie. -xyz =&gt;
+-x -y -z</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/supplemental/facets/argvector.rb', line 316</span>
+
+<span class='def def kw'>def</span> <span class='multi_flag identifier id'>multi_flag</span><span class='lparen token'>(</span><span class='args identifier id'>args</span><span class='assign token'>=</span><span class='nil nil kw'>nil</span><span class='rparen token'>)</span>
+  <span class='args identifier id'>args</span> <span class='opasgn op'>||=</span> <span class='argv identifier id'>argv</span>
+  <span class='args identifier id'>args</span><span class='dot token'>.</span><span class='collect identifier id'>collect</span> <span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='arg identifier id'>arg</span><span class='bitor op'>|</span>
+    <span class='if if kw'>if</span> <span class='md identifier id'>md</span> <span class='assign token'>=</span> <span class='regexp val'>/^-(\w{2,})/</span><span class='dot token'>.</span><span class='match identifier id'>match</span><span class='lparen token'>(</span> <span class='arg identifier id'>arg</span> <span class='rparen token'>)</span>
+      <span class='md identifier id'>md</span><span class='lbrack token'>[</span><span class='integer val'>1</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='split identifier id'>split</span><span class='lparen token'>(</span><span class='regexp val'>//</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='collect identifier id'>collect</span> <span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='c identifier id'>c</span><span class='bitor op'>|</span> <span class='dstring node'>&quot;-#{c}&quot;</span> <span class='rbrace token'>}</span>
+    <span class='else else kw'>else</span>
+      <span class='arg identifier id'>arg</span><span class='dot token'>.</span><span class='dup identifier id'>dup</span>
+    <span class='end end kw'>end</span>
+  <span class='rbrace token'>}</span><span class='dot token'>.</span><span class='flatten identifier id'>flatten</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="operands-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>operands</strong> 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='arguments-instance_method'>arguments</span></span>
+    </span>
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns operand array.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+90
+91
+92</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/supplemental/facets/argvector.rb', line 90</span>
+
+<span class='def def kw'>def</span> <span class='operands identifier id'>operands</span>
+  <span class='@operands ivar id'>@operands</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="options-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>options</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns options hash.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+98
+99
+100</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/supplemental/facets/argvector.rb', line 98</span>
+
+<span class='def def kw'>def</span> <span class='options identifier id'>options</span>
+  <span class='@options ivar id'>@options</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="parameters-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>parameters</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns [operands, options], which is good for plugging directly into a
+method.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+104
+105
+106</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/supplemental/facets/argvector.rb', line 104</span>
+
+<span class='def def kw'>def</span> <span class='parameters identifier id'>parameters</span>
+  <span class='return return kw'>return</span> <span class='@operands ivar id'>@operands</span><span class='comma token'>,</span> <span class='@options ivar id'>@options</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="parameters_without_duplicates-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>parameters_without_duplicates</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Like parameters but without allowing for duplicate options.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/supplemental/facets/argvector.rb', line 181</span>
+
+<span class='def def kw'>def</span> <span class='parameters_without_duplicates identifier id'>parameters_without_duplicates</span>
+  <span class='opts identifier id'>opts</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span>
+  <span class='@options ivar id'>@options</span><span class='dot token'>.</span><span class='each identifier id'>each</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='k identifier id'>k</span><span class='comma token'>,</span><span class='v identifier id'>v</span><span class='bitor op'>|</span>
+    <span class='if if kw'>if</span> <span class='Array constant id'>Array</span><span class='eqq op'>===</span><span class='v identifier id'>v</span>
+      <span class='opts identifier id'>opts</span><span class='lbrack token'>[</span><span class='k identifier id'>k</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='v identifier id'>v</span><span class='lbrack token'>[</span><span class='integer val'>0</span><span class='rbrack token'>]</span>
+    <span class='else else kw'>else</span>
+      <span class='opts identifier id'>opts</span><span class='lbrack token'>[</span><span class='k identifier id'>k</span><span class='rbrack token'>]</span> <span class='assign token'>=</span>  <span class='v identifier id'>v</span>
+    <span class='end end kw'>end</span>
+  <span class='end end kw'>end</span>
+  <span class='return return kw'>return</span> <span class='@operands ivar id'>@operands</span><span class='comma token'>,</span> <span class='opts identifier id'>opts</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="parse-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>parse</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Basic parser partitions the command line into options and operands. Options
+are converted to a hash and the two  parts are returned.</p>
+
+<pre class="code"><span class='line identifier id'>line</span> <span class='assign token'>=</span> <span class='string val'>&quot;--trace stamp --file=VERSION&quot;</span>
+<span class='argv identifier id'>argv</span> <span class='assign token'>=</span> <span class='Argvector constant id'>Argvector</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='line identifier id'>line</span><span class='rparen token'>)</span>
+
+<span class='args identifier id'>args</span><span class='comma token'>,</span> <span class='keys identifier id'>keys</span> <span class='assign token'>=</span> <span class='mult op'>*</span><span class='argv identifier id'>argv</span><span class='dot token'>.</span><span class='parse identifier id'>parse</span>
+
+<span class='args identifier id'>args</span> <span class='comment val'>#=&gt; [&quot;stamp&quot;]</span>
+<span class='keys identifier id'>keys</span> <span class='comment val'>#=&gt; {&quot;trace&quot;=&gt;true, &quot;file&quot;=&gt;&quot;VERSION&quot;}</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/supplemental/facets/argvector.rb', line 207</span>
+
+<span class='def def kw'>def</span> <span class='parse identifier id'>parse</span>
+  <span class='args identifier id'>args</span> <span class='assign token'>=</span> <span class='assoc_options identifier id'>assoc_options</span><span class='lparen token'>(</span><span class='argv identifier id'>argv</span><span class='rparen token'>)</span> <span class='comment val'>#, *opts_arity)</span>
+
+  <span class='opts identifier id'>opts</span><span class='comma token'>,</span> <span class='opds identifier id'>opds</span> <span class='assign token'>=</span> <span class='args identifier id'>args</span><span class='dot token'>.</span><span class='partition identifier id'>partition</span><span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='a identifier id'>a</span><span class='bitor op'>|</span> <span class='Array constant id'>Array</span> <span class='eqq op'>===</span> <span class='a identifier id'>a</span> <span class='rbrace token'>}</span>
+
+  <span class='@operands ivar id'>@operands</span> <span class='assign token'>=</span> <span class='opds identifier id'>opds</span>
+  <span class='@options ivar id'>@options</span>  <span class='assign token'>=</span> <span class='format_options identifier id'>format_options</span><span class='lparen token'>(</span><span class='opts identifier id'>opts</span><span class='rparen token'>)</span>
+
+  <span class='return return kw'>return</span> <span class='@operands ivar id'>@operands</span><span class='comma token'>,</span> <span class='@options ivar id'>@options</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="parse_arity-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>parse_arity</strong>(arity) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Ensure arity is uniform.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+245
+246
+247
+248
+249</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/supplemental/facets/argvector.rb', line 245</span>
+
+<span class='def def kw'>def</span> <span class='parse_arity identifier id'>parse_arity</span><span class='lparen token'>(</span><span class='arity identifier id'>arity</span><span class='rparen token'>)</span>
+  <span class='arity2 identifier id'>arity2</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span>
+  <span class='arity identifier id'>arity</span><span class='dot token'>.</span><span class='each identifier id'>each</span><span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='k identifier id'>k</span><span class='comma token'>,</span><span class='v identifier id'>v</span><span class='bitor op'>|</span> <span class='arity2 identifier id'>arity2</span><span class='lbrack token'>[</span><span class='k identifier id'>k</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='v identifier id'>v</span><span class='dot token'>.</span><span class='to_i identifier id'>to_i</span> <span class='rbrace token'>}</span>
+  <span class='return return kw'>return</span> <span class='arity2 identifier id'>arity2</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="parse_line-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>parse_line</strong>(line = nil) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>First pass parser to split the command line into an array using Shellwords,
+if not already so divided.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/supplemental/facets/argvector.rb', line 220</span>
+
+<span class='def def kw'>def</span> <span class='parse_line identifier id'>parse_line</span><span class='lparen token'>(</span><span class='line identifier id'>line</span><span class='assign token'>=</span><span class='nil nil kw'>nil</span><span class='rparen token'>)</span>
+  <span class='if if kw'>if</span> <span class='line identifier id'>line</span>
+    <span class='case case kw'>case</span> <span class='line identifier id'>line</span>
+    <span class='when when kw'>when</span> <span class='String constant id'>String</span>
+      <span class='argv identifier id'>argv</span> <span class='assign token'>=</span> <span class='Shellwords constant id'>Shellwords</span><span class='dot token'>.</span><span class='shellwords identifier id'>shellwords</span><span class='lparen token'>(</span><span class='line identifier id'>line</span><span class='rparen token'>)</span>
+    <span class='else else kw'>else</span>
+      <span class='argv identifier id'>argv</span> <span class='assign token'>=</span> <span class='line identifier id'>line</span><span class='dot token'>.</span><span class='to_ary identifier id'>to_ary</span><span class='dot token'>.</span><span class='dup identifier id'>dup</span>
+      <span class='line identifier id'>line</span> <span class='assign token'>=</span> <span class='argv identifier id'>argv</span><span class='dot token'>.</span><span class='join identifier id'>join</span><span class='lparen token'>(</span><span class='string val'>' '</span><span class='rparen token'>)</span>
+    <span class='end end kw'>end</span>
+  <span class='else else kw'>else</span>
+    <span class='argv identifier id'>argv</span> <span class='assign token'>=</span> <span class='ARGV constant id'>ARGV</span><span class='dot token'>.</span><span class='dup identifier id'>dup</span>
+    <span class='line identifier id'>line</span> <span class='assign token'>=</span> <span class='argv identifier id'>argv</span><span class='dot token'>.</span><span class='join identifier id'>join</span><span class='lparen token'>(</span><span class='string val'>' '</span><span class='rparen token'>)</span>
+  <span class='end end kw'>end</span>
+  <span class='return return kw'>return</span> <span class='line identifier id'>line</span><span class='comma token'>,</span> <span class='argv identifier id'>argv</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="parse_preoptions-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>parse_preoptions</strong>(args) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Parse preoptions. A “preoption” is one that occurs before the first
+operans (if any).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/supplemental/facets/argvector.rb', line 253</span>
+
+<span class='def def kw'>def</span> <span class='parse_preoptions identifier id'>parse_preoptions</span><span class='lparen token'>(</span><span class='args identifier id'>args</span><span class='rparen token'>)</span>
+  <span class='comment val'>##args = args.dup</span>
+  <span class='args identifier id'>args</span> <span class='assign token'>=</span> <span class='multi_flag identifier id'>multi_flag</span><span class='lparen token'>(</span><span class='args identifier id'>args</span><span class='rparen token'>)</span> <span class='comment val'>#unless opts.include?(:simple)</span>
+
+  <span class='flags identifier id'>flags</span> <span class='assign token'>=</span> <span class='lbrack token'>[</span><span class='rbrack token'>]</span>
+  <span class='while while kw'>while</span> <span class='args identifier id'>args</span><span class='dot token'>.</span><span class='first identifier id'>first</span> <span class='match op'>=~</span> <span class='regexp val'>/^-/</span>
+    <span class='key identifier id'>key</span> <span class='assign token'>=</span> <span class='args identifier id'>args</span><span class='dot token'>.</span><span class='shift identifier id'>shift</span>
+    <span class='key identifier id'>key</span><span class='dot token'>.</span><span class='sub! fid id'>sub!</span><span class='lparen token'>(</span><span class='regexp val'>/^-{1,2}/</span><span class='comma token'>,</span><span class='string val'>''</span><span class='rparen token'>)</span>
+    <span class='if if kw'>if</span> <span class='key identifier id'>key</span><span class='dot token'>.</span><span class='index identifier id'>index</span><span class='lparen token'>(</span><span class='string val'>'='</span><span class='rparen token'>)</span>
+      <span class='key identifier id'>key</span><span class='comma token'>,</span> <span class='val identifier id'>val</span> <span class='assign token'>=</span> <span class='key identifier id'>key</span><span class='dot token'>.</span><span class='split identifier id'>split</span><span class='lparen token'>(</span><span class='string val'>'='</span><span class='rparen token'>)</span>
+    <span class='elsif elsif kw'>elsif</span> <span class='a identifier id'>a</span> <span class='assign token'>=</span> <span class='arity identifier id'>arity</span><span class='lbrack token'>[</span><span class='key identifier id'>key</span><span class='rbrack token'>]</span>
+      <span class='val identifier id'>val</span> <span class='assign token'>=</span> <span class='args identifier id'>args</span><span class='dot token'>.</span><span class='slice! fid id'>slice!</span><span class='lparen token'>(</span><span class='integer val'>0</span><span class='comma token'>,</span><span class='a identifier id'>a</span><span class='rparen token'>)</span>
+      <span class='val identifier id'>val</span> <span class='assign token'>=</span> <span class='val identifier id'>val</span><span class='dot token'>.</span><span class='first identifier id'>first</span> <span class='if if_mod kw'>if</span> <span class='a identifier id'>a</span> <span class='eq op'>==</span> <span class='integer val'>1</span>
+    <span class='else else kw'>else</span>
+      <span class='val identifier id'>val</span> <span class='assign token'>=</span> <span class='true true kw'>true</span>
+    <span class='end end kw'>end</span>
+    <span class='flags identifier id'>flags</span> <span class='lshft op'>&lt;&lt;</span> <span class='lbrack token'>[</span><span class='key identifier id'>key</span><span class='comma token'>,</span> <span class='val identifier id'>val</span><span class='rbrack token'>]</span>
+  <span class='end end kw'>end</span>
+
+  <span class='flags identifier id'>flags</span> <span class='assign token'>=</span> <span class='format_options identifier id'>format_options</span><span class='lparen token'>(</span><span class='flags identifier id'>flags</span><span class='rparen token'>)</span>
+
+  <span class='return return kw'>return</span> <span class='flags identifier id'>flags</span><span class='comma token'>,</span> <span class='args identifier id'>args</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="preflags-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>preflags</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Same as <tt>flags</tt> but only returns flags in the preoptions.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/supplemental/facets/argvector.rb', line 169</span>
+
+<span class='def def kw'>def</span> <span class='preflags identifier id'>preflags</span>
+  <span class='preopts identifier id'>preopts</span><span class='comma token'>,</span> <span class='remainder identifier id'>remainder</span> <span class='assign token'>=</span> <span class='mult op'>*</span><span class='parse_preoptions identifier id'>parse_preoptions</span><span class='lparen token'>(</span><span class='argv identifier id'>argv</span><span class='rparen token'>)</span>
+  <span class='f identifier id'>f</span> <span class='assign token'>=</span> <span class='lbrack token'>[</span><span class='rbrack token'>]</span>
+  <span class='preopts identifier id'>preopts</span><span class='dot token'>.</span><span class='each identifier id'>each</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='k identifier id'>k</span><span class='comma token'>,</span> <span class='v identifier id'>v</span><span class='bitor op'>|</span>
+    <span class='if if kw'>if</span> <span class='TrueClass constant id'>TrueClass</span><span class='eqq op'>===</span><span class='v identifier id'>v</span> <span class='or or kw'>or</span> <span class='FalseClass constant id'>FalseClass</span><span class='eqq op'>===</span><span class='v identifier id'>v</span>  <span class='comment val'># not that it's ever false</span>
+      <span class='f identifier id'>f</span> <span class='lshft op'>&lt;&lt;</span> <span class='k identifier id'>k</span>
+    <span class='end end kw'>end</span>
+  <span class='end end kw'>end</span>
+  <span class='return return kw'>return</span> <span class='f identifier id'>f</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="preoptions-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>preoptions</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a hash of options that occur before the first operand. This works
+well with subcommand to get the main command’s options.</p>
+
+<pre class="code"><span class='line identifier id'>line</span> <span class='assign token'>=</span> <span class='string val'>&quot;--trace stamp --file VERSION&quot;</span>
+<span class='cargs identifier id'>cargs</span> <span class='assign token'>=</span> <span class='Argvector constant id'>Argvector</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='line identifier id'>line</span><span class='rparen token'>)</span>
+<span class='opts identifier id'>opts</span> <span class='assign token'>=</span> <span class='cargs identifier id'>cargs</span><span class='dot token'>.</span><span class='preoptions identifier id'>preoptions</span>
+<span class='opts identifier id'>opts</span> <span class='comment val'>#=&gt; {&quot;trace&quot;=&gt;true}</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+162
+163
+164
+165</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/supplemental/facets/argvector.rb', line 162</span>
+
+<span class='def def kw'>def</span> <span class='preoptions identifier id'>preoptions</span>
+  <span class='preopts identifier id'>preopts</span><span class='comma token'>,</span> <span class='remainder identifier id'>remainder</span> <span class='assign token'>=</span> <span class='mult op'>*</span><span class='parse_preoptions identifier id'>parse_preoptions</span><span class='lparen token'>(</span><span class='argv identifier id'>argv</span><span class='rparen token'>)</span>
+  <span class='return return kw'>return</span> <span class='preopts identifier id'>preopts</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="subcommand_with_arguments-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>subcommand_with_arguments</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Assumes the first operand is a “subcommand” and returns it and the
+argments following it as another Arguments object.</p>
+
+<p>TODO: This probably should be called ‘subcommand’.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+146
+147
+148
+149
+150
+151</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/supplemental/facets/argvector.rb', line 146</span>
+
+<span class='def def kw'>def</span> <span class='subcommand_with_arguments identifier id'>subcommand_with_arguments</span>
+  <span class='opts identifier id'>opts</span><span class='comma token'>,</span> <span class='args identifier id'>args</span> <span class='assign token'>=</span> <span class='mult op'>*</span><span class='parse_preoptions identifier id'>parse_preoptions</span><span class='lparen token'>(</span><span class='argv identifier id'>argv</span><span class='rparen token'>)</span>
+  <span class='cmd identifier id'>cmd</span> <span class='assign token'>=</span> <span class='args identifier id'>args</span><span class='dot token'>.</span><span class='shift identifier id'>shift</span>
+  <span class='subargs identifier id'>subargs</span> <span class='assign token'>=</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='class identifier id'>class</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='args identifier id'>args</span><span class='comma token'>,</span> <span class='@arity ivar id'>@arity</span><span class='rparen token'>)</span>
+  <span class='return return kw'>return</span> <span class='cmd identifier id'>cmd</span><span class='comma token'>,</span> <span class='subargs identifier id'>subargs</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="subcommand_with_parameters-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>subcommand_with_parameters</strong> 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='subcommand-instance_method'>subcommand</span></span>
+    </span>
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Assumes the first operand is a “subcommand” and returns it and the
+argments following it as parameters.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+122
+123
+124
+125
+126
+127</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/supplemental/facets/argvector.rb', line 122</span>
+
+<span class='def def kw'>def</span> <span class='subcommand_with_parameters identifier id'>subcommand_with_parameters</span>
+  <span class='opts identifier id'>opts</span><span class='comma token'>,</span> <span class='args identifier id'>args</span> <span class='assign token'>=</span> <span class='mult op'>*</span><span class='parse_preoptions identifier id'>parse_preoptions</span><span class='lparen token'>(</span><span class='argv identifier id'>argv</span><span class='rparen token'>)</span>
+  <span class='cmd identifier id'>cmd</span> <span class='assign token'>=</span> <span class='args identifier id'>args</span><span class='dot token'>.</span><span class='shift identifier id'>shift</span>
+  <span class='subargs identifier id'>subargs</span> <span class='assign token'>=</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='class identifier id'>class</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='args identifier id'>args</span><span class='comma token'>,</span> <span class='@arity ivar id'>@arity</span><span class='rparen token'>)</span>
+  <span class='return return kw'>return</span> <span class='lbrack token'>[</span><span class='cmd identifier id'>cmd</span><span class='comma token'>,</span> <span class='mult op'>*</span><span class='subargs identifier id'>subargs</span><span class='dot token'>.</span><span class='parameters identifier id'>parameters</span><span class='rbrack token'>]</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="subcommand_with_preoptions-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>subcommand_with_preoptions</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+132
+133
+134
+135
+136
+137
+138</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/supplemental/facets/argvector.rb', line 132</span>
+
+<span class='def def kw'>def</span> <span class='subcommand_with_preoptions identifier id'>subcommand_with_preoptions</span>
+  <span class='pre identifier id'>pre</span><span class='comma token'>,</span> <span class='args identifier id'>args</span> <span class='assign token'>=</span> <span class='mult op'>*</span><span class='parse_preoptions identifier id'>parse_preoptions</span><span class='lparen token'>(</span><span class='argv identifier id'>argv</span><span class='rparen token'>)</span>
+  <span class='cmd identifier id'>cmd</span> <span class='assign token'>=</span> <span class='args identifier id'>args</span><span class='dot token'>.</span><span class='shift identifier id'>shift</span>
+  <span class='subargs identifier id'>subargs</span> <span class='assign token'>=</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='class identifier id'>class</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='args identifier id'>args</span><span class='comma token'>,</span> <span class='@arity ivar id'>@arity</span><span class='rparen token'>)</span>
+  <span class='args identifier id'>args</span><span class='comma token'>,</span> <span class='opts identifier id'>opts</span> <span class='assign token'>=</span> <span class='mult op'>*</span><span class='subargs identifier id'>subargs</span><span class='dot token'>.</span><span class='parameters identifier id'>parameters</span>
+  <span class='return return kw'>return</span> <span class='lbrack token'>[</span><span class='cmd identifier id'>cmd</span><span class='comma token'>,</span> <span class='args identifier id'>args</span><span class='comma token'>,</span> <span class='pre identifier id'>pre</span><span class='dot token'>.</span><span class='merge identifier id'>merge</span><span class='lparen token'>(</span><span class='opts identifier id'>opts</span><span class='rparen token'>)</span><span class='rbrack token'>]</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Tue May 17 02:27:25 2011 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.6.7 (ruby-1.8.7).
+</div>
+
+  </body>
+</html>

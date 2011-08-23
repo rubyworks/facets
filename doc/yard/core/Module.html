@@ -1,0 +1,2796 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<title>Class: Module</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (M)</a> &raquo; 
+    
+    
+    <span class="title">Module</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Class List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Class: Module
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></span>
+      
+        <ul class="fullTree">
+          <li><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></li>
+          
+            <li class="next">Module</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/core/facets/module/instance_method.rb<span class="defines">,<br />
+  lib/core/facets/module/is.rb,<br /> lib/core/facets/module/op.rb,<br /> lib/core/facets/module/can.rb,<br /> lib/core/facets/module/set.rb,<br /> lib/core/facets/module/home.rb,<br /> lib/core/facets/module/nodef.rb,<br /> lib/core/facets/module/class.rb,<br /> lib/core/facets/module/to_obj.rb,<br /> lib/core/facets/module/revise.rb,<br /> lib/core/facets/module/pathize.rb,<br /> lib/core/facets/module/basename.rb,<br /> lib/core/facets/module/ancestor.rb,<br /> lib/core/facets/module/abstract.rb,<br /> lib/core/facets/module/methodize.rb,<br /> lib/core/facets/module/anonymous.rb,<br /> lib/core/facets/module/spacename.rb,<br /> lib/core/facets/module/integrate.rb,<br /> lib/core/facets/module/module_def.rb,<br /> lib/core/facets/module/wrap_method.rb,<br /> lib/core/facets/module/attr_setter.rb,<br /> lib/core/facets/module/method_clash.rb,<br /> lib/core/facets/module/rename_method.rb,<br /> lib/core/facets/module/alias_accessor.rb,<br /> lib/core/facets/module/redirect_method.rb,<br /> lib/core/facets/module/redefine_method.rb,<br /> lib/core/facets/module/alias_method_chain.rb,<br /> lib/core/facets/module/all_instance_methods.rb,<br /> lib/core/facets/module/alias_module_function.rb,<br /> lib/core/facets/module/include_function_module.rb,<br /> lib/core/facets/module/instance_method_defined.rb</span>
+</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%2A-instance_method" title="#* (instance method)">- (Object) <strong>*</strong>(rename_map) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Rename methods.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%2B-instance_method" title="#+ (instance method)">- (Object) <strong>+</strong>(other) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Combine modules.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#--instance_method" title="#- (instance method)">- (Object) <strong>-</strong>(other) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Subtract modules.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#abstract-instance_method" title="#abstract (instance method)">- (Object) <strong>abstract</strong>(*sym) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Create an abstract method.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#alias_method_chain-instance_method" title="#alias_method_chain (instance method)">- (Object) <strong>alias_method_chain</strong>(target, feature) {|aliased_target, punctuation| ... }</a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Encapsulates the common pattern of …</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#all_instance_methods-instance_method" title="#all_instance_methods (instance method)">- (Object) <strong>all_instance_methods</strong>(include_super = true) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>List all instance methods, equivalent to.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ancestor%3F-instance_method" title="#ancestor? (instance method)">- (Boolean) <strong>ancestor?</strong>(mod) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Is a given class or module an ancestor of this class or module?.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#anonymous%3F-instance_method" title="#anonymous? (instance method)">- (Boolean) <strong>anonymous?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>A module may or may not have a name.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#attr_setter-instance_method" title="#attr_setter (instance method)">- (Object) <strong>attr_setter</strong>(*args) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Create an attribute method for both getting and setting an instance
+variable:.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#basename-instance_method" title="#basename (instance method)">- (Object) <strong>basename</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the root name of the module/class.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#class_def-instance_method" title="#class_def (instance method)">- (Object) <strong>class_def</strong>(name, &amp;blk) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Defines an instance method within a class/module.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#home-instance_method" title="#home (instance method)">- (Object) <strong>home</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the module or class containing the receiver.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#homename-instance_method" title="#homename (instance method)">- (Object) <strong>homename</strong> </a>
+    
+
+    
+      (also: #modname)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the name of module or class containing the receiver.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#housing-instance_method" title="#housing (instance method)">- (Object) <strong>housing</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns all the namespaces of this module according ordered from nearest
+and moving outwards.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#instance_method%21-instance_method" title="#instance_method! (instance method)">- (Object) <strong>instance_method!</strong>(s) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Access method as a singleton object and retain state.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#instance_method_defined%3F-instance_method" title="#instance_method_defined? (instance method)">- (Boolean) <strong>instance_method_defined?</strong>(meth) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Query whether a public instance method is defined for the module.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#integrate-instance_method" title="#integrate (instance method)">- (Object) <strong>integrate</strong>(mod, &amp;block) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Using integrate is just like using include except the module included is a
+reconstruction of the one given altered by the commands given in the block.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#is-instance_method" title="#is (instance method)">- (Object) <strong>is</strong>(*mods) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>An alias for #include.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#is%3F-instance_method" title="#is? (instance method)">- (Boolean) <strong>is?</strong>(base) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Is a given class or module an ancestor of this class or module?.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#method_clash-instance_method" title="#method_clash (instance method)">- (Object) <strong>method_clash</strong>(other) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Detect method name clash between modules and/or classes, regardless of
+method visibility:.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#method_clash%3F-instance_method" title="#method_clash? (instance method)">- (Boolean) <strong>method_clash?</strong>(other) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Uses #method_clash to return <tt>true</tt> or <tt>false</tt> if there are
+method name clashes.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#methodize-instance_method" title="#methodize (instance method)">- (Object) <strong>methodize</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Translate a module name to a suitable method name.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#module_def-instance_method" title="#module_def (instance method)">- (Object) <strong>module_def</strong>(name, &amp;blk) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Defines an instance method within a class/module.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#pathize-instance_method" title="#pathize (instance method)">- (Object) <strong>pathize</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Converts a class name to a unix path.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#revise-instance_method" title="#revise (instance method)">- (Object) <strong>revise</strong>(&amp;blk) </a>
+    
+
+    
+      (also: #revisal)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Return a new module based on another.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set-instance_method" title="#set (instance method)">- (Object) <strong>set</strong>(option, value = self, &amp;block) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets an option to the given value.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#singleton_method_defined%3F-instance_method" title="#singleton_method_defined? (instance method)">- (Boolean) <strong>singleton_method_defined?</strong>(meth) </a>
+    
+
+    
+      (also: #class_method_defined?, #module_method_defined?)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Query whether a normal (singleton) method is defined for the module.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#spacename-instance_method" title="#spacename (instance method)">- (Object) <strong>spacename</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the name of module’s container module.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_obj-instance_method" title="#to_obj (instance method)">- (Object) <strong>to_obj</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Create an instance of Object and extend it with <tt>self</tt>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#wrap_method-instance_method" title="#wrap_method (instance method)">- (Object) <strong>wrap_method</strong>(sym, &amp;blk) </a>
+    
+
+    
+      (also: #wrap)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Creates a new method wrapping the previous of the same name.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="*-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>*</strong>(rename_map) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Rename methods.</p>
+
+<pre class="code"><span class='module module kw'>module</span> <span class='AStar constant id'>AStar</span>
+  <span class='def def kw'>def</span> <span class='a identifier id'>a</span><span class='semicolon token'>;</span> <span class='string val'>&quot;a&quot;</span><span class='semicolon token'>;</span> <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+
+<span class='BStar constant id'>BStar</span> <span class='assign token'>=</span> <span class='AStar constant id'>AStar</span> <span class='mult op'>*</span> <span class='lbrace token'>{</span> <span class='symbol val'>:a</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:b</span> <span class='rbrace token'>}</span>
+
+<span class='class class kw'>class</span> <span class='XStar constant id'>XStar</span><span class='semicolon token'>;</span> <span class='include identifier id'>include</span> <span class='BStar constant id'>BStar</span><span class='semicolon token'>;</span> <span class='end end kw'>end</span>
+
+<span class='XStar constant id'>XStar</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='dot token'>.</span><span class='b identifier id'>b</span>    <span class='comment val'>#=&gt; &quot;a&quot;</span>
+</pre>
+
+<p>CREDIT: Thomas Sawyer, Robert Dober</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/module/op.rb', line 95</span>
+
+<span class='def def kw'>def</span> <span class='mult op'>*</span><span class='lparen token'>(</span><span class='rename_map identifier id'>rename_map</span><span class='rparen token'>)</span>
+  <span class='base identifier id'>base</span> <span class='assign token'>=</span> <span class='self self kw'>self</span>
+  <span class='Module constant id'>Module</span><span class='dot token'>.</span><span class='new identifier id'>new</span> <span class='do do kw'>do</span>
+    <span class='include identifier id'>include</span> <span class='base identifier id'>base</span>
+    <span class='rename_map identifier id'>rename_map</span><span class='dot token'>.</span><span class='each identifier id'>each</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='from identifier id'>from</span><span class='comma token'>,</span> <span class='to identifier id'>to</span><span class='bitor op'>|</span>
+      <span class='alias_method identifier id'>alias_method</span> <span class='to identifier id'>to</span><span class='comma token'>,</span> <span class='from identifier id'>from</span>
+      <span class='undef_method identifier id'>undef_method</span> <span class='from identifier id'>from</span>
+    <span class='end end kw'>end</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="+-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>+</strong>(other) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Combine modules.</p>
+
+<pre class="code"><span class='module module kw'>module</span> <span class='APlus constant id'>APlus</span>
+  <span class='def def kw'>def</span> <span class='a identifier id'>a</span><span class='semicolon token'>;</span> <span class='string val'>&quot;a&quot;</span><span class='semicolon token'>;</span> <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+
+<span class='module module kw'>module</span> <span class='BPlus constant id'>BPlus</span>
+  <span class='def def kw'>def</span> <span class='b identifier id'>b</span><span class='semicolon token'>;</span> <span class='string val'>&quot;b&quot;</span><span class='semicolon token'>;</span> <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+
+<span class='CPlus constant id'>CPlus</span> <span class='assign token'>=</span> <span class='APlus constant id'>APlus</span> <span class='plus op'>+</span> <span class='BPlus constant id'>BPlus</span>
+
+<span class='class class kw'>class</span> <span class='XPlus constant id'>XPlus</span><span class='semicolon token'>;</span> <span class='include identifier id'>include</span> <span class='CPlus constant id'>CPlus</span><span class='semicolon token'>;</span> <span class='end end kw'>end</span>
+
+<span class='XPlus constant id'>XPlus</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='dot token'>.</span><span class='a identifier id'>a</span>    <span class='comment val'>#=&gt; &quot;a&quot;</span>
+<span class='XPlus constant id'>XPlus</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='dot token'>.</span><span class='b identifier id'>b</span>    <span class='comment val'>#=&gt; &quot;b&quot;</span>
+</pre>
+
+<p>Note that in the old version of traits.rb we cloned modules and altered
+their copies…</p>
+
+<pre class="code"><span class='def def kw'>def</span> <span class='plus op'>+</span><span class='lparen token'>(</span><span class='other identifier id'>other</span><span class='rparen token'>)</span>
+  <span class='mod1 identifier id'>mod1</span> <span class='assign token'>=</span> <span class='other identifier id'>other</span><span class='dot token'>.</span><span class='clone identifier id'>clone</span>
+  <span class='mod2 identifier id'>mod2</span> <span class='assign token'>=</span> <span class='clone identifier id'>clone</span>
+  <span class='mod1 identifier id'>mod1</span><span class='dot token'>.</span><span class='module_eval identifier id'>module_eval</span><span class='lbrace token'>{</span> <span class='include identifier id'>include</span> <span class='mod2 identifier id'>mod2</span> <span class='rbrace token'>}</span>
+<span class='end end kw'>end</span>
+</pre>
+
+<p>Later it was realized that this thwarted the main benefit that Ruby’s
+concept of modules has over traditional traits, inheritance.</p>
+
+<p>CREDIT: Thomas Sawyer, Robert Dober</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+35
+36
+37
+38
+39
+40
+41</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/module/op.rb', line 35</span>
+
+<span class='def def kw'>def</span> <span class='plus op'>+</span><span class='lparen token'>(</span><span class='other identifier id'>other</span><span class='rparen token'>)</span>
+  <span class='base identifier id'>base</span> <span class='assign token'>=</span> <span class='self self kw'>self</span>
+  <span class='Module constant id'>Module</span><span class='dot token'>.</span><span class='new identifier id'>new</span> <span class='do do kw'>do</span>
+    <span class='include identifier id'>include</span> <span class='base identifier id'>base</span>
+    <span class='include identifier id'>include</span> <span class='other identifier id'>other</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="--instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>-</strong>(other) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Subtract modules.</p>
+
+<pre class="code"><span class='module module kw'>module</span> <span class='AMinus constant id'>AMinus</span>
+  <span class='def def kw'>def</span> <span class='a identifier id'>a</span><span class='semicolon token'>;</span> <span class='string val'>&quot;a&quot;</span><span class='semicolon token'>;</span> <span class='end end kw'>end</span>
+  <span class='def def kw'>def</span> <span class='b identifier id'>b</span><span class='semicolon token'>;</span> <span class='string val'>&quot;b&quot;</span><span class='semicolon token'>;</span> <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+
+<span class='CMinus constant id'>CMinus</span> <span class='assign token'>=</span> <span class='AMinus constant id'>AMinus</span> <span class='minus op'>-</span> <span class='lbrack token'>[</span><span class='symbol val'>:a</span><span class='rbrack token'>]</span>
+
+<span class='class class kw'>class</span> <span class='XMinus constant id'>XMinus</span><span class='semicolon token'>;</span> <span class='include identifier id'>include</span> <span class='CMinus constant id'>CMinus</span><span class='semicolon token'>;</span> <span class='end end kw'>end</span>
+
+<span class='expect identifier id'>expect</span> <span class='NameError constant id'>NameError</span> <span class='do do kw'>do</span>
+  <span class='XMinus constant id'>XMinus</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='dot token'>.</span><span class='a identifier id'>a</span>  <span class='comment val'>#=&gt; &quot;a&quot;</span>
+<span class='end end kw'>end</span>
+
+<span class='XMinus constant id'>XMinus</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='dot token'>.</span><span class='b identifier id'>b</span>    <span class='comment val'>#=&gt; &quot;b&quot;</span>
+</pre>
+
+<p>TODO: Should this use all instance methods, not just public?</p>
+
+<p>CREDIT: Thomas Sawyer, Robert Dober</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/module/op.rb', line 64</span>
+
+<span class='def def kw'>def</span> <span class='minus op'>-</span><span class='lparen token'>(</span><span class='other identifier id'>other</span><span class='rparen token'>)</span>
+  <span class='instance_methods identifier id'>instance_methods</span> <span class='assign token'>=</span> <span class='instance_methods identifier id'>instance_methods</span><span class='lparen token'>(</span><span class='true true kw'>true</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='map identifier id'>map</span><span class='lbrace token'>{</span><span class='bitor op'>|</span><span class='m identifier id'>m</span><span class='bitor op'>|</span> <span class='m identifier id'>m</span><span class='dot token'>.</span><span class='to_sym identifier id'>to_sym</span><span class='rbrace token'>}</span>
+  <span class='case case kw'>case</span> <span class='other identifier id'>other</span>
+  <span class='when when kw'>when</span> <span class='Array constant id'>Array</span>
+    <span class='subtract identifier id'>subtract</span> <span class='assign token'>=</span> <span class='instance_methods identifier id'>instance_methods</span> <span class='bitand op'>&amp;</span> <span class='other identifier id'>other</span><span class='dot token'>.</span><span class='map identifier id'>map</span><span class='lbrace token'>{</span><span class='bitor op'>|</span><span class='m identifier id'>m</span><span class='bitor op'>|</span> <span class='m identifier id'>m</span><span class='dot token'>.</span><span class='to_sym identifier id'>to_sym</span><span class='rbrace token'>}</span>
+  <span class='when when kw'>when</span> <span class='Module constant id'>Module</span>
+    <span class='subtract identifier id'>subtract</span> <span class='assign token'>=</span> <span class='instance_methods identifier id'>instance_methods</span> <span class='bitand op'>&amp;</span> <span class='other identifier id'>other</span><span class='dot token'>.</span><span class='instance_methods identifier id'>instance_methods</span><span class='lparen token'>(</span><span class='true true kw'>true</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='map identifier id'>map</span><span class='lbrace token'>{</span><span class='bitor op'>|</span><span class='m identifier id'>m</span><span class='bitor op'>|</span> <span class='m identifier id'>m</span><span class='dot token'>.</span><span class='to_sym identifier id'>to_sym</span><span class='rbrace token'>}</span>  <span class='comment val'># false?</span>
+  <span class='when when kw'>when</span> <span class='String constant id'>String</span><span class='comma token'>,</span> <span class='Symbol constant id'>Symbol</span>
+    <span class='subtract identifier id'>subtract</span> <span class='assign token'>=</span> <span class='instance_methods identifier id'>instance_methods</span> <span class='bitand op'>&amp;</span> <span class='lbrack token'>[</span><span class='other identifier id'>other</span><span class='dot token'>.</span><span class='to_sym identifier id'>to_sym</span><span class='rbrack token'>]</span>
+  <span class='end end kw'>end</span>
+  <span class='base identifier id'>base</span> <span class='assign token'>=</span> <span class='self self kw'>self</span>
+  <span class='Module constant id'>Module</span><span class='dot token'>.</span><span class='new identifier id'>new</span> <span class='do do kw'>do</span>
+    <span class='include identifier id'>include</span> <span class='base identifier id'>base</span>
+    <span class='subtract identifier id'>subtract</span><span class='dot token'>.</span><span class='each identifier id'>each</span><span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='x identifier id'>x</span><span class='bitor op'>|</span> <span class='undef_method identifier id'>undef_method</span> <span class='x identifier id'>x</span> <span class='rbrace token'>}</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="abstract-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>abstract</strong>(*sym) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Create an abstract method. If it is not overridden, it will raise a
+TypeError when called.</p>
+
+<pre class="code"><span class='class class kw'>class</span> <span class='AbstractExample constant id'>AbstractExample</span>
+  <span class='abstract identifier id'>abstract</span> <span class='symbol val'>:a</span>
+<span class='end end kw'>end</span>
+
+<span class='c identifier id'>c</span> <span class='assign token'>=</span> <span class='AbstractExample constant id'>AbstractExample</span><span class='dot token'>.</span><span class='new identifier id'>new</span>
+
+<span class='expect identifier id'>expect</span> <span class='TypeError constant id'>TypeError</span> <span class='do do kw'>do</span>
+  <span class='c identifier id'>c</span><span class='dot token'>.</span><span class='a identifier id'>a</span>
+<span class='end end kw'>end</span>
+</pre>
+
+<p>CREDIT: Trans</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+18
+19
+20
+21
+22</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/module/abstract.rb', line 18</span>
+
+<span class='def def kw'>def</span> <span class='abstract identifier id'>abstract</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='sym identifier id'>sym</span><span class='rparen token'>)</span>
+  <span class='sym identifier id'>sym</span><span class='dot token'>.</span><span class='each identifier id'>each</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='s identifier id'>s</span><span class='bitor op'>|</span>
+    <span class='define_method identifier id'>define_method</span><span class='lparen token'>(</span><span class='s identifier id'>s</span><span class='rparen token'>)</span><span class='lbrace token'>{</span> <span class='raise identifier id'>raise</span> <span class='TypeError constant id'>TypeError</span><span class='comma token'>,</span> <span class='dstring node'>&quot;undefined abstraction ##{s}&quot;</span> <span class='rbrace token'>}</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="alias_method_chain-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>alias_method_chain</strong>(target, feature) {|aliased_target, punctuation| ... }
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Encapsulates the common pattern of …</p>
+
+<pre class="code"><span class='alias_method identifier id'>alias_method</span> <span class='symbol val'>:foo_without_feature</span><span class='comma token'>,</span> <span class='symbol val'>:foo</span>
+<span class='alias_method identifier id'>alias_method</span> <span class='symbol val'>:foo</span><span class='comma token'>,</span> <span class='symbol val'>:foo_with_feature</span>
+</pre>
+
+<p>With this, you simply do …</p>
+
+<pre class="code"><span class='alias_method_chain identifier id'>alias_method_chain</span> <span class='symbol val'>:foo</span><span class='comma token'>,</span> <span class='symbol val'>:feature</span>
+</pre>
+
+<p>For example</p>
+
+<pre class="code"><span class='class class kw'>class</span> <span class='AliasMethodChainExample constant id'>AliasMethodChainExample</span>
+  <span class='def def kw'>def</span> <span class='foo identifier id'>foo</span> 
+    <span class='string val'>&quot;foo&quot;</span>
+  <span class='end end kw'>end</span>
+
+  <span class='def def kw'>def</span> <span class='foo_with_feature identifier id'>foo_with_feature</span>
+    <span class='string val'>&quot;foo!&quot;</span>
+  <span class='end end kw'>end</span>
+
+  <span class='alias_method_chain identifier id'>alias_method_chain</span> <span class='symbol val'>:foo</span><span class='comma token'>,</span> <span class='symbol val'>:feature</span>
+<span class='end end kw'>end</span>
+</pre>
+
+<p>And both aliases are set up for you.</p>
+
+<pre class="code"><span class='example identifier id'>example</span> <span class='assign token'>=</span> <span class='AliasMethodChainExample constant id'>AliasMethodChainExample</span><span class='dot token'>.</span><span class='new identifier id'>new</span>
+<span class='example identifier id'>example</span><span class='dot token'>.</span><span class='foo identifier id'>foo</span> <span class='comment val'>#=&gt; &quot;foo!&quot;</span>
+<span class='example identifier id'>example</span><span class='dot token'>.</span><span class='foo_without_feature identifier id'>foo_without_feature</span> <span class='comment val'>#=&gt; &quot;foo&quot;</span>
+</pre>
+
+<p>Query and bang methods (foo?, foo!) keep the same punctuation …</p>
+
+<pre class="code"><span class='alias_method_chain identifier id'>alias_method_chain</span> <span class='symbol val'>:foo?</span><span class='comma token'>,</span> <span class='symbol val'>:feature</span>
+</pre>
+
+<p>is equivalent to …</p>
+
+<pre class="code"><span class='alias_method identifier id'>alias_method</span> <span class='symbol val'>:foo_without_feature?</span><span class='comma token'>,</span> <span class='symbol val'>:foo?</span>
+<span class='alias_method identifier id'>alias_method</span> <span class='symbol val'>:foo?</span><span class='comma token'>,</span> <span class='symbol val'>:foo_with_feature?</span>
+</pre>
+
+<p>so you can safely chain foo, foo?, and foo! with the same feature.</p>
+
+<p>CREDIT: Bitsweat, Rails Team</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Yields:</h3>
+<ul class="yield">
+  
+    <li>
+      
+        <span class='type'>(<tt>aliased_target</tt>, <tt>punctuation</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/module/alias_method_chain.rb', line 45</span>
+
+<span class='def def kw'>def</span> <span class='alias_method_chain identifier id'>alias_method_chain</span><span class='lparen token'>(</span><span class='target identifier id'>target</span><span class='comma token'>,</span> <span class='feature identifier id'>feature</span><span class='rparen token'>)</span>
+  <span class='comment val'># Strip out punctuation on predicates or bang methods since</span>
+  <span class='comment val'># e.g. target?_without_feature is not a valid method name.</span>
+  <span class='aliased_target identifier id'>aliased_target</span><span class='comma token'>,</span> <span class='punctuation identifier id'>punctuation</span> <span class='assign token'>=</span> <span class='target identifier id'>target</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span><span class='dot token'>.</span><span class='sub identifier id'>sub</span><span class='lparen token'>(</span><span class='regexp val'>/([?!=])$/</span><span class='comma token'>,</span> <span class='string val'>''</span><span class='rparen token'>)</span><span class='comma token'>,</span> <span class='$1 nth_ref id'>$1</span>
+  <span class='yield yield kw'>yield</span><span class='lparen token'>(</span><span class='aliased_target identifier id'>aliased_target</span><span class='comma token'>,</span> <span class='punctuation identifier id'>punctuation</span><span class='rparen token'>)</span> <span class='if if_mod kw'>if</span> <span class='block_given? fid id'>block_given?</span>
+
+  <span class='with_method identifier id'>with_method</span><span class='comma token'>,</span> <span class='without_method identifier id'>without_method</span> <span class='assign token'>=</span> <span class='dstring node'>&quot;#{aliased_target}_with_#{feature}#{punctuation}&quot;</span><span class='comma token'>,</span> <span class='dstring node'>&quot;#{aliased_target}_without_#{feature}#{punctuation}&quot;</span>
+
+  <span class='alias_method identifier id'>alias_method</span> <span class='without_method identifier id'>without_method</span><span class='comma token'>,</span> <span class='target identifier id'>target</span>
+  <span class='alias_method identifier id'>alias_method</span> <span class='target identifier id'>target</span><span class='comma token'>,</span> <span class='with_method identifier id'>with_method</span>
+
+  <span class='case case kw'>case</span>
+    <span class='when when kw'>when</span> <span class='public_method_defined? fid id'>public_method_defined?</span><span class='lparen token'>(</span><span class='without_method identifier id'>without_method</span><span class='rparen token'>)</span>
+      <span class='public identifier id'>public</span> <span class='target identifier id'>target</span>
+    <span class='when when kw'>when</span> <span class='protected_method_defined? fid id'>protected_method_defined?</span><span class='lparen token'>(</span><span class='without_method identifier id'>without_method</span><span class='rparen token'>)</span>
+      <span class='protected identifier id'>protected</span> <span class='target identifier id'>target</span>
+    <span class='when when kw'>when</span> <span class='private_method_defined? fid id'>private_method_defined?</span><span class='lparen token'>(</span><span class='without_method identifier id'>without_method</span><span class='rparen token'>)</span>
+      <span class='private identifier id'>private</span> <span class='target identifier id'>target</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="all_instance_methods-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>all_instance_methods</strong>(include_super = true) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>List all instance methods, equivalent to</p>
+
+<pre class="code"><span class='public_instance_methods identifier id'>public_instance_methods</span> <span class='plus op'>+</span>
+<span class='protected_instance_methods identifier id'>protected_instance_methods</span> <span class='plus op'>+</span>
+<span class='private_instance_methods identifier id'>private_instance_methods</span>
+</pre>
+
+<p>TODO: Better name for #all_instance_methods?</p>
+
+<p>CREDIT: Trans</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+13
+14
+15
+16
+17</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/module/all_instance_methods.rb', line 13</span>
+
+<span class='def def kw'>def</span> <span class='all_instance_methods identifier id'>all_instance_methods</span><span class='lparen token'>(</span><span class='include_super identifier id'>include_super</span><span class='assign token'>=</span><span class='true true kw'>true</span><span class='rparen token'>)</span>
+  <span class='public_instance_methods identifier id'>public_instance_methods</span><span class='lparen token'>(</span><span class='include_super identifier id'>include_super</span><span class='rparen token'>)</span> <span class='plus op'>+</span>
+  <span class='protected_instance_methods identifier id'>protected_instance_methods</span><span class='lparen token'>(</span><span class='include_super identifier id'>include_super</span><span class='rparen token'>)</span> <span class='plus op'>+</span>
+  <span class='private_instance_methods identifier id'>private_instance_methods</span><span class='lparen token'>(</span><span class='include_super identifier id'>include_super</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="ancestor?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>ancestor?</strong>(mod) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Is a given class or module an ancestor of this class or module?</p>
+
+<pre class="code"><span class='class class kw'>class</span> <span class='X constant id'>X</span> <span class='semicolon token'>;</span> <span class='end end kw'>end</span>
+<span class='class class kw'>class</span> <span class='Y constant id'>Y</span> <span class='lt op'>&lt;</span> <span class='X constant id'>X</span> <span class='semicolon token'>;</span> <span class='end end kw'>end</span>
+
+ <span class='X constant id'>X</span><span class='dot token'>.</span><span class='ancestor? fid id'>ancestor?</span><span class='lparen token'>(</span><span class='Y constant id'>Y</span><span class='rparen token'>)</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+11
+12
+13</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/module/ancestor.rb', line 11</span>
+
+<span class='def def kw'>def</span> <span class='ancestor? fid id'>ancestor?</span><span class='lparen token'>(</span> <span class='mod identifier id'>mod</span> <span class='rparen token'>)</span>
+  <span class='ancestors identifier id'>ancestors</span><span class='dot token'>.</span><span class='include? fid id'>include?</span><span class='lparen token'>(</span><span class='mod identifier id'>mod</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="anonymous?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>anonymous?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>A module may or may not have a name.</p>
+
+<p>module M; end M.name # =&gt; “M”</p>
+
+<p>m = Module.new m.name # =&gt; “”</p>
+
+<p>A module gets a name when it is first assigned to a constant. Either via
+the <tt>module</tt> or <tt>class</tt> keyword or by an explicit assignment:</p>
+
+<p>m = Module.new # creates an anonymous module M = m # =&gt; m gets a name
+here as a side-effect m.name # =&gt; “M”</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+18
+19
+20
+21
+22</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/module/anonymous.rb', line 18</span>
+
+<span class='def def kw'>def</span> <span class='anonymous? fid id'>anonymous?</span>
+  <span class='comment val'># The name of an anonymous class is an empty</span>
+  <span class='comment val'># string in 1.8, and nil in 1.9.</span>
+  <span class='name identifier id'>name</span><span class='dot token'>.</span><span class='nil? fid id'>nil?</span> <span class='orop op'>||</span> <span class='name identifier id'>name</span><span class='dot token'>.</span><span class='empty? fid id'>empty?</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="attr_setter-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>attr_setter</strong>(*args) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Create an attribute method for both getting and setting an instance
+variable:</p>
+
+<pre class="code"><span class='attr_setter identifier id'>attr_setter</span> <span class='symbol val'>:a</span>
+</pre>
+
+<p>is equivalent to:</p>
+
+<pre class="code"><span class='def def kw'>def</span> <span class='a identifier id'>a</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='args identifier id'>args</span><span class='rparen token'>)</span>
+  <span class='if if kw'>if</span> <span class='args identifier id'>args</span><span class='dot token'>.</span><span class='size identifier id'>size</span> <span class='gt op'>&gt;</span> <span class='integer val'>0</span>
+    <span class='@a ivar id'>@a</span> <span class='assign token'>=</span> <span class='args identifier id'>args</span><span class='lbrack token'>[</span><span class='integer val'>0</span><span class='rbrack token'>]</span>
+    <span class='self self kw'>self</span>
+  <span class='else else kw'>else</span>
+    <span class='@a ivar id'>@a</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
+
+<p>CREDIT: Trans</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/module/attr_setter.rb', line 21</span>
+
+<span class='def def kw'>def</span> <span class='attr_setter identifier id'>attr_setter</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='args identifier id'>args</span><span class='rparen token'>)</span>
+  <span class='code identifier id'>code</span><span class='comma token'>,</span> <span class='made identifier id'>made</span> <span class='assign token'>=</span> <span class='string val'>''</span><span class='comma token'>,</span> <span class='lbrack token'>[</span><span class='rbrack token'>]</span>
+  <span class='args identifier id'>args</span><span class='dot token'>.</span><span class='each identifier id'>each</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='a identifier id'>a</span><span class='bitor op'>|</span>
+    <span class='code identifier id'>code</span> <span class='lshft op'>&lt;&lt;</span> <span class='dstring node'>%{
+      def #{a}(*args)
+        args.size &gt; 0 ? ( @#{a}=args[0] ; self ) : @#{a}
+      end
+    }</span>
+    <span class='made identifier id'>made</span> <span class='lshft op'>&lt;&lt;</span> <span class='dstring node'>&quot;#{a}&quot;</span><span class='dot token'>.</span><span class='to_sym identifier id'>to_sym</span>
+  <span class='end end kw'>end</span>
+  <span class='module_eval identifier id'>module_eval</span> <span class='code identifier id'>code</span>
+  <span class='made identifier id'>made</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="basename-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>basename</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the root name of the module/class.</p>
+
+<pre class="code"><span class='module module kw'>module</span> <span class='colon3 op'>::</span><span class='BaseName constant id'>BaseName</span>
+  <span class='class class kw'>class</span> <span class='Example constant id'>Example</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+
+<span class='BaseName constant id'>BaseName</span><span class='colon2 op'>::</span><span class='Example constant id'>Example</span><span class='dot token'>.</span><span class='name identifier id'>name</span>       <span class='comment val'>#=&gt; &quot;BaseName::Example&quot;</span>
+<span class='BaseName constant id'>BaseName</span><span class='colon2 op'>::</span><span class='Example constant id'>Example</span><span class='dot token'>.</span><span class='basename identifier id'>basename</span>   <span class='comment val'>#=&gt; &quot;Example&quot;</span>
+</pre>
+
+<p>For anonymous modules this will provide a basename based on Module#inspect.</p>
+
+<pre class="code"><span class='m identifier id'>m</span> <span class='assign token'>=</span> <span class='Module constant id'>Module</span><span class='dot token'>.</span><span class='new identifier id'>new</span>
+<span class='m identifier id'>m</span><span class='dot token'>.</span><span class='inspect identifier id'>inspect</span>       <span class='comment val'># &quot;#&lt;Module:0xb7bb0434&gt;&quot;</span>
+<span class='m identifier id'>m</span><span class='dot token'>.</span><span class='basename identifier id'>basename</span>      <span class='comment val'># &quot;Module_0xb7bb0434&quot;</span>
+</pre>
+
+<p>CREDIT: Trans</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+22
+23
+24
+25
+26
+27
+28</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/module/basename.rb', line 22</span>
+
+<span class='def def kw'>def</span> <span class='basename identifier id'>basename</span>
+  <span class='if if kw'>if</span> <span class='name identifier id'>name</span> <span class='and and kw'>and</span> <span class='not not kw'>not</span> <span class='name identifier id'>name</span><span class='dot token'>.</span><span class='empty? fid id'>empty?</span>
+    <span class='name identifier id'>name</span><span class='dot token'>.</span><span class='gsub identifier id'>gsub</span><span class='lparen token'>(</span><span class='regexp val'>/^.*::/</span><span class='comma token'>,</span> <span class='string val'>''</span><span class='rparen token'>)</span>
+  <span class='else else kw'>else</span>
+    <span class='nil nil kw'>nil</span> <span class='comment val'>#inspect.gsub('#&lt;','').gsub('&gt;','').sub(':', '_')</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="class_def-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>class_def</strong>(name, &amp;blk) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Defines an instance method within a class/module.</p>
+
+<p>CREDIT: WhyTheLuckyStiff</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+7
+8
+9</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/module/module_def.rb', line 7</span>
+
+<span class='def def kw'>def</span> <span class='class_def identifier id'>class_def</span> <span class='name identifier id'>name</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span>
+  <span class='class_eval identifier id'>class_eval</span> <span class='lbrace token'>{</span> <span class='define_method identifier id'>define_method</span> <span class='name identifier id'>name</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span> <span class='rbrace token'>}</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="home-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>home</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the module or class containing the receiver.</p>
+
+<pre class="code"><span class='module module kw'>module</span> <span class='colon3 op'>::</span><span class='HomeExample constant id'>HomeExample</span>
+  <span class='module module kw'>module</span> <span class='M constant id'>M</span>
+    <span class='module module kw'>module</span> <span class='N constant id'>N</span>
+    <span class='end end kw'>end</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+
+<span class='HomeExample constant id'>HomeExample</span><span class='colon2 op'>::</span><span class='M constant id'>M</span><span class='colon2 op'>::</span><span class='N constant id'>N</span><span class='dot token'>.</span><span class='home identifier id'>home</span>  <span class='comment val'>#=&gt; HomeExample::M</span>
+</pre>
+
+<p>The home of a top-level module/class is Object.</p>
+
+<pre class="code"><span class='HomeExample constant id'>HomeExample</span><span class='dot token'>.</span><span class='home identifier id'>home</span>   <span class='comment val'>#=&gt; Object</span>
+</pre>
+
+<p>This method is called <b>home</b> because techinally a module or class is
+just a constant reference, and as such can reside with multiple namespaces,
+like any variable. For example:</p>
+
+<pre class="code"><span class='module module kw'>module</span> <span class='OtherPlace constant id'>OtherPlace</span>
+  <span class='M constant id'>M</span> <span class='assign token'>=</span> <span class='colon3 op'>::</span><span class='HomeExample constant id'>HomeExample</span><span class='colon2 op'>::</span><span class='M constant id'>M</span>
+<span class='end end kw'>end</span>
+</pre>
+
+<p>In this example, you might think that <tt>OtherPlace::M</tt>‘s home would be
+<tt>OtherPlace</tt>, but <tt>OtherPlace::M</tt> is the same object as
+<tt>HomeExample::M</tt>, and it can have only one “home” –the original
+location of it’s definition.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/module/home.rb', line 29</span>
+
+<span class='def def kw'>def</span> <span class='home identifier id'>home</span>
+  <span class='comment val'>#homename = /::[^:]+\Z/ =~ name ? $` : nil</span>
+  <span class='if if kw'>if</span> <span class='homename identifier id'>homename</span>
+    <span class='homename identifier id'>homename</span><span class='dot token'>.</span><span class='split identifier id'>split</span><span class='lparen token'>(</span><span class='regexp val'>/::/</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='inject identifier id'>inject</span><span class='lparen token'>(</span><span class='self self kw'>self</span><span class='rparen token'>)</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='mod identifier id'>mod</span><span class='comma token'>,</span> <span class='cref identifier id'>cref</span><span class='bitor op'>|</span>
+      <span class='if if kw'>if</span> <span class='regexp val'>/\:(0x.*?)\&gt;$/</span> <span class='match op'>=~</span> <span class='cref identifier id'>cref</span>   <span class='comment val'># TODO: does this ever happen?</span>
+        <span class='comment val'>#p $1.to_i(16)</span>
+        <span class='ObjectSpace constant id'>ObjectSpace</span><span class='dot token'>.</span><span class='_idref identifier id'>_idref</span><span class='lparen token'>(</span><span class='$1 nth_ref id'>$1</span><span class='dot token'>.</span><span class='to_i identifier id'>to_i</span><span class='lparen token'>(</span><span class='integer val'>16</span><span class='rparen token'>)</span><span class='rparen token'>)</span>
+      <span class='else else kw'>else</span>
+        <span class='mod identifier id'>mod</span><span class='dot token'>.</span><span class='const_get identifier id'>const_get</span><span class='lparen token'>(</span><span class='cref identifier id'>cref</span><span class='rparen token'>)</span>
+      <span class='end end kw'>end</span>
+    <span class='end end kw'>end</span>
+  <span class='else else kw'>else</span>
+    <span class='Object constant id'>Object</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="homename-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>homename</strong> 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='modname-instance_method'>modname</span></span>
+    </span>
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the name of module or class containing the receiver.</p>
+
+<pre class="code"><span class='module module kw'>module</span> <span class='colon3 op'>::</span><span class='HomeExample constant id'>HomeExample</span>
+  <span class='module module kw'>module</span> <span class='M constant id'>M</span>
+    <span class='module module kw'>module</span> <span class='N constant id'>N</span>
+    <span class='end end kw'>end</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+
+<span class='HomeExample constant id'>HomeExample</span><span class='colon2 op'>::</span><span class='M constant id'>M</span><span class='colon2 op'>::</span><span class='N constant id'>N</span><span class='dot token'>.</span><span class='homename identifier id'>homename</span>  <span class='comment val'>#=&gt; &quot;HomeExample::M&quot;</span>
+</pre>
+
+<p>See also Module#basename.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+57
+58
+59</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/module/home.rb', line 57</span>
+
+<span class='def def kw'>def</span> <span class='homename identifier id'>homename</span>
+  <span class='regexp val'>/::[^:]+\Z/</span> <span class='match op'>=~</span> <span class='name identifier id'>name</span> <span class='integer val'>? </span><span class='$` back_ref id'>$`</span> <span class='colon op'>:</span> <span class='nil nil kw'>nil</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="housing-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>housing</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns all the namespaces of this module according ordered from nearest
+and moving outwards. The receiver is not contained within the result.</p>
+
+<pre class="code"><span class='module module kw'>module</span> <span class='colon3 op'>::</span><span class='HouseExample constant id'>HouseExample</span>
+  <span class='module module kw'>module</span> <span class='M constant id'>M</span>
+    <span class='module module kw'>module</span> <span class='N constant id'>N</span>
+    <span class='end end kw'>end</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+
+<span class='HouseExample constant id'>HouseExample</span><span class='dot token'>.</span><span class='housing identifier id'>housing</span>        <span class='comment val'>#=&gt; [Object]</span>
+<span class='HouseExample constant id'>HouseExample</span><span class='colon2 op'>::</span><span class='M constant id'>M</span><span class='dot token'>.</span><span class='housing identifier id'>housing</span>     <span class='comment val'>#=&gt; [HouseExample, Object]</span>
+<span class='HouseExample constant id'>HouseExample</span><span class='colon2 op'>::</span><span class='M constant id'>M</span><span class='colon2 op'>::</span><span class='N constant id'>N</span><span class='dot token'>.</span><span class='housing identifier id'>housing</span>  <span class='comment val'>#=&gt; [HouseExample::M, HouseExample, Object]</span>
+</pre>
+
+<p>Compare this to <tt>Module.nesting</tt>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+80
+81
+82
+83
+84
+85
+86
+87
+88</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/module/home.rb', line 80</span>
+
+<span class='def def kw'>def</span> <span class='housing identifier id'>housing</span>
+  <span class='n identifier id'>n</span> <span class='assign token'>=</span> <span class='lbrack token'>[</span><span class='rbrack token'>]</span>
+  <span class='name identifier id'>name</span><span class='dot token'>.</span><span class='split identifier id'>split</span><span class='lparen token'>(</span><span class='regexp val'>/::/</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='inject identifier id'>inject</span><span class='lparen token'>(</span><span class='self self kw'>self</span><span class='rparen token'>)</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='mod identifier id'>mod</span><span class='comma token'>,</span> <span class='cref identifier id'>cref</span><span class='bitor op'>|</span>
+    <span class='c identifier id'>c</span> <span class='assign token'>=</span> <span class='mod identifier id'>mod</span><span class='dot token'>.</span><span class='const_get identifier id'>const_get</span><span class='lparen token'>(</span><span class='cref identifier id'>cref</span><span class='rparen token'>)</span> <span class='semicolon token'>;</span> <span class='n identifier id'>n</span><span class='dot token'>.</span><span class='unshift identifier id'>unshift</span><span class='lparen token'>(</span><span class='c identifier id'>c</span><span class='rparen token'>)</span> <span class='semicolon token'>;</span> <span class='c identifier id'>c</span>
+  <span class='end end kw'>end</span>
+  <span class='n identifier id'>n</span> <span class='lshft op'>&lt;&lt;</span> <span class='Object constant id'>Object</span> <span class='comment val'># ?</span>
+  <span class='n identifier id'>n</span><span class='dot token'>.</span><span class='shift identifier id'>shift</span> <span class='comment val'># we really don't need +self+ too.</span>
+  <span class='n identifier id'>n</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="instance_method!-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>instance_method!</strong>(s) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Access method as a singleton object and retain state.</p>
+
+<pre class="code"><span class='module module kw'>module</span> <span class='colon3 op'>::</span><span class='K constant id'>K</span>
+  <span class='def def kw'>def</span> <span class='hello identifier id'>hello</span>
+    <span class='puts identifier id'>puts</span> <span class='string val'>&quot;Hello World!&quot;</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+
+<span class='K constant id'>K</span><span class='dot token'>.</span><span class='instance_method! fid id'>instance_method!</span><span class='lparen token'>(</span><span class='symbol val'>:hello</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='inspect identifier id'>inspect</span>   <span class='comment val'>#=&gt; &quot;#&lt;UnboundMethod: K#hello&gt;&quot;</span>
+</pre>
+
+<p>NOTE: This is limited to the scope of the current module/class.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+18
+19
+20
+21
+22</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/module/instance_method.rb', line 18</span>
+
+<span class='def def kw'>def</span> <span class='instance_method! fid id'>instance_method!</span><span class='lparen token'>(</span><span class='s identifier id'>s</span><span class='rparen token'>)</span>
+  <span class='comment val'>#( @@__instance_methods__ ||= {} )[s] ||= instance_method(s)  # TODO: use class vars for 1.9+ ?</span>
+  <span class='comment val'>#( @__instance_methods__ ||= {} )[s.to_sym] ||= instance_method(s.to_sym)</span>
+  <span class='$FIRST_CLASS_INSTANCE_METHODS gvar id'>$FIRST_CLASS_INSTANCE_METHODS</span><span class='lbrack token'>[</span><span class='self self kw'>self</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='s identifier id'>s</span><span class='dot token'>.</span><span class='to_sym identifier id'>to_sym</span><span class='rbrack token'>]</span> <span class='opasgn op'>||=</span> <span class='instance_method identifier id'>instance_method</span><span class='lparen token'>(</span><span class='s identifier id'>s</span><span class='dot token'>.</span><span class='to_sym identifier id'>to_sym</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="instance_method_defined?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>instance_method_defined?</strong>(meth) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Query whether a public instance method is defined for the module.</p>
+
+<p>CREDIT: Gavin Sinclair, Noah Gibbs</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+7
+8
+9</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/module/instance_method_defined.rb', line 7</span>
+
+<span class='def def kw'>def</span> <span class='instance_method_defined? fid id'>instance_method_defined?</span><span class='lparen token'>(</span><span class='meth identifier id'>meth</span><span class='rparen token'>)</span>
+  <span class='instance_methods identifier id'>instance_methods</span><span class='lparen token'>(</span><span class='true true kw'>true</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='find identifier id'>find</span><span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='m identifier id'>m</span><span class='bitor op'>|</span> <span class='m identifier id'>m</span><span class='dot token'>.</span><span class='to_sym identifier id'>to_sym</span> <span class='eq op'>==</span> <span class='meth identifier id'>meth</span><span class='dot token'>.</span><span class='to_sym identifier id'>to_sym</span> <span class='rbrace token'>}</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="integrate-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>integrate</strong>(mod, &amp;block) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Using integrate is just like using include except the module included is a
+reconstruction of the one given altered by the commands given in the block.</p>
+
+<p>Convenient commands available are: #rename, #redef, #remove, #nodef and
+#wrap. But any module method can be used.</p>
+
+<pre class="code"><span class='module module kw'>module</span> <span class='IntegrateExampleModule constant id'>IntegrateExampleModule</span>
+  <span class='def def kw'>def</span> <span class='q identifier id'>q</span> <span class='semicolon token'>;</span> <span class='string val'>&quot;q&quot;</span> <span class='semicolon token'>;</span> <span class='end end kw'>end</span>
+  <span class='def def kw'>def</span> <span class='y identifier id'>y</span> <span class='semicolon token'>;</span> <span class='string val'>&quot;y&quot;</span> <span class='semicolon token'>;</span> <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+
+<span class='class class kw'>class</span> <span class='InegrateExampleClass constant id'>InegrateExampleClass</span>
+  <span class='integrate identifier id'>integrate</span> <span class='IntegrateExampleModule constant id'>IntegrateExampleModule</span> <span class='do do kw'>do</span>
+    <span class='undef_method identifier id'>undef_method</span> <span class='symbol val'>:y</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+
+<span class='x identifier id'>x</span> <span class='assign token'>=</span> <span class='InegrateExampleClass constant id'>InegrateExampleClass</span><span class='dot token'>.</span><span class='new identifier id'>new</span>
+<span class='x identifier id'>x</span><span class='dot token'>.</span><span class='q identifier id'>q</span>  <span class='comment val'>#=&gt; &quot;q&quot;</span>
+
+<span class='expect identifier id'>expect</span> <span class='NameError constant id'>NameError</span> <span class='do do kw'>do</span>
+  <span class='x identifier id'>x</span><span class='dot token'>.</span><span class='y identifier id'>y</span>
+<span class='end end kw'>end</span>
+</pre>
+
+<p>This is like #revisal, but #revisal only returns the reconstructred module.
+It does not include it.</p>
+
+<p>CREDIT: Trans</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+41
+42
+43
+44
+45
+46</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/module/integrate.rb', line 41</span>
+
+<span class='def def kw'>def</span> <span class='integrate identifier id'>integrate</span><span class='lparen token'>(</span><span class='mod identifier id'>mod</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='block identifier id'>block</span><span class='rparen token'>)</span>
+  <span class='comment val'>#include mod.revisal( &amp;blk )</span>
+  <span class='m identifier id'>m</span> <span class='assign token'>=</span> <span class='Module constant id'>Module</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lbrace token'>{</span> <span class='include identifier id'>include</span> <span class='mod identifier id'>mod</span> <span class='rbrace token'>}</span>
+  <span class='m identifier id'>m</span><span class='dot token'>.</span><span class='class_eval identifier id'>class_eval</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='block identifier id'>block</span><span class='rparen token'>)</span>
+  <span class='include identifier id'>include</span> <span class='m identifier id'>m</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="is-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>is</strong>(*mods) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>An alias for #include.</p>
+
+<pre class="code"><span class='class class kw'>class</span> <span class='IsExample constant id'>IsExample</span>
+  <span class='is identifier id'>is</span> <span class='Enumerable constant id'>Enumerable</span>
+<span class='end end kw'>end</span>
+</pre>
+
+<p>CREDIT: Trans</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/module/is.rb', line 25</span>
+
+<span class='def def kw'>def</span> <span class='is identifier id'>is</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='mods identifier id'>mods</span><span class='rparen token'>)</span>
+  <span class='mods identifier id'>mods</span><span class='dot token'>.</span><span class='each identifier id'>each</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='mod identifier id'>mod</span><span class='bitor op'>|</span>
+    <span class='if if kw'>if</span> <span class='mod identifier id'>mod</span><span class='dot token'>.</span><span class='const_defined? fid id'>const_defined?</span><span class='lparen token'>(</span><span class='symbol val'>:Self</span><span class='rparen token'>)</span>
+      <span class='extend identifier id'>extend</span> <span class='mod identifier id'>mod</span><span class='colon2 op'>::</span><span class='Self constant id'>Self</span>
+      <span class='comment val'># pass it along if module</span>
+      <span class='if if kw'>if</span> <span class='instance_of? fid id'>instance_of?</span><span class='lparen token'>(</span><span class='Module constant id'>Module</span><span class='rparen token'>)</span>
+        <span class='const_set identifier id'>const_set</span><span class='lparen token'>(</span><span class='symbol val'>:Self</span><span class='comma token'>,</span> <span class='Module constant id'>Module</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='rparen token'>)</span> <span class='unless unless_mod kw'>unless</span> <span class='const_defined? fid id'>const_defined?</span><span class='lparen token'>(</span><span class='symbol val'>:Self</span><span class='rparen token'>)</span>
+        <span class='const_get identifier id'>const_get</span><span class='lparen token'>(</span><span class='symbol val'>:Self</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='send identifier id'>send</span><span class='lparen token'>(</span><span class='symbol val'>:include</span><span class='comma token'>,</span> <span class='mod identifier id'>mod</span><span class='colon2 op'>::</span><span class='Self constant id'>Self</span><span class='rparen token'>)</span>
+      <span class='end end kw'>end</span>
+    <span class='end end kw'>end</span>
+  <span class='end end kw'>end</span>
+  <span class='include identifier id'>include</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='mods identifier id'>mods</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="is?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>is?</strong>(base) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Is a given class or module an ancestor of this class or module?</p>
+
+<pre class="code"><span class='class class kw'>class</span> <span class='IsX constant id'>IsX</span> <span class='semicolon token'>;</span> <span class='end end kw'>end</span>
+<span class='class class kw'>class</span> <span class='IsY constant id'>IsY</span> <span class='lt op'>&lt;</span> <span class='IsX constant id'>IsX</span> <span class='semicolon token'>;</span> <span class='end end kw'>end</span>
+
+<span class='IsY constant id'>IsY</span><span class='dot token'>.</span><span class='is? fid id'>is?</span><span class='lparen token'>(</span><span class='IsX constant id'>IsX</span><span class='rparen token'>)</span>  <span class='comment val'>#=&gt; true</span>
+</pre>
+
+<p>CREDIT: Trans</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+13
+14
+15</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/module/is.rb', line 13</span>
+
+<span class='def def kw'>def</span> <span class='is? fid id'>is?</span><span class='lparen token'>(</span><span class='base identifier id'>base</span><span class='rparen token'>)</span>
+  <span class='Module constant id'>Module</span><span class='eqq op'>===</span><span class='base identifier id'>base</span> <span class='andop op'>&amp;&amp;</span> <span class='ancestors identifier id'>ancestors</span><span class='dot token'>.</span><span class='slice identifier id'>slice</span><span class='lparen token'>(</span><span class='float val'>1</span><span class='dot2 op'>..</span><span class='integer val'>-1</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='include? fid id'>include?</span><span class='lparen token'>(</span><span class='base identifier id'>base</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="method_clash-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>method_clash</strong>(other) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Detect method name clash between modules and/or classes, regardless of
+method visibility:</p>
+
+<pre class="code"><span class='module module kw'>module</span> <span class='MethodClashExample constant id'>MethodClashExample</span>
+
+  <span class='module module kw'>module</span> <span class='A constant id'>A</span>
+    <span class='def def kw'>def</span> <span class='c identifier id'>c</span><span class='semicolon token'>;</span> <span class='end end kw'>end</span>
+  <span class='end end kw'>end</span>
+
+  <span class='module module kw'>module</span> <span class='B constant id'>B</span>
+    <span class='private identifier id'>private</span>
+    <span class='def def kw'>def</span> <span class='c identifier id'>c</span><span class='semicolon token'>;</span> <span class='end end kw'>end</span>
+  <span class='end end kw'>end</span>
+
+  <span class='A constant id'>A</span><span class='dot token'>.</span><span class='method_clash identifier id'>method_clash</span><span class='lparen token'>(</span><span class='B constant id'>B</span><span class='rparen token'>)</span>  <span class='comment val'>#=&gt; [:c]</span>
+
+<span class='end end kw'>end</span>
+</pre>
+
+<p>CREDIT: Thomas Sawyer, Robert Dober</p>
+
+<p>– TODO: Should method_clash just be public methods? … ++</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/module/method_clash.rb', line 26</span>
+
+<span class='def def kw'>def</span> <span class='method_clash identifier id'>method_clash</span><span class='lparen token'>(</span><span class='other identifier id'>other</span><span class='rparen token'>)</span>
+  <span class='common_ancestor identifier id'>common_ancestor</span> <span class='assign token'>=</span> <span class='lparen token'>(</span><span class='ancestors identifier id'>ancestors</span> <span class='bitand op'>&amp;</span> <span class='other identifier id'>other</span><span class='dot token'>.</span><span class='ancestors identifier id'>ancestors</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='first identifier id'>first</span>
+
+  <span class='s identifier id'>s</span> <span class='assign token'>=</span> <span class='lbrack token'>[</span><span class='rbrack token'>]</span>
+  <span class='s identifier id'>s</span> <span class='opasgn op'>+=</span> <span class='public_instance_methods identifier id'>public_instance_methods</span><span class='lparen token'>(</span><span class='true true kw'>true</span><span class='rparen token'>)</span>
+  <span class='s identifier id'>s</span> <span class='opasgn op'>+=</span> <span class='private_instance_methods identifier id'>private_instance_methods</span><span class='lparen token'>(</span><span class='true true kw'>true</span><span class='rparen token'>)</span>
+  <span class='s identifier id'>s</span> <span class='opasgn op'>+=</span> <span class='protected_instance_methods identifier id'>protected_instance_methods</span><span class='lparen token'>(</span><span class='true true kw'>true</span><span class='rparen token'>)</span>
+
+  <span class='o identifier id'>o</span> <span class='assign token'>=</span> <span class='lbrack token'>[</span><span class='rbrack token'>]</span>
+  <span class='o identifier id'>o</span> <span class='opasgn op'>+=</span> <span class='other identifier id'>other</span><span class='dot token'>.</span><span class='public_instance_methods identifier id'>public_instance_methods</span><span class='lparen token'>(</span><span class='true true kw'>true</span><span class='rparen token'>)</span>
+  <span class='o identifier id'>o</span> <span class='opasgn op'>+=</span> <span class='other identifier id'>other</span><span class='dot token'>.</span><span class='private_instance_methods identifier id'>private_instance_methods</span><span class='lparen token'>(</span><span class='true true kw'>true</span><span class='rparen token'>)</span>
+  <span class='o identifier id'>o</span> <span class='opasgn op'>+=</span> <span class='other identifier id'>other</span><span class='dot token'>.</span><span class='protected_instance_methods identifier id'>protected_instance_methods</span><span class='lparen token'>(</span><span class='true true kw'>true</span><span class='rparen token'>)</span>
+
+  <span class='c identifier id'>c</span> <span class='assign token'>=</span> <span class='s identifier id'>s</span> <span class='bitand op'>&amp;</span> <span class='o identifier id'>o</span>
+
+  <span class='if if kw'>if</span> <span class='common_ancestor identifier id'>common_ancestor</span>
+    <span class='c identifier id'>c</span> <span class='opasgn op'>-=</span> <span class='common_ancestor identifier id'>common_ancestor</span><span class='dot token'>.</span><span class='public_instance_methods identifier id'>public_instance_methods</span><span class='lparen token'>(</span><span class='true true kw'>true</span><span class='rparen token'>)</span>
+    <span class='c identifier id'>c</span> <span class='opasgn op'>-=</span> <span class='common_ancestor identifier id'>common_ancestor</span><span class='dot token'>.</span><span class='private_instance_methods identifier id'>private_instance_methods</span><span class='lparen token'>(</span><span class='true true kw'>true</span><span class='rparen token'>)</span>
+    <span class='c identifier id'>c</span> <span class='opasgn op'>-=</span> <span class='common_ancestor identifier id'>common_ancestor</span><span class='dot token'>.</span><span class='protected_instance_methods identifier id'>protected_instance_methods</span><span class='lparen token'>(</span><span class='true true kw'>true</span><span class='rparen token'>)</span>
+  <span class='end end kw'>end</span>
+
+  <span class='return return kw'>return</span> <span class='c identifier id'>c</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="method_clash?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>method_clash?</strong>(other) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Uses #method_clash to return <tt>true</tt> or <tt>false</tt> if there are
+method name clashes.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+52
+53
+54
+55</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/module/method_clash.rb', line 52</span>
+
+<span class='def def kw'>def</span> <span class='method_clash? fid id'>method_clash?</span><span class='lparen token'>(</span><span class='other identifier id'>other</span><span class='rparen token'>)</span> 
+  <span class='c identifier id'>c</span> <span class='assign token'>=</span> <span class='method_clash identifier id'>method_clash</span><span class='lparen token'>(</span><span class='other identifier id'>other</span><span class='rparen token'>)</span> 
+  <span class='notop op'>!</span><span class='c identifier id'>c</span><span class='dot token'>.</span><span class='empty? fid id'>empty?</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="methodize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>methodize</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Translate a module name to a suitable method name.</p>
+
+<pre class="code"><span class='module module kw'>module</span> <span class='colon3 op'>::</span><span class='EgMethodize constant id'>EgMethodize</span>
+  <span class='module module kw'>module</span> <span class='Eg constant id'>Eg</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+
+<span class='EgMethodize constant id'>EgMethodize</span><span class='dot token'>.</span><span class='methodize identifier id'>methodize</span>      <span class='comment val'>#=&gt; &quot;eg_methodize&quot;</span>
+<span class='EgMethodize constant id'>EgMethodize</span><span class='colon2 op'>::</span><span class='Eg constant id'>Eg</span><span class='dot token'>.</span><span class='methodize identifier id'>methodize</span>  <span class='comment val'>#=&gt; &quot;eg_methodize__eg&quot;</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+15
+16
+17</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/module/methodize.rb', line 15</span>
+
+<span class='def def kw'>def</span> <span class='methodize identifier id'>methodize</span>
+  <span class='name identifier id'>name</span><span class='dot token'>.</span><span class='methodize identifier id'>methodize</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="module_def-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>module_def</strong>(name, &amp;blk) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Defines an instance method within a class/module.</p>
+
+<p>CREDIT: WhyTheLuckyStiff</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+15
+16
+17</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/module/module_def.rb', line 15</span>
+
+<span class='def def kw'>def</span> <span class='module_def identifier id'>module_def</span> <span class='name identifier id'>name</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span>
+  <span class='module_eval identifier id'>module_eval</span> <span class='lbrace token'>{</span> <span class='define_method identifier id'>define_method</span> <span class='name identifier id'>name</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span> <span class='rbrace token'>}</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="pathize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>pathize</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Converts a class name to a unix path.</p>
+
+<pre class="code"><span class='module module kw'>module</span> <span class='colon3 op'>::</span><span class='ExamplePathize constant id'>ExamplePathize</span>
+  <span class='module module kw'>module</span> <span class='Example constant id'>Example</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+
+<span class='ExamplePathize constant id'>ExamplePathize</span><span class='dot token'>.</span><span class='pathize identifier id'>pathize</span>           <span class='comment val'>#=&gt; &quot;example_pathize&quot;</span>
+<span class='ExamplePathize constant id'>ExamplePathize</span><span class='colon2 op'>::</span><span class='Example constant id'>Example</span><span class='dot token'>.</span><span class='pathize identifier id'>pathize</span>  <span class='comment val'>#=&gt; &quot;example_pathize/example&quot;</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+15
+16
+17</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/module/pathize.rb', line 15</span>
+
+<span class='def def kw'>def</span> <span class='pathize identifier id'>pathize</span>
+  <span class='name identifier id'>name</span><span class='dot token'>.</span><span class='pathize identifier id'>pathize</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="revise-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>revise</strong>(&amp;blk) 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='revisal-instance_method'>revisal</span></span>
+    </span>
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Return a new module based on another. This includes the original module
+into the new revised module.</p>
+
+<pre class="code"><span class='module module kw'>module</span> <span class='ReviseExample constant id'>ReviseExample</span>
+  <span class='def def kw'>def</span> <span class='foo identifier id'>foo</span><span class='semicolon token'>;</span> <span class='string val'>&quot;foo&quot;</span><span class='semicolon token'>;</span> <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+
+<span class='ReviseExample2 constant id'>ReviseExample2</span> <span class='assign token'>=</span> <span class='ReviseExample constant id'>ReviseExample</span><span class='dot token'>.</span><span class='revise identifier id'>revise</span> <span class='do do kw'>do</span>
+  <span class='alias_method identifier id'>alias_method</span> <span class='symbol val'>:bar</span><span class='comma token'>,</span> <span class='symbol val'>:foo</span>
+<span class='end end kw'>end</span>
+
+<span class='object identifier id'>object</span> <span class='assign token'>=</span> <span class='Object constant id'>Object</span><span class='dot token'>.</span><span class='new identifier id'>new</span>
+<span class='object identifier id'>object</span><span class='dot token'>.</span><span class='extend identifier id'>extend</span> <span class='ReviseExample2 constant id'>ReviseExample2</span>
+<span class='object identifier id'>object</span><span class='dot token'>.</span><span class='bar identifier id'>bar</span>  <span class='comment val'>#=&gt; 'foo'</span>
+</pre>
+
+<p>CREDIT: Trans</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+26
+27
+28
+29
+30
+31</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/module/revise.rb', line 26</span>
+
+<span class='def def kw'>def</span> <span class='revise identifier id'>revise</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+  <span class='base identifier id'>base</span> <span class='assign token'>=</span> <span class='self self kw'>self</span>
+  <span class='nm identifier id'>nm</span> <span class='assign token'>=</span> <span class='Module constant id'>Module</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lbrace token'>{</span> <span class='include identifier id'>include</span> <span class='base identifier id'>base</span> <span class='rbrace token'>}</span>
+  <span class='nm identifier id'>nm</span><span class='dot token'>.</span><span class='class_eval identifier id'>class_eval</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+  <span class='nm identifier id'>nm</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="set-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>set</strong>(option, value = self, &amp;block) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets an option to the given value. If the value is a proc, the proc will be
+called every time the option is accessed.</p>
+
+<p>CREDIT: Blake Mizerany (Sinatra)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Raises:</h3>
+<ul class="raise">
+  
+    <li>
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/module/set.rb', line 10</span>
+
+<span class='def def kw'>def</span> <span class='set identifier id'>set</span><span class='lparen token'>(</span><span class='option identifier id'>option</span><span class='comma token'>,</span> <span class='value identifier id'>value</span><span class='assign token'>=</span><span class='self self kw'>self</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='block identifier id'>block</span><span class='rparen token'>)</span>
+  <span class='raise identifier id'>raise</span> <span class='ArgumentError constant id'>ArgumentError</span> <span class='if if_mod kw'>if</span> <span class='block identifier id'>block</span> <span class='andop op'>&amp;&amp;</span> <span class='value identifier id'>value</span> <span class='neq op'>!=</span> <span class='self self kw'>self</span>
+  <span class='value identifier id'>value</span> <span class='assign token'>=</span> <span class='block identifier id'>block</span> <span class='if if_mod kw'>if</span> <span class='block identifier id'>block</span>
+  <span class='if if kw'>if</span> <span class='value identifier id'>value</span><span class='dot token'>.</span><span class='kind_of? fid id'>kind_of?</span><span class='lparen token'>(</span><span class='Proc constant id'>Proc</span><span class='rparen token'>)</span>
+    <span class='if if kw'>if</span> <span class='value identifier id'>value</span><span class='dot token'>.</span><span class='arity identifier id'>arity</span> <span class='eq op'>==</span> <span class='integer val'>1</span>
+      <span class='yield yield kw'>yield</span> <span class='self self kw'>self</span>
+    <span class='else else kw'>else</span>
+      <span class='lparen token'>(</span><span class='class class kw'>class</span> <span class='lshft op'>&lt;&lt;</span> <span class='self self kw'>self</span><span class='semicolon token'>;</span> <span class='self self kw'>self</span><span class='semicolon token'>;</span> <span class='end end kw'>end</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='module_eval identifier id'>module_eval</span> <span class='do do kw'>do</span>
+        <span class='define_method identifier id'>define_method</span><span class='lparen token'>(</span><span class='option identifier id'>option</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='value identifier id'>value</span><span class='rparen token'>)</span>
+        <span class='define_method identifier id'>define_method</span><span class='lparen token'>(</span><span class='dstring node'>&quot;#{option}?&quot;</span><span class='rparen token'>)</span><span class='lbrace token'>{</span> <span class='notop op'>!</span><span class='notop op'>!</span><span class='__send__ identifier id'>__send__</span><span class='lparen token'>(</span><span class='option identifier id'>option</span><span class='rparen token'>)</span> <span class='rbrace token'>}</span>
+        <span class='define_method identifier id'>define_method</span><span class='lparen token'>(</span><span class='dstring node'>&quot;#{option}=&quot;</span><span class='rparen token'>)</span><span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='val identifier id'>val</span><span class='bitor op'>|</span> <span class='set identifier id'>set</span><span class='lparen token'>(</span><span class='option identifier id'>option</span><span class='comma token'>,</span> <span class='Proc constant id'>Proc</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lbrace token'>{</span><span class='val identifier id'>val</span><span class='rbrace token'>}</span><span class='rparen token'>)</span> <span class='rbrace token'>}</span>
+      <span class='end end kw'>end</span>
+    <span class='end end kw'>end</span>
+  <span class='elsif elsif kw'>elsif</span> <span class='value identifier id'>value</span> <span class='eq op'>==</span> <span class='self self kw'>self</span>
+    <span class='option identifier id'>option</span><span class='dot token'>.</span><span class='each identifier id'>each</span><span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='k identifier id'>k</span><span class='comma token'>,</span><span class='v identifier id'>v</span><span class='bitor op'>|</span> <span class='set identifier id'>set</span><span class='lparen token'>(</span><span class='k identifier id'>k</span><span class='comma token'>,</span> <span class='v identifier id'>v</span><span class='rparen token'>)</span> <span class='rbrace token'>}</span>
+  <span class='elsif elsif kw'>elsif</span> <span class='respond_to? fid id'>respond_to?</span><span class='lparen token'>(</span><span class='dstring node'>&quot;#{option}=&quot;</span><span class='rparen token'>)</span>
+    <span class='__send__ identifier id'>__send__</span><span class='lparen token'>(</span><span class='dstring node'>&quot;#{option}=&quot;</span><span class='comma token'>,</span> <span class='value identifier id'>value</span><span class='rparen token'>)</span>
+  <span class='else else kw'>else</span>
+    <span class='set identifier id'>set</span><span class='lparen token'>(</span><span class='option identifier id'>option</span><span class='comma token'>,</span> <span class='Proc constant id'>Proc</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lbrace token'>{</span><span class='value identifier id'>value</span><span class='rbrace token'>}</span><span class='rparen token'>)</span>
+  <span class='end end kw'>end</span>
+  <span class='self self kw'>self</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="singleton_method_defined?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>singleton_method_defined?</strong>(meth) 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='class_method_defined?-instance_method'>class_method_defined?</span>, <span id='module_method_defined?-instance_method'>module_method_defined?</span></span>
+    </span>
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Query whether a normal (singleton) method is defined for the module.</p>
+
+<p>CREDIT: Gavin Sinclair, Noah Gibbs</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+15
+16
+17</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/module/instance_method_defined.rb', line 15</span>
+
+<span class='def def kw'>def</span> <span class='singleton_method_defined? fid id'>singleton_method_defined?</span><span class='lparen token'>(</span><span class='meth identifier id'>meth</span><span class='rparen token'>)</span>
+  <span class='singleton_methods identifier id'>singleton_methods</span><span class='lparen token'>(</span><span class='true true kw'>true</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='find identifier id'>find</span><span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='m identifier id'>m</span><span class='bitor op'>|</span> <span class='m identifier id'>m</span><span class='dot token'>.</span><span class='to_sym identifier id'>to_sym</span> <span class='eq op'>==</span> <span class='meth identifier id'>meth</span><span class='dot token'>.</span><span class='to_sym identifier id'>to_sym</span> <span class='rbrace token'>}</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="spacename-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>spacename</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the name of module’s container module.</p>
+
+<pre class="code"><span class='module module kw'>module</span> <span class='colon3 op'>::</span><span class='SpaceName constant id'>SpaceName</span>
+  <span class='class class kw'>class</span> <span class='Example constant id'>Example</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+
+<span class='SpaceName constant id'>SpaceName</span><span class='colon2 op'>::</span><span class='Example constant id'>Example</span><span class='dot token'>.</span><span class='name identifier id'>name</span>         <span class='comment val'>#=&gt; &quot;SpaceName::Example&quot;</span>
+<span class='SpaceName constant id'>SpaceName</span><span class='colon2 op'>::</span><span class='Example constant id'>Example</span><span class='dot token'>.</span><span class='spacename identifier id'>spacename</span>    <span class='comment val'>#=&gt; &quot;SpaceName&quot;</span>
+</pre>
+
+<p>This used to be called <tt>dirname</tt>.</p>
+
+<p>See also Module#basename.</p>
+
+<p>CREDIT: Trans</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+19
+20
+21
+22</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/module/spacename.rb', line 19</span>
+
+<span class='def def kw'>def</span> <span class='spacename identifier id'>spacename</span>
+  <span class='name identifier id'>name</span><span class='lbrack token'>[</span><span class='integer val'>0</span><span class='dot3 op'>...</span><span class='lparen token'>(</span><span class='name identifier id'>name</span><span class='dot token'>.</span><span class='rindex identifier id'>rindex</span><span class='lparen token'>(</span><span class='string val'>'::'</span><span class='rparen token'>)</span> <span class='orop op'>||</span> <span class='integer val'>0</span><span class='rparen token'>)</span><span class='rbrack token'>]</span>
+  <span class='comment val'>#name.gsub(/::[^:]*$/, '')</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="to_obj-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>to_obj</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Create an instance of Object and extend it with <tt>self</tt>.</p>
+
+<pre class="code"><span class='mod identifier id'>mod</span> <span class='assign token'>=</span> <span class='Module constant id'>Module</span><span class='dot token'>.</span><span class='new identifier id'>new</span> <span class='do do kw'>do</span>
+  <span class='def def kw'>def</span> <span class='foo identifier id'>foo</span><span class='semicolon token'>;</span> <span class='string val'>&quot;foo&quot;</span><span class='semicolon token'>;</span> <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+
+<span class='obj identifier id'>obj</span> <span class='assign token'>=</span> <span class='mod identifier id'>mod</span><span class='dot token'>.</span><span class='to_obj identifier id'>to_obj</span>
+
+<span class='obj identifier id'>obj</span><span class='dot token'>.</span><span class='foo identifier id'>foo</span> <span class='comment val'>#=&gt; &quot;foo&quot;</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+13
+14
+15
+16
+17</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/module/to_obj.rb', line 13</span>
+
+<span class='def def kw'>def</span> <span class='to_obj identifier id'>to_obj</span>
+  <span class='o identifier id'>o</span> <span class='assign token'>=</span> <span class='Object constant id'>Object</span><span class='dot token'>.</span><span class='new identifier id'>new</span>
+  <span class='o identifier id'>o</span><span class='dot token'>.</span><span class='extend identifier id'>extend</span> <span class='self self kw'>self</span>
+  <span class='o identifier id'>o</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="wrap_method-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>wrap_method</strong>(sym, &amp;blk) 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='wrap-instance_method'>wrap</span></span>
+    </span>
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Creates a new method wrapping the previous of the same name. Reference to
+the old method is passed into the new definition block as the first
+parameter.</p>
+
+<pre class="code"><span class='class class kw'>class</span> <span class='WrapExample constant id'>WrapExample</span>
+  <span class='def def kw'>def</span> <span class='foo identifier id'>foo</span>
+    <span class='string val'>&quot;foo&quot;</span>
+  <span class='end end kw'>end</span>
+
+  <span class='wrap_method identifier id'>wrap_method</span><span class='lparen token'>(</span><span class='symbol val'>:foo</span><span class='rparen token'>)</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='old_meth identifier id'>old_meth</span><span class='comma token'>,</span> <span class='mult op'>*</span><span class='args identifier id'>args</span><span class='bitor op'>|</span>
+    <span class='old_meth identifier id'>old_meth</span><span class='dot token'>.</span><span class='call identifier id'>call</span> <span class='plus op'>+</span> <span class='string val'>'!'</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+
+<span class='example identifier id'>example</span> <span class='assign token'>=</span> <span class='WrapExample constant id'>WrapExample</span><span class='dot token'>.</span><span class='new identifier id'>new</span>
+<span class='example identifier id'>example</span><span class='dot token'>.</span><span class='foo identifier id'>foo</span> <span class='comment val'>#=&gt; 'foo!'</span>
+</pre>
+
+<p>Keep in mind that this cannot be used to wrap methods that take a block.</p>
+
+<p>CREDIT: Trans</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+27
+28
+29
+30</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/facets/module/wrap_method.rb', line 27</span>
+
+<span class='def def kw'>def</span> <span class='wrap_method identifier id'>wrap_method</span><span class='lparen token'>(</span> <span class='sym identifier id'>sym</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span> <span class='rparen token'>)</span>
+  <span class='old identifier id'>old</span> <span class='assign token'>=</span> <span class='instance_method identifier id'>instance_method</span><span class='lparen token'>(</span><span class='sym identifier id'>sym</span><span class='rparen token'>)</span>
+  <span class='define_method identifier id'>define_method</span><span class='lparen token'>(</span><span class='sym identifier id'>sym</span><span class='rparen token'>)</span> <span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='mult op'>*</span><span class='args identifier id'>args</span><span class='bitor op'>|</span> <span class='blk identifier id'>blk</span><span class='dot token'>.</span><span class='call identifier id'>call</span><span class='lparen token'>(</span><span class='old identifier id'>old</span><span class='dot token'>.</span><span class='bind identifier id'>bind</span><span class='lparen token'>(</span><span class='self self kw'>self</span><span class='rparen token'>)</span><span class='comma token'>,</span> <span class='mult op'>*</span><span class='args identifier id'>args</span><span class='rparen token'>)</span> <span class='rbrace token'>}</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Tue May 17 02:26:18 2011 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.6.7 (ruby-1.8.7).
+</div>
+
+  </body>
+</html>

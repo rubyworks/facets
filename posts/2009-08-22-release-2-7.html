@@ -1,5 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
@@ -14,9 +13,9 @@
   <meta name="DESCRIPTION"
         content="Ruby Facets is a large collection of libraries for the Ruby programming lanaguage."/>
 
-  <link rel="icon" href="../media/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="<%= root %>media/favicon.ico" type="image/x-icon" />
 
-  <link href="http://rubyworks.github.com/facets/atom.xml" rel="alternate" title="blog.facets.rubyforge.org" type="application/atom+xml" />
+  <link href="<%= site.url %>/atom.xml" rel="alternate" title="blog.facets.rubyforge.org" type="application/atom+xml" />
 
 <!--
   <link href="/assets/styles/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
@@ -27,8 +26,8 @@
       <link href="/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
   <![endif]-->
 
-  <link href="../assets/site.css" rel="stylesheet" type="text/css" />
-  <link href="../assets/syntax.css" rel="stylesheet" type="text/css" />
+  <link href="<%=root%>assets/site.css" rel="stylesheet" type="text/css" />
+  <link href="<%=root%>assets/syntax.css" rel="stylesheet" type="text/css" />
 
   <!-- <script src="/js/rdocs.js" type="text/javascript"></script> -->
 </head>
@@ -37,15 +36,15 @@
 
 <div id="forkme">
   <a href="http://github.com/rubyworks/facets">
-    <img src="../media/forkme.png" />
+    <img src="<%= root %>media/forkme.png" />
   </a>
 </div>
 
 <div id="container">
 
   <div id="header">
-    <a href="http://rubyworks.github.com/facets">
-      <img id="logo" src="../media/RubyFacets.png" align="middle" />
+    <a href="<%= site.url %>">
+      <img id="logo" src="<%=root%>media/RubyFacets.png" align="middle" />
     </a>
   </div>
 
@@ -55,160 +54,22 @@
 
   <div class="blurb">
     <div id="menu">
-      <a href="../index.html">Overview</a> &middot;
-      <a href="../news.html">News/Blog</a> &middot;
-      <a href="../learn.html">Documentation</a> &middot;
-      <a href="../source.html">Development</a>
+      <a href="<%= root %>index.html">Overview</a> &middot;
+      <a href="<%= root %>news.html">News/Blog</a> &middot;
+      <a href="<%= root %>learn.html">Documentation</a> &middot;
+      <a href="<%= root %>source.html">Development</a>
       <img style="width: 20px; height: 1px;" src="/media/clear.gif"/>
     </div>
 
     <div class="desc">
-      <h1></h1>
-      
+      <h1><%= blurb %></h1>
+      <%= detail %>
     </div>
   </div>
 
 
   <div class="page">
-    
-<div class="page">
-
-  <h2>Facets 2.7 is a Significant Release</h2>
-
-  <p>Facets 2.7 is most significant release of Facets since 2.4. Rather then trickle-release
-these changes over the course of the 2.6.x series, I made the decision to let 2.7 have them
-all at once. In so doing this release nearly completes the process of trimming down
-the MORE library to its essentials. Over 40 high-level libraries have been spun-off
-as separate gems and/or deprecated. No doubt this is a big change for Facets, and the
-transition may be a bit bumpy over the short-term, but I am certain that in the long-run
-everyone involved will be better served. To help, I have listed the effected libraries
-and the alternate gems available to take their place.</p>
-
-<p>A few other changes have also been made in the release that may also effect your code.
-In particular you should note that #class_extension has been renamed to #class_extend
-(require 'facets/class_extend'). In addition we have added a few new core methods such
-as Exception#raised? and Symbol#thrown?.</p>
-
-<h2>Spun-Off Projects</h2>
-
-<p>These libraries have been deprecated from Facets entirely, but are available
-as separate gems (or soon will be).</p>
-
-<pre><code>LIBRARY               GEM
--------------------   -------------------------
-overload.rb           overload
-binreadable.rb        binaryio
-downloader.rb         downloader
-xoxo.rb               xoxo
-bicrypt.rb            bicrypt
-typecast.rb           typecast
-association.rb        association
-syncarray.rb          sync
-synchash.rb           sync
-paramix.rb            paramix
-crypt.rb              crypt3
-lrucache.rb           lrucache
-net/smtp_tls.rb       smtp_tls
-advisable.rb          advisable
-buildable.rb          buildable
-memoizer.rb           memoizer
-harray.rb             sparray
-sparse_array.rb       sparray
-iteration.rb          iteration
-interval.rb           stick
-infinity.rb           stick
-pool.rb               pool
-linkedlist.rb         linkedlist
-semaphore.rb          semaphore
-pqueue.rb             pqueue
-censor.rb             language
-macther.rb            language
-basex.rb              radix
-minitar.rb            archive-tar-minitar, folio
-</code></pre>
-
-<h2>Spun-Off But Still Available</h2>
-
-<p>These libraries have been spun-off into stand-alone gems, but remain
-available via Facets too. Ultimately some of these will be removed
-from Facets too (in particular the ansi libraries).</p>
-
-<pre><code>LIBRARY               GEM
--------------------   -------------------------
-ansicode.rb           ansi
-progressbar.rb        ansi
-logger.rb             ansi
-tracepoint.rb         tracepoint
-dictionary.rb         dictionary
-recorder.rb           recorder
-ostructable.rb        ostructable, openhash
-openobject.rb         openhash
-opencollection.rb     openhash
-opencascade.rb        openhash
-openhash.rb           openhash
-openmodule.rb         openmodule
-fileable.rb           fileable
-expirable.rb          expirable
-enumerablepass.rb     enumargs
-</code></pre>
-
-<h2>Deprecations Without Current Replacement</h2>
-
-<p>The libraries have been deprecated but do not yet have replacements.
-Separate gems for these are planned though.</p>
-
-<pre><code>* bbcode.rb
-* ini.rb
-* settings.rb
-* xmlhash.rb
-</code></pre>
-
-<h2>Deprecations Merged Into CORE</h2>
-
-<p>These libraries have been deprecated because their functionality was merged into
-the CORE library and/or made available in some another way.</p>
-
-<pre><code>* 1stclassmethod.rb   #method! and #instance_method! are now part of CORE.
-* elementor.rb        #per has been added to CORE.
-* elementwise.rb      #ewise has been added to CORE.
-* consoleutils.rb     #ask is in CORE, for the rest see Ansi or Clio project.
-* attr.rb             Added Module#attr_setter to CORE, and separated the rest in MORE.
-</code></pre>
-
-<h2>General Deprecations</h2>
-
-<p>These libraries have simply been deprecated because they were found lacking in
-some significant fashion.</p>
-
-<pre><code>* nilstatus.rb        Poved rather useless, not to mention trivial.
-* heap.rb             Heap was just an alias for PQueue anyway. Use 'pqueue' instead.
-* dependency.rb       Other solutions exist that are much better (like Advisable).
-* classmethods.rb     #class_extend solution is more robust.
-* ziputils.rb         Have a look at Folio (gem install folio) for replacement.
-* unheritable.rb      Implementation is trivial and usefulness questionable.
-* instantise.rb       Replaced by instance_function.rb.
-</code></pre>
-
-<p>In addition to all this we've also taken some time to ensure Ruby Facets is more compatible
-with Ruby 1.9 --indeed, at this point, it should be very close to fully compatibility. In
-the process of doing this, btw, it has become clear that Ruby 1.9 picked up a good number
-of methods already supported by Facets (some with the same exact names and some with
-changed names). There's no way to know if Facets had any influence in these additions
-to 1.9, but at the very least we can be sure that Facets contributed to "airing the field"
-that led to their addition. That's a great thing, as it means Facets is directly contributing
-to Ruby's future. I hope that will continue.</p>
-
-
-  <small>Written by Trans, 2009-08-22</small>
-
-  <ul class="posts">
-    
-    
-  </ul>
-
-</div>
-
-
+    <%= yield %>
   </div>
 
   </div>
@@ -216,7 +77,7 @@ to Ruby's future. I hope that will continue.</p>
 </div>
 
 <div id="copyright">
-  <img src="../media/abc1.png"/>
+  <img src="<%= root %>media/abc1.png"/>
 
   <br/><br/><br/>
 

@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<title>Module: Random::RangeExtensions</title>
+<link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="../css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '..';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (R)</a> &raquo; 
+    <span class='title'><span class='object_link'><a href="../Random.html" title="Random (class)">Random</a></span></span>
+     &raquo; 
+    <span class="title">RangeExtensions</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Class List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Module: Random::RangeExtensions
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+    <dt class="r1">Included in:</dt>
+    <dd class="r1"><span class='object_link'><a href="../Range.html" title="Range (class)">Range</a></span></dd>
+    
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/standard/facets/random.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#at_rand-instance_method" title="#at_rand (instance method)">- (Object) <strong>at_rand</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Return a random element from the range.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="at_rand-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>at_rand</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Return a random element from the range.</p>
+
+<pre class="code"><span class='lparen token'>(</span><span class='float val'>1</span><span class='dot2 op'>..</span><span class='integer val'>4</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='at_rand identifier id'>at_rand</span>           <span class='comment val'>#~&gt; 2</span>
+<span class='lparen token'>(</span><span class='float val'>1</span><span class='dot2 op'>..</span><span class='integer val'>4</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='at_rand identifier id'>at_rand</span>           <span class='comment val'>#~&gt; 4</span>
+
+<span class='lparen token'>(</span><span class='float val'>1.5</span><span class='dot2 op'>..</span><span class='float val'>2.5</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='at_rand identifier id'>at_rand</span>       <span class='comment val'>#~&gt; 2.06309842754533</span>
+<span class='lparen token'>(</span><span class='float val'>1.5</span><span class='dot2 op'>..</span><span class='float val'>2.5</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='at_rand identifier id'>at_rand</span>       <span class='comment val'>#~&gt; 1.74976944931541</span>
+
+<span class='lparen token'>(</span><span class='string val'>'a'</span><span class='dot2 op'>..</span><span class='string val'>'z'</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='at_rand identifier id'>at_rand</span>       <span class='comment val'>#~&gt; 'q'</span>
+<span class='lparen token'>(</span><span class='string val'>'a'</span><span class='dot2 op'>..</span><span class='string val'>'z'</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='at_rand identifier id'>at_rand</span>       <span class='comment val'>#~&gt; 'f'</span>
+</pre>
+
+<p>CREDIT: Lavir the Whiolet, Thomas Sawyer</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/standard/facets/random.rb', line 68</span>
+
+<span class='def def kw'>def</span> <span class='at_rand identifier id'>at_rand</span>
+  <span class='first identifier id'>first</span><span class='comma token'>,</span> <span class='last identifier id'>last</span> <span class='assign token'>=</span> <span class='first identifier id'>first</span><span class='lparen token'>(</span><span class='rparen token'>)</span><span class='comma token'>,</span> <span class='last identifier id'>last</span><span class='lparen token'>(</span><span class='rparen token'>)</span>
+  <span class='if if kw'>if</span> <span class='first identifier id'>first</span><span class='dot token'>.</span><span class='respond_to? fid id'>respond_to?</span><span class='lparen token'>(</span><span class='symbol val'>:random_delta</span><span class='rparen token'>)</span>  <span class='comment val'># TODO: work on this!!!</span>
+    <span class='begin begin kw'>begin</span>
+      <span class='first identifier id'>first</span><span class='dot token'>.</span><span class='random_delta identifier id'>random_delta</span><span class='lparen token'>(</span><span class='last identifier id'>last</span><span class='comma token'>,</span> <span class='exclude_end? fid id'>exclude_end?</span><span class='rparen token'>)</span>
+    <span class='rescue rescue kw'>rescue</span>
+      <span class='to_a identifier id'>to_a</span><span class='dot token'>.</span><span class='at_rand identifier id'>at_rand</span>
+    <span class='end end kw'>end</span>
+  <span class='else else kw'>else</span>
+    <span class='to_a identifier id'>to_a</span><span class='dot token'>.</span><span class='at_rand identifier id'>at_rand</span>
+  <span class='end end kw'>end</span>
+  <span class='comment val'>##elsif first.respond_to?(:succ)</span>
+  <span class='comment val'>##  # optimized algorithm</span>
+  <span class='comment val'>##  if (Fixnum === first || Bignum === first) &amp;&amp;</span>
+  <span class='comment val'>##     (Fixnum === last  || Bignum === last)</span>
+  <span class='comment val'>##    last -= 1 if exclude_end?</span>
+  <span class='comment val'>##    return nil if last &lt; first</span>
+  <span class='comment val'>##    return Random.number(last - first + 1) + first</span>
+  <span class='comment val'>##  end</span>
+  <span class='comment val'>##  # standard algorithm</span>
+  <span class='comment val'>##  return to_a.at_rand</span>
+  <span class='comment val'>##elsif Numeric === first &amp;&amp; Numeric === last</span>
+  <span class='comment val'>##  return nil if last &lt; first</span>
+  <span class='comment val'>##  return nil if exclude_end? &amp;&amp; last == first</span>
+  <span class='comment val'>##  return (last - first) * Random.number + first</span>
+  <span class='comment val'>##else</span>
+  <span class='comment val'>##  return nil</span>
+  <span class='comment val'>##end</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Tue May 17 02:27:17 2011 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.6.7 (ruby-1.8.7).
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,865 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+  <title>Facets Supplemental Libraries</title>
+
+  <link rel="shortcut icon" type="image/x-icon" href="./assets/favicon.ico" />
+
+  <link rel="stylesheet" type="text/css" href="./assets/long/css/low.css" />
+  <link rel="stylesheet" type="text/css" href="./assets/long/css/screen.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="./assets/long/css/print.css" media="print" />
+  <link rel="stylesheet" type="text/css" href="./assets/prettify.css" />
+
+  <link rel="alternate stylesheet" type="text/css" href="./assets/long/css/low_vision_screen.css" media="screen" title="Low vision" />
+
+  <script type="text/javascript" src="./assets/jquery.js" ></script>
+  <script type="text/javascript" src="./assets/prettify.js"></script>
+  <script type="text/javascript" src="./assets/quicksearch.js"></script>
+  <script type="text/javascript" src="./assets/main.js"></script>  
+
+  <script type="text/javascript">
+    $(document).ready( function() {
+	    hookHighlightSyntax();
+	    hookQuickSearch();
+	    // $('ul.link-list a').bind( "click", highlightClickTarget );
+    });
+  </script>
+</head>
+
+<body>
+  <div id="page">
+
+    <div id="header">
+      <div id="logo" style="font-size: 52px; font-family: times, serif; font-style: italic; color: black;">
+        <img src="./assets/long/img/logo.gif" alt="" title="" height="119" align="absmiddle">Facets Supplemental Libraries
+      </div>
+      <div class="site-links">
+<a href="./index.html">Index</a><span class="separator"> | </span>
+  <a href="http://rubyworks.github.com/facets">Home Page</a><span class="separator"> |</span>
+  <a href="http://wiki.github.com/rubyworks/facets">Community</a><span class="separator"> | </span>
+<a href="http://www.ruby-lang.org/en/about/">About Ruby</a>
+      </div>
+    </div>
+
+    <hr class="hidden-modern">
+
+    <div id="main-wrapper">
+      <div id="main">
+
+        
+
+<div id="content-wrapper">
+
+    <div id="head-wrapper-1">
+        <div id="head-wrapper-2">
+            <div id="head">
+                <h1><a href="Timer.html">Timer</a></h1>
+            </div>
+        </div>
+    </div>
+
+    <div id="content">
+
+        <!-- DESCRIPTION -->
+
+        
+        <div class="description">
+          
+
+<p>Provides a strightforward means for controlling time critical execution.
+Can be used as a “stop watch” timer or as a “time bomb” timer:</p>
+
+<pre>t = Timer.new(10) { raise TimeoutError, &quot;timeout!&quot; }
+t.start
+  :      # done within 10sec timeout
+t.stop
+t.start
+  :
+if condition then
+  t.reset       #--&gt; restart timer
+end</pre>
+
+<p>A class method is also provided for easily timing the exectuion of a block.</p>
+
+<pre>Timer.time do |timer|
+ timer.total_time.round  #=&gt; 0
+
+ sleep 1
+ timer.total_time.round  #=&gt; 1
+
+ timer.stop
+ timer.total_time.round  #=&gt; 1
+
+ sleep 1
+ timer.total_time.round  #=&gt; 1
+
+ timer.start
+ timer.total_time.round  #=&gt; 1
+
+ sleep 1
+ timer.total_time.round  #=&gt; 2
+end</pre>
+
+<p>Thanks to Paul Brannan for TimeLimit and Minero Aoki for <a
+href="Timer.html">Timer</a>. These two libraries served as models for
+building this class.</p>
+
+        </div>
+        
+
+        <!-- REQUIRES -->
+
+        
+
+        <!-- CONTENTS -->
+
+        
+        
+
+        <!-- INCLUDED MODULES -->
+
+        
+
+        <!-- DESCRIPTION (of what?) --->
+
+        
+
+        <!-- CLASSES AND MODULES -->
+
+        
+        <h3>Classes and Modules</h3>
+        <ul>
+            
+            <li><span class="type">CLASS</span> <a href="Timer/Dummy.html">Timer::Dummy</a></li>
+            
+        </ul>
+        
+
+        <!-- CONSTANTS -->
+
+        
+
+        <!-- ATTRIBUTES -->
+
+        
+        <h3>Attributes</h3>
+        <table border='0' cellpadding='5'>
+            
+            <tr valign='top'>
+                <td class='attr-rw'>
+                    [RW]
+                </td>
+                <td class='attr-name'>time_limit</td>
+                <td class='attr-desc'></td>
+            </tr>
+            
+        </table>
+        
+
+        <!-- METHODS -->
+
+        
+                <h3>Class Public methods</h3>
+                <dl>
+                
+                    <p class="source-link" style="float: right;">
+                        <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source"><img src="./assets/long/img/rb.png" alt="[+]"></a>
+                        
+                    </p>
+
+                    <dt>
+                    
+                      <a name="method-c-new"></a><b>new</b>(time_limit=nil, &amp;block)
+                    
+                    </dt>
+
+                    <dd>
+                    
+                      
+                        <div id="method-c-new_source" style="display: none;">
+                            <pre class="code"><code><span class="ruby-comment"># File lib/supplemental/facets/timer.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">time_limit</span>=<span class="ruby-keyword">nil</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-comment"># standard timer</span>
+  <span class="ruby-ivar">@start_time</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@end_time</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@total_time</span> = <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@runnning</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-comment"># for using time limit</span>
+  <span class="ruby-ivar">@time_limit</span> = <span class="ruby-identifier">time_limit</span>
+  <span class="ruby-ivar">@on_timeout</span> = <span class="ruby-identifier">block</span>
+  <span class="ruby-ivar">@current_thread</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@timer_thread</span> = <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></code></pre>
+                        </div>
+                    
+
+                    
+                      Not Documented
+                    
+
+                    
+
+                    </dd>
+                
+                    <p class="source-link" style="float: right;">
+                        <a href="javascript:toggleSource('method-c-time_source')" id="l_method-c-time_source"><img src="./assets/long/img/rb.png" alt="[+]"></a>
+                        
+                    </p>
+
+                    <dt>
+                    
+                      <a name="method-c-time"></a><b>time</b>()
+                    
+                    </dt>
+
+                    <dd>
+                    
+                      
+                        <div id="method-c-time_source" style="display: none;">
+                            <pre class="code"><code><span class="ruby-comment"># File lib/supplemental/facets/timer.rb, line 182</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">time</span>
+  <span class="ruby-keyword">yield</span>( <span class="ruby-identifier">timer</span> = <span class="ruby-constant">Timer</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">start</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">timer</span>.<span class="ruby-identifier">total_time</span>
+<span class="ruby-keyword">end</span></code></pre>
+                        </div>
+                    
+
+                    
+                      
+                      
+<p>Takes a block and returns the total time it took to execute.</p>
+
+                    
+
+                    
+
+                    </dd>
+                
+            
+        
+                <h3>Instance Public methods</h3>
+                <dl>
+                
+                    <p class="source-link" style="float: right;">
+                        <a href="javascript:toggleSource('method-i-defuse_source')" id="l_method-i-defuse_source"><img src="./assets/long/img/rb.png" alt="[+]"></a>
+                        
+                    </p>
+
+                    <dt>
+                    
+                      <a name="method-i-defuse"></a><b>defuse</b>()
+                    
+                    </dt>
+
+                    <dd>
+                    
+                      
+                        <div id="method-i-defuse_source" style="display: none;">
+                            <pre class="code"><code><span class="ruby-comment"># File lib/supplemental/facets/timer.rb, line 117</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">defuse</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@timer_thread</span>
+    <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">kill</span> <span class="ruby-ivar">@timer_thread</span>
+    <span class="ruby-ivar">@timer_thread</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></code></pre>
+                        </div>
+                    
+
+                    
+                      
+                      
+<p>Kill time limit thread, if any.</p>
+
+                    
+
+                    
+
+                    </dd>
+                
+                    <p class="source-link" style="float: right;">
+                        <a href="javascript:toggleSource('method-i-end_time_source')" id="l_method-i-end_time_source"><img src="./assets/long/img/rb.png" alt="[+]"></a>
+                        
+                    </p>
+
+                    <dt>
+                    
+                      <a name="method-i-end_time"></a><b>end_time</b>()
+                    
+                    </dt>
+
+                    <dd>
+                    
+                      
+                        <div id="method-i-end_time_source" style="display: none;">
+                            <pre class="code"><code><span class="ruby-comment"># File lib/supplemental/facets/timer.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">end_time</span>
+  <span class="ruby-ivar">@end_time</span>
+<span class="ruby-keyword">end</span></code></pre>
+                        </div>
+                    
+
+                    
+                      Not Documented
+                    
+
+                    
+
+                    </dd>
+                
+                    <p class="source-link" style="float: right;">
+                        <a href="javascript:toggleSource('method-i-limit_source')" id="l_method-i-limit_source"><img src="./assets/long/img/rb.png" alt="[+]"></a>
+                        
+                    </p>
+
+                    <dt>
+                    
+                      <a name="method-i-limit"></a><b>limit</b>( time_limit=nil )
+                    
+                    </dt>
+
+                    <dd>
+                    
+                      
+                        <div id="method-i-limit_source" style="display: none;">
+                            <pre class="code"><code><span class="ruby-comment"># File lib/supplemental/facets/timer.rb, line 102</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">limit</span>( <span class="ruby-identifier">time_limit</span>=<span class="ruby-keyword">nil</span> )
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@time_limit</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">time_limit</span>
+    <span class="ruby-ivar">@current_thread</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>
+    <span class="ruby-ivar">@timer_thread</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">fork</span> {
+      <span class="ruby-identifier">sleep</span> <span class="ruby-ivar">@time_limit</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-ivar">@on_timeout</span> <span class="ruby-keyword">then</span>
+        <span class="ruby-ivar">@on_timeout</span>.<span class="ruby-identifier">call</span> <span class="ruby-ivar">@time_limit</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-ivar">@current_thread</span>.<span class="ruby-identifier">raise</span> <span class="ruby-constant">TimeoutError</span>, <span class="ruby-node">&quot;#{@time_limit} seconds past&quot;</span>
+      <span class="ruby-keyword">end</span>
+    }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></code></pre>
+                        </div>
+                    
+
+                    
+                      
+                      
+<p>Establish a time limit on execution.</p>
+
+                    
+
+                    
+
+                    </dd>
+                
+                    <p class="source-link" style="float: right;">
+                        <a href="javascript:toggleSource('method-i-on_timeout_source')" id="l_method-i-on_timeout_source"><img src="./assets/long/img/rb.png" alt="[+]"></a>
+                        
+                    </p>
+
+                    <dt>
+                    
+                      <a name="method-i-on_timeout"></a><b>on_timeout</b>( &amp;block )
+                    
+                    </dt>
+
+                    <dd>
+                    
+                      
+                        <div id="method-i-on_timeout_source" style="display: none;">
+                            <pre class="code"><code><span class="ruby-comment"># File lib/supplemental/facets/timer.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">on_timeout</span>( &amp;<span class="ruby-identifier">block</span> )
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-ivar">@on_timeout</span> = <span class="ruby-identifier">block</span>
+    <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></code></pre>
+                        </div>
+                    
+
+                    
+                      Not Documented
+                    
+
+                    
+
+                    </dd>
+                
+                    <p class="source-link" style="float: right;">
+                        <a href="javascript:toggleSource('method-i-reset_source')" id="l_method-i-reset_source"><img src="./assets/long/img/rb.png" alt="[+]"></a>
+                        
+                    </p>
+
+                    <dt>
+                    
+                      <a name="method-i-reset"></a><b>reset</b>()
+                    
+                    </dt>
+
+                    <dd>
+                    
+                      
+                        <div id="method-i-reset_source" style="display: none;">
+                            <pre class="code"><code><span class="ruby-comment"># File lib/supplemental/facets/timer.rb, line 140</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">reset</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">running?</span>
+    <span class="ruby-identifier">r</span> = <span class="ruby-identifier">stop</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">r</span> = <span class="ruby-value">0</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@total_time</span> = <span class="ruby-value">0</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">r</span>
+<span class="ruby-keyword">end</span></code></pre>
+                        </div>
+                    
+
+                    
+                      
+                      
+<p>Stops and resets the timer. If the timer was running returns the total
+time. If not returns 0.</p>
+
+                    
+
+                    
+
+                    </dd>
+                
+                    <p class="source-link" style="float: right;">
+                        <a href="javascript:toggleSource('method-i-reset_limit_source')" id="l_method-i-reset_limit_source"><img src="./assets/long/img/rb.png" alt="[+]"></a>
+                        
+                    </p>
+
+                    <dt>
+                    
+                      <a name="method-i-reset_limit"></a><b>reset_limit</b>()
+                    
+                    </dt>
+
+                    <dd>
+                    
+                      
+                        <div id="method-i-reset_limit_source" style="display: none;">
+                            <pre class="code"><code><span class="ruby-comment"># File lib/supplemental/facets/timer.rb, line 155</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">reset_limit</span>
+  <span class="ruby-comment">#stop</span>
+  <span class="ruby-comment">#start</span>
+  <span class="ruby-identifier">defuse</span>
+  <span class="ruby-identifier">limit</span>
+<span class="ruby-keyword">end</span></code></pre>
+                        </div>
+                    
+
+                    
+                      
+                      
+<p>Resets the time limit. Same as:</p>
+
+<pre>t.stop
+t.start</pre>
+
+                    
+
+                    
+
+                    </dd>
+                
+                    <p class="source-link" style="float: right;">
+                        <a href="javascript:toggleSource('method-i-running-3F_source')" id="l_method-i-running-3F_source"><img src="./assets/long/img/rb.png" alt="[+]"></a>
+                        
+                    </p>
+
+                    <dt>
+                    
+                      <a name="method-i-running-3F"></a><b>running?</b>()
+                    
+                    </dt>
+
+                    <dd>
+                    
+                      
+                        <div id="method-i-running-3F_source" style="display: none;">
+                            <pre class="code"><code><span class="ruby-comment"># File lib/supplemental/facets/timer.rb, line 163</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">running?</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@running</span>
+<span class="ruby-keyword">end</span></code></pre>
+                        </div>
+                    
+
+                    
+                      
+                      
+<p>Queries whether the timer is still running.</p>
+
+                    
+
+                    
+
+                    </dd>
+                
+                    <p class="source-link" style="float: right;">
+                        <a href="javascript:toggleSource('method-i-start_source')" id="l_method-i-start_source"><img src="./assets/long/img/rb.png" alt="[+]"></a>
+                        
+                    </p>
+
+                    <dt>
+                    
+                      <a name="method-i-start"></a><b>start</b>()
+                    
+                    </dt>
+
+                    <dd>
+                    
+                      
+                        <div id="method-i-start_source" style="display: none;">
+                            <pre class="code"><code><span class="ruby-comment"># File lib/supplemental/facets/timer.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">start</span>
+  <span class="ruby-ivar">@running</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-ivar">@start_time</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+
+  <span class="ruby-identifier">limit</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@time_limit</span>
+
+  <span class="ruby-keyword">self</span>
+
+  <span class="ruby-comment">##if block_given? then</span>
+  <span class="ruby-comment">##  begin</span>
+  <span class="ruby-comment">##    yield( self )</span>
+  <span class="ruby-comment">##  ensure</span>
+  <span class="ruby-comment">##    stop</span>
+  <span class="ruby-comment">##  end</span>
+  <span class="ruby-comment">##else</span>
+  <span class="ruby-comment">##  @time_limit</span>
+  <span class="ruby-comment">##end</span>
+<span class="ruby-keyword">end</span></code></pre>
+                        </div>
+                    
+
+                    
+                      
+                      
+<p>Start the timer.</p>
+
+                    
+
+                    
+
+                    </dd>
+                
+                    <p class="source-link" style="float: right;">
+                        <a href="javascript:toggleSource('method-i-start_time_source')" id="l_method-i-start_time_source"><img src="./assets/long/img/rb.png" alt="[+]"></a>
+                        
+                    </p>
+
+                    <dt>
+                    
+                      <a name="method-i-start_time"></a><b>start_time</b>()
+                    
+                    </dt>
+
+                    <dd>
+                    
+                      
+                        <div id="method-i-start_time_source" style="display: none;">
+                            <pre class="code"><code><span class="ruby-comment"># File lib/supplemental/facets/timer.rb, line 62</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">start_time</span>
+  <span class="ruby-ivar">@start_time</span>
+<span class="ruby-keyword">end</span></code></pre>
+                        </div>
+                    
+
+                    
+                      Not Documented
+                    
+
+                    
+
+                    </dd>
+                
+                    <p class="source-link" style="float: right;">
+                        <a href="javascript:toggleSource('method-i-stop_source')" id="l_method-i-stop_source"><img src="./assets/long/img/rb.png" alt="[+]"></a>
+                        
+                    </p>
+
+                    <dt>
+                    
+                      <a name="method-i-stop"></a><b>stop</b>()
+                    
+                    </dt>
+
+                    <dd>
+                    
+                      
+                        <div id="method-i-stop_source" style="display: none;">
+                            <pre class="code"><code><span class="ruby-comment"># File lib/supplemental/facets/timer.rb, line 126</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">stop</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@running</span>
+    <span class="ruby-identifier">defuse</span>
+    <span class="ruby-comment"># record running time</span>
+    <span class="ruby-ivar">@end_time</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+    <span class="ruby-ivar">@running</span> = <span class="ruby-keyword">false</span>
+    <span class="ruby-ivar">@total_time</span> <span class="ruby-operator">+=</span> (<span class="ruby-ivar">@end_time</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@start_time</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></code></pre>
+                        </div>
+                    
+
+                    
+                      
+                      
+<p>Stops timer and returns total time. If timer was not running returns false.</p>
+
+                    
+
+                    
+
+                    </dd>
+                
+                    <p class="source-link" style="float: right;">
+                        <a href="javascript:toggleSource('method-i-stopped-3F_source')" id="l_method-i-stopped-3F_source"><img src="./assets/long/img/rb.png" alt="[+]"></a>
+                        
+                    </p>
+
+                    <dt>
+                    
+                      <a name="method-i-stopped-3F"></a><b>stopped?</b>()
+                    
+                    </dt>
+
+                    <dd>
+                    
+                      
+                        <div id="method-i-stopped-3F_source" style="display: none;">
+                            <pre class="code"><code><span class="ruby-comment"># File lib/supplemental/facets/timer.rb, line 168</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">stopped?</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@running</span>
+<span class="ruby-keyword">end</span></code></pre>
+                        </div>
+                    
+
+                    
+                      
+                      
+<p>Queries whether the timer is still not running.</p>
+
+                    
+
+                    
+
+                    </dd>
+                
+                    <p class="source-link" style="float: right;">
+                        <a href="javascript:toggleSource('method-i-total_time_source')" id="l_method-i-total_time_source"><img src="./assets/long/img/rb.png" alt="[+]"></a>
+                        
+                    </p>
+
+                    <dt>
+                    
+                      <a name="method-i-total_time"></a><b>total_time</b>()
+                    
+                    </dt>
+
+                    <dd>
+                    
+                      
+                        <div id="method-i-total_time_source" style="display: none;">
+                            <pre class="code"><code><span class="ruby-comment"># File lib/supplemental/facets/timer.rb, line 173</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">total_time</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">running?</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-ivar">@total_time</span> <span class="ruby-operator">+</span> (<span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@start_time</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-ivar">@total_time</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></code></pre>
+                        </div>
+                    
+
+                    
+                      
+                      
+<p>Queries total recorded time of timer.</p>
+
+                    
+
+                    
+
+                    </dd>
+                
+            
+        
+
+     </div>
+
+ </div>
+
+<hr class="hidden-modern" />
+
+<div id="sidebar-wrapper">
+
+    <div id="sidebar">
+
+        <div class="navigation" style="background-color: transparent;">
+          <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+          <fieldset>
+            <legend>Quicksearch</legend>
+            <input type="text" name="quicksearch" value="" class="quicksearch-field" style="width: 95%;" />
+          </fieldset>
+          </form>
+        </div>
+
+        <br/><br/>
+
+        <!-- PARENT -->
+        
+        <div class="navigation">
+          <h3>Parent</h3>
+          <ul>
+            <li><a href="lib/supplemental/facets/timer_rb.html">timer.rb</a></li>
+          </ul>
+        </div>
+        
+
+        <!-- SUPERCLASS -->
+        
+          
+          <div class="navigation">
+            <h3>Superclass</h3>
+            <ul>
+            <li>
+              
+                <a href="Object.html">Object</a>
+              
+            </li>
+            </ul>
+          </div>
+          
+        
+
+        <!-- INCLUDED MODULES -->
+
+        
+
+        <!-- CLASSES AND MODULES -->
+
+        
+        <div class="navigation">
+          <h3>Classes and Modules</h3>
+          <ul>
+              
+              <li><a href="Timer/Dummy.html">Dummy</a></li>
+              
+          </ul>
+        </div>
+        
+
+        <!-- METHOD LIST -->
+        
+        
+        <div class="navigation">
+            <h3>Methods</h3>
+            <ul class="menu quicksearch-target">
+                
+                <li><a href="#method-i-defuse">defuse</a></li>
+                
+                <li><a href="#method-i-end_time">end_time</a></li>
+                
+                <li><a href="#method-i-limit">limit</a></li>
+                
+                <li><a href="#method-c-new">new</a></li>
+                
+                <li><a href="#method-i-on_timeout">on_timeout</a></li>
+                
+                <li><a href="#method-i-reset">reset</a></li>
+                
+                <li><a href="#method-i-reset_limit">reset_limit</a></li>
+                
+                <li><a href="#method-i-running-3F">running?</a></li>
+                
+                <li><a href="#method-i-start">start</a></li>
+                
+                <li><a href="#method-i-start_time">start_time</a></li>
+                
+                <li><a href="#method-i-stop">stop</a></li>
+                
+                <li><a href="#method-i-stopped-3F">stopped?</a></li>
+                
+                <li><a href="#method-c-time">time</a></li>
+                
+                <li><a href="#method-i-total_time">total_time</a></li>
+                
+            </ul>
+        </div>
+        
+
+        <!-- IN FILES -->
+
+        <div class="navigation">
+          <h3>In Files</h3>
+          <ul>
+          
+            <li class="file">
+              <a href="./lib/supplemental/facets/timer_rb.html" title="lib/supplemental/facets/timer.rb">lib/supplemental/facets/timer.rb</a>
+            </li>
+          
+          </ul>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+        <hr class="hidden-modern">
+
+        <div class="foot">
+          <div class="site-links">
+<a href="./index.html">Index</a><span class="separator"> | </span>
+  <a href="http://rubyworks.github.com/facets">Home Page</a><span class="separator"> |</span>
+  <a href="http://wiki.github.com/rubyworks/facets">Community</a><span class="separator"> | </span>
+<a href="http://www.ruby-lang.org/en/about/">About Ruby</a>
+          </div>
+        </div>
+
+      </div>
+    </div> <!-- end main-wrapper -->
+
+    <div id="search-box">
+<form id="search-form" action="http://www.google.com/cse">
+<table class="fieldset">
+  <tbody><tr>
+    <td>
+      <input class="field" name="q" size="31" style="background: white url(http://www.google.com/coop/intl/en/images/google_custom_search_watermark.gif) no-repeat scroll left center; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;" onfocus="this.style.background='white'" onblur="if (/^\s*$/.test(this.value)) this.style.background='white url(http://www.google.com/coop/intl/en/images/google_custom_search_watermark.gif) left no-repeat'" type="text">
+    </td>
+    <td>
+      <input name="cx" value="013598269713424429640:g5orptiw95w" type="hidden">
+      <input name="ie" value="UTF-8" type="hidden">
+      <input class="button" name="sa" value="Search" type="submit">
+    </td>
+  </tr>
+</tbody></table>
+</form>
+    </div> <!-- end search-box -->
+
+    <div id="footer">
+      <div class="fine-print">
+<!--
+        <p>Content available in <a href="http://www.ruby-lang.org/en/">English</a>, <a href="http://www.ruby-lang.org/fr/">French</a>, <a href="http://www.ruby-lang.org/ja/">Japanese</a>, <a href="http://www.ruby-lang.org/ko/">Korean</a>, <a href="http://www.ruby-lang.org/pl/">Polish</a>, <a href="http://www.ruby-lang.org/es/">Spanish</a>, <a href="http://www.ruby-lang.org/pt/">Portuguese</a>, <a href="http://www.ruby-lang.org/zh_cn/">Simplified Chinese</a>, <a href="http://www.ruby-lang.org/zh_TW/">Traditional Chinese</a>, <a href="http://www.ruby-lang.org/id/">Bahasa Indonesia</a>, <a href="http://www.ruby-lang.org/de/">German</a>, <a href="http://www.ruby-lang.org/it/">Italian</a> and <a href="http://www.ruby-lang.org/bg/">Bulgarian</a>.</p>
+-->
+
+        <p>This website is made with Ruby and powered by <a href="http://rdocidile.github.com/rdoc-rubyfaux">RubyFaux</a> v1.2.0.
+<!--
+          It is proudly maintained by <a href="http://rubyidentity.org/">members of the Ruby community</a>. Please contact
+          our <a href="mailto:webmaster@ruby-lang.org">webmaster</a> for questions or comments
+          concerning this website.</p>
+-->
+        </p>
+      </div>
+    </div>
+
+  </div> <!-- end page  -->
+</body>
+</html>

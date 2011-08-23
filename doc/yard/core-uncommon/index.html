@@ -1,0 +1,328 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<title>File: README</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html" title="Index">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Class List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><div id='filecontents'>
+<h1>Ruby Facets</h1>
+
+<p>“ALL YOUR BASE ARE BELONG TO RUBY”</p>
+
+<h2>Introduction</h2>
+
+<p>Ruby Facets is the premiere collection of general purpose method extensions
+and standard additions for the Ruby programming language.</p>
+
+<p>Facets houses the largest single collection of methods available for
+extending the core capabilities of Ruby’s built-in classes and modules.
+This collection of extension methods are unique by virtue of their
+atomicity. The methods are stored in individual files so that each can be
+required independently. This gives developers the potential for much finer
+control over which extra methods to bring into their code.</p>
+
+<p>In addition Facets provides a collection of extensions to Ruby standard
+library plus a small collection of add-on classes and modules. Together
+these libraries constitute an ever improving source of reusable components,
+suitable to a wide variety of usecases.</p>
+
+<h2>Resources</h2>
+<ul><li>
+<p>Homepage: <a
+href="http://rubyworks.github.com/facets">rubyworks.github.com/facets</a></p>
+</li><li>
+<p>Report Bugs: <a
+href="http://github.com/rubyworks/facets/issues">github.com/rubyworks/facets/issues</a></p>
+</li><li>
+<p>Mailing List: <a
+href="http://groups.google.com/group/facets-universal/topics">groups.google.com/group/facets-universal/topics</a></p>
+</li><li>
+<p>Wiki Pages: <a
+href="http://wiki.github.com/rubyworks/facets">wiki.github.com/rubyworks/facets</a></p>
+</li><li>
+<p>Source Code: <a
+href="http://github.com/rubyworks/facets">github.com/rubyworks/facets</a></p>
+</li></ul>
+
+<h2>Documentation</h2>
+
+<p>Facets has special documentation needs due to it’s extensive bredth. The
+RDocs generated when installing via RubyGems are unweildly because it
+combines all of Facets in one set of docs. (Hopefully we can remedy this in
+the future). In the mean time better organized online documentation  is
+available at <a
+href="http://rubyworks.github.com/facets/learn.html">rubyworks.github.com/facets/learn.html</a>.</p>
+<ul><li>
+<p>Core API: <a
+href="http://rubyworks/github.com/facets/doc/api/core/index.html">rubyworks/github.com/facets/doc/api/core/index.html</a></p>
+</li><li>
+<p>More API: <a
+href="http://rubyworks/github.com/facets/doc/api/more/index.html">rubyworks/github.com/facets/doc/api/more/index.html</a></p>
+</li><li>
+<p>Tour API: <a
+href="http://rubyworks/github.com/facets/doc/api/tour/index.html">rubyworks/github.com/facets/doc/api/tour/index.html</a></p>
+</li></ul>
+
+<h2>Installation</h2>
+
+<p>The easiest way to install is via RubyGems.</p>
+
+<pre class="code">$ <span class='gem identifier id'>gem</span> <span class='install identifier id'>install</span> <span class='facets identifier id'>facets</span>
+</pre>
+
+<p>To install manually, your will need Ruby Setup (<a
+href="http::/setup.rubyforge.org">:/setup.rubyforge.org</a>). Then download
+and unpack the .tar.gz package and run:</p>
+
+<pre class="code">$ <span class='tar identifier id'>tar</span> <span class='minus op'>-</span><span class='xvzf identifier id'>xvzf</span> <span class='facets identifier id'>facets</span><span class='minus op'>-</span><span class='float val'>2</span><span class='dot token'>.</span><span class='x identifier id'>x</span><span class='dot token'>.</span><span class='x identifier id'>x</span><span class='dot token'>.</span><span class='tar identifier id'>tar</span><span class='dot token'>.</span><span class='gz identifier id'>gz</span>
+$ <span class='cd identifier id'>cd</span> <span class='facets identifier id'>facets</span><span class='minus op'>-</span><span class='float val'>2</span><span class='dot token'>.</span><span class='x identifier id'>x</span><span class='dot token'>.</span><span class='x identifier id'>x</span>
+$ <span class='sudo identifier id'>sudo</span> <span class='setup identifier id'>setup</span><span class='dot token'>.</span><span class='rb identifier id'>rb</span>
+</pre>
+
+<p>Facets 2.8+ requires Ruby 1.8.7 or higher.</p>
+
+<h2>Mission</h2>
+
+<p>Facets holds to the notion that the more we can reasonably integrate into a
+common foundation, directed toward general needs, the better that
+foundation will be able to serve the community. There are a number of
+advantages here:</p>
+<ul><li>
+<p>Better Code-reuse</p>
+</li><li>
+<p>Collaborative Improvements</p>
+</li><li>
+<p>Greater Name Consistency</p>
+</li><li>
+<p>One-stop Shop and Installation</p>
+</li></ul>
+
+<h2>Usage</h2>
+
+<h3>CORE Library</h3>
+
+<p>At the heart of Ruby Facets is the CORE extensions library. CORE provides a
+sizable collection of generally useful methods, along with a few supporting
+classes, that extend the functionality of Ruby’s core classes and
+modules.</p>
+
+<p>With the exception of a few <b>uncommon</b> extensions, CORE contains
+anything that will load automatically when issuing:</p>
+
+<pre class="code"><span class='require identifier id'>require</span> <span class='string val'>'facets'</span>
+</pre>
+
+<p>This loads all the CORE functionality at once. If you plan to use more then
+a handful of Facets core methods it is recommended that you require the
+library in this way.</p>
+
+<p>Of course you can use the CORE library piecemeal if you prefer. And for
+uncommon extension this must be done. The general require statement for a
+core extensions library is:</p>
+
+<pre class="code"><span class='require identifier id'>require</span> <span class='string val'>'facets/&lt;class|module&gt;/&lt;method-lib&gt;'</span>
+</pre>
+
+<p>For example:</p>
+
+<pre class="code"><span class='require identifier id'>require</span> <span class='string val'>'facets/time/stamp'</span>
+</pre>
+
+<p>Most “atoms” contain only one method, but a few exceptions occur when
+methods are closely tied together.</p>
+
+<p>You can load per-class or per-module groups of core methods by requiring
+the class or module by name. For example“</p>
+
+<pre class="code"><span class='require identifier id'>require</span> <span class='string val'>'facets/time'</span>
+</pre>
+
+<p>Will require all the core Time method extensions.</p>
+
+<p>Note that some methods that were part of CORE in 1.8 and earlier are now
+part of MORE libraries. A good example is ‘random.rb’. There were
+separated because they had more specialized use cases, where as CORE
+extensions are intended as general purpose.</p>
+
+<p>This is the recommended usage. However, you can also “cherry pick” core
+methods. While there are exceptions the rule of thumb for loading a core
+method is:</p>
+
+<pre class="code"><span class='require identifier id'>require</span> <span class='string val'>'facets/{class|module}/{method}'</span>
+</pre>
+
+<h4>Method File Names</h4>
+
+<p>Operator method redirect files are stored using English names. For instance
+for Proc#* is ‘proc/op_mul’.</p>
+
+<p>For reference, here is the chart.</p>
+
+<pre class="code"><span class='plus op'>+</span>@   <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='op_plus identifier id'>op_plus</span>
+<span class='minus op'>-</span>@   <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='op_minus identifier id'>op_minus</span>
+<span class='plus op'>+</span>    <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='op_add identifier id'>op_add</span>
+<span class='minus op'>-</span>    <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='op_sub identifier id'>op_sub</span>
+<span class='pow op'>**</span>   <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='op_pow identifier id'>op_pow</span>
+<span class='mult op'>*</span>    <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='op_mul identifier id'>op_mul</span>
+<span class='regexp val'>/    =&gt; op_div
+%    =&gt; op_mod
+~    =&gt; op_tilde
+&lt;=&gt;  =&gt; op_cmp
+&lt;&lt;   =&gt; op_lshift
+&gt;&gt;   =&gt; op_rshift
+&lt;    =&gt; op_lt
+&gt;    =&gt; op_gt
+===  =&gt; op_case
+==   =&gt; op_equal
+=~   =&gt; op_apply
+&lt;=   =&gt; op_lt_eq
+&gt;=   =&gt; op_gt_eq
+|    =&gt; op_or
+&amp;    =&gt; op_and
+^    =&gt; op_xor
+[]=  =&gt; op_store
+[]   =&gt; op_fetch
+</span></pre>
+
+<p>Facets simply takes the ‘*’ and translates it into a string acceptable
+to all file systems. Also, if a method ends in ‘=’, ‘?’ or ‘!’
+it is simply removed.</p>
+
+<h3>MORE Library</h3>
+
+<p>On top of the extensive CORE library, Facets provides extensions for
+Ruby’s standard library, as well as very small collection of additional
+modules and classes to supplement it.</p>
+
+<p>Use the More library like you would any other 3rd party library. The only
+difference between Facets More library and other libraries is the lack of
+any enclosing @Facets::@ namespace. This is becuase the libraries provided
+by Facets are considerd fairly low-level.</p>
+
+<p>When using Facets’ extended versions of Ruby’s standard libraries, the
+More libraries have to loaded manually, of course. However you do not need
+to load Ruby’s library first, as the Facets’ library will do that
+automatically.</p>
+
+<p>For example, normally one load Ruby’s OpenStruct class via:</p>
+
+<pre class="code"><span class='require identifier id'>require</span> <span class='string val'>'ostruct'</span>
+</pre>
+
+<p>To load ‘ostruct.rb’ plus Facets extensions for it simply use:</p>
+
+<pre class="code"><span class='require identifier id'>require</span> <span class='string val'>'facets/ostruct'</span>
+</pre>
+
+<p>instead.</p>
+
+<p>Using the Facets/MORE library of modules, classes or microframeworks is
+essentially the same. For example:</p>
+
+<pre class="code"><span class='require identifier id'>require</span> <span class='string val'>'facets/basicobject'</span>
+</pre>
+
+<p>Again, for details pertaining to the functionality of each feature, please
+see the API Docs.</p>
+
+<h2>Contribute</h2>
+
+<p>This project thrives on contribution.</p>
+
+<p>If you have any extension methods, classes, modules or small frameworks
+that you think have general applicability and would like to see them
+included in this project, don’t hesitiate to submit. Also, if you have
+better versions of any thing already included or simply have a patch, they
+are more than welcome. We want Ruby Facets to be of the highest quality.</p>
+
+<h2>Authors</h2>
+
+<p>This collection was put together by, and largely written by Thomas Sawyer
+(aka Trans). He can be reached via email at transfire at gmail.com.</p>
+
+<p>Some parts of this collection were written and/or inspired by other
+persons. Fortunately nearly all were copyrighted under the same open
+license, the Ruby License. In the few exceptions I have included the
+copyright notice with the source code.</p>
+
+<p>Any code file not specifically labeled shall fall under the Ruby License.</p>
+
+<p>In all cases, I have made every effort to give credit where credit is due.
+You will find these copyrights, thanks and acknowledgments embedded in the
+source code. You can see them in “CREDIT:” lines or as file-base
+“Author(s)” sections given in the RDocs.</p>
+
+<p>Also see the AUTHORS file for a list of all contributing Rubyists. If
+anyone is missing from the list, please let me know and I will correct
+right away. Thanks.</p>
+
+<h2>License</h2>
+
+<p>The collection PER COLLECTION is licensed as follows:</p>
+
+<pre class="code"><span class='Ruby constant id'>Ruby</span> <span class='Facets constant id'>Facets</span>
+<span class='Copyright constant id'>Copyright</span> <span class='lparen token'>(</span><span class='c identifier id'>c</span><span class='rparen token'>)</span> <span class='integer val'>2004</span><span class='comma token'>,</span><span class='integer val'>2010</span> <span class='Thomas constant id'>Thomas</span> <span class='Sawyer constant id'>Sawyer</span>
+
+<span class='Distributed constant id'>Distributed</span> <span class='under identifier id'>under</span> <span class='the identifier id'>the</span> <span class='terms identifier id'>terms</span> <span class='of identifier id'>of</span> <span class='the identifier id'>the</span> <span class='Ruby constant id'>Ruby</span> <span class='license identifier id'>license</span><span class='dot token'>.</span>
+</pre>
+
+<p>The Ruby license is a dual license that also provides for use of the GPL.
+Complete texts of both licenses accompany this document (see LICENSE).</p>
+
+<p>Acknowledgments and Copyrights for particular snippets of borrowed code are
+given in their respective source. All licenses are either compatible with
+the Ruby license (namely the GPL) or the original author has given
+permission for inclusion of their code under such license.</p>
+
+<p>“ALL YOUR BASE ARE BELONG TO RUBY!”</p>
+
+<p>Ruby Facets, Copyright ©2005,2006,2007,2008,2009,2010 Thomas Sawyer</p>
+
+<p>Do you Ruby? (<a href="http://ruby-lang.org">ruby-lang.org</a>)</p>
+</div></div>
+    
+    <div id="footer">
+  Generated on Tue May 17 02:26:54 2011 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.6.7 (ruby-1.8.7).
+</div>
+
+  </body>
+</html>

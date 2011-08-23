@@ -1,23 +1,22 @@
----
 layout : default
-stencil: liquid
----
+
+--- html
 
 <div class="page">
 
-  <h2>{{ page.title }}</h2>
+  <h2><%= page.title %></h2>
 
-  {{ yield }}
+  <%= yield %>
 
-  <small>Written by {{ page.author }}, {{ page.date | date_to_string }}</small>
+  <small>Written by <%= page.author %>, <%= page.date %></small>
 
   <ul class="posts">
-    {% assign p = page.previous %}{% if p %}
-    <li><span>Previous: {{ p.date | date_to_string }}</span> &raquo; <a href="{{ p.url }}">{{ p.title }}</a></li>
-    {% endif %}
-    {% assign p = page.next %}{% if p %}
-    <li><span> Next: {{ p.date | date_to_string }}</span> &raquo; <a href="{{ p.url }}">{{ p.title }}</a></li>
-    {% endif %}
+    <% p = page.previous %><% if p %>
+    <li><span>Previous: <%= p.date %></span> &raquo; <a href="<%= p.url %>"><%= p.title %></a></li>
+    <% end %>
+    <% p = page.next %><% if p %>
+    <li><span> Next: <%= p.date %></span> &raquo; <a href="<%= p.url %>"><%= p.title %></a></li>
+    <% end %>
   </ul>
 
 </div>
