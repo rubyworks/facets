@@ -1,5 +1,30 @@
 = Facets Release History
 
+== 2.9.2 / 2011-08-23
+
+The main purpose of this release is a fix for Module#redefine_method,
+so it will not conflict with ActiveSupport. Beyond that a handful of new
+methods have been added. This release also marks the start of using
+a src/ directory to generate the lib/ directory.
+
+Changes:
+
+* New Features
+
+  * Add Enumerable#map_with and alias #zip_map.
+  * Hash#delete_values returns removed keys (#12).
+  * Add clap-like command-line parser to Shellwords.
+  * Add Module#let, akin to RSpec's method.
+  * Add uncommon Module#method_clash method.
+  * Add uncommon Class#singleton? method.
+
+* Bug Fixes
+
+  * Fix Module#redefine_method to use #remove_method.
+  * Fix Kernel#object_hexid, or at least try to do so again.
+  * Fix Exception#detail to not return backtrace if nil.
+
+
 == 2.9.1 / 2011-01-30
 
 Primarily this release fixes a couple of small issues. But also a handful of

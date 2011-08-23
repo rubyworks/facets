@@ -15,17 +15,7 @@ vclog:
   output: log/ChangeLog.rdoc
   active: false
 
-#ruby-prof:
-#  service: qed
-#  options: ~
-
-erbside:
-  tool  : Custom
-  track : main
-  generate: |
-    sh 'erbside lib/core/*.rb'
-  active: false
-
+# TODO: Use ruby-test tool when ready
 lemon:
   tool  : Custom
   track : main
@@ -42,14 +32,6 @@ lemon:
 #    #doc/yard: yard
 #  active: false
 
-
-#facets.rb:
-#  service : Custom
-#  pipeline: main
-#  generate: |
-#    sh 'till lib/core/facets.rb'
-#  active: false
-#
 #till:
 #  service: Till
 #  active: false
