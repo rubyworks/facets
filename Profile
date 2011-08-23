@@ -1,11 +1,9 @@
 --- 
 title   : Facets
+name    : facets
 summary : Premium Ruby Extensions
-license : Ruby
-suite   : rubyworks
 authors : Thomas Sawyer <transfire@gmail.com>
 slogan  : ALL YOUR BASE ARE BELONG TO RUBY!
-contact : facets-universal@rubyforge.org
 created : 2004-12-16
 
 description:
@@ -16,9 +14,9 @@ description:
   classes and mixins suitable to wide variety of applications.
 
 requires:
-  - syckle (build)
-  - lemon  (test)
-  - qed    (test)
+  - lemon   (test)
+  - qed     (test)
+  - detroit (build)
 
 resources:
   home: http://rubyworks.github.com/facets
@@ -28,11 +26,16 @@ resources:
   talk: http://groups.google.com/group/facets-universal
 
 repositories:
-  public: git@github.com:rubyworks/facets.git
+  upstream: git@github.com:rubyworks/facets.git
 
 loadpath:
   - lib/core
   - lib/core-uncommon
   - lib/standard
   - lib/supplemental
+
+organization: rubyworks
+
+copyrights:
+  - (c) 2004 Thomas Sawyer (Ruby)
 

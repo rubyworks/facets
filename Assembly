@@ -1,4 +1,7 @@
 ---
+gem:
+  active: true
+
 github:
   active: true
 
@@ -27,7 +30,7 @@ lemon:
   tool  : Custom
   track : main
   test: |
-    sh 'lemon -Ilib test/'
+    sh 'ruby-test test'
   active: false
 
 #rubyforge:
@@ -37,5 +40,17 @@ lemon:
 #    site    : '.'
 #    #doc/rdoc: rdoc
 #    #doc/yard: yard
+#  active: false
+
+
+#facets.rb:
+#  service : Custom
+#  pipeline: main
+#  generate: |
+#    sh 'till lib/core/facets.rb'
+#  active: false
+#
+#till:
+#  service: Till
 #  active: false
 

@@ -14,7 +14,7 @@ module Facets
   end
 
   #
-  VERSION = '2.9.1'  # profile['version']
+  VERSION = '2.9.2'  # profile['version']
 end
 
 require 'facets/array.rb'

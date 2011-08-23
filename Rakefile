@@ -5,6 +5,39 @@ require 'fileutils'
 PATH = "lib/core:lib/core-uncommon:lib/standard:lib/supplemental"
 
 #
+# GENERATE LIB
+# ----------------------------------------------------------------------------
+desc "generate lib"
+task "lib" do |tsk|
+  require 'erb'
+  require 'fileutils'
+
+  dryrun = tsk.application.options.dryrun 
+  trace  = tsk.application.options.trace
+  silent = tsk.application.options.silent
+
+  FileUtils.rm_r('lib') if File.directory?('lib')
+  FileUtils.mkdir('lib')
+
+  files = Dir['src/**/*']
+  files.each do |file|
+    out = file.sub('src', 'lib')
+    if File.directory?(file)
+      FileUtils.mkdir(out) unless dryrun
+    else
+      puts "erb #{file} -> #{out}" if trace
+      erb = ERB.new(File.read(file))
+      erb.filename = file
+      txt = erb.result(metadata_binding)
+      unless dryrun
+        File.open(out, 'w'){ |f| f.puts txt }
+      end
+    end
+  end
+  puts "#{files.size} files rendered." unless silent
+end
+
+#
 # GENERATE RDOCS
 # ----------------------------------------------------------------------------
 
@@ -356,5 +389,14 @@ namespace :check do
     end
   end
 
+end
+
+
+# -- Support methods ----
+
+#
+def metadata_binding
+  object = Object.new
+  object.instance_eval("binding")
 end
 

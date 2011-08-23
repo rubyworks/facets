@@ -1,4 +1,5 @@
-#!mast lib qed test [A-Z]*
+#!mast .ruby lib qed test [A-Z]*.*
+.ruby
 lib/core/facets/applique/file_helpers.rb
 lib/core/facets/array/after.rb
 lib/core/facets/array/before.rb
@@ -299,7 +300,6 @@ lib/core/facets/module/instance_method.rb
 lib/core/facets/module/instance_method_defined.rb
 lib/core/facets/module/integrate.rb
 lib/core/facets/module/is.rb
-lib/core/facets/module/method_clash.rb
 lib/core/facets/module/methodize.rb
 lib/core/facets/module/modname.rb
 lib/core/facets/module/module_def.rb
@@ -472,6 +472,7 @@ lib/core-uncommon/facets/array/median.rb
 lib/core-uncommon/facets/array/op_pow.rb
 lib/core-uncommon/facets/array/percentile.rb
 lib/core-uncommon/facets/class/preallocate.rb
+lib/core-uncommon/facets/class/singleton.rb
 lib/core-uncommon/facets/enumerable/has.rb
 lib/core-uncommon/facets/enumerable/have.rb
 lib/core-uncommon/facets/integer/roman.rb
@@ -495,12 +496,15 @@ lib/core-uncommon/facets/module/enclosure.rb
 lib/core-uncommon/facets/module/enclosures.rb
 lib/core-uncommon/facets/module/include_as.rb
 lib/core-uncommon/facets/module/instance_function.rb
+lib/core-uncommon/facets/module/let.rb
 lib/core-uncommon/facets/module/memoize.rb
+lib/core-uncommon/facets/module/method_clash.rb
 lib/core-uncommon/facets/module/method_space.rb
 lib/core-uncommon/facets/module/module_load.rb
 lib/core-uncommon/facets/module/preextend.rb
 lib/core-uncommon/facets/module/prepend.rb
 lib/core-uncommon/facets/regexp/op_or.rb
+lib/core-uncommon/facets/string/acronym.rb
 lib/core-uncommon/facets/string/crypt.rb
 lib/core-uncommon/facets/string/roman.rb
 lib/standard/facets/basicobject.rb
@@ -593,6 +597,7 @@ lib/standard/facets/yaml.rb
 lib/standard/facets/zlib.rb
 lib/supplemental/facets/argvector.rb
 lib/supplemental/facets/atomicfile.rb
+lib/supplemental/facets/enumargs.rb
 lib/supplemental/facets/interval.rb
 lib/supplemental/facets/main.rb
 lib/supplemental/facets/memoizable.rb
@@ -934,7 +939,6 @@ test/core/module/test_instance_method.rb
 test/core/module/test_instance_method_defined.rb
 test/core/module/test_integrate.rb
 test/core/module/test_is.rb
-test/core/module/test_method_clash.rb
 test/core/module/test_methodize.rb
 test/core/module/test_modname.rb
 test/core/module/test_module_def.rb
@@ -1078,6 +1082,7 @@ test/core-uncommon/module/test_copy_inheritor.rb
 test/core-uncommon/module/test_enclosure.rb
 test/core-uncommon/module/test_instance_function.rb
 test/core-uncommon/module/test_memoize.rb
+test/core-uncommon/module/test_method_clash.rb
 test/core-uncommon/module/test_method_space.rb
 test/core-uncommon/module/test_module_load.rb
 test/core-uncommon/module/test_preextend.rb
@@ -1090,14 +1095,13 @@ test/standard/test_thread.rb
 test/standard/test_timer.rb
 test/standard/test_uri.rb
 test/supplemental/test_argvector.rb
+test/supplemental/test_enumargs.rb
 test/supplemental/test_memoizable.rb
 test/supplemental/test_multipliers.rb
 test/supplemental/test_tuple.rb
-Rakefile
 HISTORY.rdoc
-PROFILE
 README.rdoc
-AUTHORS
-NOTICE
-VERSION
-COPYING
+RUBY.txt
+GPL3.txt
+NOTICE.rdoc
+AUTHORS.rdoc
