@@ -1,0 +1,7 @@
+--output-dir "site/doc/yard/supplemental"
+--title "Facets Supplemental Class and Modules"
+--readme README.rdoc
+--protected
+lib/supplemental
+-
+README.rdoc

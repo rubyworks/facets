@@ -10,7 +10,7 @@ ri:
 
 rdoc-core:
   service : RDoc
-  template: rubyfaux
+  format  : rubyfaux
   output  : site/doc/api/core
   title   : Facets Core Extensions
   main    : README.rdoc
@@ -20,7 +20,7 @@ rdoc-core:
 
 rdoc-more:
   service : RDoc
-  template: rubyfaux
+  format  : rubyfaux
   output  : site/doc/api/uncommon
   title   : Facets Uncommon Core Extensions
   main    : README.rdoc
@@ -30,7 +30,7 @@ rdoc-more:
 
 rdoc-standard:
   service : RDoc
-  template: rubyfaux
+  format  : rubyfaux
   output  : site/doc/api/standard
   title   : Facets Standard Extensions
   main    : README.rdoc
@@ -40,7 +40,7 @@ rdoc-standard:
 
 rdoc-supplemental:
   service : RDoc
-  template: rubyfaux
+  format  : rubyfaux
   output  : site/doc/api/supplemental
   title   : Facets Supplemental Libraries
   main    : README.rdoc

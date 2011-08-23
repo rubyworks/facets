@@ -1,4 +1,5 @@
 .cache
+.rdoc
 .yardoc
 .reap/digest
 log

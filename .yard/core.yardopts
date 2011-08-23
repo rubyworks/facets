@@ -1,0 +1,7 @@
+--output-dir "site/doc/yard/core"
+--title "Facets Core Extensions"
+--readme README.rdoc
+--protected
+lib/core
+-
+README.rdoc
