@@ -9,8 +9,8 @@
 The following developers have recently contributed to the development of Facets.
 They are held in the highest regard for their efforts.
 
-* Michel Martens       Clap-like CLI parser added to Shellwords.
-
+* Michael Kohl         Enumerable#zip_map      
+* Michel Martens       Shellwords CLI parser inspired by Clap.
 * Alexey Petrushin     Some methods from `ruby-ext` project.
 * Michael Harmer       Documentation Improvements
 * Lavir the Whiolet    Improved Range#at_rand and added File#ext.
@@ -69,6 +69,7 @@ All of their hard work is greatly appreciated.
 * MenTaLguY
 * Mohammad Khan
 * Robert Klemme
+* Michael Kohl
 * Richard Laugesen
 * Derek Lewis
 * Jan Molic
