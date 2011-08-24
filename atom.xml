@@ -11,7 +11,7 @@
  <entry>
    <title>{{ post.title | xml_escape }}</title>
    <link href="http://rubyworks.github.com/facetsposts/2010-09-01-release-2-9.html"/>
-   <updated>2011-08-23 20:25:59 -0400</updated>
+   <updated>2010-09-01</updated>
    <id>{{ site.url }}{{ post.id }}</id>
    <content type="html"></content>
  </entry>
@@ -19,7 +19,7 @@
  <entry>
    <title>{{ post.title | xml_escape }}</title>
    <link href="http://rubyworks.github.com/facetsposts/2009-11-09-release-2-8.html"/>
-   <updated>2010-08-29 13:48:16 -0400</updated>
+   <updated>2009-11-09</updated>
    <id>{{ site.url }}{{ post.id }}</id>
    <content type="html"></content>
  </entry>
@@ -27,7 +27,7 @@
  <entry>
    <title>{{ post.title | xml_escape }}</title>
    <link href="http://rubyworks.github.com/facetsposts/2009-08-22-release-2-7.html"/>
-   <updated>2010-08-29 13:48:10 -0400</updated>
+   <updated>2009-08-22</updated>
    <id>{{ site.url }}{{ post.id }}</id>
    <content type="html"></content>
  </entry>
@@ -35,7 +35,7 @@
  <entry>
    <title>{{ post.title | xml_escape }}</title>
    <link href="http://rubyworks.github.com/facetsposts/2009-07-21-new-website.html"/>
-   <updated>2010-08-29 13:47:51 -0400</updated>
+   <updated>2009-07-01</updated>
    <id>{{ site.url }}{{ post.id }}</id>
    <content type="html"></content>
  </entry>
@@ -43,7 +43,7 @@
  <entry>
    <title>{{ post.title | xml_escape }}</title>
    <link href="http://rubyworks.github.com/facetsposts/2008-03-24-release-2-4.html"/>
-   <updated>2010-08-29 13:47:42 -0400</updated>
+   <updated>2008-03-24</updated>
    <id>{{ site.url }}{{ post.id }}</id>
    <content type="html"></content>
  </entry>
@@ -51,7 +51,7 @@
  <entry>
    <title>{{ post.title | xml_escape }}</title>
    <link href="http://rubyworks.github.com/facetsposts/2008-01-01-how-facets-was-born.html"/>
-   <updated>2010-08-29 13:47:36 -0400</updated>
+   <updated>2008-01-01</updated>
    <id>{{ site.url }}{{ post.id }}</id>
    <content type="html"></content>
  </entry>
