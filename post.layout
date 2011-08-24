@@ -4,17 +4,17 @@ layout : default
 
 <div class="page">
 
-  <h2><%= page.title %></h2>
+  <h2><%= title %></h2>
 
   <%= yield %>
 
-  <small>Written by <%= page.author %>, <%= page.date %></small>
+  <small>Written by <%= author %>, <%= date %></small>
 
   <ul class="posts">
-    <% p = page.previous %><% if p %>
+    <% p = previous_post %><% if p %>
     <li><span>Previous: <%= p.date %></span> &raquo; <a href="<%= p.url %>"><%= p.title %></a></li>
     <% end %>
-    <% p = page.next %><% if p %>
+    <% p = next_post %><% if p %>
     <li><span> Next: <%= p.date %></span> &raquo; <a href="<%= p.url %>"><%= p.title %></a></li>
     <% end %>
   </ul>
