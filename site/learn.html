@@ -1,110 +1,65 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<h1>Installation</h1>
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<h2>RubyGems</h2>
 
-<head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<p>Facets can be dowloaded and installed easily using RubyGems:</p>
 
-  <title>Ruby Facets</title>
+<pre><code>$ gem install facets
+</code></pre>
 
-  <!-- google verification-->
-  <meta name="verify-v1" content="p14vW7GGMohDo2YKUHm0SXXTL+tzyPbKxxp35/WIQLA=" />
+<p>Gems will automatically generate rdocs on installation. Unfortunately
+the Gem generated rdocs are very poor --in fact Facets only allows them
+to be generated to ensure the creation of ri docs (ruby api index files).
+We recommend instead that you use the pre-generated rdocs on the website.</p>
 
-  <meta name="DESCRIPTION"
-        content="Ruby Facets is a large collection of libraries for the Ruby programming lanaguage."/>
+<h2>Site Install</h2>
 
-  <link rel="icon" href="<%= root %>media/favicon.ico" type="image/x-icon" />
+<p>If you would like to install from source, you can download the tarball
+package from <a href="http://github.com/rubyworks/facets/download">GitHub</a>
+and use <a href="http://rubyworks.github.com/setup">Ruby Setup</a>, e.g.</p>
 
-  <link href="<%= site.url %>/atom.xml" rel="alternate" title="blog.facets.rubyforge.org" type="application/atom+xml" />
+<pre><code>$ tar -xvzf facets-2.9.0.tgz
+$ cd facets-2.9.0
+$ setup.rb
+</code></pre>
 
-<!--
-  <link href="/assets/styles/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
-  <link href="/assets/styles/print.css"  media="print" rel="stylesheet" type="text/css" />
--->
+<p>The last step may require super-user permissions (eg. use <code>sudo</code>).</p>
 
-  <!--[if IE]>
-      <link href="/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
-  <![endif]-->
+<p>Of course, to use Facets you also need <em>Ruby</em>. The 2.x versions of Facets are
+designed to work with Ruby 1.8.6 and up. Facets is fully compatible with Ruby 1.9.</p>
 
-  <link href="<%=root%>assets/site.css" rel="stylesheet" type="text/css" />
-  <link href="<%=root%>assets/syntax.css" rel="stylesheet" type="text/css" />
+<h1>API Documentation</h1>
 
-  <!-- <script src="/js/rdocs.js" type="text/javascript"></script> -->
-</head>
+<p>Facets API is divided into two documentation sets, one for each library group,
+CORE for the core extensions and MORE for standard extensions and additions.</p>
 
-<body>
+<h2>Core API</h2>
 
-<div id="forkme">
-  <a href="http://github.com/rubyworks/facets">
-    <img src="<%= root %>media/forkme.png" />
-  </a>
-</div>
+<p>The <a href="doc/api/core/index.html">CORE API</a> includes all
+the "prime" extensions. These methods are at the heart of Facets. Any
+application or library that makes use of Facets, you can be sure, supports
+these methods. Also include is the Functor class, which is a Higher Order
+Message class. It is used by a number of methods to provide fluid interfaces.</p>
 
-<div id="container">
+<h2>More API</h2>
 
-  <div id="header">
-    <a href="<%= site.url %>">
-      <img id="logo" src="<%=root%>media/RubyFacets.png" align="middle" />
-    </a>
-  </div>
+<p>The <a href="doc/api/standard/index.html">MORE API</a> documents the
+variety of extension methods to Ruby's standard library, and additional
+classes, modules and micro-frameworks Facets provides as optional libraries.</p>
 
-  <!-- <div id="drop_shadow"></div> -->
+<h1>Wiki</h1>
 
-  <div id="content">
+<p>The Wiki is a place for end-users to create their own documentation. Ultimately,
+it is hoped, this documentaiton will make a great source for sharing real-world
+use cases. However, a full Wiki solution isn't in place yetand we are simply
+using Google Pages, provided along side the Google mailing list interface.</p>
 
-  <div class="blurb">
-    <div id="menu">
-      <a href="<%= root %>index.html">Overview</a> &middot;
-      <a href="<%= root %>news.html">News/Blog</a> &middot;
-      <a href="<%= root %>learn.html">Documentation</a> &middot;
-      <a href="<%= root %>source.html">Development</a>
-      <img style="width: 20px; height: 1px;" src="/media/clear.gif"/>
-    </div>
+<p>Facets has a community wiki that anyone can use to help document Facets at
+<a href="http://wiki.github.com/rubyworks/facets">Facets Wiki</a>.</p>
 
-    <div class="desc">
-      <h1><%= blurb %></h1>
-      <%= detail %>
-    </div>
-  </div>
+<h1>Mailing List</h1>
 
-
-  <div class="page">
-    <%= yield %>
-  </div>
-
-  </div>
-
-</div>
-
-<div id="copyright">
-  <img src="<%= root %>media/abc1.png"/>
-
-  <br/><br/><br/>
-
-  Copyright (c) 2005-2008 Thomas Sawyer &amp; Contributors <br/><br/>
-
-  Ruby Facets was created by Thomas Sawyer (7rans), either written by hand or collected from a variety of Ruby resources.<br/>
-  The system continues to be extended and improved by a diverse cast of open-source contributors.<br/><br/>
-
-  Facets is released under the terms of the Ruby license, just like Ruby.<br/>
-  The Ruby license is a dual GPLv2 license.<br/><br/>
-
-  "Facets", "Ruby Facets" and "All Base Common" are trademarks of Thomas Sawyer. All rights reserved.
-
-  <br/><br/>
-
-  THIS SOFTWARE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR
-  IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
-  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
-  PURPOSE.
-</div>
-
-<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
-</script>
-<script type="text/javascript">
-_uacct = "UA-2883355-2";
-urchinTracker();
-</script>
-
-</body>
-</html>
+<p>Facets has a dedicated mailing list hosted via
+<a href="http://groups.google.com/group/facets-universal/topics">Google Groups</a>.
+The same list is used by developers and end-users alike. If you have a
+question or a suggestion the list is a good place to get feedback about it.</p>

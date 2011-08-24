@@ -13,9 +13,9 @@
   <meta name="DESCRIPTION"
         content="Ruby Facets is a large collection of libraries for the Ruby programming lanaguage."/>
 
-  <link rel="icon" href="<%= root %>media/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="../media/favicon.ico" type="image/x-icon" />
 
-  <link href="<%= site.url %>/atom.xml" rel="alternate" title="blog.facets.rubyforge.org" type="application/atom+xml" />
+  <link href="http://rubyworks.github.com/facets/atom.xml" rel="alternate" title="blog.facets.rubyforge.org" type="application/atom+xml" />
 
 <!--
   <link href="/assets/styles/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
@@ -26,8 +26,8 @@
       <link href="/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
   <![endif]-->
 
-  <link href="<%=root%>assets/site.css" rel="stylesheet" type="text/css" />
-  <link href="<%=root%>assets/syntax.css" rel="stylesheet" type="text/css" />
+  <link href="../assets/site.css" rel="stylesheet" type="text/css" />
+  <link href="../assets/syntax.css" rel="stylesheet" type="text/css" />
 
   <!-- <script src="/js/rdocs.js" type="text/javascript"></script> -->
 </head>
@@ -36,15 +36,15 @@
 
 <div id="forkme">
   <a href="http://github.com/rubyworks/facets">
-    <img src="<%= root %>media/forkme.png" />
+    <img src="../media/forkme.png" />
   </a>
 </div>
 
 <div id="container">
 
   <div id="header">
-    <a href="<%= site.url %>">
-      <img id="logo" src="<%=root%>media/RubyFacets.png" align="middle" />
+    <a href="http://rubyworks.github.com/facets">
+      <img id="logo" src="../media/RubyFacets.png" align="middle" />
     </a>
   </div>
 
@@ -54,22 +54,58 @@
 
   <div class="blurb">
     <div id="menu">
-      <a href="<%= root %>index.html">Overview</a> &middot;
-      <a href="<%= root %>news.html">News/Blog</a> &middot;
-      <a href="<%= root %>learn.html">Documentation</a> &middot;
-      <a href="<%= root %>source.html">Development</a>
+      <a href="../index.html">Overview</a> &middot;
+      <a href="../news.html">News/Blog</a> &middot;
+      <a href="../learn.html">Documentation</a> &middot;
+      <a href="../source.html">Development</a>
       <img style="width: 20px; height: 1px;" src="/media/clear.gif"/>
     </div>
 
     <div class="desc">
-      <h1><%= blurb %></h1>
-      <%= detail %>
+      <h1></h1>
+      
     </div>
   </div>
 
 
   <div class="page">
-    <%= yield %>
+    
+<div class="page">
+
+  <h2>How Facets Was Born</h2>
+
+  <p>As programmers are wont to do, I started collecting reusable pieces of
+Ruby long ago. At first it was just a small function here, a useful
+module there. Eventually the collection became sizable and I called it <i>TomsLib</i>.
+As time wore on and my library grew, I started to feel it worth a general
+release and I had renamed it <i>Raspberry Lib</i>. But sometime shortly thereafter
+I hit upon the idea of <i>atomicity</i> of the core extensions. And that's how the
+name Facets came about --it's all about the little things. Of course, that name
+took a while to decide upon too. The library was almost called "Atomix &amp; Trix"!</p>
+
+<p>Facets has eveolved considerably over the years --and lessons were learned. Probably
+the biggest lesson was the 2.0 release, where the idea of atomicity was eroded and
+and alternate means of library requiring was attempted. Both were rectified by 2.4.</p>
+
+<p>Much has changed since those first days. But time has been good to Facets.
+Today, Facets is a more solid and leaner library than ever before and will
+continue in the fashion for version to come.</p>
+
+
+  <small>Written by Anonymous, 2010-08-29 13:47:36 -0400</small>
+
+  <ul class="posts">
+    
+    <li><span>Previous: 2010-08-29 13:47:36 -0400</span> &raquo; <a href="posts/2008-01-01-how-facets-was-born.html">How Facets Was Born</a></li>
+    
+    
+    <li><span> Next: 2010-08-29 13:47:36 -0400</span> &raquo; <a href="posts/2008-01-01-how-facets-was-born.html">How Facets Was Born</a></li>
+    
+  </ul>
+
+</div>
+
+
   </div>
 
   </div>
@@ -77,7 +113,7 @@
 </div>
 
 <div id="copyright">
-  <img src="<%= root %>media/abc1.png"/>
+  <img src="../media/abc1.png"/>
 
   <br/><br/><br/>
 
