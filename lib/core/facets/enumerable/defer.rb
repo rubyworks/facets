@@ -44,30 +44,3 @@ module Enumerable
 
 end
 
-
-=begin
-  
-  TODO: (Programming Challenge) Dynamically create this in a single
-  method using a Functor and without the need of Denumerable.
-  
-  Below is my first shot at it. It's close, but it cannot handle
-  infinite series.
- 
-  require 'facets/functor'
-
-  def defer
-    l = lambda do |enum|
-      Functor.new do |op, *a, &b|
-        case op.to_s
-        when /^(to_|each)/
-          enum.__send__(op, *a, &b)
-        else
-          l[enum.__send__(op, *a, &b)]
-        end
-      end
-    end
-    l[self]
-  end
-
-=end
-
