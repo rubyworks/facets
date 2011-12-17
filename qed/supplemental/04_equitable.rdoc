@@ -1,0 +1,35 @@
+= Equitqable
+
+Require the library.
+
+  require 'facets/equitable'
+
+We will use this simple class as an example.
+
+  class C
+    include Equitable(:a,:b)
+
+    attr_accessor :a, :b
+
+    def initialize(a,b)
+      @a = a
+      @b = b
+    end
+  end
+
+Now, if two instance of our sample class +C+ have
+equal attributes +@a+ and +@b+ then they will
+be equal.
+
+  c1 = C.new(10,20)
+  c2 = C.new(10,20)
+  c2.assert == c1
+
+Otherwise they will not be equal.
+
+  c1 = C.new(10, 10)
+  c2 = C.new(10, 20)
+  c2.refute == c1
+
+
+
