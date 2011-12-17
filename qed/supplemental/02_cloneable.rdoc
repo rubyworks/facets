@@ -1,0 +1,46 @@
+= Cloneable
+
+Require the library.
+
+  require 'facets/cloneable'
+
+We'll use this dummy class.
+
+  class Foo
+    include Cloneable
+    def initialize
+      @bar=[]
+    end
+    def bar_id
+      @bar.object_id
+    end
+  end
+
+Try #dup.
+
+  a = Foo.new
+  b = a.dup
+  b.bar_id.refute == a.bar_id
+
+  a.taint
+  b = a.dup
+  b.assert.tainted?
+
+  a.freeze
+  b = a.dup
+  b.refute.frozen?
+
+Note try #clone.
+
+  a = Foo.new
+  b = a.clone
+  b.bar_id.refute == a.bar_id
+
+  a.taint
+  b = a.dup
+  b.assert.tainted?
+
+  a.freeze
+  b = a.clone
+  b.assert.frozen?
+
