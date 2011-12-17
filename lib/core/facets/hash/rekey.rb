@@ -3,7 +3,9 @@ require 'facets/na'
 
 class Hash
 
-  # Rekey a hash, ...
+  # TODO: Improve Hash#rekey code!!!
+
+  # Rekey a hash:
   #
   #   rekey()
   #   rekey(from_key => to_key, ...)
@@ -39,7 +41,7 @@ class Hash
 
     key_map ||= {} 
 
-    hash = {}
+    hash = dup.replace({})  # to keep default_proc
 
     (keys - key_map.keys).each do |key|
       hash[key] = self[key]
@@ -49,13 +51,21 @@ class Hash
       hash[to] = self[from] if key?(from)
     end
 
-    hash2 = {}
-
     if block
-      hash.each do |k, v|
-        nk = block[k]
-        nk = (NA == nk ? k : nk)
-        hash2[nk] = v
+      hash2 = dup.replace({})
+      case block.arity
+      when 2  # TODO: is this condition needed?
+        hash.each do |k, v|
+          nk = block.call(k,v)
+          nk = (NA == nk ? k : nk)
+          hash2[nk] = v
+        end
+      else
+        hash.each do |k, v|
+          nk = block.call(k)
+          nk = (NA == nk ? k : nk)
+          hash2[nk] = v
+        end
       end
     else
       hash2 = hash
