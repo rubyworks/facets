@@ -1,0 +1,75 @@
+= Enumerable::Arguments
+
+Require the library.
+
+  require 'mixers/enumargs'
+
+This will serve as our example class.
+
+  class PlusArray
+    include Enumerable::Arguments
+
+    def initialize(arr)
+      @arr = arr
+    end
+
+    def each(n=0)
+      @arr.each{ |e| yield(e+n) }
+    end
+  end
+
+Now Enumerable methods such as #map and #collect
+take an argument as well.
+
+  t = PlusArray.new([1,2,3])
+  t.collect(4){ |e| e }.assert == [5,6,7]
+
+Filtering methods such as #select and reject work
+as well.
+
+  t = PlusArray.new([1,2,3])
+  t.select(4){ |x| x == 6 }.assert == [6]
+
+  t = PlusArray.new([1,2,3])
+  t.reject(4){ |x| x == 6 }.assert == [5,7]
+
+We can covert to an array using #to_a with an argument.
+
+  t = PlusArray.new([1,2,3])
+  t.to_a(4).assert == [5,6,7]
+
+We can get the minimum value using #min.
+
+  t = PlusArray.new([1,2,3])
+  t.min(4).assert == 5
+
+And get the maximum value using #min.
+
+  t = PlusArray.new([1,2,3])
+  t.max(4).assert == 7
+
+Methods that already take and argument, now take two
+such as #include?
+
+  t = PlusArray.new([1,2,3])
+  t.assert.include?(7,4)
+
+And #each_slice.
+
+  t = PlusArray.new([1,2,3,4])
+  a = []
+  t.each_slice(2,4){ |e,f| a << [e,f] }
+  a.assert == [[5,6],[7,8]]
+
+The #find method has a slightly different interface
+than the original Enumerable.
+
+  t = PlusArray.new([1,2,3,4])
+  f = t.find(2, :ifnone=>lambda{:NOPE}) { |a| a == 10 }
+  f.assert == :NOPE
+
+The #grep method should also work.
+
+  t = PlusArray.new(['a1','b2','a3','b4'])
+  t.grep(/^b/, 'x').assert == ['b2x','b4x']
+
