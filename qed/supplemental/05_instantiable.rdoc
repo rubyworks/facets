@@ -1,0 +1,42 @@
+= Instantiable
+
+Require the library.
+
+  require 'facets/instantiable'
+
+We will use this module as an example.
+
+  module M
+    include Instantiable
+
+    attr :a
+
+    def initialize(a)
+      @a = a
+    end
+  end
+
+As we can see M is now fully instantiable, as any
+class would be.
+
+    m = M.new(1)
+    m.a.assert == 1
+
+We can also use #extend rather than #include and
+get the same result.
+
+  module N
+    extend Instantiable
+
+    attr :a
+
+    def initialize( a )
+      @a = a
+    end
+  end
+
+As we saw with +M+ so too with +N+.
+
+  n = N.new( 1 )
+  n.a.assert == 1
+
