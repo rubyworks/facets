@@ -1,0 +1,72 @@
+= Advisable
+
+Require the library.
+
+    require 'mixers/advisable'
+
+We will use this fixture.
+
+    class X
+      include Advisable
+
+      attr_reader :out
+
+      def initialize
+        @out = []
+      end
+
+      before :x do
+        @out << "BEFORE X#x"
+      end
+
+      after :x do
+        @out << "AFTER X#x"
+      end
+
+      def x
+        @out << "X#x"
+        "x"
+      end
+    end
+
+Our results.
+
+    x = X.new
+    r = x.x
+    o = x.out
+
+    r.assert == "x"
+    o.assert == ["BEFORE X#x", "X#x", "AFTER X#x"]
+
+And let's see what a subclass of the example does.
+
+    class Y < X
+      before :x do
+        @out << "BEFORE Y#x"
+      end
+
+      after :x do
+        @out << "AFTER Y#x"
+      end
+
+      around :x do |target|
+        "{" + target.call + "}"
+      end
+
+      def x
+        @out << "Y#x"
+        super
+      end
+    end
+
+The result of #x should be a bracketed "x".
+
+    y = Y.new
+
+    y.x.assert == "{x}"
+
+Then the out variable should indicate where the call has been.
+
+    y.out.assert == ["BEFORE Y#x", "BEFORE X#x", "Y#x", "X#x", "AFTER X#x", "AFTER Y#x"]
+
+
