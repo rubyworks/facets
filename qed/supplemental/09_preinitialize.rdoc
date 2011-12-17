@@ -1,0 +1,28 @@
+= Preinitialize
+
+Require the library.
+
+    require 'facets/preinitialize'
+
+Use example module.
+
+   module M
+     def preinitialize
+       @a = 23
+     end
+   end
+
+Define a class to support it.
+
+   class X
+     include Preinitializable
+     include M
+     def a ; @a ; end
+   end
+
+The result should be:
+
+   x = X.new
+   x.a.assert == 23
+
+
