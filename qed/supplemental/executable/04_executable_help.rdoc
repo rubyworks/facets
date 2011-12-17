@@ -1,0 +1,19 @@
+= Executable::Help
+
+  require 'executable/help'
+
+Now lets try it.
+
+  class X
+    extend Executable::Help
+
+    help "this is a test"
+
+    def test
+    end
+  end
+
+And the result should be
+
+  X.help.assert == {:test=>"this is a test"}
+
