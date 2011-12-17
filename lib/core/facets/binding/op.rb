@@ -1,24 +1,4 @@
-require 'facets/binding/eval'
+# This file is here for backward compatibility only.
+# It can be deprecated eventually.
 
-class Binding
-
-  # Returns the value of some variable.
-  #
-  #   a = 2
-  #   binding["a"]  #=> 2
-  #
-  def []( x )
-    eval( x.to_s )
-  end
-
-  # Set the value of a local variable.
-  #
-  #   binding["a"] = 4
-  #   a  #=> 4
-  #
-  def []=( l, v )
-    eval( "lambda {|v| #{l} = v}").call( v )
-  end
-
-end
-
+require 'facets/binding/op_get'

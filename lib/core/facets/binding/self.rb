@@ -2,10 +2,15 @@ require 'facets/binding/eval'
 
 class Binding
 
-  # Returns self of the binding context.
+  # already defined by Rubinius
+  #   Kernel.eval('Rubinius::VariableScope.current.self', self)
+  unless method_defined?(:self)
 
-  def self()
-    @_self ||= eval("self")
+    # Returns self of the binding's context.
+    def self
+      eval('self')
+    end
+
   end
 
 end
