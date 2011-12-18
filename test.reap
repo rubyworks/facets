@@ -1,60 +1,6 @@
 #!/usr/bin/env ruby
 
-require 'fileutils'
-
-PATH = "lib/core:lib/core-uncommon:lib/standard:lib/supplemental"
-
-#
-# GENERATE LIB
-# ----------------------------------------------------------------------------
-
-desc "generate lib"
-task "lib" do |tsk|
-  require 'erb'
-  require 'fileutils'
-
-  dryrun = tsk.application.options.dryrun 
-  trace  = tsk.application.options.trace
-  silent = tsk.application.options.silent
-
-  FileUtils.rm_r('lib') if File.directory?('lib')
-  FileUtils.mkdir('lib')
-
-  files = Dir['src/**/*']
-  files.each do |file|
-    out = file.sub('src', 'lib')
-    if File.directory?(file)
-      FileUtils.mkdir(out) unless dryrun
-    else
-      puts "erb #{file} -> #{out}" if trace
-      erb = ERB.new(File.read(file))
-      erb.filename = file
-      txt = erb.result(metadata_binding)
-      unless dryrun
-        File.open(out, 'w'){ |f| f.puts txt }
-      end
-    end
-  end
-  puts "#{files.size} files rendered." unless silent
-end
-
-#
-# GENERATE RDOCS
-# ----------------------------------------------------------------------------
-
-desc "generate rdocs"
-
-task "rdoc" do
-  TEMPLATE  = ENV['RDOC_TEMPLATE'] || 'html'
-  APIOUT    = "site/doc/api"
-
-  FileUtils.rm_r(APIOUT)
-
-  system "rdoc -a -S -t'Facets Core API' -T #{TEMPLATE} -m README.rdoc --op '#{APIOUT}/core' README.rdoc lib/facets/core"
-  system "rdoc -a -S -t'Facets More API' -T #{TEMPLATE} -m README.rdoc --op '#{APIOUT}/core-uncommon' README.rdoc lib/facets/core-uncommon"
-  system "rdoc -a -S -t'Facets Standard API' -T #{TEMPLATE} -m README.rdoc --op '#{APIOUT}/standard' README.rdoc lib/facets/standard"
-  system "rdoc -a -S -t'Facets Supplemental API' -T #{TEMPLATE} -m README.rdoc --op '#{APIOUT}/supplemental' README.rdoc lib/facets/supplemental"
-end
+PATH = "lib/core:lib/more:lib/standard:lib/supplement"
 
 #
 # RUN TESTS (requires Lemon)
@@ -330,74 +276,18 @@ end
 
 
 #
-# SETUP/INSTALL
-# ----------------------------------------------------------------------------
-
-def load_setup
-  begin
-    require 'setup'
-    $setup_installed = true
-  rescue LoadError
-    $setup_installed = false
-    puts "NOTP"
-  end
-end
-
-private :load_setup
-
-desc "install to ruby site location"
-task :install do
-  load_setup
-
-  if $setup_installed
-    sh "setup.rb all"
-  else
-    puts "Requires stand-alone Setup.rb."
-    puts "See http://setup.rubyforge.org"
-    puts "or 'gem install setup'."
-  end
-end
-
-desc "uninstall from ruby site location"
-task :uninstall do
-  load_setup
-
-  if $setup_installed
-    sh "setup.rb uninstall"
-  else
-    puts "Requires stand-alone Setup.rb."
-    puts "See http://setup.rubyforge.org"
-    puts "or 'gem install setup'."
-  end
-end
-
-
-#
 # CHECK CHERRY PICKING
 # ----------------------------------------------------------------------------
 
-namespace :check do
-
-  desc 'check cherry pickability'
-  task 'cherry' do
-    files = Dir['lib/**/*.rb']
-    files.each do |file|
-      out = `ruby -Ilib #{file}`
-      if out != ''
-        puts file
-        puts out
-      end
+desc 'check cherry pickability'
+task 'check:cherry' do
+  files = Dir['lib/**/*.rb']
+  files.each do |file|
+    out = `ruby -Ilib #{file}`
+    if out != ''
+      puts file
+      puts out
     end
   end
-
-end
-
-
-# -- Support methods ----
-
-#
-def metadata_binding
-  object = Object.new
-  object.instance_eval("binding")
 end
 
