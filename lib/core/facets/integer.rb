@@ -1,22 +1,16 @@
-# Load all Integer core extensions.
+folder = __FILE__.chomp('.rb')
 
-if RUBY_VERSION < '1.9'
-  require "facets/integer/bit.rb"
-  require "facets/integer/bitmask.rb"
-  require "facets/integer/even.rb"
-  require "facets/integer/factorial.rb"
-  require "facets/integer/multiple.rb"
-  require "facets/integer/odd.rb"
-  require "facets/integer/of.rb"
-  require "facets/integer/ordinal.rb"
-else
-  require_relative "integer/bit.rb"
-  require_relative "integer/bitmask.rb"
-  require_relative "integer/even.rb"
-  require_relative "integer/factorial.rb"
-  require_relative "integer/multiple.rb"
-  require_relative "integer/odd.rb"
-  require_relative "integer/of.rb"
-  require_relative "integer/ordinal.rb"
+target = File.basename(folder)
+
+loader = \
+  if RUBY_VERSION < '1.9'
+    lambda{ |file| require File.join(folder, file) }
+  else
+    lambda{ |file| require_relative File.join(target, file) }
+  end
+
+Dir.entries(folder).each do |file|
+  next unless file.end_with?('.rb')
+  loader.call(file)
 end
 

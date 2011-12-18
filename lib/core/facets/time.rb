@@ -1,36 +1,16 @@
-# Require all Time core extensions.
+folder = __FILE__.chomp('.rb')
 
-if RUBY_VERSION < '1.9'
-  require "facets/time/ago.rb"
-  require "facets/time/change.rb"
-  require "facets/time/dst_adjustment.rb"
-  require "facets/time/elapse.rb"
-  require "facets/time/future.rb"
-  require "facets/time/hence.rb"
-  require "facets/time/in.rb"
-  require "facets/time/less.rb"
-  require "facets/time/past.rb"
-  require "facets/time/round_to.rb"
-  require "facets/time/set.rb"
-  require "facets/time/shift.rb"
-  require "facets/time/stamp.rb"
-  require "facets/time/to_time.rb"
-  require "facets/time/trunc.rb"
-else
-  require_relative "time/ago.rb"
-  require_relative "time/change.rb"
-  require_relative "time/dst_adjustment.rb"
-  require_relative "time/elapse.rb"
-  require_relative "time/future.rb"
-  require_relative "time/hence.rb"
-  require_relative "time/in.rb"
-  require_relative "time/less.rb"
-  require_relative "time/past.rb"
-  require_relative "time/round_to.rb"
-  require_relative "time/set.rb"
-  require_relative "time/shift.rb"
-  require_relative "time/stamp.rb"
-  require_relative "time/to_time.rb"
-  require_relative "time/trunc.rb"
+target = File.basename(folder)
+
+loader = \
+  if RUBY_VERSION < '1.9'
+    lambda{ |file| require File.join(folder, file) }
+  else
+    lambda{ |file| require_relative File.join(target, file) }
+  end
+
+Dir.entries(folder).each do |file|
+  next unless file.end_with?('.rb')
+  loader.call(file)
 end
 

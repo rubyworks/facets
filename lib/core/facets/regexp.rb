@@ -1,16 +1,16 @@
-# Require all Regexp core extensions.
+folder = __FILE__.chomp('.rb')
 
-if RUBY_VERSION < '1.9'
-  require "facets/regexp/arity.rb"
-  require "facets/regexp/multiline.rb"
-  require "facets/regexp/op_add.rb"
-  require "facets/regexp/op_or.rb"
-  require "facets/regexp/to_re.rb"
-else
-  require_relative "regexp/arity.rb"
-  require_relative "regexp/multiline.rb"
-  require_relative "regexp/op_add.rb"
-  require_relative "regexp/op_or.rb"
-  require_relative "regexp/to_re.rb"
+target = File.basename(folder)
+
+loader = \
+  if RUBY_VERSION < '1.9'
+    lambda{ |file| require File.join(folder, file) }
+  else
+    lambda{ |file| require_relative File.join(target, file) }
+  end
+
+Dir.entries(folder).each do |file|
+  next unless file.end_with?('.rb')
+  loader.call(file)
 end
 

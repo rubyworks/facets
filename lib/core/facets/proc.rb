@@ -1,20 +1,16 @@
-# Require all Proc core extensions.
+folder = __FILE__.chomp('.rb')
 
-if RUBY_VERSION < '1.9'
-  require "facets/proc/bind.rb"
-  require "facets/proc/bind_to.rb"
-  require "facets/proc/compose.rb"
-  require "facets/proc/curry.rb"
-  require "facets/proc/partial.rb"
-  require "facets/proc/to_method.rb"
-  require "facets/proc/update.rb"
-else
-  require_relative "proc/bind.rb"
-  require_relative "proc/bind_to.rb"
-  require_relative "proc/compose.rb"
-  require_relative "proc/curry.rb"
-  require_relative "proc/partial.rb"
-  require_relative "proc/to_method.rb"
-  require_relative "proc/update.rb"
+target = File.basename(folder)
+
+loader = \
+  if RUBY_VERSION < '1.9'
+    lambda{ |file| require File.join(folder, file) }
+  else
+    lambda{ |file| require_relative File.join(target, file) }
+  end
+
+Dir.entries(folder).each do |file|
+  next unless file.end_with?('.rb')
+  loader.call(file)
 end
 

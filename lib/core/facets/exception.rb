@@ -1,13 +1,16 @@
-# Load all Exception core extensions.
+folder = __FILE__.chomp('.rb')
 
-if RUBY_VERSION < '1.9'
-  require "facets/exception/detail.rb"
-  require "facets/exception/raised.rb"
-  require "facets/exception/suppress.rb"
-else
-  require_relative "exception/detail.rb"
-  require_relative "exception/raised.rb"
-  require_relative "exception/suppress.rb"
+target = File.basename(folder)
+
+loader = \
+  if RUBY_VERSION < '1.9'
+    lambda{ |file| require File.join(folder, file) }
+  else
+    lambda{ |file| require_relative File.join(target, file) }
+  end
+
+Dir.entries(folder).each do |file|
+  next unless file.end_with?('.rb')
+  loader.call(file)
 end
-
 

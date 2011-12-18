@@ -1,16 +1,16 @@
-# Require all Object core extensions.
+folder = __FILE__.chomp('.rb')
 
-if RUBY_VERSION < '1.9'
-  require "facets/object/clone.rb"
-  require "facets/object/dup.rb"
-  require "facets/object/object_state.rb"
-  require "facets/object/replace.rb"
-  require "facets/object/try_dup.rb"
-else
-  require_relative "object/clone.rb"
-  require_relative "object/dup.rb"
-  require_relative "object/object_state.rb"
-  require_relative "object/replace.rb"
-  require_relative "object/try_dup.rb"
+target = File.basename(folder)
+
+loader = \
+  if RUBY_VERSION < '1.9'
+    lambda{ |file| require File.join(folder, file) }
+  else
+    lambda{ |file| require_relative File.join(target, file) }
+  end
+
+Dir.entries(folder).each do |file|
+  next unless file.end_with?('.rb')
+  loader.call(file)
 end
 

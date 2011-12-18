@@ -1,94 +1,16 @@
-# Load all Array core extensions.
+folder = __FILE__.chomp('.rb')
 
-if RUBY_VERSION < '1.9'
-  require "facets/array/after.rb"
-  require "facets/array/before.rb"
-  require "facets/array/collapse.rb"
-  require "facets/array/collisions.rb"
-  require "facets/array/combination.rb"
-  require "facets/array/commonality.rb"
-  require "facets/array/conjoin.rb"
-  require "facets/array/contains.rb"
-  require "facets/array/delete.rb"
-  require "facets/array/delete_unless.rb"
-  require "facets/array/delete_values.rb"
-  require "facets/array/divide.rb"
-  require "facets/array/duplicates.rb"
-  require "facets/array/entropy.rb"
-  require "facets/array/extract_options.rb"
-  require "facets/array/from.rb"
-  require "facets/array/index.rb"
-  require "facets/array/indexable.rb"
-  require "facets/array/merge.rb"
-  require "facets/array/mode.rb"
-  require "facets/array/nonuniq.rb"
-  require "facets/array/not_empty.rb"
-  require "facets/array/only.rb"
-  require "facets/array/pad.rb"
-  require "facets/array/peek.rb"
-  require "facets/array/permutation.rb"
-  require "facets/array/poke.rb"
-  require "facets/array/probability.rb"
-  require "facets/array/product.rb"
-  require "facets/array/pull.rb"
-  require "facets/array/recurse.rb"
-  require "facets/array/recursively.rb"
-  require "facets/array/rotate.rb"
-  require "facets/array/select.rb"
-  require "facets/array/splice.rb"
-  require "facets/array/split.rb"
-  require "facets/array/store.rb"
-  require "facets/array/thru.rb"
-  require "facets/array/traverse.rb"
-  require "facets/array/uniq_by.rb"
-else
-  require_relative "array/after.rb"
-  require_relative "array/before.rb"
-  require_relative "array/collapse.rb"
-  require_relative "array/collisions.rb"
-  require_relative "array/combination.rb"
-  require_relative "array/commonality.rb"
-  require_relative "array/conjoin.rb"
-  require_relative "array/contains.rb"
-  require_relative "array/delete.rb"
-  require_relative "array/delete_unless.rb"
-  require_relative "array/delete_values.rb"
-  require_relative "array/divide.rb"
-  require_relative "array/duplicates.rb"
-  require_relative "array/entropy.rb"
-  require_relative "array/extract_options.rb"
-  require_relative "array/from.rb"
-  require_relative "array/index.rb"
-  require_relative "array/indexable.rb"
-  require_relative "array/merge.rb"
-  require_relative "array/mode.rb"
-  require_relative "array/nonuniq.rb"
-  require_relative "array/not_empty.rb"
-  require_relative "array/only.rb"
-  require_relative "array/pad.rb"
-  require_relative "array/peek.rb"
-  require_relative "array/permutation.rb"
-  require_relative "array/poke.rb"
-  require_relative "array/probability.rb"
-  require_relative "array/product.rb"
-  require_relative "array/pull.rb"
-  require_relative "array/recurse.rb"
-  require_relative "array/recursively.rb"
-  require_relative "array/rotate.rb"
-  require_relative "array/select.rb"
-  require_relative "array/splice.rb"
-  require_relative "array/split.rb"
-  require_relative "array/store.rb"
-  require_relative "array/thru.rb"
-  require_relative "array/traverse.rb"
-  require_relative "array/uniq_by.rb"
+target = File.basename(folder)
+
+loader = \
+  if RUBY_VERSION < '1.9'
+    lambda{ |file| require File.join(folder, file) }
+  else
+    lambda{ |file| require_relative File.join(target, file) }
+  end
+
+Dir.entries(folder).each do |file|
+  next unless file.end_with?('.rb')
+  loader.call(file)
 end
-
-
-# OLD WAY
-#dir, base = *File.split(__FILE__)
-#base = base.chomp('.rb')
-#Dir[File.join(dir, base, '*.rb')].each do |lib|
-#  require "facets/#{base}/#{File.basename(lib)}"
-#end
 

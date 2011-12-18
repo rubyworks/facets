@@ -1,16 +1,16 @@
-# Require all Range core extensions.
+folder = __FILE__.chomp('.rb')
 
-if RUBY_VERSION < '1.9'
-  require "facets/range/combine.rb"
-  require "facets/range/overlap.rb"
-  require "facets/range/to_r.rb"
-  require "facets/range/umbrella.rb"
-  require "facets/range/within.rb"
-else
-  require_relative "range/combine.rb"
-  require_relative "range/overlap.rb"
-  require_relative "range/to_r.rb"
-  require_relative "range/umbrella.rb"
-  require_relative "range/within.rb"
+target = File.basename(folder)
+
+loader = \
+  if RUBY_VERSION < '1.9'
+    lambda{ |file| require File.join(folder, file) }
+  else
+    lambda{ |file| require_relative File.join(target, file) }
+  end
+
+Dir.entries(folder).each do |file|
+  next unless file.end_with?('.rb')
+  loader.call(file)
 end
 
