@@ -73,13 +73,13 @@ module Lazy
       yield
     end
 
-    # create this once here, rather than creating a proc object for
-    # every evaluation
-    diverges = lambda { raise DivergenceError.new }
-    def diverges.inspect
+    # Create this once here, rather than creating a proc object for every evaluation.
+    DIVERGES = lambda { raise DivergenceError.new }
+
+    # Differentiate inspection of DIVERGES lambda.
+    def DIVERGES.inspect
       "DIVERGES"
     end
-    DIVERGES = diverges
 
     def __result__ #:nodoc:
       __synchronize__ do
