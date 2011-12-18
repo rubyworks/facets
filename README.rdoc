@@ -45,11 +45,20 @@ is available at http://rubyworks.github.com/facets/learn.html.
 
 == Installation
 
+=== Rubygems
+
 The easiest way to install is via RubyGems.
 
   $ gem install facets
 
-To install manually, your will need Ruby Setup (http::/setup.rubyforge.org).
+=== Setup.rb
+
+Note that, setup.rb will not work 100% as an install option as it will
+cause the optional extensions to be loaded automatically along with the
+default core extensions when using `require "facets"` or `require "facets/{name}"`.
+
+However, if that is not an issue, or if cherry picking only, then Facets
+can still be installed manually with Ruby Setup (http://rubyworks.github.com/setup).
 Then download and unpack the .tar.gz package and run:
 
   $ tar -xvzf facets-2.x.x.tar.gz
