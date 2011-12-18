@@ -1,8 +1,8 @@
 --no-output
---title "Facets Core Extensions"
+--title "Facets Optional Core Extensions"
 --readme README.rdoc
 --protected
 --private
-lib/core
+lib/more
 -
 README.rdoc

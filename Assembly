@@ -3,7 +3,7 @@ gem:
   active: true
 
 github:
-  active: true
+  gh_pages: web
 
 email:
   service: Email
@@ -12,16 +12,18 @@ email:
     - rubyworks-mailinglist@googlegroups.com
 
 vclog:
-  output: log/ChangeLog.rdoc
+  output:
+    - log/changes.html
+    - log/history.html
   active: false
 
 # TODO: Use ruby-test tool when ready
-lemon:
-  tool  : Custom
-  track : main
-  test: |
-    sh 'ruby-test test'
-  active: false
+#lemon:
+#  tool  : Custom
+#  track : main
+#  test: |
+#    sh 'ruby-test test'
+#  active: false
 
 #rubyforge:
 #  service: Rubyforge
@@ -30,9 +32,5 @@ lemon:
 #    site    : '.'
 #    #doc/rdoc: rdoc
 #    #doc/yard: yard
-#  active: false
-
-#till:
-#  service: Till
 #  active: false
 

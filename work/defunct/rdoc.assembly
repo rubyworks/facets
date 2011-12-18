@@ -4,9 +4,9 @@ ri:
   output  : .rdoc
   include :
     - lib/core
-    - lib/core-uncommon
+    - lib/more
     - lib/standard
-    - lib/supplemental
+    - lib/supplement
 
 rdoc-core:
   service : RDoc
@@ -15,17 +15,17 @@ rdoc-core:
   title   : Facets Core Extensions
   main    : README.rdoc
   extra   : ""
-  include : [README.rdoc, lib/core, lib/core-optional]
+  include : [README.rdoc, lib/core]
   active  : true
 
 rdoc-more:
   service : RDoc
   format  : rubyfaux
-  output  : site/doc/api/uncommon
+  output  : site/doc/api/more
   title   : Facets Uncommon Core Extensions
   main    : README.rdoc
   extra   : ""
-  include : [README.rdoc, lib/core-uncommon]
+  include : [README.rdoc, lib/more]
   active  : true
 
 rdoc-standard:
@@ -38,13 +38,13 @@ rdoc-standard:
   include : [README.rdoc, lib/standard]
   active  : true
 
-rdoc-supplemental:
+rdoc-supplement:
   service : RDoc
   format  : rubyfaux
-  output  : site/doc/api/supplemental
+  output  : site/doc/api/supplement
   title   : Facets Supplemental Libraries
   main    : README.rdoc
   extra   : ""
-  include : [README.rdoc, lib/supplemental]
+  include : [README.rdoc, lib/supplement]
   active  : true
 

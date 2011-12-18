@@ -1,7 +1,8 @@
---output-dir "site/doc/yard/standard"
+--no-output
 --title "Facets Standard Library Extensions"
 --readme README.rdoc
 --protected
+--private
 lib/standard
 -
 README.rdoc

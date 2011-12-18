@@ -1,7 +1,0 @@
---output-dir "site/doc/yard/uncommon"
---title "Facets Uncommon Core Extensions"
---readme README.rdoc
---protected
-lib/core-uncommon
--
-README.rdoc

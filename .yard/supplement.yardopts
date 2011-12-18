@@ -1,7 +1,8 @@
---output-dir "site/doc/yard/supplemental"
+--no-output
 --title "Facets Supplemental Class and Modules"
 --readme README.rdoc
 --protected
-lib/supplemental
+--private
+lib/supplement
 -
 README.rdoc
