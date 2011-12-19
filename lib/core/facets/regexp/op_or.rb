@@ -1,17 +1,14 @@
 class Regexp
 
-  # Add regular expressions.
+  # Operator form of `Regexp.union`.
   #
-  #   /a/ | /b/ == /(?-mix:a)(?-mix:b)/
+  #   /a/ | /b/  #=> /(?-mix:a)|(?-mix:b)/
   #
-  # Functionally equivalent to:
+  # If +other+ is not a Regexp it is passed to Regexp.escape.
   #
-  #   /ab/
-  #
-  # CREDIT:
   def |(other)
-    other = Regexp.escape(other) if other.is_a?(String)
-    /#{self}|#{other}/
+    other = Regexp.escape(other) unless Regexp === other
+    Regexp.union(self, other)
   end
 
 end

@@ -1,5 +1,6 @@
 require 'facets/kernel/require_relative'
 
+require_relative 'string/acronym.rb'
 require_relative 'string/align.rb'
 require_relative 'string/bracket.rb'
 require_relative 'string/bytes.rb'
@@ -10,6 +11,7 @@ require_relative 'string/cleanlines.rb'
 require_relative 'string/cleave.rb'
 require_relative 'string/cmp.rb'
 require_relative 'string/compress_lines.rb'
+#require_relative 'string/crypt.rb'          # non-core
 require_relative 'string/divide.rb'
 require_relative 'string/each_char.rb'
 require_relative 'string/each_word.rb'
@@ -43,6 +45,7 @@ require_relative 'string/range.rb'
 require_relative 'string/range_all.rb'
 require_relative 'string/range_of_line.rb'
 require_relative 'string/rewrite.rb'
+#require_relative 'integer/roman.rb'         # non-core
 require_relative 'string/shatter.rb'
 require_relative 'string/similarity.rb'
 require_relative 'string/snakecase.rb'

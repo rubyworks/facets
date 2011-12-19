@@ -13,6 +13,22 @@
 #
 class Functor #< BasicObject
 
+  # Functors can be somewhat inefficient if a new Functor
+  # is frequently recreated for the same use. So this cache
+  # can be used to speed things up.
+  #
+  # The +key+ will always be an array, wich makes it easier
+  # to cache functor for multiple factors.
+  #
+  def self.cache(*key, &function)
+    @cache ||= {}
+    if function
+      @cache[key] = new(&function)
+    else
+      @cache[key]
+    end
+  end
+
   EXCEPTIONS = [:binding, :inspect, :object_id]
   if defined?(::BasicObject)
     EXCEPTIONS.concat(::BasicObject.instance_methods)
