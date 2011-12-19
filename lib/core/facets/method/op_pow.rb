@@ -1,0 +1,1 @@
+require 'facets/method/composition'

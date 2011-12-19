@@ -1,16 +1,9 @@
-folder = __FILE__.chomp('.rb')
+require 'facets/kernel/require_relative'
 
-target = File.basename(folder)
-
-loader = \
-  if RUBY_VERSION < '1.9'
-    lambda{ |file| require File.join(folder, file) }
-  else
-    lambda{ |file| require_relative File.join(target, file) }
-  end
-
-Dir.entries(folder).each do |file|
-  next unless file.end_with?('.rb')
-  loader.call(file)
-end
+require_relative 'dir/ascend.rb'
+require_relative 'dir/descend.rb'
+require_relative 'dir/each_child.rb'
+require_relative 'dir/multiglob.rb'
+require_relative 'dir/parent.rb'
+require_relative 'dir/recurse.rb'
 

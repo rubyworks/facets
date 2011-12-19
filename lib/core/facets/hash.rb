@@ -1,16 +1,55 @@
-folder = __FILE__.chomp('.rb')
+require 'facets/kernel/require_relative'
 
-target = File.basename(folder)
-
-loader = \
-  if RUBY_VERSION < '1.9'
-    lambda{ |file| require File.join(folder, file) }
-  else
-    lambda{ |file| require_relative File.join(target, file) }
-  end
-
-Dir.entries(folder).each do |file|
-  next unless file.end_with?('.rb')
-  loader.call(file)
-end
+require_relative 'hash/alias.rb'
+require_relative 'hash/argumentize.rb'
+require_relative 'hash/at.rb'
+require_relative 'hash/autonew.rb'
+require_relative 'hash/collate.rb'
+require_relative 'hash/count.rb'
+require_relative 'hash/data.rb'
+require_relative 'hash/dearray_values.rb'
+require_relative 'hash/deep_merge.rb'
+require_relative 'hash/delete.rb'
+require_relative 'hash/delete_at.rb'
+require_relative 'hash/delete_unless.rb'
+require_relative 'hash/delete_values.rb'
+require_relative 'hash/diff.rb'
+require_relative 'hash/except.rb'
+require_relative 'hash/graph.rb'
+require_relative 'hash/insert.rb'
+require_relative 'hash/inverse.rb'
+require_relative 'hash/join.rb'
+require_relative 'hash/keys.rb'
+require_relative 'hash/mash.rb'
+require_relative 'hash/new_with.rb'
+require_relative 'hash/op.rb'
+require_relative 'hash/op_add.rb'
+require_relative 'hash/op_and.rb'
+require_relative 'hash/op_mul.rb'
+require_relative 'hash/op_or.rb'
+require_relative 'hash/op_push.rb'
+require_relative 'hash/op_sub.rb'
+require_relative 'hash/recurse.rb'
+require_relative 'hash/recursively.rb'
+require_relative 'hash/rekey.rb'
+require_relative 'hash/replace_each.rb'
+require_relative 'hash/reverse_merge.rb'
+require_relative 'hash/select.rb'
+require_relative 'hash/slice.rb'
+require_relative 'hash/stringify_keys.rb'
+require_relative 'hash/subset.rb'
+require_relative 'hash/swap.rb'
+require_relative 'hash/symbolize_keys.rb'
+require_relative 'hash/to_h.rb'
+require_relative 'hash/to_mod.rb'
+require_relative 'hash/to_options.rb'
+require_relative 'hash/to_proc.rb'
+require_relative 'hash/to_struct.rb'
+require_relative 'hash/traverse.rb'
+require_relative 'hash/update.rb'
+require_relative 'hash/update_each.rb'
+require_relative 'hash/update_keys.rb'
+require_relative 'hash/update_values.rb'
+require_relative 'hash/weave.rb'
+require_relative 'hash/zip.rb'
 

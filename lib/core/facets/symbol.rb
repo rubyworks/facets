@@ -1,16 +1,16 @@
-folder = __FILE__.chomp('.rb')
+require 'facets/kernel/require_relative'
 
-target = File.basename(folder)
-
-loader = \
-  if RUBY_VERSION < '1.9'
-    lambda{ |file| require File.join(folder, file) }
-  else
-    lambda{ |file| require_relative File.join(target, file) }
-  end
-
-Dir.entries(folder).each do |file|
-  next unless file.end_with?('.rb')
-  loader.call(file)
-end
+require_relative 'symbol/as_s.rb'
+require_relative 'symbol/bang.rb'
+require_relative 'symbol/chomp.rb'
+require_relative 'symbol/generate.rb'
+require_relative 'symbol/not.rb'
+require_relative 'symbol/op_div.rb'
+require_relative 'symbol/plain.rb'
+require_relative 'symbol/query.rb'
+require_relative 'symbol/setter.rb'
+require_relative 'symbol/succ.rb'
+require_relative 'symbol/thrown.rb'
+require_relative 'symbol/to_proc.rb'
+require_relative 'symbol/variablize.rb'
 

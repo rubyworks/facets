@@ -1,16 +1,38 @@
-folder = __FILE__.chomp('.rb')
+require 'facets/kernel/require_relative'
 
-target = File.basename(folder)
-
-loader = \
-  if RUBY_VERSION < '1.9'
-    lambda{ |file| require File.join(folder, file) }
-  else
-    lambda{ |file| require_relative File.join(target, file) }
-  end
-
-Dir.entries(folder).each do |file|
-  next unless file.end_with?('.rb')
-  loader.call(file)
-end
+require_relative 'enumerable/accumulate.rb'
+require_relative 'enumerable/cluster_by.rb'
+require_relative 'enumerable/collect_with_index.rb'
+require_relative 'enumerable/compact_map.rb'
+require_relative 'enumerable/count.rb'
+require_relative 'enumerable/defer.rb'
+require_relative 'enumerable/each_by.rb'
+require_relative 'enumerable/each_with_object.rb'
+require_relative 'enumerable/every.rb'
+require_relative 'enumerable/ewise.rb'
+require_relative 'enumerable/exclude.rb'
+require_relative 'enumerable/expand.rb'
+require_relative 'enumerable/filter.rb'
+require_relative 'enumerable/find_yield.rb'
+require_relative 'enumerable/frequency.rb'
+require_relative 'enumerable/graph.rb'
+require_relative 'enumerable/group_by.rb'
+require_relative 'enumerable/map_by.rb'
+require_relative 'enumerable/map_detect.rb'
+require_relative 'enumerable/map_send.rb'
+require_relative 'enumerable/map_with.rb'
+require_relative 'enumerable/map_with_index.rb'
+require_relative 'enumerable/mash.rb'
+require_relative 'enumerable/modulate.rb'
+require_relative 'enumerable/none.rb'
+require_relative 'enumerable/occur.rb'
+require_relative 'enumerable/one.rb'
+require_relative 'enumerable/per.rb'
+require_relative 'enumerable/purge.rb'
+require_relative 'enumerable/recursively.rb'
+require_relative 'enumerable/sum.rb'
+require_relative 'enumerable/take.rb'
+require_relative 'enumerable/uniq_by.rb'
+require_relative 'enumerable/visit.rb'
+require_relative 'enumerable/zip_map.rb'
 

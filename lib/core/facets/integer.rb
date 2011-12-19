@@ -1,16 +1,11 @@
-folder = __FILE__.chomp('.rb')
+require 'facets/kernel/require_relative'
 
-target = File.basename(folder)
-
-loader = \
-  if RUBY_VERSION < '1.9'
-    lambda{ |file| require File.join(folder, file) }
-  else
-    lambda{ |file| require_relative File.join(target, file) }
-  end
-
-Dir.entries(folder).each do |file|
-  next unless file.end_with?('.rb')
-  loader.call(file)
-end
+require_relative 'integer/bit.rb'
+require_relative 'integer/bitmask.rb'
+require_relative 'integer/even.rb'
+require_relative 'integer/factorial.rb'
+require_relative 'integer/multiple.rb'
+require_relative 'integer/odd.rb'
+require_relative 'integer/of.rb'
+require_relative 'integer/ordinal.rb'
 

@@ -1,16 +1,18 @@
-folder = __FILE__.chomp('.rb')
+require 'facets/kernel/require_relative'
 
-target = File.basename(folder)
-
-loader = \
-  if RUBY_VERSION < '1.9'
-    lambda{ |file| require File.join(folder, file) }
-  else
-    lambda{ |file| require_relative File.join(target, file) }
-  end
-
-Dir.entries(folder).each do |file|
-  next unless file.end_with?('.rb')
-  loader.call(file)
-end
+require_relative 'time/ago.rb'
+require_relative 'time/change.rb'
+require_relative 'time/dst_adjustment.rb'
+require_relative 'time/elapse.rb'
+require_relative 'time/future.rb'
+require_relative 'time/hence.rb'
+require_relative 'time/in.rb'
+require_relative 'time/less.rb'
+require_relative 'time/past.rb'
+require_relative 'time/round_to.rb'
+require_relative 'time/set.rb'
+require_relative 'time/shift.rb'
+require_relative 'time/stamp.rb'
+require_relative 'time/to_time.rb'
+require_relative 'time/trunc.rb'
 
