@@ -1,17 +1,10 @@
-# = Clonable
-#
-# Standard basis for adding deep #dup and #clone to a class.
-# Provides a class with deep cloneablity via the standard
-# #dup and #clone methods.
-#
-# == Credit
+# Clonable provides a standard basis for adding deep cloneablity to a class
+# via the standard #dup and #clone methods.
 #
 # Cloneable was originally ported from Jim Weirich's Rake.
 # The current version is the work of Ken Bloom.
 #
-#--
-# TODO: Is there a more robust means of determining if clone or dup is used?
-#++
+# CREDIT: Ken Bloom
 
 module Cloneable
 
@@ -25,7 +18,11 @@ module Cloneable
     #we want to know if we're being dup'ed or clone'd, because we want to
     #preserve the state of our internals the same way our state is being
     #preserved. (If we can't figure it out, we'll just use #dup.)
-    operation = caller.find{|x| x !~ /'initialize_copy'/}.match(/`(dup|clone)'/)[1] or :dup
+    operation = (
+      copy_call  = caller.find{|x| x !~ /'initialize_copy'/}
+      copy_match = copy_call.match(/`(dup|clone)'/)
+      copy_match ? copy_match[1] : :dup
+    )
 
     sibling.instance_variables.each do |ivar|
       value = sibling.instance_variable_get(ivar)
@@ -36,7 +33,20 @@ module Cloneable
     end
   end
 
+  # TODO: Is there a more robust means of determining if clone or dup is used?
+  #def clone
+  #  @_copy_operation = :clone
+  #  super
+  #end
+  #
+  #def dup
+  #  @_copy_operation = :dup
+  #  super
+  #end
+
 end 
+
+
 
 # OLD VERSION
 
