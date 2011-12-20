@@ -52,7 +52,7 @@ class Module
   def cattr_reader(*syms)
     syms.flatten.each do |sym|
       module_eval(<<-EOS, __FILE__, __LINE__)
-        unless defined? @@#{sym}
+        unless defined?(@@#{sym})
           @@#{sym} = nil
         end
 
@@ -94,7 +94,7 @@ class Module
   def cattr_writer(*syms)
     syms.flatten.each do |sym|
       module_eval(<<-EOS, __FILE__, __LINE__)
-        unless defined? @@#{sym}
+        unless defined?(@@#{sym})
           @@#{sym} = nil
         end
 
@@ -192,7 +192,7 @@ class Module
   def mattr_reader( *syms )
     syms.flatten.each do |sym|
       module_eval(<<-EOS, __FILE__, __LINE__)
-        unless defined? @@#{sym}
+        unless defined?(@@#{sym})
           @@#{sym} = nil
         end
 
@@ -235,7 +235,7 @@ class Module
   def mattr_writer(*syms)
     syms.flatten.each do |sym|
       module_eval(<<-EOS, __FILE__, __LINE__)
-        unless defined? @@#{sym}
+        unless defined?(@@#{sym})
           @@#{sym} = nil
         end
 
