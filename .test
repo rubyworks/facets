@@ -24,8 +24,6 @@ Test.run :cov do |r|
     coverage_dir 'log/coverage'
     add_filter "/test/"
     add_group "Core",       "lib/core"
-    add_group "Uncommon",   "lib/core-uncommon"
     add_group "Standard",   "lib/standard"
-    add_group "Supplement", "lib/supplemental"
   end
 end

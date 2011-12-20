@@ -17,6 +17,10 @@ vclog:
     - log/history.html
   active: false
 
+locat:
+  output: log/locat.html
+
+
 # TODO: Use ruby-test tool when ready
 #lemon:
 #  tool  : Custom

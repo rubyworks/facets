@@ -28,19 +28,9 @@ task "test:core" do
   sh "ruby-test #{test_flags} -Ilib/core test/core"
 end
 
-desc "run uncommon unit tests"
-task "test:uncommon" do
-  sh "ruby-test #{test_flags} -Ilib/core-uncommon test/core-uncommon"
-end
-
 desc "run standard unit tests"
 task "test:standard" do
   sh "ruby-test #{test_flags} -Ilib/standard test/standard"
-end
-
-desc "run supplemental unit tests"
-task "test:supplemental" do
-  sh "ruby-test #{ruby_flags} -Ilib/supplemental test/supplemental"
 end
 
 desc "run all unit tests with ActiveSupport loaded"
@@ -49,14 +39,8 @@ task 'test:all:activesupport' => [:include_activesupport, 'test:all']
 desc "run core unit tests with ActiveSupport loaded"
 task 'test:core:activesupport' => [:include_activesupport, 'test:core']
 
-desc "run uncommon unit tests with ActiveSupport loaded"
-task 'test:uncommon:activesupport' => [:include_activesupport, 'test:uncommon']
-
 desc "run standard unit tests with ActiveSupport loaded"
 task 'test:standard:activesupport' => [:include_activesupport, 'test:standard']
-
-desc "run supplemental unit tests with ActiveSupport loaded"
-task 'test:supplemental:activesupport' => [:include_activesupport, 'test:supplemental']
 
 task 'include_activesupport' do
   require 'activesupport'
@@ -69,6 +53,134 @@ def test_flags
   end
   flags.join(' ')
 end
+
+
+#
+# TEST COVERAGE
+# ----------------------------------------------------------------------------
+
+desc "show test coverage"
+task "cov" do
+  sh "lemon cov -I#{PATH} test"
+end
+
+desc "show core test coverage"
+task "cov:core" do
+  sh "lemon cov -Ilib/core test/core"
+end
+
+desc "show standard test coverage"
+task "cov:standard" do
+  sh "lemon cov -Ilib/standard test/standard"
+end
+
+desc "show core coverage by file name"
+task 'cov:file:core' do
+  core_scripts = Dir['lib/core/facets/**/*.rb'].reject{ |s| File.directory?(s) }
+  core_tests   = Dir['test/core/**/*.rb']
+
+  core_scripts = core_scripts.map do |f|
+    md = /lib\/core\/facets\/(.*?)$/.match(f)
+    md[1]
+  end
+
+  core_tests = core_tests.map do |f|
+    md = /test\/core\/(.*?)$/.match(f)
+    md[1].sub('/test_', '/')
+  end
+
+  diff = core_scripts - core_tests
+
+  # remove core collectives
+  diff = diff - %w{
+    array.rb binding.rb cattr.rb class.rb comparable.rb dir.rb
+    enumerable.rb exception.rb hash.rb file.rb filetest.rb float.rb
+    integer.rb kernel.rb matchdata.rb method.rb module.rb nilclass.rb
+    numeric.rb object.rb proc.rb process.rb range.rb regexp.rb string.rb
+    symbol.rb time.rb unboundmethod.rb
+  }
+
+  puts diff.sort.join("\n")
+  puts
+  puts "#{diff.size} files uncovered."
+end
+
+
+#
+# QED
+# ----------------------------------------------------------------------------
+
+desc "run qed docs"
+task 'qed' do
+  sh "qed #{qed_flags} -I#{PATH} qed"
+end
+
+desc "run core qed docs"
+task 'qed:core' do
+  sh "qed #{qed_flags} -I#{PATH} qed/core"
+end
+
+desc "run standard qed docs"
+task 'qed:standard' do
+  sh "qed #{qed_flags} -I#{PATH} qed/standard"
+end
+
+desc "run core qed from code base"
+task 'qed:code' do
+  sh "qed #{qed_flags} -c -Ilib/core lib/core"
+end
+
+def qed_flags
+  flags = []
+  if ENV['verbose']
+    flags << '-v'
+  end
+  flags.join(' ')
+end
+
+
+#
+# Extension Clashes
+#-----------------------------------------------------------------------------
+
+# TODO: need to fork each lookup via a seprate process to get a clean picture
+
+desc "print method clashes with ActiveSupport"
+task 'clash:as' do
+  #require 'lemon/model/snapshot'
+  #snap1 = Snapshot.new
+  #$LOAD_PATH.unshift('lib/core')
+  #$LOAD_PATH.unshift('lib/more')
+  #$LOAD_PATH.unshift('lib/tour')
+  #require 'facets' # 'facets/all'
+  #snap2 = Snapshot.new
+end
+
+desc "print method clashes with Ruby"
+task 'clash:ruby' do
+  require 'lemon/model/snapshot'
+end
+
+
+#
+# CHECK CHERRY PICKING
+# ----------------------------------------------------------------------------
+
+desc 'check cherry pickability'
+task 'check:cherry' do
+  files = Dir['lib/**/*.rb']
+  files.each do |file|
+    out = `ruby -Ilib #{file}`
+    if out != ''
+      puts file
+      puts out
+    end
+  end
+end
+
+
+
+
 
 #def add_loadpath(*paths)
 #  live = ENV['live']
@@ -146,148 +258,4 @@ end
 #    end
 #  end
 #end
-
-
-#
-# TEST COVERAGE
-# ----------------------------------------------------------------------------
-
-desc "show test coverage"
-task "cov" do
-  sh "lemon cov -I#{PATH} test"
-end
-
-desc "show core test coverage"
-task "cov:core" do
-  sh "lemon cov -Ilib/core test/core"
-end
-
-desc "show more test coverage"
-task "cov:more" do
-  sh "lemon cov -Ilib/core-uncommon test/core-uncommon"
-end
-
-desc "show standard test coverage"
-task "cov:tour" do
-  sh "lemon cov -Ilib/standard test/standard"
-end
-
-desc "show supplemental test coverage"
-task "cov:tour" do
-  sh "lemon cov -Ilib/supplemental test/supplemental"
-end
-
-desc "show core coverage by file name"
-task 'cov:file:core' do
-  core_scripts = Dir['lib/core/facets/**/*.rb'].reject{ |s| File.directory?(s) }
-  core_tests   = Dir['test/core/**/*.rb']
-
-  core_scripts = core_scripts.map do |f|
-    md = /lib\/core\/facets\/(.*?)$/.match(f)
-    md[1]
-  end
-
-  core_tests = core_tests.map do |f|
-    md = /test\/core\/(.*?)$/.match(f)
-    md[1].sub('/test_', '/')
-  end
-
-  diff = core_scripts - core_tests
-
-  # remove core collectives
-  diff = diff - %w{
-    array.rb binding.rb cattr.rb class.rb comparable.rb dir.rb
-    enumerable.rb exception.rb hash.rb file.rb filetest.rb float.rb
-    integer.rb kernel.rb matchdata.rb method.rb module.rb nilclass.rb
-    numeric.rb object.rb proc.rb process.rb range.rb regexp.rb string.rb
-    symbol.rb time.rb unboundmethod.rb
-  }
-
-  puts diff.sort.join("\n")
-  puts
-  puts "#{diff.size} files uncovered."
-end
-
-
-#
-# QED
-# ----------------------------------------------------------------------------
-
-desc "run qed docs"
-task 'qed' do
-  sh "qed #{qed_flags} -I#{PATH} qed"
-end
-
-desc "run core qed docs"
-task 'qed:core' do
-  sh "qed #{qed_flags} -I#{PATH} qed/core"
-end
-
-desc "run more qed docs"
-task 'qed:more' do
-  sh "qed #{qed_flags} -I#{PATH} qed/core-uncommon"
-end
-
-desc "run standard qed docs"
-task 'qed:standard' do
-  sh "qed #{qed_flags} -I#{PATH} qed/standard"
-end
-
-desc "run supplemental qed docs"
-task 'qed:supplemental' do
-  sh "qed #{qed_flags} -I#{PATH} qed/supplemental"
-end
-
-desc "run core qed from code base"
-task 'qed:code' do
-  sh "qed #{qed_flags} -c -Ilib/core lib/core"
-end
-
-def qed_flags
-  flags = []
-  if ENV['verbose']
-    flags << '-v'
-  end
-  flags.join(' ')
-end
-
-
-#
-# Extension Clashes
-#-----------------------------------------------------------------------------
-
-# TODO: need to fork each lookup via a seprate process to get a clean picture
-
-desc "print method clashes with ActiveSupport"
-task 'clash:as' do
-  #require 'lemon/model/snapshot'
-  #snap1 = Snapshot.new
-  #$LOAD_PATH.unshift('lib/core')
-  #$LOAD_PATH.unshift('lib/more')
-  #$LOAD_PATH.unshift('lib/tour')
-  #require 'facets' # 'facets/all'
-  #snap2 = Snapshot.new
-end
-
-desc "print method clashes with Ruby"
-task 'clash:ruby' do
-  require 'lemon/model/snapshot'
-end
-
-
-#
-# CHECK CHERRY PICKING
-# ----------------------------------------------------------------------------
-
-desc 'check cherry pickability'
-task 'check:cherry' do
-  files = Dir['lib/**/*.rb']
-  files.each do |file|
-    out = `ruby -Ilib #{file}`
-    if out != ''
-      puts file
-      puts out
-    end
-  end
-end
 
