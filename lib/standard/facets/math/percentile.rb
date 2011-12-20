@@ -1,4 +1,4 @@
-class Array
+module Math
 
   # Returns the percentile value for percentile _pcnt_; nil if array is empty.
   #
@@ -13,14 +13,14 @@ class Array
   # CREDIT: Ben Koski
   #
   # @non-core
-  #   require 'facets/array/op_pow'
+  #   require 'facets/array/precentile'
   #
-  def percentile(pcnt)
-    sorted_array = self.sort
+  def self.percentile(array, pcnt)
+    sorted_array = array.sort
 
-    return nil if self.length == 0
+    return nil if array.length == 0
 
-    rank  = (pcnt.to_f / 100) * (self.length + 1)
+    rank  = (pcnt.to_f / 100) * (array.length + 1)
     whole = rank.truncate
  
     # if has fractional part
@@ -33,7 +33,7 @@ class Array
       return (f * (s1 - s0)) + s0
     else
       return sorted_array[whole - 1]
-    end    
+    end
   end
   
 end
