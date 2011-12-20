@@ -1,5 +1,3 @@
-# = Preinitialize
-#
 # This is an object preinitialize system, which provides
 # an elegant way to initialize an object allowing the
 # class to provide additional default structure to an
@@ -36,26 +34,6 @@
 # If neded the original new method has been aliased, albeit
 # <tt>postinitialize_new</tt> is probably a bit of a misnomer.
 
-#--
-# class Module
-#
-#   def default_instance_variables(complete=false)
-#     @default_instance_variables ||= {}
-#     unless complete
-#       return @default_instance_variables
-#     else
-#       parent = ancestors[1]
-#       if parent
-#         return @default_instance_variables.merge(parent.default_instance_variables)
-#       else
-#         return @default_instance_variables
-#       end
-#     end
-#   end
-#
-# end
-#++
-
 module Preinitializable
 
   def self.included(base)
@@ -91,4 +69,26 @@ module Preinitializable
   end
 
 end
+
+
+
+#--
+# class Module
+#
+#   def default_instance_variables(complete=false)
+#     @default_instance_variables ||= {}
+#     unless complete
+#       return @default_instance_variables
+#     else
+#       parent = ancestors[1]
+#       if parent
+#         return @default_instance_variables.merge(parent.default_instance_variables)
+#       else
+#         return @default_instance_variables
+#       end
+#     end
+#   end
+#
+# end
+#++
 
