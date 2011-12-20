@@ -6,7 +6,7 @@ test_case Dir do
 
     test do
       r = Dir.multiglob('test/c*').sort
-      r.assert == ['test/core', 'test/core-uncommon']
+      r.assert == ['test/core']
     end
 
   end

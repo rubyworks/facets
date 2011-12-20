@@ -1,6 +1,6 @@
 require 'facets/equitable'
 
-test_case Equatable do
+test_case Equitable do
 
   c = Class.new
   c.class_eval { 

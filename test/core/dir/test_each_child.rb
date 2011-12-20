@@ -13,7 +13,7 @@ test_case Dir do
         c << path
       end
       d.close
-      c.sort.assert == ['core', 'core-uncommon', 'standard', 'supplemental']
+      c.sort.assert == ['core', 'standard']
     end
 
   end

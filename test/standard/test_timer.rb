@@ -22,27 +22,27 @@ test_case Timer do
 
   method :start do
     test "out of time" do
-      t = Timer.new(1)
+      t = Timer.new(0.5)
       expect TimeoutError do
         t.start
-        sleep 2
+        sleep 1
         t.stop
       end
     end
 
     test "in time" do
-      t = Timer.new(2)
+      t = Timer.new(1)
       t.start
-      sleep 1
+      sleep 0.5
       t.stop
     end
   end
 
   method :stop do
     test "in time" do
-      t = Timer.new(2)
+      t = Timer.new(1)
       t.start
-      sleep 1
+      sleep 0.5
       t.stop
     end
   end

@@ -38,4 +38,4 @@ description: Facets is the premier collection of extension methods for the Ruby 
   Facets includes a few additional classes and mixins suitable to wide variety of
   applications.
 organization: rubyworks
-date: '2011-12-18'
+date: '2011-12-20'

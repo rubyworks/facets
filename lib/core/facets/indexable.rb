@@ -1,5 +1,3 @@
-# = Indexable
-#
 # Indexable is a mixin that provides index based methods,
 # working soley with four methods: #index, #slice, #splice
 # and #size.

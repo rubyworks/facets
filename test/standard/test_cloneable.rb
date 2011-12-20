@@ -14,44 +14,44 @@ test_case Cloneable do
 
   method :dup do
     test do
-      a=foo.new
-      b=a.dup
-      assert_not_equal a.bar_id,b.bar_id
+      a = foo.new
+      b = a.dup
+      a.bar_id.refute == b.bar_id
     end
 
-    test do
-      a=foo.new
+    test "tainted" do
+      a = foo.new
       a.taint
-      b=a.dup
-      assert b.tainted?, "b should be tainted"
+      b = a.dup
+      b.assert.tainted?
     end
 
-    test do
-      a=foo.new
+    test "frozen" do
+      a = foo.new
       a.freeze
-      b=a.dup
-      assert !b.frozen?, "b should not be frozen"
+      b = a.dup
+      b.refute.frozen?
     end
   end
 
   method :clone do
     test do
-      a=foo.new
-      b=a.clone
+      a = foo.new
+      b = a.clone
       assert(a.bar_id != b.bar_id, "should not be equal")
     end
 
-    test do
-      a=foo.new
+    test "tainted" do
+      a = foo.new
       a.taint
-      b=a.dup
+      b = a.clone
       assert b.tainted?, "b should be tainted"
     end
 
-    test do
-      a=foo.new
+    test "frozen" do
+      a = foo.new
       a.freeze
-      b=a.clone
+      b = a.clone
       assert b.frozen?, "b should be frozen"
     end
 

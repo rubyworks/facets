@@ -22,7 +22,7 @@ test_case Instantiable do
     end
   end
 
-  class_method :new do
+  method :new do
     test do
       m = M.new(1)
       1.assert == m.a

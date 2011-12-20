@@ -1,35 +1,39 @@
-require 'facets/preinitilizable'
+require 'facets/kernel/heirarchically'
 
-test_case Preinitalizable
+test_case Object do
 
-  module M
-    include Preinitializable
+  setup do
+    m = Module.new do
+      def preinitialize
+        @a = 10
+      end
+      def a; @a ; end
+    end
 
-    def preinitialize
-      @a = 10
+    @x = Class.new do
+      include m
+      def initialize
+        hierarchical_send(:preinitialize)
+      end
+    end
+
+    @y = Class.new(@x) do
+      def initialize
+        @a = "not 10"
+        super
+      end
     end
   end
 
-  class X
-    include M
-    def a; @a ; end
-  end
-
-  class Y < X
-    def initialize
-      super
-    end
-  end
-
-  class_method :new do
+  method :hierarchical_send do
     test do
-      x = X.new
-      10.assert == x.a
+      a = @x.new.a
+      a.assert == 10
     end
 
-    test do
-      y = Y.new
-      10.assert == y.a
+    test 'subclass' do
+      a = @y.new.a
+      a.assert == 10
     end
   end
 
