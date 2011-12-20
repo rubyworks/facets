@@ -11,7 +11,7 @@ module Instantiable
     mod.extend self
   end
 
-  # Never use a class agian! ;)
+  # Never use a class again! ;)
 
   def new(*args,&blk)
     mod = self
