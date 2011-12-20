@@ -1,85 +1,35 @@
-# = Interval
-#
-# While Ruby support the Range class out of the box, is does not quite
-# fullfil the role od a real Interval class. For instance, it does
-# not support excluding the front sentinel. This is because Range
-# also tries to do triple duty as a simple Sequence and as a simple Tuple-Pair,
-# thus limiting its potential as an Interval. The Interval class remedies
-# the situation by commiting to interval behavior, and then extends the class'
-# capabilites beyond that of the standard Range in ways that naturally
-# fall out of that.
-#
-# Range depends on two methods: #succ and #<=>. If numeric
-# ranges were the only concern, those could just as well be #+ and #<=>,
-# but esoteric forms make that unfeasible --the obvious example being a String
-# range. But a proper Interval class requires mathematical continuation,
-# thus the Interval depends on #+ and #<=>, as well as #- as the inverse of #+.
-#
-#   i = Interval.new(1,5)
-#   i.to_a       #=> [1,2,3,4,5]
-#
-#   i = Interval[0,5]
-#   i.to_a(2)    #=> [0,2,4]
-#
-#   i = Interval[1,5]
-#   i.to_a(-1)   #=> [5,4,3,2,1]
-#
-#   i = Interval[1,3]
-#   i.to_a(1,2)  #=> [1.0,1.5,2.0,2.5,3.0]
-#
-# == Authors
-#
-# * Thomas Sawyer
-#
-# == Todo
-#
-# * Still need to tie in Infinity.
-#
-# == Copying
-#
-# Copyright (c) 2004 Thomas Sawyer
-#
-# Ruby License
-#
-# This module is free software. You may use, modify, and/or redistribute this
-# software under the same terms as Ruby.
-#
-# This program is distributed in the hope that it will be useful, but WITHOUT
-# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-# FOR A PARTICULAR PURPOSE.
-
 require 'facets/multiton'
 require 'facets/enumargs'
 #require 'facets/infinity'
 
-# = Interval
-#
+# TODO: Tie in Infinity with Interval.
+
 # While Ruby support the Range class out of the box, is does not quite
 # fullfil the role od a real Interval class. For instance, it does
-# not support excluding the front sentinel. This is because Range
-# also tries to do triple duty as a simple Sequence and as a simple Tuple-Pair,
+# not support excluding the front sentinel. This is because Range also
+# tries to do triple duty as a simple sequence and as a simple tuple-pair,
 # thus limiting its potential as an Interval. The Interval class remedies
 # the situation by commiting to interval behavior, and then extends the class'
 # capabilites beyond that of the standard Range in ways that naturally
 # fall out of that.
 #
-# Range depends on two methods: #succ and #<=>. If numeric
-# ranges were the only concern, those could just as well be #+ and #<=>,
-# but esoteric forms make that unfeasible --the obvious example being a String
-# range. But a proper Interval class requires mathematical continuation,
-# thus the Interval depends on #+ and #<=>, as well as #- as the inverse of #+.
+# Range depends on two methods: #succ and #<=>. If numeric ranges were the
+# only concern, those could just as well be #+ and #<=>, but esoteric forms
+# make that unfeasible --the obvious example being a String range. But a
+# proper Interval class requires mathematical continuation, thus the Interval
+# depends on #+ and #<=>, as well as #- as the inverse of #+.
 #
 #   i = Interval.new(1,5)
-#   i.to_a       #=> [1,2,3,4,5]
+#   i.to_a            #=> [1,2,3,4,5]
 #
 #   i = Interval[0,5]
-#   i.to_a(2)    #=> [0,2,4]
+#   i..step(2).to_a   #=> [0,2,4]
 #
 #   i = Interval[1,5]
-#   i.to_a(-1)   #=> [5,4,3,2,1]
+#   i.step(-1).to_a   #=> [5,4,3,2,1]
 #
 #   i = Interval[1,3]
-#   i.to_a(1,2)  #=> [1.0,1.5,2.0,2.5,3.0]
+#   i.step(1,2).to_a  #=> [1.0,1.5,2.0,2.5,3.0]
 #
 class Interval
 
@@ -152,9 +102,9 @@ class Interval
 
   # Returns a new interval with one of the two sentinels opened or closed
   def first_closed ; Interval.new(@first, @last, false, true) ; end
-  def last_closed ; Interval.new(@first, @last, true, false) ; end
+  def last_closed  ; Interval.new(@first, @last, true, false) ; end
   def first_opened ; Interval.new(@first, @last, true, false) ; end
-  def last_opened ; Interval.new(@first, @last, false, true) ; end
+  def last_opened  ; Interval.new(@first, @last, false, true) ; end
 
   # Unary shorthands. These return a new interval exclusive of first,
   # last or both sentinels, repectively.
@@ -173,6 +123,7 @@ class Interval
   # Returns the length of the interval as the difference between
   # the first and last elements. Returns +nil+ if the sentinal objects
   # do not support distance comparison (#distance).
+  #
   # TODO: Add +n+ parameter to count segmentations like those produced by #each.
   def distance
     @last - @first
@@ -238,8 +189,17 @@ class Interval
   #   1..5.each(2) { |e| ... }     #=> 1 3 5
   #   1..5.each(1,2) { |e| ... }   #=> 1.0 1.5 2.0 2.5 3.0 3.5 4.0 4.5 5.0
   #
-  def each(n=1, d=nil)  # :yield:
+  # @todo Deprecate arguments and simplify each definition accordingly.
+  def each(n=nil, d=nil)  # :yield:
+    if n
+      warn "FACETS: `interval.each(n,d){...}` will be deprecated.\n" +
+           "Use `interval.step(n,d).each{...}` instead."
+    else
+      n = 1
+    end
+
     return (n < 0 ? @last : @first) if degenerate?  # is this right for all values of n ?
+
     s = d ? self.length.to_f * (n.to_f / d.to_f) : n.abs
     raise "Cannot iterate over zero length steps." if s == 0
     s = s * @direction
@@ -265,7 +225,40 @@ class Interval
       end
     end
   end
-  alias_method( :step, :each )
+
+  #
+  def step(n=1, d=nil)  # :yield:
+    return (n < 0 ? @last : @first) if degenerate?  # is this right for all values of n ?
+
+    if block_given?
+      s = d ? self.length.to_f * (n.to_f / d.to_f) : n.abs
+      raise "Cannot iterate over zero length steps." if s == 0
+      s = s * @direction
+      if n < 0
+        e = @exclude_last ? @last - s : @last
+        #e = @exclude_last ? @last.pred(s) : @last
+        t = @exclude_last ? 1 : 0
+        #while e.cmp(@first) >= t
+        while (e <=> @first) >= t
+          yield(e)
+          e -= s
+          #e = e.pred(s)
+        end
+      else
+        e = @exclude_first ? @first + s : @first
+        #e = @exclude_first ? @first.succ(s) : @first
+        t = @exclude_last ? -1 : 0
+        #while e.cmp(@last) <= t
+        while (e <=> @last) <= t
+          yield(e)
+          e += s
+          #e = e.succ(s)
+        end
+      end
+    else
+      Enumerator.new(self, :step, n, d)
+    end
+  end
 
   # Should there be a #reverse_each ?
   # Since #each can now take a negative argument, this isn't really needed.
