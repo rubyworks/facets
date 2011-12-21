@@ -2,34 +2,36 @@ require 'facets/instantiable'
 
 test_case Instantiable do
 
-  module M
-    extend Instantiable
+  setup do
+    @m = Module.new do
+      extend Instantiable
 
-    attr :a
+      attr :a
 
-    def initialize( a )
-      @a = a
+      def initialize( a )
+        @a = a
+      end
     end
-  end
 
-  module N
-    include Instantiable
+    @n = Module.new do
+      include Instantiable
 
-    attr :a
+      attr :a
 
-    def initialize( a )
-      @a = a
+      def initialize( a )
+        @a = a
+      end
     end
   end
 
   method :new do
     test do
-      m = M.new(1)
+      m = @m.new(1)
       1.assert == m.a
     end
 
     test do
-      m = N.new(1)
+      m = @n.new(1)
       1.assert == m.a
     end
   end

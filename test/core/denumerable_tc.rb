@@ -1,5 +1,5 @@
 covers 'facets/denumerable'
-#require 'facets/enumerable/defer'
+covers 'facets/enumerable/defer'
 #require 'facets/enumerable/take'
 
 test_case Denumerable do
