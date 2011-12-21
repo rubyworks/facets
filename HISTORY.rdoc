@@ -1,5 +1,46 @@
 = Facets Release History
 
+== 2.9.3 / 2011-12-21
+
+This release consists of just a few minor deprecations and additions.
+It is primarily a "touch-up" release, prior to the next major 3.0 release.
+
+Changes:
+
+* New Features
+
+  * Add Kernel#hierarchical_send (better replacement for preinitialize.rb).
+  * Add Kernel#hierarchically, which supports #hierarchical_send.
+  * Add Array#median, to get the sorted middle of an array.
+  * Add Math#percentile and Math#median.
+  * Add Instantiable mixin (returns from Mixers spin-off project).
+  * Add Equitable mixin (returns from Mixers spin-off project).
+  * Add Cloneable mixin (returns from Mixers spin-off project).
+  * Add Array#each_pair and #each_value.
+  * Add Numeric#positive? and #numeric?.
+
+* Improved Features
+
+  * Imporve FileUtils#amass to be more robust.
+
+* Bug Fixes
+
+  * Fix Hash#rekey to keep default_proc.
+  * Conditionally define Binding#self for Rubinius.
+
+* Deprecations
+
+  * Deprecate Preinitializable mixin.
+  * Deprecate main.rb, spun-off to `main_like_module` gem.
+
+* Implementation Details
+
+  * Consolidated library into two parts, `core` and `standard`.
+  * Old term `more`, a synonym for `standard`, may be phased out.
+  * Relative requires are being used more extensively.
+  * Collection scripts, e.g. `require 'facets'`, are static.
+
+
 == 2.9.2 / 2011-08-23
 
 The main purpose of this release is a fix for Module#redefine_method,
