@@ -3,6 +3,8 @@ require 'facets/time/dst_adjustment'
 
 class Time
 
+  # TODO: Deprecate use of #dst-adjustment in Time#shift ?
+
   # Returns a new Time representing the time shifted by the time-units given.
   # Positive number shift the time forward, negative number shift the time 
   # backward.
