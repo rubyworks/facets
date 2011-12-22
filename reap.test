@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-PATH = "lib/core:lib/more:lib/standard:lib/supplement"
+PATH = "lib/core:lib/standard"
 
 #
 # RUN TESTS (requires Lemon)
