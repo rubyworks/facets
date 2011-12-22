@@ -16,7 +16,7 @@ class Module
   #
   # CREDIT: David Heinemeier Hansson
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/module/cattr'
   #
   def cattr(*syms)
@@ -46,7 +46,7 @@ class Module
   #
   # CREDIT: David Heinemeier Hansson
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/module/cattr'
   #
   def cattr_reader(*syms)
@@ -88,7 +88,7 @@ class Module
   #
   # CREDIT: David Heinemeier Hansson
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/module/cattr'
   #
   def cattr_writer(*syms)
@@ -127,7 +127,7 @@ class Module
   #
   # CREDIT: David Heinemeier Hansson
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/module/cattr'
   #
   def cattr_accessor(*syms)
@@ -156,7 +156,7 @@ class Module
   #
   # CREDIT: David Heinemeier Hansson
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/module/cattr'
   #
   def mattr(*syms)
@@ -186,7 +186,7 @@ class Module
   #
   # CREDIT: David Heinemeier Hansson
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/module/cattr'
   #
   def mattr_reader( *syms )
@@ -229,7 +229,7 @@ class Module
   #
   # CREDIT: David Heinemeier Hansson
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/module/cattr'
   #
   def mattr_writer(*syms)
@@ -269,7 +269,7 @@ class Module
   #
   # CREDIT: David Heinemeier Hansson
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/module/cattr'
   #
   def mattr_accessor(*syms)

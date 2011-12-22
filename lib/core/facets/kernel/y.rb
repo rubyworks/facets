@@ -13,7 +13,7 @@ module Kernel
   #
   # CREDIT: Michael Fellinger
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/kernel/y'
   #
   def Y(*args, &block)

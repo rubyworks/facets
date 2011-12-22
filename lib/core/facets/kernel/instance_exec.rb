@@ -21,7 +21,7 @@ class Object #module Kernel
     # However it is a core method in Ruby 1.9, so this only matters for users
     # of Ruby 1.8.x or below.
     #
-    # @non-core
+    # @uncommon
     #   require 'facets/kernel/instance_exec'
     #
     def instance_exec(*args, &block)

@@ -3,7 +3,7 @@ class Class
   # Return true if a class is the singleton class of
   # an object.
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/class/singleton'
   #
   def singleton? 

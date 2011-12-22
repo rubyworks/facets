@@ -12,7 +12,7 @@ class Module
   #
   # CREDIT: Trans
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/module/module_load'
   #
   def module_load( path )
@@ -47,7 +47,7 @@ class Module
   #
   # CREDIT: Trans
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/module/module_load'
   #
   def module_require( path )

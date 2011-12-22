@@ -5,7 +5,7 @@ class Method
   # NOTE: This method is not a common core extension and is not
   # loaded automatically when using <code>require 'facets'</code>.
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/method/memoize'
   #
   def memoize(value)

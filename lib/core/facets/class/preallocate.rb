@@ -31,7 +31,7 @@ class Class
   #
   # CREDIT: Trans
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/class/preallocate'
   #
   def preallocate(aspect)

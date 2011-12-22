@@ -25,7 +25,7 @@ class Integer
   # NOTE: This method is not a common core extension and is not
   # loaded automatically when using <code>require 'facets'</code>.
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/integer/roman'
   #
   def roman
@@ -56,7 +56,7 @@ class String
   # NOTE: This method is not a common core extension and is not
   # loaded automatically when using <code>require 'facets'</code>.
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/string/roman'
   #
   def roman
@@ -78,7 +78,7 @@ class String
   # NOTE: This method is not a common core extension and is not
   # loaded automatically when using <code>require 'facets'</code>.
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/string/roman'
   #
   def roman?

@@ -42,7 +42,7 @@ class Module
   #
   # CREDIT: Thomas Sawyer
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/module/class_inheritor'
   #
   def class_inheritor(key, obj, op=nil, &fop)

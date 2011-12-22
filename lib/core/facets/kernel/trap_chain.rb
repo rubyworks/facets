@@ -13,7 +13,7 @@ module Kernel
   #
   # CREDIT: Tyler Rick
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/kernel/trap_chain'
   #
   def trap_chain(signal_name, *args, &block)

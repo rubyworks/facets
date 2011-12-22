@@ -8,7 +8,7 @@ class Module
   #
   # CREDIT: ?
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/module/attr_validator'
   #
   def attr_validator(*symbols, &validator)
@@ -30,7 +30,7 @@ class Module
   # NOTE: This method is not a common core extension and is not
   # loaded automatically when using <code>require 'facets'</code>.
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/module/attr_validator'
   #
   def alias_validator(*args)

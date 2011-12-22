@@ -20,7 +20,7 @@ class Module
   #
   # CREDIT Trans
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/module/preextend'
   #
   def preextend(aspect)

@@ -4,7 +4,7 @@ class Module
   # NOTE: This method is not a common core extension and is not
   # loaded automatically when using <code>require 'facets'</code>.
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/module/attr_class_accessor'
   #
   def attr_class_accessor(name)
@@ -16,7 +16,7 @@ class Module
   # NOTE: This method is not a common core extension and is not
   # loaded automatically when using <code>require 'facets'</code>.
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/module/attr_class_reader'
   #
   def attr_class_reader(name)
@@ -34,7 +34,7 @@ class Module
   # NOTE: This method is not a common core extension and is not
   # loaded automatically when using <code>require 'facets'</code>.
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/module/attr_class_writer'
   #
   def attr_class_writer(name)

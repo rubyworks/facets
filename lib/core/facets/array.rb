@@ -20,7 +20,7 @@ require_relative 'array/extract_options.rb'
 require_relative 'array/from.rb'
 require_relative 'array/index.rb'
 require_relative 'array/indexable.rb'
-#require_relative 'array/median.rb'             # non-core
+#require_relative 'array/median.rb'             # uncommon
 require_relative 'array/merge.rb'
 require_relative 'array/mode.rb'
 require_relative 'array/nonuniq.rb'
@@ -28,13 +28,13 @@ require_relative 'array/not_empty.rb'
 require_relative 'array/only.rb'
 require_relative 'array/pad.rb'
 require_relative 'array/peek.rb'
-#require_relative 'array/percentile.rb'         # non-core
+#require_relative 'array/percentile.rb'         # uncommon
 require_relative 'array/permutation.rb'
 require_relative 'array/poke.rb'
 require_relative 'array/probability.rb'
 require_relative 'array/product.rb'
 require_relative 'array/pull.rb'
-#require_relative 'array/op_pow.rb'             # non-core
+#require_relative 'array/op_pow.rb'             # uncommon
 require_relative 'array/recurse.rb'
 require_relative 'array/recursively.rb'
 require_relative 'array/rotate.rb'

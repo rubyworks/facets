@@ -36,7 +36,7 @@ class Module
   #
   # THANKS: Nobu Nakada, Ulysses
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/module/class_extend'
   #
   def class_extend(*mods, &block)
@@ -78,7 +78,7 @@ class Class
   # The alternative is to "undef_method :class_extend",
   # but this seems uneccessarily limited.
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/module/class_extend'
   #
   def class_extend(*mods, &block)

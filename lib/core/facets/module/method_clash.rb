@@ -24,7 +24,7 @@ class Module
   #
   # CREDIT: Thomas Sawyer, Robert Dober
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/module/method_clash'
   #
   def method_clash(other)
@@ -54,7 +54,7 @@ class Module
   # Uses #method_clash to return +true+ or +false+ if there
   # are method name clashes.
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/module/method_clash'
   #
   def method_clash?(other) 

@@ -6,7 +6,7 @@ class Array
   # NOTE: This method is not a common core extension and is not
   # loaded automatically when using <code>require 'facets'</code>.
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/array/op_pow'
   #
   alias_method :**, :product

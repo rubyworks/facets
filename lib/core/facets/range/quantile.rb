@@ -5,6 +5,9 @@ class Range
   # If n=4 the quantity is called a quartile, and if n=100
   # it is called a percentile.
   #
+  # @uncommon
+  #   require 'facets/range/quantile'
+  #
   # @return [Integer] the kth n-tile
   def quantile(k, n=100)
     return 1 if k < first

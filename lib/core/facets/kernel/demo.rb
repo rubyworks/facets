@@ -19,7 +19,7 @@ module Kernel
   # NOTE: This method is not a common core extension and is not
   # loaded automatically when using <code>require 'facets'</code>.
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/kernel/demo'
   #
   def demo(out=$stdout,&block)

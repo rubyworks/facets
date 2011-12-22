@@ -9,11 +9,11 @@ module Enumerable
   # NOTE: This method is not a common core extension and is not
   # loaded automatically when using <code>require 'facets'</code>.
   #
-  # TODO: Perhaps #matches? would be a better name?
+  # TODO: Give better name, perhaps #matches?
   #
   # CREDIT: Lavir the Whiolet
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/enumerable/has'
   #
   def has?(what)

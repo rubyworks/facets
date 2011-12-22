@@ -5,7 +5,7 @@ class Module
   #
   #   s = "HELLO"
   #   String.class?(s)  #=> true
-
+  #
   alias_method :class?, :===
 
 end

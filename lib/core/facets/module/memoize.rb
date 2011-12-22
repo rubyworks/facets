@@ -4,7 +4,7 @@ class Module
 
   # This is here for backward compatibility.
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/module/memoize'
   #
   def memoize(*args)

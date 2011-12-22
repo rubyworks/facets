@@ -26,7 +26,7 @@ class Module
   #
   # CREDIT: Pit Captain
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/module/method_space'
   #
   def method_space(name, mod=nil, &blk)
@@ -97,7 +97,7 @@ class Module
   # NOTE: This method is not a common core extension and is not
   # loaded automatically when using <code>require 'facets'</code>.
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/module/method_space'
   #
   def include_as(h)

@@ -11,7 +11,7 @@ class Module
   #
   # CREDIT: Howard Yeh
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/module/let'
   #
   def let(var,&block)

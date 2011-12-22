@@ -19,7 +19,7 @@ class Module
   # NOTE: This method is not a common core extension and is not
   # loaded automatically when using <code>require 'facets'</code>.
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/module/enclosure'
   #
   def enclosure
@@ -57,7 +57,7 @@ class Module
   # NOTE: This method is not a common core extension and is not
   # loaded automatically when using <code>require 'facets'</code>.
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/module/enclosures'
   #
   def enclosures
@@ -84,7 +84,7 @@ class Module
   # NOTE: This method is not a common core extension and is not
   # loaded automatically when using <code>require 'facets'</code>.
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/module/enclosure'
   #
   def encname

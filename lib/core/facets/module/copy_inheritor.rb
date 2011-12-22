@@ -20,7 +20,7 @@ class Module
   #
   # CREDIT: Thomas Sawyer
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/module/copy_inheritor'
   #
   def copy_inheritor(name, default={})

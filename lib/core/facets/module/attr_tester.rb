@@ -16,7 +16,7 @@ class Module
   #
   # CREDIT: Trans
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/module/attr_tester'
   #
   def attr_tester(*args)
@@ -40,7 +40,7 @@ class Module
   #
   # CREDIT: Trans
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/module/attr_tester'
   #
   def alias_tester(*args)

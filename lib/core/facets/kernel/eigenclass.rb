@@ -13,7 +13,7 @@ module Kernel
   #
   # CREDIT: WhyTheLuckyStiff
   #
-  # @non-core
+  # @uncommon
   #   require 'facets/kernel/eigenclass'
   #
   def eigenclass
