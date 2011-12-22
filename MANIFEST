@@ -130,6 +130,8 @@ lib/core/facets/exception/raised.rb
 lib/core/facets/exception/suppress.rb
 lib/core/facets/exception.rb
 lib/core/facets/file/append.rb
+lib/core/facets/file/atomic_id.rb
+lib/core/facets/file/atomic_open.rb
 lib/core/facets/file/atomic_write.rb
 lib/core/facets/file/create.rb
 lib/core/facets/file/ext.rb
@@ -403,6 +405,7 @@ lib/core/facets/process/daemon.rb
 lib/core/facets/process.rb
 lib/core/facets/range/combine.rb
 lib/core/facets/range/overlap.rb
+lib/core/facets/range/quantile.rb
 lib/core/facets/range/to_r.rb
 lib/core/facets/range/umbrella.rb
 lib/core/facets/range/within.rb
