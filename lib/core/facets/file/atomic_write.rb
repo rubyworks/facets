@@ -27,10 +27,9 @@ class File
   # CREDIT: David Heinemeier Hansson
   #
   # @uncommon
-  #   require 'facets/file/atomic_write'
+  #   require 'facets/fileutils/atomic_write'
   #
   def self.atomic_write(file_name, temp_dir=nil)
-
     temp_dir  = temp_dir || Dir.tmpdir
     temp_file = Tempfile.new(basename(file_name), temp_dir)
 
@@ -57,4 +56,3 @@ class File
   end
 
 end
-
