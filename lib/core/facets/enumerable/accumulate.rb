@@ -40,8 +40,10 @@ module Enumerable
   def accumulate(iterations=1)
     return self if iterations == 0
     Functor.new do |op, *args|
-      result = inject([]) { |a, x| a << x.send(op, *args) }.flatten.uniq
-      result.accumulate(iterations - 1)
+      #result = inject([]) { |a, x| a << x.send(op, *args) }.flatten.uniq
+      result = []
+      each { |x| result << x.send(op, *args) }
+      result.flatten.uniq.accumulate(iterations - 1)
     end
   end
 
@@ -52,8 +54,10 @@ module Enumerable
   def accumulate_all(iterations=1)
     return self if iterations == 0
     Functor.new do |op, *args|
-      result = inject([]) { |a, x| a << x.send(op, *args) }.flatten
-      result.accumulate_all(iterations - 1)
+      #result = inject([]) { |a, x| a << x.send(op, *args) }.flatten
+      result = []
+      each { |x| result << x.send(op, *args) }
+      result.flatten.accumulate_all(iterations - 1)
     end
   end
 
