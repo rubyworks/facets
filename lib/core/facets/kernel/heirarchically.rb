@@ -33,13 +33,16 @@ module Kernel
   #   c.new.a  #=> 1
   #
   def hierarchical_send(method_name, *args, &block)
+    method_name = method_name.to_s if RUBY_VERSION < '1.9'
     this = self
     hierarchically do |anc|
-      if anc.public_instance_methods(false).include?(method_name) or
+      ## is there really no better way to check for the method?
+      if anc.instance_methods(false).include?(method_name) or
+           anc.public_instance_methods(false).include?(method_name) or
            anc.private_instance_methods(false).include?(method_name) or
            anc.protected_instance_methods(false).include?(method_name)
         im = anc.instance_method(method_name)
-        #im.arity == 0 ? im.bind(this).call(&block) : im.bind(this).call(*args, &block)
+        ##im.arity == 0 ? im.bind(this).call(&block) : im.bind(this).call(*args, &block)
         im.bind(this).call(*args, &block)
       end
     end

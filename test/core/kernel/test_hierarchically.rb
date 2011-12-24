@@ -4,14 +4,18 @@ test_case Object do
 
   setup do
     m = Module.new do
+      attr :a
       def preinitialize
         @a = 10
       end
-      def a; @a ; end
     end
 
     @x = Class.new do
       include m
+      attr :b
+      def preinitialize
+        @b = 20
+      end
       def initialize
         hierarchical_send(:preinitialize)
       end
@@ -20,6 +24,7 @@ test_case Object do
     @y = Class.new(@x) do
       def initialize
         @a = "not 10"
+        @b = "not 20"
         super
       end
     end
@@ -27,13 +32,15 @@ test_case Object do
 
   method :hierarchical_send do
     test do
-      a = @x.new.a
-      a.assert == 10
+      x = @x.new
+      x.a.assert == 10
+      x.b.assert == 20
     end
 
     test 'subclass' do
-      a = @y.new.a
-      a.assert == 10
+      y = @y.new
+      y.a.assert == 10
+      y.b.assert == 20
     end
   end
 
