@@ -10,7 +10,7 @@ test_case Kernel do
       @z = Class.new(@y){ def x ; 3 ; end }
     end
 
-    test do |q|
+    test do
       x = @x.new
       z = @z.new
       s0 = x.method(:x)
