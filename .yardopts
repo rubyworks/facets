@@ -1,8 +1,9 @@
 --no-output
---title "Facets Core Extensions"
+--title "Ruby Facets"
 --readme README.rdoc
 --protected
 --private
 lib/core
+lib/standard
 -
-README.rdoc
+[A-Z]*.*

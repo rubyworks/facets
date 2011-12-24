@@ -1,8 +1,0 @@
---no-output
---title "Facets Supplemental Class and Modules"
---readme README.rdoc
---protected
---private
-lib/supplement
--
-README.rdoc
