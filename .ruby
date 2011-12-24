@@ -10,7 +10,19 @@ copyrights:
   license: Ruby
 replacements: []
 alternatives: []
-requirements: []
+requirements:
+- name: lemon
+  groups:
+  - test
+  development: true
+- name: qed
+  groups:
+  - test
+  development: true
+- name: detroit
+  groups:
+  - build
+  development: true
 dependencies: []
 conflicts: []
 repositories:
@@ -25,7 +37,8 @@ resources:
   talk: http://groups.google.com/group/facets-universal
 extra: {}
 load_path:
-- lib
+- lib/core
+- lib/standard
 revision: 0
 created: '2004-12-16'
 summary: Premium Ruby Extensions
@@ -38,4 +51,4 @@ description: Facets is the premier collection of extension methods for the Ruby 
   Facets includes a few additional classes and mixins suitable to wide variety of
   applications.
 organization: rubyworks
-date: '2011-12-20'
+date: '2011-12-24'

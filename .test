@@ -4,8 +4,8 @@ require 'ae'
 require 'lemon'
 require 'fileutils'
 
-$:.unshift 'lib/core'
-$:.unshift 'lib/standard'
+#$:.unshift 'lib/core'
+#$:.unshift 'lib/standard'
 
 # A few File methods utilize this location for testing.
 # Ultimately a more robust solution is needed b/c currently
