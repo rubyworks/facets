@@ -1,13 +1,11 @@
-class Object
+module Kernel
 
   # Hierarchically apply a block, passing each ancestor to the block
   # starting at the root ancestor and working toward the current object.
   #
   # @todo Include singleton class?
   def hierarchically(&block)
-    a = self.class.ancestors
-    until a.empty?
-      m = a.pop
+    self.class.ancestors.reverse_each do |m|
       block.call(m)
     end
   end
@@ -37,11 +35,12 @@ class Object
   def hierarchical_send(method_name, *args, &block)
     this = self
     hierarchically do |anc|
-      if anc.private_instance_methods(false).include?(method_name) or
-         anc.protected_instance_methods(false).include?(method_name) or
-         anc.public_instance_methods(false).include?(method_name)
+      if anc.public_instance_methods(false).include?(method_name) or
+           anc.private_instance_methods(false).include?(method_name) or
+           anc.protected_instance_methods(false).include?(method_name)
         im = anc.instance_method(method_name)
-        im.arity == 0 ? im.bind(this).call(&block) : im.bind(this).call(*args, &block)
+        #im.arity == 0 ? im.bind(this).call(&block) : im.bind(this).call(*args, &block)
+        im.bind(this).call(*args, &block)
       end
     end
   end
