@@ -8,34 +8,34 @@ test_case Time do
       @t = Time.utc(2010,01,01, 12,00,00)
     end
 
-    test 'years' do |t|
+    test 'years' do
       @t.shift(1, :year).year.assert = 2011
       @t.shift(2, :years).year.assert = 2012
     end
 
-    test 'weeks' do |t|
+    test 'weeks' do
       @t.shift(1, :week).day.assert == 8
       @t.shift(2, :weeks).day.assert == 15
     end
 
-    test 'days' do |t|
+    test 'days' do
       @t.shift(1, :day).day.assert == 2
       @t.shift(2, :days).day.assert == 3
     end
 
-    test 'hours' do |t|
+    test 'hours' do
       @t.shift(1, :hour).hour.assert == 13
       @t.shift(2, :hours).hour.assert == 14
       @t.shift(12, :hours).hour.assert == 0
     end
 
-    test 'minutes' do |t|
+    test 'minutes' do
       @t.shift(1, :minute).min.assert == 1
       @t.shift(2, :minutes).min.assert == 2
       @t.shift(60, :minutes).min.assert == 0
     end
 
-    test 'seconds' do |t|
+    test 'seconds' do
       @t.shift(1, :second).sec.assert == 1
       @t.shift(2, :seconds).sec.assert == 2
       @t.shift(60, :seconds).sec.assert == 0

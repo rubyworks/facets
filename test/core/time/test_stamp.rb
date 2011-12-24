@@ -4,10 +4,14 @@ test_case Time do
 
   method :stamp do
 
-    # TODO: Problem with TIMEZONE.
-    test "timezone" do
+    test "default" do
       t = Time.utc(2005,4,20,15,37)
-      t.stamp.assert == "Wed Apr 20 15:37:00 UTC 2005"
+      t.stamp.assert == "2005-04-20 15:37:00 +0000"
+    end
+
+    test "ruby18" do
+      t = Time.utc(2005,4,20,15,37)
+      t.stamp(:ruby18).assert == "Wed Apr 20 15:37:00 +0000 2005"
     end
 
     test "long format" do
