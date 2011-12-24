@@ -53,7 +53,7 @@ test_case Time do
       r.assert == e
     end
 
-    test "change weeks" do |t|
+    test "change weeks" do
       e = Time.utc(2008,11,24, 18,30,57)
       r = Time.utc(2008,12, 1, 18,30,57).less(1, :weeks)
       r.assert == e
