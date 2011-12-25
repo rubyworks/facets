@@ -8,6 +8,28 @@ test_case Enumerable do
       [1,2,3].sum.assert == 6
     end
 
+    test 'with block' do
+      a = [1.0, 2.1, 3.2].sum(&:to_i)
+      a.assert == 6
+    end
+
+    test 'with identity' do
+      a = [].sum(9)
+      a.assert == 9
+
+      a = [1].sum(9)
+      a.assert == 1
+    end
+
+    test 'with identity and block' do
+      # notice identity is not effected by block (correct?)
+      a = [].sum(9.1, &:to_i)
+      a.assert == 9.1
+
+      a = [1.1].sum(9.1, &:to_i)
+      a.assert == 1
+    end
+
   end
 
 end
