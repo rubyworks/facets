@@ -31,7 +31,8 @@ class Hash
 end
 
 # NOTE: ActiveSupport defines this method but adds a check for #convert_key.
-#       If the method id defined, then it converts the keys with it. However
+#       If the method is defined, then it converts the keys with it. However
 #       it doesn't look to be supported by all Hash methods, just
 #       HashWithIndifferentAccess. I'm not so sure support for this kind of
-#       things is appropriate for Facets.
+#       thing is appropriate for Facets.
+

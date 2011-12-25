@@ -6,7 +6,9 @@ class Hash
   #   { :a=>1, :b=>2 }.collate(:a=>3, :b=>4, :c=>5)
   #   #=> { :a=>[1,3], :b=>[2,4], :c=>[5] }
   #
-  # CREDIT: Tilo Sloboda, Gavin Kistner (Phrogz)
+  # @credit Gavin Kistner (original)
+  # @credit Tilo Sloboda  (bug fixes)
+  # @credit Trans         (rewrite)
 
   def collate(other)
     h = Hash.new
@@ -28,35 +30,6 @@ class Hash
     result = collate(other_hash)
     replace(result)
   end
-
-  # Old version ...
-  #
-  #  def collate!(other_hash)
-  #    # Prepare, ensuring every existing key is already an Array
-  #    each do |key, value|
-  #      if value.is_a?(Array)
-  #        self[key] = value
-  #      else
-  #        self[key] = [value]
-  #      end
-  #    end
-  #    # Collate with values from other_hash
-  #    other_hash.each do |key, value|
-  #      if self[key]
-  #        if value.is_a?(Array)
-  #          self[key].concat( value )
-  #        else
-  #          self[key] << value
-  #        end
-  #      elsif value.is_a?(Array)
-  #        self[key] = value
-  #      else
-  #        self[key] = [value]
-  #      end
-  #    end
-  #    #each{ |key, value| value.uniq! } if options[ :uniq ]
-  #    self
-  #  end
 
 end
 
