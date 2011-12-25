@@ -15,10 +15,9 @@ require_relative 'enumerable/expand.rb'
 require_relative 'enumerable/filter.rb'
 require_relative 'enumerable/find_yield.rb'
 require_relative 'enumerable/frequency.rb'
-#require_relative 'enumerable/has.rb'         # uncommon
-#require_relative 'enumerable/have.rb'        # uncommon
 require_relative 'enumerable/graph.rb'
 require_relative 'enumerable/group_by.rb'
+require_relative 'enumerable/incase.rb'
 require_relative 'enumerable/map_by.rb'
 require_relative 'enumerable/map_detect.rb'
 require_relative 'enumerable/map_send.rb'

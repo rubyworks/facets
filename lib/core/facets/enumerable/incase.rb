@@ -1,26 +1,19 @@
 module Enumerable
   
-  # The same as #include?() but equality is tested using #===.
+  # The same as #include? but tested using #=== instead of #==.
   # 
-  #   [1, 2, "a"].has?(2)       #=> true
-  #   [1, 2, "a"].has?(String)  #=> true
-  #   [1, 2, "a"].has?(3)       #=> false
-  # 
-  # NOTE: This method is not a common core extension and is not
-  # loaded automatically when using <code>require 'facets'</code>.
+  #   [1, 2, "a"].incase?(2)       #=> true
+  #   [1, 2, "a"].incase?(String)  #=> true
+  #   [1, 2, "a"].incase?(3)       #=> false
   #
-  # TODO: Give better name, perhaps #matches?
+  # Why the name `incase`? Because the method uses case-equality.
+  # Along with the alliteration for "in case" and the similarity
+  # with "include?", it seemed like the perfect fit.
   #
-  # CREDIT: Lavir the Whiolet
+  # @credit Lavir the Whiolet
   #
-  # @uncommon
-  #   require 'facets/enumerable/has'
-  #
-  def has?(what)
+  def incase?(what)
     any? { |x| what === x }
   end
 
-  # Alias for #has?
-  alias have? has?
-  
 end
