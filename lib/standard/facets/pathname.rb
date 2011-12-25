@@ -238,3 +238,9 @@ class NilClass
   end
 end
 
+class Array
+  # Convert array to Pathname instance.
+  def to_path
+    Pathname.new(join('/'))
+  end
+end
