@@ -12,6 +12,10 @@ class Symbol
     !(c == '=' || c == '?' || c == '!')
   end
 
+  # Alias for `#plain?` method. Likely this should have been the original
+  # and only name, but such is life.
+  alias_method :reader?, :plain?
+
   # Symbol ends in `=`.
   #
   #   :a=.setter? #=> true
@@ -20,6 +24,10 @@ class Symbol
   def setter?
     to_s[-1,1] == '='
   end
+
+  # Alias for `#setter?` method. Likely this should have been the original
+  # and only name, but such is life.
+  alias_method :writer?, :setter?
 
   # Symbol ends in `?`.
   #
