@@ -9,7 +9,8 @@
 The following developers have recently contributed to the development of Facets.
 They are held in the highest regard for their efforts.
 
-* Michael Kohl         Enumerable#zip_map      
+* Mike Burns           Method composition Metgod#* and #^.
+* Michael Kohl         Enumerable#zip_map.
 * Michel Martens       Shellwords CLI parser inspired by Clap.
 * Alexey Petrushin     Some methods from `ruby-ext` project.
 * Michael Harmer       Documentation Improvements

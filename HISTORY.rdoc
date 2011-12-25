@@ -18,6 +18,7 @@ Changes:
   * Add Cloneable mixin (returns from Mixers spin-off project).
   * Add Array#each_pair and #each_value.
   * Add Numeric#positive? and #numeric?.
+  * Add Method#* and #^ composition methods. (Mike Burns)
 
 * Improved Features
 
