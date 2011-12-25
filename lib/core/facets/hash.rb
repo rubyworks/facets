@@ -50,6 +50,7 @@ require_relative 'hash/update.rb'
 require_relative 'hash/update_each.rb'
 require_relative 'hash/update_keys.rb'
 require_relative 'hash/update_values.rb'
+#require_relative 'hash/url_params.rb'      # uncommon
 require_relative 'hash/weave.rb'
 require_relative 'hash/zip.rb'
 
