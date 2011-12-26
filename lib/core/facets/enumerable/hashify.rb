@@ -14,7 +14,10 @@ module Enumerable
   #     [1,2,3,4].hashify{|n| "a" * n}  #=> {1=>"a", 2=>"aa", 3=>"aaa", 4=>"aaaa"}
   #
   # @credit Ronen Barzel
-
+  #
+  # @uncommon
+  #   require 'facets/enumerable/hashify'
+  #
   def hashify(val=true)
     h = {}
     if block_given?
