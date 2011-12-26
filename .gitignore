@@ -1,13 +1,10 @@
-.cache
 .rdoc
-.yardoc
 .reap/digest
+.yardoc
 log
-site/doc
-ri
-doc/webri
-doc/yard
+doc
 pkg
 tmp
 web
+work/sandbox
 work/trash
