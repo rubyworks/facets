@@ -1,35 +1,39 @@
-require 'facets/succ.rb'
-require 'test/unit'
+Covers 'facets/succ.rb'
 
-class TestStringSucc < Test::Unit::TestCase
+TestCase String do
 
-  def test_succ
-    assert_equal( "b", "a".succ )
-    assert_equal( "b", "a".succ(1) )
-    assert_equal( "c", "a".succ(2) )
-    assert_equal( "d", "a".succ(3) )
+  unit :succ do
+    "a".succ    .assert == "b"
+    "a".succ(1) .assert == "b"
+    "a".succ(2) .assert == "c"
+    "a".succ(3) .assert == "d"
   end
 
 end
 
-class TestNumericSucc < Test::Unit::TestCase
+# TODO: We are testing Numeric via Fixnum. Not sure why we need to do this
+# but it doesn't work otherwise. Eventually we need to figure ouy why, but
+# it's okay for now.
 
-  def test_pred
-    assert_equal(  3,  4.pred )
-    assert_equal( -3, -2.pred )
-    assert_equal(  2,  4.pred(2) )
-    assert_equal( -4, -2.pred(2) )
-    assert_equal(  6,  4.pred(-2) )
-    assert_equal(  0, -2.pred(-2) )
+TestCase Fixnum do
+
+  unit :pred do
+     4.pred     .assert ==  3 
+    -2.pred     .assert == -3 
+     4.pred(2)  .assert ==  2
+    -2.pred(2)  .assert == -4
+     4.pred(-2) .assert ==  6
+    -2.pred(-2) .assert ==  0
   end
 
-  def test_succ
-    assert_equal(  5,  4.succ )
-    assert_equal( -1, -2.succ )
-    assert_equal(  6,  4.succ(2) )
-    assert_equal(  0, -2.succ(2) )
-    assert_equal(  2,  4.succ(-2) )
-    assert_equal( -4, -2.succ(-2) )
+  unit :succ do
+     4.succ     .assert ==  5  
+    -2.succ     .assert == -1 
+     4.succ(2)  .assert ==  6
+    -2.succ(2)  .assert ==  0
+     4.succ(-2) .assert ==  2 
+    -2.succ(-2) .assert == -4
   end
 
 end
+

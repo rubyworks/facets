@@ -1,11 +1,12 @@
+require 'facets/math/linsolve'
+
 module Math
 
   # Returns array of real solution of <code>ax**2 + bx + c = d</code>
   # or <code>nil</code> if no or an infinite number of solutions exist.
   # If +d+ is missing it is assumed to be 0.
   #
-  # == Solving second order equations
-  # In order to solve <code>ax**2 + bx + c = d</code> +Extmath.sqsolve+ identifies several cases:
+  # In order to solve <code>ax**2 + bx + c = d</code> +sqsolve+ identifies several cases:
   # * <code>a == 0:</code>
   #   The equation to be solved is the linear equation <code>bx + c = d</code>. #sqsolve> delegates the computation to
   #   #linsolve>. If it results in +nil+, +nil+ is returned (not <code>[nil]</code>!). Otherwise a one-element array
@@ -15,13 +16,13 @@ module Math
   #    * <code>c == d</code>
   #      The equation to be solved is <code>ax**2 + bx = 0</code>. One solution of this equation obviously is
   #      <code>x = 0</code>, the second one solves <code>ax + b = 0</code>. The solution of the latter is
-  #      delegated to +Extmath.linsolve+. An array containing both results in ascending order is returned.
+  #      delegated to +linsolve+. An array containing both results in ascending order is returned.
   #    * <code>c != d</code>
   #      The equation cannot be separated into <code>x</code> times some factor.
   #      * <code>b == 0</code>
   #        The equation to be solved is <code>ax**2 + c = d</code>. This can be written as the linear equation
   #        <code>ay + c = d</code> with <code>y = x ** 2</code>. The solution of the linear equation is delegated
-  #        to +Extmath.linsolve+. If the returned value for +y+ is +nil+, that becomes the overall return value.
+  #        to +linsolve+. If the returned value for +y+ is +nil+, that becomes the overall return value.
   #        Otherwise an array containing the negative and positive squareroot of +y+ is returned
   #      * <code>b != 0 </code>
   #        The equation cannot be reduced to simpler cases. We now first have to compute what is called the
@@ -39,7 +40,7 @@ module Math
     else
       return [0.0, linsolve(a, b)].sort if c == d
       if b == 0.0
-        x = Extmath.linsolve(a, c, d)
+        x = linsolve(a, c, d)
         x < 0.0 ? nil : [-Math.sqrt(x), Math.sqrt(x)]
       else
         x = b * b + 4.0 * a * (d - c)

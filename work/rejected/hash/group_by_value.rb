@@ -37,6 +37,8 @@ class Hash
   #   h.sort.group_by_value   # => [[1, ["A", "B", "C"]], [2, ["D", "E", "F"]], [3, ["G", "H", "I"]]]
   #
   # CREDIT: Erik Veenstra
+  #
+  # DEPRECATED: Becuase Hash#inverse does the job.
   
   def group_by_value
     res = {}
