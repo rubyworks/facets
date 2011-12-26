@@ -6,7 +6,7 @@ class Hash
   #
   # @todo Hash#url_params may require some URL escaping.
   #
-  # @credit Matt Kirk
+  # @author Matt Kirk
 
   def url_params
     map do |k,v|

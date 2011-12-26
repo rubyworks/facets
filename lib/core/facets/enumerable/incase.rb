@@ -10,7 +10,7 @@ module Enumerable
   # Along with the alliteration for "in case" and the similarity
   # with "include?", it seemed like the perfect fit.
   #
-  # @credit Lavir the Whiolet
+  # @author Lavir the Whiolet
   #
   def incase?(what)
     any? { |x| what === x }

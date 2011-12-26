@@ -232,7 +232,10 @@ end
 class NilClass
   # Provide platform dependent null path.
   #
-  # CREDIT Daniel Burger
+  # @standard
+  #   require 'facets/pathname'
+  #
+  # @author Daniel Burger
   def to_path
     Pathname.null
   end
@@ -240,6 +243,10 @@ end
 
 class Array
   # Convert array to Pathname instance.
+  #
+  # @standard
+  #   require 'facets/pathname'
+  #
   def to_path
     Pathname.new(join('/'))
   end

@@ -4,7 +4,7 @@ class Array
   #
   #   [1,1,2,2,3,4,5].nonuniq  #=> [1,2]
   #
-  # @credit Martin DeMello
+  # @author Martin DeMello
 
   def nonuniq
     h1 = {}
@@ -32,8 +32,8 @@ class Array
   # @param [Integer] min
   #   The minimum number of duplicatation necessary for inclusion.
   #
-  # @credit Rebort Dober (current implementation)
-  # @credit Thibaut Barrère
+  # @author Rebort Dober (current implementation)
+  # @author Thibaut Barrère
 
   def duplicates(min=2)
     h = Hash.new( 0 )
@@ -52,7 +52,7 @@ class Array
   #
   #  [0,1,1,1,3,0,1,2,4].occurent(2..4) #=> [0,1]
   #
-  # @credit Robert Dober
+  # @author Robert Dober
 
   def occurent(n=2)
     h = Hash.new( 0 )

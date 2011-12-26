@@ -6,9 +6,9 @@ class Hash
   #   { :a=>1, :b=>2 }.collate(:a=>3, :b=>4, :c=>5)
   #   #=> { :a=>[1,3], :b=>[2,4], :c=>[5] }
   #
-  # @credit Gavin Kistner (original)
-  # @credit Tilo Sloboda  (bug fixes)
-  # @credit Trans         (rewrite)
+  # @author Trans         (rewrite)
+  # @author Tilo Sloboda  (bug fixes)
+  # @author Gavin Kistner (original)
 
   def collate(other)
     h = Hash.new
