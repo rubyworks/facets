@@ -17,14 +17,14 @@ test_case Array do
     end
 
     test "range" do
-      a = [:a,:b,:c,:d,:e,
-              :b,:c,:d,:e,
-                 :c,:d,:e,
-                    :d,:e,
-                       :e]
-      a.occurent(1..2).assert == [:a,:b]
-      a.occurent(1..3).assert == [:a,:b,:c]
-      a.occurent(2..3).assert == [:b,:c]
+      a = %w{a b c d e
+               b c d e
+                 c d e
+                   d e
+                     e}
+      a.occurent(1..2).sort.assert == ['a','b']
+      a.occurent(1..3).sort.assert == ['a','b','c']
+      a.occurent(2..3).sort.assert == ['b','c']
     end
 
   end
