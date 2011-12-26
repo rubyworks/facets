@@ -11,10 +11,12 @@ class Module
   #     @a ? true : @a
   #   end
   #
-  # NOTE: This method is not a common core extension and is not
+  # Note that this method is not a common core extension and is not
   # loaded automatically when using <code>require 'facets'</code>.
   #
   # CREDIT: Trans
+  #
+  # @todo This method will probably be deprecated.
   #
   # @uncommon
   #   require 'facets/module/attr_tester'
@@ -35,7 +37,7 @@ class Module
 
   # Create aliases for flag reader.
   #
-  # NOTE: This method is not a common core extension and is not
+  # Note that this method is not a common core extension and is not
   # loaded automatically when using <code>require 'facets'</code>.
   #
   # CREDIT: Trans
