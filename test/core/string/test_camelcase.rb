@@ -9,46 +9,36 @@ test_case String do
     end
 
     test "converts underscore to captialized" do
-      "abc_xyz".camelcase.assert == "AbcXyz"
-      "abc____xyz".camelcase.assert == "AbcXyz"
+      "abc_xyz".camelcase.assert == "abcXyz"
+      "abc____xyz".camelcase.assert == "abcXyz"
     end
 
-    #test "converts spaces to captialized" do
-    #  "abc xyz".camelcase.assert  == "AbcXyz"
-    #  "abc  xyz".camelcase.assert == "AbcXyz"
-    #  "abc\txyz".camelcase.assert == "AbcXyz"
-    #  "abc\nxyz".camelcase.assert == "AbcXyz"
-    #end
-
-    test "true argument converts first letter to lowercase" do
-      "abc_xyz".camelcase(true).assert == "abcXyz"
-      "abc____xyz".camelcase(true).assert == "abcXyz"
+    test "can captialize at spaces" do
+      "abc xyz".camelcase(' ').assert == "abcXyz"
+      "abc  xyz".camelcase(' ').assert == "abcXyz"
     end
 
-    test "false argument leaves first letter as is" do
-      "abc_xyz".camelcase(false).assert == "abcXyz"
-      "abc____xyz".camelcase(false).assert == "abcXyz"
-      "Abc_xyz".camelcase(false).assert == "AbcXyz"
-      "Abc____xyz".camelcase(false).assert == "AbcXyz"
+    test "can capitalize at arbitrary string" do
+      "abc;xyz".camelcase(';').assert == "abcXyz"
+      "abc//xyz".camelcase('//').assert == "abcXyz"
     end
 
-    #test "false converts spaces to captialized" do
-    #  "abc xyz".camelcase(false).assert == "abcXyz"
-    #  "abc  xyz".camelcase(false).assert == "abcXyz"
-    #  "abc\txyz".camelcase(false).assert == "abcXyz"
-    #  "abc\nxyz".camelcase(false).assert == "abcXyz"
-    #end
-
-    test "converts paths to module names" do
-      'this_is_it'.camelcase.assert == 'ThisIsIt'
-      'my_module/my_class'.camelcase.assert == 'MyModule::MyClass'
-      '/my_module/my_class'.camelcase.assert == '::MyModule::MyClass'
+    test "can captialize at regexp" do
+      "abc\nxyz".camelcase(/\s/).assert == "abcXyz"
+      "abc\txyz".camelcase(/\s/).assert == "abcXyz"
     end
 
-    #test "converts methods to module names" do
-    #  'my_module__my_class'.camelcase.assert == 'MyModule::MyClass'
-    #  '__my_module__my_class'.camelcase.assert == '::MyModule::MyClass'
-    #end
+    # this functionality is in String#modulize instead
+    test "does not convert paths to module names" do
+      'my_module/my_class'.camelcase.refute  == 'MyModule::MyClass'
+      '/my_module/my_class'.camelcase.refute == '::MyModule::MyClass'
+    end
+
+    # this functionality is in String#modulize instead
+    test "does not convert methods to module names" do
+      'My_module__my_class'.camelcase.refute   == 'MyModule::MyClass'
+      '__My_module__my_class'.camelcase.refute == '::MyModule::MyClass'
+    end
 
   end
 
@@ -63,13 +53,6 @@ test_case String do
     test do
       "abc_xyz".upper_camelcase.assert == "AbcXyz"
       "Abc_xyz".upper_camelcase.assert == "AbcXyz"
-    end
-  end
-
-  method :inter_camelcase do
-    test do
-      "abc_xyz".inter_camelcase.assert == "abcXyz"
-      "Abc_xyz".inter_camelcase.assert == "AbcXyz"
     end
   end
 
