@@ -1,8 +1,8 @@
 class Method
 
-  # Method Composition class.
+  # Method Composition class acts a proxy for composed methods.
   #
-  # CREDIT: Mike Burns
+  # @author Mike Burns
   class Composition
 
     #
@@ -61,14 +61,14 @@ class Method
 
   # Method composition.
   #
-  # CREDIT: Mike Burns
+  # @author Mike Burns
   def *(g)
-    Composition.new(self,g)
+    Composition.new(self, g)
   end
 
-  # Method repition.
+  # Method repetition.
   #
-  # CREDIT: Mike Burns
+  # @author Mike Burns
   def ^(n)
     if n < 2
       self
