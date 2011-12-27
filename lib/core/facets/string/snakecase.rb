@@ -1,21 +1,31 @@
 class String
 
-  # The reverse of +camelcase+. Makes an underscored of a camelcase string.
+  # Underscore a string such that camelcase, dashes and spaces are
+  # replaced by underscores. This is the reverse of {#camelcase},
+  # albeit not an exact inverse.
   #
-  # Changes '::' to '/' to convert namespaces to paths.
+  #   "SnakeCase".snakecase         #=> "snake_case"
+  #   "Snake-Case".snakecase        #=> "snake_case"
+  #   "Snake Case".snakecase        #=> "snake_case"
+  #   "Snake  -  Case".snakecase    #=> "snake_case"
   #
-  # Examples
-  #   "SnakeCase".snakecase           #=> "snake_case"
-  #   "Snake-Case".snakecase          #=> "snake_case"
-  #   "SnakeCase::Errors".snakecase   #=> "snake_case/errors"
-  #
+  # Note, this method no longer converts `::` to `/`, in that case
+  # use the {#pathize} method instead.
+
   def snakecase
-    gsub(/::/, '/').  # NOT SO SURE ABOUT THIS
+    #gsub(/::/, '/').
     gsub(/([A-Z]+)([A-Z][a-z])/,'\1_\2').
     gsub(/([a-z\d])([A-Z])/,'\1_\2').
-    tr("-", "_").
+    tr('-', '_').
+    gsub(/\s/, '_').
+    gsub(/__+/, '_').
     downcase
   end
+
+  #
+  alias_method :underscore, :snakecase
+
+  # TODO: Add *separators to #snakecase, like camelcase.
 
 end
 
