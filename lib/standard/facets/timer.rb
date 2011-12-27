@@ -116,7 +116,8 @@ class Timer
   # Kill time limit thread, if any.
   def defuse
     if @timer_thread
-      Thread.kill @timer_thread
+      #Thread.kill @timer_thread
+      @timer_thread.kill
       @timer_thread = nil
     end
   end
@@ -204,4 +205,4 @@ class Timer
 
 end #class Timer
 
-# Copyright (c) 2004 Thomas Sawyer (Ruby License)
+# Copyright (c) 2004 Rubyworks
