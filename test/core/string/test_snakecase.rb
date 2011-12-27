@@ -4,11 +4,16 @@ test_case String do
 
   method :snakecase do
 
-    test do
-      '/my_module/my_class/'.snakecase.assert == '/my_module/my_class/'
-      'MyModule::MyClass'.snakecase.assert == 'my_module/my_class'
-      '::MyClass'.snakecase.assert == '/my_class'
+    test 'dowcases' do
       'URI'.snakecase.assert == 'uri'
+    end
+
+    test 'converts spaces' do
+      'MyStuff  HisStuff'.snakecase.assert == 'my_stuff_his_stuff'
+    end
+
+    test 'does not alter path dividers' do
+      '/my_module/my_class/'.snakecase.assert == '/my_module/my_class/'
     end
 
   end

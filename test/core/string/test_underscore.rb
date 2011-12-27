@@ -12,8 +12,8 @@ test_case String do
       "Snake-Case".underscore.assert == "snake_case"
     end
 
-    test "containing double colons" do
-      "SnakeCase::Errors".underscore.assert == "snake_case/errors"
+    test "containing spaces" do
+      "Snake Case".underscore.assert == "snake_case"
     end
 
   end

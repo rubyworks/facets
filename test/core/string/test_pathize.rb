@@ -22,6 +22,10 @@ test_case String do
       a.pathize.assert == x
     end
 
+    test 'transforms initial double colon' do
+      '::MyClass'.pathize.assert == '/my_class'
+    end
+
   end
 
 end
