@@ -1,14 +1,25 @@
 class String
 
-  # Title case.
+  # Transform a string into a form that makes for an acceptable title.
   #
   #   "this is a string".titlecase
   #   #=> "This Is A String"
   #
-  # CREDIT: Eliazar Parra
+  # @author Eliazar Parra
 
   def titlecase
+    tr('_', ' ').
+    gsub(/\s+/, ' ').
     gsub(/\b\w/){ $`[-1,1] == "'" ? $& : $&.upcase }
+  end
+
+  # Transform a string into a sentence like form.
+  #
+  #   "This Is A String".briefcase
+  #   #=> "This is a string"
+  #
+  def briefcase
+    titlecase.capitalize
   end
 
 end
