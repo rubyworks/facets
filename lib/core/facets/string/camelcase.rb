@@ -4,18 +4,27 @@ class String
   # as given. This allows other methods to be used first, such as #uppercase
   # and #lowercase.
   #
-  #   "camel_case".camelcase       #=> "camelCase"
-  #   "Camel_case".camelcase       #=> "CamelCase"
+  #   "camel_case".camelcase          #=> "camelCase"
+  #   "Camel_case".camelcase          #=> "CamelCase"
   #
-  # Custom +separators+ can be used to specify the divisions used to determine
-  # where capitalization should occur. By default these are `_` and `-`.
+  # Custom +separators+ can be used to specify the patterns used to determine
+  # where capitalization should occur. By default these are underscores (`_`)
+  # and space characters (`\s`).
   #
-  #   "camel/case".camelcase('/')  #=> "camelCase"
+  #   "camel/case".camelcase('/')     #=> "camelCase"
   #
-  # Note that this implementation is quite different form ActiveSupports.
+  # If the first separator is a symbol, either `:lower` or `:upper`, then
+  # the first characters of the string will be downcased or upcased respectively.
+  #
+  #   "camel_case".camelcase(:upper)  #=> "CamelCase"
+  #
+  # Note that this implementation is different from ActiveSupport's.
+  # If that is what you are looking for you may want {#modulize}.
   #
   def camelcase(*separators)
-    separators = ['_', '-'] if separators.empty?
+    first_letter = separators.shift if Symbol === separators.first
+
+    separators = ['_', '\s'] if separators.empty?
 
     str = self.dup
 
@@ -23,29 +32,39 @@ class String
       str = str.gsub(/(?:#{s}+)([a-z])/){ $1.upcase }
     end
 
+    case first_letter
+    when :upper
+      str = str.gsub(/(\A|\s)([a-z])/){ $1 + $2.upcase }
+    when :lower
+      str = str.gsub(/(\A|\s)([A-Z])/){ $1 + $2.downcase }
+    end
+
     str
   end
 
   # Same as +#camelcase+ but converts first letter to uppercase.
   #
-  #   "camel_case".lowercamelcase   #=> "CamelCase"
-  #   "Camel_case".lowercamelcase   #=> "camelCase"
+  #   "camel_case".upper_camelcase   #=> "CamelCase"
+  #   "Camel_case".upper_camelcase   #=> "CamelCase"
   #
-  def uppercamelcase(*separators)
-    camelcase(*separators).gsub(/(\A|\s)([a-z])/){ $1 + $2.upcase }
+  # @deprecated
+  #   Use `#camelcase(:upper)` instead.
+  #
+  def upper_camelcase(*separators)
+    camelcase(:upper, *separators)
   end
 
   # Same as +#camelcase+ but converts first letter to lowercase.
   #
-  #   "camel_case".uppercamelcase   #=> "camelCase"
-  #   "Camel_case".uppercamelcase   #=> "CamelCase"
+  #   "camel_case".lower_camelcase   #=> "camelCase"
+  #   "Camel_case".lower_camelcase   #=> "camelCase"
   #
-  def lowercamelcase(*separators)
-    camelcase(*separators).gsub(/(\A|\s)([A-Z])/){ $1 + $2.downcase }
+  # @deprecated
+  #   Use `#camelcase(:lower)` instead.
+  #
+  def lower_camelcase(*separators)
+    camelcase(:lower, *separators)
   end
-
-  alias_method :upper_camelcase, :uppercamelcase
-  alias_method :lower_camelcase, :lowercamelcase
 
 end
 
