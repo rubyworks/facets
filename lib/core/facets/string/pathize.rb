@@ -14,7 +14,7 @@ class String
     gsub('__','/').
     gsub('::','/').
     gsub(/\s+/, '').                # spaces are bad form
-    gsub(/[\\\/?%*:|"<>.]+/, '').   # reserved characters
+    gsub(/[?%*:|"<>.]+/, '').   # reserved characters
     downcase
   end
 
