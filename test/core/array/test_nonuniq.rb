@@ -6,7 +6,7 @@ test_case Array do
 
     test do
       a = [1,1,2,2,3,4,5]
-      a.nonuniq.assert == [1,2]
+      a.nonuniq.sort.assert == [1,2]
     end
 
   end
@@ -16,7 +16,7 @@ test_case Array do
     test do
       a = [1,1,2,2,3,4,5]
       a.nonuniq!
-      a.assert == [1,2]
+      a.sort.assert == [1,2]
     end
 
   end

@@ -4,8 +4,12 @@ test_case String do
 
   method :index_all do
 
-    test do
+    test "with string argument" do
       "axxxaxxxa".index_all('a').assert == [0,4,8]
+    end
+
+    test "with regexp argument" do
+      "a123a567a9".index_all(/a/).assert == [0,4,8]
     end
 
   end
