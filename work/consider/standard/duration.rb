@@ -1,3 +1,6 @@
+#
+# @author Matthew Harris
+#
 class Duration
   include Comparable
 
