@@ -9,6 +9,7 @@ class Binding
   #
   #   binding.local_variables  #=> [:a, :b]
   #
+  # TODO: Rename this to prevent name clash?
   def local_variables()
     eval("local_variables")
   end
