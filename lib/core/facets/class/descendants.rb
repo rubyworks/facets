@@ -19,7 +19,8 @@ class Class
   #   X.descendants(1) #=> [Y]
   #
   # NOTE: This is a intensive operation. Do not expect it to be very fast.
-
+  #
+  # @author Roger Pack
   def descendants(generations=-1)
     descendants = []
     subclasses.each do |k|

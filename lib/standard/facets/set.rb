@@ -3,9 +3,10 @@ require 'set'
 class Set
 
   #
+  # @author Phrogz
   def power_set
     if empty?
-      Set[ self ]
+      Set[self]
     else
       any_value = [to_a.first]
       subsubs = (self - any_value).power_set
@@ -16,7 +17,10 @@ end
 
 class Array
 
+  # TODO: Move to Array extensions.
+
   #
+  # @author Phrogz
   def power_set
     if empty?
       [self]

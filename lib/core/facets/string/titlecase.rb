@@ -6,6 +6,7 @@ class String
   #   #=> "This Is A String"
   #
   # @author Eliazar Parra
+  # @author Angelo Lakra (apostrophe fix)
 
   def titlecase
     tr('_', ' ').

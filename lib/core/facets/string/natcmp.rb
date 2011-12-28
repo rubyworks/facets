@@ -26,6 +26,7 @@
 # 3. This notice may not be removed or altered from any source distribution.
 #++
 
+#
 class String
 
   # 'Natural order' comparison of strings, e.g. ...
@@ -40,7 +41,8 @@ class String
   #
   # TODO: Invert case flag?
   #
-  # CREDIT: Alan Davies, Martin Pool
+  # @author Alan Davies
+  # @author Martin Pool
 
   def natcmp(str2, caseInsensitive=false)
     str1 = self.dup

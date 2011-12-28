@@ -17,7 +17,10 @@ module Kernel
   #
   #   obj.foo  #=> "foo"
   #
-  # NOTE: This is one of the few overrides in Facents.
+  # NOTE: This is one of the few core overrides in Facets.
+  #
+  # @author Trans
+  # @author Marco Otte-Witte (bug fix)
   def extend(*mod, &blk)
     _extend(*mod) unless mod.empty?
     _extend Module.new(&blk) if blk

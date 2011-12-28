@@ -9,7 +9,7 @@ class Array
   #
   # Returns an Array of most common elements.
   #
-  # CREDIT: Robert Klemme
+  # @author Robert Klemme
 
   def mode
     max = 0

@@ -6,7 +6,8 @@ class Hash
   #   h.update_keys{ |k| "#{k}!" }
   #   h  #=> { "a!"=>1, "b!"=>2 }
   #
-  # CREDIT: Trans
+  # @author Trans
+  # @author Evgeniy Dolzhenko (bug fix)
 
   def update_keys #:yield:
     if block_given?

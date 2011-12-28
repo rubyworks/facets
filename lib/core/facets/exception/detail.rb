@@ -1,15 +1,9 @@
 class Exception
 
-  # Pretty string output of exception/error
-  # object useful for helpful debug messages.
+  # Pretty string output of exception/error object useful for helpful
+  # debug messages.
   #
-  # Input:
-  # The Exception/StandardError object
-  #
-  # Output:
-  # The pretty printed string
-  #
-  # CREDIT: George Moschovitis
+  # @author George Moschovitis
 
   def detail
     if backtrace

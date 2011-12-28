@@ -5,6 +5,7 @@ class Hash
   # If an array is given then matching keys are removed.
   #
   # CREDIT: Trans
+  # CREDIT: Xavier Shay (bug fix)
 
   def -(other)
     h = self.dup

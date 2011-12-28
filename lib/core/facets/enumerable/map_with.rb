@@ -8,6 +8,9 @@ module Enumerable
   #   end
   #   h  #=> {:x=>1, :y=>2, :z=>3}
   #
+  # @return [Hash]
+  #
+  # @author Michael Kohl
   def map_with(*arrays, &block)
     enum_for(:zip, *arrays).map(&block)
   end

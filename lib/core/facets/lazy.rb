@@ -19,10 +19,9 @@
 # ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
 # FOR A PARTICULAR PURPOSE.
 
-# = Lazy
-#
 # Everything you need for Lazy evaluation in Ruby.
 #
+# @author MenTaLguY
 module Lazy
 
   # Raised when a demanded computation diverges (e.g. if it tries to directly
