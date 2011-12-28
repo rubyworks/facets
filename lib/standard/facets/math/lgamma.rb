@@ -2,7 +2,9 @@ module Math
 
   unless defined?(lgamma)
 
-    # Logarithmus naturalis of gamma function of +x+
+    # Logarithmus naturalis of gamma function of +x+.
+    #
+    # @author Josef Schugt
     def self.lgamma(x)
       h  = x + 5.5
       h -= (x + 0.5) * log(h)

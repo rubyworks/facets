@@ -33,6 +33,7 @@ module Math
   #        The second one is computed from the fact that the product of both solutions is <code>(c - d) / a</code>.
   #        Take a look at a book on numerical mathematics if you don't understand why this should be done.
   #
+  # @author Josef Schugt
   def self.sqsolve(a, b, c, d = 0.0)
     if a == 0.0
       x = linsolve(b, c, d)
