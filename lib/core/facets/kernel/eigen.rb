@@ -21,7 +21,7 @@ module Kernel
   # and overly used term that 'eigen' was decided upon as a better
   # choice. You can thank or blame _why for the term, if you like.
   #
-  class eigen
+  def eigen
     Functor.new do |op,*a,&b|
       (class << self; self; end).class_eval do
         __send__(op,*a,&b)

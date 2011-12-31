@@ -21,8 +21,6 @@ require_relative 'module/class_def.rb'
 #require_relative 'module/class_inheritor.rb'             # uncommon
 require_relative 'module/class_method_defined.rb'
 #require_relative 'module/copy_inheritor.rb'              # uncommon
-require_relative 'module/eigen.rb'
-require_relative 'module/eigenclass.rb'
 #require_relative 'module/enclosure.rb'                   # uncommon
 #require_relative 'module/enclosures.rb'                  # uncommon
 require_relative 'module/extend.rb'

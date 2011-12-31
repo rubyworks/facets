@@ -16,6 +16,7 @@ require_relative 'kernel/deep_clone.rb'
 require_relative 'kernel/deep_copy.rb'
 #require_relative 'kernel/demo.rb'              # uncommon
 require_relative 'kernel/disable_warnings.rb'
+require_relative 'kernel/eigen.rb'
 #require_relative 'kernel/eigenclass.rb'        # uncommon
 require_relative 'kernel/enable_warnings.rb'
 require_relative 'kernel/equate.rb'

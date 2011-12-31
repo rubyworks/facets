@@ -22,7 +22,10 @@ class String
   # If that is what you are looking for you may want {#modulize}.
   #
   def camelcase(*separators)
-    first_letter = separators.shift if Symbol === separators.first
+    case separators.first
+    when Symbol, TrueClass, FalseClass, NilClass
+      first_letter = separators.shift
+    end
 
     separators = ['_', '\s'] if separators.empty?
 
@@ -33,9 +36,9 @@ class String
     end
 
     case first_letter
-    when :upper
+    when :upper, true
       str = str.gsub(/(\A|\s)([a-z])/){ $1 + $2.upcase }
-    when :lower
+    when :lower, false
       str = str.gsub(/(\A|\s)([A-Z])/){ $1 + $2.downcase }
     end
 
