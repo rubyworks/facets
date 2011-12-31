@@ -1,5 +1,6 @@
-#!mast .ruby lib qed test [A-Z]*.*
+#!mast .ruby .yardopts lib qed test [A-Z]*.*
 .ruby
+.yardopts
 lib/core/facets/applique/file_helpers.rb
 lib/core/facets/array/after.rb
 lib/core/facets/array/before.rb
@@ -26,6 +27,7 @@ lib/core/facets/array/merge.rb
 lib/core/facets/array/mode.rb
 lib/core/facets/array/nonuniq.rb
 lib/core/facets/array/not_empty.rb
+lib/core/facets/array/occurent.rb
 lib/core/facets/array/only.rb
 lib/core/facets/array/op_pow.rb
 lib/core/facets/array/pad.rb
@@ -62,6 +64,7 @@ lib/core/facets/binding/with.rb
 lib/core/facets/binding.rb
 lib/core/facets/boolean.rb
 lib/core/facets/class/descendants.rb
+lib/core/facets/class/hierarchically.rb
 lib/core/facets/class/methodize.rb
 lib/core/facets/class/pathize.rb
 lib/core/facets/class/preallocate.rb
@@ -102,8 +105,8 @@ lib/core/facets/enumerable/find_yield.rb
 lib/core/facets/enumerable/frequency.rb
 lib/core/facets/enumerable/graph.rb
 lib/core/facets/enumerable/group_by.rb
-lib/core/facets/enumerable/has.rb
-lib/core/facets/enumerable/have.rb
+lib/core/facets/enumerable/hashify.rb
+lib/core/facets/enumerable/incase.rb
 lib/core/facets/enumerable/map_by.rb
 lib/core/facets/enumerable/map_detect.rb
 lib/core/facets/enumerable/map_send.rb
@@ -126,6 +129,7 @@ lib/core/facets/enumerable.rb
 lib/core/facets/enumerator/fx.rb
 lib/core/facets/enumerator.rb
 lib/core/facets/exception/detail.rb
+lib/core/facets/exception/error_print.rb
 lib/core/facets/exception/raised.rb
 lib/core/facets/exception/suppress.rb
 lib/core/facets/exception.rb
@@ -153,6 +157,7 @@ lib/core/facets/filetest/root.rb
 lib/core/facets/filetest/safe.rb
 lib/core/facets/filetest/separator_pattern.rb
 lib/core/facets/filetest.rb
+lib/core/facets/fixnum.rb
 lib/core/facets/float/round.rb
 lib/core/facets/float.rb
 lib/core/facets/functor.rb
@@ -206,6 +211,7 @@ lib/core/facets/hash/update.rb
 lib/core/facets/hash/update_each.rb
 lib/core/facets/hash/update_keys.rb
 lib/core/facets/hash/update_values.rb
+lib/core/facets/hash/url_params.rb
 lib/core/facets/hash/weave.rb
 lib/core/facets/hash/zip.rb
 lib/core/facets/hash.rb
@@ -251,9 +257,8 @@ lib/core/facets/kernel/ergo.rb
 lib/core/facets/kernel/extend.rb
 lib/core/facets/kernel/extension.rb
 lib/core/facets/kernel/false.rb
-lib/core/facets/kernel/heirarchical_send.rb
-lib/core/facets/kernel/heirarchically.rb
 lib/core/facets/kernel/here.rb
+lib/core/facets/kernel/hierarchical_send.rb
 lib/core/facets/kernel/identical.rb
 lib/core/facets/kernel/in.rb
 lib/core/facets/kernel/instance_assign.rb
@@ -374,6 +379,7 @@ lib/core/facets/nilclass/ergo.rb
 lib/core/facets/nilclass/to_f.rb
 lib/core/facets/nilclass.rb
 lib/core/facets/numeric/approx.rb
+lib/core/facets/numeric/close.rb
 lib/core/facets/numeric/distance.rb
 lib/core/facets/numeric/length.rb
 lib/core/facets/numeric/negative.rb
@@ -420,6 +426,7 @@ lib/core/facets/roman.rb
 lib/core/facets/string/acronym.rb
 lib/core/facets/string/align.rb
 lib/core/facets/string/bracket.rb
+lib/core/facets/string/briefcase.rb
 lib/core/facets/string/bytes.rb
 lib/core/facets/string/camelcase.rb
 lib/core/facets/string/capitalized.rb
@@ -496,11 +503,13 @@ lib/core/facets/symbol/not.rb
 lib/core/facets/symbol/op_div.rb
 lib/core/facets/symbol/plain.rb
 lib/core/facets/symbol/query.rb
+lib/core/facets/symbol/reader.rb
 lib/core/facets/symbol/setter.rb
 lib/core/facets/symbol/succ.rb
 lib/core/facets/symbol/thrown.rb
 lib/core/facets/symbol/to_proc.rb
 lib/core/facets/symbol/variablize.rb
+lib/core/facets/symbol/writer.rb
 lib/core/facets/symbol.rb
 lib/core/facets/time/ago.rb
 lib/core/facets/time/change.rb
@@ -595,6 +604,7 @@ lib/standard/facets/math/pstd.rb
 lib/standard/facets/math/pvariance.rb
 lib/standard/facets/math/rmd.rb
 lib/standard/facets/math/root.rb
+lib/standard/facets/math/round.rb
 lib/standard/facets/math/sec.rb
 lib/standard/facets/math/sech.rb
 lib/standard/facets/math/sign.rb
@@ -605,6 +615,7 @@ lib/standard/facets/math/std.rb
 lib/standard/facets/math/stderr.rb
 lib/standard/facets/math/sum.rb
 lib/standard/facets/math/summed_sqdevs.rb
+lib/standard/facets/math/tgamma.rb
 lib/standard/facets/math/theil_index.rb
 lib/standard/facets/math/variance.rb
 lib/standard/facets/math.rb
@@ -757,6 +768,7 @@ test/core/array/test_merge.rb
 test/core/array/test_mode.rb
 test/core/array/test_nonuniq.rb
 test/core/array/test_not_empty.rb
+test/core/array/test_occurent.rb
 test/core/array/test_only.rb
 test/core/array/test_pad.rb
 test/core/array/test_peek.rb
@@ -890,6 +902,7 @@ test/core/hash/test_traverse.rb
 test/core/hash/test_update_each.rb
 test/core/hash/test_update_keys.rb
 test/core/hash/test_update_values.rb
+test/core/hash/test_url_params.rb
 test/core/hash/test_weave.rb
 test/core/hash/test_zip.rb
 test/core/indexable_tc.rb
@@ -985,7 +998,6 @@ test/core/module/test_nodef.rb
 test/core/module/test_op.rb
 test/core/module/test_pathize.rb
 test/core/module/test_preextend.rb
-test/core/module/test_prepend.rb
 test/core/module/test_redefine_method.rb
 test/core/module/test_redirect_method.rb
 test/core/module/test_remove.rb
@@ -1113,8 +1125,10 @@ test/core/time/test_trunc.rb
 test/core/to_hash_tc.rb
 test/core/unboundmethod/test_arguments.rb
 test/core/unboundmethod/test_name.rb
+test/standard/math/test_abs.rb
 test/standard/math/test_median.rb
 test/standard/math/test_percentile.rb
+test/standard/math/test_sign.rb
 test/standard/test_argvector.rb
 test/standard/test_cloneable.rb
 test/standard/test_date.rb
@@ -1131,7 +1145,7 @@ test/standard/test_timer.rb
 test/standard/test_tuple.rb
 test/standard/test_uri.rb
 HISTORY.rdoc
+Gemfile.lock
 README.rdoc
 RUBY.txt
 NOTICE.rdoc
-AUTHORS.rdoc
