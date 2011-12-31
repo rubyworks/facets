@@ -25,6 +25,7 @@ require_relative 'kernel/extend.rb'
 require_relative 'kernel/extension.rb'
 require_relative 'kernel/false.rb'
 require_relative 'kernel/here.rb'
+#require_relative 'kernel/hierarchical_send'    # uncommon
 require_relative 'kernel/identical.rb'
 require_relative 'kernel/in.rb'
 require_relative 'kernel/instance_assign.rb'

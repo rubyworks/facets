@@ -1,6 +1,7 @@
 require 'facets/kernel/require_relative'
 
 require_relative 'class/descendants.rb'
+#require_relative 'class/hierarchically'  # uncommon
 require_relative 'class/methodize.rb'
 require_relative 'class/pathize.rb'
 #require_relative 'class/preallocate.rb'  # uncommon

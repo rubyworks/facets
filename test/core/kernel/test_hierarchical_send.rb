@@ -1,4 +1,4 @@
-require 'facets/kernel/heirarchically'
+require 'facets/kernel/hierarchical_send'
 
 test_case Object do
 
