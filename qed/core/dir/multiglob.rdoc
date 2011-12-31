@@ -3,7 +3,7 @@
 Dir#multglob is like Dir#glob but it can handle more than one match
 parameter at a time.
 
-Given a directory 'tmp/multiglob' containing ...
+Given a directory 'multiglob' containing:
 
   A.txt
   A/B.txt
@@ -14,11 +14,11 @@ We can use #multglob to find multiple matches.
   require 'facets/dir/multiglob'
 
   x = %w{
-    tmp/multiglob/A
-    tmp/multiglob/A.txt
+    multiglob/A
+    multiglob/A.txt
   }
 
-  r = Dir.multiglob('tmp/multiglob/A', 'tmp/multiglob/A.*').sort
+  r = Dir.multiglob('multiglob/A', 'multiglob/A.*').sort
 
   r.assert == x
 
@@ -28,14 +28,14 @@ Dir#multiglob_r is like #multiglob but automatically searches
 directories recrusively.
 
   x = %w{
-    tmp/multiglob/A 
-    tmp/multiglob/A/B
-    tmp/multiglob/A.txt
-    tmp/multiglob/A/B.txt
-    tmp/multiglob/A/B/C.txt
+    multiglob/A 
+    multiglob/A/B
+    multiglob/A.txt
+    multiglob/A/B.txt
+    multiglob/A/B/C.txt
   }.sort
 
-  r = Dir.multiglob_r('tmp/multiglob/*').sort
+  r = Dir.multiglob_r('multiglob/*').sort
 
   r.assert == x
 

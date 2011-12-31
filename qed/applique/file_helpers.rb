@@ -13,7 +13,7 @@ Before :document do
 end
 
 When /Given a directory '(.*?)' containing/ do |dir, text|
-  abort unless /^#{temporary_directory}/ =~ dir
+  #abort unless /^#{temporary_directory}/ =~ dir
   text.lines.each do |file|
     next if file =~ /^\s*$/
     file = File.join(dir, file.strip)

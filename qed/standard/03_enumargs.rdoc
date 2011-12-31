@@ -2,7 +2,7 @@
 
 Require the library.
 
-  require 'mixers/enumargs'
+  require 'facets/enumargs'
 
 This will serve as our example class.
 

@@ -2,8 +2,9 @@
 
   require 'facets/string/snakecase'
 
-  '/my_module/my_class/'.snakecase.assert == '/my_module/my_class/'
-  'MyModule::MyClass'.snakecase.assert == 'my_module/my_class'
-  '::MyClass'.snakecase.assert == '/my_class'
+  'my_name'.snakecase.assert == 'my_name'
+
+  'MyName'.snakecase.assert == 'my_name'
+
   'URI'.snakecase.assert == 'uri'
 
