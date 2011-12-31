@@ -740,12 +740,7 @@ qed/standard/02_cloneable.rdoc
 qed/standard/03_enumargs.rdoc
 qed/standard/04_equitable.rdoc
 qed/standard/05_instantiable.rdoc
-qed/standard/09_preinitialize.rdoc
 qed/standard/basic_object.rdoc
-qed/standard/executable/02_subclass.rdoc
-qed/standard/executable/03_example.rdoc
-qed/standard/executable/04_executable_help.rdoc
-qed/standard/executable/applique/exec.rb
 qed/standard/memoizable.rdoc
 qed/standard/mulititon.rdoc
 test/core/array/test_after.rb
@@ -931,7 +926,7 @@ test/core/kernel/test_ergo.rb
 test/core/kernel/test_extension.rb
 test/core/kernel/test_get.rb
 test/core/kernel/test_here.rb
-test/core/kernel/test_hierarchically.rb
+test/core/kernel/test_hierarchical_send.rb
 test/core/kernel/test_in.rb
 test/core/kernel/test_instance_assign.rb
 test/core/kernel/test_instance_class.rb
@@ -1145,7 +1140,6 @@ test/standard/test_timer.rb
 test/standard/test_tuple.rb
 test/standard/test_uri.rb
 HISTORY.rdoc
-Gemfile.lock
 README.rdoc
 RUBY.txt
 NOTICE.rdoc
