@@ -1,12 +1,12 @@
-layout : default
+---
+layout: default
 
 --- html
-
 <div class="page">
 
   <h2><%= title %></h2>
 
-  <%= yield %>
+  <%= content %>
 
   <small>Written by <%= author %>, <%= date %></small>
 

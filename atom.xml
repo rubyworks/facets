@@ -10,7 +10,7 @@
  
  <entry>
    <title>{{ post.title | xml_escape }}</title>
-   <link href="http://rubyworks.github.com/facetsposts/2010-09-01-release-2-9.html"/>
+   <link href="http://rubyworks.github.com/facets/posts/2010-09-01-release-2-9.html"/>
    <updated>2010-09-01</updated>
    <id>{{ site.url }}{{ post.id }}</id>
    <content type="html"></content>
@@ -18,7 +18,7 @@
  
  <entry>
    <title>{{ post.title | xml_escape }}</title>
-   <link href="http://rubyworks.github.com/facetsposts/2009-11-09-release-2-8.html"/>
+   <link href="http://rubyworks.github.com/facets/posts/2009-11-09-release-2-8.html"/>
    <updated>2009-11-09</updated>
    <id>{{ site.url }}{{ post.id }}</id>
    <content type="html"></content>
@@ -26,7 +26,7 @@
  
  <entry>
    <title>{{ post.title | xml_escape }}</title>
-   <link href="http://rubyworks.github.com/facetsposts/2009-08-22-release-2-7.html"/>
+   <link href="http://rubyworks.github.com/facets/posts/2009-08-22-release-2-7.html"/>
    <updated>2009-08-22</updated>
    <id>{{ site.url }}{{ post.id }}</id>
    <content type="html"></content>
@@ -34,7 +34,7 @@
  
  <entry>
    <title>{{ post.title | xml_escape }}</title>
-   <link href="http://rubyworks.github.com/facetsposts/2009-07-21-new-website.html"/>
+   <link href="http://rubyworks.github.com/facets/posts/2009-07-21-new-website.html"/>
    <updated>2009-07-01</updated>
    <id>{{ site.url }}{{ post.id }}</id>
    <content type="html"></content>
@@ -42,7 +42,7 @@
  
  <entry>
    <title>{{ post.title | xml_escape }}</title>
-   <link href="http://rubyworks.github.com/facetsposts/2008-03-24-release-2-4.html"/>
+   <link href="http://rubyworks.github.com/facets/posts/2008-03-24-release-2-4.html"/>
    <updated>2008-03-24</updated>
    <id>{{ site.url }}{{ post.id }}</id>
    <content type="html"></content>
@@ -50,7 +50,7 @@
  
  <entry>
    <title>{{ post.title | xml_escape }}</title>
-   <link href="http://rubyworks.github.com/facetsposts/2008-01-01-how-facets-was-born.html"/>
+   <link href="http://rubyworks.github.com/facets/posts/2008-01-01-how-facets-was-born.html"/>
    <updated>2008-01-01</updated>
    <id>{{ site.url }}{{ post.id }}</id>
    <content type="html"></content>
