@@ -43,17 +43,29 @@ class String
     if size
       indent(-size)
     else
-      char = ' '
-      self.scan(/^[\ \t]*\S/) do |m|
-        if size.nil? || m.size < size
-          size = m.size
-          char = m[0...-1]
-        end
-      end
-      size -= 1
-      indent(-size, char)
+      ws = self.scan(/^([\ \t]*)\S/).flatten
+      prefix = common_prefix(*ws)
+      indent(-1, prefix)
     end
   end
+
+  def common_prefix(*strings)
+    return nil if strings.empty?
+    first = strings.shift
+    return first if strings.empty?
+
+    index = 0
+    while index < first.size
+      char = first[index...index+1]
+      strings.each do |str|
+        sub = str[index...index+1]
+        return str[0...index] unless sub == char
+      end
+      index += 1
+    end
+    first
+  end
+  private :common_prefix
 
   # Equivalent to String#unindent, but modifies the receiver in place.
   #
