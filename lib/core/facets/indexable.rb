@@ -1,16 +1,16 @@
 # Indexable is a mixin that provides index based methods,
-# working soley with four methods: #index, #slice, #splice
+# working solely with four methods: #index, #slice, #splice
 # and #size.
 #
 # These methods work in harmony. Where #index returns a
 # position of a given element, #slice returns elements
 # for given positions. #splice is like #slice but replaces
-# the given position with new values. This mehtod is not
+# the given position with new values. This method is not
 # part of ruby core, but it generally just an alias for #[]=,
 # just as #slice is an alias of #[]. #size of course simply
 # returns the total length of the indexable object.
 #
-# NOTE: To test the folowing methods Indexable needs to be
+# NOTE: To test the following methods Indexable needs to be
 # included into Array and array must have #splice defined.
 #
 #   require 'facets/array/splice'
@@ -49,7 +49,7 @@ module Indexable
     slice(-1,1)
   end
 
-  # Returns an array of the first element upto,
+  # Returns an array of the first element up to,
   # but not including, the last element.
   #
   #   [1,2,3].body  #=> [1,2]
@@ -74,7 +74,7 @@ module Indexable
   #
   # In other words, If there are an even number of elements the
   # higher-indexed of the two center elements is indexed as
-  # orgin (0).
+  # origin (0).
   #
   def mid(offset=0)
     slice((size / 2) + offset)
@@ -103,7 +103,7 @@ module Indexable
     end
   end
 
-  # Fetch values from a start index thru an end index.
+  # Fetch values from a start index through an end index.
   #
   #   [1,2,3,4,5].thru(0,2)  #=> [1,2,3]
   #   [1,2,3,4,5].thru(2,4)  #=> [3,4,5]
