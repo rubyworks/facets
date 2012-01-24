@@ -3,7 +3,7 @@ class Symbol
   # Does the block throw the symbol?
   # 
   def thrown?
-    catch(self) do
+    !(catch(self) do
       begin
         yield
         true
@@ -12,7 +12,7 @@ class Symbol
       rescue NameError => err         # 1.8 exception
         false  #msg += ", not #{err.name.inspect}"
       end
-    end
+    end)
   end
 
 end
