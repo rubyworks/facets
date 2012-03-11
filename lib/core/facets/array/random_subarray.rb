@@ -8,7 +8,7 @@
 # CREDIT: Michael Kohl
 
 class Array
-  def random_subset(n=1)
+  def random_subarray(n=1)
     raise ArgumentError, "negative argument" if n < 0
     (1..n).map do
       r = rand(2**self.size)
