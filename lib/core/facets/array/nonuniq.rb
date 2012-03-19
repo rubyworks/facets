@@ -27,10 +27,10 @@ class Array
     self.replace(h2.keys)
   end
 
-  # Return list of duplictate elements.
+  # Return list of duplicate elements.
   #
   # @param [Integer] min
-  #   The minimum number of duplicatation necessary for inclusion.
+  #   The minimum number of duplication necessary for inclusion.
   #
   # @author Rebort Dober (current implementation)
   # @author Thibaut Barrère
