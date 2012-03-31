@@ -1,8 +1,6 @@
 module Kernel
 
-  alias_method :_extend, :extend
-
-  private :_extend
+  extend_method = instance_method(:extend)
 
   # Extend an object with a module.
   #
@@ -21,9 +19,9 @@ module Kernel
   #
   # @author Trans
   # @author Marco Otte-Witte (bug fix)
-  def extend(*mod, &blk)
-    _extend(*mod) unless mod.empty?
-    _extend Module.new(&blk) if blk
+  define_method :extend do |*mod, &blk|
+    extend_method.bind(self).call(*mod) unless mod.empty?
+    extend_method.bind(self).call(Module.new(&blk)) if blk
     self
   end
 
