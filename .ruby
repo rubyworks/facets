@@ -1,6 +1,6 @@
 ---
 source:
-- var
+- meta
 authors:
 - name: Thomas Sawyer
   email: transfire@gmail.com
@@ -8,8 +8,6 @@ copyrights:
 - holder: Thomas Sawyer
   year: '2004'
   license: Ruby
-replacements: []
-alternatives: []
 requirements:
 - name: lemon
   groups:
@@ -24,6 +22,7 @@ requirements:
   - build
   development: true
 dependencies: []
+alternatives: []
 conflicts: []
 repositories:
 - uri: git@github.com:rubyworks/facets.git
@@ -42,7 +41,7 @@ load_path:
 revision: 0
 created: '2004-12-16'
 summary: Premium Ruby Extensions
-title: Facets
+title: Ruby Facets
 version: 2.9.3
 name: facets
 description: Facets is the premier collection of extension methods for the Ruby programming
@@ -51,4 +50,4 @@ description: Facets is the premier collection of extension methods for the Ruby 
   Facets includes a few additional classes and mixins suitable to wide variety of
   applications.
 organization: rubyworks
-date: '2011-12-31'
+date: '2012-03-30'
