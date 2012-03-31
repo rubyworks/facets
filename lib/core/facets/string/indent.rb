@@ -1,7 +1,6 @@
 class String
 
   # Indent left or right by n spaces.
-  # (This used to be called #tab and aliased as #indent.)
   #
   # CREDIT: Gavin Sinclair, Trans, Tyler Rick
 

@@ -1,17 +1,23 @@
-require 'facets/string/tabto'
+require 'facets/string/indent'
 
 class String
 
-  # Aligns each line n spaces.
+  # Preserves relative tabbing. The first non-empty line ends up with `n`
+  # spaces before nonspace.
   #
-  # CREDIT: Gavin Sinclair
-  #
+  # @author Gavin Sinclair
+
   def tab(n)
-    gsub(/^ */, ' ' * n)
+    if self =~ /^( *)\S/
+      indent(n - $1.length)
+    else
+      self
+    end
   end
 
-  # NOTE: Deprecated #taballto which was an alias for #tab.
-  #alias_method :taballto, :tab
+  # @deprecated Use String#tab instead.
+
+  alias :tabto, :tab
 
 end
 
