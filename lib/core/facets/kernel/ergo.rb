@@ -11,7 +11,7 @@ module Kernel
   #   nil.ergo{ |o| o.foobar } #=> nil
   #
   # This is like #tap, but #tap yields self and returns self,
-  # where as #ergo yields self buit return the result.
+  # where as #ergo yields self but returns the result.
   #
   # CREDIT: Daniel DeLorme
 
