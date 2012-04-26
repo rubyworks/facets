@@ -1,4 +1,4 @@
-reqiure 'facets/kernel/require_relative'
+require 'facets/kernel/require_relative'
 
 require_relative 'abs.rb'
 require_relative 'acot.rb'
