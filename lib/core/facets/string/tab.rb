@@ -17,7 +17,7 @@ class String
 
   # @deprecated Use String#tab instead.
 
-  alias :tabto, :tab
+  alias :tabto :tab
 
 end
 
