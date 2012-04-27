@@ -18,13 +18,7 @@ class Array
 
   # Same as `#nonuniq` but acting in place.
   def nonuniq!
-    h1 = {}
-    h2 = {}
-    each {|i|
-      h2[i] = true if h1[i]
-      h1[i] = true
-    }
-    self.replace(h2.keys)
+    self.replace(self.nonuniq)
   end
 
   # Return list of duplicate elements.
