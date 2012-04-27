@@ -2,6 +2,7 @@ require 'facets/kernel/require_relative'
 
 require_relative 'file/append.rb'
 #require_relative 'file/atomic_write.rb'    # uncommon
+require_relative 'file/common_path.rb'
 require_relative 'file/create.rb'
 require_relative 'file/ext.rb'
 require_relative 'file/null.rb'
