@@ -208,7 +208,9 @@ class Hash
   #
   # CREDIT: Forian Gross
 
-  def to_h; rehash; end
+  def to_h
+    rehash  #dup
+  end
 
   unless method_defined?(:to_hash) # 1.9.?+
     # Returns _self_.
