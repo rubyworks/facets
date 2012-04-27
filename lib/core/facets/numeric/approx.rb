@@ -17,7 +17,8 @@ class Numeric
   # Determines if another number is approximately equal
   # within a given +epsilon+.
   #
-  # This is the same a {#approx?} but has a different defualt.
+  # This is the same a {#approx?} but has a different default.
+  # In this case it is 1/100th.
   #
   # @author Gavin Sinclair
   def close?(number, epsilon=0.01)
@@ -26,7 +27,7 @@ class Numeric
     a, b = self.to_f, number.to_f
     if a.zero? or b.zero?
       ## There's no scale, so we can only go on difference.
-      (a - b).abs < @epsilon
+      (a - b).abs < epsilon
     else
       ## We go by ratio. The ratio of two equal numbers is one, so the ratio
       ## of two practically-equal floats will be very nearly one.
