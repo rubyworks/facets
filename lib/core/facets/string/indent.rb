@@ -1,6 +1,6 @@
 class String
 
-  # Indent left or right by n spaces.
+  # Indent left or right by `n` spaces, or `n` number of `c` string.
   #
   # CREDIT: Gavin Sinclair, Trans, Tyler Rick
 
