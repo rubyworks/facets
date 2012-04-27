@@ -7,7 +7,7 @@ test_case Kernel do
   method :source_location do
 
     test do
-      raise Omission, "issue with call stack"
+      raise NotImplementedError, "issue with call stack"
 
       file, line, meth = source_location_example
       file.assert == __FILE__
