@@ -5,13 +5,22 @@ require 'fileutils'
 metadata = YAML.load_file('.ruby')
 version  = metadata['version']
 
-desc "Generate documentation"
+common_yardopts = %{
+  --no-yardopts
+  --no-cache
+  --title "Ruby Facets"
+  --readme README.rdoc
+  --protected
+  --private
+  --tag uncommon:Uncommon
+  --tag standard:Standard
+}.gsub("\n", ' ')
+
+desc "Generate shomen documentation"
 task :document do
-  FileUtils.mkdir("web/docs/facets-#{version}")
-  system "shomen yard --yardopts .yard/core.yardopts > web/docs/facets-#{version}/core.json"
-  system "shomen yard --yardopts .yard/more.yardopts > web/docs/facets-#{version}/more.json"
-  system "shomen yard --yardopts .yard/standard.yardopts > web/docs/facets-#{version}/standard.json"
-  system "shomen yard --yardopts .yard/supplement.yardopts > web/docs/facets-#{version}/supplement.json"
+  FileUtils.mkdir_p("web/docs/facets-#{version}")
+  system "shomen yard #{common_yardopts} lib/core - [A-Z]*.* > web/docs/facets-#{version}/core.json"
+  system "shomen yard #{common_yardopts} lib/standard - [A-Z]*.* > web/docs/facets-#{version}/standard.json"
 end
 
 # yard core extensions
@@ -22,7 +31,7 @@ file "lib/core/**/*.rb" do
   #cmd << "-r doc/README.core "
   #cmd << "lib/core - README.rdoc AUTHORS.rdoc NOTICE.rdoc "
   #abort unless system cmd
-  abort unless system "shomen yard --yardopts .yard/core.yardopts > web/docs/facets-#{version}/core.json"
+  abort unless system "shomen yard #{common_yardopts} lib/core - [A-Z]*.* > web/docs/facets-#{version}/core.json"
 end
 
 # yard standard extensions
@@ -33,11 +42,11 @@ file "lib/standard/**/*.rb" do
   #cmd << "-r doc/README.standard "
   #cmd << "lib/standard - README.rdoc AUTHORS.rdoc NOTICE.rdoc "
   #abort unless system cmd
-  abort unless system "shomen yard --yardopts .yard/standard.yardopts > web/docs/facets-#{version}/standard.json"
+  abort unless system "shomen yard #{common_yardopts} lib/standard - [A-Z]*.* > web/docs/facets-#{version}/standard.json"
 end
 
 
-
+=begin
 #
 # GENERATE RDOCS
 # ----------------------------------------------------------------------------
@@ -52,4 +61,5 @@ task "rdoc" do
   system "rdoc -a -S -t'Facets Core API' -T #{TEMPLATE} -m README.rdoc --op '#{APIOUT}/core' README.rdoc lib/facets/core"
   system "rdoc -a -S -t'Facets Standard API' -T #{TEMPLATE} -m README.rdoc --op '#{APIOUT}/standard' README.rdoc lib/facets/standard"
 end
+=end
 
