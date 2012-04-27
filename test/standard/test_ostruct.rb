@@ -52,19 +52,20 @@ test_case OpenStruct do
     end
   end
 
-  method :instance_delegate do
-    test "store" do
-      o = OpenStruct.new(:a => 1)
-      o.instance_delegate.store(:a,1)
-      o.a.assert == 1
-    end
-
-    test "update" do
-      o = OpenStruct.new
-      o.instance_delegate.update(:a=>1)
-      o.a.assert == 1
-    end
-  end
+  # @deprecated
+  #method :instance_delegate do
+  #  test "store" do
+  #    o = OpenStruct.new(:a => 1)
+  #    o.instance_delegate.store(:a,1)
+  #    o.a.assert == 1
+  #  end
+  #
+  #  test "update" do
+  #    o = OpenStruct.new
+  #    o.instance_delegate.update(:a=>1)
+  #    o.a.assert == 1
+  #  end
+  #end
 
   method :[] do
     test do
@@ -150,11 +151,15 @@ end
 test_case Hash do
 
   method :to_ostruct do
-    a = { :a => 1, :b => 2, :c => 3 }
-    ao = a.to_ostruct
-    ao.a.assert == a[:a]
-    ao.b.assert == a[:b]
-    ao.c.assert == a[:c]
+
+    test do
+      a = { :a => 1, :b => 2, :c => 3 }
+      ao = a.to_ostruct
+      ao.a.assert == a[:a]
+      ao.b.assert == a[:b]
+      ao.c.assert == a[:c]
+    end
+
   end
 
   method :to_ostruct_recurse do
