@@ -15,7 +15,7 @@ module Shellwords
 
   unless method_defined?(:escape)
     def escape(cmdline)
-      cmdline.gsub(/([\\\t\| &`<>)('"])/) { |s| '\\' << s }
+      cmdline.gsub(/([\\\t\| &`<>)('"])\$/) { |s| '\\' << s }
     end
   end
 
@@ -34,7 +34,7 @@ module Shellwords
   # The coolest little arguments parser in all of Rubyland.
   #
   # CREDIT: Michel Martens
-  def run(argv, opts)
+  def parse(argv, opts)
     argv = (String === argv ? shellwords(argv) : argv.to_a.dup)
     args = []
     while argv.any?
@@ -59,6 +59,9 @@ module Shellwords
     end
     args
   end
+
+  # Original name for Shellwords#parse.
+  alias_method :run, :parse
 
 end
 
