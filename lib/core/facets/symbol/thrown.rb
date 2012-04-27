@@ -2,16 +2,19 @@ class Symbol
 
   # Does the block throw the symbol?
   # 
+  # Note that +throw+ inside the block must be used in one-argument form.
+  # 
+  # Also note that symbols other than this one are not checked by this method so
+  # the following code:
+  # 
+  #   :a.thrown? { throw :b }
+  # 
+  # will result in error.
+  # 
   def thrown?
-    catch(self) do
-      begin
-        yield
-        true
-      rescue ArgumentError => err     # 1.9 exception
-        false  #msg += ", not #{err.message.split(/ /).last}"
-      rescue NameError => err         # 1.8 exception
-        false  #msg += ", not #{err.name.inspect}"
-      end
+    not catch(self) do
+      yield
+      true
     end
   end
 

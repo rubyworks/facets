@@ -15,7 +15,7 @@ module Shellwords
 
   unless method_defined?(:escape)
     def escape(cmdline)
-      cmdline.gsub(/([\\\t\| &`<>)('"])/) { |s| '\\' << s }
+      cmdline.gsub(/([\\\t\| &`<>)('"])\$/) { |s| '\\' << s }
     end
   end
 
