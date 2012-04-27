@@ -1,4 +1,7 @@
+# TODO: URI query methods need work and new consideration.
+
 require 'uri'
+require 'facets/uri/cgi_escape'
 
 module URI
 
@@ -105,7 +108,7 @@ module URI
   # @todo Optimize this method.
   #
   def query_update(uri, parameters)
-    query_string = self.get_query_string(uri)
+    query_string = self.query_get(uri)
     rest = uri.dup.gsub(/\?#{query_string}/, "")
 
     hash = self.query_string_to_hash(query_string)
@@ -132,7 +135,7 @@ module URI
     hash = request.parameters.dup()
     hash.update(parameters)
 
-    ## use this in hash_to_querystring.
+    ## use this in hash_to_query
     query_string = hash.collect { |k, v|
       "#{k}=#{v}"
     }.join(";")
