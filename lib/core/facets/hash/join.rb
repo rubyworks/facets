@@ -2,7 +2,7 @@ class Hash
 
   # Like Array#join but specialized to Hash.
   #
-  # NOTE: Without Ruby 1.9 this would be difficult to rely on becuase
+  # NOTE: Without Ruby 1.9 this would be difficult to rely on because
   # hashes did not have a strict order.
   #
   # CREDIT: Mauricio Fernandez
