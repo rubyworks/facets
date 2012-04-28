@@ -1,6 +1,6 @@
 class Hash
 
-  # Weave is a very uniqe hash operator. I is designed
+  # Weave is a very unique hash operator. It is designed
   # to merge to complex hashes in according to sensible,
   # regular pattern. The effect is akin to inheritance.
   #
