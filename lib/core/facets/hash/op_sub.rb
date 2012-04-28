@@ -1,6 +1,6 @@
 class Hash
 
-  # Operator for remove hash paris. If another hash is given
+  # Operator for removing hash pairs. If another hash is given
   # the pairs are only removed if both key and value are equal.
   # If an array is given then matching keys are removed.
   #

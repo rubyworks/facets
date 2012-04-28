@@ -1,6 +1,6 @@
 class Hash
 
-  # Any array values with be replaced with the first element of the array.
+  # Any array values will be replaced with the first element of the array.
   # Arrays with no elements will be set to nil.
   #
   #   h = { :a=>[1], :b=>[1,2], :c=>3, :d=>[] }
