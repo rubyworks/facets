@@ -192,6 +192,20 @@ of any thing already included or simply have a patch, they are more than
 welcome. We want Ruby Facets to be of the highest quality.
 
 
+== Development
+
+Facets uses the {Lemon}[http://rubyworks.github.com/lemon] testing framework
+to handle unit testing. And uses QED specifications to provide a higher level
+of testing along wth documentation. It is most important to provide Lemon
+tests when contributing, but feel free to provide QED specs if you are feeling
+particularly verbose!
+
+Facets uses {Detroit}[http://detroit.github.com] and {Fire}[http://rubyworks.github.com/fire]
+build tools. Detroit is a life-cycle tool and Fire is something of a cross between Rake and
+Watchr. The build scripts (the Assembly and the `Rulefile` respectively), sometimes used other
+tools such as `mast` and `vclog`.
+
+
 == Authors
 
 This collection was put together by, and largely written by Trans. He can be
