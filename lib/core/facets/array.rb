@@ -36,6 +36,7 @@ require_relative 'array/product.rb'
 require_relative 'array/pull.rb'
 require_relative 'array/occurent.rb'
 #require_relative 'array/op_pow.rb'             # uncommon
+require_relative 'array/random_subarray.rb'
 require_relative 'array/recurse.rb'
 require_relative 'array/recursively.rb'
 require_relative 'array/rotate.rb'
@@ -65,4 +66,3 @@ require_relative 'array/uniq_by.rb'
 #  next unless file.end_with?('.rb')
 #  loader.call(file)
 #end
-
