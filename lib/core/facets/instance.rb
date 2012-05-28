@@ -1,16 +1,3 @@
-module Kernel
-  INSTANCES = {}
-
-  # Returns an instance of Instance for +self+,
-  # which allows convenient access to an object's
-  # internals.
-
-  def instance
-    INSTANCES[self] ||= Instance.new(self)
-  end
-
-end
-
 # = Instance Class
 #
 #   class Friend
@@ -29,6 +16,24 @@ end
 class Instance
 
   include Enumerable
+
+  module Kernel
+    # Returns an instance of Instance for +self+,
+    # which allows convenient access to an object's
+    # internals.
+    def instance
+      Instance.instance(self)
+    end
+  end
+
+  # Instance table acts as a global cache for instances of Instance.
+  @table = {}
+
+  # Instance is multiton. Use this method instead of #new to get a the
+  # cached instance.
+  def self.instance(delegate)
+    @table[delegate] ||= Instance.new(delegate)
+  end
 
   #
   def initialize(delegate)
@@ -153,5 +158,9 @@ class Instance
       name.to_s !~ /^@/ ? "@#{name}" : name
     end
 
+end
+
+module Kernel
+  include Instance::Kernel
 end
 
