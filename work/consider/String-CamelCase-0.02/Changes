@@ -1,0 +1,9 @@
+Revision history for String-CamelCase
+
+0.02    Mon Dec 28 08:28:44 JST 2009
+        fix pod syntax (no code changes).
+        Thanks to Pedro Melo and Tokuhiro Matsuno.
+
+0.01    Wed Sep  6 09:30:19 JST 2006
+        First version.
+

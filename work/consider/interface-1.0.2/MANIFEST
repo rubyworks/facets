@@ -1,0 +1,11 @@
+* CHANGES
+* MANIFEST
+* README
+* Rakefile
+* interface.gemspec
+* examples/example_instance.rb
+* examples/example_interface.rb
+* examples/example_sub.rb
+* examples/example_unrequire.rb
+* lib/interface.rb
+* test/test_interface.rb

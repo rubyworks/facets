@@ -1,0 +1,12 @@
+extmath is a library that extends Ruby's built-in math library.
+
+extmath extends Ruby's built-in math capabilities by providing
+additional constants and functions that a good scientific calculator
+should provide.
+
+extmath was written by Josef 'Jupp' Schugt, jupp@rubyforge.org and
+is free software. See GPL.txt for details.
+
+Installation is described in INSTALL.
+Documentation is in doc directory.
+Changelog is at bottom of doc/documentation.txt

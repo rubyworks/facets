@@ -1,0 +1,34 @@
+diff --git a/lib/core/facets/enumerable/sum.rb b/lib/core/facets/enumerable/sum.rb
+index 2a790d3..4ce6b13 100644
+--- a/lib/core/facets/enumerable/sum.rb
++++ b/lib/core/facets/enumerable/sum.rb
+@@ -7,9 +7,9 @@ module Enumerable
+   #
+   def sum(identity = 0, &block)
+     if block_given?
+-      map(&block).sum
++      map(&block).sum(identity)
+     else
+-      inject{ |sum, element| sum + element } || identity
++      reduce { |sum, element| sum + element } || identity
+     end
+   end
+ 
+diff --git a/test/core/enumerable/test_sum.rb b/test/core/enumerable/test_sum.rb
+new file mode 100644
+index 0000000..24a8a02
+--- /dev/null
++++ b/test/core/enumerable/test_sum.rb
+@@ -0,0 +1,12 @@
++require 'facets/enumerable/sum'
++require 'test/unit'
++
++class TC_Enumerable_Sum < Test::Unit::TestCase
++
++  def test_sum_with_identity_and_block
++    a = [].sum 9, &:to_i
++    assert_equal( a, 9 )
++  end
++
++end
++

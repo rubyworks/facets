@@ -1,0 +1,42 @@
+Index: test/unit/hash/test_op.rb
+===================================================================
+--- test/unit/hash/test_op.rb	(revision 380)
++++ test/unit/hash/test_op.rb	(working copy)
+@@ -46,6 +46,20 @@
+       assert_equal( e, a << b )
+     end
+ 
++    def test_op_minus_array
++      a = { :a => 1, :b => 2, :c => 3 }
++      b = [ :a ]
++      e = { :b => 2, :c => 3 }
++      assert_equal( e, a - b )
++    end
++
++    def test_op_minus_hash
++      a = { :a => 1, :b => 2, :c => 3 }
++      b = { :a => 1, :d => 4 }
++      e = { :b => 2, :c => 3 }
++      assert_equal( e, a - b )
++    end
++
+   end
+ 
+ 
+Index: lib/core/facets/hash/op.rb
+===================================================================
+--- lib/core/facets/hash/op.rb	(revision 380)
++++ lib/core/facets/hash/op.rb	(working copy)
+@@ -82,10 +82,11 @@
+     else
+       other.each do |k,v|
+         if h.key?(k)
+-          h.delete(k) if value == h[k]
++          h.delete(k) if v == h[k]
+         end
+       end
+     end
++    return h
+   end
+ 
+   # Like merge operator '+' but merges in reverse order.

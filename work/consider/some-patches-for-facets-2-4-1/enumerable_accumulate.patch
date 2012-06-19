@@ -1,0 +1,13 @@
+--- lib/facets/enumerable/accumulate.rb	2008-03-08 15:12:34.000000000 +0100
++++ lib/facets/enumerable/accumulate1.rb	2008-04-20 13:57:20.000000000 +0200
+@@ -13,7 +13,9 @@
+ 
+   def accumulate
+     @_accumulate ||= Functor.new do |op, *args|
+-      inject([]) { |a, x| a << x.send(op, *args) }.flatten
++      result = []
++      each { |x| result << x.send( op, *args ) }
++      result.flatten
+     end
+   end
+ 

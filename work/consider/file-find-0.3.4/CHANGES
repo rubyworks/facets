@@ -1,0 +1,72 @@
+== 0.3.4 - 19-Sep-2009
+* Fixed a packaging bug. Thanks go to Gabriel Horner for the spot.
+* Added the 'gem' task to the Rakefile for building the gem. Removed the
+  gem builder code that was in the gemspec itself.
+* Updated the dependency for sys-admin to 1.5.2.
+
+== 0.3.3 - 3-Aug-2009
+* Now compatible with Ruby 1.9.x.
+* Added support for the :links option
+* Updated the :mount accessor to work properly if the value is changed
+  after the File::Find object is initially created.
+* Eliminated some 'shadowed variable' warnings in Ruby 1.9.x.
+* Added a fuller description to the gemspec.
+* Minor test refactoring.
+
+== 0.3.2 - 20-Feb-2009
+* Added support for the :mount option.
+* Added some basic tests for the :mount option.
+
+== 0.3.1 - 9-Jan-2009
+* Now defaults to using Etc instead of Sys::Admin for implementations
+  that don't support building C extensions, e.g. JRuby.
+* Updated the test suite to work with JRuby.
+* Minor optimizations for symbolic perms and atime/ctime/mtime checks.
+  Thanks go in part to Ryan Davis' flay library.
+
+== 0.3.0 - 30-Dec-2008
+* Added support for FileTest operations. All options passed to the constructor
+  that end with '?' are now validated and treated as FileTest operations.
+
+== 0.2.5 - 29-Dec-2008
+* Added maxdepth and mindepth support.
+* Added a 'clean' rake task to cleanup any test-unit results files.
+
+== 0.2.4 - 10-Dec-2008
+* Added support for symbolic permissions. Thanks go to Bill Kleb for the
+  suggestion and to Hal Fulton for providing the solution.
+
+== 0.2.3 - 25-Nov-2008
+* Added mtime support. My previous concerns, which I believe stemmed from
+  the find(2) man page on Solaris 10 with regards to atime checks modifying
+  the mtime, appear have been unfounded.
+
+== 0.2.2 - 19-Nov-2008
+* The :user and :group options now accept a name or a numeric id. Thanks go
+  to Bill Kleb for the suggestion.
+* Fixed yet another path bug for MS Windows.
+* Updated platform check to use CONFIG instead of RUBY_PLATFORM, because the
+  latter does not work as I intended with other implementations, e.g. JRuby.
+* Added sys-admin and test-unit as prerequisites.
+* Added tests for the :user and :group options.
+
+== 0.2.1 - 4-Oct-2007
+* Added the File::Find#previous method, which lets you see the previous
+  match, if any.
+* Path name bug fix for MS Windows.
+* Test suite bug fixes for MS Windows (perm test now skipped).
+* Inaccessible directories are now skipped instead of raising an error.
+
+== 0.2.0 - 26-Apr-2007
+* Fixed a bug where it was not traversing subdirectories.
+* Added support for the perm and prune options.
+
+== 0.1.1 - 25-Apr-2007
+* The default for name is now '*', i.e. everything.
+* Fixed a bug where directories were not matched. Thanks go to Leslie Viljoen
+  for the spot.
+* The size option now accepts strings with comparable operators. For example,
+  you can now look for files greater than 400 bytes with the string "> 400".
+
+== 0.1.0 - 24-Apr-2007
+* Initial release

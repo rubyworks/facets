@@ -1,0 +1,14 @@
+Changes
+MANIFEST
+Makefile.PL
+README
+SIGNATURE
+inc/ExtUtils/MY_Metafile.pm
+lib/String/CamelCase.pm
+t/00-load.t
+t/01-basic.t
+t/02-more.t
+t/boilerplate.t
+t/pod-coverage.t
+t/pod.t
+META.yml                                 Module meta-data (added by MakeMaker)

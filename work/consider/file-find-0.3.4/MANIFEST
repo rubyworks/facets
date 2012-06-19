@@ -1,0 +1,7 @@
+* CHANGES
+* MANIFEST
+* Rakefile
+* README
+* file-find.gemspec
+* lib/file/find.rb
+* test/test_file_find.rb
