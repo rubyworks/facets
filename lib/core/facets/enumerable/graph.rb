@@ -30,8 +30,5 @@ module Enumerable
     end
   end
 
-  # Alias for #graph, which stands for "map hash".
-  alias_method :mash, :graph
-
 end
 
