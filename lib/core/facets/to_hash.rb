@@ -1,3 +1,5 @@
+warn 'facets: to_hash.rb is deprecated in favor of hashifier.rb.'
+
 require 'facets/enumerator'
 require 'facets/hash/dearray_values'
 
@@ -65,7 +67,7 @@ class Array
 
   # Converts an array into a hash. Converting an array
   # into a hash is not a one-to-one conversion, for this
-  # reason #to_h examines at the array being converted
+  # reason #to_h examines the array being converted
   # and then dispatches the conversion to the most sutiable
   # specialized function. There are three possiblities for this.
   #
@@ -135,12 +137,6 @@ class Array
     a << nil if a.size % 2 == 1
     Hash[*a]
   end
-
-  #--
-  #def to_h_flat
-  #  each_slice(2).inject({}) {|ha,(k,v)| ha[k]=v; ha}
-  #end 
-  #++
 
   # When a mixed or multi-element accociative array
   # is used, the result is as follows:

@@ -36,6 +36,6 @@ require 'facets/string.rb'
 require 'facets/struct.rb'
 require 'facets/symbol.rb'
 require 'facets/time.rb'
-require 'facets/to_hash.rb'
+#require 'facets/to_hash.rb'
 require 'facets/unboundmethod.rb'
 
