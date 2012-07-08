@@ -11,7 +11,7 @@ module Enumerable
   # If a block is given, each key's value is the result of running the
   # block for that key, e.g.:
   #
-  #     [1,2,3].value_by{|n| "a"*n}  #=> {1=>"a", 2=>"aa", 3=>"aaa"}
+  #     [1,2,3].value_by{ |n| "a"*n }  #=> {1=>"a", 2=>"aa", 3=>"aaa"}
   #
   # @author Ronen Barzel
   #
