@@ -1,8 +1,8 @@
 class Proc
 
-  # Bind a procedure to an object. This works
-  # wrapping instance_eval on the Proc object
-  # and then wrapping this in a new Proc.
+  # Bind a procedure to an object. This works by
+  # wrapping instance_eval on the Proc object and
+  # then wrapping this in a new Proc.
   #
   #    a = [1,2,3]
   #    p1 = Proc.new{ join(' ') }
