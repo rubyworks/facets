@@ -3,6 +3,8 @@ module Kernel
   # Similar to __FILE__, __DIR__ provides the directory
   # path to the current executing script.
   #
+  # DEPRECATED: As of Ruby 2.0, which will have #__dir__ method.
+  #
   # CREDIT: Trans
 
   def __DIR__(*paths)
