@@ -13,21 +13,18 @@ module Kernel
   #     obj.object_send(:foo)
   #   end
   #
-  # TODO: object_send needs to change for 1.9. Is it #public_send ?
-  #
-  # CREDIT: Trans
-  #--
-  # Which implementation is faster?
-  #++
+  # DEPRECATED: Use #public_send instead.
 
-  def object_send(name, *args, &blk)
-    #instance_eval "self.#{name}(*args)"
-    if respond_to?(name)
-      __send__(name, *args, &blk)
-    else
-      __send__(:method_missing, name, *args, &blk)
-    end
-  end
+  alias object_send public_send rescue nil
+
+  #def object_send(name, *args, &blk)
+  #  #instance_eval "self.#{name}(*args)"
+  #  if respond_to?(name)
+  #    __send__(name, *args, &blk)
+  #  else
+  #    __send__(:method_missing, name, *args, &blk)
+  #  end
+  #end
 
 end
 
