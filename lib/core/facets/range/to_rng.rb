@@ -5,7 +5,7 @@ class Range
   #
   # CREDIT: Trans
 
-  def to_r
+  def to_rng
     self
   end
 
