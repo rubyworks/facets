@@ -4,8 +4,8 @@ class Binding
 
     # Evaluate a Ruby source code string (or block) in the binding context.
 
-    def eval(str)
-      Kernel.eval(str, self)
+    def eval(str, *file_and_line)
+      Kernel.eval(str, self, *file_and_line)
     end
 
   end
