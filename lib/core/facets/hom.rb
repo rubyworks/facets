@@ -1,9 +1,7 @@
-# By definition a Functor is simply a first class method, but these are common
-# in the form of Method and Proc. So for Ruby a Functor is a more specialized
-# as a Higher-order function or Metafunction. Essentally, a Functor can vary
+# HOM stands for Higher-Order-Message. Essentally, a HOM can vary
 # its behavior accorrding to the operation applied to it.
 #
-#   f = Functor.new { |op, x| x.send(op, x) }
+#   f = HOM.new { |op, x| x.send(op, x) }
 #   (f + 1)  #=> 2
 #   (f + 2)  #=> 4
 #   (f + 3)  #=> 6
@@ -11,14 +9,14 @@
 #   (f * 2)  #=> 4
 #   (f * 3)  #=> 9
 #
-class Functor #< BasicObject
+class HOM #< BasicObject
 
-  # Functors can be somewhat inefficient if a new Functor
+  # HOMs can be somewhat inefficient if a new HOM
   # is frequently recreated for the same use. So this cache
   # can be used to speed things up.
   #
   # The +key+ will always be an array, wich makes it easier
-  # to cache functor for multiple factors.
+  # to cache HOM for multiple factors.
   #
   def self.cache(*key, &function)
     @cache ||= {}
@@ -39,13 +37,13 @@ class Functor #< BasicObject
   #
   alias :__class__ :class
 
-  ## If Functor were built-in to Ruby this would not be
+  ## If HOM were built-in to Ruby this would not be
   ## needed since exceetions could just be added directly.
-  ##$FUNCTOR_EXCEPTIONS ||= [:binding, :undefine_method]
+  ##$HOM_EXCEPTIONS ||= [:binding, :undefine_method]
 
   ## TODO: This will not work when BasicObject is utilized. How to fix?
   ##def self.honor_exceptions
-  ##  $FUNCTOR_EXCEPTIONS.each{ |name|
+  ##  $HOM_EXCEPTIONS.each{ |name|
   ##    next if method_defined?(name)
   ##    eval %{
   ##      def #{name}(*a,&b)
@@ -73,7 +71,7 @@ class Functor #< BasicObject
   end
 
   ##def inspect
-  ##  #"#<Functor:#{object_id} #{method_missing(:inspect)}>"    # hex id ?
+  ##  #"#<#{__class__}:#{object_id} #{method_missing(:inspect)}>"    # hex id ?
   ##  "#{method_missing(:inspect)}"
   ##end
 
@@ -84,11 +82,9 @@ class Functor #< BasicObject
 
   private
 
-  # Any action against the functor is processesd by the function.
+  # Any action against the HOM is processesd by the function.
   def method_missing(op, *args, &blk)
     @function.call(op, *args, &blk)
   end
 
 end
-
-# Copyright (c) 2004 Thomas Sawyer (Ruby License)
