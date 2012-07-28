@@ -9,6 +9,8 @@ module Kernel
   #   constant("Process::Sys")            # => Process::Sys
   #   constant("Regexp::MULTILINE")       # => 4
   #
+  # TODO: As of Ruby 2.0, #constant can be deprecated, or aliased to #get_const.
+  #
   # CREDIT: Trans
 
   def constant(const)
