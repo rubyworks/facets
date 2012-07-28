@@ -1,4 +1,4 @@
-require 'facets/functor'
+require 'facets/hom'
 
 class String
 
@@ -9,7 +9,7 @@ class String
   #    'foo.txt'.file.mtime
   #
   def file
-    Functor.new(&method(:file_send).to_proc)
+    HOM.new(&method(:file_send).to_proc)
   end
 
   private
