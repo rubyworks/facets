@@ -15,5 +15,8 @@ class String
     end
   end
 
+  # Alias for #mscan.
+  alias each_match mscan
+
 end
 
