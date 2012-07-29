@@ -2,13 +2,14 @@ class Hash
 
   # Returns a new hash with only the given keys.
   #
-  #   h = {:a=>1, :b=>2}
-  #   h.slice(:a)  #=> {:a=>1}
+  #   h = {:a=>1, :b=>2, :c=>3}
+  #   h.slice(:a, :c)  #=> {:a=>1, :c=>3}
+  #   h.slice(:a, :d)  #=> {:a=>1}
   #
   def slice(*keep_keys)
     hash = {}
     keep_keys.each do |key|
-      hash[key] = fetch(key)
+      hash[key] = self[key] if has_key?(key)
     end
     hash
   end
