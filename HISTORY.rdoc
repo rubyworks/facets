@@ -1,5 +1,55 @@
 = Facets Release History
 
+== 3.0.0 / 2012-07-01
+
+Major release is now for Ruby 1.9.2+. Ruby 1.8 and older is no longer supported.
+If you still need to use Facets with Ruby 1.8 or older then the excellent
+Backports project can be used to fill in the gaps. 
+
+Changes:
+
+* New Features
+
+  * Add alias String#each_match for #mscan.
+
+* Renamed Features
+
+  * Rename Object#replace to Object#instance_replace.
+  * Rename Range#to_r to Range#to_rng, since #to_r is not for Rational.  
+
+* Deprecated Features
+
+  * Deprecated numeric/round.rb and float/round.rb scripts.
+
+* Deprecated Features Now in Ruby
+
+  * Deprecate Array#combination (now in Ruby).
+  * Deprecate Array#index (now in Ruby).
+  * Deprecate Array#permutation (now in Ruby).
+  * Deprecate Array#product (now in Ruby).
+  * Deprecate Array#rotate, now in Ruby.
+  * Deprecate Array#rotate!, now in Ruby.
+  * Deprecate Array#select!, now in Ruby.
+  * Deprecate Binding#eval, now in Ruby.
+  * Deprecate Float#round_at, now in Ruby (as #round).
+  * Deprecate Hash#select!, now in Ruby.
+  * Deprecate Integer#even?, now in Ruby.
+  * Deprecate Integer#odd?, now in Ruby.
+  * Deprecate Kernel#__callee__, now in Ruby.
+  * Deprecate Kernel#__method__, now in Ruby.
+  * Deprecate NilClass#to_f, now in Ruby.
+  * Deprecate NilClass#to_h, now in Ruby.
+  * Deprecate Numeric#round_at, now in Ruby (as #round).
+  * Deprecate Proc#curry, now in Ruby.
+  * Deprecate String#bytes, now in Ruby.
+  * Deprecate String#each_char, now in Ruby.
+  * Deprecate String#end_with, now in Ruby.
+  * Deprecate String#lines, now in Ruby.
+  * Deprecate String#start_with, now in Ruby.
+  * Deprecate Symbol#to_proc, now in Ruby.
+  * Deprecate UnboundMethod#name, now in Ruby.
+
+
 == 2.9.3 / 2011-12-31
 
 Happy New Year! Ruby Facets kicks off the year with a 2.9.x release.
