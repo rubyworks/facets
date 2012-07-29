@@ -17,6 +17,10 @@ requirements:
   groups:
   - test
   development: true
+- name: rc
+  groups:
+  - test
+  development: true
 - name: detroit
   groups:
   - build
