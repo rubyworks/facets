@@ -71,10 +71,8 @@ require_relative 'kernel/with.rb'
 require_relative 'kernel/writers.rb'
 #require_relative 'kernel/y.rb'                 # uncommon
 require_relative 'kernel/yes.rb'
-require_relative 'kernel/__callee__.rb'
 require_relative 'kernel/__class__.rb'
 require_relative 'kernel/__dir__.rb'
 require_relative 'kernel/__get__.rb'
-require_relative 'kernel/__method__.rb'
 require_relative 'kernel/__set__.rb'
 

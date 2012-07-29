@@ -4,7 +4,6 @@ require_relative 'binding/caller.rb'
 require_relative 'binding/callstack.rb'
 require_relative 'binding/call_stack.rb'
 require_relative 'binding/defined.rb'
-require_relative 'binding/eval.rb'
 #require_relative 'binding/local_variables.rb'  # uncommon
 require_relative 'binding/op.rb'
 require_relative 'binding/op_get.rb'

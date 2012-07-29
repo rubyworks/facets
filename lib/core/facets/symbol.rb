@@ -11,6 +11,5 @@ require_relative 'symbol/query.rb'
 require_relative 'symbol/setter.rb'
 require_relative 'symbol/succ.rb'
 require_relative 'symbol/thrown.rb'
-require_relative 'symbol/to_proc.rb'
 require_relative 'symbol/variablize.rb'
 
