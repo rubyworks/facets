@@ -9,7 +9,7 @@ class Hash
   def slice(*keep_keys)
     hash = {}
     keep_keys.each do |key|
-      hash[key] = self[key] if has_key?(key)
+      hash[key] = fetch(key) if key?(key)
     end
     hash
   end
