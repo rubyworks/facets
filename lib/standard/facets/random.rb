@@ -51,6 +51,7 @@ class Random
     (Random.number(26) + (Random.number(2) == 0 ? 65 : 97) ).chr
   end
 
+  # Random extensions for Range class.
   #
   module RangeExtensions
     # Return a random element from the range.
@@ -96,6 +97,7 @@ class Random
     end
   end
 
+  # Random extensions fo Integer class.
   #
   module IntegerExtensions
     #
@@ -107,6 +109,7 @@ class Random
     end
   end
 
+  # Random extensions for Numeric class.
   #
   module NumericExtensions
     #
@@ -118,6 +121,7 @@ class Random
     end
   end
 
+  # Random extensions for Array class.
   #
   module ArrayExtensions
     # Return a random element from the array.
@@ -193,13 +197,30 @@ class Random
     #   [1, 2, 3, 4].rand_subset           #~> [1, 3, 4]
     #   [1, 2, 3, 4].rand_subset           #~> [2, 3]
     #
-    def rand_subset( number=nil, exclusive=true )
+    def rand_subset(number=nil, exclusive=true)
       number = Random.number(size) unless number
       number = number.to_int
       #return self.dup if (number >= size and exlusive)
       return sort_by{rand}.slice(0,number) if exclusive
       ri =[]; number.times { |n| ri << Random.number(size) }
       return values_at(*ri)
+    end
+
+    # Generates random subarrays. Uses random numbers and bit-
+    # fiddling to assure performant uniform distributions even
+    # for large arrays.
+    #
+    #   a = *1..5
+    #   a.rand_subarrays(2) #=> [[3, 4, 5], []]
+    #   a.rand_subarrays(3) #=> [[1], [1, 4, 5], [2, 3]]
+    #
+    # CREDIT: Michael Kohl
+    def rand_subarrays(n=1)
+      raise ArgumentError, "negative argument" if n < 0
+      (1..n).map do
+        r = rand(2**self.size)
+        self.select.with_index { |_, i| r[i] == 1 }
+      end
     end
 
     # Randomize the order of an array.
@@ -234,6 +255,7 @@ class Random
 
   end
 
+  # Random extensions for Hash class.
   #
   module HashExtensions
     # Returns a random key.
@@ -330,6 +352,7 @@ class Random
 
   end
 
+  # Random extensions for String class.
   #
   module StringExtensions
 
