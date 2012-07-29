@@ -17,7 +17,7 @@ class Module
   # CREDIT: David Heinemeier Hansson
   #
   # @uncommon
-  #   require 'facets/module/mattr'
+  #   require 'facets/module/cattr'
   #
   def cattr(*syms)
     writers, readers = syms.flatten.partition{ |a| a.to_s =~ /=$/ }
@@ -47,7 +47,7 @@ class Module
   # CREDIT: David Heinemeier Hansson
   #
   # @uncommon
-  #   require 'facets/module/mattr'
+  #   require 'facets/module/cattr'
   #
   def cattr_reader(*syms)
     syms.flatten.each do |sym|
@@ -89,7 +89,7 @@ class Module
   # CREDIT: David Heinemeier Hansson
   #
   # @uncommon
-  #   require 'facets/module/mattr'
+  #   require 'facets/module/cattr'
   #
   def cattr_writer(*syms)
     syms.flatten.each do |sym|
@@ -128,7 +128,7 @@ class Module
   # CREDIT: David Heinemeier Hansson
   #
   # @uncommon
-  #   require 'facets/module/mattr'
+  #   require 'facets/module/cattr'
   #
   def cattr_accessor(*syms)
     cattr_reader(*syms) + cattr_writer(*syms)
