@@ -17,7 +17,7 @@ class Module
   # CREDIT: David Heinemeier Hansson
   #
   # @uncommon
-  #   require 'facets/module/cattr'
+  #   require 'facets/module/mattr'
   #
   def cattr(*syms)
     writers, readers = syms.flatten.partition{ |a| a.to_s =~ /=$/ }
@@ -47,7 +47,7 @@ class Module
   # CREDIT: David Heinemeier Hansson
   #
   # @uncommon
-  #   require 'facets/module/cattr'
+  #   require 'facets/module/mattr'
   #
   def cattr_reader(*syms)
     syms.flatten.each do |sym|
@@ -89,7 +89,7 @@ class Module
   # CREDIT: David Heinemeier Hansson
   #
   # @uncommon
-  #   require 'facets/module/cattr'
+  #   require 'facets/module/mattr'
   #
   def cattr_writer(*syms)
     syms.flatten.each do |sym|
@@ -128,7 +128,7 @@ class Module
   # CREDIT: David Heinemeier Hansson
   #
   # @uncommon
-  #   require 'facets/module/cattr'
+  #   require 'facets/module/mattr'
   #
   def cattr_accessor(*syms)
     cattr_reader(*syms) + cattr_writer(*syms)
@@ -157,7 +157,7 @@ class Module
   # CREDIT: David Heinemeier Hansson
   #
   # @uncommon
-  #   require 'facets/module/cattr'
+  #   require 'facets/module/mattr'
   #
   def mattr(*syms)
     writers, readers = syms.flatten.partition{ |a| a.to_s =~ /=$/ }
@@ -187,7 +187,7 @@ class Module
   # CREDIT: David Heinemeier Hansson
   #
   # @uncommon
-  #   require 'facets/module/cattr'
+  #   require 'facets/module/mattr'
   #
   def mattr_reader( *syms )
     syms.flatten.each do |sym|
@@ -230,7 +230,7 @@ class Module
   # CREDIT: David Heinemeier Hansson
   #
   # @uncommon
-  #   require 'facets/module/cattr'
+  #   require 'facets/module/mattr'
   #
   def mattr_writer(*syms)
     syms.flatten.each do |sym|
@@ -270,7 +270,7 @@ class Module
   # CREDIT: David Heinemeier Hansson
   #
   # @uncommon
-  #   require 'facets/module/cattr'
+  #   require 'facets/module/mattr'
   #
   def mattr_accessor(*syms)
     mattr_reader(*syms) + mattr_writer(*syms)
