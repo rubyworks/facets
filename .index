@@ -1,0 +1,66 @@
+---
+type: ruby
+revision: 2013
+sources:
+- var
+authors:
+- name: Thomas Sawyer
+  email: transfire@gmail.com
+organizations: []
+requirements:
+- groups:
+  - test
+  development: true
+  name: lemon
+- groups:
+  - test
+  development: true
+  name: qed
+- groups:
+  - build
+  development: true
+  name: rc
+- groups:
+  - build
+  development: true
+  name: detroit
+conflicts: []
+alternatives: []
+resources:
+- type: home
+  uri: http://rubyworks.github.com/facets
+  label: Homepage
+- type: code
+  uri: http://github.com/rubyworks/facets
+  label: Source Code
+- type: docs
+  uri: http://rubyworks.github.com/facets/learn.html
+  label: Documentation
+- type: wiki
+  uri: http://wiki.github.com/rubyworks/facets
+  label: User Guide
+- type: talk
+  uri: http://groups.google.com/group/facets-universal
+repositories:
+- name: upstream
+  scm: git
+  uri: git@github.com:rubyworks/facets.git
+categories: []
+load_path:
+- lib/core
+- lib/standard
+copyrights:
+- holder: Thomas Sawyer
+  year: '2004'
+  license: Ruby
+created: '2004-12-16'
+summary: Premium Ruby Extensions
+title: Ruby Facets
+version: 2.9.3
+name: facets
+description: Facets is the premier collection of extension methods for the Ruby programming
+  language. Facets extensions are unique by virtue of thier atomicity. They are stored
+  in individual files allowing for highly granular control of requirements. In addition,
+  Facets includes a few additional classes and mixins suitable to wide variety of
+  applications.
+date: '2012-12-08'
