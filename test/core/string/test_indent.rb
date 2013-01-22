@@ -81,10 +81,4 @@ test_case String do
 
   end
 
-  #method :unindent do
-  #  test "is an alias for negative indent" do
-  #    '  xyz'.unindent(2).assert == 'xyz'
-  #  end
-  #end
-
 end

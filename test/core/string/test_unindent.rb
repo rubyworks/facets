@@ -57,6 +57,46 @@ by.
       "   xyz".unindent(4).assert  == "xyz"
     end
 
+    test "unindents by the amount of the largest indent" do
+      expected = <<-EOF
+I must go down to the seas again
+  The lonely sea and the sky
+And all I want is a tall ship
+  And a star to steer her by
+      EOF
+      actual = ex1.unindent
+      actual.assert == expected
+    end
+
+    test "unindents by the amount of the largest indent - tabs and spaces" do
+      ex = "\t\t  I must go down to the seas again\n" +
+           "\t\t    The lonely sea and the sky\n" +
+           "\t\t  And all I want is a tall ship\n" +
+           "\t\t    And a star to steer her by\n"
+      expected = "I must go down to the seas again\n" +
+                 "  The lonely sea and the sky\n" +
+                 "And all I want is a tall ship\n" +
+                 "  And a star to steer her by\n"
+      actual = ex.unindent
+      actual.assert == expected
+    end
+
+    # There is arguably no right answer here, because there's no way to tell
+    # what a tab character means.  This behavior is arbitrary, but at least it
+    # is predictable.
+    test "unindents given inconsistent tab usage" do
+      ex = "\t  I must go down to the seas again\n" +
+           "\t\tThe lonely sea and the sky\n" +
+           "\t\t  And all I want is a tall ship\n" +
+           "\t    And a star to steer her by\n"
+      expected = "  I must go down to the seas again\n" +
+                 "\tThe lonely sea and the sky\n" +
+                 "\t  And all I want is a tall ship\n" +
+                 "    And a star to steer her by\n"
+      actual = ex.unindent
+      actual.assert == expected
+    end
+
     test "large example unindented one space" do
       expected = <<-EOF
    I must go down to the seas again
