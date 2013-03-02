@@ -38,7 +38,7 @@ module Enumerable
       r.size
     else
       begin
-				raise if size.nil?
+        raise if size.nil?
         size
       rescue
         i=0; each{ |e| i+=1 }; i
