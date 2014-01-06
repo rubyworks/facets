@@ -1,5 +1,3 @@
-require 'facets/binding/eval'
-
 class Binding
 
   # Returns the local variables defined in the binding context:

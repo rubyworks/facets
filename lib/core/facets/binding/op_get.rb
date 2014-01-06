@@ -1,5 +1,3 @@
-require 'facets/binding/eval'
-
 class Binding
 
   # Returns the value of some variable.

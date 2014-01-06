@@ -1,5 +1,3 @@
-require 'facets/binding/eval'
-
 class Binding
 
   # Returns the nature of something within the context of the binding.

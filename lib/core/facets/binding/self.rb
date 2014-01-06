@@ -1,5 +1,3 @@
-require 'facets/binding/eval'
-
 class Binding
 
   # already defined by Rubinius

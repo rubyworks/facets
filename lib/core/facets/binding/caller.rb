@@ -1,6 +1,4 @@
-require 'facets/binding/eval'
-require 'facets/binding/call_stack'
-require 'facets/kernel/__method__'
+require 'facets/binding/callstack'
 
 class Binding
 
