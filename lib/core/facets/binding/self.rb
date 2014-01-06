@@ -1,6 +1,6 @@
 class Binding
 
-  # already defined by Rubinius
+  # This is already defined by Rubinius:
   #   Kernel.eval('Rubinius::VariableScope.current.self', self)
   unless method_defined?(:self)
 
