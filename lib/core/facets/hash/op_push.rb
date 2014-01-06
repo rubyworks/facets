@@ -7,11 +7,19 @@ class Hash
 
   def <<(other)
     if other.respond_to?(:to_ary)
-      self.store(*other)
+      store(*other)
     else
       update(other)
     end
     self
   end
+
+  #def <<(pairs)
+  #  if Array === pairs
+  #    merge! Hash[*pairs]
+  #  else
+  #    merge! pairs
+  #  end
+  #end
 
 end
