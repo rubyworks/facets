@@ -1,6 +1,6 @@
-module Kernel
+require 'facets/functor'
 
-  require 'facets/hom'
+module Kernel
 
   # The tap K-Combinator. This yields self -and- returns self.
   #
@@ -19,7 +19,7 @@ module Kernel
       yield(self)
       self
     else
-      HOM.new{ |op,*a,&b| self.send(op, *a, &b); self }
+      Functor.new{ |op,*a,&b| self.send(op, *a, &b); self }
     end
   end
 

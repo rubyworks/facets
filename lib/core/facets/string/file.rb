@@ -1,4 +1,4 @@
-require 'facets/hom'
+require 'facets/functor'
 
 class String
 
@@ -9,27 +9,12 @@ class String
   #    'foo.txt'.file.mtime
   #
   def file
-    HOM.new(&method(:file_send).to_proc)
+    #warn "Deprecation Warning: String#file is moved to hightops gem."
+    f = self
+    Functor.new do |op, *a, &b|
+      File.send(op, f, *a, &b)
+    end
   end
-
-  private
-
-  def file_send(op, *a, &b)
-    File.send(op, self, *a, &b)
-  end
-
-  ## TODO: When no longer needing to support 1.8.6 we can use:
-  ##
-  ## # Use fluent notation for making file directives.
-  ## #
-  ## #    'README.rdoc'.file.mtime
-  ## #  
-  ## def file
-  ##   f = self
-  ##   Functor.new do |op, *a, &b|
-  ##     File.send(op, f, *a, &b)
-  ##   end
-  ## end
 
 end
 

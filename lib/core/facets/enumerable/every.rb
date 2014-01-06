@@ -20,17 +20,17 @@ module Enumerable
   end
 
   #--
-  # These used to be defined via HOM as follows ...
+  # These used to be defined via H.O.M. as follows ...
   #
   #  def every
-  #    HOM.new do |op,*args|
+  #    Functor.new do |op,*args|
   #      map{ |a| a.send(op,*args) }
   #    end
   #  end
   #
   #  def every!
   #    raise NoMethodError unless respond_to?(:map!)
-  #    HOM.new do |op,*args|
+  #    Functor.new do |op,*args|
   #      map!{ |a| a.send(op,*args) }
   #    end
   #  end
