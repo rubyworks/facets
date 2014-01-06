@@ -46,9 +46,10 @@ repositories:
   scm: git
   uri: git@github.com:rubyworks/facets.git
 categories: []
-load_path:
-- lib/core
-- lib/standard
+paths:
+  lib:
+    - lib/core
+    - lib/standard
 copyrights:
 - holder: Thomas Sawyer
   year: '2004'
