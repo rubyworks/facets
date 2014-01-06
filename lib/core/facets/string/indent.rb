@@ -2,7 +2,14 @@ class String
 
   # Indent left or right by `n` spaces, or `n` number of `c` string.
   #
-  # CREDIT: Gavin Sinclair, Trans, Tyler Rick
+  # n - The number of spaces to indent. [Integer]
+  # c - Character to use, if other then space. [String]
+  #
+  # Returns a new string with the indention. [String]
+  #
+  # Credit: Gavin Sinclair
+  # Credit: Trans
+  # Credit: Tyler Rick
 
   def indent(n, c=' ')
     if n >= 0
@@ -13,30 +20,33 @@ class String
   end
 
   # Equivalent to String#indent, but modifies the receiver in place.
+  #
+  # n - The number of spaces to indent. [Integer]
+  # c - Character to use, if other then space. [String]
+  #
+  # Returns this string with the indention. [String]
 
   def indent!(n, c=' ')
     replace(indent(n,c))
   end
 
-  # Remove excessive indentation. Useful for multi-line strings embeded in
-  # already indented code.
+  # Remove excessive indentation. Useful for multi-line strings
+  # embeded in already indented code.
   #
-  #   <<-END.unindent
-  #       ohaie
-  #         wurld
-  #   END
+  # size - The number of spaces to indent. [Integer]
   #
-  # Outputs ...
+  # Examples
   #
-  #   ohaie
-  #     wurld
+  #     <<-END.unindent
+  #         ohaie
+  #           wurld
+  #     END 
+  #     #=> "ohaie\n  wurld"
   #
-  # Instead of ...
+  # Returns a new unindented string. [String]
   #
-  #       ohaie
-  #         wurld
-  #
-  # CREDIT: Noah Gibbs, mynyml
+  # Credit: Noah Gibbs
+  # Credit: mynyml
 
   def unindent(size=nil)
     if size
@@ -56,11 +66,19 @@ class String
 
   # Equivalent to String#unindent, but modifies the receiver in place.
   #
-  # CREDIT: mynyml
+  # Returns this string unindented. [String]
+  #
+  # Credit: mynyml
 
   def unindent!
-    self.replace(self.unindent)
+    replace(unindent)
   end
 
-end
+  # DEPRECATED: Use String#indent instead.
+  alias :tab  :indent
+  alias :tab! :indent!
 
+  #alias :backtab  :unindent
+  #alias :backtab! :unindent!
+
+end

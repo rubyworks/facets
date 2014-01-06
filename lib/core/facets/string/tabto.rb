@@ -1,1 +1,2 @@
-require 'facets/string/tab'
+# DEPRECATED
+require 'facets/string/margin'
