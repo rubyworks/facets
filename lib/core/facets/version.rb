@@ -1,7 +1,7 @@
 module Facets
   #
-  def self.profile
-    @profile ||= (
+  def self.index
+    @index ||= (
       require 'yaml'
       YAML.load(File.new(File.dirname(__FILE__) + '/facets.yml'))
     )
@@ -10,10 +10,10 @@ module Facets
   #
   def self.const_missing(name)
     key = name.to_s.downcase
-    profile[key] || super(name)
+    index[key] || super(name)
   end
 
-  #
-  VERSION = '2.9.3'  # profile['version']
+  # deprecate
+  VERSION = '3.0.0'
 end
 
