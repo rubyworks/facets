@@ -16,7 +16,7 @@ class Array
     h = {}
     each{ |(k,v)| h[k] = v }
     h
-  end
+  end unless method_defined?(:to_h)
 
 end
 
