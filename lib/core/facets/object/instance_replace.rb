@@ -1,5 +1,7 @@
 class Object
 
+  # TODO: Should this be deprecated in favor of Instance#replace?
+
   # Replace state of object with the state of another object of the
   # same class (or superclass).
   #
