@@ -1,5 +1,3 @@
-require 'facets/kernel/require_relative'
-
 require_relative 'string/acronym.rb'
 require_relative 'string/align.rb'
 require_relative 'string/bracket.rb'
@@ -24,6 +22,7 @@ require_relative 'string/index_all.rb'
 require_relative 'string/interpolate.rb'
 require_relative 'string/lchomp.rb'
 require_relative 'string/line_wrap.rb'
+require_relative 'string/linear.rb'
 require_relative 'string/lowercase.rb'
 require_relative 'string/margin.rb'
 require_relative 'string/methodize.rb'
