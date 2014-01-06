@@ -2,6 +2,12 @@ require 'facets/functor'
 
 class Hash
 
+  # TODO: Change name of Hash#data to something better?
+  
+  # TODO: Is Hash#data really a method worth having?
+
+  # TODO: Should Hash#data be moved to the Functor project?
+
   # Access to a hash as if it were an OpenStruct.
   #
   #   h = {:a=>1, :b=>2}
@@ -16,9 +22,6 @@ class Hash
   #   h.data.a?  #=> true
   #   h.data.d?  #=> false
   #
-  # TODO: Change name of Hash#data to something better?
-  #
-  # TODO: Is this really a method worth having?
   def data
     this = self
     Functor.new do |op, *a|

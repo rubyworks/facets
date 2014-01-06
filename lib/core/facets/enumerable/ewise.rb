@@ -2,6 +2,8 @@ require 'facets/functor'
 
 module Enumerable
 
+  # TODO: Should Enumerable#ewise be moved to functor gem?"
+
   # Returns an elementwise Functor designed to make R-like
   # elementwise operations possible. This is very much like
   # the #every method, but it treats array argument specially.

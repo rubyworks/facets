@@ -2,6 +2,8 @@ require 'facets/functor'
 
 module Enumerable
 
+  # TODO: Should Enumerable#accumuate be moved to functor gem?"
+
   # Accumulate a set of a set. For example, in an ORM design
   # where `Group has_many User` we might have something
   # equivalent to the following.

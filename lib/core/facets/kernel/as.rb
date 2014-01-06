@@ -2,8 +2,6 @@ require 'facets/functor'
 
 module Kernel
 
-  # NOTE: We are keeping Kernel#as in Facets although it is also now in hightops gems.
-
   # Returns a As-functor that allows one to call any
   # ancestor's method directly of the given object.
   #
@@ -110,8 +108,9 @@ class As #:nodoc:
   end
 
   private
+
   def method_missing(sym, *args, &blk)
     @ancestor.instance_method(sym).bind(@subject).call(*args,&blk)
   end
-end
 
+end
