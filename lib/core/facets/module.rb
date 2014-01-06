@@ -1,5 +1,3 @@
-require 'facets/kernel/require_relative'
-
 require_relative 'module/abstract.rb'
 require_relative 'module/alias_accessor.rb'
 require_relative 'module/alias_method_chain.rb'

@@ -1,5 +1,3 @@
-require 'facets/kernel/require_relative'
-
 require_relative 'regexp/arity.rb'
 require_relative 'regexp/multiline.rb'
 require_relative 'regexp/op_add.rb'

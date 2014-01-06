@@ -1,5 +1,3 @@
-require 'facets/kernel/require_relative'
-
 require_relative 'filetest/absolute.rb'
 require_relative 'filetest/contains.rb'
 require_relative 'filetest/relative.rb'

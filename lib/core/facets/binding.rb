@@ -1,5 +1,3 @@
-require 'facets/kernel/require_relative'
-
 require_relative 'binding/caller.rb'
 require_relative 'binding/callstack.rb'
 require_relative 'binding/call_stack.rb'

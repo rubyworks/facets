@@ -1,5 +1,3 @@
-require 'facets/kernel/require_relative'
-
 require_relative 'proc/bind.rb'
 require_relative 'proc/bind_to.rb'
 require_relative 'proc/compose.rb'

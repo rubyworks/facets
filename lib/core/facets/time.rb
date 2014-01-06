@@ -1,5 +1,3 @@
-require 'facets/kernel/require_relative'
-
 require_relative 'time/ago.rb'
 require_relative 'time/change.rb'
 require_relative 'time/dst_adjustment.rb'

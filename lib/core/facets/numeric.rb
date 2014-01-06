@@ -1,5 +1,3 @@
-require 'facets/kernel/require_relative'
-
 require_relative 'numeric/approx.rb'
 require_relative 'numeric/distance.rb'
 require_relative 'numeric/length.rb'

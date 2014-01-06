@@ -1,5 +1,3 @@
-require 'facets/kernel/require_relative'
-
 require_relative 'array/after.rb'
 require_relative 'array/before.rb'
 require_relative 'array/collapse.rb'

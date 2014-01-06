@@ -1,5 +1,3 @@
-require 'facets/kernel/require_relative'
-
 require_relative 'kernel/as.rb'
 require_relative 'kernel/ask.rb'
 require_relative 'kernel/assign.rb'

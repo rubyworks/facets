@@ -1,5 +1,3 @@
-require 'facets/kernel/require_relative'
-
 require_relative 'enumerable/accumulate.rb'
 #require_relative 'enumerable/associate.rb'
 require_relative 'enumerable/cluster.rb'

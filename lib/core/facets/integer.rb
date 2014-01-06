@@ -1,5 +1,3 @@
-require 'facets/kernel/require_relative'
-
 require_relative 'integer/bit.rb'
 require_relative 'integer/bitmask.rb'
 require_relative 'integer/factorial.rb'
