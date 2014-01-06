@@ -4,7 +4,7 @@ test_case Enumerable::Arguments do
 
   setup do
     @PlusArray = Class.new do
-      include Enumerable::Arguments
+      include Enumerable::Argumentable
       def initialize(arr)
         @arr = arr
       end
