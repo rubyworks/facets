@@ -1,5 +1,3 @@
-require 'facets/kernel/require_relative'
-
 require_relative 'hash/alias.rb'
 require_relative 'hash/argumentize.rb'
 require_relative 'hash/at.rb'
