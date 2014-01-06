@@ -13,6 +13,7 @@ class Array
   #   sequence.before('d')           #=> nil
   #
   # CREDIT: Tyler Rick
+
   def before(value)
     return nil unless include? value
     self[(index(value).to_i - 1) % length]
@@ -30,6 +31,7 @@ class Array
   #   sequence.after('d')           #=> nil
   #
   # CREDIT: Tyler Rick
+
   def after(value)
     return nil unless include? value
     self[(index(value).to_i + 1) % length]

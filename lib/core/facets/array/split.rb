@@ -1,9 +1,14 @@
 class Array
 
-  # Split on matching pattern. Unlike #divide this does not include matching elements.
+  # Split on matching pattern. Unlike #divide this does not include matching
+  # elements.
+  #
+  # Examples
   #
   #   ['a1','a2','b1','a3','b2','a4'].split(/^b/)
   #   #=> [['a1','a2'],['a3'],['a4']]
+  #
+  # Returns list of split-up arrays. [Array<Array>]
   #
   # CREDIT: Trans
 

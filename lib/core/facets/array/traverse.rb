@@ -1,18 +1,21 @@
 class Array
 
-  # Returns a new array created by traversing the array and its
+  # Construct a new array created by traversing the array and its
   # sub-arrays, executing the given block on the elements.
   #
+  # Examples
+  #
   #   h = ["A", "B", ["X", "Y"]]
-  #
   #   g = h.traverse{ |e| e.downcase }
-  #
   #   g  #=> ["a", "b", ["x", "y"]]
   #
   # This is the same as <code>recursive.map</code> and will
   # likely be deprecated in the future because of it.
   #
+  # Returns new array. [Array]
+  #
   # CREDIT: Trans
+
   def traverse(&block)
     if block_given?
       map do |e|
@@ -29,13 +32,16 @@ class Array
 
   # Like #recursive_map, but will change the array in place.
   #
+  # Examples:
+  #
   #   h = ["A", "B", ["X", "Y"]]
-  #
   #   h.traverse!{ |e| e.downcase }
-  #
   #   h  #=> ["a", "b", ["x", "y"]]
   #
+  # Returns self. [Array]
+  #
   # CREDIT: Trans
+
   def traverse!(&block)
     replace(traverse(&block))
   end

@@ -4,20 +4,26 @@ require 'facets/enumerable/recursively'
 class Array
 
   # Apply a method to array, and recursively apply that method
-  # to each sub-array or +types+.
+  # to each sub-array or given +types+.
+  #
+  # By default the sub-types are passed thru uneffected. Passing
+  # a block to #recursively can be used to change this.
+  #
+  # types - List of class types to recurse. [Array<Class>]
+  # block - Optional filter procedure to apply on each recursion. 
+  #
+  # Examples
   #
   #   arr = ["a", ["b", "c"]]
   #   arr.recursively.map{ |v| v.to_sym }
   #   #=> [:a, [:b, :c]]
   #
-  # By default the sub-types are passed thru uneffected. Passing a block
-  # to #recursively changes this.
-  #
   #   arr = ["a", ["b", "c"]]
   #   arr.recursively{ |a| a.reverse }.map{ |v| v.to_sym }
   #   #=> [:a, [:c, :b]]
   #
-  # TODO: Return Enumerator if no +yld+ block is given ?
+  # Returns [Recursor].
+
   def recursively(*types, &block)
     Recursor.new(self, *types, &block)
   end
