@@ -1,3 +1,5 @@
 ---
-- lib/core
-- lib/standard
+lib:
+  - lib/core
+  - lib/standard
+

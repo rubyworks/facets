@@ -155,7 +155,8 @@ module Indexer
     end
 
     def require_paths
-      metadata['load_path'] || ['lib']
+      paths = metadata['paths'] || {}
+      paths['load'] || ['lib']
     end
 
     #

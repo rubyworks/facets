@@ -53,7 +53,8 @@ copyrights:
 customs: []
 paths:
   lib:
-  - lib
+  - lib/core
+  - lib/standard
 name: facets
 title: Ruby Facets
 summary: Premium Ruby Extensions
