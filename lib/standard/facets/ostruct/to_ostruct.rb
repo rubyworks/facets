@@ -40,7 +40,7 @@ class Hash
     each_pair do |k,v|
       h[k] = v.to_ostruct_recurse( exclude ) if v.respond_to?(:to_ostruct_recurse)
     end
-    o.__update__(h)
+    o.merge!(h)
   end
 end
 

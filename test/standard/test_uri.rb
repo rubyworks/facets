@@ -2,6 +2,15 @@ covers 'facets/uri'
 
 test_case URI do
 
+  class_method :query do
+    test do
+      h = { :a=>1, :b=>2 }
+      r = URI.query(h)
+      assert(r == "a=1;b=2" || r == "b=2;a=1")
+    end
+  end
+
+  # this is an alias of the above
   class_method :hash_to_query do
     test do
       h = { :a=>1, :b=>2 }

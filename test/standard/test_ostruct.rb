@@ -2,18 +2,18 @@ covers 'facets/ostruct'
 
 test_case OpenStruct do
 
-  method :__update__ do
+  method :merge! do
     test do
       o = OpenStruct.new(:a => 1)
       h = { :b => 2 }
-      o.__update__(h)
+      o.merge!(h)
       o.b.assert == 2
     end
 
     test do
       o = OpenStruct.new( { :a => 1 } )
       h = { :b => 2 }
-      o.__update__(h)
+      o.merge!(h)
       o.b.assert == 2
     end
   end

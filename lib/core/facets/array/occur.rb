@@ -15,7 +15,7 @@ class Array
   #
   # CREDIT: Robert Dober
 
-  def occur(n=2)
+  def occur(n=nil) #:yield:
     h = Hash.new(0)
 
     each do |i|

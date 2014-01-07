@@ -27,9 +27,8 @@ require_relative 'array/peek.rb'
 #require_relative 'array/percentile.rb'         # uncommon
 require_relative 'array/poke.rb'
 require_relative 'array/probability.rb'
-require_relative 'array/product.rb'
 require_relative 'array/pull.rb'
-require_relative 'array/occurent.rb'
+require_relative 'array/occurrence.rb'
 #require_relative 'array/op_pow.rb'             # uncommon
 require_relative 'array/recurse.rb'
 require_relative 'array/recursively.rb'

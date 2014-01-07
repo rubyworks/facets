@@ -55,8 +55,8 @@ class OpenStruct
   # @deprecated Use #merge! instead.
   #
   def __update__(other)
-    warn "OpenSrtuct#__update__ has been deprecated. Use #merge! instead."
-    merge!(other)
+    raise NameError, "OpenSrtuct#__update__ has been deprecated. Use #merge! instead."
+    #merge!(other)
   end
 
   # TODO: How to handle regular merge, since it lacks punctuation to make it safe.
@@ -70,7 +70,7 @@ class OpenStruct
   #
   def ostruct_merge(other)
     o = dup
-    o.ostruct_update(other)
+    o.merge!(other)
     o
   end
 
@@ -82,7 +82,7 @@ class OpenStruct
   #
   def __merge__(other)
     o = dup
-    o.__update__(other)
+    o.merge!(other)
     o
   end
 

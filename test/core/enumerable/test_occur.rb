@@ -4,22 +4,35 @@ test_case Enumerable do
 
   method :occur do
 
-    arr = [:a,:b,:a]
-
-    test do
-      arr.occur(1).assert == [:b]
+    # make an Enumerable class to test
+    eC = Class.new do
+      include Enumerable
+      def initialize(*a)
+        @a = a
+      end
+      def each(&b)
+        @a.each(&b)
+      end
     end
 
     test do
-      arr.occur(2).assert == [:a]
+      e = eC.new(:a,:b,:a)
+      e.occur(1).assert == [:b]
     end
 
     test do
-      arr.occur(1..1).assert == [:b]
+      e = eC.new(:a,:b,:a)
+      e.occur(2).assert == [:a]
     end
 
     test do
-      arr.occur{ |n| n % 2 == 0 }.assert == [:a]
+      e = eC.new(:a,:b,:a)
+      e.occur(1..1).assert == [:b]
+    end
+
+    test do
+      e = eC.new(:a,:b,:a)
+      e.occur{ |n| n % 2 == 0 }.assert == [:a]
     end
 
   end

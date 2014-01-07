@@ -2,6 +2,7 @@
 
 require 'uri'
 require 'facets/uri/cgi_escape'
+require 'facets/module/alias_module_function'
 
 module URI
 
@@ -28,8 +29,8 @@ module URI
     return pairs.join(KEY_VALUE_SEPARATOR)
   end
 
-  alias_method :hash_to_query, :query
-  alias_method :hash_to_query_string, :query
+  alias_module_function :hash_to_query, :query
+  alias_module_function :hash_to_query_string, :query
 
   #
   # Extend the basic query string parser provided by the cgi module.
@@ -57,8 +58,8 @@ module URI
     return query_parameters
   end
 
-  alias_method :query_to_hash, :query_hash
-  alias_method :query_string_to_hash, :query_hash
+  alias_module_function :query_to_hash, :query_hash
+  alias_module_function :query_string_to_hash, :query_hash
 
   #
   # This method returns the query string of a uri.
@@ -94,7 +95,7 @@ module URI
     return uri.dup.chomp("?#{query_string}")
   end
 
-  alias_method :chomp_query_string, :query_chomp
+  alias_module_function :chomp_query_string, :query_chomp
 
   #
   # Get a uri and a hash of parameters. Inject the hash values
@@ -122,7 +123,7 @@ module URI
     end
   end
 
-  alias_method :update_query_string, :query_update
+  alias_module_function :update_query_string, :query_update
 
   #
   # Gets the request uri, injects extra parameters in the query string

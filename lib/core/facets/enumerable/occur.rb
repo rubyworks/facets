@@ -17,10 +17,12 @@ module Enumerable
   #
   def occur(n=nil) #:yield:
     result = Hash.new { |hash, key| hash[key] = Array.new }
-    self.each do |item|
+
+    each do |item|
       key = item
       result[key] << item
     end
+
     if block_given?
       result.reject! { |key, values| ! yield(values.size) }
     else
@@ -31,6 +33,7 @@ module Enumerable
         result.reject! { |key, values| values.size != n }
       end
     end
+
     return result.values.flatten.uniq
   end
 
