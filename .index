@@ -52,7 +52,7 @@ copyrights:
   license: BSD-2-Clause
 customs: []
 paths:
-  lib:
+  load:
   - lib/core
   - lib/standard
 name: facets

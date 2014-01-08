@@ -1,10 +1,11 @@
 #!/usr/bin/env ruby
 
 require 'fileutils'
+require 'yaml'
 
 PATH = "lib/core:lib/standard"
 
-metadata = YAML.load_file('.ruby')
+metadata = YAML.load_file('.index')
 version  = metadata['version']
 
 common_yardopts = %{
@@ -152,17 +153,17 @@ end
 
 desc "run qed docs"
 task 'qed' do
-  sh "qed #{qed_flags} -I#{PATH} qed"
+  sh "qed #{qed_flags} -I#{PATH} demo"
 end
 
 desc "run core qed docs"
 task 'qed:core' do
-  sh "qed #{qed_flags} -I#{PATH} qed/core"
+  sh "qed #{qed_flags} -I#{PATH} demo/core"
 end
 
 desc "run standard qed docs"
 task 'qed:standard' do
-  sh "qed #{qed_flags} -I#{PATH} qed/standard"
+  sh "qed #{qed_flags} -I#{PATH} demo/standard"
 end
 
 desc "run core qed from code base"
