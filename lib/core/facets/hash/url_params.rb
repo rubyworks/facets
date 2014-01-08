@@ -6,7 +6,7 @@ class Hash
   #
   # @todo Hash#url_params may require some URL escaping.
   #
-  # @deprecated Use URI.paramseters(hash) instead.
+  # @deprecated Use URI.parameters(hash) instead.
   #
   # @author Matt Kirk
 
