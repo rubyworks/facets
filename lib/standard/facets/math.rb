@@ -1,5 +1,3 @@
-require 'facets/kernel/require_relative'
-
 require_relative 'math/abs.rb'
 require_relative 'math/acot.rb'
 require_relative 'math/acoth.rb'
@@ -52,6 +50,7 @@ require_relative 'math/std.rb'
 require_relative 'math/stderr.rb'
 require_relative 'math/sum.rb'
 require_relative 'math/summed_sqdevs.rb'
+require_relative 'math/tau.rb'
 require_relative 'math/tgamma.rb'
 require_relative 'math/theil_index.rb'
 require_relative 'math/variance.rb'

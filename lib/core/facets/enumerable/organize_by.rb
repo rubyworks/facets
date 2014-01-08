@@ -1,5 +1,3 @@
-require 'facets/enumerable/group_by'
-
 module Enumerable
 
   # Similar to #group_by but returns an array of the groups.

@@ -3,14 +3,14 @@ class String
   # Returns a new string with all new lines removed from
   # adjacent lines of text.
   #
-  #   s = "This is\na test.\n\nIt clumps\nlines of text."
-  #   s.fold
+  #     s = "This is\na test.\n\nIt clumps\nlines of text."
+  #     s.fold
   #
   # _produces_
   #
-  #   "This is a test.\n\nIt clumps lines of text. "
+  #     "This is a test.\n\nIt clumps lines of text. "
   #
-  # One arguable flaw with this, that might need a fix:
+  # TODO: One arguable flaw with this that might need a fix:
   # if the given string ends in a newline, it is replaced with
   # a single space.
   #
@@ -19,7 +19,7 @@ class String
   def fold(ignore_indented=false)
     ns = ''
     i = 0
-    br = self.scan(/(\n\s*\n|\Z)/m) do |m|
+    self.scan(/(\n\s*\n|\Z)/m) do |m|
       b = $~.begin(1)
       e = $~.end(1)
       nl = $&

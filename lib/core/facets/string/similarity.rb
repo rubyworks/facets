@@ -36,7 +36,7 @@ class String
     # -- "graph" self
     last = self.length
     (0..last).each do |ff|
-      loc  = self.length
+      #loc = self.length
       break if ff == last - 1
       wordB = (1..(last-1)).to_a.reverse!
       if (wordB != nil)
@@ -50,7 +50,7 @@ class String
     # -- "graph" input string
     last = str_in.length
     (0..last).each{ |ff|
-      loc  = str_in.length
+      #loc = str_in.length
       break if ff == last - 1
       wordB = (1..(last-1)).to_a.reverse!
       wordB.each do |ss|

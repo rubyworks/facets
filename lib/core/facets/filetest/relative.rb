@@ -13,7 +13,7 @@ module FileTest
   # The opposite of #absolute?
   def relative?(path)
     while r = chop_basename(path.to_s)
-      path, basename = r
+      path, _ = r
     end
     path == ''
   end

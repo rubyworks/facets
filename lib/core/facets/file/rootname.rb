@@ -13,7 +13,7 @@ class File
     # -- this should be fairly robust
     path_re = Regexp.new('[' + Regexp.escape(File::Separator + %q{\/}) + ']')
 
-    head, tail = path.split(path_re, 2)
+    head, _ = path.split(path_re, 2)
     return '.' if path == head
     return '/' if head.empty?
     return head

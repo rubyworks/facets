@@ -4,8 +4,8 @@
 
 require 'thread'
 
-require 'facets/binding/eval'
-require 'facets/kernel/__method__'
+#require 'facets/binding/eval'
+#require 'facets/kernel/__method__'
 
 # This is the non-threaded form of #threaded_map_send.
 require 'facets/enumerable/map_send'
