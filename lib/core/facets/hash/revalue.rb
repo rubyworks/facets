@@ -12,11 +12,12 @@ class Hash
   # Credit: Sean Mackesey
 
   def revalue(val_map=nil, &block)
-    raise ArgumentError, "argument or block" if val_map && block
+    raise ArgumentError, "argument or block, not both" if val_map && block
 
-    #if !(val_map or block)
-    #  block = lambda{|k| k.to_sym}
-    #end
+    if !(val_map or block)
+      raise ArgumentError, "must provide Hash arguments or a block"
+      #block = lambda{|v| v.to_s}
+    end
 
     if block
       hash = dup.clear  # to keep default_proc
