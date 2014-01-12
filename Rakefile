@@ -8,6 +8,10 @@ PATH = "lib/core:lib/standard"
 metadata = YAML.load_file('.index')
 version  = metadata['version']
 
+#
+# GENERATE DOCUMENTATION
+# ----------------------------------------------------------------------------
+
 common_yardopts = %{
   --no-yardopts
   --no-cache
@@ -19,7 +23,7 @@ common_yardopts = %{
   --tag standard:Standard
 }.gsub("\n", ' ')
 
-desc "Generate shomen documentation"
+desc "generate shomen documentation via yard"
 task :document do
   FileUtils.mkdir_p("web/docs/facets-#{version}")
   system "shomen yard #{common_yardopts} lib/core - [A-Z]*.* > web/docs/facets-#{version}/core.json"
@@ -27,10 +31,6 @@ task :document do
 end
 
 =begin
-#
-# GENERATE RDOCS
-# ----------------------------------------------------------------------------
-
 desc "generate rdocs"
 task "rdoc" do
   TEMPLATE  = ENV['RDOC_TEMPLATE'] || 'html'
@@ -219,6 +219,21 @@ task 'check:cherry' do
   end
 end
 
+
+#
+# RELEASE
+# -----------------------------------------------------------------------------
+
+desc "release preperation"
+task "prepare" do
+  sh "mast -u"
+  sh "index -u var"
+end
+
+desc "create gem package"
+task "package" => [:prepare] do
+  sh "gem build facets.gemspec"
+end
 
 
 
