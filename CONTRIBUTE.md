@@ -5,11 +5,12 @@
   with related methods, but for now that's not happening.)
 
 * Each method must be in it's own file of the same name. If the method ends
-  with `=` or `?` just leave it off the file name. On rare occasion two or more
-  methods can be very tightly related. In these cases he methods can all go in
-  a single file under the name of the method considered most significant. 
-  Files for the other methods should usually still be create that simply
-  require the main file.
+  with `=` or `?` just leave it off the file name. 
+
+* On rare occasion two or more methods can be very tightly related. In these
+  cases the methods can all go in a single file under the name of the method
+  considered most significant. Usually files for the other methods should
+  still be created that simply require the main file.
 
 * Methods must be tested either via a Lemon unit test or a QED demo,
   preferably both. The Lemon unit tests are for testing a method in
@@ -39,8 +40,20 @@
 
 * Don't be discouraged when you get feedback about a method that isn't
   all sunshine and roses. Facets has been around long enough now that 
-  it needs to maintain a reasonable level of quality, and that means
+  it needs to maintain a certain degree of quality control, and that means
   serious discernment about what goes into the library. That includes 
-  discussion about the best name for a method --even if the functionality
-  has been accepted the name may not.
+  having in depth discussions the merits of methods, even about the best
+  name for a method --even if the functionality has been accepted the name
+  may not!
+
+* When making a commit, if the commit is only a documentation change, then
+  and `[doc]` to the end of the first line of commit message. If it is only
+  a change to tests then add `[test]`. If the change only effects build files
+  then add `[admin]`. For actual code changes, if the change is not somethng
+  anyone would notice, use `[tweak]` or `[minor]` (minor being slightly more
+  improtant than tweak). For typical code changes no comment tag is necessary.
+  If the change fixes a bug that was reported via the issue system be sure to
+  reference the issue id in the message using `#` and add `[bug]`. If a change
+  is a significant change to the API, then end the message with `[major]`.
+  These are all rules of thumb, and no expects them to be applied perfectly.
 
