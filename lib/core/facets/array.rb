@@ -32,6 +32,7 @@ require_relative 'array/occurrence.rb'
 #require_relative 'array/op_pow.rb'             # uncommon
 require_relative 'array/recurse.rb'
 require_relative 'array/recursively.rb'
+require_relative 'array/reject_values.rb'
 require_relative 'array/splice.rb'
 require_relative 'array/split.rb'
 require_relative 'array/store.rb'
