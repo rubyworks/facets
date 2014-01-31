@@ -36,6 +36,7 @@ require_relative 'string/op_sub.rb'          # included in `remove`.
 require_relative 'string/outdent.rb'
 require_relative 'string/pathize.rb'
 require_relative 'string/quote.rb'
+require_relative 'string/random.rb'
 require_relative 'string/random_binary.rb'
 require_relative 'string/range.rb'
 require_relative 'string/range_all.rb'
