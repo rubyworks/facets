@@ -11,3 +11,8 @@ end
 #  gem 'rc'
 #end
 
+# Requirements for Rubinius
+platforms :rbx do
+  gem 'psych'            # YAML
+  gem 'rubysl', '~> 2.0' # Standard Library
+end
