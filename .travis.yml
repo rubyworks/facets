@@ -2,10 +2,16 @@
 language: ruby
 script: "bundle exec rubytest -v"
 rvm:
-  - 1.8.7
-  - 1.9.2
+  - 2.1.0
+  - 2.0.0
   - 1.9.3
-  - rbx-2.0
+  - 1.8.7
+  - rbx
   - jruby
+  - jruby-19mode
+  - jruby-18mode
   - ree
-
+matrix:
+  allow_failures:
+    - rvm: rbx
+cache: bundler
