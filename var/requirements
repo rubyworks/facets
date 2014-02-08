@@ -1,5 +1,7 @@
 ---
-- lemon   (test)
-- qed     (test)
-- rc      (build)
-- detroit (build)
+- rubytest-cli (test)
+- lemon        (test)
+- qed          (test)
+#- detroit     (build)
+#- rc          (build)
+

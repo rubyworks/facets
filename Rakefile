@@ -148,7 +148,7 @@ end
 
 
 #
-# QED
+# QED DEMOS
 # ----------------------------------------------------------------------------
 
 desc "run qed docs"
@@ -181,7 +181,7 @@ end
 
 
 #
-# Extension Clashes
+# EXTENSION CLASHES
 #-----------------------------------------------------------------------------
 
 # TODO: need to fork each lookup via a seprate process to get a clean picture
@@ -227,7 +227,7 @@ end
 desc "release preperation"
 task "prepare" do
   sh "mast -u"
-  sh "index -u var"
+  sh "index -u Indexfile Gemfile"
 end
 
 desc "create gem package"

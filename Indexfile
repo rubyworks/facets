@@ -1,0 +1,52 @@
+---
+name:
+  facets
+
+version:
+  3.0.0
+
+title:
+  Ruby Facets
+
+summary:
+  The orginal well curated collection of extension methods for Ruby.
+
+slogan:
+  ALL YOUR BASE ARE BELONG TO RUBY!
+
+description:
+  Facets is the premier collection of extension methods for the Ruby programming language.
+  Facets extensions are unique by virtue of thier atomicity. They are stored in individual
+  files allowing for highly granular control of requirements. In addition, Facets includes
+  a few additional classes and mixins suitable to wide variety of applications.
+
+organization:
+  Rubyworks
+
+resources:
+  home: http://rubyworks.github.com/facets
+  code: http://github.com/rubyworks/facets
+  docs: http://rubyworks.github.com/facets/learn.html
+  wiki: http://wiki.github.com/rubyworks/facets
+  talk: http://groups.google.com/group/facets-universal
+
+repositories:
+  upstream: git@github.com:rubyworks/facets.git
+
+paths:
+  load:
+    - lib/core
+    - lib/standard
+
+scm_uri:
+   https://github.com/rubyworks/facets/tree/master
+
+authors:
+  - Thomas Sawyer <transfire@gmail.com>
+
+copyrights:
+  - (c) 2004 Rubyworks (BSD-2-Clause)
+
+created: 
+  2004-12-16
+
