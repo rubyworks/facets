@@ -23,4 +23,3 @@ module Enumerable
   end
 
 end
-
