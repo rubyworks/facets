@@ -15,12 +15,12 @@ test_case Enumerable do
       end
     end
 
-    test do
+    test 'example' do
       e = eC.new(1,2,2,3,3,2,1)
       e.squeeze.assert == [1,2,3,2,1]
     end
 
-    test do
+    test 'sort.squeeze eq uniq' do
       e = eC.new(1,2,2,3,3,2,1)
       e.sort.squeeze.assert == [1,2,3]
     end
