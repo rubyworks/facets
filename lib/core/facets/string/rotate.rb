@@ -7,7 +7,6 @@ class String
   #   'abcdefgh'.rotate(-2) #=> 'ghabcdef'
   #
   # CREDIT: T. Yamada
-
   def rotate(count=1)
     count+=self.length if count<0
     self.slice(count,self.length-count)+self.slice(0,count)
@@ -20,7 +19,6 @@ class String
   #   s.should eq 'cdefghab'
   #
   # CREDIT: T. Yamada
-
-  def rotate!(count=1) self.replace(self.rotate(count)) end
+  def rotate!(count=1) replace(rotate(count)) end
 
 end
