@@ -45,6 +45,7 @@ require_relative 'string/range_of_line.rb'
 require_relative 'string/remove.rb'
 require_relative 'string/rewrite.rb'
 #require_relative 'integer/roman.rb'         # uncommon
+require_relative 'string/rotate.rb'
 require_relative 'string/shatter.rb'
 require_relative 'string/similarity.rb'
 require_relative 'string/snakecase.rb'
