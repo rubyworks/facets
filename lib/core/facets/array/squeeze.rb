@@ -1,4 +1,4 @@
-require 'facets/enumearble/squeeze'
+require 'facets/enumerable/squeeze'
 
 class Array
 
