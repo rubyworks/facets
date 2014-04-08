@@ -1,9 +1,11 @@
-source :rubygems
+source "https://rubygems.org"
 
 group :test do
   gem 'lemon'
   gem 'qed'
   gem 'rubytest-cli'
+  gem 'rake'
+  gem 'simplecov'
 end
 
 #group :build do

@@ -9,4 +9,5 @@ web/
 work/sandbox
 work/trash
 Gemfile.lock
+.rvmrc
 *.gem
