@@ -31,11 +31,12 @@
   Otherwise they'd deserve their own gem.
 
 * When submitting new methods for consideration, it is best if each method
-  (or tightly related set of methods) is in it's own pull request. This can be
-  done either through separate commits or separate branches. Let me emphasizes
+  (or *tightly related* set of methods) is in it's own pull request. If you
+  have only one method to submit then a simple  commit will do the tirck. If
+  you have more than one it best to use separate branches. Let me emphasizes
   this point because it makes it *much more likely* that your pull request
-  will be merged. If you submit a bunch of methods in a single request, it is
-  more likely that the request will not be merged even if methods you submitted
+  will be merged. If you submit a bunch of methods in a single pull request,
+  it is very likely that it will not be merged even if methods you submitted
   are accepted!!!
 
 * Don't be discouraged when you get feedback about a method that isn't
@@ -56,4 +57,22 @@
   reference the issue id in the message using `#` and add `[bug]`. If a change
   is a significant change to the API, then end the message with `[major]`.
   These are all rules of thumb, and no expects them to be applied perfectly.
+
+## Documentation
+
+Facets started when the only choice for API documentation was RDoc. So originally
+that's how methods were documented. Since then both YARD and Tomdoc have come
+along. And some of these documentation styles have creeped into a number of
+methods. So right now, things are a bit messy. But going forward it looks like we 
+are going to settle on Tomdoc as the official documentation style (but using
+the tomparse gem's extensions). Using Tomdoc will give us reasonable
+interoperabiltiy with both RDoc and YARD, both of which now have support for
+Tomdoc (albeit support is not 100% the same, but hopefully it's close enough).
+
+Offically we publish documentation via rubydoc.info, which is the YARD server,
+and via the Facets website in Shomen JSON format.
+
+When writting documentation for a method it is best to give a simple summary 
+explaination, followed by some basic examples. Follow that up with deeper
+explaination if needed, including *when* and *why* the method could be useful.
 
