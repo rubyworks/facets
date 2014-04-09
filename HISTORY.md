@@ -11,11 +11,12 @@ Changes:
 * New Features
 
   * Add alias String#each_match for #mscan.
+  * Add Dir.lookup method.
 
 * Renamed Features
 
   * Rename Object#replace to Object#instance_replace.
-  * Rename Range#to_r to Range#to_rng, since #to_r is not for Rational.  
+  * Rename Range#to_r to Range#to_rng, since #to_r is now for Rational.  
 
 * Deprecated Features
 
