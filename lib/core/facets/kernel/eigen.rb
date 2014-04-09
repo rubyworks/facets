@@ -10,7 +10,7 @@ module Kernel
   #     name.eigen.define_method(:turkey){ self + " Turkey" }
   #     name.turkey #=> "Tom Turkey"
   #
-  # One the nice things you can do with #eigen, is define class attributes
+  # One of the nice things you can do with #eigen is define class attributes
   # without having to open a `class << self` block.
   #
   #     c = Class.new do

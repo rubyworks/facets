@@ -1,8 +1,13 @@
 class String
 
-  # Unfold paragrpahs.
+  # Unfold paragraphs such that new lines are removed from between
+  # sentences of the same paragraph.
   #
-  # FIXME: Sometimes adds one too many blank lines. TEST!!!
+  # Note that #rstrip is called on the final result, but this may
+  # change in the future.
+  #
+  # FIXME: Sometimes adds one too many blank lines, which is why we are
+  #         using rstrip. Fix and probably remove the rstrip.
   #
   def unfold
     blank = false

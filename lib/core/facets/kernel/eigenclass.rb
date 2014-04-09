@@ -9,7 +9,7 @@ module Kernel
   # I know what my Hallowe’en pumpkin is going to say.
   #
   # NOTE: This method is not a common core extension and is not
-  # loaded automatically when using <code>require 'facets'</code>.
+  # loaded automatically when using `require 'facets'`.
   #
   # CREDIT: WhyTheLuckyStiff
   #

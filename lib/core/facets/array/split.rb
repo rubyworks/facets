@@ -9,8 +9,6 @@ class Array
   #   #=> [['a1','a2'],['a3'],['a4']]
   #
   # Returns list of split-up arrays. [Array<Array>]
-  #
-  # CREDIT: Trans
 
   def split(pattern)
     memo = []
