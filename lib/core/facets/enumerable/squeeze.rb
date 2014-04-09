@@ -1,9 +1,9 @@
 module Enumerable
 
   # Squeeze out the same elements. This behaves like C++ unique(),
-  # removing equivalent elements that concomitant to each other.
-  # To get the similar result to Array#uniq, we would need to sort
-  # it prior.
+  # removing equivalent elements that are concomitant to each other.
+  # To get a similar result with Array#uniq, the array would have to
+  # be sorted first.
   #
   # Calculation order is O(n).
   #
