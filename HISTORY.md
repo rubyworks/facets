@@ -12,6 +12,7 @@ Changes:
 
   * Add alias String#each_match for #mscan.
   * Add Dir.lookup method.
+  * Add Proc.wrap (may become `Kernel#Proc()`).
 
 * Renamed Features
 
