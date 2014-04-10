@@ -6,6 +6,9 @@ Major release is now for Ruby 1.9.2+. Ruby 1.8 and older is no longer supported.
 If you still need to use Facets with Ruby 1.8 or older then the excellent
 Backports project can be used to fill in the gaps. 
 
+Special thanks to Seam Mackesey for contributing some new methods.
+
+
 Changes:
 
 * New Features
@@ -13,6 +16,7 @@ Changes:
   * Add alias String#each_match for #mscan.
   * Add Dir.lookup method.
   * Add Proc.wrap (may become `Kernel#Proc()`).
+  * Add Regexp#to_proc.
 
 * Renamed Features
 
