@@ -374,13 +374,20 @@ class Random
       # TODO: This is not very efficient. Better way?
       #++
       def random(max_length = 8, char_re = /[\w\d]/)
-        raise ArgumentError.new('char_re must be a regular expression!') unless char_re.is_a?(Regexp)
+        raise ArgumentError.new('second argument must be a regular expression') unless char_re.is_a?(Regexp)
         string = ""
         while string.length < max_length
             ch = Random.number(255).chr
             string << ch if ch =~ char_re
         end
         return string
+      end
+
+      # Generate a random binary string of +n_bytes+ size.
+      #
+      # CREDIT: Guido De Rosa
+      def random_binary(n_bytes)
+        ( Array.new(n_bytes){ rand(0x100) } ).pack('c*') 
       end
     end
 
