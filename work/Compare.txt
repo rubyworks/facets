@@ -1,0 +1,156 @@
+# Compare New Facets to Old
+
+This file outlines a comparison of Facets circa 2008 opposed to Facets in 2014.
+
+## String
+
+### Common
+
+align.rb (w/ align_center, align_left, align_right)
+bracket.rb
+briefcase.rb (was brief.rb)
+camelcase.rb (was camelize.rb)
+capitalized.rb (w/ downcase upcase)
+cleave.rb
+cmp.rb
+crypt.rb (was unix_crypt.rb)
+divide.rb
+each_word.rb
+ends_with.rb
+fold.rb
+indent.rb
+index_all.rb
+interpolate.rb
+line_wrap.rb
+lowercase.rb
+margin.rb
+methodize.rb
+modulize.rb
+mscan.rb
+natcmp.rb
+nchar.rb
+pathize.rb
+quote.rb
+random.rb
+range.rb
+range_all.rb
+range_of_line.rb
+rewrite.rb
+shatter.rb
+similarity.rb
+starts_with.rb
+tab.rb
+tabto.rb
+to_re.rb
+to_rx.rb
+titlecase.rb (was capitalize_all.rb)
+trim.rb  (was margin)
+unbracket.rb
+underscore.rb
+unfold.rb (in fold.rb, I assume)
+unindent.rb (in indent.rb, I assume)
+unquote.rb (was dequote.rb)
+uppercase.rb
+word_wrap.rb
+words.rb
+
+### New
+
+acronym.rb
+ascii_only.rb
+characters.rb
+cleanlines.rb
+compress_lines.rb
+each_match.rb
+edit_distance.rb
+exclude.rb
+expand_tab.rb
+file.rb
+lchomp.rb
+linear.rb
+newlines.rb
+number.rb
+op_div.rb
+op_sub.rb
+outdent.rb
+random.rb
+remove.rb
+roman.rb
+rotate.rb
+snakecase.rb
+splice.rb
+squish.rb
+store.rb
+subtract.rb
+variablize.rb
+xor.rb
+
+### Moved
+
+#### Moved to blank.rb
+
+blank.rb
+
+#### Moved to indexable.rb
+
+first.rb
+last.rb
+
+#### Moved to boolean.rb
+
+to_b.rb
+
+#### Moved to random.rb
+
+at_rand.rb
+rand_byte.rb
+rand_index.rb
+rand_letter.rb
+shuffle.rb
+
+### Moved to date.rb/time.rb
+
+to_date.rb
+to_time.rb
+
+#### Moved to English project
+
+dresner.rb
+ordinal.rb
+plural.rb
+singular.rb
+soundex.rb
+word_filter.rb
+
+#### Moved to Ruby itself
+
+bytes.rb
+chars.rb
+each_char.rb
+lines.rb
+unpack.rb
+
+### Deprecated
+
+at.rb
+basename.rb
+demodulize.rb
+first_char.rb
+format.rb
+humanize.rb (TODO: bring back with better name?)
+last_char.rb
+patterns.rb
+pop.rb
+pot.rb
+pull.rb
+push.rb
+shift.rb
+succ.rb
+regesc.rb
+shell_escape.rb
+to_a.rb  (why?)
+to_const.rb
+to_proc.rb
+unshift.rb
+whitespace.rb (was renamed to `#blank?`)
+
