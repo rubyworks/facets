@@ -46,20 +46,28 @@ on the website for links to available documentation.
 
 == Installation
 
+=== Bundler
+
+If you are using Bundler with your project, add the facets gem to the project's
+Gemfile. Unless you want all of facets loaded be sure to add the `:require => false`
+option.
+
+    gem "facets", require: false
+
 === RubyGems
 
 The easiest way to install is via RubyGems.
 
-  $ gem install facets
+    $ gem install facets
 
 === Setup.rb
 
 Facets can be installed the old-fashioned way using Ruby Setup (http://rubyworks.github.com/setup).
 Download and unpack the .tar.gz package and run setup.rb, like so:
 
-  $ tar -xvzf facets-2.x.x.tar.gz
-  $ cd facets-2.x.x
-  $ sudo setup.rb
+    $ tar -xvzf facets-2.x.x.tar.gz
+    $ cd facets-2.x.x
+    $ sudo setup.rb
 
 Facets 2.8+ requires Ruby 1.8.7 or higher.
 
