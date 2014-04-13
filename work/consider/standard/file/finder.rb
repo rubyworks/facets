@@ -1,3 +1,5 @@
+# Based on file-find gem.
+
 require 'date'
 require 'rbconfig'
 
@@ -9,7 +11,84 @@ rescue LoadError
    require 'etc'
 end
 
-class File::Find
+# This is a alternative to the Find module currently in the standard library.
+# It is modeled on a typical 'find' command found on most Unix systems.
+#
+#     finder = File::Finder.new(
+#       :pattern => "*.rb",
+#       :follow  => false,
+#       :path    => ['/usr/local/lib', '/opt/local/lib']
+#     )
+#
+#     finder.find{ |f|
+#       puts f
+#     }
+#
+# The current find module in the standard library is inadequate. It is, quite
+# frankly, not much more than a plain Dir.glob call. This library provides an
+# interface based on options typically available on your command line 'find'
+# command, thus allowing you much greater control over how you find your files.
+# The following criteria are supported:
+#
+# * atime
+# * ctime
+# * follow
+# * ftype
+# * inum (except Windows)
+# * group (name or id)
+# * maxdepth
+# * mindepth
+# * mount
+# * mtime
+# * name (or 'pattern')
+# * path
+# * perm (except Windows)
+# * prune
+# * size
+# * user (name or id)
+# 
+# In addition to the above options, FileTest methods such as `readable?` and
+# `writable?` may be used as keys, with true or false for their values.
+# 
+# More options might be added in the future, and requests will definitely be
+# considered. Some specific things that could be added include:
+# 
+# * exec
+# * links
+# * support for :user and :group on MS Windows
+# 
+# However, generally speaking, anything that would require mucking around with
+# C code or is just too difficult to implement in a cross platform manner will
+# not be supported. These include the following options:
+# 
+# * acl/xattr - Way too difficult to implement in a cross platform manner, and
+#   a rarely used option in practice.
+# * cpio/ncpio - Will not shell out to this or any other 3rd party application.
+# * ls/print - Use Ruby's builtin printing methods to print as you see fit.
+# * ok - This is not interactive software.
+# 
+# Note that the 'perm' option does not work on MS Windows, even for its limited
+# subset of permissions, i.e. 664 and 666. This is arguably a bug in Ruby's
+# File::Stat.mode method on MS Windows.
+# 
+# The 'user' and 'group' options are not currently supported on MS Windows either.
+# This can be supported, but will require changes in the win32-file and
+# win32-file-stat libraries (which would then become dependencies).
+# 
+# There are three test failures with JRuby, all related to the 'perm' option.
+# As of yet I have not been able to reduce them to a simple test case and
+# discern the exact cause of the failures, though I suspect a bug in the JRuby
+# implementation of File.chmod.
+# 
+# 
+# The followin people deserve acknowledgement: Richard Clamp for File::Find::Rule
+# Perl module for additional ideas and inspiration; Bill Kleb for ideas regarding
+# name, group and perm enhancements; and Hal Fulton for his implementation of
+# symbolic permissions.
+#
+# CREDIT: Daniel J. Berger
+
+class File::Finder
    # The version of the file-find library
    VERSION = '0.3.4'
 
@@ -445,8 +524,8 @@ class File::Find
    end
 
    # Converts a symoblic permissions mode into its octal equivalent.
-   #--
-   # Taken almost entirely from ruby-talk: 96956 (Hal Fulton).
+   #
+   # This code was taken almost entirely from ruby-talk: 96956 (Hal Fulton).
    #
    def sym2oct(str)
       left  = {'u' => 0700, 'g' => 0070, 'o' => 0007, 'a' => 0777}
