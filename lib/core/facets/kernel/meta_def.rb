@@ -16,5 +16,9 @@ module Kernel
     end
   end
 
+  #def meta_def( name, &blk )
+  #  meta_eval { define_method name, &blk }
+  #end
+
 end
 

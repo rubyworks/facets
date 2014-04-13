@@ -10,27 +10,39 @@ end
 class Hash
   # Turns a hash into a generic object using an OpenStruct.
   #
-  #   o = {'a' => 1}.to_ostruct
-  #   o.a  #=> 1
+  #     o = {'a' => 1}.to_ostruct
+  #     o.a  #=> 1
   #
   def to_ostruct
     OpenStruct.new(self)
   end
 
-  # Like to_ostruct but recusively objectifies all hash elements as well.
+  ## Recursively converts a Hash object to an OpenStruct object.
+  ##
+  ## Returns a copy of the hash as an OpenStruct.
+  #def to_ostruct()
+  #  struct = OpenStruct.new(self.clone())
+  #  each do |k, v|
+  #    struct.__send__("#{k}=", v.to_ostruct()) if v.is_a?(Hash)
+  #    struct.__send__(k).map! {|x| x.is_a?(Hash) ? x.to_ostruct() : x} if v.is_a?(Array)
+  #  end
+  #  return struct
+  #end
+
+  # Like `#to_ostruct` but recusively objectifies all hash elements as well.
   #
-  #   o = {'a' => { 'b' => 1 }}.to_ostruct_recurse
-  #   o.a.b  #=> 1
+  #     o = {'a' => { 'b' => 1 }}.to_ostruct_recurse
+  #     o.a.b  #=> 1
   #
-  # The +exclude+ parameter is used internally to prevent infinite
+  # The `exclude` parameter is used internally to prevent infinite
   # recursion and is not intended to be utilized by the end-user.
   # But for more advance use, if there is a particular subhash you
   # would like to prevent from being converted to an OpoenStruct
-  # then include it in the +exclude+ hash referencing itself. Eg.
+  # then include it in the `exclude` hash referencing itself. e.g.
   #
-  #   h = { 'a' => { 'b' => 1 } }
-  #   o = h.to_ostruct_recurse( { h['a'] => h['a'] } )
-  #   o.a['b']  #=> 1
+  #     h = { 'a' => { 'b' => 1 } }
+  #     o = h.to_ostruct_recurse( { h['a'] => h['a'] } )
+  #     o.a['b']  #=> 1
   #
   # CREDIT: Alison Rowland, Jamie Macey, Mat Schaffer
   def to_ostruct_recurse(exclude={})
