@@ -4,7 +4,7 @@ if defined?(Enumerator::Lazy)
 
       # Enumerator::Lazy version of Enumerable#squeeze.
       # Note: you must use Ruby 2.0+ or require 'backports'.
-      # For now, you have to require 'facets/lib/core/facets/enumerator/lazy/squeeze' explicitly.
+      # For now, you have to require 'facets/enumerator/lazy/squeeze' explicitly.
       #
       # Examples
       #
