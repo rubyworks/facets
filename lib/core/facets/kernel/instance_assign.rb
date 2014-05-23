@@ -7,8 +7,8 @@ module Kernel
   #     @b   #=> 2
   #
   # NOTE: Conceptually a better alternative to this method is `instance.update`
-  #       from the `instance` gem. However, pratically this method is probably 
-  #       the better choice until such time that Ruby support annonymous delgators.
+  #       from the `instance` gem. However, practically this method is probably 
+  #       the better choice until such time that Ruby supports anonymous delegators.
   #
   def instance_assign(hash, safe=false)
     if safe
