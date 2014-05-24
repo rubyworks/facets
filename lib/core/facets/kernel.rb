@@ -29,6 +29,7 @@ require_relative 'kernel/in.rb'
 require_relative 'kernel/instance_assign.rb'
 require_relative 'kernel/instance_class.rb'
 #require_relative 'kernel/instance_exec.rb'     # uncommon
+require_relative 'kernel/instance_extract.rb'
 require_relative 'kernel/instance_send.rb'
 require_relative 'kernel/like.rb'
 require_relative 'kernel/load_all.rb'

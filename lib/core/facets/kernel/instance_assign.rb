@@ -10,19 +10,12 @@ module Kernel
   #       from the `instance` gem. However, practically this method is probably 
   #       the better choice until such time that Ruby supports anonymous delegators.
   #
-  def instance_assign(hash, safe=false)
-    if safe
-      hash.each do |k,v|
-        k = "@#{k}" if k !~ /^@/
-        instance_variable_set(k, v) unless instance_variable_defined?(k)
-      end
-    else
-      hash.each do |k,v|
-        k = "@#{k}" if k !~ /^@/
-        instance_variable_set(k, v)
-      end
+  def instance_assign(hash)
+    hash.each do |k,v|
+      k = "@#{k}" if k !~ /^@/
+      instance_variable_set(k, v)
     end
-    return self
+    self
   end
 
 end
