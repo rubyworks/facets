@@ -12,8 +12,8 @@ class Array
   #
   # CREDIT: T. Yamada
 
-  def squeeze!
-    replace(squeeze)
+  def squeeze!(*other_elem)
+    replace(squeeze(*other_elem))
   end
 
 end

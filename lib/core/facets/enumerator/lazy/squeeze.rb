@@ -14,11 +14,13 @@ if defined?(Enumerator::Lazy)
       #
       # CREDIT: T. Yamada
 
-      def squeeze
+      def squeeze(*other_elem)
         first = true
         cur = nil
         self.class.new(self) do |y,v|
-          if first || cur != v
+          if !other_elem.empty? && !other_elem.include?(v)
+            y << v
+          elsif first || cur != v
             y << v
             first = false
             cur = v

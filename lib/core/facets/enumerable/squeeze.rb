@@ -16,12 +16,16 @@ module Enumerable
   #
   # CREDIT: T. Yamada
 
-  def squeeze
+  def squeeze(*other_elem)
+    first = true
     r = []   # result
     c = nil  # current
     each do |e|
-      if r.empty? || c != e
+      if !other_elem.empty? && !other_elem.include?(e)
         r << e
+      elsif first || c != e
+        r << e
+        first = false
         c = e
       end
     end
