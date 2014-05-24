@@ -8,6 +8,8 @@ module Kernel
   #     @a   #=> 9
   #     @b   #=> 2
   #
+  # CREDIT: T. Yamada
+
   def instance_extract(hash)
     hash.each do |k,v|
       k = "@#{k}" if k !~ /^@/
