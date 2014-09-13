@@ -1,4 +1,4 @@
-covers 'facets/kernel/extract'
+covers 'facets/kernel/instance_extract'
  
 test_case Kernel do 
 
