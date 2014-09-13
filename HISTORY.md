@@ -1,13 +1,16 @@
 # Facets Release History
 
-## 3.0.0 / 2012-07-01
+## 3.0.0 / 2014-09-15
 
-Major release is now for Ruby 1.9.2+. Ruby 1.8 and older is no longer supported.
-If you still need to use Facets with Ruby 1.8 or older then the excellent
-Backports project can be used to fill in the gaps. 
+This major release has been a long time in coming. Too long in fact. As with
+any "point oh" release, please expect a few hiccups and report them so we can
+get a solid 3.1 release out as soon as possible.
+
+This release is tailored for Ruby 1.9.2 and above. Ruby 1.8 and older is no
+longer supported. If you still need to use Facets with Ruby 1.8 or older then
+the excellent Backports project can be used to fill in the gaps. 
 
 Special thanks to Seam Mackesey for contributing some new methods.
-
 
 Changes:
 
@@ -17,15 +20,24 @@ Changes:
   * Add Dir.lookup method.
   * Add Proc.wrap (may become `Kernel#Proc()`).
   * Add Regexp#to_proc.
+  * Add Kernel#instance_extract.
+  * Add Math#EC for Euler's constant.
+  * Add Array#uniqe_permutation.
+  * Add Enumerator::Lazy#squeeze.
+  * Add Hash::fetch)nested.
+
+* Improved Features
+
+  * Enumerable#sum argument is initial value.
 
 * Renamed Features
 
   * Rename Object#replace to Object#instance_replace.
   * Rename Range#to_r to Range#to_rng, since #to_r is now for Rational.  
 
-* Deprecated Features
+* Bug Fixes
 
-  * Deprecated numeric/round.rb and float/round.rb scripts.
+  * Fix Platform#inspect.
 
 * Deprecated Features Now in Ruby
 
@@ -33,27 +45,28 @@ Changes:
   * Deprecate Array#index (now in Ruby).
   * Deprecate Array#permutation (now in Ruby).
   * Deprecate Array#product (now in Ruby).
-  * Deprecate Array#rotate, now in Ruby.
-  * Deprecate Array#rotate!, now in Ruby.
-  * Deprecate Array#select!, now in Ruby.
-  * Deprecate Binding#eval, now in Ruby.
-  * Deprecate Float#round_at, now in Ruby (as #round).
-  * Deprecate Hash#select!, now in Ruby.
-  * Deprecate Integer#even?, now in Ruby.
-  * Deprecate Integer#odd?, now in Ruby.
-  * Deprecate Kernel#__callee__, now in Ruby.
-  * Deprecate Kernel#__method__, now in Ruby.
-  * Deprecate NilClass#to_f, now in Ruby.
-  * Deprecate NilClass#to_h, now in Ruby.
-  * Deprecate Numeric#round_at, now in Ruby (as #round).
-  * Deprecate Proc#curry, now in Ruby.
-  * Deprecate String#bytes, now in Ruby.
-  * Deprecate String#each_char, now in Ruby.
-  * Deprecate String#end_with, now in Ruby.
-  * Deprecate String#lines, now in Ruby.
-  * Deprecate String#start_with, now in Ruby.
-  * Deprecate Symbol#to_proc, now in Ruby.
-  * Deprecate UnboundMethod#name, now in Ruby.
+  * Deprecate Array#rotate (now in Ruby).
+  * Deprecate Array#rotate! (now in Ruby).
+  * Deprecate Array#select! (now in Ruby).
+  * Deprecate Binding#eval (now in Ruby).
+  * Deprecate Float#round_at (now in Ruby as #round).
+  * Deprecate Hash#select! (now in Ruby).
+  * Deprecate Integer#even? (now in Ruby).
+  * Deprecate Integer#odd? (now in Ruby).
+  * Deprecate Kernel#__callee__ (now in Ruby).
+  * Deprecate Kernel#__method__ (now in Ruby).
+  * Deprecate Kernel#source_location (now in Ruby).
+  * Deprecate NilClass#to_f (now in Ruby).
+  * Deprecate NilClass#to_h (now in Ruby).
+  * Deprecate Numeric#round_at (now in Ruby as #round).
+  * Deprecate Proc#curry (now in Ruby).
+  * Deprecate String#bytes (now in Ruby).
+  * Deprecate String#each_char (now in Ruby).
+  * Deprecate String#end_with (now in Ruby).
+  * Deprecate String#lines (now in Ruby).
+  * Deprecate String#start_with (now in Ruby).
+  * Deprecate Symbol#to_proc (now in Ruby).
+  * Deprecate UnboundMethod#name (now in Ruby).
 
 
 ## 2.9.3 / 2011-12-31
