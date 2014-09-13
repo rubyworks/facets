@@ -56,7 +56,7 @@ class Platform
 
   #
   def self.local
-    arch = Config::CONFIG['arch']
+    arch = RbConfig::CONFIG['arch']
     arch = "#{arch}_60" if arch =~ /mswin32$/
     @local ||= new(arch)
   end
@@ -141,7 +141,7 @@ class Platform
 
   #
   def inspect
-    "#s:0x%x @cpu=%p, @os=%p, @version=%p>" % [self.class, object_id, *to_a]
+    "#<%s:0x%x @cpu=%p, @os=%p, @version=%p>" % [self.class, object_id, *to_a]
   end
 
   #
