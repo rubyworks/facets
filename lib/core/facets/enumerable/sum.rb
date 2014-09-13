@@ -11,7 +11,7 @@ module Enumerable
     if block_given?
       map(&block).sum(identity)
     else
-      reduce { |sum, element| sum + element } || identity
+      reduce(identity) { |sum, element| sum + element } || identity
     end
   end
 
