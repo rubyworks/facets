@@ -1,9 +1,11 @@
 class Hash
 
-  # nil safe version of Hash#[].
+  # Similar to Hash#fetch but supports nested lookup and is `nil` safe.
   #
-  #   {'hello'=>{'world'=>42}}.fetch_nested(*['hello','world']) #=> 42
-  #   {}.fetch_nested(*['hello','world']) #=> nil
+  #     {}.fetch_nested('anything','at','all')  #=> nil
+  #
+  #     h = {'hello'=>{'world'=>42}}
+  #     h.fetch_nested(*['hello','world'])  #=> 42
   #
   # CREDIT: T. Yamada and Sean Mackesey
 
