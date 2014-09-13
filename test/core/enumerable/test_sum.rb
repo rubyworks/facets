@@ -18,16 +18,16 @@ test_case Enumerable do
       a.assert == 9
 
       a = [1].sum(9)
-      a.assert == 1
+      a.assert == 10
     end
 
     test 'with identity and block' do
-      # notice identity is not effected by block (correct?)
+      # notice identity is not effected by the block
       a = [].sum(9.1, &:to_i)
       a.assert == 9.1
 
       a = [1.1].sum(9.1, &:to_i)
-      a.assert == 1
+      a.assert == 10.1
     end
 
   end
