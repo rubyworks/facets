@@ -30,6 +30,11 @@ test_case Enumerable do
       a.assert == 10.1
     end
 
+    test 'with non-numeral addition' do
+      a = [[1],[2],[3]].sum([])
+      a.assert == [1,2,3]
+    end
+
   end
 
 end

@@ -19,11 +19,11 @@ module Enumerable
   #
   # @author Dawid Marcin Grzesiak
 
-  def sum(identity=0, &block)
+  def sum(*identity, &block)
     if block_given?
-      map(&block).sum(identity)
+      map(&block).sum(*identity)
     else
-      reduce(identity) { |sum, element| sum + element }
+      reduce(*identity) { |sum, element| sum + element }
     end
   end
 
