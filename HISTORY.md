@@ -1,21 +1,20 @@
 # Facets Release History
 
-## 3.0.0 / 2014-09-15
+## 3.0.0 / 2014-11-11
 
-This major release has been a long time in coming. Too long in fact. As with
-any "point oh" release, please expect a few hiccups and report them so we can
+This major release has been a long time in coming --too long in fact. As with
+any "Point Oh" release, please expect a few hiccups and report them so we can
 get a solid 3.1 release out as soon as possible.
 
 This release is tailored for Ruby 1.9.2 and above. Ruby 1.8 and older is no
 longer supported. If you still need to use Facets with Ruby 1.8 or older then
 the excellent Backports project can be used to fill in the gaps. 
 
-Special thanks to Seam Mackesey for contributing some new methods.
-
 Changes:
 
 * New Features
 
+  * Add Time.current.
   * Add alias String#each_match for #mscan.
   * Add Dir.lookup method.
   * Add Proc.wrap (may become `Kernel#Proc()`).
@@ -24,11 +23,13 @@ Changes:
   * Add Math#EC for Euler's constant.
   * Add Array#uniqe_permutation.
   * Add Enumerator::Lazy#squeeze.
-  * Add Hash::fetch)nested.
+  * Add Hash#fetch_nested.
 
 * Improved Features
 
   * Enumerable#sum argument is initial value.
+  * Time#past? and #future? use Time.current.
+  * Better ActiveSupport compatibility.
 
 * Renamed Features
 
