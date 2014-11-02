@@ -1,4 +1,4 @@
-class Object
+module Kernel
 
   # Replace state of object with the state of another object of the
   # same class (or superclass).

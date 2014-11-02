@@ -25,7 +25,7 @@ require_relative 'array/only.rb'
 require_relative 'array/pad.rb'
 require_relative 'array/peek.rb'
 #require_relative 'array/percentile.rb'         # uncommon
-require_relative 'array/permutation2.rb'
+require_relative 'array/unique_permutation.rb'
 require_relative 'array/poke.rb'
 require_relative 'array/probability.rb'
 require_relative 'array/pull.rb'
