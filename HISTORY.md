@@ -27,6 +27,8 @@ Changes:
 
 * Improved Features
 
+  * Hash#collate can take multiple arguments.
+  * Hash#collate no longer flattens automatically.
   * Enumerable#sum argument is initial value.
   * Time#past? and #future? use Time.current.
   * Better ActiveSupport compatibility.

@@ -6,20 +6,34 @@ class Hash
   #   { :a=>1, :b=>2 }.collate(:a=>3, :b=>4, :c=>5)
   #   #=> { :a=>[1,3], :b=>[2,4], :c=>[5] }
   #
+  # As of v3.0, this method no longer automatically flattens
+  # the array values. To acheive the same effect add a flat map.
+  #
+  #   h = { :a=>[1,3], :b=>[2,4], :c=>[5] }.collate(:a=>6, :b=>7, :c=>8)
+  #   h.each_value{ |v| v.flatten! }
+  #   #=> { :a=>[1,3,6], :b=>[2,4,7], :c=>[5,8] }
+  #
   # @author Trans         (rewrite)
   # @author Tilo Sloboda  (bug fixes)
   # @author Gavin Kistner (original)
 
-  def collate(other)
-    h = Hash.new
-    (keys + other.keys).each do |key|
-      h[key] = []
+  def collate(*others)
+    h = {}
+    keys.each do |k|
+      h[k] = []
     end
-    each do |key, value|
-      h[key] << value
+    others.each do |other|
+      other.keys.each do |k|
+        h[k] = []
+      end
     end
-    other.each do |key, value|
-      h[key] << value
+    each do |k, v|
+      h[k] << v
+    end
+    others.each do |other|
+      other.each do |k, v|
+        h[k] << v
+      end
     end
     h.each{ |k,v| v.flatten! }
     h
