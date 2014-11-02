@@ -6,6 +6,7 @@ doc/
 pkg/
 tmp/
 web/
+work/rails
 work/sandbox
 work/trash
 Gemfile.lock
