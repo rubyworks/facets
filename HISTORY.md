@@ -14,16 +14,20 @@ Changes:
 
 * New Features
 
-  * Add Time.current.
-  * Add alias String#each_match for #mscan.
-  * Add Dir.lookup method.
-  * Add Proc.wrap (may become `Kernel#Proc()`).
-  * Add Regexp#to_proc.
-  * Add Kernel#instance_extract.
-  * Add Math#EC for Euler's constant.
-  * Add Array#uniqe_permutation.
-  * Add Enumerator::Lazy#squeeze.
-  * Add Hash#fetch_nested.
+  * Add Time.current
+  * Add alias String#each_match for #mscan
+  * Add Dir.lookup method
+  * Add Proc.wrap (may become `Kernel#Proc()`)
+  * Add Regexp#to_proc
+  * Add Kernel#instance_extract
+  * Add Math#EC for Euler's constant
+  * Add Array#uniqe_permutation
+  * Add Enumerator::Lazy#squeeze
+  * Add Hash#fetch_nested
+  * Add Array#arrange
+  * Add Array#intersection
+  * Add Array#missing
+  * Add Range#- and Range#+
 
 * Improved Features
 

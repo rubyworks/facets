@@ -1,4 +1,5 @@
 require_relative 'array/after.rb'
+#require_relative 'array/arrange.rb'            # too new
 require_relative 'array/before.rb'
 require_relative 'array/collapse.rb'
 require_relative 'array/collisions.rb'
@@ -16,8 +17,10 @@ require_relative 'array/entropy.rb'
 require_relative 'array/extract_options.rb'
 require_relative 'array/from.rb'
 require_relative 'array/indexable.rb'
+#require_relative 'array/intersection.rb'       # too new
 #require_relative 'array/median.rb'             # uncommon
 require_relative 'array/merge.rb'
+#require_relative 'array/missing.rb'            # too new
 require_relative 'array/mode.rb'
 require_relative 'array/nonuniq.rb'
 require_relative 'array/not_empty.rb'
