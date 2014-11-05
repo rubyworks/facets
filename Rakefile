@@ -58,9 +58,7 @@ task "test" do
 end
 
 desc "run all unit tests"
-task "test:all" do
-  sh "ruby-test #{test_flags} test/"
-end
+task "test:all" => "test"
 
 desc "run core unit tests"
 task "test:core" do
