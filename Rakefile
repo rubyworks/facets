@@ -47,9 +47,7 @@ end
 # RUN TESTS (requires Lemon)
 # ----------------------------------------------------------------------------
 
-task "default" do
-  sh "ruby-test #{test_flags} test/"
-end
+task "default" => "test"
 
 task "test" do
   if tests = ENV['TESTS']
