@@ -49,7 +49,7 @@ end
 
 task "default" => "test"
 
-task "test" do
+task "test" => "tmp" do
   if tests = ENV['TESTS']
     sh "ruby-test #{test_flags} #{tests}"
   else
@@ -61,12 +61,12 @@ desc "run all unit tests"
 task "test:all" => "test"
 
 desc "run core unit tests"
-task "test:core" do
+task "test:core" => "tmp" do
   sh "ruby-test #{test_flags} -Ilib/core test/core"
 end
 
 desc "run standard unit tests"
-task "test:standard" do
+task "test:standard" => "tmp" do
   sh "ruby-test #{test_flags} -Ilib/standard test/standard"
 end
 
@@ -82,6 +82,8 @@ task 'test:standard:activesupport' => [:include_activesupport, 'test:standard']
 task 'include_activesupport' do
   require 'activesupport'
 end
+
+directory "tmp"
 
 def test_flags
   flags = []
