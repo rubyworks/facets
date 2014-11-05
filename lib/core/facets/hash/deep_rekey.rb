@@ -1,3 +1,6 @@
+require 'facets/hash/recurse'
+require 'facets/hash/rekey'
+
 class Hash
 
   # Rekey a hash and all sub-hashes:
