@@ -32,9 +32,9 @@ to a wide variety of usecases.
 
 == Documentation
 
-Facets has special documentation needs due to it's extensive bredth.
+Facets has special documentation needs due to its extensive breadth.
 The documentation generated when installing via RubyGems, or the YARD
-docs provided by rubydoc.info can be somewhat unweildly because it
+docs provided by rubydoc.info can be somewhat unwieldy because it
 combines all of Facets in one large set. When using these resources,
 it is important to remain aware of the source location of particular
 methods.
