@@ -4,11 +4,11 @@ class Hash
   #
   #   {:A=>1, :B=>1}.count(1)  #=> 2
   #
-  def count(value=nil)
-    if value
-      values.count(value)
-    else
+  def count(*value)
+    if value.empty?
       super()
+    else
+      values.count(*value)
     end
   end
 
