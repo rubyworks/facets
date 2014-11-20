@@ -168,7 +168,7 @@ classes to supplement it.
 
 Use this library like you would any other 3rd party library.
 The only difference between Facet's Standard library and other libraries
-is the lack of any enclosing @Facets::@ namespace. This is becuase
+is the lack of any enclosing @Facets::@ namespace. This is because
 the libraries provided by Facets are fairly low-level and very general 
 purpose.
 
