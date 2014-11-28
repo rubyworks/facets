@@ -22,6 +22,14 @@ requirements:
   - test
   version: '>= 0'
   name: rubytest-cli
+- groups:
+  - test
+  version: '>= 0'
+  name: rake
+- groups:
+  - test
+  version: '>= 0'
+  name: simplecov
 conflicts: []
 alternatives: []
 resources:
@@ -65,4 +73,4 @@ description: Facets is the premier collection of extension methods for the Ruby 
   applications.
 scm_uri: https://github.com/rubyworks/facets/tree/master
 created: '2004-12-16'
-date: '2014-02-08'
+date: '2014-11-28'

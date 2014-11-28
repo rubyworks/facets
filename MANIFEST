@@ -186,6 +186,7 @@ lib/core/facets/hash/count.rb
 lib/core/facets/hash/data.rb
 lib/core/facets/hash/dearray_values.rb
 lib/core/facets/hash/deep_merge.rb
+lib/core/facets/hash/deep_rekey.rb
 lib/core/facets/hash/delete.rb
 lib/core/facets/hash/delete_at.rb
 lib/core/facets/hash/delete_unless.rb
@@ -283,6 +284,7 @@ lib/core/facets/kernel/load_all.rb
 lib/core/facets/kernel/load_relative.rb
 lib/core/facets/kernel/maybe.rb
 lib/core/facets/kernel/memo.rb
+lib/core/facets/kernel/meta.rb
 lib/core/facets/kernel/meta_alias.rb
 lib/core/facets/kernel/meta_class.rb
 lib/core/facets/kernel/meta_def.rb
@@ -953,6 +955,7 @@ test/core/hash/test_count.rb
 test/core/hash/test_data.rb
 test/core/hash/test_dearray_values.rb
 test/core/hash/test_deep_merge.rb
+test/core/hash/test_deep_rekey.rb
 test/core/hash/test_delete_at.rb
 test/core/hash/test_delete_unless.rb
 test/core/hash/test_delete_values.rb
