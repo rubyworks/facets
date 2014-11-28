@@ -9,11 +9,11 @@ module Enumerable
   end
 
   # Recursor is a specialized Functor for recurively iterating over Enumerables.
-  #--
+  #
   # TODO: Return Enumerator if no +yld+ block is given.
   #
-  # TODO: Add limiting +depth+ option to Enumerable#recursively ?
-  #++
+  # TODO: Add limiting +depth+ option to Enumerable#recursively?
+  #
   class Recursor
     instance_methods(true).each{ |m| private m unless /^(__|object_id$)/ =~ m.to_s }
 

@@ -6,16 +6,16 @@ class Hash
   # Apply a block to a hash, and recursively apply that block
   # to each sub-hash:
   #
-  #   h = {:a=>1, :b=>{:x=>1, :y=>2}}
-  #   h.recursively.map{ |k,v| [k.to_s, v] }
-  #   #=> [["a", 1], ["b", [["y", 2], ["x", 1]]]]
+  #     h = {:a=>1, :b=>{:x=>1, :y=>2}}
+  #     h.recursively.map{ |k,v| [k.to_s, v] }
+  #     #=> [["a", 1], ["b", [["y", 2], ["x", 1]]]]
   #
   # The recursive iteration can be treated separately from the non-recursive
   # iteration by passing a block to the #recursive method:
   #
-  #   h = {:a=>1, :b=>{:x=>1, :y=>2}}
-  #   h.recursively{ |k,v| [k.to_s, v] }.map{ |k,v| [k.to_s, v.to_s] }
-  #   #=> [["a", "1"], ["b", [["y", "2"], ["x", "1"]]]]
+  #     h = {:a=>1, :b=>{:x=>1, :y=>2}}
+  #     h.recursively{ |k,v| [k.to_s, v] }.map{ |k,v| [k.to_s, v.to_s] }
+  #     #=> [["a", "1"], ["b", [["y", "2"], ["x", "1"]]]]
   #
   def recursively(*types, &block)
     Recursor.new(self, *types, &block)
