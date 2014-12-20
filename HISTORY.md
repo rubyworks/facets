@@ -6,34 +6,36 @@ This major release has been a long time in coming --too long in fact. As with
 any "Point Oh" release, please expect a few hiccups and report them so we can
 get a solid 3.1 release out as soon as possible.
 
-This release is tailored for Ruby 1.9.2 and above. Ruby 1.8 and older is no
-longer supported. If you still need to use Facets with Ruby 1.8 or older then
-the excellent Backports project can be used to fill in the gaps. 
+This release is tailored for Ruby 2.0 and above. Ruby 1.9.x and older is no
+longer supported. If you still need to use Facets with Ruby 1.9.x or older
+then the excellent Backports project can be used to fill in the gaps. 
 
 Changes:
 
 * New Features
 
-  * Add Time.current
-  * Add alias String#each_match for #mscan
-  * Add Dir.lookup method
-  * Add Proc.wrap (may become `Kernel#Proc()`)
-  * Add Regexp#to_proc
-  * Add Kernel#instance_extract
-  * Add Math#EC for Euler's constant
-  * Add Array#uniqe_permutation
-  * Add Enumerator::Lazy#squeeze
-  * Add Hash#fetch_nested
   * Add Array#arrange
   * Add Array#intersection
   * Add Array#missing
+  * Add Array#uniqe_permutation
+  * Add Dir.lookup method
+  * Add Enumerator::Lazy#squeeze
+  * Add Hash#fetch_nested
+  * Add Kernel#instance_extract
+  * Add Math#EC for Euler's constant
+  * Add Pathname#chdir
+  * Add Pathname#readline
+  * Add Proc.wrap (may become `Kernel#Proc()`)
   * Add Range#- and Range#+
+  * Add Regexp#to_proc
+  * Add String#each_match as alias for #mscan
+  * Add Time.current
 
 * Improved Features
 
+  * Enumerable#sum argument is initial value.
   * Hash#collate can take multiple arguments.
   * Hash#collate no longer flattens automatically.
-  * Enumerable#sum argument is initial value.
   * Time#past? and #future? use Time.current.
   * Better ActiveSupport compatibility.
 
