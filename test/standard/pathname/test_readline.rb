@@ -1,3 +1,5 @@
+require 'pathname'
+
 covers 'facets/pathname/readline'
 
 test_case Pathname do
@@ -6,7 +8,7 @@ test_case Pathname do
 
     setup do
       @test_file = Pathname.new('tmp/test_file')
-      @test_file.write("line1\nline2")
+      File.open(@test_file, "w") { |f| f << "line1\nline2" }
     end
 
     test do
