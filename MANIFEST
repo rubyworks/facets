@@ -44,6 +44,7 @@ lib/core/facets/array/reject_values.rb
 lib/core/facets/array/splice.rb
 lib/core/facets/array/split.rb
 lib/core/facets/array/squeeze.rb
+lib/core/facets/array/step.rb
 lib/core/facets/array/store.rb
 lib/core/facets/array/thru.rb
 lib/core/facets/array/to_h.rb
@@ -679,6 +680,7 @@ lib/standard/facets/ostruct/op_store.rb
 lib/standard/facets/ostruct/to_h.rb
 lib/standard/facets/ostruct/to_ostruct.rb
 lib/standard/facets/ostruct.rb
+lib/standard/facets/pathname/chdir.rb
 lib/standard/facets/pathname/empty.rb
 lib/standard/facets/pathname/exists.rb
 lib/standard/facets/pathname/glob.rb
@@ -687,6 +689,7 @@ lib/standard/facets/pathname/null.rb
 lib/standard/facets/pathname/op_div.rb
 lib/standard/facets/pathname/op_fetch.rb
 lib/standard/facets/pathname/outofdate.rb
+lib/standard/facets/pathname/readline.rb
 lib/standard/facets/pathname/root.rb
 lib/standard/facets/pathname/rootname.rb
 lib/standard/facets/pathname/safe.rb
@@ -865,6 +868,7 @@ test/core/array/test_select.rb
 test/core/array/test_splice.rb
 test/core/array/test_split.rb
 test/core/array/test_squeeze.rb
+test/core/array/test_step.rb
 test/core/array/test_store.rb
 test/core/array/test_traverse.rb
 test/core/array/test_uniq_by.rb
@@ -1251,6 +1255,8 @@ test/standard/math/test_sech.rb
 test/standard/math/test_sign.rb
 test/standard/math/test_sinc.rb
 test/standard/math/test_srq.rb
+test/standard/pathname/test_chdir.rb
+test/standard/pathname/test_readline.rb
 test/standard/test_argvector.rb
 test/standard/test_cloneable.rb
 test/standard/test_date.rb
