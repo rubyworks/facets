@@ -5,7 +5,7 @@ module Kernel
   # #equal?, then #eql?, then #==, and ending with #===.
   #
   #   1.like?(1.0)               #=> true
-  #   "string".likee?("string")   #=> true
+  #   "string".like?("string")   #=> true
   #   String.like?("string")     #=> true
   #
   def like?(x)
