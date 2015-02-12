@@ -1,0 +1,63 @@
+== Introduction
+
+This is valid code.
+
+```ruby
+
+module Refined::String::Woot
+  refine String
+    include Facets::String::Woot
+  end
+end
+using Refined::String::Woot
+puts 'refined?'.woot #> refined? Woot!
+```
+
+and so is this.
+
+```ruby
+String.include(Facets::String::Woot)
+puts 'patched?'.woot #> patched? Woot!
+
+=== Starting point
+
+I really want to start using refinements, and I really want to keep using
+facets, and I want to make that happen sooner than later.  I did some searching
+for this kind of conversation but found little except some posts talking about
+ways that refinements could be (wait for it) refined.  So I started thinking
+about the fundamental problems (as I saw it).  Do not repeat code, do not break
+the existing api, keep identical behaviour, add refinements using same code
+base. And at the same time, to achieve the goal of being able to use facets for
+eitherpatching core objects or refining modules. the existing code had to
+change as it was inixtricably tied to a single approach.
+
+=== There be Dragons
+
+I imagine there are subtleties to the difference of gaining a new method
+between reopening a class and and incuding a module, but I have no idea what
+they might be.
+
+the simple ``` String.include(Facets::Module:OfAwesome)``` seems a perfectly
+ruby way to do it and also seems to be a too good to be true situation.  Can it
+be the best way to stuff that method in there?  I have no idea.
+
+Writing code this way might be a pain,
+The extra hoops could largely be accounted for by a macro or automated,
+there's really just a bunch of boilerplate code surrounding the common modules.
+And that alone might tank any shared code appoach.
+
+The addition of the common classes that could be picked and used in custom
+classes would be a nice addition to the suite.
+
+=== The future
+
+I have energy to burn on converting this if a scheme can be agreed on. If
+there's another effort to do the same thing with a different scheme then I'd
+be glad to help however I can.
+
+=== The Code
+
+the dir contains the 5 files needed to prove the concept.  The organization and
+naming scheme can be molded to whatever is needed.  Generating code for the
+wrappers should be a relatively straight forward Thor task.
+
