@@ -26,9 +26,8 @@ class String
   # TODO: Move to random.rb in standard library?
 
   def self.random(len=32, character_set = ["A".."Z", "a".."z", "0".."9"])
-    characters = character_set.map { |i| i.to_a }.flatten
-    characters_len = characters.length
-    (0...len).map{ characters[rand(characters_len)] }.join
+    chars = character_set.map(&:to_a).flatten
+    Array.new(len){ chars.sample }
   end
 
 end
