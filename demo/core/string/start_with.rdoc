@@ -1,7 +1,0 @@
-== String#start_with?
-
-  require 'facets/string/start_with'
-
-  s = "xxboo"
-  s.assert.start_with?('xx')
-
