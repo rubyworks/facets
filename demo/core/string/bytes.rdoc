@@ -1,8 +1,0 @@
-== String#bytes
-
-  require 'facets/string/bytes'
-
-  s = "abc"
-
-  s.bytes.to_a.assert == s.unpack('C*')
-
