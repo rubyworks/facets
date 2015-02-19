@@ -26,7 +26,7 @@ module Kernel
 end
 
 class NilClass
-
+  FUNCTOR = Functor.new{ nil }
   # Compliments Kernel#ergo.
   #
   #   "a".ergo{ |o| o.upcase } #=> "A"
@@ -35,8 +35,7 @@ class NilClass
   # CREDIT: Daniel DeLorme
 
   def ergo
-    @_ergo ||= Functor.new{ nil } # raising "can't modify frozen NilClass"
-    @_ergo unless block_given?
+    FUNCTOR unless block_given?
   end
 
 end
