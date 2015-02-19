@@ -35,7 +35,7 @@ class NilClass
   # CREDIT: Daniel DeLorme
 
   def ergo
-    @_ergo ||= Functor.new{ nil }
+    @_ergo ||= Functor.new{ nil } # raising "can't modify frozen NilClass"
     @_ergo unless block_given?
   end
 
