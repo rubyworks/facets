@@ -27,7 +27,7 @@ class String
 
   def self.random(len=32, character_set = ["A".."Z", "a".."z", "0".."9"])
     chars = character_set.map(&:to_a).flatten
-    Array.new(len){ chars.sample }
+    Array.new(len){ chars.sample }.join
   end
 
 end
