@@ -1,8 +1,8 @@
-covers 'facets/range/to_r'
+covers 'facets/range/to_rng'
 
 test_case Range do
 
-  method :to_r do
+  method :to_rng do
     test do
       a = (0..10)
       a.to_r.assert == a
