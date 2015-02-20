@@ -1,47 +1,47 @@
-== String#margin
+== String#trim
 
-    require 'facets/string/margin'
+    require 'facets/string/trim'
 
     s = %q{
           |ABC
           |123
           |TEST
-          }.margin
+          }.trim
     s.assert == "ABC\n123\nTEST"
 
     s = %q{
             |ABC
           |123
                 |TEST
-          }.margin
+          }.trim
     s.assert == "ABC\n123\nTEST"
 
     s = %q{|ABC
           |123
           |TEST
-    }.margin
+    }.trim
     s.assert == "ABC\n123\nTEST"
 
     s = %q{
           |ABC
           |123
-          |TEST}.margin
+          |TEST}.trim
     s.assert == "ABC\n123\nTEST"
 
     s = %q{|ABC
           |123
-          |TEST}.margin
+          |TEST}.trim
     s.assert == "ABC\n123\nTEST"
 
     s = %q{   |ABC
           |123
-          |TEST}.margin
+          |TEST}.trim
     s.assert == "ABC\n123\nTEST"
 
     s = %q{ABC
           |123
           |TEST
-          }.margin
+          }.trim
     s.assert == "ABC\n123\nTEST"
 
 spacing
@@ -50,27 +50,27 @@ spacing
           | ABC
           | 123
           | TEST
-          }.margin
+          }.trim
     s.assert == " ABC\n 123\n TEST"
 
     s = %q{
           |ABC
           |123
           |TEST
-          }.margin(1)
+          }.trim(1)
     s.assert == " ABC\n 123\n TEST"
 
     s = %q{
           |ABC
           |123
           |TEST
-          }.margin(2)
+          }.trim(2)
     s.assert == "  ABC\n  123\n  TEST"
 
     s = %q{ ABC
           - 123
           - TEST
-          }.margin
+          }.trim
     s.assert == " ABC\n 123\n TEST"
 
 random placement
@@ -87,6 +87,6 @@ random placement
     }
 
     @volly.each{ |k,v|
-      k.margin.assert == v
+      k.trim.assert == v
     }
 
