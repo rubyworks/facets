@@ -1,8 +1,6 @@
-
 covers 'facets/enumerable/hashify'
 
 test_case Enumerable do
-
   method :hashify do
     test do
       a = [ [:a,1], [:b,2] ]
@@ -12,7 +10,6 @@ test_case Enumerable do
 end
 
 test_case Enumerable::Hashifier do
-
   method :splat do
     test do
       a = [1,2,3,4]
@@ -31,7 +28,6 @@ test_case Enumerable::Hashifier do
       h = Enumerable::Hashifier.new(a)
       h.splat.assert == {1 => 2, 3 => 4, 5=> nil}
     end
-
   end
 
   method :flat do
@@ -98,6 +94,20 @@ test_case Enumerable::Hashifier do
   end
 
   method :auto do
+    test do
+      a = [ [:a,1], [:b,2] ]
+      a.hashify.auto.assert == { :a=>1, :b=>2 }
+    end
+
+    test do
+      a = [ [:a,1,2], [:b,2], [:c], [:d] ]
+      a.hashify.auto.assert == { :a=>[1,2], :b=>[2], :c=>[], :d=>[] }
+    end
+
+    test do
+      a = [ [:a,1,2], 2, :b, [:c,3], 9 ]
+      a.hashify.auto.assert =={ [:a,1,2]=>2, :b=>[:c,3], 9=>nil }
+    end
 
   end
 end
