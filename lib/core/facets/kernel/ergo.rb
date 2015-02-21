@@ -27,6 +27,7 @@ end
 
 class NilClass
   FUNCTOR = Functor.new{ nil }
+  
   # Compliments Kernel#ergo.
   #
   #   "a".ergo{ |o| o.upcase } #=> "A"
