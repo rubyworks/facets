@@ -26,6 +26,11 @@ test_case Enumerable::Hashifier do
       h.splat.assert == {1 => 2, 3 => 4, 5=> nil}
     end
 
+    test do
+      a = 1..5
+      h = Enumerable::Hashifier.new(a)
+      h.splat.assert == {1 => 2, 3 => 4, 5=> nil}
+    end
 
   end
 
@@ -38,6 +43,13 @@ test_case Enumerable::Hashifier do
 
     test do
       a = [:a,1,[:b,2,:c]]
+      h = Enumerable::Hashifier.new(a)
+      h.flat.assert == {a: 1, b: 2, c: nil}
+    end
+
+    test do
+      require 'set'
+      a = Set.new([:a, 1, [:b, 2, :c]])
       h = Enumerable::Hashifier.new(a)
       h.flat.assert == {a: 1, b: 2, c: nil}
     end

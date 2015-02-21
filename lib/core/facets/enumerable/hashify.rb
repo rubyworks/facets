@@ -64,11 +64,9 @@ module Enumerable
     #
     #   a = [:a,1,:b,2,:c]
     #   a.to_h_splat  #=> { :a=>1, :b=>2, :c=>nil }
-    #
-    # TODO: Can this be done without #size?
     def splat
-      a = @enum.dup
-      a << nil if a.size % 2 == 1
+      a = @enum.to_a
+      a << nil if a.size.odd?
       Hash[*a]
     end
 
@@ -78,11 +76,9 @@ module Enumerable
     #
     #   a = [:a,1,[:b,2,:c]]
     #   a.to_h_flat  #=> { :a=>1, :b=>2, :c=>nil }
-    #
-    # TODO: Need to do this without #size.
     def flat
-      a = @enum.flatten
-      a << nil if a.size % 2 == 1
+      a = @enum.to_a.flatten
+      a << nil if a.size.odd?
       Hash[*a]
     end
 
@@ -174,7 +170,7 @@ module Enumerable
     #   a = [ [:a,1,2], [:b,2], [:c], [:d] ]
     #   a.hashify.auto  #=> { :a=>[1,2], :b=>[2], :c=>[], :d=>[] }
     #
-    # If it contians objects other then arrays then the #splat method
+    # If it contains objects other then arrays then the #splat method
     # is called.
     #
     #   a = [ [:a,1,2], 2, :b, [:c,3], 9 ]
