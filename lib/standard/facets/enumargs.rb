@@ -51,6 +51,11 @@ module Enumerable
           end
         }
       else
+        # this branch is used when the method has a variable number of arguments
+        #   resulting in an arity of -1.  Right now this is bugged as it does
+        #   not pass the argument to the each, and always passes the argument
+        #   to the method.  This makes methods like .min amdn .max to act
+        #   in an unexpected manner.
         class_eval %{
           def #{m}( *args, &yld )
             enum_for(:each).#{m}( *args, &yld )
