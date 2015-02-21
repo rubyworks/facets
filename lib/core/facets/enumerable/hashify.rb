@@ -4,13 +4,13 @@ require 'facets/enumerable/value_by'
 
 module Enumerable
 
-  # The hashify methods is a higher-order message used to 
+  # The hashify methods is a higher-order message used to
   # convert an enumerable object into a hash. Converting an
   # enumerable object into a hash is not a one-to-one conversion,
   # for this reason #hashify is used to provide variant approches
   # for the conversion most suited to the use case at hand.
   # Here are some (but not a complete set of) examples.
-  # 
+  #
   # If the enumerable is a collection of perfect pairs, like that
   # which Hash#to_a generates, then #assoc can be used.
   #
@@ -23,13 +23,13 @@ module Enumerable
   #   a = [ [:a,1,2], [:b,2], [:c], [:d] ]
   #   a.hashify.concat  #=> { :a=>[1,2], :b=>[2], :c=>[], :d=>[] }
   #
-  # If the array contians objects other then arrays then
+  # If the array contains objects other then arrays then
   # the #splat method might do the trick.
   #
   #   a = [ [:a,1,2], 2, :b, [:c,3], 9 ]
-  #   a.hashify.splat  #=> { [:a,1,2]=>2, :b=>[:c,3], 9=>nil } 
+  #   a.hashify.splat  #=> { [:a,1,2]=>2, :b=>[:c,3], 9=>nil }
   #
-  # Also, the particular dispatch can be left up the Hashify 
+  # Also, the particular dispatch can be left up the Hashify
   # using the #auto method. See Hashify#auto for details on this.
   #
   # TODO: This method takes arguments only for the sake of the old
@@ -64,11 +64,9 @@ module Enumerable
     #
     #   a = [:a,1,:b,2,:c]
     #   a.to_h_splat  #=> { :a=>1, :b=>2, :c=>nil }
-    #
-    # TODO: Can this be done without #size?
     def splat
-      a = @enum.dup
-      a << nil if a.size % 2 == 1
+      a = @enum.to_a
+      a << nil if a.size.odd?
       Hash[*a]
     end
 
@@ -78,48 +76,46 @@ module Enumerable
     #
     #   a = [:a,1,[:b,2,:c]]
     #   a.to_h_flat  #=> { :a=>1, :b=>2, :c=>nil }
-    #
-    # TODO: Need to do this without #size.
     def flat
-      a = @enum.flatten
-      a << nil if a.size % 2 == 1
+      a = @enum.to_a.flatten
+      a << nil if a.size.odd?
       Hash[*a]
     end
 
-    # When a mixed or multi-element accociative array
+    # When a mixed or multi-element associative array
     # is used, the result is as follows:
     #
     #   a = [ [:a,1,2], [:b,2], [:c], :d ]
     #   a.hashify.assoc  #=> { :a=>[1,2], :b=>[2], :c=>[], :d=>[] }
     #
     # If the first entry of any subelements are the same, then
-    # the value will be set to the last occuring value.
+    # the value will be set to the last occurring value.
     #
     #   a = [ :x, [:x], [:x,1,2], [:x,3], [:x,4] ]
     #   a.hashify.assoc  #=> { :x=>[4] }
     #
     def associate
       h = {}
-      each do |k,*v| 
+      each do |k,*v|
         h[k] = v
       end
       h
     end
 
     # Alias for #associate.
-    alias :assoc, :associate
+    alias :assoc :associate
 
     # Like associate but does force values into an array.
     #
     def merge
       h = {}
-      each do |k,v| 
+      each do |k,v|
         h[k] = v
       end
       h
     end
 
-    # When a mixed or multi-element accociative array
+    # When a mixed or multi-element associative array
     # is used, the result is as follows:
     #
     #   a = [ [:a,1,2], [:b,2], [:c], :d ]
@@ -129,11 +125,11 @@ module Enumerable
     # the values will be merged using #concat.
     #
     #   a = [ [:a,1,2], [:a,3], [:a,4], [:a], :a ]
-    #   a.hasify.concat  #=> { :a=>[1,2,3,4] }
+    #   a.hashify.concat  #=> { :a=>[1,2,3,4] }
     #
     def concat
       h = {}
-      each do |k,*v| 
+      each do |k,*v|
         h[k] ||= []
         h[k].concat(v)
       end
@@ -141,7 +137,7 @@ module Enumerable
     end
 
     # Older name for #concat.
-    alias :multi, :concat
+    alias :multi :concat
 
     # Convert enumerable object to Hash using index as keys.
     #
@@ -158,11 +154,11 @@ module Enumerable
     # Converts enumerable object into a hash. Converting an array
     # into a hash is not a one-to-one conversion, for this
     # reason #auto examines the enumerable being converted
-    # and then dispatches the conversion to the most sutiable
-    # specialized function. There are three possiblities for this.
+    # and then dispatches the conversion to the most suitable
+    # specialized function. There are three possibilities for this.
     #
     # If the enumerable is a collection of perfect pairs, like that
-    # which Hash#to_a generates, then conversion is handled by 
+    # which Hash#to_a generates, then conversion is handled by
     # #flat.
     #
     #   a = [ [:a,1], [:b,2] ]
@@ -174,14 +170,14 @@ module Enumerable
     #   a = [ [:a,1,2], [:b,2], [:c], [:d] ]
     #   a.hashify.auto  #=> { :a=>[1,2], :b=>[2], :c=>[], :d=>[] }
     #
-    # If it contians objects other then arrays then the #splat method
+    # If it contains objects other then arrays then the #splat method
     # is called.
     #
     #   a = [ [:a,1,2], 2, :b, [:c,3], 9 ]
-    #   a.hashify.auto  #=> { [:a,1,2]=>2, :b=>[:c,3], 9=>nil } 
+    #   a.hashify.auto  #=> { [:a,1,2]=>2, :b=>[:c,3], 9=>nil }
     #
     # Be aware this is not as efficient as using the underlying methods
-    # directly becuase it must perform an initial iteration over the
+    # directly because it must perform an initial iteration over the
     # enumerable to determine its contents.
 
     def auto(&block)
@@ -206,18 +202,18 @@ module Enumerable
     end
 
     # Alias for `#auto`.
-    alias :automatic, :auto
+    alias :automatic :auto
 
   private
 
     #
     def each(&b)
-      @enum.each(&b) 
+      @enum.each(&b)
     end
 
     #
     def each_with_index(&b)
-      @enum.each_with_index(&b) 
+      @enum.each_with_index(&b)
     end
 
   end
