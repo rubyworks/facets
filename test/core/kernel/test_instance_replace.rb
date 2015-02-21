@@ -1,8 +1,7 @@
-covers 'facets/object/replace'
+covers 'facets/kernel/instance_replace'
+test_case Kernel do
 
-test_case Object do
-
-  method :replace do
+  method :instance_replace do
 
     test "must be the same type" do
       c = Class.new do
@@ -18,7 +17,7 @@ test_case Object do
 
       # TODO: TypeError ?
       expect ArgumentError do
-        o.replace(:a=>3, :b=>4)
+        o.instance_replace(:a=>3, :b=>4)
       end
     end
 
@@ -30,38 +29,17 @@ test_case Object do
           @name, @age = name, age
         end
       end
-   
+
       a = c.new('bob', 60)
       a.name.assert == 'bob'
       a.age.assert == 60
 
       b = c.new('tom', 40)
 
-      a.replace(b)
+      a.instance_replace(b)
 
       a.name.assert == 'tom'
       a.age.assert == 40
-    end
-
-  end
-
-end
-
-test_case Struct do
-
-  method :replace do
-
-    test do
-      s = Struct.new(:name, :age)
-   
-      o = s.new('bob', 60)
-      o.name.assert == 'bob'
-      o.age.assert == 60
-
-      o.replace(:name=>'tom', :age=>40)
-
-      o.name.assert == 'tom'
-      o.age.assert == 40
     end
 
   end
