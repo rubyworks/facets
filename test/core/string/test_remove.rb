@@ -32,5 +32,19 @@ test_case String do
 
   end
 
+  method :- do
+
+    test "remove string" do
+      s = "xxbooxxfoo"
+      (s - "xx").assert == "boofoo"
+    end
+
+    test "remove regex" do
+      s = "xbooxxfoox"
+      (s - /x{1,2}/).assert == "boofoo"
+    end
+
+  end
+
 end
 
