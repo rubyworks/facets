@@ -33,8 +33,8 @@ module ::Guard
     end
 
     def run_on_modifications(paths)
-      puts "Running test for #{paths}"
-      puts `ruby-test #{paths}`
+      puts "Running test for #{paths.join(' ')}"
+      puts `ruby-test #{paths.join(' ')}`
     end
   end
 end
