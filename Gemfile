@@ -4,6 +4,7 @@ group :test do
   gem 'lemon'
   gem 'qed'
   gem 'rubytest-cli'
+  gem 'guard-shell'
   gem 'rake'
   gem 'simplecov'
 end

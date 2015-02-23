@@ -15,9 +15,9 @@ tmp = File.join(File.dirname(__FILE__), 'tmp')
 FileUtils.mkdir(tmp) unless File.directory?(tmp)
 
 # Default test run.
-Test.run do |r|
-  r.files << 'test'
-end
+# Test.run do |r|
+#   r.files << 'test'
+# end
 
 # Generate SimpleCov coverage report.
 Test.run :cov do |r|
