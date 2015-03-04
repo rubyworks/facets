@@ -52,8 +52,4 @@ class String
       str.indent(num - min)
     end
   end
-
-  # Original name of #margin.
-  alias :tabto :margin
-
 end
