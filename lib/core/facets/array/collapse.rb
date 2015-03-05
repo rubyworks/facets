@@ -10,5 +10,9 @@ class Array
     flatten.compact
   end
 
+  def collapse!
+    flatten!.compact!
+  end
+
 end
 
