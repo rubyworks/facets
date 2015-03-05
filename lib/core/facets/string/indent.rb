@@ -73,12 +73,4 @@ class String
   def unindent!
     replace(unindent)
   end
-
-  # DEPRECATED: Use String#indent instead.
-  alias :tab  :indent
-  alias :tab! :indent!
-
-  #alias :backtab  :unindent
-  #alias :backtab! :unindent!
-
 end
