@@ -5,6 +5,12 @@ class Array
   #   ['a1','b1','a2','b2'].divide(/^a/)
   #   #=> [['a1','b1'],['a2','b2']]
   #
+  #   ['a1','b1','a2','b2'].divide(/^b/)
+  #   #=> [['a1'],['b1','a2'],'b2']]
+  #
+  #   ['a1','b1','a2','b2'].divide(/^c/)
+  #   #=> [['a1','b1','a2','b2']]
+  #
   # CREDIT: Trans
 
   def divide(pattern)
@@ -18,4 +24,3 @@ class Array
   end
 
 end
-
