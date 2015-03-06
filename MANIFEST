@@ -722,6 +722,7 @@ lib/standard/facets/zlib.rb
 demo/applique/assertion_framework.rb
 demo/applique/file_helpers.rb
 demo/core/array/combination.rdoc
+demo/core/array/contains.rdoc
 demo/core/array/delete.rdoc
 demo/core/array/index.rdoc
 demo/core/array/merge.rdoc
