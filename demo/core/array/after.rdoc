@@ -1,0 +1,12 @@
+== Array#after
+
+  require 'facets/array/after'
+
+Returns the value after the given value. The value before the last
+is the first. Returns nil if the given value is not in the array.
+
+  sequence = ['a', 'b', 'c']
+  sequence.after('a').assert == 'b'
+  sequence.after('b').assert == 'c'
+  sequence.after('c').assert == 'a'
+  sequence.after('d').assert == nil
