@@ -1,8 +1,10 @@
 # CONTRIBUTING TO FACETS
 
+## General Rules
+
 * Facets methods must have no external dependencies. (The only possible
   exception to this is if the functor gets spun-off as a separate gem along
-  with related methods, but for now that's not happening.)
+  with related methods, but for now that hasn't happened.)
 
 * Each method must be in it's own file of the same name. If the method ends
   with `=` or `?` just leave it off the file name.
@@ -12,17 +14,18 @@
   considered most significant. Usually files for the other methods should
   still be created that simply require the main file.
 
-* Methods must be tested either via a Lemon unit test or a QED demo,
-  preferably both. The Lemon unit tests are for testing a method in
-  detail whereas the QED demos are for demonstrating usage.
+* Methods must be tested both via a Lemon unit test and as a QED demo.
+  The Lemon unit tests are for testing a method in detail whereas the QED
+  demos are for demonstrating usage.
 
 * Facets is divided into two parts, *core* and *standard* libraries.
-  All of the core library is loaded by default when using `require 'facets'`
-  (actually, almost all). The standard library (sometimes called the *more*
-  library) must be required per-script.
+  Almost all of the core library can be loaded at once using `require 'facets'`
+  The standard library (also called the *more* library) must be required
+  per-script.
 
 * Some core methods are included on a *trial* basis, and these are not
-  necessary loaded automatically with `require 'facets'`.
+  necessary loaded automatically with `require 'facets'`. These should be
+  documented as such in the method comments.
 
 * Standard libraries that are not extensions of existing standard libraries
   do not have to be divvied up into individual method files. But note that
@@ -45,18 +48,38 @@
   serious discernment about what goes into the library. That includes
   having in depth discussions the merits of methods, even about the best
   name for a method --even if the functionality has been accepted the name
-  may not!
+  may not.
 
-* When making a commit, if the commit is only a documentation change, then
-  and `[doc]` to the end of the first line of commit message. If it is only
-  a change to tests then add `[test]`. If the change only effects build files
-  then add `[admin]`. For actual code changes, if the change is not something
-  anyone would notice, use `[tweak]` or `[minor]` (minor being slightly more
-  important than tweak). For typical code changes no comment tag is necessary.
-  If the change fixes a bug that was reported via the issue system be sure to
-  reference the issue id in the message using `#` and add `[bug]`. If a change
-  is a significant change to the API, then end the message with `[major]`.
-  These are all rules of thumb, and no expects them to be applied perfectly.
+
+## Versioning
+
+Facets tries to follow a semantic versioning system, but with a slightly
+differt scheme than most projects. For Facets the version number represents:
+
+    gestault.major.minor
+
+Techinically there can be a fouth `build` number, but we never use it for
+releases.
+
+
+## Commit Tags
+
+When making a commit, it is helpful to add a *commit tag* to the end of the
+first line of commit message. Commit tags are single words wrapped in colons.
+
+* If the commit is only a documentation change, then and `:doc:`.
+* If it is only a change to tests then add `:test:`.
+* If the change only effects project build or config files then add `:admin:`.
+* If the change fixes a bug that was reported via the issue system be sure
+  to reference the issue number in the message using `#` and add a `:bug:` tag.
+* For actual code changes, if the change is *very minor* and not something
+  anyone would notice, you can use `:tweak:`, if you want. 
+* If the change would require a minor version change than use `:minor:`.
+* But if a change is a significant change to the API, and thus will require
+  a major version change, then end the message with `:major:`.
+
+These are all rules of thumb, and no one expects them to be applied perfectly.
+
 
 ## Documentation
 
@@ -75,4 +98,15 @@ and via the Facets website in Shomen JSON format.
 When writing documentation for a method it is best to give a simple summary
 explanation, followed by some basic examples. Follow that up with deeper
 explanation if needed, including *when* and *why* the method could be useful.
+
+
+## Testing
+
+* Methods in `lib/core/facets/{class}/{method}.rb` will be tested in `test/foo/{class}/test_{method}.rb`.
+* If `lib/core/facets/{class}/{method}.rb` consists only of a require statement, no test file is expected.
+* If `lib/core/facets/{class}/{method}.rb` consists only of a require and an alias, then `test/foo/{class}/{method}.rb`, only needs to test the existence of the alias and not the underlying code. But it's okay if the alias is tested further.
+* Methods in `lib/core/facets/{class}/{method}.rb` will be demoed in `demo/core/{class}/{method}.md`.
+* Require only files will have a full demo of it's method or methods. Code in a single file may be split into multiple demos, named after the method. This is to promote discoverability in the documentation.
+* Demos of aliases will have a simple demo, and a reference to the file it aliases
+
 
