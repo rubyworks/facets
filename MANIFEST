@@ -505,8 +505,6 @@ lib/core/facets/string/squish.rb
 lib/core/facets/string/starts_with.rb
 lib/core/facets/string/store.rb
 lib/core/facets/string/subtract.rb
-lib/core/facets/string/tab.rb
-lib/core/facets/string/tabto.rb
 lib/core/facets/string/titlecase.rb
 lib/core/facets/string/to_re.rb
 lib/core/facets/string/to_rx.rb
@@ -724,6 +722,7 @@ lib/standard/facets/zlib.rb
 demo/applique/assertion_framework.rb
 demo/applique/file_helpers.rb
 demo/core/array/combination.rdoc
+demo/core/array/contains.rdoc
 demo/core/array/delete.rdoc
 demo/core/array/index.rdoc
 demo/core/array/merge.rdoc
@@ -808,8 +807,6 @@ demo/core/string/snakecase.rdoc
 demo/core/string/splice.rdoc
 demo/core/string/start_with.rdoc
 demo/core/string/subtract.rdoc
-demo/core/string/tab.rdoc
-demo/core/string/tabto.rdoc
 demo/core/string/titlecase.rdoc
 demo/core/string/to_re.rdoc
 demo/core/string/unfold.rdoc
@@ -1184,7 +1181,6 @@ test/core/string/test_squish.rb
 test/core/string/test_start_with.rb
 test/core/string/test_store.rb
 test/core/string/test_subtract.rb
-test/core/string/test_tab.rb
 test/core/string/test_titlecase.rb
 test/core/string/test_to_re.rb
 test/core/string/test_trim.rb
