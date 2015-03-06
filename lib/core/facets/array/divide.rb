@@ -9,6 +9,7 @@ class Array
 
   def divide(pattern)
     memo = []
+    memo.push [] unless pattern === first
     each do |obj|
       memo.push [] if pattern === obj
       memo.last << obj
