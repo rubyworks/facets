@@ -8,6 +8,8 @@ class Array
   #
   #   [1,1,2,3].duplicates #=> [1]
   #
+  #   [1,1,2,3,2,4,5,4,2].duplicates(3) #=> [2]
+  #
   # CREDIT: Rebort Dober (current implementation)
   # CREDIT: Thibaut Barrère
 
