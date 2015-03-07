@@ -66,14 +66,14 @@ The easiest way to install is via RubyGems.
 
 ### Setup.rb
 
-Facets can be installed the old-fashioned way using Ruby Setup (http://rubyworks.github.com/setup).
+Facets can be installed the old-fashioned way using [Setup.rb](http://rubyworks.github.com/setup).
 Download and unpack the .tar.gz package and run setup.rb, like so:
 
     $ tar -xvzf facets-2.x.x.tar.gz
     $ cd facets-2.x.x
     $ sudo setup.rb
 
-Facets 2.8+ requires Ruby 1.8.7 or higher.
+Facets 2.8+ requires Ruby 1.8.7 or higher. Facets 3.0+ requires Ruby 2.0.0 or higher.
 
 
 ## Mission
@@ -167,19 +167,17 @@ file systems. Also, if a method ends in '=', '?' or '!' it is simply removed.
 ### MORE Library (aka Standard Library)
 
 On top of the extensive CORE library, Facets provides extensions for Ruby's
-standard library, as well as very small collection of additional modules and
+standard library, as well as a small collection of additional modules and
 classes to supplement it.
 
 Use this library like you would any other 3rd party library.
 The only difference between Facet's Standard library and other libraries
-is the lack of any enclosing @Facets::@ namespace. This is because
-the libraries provided by Facets are fairly low-level and very general 
-purpose.
+is the lack of any enclosing `Facets::` namespace.
 
 When using Facets extended versions of Ruby's standard libraries,
-the libraries have to loaded manually, of course. However you
-do not need to load Ruby's library first, as the Facets' library
-will do that automatically.
+the libraries have to loaded individually. However you do not need
+to load Ruby's library first, as the Facets' library will do that
+automatically.
 
 For example, normally one load Ruby's OpenStruct class via:
 
@@ -210,10 +208,10 @@ Facets uses the [Lemon](http://rubyworks.github.com/lemon) testing framework
 to handle unit testing, while [QED](http://rubyworks.github.com/qed) specifications
 provide tested documentation.
 
-Facets uses [Detroit](http://detroit.github.com) and [Rulebow](http://rubyworks.github.com/rulebow]
+Facets uses [Detroit](http://detroit.github.com) and [Rulebow](http://rubyworks.github.com/rulebow)
 build tools. Detroit is a life-cycle tool and Rulebow is continuous integrations tool. The build
 scripts (`Assembly` and `Rulebook` respectively), sometimes use other tools such as
-`mast` and `indexer`.
+[Mast](http://rubyworks.github.com/mast) and [Indexer](http://rubyworks.github.com/indexer).
 
 
 ## Authors
