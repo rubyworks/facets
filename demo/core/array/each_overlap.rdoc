@@ -1,6 +1,6 @@
 == Array#each_overlap
 
-  require 'facets/array/duplicates'
+  require 'facets/array/each_overlap'
 
 Iterate over each slice where the last n values of a preceding slice
 overlap with the first n values of the following slice. The value of n
