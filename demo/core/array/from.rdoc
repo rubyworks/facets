@@ -8,4 +8,4 @@ Returns elements from index i until the end.
 
 Returns entire array for i > length
 
-  %w{W o r l d}.from(7).assert == %w{W o r l d}
+  %w{W o r l d}.from(7).assert == nil

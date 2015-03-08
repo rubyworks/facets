@@ -5,7 +5,6 @@ class Array
   #   %w{W o r l d}.from(3)  #=> %w{l d}
   #
   def from(i)
-    return self if i >= size
     self[i..-1]
   end unless method_defined?(:from)
 
