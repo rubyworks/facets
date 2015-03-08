@@ -43,14 +43,14 @@ group :qed do
   guard :qed do
     watch('demo/applique/') { 'demo' }
     watch(%r{^lib/(.+)/facets/(.+\.rdoc)$}) { |m| "demo/#{m[1]}/#{m[2]}" }
-    watch(%r{^demo/.+/.+\.rdoc$}) { |m| m[0] }
+    watch(%r{^demo/.+/.+\.rdoc$})
   end
 end
 
 group :test do
   guard :rubytest do
     watch('etc/test.rb') { 'test' }
-    watch(%r{^lib/(.+)/facets/(.+\.rb)$}) { |m| "test/#{m[1]}/#{m[2]}" }
-    watch(%r{^test/.+/test_.+\.rb$}) { |m| "#{m[0]}" }
+    watch(%r{^lib/(.+)/facets/(.+)/(.+\.rb)$}) { |m| "test/#{m[1]}/#{m[2]}/test_#{m[3]}" }
+    watch(%r{^test/.+/test_.+\.rb$})
   end
 end
