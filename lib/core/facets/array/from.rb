@@ -1,12 +1,12 @@
 class Array
 
-  # Returns last _n_ elements.
+  # Returns elements from index i until the end.
   #
   #   %w{W o r l d}.from(3)  #=> %w{l d}
   #
   def from(i)
     return self if i >= size
-    self[i, size - i]
+    self[i..-1]
   end unless method_defined?(:from)
 
   # Fetch values from a start index thru an end index.
@@ -19,14 +19,7 @@ class Array
   #
   def thru(from, to=nil)
     from, to = 0, from unless to
-    to = size - 1 if to >= size
-    a = []
-    i = from
-    while i <= to
-      a << self[i]
-      i += 1
-    end
-    a
+    self[from..to]
   end unless method_defined?(:thru)
 
 end
