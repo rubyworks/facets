@@ -7,7 +7,7 @@ test_case Array do
     test do
       %w{W o r l d}.from(3).assert == ['l', 'd']
 
-      %w{W o r l d}.from(8).assert == ['W', 'o', 'r', 'l', 'd']
+      %w{W o r l d}.from(8).assert == nil
     end
   end
 
