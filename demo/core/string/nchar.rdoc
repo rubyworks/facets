@@ -1,9 +1,0 @@
-== String#nchar
-
-  require 'facets/string/nchar'
-
-  "abcxyz".nchar(3).assert == "abc"
-  "abcxyz".nchar(-3).assert == "xyz"
-  "abcxyz".nchar(3, 'HI').assert == "HIxyz"
-  "abcxyz".nchar(-3, 'HI').assert == "abcHI"
-
