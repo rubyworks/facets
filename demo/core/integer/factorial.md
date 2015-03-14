@@ -1,4 +1,4 @@
-== Integer#factorial
+## Integer#factorial
 
     require 'facets/integer/factorial'
 
