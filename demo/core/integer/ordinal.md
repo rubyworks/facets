@@ -1,6 +1,8 @@
-= Integer#ordinal
+## Integer#ordinal
 
     require 'facets/integer/ordinal'
+
+Produce the ordinal name of a number.
 
     1.ordinal.assert == '1st'
     2.ordinal.assert == '2nd'

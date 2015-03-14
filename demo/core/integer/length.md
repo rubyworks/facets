@@ -1,4 +1,4 @@
-== Numeric#length
+## Numeric#length
 
     require 'facets/numeric/length'
 
