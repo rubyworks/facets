@@ -1,6 +1,6 @@
-== Module#class_inheritor
+## Module#class_inheritor
 
-  require 'facets/module/class_inheritor'
+    require 'facets/module/class_inheritor'
 
 Subclass with inheritor
 

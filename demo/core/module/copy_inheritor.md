@@ -1,8 +1,8 @@
-= Module#copy_inheritor
+## Module#copy_inheritor
 
-  require 'facets/module/copy_inheritor'
+    require 'facets/module/copy_inheritor'
 
-We see copy_inheritor
+We see `#copy_inheritor` in action.
 
     m = Module.new do
       copy_inheritor :koko, []
@@ -22,7 +22,7 @@ We see copy_inheritor
       koko << 4
     end
 
-copy_inheritor
+And the result.
 
     m.koko.assert  == [1]
     c1.koko.assert == [1,2,3]
