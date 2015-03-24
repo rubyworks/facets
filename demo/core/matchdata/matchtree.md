@@ -1,6 +1,6 @@
 ## MatchData#matchtree
 
-    require 'facets/matchdata/matchtree'
+    require 'facets/matchdata/matchset'
 
     md = /(bb)(cc(dd))(ee)/.match "XXaabbccddeeffXX"
     md.matchtree.assert == [["bb"], ["cc", ["dd"]], ["ee"]]
