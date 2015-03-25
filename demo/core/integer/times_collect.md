@@ -1,6 +1,6 @@
 ## Integer#times_collect
 
-    require 'facets/integer/times_collect'
+    require 'facets/integer/of'
 
     a = 4
     b = a.times_collect{ |i| i*2 }

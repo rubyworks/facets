@@ -25,8 +25,8 @@ list of all the entries.
 
 ## Dir#ls_r
 
-  Dir#ls_r is an alias for #recurse which can also be used to gather
-  a complete recursive list of all the entries.
+Dir#ls_r is an alias for #recurse which can also be used to gather
+a complete recursive list of all the entries.
 
     x = %w{
       recurse/A
