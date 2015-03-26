@@ -1,13 +1,14 @@
 class Array
 
-  # Create a hart of counts of duplicate elements.
+  # Create a hash of each uniq element of the array
+  # and how many time each appears.
   #
   # Examples
   #
   #   [:a,:a,:b,:c,:c,:c].occurrence
-  #   #=> { :a => 2, :b => 1, :c => 3 } 
+  #   #=> { :a => 2, :b => 1, :c => 3 }
   #
-  #   [2,2,3,4,4,4].occurence{|i| i % 2} 
+  #   [2,2,3,4,4,4].occurrence{|i| i % 2}
   #   #=> { 0 => 5, 1 => 1 }
   #
   def occurrence
