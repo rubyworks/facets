@@ -1,8 +1,8 @@
 class Array
 
-  # In Statistics mode is the value that occurs most frequently
+  # In Statistics. mode is the value that occurs most frequently
   # in a given set of data. This method returns an array in case
-  # their is a tie.
+  # there is a tie.
   #
   #   [:a, :b, :c, :b, :d].mode  #=> [:b]
   #   [:a, :b, :c, :b, :a].mode  #=> [:a, :b]
