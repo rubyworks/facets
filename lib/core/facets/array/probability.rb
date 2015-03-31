@@ -1,7 +1,7 @@
 class Array
 
   # Generates a hash mapping each unique element in the array to the
-  # relative frequency, i.e. the probablity, of it appearence.
+  # relative frequency, i.e. the probability, of it appearance.
   #
   #   [:a, :b, :c, :c].probability  #=> {:a=> 0.25, :b=>0.25, :c=>0.5}
   #
