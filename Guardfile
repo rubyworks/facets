@@ -42,8 +42,8 @@ end
 group :qed do
   guard :qed do
     watch('demo/applique/') { 'demo' }
-    watch(%r{^lib/(.+)/facets/(.+\.rdoc)$}) { |m| "demo/#{m[1]}/#{m[2]}" }
-    watch(%r{^demo/.+/.+\.rdoc$})
+    watch(%r{^lib/(.+)/facets/(.+\.md)$}) { |m| "demo/#{m[1]}/#{m[2]}" }
+    watch(%r{^demo/.+/.+\.md})
   end
 end
 
