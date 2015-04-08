@@ -6,11 +6,11 @@ class Array
   # Apply a method to array, and recursively apply that method
   # to each sub-array or given +types+.
   #
-  # By default the sub-types are passed thru uneffected. Passing
+  # By default the sub-types are passed through unaffected. Passing
   # a block to #recursively can be used to change this.
   #
   # types - List of class types to recurse. [Array<Class>]
-  # block - Optional filter procedure to apply on each recursion. 
+  # block - Optional filter procedure to apply on each recursion.
   #
   # Examples
   #
