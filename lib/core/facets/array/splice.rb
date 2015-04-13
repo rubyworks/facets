@@ -2,7 +2,7 @@ require 'facets/array/store'
 
 class Array
 
-  # Splice acts a combination of #slice! and #store.
+  # Splice acts as a combination of #slice! and #store.
   # If two arguments are given it calls #store.
   # If a single argument is given it calls slice!.
   #
