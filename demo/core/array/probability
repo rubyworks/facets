@@ -1,0 +1,8 @@
+## Array#probability
+
+    require 'facets/array/probability'
+
+Generates a hash mapping each unique element in the array to the relative
+frequency, i.e. the probability, of it's appearance.
+
+    [:a, :b, :c, :c].probability.assert == {a: 0.25, b: 0.25, c: 0.50}
