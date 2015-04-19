@@ -7,9 +7,6 @@ class Array
   #   [[:a, 1], [:b, 2]].to_h
   #   #=> {:a=>1, :b=>2}
   #
-  #   [[:a, 1], :b].to_h
-  #   #=> {:a=>1, :b=>nil}
-  #
   # Returns [Hash].
   #
   def to_h
