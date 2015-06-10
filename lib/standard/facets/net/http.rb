@@ -19,11 +19,7 @@ module Net
 
   # CREDIT: Daniel Huckstep
   def self.download_and_save(url, path = nil)
-    if path.nil?
-      path = File.expand_path(url.split('/').last)
-    else
-      path = File.expand_path(path)
-    end
+    path = File.expand_path(path || url.split('/').last)
     raise ArgumentError.new('Save path is a directory') if File.directory?(path)
     resp = download(url)
     open(path,'w') { |file| file.write(resp.body) } if resp.is_a?(Net::HTTPSuccess)
