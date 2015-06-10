@@ -3,7 +3,8 @@ require 'net/http'
 module Net
 
   # CREDIT: Daniel Huckstep
-  def self.download(url, limit = 10)
+  def self.download(url, limit = nil)
+    limit ||= 10
     raise ArgumentError, 'HTTP redirect too deep' if limit.zero?
     #url = URI.parse(url)
     #req = Net::HTTP::Get.new(url.path)
@@ -21,7 +22,7 @@ module Net
   def self.download_and_save(url, path = nil, options = {})
     path = File.expand_path(path || url.split('/').last)
     raise ArgumentError.new('Save path is a directory') if File.directory?(path)
-    resp = download(url)
+    resp = download(url, options.delete(:limit))
     File.write(path, resp.body, options)
   end
 end
