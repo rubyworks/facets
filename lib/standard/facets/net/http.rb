@@ -4,7 +4,7 @@ module Net
 
   # CREDIT: Daniel Huckstep
   def self.download(url, limit = 10)
-    raise ArgumentError, 'HTTP redirect too deep' if limit == 0
+    raise ArgumentError, 'HTTP redirect too deep' if limit.zero?
     #url = URI.parse(url)
     #req = Net::HTTP::Get.new(url.path)
     #req['User-Agent'] = "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.7) Gecko/2009030422 Ubuntu/8.10 (intrepid) Firefox/3.0.7"
