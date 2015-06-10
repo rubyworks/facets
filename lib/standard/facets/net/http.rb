@@ -18,11 +18,11 @@ module Net
   end
 
   # CREDIT: Daniel Huckstep
-  def self.download_and_save(url, path = nil)
+  def self.download_and_save(url, path = nil, options = {})
     path = File.expand_path(path || url.split('/').last)
     raise ArgumentError.new('Save path is a directory') if File.directory?(path)
     resp = download(url)
-    open(path,'w') { |file| file.write(resp.body) } if resp.is_a?(Net::HTTPSuccess)
+    File.write(path, resp.body, options)
   end
 end
 
