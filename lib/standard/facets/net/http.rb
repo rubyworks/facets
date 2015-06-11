@@ -44,7 +44,7 @@ module Net
     path = File.expand_path(path || url.split('/').last)
     raise ArgumentError.new('Save path is a directory') if File.directory?(path)
     resp = download(url, options.delete(:limit))
-    File.write(path, resp.body, options)
+    File.write(path, resp.body, options) if resp.is_a?(Net::HTTPSuccess)
   end
 end
 
