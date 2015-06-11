@@ -41,10 +41,11 @@ module Net
   #
   # CREDIT: Daniel Huckstep
   def self.download_and_save(url, path = nil, options = {})
+    opts = options.dup
     path = File.expand_path(path || url.split('/').last)
     raise ArgumentError.new('Save path is a directory') if File.directory?(path)
-    resp = download(url, options.delete(:limit))
-    File.write(path, resp.body, options) if resp.is_a?(Net::HTTPSuccess)
+    resp = download(url, opts.delete(:limit))
+    File.write(path, resp.body, opts) if resp.is_a?(Net::HTTPSuccess)
   end
 end
 
