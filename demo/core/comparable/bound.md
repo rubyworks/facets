@@ -1,5 +1,7 @@
 ## Comparable#bound
 
+    require 'facets/comparable/bound'
+
 The `#bound` method is an alias for `#clip`. It is the original name
 of the method before the `clip`/`cap` duo was decided upon.
 

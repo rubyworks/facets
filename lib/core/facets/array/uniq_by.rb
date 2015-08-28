@@ -9,6 +9,10 @@ class Array
   #   a.uniq_by!{ |i| i*i }
   #   a #=> [-5, -4, -3, -2, -1, 0]
   #
+  #   a = (-5..5).to_a.reverse
+  #   a.uniq_by!{ |i| i*i }
+  #   a #=> [5, 4, 3, 2, 1, 0]
+  #
   # Returns [Array] of unique elements.
   #
   def uniq_by! #:yield:

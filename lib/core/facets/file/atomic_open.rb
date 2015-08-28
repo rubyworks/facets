@@ -12,7 +12,7 @@ class File
   #
   def self.atomic_open(file_name, mode="r", temp_dir=nil, &block)
     temp_dir  = temp_dir || Dir.tmpdir
-    temp_file = Tempfile.new("#{aomtic_id}-" + basename(file_name), temp_dir)
+    temp_file = Tempfile.new("#{atomic_id}-" + basename(file_name), temp_dir)
 
     if File.exist?(file_name)
       FileUtils.cp(file_name, temp_file)

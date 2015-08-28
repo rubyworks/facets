@@ -1,5 +1,3 @@
-require 'facets/array/product'
-
 class Array
   # Array#** is an alias for Array#product.
   #

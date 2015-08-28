@@ -1,6 +1,6 @@
 class Array
 
-	# Returns the values in common for an array set (nil, singe value/object, or range).
+	# Returns the values in common for an array set (nil, single value/object, or range).
   #
   # CREDIT: monocle
 
