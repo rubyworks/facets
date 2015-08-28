@@ -81,7 +81,7 @@ class String
     end
 
     score = 0.0
-    matches.each{ |mm| p mm.length; score += mm.length }
+    matches.each{ |mm| score += mm.length }
     self.length > str_in.length ? largest = self.length : largest = str_in.length
     return score/(largest+1)
   end
