@@ -4,19 +4,19 @@ class String
   # on the number of shared edges. To be effective, the strings
   # must be of length 2 or greater.
   #
-  #   "Alexsander".similarity("Aleksander")  #=> 0.9
+  #     "Alexsander".similarity("Aleksander")  #=> 0.9
   #
   # The way it works:
   #
   # 1. Converts each string into a "graph like" object, with edges ...
   #
-  #     "alexsander" -> [ alexsander, alexsand, alexsan ... lexsand ... san ... an, etc ]
-  #     "aleksander" -> [ aleksander, aleksand ... etc. ]
+  #        "alexsander" -> [ alexsander, alexsand, alexsan ... lexsand ... san ... an, etc ]
+  #        "aleksander" -> [ aleksander, aleksand ... etc. ]
   #
   # 2. Perform match, then remove any subsets from this matched set (i.e. a hit
   # on "san" is a subset of a hit on "sander") ...
   #
-  #     Above example, once reduced -> [ ale, sander ]
+  #        Above example, once reduced -> [ ale, sander ]
   #
   # 3. See's how many of the matches remain, and calculates a score based
   # on how many matches, their length, and compare to the length of the
@@ -24,7 +24,8 @@ class String
   #
   # Still a bit rough. Any suggestions for improvement are welcome.
   #
-  # CREDIT: Derek Lewis.
+  # CREDIT: Derek Lewis
+
   def similarity(str_in)
     return 0 if str_in == nil
     return 1 if self == str_in
@@ -80,9 +81,9 @@ class String
     end
 
     score = 0.0
-    matches.each{ |mm| score += mm.length }
+    matches.each{ |mm| p mm.length; score += mm.length }
     self.length > str_in.length ? largest = self.length : largest = str_in.length
-    return score/largest
+    return score/(largest+1)
   end
 
 end
