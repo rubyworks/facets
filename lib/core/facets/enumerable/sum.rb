@@ -4,9 +4,19 @@ module Enumerable
   #
   #     [1,2,3].sum      #=> 6
   #     [3,3,3].sum      #=> 9
-  #     [].sum           #=> 0
   #
-  # A initial value can be passed to the method.
+  # Note that Facets' sum method is completely generic -- it can work
+  # on any objects that respond to #+.
+  #
+  #     [[1],[2],[3]].sum   #=> [1,2,3]
+  #
+  # For this reason it is usually a good idea to provide a default
+  # value. Consider the difference between the two expressions below.
+  #
+  #     [].sum           #=> nil
+  #     [].sum(0)        #=> 0
+  #
+  # This default value also acts as an initial value.
   #
   #     [].sum(5)        #=> 5
   #     [1,2,3].sum(10)  #=> 16
