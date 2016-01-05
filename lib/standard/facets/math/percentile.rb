@@ -5,7 +5,7 @@ module Math
   # +pcnt+ should be expressed as an integer, e.g. `percentile(90)` returns
   # the 90th percentile of the array.
   #
-  # Algorithm from NIST[http://www.itl.nist.gov/div898/handbook/prc/section2/prc252.htm]
+  # Algorithm from NIST[http://www.itl.nist.gov/div898/handbook/prc/section2/prc262.htm]
   #
   # NOTE: This is not a common core extension and is not
   # loaded automatically when using <code>require 'facets'</code>.
