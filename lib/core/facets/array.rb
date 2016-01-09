@@ -1,5 +1,6 @@
 require_relative 'array/after.rb'
 #require_relative 'array/arrange.rb'            # too new
+require_relative 'array/average.rb'
 require_relative 'array/before.rb'
 require_relative 'array/collapse.rb'
 require_relative 'array/collisions.rb'
