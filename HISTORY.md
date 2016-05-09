@@ -1,5 +1,38 @@
 # Facets Release History
 
+## 3.1.0 / 2016-05-10
+
+More or less a minor release, but there are some backward incompatabilites
+such as `Hash#except!` which no longer returns the rejected entries (use
+`Hash#remove!` for old behavior).
+
+Special thanks to Scott Parrish for all his help getting Facets in tip-top
+shape.
+
+Changes:
+
+* New Features
+
+  * Add `Hash#remove!` for old `except!` behavior.
+  * Add `Array#standard_deviation`.
+  * Add `Array#variance`.
+  * Add `Array#average`.
+  * Add `Numeric#delimit`.
+
+* Improved Features
+
+  * Change `Hash#except!` to not return rejected entries.
+  * Improve definition of Character Set in `String.random`.
+  * Add one to denominator of `String#similarity` score.
+  * Enhanced download methods.
+  * Improvements on compatability with ActiveSupport.
+
+* Bug Fixes
+
+  * Fix `Enumerable#key_by`.
+  * Fix `Enumerable#sum` to take initial value.
+
+
 ## 3.0.0 / 2014-11-11
 
 This major release has been a long time in coming --too long in fact. As with
@@ -21,8 +54,10 @@ Changes:
   * Add Dir.lookup method
   * Add Enumerator::Lazy#squeeze
   * Add Hash#fetch_nested
+  * Add Hash#deep_rekey and Hash#deep_rekey!
   * Add Kernel#instance_extract
   * Add Math#EC for Euler's constant
+  * Add Module#alias_class_method
   * Add Pathname#chdir
   * Add Pathname#readline
   * Add Proc.wrap (may become `Kernel#Proc()`)
@@ -34,6 +69,7 @@ Changes:
 * Improved Features
 
   * Enumerable#sum argument is initial value.
+  * Generalize Enumerable#sum to duck-type on `#+`.
   * Hash#collate can take multiple arguments.
   * Hash#collate no longer flattens automatically.
   * Time#past? and #future? use Time.current.
@@ -43,6 +79,7 @@ Changes:
 
   * Rename Object#replace to Object#instance_replace.
   * Rename Range#to_r to Range#to_rng, since #to_r is now for Rational.  
+  * Rename Kernel#eigen to #meta.
 
 * Bug Fixes
 
