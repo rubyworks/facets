@@ -19,6 +19,10 @@ test_case Hash do
       h.assert == {:b=>2,:c=>3}
     end
 
+  end
+
+  method :remove! do
+
     test do
       h = {:a=>1, :b=>2, :c=>3}
       h.remove!(:a).assert == {:a=>1}

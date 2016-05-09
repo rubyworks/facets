@@ -6,8 +6,7 @@ test_case Array do
 
     test do
       %w{W o r l d}.from(3).assert == ['l', 'd']
-
-      %w{W o r l d}.from(8).assert == nil
+      %w{W o r l d}.from(8).assert == []
     end
   end
 
@@ -35,10 +34,9 @@ test_case Array do
 
     test do
 
-      [1, 2, 3, 4, 5].thru(6, 7).assert.nil?
+      [1, 2, 3, 4, 5].thru(6, 7).assert = []
 
     end
-
 
   end
 end

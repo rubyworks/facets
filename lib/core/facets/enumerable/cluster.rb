@@ -1,10 +1,12 @@
 module Enumerable
 
-  # Clusters together adjacent elements into a list of 
-  # sub-arrays.
+  # Clusters together adjacent elements into a list of sub-arrays.
   #
-  # >> [2,2,2,3,3,4,2,2,1].cluster{ |x| x }
-  # => [[2, 2, 2], [3, 3], [4], [2, 2], [1]]
+  #     [2,2,2,3,3,4,2,2,1].cluster{ |x| x }
+  #     => [[2, 2, 2], [3, 3], [4], [2, 2], [1]]
+  #
+  #     ["dog", "duck", "cat", "dude"].cluster{ |x| x[0] }
+  #     => [["dog", "duck"], ["cat"], ["dude"]]
   #
   # @author Oleg K
 

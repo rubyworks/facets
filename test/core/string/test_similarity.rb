@@ -5,7 +5,7 @@ test_case String do
   method :similarity do
 
     test do
-      "Alexsander".similarity("Aleksander").assert == 0.9
+      "Alexsanders".similarity("Aleksander").assert == 0.75
     end
 
     test do

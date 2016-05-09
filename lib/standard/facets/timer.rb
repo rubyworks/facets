@@ -1,11 +1,11 @@
-require 'timeout'  # for TimeoutError
+require 'timeout'  # for Timeout::Error
 
 # = Timer
 #
 # Provides a strightforward means for controlling time critical execution.
 # Can be used as a "stop watch" timer or as a "time bomb" timer:
 #
-#   t = Timer.new(10) { raise TimeoutError, "timeout!" }
+#   t = Timer.new(10) { raise Timeout::Error, "timeout!" }
 #   t.start
 #     :      # done within 10sec timeout
 #   t.stop
@@ -107,7 +107,7 @@ class Timer
         if @on_timeout then
           @on_timeout.call @time_limit
         else
-          @current_thread.raise TimeoutError, "#{@time_limit} seconds past"
+          @current_thread.raise Timeout::Error, "#{@time_limit} seconds past"
         end
       }
     end

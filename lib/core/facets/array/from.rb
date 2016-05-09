@@ -5,12 +5,8 @@ class Array
   #   %w{W o r l d}.from(3)  #=> ["l", "d"]
   #   %w{W o r l d}.from(9)  #=> []
   #
-  # TODO: Should #from and #thru be more liberal than #slice
-  #       and always return an empty array when the index
-  #       is out of bounds (instead of nil)?
-  #
   def from(index)
-    #return [] if index <= size
+    return [] if index >= size
     self[index..-1]
   end unless method_defined?(:from)
 
@@ -24,6 +20,7 @@ class Array
   #
   def thru(from, to=nil)
     from, to = 0, from unless to
+    return [] if from >= size
     self[from..to]
   end unless method_defined?(:thru)
 

@@ -128,7 +128,7 @@ module Indexable
   #   %w{W o r l d}.from(3)  #=> %w{l d}
   #
   def from(i)
-    return self if i >= size
+    return [] if i >= size
     slice(i, size - i) #slice(-n..-1)
   end
 

@@ -35,7 +35,7 @@ test_case Timer do
   method :start do
     test "out of time" do
       t = Timer.new(0.5)
-      expect TimeoutError do
+      expect Timeout::Error do
         t.start
         sleep 1
         t.stop

@@ -26,6 +26,7 @@ Changes:
   * Add one to denominator of `String#similarity` score.
   * Enhanced download methods.
   * Improvements on compatability with ActiveSupport.
+  * Enumerable#from and #thru return empty set when index is out of bounds.
 
 * Bug Fixes
 
