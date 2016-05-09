@@ -12,24 +12,28 @@ organizations:
 requirements:
 - groups:
   - test
-  version: '>= 0'
+  version: ">= 0"
   name: lemon
 - groups:
   - test
-  version: '>= 0'
+  version: ">= 0"
   name: qed
 - groups:
   - test
-  version: '>= 0'
+  version: ">= 0"
   name: rubytest-cli
 - groups:
   - test
-  version: '>= 0'
+  version: ">= 0"
   name: rake
 - groups:
   - test
-  version: '>= 0'
+  version: ">= 0"
   name: simplecov
+- groups:
+  - guard
+  version: ">= 0"
+  name: guard
 conflicts: []
 alternatives: []
 resources:
@@ -63,7 +67,7 @@ paths:
   - lib/standard
 name: facets
 title: Ruby Facets
-version: 3.0.0
+version: 3.1.0
 summary: The orginal well curated collection of extension methods for Ruby.
 slogan: ALL YOUR BASE ARE BELONG TO RUBY!
 description: Facets is the premier collection of extension methods for the Ruby programming
@@ -73,4 +77,4 @@ description: Facets is the premier collection of extension methods for the Ruby 
   applications.
 scm_uri: https://github.com/rubyworks/facets/tree/master
 created: '2004-12-16'
-date: '2014-12-20'
+date: '2016-05-09'
