@@ -13,7 +13,7 @@ module Math
   # CREDIT: Ben Koski
   #
   # @non-core
-  #   require 'facets/array/precentile'
+  #   require 'facets/math/percentile'
   #
   def self.percentile(array, pcnt)
     sorted_array = array.sort
