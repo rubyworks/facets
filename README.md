@@ -197,7 +197,7 @@ This project thrives on contribution!
 
 If you have any extension methods, classes or modules that you think have
 very general applicability and would like to see them included in
-this project, don't hesitiate to submit. Also, if you have better versions
+this project, don't hesitate to submit. Also, if you have better versions
 of any thing already included or simply have a patch, they are more than
 welcome. We want Ruby Facets to be of the highest quality.
 
@@ -209,7 +209,7 @@ to handle unit testing, while [QED](http://rubyworks.github.com/qed) specificati
 provide tested documentation.
 
 Facets uses [Detroit](http://detroit.github.com) and [Rulebow](http://rubyworks.github.com/rulebow)
-build tools. Detroit is a life-cycle tool and Rulebow is continuous integrations tool. These
+build tools. Detroit is a life-cycle tool and Rulebow is a continuous integration tool. These
 tools, via the `Assembly` and `Rulebook` scripts respectively, sometimes use other tools such
 as [Mast](http://rubyworks.github.com/mast) and [Indexer](http://rubyworks.github.com/indexer).
 In addition we support [Rake](https://ruby.github.io/rake/) and [Guard](http://guardgem.org/)
@@ -224,16 +224,16 @@ Much of this collection was written and/or inspired by a variety of great Ruby
 developers. Fortunately nearly all utilized works were copyrighted under the same
 open licenses, the Ruby License or the more liberal BSD and MIT licenses. In the
 one or two exceptions the copyright notice has been included with the source code.
-We have since recceived permission from the various authors to normalize the licensing
-to a single license. For this purpose we have choosen the BSD 2 Clause License.
+We have since received permission from the various authors to normalize the licensing
+to a single license. For this purpose we have chosen the BSD 2 Clause License.
 This is the license Ruby itself now uses, so it seemed the most appropriate choice.
 It is also almost identical to the MIT license. Any code file not specifically labeled
-othewise shall fall under the this license (which is BSD 2-clause).
+otherwise shall fall under the this license (which is BSD 2-clause).
 
 In all cases, every effort has been made to give credit where credit is due.
 You will find these acknowledgments embedded in the source code. You can see
 them in "CREDIT:" and/or "@author" lines. 
-Also see the [Contibutors page](https://github.com/rubyworks/facets/wiki/Contributors)
+Also see the [Contributors page](https://github.com/rubyworks/facets/wiki/Contributors)
 on the Wiki for a list of all contributing Rubyists. If anyone is missing from
 the list, please let us know so we can correct. Thanks.
 
