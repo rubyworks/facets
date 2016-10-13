@@ -209,9 +209,13 @@ to handle unit testing, while [QED](http://rubyworks.github.com/qed) specificati
 provide tested documentation.
 
 Facets uses [Detroit](http://detroit.github.com) and [Rulebow](http://rubyworks.github.com/rulebow)
-build tools. Detroit is a life-cycle tool and Rulebow is continuous integrations tool. The build
-scripts (`Assembly` and `Rulebook` respectively), sometimes use other tools such as
-[Mast](http://rubyworks.github.com/mast) and [Indexer](http://rubyworks.github.com/indexer).
+build tools. Detroit is a life-cycle tool and Rulebow is continuous integrations tool. These
+tools, via the `Assembly` and `Rulebook` scripts respectively, sometimes use other tools such
+as [Mast](http://rubyworks.github.com/mast) and [Indexer](http://rubyworks.github.com/indexer).
+In addition we support [Rake](https://ruby.github.io/rake/) and [Guard](http://guardgem.org/)
+build tools, which most developers are familiar with.
+Note, that while these build tools can be easy circumvented, the Mast and Indexer tools are
+necessary to prepare Facets for release.
 
 
 ## Authors
@@ -220,15 +224,18 @@ Much of this collection was written and/or inspired by a variety of great Ruby
 developers. Fortunately nearly all utilized works were copyrighted under the same
 open licenses, the Ruby License or the more liberal BSD and MIT licenses. In the
 one or two exceptions the copyright notice has been included with the source code.
-Any code file not specifically labeled othewise shall fall under the current Ruby
-License (which is BSD 2-clause).
+We have since recceived permission from the various authors to normalize the licensing
+to a single license. For this purpose we have choosen the BSD 2 Clause License.
+This is the license Ruby itself now uses, so it seemed the most appropriate choice.
+It is also almost identical to the MIT license. Any code file not specifically labeled
+othewise shall fall under the this license (which is BSD 2-clause).
 
 In all cases, every effort has been made to give credit where credit is due.
 You will find these acknowledgments embedded in the source code. You can see
 them in "CREDIT:" and/or "@author" lines. 
 Also see the [Contibutors page](https://github.com/rubyworks/facets/wiki/Contributors)
 on the Wiki for a list of all contributing Rubyists. If anyone is missing from
-the list, please let us know so we can correct right away. Thanks.
+the list, please let us know so we can correct. Thanks.
 
 This collection was put together by, and much of it written by [trans](https://github.com/trans).
 If need be, he can be reached via email at transfire at gmail.com.
@@ -239,22 +246,22 @@ If need be, he can be reached via email at transfire at gmail.com.
 The collection PER COLLECTION is licensed as follows:
 
     Ruby Facets
-    Copyright (c) 2004,2010 Rubyworks
+    Copyright (c) 2005 Rubyworks
 
-    Distributed under the terms of the Ruby license.
+    Distributed under the terms of the BSD-2 License (same as Ruby license).
 
-The Ruby license is a dual license that also provides for use of the GPL.
-Complete texts of both licenses accompany this document (see LICENSE).
+The BSD 2 Clause License is a simple open source license. The complete text of the
+license accompany this document (see the enclosed LICENSE file).
 
 Acknowledgments and Copyrights for particular snippets of borrowed code
-are given in their respective source. All licenses are either compatible
-with the Ruby license or the original author has given permission for
-inclusion of their code under such license.
+are given in their respective source. At this point, all licensing has been normalized
+for all included code. Original authors have given permission for inclusion of their
+code under such license, with appropriate credit citations.
 
 
-"ALL YOUR BASE ARE BELONG TO RUBY!"
+## "ALL YOUR BASE ARE BELONG TO RUBY!"
 
-Ruby Facets, Copyright (c)2005,2011 Rubyworks
+Ruby Facets, Copyright (c) 2005 Rubyworks
 
 Do you Ruby? (http://ruby-lang.org)
 

@@ -87,5 +87,3 @@ class OpenStruct
   end
 
 end
-
-# Copyright (c) 2005 Thomas Sawyer (Ruby License)

@@ -76,7 +76,7 @@
 #
 # Copyright (c) 2007 Christoph Rippel, Thomas Sawyer
 #
-# Ruby License
+# Ruby License / BSD-2 License
 #
 # This module is free software. You may use, modify, and/or redistribute this
 # software under the same terms as Ruby.
