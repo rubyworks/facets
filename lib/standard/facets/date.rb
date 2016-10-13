@@ -1,5 +1,6 @@
 require 'date'
 require 'facets/time/stamp'
+require 'facets/date/cmp'
 
 # = Date
 #
