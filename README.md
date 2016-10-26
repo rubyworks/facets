@@ -1,7 +1,7 @@
 # Ruby Facets
 
-[![Gem Version](https://badge.fury.io/rb/facets.png)](http://badge.fury.io/rb/facets)
-[![Build Status](https://secure.travis-ci.org/rubyworks/facets.png)](http://travis-ci.org/rubyworks/facets) &nbsp; &nbsp;
+[![Gem Version](https://badge.fury.io/rb/facets.svg)](http://badge.fury.io/rb/facets)
+[![Build Status](https://secure.travis-ci.org/rubyworks/facets.svg)](http://travis-ci.org/rubyworks/facets) &nbsp; &nbsp;
 [![Flattr Me](http://api.flattr.com/button/flattr-badge-large.png)](http://flattr.com/thing/324911/Rubyworks-Ruby-Development-Fund)
 
 
