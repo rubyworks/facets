@@ -1,6 +1,6 @@
 ---
 language: ruby
-script: "bundle exec rubytest -v -Ilib test/"
+script: "bundle exec rubytest -Ilib test/ --verbose"
 bundler_args: --without guard
 rvm:
   - 2.3.0
