@@ -4,10 +4,7 @@ class String
   #
   #   "abc".characters.to_a  #=> ["a","b","c"]
   #
-  # TODO: Probably should make this an enumerator. With #scan?
-  def characters
-    split(//)
-  end
+  alias :characters, :each_char
 
 end
 
