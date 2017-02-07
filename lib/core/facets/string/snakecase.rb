@@ -19,7 +19,9 @@ class String
     tr('-', '_').
     gsub(/\s/, '_').
     gsub(/__+/, '_').
-    downcase
+    downcase.
+    gsub(/([0-9]+)_/, '_\1').
+    gsub(/([a-z]+)([0-9]+)(?=[a-z])/, '\1_\2')
   end
 
   #
