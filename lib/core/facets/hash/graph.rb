@@ -1,4 +1,4 @@
-require 'facets/enumerable/mash'
+require 'facets/enumerable/graph'
 
 class Hash
 
