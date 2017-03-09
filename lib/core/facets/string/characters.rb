@@ -4,7 +4,7 @@ class String
   #
   #   "abc".characters.to_a  #=> ["a","b","c"]
   #
-  alias :characters, :each_char
+  alias :characters :each_char
 
 end
 
