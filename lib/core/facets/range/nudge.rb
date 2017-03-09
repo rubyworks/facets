@@ -10,16 +10,14 @@ class Range
   #
   # CREDIT: Codeindulgence
 
-  def nudge(options_or_number = 1)
-    if options_or_number.instance_of? Fixnum
-      {:min => options_or_number, :max => options_or_number}
-      min = options_or_number
-      max = options_or_number
+  def nudge(value = 1, min: nil, max: nil)
+    if min or max
+      min ||= 0
+      max ||= 0
     else
-      min = options_or_number[:min].to_i
-      max = options_or_number[:max].to_i
+      min = max = value
     end
-
+    
     if exclude_end?
       (self.min + min)...((self.max + 1) + max)
     else
