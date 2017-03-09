@@ -42,7 +42,7 @@ class Module
   def class_extend(*mods, &block)
     class_extension = Module.new
 
-    class_extension.__send__(:include, *mods)
+    class_extension.__send__(:include, *mods) if mods.any?
     class_extension.module_eval(&block) if block_given?
 
     extend(class_extension)  # extend this module too
@@ -83,7 +83,7 @@ class Class
   #
   def class_extend(*mods, &block)
     class_extension = Module.new
-    class_extension.__send__(:include, *mods)
+    class_extension.__send__(:include, *mods) if mods.any?
     class_extension.module_eval(&block) if block
     extend(class_extension)
     class_extensions << class_extension
