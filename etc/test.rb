@@ -11,7 +11,7 @@ $:.unshift 'lib/standard'
 # Ultimately a more robust solution is needed b/c currently
 # there is no guarentee that tests are always run from project
 # root dir. Perhaps we can do a Dir.chdir to ensure it?
-tmp = File.join(File.dirname(__FILE__), 'tmp')
+tmp = File.join(File.dirname(__dir__), 'tmp')
 FileUtils.mkdir(tmp) unless File.directory?(tmp)
 
 # Default test run.
