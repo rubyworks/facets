@@ -13,11 +13,9 @@ class Hash
       end
     end
 
-    hash = {}
-    keep_keys.each do |key|
+    keep_keys.each_with_object({}) do |key, hash|
       hash[key] = fetch(key) if key?(key)
     end
-    hash
   end
 
   # Replaces hash with a new hash having only the given keys.
