@@ -1,6 +1,6 @@
 covers 'facets/multipliers'
 
-test_case Fixnum do
+test_case Numeric do
 
   method :deka do
     test do
