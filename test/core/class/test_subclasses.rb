@@ -9,7 +9,8 @@ test_case Class do
     x = Class.new(c)
     y = Class.new(c)
     z = Class.new(c)
-
+    zz = Class.new(z)
+    
     test do
       c.subclasses == [x, y, z]
     end

@@ -14,12 +14,10 @@ class Class
     #
     #   Integer.subclasses # => [Fixnum, Bignum]
     #
-    def subclasses
-      list = []
-      ObjectSpace.each_object(Class) do |c|
-        list.unshift c if c.superclass == self
+    def subclasses # :nodoc:
+      ObjectSpace.each_object(singleton_class).select do |k|
+        k != self
       end
-      list.uniq
     end
 
   end
