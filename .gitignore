@@ -12,3 +12,5 @@ work/trash
 Gemfile.lock
 .rvmrc
 *.gem
+.bundle/
+vendor/
