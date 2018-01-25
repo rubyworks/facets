@@ -14,7 +14,6 @@ module FileUtils
   # subdirectory is automatically skipped as well.
 
   def cp_rx(src, dest, options = {}, &filter)
-	  fu_check_options(options, OPT_TABLE['cp_r'])
     if options[:verbose]
 	    fu_output_message("cp -r#{options[:preserve] ? 'p' : ''}#{options[:remove_destination] ? ' --remove-destination' : ''} #{[src,dest].flatten.join ' '}")
     end
@@ -41,4 +40,3 @@ module FileUtils
   end
 
 end
-
