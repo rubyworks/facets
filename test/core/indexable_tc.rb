@@ -124,6 +124,12 @@ test_case Indexable do
     end
   end
 
+  method :last_index do
+    test do
+      [1,2,3,4,5].last_index.assert == 4
+    end
+  end
+
   method :pos do
     test do
       [1,2,3,4,5].pos(1).assert == 0
