@@ -84,6 +84,9 @@ We recommend instead that you use the pre-generated rdocs on the website.</p>
 
 <h2>Site Install</h2>
 
+<p>Note this is  a very old-school installation method. We should probably remove this,
+but for the moment we leave it her for posterity's sake.<p>
+
 <p>If you would like to install from source, you can download the tarball
 package from <a href="http://github.com/rubyworks/facets/download">GitHub</a>
 and use <a href="http://rubyworks.github.io/setup">Ruby Setup</a>, e.g.</p>
@@ -100,33 +103,34 @@ designed to work with Ruby 1.8.6 and up. Facets is fully compatible with Ruby 1.
 
 <h1>API Documentation</h1>
 
-<p>Facets API is divided into two documentation sets, one for core extensions,
-and anther for standard library extensions and additions.</p>
+<p>The <a href="https://www.rubydoc.info/github/rubyworks/facets">YARD documentation</a> includes all of Facets,
+both the core extensions and standard library, in a single reference resource.</p>
+
+<p>Facets offical API documentation is divided into two documentation sets, one for the core extensions,
+and the other for the standard library extensions and additions.</p>
+
+<p><b>PLEASE NOTE THE FOLLOWING DOCUMENTATION RESOURCES ARE DOWN UNTIL YOURS TRULY HAS A CHANCE TO FIX.</b></p>
 
 <h2>Core API</h2>
 
-<p>The <a href="http://rubyworks.github.io/rubyfaux?doc=http://rubyworks.github.io/facets/docs/facets-2.9.3/core.json">CORE API</a>
+The <a href="http://rubyworks.github.io/rubyfaux?doc=http://rubyworks.github.io/facets/docs/facets-2.9.3/core.json">CORE API</a>
 <sup>(<a href="http://shomen-rubyfaux.herokuapp.com?doc=http://rubyworks.github.io/facets/docs/facets-2.9.3/core.json">alt</a>)</sup>
-includes all the "prime" extensions. These methods are at the heart of Facets. Any
-application or library that makes use of Facets, you can be sure, supports
-these methods. Also include is the Functor class, which is a Higher Order
-Message class. It is used by a number of methods to provide fluid interfaces.</p>
+includes only the core extensions. These methods are at the heart of Facets. Any application or library that makes use of Facets
+is encouraged to write their tests with all of these methods loaded to ensure cross-application support. Also included is the
+Functor class, which is a Higher Order Message class. It is used by a number of methods to provide fluid interfaces.</p>
 
 <h2>Standard API</h2>
 
 <p>The <a href="http://rubyworks.github.com/rubyfaux?doc=http://rubyworks.github.io/facets/docs/facets-2.9.3/standard.json">STANDARD API</a>
 <sup>(<a href="http://shomen-rubyfaux.herokuapp.com?doc=http://rubyworks.github.io/facets/docs/facets-2.9.3/standard.json">alt</a>)</sup>
-documents the variety of extension methods to Ruby's standard library, and additional
+documents a variety of extension methods to Ruby's standard library, and additional
 classes and modules Facets provides as optional libraries.</p>
 
 <h1>Wiki</h1>
 
 <p>The Wiki is a place for end-users to create their own documentation. Ultimately,
 it is hoped, this documentaiton will make a great source for sharing real-world
-use cases. However, a full Wiki solution isn't in place yetand we are simply
-using Google Pages, provided along side the Google mailing list interface.</p>
-
-<p>Facets has a community wiki that anyone can use to help document Facets at
+use cases. The community wiki, that anyone can use to help document Facets, is at
 <a href="http://wiki.github.com/rubyworks/facets">Facets Wiki</a>.</p>
 
 <h1>Mailing List</h1>
@@ -134,7 +138,9 @@ using Google Pages, provided along side the Google mailing list interface.</p>
 <p>Facets has a dedicated mailing list hosted via
 <a href="http://groups.google.com/group/facets-universal/topics">Google Groups</a>.
 The same list is used by developers and end-users alike. If you have a
-question or a suggestion the list is a good place to get feedback about it.</p>
+question or a suggestion, the list this is a place you can use to get feedback.
+However the Github Issues page is so good these days that most people opt just to use it
+instead, which is fine.</p>
 
   </div>
 
