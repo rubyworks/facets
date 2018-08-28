@@ -15,7 +15,7 @@ class String
   #      => ["Slowly", "grudgingly", "he", "said", "This", "has", "to", "stop"]
   def words_without_punctuation
     s = self.dup
-    s.gsub!(/[.?¿¡…!,:：;"。？！、‘“”〈〉《》，\/\[\]]/, ' ')
+    s.gsub!(/[.?¿¡…!,:：;—"。？！、‘“”„«»〈〉《》，\/\[\]]/, ' ')
     s.gsub!('- ', ' ')
     s.squeeze!(" ")
     s.strip.split(" ")
