@@ -19,7 +19,7 @@ class Array
     self[(index(value).to_i - 1) % length]
   end
 
-  # Returns the value after the given value. The value before the last
+  # Returns the value next to the given value. The value next to the last
   # is the first. Returns nil if the given value is not in the array.
   #
   # Examples
