@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Module
 
   # Create an attribute method for both getting
@@ -19,7 +20,7 @@ class Module
   # CREDIT: Trans
 
   def attr_setter(*args)
-    code, made = '', []
+    code, made = [], []
     args.each do |a|
       code << %{
         def #{a}(*args)
@@ -28,7 +29,7 @@ class Module
       }
       made << "#{a}".to_sym
     end
-    module_eval code
+    module_eval code.join
     made
   end
 
