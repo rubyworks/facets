@@ -2,7 +2,7 @@ require 'timeout'  # for Timeout::Error
 
 # = Timer
 #
-# Provides a strightforward means for controlling time critical execution.
+# Provides a straightforward means for controlling time critical execution.
 # Can be used as a "stop watch" timer or as a "time bomb" timer:
 #
 #   t = Timer.new(10) { raise Timeout::Error, "timeout!" }
@@ -15,7 +15,7 @@ require 'timeout'  # for Timeout::Error
 #     t.reset       #--> restart timer
 #   end
 #
-# A class method is also provided for easily timing the exectuion of a block.
+# A class method is also provided for easily timing the execution of a block.
 #
 #   Timer.time do |timer|
 #    timer.total_time.round  #=> 0
