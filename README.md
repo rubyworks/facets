@@ -117,7 +117,9 @@ Most "atoms" contain only one method, but exceptions occur when methods
 are closely tied together.
 
 You can load per-class or per-module groups of core methods by requiring the
-class or module by name. For example"
+class or module by name. 
+
+For example:
 
     require 'facets/time'
 
@@ -179,7 +181,7 @@ the libraries have to loaded individually. However you do not need
 to load Ruby's library first, as the Facets' library will do that
 automatically.
 
-For example, normally one load Ruby's OpenStruct class via:
+For example, normally one loads Ruby's OpenStruct class via:
 
     require 'ostruct'
 
