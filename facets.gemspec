@@ -249,8 +249,6 @@ module Indexer
         gemspec.default_executable = gemspec.executables.first
       end
 
-      gemspec.test_files = glob_files(patterns[:test])
-
       unless gemspec.files.include?('.document')
         gemspec.extra_rdoc_files = glob_files(patterns[:doc])
       end
