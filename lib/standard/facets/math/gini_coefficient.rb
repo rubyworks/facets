@@ -1,4 +1,5 @@
 require 'facets/math/approx_equal'
+require 'facets/math/mean'
 
 module Math
 
@@ -13,11 +14,11 @@ module Math
   #   GC = \frac{\sum_{i=1}^N (2i-N-1)x_i}{N^2-\bar{x}}
   #
   def self.gini_coefficient(array)
-    return -1 if size <= 0 or any? { |x| x < 0 }
-    return 0 if size < 2 or all? { |x| approx_equal(x,0) }
+    return -1 if array.size <= 0 or array.any? { |x| x < 0 }
+    return 0 if array.size < 2 or array.all? { |x| approx_equal(x,0) }
     s = 0
-    sort.each_with_index { |li,i| s += (2*i+1-size)*li }
-    s.to_f/(size**2*mean).to_f
+    array.sort.each_with_index { |li,i| s += (2*i+1-array.size)*li }
+    s.to_f/(array.size**2*mean(array)).to_f
   end
 
   ## OLD WAY
