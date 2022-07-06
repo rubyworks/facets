@@ -42,7 +42,7 @@ class Tuple
     if block_given?
       values = []
       arg.times { |i| values << block[i] }
-    elseif Integer === arg
+    elsif Integer === arg
       values = [ default ] * arg
     else
       values = arg.to_ary
@@ -54,7 +54,7 @@ class Tuple
     if block_given?
       @values = []
       arg.times { |i| @values << blk[i] }
-    elseif Integer === arg
+    elsif Integer === arg
       @values = [ default ] * arg
     else
       @values = arg.to_ary
