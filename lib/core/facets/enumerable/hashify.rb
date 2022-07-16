@@ -1,4 +1,3 @@
-#require 'facets/enumerator'
 require 'facets/hash/dearray_values'
 require 'facets/enumerable/value_by'
 

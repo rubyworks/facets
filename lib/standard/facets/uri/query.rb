@@ -17,7 +17,7 @@ module URI
   # Given a hash with parameter/value pairs construct a
   # standard query string.
   #
-  #   URI.hash_to_query(:a => 1, :b => 2)
+  #   URI.hash_to_query_string(:a => 1, :b => 2)
   #   #=> "a=1;b=2"
   #
   def query(parameters)
