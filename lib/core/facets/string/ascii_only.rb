@@ -21,7 +21,7 @@ class String
       :replace                     => alt,       # Use a blank for those replacements
       :UNIVERSAL_NEWLINE_DECORATOR => true       # Always break lines with \n
     }
-    self.encode(Encoding.find('ASCII'), encoding_options)
+    self.encode(Encoding::ASCII_8BIT, **encoding_options)
   end
 
   # Modify string keeping only ASCII characters.
@@ -46,7 +46,7 @@ class String
       :replace                     => alt,       # Use a blank for those replacements
       :UNIVERSAL_NEWLINE_DECORATOR => true       # Always break lines with \n
     }
-    self.encode!(Encoding.find('ASCII'), encoding_options)
+    self.encode!(Encoding::ASCII_8BIT, **encoding_options)
   end
 
 end

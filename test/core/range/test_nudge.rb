@@ -19,13 +19,14 @@ test_case Range do
     end
 
     test 'min nudge' do
-      (5..9).nudge(:min => 2).assert == (7..9)
-      (5...9).nudge(:min => 2).assert == (7...9)
+      binding.irb
+      (5..9).nudge(min: 2).assert == (7..9)
+      (5...9).nudge(min: 2).assert == (7...9)
     end
 
     test 'max nudge' do
-      (8..16).nudge(:max => 10).assert == (8..26)
-      (8...16).nudge(:max => 10).assert == (8...26)
+      (8..16).nudge(max: 10).assert == (8..26)
+      (8...16).nudge(max: 10).assert == (8...26)
     end
   end
 end

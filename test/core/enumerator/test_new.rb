@@ -1,5 +1,3 @@
-covers 'facets/enumerator'
-
 test_case Enumerator do
 
   class_method :new do

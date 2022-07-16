@@ -1,5 +1,3 @@
-require "facets/enumerator"
-
 class String
 
   # Returns an Enumerator for iterating over each

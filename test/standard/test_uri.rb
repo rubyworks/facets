@@ -14,7 +14,7 @@ test_case URI do
   class_method :hash_to_query do
     test do
       h = { :a=>1, :b=>2 }
-      r = URI.hash_to_query(h)
+      r = URI.hash_to_query_string(h)
       assert(r == "a=1;b=2" || r == "b=2;a=1")
     end
   end
