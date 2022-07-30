@@ -67,7 +67,7 @@ paths:
   - lib/standard
 name: facets
 title: Ruby Facets
-version: 3.1.0
+version: 3.1.1
 summary: The orginal well curated collection of extension methods for Ruby.
 slogan: ALL YOUR BASE ARE BELONG TO RUBY!
 description: Facets is the premier collection of extension methods for the Ruby programming
