@@ -86,7 +86,7 @@ class String
   #
   # All other strings return false.
   #
-  # Here are some exmamples.
+  # Here are some examples.
   #
   #   "true".to_b   #=> true
   #   "yes".to_b    #=> true
