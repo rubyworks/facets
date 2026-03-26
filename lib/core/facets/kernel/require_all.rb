@@ -13,7 +13,7 @@ module Kernel
 
   def require_all(pattern)
     c = caller.first
-    fail "Can't parse #{c}" unless c.rindex(/:\d+(:in `.*')?$/)
+    fail "Can't parse #{c}" unless c.rindex(/:\d+(:in [`'].*')?$/)
     file = $` # File.dirname(c)
     if /\A\((.*)\)/ =~ file # eval, etc.
       raise LoadError, "require_relative is called in #{$1}"
@@ -27,7 +27,7 @@ module Kernel
   # Same as #require_all, but for #load.
   def load_all(pattern, safe=nil)
     c = caller.first
-    fail "Can't parse #{c}" unless c.rindex(/:\d+(:in `.*')?$/)
+    fail "Can't parse #{c}" unless c.rindex(/:\d+(:in [`'].*')?$/)
     file = $` # File.dirname(c)
     if /\A\((.*)\)/ =~ file # eval, etc.
       raise LoadError, "require_relative is called in #{$1}"

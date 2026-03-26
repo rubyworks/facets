@@ -31,7 +31,7 @@ module Kernel
     stack = []
     call_str_array.each{ |call_str|
       file, lineno, method = call_str.split(':')
-      if method =~ /in `(.*)'/ then
+      if method =~ /in [`'](.*)'/ then
         method = $1.intern()
       end
       stack << [file, lineno.to_i, method]

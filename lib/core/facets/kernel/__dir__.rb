@@ -9,7 +9,7 @@ module Kernel
 
   def __DIR__(*paths)
     c = caller.first
-    return nil unless c.rindex(/:\d+(:in `.*')?$/)
+    return nil unless c.rindex(/:\d+(:in [`'].*')?$/)
     file = $` # File.dirname(c)
     return nil if /\A\((.*)\)/ =~ file # eval, etc.
     #File.expand_path(File.join(File.dirname(file), paths))
