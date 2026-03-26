@@ -1,5 +1,45 @@
 # Facets Release History
 
+## 3.2.0 / (Unreleased)
+
+Modernization release targeting Ruby 3.1+. Cleans up long-standing
+compatibility issues and incorporates community contributions.
+
+Changes:
+
+* New Features
+
+  * Add `Array#to_proc` for chaining method calls via array. (PR#233)
+  * Add `Array#to_ranges` to convert arrays to ranges. (PR#265)
+  * Add `Array#remove` and `Array#remove!` for count-respecting subtraction. (PR#293)
+  * Add `Array#indexes` / `Array#index_all` to find all matching indexes. (PR#294)
+  * Add `String#dashcase` for kebab-case conversion. (PR#297)
+  * Add `Binding#caller_locations`.
+
+* Improved Features
+
+  * Adapt `Module#attr_setter` to frozen-string-literal. (PR#287)
+  * Update `Binding#__LINE__` and `__FILE__` to use `source_location`.
+  * Replace `URI.escape`/`URI.unescape` with `CGI.escape`/`CGI.unescape`.
+  * Match Ruby 3.4 caller syntax in `Kernel#__DIR__`, `#callstack`, `#require_all`. (PR#308)
+  * Switch CI from Travis to GitHub Actions.
+
+* Bug Fixes
+
+  * Fix `Math.gini_coefficient` referencing `self` instead of `array` parameter. (PR#302)
+  * Fix typo in `Array#after` doc. (PR#283)
+  * Fix typo in `String#to_b` doc. (PR#306)
+
+* Removals
+
+  * Remove `Enumerable#filter` (conflicts with Ruby's built-in `filter` since 2.6).
+    Use `each_with_object` instead, with block arguments reversed:
+    `collection.each_with_object([]) { |el, out| out << el if cond }`.
+  * Remove Ruby 1.8 compatibility code from `enumerator.rb`.
+  * Remove `taint`/`tainted?` references (removed from Ruby in 3.2).
+  * Drop unused `test_files` directive from gemspec. (PR#301)
+
+
 ## 3.1.0 / 2016-05-10
 
 More or less a minor release, but there are some backward incompatabilites

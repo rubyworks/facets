@@ -1,4 +1,5 @@
 require 'uri'
+require 'cgi'
 
 require 'facets/uri/cgi_escape.rb'
 require 'facets/uri/cgi_unescape.rb'
@@ -12,12 +13,12 @@ module URI
   module Kernel
     #
     def uri(s, w=%r{[^a-zA-Z_0-9./-]})
-      URI.escape(s, w)
+      CGI.escape(s)
     end
 
     #
     def unuri(s)
-      URI.unescape(s)
+      CGI.unescape(s)
     end
   end
 

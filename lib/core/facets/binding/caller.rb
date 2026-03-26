@@ -8,16 +8,22 @@ class Binding
     eval("caller(#{skip})")
   end
 
+  # Returns the call stack, same format as Kernel#caller_locations()
+  #
+  def caller_locations( skip=0 )
+    eval("caller_locations(#{skip})")
+  end
+
   # Return the line number on which the binding was created.
   #
   def __LINE__
-    Kernel.eval("__LINE__", self)
+    self.source_location[1]
   end
 
   # Returns file name in which the binding was created.
   #
   def __FILE__
-    Kernel.eval("__FILE__", self)
+    self.source_location[0]
   end
 
   # Return the directory of the file in which the binding was created.

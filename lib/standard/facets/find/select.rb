@@ -1,5 +1,3 @@
-require 'facets/enumerator'
-
 module Find
   # Identical to find except select returns the matching files as an array.
   # (find returns nil, which is not very useful if you actually wanted an array.)

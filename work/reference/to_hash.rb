@@ -1,6 +1,5 @@
 warn 'facets: to_hash.rb is deprecated in favor of hashifier.rb.'
 
-require 'facets/enumerator'
 require 'facets/hash/dearray_values'
 
 class Array

@@ -1,5 +1,3 @@
-require 'facets/enumerator'
-
 module Enumerable
 
   # Iterate through slices. If slice +steps+ is not

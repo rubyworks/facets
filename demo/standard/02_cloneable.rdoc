@@ -22,10 +22,6 @@ Try #dup.
   b = a.dup
   b.bar_id.refute == a.bar_id
 
-  a.taint
-  b = a.dup
-  b.assert.tainted?
-
   a.freeze
   b = a.dup
   b.refute.frozen?
@@ -35,10 +31,6 @@ Note try #clone.
   a = Foo.new
   b = a.clone
   b.bar_id.refute == a.bar_id
-
-  a.taint
-  b = a.dup
-  b.assert.tainted?
 
   a.freeze
   b = a.clone
