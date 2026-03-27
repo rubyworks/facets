@@ -31,7 +31,8 @@ class Array
   #
   def remove!(other_ary)
     other_ary.each do |el|
-      delete_first(el)
+      i = index(el)
+      delete_at(i) if i
     end
     self
   end

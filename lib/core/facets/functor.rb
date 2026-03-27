@@ -90,3 +90,9 @@ class Functor #< BasicObject
   end
 
 end
+
+# Tee is an alias for Functor. The name comes from the Unix `tee` command,
+# which forks a data stream — here it forks a method call for side effects
+# while passing the original receiver through. Functor will be gradually
+# deprecated in favor of Tee.
+Tee = Functor

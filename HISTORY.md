@@ -15,6 +15,8 @@ Changes:
   * Add `Array#indexes` / `Array#index_all` to find all matching indexes. (PR#294)
   * Add `String#dashcase` for kebab-case conversion. (PR#297)
   * Add `Binding#caller_locations`.
+  * Add `Kernel#tee` — block-less method chaining via Tee/Functor, replaces `tap` override.
+  * Add `Tee` as alias for `Functor` (gradual rename).
 
 * Improved Features
 
@@ -32,6 +34,7 @@ Changes:
 
 * Removals
 
+  * Remove `Kernel#tap` override. Use `Kernel#tee` for the block-less Functor form.
   * Remove `Enumerable#filter` (conflicts with Ruby's built-in `filter` since 2.6).
     Use `each_with_object` instead, with block arguments reversed:
     `collection.each_with_object([]) { |el, out| out << el if cond }`.
