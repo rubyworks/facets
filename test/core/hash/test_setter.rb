@@ -1,8 +1,8 @@
-covers 'facets/hash/to_proc'
+covers 'facets/hash/setter'
 
 test_case Hash do
 
-  method :to_proc do
+  method :setter do
 
     test do
       c = Class.new do
@@ -12,12 +12,11 @@ test_case Hash do
       h = {:a => 1}
       o = c.new
 
-      h.to_proc.call(o)
+      h.setter.call(o)
 
       o.a.assert == 1
     end
 
   end
-  
-end
 
+end

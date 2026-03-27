@@ -17,6 +17,10 @@ Changes:
   * Add `Binding#caller_locations`.
   * Add `Kernel#tee` — block-less method chaining via Tee/Functor, replaces `tap` override.
   * Add `Tee` as alias for `Functor` (gradual rename).
+  * Rename `Hash#to_proc` to `Hash#setter` (avoids clash with Ruby 2.3's `Hash#to_proc`
+    which does key lookup; Facets' version does attribute assignment).
+  * Consolidate `Array#arrange` and `Array#to_ranges`; `to_ranges` is now primary,
+    `arrange` and `rangify` are aliases. Now handles mixed ranges and values.
 
 * Improved Features
 

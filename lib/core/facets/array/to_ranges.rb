@@ -1,30 +1,45 @@
 class Array
 
-  # Convert an array of values (which must respond to #succ) to an
-  # array of ranges.
+  # Produces an array of ranges from the values in the array.
+  # Contiguous values and overlapping ranges are merged.
   #
-  #   [3,4,5,1,6,9,8].to_ranges => [1..1,3..6,8..9]
+  # Examples
   #
-  # CREDIT: Adapted and debugged by Ryan Duryea
-  # from https://dzone.com/articles/convert-ruby-array-ranges
+  #     [1,2,3,6,7,8].to_ranges  #=> [1..3, 6..8]
+  #
+  #     [3,4,5,1,6,9,8].to_ranges  #=> [1..6, 8..9]
+  #
+  #     [10..15, 16..20, 21, 22].to_ranges  #=> [10..22]
+  #
+  # Assumes inclusive ranges (i.e. 1..4) and range.first <= range.last.
+  #
+  # Works with integers, dates and strings. However, all the objects
+  # in the array must be of the same class.
+  #
+  # CREDIT: monocle, Ryan Duryea
 
   def to_ranges
-    array = self.compact.uniq.sort
-    ranges = []
-    if !array.empty?
-      # Initialize the left and right endpoints of the range
-      left, right = array.first, nil
-      array.each do |obj|
-        # If the right endpoint is set and obj is not equal to right's successor
-        # then we need to create a range.
-        if right && obj != right.succ
-          ranges << Range.new(left,right)
-          left = obj
+    array = compact.uniq.sort_by { |e| Range === e ? e.first : e }
+    array.inject([]) do |c, value|
+      unless c.empty?
+        last = c.last
+        last_value    = (Range === last  ? last.last   : last)
+        current_value = (Range === value ? value.first : value)
+        if (last_value.succ <=> current_value) == -1
+          c << value
+        else
+          first  = (Range === last ? last.first : last)
+          second = [Range === last ? last.last : last, Range === value ? value.last : value].max
+          c[-1] = [first..second]
+          c.flatten!
         end
-        right = obj
+      else
+        c << value
       end
-      ranges << Range.new(left,right)
     end
-    ranges
   end
+
+  alias arrange to_ranges
+  alias rangify to_ranges
+
 end

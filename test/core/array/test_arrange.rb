@@ -1,4 +1,4 @@
-require 'facets/array/arrange'
+covers 'facets/array/arrange'
 
 test_case Array do
 
