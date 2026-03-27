@@ -82,6 +82,9 @@ Changes:
   * Deprecate `Array#standard_deviation` (use `Array#stddev` or `Array#sd`).
   * Deprecate `Struct#attributes` (use `Struct#to_h`, adopted by Ruby in 2.0).
   * Deprecate `UnboundMethod#arguments` (use `UnboundMethod#parameters`, adopted by Ruby in 2.0).
+  * Remove `Object#dup!` and `Object#try_dup` (plain `dup` works on all objects since Ruby 2.4).
+  * Remove `Exception#set_message` (broken — did not actually change the message).
+  * Deprecate `Exception#error_print` (use `Exception#full_message`, adopted by Ruby in 2.5).
   * Remove misplaced `applique/file_helpers` from core (test infrastructure).
   * Drop unused `test_files` directive from gemspec. (PR#301)
 
