@@ -79,6 +79,10 @@ Changes:
     Use `Dir.each_child('/path').reject { |f| ignore.include?(f) }` instead.
   * Remove `Numeric#positive?` and `Numeric#negative?` (adopted by Ruby in 2.3).
   * Remove `Object#itself` (adopted by Ruby in 2.6).
+  * Deprecate `Array#standard_deviation` (use `Array#stddev` or `Array#sd`).
+  * Deprecate `Struct#attributes` (use `Struct#to_h`, adopted by Ruby in 2.0).
+  * Deprecate `UnboundMethod#arguments` (use `UnboundMethod#parameters`, adopted by Ruby in 2.0).
+  * Remove misplaced `applique/file_helpers` from core (test infrastructure).
   * Drop unused `test_files` directive from gemspec. (PR#301)
 
 

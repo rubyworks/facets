@@ -19,6 +19,7 @@ class UnboundMethod
   # CREDIT: Trans
 
   def arguments
+    warn "UnboundMethod#arguments is deprecated. Use UnboundMethod#parameters instead.", uplevel: 1
     ar = arity
     case ar <=> 0
     when 1

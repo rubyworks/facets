@@ -6,9 +6,8 @@ class Struct
   # This will eventually be deprecated in favor of #to_h.
 
   def attributes
-    h = {}
-    each_pair { |k,v| h[k] = v }
-    h
+    warn "Struct#attributes is deprecated. Use Struct#to_h instead.", uplevel: 1
+    to_h
   end
 
 end
