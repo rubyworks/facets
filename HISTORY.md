@@ -27,7 +27,8 @@ Changes:
   * Adapt `Module#attr_setter` to frozen-string-literal. (PR#287)
   * Update `Binding#__LINE__` and `__FILE__` to use `source_location`.
   * Replace `URI.escape`/`URI.unescape` with `CGI.escape`/`CGI.unescape`.
-  * Match Ruby 3.4 caller syntax in `Kernel#__DIR__`, `#callstack`, `#require_all`. (PR#308)
+  * Rewrite `Kernel#callstack`, `#require_all`, `#load_all` to use `caller_locations`
+    instead of parsing caller strings with regex.
   * Switch CI from Travis to GitHub Actions.
 
 * Bug Fixes
