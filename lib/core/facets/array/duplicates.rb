@@ -21,4 +21,17 @@ class Array
     h.delete_if{|_,v| v < min}.keys
   end
 
+  # In-place version of #duplicates. Replaces the array with
+  # only its duplicate elements.
+  #
+  # Examples:
+  #
+  #   a = [1,1,2,3,2]
+  #   a.duplicates!  #=> [1,2]
+  #   a              #=> [1,2]
+  #
+  def duplicates!(min=2)
+    replace(duplicates(min))
+  end
+
 end

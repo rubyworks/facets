@@ -11,18 +11,9 @@ class Array
   #   [2,2,3,4,4,4].occurrence{|i| i % 2}
   #   #=> { 0 => 5, 1 => 1 }
   #
-  def occurrence
-    h = Hash.new(0)
-    if block_given?
-      each do |e|
-        h[yield(e)] += 1
-      end
-    else
-      each do |e|
-        h[e] += 1
-      end
-    end
-    h
+  def occurrence(&block)
+    warn "Array#occurrence is deprecated. Use Array#tally instead.", uplevel: 1
+    tally(&block)
   end
 
 end

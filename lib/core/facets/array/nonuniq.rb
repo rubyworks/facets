@@ -1,3 +1,5 @@
+require 'facets/array/duplicates'
+
 class Array
 
   # Returns a list of non-unique elements.
@@ -9,19 +11,15 @@ class Array
   # CREDIT: Martin DeMello
 
   def nonuniq
-    h1 = {}
-    h2 = {}
-    each {|i|
-      h2[i] = true if h1[i]
-      h1[i] = true
-    }
-    h2.keys
+    warn "Array#nonuniq is deprecated. Use Array#duplicates instead.", uplevel: 1
+    duplicates
   end
 
   # Same as `#nonuniq` but acts in place.
 
   def nonuniq!
-    self.replace(self.nonuniq)
+    warn "Array#nonuniq! is deprecated. Use Array#duplicates instead.", uplevel: 1
+    self.replace(duplicates)
   end
 
 end

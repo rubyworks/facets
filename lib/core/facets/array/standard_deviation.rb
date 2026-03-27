@@ -12,12 +12,17 @@ class Array
   #   [36, -67, -17, 85, -46, -64, -23, -13, 89, -47].standard_deviation #=> 54.67183918618432
   #   [60.7829, 31.2622, 20.626, 78.8907, 61.5328].standard_deviation #=> 21.428815505053002
   #
-  def standard_deviation
+  def stddev
     return nil if empty?
     Math.sqrt(variance)
   end
 
-  alias sd standard_deviation
+  alias sd stddev
+
+  def standard_deviation
+    warn "Array#standard_deviation is deprecated. Use Array#stddev or Array#sd instead.", uplevel: 1
+    stddev
+  end
 end
 
 

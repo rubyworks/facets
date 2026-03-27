@@ -15,9 +15,9 @@ class Array
   #
   # Returns [Array] of unique elements.
   #
-  def uniq_by! #:yield:
-    h = {}
-    replace( inject([]){|a,x| h[yield(x)] ||= a << x} )
+  def uniq_by!(&block) #:yield:
+    warn "Array#uniq_by! is deprecated. Use Array#uniq!(&block) instead.", uplevel: 1
+    uniq!(&block)
   end
 
 end

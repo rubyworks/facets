@@ -23,6 +23,7 @@ Changes:
     which does key lookup; Facets' version does attribute assignment).
   * Consolidate `Array#arrange` and `Array#to_ranges`; `to_ranges` is now primary,
     `arrange` and `rangify` are aliases. Now handles mixed ranges and values.
+  * Fix `Array#step` to start at index 0 (was n-1); add optional offset parameter.
 
 * Improved Features
 
@@ -41,6 +42,11 @@ Changes:
 
 * Removals
 
+  * Remove `Array#**` (`op_pow`) alias for `product` (use `Array#product` directly).
+  * Deprecate `Array#occurrence` (use `Enumerable#tally` instead, adopted by Ruby in 2.7).
+  * Deprecate `Array#uniq_by!` (use `Array#uniq!(&block)` instead, adopted by Ruby in 1.9.2).
+  * Deprecate `Array#nonuniq` / `nonuniq!` (use `Array#duplicates` / `duplicates!` instead).
+  * Add `Array#duplicates!` (in-place version of `duplicates`).
   * Remove `Kernel#tap` override. Use `Kernel#tee` for the block-less Functor form.
   * Remove `Enumerable#filter` (conflicts with Ruby's built-in `filter` since 2.6).
     Use `each_with_object` instead, with block arguments reversed:
