@@ -1,7 +1,0 @@
-## MatchData#match
-
-    require 'facets/matchdata/match'
-
-    md = /X(a)(b)(c)X/.match("YXabcXY")
-    md.match.assert == "XabcX"
-

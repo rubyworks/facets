@@ -37,6 +37,32 @@ Changes:
     `collection.each_with_object([]) { |el, out| out << el if cond }`.
   * Remove Ruby 1.8 compatibility code from `enumerator.rb`.
   * Remove `taint`/`tainted?` references (removed from Ruby in 3.2).
+  * Remove `Enumerable#sum` (adopted by Ruby in 2.4).
+    For non-numeric cases (e.g. `[[1],[2],[3]]`), use `reduce(:+)` instead.
+  * Remove `String#crypt` override (Ruby deprecated `crypt` in 3.2; use `bcrypt` gem instead).
+  * Remove `MatchData#match` (adopted by Ruby in 3.1).
+  * Remove `Range#overlap?` (adopted by Ruby in 3.3).
+  * Remove `Kernel#__DIR__` (adopted by Ruby as `__dir__` in 2.0).
+  * Remove `Kernel#instance_exec` (adopted by Ruby in 1.9).
+  * Remove `Kernel#singleton_class` (adopted by Ruby in 1.9).
+  * Remove `Kernel#p` override (Ruby's `p` returns its arguments since 1.9).
+  * Remove `Method#curry` (adopted by Ruby in 2.2).
+  * Remove `Array#to_h` (adopted by Ruby in 2.1).
+  * Remove `Array#intersection` (clashes with Ruby 2.7's `Array#intersection`).
+    Consider `Range.intersection` class method as future replacement.
+  * Remove `Hash#except` (adopted by Ruby in 3.0); `except!` and `remove!` retained.
+  * Remove `Hash#slice` (adopted by Ruby in 2.5); `slice!` retained.
+    Block form removed from both; use `slice(...).select { ... }` instead.
+  * Remove `Class#singleton_class?` (adopted by Ruby in 3.2).
+  * Remove `Class#subclasses` (adopted by Ruby in 3.1).
+  * Remove `Symbol#succ` (adopted by Ruby in 1.9).
+  * Remove `File.write` (adopted by Ruby in 1.9).
+  * Remove `Process.daemon` (adopted by Ruby in 1.9).
+  * Remove `Dir#each_child` (adopted by Ruby in 2.6).
+    Note: Ruby's version does not support the custom ignore argument.
+    Use `Dir.each_child('/path').reject { |f| ignore.include?(f) }` instead.
+  * Remove `Numeric#positive?` and `Numeric#negative?` (adopted by Ruby in 2.3).
+  * Remove `Object#itself` (adopted by Ruby in 2.6).
   * Drop unused `test_files` directive from gemspec. (PR#301)
 
 

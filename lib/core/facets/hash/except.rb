@@ -1,12 +1,5 @@
 class Hash
 
-  # Returns a new hash less the given keys.
-  def except(*less_keys)
-    hash = dup
-    less_keys.each{ |k| hash.delete(k) }
-    hash
-  end
-
   # Replaces hash with new hash less the given keys.
   #
   #   h = {:a=>1, :b=>2, :c=>3}
