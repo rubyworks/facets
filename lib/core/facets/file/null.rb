@@ -1,21 +1,9 @@
 class File
 
-  # Platform dependent null device.
-  #
-  # CREDIT: Daniel Burger
-
+  # @deprecated Use File::NULL constant instead (built-in since Ruby 1.9.3).
   def self.null
-    case RUBY_PLATFORM
-    when /mswin/i
-      'NUL'
-    when /amiga/i
-      'NIL:'
-    when /openvms/i
-      'NL:'
-    else
-      '/dev/null'
-    end
+    warn "File.null is deprecated. Use File::NULL instead.", uplevel: 1
+    File::NULL
   end
 
 end
-

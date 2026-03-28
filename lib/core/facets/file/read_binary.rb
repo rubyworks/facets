@@ -1,18 +1,9 @@
 class File
 
-  # Read in a file as binary data.
-  #
-  # Assuming we had a binary file 'binary.dat'.
-  #
-  #   File.read_binary('binary.dat')
-  #
-  # CREDIT: George Moschovitis
-
+  # @deprecated Use File.binread instead (built-in since Ruby 1.9.3).
   def self.read_binary(fname)
-    open(fname, 'rb') do |f|
-      return f.read
-    end
+    warn "File.read_binary is deprecated. Use File.binread instead.", uplevel: 1
+    binread(fname)
   end
 
 end
-
