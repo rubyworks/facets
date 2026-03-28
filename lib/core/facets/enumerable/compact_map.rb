@@ -15,18 +15,8 @@ module Enumerable
   # does almost the same thing and enum.map{}.compact works too.
 
   def compact_map(&block)
-    y = []
-    if block_given?
-      each do |*a|
-        r = yield(*a)
-        y << r unless r.nil?
-      end
-    else
-      each do |r|
-        y << r unless r.nil?
-      end
-    end
-    y
+    warn "Enumerable#compact_map is deprecated. Use Enumerable#filter_map instead.", uplevel: 1
+    filter_map(&block)
   end
 
   #

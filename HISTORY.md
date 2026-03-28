@@ -93,6 +93,13 @@ Changes:
   * Deprecate `Hash#update_keys` (use `Hash#transform_keys!` or `Hash#rekey!`).
   * Deprecate `Hash#update_values` (use `Hash#transform_values!` or `Hash#revalue!`).
   * Deprecate `Hash#fetch_nested` (use `Hash#dig`, adopted by Ruby in 2.3).
+  * Deprecate `Enumerable#compact_map` (use `Enumerable#filter_map`, adopted by Ruby in 2.7).
+  * Deprecate `Enumerable#defer` (use `Enumerable#lazy`, adopted by Ruby in 2.0).
+  * Deprecate `Enumerable#frequency` (use `Enumerable#tally`, adopted by Ruby in 2.7).
+  * Deprecate `Enumerable#hinge` (use `Enumerable#each_with_object`, note: block args reversed).
+  * Deprecate `Enumerable#map_with_index` (use `Enumerable#map.with_index`).
+  * Deprecate `Enumerable#mash` (use `Enumerable#graph` instead).
+  * Deprecate `Enumerable#uniq_by` (use `Enumerable#uniq(&block)`, Ruby 1.9.2+).
   * Fix dead requires for removed `kernel/singleton_class` in Proc and Kernel.
   * Remove misplaced `applique/file_helpers` from core (test infrastructure).
   * Drop unused `test_files` directive from gemspec. (PR#301)

@@ -27,19 +27,8 @@ module Enumerable
   # to output each result and discard it.
   #
   def defer(&blk)
-    if block_given?
-      Denumerator.new do |output|
-        each do |*input|
-          yield(output, *input)
-        end
-      end
-    else
-      Denumerator.new do |output|
-        each do |*input|
-          output.yield(*input)
-        end
-      end
-    end
+    warn "Enumerable#defer is deprecated. Use Enumerable#lazy instead.", uplevel: 1
+    lazy
   end
 
 end

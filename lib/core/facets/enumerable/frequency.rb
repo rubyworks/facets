@@ -16,8 +16,8 @@ module Enumerable
   #++
 
   def frequency
-    p = Hash.new(0); each{ |v| p[v] += 1 }; p
-
+    warn "Enumerable#frequency is deprecated. Use Enumerable#tally instead.", uplevel: 1
+    tally
   end
 
 end

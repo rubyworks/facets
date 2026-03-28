@@ -7,12 +7,9 @@ module Enumerable
   #
   # CREDIT: Gavin Sinclair
 
-  def map_with_index
-    r = []
-    each_with_index do |e, i|
-      r << yield(e, i)
-    end
-    r
+  def map_with_index(&block)
+    warn "Enumerable#map_with_index is deprecated. Use Enumerable#map.with_index instead.", uplevel: 1
+    map.with_index(&block)
   end
 
   # Alias for map_with_index.
