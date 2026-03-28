@@ -85,6 +85,10 @@ Changes:
   * Remove `Object#dup!` and `Object#try_dup` (plain `dup` works on all objects since Ruby 2.4).
   * Remove `Exception#set_message` (broken — did not actually change the message).
   * Deprecate `Exception#error_print` (use `Exception#full_message`, adopted by Ruby in 2.5).
+  * Deprecate `Comparable#clip` (use `Comparable#clamp`, adopted by Ruby in 2.4).
+  * Redefine `Comparable#bound` as alias for `clamp`.
+  * Add `Dir.find` as convenience wrapper around Ruby's `Find.find`.
+  * Deprecate `Dir.recurse` / `Dir.ls_r` (use `Dir.find` or `Find.find` instead).
   * Remove misplaced `applique/file_helpers` from core (test infrastructure).
   * Drop unused `test_files` directive from gemspec. (PR#301)
 
