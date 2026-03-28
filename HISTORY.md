@@ -103,6 +103,9 @@ Changes:
   * Redefine `String#lchomp` / `#lchomp!` as aliases for `delete_prefix` / `delete_prefix!`.
   * Rename `Time#trunc` to `Time#floor_to` (parallels `Time#round_to`; avoids confusion
     with Ruby's `Time#floor` which takes sub-second digit precision). `trunc` deprecated.
+  * Fix `Binding#[]` and `#[]=` to use `local_variable_get`/`local_variable_set`
+    (broken since Ruby 1.9; now works again).
+  * Deprecate `Binding#self` (use `Binding#receiver`, adopted by Ruby in 2.6).
   * Deprecate `File.null` (use `File::NULL` constant, Ruby 1.9.3+).
   * Deprecate `File.read_binary` (use `File.binread`, Ruby 1.9.3+).
   * Fix dead requires for removed `kernel/singleton_class` in Proc and Kernel.
