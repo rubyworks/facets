@@ -1,5 +1,3 @@
-require 'facets/kernel/singleton_class'
-
 class Proc
 
   # Bind a Proc to an object returning a Method.

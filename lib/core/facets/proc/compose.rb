@@ -1,42 +1,21 @@
 class Proc
 
-  # Returns a new proc that is the functional
-  # composition of two procs, in order.
-  #
-  #   a = lambda { |x| x + 4 }
-  #   b = lambda { |y| y / 2 }
-  #
-  #   a.compose(b).call(4)  #=> 6
-  #   b.compose(a).call(4)  #=> 4
-  #
-  # CREDIT: Dave
-
+  # @deprecated Use Proc#>> or Proc#<< instead (built-in since Ruby 2.6).
   def compose(g)
-    raise ArgumentError, "arity count mismatch" unless arity == g.arity
-    lambda{ |*a| self[ *g[*a] ] }
+    warn "Proc#compose is deprecated. Use Proc#<< instead (right-to-left composition).", uplevel: 1
+    self << g
   end
 
-  # Operator for Proc#compose and Integer#times_collect/of.
-  #
-  #   a = lambda { |x| x + 4 }
-  #   b = lambda { |y| y / 2 }
-  #
-  #   (a * b).call(4)  #=> 6
-  #   (b * a).call(4)  #=> 4
-  #
-  # CREDIT: Dave
-
+  # @deprecated Use Proc#>> or Proc#<< for composition (built-in since Ruby 2.6).
   def *(x)
-    if Integer===x
-      # collect times
+    warn "Proc#* is deprecated. Use Proc#<< for composition (right-to-left).", uplevel: 1
+    if Integer === x
       c = []
       x.times{|i| c << call(i)}
       c
     else
-      # compose procs
-      lambda{|*a| self[x[*a]]}
+      self << x
     end
   end
 
 end
-

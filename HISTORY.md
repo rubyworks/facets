@@ -89,6 +89,8 @@ Changes:
   * Redefine `Comparable#bound` as alias for `clamp`.
   * Add `Dir.find` as convenience wrapper around Ruby's `Find.find`.
   * Deprecate `Dir.recurse` / `Dir.ls_r` (use `Dir.find` or `Find.find` instead).
+  * Deprecate `Proc#compose` and `Proc#*` (use `Proc#<<` for right-to-left composition, Ruby 2.6+).
+  * Fix dead requires for removed `kernel/singleton_class` in Proc and Kernel.
   * Remove misplaced `applique/file_helpers` from core (test infrastructure).
   * Drop unused `test_files` directive from gemspec. (PR#301)
 

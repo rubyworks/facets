@@ -1,5 +1,4 @@
 require 'facets/proc/bind'
-require 'facets/kernel/singleton_class'
 
 class Proc
 
