@@ -90,6 +90,9 @@ Changes:
   * Add `Dir.find` as convenience wrapper around Ruby's `Find.find`.
   * Deprecate `Dir.recurse` / `Dir.ls_r` (use `Dir.find` or `Find.find` instead).
   * Deprecate `Proc#compose` and `Proc#*` (use `Proc#<<` for right-to-left composition, Ruby 2.6+).
+  * Deprecate `Hash#update_keys` (use `Hash#transform_keys!` or `Hash#rekey!`).
+  * Deprecate `Hash#update_values` (use `Hash#transform_values!` or `Hash#revalue!`).
+  * Deprecate `Hash#fetch_nested` (use `Hash#dig`, adopted by Ruby in 2.3).
   * Fix dead requires for removed `kernel/singleton_class` in Proc and Kernel.
   * Remove misplaced `applique/file_helpers` from core (test infrastructure).
   * Drop unused `test_files` directive from gemspec. (PR#301)

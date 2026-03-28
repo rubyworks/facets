@@ -1,18 +1,17 @@
 class Hash
 
-  # Similar to Hash#fetch but supports nested lookup and is `nil` safe.
+  # @deprecated Use Hash#dig instead (built-in since Ruby 2.3).
   #
-  #     {}.fetch_nested('anything','at','all')  #=> nil
+  # Similar to Hash#dig but supports a block for missing keys,
+  # like Hash#fetch does. Ruby's #dig does not support a block.
   #
-  #     h = {'hello'=>{'world'=>42}}
-  #     h.fetch_nested(*['hello','world'])  #=> 42
+  # TODO: Consider proposing block support for Hash#dig to Ruby core.
   #
-  # CREDIT: T. Yamada and Sean Mackesey
-
-  def fetch_nested(*keys)
+  def fetch_nested(*keys, &block)
+    warn "Hash#fetch_nested is deprecated. Use Hash#dig instead.", uplevel: 1
     begin
-      keys.reduce(self){|accum, k| accum.fetch(k)}
-	rescue (RUBY_VERSION<'1.9' ? IndexError : KeyError)
+      keys.reduce(self) { |accum, k| accum.fetch(k) }
+    rescue KeyError
       block_given? ? yield(*keys) : nil
     end
   end

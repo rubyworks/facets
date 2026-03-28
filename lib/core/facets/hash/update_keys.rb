@@ -1,21 +1,14 @@
 class Hash
 
-  # Iterate over hash updating just the keys.
+  # @deprecated Use Hash#transform_keys! (Ruby 2.5+) or Hash#rekey! instead.
   #
-  #   h = {:a=>1, :b=>2}
-  #   h.update_keys{ |k| "#{k}!" }
-  #   h  #=> { "a!"=>1, "b!"=>2 }
-  #
-  # @author Trans
-  # @author Evgeniy Dolzhenko (bug fix)
-
-  def update_keys #:yield:
+  def update_keys(&block)
+    warn "Hash#update_keys is deprecated. Use Hash#transform_keys! or Hash#rekey! instead.", uplevel: 1
     if block_given?
-      keys.each { |old_key| store(yield(old_key), delete(old_key)) }
+      transform_keys!(&block)
     else
       to_enum(:update_keys)
     end
   end
 
 end
-

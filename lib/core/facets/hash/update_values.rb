@@ -1,20 +1,14 @@
 class Hash
 
-  # Iterate over hash updating just the values.
+  # @deprecated Use Hash#transform_values! (Ruby 2.4+) or Hash#revalue! instead.
   #
-  #   h = {:a=>1, :b=>2}
-  #   h.update_values{ |v| v + 1 }
-  #   h  #=> { :a=>2, :b=>3 }
-  #
-  # CREDIT: Trans
-
-  def update_values #:yield:
+  def update_values(&block)
+    warn "Hash#update_values is deprecated. Use Hash#transform_values! or Hash#revalue! instead.", uplevel: 1
     if block_given?
-      each{ |k,v| store(k, yield(v)) }
+      transform_values!(&block)
     else
       to_enum(:update_values)
     end
   end
 
 end
-
