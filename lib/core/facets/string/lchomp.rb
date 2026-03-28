@@ -1,6 +1,6 @@
 class String
 
-  # Left chomp.
+  # Left chomp. Alias for #delete_prefix.
   #
   #   "help".lchomp("h")  #=> "elp"
   #   "help".lchomp("k")  #=> "help"
@@ -8,26 +8,19 @@ class String
   # CREDIT: Trans
 
   def lchomp(match)
-    if index(match) == 0
-      self[match.size..-1]
-    else
-      self.dup
-    end
+    delete_prefix(match)
   end
 
-  # In-place left chomp.
+  # In-place left chomp. Alias for #delete_prefix!.
   #
-  #   "help".lchomp("h")  #=> "elp"
-  #   "help".lchomp("k")  #=> "help"
+  #   s = "help"
+  #   s.lchomp!("h")  #=> "elp"
+  #   s                #=> "elp"
   #
   # CREDIT: Trans
 
   def lchomp!(match)
-    if index(match) == 0
-      self[0...match.size] = ''
-      self
-    end
+    delete_prefix!(match)
   end
 
 end
-

@@ -100,6 +100,7 @@ Changes:
   * Deprecate `Enumerable#map_with_index` (use `Enumerable#map.with_index`).
   * Deprecate `Enumerable#mash` (use `Enumerable#graph` instead).
   * Deprecate `Enumerable#uniq_by` (use `Enumerable#uniq(&block)`, Ruby 1.9.2+).
+  * Redefine `String#lchomp` / `#lchomp!` as aliases for `delete_prefix` / `delete_prefix!`.
   * Fix dead requires for removed `kernel/singleton_class` in Proc and Kernel.
   * Remove misplaced `applique/file_helpers` from core (test infrastructure).
   * Drop unused `test_files` directive from gemspec. (PR#301)
