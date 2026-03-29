@@ -110,6 +110,14 @@ Changes:
   * Deprecate `Module#can` (use `Module#extend`).
   * Deprecate `File.null` (use `File::NULL` constant, Ruby 1.9.3+).
   * Deprecate `File.read_binary` (use `File.binread`, Ruby 1.9.3+).
+  * Deprecate `Kernel#eigenclass` (use `singleton_class` or `meta_class`; kept in tribute to _why).
+  * Deprecate `Kernel#extension`, `#instance_class`, `#qua_class`, `#object_class`
+    (use `singleton_class` or `meta_class`).
+  * Deprecate `Kernel#object_send` (use `public_send`), `#instance_send` (use `__send__`).
+  * Deprecate `Kernel#load_relative` (use `require_relative`).
+  * Deprecate `Kernel#returning` (use `Kernel#tap`).
+  * Deprecate `Kernel#memo` (use `Module#memoize`; global `$MEMO` is problematic).
+  * Update `Kernel#meta_class` to delegate to `singleton_class` internally.
   * Fix dead requires for removed `kernel/singleton_class` in Proc and Kernel.
   * Remove misplaced `applique/file_helpers` from core (test infrastructure).
   * Drop unused `test_files` directive from gemspec. (PR#301)

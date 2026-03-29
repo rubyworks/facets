@@ -1,12 +1,9 @@
 module Kernel
 
-  # TODO: Must reduce the number of singleton method methods.
-
-  # Don't say it!
-  #
+  # @deprecated Use singleton_class or meta_class instead.
   def extension
-    class << self; self; end
+    warn "Kernel#extension is deprecated. Use singleton_class or meta_class instead.", uplevel: 1
+    singleton_class
   end
 
 end
-

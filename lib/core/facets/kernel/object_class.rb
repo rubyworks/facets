@@ -1,10 +1,9 @@
 module Kernel
 
-  # Defines object_classas an alias of class.
-  # This is an alternative to __class__, akin to
-  # #object_id.
-
-  alias_method :object_class, :class
+  # @deprecated Use __class__ instead.
+  def object_class
+    warn "Kernel#object_class is deprecated. Use __class__ instead.", uplevel: 1
+    self.class
+  end
 
 end
-

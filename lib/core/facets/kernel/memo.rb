@@ -1,35 +1,14 @@
-require 'facets/binding/eval'
-require 'facets/kernel/__method__'
-
 module Kernel
 
-  # Global memo cache.
-  $MEMO ||= {}
-
-  # Memoize a method.
-  # 
-  #   class MemoExample
-  #     attr_accessor :a
-  #     def m
-  #       memo{ @a }
-  #     end
-  #   end
-  #
-  #   ex = MemoExample.new
-  #
-  #   ex.a = 10
-  #   ex.m  #=> 10
-  #
-  #   ex.a = 20
-  #   ex.m  #=> 10
-  #
-  # NOTE: This method is not a common core extension and is not
-  # loaded automatically when using <code>require 'facets'</code>.
+  # @deprecated Use Module#memoize instead, which provides proper
+  #   per-object memoization without a global variable.
   #
   # @uncommon
   #   require 'facets/kernel/memo'
   #
   def memo(*args, &block)
+    warn "Kernel#memo is deprecated. Use Module#memoize instead.", uplevel: 1
+    $MEMO ||= {}
     if args.empty?
       args = block.binding.eval('[self, __method__]')
     end
@@ -41,4 +20,3 @@ module Kernel
   end
 
 end
-

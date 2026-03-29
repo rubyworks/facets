@@ -1,30 +1,9 @@
 module Kernel
 
-  # Send only to public methods.
-  #
-  #   class SendExample
-  #     private
-  #     def foo; end
-  #   end
-  #
-  #   obj = SendExample.new
-  #
-  #   expect NoMethodError do
-  #     obj.object_send(:foo)
-  #   end
-  #
-  # DEPRECATED: Use #public_send instead.
-
-  alias object_send public_send rescue nil
-
-  #def object_send(name, *args, &blk)
-  #  #instance_eval "self.#{name}(*args)"
-  #  if respond_to?(name)
-  #    __send__(name, *args, &blk)
-  #  else
-  #    __send__(:method_missing, name, *args, &blk)
-  #  end
-  #end
+  # @deprecated Use public_send instead (built-in since Ruby 1.9.2).
+  def object_send(name, *args, &blk)
+    warn "Kernel#object_send is deprecated. Use public_send instead.", uplevel: 1
+    public_send(name, *args, &blk)
+  end
 
 end
-
