@@ -1,50 +1,12 @@
 class Module
 
-  # Encapsulates the common pattern of ...
+  # @deprecated Use Module#prepend instead (built-in since Ruby 2.0).
   #
-  #   alias_method :foo_without_feature, :foo
-  #   alias_method :foo, :foo_with_feature
+  # The alias_method_chain pattern has been superseded by Module#prepend,
+  # which provides a cleaner way to wrap methods.
   #
-  # With this, you simply do ...
-  #
-  #   alias_method_chain :foo, :feature
-  #
-  # For example
-  #
-  #   class AliasMethodChainExample
-  #     def foo 
-  #       "foo"
-  #     end
-  #
-  #     def foo_with_feature
-  #       "foo!"
-  #     end
-  #
-  #     alias_method_chain :foo, :feature
-  #   end
-  #
-  # And both aliases are set up for you.
-  #
-  #   example = AliasMethodChainExample.new
-  #   example.foo #=> "foo!"
-  #   example.foo_without_feature #=> "foo"
-  #
-  # Query and bang methods (foo?, foo!) keep the same punctuation ...
-  #
-  #   alias_method_chain :foo?, :feature
-  #
-  # is equivalent to ...
-  #
-  #   alias_method :foo_without_feature?, :foo?
-  #   alias_method :foo?, :foo_with_feature?
-  #
-  # so you can safely chain foo, foo?, and foo! with the same feature.
-  #
-  # CREDIT: Bitsweat, Rails Team
-
   def alias_method_chain(target, feature)
-    # Strip out punctuation on predicates or bang methods since
-    # e.g. target?_without_feature is not a valid method name.
+    warn "Module#alias_method_chain is deprecated. Use Module#prepend instead.", uplevel: 1
     aliased_target, punctuation = target.to_s.sub(/([?!=])$/, ''), $1
     yield(aliased_target, punctuation) if block_given?
 
@@ -64,4 +26,3 @@ class Module
   end
 
 end
-

@@ -106,6 +106,8 @@ Changes:
   * Fix `Binding#[]` and `#[]=` to use `local_variable_get`/`local_variable_set`
     (broken since Ruby 1.9; now works again).
   * Deprecate `Binding#self` (use `Binding#receiver`, adopted by Ruby in 2.6).
+  * Deprecate `Module#alias_method_chain` (use `Module#prepend`, Ruby 2.0+).
+  * Deprecate `Module#can` (use `Module#extend`).
   * Deprecate `File.null` (use `File::NULL` constant, Ruby 1.9.3+).
   * Deprecate `File.read_binary` (use `File.binread`, Ruby 1.9.3+).
   * Fix dead requires for removed `kernel/singleton_class` in Proc and Kernel.
