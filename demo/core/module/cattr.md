@@ -41,3 +41,20 @@
     t.c = 50
     t.c.assert == 50
 
+## Block defaults
+
+    c = Class.new do
+      cattr_accessor(:setting) { :default }
+    end
+
+    c.setting.assert == :default
+    c.new.setting.assert == :default
+
+Existing values are left in place.
+
+    c = Class.new do
+      class_variable_set(:@@setting, :existing)
+      cattr_accessor(:setting) { :default }
+    end
+
+    c.setting.assert == :existing
