@@ -19,13 +19,19 @@ class Module
   # @uncommon
   #   require 'facets/module/cattr'
   #
-  def cattr(*syms)
+  def cattr(*syms, &block)
     writers, readers = syms.flatten.partition{ |a| a.to_s =~ /=$/ }
     writers = writers.map{ |e| e.to_s.chomp('=').to_sym }
     ##readers.concat( writers ) # writers also get readers
 
-    cattr_reader(*readers)
-    cattr_writer(*writers)
+    cattr_reader(*readers, &block)
+
+    if block
+      cattr_writer(*(writers - readers), &block)
+      cattr_writer(*(writers & readers))
+    else
+      cattr_writer(*writers)
+    end
 
     return readers + writers
   end
@@ -49,13 +55,13 @@ class Module
   # @uncommon
   #   require 'facets/module/cattr'
   #
-  def cattr_reader(*syms)
+  def cattr_reader(*syms, &block)
     syms.flatten.each do |sym|
-      module_eval(<<-EOS, __FILE__, __LINE__)
-        unless defined? @@#{sym}
-          @@#{sym} = nil
-        end
+      unless class_variable_defined?("@@#{sym}")
+        class_variable_set("@@#{sym}", block ? block.call : nil)
+      end
 
+      module_eval(<<-EOS, __FILE__, __LINE__)
         def self.#{sym}
           @@#{sym}
         end
@@ -91,13 +97,13 @@ class Module
   # @uncommon
   #   require 'facets/module/cattr'
   #
-  def cattr_writer(*syms)
+  def cattr_writer(*syms, &block)
     syms.flatten.each do |sym|
-      module_eval(<<-EOS, __FILE__, __LINE__)
-        unless defined? @@#{sym}
-          @@#{sym} = nil
-        end
+      unless class_variable_defined?("@@#{sym}")
+        class_variable_set("@@#{sym}", block ? block.call : nil)
+      end
 
+      module_eval(<<-EOS, __FILE__, __LINE__)
         def self.#{sym}=(obj)
           @@#{sym} = obj
         end
@@ -130,8 +136,8 @@ class Module
   # @uncommon
   #   require 'facets/module/cattr'
   #
-  def cattr_accessor(*syms)
-    cattr_reader(*syms) + cattr_writer(*syms)
+  def cattr_accessor(*syms, &block)
+    cattr_reader(*syms, &block) + cattr_writer(*syms)
   end
 
   # Creates a class-variable attribute that can
@@ -159,13 +165,18 @@ class Module
   # @uncommon
   #   require 'facets/module/mattr'
   #
-  def mattr(*syms)
+  def mattr(*syms, &block)
     writers, readers = syms.flatten.partition{ |a| a.to_s =~ /=$/ }
     writers = writers.collect{ |e| e.to_s.chomp('=').to_sym }
     ##readers.concat( writers ) # writers also get readers
 
-    mattr_writer( *writers )
-    mattr_reader( *readers )
+    if block
+      mattr_writer( *(writers - readers), &block )
+      mattr_writer( *(writers & readers) )
+    else
+      mattr_writer( *writers )
+    end
+    mattr_reader( *readers, &block )
 
     return readers + writers
   end
@@ -189,13 +200,13 @@ class Module
   # @uncommon
   #   require 'facets/module/mattr'
   #
-  def mattr_reader( *syms )
+  def mattr_reader( *syms, &block )
     syms.flatten.each do |sym|
-      module_eval(<<-EOS, __FILE__, __LINE__)
-        unless defined? @@#{sym}
-          @@#{sym} = nil
-        end
+      unless class_variable_defined?("@@#{sym}")
+        class_variable_set("@@#{sym}", block ? block.call : nil)
+      end
 
+      module_eval(<<-EOS, __FILE__, __LINE__)
         def self.#{sym}
           @@#{sym}
         end
@@ -232,13 +243,13 @@ class Module
   # @uncommon
   #   require 'facets/module/mattr'
   #
-  def mattr_writer(*syms)
+  def mattr_writer(*syms, &block)
     syms.flatten.each do |sym|
-      module_eval(<<-EOS, __FILE__, __LINE__)
-        unless defined? @@#{sym}
-          @@#{sym} = nil
-        end
+      unless class_variable_defined?("@@#{sym}")
+        class_variable_set("@@#{sym}", block ? block.call : nil)
+      end
 
+      module_eval(<<-EOS, __FILE__, __LINE__)
         def self.#{sym}=(obj)
           @@#{sym} = obj
         end
@@ -272,8 +283,8 @@ class Module
   # @uncommon
   #   require 'facets/module/mattr'
   #
-  def mattr_accessor(*syms)
-    mattr_reader(*syms) + mattr_writer(*syms)
+  def mattr_accessor(*syms, &block)
+    mattr_reader(*syms, &block) + mattr_writer(*syms)
   end
 
 end
