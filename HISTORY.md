@@ -11,10 +11,14 @@ Changes:
     `Hash#to_options`, `Hash#slice!`, `Array#extract_options!`,
     `Module#mattr_*`/`#cattr_*`, `File.atomic_write` and the `facets/date`
     extensions. Require paths are unchanged (`require 'facets/hash/slice'`
-    still works), and `require 'facets'` still loads the same methods.
+    still works), and `require 'facets'` still provides the same methods.
 
 * Deprecations
 
+  * `require 'facets'` will stop providing the lib/rails methods after
+    2027-09-30. Until then, the first call to one of them through
+    `require 'facets'` warns and names the file to require. Requiring that
+    file directly avoids the warning.
   * `Kernel#returning`, `Module#alias_method_chain`, `Array#uniq_by!`,
     `Enumerable#uniq_by`, `Kernel#silence_stream` and Facets' fallback
     `Time#to_time` are scheduled for removal after 2027-09-30. Each warns

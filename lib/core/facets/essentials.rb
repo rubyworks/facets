@@ -47,7 +47,6 @@ require_relative 'hash/delete_values'
 require_relative 'hash/except'
 require_relative 'hash/rekey'
 require_relative 'hash/revalue'
-require 'facets/hash/slice'  # lib/rails
 
 ### Proc
 #require_relative 'proc/wrap'
@@ -63,3 +62,7 @@ require_relative 'string/trim'
 require_relative 'string/unindent'
 #require_realtive 'string/word_wrap'
 
+
+# Rails-compatible methods from lib/rails; see facets/rails_bridge.
+require_relative 'rails_bridge'
+Facets.rails_bridge(Hash, 'facets/hash/slice', :slice!)

@@ -15,7 +15,6 @@ require_relative 'array/duplicates.rb'
 require_relative 'array/each_pair.rb'
 require_relative 'array/each_value.rb'
 require_relative 'array/entropy.rb'
-require 'facets/array/extract_options'  # lib/rails
 require_relative 'array/from.rb'
 require_relative 'array/indexable.rb'
 #require_relative 'array/intersection.rb'       # too new
@@ -47,3 +46,8 @@ require_relative 'array/thru.rb'
 require_relative 'array/traverse.rb'
 require_relative 'array/uniq_by.rb'
 
+
+# Rails-compatible methods from lib/rails; see facets/rails_bridge.
+require_relative 'rails_bridge.rb'
+Facets.rails_bridge(Array, 'facets/array/extract_options', :extract_options!)
+Facets.rails_bridge(Hash, 'facets/array/extract_options', :extractable_options?)

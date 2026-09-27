@@ -419,6 +419,7 @@ lib/core/facets/proc/wrap.rb
 lib/core/facets/proc.rb
 lib/core/facets/process/daemon.rb
 lib/core/facets/process.rb
+lib/core/facets/rails_bridge.rb
 lib/core/facets/range/combine.rb
 lib/core/facets/range/op_add.rb
 lib/core/facets/range/op_sub.rb
@@ -1204,6 +1205,7 @@ test/core/symbol/test_succ.rb
 test/core/symbol/test_thrown.rb
 test/core/symbol/test_to_proc.rb
 test/core/symbol/test_variablize.rb
+test/core/test_rails_bridge.rb
 test/core/time/test_ago.rb
 test/core/time/test_change.rb
 test/core/time/test_dst_adjustment.rb
