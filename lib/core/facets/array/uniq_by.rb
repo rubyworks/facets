@@ -15,8 +15,12 @@ class Array
   #
   # Returns [Array] of unique elements.
   #
+  # @deprecated Use Array#uniq! with a block instead (Ruby 1.9.2+).
+  #   Scheduled for removal after 2027-09-30.
+  #
   def uniq_by!(&block) #:yield:
-    warn "Array#uniq_by! is deprecated. Use Array#uniq!(&block) instead.", uplevel: 1
+    warn "Array#uniq_by! is deprecated. Use Array#uniq!(&block) instead. " \
+         "It will be removed after 2027-09-30.", uplevel: 1
     uniq!(&block)
   end
 

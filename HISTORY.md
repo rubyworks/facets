@@ -1,5 +1,36 @@
 # Facets Release History
 
+## Unreleased
+
+Changes:
+
+* Enhancements
+
+  * New `lib/rails` library for Rails-compatible methods that Facets carries
+    but doesn't endorse as its own: `Hash#symbolize_keys`/`#stringify_keys`,
+    `Hash#to_options`, `Hash#slice!`, `Array#extract_options!`,
+    `Module#mattr_*`/`#cattr_*`, `File.atomic_write` and the `facets/date`
+    extensions. Require paths are unchanged (`require 'facets/hash/slice'`
+    still works), and `require 'facets'` still provides the same methods.
+
+* Deprecations
+
+  * `require 'facets'` will stop providing the lib/rails methods after
+    2027-09-30. Until then, the first call to one of them through
+    `require 'facets'` warns and names the file to require. Requiring that
+    file directly avoids the warning.
+  * `Kernel#returning`, `Module#alias_method_chain`, `Array#uniq_by!`,
+    `Enumerable#uniq_by`, `Kernel#silence_stream` and Facets' fallback
+    `Time#to_time` are scheduled for removal after 2027-09-30. Each warns
+    with its replacement and the removal date.
+  * `Kernel#silence` now does the stream silencing itself; `silently`,
+    `silence_stderr` and `silence_stdout` use it and do not warn.
+
+* Bug Fixes
+
+  * `Hash#to_options` and `#to_options!` now exist. `facets/hash/to_options`
+    only loaded `symbolize_keys` and never defined the aliases.
+
 ## 3.2.2 / 2026-06-15
 
 Patch release with cross-version fixes surfaced by CI on Ruby 3.1–3.4.

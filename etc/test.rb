@@ -4,6 +4,7 @@ require 'ae'
 require 'lemon'
 require 'fileutils'
 
+$:.unshift 'lib/rails'
 $:.unshift 'lib/core'
 $:.unshift 'lib/standard'
 
@@ -28,5 +29,6 @@ Test.run :cov do |r|
     add_filter "/test/"
     add_group "Core",       "lib/core"
     add_group "Standard",   "lib/standard"
+    add_group "Rails",      "lib/rails"
   end
 end

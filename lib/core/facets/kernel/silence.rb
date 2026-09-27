@@ -9,6 +9,9 @@ module Kernel
   # Supported +streams+ are +stderr+, +stdout+, +verbose+, +debug+,
   # and +warnings+, which is the same as +verbose+. You can also
   # use the actual streams, STDERR and STDOUT.
+  #
+  # Silencing works by reopening the stream on the null device, so it
+  # affects the whole process, not just the current thread.
   def silence(*streams) #:yield:
     streams = streams.map do |stream|
       case stream
@@ -21,19 +24,26 @@ module Kernel
       end
     end
 
-    if streams.empty?
-      yield
-    else
-      silence_stream(*streams){ yield }
+    return yield if streams.empty?
+
+    on_hold = streams.collect{ |stream| stream.dup }
+    streams.each do |stream|
+      stream.reopen(File::NULL)
+      stream.sync = true
     end
+    yield
+  ensure
+    streams.each_with_index do |stream, i|
+      stream.reopen(on_hold[i])
+    end if on_hold
   end
 
-  # Just like silence_stream, but will default to
+  # Just like #silence, but will default to
   # STDOUT, STDERR if no streams are given.
 
   def silently(*streams) #:yeild:
     streams = [STDOUT, STDERR] if streams.empty?
-    silence_stream(*streams){ yield }
+    silence(*streams){ yield }
   end
 
   # Silences any stream for the duration of the block...
@@ -45,29 +55,24 @@ module Kernel
   #   puts 'But this will'
   #
   # CREDIT: David Heinemeier Hansson
+  #
+  # @deprecated Use #silence instead, which takes the same arguments.
+  #   Scheduled for removal after 2027-09-30.
 
   def silence_stream(*streams) #:yeild:
-    on_hold = streams.collect{ |stream| stream.dup }
-    streams.each do |stream|
-      stream.reopen(RUBY_PLATFORM =~ /mswin/ ? 'NUL:' : '/dev/null')
-      stream.sync = true
-    end
-    yield
-  ensure
-    streams.each_with_index do |stream, i|
-      stream.reopen(on_hold[i])
-    end
+    warn "Kernel#silence_stream is deprecated. Use Kernel#silence instead. " \
+         "It will be removed after 2027-09-30.", uplevel: 1
+    silence(*streams){ yield }
   end
 
-  # Equivalent to `silence_stream(STDERR)`.
+  # Equivalent to `silence(STDERR)`.
   def silence_stderr #:yeild:
-    silence_stream(STDERR) { yield }
+    silence(STDERR) { yield }
   end
 
-  # Equivalent to `silence_stream(STDOUT)`.
+  # Equivalent to `silence(STDOUT)`.
   def silence_stdout #:yeild:
-    silence_stream(STDOUT) { yield }
+    silence(STDOUT) { yield }
   end
 
 end
-

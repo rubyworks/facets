@@ -37,6 +37,7 @@ paths:
   load:
     - lib/core
     - lib/standard
+    - lib/rails
 
 scm_uri:
    https://github.com/rubyworks/facets/tree/master

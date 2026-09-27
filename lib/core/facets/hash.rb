@@ -33,13 +33,9 @@ require_relative 'hash/recursively.rb'
 require_relative 'hash/rekey.rb'
 require_relative 'hash/replace_each.rb'
 require_relative 'hash/reverse_merge.rb'
-require_relative 'hash/slice.rb'
-require_relative 'hash/stringify_keys.rb'
 require_relative 'hash/subset.rb'
 require_relative 'hash/swap.rb'
-require_relative 'hash/symbolize_keys.rb'
 require_relative 'hash/to_mod.rb'
-require_relative 'hash/to_options.rb'
 require_relative 'hash/setter.rb'
 require_relative 'hash/to_struct.rb'
 require_relative 'hash/traverse.rb'
@@ -51,3 +47,9 @@ require_relative 'hash/update_values.rb'
 require_relative 'hash/weave.rb'
 require_relative 'hash/zip.rb'
 
+
+# Rails-compatible methods from lib/rails; see facets/rails_bridge.
+require_relative 'rails_bridge.rb'
+Facets.rails_bridge(Hash, 'facets/hash/slice', :slice!)
+Facets.rails_bridge(Hash, 'facets/hash/symbolize_keys', :symbolize_keys, :symbolize_keys!, :stringify_keys, :stringify_keys!)
+Facets.rails_bridge(Hash, 'facets/hash/to_options', :to_options, :to_options!)

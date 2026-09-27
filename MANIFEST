@@ -19,7 +19,6 @@ lib/core/facets/array/each_overlap.rb
 lib/core/facets/array/each_pair.rb
 lib/core/facets/array/each_value.rb
 lib/core/facets/array/entropy.rb
-lib/core/facets/array/extract_options.rb
 lib/core/facets/array/from.rb
 lib/core/facets/array/indexable.rb
 lib/core/facets/array/intersection.rb
@@ -67,8 +66,6 @@ lib/core/facets/binding/self.rb
 lib/core/facets/binding/with.rb
 lib/core/facets/binding.rb
 lib/core/facets/boolean.rb
-lib/core/facets/cattr.rb
-lib/core/facets/class/cattr.rb
 lib/core/facets/class/descendants.rb
 lib/core/facets/class/hierarchically.rb
 lib/core/facets/class/methodize.rb
@@ -152,7 +149,6 @@ lib/core/facets/exception.rb
 lib/core/facets/file/append.rb
 lib/core/facets/file/atomic_id.rb
 lib/core/facets/file/atomic_open.rb
-lib/core/facets/file/atomic_write.rb
 lib/core/facets/file/common_path.rb
 lib/core/facets/file/create.rb
 lib/core/facets/file/ext.rb
@@ -217,13 +213,9 @@ lib/core/facets/hash/rekey.rb
 lib/core/facets/hash/replace_each.rb
 lib/core/facets/hash/revalue.rb
 lib/core/facets/hash/reverse_merge.rb
-lib/core/facets/hash/slice.rb
-lib/core/facets/hash/stringify_keys.rb
 lib/core/facets/hash/subset.rb
 lib/core/facets/hash/swap.rb
-lib/core/facets/hash/symbolize_keys.rb
 lib/core/facets/hash/to_mod.rb
-lib/core/facets/hash/to_options.rb
 lib/core/facets/hash/to_proc.rb
 lib/core/facets/hash/to_struct.rb
 lib/core/facets/hash/traverse.rb
@@ -348,7 +340,6 @@ lib/core/facets/module/attr_tester.rb
 lib/core/facets/module/attr_validator.rb
 lib/core/facets/module/basename.rb
 lib/core/facets/module/can.rb
-lib/core/facets/module/cattr.rb
 lib/core/facets/module/class.rb
 lib/core/facets/module/class_accessor.rb
 lib/core/facets/module/class_def.rb
@@ -371,7 +362,6 @@ lib/core/facets/module/integrate.rb
 lib/core/facets/module/is.rb
 lib/core/facets/module/lastname.rb
 lib/core/facets/module/let.rb
-lib/core/facets/module/mattr.rb
 lib/core/facets/module/memoize.rb
 lib/core/facets/module/method_clash.rb
 lib/core/facets/module/method_space.rb
@@ -429,6 +419,7 @@ lib/core/facets/proc/wrap.rb
 lib/core/facets/proc.rb
 lib/core/facets/process/daemon.rb
 lib/core/facets/process.rb
+lib/core/facets/rails_bridge.rb
 lib/core/facets/range/combine.rb
 lib/core/facets/range/op_add.rb
 lib/core/facets/range/op_sub.rb
@@ -571,7 +562,6 @@ lib/standard/facets/cgi.rb
 lib/standard/facets/cli.rb
 lib/standard/facets/cloneable.rb
 lib/standard/facets/continuation.rb
-lib/standard/facets/date.rb
 lib/standard/facets/digest/base64digest.rb
 lib/standard/facets/digest/salted_digest.rb
 lib/standard/facets/digest.rb
@@ -719,6 +709,17 @@ lib/standard/facets/yaml/kernel.rb
 lib/standard/facets/yaml/read.rb
 lib/standard/facets/yaml.rb
 lib/standard/facets/zlib.rb
+lib/rails/facets/array/extract_options.rb
+lib/rails/facets/cattr.rb
+lib/rails/facets/class/cattr.rb
+lib/rails/facets/date.rb
+lib/rails/facets/file/atomic_write.rb
+lib/rails/facets/hash/slice.rb
+lib/rails/facets/hash/stringify_keys.rb
+lib/rails/facets/hash/symbolize_keys.rb
+lib/rails/facets/hash/to_options.rb
+lib/rails/facets/module/cattr.rb
+lib/rails/facets/module/mattr.rb
 demo/applique/assertion_framework.rb
 demo/applique/file_helpers.rb
 demo/core/array/combination.rdoc
@@ -836,7 +837,6 @@ test/core/array/test_divide.rb
 test/core/array/test_duplicates.rb
 test/core/array/test_each_overlap.rb
 test/core/array/test_entropy.rb
-test/core/array/test_extract_options.rb
 test/core/array/test_first.rb
 test/core/array/test_index.rb
 test/core/array/test_intersection.rb
@@ -983,10 +983,8 @@ test/core/hash/test_replace_each.rb
 test/core/hash/test_revalue.rb
 test/core/hash/test_reverse_merge.rb
 test/core/hash/test_select.rb
-test/core/hash/test_slice.rb
 test/core/hash/test_stringify_keys.rb
 test/core/hash/test_swap.rb
-test/core/hash/test_symbolize_keys.rb
 test/core/hash/test_to_mod.rb
 test/core/hash/test_to_proc.rb
 test/core/hash/test_to_struct.rb
@@ -1207,6 +1205,7 @@ test/core/symbol/test_succ.rb
 test/core/symbol/test_thrown.rb
 test/core/symbol/test_to_proc.rb
 test/core/symbol/test_variablize.rb
+test/core/test_rails_bridge.rb
 test/core/time/test_ago.rb
 test/core/time/test_change.rb
 test/core/time/test_dst_adjustment.rb
@@ -1255,7 +1254,6 @@ test/standard/pathname/test_chdir.rb
 test/standard/pathname/test_readline.rb
 test/standard/test_argvector.rb
 test/standard/test_cloneable.rb
-test/standard/test_date.rb
 test/standard/test_enumargs.rb
 test/standard/test_equitable.rb
 test/standard/test_instantiable.rb
@@ -1269,6 +1267,10 @@ test/standard/test_thread.rb
 test/standard/test_timer.rb
 test/standard/test_tuple.rb
 test/standard/test_uri.rb
+test/rails/array/test_extract_options.rb
+test/rails/hash/test_slice.rb
+test/rails/hash/test_symbolize_keys.rb
+test/rails/test_date.rb
 CONTRIBUTE.md
 HISTORY.md
 NOTICE.rdoc
