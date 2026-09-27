@@ -1,253 +1,84 @@
-# Ruby Facets
+# Ruby Facets <img src="docs/assets/images/cherries.svg" alt="cherries" width="34" height="34">
 
 [![Gem Version](https://badge.fury.io/rb/facets.svg)](https://rubygems.org/gems/facets)
 [![CI](https://github.com/rubyworks/facets/actions/workflows/ci.yml/badge.svg)](https://github.com/rubyworks/facets/actions/workflows/ci.yml)
 
+**More of Ruby, one method at a time.** Facets is a collection of extensions to Ruby's core classes and standard library, plus a few small, reusable classes and modules. Most methods live in their own files, so you can load one extension, a class's extensions, or the core collection.
 
-*"ALL YOUR BASE ARE BELONG TO RUBY"*
+Facets began in 2005 and is still maintained. The current release is **3.2.2**, which requires **Ruby 3.1 or newer**. See the [release history](HISTORY.md) for changes and migration notes from earlier versions. The `main` branch also contains changes awaiting the next release.
 
+## Install
 
-## Introduction
+```sh
+gem install facets
+```
 
-Ruby Facets is the premier collection of general purpose method
-extensions and standard additions for the Ruby programming language.
+With Bundler, add this to your Gemfile:
 
-Facets houses the largest single collection of methods available for
-extending the core capabilities of Ruby's built-in classes and modules.
-This collection of extension methods are unique by virtue of their atomicity.
-The methods are stored in individual files so that each can be required
-independently. This gives developers the potential for much finer control over
-which extra methods to bring into their code.
+```ruby
+gem 'facets', require: false
+```
 
-In addition Facets provides a collection of extensions to Ruby standard library
-plus a small collection of add-on classes and modules. Together these
-libraries constitute an reliable source of reusable components, suitable
-to a wide variety of usecases.
+`require: false` lets you choose which extensions to load. Omit it if you want Bundler to load the core collection automatically.
 
+## Choose how much to load
 
-## Resources
+### One method
 
-* Homepage: https://rubyworks.github.io/facets
-* Report Bugs: https://github.com/rubyworks/facets/issues
-* Wiki Pages: https://github.com/rubyworks/facets/wiki
-* Source Code: https://github.com/rubyworks/facets
+```ruby
+require 'facets/array/to_ranges'
 
+[1, 2, 3, 6, 7].to_ranges
+#=> [1..3, 6..7]
+```
+
+### One class's core extensions
+
+```ruby
+require 'facets/string'
+
+'Ruby Facets'.snakecase
+#=> "ruby_facets"
+```
+
+### The core collection
+
+```ruby
+require 'facets'
+
+[1, 2, 3].average
+#=> 2.0
+```
+
+`require 'facets'` loads the broadly useful **core** extensions. Some specialized core extensions are opt-in; require their method file directly. To load Facets extensions to a Ruby standard library, require that library through Facets:
+
+```ruby
+require 'facets/ostruct'
+```
+
+This loads `ostruct` and Facets' OpenStruct extensions. On Ruby 3.5+, declare the `ostruct` gem separately because it is no longer a default gem.
 
 ## Documentation
 
-Facets has special documentation needs due to its extensive breadth.
-The documentation generated when installing via RubyGems, or the YARD
-docs provided by rubydoc.info can be somewhat unwieldy because it
-combines all of Facets in one large set. When using these resources,
-it is important to remain aware of the source location of particular
-methods.
+- [Getting started and loading guide](https://rubyworks.github.io/facets/learn.html)
+- [Generated API documentation on RubyDoc.info](https://www.rubydoc.info/gems/facets) (check the displayed version)
+- [Release history](HISTORY.md)
 
-For better organized online documentation, generated to separate core
-extensions from standard libraries, see the [Learn Facets](https://rubyworks.github.io/facets/learn.html) page on the website for links to available documentation.
-
-
-## Installation
-
-### Bundler
-
-If you are using Bundler with your project, add the facets gem to the project's
-Gemfile. Unless you want all of facets loaded be sure to add the `:require => false`
-option.
-
-    gem "facets", require: false
-
-### RubyGems
-
-The easiest way to install is via RubyGems.
-
-    $ gem install facets
-
-### Requirements
-
-Facets 3.2+ requires Ruby 3.1 or higher.
-
-
-## Mission
-
-Facets holds to the notion that the more we can *reasonably* integrate into
-a common foundation, directed toward general needs, the better that foundation
-will be able to serve the community. There are a number of advantages here:
-
-* Better Code-reuse
-* Collaborative Improvements
-* Greater Name Consistency
-* One-stop Shop and Installation
-
-
-## Usage
-
-### CORE Library
-
-At the heart of Ruby Facets is the CORE extensions library. CORE provides
-a sizable collection of generally useful methods, along with a few supporting
-classes, that extend the functionality of Ruby's core classes and modules.
-
-With the exception of a few *uncommon* extensions, CORE contains anything that
-will load automatically when issuing:
-
-    require 'facets'
-
-This loads all the CORE functionality at once. If you plan to use more then a
-handful of Facets core methods it is recommended that you require the library in
-this way. However, you can also "cherry pick" the CORE library as you prefer.
-And for uncommon extensions this must be done. The general require statement for
-a core extension library is:
-
-    require 'facets/<class|module>/<method>'
-
-For example:
-
-    require 'facets/time/stamp'
-
-Most "atoms" contain only one method, but exceptions occur when methods
-are closely tied together.
-
-You can load per-class or per-module groups of core methods by requiring the
-class or module by name. For example"
-
-    require 'facets/time'
-
-Will require all the core Time method extensions.
-
-Note that some methods that were part of CORE in 1.8 and earlier are now part
-of MORE libraries. A good example is 'random.rb'. There were separated because
-they had more specialized use cases, where as CORE extensions are intended as
-general purpose.
-
-#### Method File Names
-
-Operator method redirect files are stored using English names. For instance 
-`Proc#*` is `proc/op_mul`.
-
-For reference, here is the chart.
-
-     +@   => op_plus
-     -@   => op_minus
-     +    => op_add
-     -    => op_sub
-     **   => op_pow
-     *    => op_mul
-     /    => op_div
-     %    => op_mod
-     ~    => op_tilde
-     <=>  => op_cmp
-     <<   => op_lshift
-     >>   => op_rshift
-     <    => op_lt
-     >    => op_gt
-     ===  => op_case
-     ==   => op_equal
-     =~   => op_apply
-     <=   => op_lt_eq
-     >=   => op_gt_eq
-     |    => op_or
-     &    => op_and
-     ^    => op_xor
-     []=  => op_store
-     []   => op_fetch
-
-Facets simply takes the '*' and translates it into a string acceptable to all
-file systems. Also, if a method ends in '=', '?' or '!' it is simply removed.
-
-
-### MORE Library (aka Standard Library)
-
-On top of the extensive CORE library, Facets provides extensions for Ruby's
-standard library, as well as a small collection of additional modules and
-classes to supplement it.
-
-Use this library like you would any other 3rd party library.
-The only difference between Facet's Standard library and other libraries
-is the lack of any enclosing `Facets::` namespace.
-
-When using Facets extended versions of Ruby's standard libraries,
-the libraries have to loaded individually. However you do not need
-to load Ruby's library first, as the Facets' library will do that
-automatically.
-
-For example, normally one load Ruby's OpenStruct class via:
-
-    require 'ostruct'
-
-To load 'ostruct.rb' plus Facets extensions for it simply use:
-
-    require 'facets/ostruct'
-
-For details pertaining to the functionality of each feature,
-please see the API documentation.
-
+In the published 3.2.2 gem, the split between `lib/core` and `lib/standard` is visible in API source paths. This helps you tell whether a method is loaded by `require 'facets'` or needs an explicit require. The development branch also has a new `lib/rails` area for Rails-compatible helpers; see the **Unreleased** section of the release history for details.
 
 ## Contribute
 
-This project thrives on contribution!
+Issues and pull requests are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md) for the library's method organization, demos, and test conventions. The test suite runs with:
 
-If you have any extension methods, classes or modules that you think have
-very general applicability and would like to see them included in
-this project, don't hesitate to submit. Also, if you have better versions
-of any thing already included or simply have a patch, they are more than
-welcome. We want Ruby Facets to be of the highest quality.
+```sh
+bundle install
+bundle exec rake test
+```
 
+[Source](https://github.com/rubyworks/facets) · [Issues](https://github.com/rubyworks/facets/issues) · [Website](https://rubyworks.github.io/facets/)
 
-## Development
+## License and credits
 
-Facets uses the [Lemon](https://rubyworks.github.io/lemon) testing framework
-to handle unit testing, while [QED](https://rubyworks.github.io/qed) specifications
-provide tested documentation. Run the test suite with [Rake](https://ruby.github.io/rake/):
+Facets is distributed under the [BSD 2-Clause License](LICENSE.txt). Thomas Sawyer started the project, and many Rubyists have contributed code, ideas, tests, and documentation. Individual files record additional credits where applicable.
 
-    $ rake test
-
-Continuous integration runs on GitHub Actions (see `.github/workflows/ci.yml`).
-
-
-## Authors
-
-Much of this collection was written and/or inspired by a variety of great Ruby
-developers. Fortunately nearly all utilized works were copyrighted under the same
-open licenses, the Ruby License or the more liberal BSD and MIT licenses. In the
-one or two exceptions the copyright notice has been included with the source code.
-We have since received permission from the various authors to normalize the licensing
-to a single license. For this purpose we have chosen the BSD 2 Clause License.
-This is the license Ruby itself now uses, so it seemed the most appropriate choice.
-It is also almost identical to the MIT license. Any code file not specifically labeled
-otherwise shall fall under the this license (which is BSD 2-clause).
-
-In all cases, every effort has been made to give credit where credit is due.
-You will find these acknowledgments embedded in the source code. You can see
-them in "CREDIT:" and/or "@author" lines. 
-Also see the [Contributors page](https://github.com/rubyworks/facets/wiki/Contributors)
-on the Wiki for a list of all contributing Rubyists. If anyone is missing from
-the list, please let us know so we can correct. Thanks.
-
-This collection was put together by, and much of it written by [trans](https://github.com/trans).
-If need be, he can be reached via email at transfire at gmail.com.
-
-
-## License
-
-The collection PER COLLECTION is licensed as follows:
-
-    Ruby Facets
-    Copyright (c) 2005 Rubyworks
-
-    Distributed under the terms of the BSD-2 License (same as Ruby license).
-
-The BSD 2 Clause License is a simple open source license. The complete text of the
-license accompany this document (see the enclosed LICENSE file).
-
-Acknowledgments and Copyrights for particular snippets of borrowed code
-are given in their respective source. At this point, all licensing has been normalized
-for all included code. Original authors have given permission for inclusion of their
-code under such license, with appropriate credit citations.
-
-
-## "ALL YOUR BASE ARE BELONG TO RUBY!"
-
-Ruby Facets, Copyright (c) 2005 Rubyworks
-
-Do you Ruby? (https://ruby-lang.org)
-
+*All your base are belong to Ruby.*

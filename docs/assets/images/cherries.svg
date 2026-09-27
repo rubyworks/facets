@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" role="img" aria-labelledby="title">
+  <title id="title">Two cherries</title>
+  <path d="M29 43C27 31 31 20 43 10c9 9 13 18 10 34" fill="none" stroke="#a3c3a4" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M41 14C45 5 55 5 65 10c-5 9-14 12-24 4Z" fill="#8db59c" stroke="#b6d2b2" stroke-width="1.4" stroke-linejoin="round"/>
+  <path d="M27 41c-9-2-18 4-19 15-1 10 6 18 17 19 10 1 19-6 20-16 1-8-4-16-12-18-2 2-4 2-6 0Z" fill="#e54d5c" stroke="#9d2e47" stroke-width="2"/>
+  <path d="M52 42c-10-2-18 5-19 15-1 10 6 18 17 18 11 1 19-7 20-17 0-9-5-16-13-17-1 2-3 3-5 1Z" fill="#c73550" stroke="#8c2b43" stroke-width="2"/>
+  <path d="M17 51c2-4 6-6 10-6M44 51c2-4 6-6 10-6" fill="none" stroke="#ffb5b4" stroke-width="3" stroke-linecap="round" opacity=".9"/>
+</svg>

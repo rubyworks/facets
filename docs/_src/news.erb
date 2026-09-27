@@ -1,52 +1,7 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#201523">
-  <meta name="description" content="Recent Ruby Facets releases and the historical news archive.">
-  <title>Releases | Ruby Facets</title>
-  <link rel="icon" href="assets/images/cherries.svg" type="image/svg+xml">
-  <link rel="alternate" href="atom.xml" type="application/atom+xml" title="Ruby Facets releases">
-  <link rel="stylesheet" href="assets/styles/site.css">
-</head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="shell header-inner">
-      <a class="brand" href="index.html" aria-label="Ruby Facets home"><img class="brand-mark" src="assets/images/cherries.svg" alt=""><span>Ruby <strong>Facets</strong></span></a>
-      <nav class="site-nav" aria-label="Main navigation">
-        <a href="index.html" >Overview</a>
-        <a href="learn.html" >Guide</a>
-        <a href="news.html" aria-current="page">Releases</a>
-        <a href="source.html" >Contribute</a>
-      </nav>
-      <a class="header-github" href="https://github.com/rubyworks/facets">GitHub <span aria-hidden="true">↗</span></a>
-    </div>
-  </header>
-
-  <main id="main"><section class="page-hero"><div class="shell"><p class="eyebrow"><span class="eyebrow-line"></span> RELEASES & HISTORY</p><h1>A living Ruby<br><em>collection.</em></h1><p>Facets has been growing since 2005. Here are the recent releases and a path back through its story.</p></div></section>
+<section class="page-hero"><div class="shell"><p class="eyebrow"><span class="eyebrow-line"></span> RELEASES & HISTORY</p><h1>A living Ruby<br><em>collection.</em></h1><p>Facets has been growing since 2005. Here are the recent releases and a path back through its story.</p></div></section>
 <section class="section section-light"><div class="shell"><div class="section-heading narrow"><p class="kicker">LATEST RELEASES</p><h2>Facets 3.2</h2><p>The 3.2 series brings the library forward for Ruby 3.1 and newer. Work merged since 3.2.2 is listed under <a href="https://github.com/rubyworks/facets/blob/main/HISTORY.md#unreleased">Unreleased</a> in the release history.</p></div><div class="timeline">
   <article class="timeline-item" id="facets-3-2-2"><div class="timeline-date"><strong>3.2.2</strong><span>15 JUN 2026</span></div><div><p class="tag">LATEST</p><h3>Compatibility, polished</h3><p>Fixes range intersection on Ruby 3.1 and 3.2, restores <code>Range#overlap?</code> where Ruby does not provide it, and corrects <code>Binding#caller_locations</code> argument handling.</p><a class="text-link" href="https://github.com/rubyworks/facets/blob/main/HISTORY.md#322--2026-06-15">Read changes <span aria-hidden="true">↗</span></a></div></article>
   <article class="timeline-item" id="facets-3-2-1"><div class="timeline-date"><strong>3.2.1</strong><span>14 JUN 2026</span></div><div><h3>Core loading restored</h3><p>Repairs stale require paths that affected <code>require 'facets'</code> in 3.2.0, and adds a load-path regression check. Also adds OpenDSL and PIC.</p><a class="text-link" href="https://github.com/rubyworks/facets/blob/main/HISTORY.md#321--2026-06-14">Read changes <span aria-hidden="true">↗</span></a></div></article>
   <article class="timeline-item" id="facets-3-2-0"><div class="timeline-date"><strong>3.2.0</strong><span>APR 2026</span></div><div><h3>Modern Ruby foundation</h3><p>Moves the minimum Ruby version to 3.1, adds methods such as <code>Array#to_ranges</code> and <code>String#dashcase</code>, and retires extensions now built into Ruby.</p><a class="text-link" href="https://github.com/rubyworks/facets/blob/main/HISTORY.md#320--2026-04-01">Read migration notes <span aria-hidden="true">↗</span></a></div></article>
 </div></div></section>
 <section class="section section-cream"><div class="shell archive-grid"><div><p class="kicker">FROM THE ARCHIVE</p><h2>Twenty years<br><em>of ideas.</em></h2><p>These posts are preserved as published. Their install advice and API links describe older Facets releases; use the current guide for 3.x.</p></div><div class="archive-list"><a href="posts/2010-09-01-release-2-9.html"><span>2010</span> Facets 2.9 release <b aria-hidden="true">↗</b></a><a href="posts/2009-11-09-release-2-8.html"><span>2009</span> Facets 2.8 release <b aria-hidden="true">↗</b></a><a href="posts/2009-08-22-release-2-7.html"><span>2009</span> Facets 2.7 release <b aria-hidden="true">↗</b></a><a href="posts/2009-07-21-new-website.html"><span>2009</span> A new website <b aria-hidden="true">↗</b></a><a href="posts/2008-01-01-how-facets-was-born.html"><span>2008</span> How Facets was born <b aria-hidden="true">↗</b></a></div></div></section>
-</main>
-
-  <footer class="site-footer">
-    <div class="shell footer-inner">
-      <div>
-        <a class="brand" href="index.html"><img class="brand-mark" src="assets/images/cherries.svg" alt=""><span>Ruby <strong>Facets</strong></span></a>
-        <p>More of Ruby, one method at a time.<br>Created by Thomas Sawyer and the Ruby community.</p>
-      </div>
-      <div class="footer-links" aria-label="More resources">
-        <a href="https://rubygems.org/gems/facets">RubyGems</a>
-        <a href="https://www.rubydoc.info/gems/facets">API reference</a>
-        <a href="https://github.com/rubyworks/facets/issues">Issues</a>
-        <a href="https://github.com/rubyworks/facets/blob/main/LICENSE.txt">BSD 2-Clause license</a>
-      </div>
-    </div>
-  </footer>
-</body>
-</html>

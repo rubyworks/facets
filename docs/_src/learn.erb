@@ -1,31 +1,4 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#201523">
-  <meta name="description" content="Install Ruby Facets and choose exactly which extensions to load.">
-  <title>Guide | Ruby Facets</title>
-  <link rel="icon" href="assets/images/cherries.svg" type="image/svg+xml">
-  <link rel="alternate" href="atom.xml" type="application/atom+xml" title="Ruby Facets releases">
-  <link rel="stylesheet" href="assets/styles/site.css">
-</head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="shell header-inner">
-      <a class="brand" href="index.html" aria-label="Ruby Facets home"><img class="brand-mark" src="assets/images/cherries.svg" alt=""><span>Ruby <strong>Facets</strong></span></a>
-      <nav class="site-nav" aria-label="Main navigation">
-        <a href="index.html" >Overview</a>
-        <a href="learn.html" aria-current="page">Guide</a>
-        <a href="news.html" >Releases</a>
-        <a href="source.html" >Contribute</a>
-      </nav>
-      <a class="header-github" href="https://github.com/rubyworks/facets">GitHub <span aria-hidden="true">↗</span></a>
-    </div>
-  </header>
-
-  <main id="main"><section class="page-hero"><div class="shell"><p class="eyebrow"><span class="eyebrow-line"></span> THE GUIDE</p><h1>Find your way<br><em>into Facets.</em></h1><p>Install the gem, choose how much to load, and make Ruby feel a little more like yours.</p></div></section>
+<section class="page-hero"><div class="shell"><p class="eyebrow"><span class="eyebrow-line"></span> THE GUIDE</p><h1>Find your way<br><em>into Facets.</em></h1><p>Install the gem, choose how much to load, and make Ruby feel a little more like yours.</p></div></section>
 <section class="section section-light"><div class="shell guide-grid"><aside class="guide-aside"><p class="kicker">ON THIS PAGE</p><a href="#install">Install</a><a href="#load">Load extensions</a><a href="#examples">Try a few methods</a><a href="#reference">Find the API</a></aside><div class="guide-content">
   <section id="install" class="guide-block"><p class="kicker">01 / GET READY</p><h2>Install Facets</h2><p>Facets 3.2.2 requires Ruby 3.1 or newer. Install it directly with RubyGems or add it to a Bundler project.</p><div class="snippet"><div class="snippet-label">TERMINAL</div><pre><code>gem install facets</code></pre></div><div class="snippet"><div class="snippet-label">GEMFILE</div><pre><code>gem 'facets', require: false</code></pre></div><p><code>require: false</code> keeps Bundler from loading the entire core collection automatically, so you can choose the files your project needs.</p></section>
   <section id="load" class="guide-block"><p class="kicker">02 / CHOOSE YOUR SCOPE</p><h2>Load what fits</h2><p>Most core extension methods are stored in individual files. You can require one method, a class's core methods, or the core collection.</p><div class="snippet"><div class="snippet-label">RUBY</div><pre><code><span class="code-comment"># One method</span>
@@ -49,21 +22,3 @@ Range.intersection(1..10, 5..15)
 <span class="code-comment">#=&gt; 5..10</span></code></pre></div><p>Extensions add methods to Ruby's existing classes. When combining libraries that extend the same classes, choose your requires deliberately and check for method name overlap.</p></section>
   <section id="reference" class="guide-block"><p class="kicker">04 / KEEP EXPLORING</p><h2>Find the right method</h2><p><a href="https://www.rubydoc.info/gems/facets">RubyDoc.info</a> hosts generated API documentation; check the displayed gem version when browsing. In the published 3.2.2 gem, <code>lib/core</code> belongs to the core collection and <code>lib/standard</code> contains separately loaded libraries. The <a href="https://github.com/rubyworks/facets">source repository</a> also contains unreleased changes, including a new <code>lib/rails</code> area.</p><div class="resource-list"><a href="https://www.rubydoc.info/gems/facets"><span>Generated API documentation <small>RubyDoc.info</small></span><span aria-hidden="true">↗</span></a><a href="https://github.com/rubyworks/facets/blob/main/HISTORY.md"><span>Release history <small>Changes and migration notes</small></span><span aria-hidden="true">↗</span></a></div></section>
 </div></div></section>
-</main>
-
-  <footer class="site-footer">
-    <div class="shell footer-inner">
-      <div>
-        <a class="brand" href="index.html"><img class="brand-mark" src="assets/images/cherries.svg" alt=""><span>Ruby <strong>Facets</strong></span></a>
-        <p>More of Ruby, one method at a time.<br>Created by Thomas Sawyer and the Ruby community.</p>
-      </div>
-      <div class="footer-links" aria-label="More resources">
-        <a href="https://rubygems.org/gems/facets">RubyGems</a>
-        <a href="https://www.rubydoc.info/gems/facets">API reference</a>
-        <a href="https://github.com/rubyworks/facets/issues">Issues</a>
-        <a href="https://github.com/rubyworks/facets/blob/main/LICENSE.txt">BSD 2-Clause license</a>
-      </div>
-    </div>
-  </footer>
-</body>
-</html>
