@@ -72,6 +72,12 @@ Changes:
 * Internal
 
   * Run the qed demos in CI.
+  * Remove leftover build files that nothing reads anymore: `MANIFEST`,
+    `Assembly` (Detroit), `.index`, `Indexfile` and `lib/core/facets.yml`.
+    The Rakefile takes its version from `Facets::VERSION` (`.index` still said
+    3.1.1), and `rake package` no longer needs the `mast` and `index` tools.
+  * The gemspec reads its version from `Facets::VERSION`, so the version now
+    lives in one place, `lib/core/facets/version.rb`.
   * Fix the qed demos, which had 8 failures and 2 errors. Most were stale
     expectations (`Array#from`, `#step`, `#arrange`, `String#similarity`)
     and the date demo held pasted irb output.

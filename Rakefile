@@ -1,12 +1,11 @@
 #!/usr/bin/env ruby
 
 require 'fileutils'
-require 'yaml'
+require_relative 'lib/core/facets/version'
 
 PATH = "lib/core:lib/standard:lib/rails"
 
-metadata = YAML.load_file('.index')
-version  = metadata['version']
+version = Facets::VERSION
 
 #
 # GENERATE DOCUMENTATION
@@ -232,14 +231,8 @@ end
 # RELEASE
 # -----------------------------------------------------------------------------
 
-desc "release preperation"
-task "prepare" do
-  sh "mast -u"
-  sh "index -u Indexfile Gemfile"
-end
-
 desc "create gem package"
-task "package" => [:prepare] do
+task "package" do
   sh "gem build facets.gemspec"
 end
 
