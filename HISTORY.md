@@ -23,6 +23,9 @@ Changes:
     `Enumerable#uniq_by`, `Kernel#silence_stream` and Facets' fallback
     `Time#to_time` are scheduled for removal after 2027-09-30. Each warns
     with its replacement and the removal date.
+  * `Kernel#with` is deprecated in favor of `instance_eval`, also for removal
+    after 2027-09-30. Rails 7.1's unrelated `Object#with` (which temporarily
+    sets attributes) was silently replaced by it when both were loaded.
   * `Kernel#silence` now does the stream silencing itself; `silently`,
     `silence_stderr` and `silence_stdout` use it and do not warn.
 
