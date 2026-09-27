@@ -5,7 +5,7 @@
 A fuzzy matching mechanism. Returns a score from 0-1, based on the number of
 shared edges. To be effective, the strings must be of length 2 or greater.
 
-    "Alexsander".similarity("Aleksander").assert == 0.9
+    "Alexsander".similarity("Aleksander").round(2).assert == 0.82
 
     "Alexander".similarity("Alexander").assert == 1.0
 

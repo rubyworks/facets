@@ -6,10 +6,8 @@ Allows Times, Dates and DateTimes to be compared with each other. This is useful
 if you've got an array of Date, DateTime and Time instances and want to sort
 them correctly (see Loading YAML below for an example of where this can happen).
 
-    [Time.now - 10, Date.today, DateTime.now + 10].sort
-    => [#<Date: 2016-10-08 ((2457670j,0s,0n),+0s,2299161j)>,
-        2016-10-08 17:29:25 +1300,
-        #<DateTime: 2016-10-18T17:29:35+13:00 ((2457680j,16175s,182784000n),+46800s,2299161j)>]
+    list = [Time.utc(2016,10,8,12), Date.new(2016,10,8), DateTime.new(2016,10,18)]
+    list.sort.map(&:class).assert == [Date, Time, DateTime]
 
 Otherwise, you'll get ArgumentError.
 
@@ -22,12 +20,11 @@ library which assumes no timezone offset for a given date.
 When loading YAML, it's possible that you get back instances of Date and Time
 depending on the text format.
 
-    YAML::load("#{Date.today.to_s}").class
-    => Date
-    YAML::load("#{DateTime.now.to_s}").class
-    => Time
-    YAML::load("#{Time.now.to_s}").class
-    => Time
+    require 'yaml'
+
+    YAML.unsafe_load("2016-10-08").class.assert == Date
+    YAML.unsafe_load("2016-10-18T17:29:35+13:00").class.assert == Time
+    YAML.unsafe_load("2016-10-08 17:29:25 +1300").class.assert == Time
 
 It's nice to have some way to sort these entries correctly without having to
 impose limits on the format of the YAML document.

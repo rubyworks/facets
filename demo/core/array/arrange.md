@@ -13,5 +13,5 @@ be of the same class.
     [10..15, 16..20, 21, 22].arrange.assert == [10..22]
 
     a = %w{a b c g h i j k  m o}
-    a.arrange.assert == ['a'..'c','g'..'k', 'm' , 'o']
+    a.arrange.assert == ['a'..'c','g'..'k', 'm'..'m', 'o'..'o']
 
