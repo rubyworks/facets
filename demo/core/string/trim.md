@@ -75,7 +75,7 @@ spacing
 
 random placement
 
-    @volly = {}
+    @volly = []
     100.times{ |n|
       k = []
       a = []
@@ -83,7 +83,7 @@ random placement
         k << ( ( ' ' * Integer(rand*10) ) + '|' + i.to_s )
         a << ( i.to_s )
       }
-      @volly[k.join("\n")] = a.join("\n")
+      @volly << [k.join("\n"), a.join("\n")]
     }
 
     @volly.each{ |k,v|
