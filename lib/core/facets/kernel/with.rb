@@ -14,6 +14,9 @@ module Kernel
   #   unrelated Object#with that temporarily sets attributes, and this one
   #   silently replaces it. Scheduled for removal after 2027-09-30.
   #
+  # @uncommon
+  #   require 'facets/kernel/with'
+  #
   def with(obj=self, &block)
     warn "Kernel#with is deprecated. Use obj.instance_eval { ... } instead. " \
          "It will be removed after 2027-09-30.", uplevel: 1
