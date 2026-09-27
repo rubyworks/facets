@@ -15,7 +15,7 @@ require_relative 'array/duplicates.rb'
 require_relative 'array/each_pair.rb'
 require_relative 'array/each_value.rb'
 require_relative 'array/entropy.rb'
-require_relative 'array/extract_options.rb'
+require 'facets/array/extract_options'  # lib/rails
 require_relative 'array/from.rb'
 require_relative 'array/indexable.rb'
 #require_relative 'array/intersection.rb'       # too new

@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
     'CONTRIBUTING.md'
   ]
 
-  s.require_paths = ['lib/core', 'lib/standard']
+  s.require_paths = ['lib/core', 'lib/standard', 'lib/rails']
 
   s.metadata = {
     'source_code_uri' => 'https://github.com/rubyworks/facets',

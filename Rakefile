@@ -3,7 +3,7 @@
 require 'fileutils'
 require 'yaml'
 
-PATH = "lib/core:lib/standard"
+PATH = "lib/core:lib/standard:lib/rails"
 
 metadata = YAML.load_file('.index')
 version  = metadata['version']
@@ -68,6 +68,11 @@ end
 desc "run standard unit tests"
 task "test:standard" => "tmp" do
   sh "ruby-test #{test_flags} -Ilib/standard test/standard"
+end
+
+desc "run rails compatibility unit tests"
+task "test:rails" => "tmp" do
+  sh "ruby-test #{test_flags} -Ilib/core -Ilib/standard -Ilib/rails test/rails"
 end
 
 desc "run all unit tests with ActiveSupport loaded"
@@ -162,6 +167,11 @@ end
 desc "run standard qed docs"
 task 'qed:standard' do
   sh "qed #{qed_flags} -I#{PATH} demo/standard"
+end
+
+desc "run rails compatibility qed docs"
+task 'qed:rails' do
+  sh "qed #{qed_flags} -I#{PATH} demo/rails"
 end
 
 desc "run core qed from code base"

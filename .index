@@ -65,6 +65,7 @@ paths:
   load:
   - lib/core
   - lib/standard
+  - lib/rails
 name: facets
 title: Ruby Facets
 version: 3.1.1

@@ -1,5 +1,23 @@
 # Facets Release History
 
+## Unreleased
+
+Changes:
+
+* Enhancements
+
+  * New `lib/rails` library for Rails-compatible methods that Facets carries
+    but doesn't endorse as its own: `Hash#symbolize_keys`/`#stringify_keys`,
+    `Hash#to_options`, `Hash#slice!`, `Array#extract_options!`,
+    `Module#mattr_*`/`#cattr_*`, `File.atomic_write` and the `facets/date`
+    extensions. Require paths are unchanged (`require 'facets/hash/slice'`
+    still works), and `require 'facets'` still loads the same methods.
+
+* Bug Fixes
+
+  * `Hash#to_options` and `#to_options!` now exist. `facets/hash/to_options`
+    only loaded `symbolize_keys` and never defined the aliases.
+
 ## 3.2.2 / 2026-06-15
 
 Patch release with cross-version fixes surfaced by CI on Ruby 3.1–3.4.

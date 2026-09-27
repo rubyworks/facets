@@ -47,7 +47,7 @@ require_relative 'hash/delete_values'
 require_relative 'hash/except'
 require_relative 'hash/rekey'
 require_relative 'hash/revalue'
-require_relative 'hash/slice'
+require 'facets/hash/slice'  # lib/rails
 
 ### Proc
 #require_relative 'proc/wrap'

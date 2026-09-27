@@ -33,13 +33,13 @@ require_relative 'hash/recursively.rb'
 require_relative 'hash/rekey.rb'
 require_relative 'hash/replace_each.rb'
 require_relative 'hash/reverse_merge.rb'
-require_relative 'hash/slice.rb'
-require_relative 'hash/stringify_keys.rb'
+require 'facets/hash/slice'           # lib/rails
+require 'facets/hash/stringify_keys'  # lib/rails
 require_relative 'hash/subset.rb'
 require_relative 'hash/swap.rb'
-require_relative 'hash/symbolize_keys.rb'
+require 'facets/hash/symbolize_keys'  # lib/rails
 require_relative 'hash/to_mod.rb'
-require_relative 'hash/to_options.rb'
+require 'facets/hash/to_options'      # lib/rails
 require_relative 'hash/setter.rb'
 require_relative 'hash/to_struct.rb'
 require_relative 'hash/traverse.rb'
