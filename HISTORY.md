@@ -13,6 +13,15 @@ Changes:
     extensions. Require paths are unchanged (`require 'facets/hash/slice'`
     still works), and `require 'facets'` still loads the same methods.
 
+* Deprecations
+
+  * `Kernel#returning`, `Module#alias_method_chain`, `Array#uniq_by!`,
+    `Enumerable#uniq_by`, `Kernel#silence_stream` and Facets' fallback
+    `Time#to_time` are scheduled for removal after 2027-09-30. Each warns
+    with its replacement and the removal date.
+  * `Kernel#silence` now does the stream silencing itself; `silently`,
+    `silence_stderr` and `silence_stdout` use it and do not warn.
+
 * Bug Fixes
 
   * `Hash#to_options` and `#to_options!` now exist. `facets/hash/to_options`
