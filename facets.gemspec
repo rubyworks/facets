@@ -1,6 +1,8 @@
+require_relative 'lib/core/facets/version'
+
 Gem::Specification.new do |s|
   s.name        = 'facets'
-  s.version     = '3.2.2'
+  s.version     = Facets::VERSION
   s.summary     = 'The premier collection of extension methods for Ruby.'
   s.description = 'Facets is the premier collection of extension methods for the Ruby ' \
                   'programming language. Facets extensions are unique by virtue of their ' \
