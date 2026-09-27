@@ -4,7 +4,7 @@ class String
   # on the number of shared edges. To be effective, the strings
   # must be of length 2 or greater.
   #
-  #     "Alexsander".similarity("Aleksander")  #=> 0.8181818181818182
+  #     "Alexsander".similarity("Aleksander")  #=> 0.9
   #
   # The way it works:
   #
@@ -82,8 +82,9 @@ class String
 
     score = 0.0
     matches.each{ |mm| score += mm.length }
-    self.length > str_in.length ? largest = self.length : largest = str_in.length
-    return score/(largest+1)
+    largest = [self.length, str_in.length].max
+    return 0.0 if largest.zero?   # e.g. an empty Symbol or Array
+    return score/largest
   end
 
 end
