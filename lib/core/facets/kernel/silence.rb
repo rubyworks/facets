@@ -10,21 +10,23 @@ module Kernel
   # and +warnings+, which is the same as +verbose+. You can also
   # use the actual streams, STDERR and STDOUT.
   #
-  # Silencing works by reopening the stream on the null device, so it
+  #   silence(:verbose) do
+  #     warn "won't see me either"
+  #   end
+  #
+  # +verbose+ sets $VERBOSE to nil and +debug+ sets $DEBUG to false
+  # for the duration of the block.
+  #
+  # Silencing a stream works by reopening it on the null device, so it
   # affects the whole process, not just the current thread.
   def silence(*streams) #:yield:
-    streams = streams.map do |stream|
-      case stream
-      when :stderr
-        STDERR
-      when :stdout
-        STDOUT
-      else
-        stream
-      end
-    end
+    verbose, debug = $VERBOSE, $DEBUG
+    $VERBOSE = nil   if (streams & [:verbose, :warnings]).any?
+    $DEBUG   = false if streams.include?(:debug)
 
-    return yield if streams.empty?
+    streams = (streams - [:verbose, :warnings, :debug]).map do |stream|
+      {stderr: STDERR, stdout: STDOUT}.fetch(stream, stream)
+    end
 
     on_hold = streams.collect{ |stream| stream.dup }
     streams.each do |stream|
@@ -36,6 +38,7 @@ module Kernel
     streams.each_with_index do |stream, i|
       stream.reopen(on_hold[i])
     end if on_hold
+    $VERBOSE, $DEBUG = verbose, debug
   end
 
   # Just like #silence, but will default to
