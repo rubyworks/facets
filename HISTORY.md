@@ -38,9 +38,13 @@ Changes:
     quietly changed both.
   * `Enumerable::Argumentable#min` and `#max` now pass their arguments to
     `#each`, as documented, rather than to Ruby's own `min(n)`/`max(n)`.
+  * `require 'facets'` no longer crashes on Ruby 4.1, which removed
+    `ObjectSpace._id2ref`. `ObjectSpace[]` is only defined where `_id2ref`
+    exists.
 
 * Internal
 
+  * Run the qed demos in CI.
   * Fix the qed demos, which had 8 failures and 2 errors. Most were stale
     expectations (`Array#from`, `#step`, `#arrange`, `String#similarity`)
     and the date demo held pasted irb output.

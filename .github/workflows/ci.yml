@@ -47,3 +47,7 @@ jobs:
       - name: Run tests
         timeout-minutes: 5
         run: bundle exec rake test
+
+      - name: Run demos
+        timeout-minutes: 5
+        run: bundle exec rake qed
