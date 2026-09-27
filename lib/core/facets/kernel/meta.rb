@@ -28,7 +28,7 @@ module Kernel
   end
 
   def eigen
-    warn "The `eigen' method is deprecated. Please use `meta' instead."
+    warn "The `eigen' method is deprecated. Please use `meta' instead. It will be removed after 2027-09-30.", uplevel: 1
     meta
   end
 

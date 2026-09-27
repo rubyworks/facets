@@ -52,8 +52,11 @@ class String
   #
   # @deprecated
   #   Use `#camelcase(:upper)` instead.
+  #   Scheduled for removal after 2027-09-30.
   #
   def upper_camelcase(*separators)
+    warn "String#upper_camelcase is deprecated. Use String#camelcase(:upper) instead. " \
+         "It will be removed after 2027-09-30.", uplevel: 1
     camelcase(:upper, *separators)
   end
 
@@ -64,8 +67,11 @@ class String
   #
   # @deprecated
   #   Use `#camelcase(:lower)` instead.
+  #   Scheduled for removal after 2027-09-30.
   #
   def lower_camelcase(*separators)
+    warn "String#lower_camelcase is deprecated. Use String#camelcase(:lower) instead. " \
+         "It will be removed after 2027-09-30.", uplevel: 1
     camelcase(:lower, *separators)
   end
 

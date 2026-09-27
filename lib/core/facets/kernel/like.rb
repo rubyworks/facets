@@ -12,8 +12,13 @@ module Kernel
     equal?(x) || eql?(x) || self == x || self === x
   end
 
-  # @deprecated
-  alias :equate? :like?
+  # @deprecated Use #like? instead.
+  #   Scheduled for removal after 2027-09-30.
+  def equate?(x)
+    warn "Kernel#equate? is deprecated. Use Kernel#like? instead. " \
+         "It will be removed after 2027-09-30.", uplevel: 1
+    like?(x)
+  end
 
 end
 

@@ -10,6 +10,7 @@ module Kernel
   #
   # @deprecated Use singleton_class or meta_class instead.
   #   Kept in tribute to WhyTheLuckyStiff who coined the term.
+  #   Scheduled for removal after 2027-09-30.
   #
   # CREDIT: WhyTheLuckyStiff
   #
@@ -17,7 +18,7 @@ module Kernel
   #   require 'facets/kernel/eigenclass'
   #
   def eigenclass
-    warn "Kernel#eigenclass is deprecated. Use singleton_class or meta_class instead.", uplevel: 1
+    warn "Kernel#eigenclass is deprecated. Use singleton_class or meta_class instead. It will be removed after 2027-09-30.", uplevel: 1
     singleton_class
   end
 

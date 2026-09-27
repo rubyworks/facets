@@ -14,8 +14,9 @@ class Time
   end
 
   # @deprecated Use Time#floor_to instead.
+  #   Scheduled for removal after 2027-09-30.
   def trunc(seconds)
-    warn "Time#trunc is deprecated. Use Time#floor_to instead.", uplevel: 1
+    warn "Time#trunc is deprecated. Use Time#floor_to instead. It will be removed after 2027-09-30.", uplevel: 1
     floor_to(seconds)
   end
 

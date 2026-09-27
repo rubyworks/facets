@@ -189,11 +189,12 @@ class Interval
   #   1..5.each(2) { |e| ... }     #=> 1 3 5
   #   1..5.each(1,2) { |e| ... }   #=> 1.0 1.5 2.0 2.5 3.0 3.5 4.0 4.5 5.0
   #
-  # @todo Deprecate arguments and simplify each definition accordingly.
+  # @deprecated The +n+ and +d+ arguments. Use +interval.step(n,d).each+ instead.
+  #   Scheduled for removal after 2027-09-30.
   def each(n=nil, d=nil)  # :yield:
     if n
-      warn "FACETS: `interval.each(n,d){...}` will be deprecated.\n" +
-           "Use `interval.step(n,d).each{...}` instead."
+      warn "Interval#each(n, d) is deprecated. Use interval.step(n, d).each instead. " \
+           "It will be removed after 2027-09-30.", uplevel: 1
     else
       n = 1
     end

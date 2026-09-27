@@ -39,12 +39,12 @@ module Enumerable
 
   def hashify(val=nil, &block)
     if val
-      warn "The old Enumerable#hashify method has been be deprecated. Use #value_by instead."
+      warn "The old Enumerable#hashify method is deprecated. Use #value_by instead. It will be removed after 2027-09-30.", uplevel: 1
       value_by{ val }
     end
 
     if block
-      warn "The old Enumerable#hashify method has been be deprecated. Use #value_by instead."
+      warn "The old Enumerable#hashify method is deprecated. Use #value_by instead. It will be removed after 2027-09-30.", uplevel: 1
       value_by(&block)
     end
 

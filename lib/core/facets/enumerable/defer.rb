@@ -27,7 +27,7 @@ module Enumerable
   # to output each result and discard it.
   #
   def defer(&blk)
-    warn "Enumerable#defer is deprecated. Use Enumerable#lazy instead.", uplevel: 1
+    warn "Enumerable#defer is deprecated. Use Enumerable#lazy instead. It will be removed after 2027-09-30.", uplevel: 1
     lazy
   end
 

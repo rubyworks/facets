@@ -1,6 +1,7 @@
 # @deprecated Use deep_dup/deep_clone instead, or define your own
 #   initialize_copy method.
-warn "facets/cloneable is deprecated. Use deep_dup/deep_clone instead.", uplevel: 1
+#   Scheduled for removal after 2027-09-30.
+warn "facets/cloneable is deprecated. Use deep_dup/deep_clone instead. It will be removed after 2027-09-30.", uplevel: 1
 
 module Cloneable
 

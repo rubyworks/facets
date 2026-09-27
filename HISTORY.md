@@ -39,6 +39,11 @@ Changes:
     `Enumerable#uniq_by`, `Kernel#silence_stream` and Facets' fallback
     `Time#to_time` are scheduled for removal after 2027-09-30. Each warns
     with its replacement and the removal date.
+  * Every existing deprecation now names a removal date, 2027-09-30, in its
+    `@deprecated` note and its warning. `String#upper_camelcase`/
+    `#lower_camelcase`, `Kernel#equate?`, `facets/kernel/tee` and
+    `Interval#each(n, d)` were deprecated in docs only (or "will be") and
+    now warn as well.
   * `Kernel#with` is deprecated in favor of `instance_eval`, also for removal
     after 2027-09-30. Rails 7.1's unrelated `Object#with` (which temporarily
     sets attributes) was silently replaced by it when both were loaded.

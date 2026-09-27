@@ -10,7 +10,7 @@ module Enumerable
   # TODO: Enumerable#hinge will get a new name.
   #
   def hinge(init={}, &block)
-    warn "Enumerable#hinge is deprecated. Use Enumerable#each_with_object instead (note: block args are reversed).", uplevel: 1
+    warn "Enumerable#hinge is deprecated. Use Enumerable#each_with_object instead (note: block args are reversed). It will be removed after 2027-09-30.", uplevel: 1
     each_with_object(init) { |e, obj| block.call(obj, e) }
   end
 
