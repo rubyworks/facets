@@ -41,6 +41,9 @@ Changes:
   * `require 'facets'` no longer crashes on Ruby 4.1, which removed
     `ObjectSpace._id2ref`. `ObjectSpace[]` is only defined where `_id2ref`
     exists.
+  * `Kernel#silence` now supports `:verbose`/`:warnings` and `:debug`, as its
+    docs always said, instead of raising `NoMethodError`. They set `$VERBOSE`
+    to nil and `$DEBUG` to false within the block.
 
 * Internal
 
