@@ -25,13 +25,7 @@ class Module
     ##readers.concat( writers ) # writers also get readers
 
     cattr_reader(*readers, &block)
-
-    if block
-      cattr_writer(*(writers - readers), &block)
-      cattr_writer(*(writers & readers))
-    else
-      cattr_writer(*writers)
-    end
+    cattr_writer(*writers, &block)
 
     return readers + writers
   end
@@ -170,12 +164,7 @@ class Module
     writers = writers.collect{ |e| e.to_s.chomp('=').to_sym }
     ##readers.concat( writers ) # writers also get readers
 
-    if block
-      mattr_writer( *(writers - readers), &block )
-      mattr_writer( *(writers & readers) )
-    else
-      mattr_writer( *writers )
-    end
+    mattr_writer( *writers, &block )
     mattr_reader( *readers, &block )
 
     return readers + writers
