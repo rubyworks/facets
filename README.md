@@ -50,7 +50,7 @@ require 'facets'
 #=> 2.0
 ```
 
-`require 'facets'` loads the broadly useful **core** extensions. Some specialized core extensions are opt-in; require their method file directly. To load Facets extensions to a Ruby standard library, require that library through Facets:
+`require 'facets'` loads the broadly useful **core** extensions: roughly 860 methods from 448 files, adding about 35 ms of load time and 2 MB of memory (Ruby 3.3, Linux). Some specialized core extensions are opt-in; require their method file directly. To load Facets extensions to a Ruby standard library, require that library through Facets:
 
 ```ruby
 require 'facets/ostruct'
