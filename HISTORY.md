@@ -1,6 +1,12 @@
 # Facets Release History
 
-## Unreleased
+## 4.0.0 / 2026-09-27
+
+A major release, because it changes behavior: `Kernel#try!` is now the
+lenient variant and `#try` is strict, `require 'facets'` no longer loads
+`Kernel#with`, and Rails-compatible methods move to the new `lib/rails`
+area (still loaded by `require 'facets'` with a warning until 2027-09-30).
+Every deprecation now names that same removal date.
 
 Changes:
 
@@ -84,6 +90,10 @@ Changes:
   * Fix the qed demos, which had 8 failures and 2 errors. Most were stale
     expectations (`Array#from`, `#step`, `#arrange`, `String#similarity`)
     and the date demo held pasted irb output.
+  * CONTRIBUTING.md explains the test stack (RubyTest, Lemon, AE and QED)
+    and the `@uncommon` convention.
+  * The `String#trim` demo no longer drops random cases, so the QED
+    assertion count is the same on every run.
 
 ## 3.2.2 / 2026-06-15
 
