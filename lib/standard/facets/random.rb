@@ -117,26 +117,30 @@ class Random
     end
 
     # @deprecated Use Array#sample instead.
+    #   Scheduled for removal after 2027-09-30.
     def at_rand
-      warn "Array#at_rand is deprecated. Use Array#sample instead.", uplevel: 1
+      warn "Array#at_rand is deprecated. Use Array#sample instead. It will be removed after 2027-09-30.", uplevel: 1
       sample
     end
 
     # @deprecated Use Array#sample! instead.
+    #   Scheduled for removal after 2027-09-30.
     def at_rand!
-      warn "Array#at_rand! is deprecated. Use Array#sample! instead.", uplevel: 1
+      warn "Array#at_rand! is deprecated. Use Array#sample! instead. It will be removed after 2027-09-30.", uplevel: 1
       sample!
     end
 
     # @deprecated Use Array#sample instead.
+    #   Scheduled for removal after 2027-09-30.
     def pick(n=nil)
-      warn "Array#pick is deprecated. Use Array#sample instead.", uplevel: 1
+      warn "Array#pick is deprecated. Use Array#sample instead. It will be removed after 2027-09-30.", uplevel: 1
       n ? sample(n) : sample
     end
 
     # @deprecated Use Array#sample! instead.
+    #   Scheduled for removal after 2027-09-30.
     def pick!(n=nil)
-      warn "Array#pick! is deprecated. Use Array#sample! instead.", uplevel: 1
+      warn "Array#pick! is deprecated. Use Array#sample! instead. It will be removed after 2027-09-30.", uplevel: 1
       sample!(n)
     end
 

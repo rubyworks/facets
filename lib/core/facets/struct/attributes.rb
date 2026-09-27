@@ -6,7 +6,7 @@ class Struct
   # This will eventually be deprecated in favor of #to_h.
 
   def attributes
-    warn "Struct#attributes is deprecated. Use Struct#to_h instead.", uplevel: 1
+    warn "Struct#attributes is deprecated. Use Struct#to_h instead. It will be removed after 2027-09-30.", uplevel: 1
     to_h
   end
 

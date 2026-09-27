@@ -16,7 +16,7 @@ module Enumerable
   #++
 
   def frequency
-    warn "Enumerable#frequency is deprecated. Use Enumerable#tally instead.", uplevel: 1
+    warn "Enumerable#frequency is deprecated. Use Enumerable#tally instead. It will be removed after 2027-09-30.", uplevel: 1
     tally
   end
 

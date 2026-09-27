@@ -20,7 +20,7 @@ class Array
   alias sd stddev
 
   def standard_deviation
-    warn "Array#standard_deviation is deprecated. Use Array#stddev or Array#sd instead.", uplevel: 1
+    warn "Array#standard_deviation is deprecated. Use Array#stddev or Array#sd instead. It will be removed after 2027-09-30.", uplevel: 1
     stddev
   end
 end

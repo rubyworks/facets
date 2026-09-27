@@ -8,7 +8,7 @@ module Enumerable
   # CREDIT: Gavin Sinclair
 
   def map_with_index(&block)
-    warn "Enumerable#map_with_index is deprecated. Use Enumerable#map.with_index instead.", uplevel: 1
+    warn "Enumerable#map_with_index is deprecated. Use Enumerable#map.with_index instead. It will be removed after 2027-09-30.", uplevel: 1
     map.with_index(&block)
   end
 

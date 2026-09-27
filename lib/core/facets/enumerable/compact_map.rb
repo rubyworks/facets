@@ -15,7 +15,7 @@ module Enumerable
   # does almost the same thing and enum.map{}.compact works too.
 
   def compact_map(&block)
-    warn "Enumerable#compact_map is deprecated. Use Enumerable#filter_map instead.", uplevel: 1
+    warn "Enumerable#compact_map is deprecated. Use Enumerable#filter_map instead. It will be removed after 2027-09-30.", uplevel: 1
     filter_map(&block)
   end
 

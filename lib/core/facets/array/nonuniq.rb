@@ -11,14 +11,14 @@ class Array
   # CREDIT: Martin DeMello
 
   def nonuniq
-    warn "Array#nonuniq is deprecated. Use Array#duplicates instead.", uplevel: 1
+    warn "Array#nonuniq is deprecated. Use Array#duplicates instead. It will be removed after 2027-09-30.", uplevel: 1
     duplicates
   end
 
   # Same as `#nonuniq` but acts in place.
 
   def nonuniq!
-    warn "Array#nonuniq! is deprecated. Use Array#duplicates instead.", uplevel: 1
+    warn "Array#nonuniq! is deprecated. Use Array#duplicates instead. It will be removed after 2027-09-30.", uplevel: 1
     self.replace(duplicates)
   end
 
