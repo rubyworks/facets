@@ -62,6 +62,9 @@ Changes:
     quietly changed both.
   * `Enumerable::Argumentable#min` and `#max` now pass their arguments to
     `#each`, as documented, rather than to Ruby's own `min(n)`/`max(n)`.
+  * `String#similarity` now divides the shared length by the longer string's
+    length, not length + 1, so 9 of 10 matching characters score 0.9 as its
+    docs said (it gave 0.818). Scores for non-identical strings rise slightly.
   * `require 'facets'` no longer crashes on Ruby 4.1, which removed
     `ObjectSpace._id2ref`. `ObjectSpace[]` is only defined where `_id2ref`
     exists.
