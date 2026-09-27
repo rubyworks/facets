@@ -13,6 +13,8 @@ Changes:
     marks the more dangerous method, and quietly ignoring a missing method is
     the dangerous behavior. The docs no longer claim ActiveSupport
     compatibility.
+  * `Kernel#try` no longer calls private methods. It now behaves exactly like
+    a normal call or `&.`, raising `NoMethodError` for them.
 
 * Enhancements
 

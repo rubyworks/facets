@@ -19,6 +19,11 @@ test_case Kernel do
       NoMethodError.assert.raised? { example.try(:nmae) }
     end
 
+    test "raises for a private method, like a normal call" do
+      example = Class.new { private def secret; :s; end }.new
+      NoMethodError.assert.raised? { example.try(:secret) }
+    end
+
   end
 
   method :try! do

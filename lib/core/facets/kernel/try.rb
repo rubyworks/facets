@@ -4,8 +4,9 @@ module Kernel
 
   # Invokes the method identified by the symbol +method+, passing it any
   # arguments and/or the block specified. If the receiver is +nil+, it
-  # returns +nil+ instead (see NilClass#try below). A method the receiver
-  # doesn't have still raises NoMethodError, just like a normal call.
+  # returns +nil+ instead (see NilClass#try below). Otherwise it behaves
+  # exactly like a normal call (or &.): a method the receiver doesn't have,
+  # or a private one, raises NoMethodError.
   #
   #   @example.try(:name)              #=> "bob"
   #   @example.try { |o| o.name }     #=> "bob"
@@ -21,7 +22,7 @@ module Kernel
   #
   def try(method=nil, *args, &block)
     if method
-      __send__(method, *args, &block)
+      public_send(method, *args, &block)
     elsif block_given?
       yield self
     else
