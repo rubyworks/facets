@@ -18,9 +18,9 @@
   The Lemon unit tests are for testing a method in detail whereas the QED
   demos are for demonstrating usage.
 
-* Facets has *core*, *standard*, and Rails-compatible library areas.
+* Facets groups libraries into `core`, `standard`, and `rails` areas.
   Almost all core extensions can be loaded at once with `require 'facets'`.
-  Standard and Rails-compatible extensions should be required by file.
+  Standard and rails extensions should be required by file.
 
 * Some core methods are included on a *trial* basis, and these are not
   necessary loaded automatically with `require 'facets'`. These should be
@@ -131,7 +131,7 @@ corresponding `qed:*` tasks for each library area.
 
 * A core method in `lib/core/facets/{class}/{method}.rb` normally has a Lemon
   test in `test/core/{class}/test_{method}.rb` and a QED demo in
-  `demo/core/{class}/{method}.md`. Standard and Rails-compatible libraries use
+  `demo/core/{class}/{method}.md`. Standard and rails libraries use
   their respective `test/` and `demo/` directories.
 * A file that only requires another file does not need its own unit test. A file
   that also defines an alias can test the alias without repeating every test
