@@ -14,9 +14,18 @@ test_case Module do
       end
 
       m.y.assert == 33
+      m.private_method_defined?(:y).assert == true
+    end
 
-      # use send b/c private?
-      #@m.send(:y).assert == 33
+    test "alias stays public when aliased again" do
+      m = Module.new do
+        module_function
+        def x ; 33 ; end
+        alias_module_function :y, :x
+      end
+
+      m.singleton_class.send(:alias_method, :z, :y)
+      m.z.assert == 33
     end
 
   end

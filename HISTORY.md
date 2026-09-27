@@ -30,6 +30,9 @@ Changes:
 
   * `Hash#to_options` and `#to_options!` now exist. `facets/hash/to_options`
     only loaded `symbolize_keys` and never defined the aliases.
+  * `Module#alias_module_function` now aliases the singleton method directly.
+    On JRuby, the singleton method `module_function` created turned private
+    when aliased again, which broke `URI.hash_to_query` under the test suite.
 
 ## 3.2.2 / 2026-06-15
 

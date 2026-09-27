@@ -23,7 +23,10 @@ class Module
   #
   def alias_module_function(new, old)
     alias_method(new, old)
-    module_function(new)
+    return module_function(new) unless singleton_class.method_defined?(old)
+    # Alias the singleton method directly. On JRuby, a singleton method made
+    # by #module_function turns private when it is itself aliased later.
+    singleton_class.send(:alias_method, new, old)
   end
 
 end
