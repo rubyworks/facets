@@ -1,0 +1,62 @@
+<p>Facets 2.8 effectively completes the MORE library clean-up which peaked
+with the previous 2.7 release. In so doing, five additional libraries
+have been deprecated:</p>
+
+<ul>
+<li>fileable.rb    (too esoteric)</li>
+<li>ioredirect.rb  (needs better implementation)</li>
+<li>coroutine.rb   (because of Fiber)</li>
+<li>capsule.rb     (may be spun-off)</li>
+<li>recorder.rb    (may be spun-off)</li>
+</ul>
+
+
+<p>Three other libraries have been deprecated, but have been spun-off
+to the new 'ansi' project:</p>
+
+<ul>
+<li>ansicode.rb</li>
+<li>progressbar.rb</li>
+<li>logger.rb</li>
+</ul>
+
+
+<p>This version of Facets also reverts a few of the deprecations made before --
+reconsiderations made due to analysis of the code as suitable for release
+as separate projects. These libs will thus remain in Facets's MORE library
+at least for the forseeable future.</p>
+
+<ul>
+<li>ini.rb</li>
+<li>linkedlist.rb</li>
+<li>matcher.rb</li>
+<li>memoizer.rb</li>
+<li>roman.rb</li>
+<li>semaphore.rb</li>
+</ul>
+
+
+<p>Other minor enhancements have also been made in the release. These include:</p>
+
+<ul>
+<li>Kernel#extend can now take a block</li>
+<li>Fixed kernel#d so it is useable</li>
+<li>Added method #at_rand to Range in random.rb (thanks to Tyler Rick).</li>
+<li>Added method #map_detect to Enumerable (thanks to Scott Taylor).</li>
+<li>Added method #/ to String, which calls File.join.</li>
+<li>Added method #newlines and #cleanlines to String.</li>
+<li>String#titlecase now handles apostrophes.</li>
+<li>BasicObject/BlankSlate is more compliant with 1.9.1's design.</li>
+<li>Enumerable#count can take multiple items, treats them as a logical Or.</li>
+<li>Class#class_extend extends class level, rather than use class_eval.</li>
+<li>Integer#succ(n) becomes Fixnum#succ(n) in succ.rb.</li>
+<li>inheritor.rb has been rewritten.</li>
+<li>The Shellwords extensions have been reworked.</li>
+<li>Added #similarity method to String.</li>
+<li>Added a Levenshtein edit_distance method to String.</li>
+</ul>
+
+
+<p>In addition to all this, we have recently set up a new Ruby 1.9 compliance procedure
+using RunCodeRun.com. Actually RunCodeRun helps us to ensure 1.8.6 compabiltiy as well.
+This is great tool for improving code quality, and comes highly recommended.</p>

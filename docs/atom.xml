@@ -1,60 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-
- <title>blog.crantastic.org</title>
- <link href="http://rubyworks.github.com/facets/atom.xml" rel="self"/>
- <link href="http://rubyworks.github.com/facets"/>
- <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>http://rubyworks.github.com/facets</id>
-
- 
- <entry>
-   <title>{{ post.title | xml_escape }}</title>
-   <link href="http://rubyworks.github.com/facets/posts/2010-09-01-release-2-9.html"/>
-   <updated>2010-09-01</updated>
-   <id>{{ site.url }}{{ post.id }}</id>
-   <content type="html"></content>
- </entry>
- 
- <entry>
-   <title>{{ post.title | xml_escape }}</title>
-   <link href="http://rubyworks.github.com/facets/posts/2009-11-09-release-2-8.html"/>
-   <updated>2009-11-09</updated>
-   <id>{{ site.url }}{{ post.id }}</id>
-   <content type="html"></content>
- </entry>
- 
- <entry>
-   <title>{{ post.title | xml_escape }}</title>
-   <link href="http://rubyworks.github.com/facets/posts/2009-08-22-release-2-7.html"/>
-   <updated>2009-08-22</updated>
-   <id>{{ site.url }}{{ post.id }}</id>
-   <content type="html"></content>
- </entry>
- 
- <entry>
-   <title>{{ post.title | xml_escape }}</title>
-   <link href="http://rubyworks.github.com/facets/posts/2009-07-21-new-website.html"/>
-   <updated>2009-07-01</updated>
-   <id>{{ site.url }}{{ post.id }}</id>
-   <content type="html"></content>
- </entry>
- 
- <entry>
-   <title>{{ post.title | xml_escape }}</title>
-   <link href="http://rubyworks.github.com/facets/posts/2008-03-24-release-2-4.html"/>
-   <updated>2008-03-24</updated>
-   <id>{{ site.url }}{{ post.id }}</id>
-   <content type="html"></content>
- </entry>
- 
- <entry>
-   <title>{{ post.title | xml_escape }}</title>
-   <link href="http://rubyworks.github.com/facets/posts/2008-01-01-how-facets-was-born.html"/>
-   <updated>2008-01-01</updated>
-   <id>{{ site.url }}{{ post.id }}</id>
-   <content type="html"></content>
- </entry>
- 
-
+  <title>Ruby Facets releases</title>
+  <id>https://rubyworks.github.io/facets/</id>
+  <link href="https://rubyworks.github.io/facets/"/>
+  <link href="https://rubyworks.github.io/facets/atom.xml" rel="self" type="application/atom+xml"/>
+  <updated>2026-06-15T00:00:00Z</updated>
+  <author><name>Ruby Facets</name></author>
+  <entry>
+    <title>Ruby Facets 3.2.2</title>
+    <id>https://rubyworks.github.io/facets/news.html#facets-3-2-2</id>
+    <link href="https://rubyworks.github.io/facets/news.html#facets-3-2-2"/>
+    <updated>2026-06-15T00:00:00Z</updated>
+    <summary>Compatibility fixes for Range and Binding across Ruby 3.1–3.4.</summary>
+  </entry>
+  <entry>
+    <title>Ruby Facets 3.2.1</title>
+    <id>https://rubyworks.github.io/facets/news.html#facets-3-2-1</id>
+    <link href="https://rubyworks.github.io/facets/news.html#facets-3-2-1"/>
+    <updated>2026-06-14T00:00:00Z</updated>
+    <summary>Restores core collection loading and adds OpenDSL and PIC.</summary>
+  </entry>
+  <entry>
+    <title>Ruby Facets 3.2.0</title>
+    <id>https://rubyworks.github.io/facets/news.html#facets-3-2-0</id>
+    <link href="https://rubyworks.github.io/facets/news.html#facets-3-2-0"/>
+    <updated>2026-04-01T00:00:00Z</updated>
+    <summary>Modernization release for Ruby 3.1 and newer.</summary>
+  </entry>
 </feed>
