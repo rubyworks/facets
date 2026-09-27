@@ -149,6 +149,10 @@ Changes:
 Modernization release targeting Ruby 3.1+. Cleans up long-standing
 compatibility issues and incorporates community contributions.
 
+**Note:** This release removed methods and raised the minimum Ruby version
+to 3.1, so it should have been released as 4.0.0. Treat the 3.2 series as a
+major upgrade from 3.1, and review the Removals below before upgrading.
+
 Changes:
 
 * New Features
