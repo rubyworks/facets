@@ -18,10 +18,9 @@
   The Lemon unit tests are for testing a method in detail whereas the QED
   demos are for demonstrating usage.
 
-* Facets is divided into two parts, *core* and *standard* libraries.
-  Almost all of the core library can be loaded at once using `require 'facets'`
-  The standard library (also called the *more* library) must be required
-  per-script.
+* Facets groups libraries into `core`, `standard`, and `rails` areas.
+  Almost all core extensions can be loaded at once with `require 'facets'`.
+  Standard and rails extensions should be required by file.
 
 * Some core methods are included on a *trial* basis, and these are not
   necessary loaded automatically with `require 'facets'`. These should be
@@ -102,11 +101,40 @@ explanation if needed, including *when* and *why* the method could be useful.
 
 ## Testing
 
-* Methods in `lib/core/facets/{class}/{method}.rb` will be tested in `test/foo/{class}/test_{method}.rb`.
-* If `lib/core/facets/{class}/{method}.rb` consists only of a require statement, no test file is expected.
-* If `lib/core/facets/{class}/{method}.rb` consists only of a require and an alias, then `test/foo/{class}/{method}.rb`, only needs to test the existence of the alias and not the underlying code. But it's okay if the alias is tested further.
-* Methods in `lib/core/facets/{class}/{method}.rb` will be demoed in `demo/core/{class}/{method}.md`.
-* Require only files will have a full demo of it's method or methods. Code in a single file may be split into multiple demos, named after the method. This is to promote discoverability in the documentation.
-* Demos of aliases will have a simple demo, and a reference to the file it aliases
+The test suite uses four tools:
 
+* **RubyTest** provides the test runner interface; `rubytest-cli` supplies the
+  `ruby-test` command used by the Rake tasks.
+* **Lemon** defines the `test_case`, `method`, and `test` structure of the unit
+  tests.
+* **AE** provides assertions such as `.assert` and `expect` inside those tests.
+  It is installed as a Lemon dependency.
+* **QED** runs the executable examples in `demo/`. They show how a method is
+  intended to be used as well as checking its behavior.
 
+Install the development dependencies and run the same two suites as CI:
+
+```sh
+bundle install
+bundle exec rake test
+bundle exec rake qed
+```
+
+For a focused unit test, set `TESTS` to a test file, for example:
+
+```sh
+TESTS=test/core/array/test_average.rb bundle exec rake test
+```
+
+The Rakefile also provides `test:core`, `test:standard`, `test:rails` and the
+corresponding `qed:*` tasks for each library area.
+
+* A core method in `lib/core/facets/{class}/{method}.rb` normally has a Lemon
+  test in `test/core/{class}/test_{method}.rb` and a QED demo in
+  `demo/core/{class}/{method}.md`. Standard and rails libraries use
+  their respective `test/` and `demo/` directories.
+* A file that only requires another file does not need its own unit test. A file
+  that also defines an alias can test the alias without repeating every test
+  for the underlying method.
+* Demos should show the behavior of each method. An alias can have a short demo
+  that points readers to the main method's demo.
