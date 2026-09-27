@@ -64,7 +64,7 @@ This loads `ostruct` and Facets' OpenStruct extensions. On Ruby 3.5+, declare th
 - [Generated API documentation on RubyDoc.info](https://www.rubydoc.info/gems/facets) (check the displayed version)
 - [Release history](HISTORY.md)
 
-In the published 3.2.2 gem, the split between `lib/core` and `lib/standard` is visible in API source paths. This helps you tell whether a method is loaded by `require 'facets'` or needs an explicit require. The development branch also has a new `lib/rails` area for Rails-compatible helpers; see the **Unreleased** section of the release history for details.
+The split between `lib/core`, `lib/standard` and `lib/rails` is visible in API source paths. This helps you tell whether a method is loaded by `require 'facets'` or needs an explicit require. The `lib/rails` area, new in 4.0.0, holds Rails-compatible helpers; see the release history for details.
 
 ## Contribute
 
