@@ -13,6 +13,10 @@ Changes:
     marks the more dangerous method, and quietly ignoring a missing method is
     the dangerous behavior. The docs no longer claim ActiveSupport
     compatibility.
+  * `require 'facets'` no longer loads `Kernel#with`, since a global `with`
+    breaks other libraries' methods of that name, such as RSpec's
+    `receive(...).with` (#290). It is still available, deprecated, with
+    `require 'facets/kernel/with'`.
   * `Kernel#try` no longer calls private methods. It now behaves exactly like
     a normal call or `&.`, raising `NoMethodError` for them.
 

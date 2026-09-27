@@ -63,7 +63,7 @@ require_relative 'kernel/temporarily.rb'
 require_relative 'kernel/true.rb'
 require_relative 'kernel/try.rb'
 require_relative 'kernel/val.rb'
-require_relative 'kernel/with.rb'
+#require_relative 'kernel/with.rb'             # uncommon
 require_relative 'kernel/writers.rb'
 #require_relative 'kernel/y.rb'                 # uncommon
 require_relative 'kernel/yes.rb'
