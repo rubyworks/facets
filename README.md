@@ -5,7 +5,7 @@
 
 **More of Ruby, one method at a time.** Facets is a collection of extensions to Ruby's core classes and standard library, plus a few small, reusable classes and modules. Most methods live in their own files, so you can load one extension, a class's extensions, or the core collection.
 
-Facets began in 2005 and is still maintained. The current release is **3.2.2**, which requires **Ruby 3.1 or newer**. See the [release history](HISTORY.md) for changes and migration notes from earlier versions. The `main` branch also contains changes awaiting the next release.
+Facets took its name in 2004, growing out of a small methods library started in 2002, and is still maintained. The current release is **3.2.2**, which requires **Ruby 3.1 or newer**. See the [release history](HISTORY.md) for changes and migration notes from earlier versions. The `main` branch also contains changes awaiting the next release.
 
 ## Install
 

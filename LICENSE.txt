@@ -1,5 +1,5 @@
 Ruby Facets
-Copyright (c) 2005, Thomas Sawyer
+Copyright (c) 2004, Thomas Sawyer
 All rights reserved.
 
 (BSD-2 LICENSE)

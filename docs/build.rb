@@ -5,6 +5,9 @@
 # in _src. Run from anywhere with: ruby docs/build.rb
 require 'erb'
 
+# The templates contain non-ASCII characters; don't depend on the locale.
+Encoding.default_external = Encoding::UTF_8
+
 site_dir = __dir__
 source_dir = File.join(site_dir, '_src')
 layout = ERB.new(File.read(File.join(source_dir, 'layout.erb')), trim_mode: '-')
