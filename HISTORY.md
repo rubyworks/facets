@@ -33,6 +33,17 @@ Changes:
   * `Module#alias_module_function` now aliases the singleton method directly.
     On JRuby, the singleton method `module_function` created turned private
     when aliased again, which broke `URI.hash_to_query` under the test suite.
+  * `Dir.recurse` and `Dir.ls_r` once again return an Array that leaves out
+    the starting directory. Deprecating them in favor of `Dir.find` had
+    quietly changed both.
+  * `Enumerable::Argumentable#min` and `#max` now pass their arguments to
+    `#each`, as documented, rather than to Ruby's own `min(n)`/`max(n)`.
+
+* Internal
+
+  * Fix the qed demos, which had 8 failures and 2 errors. Most were stale
+    expectations (`Array#from`, `#step`, `#arrange`, `String#similarity`)
+    and the date demo held pasted irb output.
 
 ## 3.2.2 / 2026-06-15
 

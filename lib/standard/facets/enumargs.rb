@@ -54,8 +54,8 @@ module Enumerable
         # this branch is used when the method has a variable number of arguments
         #   resulting in an arity of -1.  Right now this is bugged as it does
         #   not pass the argument to the each, and always passes the argument
-        #   to the method.  This makes methods like .min amdn .max to act
-        #   in an unexpected manner.
+        #   to the method. #min and #max are defined explicitly below for
+        #   this reason.
         class_eval %{
           def #{m}( *args, &yld )
             enum_for(:each).#{m}( *args, &yld )
@@ -74,6 +74,18 @@ module Enumerable
     def to_a(*args)
       #map(*args){ |x| x }
       enum_for(:each, *args).to_a
+    end
+
+    # Support for #min and #max. Ruby's own versions take an optional
+    # count, so the generic wrapper would pass the argument to them
+    # instead of to #each.
+    #
+    def min(*args, &yld)
+      enum_for(:each, *args).min(&yld)
+    end
+
+    def max(*args, &yld)
+      enum_for(:each, *args).max(&yld)
     end
 
     # Make exception for #find (a negative arity method) to accept

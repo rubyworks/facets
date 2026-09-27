@@ -4,7 +4,7 @@ class String
   # on the number of shared edges. To be effective, the strings
   # must be of length 2 or greater.
   #
-  #     "Alexsander".similarity("Aleksander")  #=> 0.9
+  #     "Alexsander".similarity("Aleksander")  #=> 0.8181818181818182
   #
   # The way it works:
   #
