@@ -4,6 +4,18 @@
 
 Changes:
 
+* Breaking
+
+  * `Kernel#try!` now returns `nil` when the receiver doesn't respond to the
+    method (or it is private), instead of raising `NoMethodError`. `#try`
+    stays strict. This is deliberately the opposite of ActiveSupport, which
+    since Rails 4.0 makes `#try` lenient and `#try!` strict. In Ruby the bang
+    marks the more dangerous method, and quietly ignoring a missing method is
+    the dangerous behavior. The docs no longer claim ActiveSupport
+    compatibility.
+  * `Kernel#try` no longer calls private methods. It now behaves exactly like
+    a normal call or `&.`, raising `NoMethodError` for them.
+
 * Enhancements
 
   * New `lib/rails` library for Rails-compatible methods that Facets carries
