@@ -22,9 +22,10 @@
   Almost all core extensions can be loaded at once with `require 'facets'`.
   Standard and rails extensions should be required by file.
 
-* Some core methods are included on a *trial* basis, and these are not
-  necessary loaded automatically with `require 'facets'`. These should be
-  documented as such in the method comments.
+* Some core methods are *uncommon* and are not loaded by `require 'facets'`.
+  Mark them with an `@uncommon` tag in the method comments, showing the
+  require line, and comment out their line in the aggregator file with
+  `# uncommon`.
 
 * Standard libraries that are not extensions of existing standard libraries
   do not have to be divvied up into individual method files. But note that
@@ -107,8 +108,8 @@ The test suite uses four tools:
   `ruby-test` command used by the Rake tasks.
 * **Lemon** defines the `test_case`, `method`, and `test` structure of the unit
   tests.
-* **AE** provides assertions such as `.assert` and `expect` inside those tests.
-  It is installed as a Lemon dependency.
+* **AE** provides assertions such as `.assert` and `expect`, used in both the
+  unit tests and the QED demos. It is installed as a Lemon dependency.
 * **QED** runs the executable examples in `demo/`. They show how a method is
   intended to be used as well as checking its behavior.
 
