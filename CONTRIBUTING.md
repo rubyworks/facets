@@ -104,8 +104,8 @@ explanation if needed, including *when* and *why* the method could be useful.
 
 The test suite uses four tools:
 
-* **RubyTest** provides the test runner interface; `rubytest-cli` supplies the
-  `ruby-test` command used by the Rake tasks.
+* **RubyTest** provides the test runner interface and the `rubytest` command
+  used by the Rake tasks.
 * **Lemon** defines the `test_case`, `method`, and `test` structure of the unit
   tests.
 * **AE** provides assertions such as `.assert` and `expect`, used in both the

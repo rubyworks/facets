@@ -3,7 +3,7 @@ source "https://rubygems.org"
 group :test do
   gem 'lemon'
   gem 'qed'
-  gem 'rubytest-cli'
+  gem 'rubytest', '>= 0.9'
   gem 'rake'
   gem 'simplecov'
   gem 'ostruct'  # no longer a default gem as of Ruby 3.5; needed by facets/ostruct tests
