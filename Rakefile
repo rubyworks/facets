@@ -50,9 +50,9 @@ task "default" => "test"
 
 task "test" => "tmp" do
   if tests = ENV['TESTS']
-    sh "ruby-test #{test_flags} #{tests}"
+    sh "rubytest #{test_flags} #{tests}"
   else
-    sh "ruby-test #{test_flags} test/"
+    sh "rubytest #{test_flags} test/"
   end
 end
 
@@ -61,17 +61,17 @@ task "test:all" => "test"
 
 desc "run core unit tests"
 task "test:core" => "tmp" do
-  sh "ruby-test #{test_flags} -Ilib/core test/core"
+  sh "rubytest #{test_flags} -Ilib/core test/core"
 end
 
 desc "run standard unit tests"
 task "test:standard" => "tmp" do
-  sh "ruby-test #{test_flags} -Ilib/standard test/standard"
+  sh "rubytest #{test_flags} -Ilib/standard test/standard"
 end
 
 desc "run rails compatibility unit tests"
 task "test:rails" => "tmp" do
-  sh "ruby-test #{test_flags} -Ilib/core -Ilib/standard -Ilib/rails test/rails"
+  sh "rubytest #{test_flags} -Ilib/core -Ilib/standard -Ilib/rails test/rails"
 end
 
 desc "run all unit tests with ActiveSupport loaded"

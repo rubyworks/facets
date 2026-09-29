@@ -29,12 +29,12 @@ module ::Guard
 
     def run_all
       puts 'Running all tests'
-      puts `ruby-test test`
+      puts `rubytest test`
     end
 
     def run_on_modifications(paths)
       puts "Running test for #{paths.join(' ')}"
-      puts `ruby-test #{paths.join(' ')}`
+      puts `rubytest #{paths.join(' ')}`
     end
   end
 end
