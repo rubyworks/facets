@@ -130,6 +130,12 @@ TESTS=test/core/array/test_average.rb bundle exec rake test
 The Rakefile also provides `test:core`, `test:standard`, `test:rails` and the
 corresponding `qed:*` tasks for each library area.
 
+Tests and demos of deprecated methods call them on purpose, so both suites hide
+those deprecation warnings and print a count at the end instead
+(`etc/quiet_deprecations.rb`). A deprecation warning raised from inside `lib/`
+still shows, because it means Facets calls a deprecated method itself. To see
+every warning, set `FACETS_DEPRECATIONS=show`.
+
 * A core method in `lib/core/facets/{class}/{method}.rb` normally has a Lemon
   test in `test/core/{class}/test_{method}.rb` and a QED demo in
   `demo/core/{class}/{method}.md`. Standard and rails libraries use

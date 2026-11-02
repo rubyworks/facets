@@ -3,6 +3,7 @@
 require 'ae'
 require 'lemon'
 require 'fileutils'
+require_relative 'quiet_deprecations'
 
 $:.unshift 'lib/rails'
 $:.unshift 'lib/core'
