@@ -4,19 +4,15 @@ module Shellwords
 
   module_function
 
-  # Escape special characters used in most unix shells
-  # to use it, eg. with system().
+  # Escape backslash, tab, space, and the characters | & ` < > ( ) ' "
+  # with a backslash.
   #
-  # This differs from Ruby's #escape in that it does not
-  # escape shell variables, e.g. $0.
+  # Unlike Ruby's Shellwords.escape, this leaves other shell
+  # metacharacters alone, including $ (so shell variables still
+  # expand), ; * ? ~ and newlines. It is not safe for untrusted
+  # input: use Shellwords.escape for that.
   def alt_escape(cmdline)
     cmdline.gsub(/([\\\t\| &`<>)('"])/) { |s| '\\' << s }
-  end
-
-  unless method_defined?(:escape)
-    def escape(cmdline)
-      cmdline.gsub(/([\\\t\| &`<>)('"])\$/) { |s| '\\' << s }
-    end
   end
 
   # Escape special character used in DOS-based shells.

@@ -33,6 +33,29 @@ test_case Shellwords do
 
   end
 
+  # Facets must not replace Ruby's own escape (issue #67).
+  class_method :escape do
+
+    test "escapes shell metacharacters" do
+      Shellwords.escape("x; rm -rf ~").assert == "x\\;\\ rm\\ -rf\\ \\~"
+    end
+
+    test "escapes glob characters" do
+      Shellwords.escape("*.rb ?").assert == "\\*.rb\\ \\?"
+    end
+
+  end
+
+end
+
+test_case String do
+
+  method :shellescape do
+    test "uses Ruby's escape" do
+      "a b*".shellescape.assert == "a\\ b\\*"
+    end
+  end
+
 end
 
 test_case Array do
