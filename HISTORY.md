@@ -1,5 +1,70 @@
 # Facets Release History
 
+## 4.0.1 / 2026-11-02
+
+A patch release with a security fix: `require 'facets/shellwords'` replaced
+Ruby's `Shellwords.escape` with a version that left shell metacharacters
+unescaped. It also lets Rails apps that load Facets boot again, and fixes
+several methods that broke on Ruby 3.
+
+Changes:
+
+* Bug Fixes
+
+  * Security: `require 'facets/shellwords'` replaced Ruby's
+    `Shellwords.escape`, and with it `String#shellescape`, with a fallback
+    that escaped almost nothing. `Shellwords.escape("x; rm -rf ~")` came back
+    unchanged, so code that relied on it to quote shell arguments was open to
+    command injection. The fallback was meant to apply only where Ruby had no
+    `escape`, but its check never matched Ruby's definition, so it always
+    applied. It is gone, and Ruby's own `escape` is always used. The bug dates
+    back to 2010. `require 'facets'` does not load this file (#67).
+  * `require 'facets'` no longer makes `attr`, `attr_reader`, `attr_writer`,
+    `attr_accessor`, `remove_method` and `undef_method` protected; Ruby has
+    made them public since 2.5. `Module#redefine_method` is now public, like
+    ActiveSupport's, so Rails apps that load Facets no longer fail with
+    "private method 'redefine_method' called" (#292). A redefined method now
+    keeps its visibility; before, a redefined private method became public.
+  * `Enumerable#graph` (also `Hash#graph` and `#mash`) and `Interval#step`
+    without a block, and every call to `Find.select`, no longer raise
+    `ArgumentError` on Ruby 3 (#246). `facets/find/select` now also requires
+    `find` itself.
+  * `Math.percentile` returns the minimum or maximum at the extremes, as the
+    NIST method it cites specifies. `percentile([1,2,3], 90)` raised
+    `NoMethodError`, `percentile([1,2,3], 100)` returned `nil` and
+    `percentile([1,2,3], 0)` returned 3 (#289).
+  * `Kernel#deep_clone` now copies array elements and hash values at any
+    depth; before, it only copied instance variables (#11). Equal but distinct
+    objects, such as two equal strings, no longer share one copy. Hash keys,
+    and Struct and Set members, are still shared with the original.
+  * `Enumerable#map_by` maps `false` and `nil` values instead of storing the
+    whole element (#75).
+  * `Module#alias_class_method` works. It raised `NameError` on every call.
+  * `Time#round_to` no longer prints a deprecation warning. It called the
+    deprecated `Time#trunc`.
+  * The `facets/cloneable` deprecation warning recommends `Kernel#deep_clone`
+    or `initialize_copy` instead of `deep_dup`, which Facets doesn't define.
+    The 3.2.0 notes gave the same wrong advice.
+
+* Documentation
+
+  * The README names the current release (it still said 3.2.2) and shows how
+    to load chosen extensions from a Gemfile with `require: [...]` (#280).
+  * The `Shellwords.alt_escape` docs no longer suggest it for `system()`. It
+    leaves `$ ; * ? ~` and newlines unescaped, so it is not safe for untrusted
+    input.
+
+* Internal
+
+  * The tests use rubytest 0.9's own `rubytest` command instead of the
+    `rubytest-cli` gem.
+  * The test and demo runs hide the deprecation warnings they trigger on
+    purpose and print a count instead. A deprecation warning raised from
+    inside `lib/` still shows. Set `FACETS_DEPRECATIONS=show` to see every
+    warning.
+  * First tests for `Interval#step`, `Find.select` and
+    `Module#alias_class_method`.
+
 ## 4.0.0 / 2026-09-27
 
 A major release, because it changes behavior: `Kernel#try!` is now the
