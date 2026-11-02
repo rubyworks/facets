@@ -257,7 +257,7 @@ class Interval
         end
       end
     else
-      Enumerator.new(self, :step, n, d)
+      to_enum(:step, n, d)
     end
   end
 

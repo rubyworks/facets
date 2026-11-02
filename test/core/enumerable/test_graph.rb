@@ -37,6 +37,17 @@ test_case Enumerable do
       sq_roots.assert == {1=>1, 4=>2, 9=>3}
     end
 
+    test "without a block returns an enumerator" do
+      e = (1..3).graph
+      e.assert.is_a?(Enumerator)
+      e.each{ |n| [n, n*n] }.assert == {1=>1, 2=>4, 3=>9}
+    end
+
+    test "without a block on a hash" do
+      r = {:a=>1, :b=>2}.graph.each{ |k,v| [k, v+1] }
+      r.assert == {:a=>2, :b=>3}
+    end
+
   end
 
 end

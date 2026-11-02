@@ -1,3 +1,5 @@
+require 'find'
+
 module Find
   # Identical to find except select returns the matching files as an array.
   # (find returns nil, which is not very useful if you actually wanted an array.)
@@ -8,7 +10,7 @@ module Find
   #
   # CREDIT: Tyler Rick
   def self.select(*paths, &block)
-    Enumerator.new(self, :find, *paths).select{|value| yield value}
+    find(*paths).select(&block)
   end
 end
 
