@@ -21,6 +21,12 @@ gem 'facets', require: false
 
 `require: false` lets you choose which extensions to load. Omit it if you want Bundler to load the core collection automatically.
 
+To have Bundler load only certain extensions, for example in a Rails app, list their files instead:
+
+```ruby
+gem 'facets', require: ['facets/array/to_ranges', 'facets/string/snakecase']
+```
+
 ## Choose how much to load
 
 ### One method
