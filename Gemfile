@@ -6,7 +6,7 @@ group :test do
   gem 'rubytest', '>= 0.9'
   gem 'rake'
   gem 'simplecov'
-  gem 'ostruct'  # no longer a default gem as of Ruby 3.5; needed by facets/ostruct tests
+  gem 'ostruct'  # a bundled gem, not a default gem, as of Ruby 4.0; needed by facets/ostruct tests
 end
 
 group :guard do

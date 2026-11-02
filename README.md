@@ -62,7 +62,7 @@ require 'facets'
 require 'facets/ostruct'
 ```
 
-This loads `ostruct` and Facets' OpenStruct extensions. On Ruby 3.5+, declare the `ostruct` gem separately because it is no longer a default gem.
+This loads `ostruct` and Facets' OpenStruct extensions. On Ruby 4.0+, list the `ostruct` gem in your Gemfile, because it is now a bundled gem rather than a default gem.
 
 ## Documentation
 
