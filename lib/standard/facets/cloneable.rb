@@ -1,7 +1,8 @@
-# @deprecated Use deep_dup/deep_clone instead, or define your own
-#   initialize_copy method.
+# @deprecated Use Kernel#deep_clone (`require 'facets/kernel/deep_clone'`)
+#   instead, or define your own initialize_copy method.
 #   Scheduled for removal after 2027-09-30.
-warn "facets/cloneable is deprecated. Use deep_dup/deep_clone instead. It will be removed after 2027-09-30.", uplevel: 1
+warn "facets/cloneable is deprecated. Use Kernel#deep_clone (require 'facets/kernel/deep_clone') " \
+     "or define your own initialize_copy instead. It will be removed after 2027-09-30.", uplevel: 1
 
 module Cloneable
 
