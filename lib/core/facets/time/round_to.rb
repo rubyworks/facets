@@ -14,7 +14,7 @@ class Time
   # TODO: Fractional seconds should round the usec.
   #
   def round_to(seconds)
-    (self + seconds / 2.0).trunc(seconds)
+    (self + seconds / 2.0).floor_to(seconds)
   end
 
 end

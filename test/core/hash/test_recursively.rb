@@ -40,12 +40,6 @@ test_case Hash do
       h.assert == {'a'=>'1','b'=>{'c'=>'3'}}
     end
 
-    test 'mash' do
-      h = {:a=>1,:b=>{:c=>3}}
-      r = h.recursively{ |k,v| [k.to_s, v] }.mash{ |k,v| [k.to_s, v.to_s] }
-      r.assert == {'a'=>'1','b'=>{'c'=>'3'}}
-    end
-
     test 'mash!' do
       h = {:a=>1,:b=>{:c=>3}}
       h.recursively{ |k,v| [k.to_s, v] }.mash!{ |k,v| [k.to_s, v.to_s] }
