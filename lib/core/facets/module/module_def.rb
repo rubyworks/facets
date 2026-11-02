@@ -16,16 +16,5 @@ class Module
     module_eval { define_method name, &blk }
   end
 
-  #--
-  # TODO: Why are we making these protected,
-  # and where should these really go in Facets?
-  #++
-  protected :attr
-  protected :attr_reader
-  protected :attr_writer
-  protected :attr_accessor
-  protected :remove_method
-  protected :undef_method
-
 end
 
