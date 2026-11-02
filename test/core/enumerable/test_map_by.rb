@@ -22,6 +22,12 @@ test_case Enumerable do
       r.assert == {1=>[["A",1], ["B",1], ["C",1]], 2=>[["D",2], ["E",2]]}
     end
 
+    test "maps false and nil values (#75)" do
+      a = [[:a, true], [:b, false], [:c, nil]]
+      r = a.map_by{ |x, y| [x, y] }
+      r.assert == {:a=>[true], :b=>[false], :c=>[nil]}
+    end
+
   end
 
 end

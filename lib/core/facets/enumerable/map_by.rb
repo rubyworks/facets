@@ -21,10 +21,14 @@ module Enumerable
   def map_by #:yield:
     res = {}
     each do |a|
-      k,v = yield(*a)
-      if v
+      r = yield(*a)
+      # Test whether a second value was returned, not whether it is truthy,
+      # so false and nil are mapped too.
+      if Array === r && r.size > 1
+        k, v = r
         (res[k] ||= []) << v
       else
+        k, = r
         (res[k] ||= []) << a
       end
     end
