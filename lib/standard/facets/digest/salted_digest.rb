@@ -1,13 +1,17 @@
 require 'digest'
-require 'facets/string/random_binary'
+require 'securerandom'
 
 module Digest
 
   module Instance
+    # The digest of +str+ followed by +salt+, with the salt appended.
+    # With +salt+ :auto, the salt is +digest_length+ random bytes from
+    # SecureRandom.
+    #
     # CREDIT: Guido De Rosa
     def salted_digest(str='', salt=:auto)
       if salt == :auto
-        salt = String.random_binary(digest_length) 
+        salt = SecureRandom.random_bytes(digest_length)
       end
       digest(str + salt) + salt
     end

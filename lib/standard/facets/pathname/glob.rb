@@ -1,4 +1,9 @@
+require 'pathname'
+
 class Pathname
+
+  alias_method :_glob_original, :glob
+  private :_glob_original
 
   # Extends Ruby's built-in Pathname#glob to accept symbol-based
   # flags in addition to the standard File::FNM_* constants.
@@ -7,15 +12,14 @@ class Pathname
   #
   # Supported symbols: :noescape, :pathname, :dotmatch, :casefold
   #
-  alias_method :_glob_original, :glob
-  private :_glob_original
-
-  def glob(match, *opts)
+  # Otherwise it is Ruby's own Pathname#glob. With a block, it gives the
+  # block each match and returns nil.
+  #
+  def glob(match, *opts, &block)
     if opts.any? { |o| o.is_a?(Symbol) || o.is_a?(String) }
-      flags = glob_flags(opts)
-      Dir.glob(::File.join(self.to_s, match), flags).map { |m| self.class.new(m) }
+      _glob_original(match, glob_flags(opts), &block)
     else
-      _glob_original(match, *opts)
+      _glob_original(match, *opts, &block)
     end
   end
 

@@ -2,6 +2,9 @@ require 'ostruct'
 
 class OpenStruct
 
+  alias_method :__initialize_without_block__, :initialize
+  private :__initialize_without_block__
+
   # Allows the initialization of an OpenStruct with a setter block:
   #
   #   person = OpenStruct.new do |o|
@@ -17,14 +20,12 @@ class OpenStruct
   #     p.gender = :M
   #   end
   #
+  # The hash is handled by Ruby's own OpenStruct#initialize, which this
+  # calls first.
+  #
   # CREDIT: Noah Gibbs, Gavin Sinclair
   def initialize(hash=nil, &block)
-    @table = {}
-    if hash
-      hash.each_pair do |k, v|
-        self[k.to_sym] = v
-      end
-    end
+    __initialize_without_block__(hash)
     if block && block.arity == 1
       yield self
     end

@@ -9,10 +9,36 @@ Facets now matches ActiveSupport 8.1 in these cases, which fixes bugs in
 Rails apps that load Facets, and adds the extra options ActiveSupport's
 versions take.
 
+It also stops Facets from changing what Ruby's own methods do. Under a new
+rule, now in CONTRIBUTING.md, a Facets method may share a name with one of
+Ruby's only if it gives Ruby's results and adds something useful. Otherwise
+Facets gets out of Ruby's way.
+
 Changes:
 
 * Bug Fixes
 
+  * `Hash#count`, loaded by `require 'facets'`, gives Ruby's own answers
+    again. Facets' version counted values rather than key-value pairs, which
+    changed Ruby's answer for every library in the program:
+    `{a: 1}.count([:a, 1])` returned 0. To count values, use
+    `hash.values.count(value)`. Until 2027-09-30, `Hash#count` warns when
+    given an argument that can't be a key-value pair, which is how Facets'
+    version was called.
+  * `Array#shelljoin` from `facets/shellwords` is Ruby's own again. Facets'
+    version flattened nested arrays and turned hashes into options, so a
+    value meant as one argument could become several. A web request's
+    parameter can be an array (`?term[]=&term[]=/home`), and with it
+    `['grep', '-r', '--', term, 'public/'].shelljoin` gave
+    `grep -r -- '' /home public/`, which prints every file under `/home`.
+    Ruby's escapes each element as one argument. To turn hashes into
+    options, use `array.shellwords.shelljoin`. Until 2027-09-30,
+    `Array#shelljoin` warns when the array has a hash or an array in it.
+  * `Hash#shellwords`, and so `Hash#shelljoin` and `Array#shellwords`, no
+    longer put quote characters around values. Once the words were escaped
+    with `shelljoin`, the quotes became part of the value:
+    `{name: 'jim'}.shelljoin` passed `"jim"`, quotes included. Each flag and
+    its value is now one plain word, `--name=jim`.
   * `Time.current` uses ActiveSupport's `Time.zone` when it is set. Before,
     when Facets loaded after ActiveSupport, `Time.current` ignored the Rails
     app's time zone and returned the system's local time.
@@ -34,6 +60,29 @@ Changes:
     `"ohaie\nwurld"`. It also raised `NoMethodError` for an empty string.
   * `String#indent` with a negative number and an indent string of more than
     one character removes only whole copies of that string.
+  * `require 'facets/fileutils/ln_r'` replaced Ruby's `FileUtils.link_entry`
+    and an internal method it uses with old copies, so Ruby's own
+    `FileUtils.cp_lr` raised `NameError`. `FileUtils.ln_r` now uses Ruby's
+    `link_entry`, and the file requires `fileutils` itself.
+  * `Pathname#glob` from `facets/pathname/glob` ignored a block; it now gives
+    the block each match, as Ruby's does. With symbol flags, such as
+    `:dotmatch`, it now uses Ruby's glob too, so it works in a directory
+    whose name has glob characters such as `[`, and returns paths in the
+    same form as it does without them. The file requires `pathname` itself.
+  * `Kernel#extend` with no arguments and no block raises `ArgumentError`,
+    as Ruby's does; before, it returned the object. The block form is now a
+    module prepended to `Kernel`, so `ruby -w` no longer warns that `extend`
+    was redefined.
+  * `require 'facets/digest'` raised `LoadError`, because it required a file
+    that had moved. `#salted_digest`'s automatic salt now comes from
+    `SecureRandom` instead of `rand`.
+  * `facets/zlib` no longer defines its own copies of Ruby's `Zlib.inflate`
+    and `Zlib.deflate`. It now requires `zlib` and `stringio` itself;
+    before, `Zlib.compress` raised `NameError` unless they were already
+    loaded.
+  * `OpenStruct#initialize` from `facets/ostruct` calls Ruby's own
+    `initialize` for the hash, instead of a copy of it, and `ruby -w` no
+    longer warns that it was redefined.
 
 * Additions
 
@@ -48,6 +97,12 @@ Changes:
 
 * Changes that can affect existing code
 
+  * `Hash#count(value)` and `Array#shelljoin` no longer do what Facets'
+    versions did; see Bug Fixes. Both warn until 2027-09-30 when called
+    the old way.
+  * `Hash#shellwords` gives `--name=jim` rather than `--name="jim"`. Code
+    that joined the words with spaces into a shell command should use
+    `shelljoin` instead.
   * `Array#split` keeps an empty piece where a match is at either end:
     `[2, 1, 2].split(2)` is `[[], [1], []]`, and `[].split(2)` is `[[]]`.
     Before, empty pieces at the end were dropped.
