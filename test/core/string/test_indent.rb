@@ -65,6 +65,25 @@ test_case String do
       '^^xyz'.indent(-2, '^').assert == 'xyz'
     end
 
+
+    test "leaves empty lines alone, as ActiveSupport does" do
+      "a\n\nb".indent(2).assert == "  a\n\n  b"
+    end
+
+    test "indents empty lines when asked" do
+      "a\n\nb".indent(2, ' ', true).assert == "  a\n  \n  b"
+    end
+
+    test "uses the string's own indentation character" do
+      "\ta".indent(1).assert == "\t\ta"
+      "a\n b".indent(1).assert == " a\n  b"
+    end
+
+    test "removes a multi-character indent string whole" do
+      "----xyz".indent(-1, '--').assert == '--xyz'
+      "-xyz".indent(-1, '--').assert == '-xyz'
+    end
+
   end
 
   method :indent! do
@@ -77,6 +96,13 @@ test_case String do
       s = "  xyz"
       s.indent!(2)
       s.assert == '    xyz'
+    end
+
+
+    test "takes the same arguments as #indent" do
+      s = "a\n\nb"
+      s.indent!(1, '-', true)
+      s.assert == "-a\n-\n-b"
     end
 
   end

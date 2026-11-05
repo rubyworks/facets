@@ -67,12 +67,17 @@ class Hash
 end
 
 class String
-  # Is this string just whitespace?
+  # Is this string empty or just whitespace? Unicode whitespace, such as a
+  # non-breaking space, counts too, as it does in ActiveSupport.
   #
-  #   "abc".blank?  #=> false
-  #   "   ".blank?  #=> true
+  #   "abc".blank?     #=> false
+  #   "   ".blank?     #=> true
+  #   " ".blank?  #=> true
   def blank?
-    /\S/ !~ self
+    empty? || /\A[[:space:]]*\z/.match?(self)
+  rescue Encoding::CompatibilityError
+    # e.g. UTF-16 text, which a UTF-8 regexp can't match
+    Regexp.new('\A[[:space:]]*\z'.encode(encoding), Regexp::FIXEDENCODING).match?(self)
   end
 end
 

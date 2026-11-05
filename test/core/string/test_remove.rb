@@ -14,6 +14,11 @@ test_case String do
       s.remove(/x{1,2}/).assert == "boofoo"
     end
 
+
+    test "removes several patterns" do
+      "foo bar".remove(/o/, "b").assert == "f ar"
+    end
+
   end
 
   method :remove! do
@@ -28,6 +33,18 @@ test_case String do
       s = "xbooxxfoox"
       s.remove!(/x{1,2}/)
       s.assert == "boofoo"
+    end
+
+
+    test "removes several patterns" do
+      s = "foo bar"
+      s.remove!(/o/, "b")
+      s.assert == "f ar"
+    end
+
+    test "returns the string even if nothing was removed" do
+      s = "foo"
+      s.remove!("x").assert.equal?(s)
     end
 
   end

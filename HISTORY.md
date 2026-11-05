@@ -1,5 +1,66 @@
 # Facets Release History
 
+## Unreleased
+
+Facets and ActiveSupport define many of the same methods, and whichever
+loads last replaces the other's. This release makes a set of those methods
+behave the same in both libraries, so it no longer matters which one wins.
+Facets now matches ActiveSupport 8.1 in these cases, which fixes bugs in
+Rails apps that load Facets, and adds the extra options ActiveSupport's
+versions take.
+
+Changes:
+
+* Bug Fixes
+
+  * `Time.current` uses ActiveSupport's `Time.zone` when it is set. Before,
+    when Facets loaded after ActiveSupport, `Time.current` ignored the Rails
+    app's time zone and returned the system's local time.
+  * `Time#change` keeps the time's UTC offset or time zone. Before, a time
+    such as `15:30 +09:00` changed to the system's local time zone. It also
+    keeps fractions of a microsecond.
+  * Facets' deprecated `Time#to_time`, used only when `date` isn't loaded,
+    returns `self`, as Ruby's own does. Before, it converted to local time.
+  * `String#blank?` and `String#squish` treat Unicode whitespace, such as a
+    non-breaking space, as whitespace. `String#blank?` also works for strings
+    in encodings such as UTF-16.
+  * `Class#descendants` no longer raises `ArgumentError` when ActiveSupport
+    is loaded. Calling it with a number of generations still does, because
+    ActiveSupport wraps the method in one that takes no argument.
+  * `Integer#ordinal` and `#ordinalize` give `"-1st"` for -1, not `"-1th"`.
+  * `String#unindent` with no argument removes only the least indented
+    line's indentation from each line. Before, it removed more from the more
+    indented lines, so its own example, `"ohaie\n  wurld"`, came out as
+    `"ohaie\nwurld"`. It also raised `NoMethodError` for an empty string.
+  * `String#indent` with a negative number and an indent string of more than
+    one character removes only whole copies of that string.
+
+* Additions
+
+  * `Time#change` takes `nsec:` and `offset:`.
+  * `String#remove` and `#remove!` take several patterns.
+  * `Hash#deep_merge` and `#deep_merge!` take a block, as `Hash#merge` does,
+    to decide the value of a key both hashes have.
+  * `Array#split` takes a block instead of a pattern, and splits on `nil`
+    when given neither.
+  * `String#indent` and `#indent!` take a third argument; when true, empty
+    lines are indented too.
+
+* Changes that can affect existing code
+
+  * `Array#split` keeps an empty piece where a match is at either end:
+    `[2, 1, 2].split(2)` is `[[], [1], []]`, and `[].split(2)` is `[[]]`.
+    Before, empty pieces at the end were dropped.
+  * `String#indent` leaves empty lines unchanged unless asked. Without an
+    indent string, it indents with the string's own indentation character,
+    so a tab-indented string gets more tabs.
+  * `String#remove!` returns the string even when nothing was removed.
+    Before, it returned `nil` then.
+  * `Hash#deep_merge!` replaces a sub-hash with a merged copy instead of
+    changing it, so other references to the sub-hash no longer see the
+    change.
+  * `Class#descendants` lists all subclasses before their own descendants.
+
 ## 4.0.1 / 2026-11-02
 
 A patch release with a security fix: `require 'facets/shellwords'` replaced
