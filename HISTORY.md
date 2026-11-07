@@ -70,9 +70,8 @@ Changes:
     whose name has glob characters such as `[`, and returns paths in the
     same form as it does without them. The file requires `pathname` itself.
   * `Kernel#extend` with no arguments and no block raises `ArgumentError`,
-    as Ruby's does; before, it returned the object. The block form is now a
-    module prepended to `Kernel`, so `ruby -w` no longer warns that `extend`
-    was redefined.
+    as Ruby's does; before, it returned the object. `ruby -w` no longer warns
+    that `extend` was redefined.
   * `require 'facets/digest'` raised `LoadError`, because it required a file
     that had moved. `#salted_digest`'s automatic salt now comes from
     `SecureRandom` instead of `rand`.
@@ -94,6 +93,15 @@ Changes:
     when given neither.
   * `String#indent` and `#indent!` take a third argument; when true, empty
     lines are indented too.
+
+* Deprecations
+
+  * `Kernel#extend` with a block, which Facets has added since 2.8.0, now
+    warns, and will be removed after 2027-09-30. It's the only reason Facets
+    overrides Ruby's `extend`, which every `extend` call in a program then
+    goes through. Use `obj.extend(Module.new { ... })` instead. Without
+    Facets, Ruby raises if given only a block, and ignores a block given
+    with modules.
 
 * Changes that can affect existing code
 

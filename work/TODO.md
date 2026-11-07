@@ -30,8 +30,8 @@ probably in how the command line splits options from file arguments.
   for the method's FIXME about adding one blank line too many, which is why
   the result is `rstrip`ped.
 
-(The `Kernel#extend` "method redefined" warning is gone: since 2026-11-04 the
-override is a module prepended to Kernel.)
+(The `Kernel#extend` "method redefined" warning is gone since 2026-11-04:
+Facets removes Ruby's method before defining its own.)
 
 Once it's gone, consider a test that `require 'facets'` is silent under
 `-w`, so new warnings get caught.

@@ -1,7 +1,6 @@
 covers 'facets/kernel/extend'
 
-# Facets' #extend lives in a module prepended to Kernel, so Lemon must wrap it there.
-test_case Facets::KernelExtend do
+test_case Kernel do
 
   method :extend do
 
@@ -36,6 +35,18 @@ test_case Facets::KernelExtend do
 
     test "with nothing raises ArgumentError, as Ruby's does" do
       expect(ArgumentError) { Object.new.extend }
+    end
+
+    test "with a block, warns that it's deprecated" do
+      warnings = WarningRecorder.record { Object.new.extend { } }
+      warnings.size.assert == 1
+      warnings.first.assert =~ /Module\.new/
+      # It names the caller (here Lemon, which wraps the method), not Facets.
+      warnings.first.refute.include?('facets/kernel/extend.rb')
+    end
+
+    test "without a block, doesn't warn" do
+      WarningRecorder.record { Object.new.extend(Comparable) }.assert == []
     end
 
   end
