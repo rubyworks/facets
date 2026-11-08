@@ -1,0 +1,13 @@
+---
+layout: default
+---
+<section class="page-hero archive-hero"><div class="shell">
+  {%- if page.archive %}
+  <p class="eyebrow"><span class="eyebrow-line"></span> FROM THE ARCHIVE / {{ page.date | date: "%Y-%m-%d" }}</p><h1>{{ page.title }}</h1><p>This post is preserved from an earlier Facets release. For current installation and API guidance, use the <a href="{{ '/learn.html' | relative_url }}">guide</a>.</p>
+  {%- else %}
+  <p class="eyebrow"><span class="eyebrow-line"></span> BLOG / {{ page.date | date: "%Y-%m-%d" }}</p><h1>{{ page.title }}</h1>
+  {%- if page.subtitle %}<p>{{ page.subtitle }}</p>{% endif %}
+  {%- endif %}
+</div></section>
+<article class="archive-article shell">{{ content }}</article>
+<div class="archive-back shell"><a class="text-link" href="{{ '/blog/' | relative_url }}">← All posts</a></div>

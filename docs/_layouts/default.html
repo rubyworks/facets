@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#201523">
+  {%- if page.layout == 'post' %}
+    {%- if page.archive %}
+      {%- capture head_title %}{{ page.title }} | Ruby Facets archive{% endcapture %}
+      {%- capture head_description %}{{ page.title }}, a historical post from the Ruby Facets archive.{% endcapture %}
+    {%- else %}
+      {%- capture head_title %}{{ page.title }} | Ruby Facets blog{% endcapture %}
+      {%- capture head_description %}{{ page.description | default: page.excerpt | strip_html | normalize_whitespace | truncatewords: 30 }}{% endcapture %}
+    {%- endif %}
+  {%- else %}
+    {%- assign head_title = page.title | default: site.title %}
+    {%- assign head_description = page.description | default: site.description %}
+  {%- endif %}
+  <meta name="description" content="{{ head_description | escape }}">
+  <title>{{ head_title | escape }}</title>
+  <link rel="icon" href="{{ '/assets/images/cherries.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="alternate" href="{{ '/atom.xml' | relative_url }}" type="application/atom+xml" title="Ruby Facets releases">
+  <link rel="alternate" href="{{ '/feed.xml' | relative_url }}" type="application/atom+xml" title="Ruby Facets blog">
+  <link rel="stylesheet" href="{{ '/assets/styles/site.css' | relative_url }}">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="{{ '/index.html' | relative_url }}" aria-label="Ruby Facets home"><img class="brand-mark" src="{{ '/assets/images/cherries.svg' | relative_url }}" alt=""><span>Ruby <strong>Facets</strong></span></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="{{ '/index.html' | relative_url }}" {% if page.active == 'index' %}aria-current="page"{% endif %}>Overview</a>
+        <a href="{{ '/learn.html' | relative_url }}" {% if page.active == 'learn' %}aria-current="page"{% endif %}>Guide</a>
+        <a href="{{ '/news.html' | relative_url }}" {% if page.active == 'news' %}aria-current="page"{% endif %}>Releases</a>
+        <a href="{{ '/blog/' | relative_url }}" {% if page.active == 'blog' or page.layout == 'post' %}aria-current="page"{% endif %}>Blog</a>
+        <a href="{{ '/source.html' | relative_url }}" {% if page.active == 'source' %}aria-current="page"{% endif %}>Contribute</a>
+      </nav>
+      <a class="header-github" href="https://github.com/rubyworks/facets">GitHub <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="main">{{ content }}</main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <div>
+        <a class="brand" href="{{ '/index.html' | relative_url }}"><img class="brand-mark" src="{{ '/assets/images/cherries.svg' | relative_url }}" alt=""><span>Ruby <strong>Facets</strong></span></a>
+        <p>More of Ruby, one method at a time.<br>Created by Thomas Sawyer and the Ruby community.</p>
+      </div>
+      <div class="footer-links" aria-label="More resources">
+        <a href="https://rubygems.org/gems/facets">RubyGems</a>
+        <a href="https://www.rubydoc.info/gems/facets">API reference</a>
+        <a href="https://github.com/rubyworks/facets/issues">Issues</a>
+        <a href="https://github.com/rubyworks/facets/blob/main/LICENSE.txt">BSD 2-Clause license</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

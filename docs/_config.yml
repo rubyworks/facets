@@ -1,0 +1,38 @@
+# GitHub Pages builds this site with Jekyll from main's docs/ folder.
+# Preview it locally with GitHub Pages' own Jekyll; see README.md.
+
+title: Ruby Facets
+description: Ruby Facets adds focused extensions to Ruby core classes and the standard library.
+author: Thomas Sawyer
+url: https://rubyworks.github.io
+baseurl: /facets
+
+# Blog posts, including the archive of early Facets posts, live in _posts
+# and keep the URLs the archive posts have always had.
+permalink: /posts/:year-:month-:day-:title:output_ext
+
+defaults:
+  - scope: { path: "", type: pages }
+    values: { layout: default }
+  - scope: { path: "", type: posts }
+    values: { layout: post }
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+highlighter: rouge
+
+plugins:
+  - jekyll-feed
+
+feed:
+  path: feed.xml
+
+exclude:
+  - README.md
+  # Left from the former Brite site, for reference only.
+  - brite.yml
+  - "*.page"
+  - posts/*.post
+  - assets/layouts

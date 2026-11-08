@@ -188,6 +188,29 @@ p { margin-bottom: 1.25em; }
 .archive-article code, .archive-article pre { background: #eee8e4; }
 .archive-article pre { padding: 18px; margin: 24px 0; }
 .archive-back { max-width: 830px; padding-bottom: 80px; }
+.archive-article pre code { background: none; font-size: .88rem; line-height: 1.7; }
+.archive-article div.highlighter-rouge { margin: 24px 0; }
+.archive-article div.highlighter-rouge pre { margin: 0; }
+.archive-article blockquote { margin: 24px 0; padding-left: 20px; border-left: 3px solid #e3c9c9; color: var(--muted); }
+.post-list { max-width: 900px; border-top: 1px solid #cfc5be; }
+.post-list-item { display: grid; grid-template-columns: 70px 1fr 20px; gap: 12px; align-items: center; padding: 18px 0; border-bottom: 1px solid #cfc5be; text-decoration: none; }
+.post-list-item:hover strong { color: var(--ruby-dark); }
+.post-list-date { color: #a04b56; font-size: .7rem; font-weight: 800; }
+.post-list-text strong { display: block; font-family: var(--serif); font-size: 1.3rem; font-weight: 400; }
+.post-list-text em { display: block; margin-top: 2px; color: var(--muted); font-style: normal; font-size: .9rem; }
+.post-list-item b { font-size: .9rem; font-weight: 400; }
+/* Code highlighted by Rouge, in the site's palette. */
+.highlight .c, .highlight .c1, .highlight .cm, .highlight .cd { color: #8c7f8a; font-style: italic; }
+.highlight .k, .highlight .kd, .highlight .kp, .highlight .kr, .highlight .kc, .highlight .ow { color: #b72f43; }
+.highlight .nf, .highlight .fm { color: #6d3c8a; }
+.highlight .nc, .highlight .nn, .highlight .no { color: #8a4b1f; }
+.highlight .s, .highlight .s1, .highlight .s2, .highlight .sb, .highlight .sh, .highlight .sx, .highlight .dl { color: #7a5a17; }
+.highlight .ss { color: #2e6a62; }
+.highlight .mi, .highlight .mf, .highlight .m { color: #5b4bb0; }
+.highlight .vi, .highlight .vc, .highlight .vg, .highlight .nv { color: #2f5f8a; }
+.highlight .nb, .highlight .bp { color: #8e3a68; }
+.highlight .gp, .highlight .go { color: #8c7f8a; }
+.highlight .err { color: inherit; background: none; }
 .site-footer { background: #1a111d; color: #f5edf0; padding-block: 56px; }
 .footer-inner { display: flex; justify-content: space-between; gap: 40px; }
 .site-footer .brand { margin-bottom: 16px; }

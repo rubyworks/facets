@@ -1,0 +1,11 @@
+---
+title: Blog | Ruby Facets
+description: Articles on Ruby's methods, its object model, and Ruby Facets itself.
+active: blog
+---
+<section class="page-hero"><div class="shell"><p class="eyebrow"><span class="eyebrow-line"></span> BLOG</p><h1>Notes on<br><em>Ruby's methods.</em></h1><p>Articles on Ruby's methods, its object model, and Facets itself, along with posts from the Facets archive. <a href="{{ '/feed.xml' | relative_url }}">Subscribe to the feed</a>.</p></div></section>
+<section class="section section-light"><div class="shell"><div class="post-list">
+{%- for post in site.posts %}
+  <a class="post-list-item" href="{{ post.url | relative_url }}"><span class="post-list-date">{{ post.date | date: "%Y" }}</span><span class="post-list-text"><strong>{{ post.title }}</strong>{% if post.archive %}<em>From the archive</em>{% elsif post.subtitle %}<em>{{ post.subtitle }}</em>{% endif %}</span><b aria-hidden="true">↗</b></a>
+{%- endfor %}
+</div></div></section>
