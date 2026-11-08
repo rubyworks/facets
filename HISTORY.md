@@ -42,6 +42,11 @@ Changes:
   * `require 'facets'` loads `String#trim`. When `String#margin` was renamed
     to `#trim` in 3.0, the new file was never added to the core aggregator,
     so `trim` worked only with its own require.
+  * `Enumerable#defer` with a block works again. Since 3.2 deprecated it,
+    `defer` ignored its block, so
+    `(1..10).defer { |out, i| out << i if i.even? }.first(5)` returned
+    `[1, 2, 3, 4, 5]` instead of `[2, 4, 6, 8, 10]`. It is still
+    deprecated; the block form is `Enumerator::Lazy.new(enum) { ... }`.
   * `Time.current` uses ActiveSupport's `Time.zone` when it is set. Before,
     when Facets loaded after ActiveSupport, `Time.current` ignored the Rails
     app's time zone and returned the system's local time.
