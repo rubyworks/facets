@@ -1,9 +1,28 @@
 class String
 
-  # Indent left or right by `n` spaces, or `n` number of `c` string.
+  # Indent right by `n` copies of `c`, or left by removing up to `n` copies
+  # of `c` from the start of each line if `n` is negative.
   #
-  # n - The number of spaces to indent. [Integer]
-  # c - Character to use, if other then space. [String]
+  #   "a\nb".indent(2)       #=> "  a\n  b"
+  #   "    a".indent(-2)     #=> "  a"
+  #   "a".indent(2, "-")     #=> "--a"
+  #
+  # Empty lines aren't indented, unless `empty_lines` is true.
+  #
+  #   "a\n\nb".indent(2)              #=> "  a\n\n  b"
+  #   "a\n\nb".indent(2, ' ', true)   #=> "  a\n  \n  b"
+  #
+  # Without `c`, it indents with the string's own indentation character,
+  # a tab or a space, or a space if the string has no indentation.
+  #
+  #   "\ta".indent(1)  #=> "\t\ta"
+  #
+  # This matches ActiveSupport's String#indent, so the two agree whichever
+  # is loaded. A negative `n` is a Facets addition.
+  #
+  # n           - The number of copies of `c` to add or remove. [Integer]
+  # c           - The indentation string. [String]
+  # empty_lines - Whether to indent empty lines too. [Boolean]
   #
   # Returns a new string with the indention. [String]
   #
@@ -11,23 +30,21 @@ class String
   # Credit: Trans
   # Credit: Tyler Rick
 
-  def indent(n, c=' ')
+  def indent(n, c=nil, empty_lines=false)
+    c ||= self[/^[ \t]/] || ' '
     if n >= 0
-      gsub(/^/, c * n)
+      gsub(empty_lines ? /^/ : /^(?!$)/, c * n)
     else
-      gsub(/^#{Regexp.escape(c)}{0,#{-n}}/, "")
+      gsub(/^(?:#{Regexp.escape(c)}){0,#{-n}}/, "")
     end
   end
 
   # Equivalent to String#indent, but modifies the receiver in place.
   #
-  # n - The number of spaces to indent. [Integer]
-  # c - Character to use, if other then space. [String]
-  #
   # Returns this string with the indention. [String]
 
-  def indent!(n, c=' ')
-    replace(indent(n,c))
+  def indent!(n, c=nil, empty_lines=false)
+    replace(indent(n, c, empty_lines))
   end
 
   # Remove excessive indentation. Useful for multi-line strings
@@ -52,15 +69,10 @@ class String
     if size
       indent(-size)
     else
-      char = ' '
-      self.scan(/^[\ \t]*\S/) do |m|
-        if size.nil? || m.size < size
-          size = m.size
-          char = m[0...-1]
-        end
-      end
-      size -= 1
-      indent(-size, char)
+      # The indentation of the least indented line that isn't blank.
+      prefix = scan(/^[ \t]*(?=\S)/).min_by(&:size)
+      return dup if prefix.nil? || prefix.empty?
+      gsub(/^#{Regexp.escape(prefix)}/, '')
     end
   end
 

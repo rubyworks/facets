@@ -75,6 +75,22 @@ test_case String do
       refute "xyz".blank?
       assert "   ".blank?
     end
+
+    test "empty and other whitespace" do
+      assert "".blank?
+      assert "\t\n\r".blank?
+    end
+
+    test "Unicode whitespace" do
+      assert " ".blank?
+      assert "　  ".blank?
+      refute " x".blank?
+    end
+
+    test "other encodings" do
+      assert " \t".encode('UTF-16LE').blank?
+      refute "x".encode('UTF-16LE').blank?
+    end
   end
 
 end

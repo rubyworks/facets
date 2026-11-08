@@ -1,5 +1,137 @@
 # Facets Release History
 
+## Unreleased
+
+Facets and ActiveSupport define many of the same methods, and whichever
+loads last replaces the other's. This release makes a set of those methods
+behave the same in both libraries, so it no longer matters which one wins.
+Facets now matches ActiveSupport 8.1 in these cases, which fixes bugs in
+Rails apps that load Facets, and adds the extra options ActiveSupport's
+versions take.
+
+It also stops Facets from changing what Ruby's own methods do. Under a new
+rule, now in CONTRIBUTING.md, a Facets method may share a name with one of
+Ruby's only if it gives Ruby's results and adds something useful. Otherwise
+Facets gets out of Ruby's way.
+
+Changes:
+
+* Bug Fixes
+
+  * `Hash#count`, loaded by `require 'facets'`, gives Ruby's own answers
+    again. Facets' version counted values rather than key-value pairs, which
+    changed Ruby's answer for every library in the program:
+    `{a: 1}.count([:a, 1])` returned 0. To count values, use
+    `hash.values.count(value)`. Until 2027-09-30, `Hash#count` warns when
+    given an argument that can't be a key-value pair, which is how Facets'
+    version was called.
+  * `Array#shelljoin` from `facets/shellwords` is Ruby's own again. Facets'
+    version flattened nested arrays and turned hashes into options, so a
+    value meant as one argument could become several. A web request's
+    parameter can be an array (`?term[]=&term[]=/home`), and with it
+    `['grep', '-r', '--', term, 'public/'].shelljoin` gave
+    `grep -r -- '' /home public/`, which prints every file under `/home`.
+    Ruby's escapes each element as one argument. To turn hashes into
+    options, use `array.shellwords.shelljoin`. Until 2027-09-30,
+    `Array#shelljoin` warns when the array has a hash or an array in it.
+  * `Hash#shellwords`, and so `Hash#shelljoin` and `Array#shellwords`, no
+    longer put quote characters around values. Once the words were escaped
+    with `shelljoin`, the quotes became part of the value:
+    `{name: 'jim'}.shelljoin` passed `"jim"`, quotes included. Each flag and
+    its value is now one plain word, `--name=jim`.
+  * `require 'facets'` loads `String#trim`. When `String#margin` was renamed
+    to `#trim` in 3.0, the new file was never added to the core aggregator,
+    so `trim` worked only with its own require.
+  * `Enumerable#defer` with a block works again. Since 3.2 deprecated it,
+    `defer` ignored its block, so
+    `(1..10).defer { |out, i| out << i if i.even? }.first(5)` returned
+    `[1, 2, 3, 4, 5]` instead of `[2, 4, 6, 8, 10]`. It is still
+    deprecated; the block form is `Enumerator::Lazy.new(enum) { ... }`.
+  * `Time.current` uses ActiveSupport's `Time.zone` when it is set. Before,
+    when Facets loaded after ActiveSupport, `Time.current` ignored the Rails
+    app's time zone and returned the system's local time.
+  * `Time#change` keeps the time's UTC offset or time zone. Before, a time
+    such as `15:30 +09:00` changed to the system's local time zone. It also
+    keeps fractions of a microsecond.
+  * Facets' deprecated `Time#to_time`, used only when `date` isn't loaded,
+    returns `self`, as Ruby's own does. Before, it converted to local time.
+  * `String#blank?` and `String#squish` treat Unicode whitespace, such as a
+    non-breaking space, as whitespace. `String#blank?` also works for strings
+    in encodings such as UTF-16.
+  * `Class#descendants` no longer raises `ArgumentError` when ActiveSupport
+    is loaded. Calling it with a number of generations still does, because
+    ActiveSupport wraps the method in one that takes no argument.
+  * `Integer#ordinal` and `#ordinalize` give `"-1st"` for -1, not `"-1th"`.
+  * `String#unindent` with no argument removes only the least indented
+    line's indentation from each line. Before, it removed more from the more
+    indented lines, so its own example, `"ohaie\n  wurld"`, came out as
+    `"ohaie\nwurld"`. It also raised `NoMethodError` for an empty string.
+  * `String#indent` with a negative number and an indent string of more than
+    one character removes only whole copies of that string.
+  * `require 'facets/fileutils/ln_r'` replaced Ruby's `FileUtils.link_entry`
+    and an internal method it uses with old copies, so Ruby's own
+    `FileUtils.cp_lr` raised `NameError`. `FileUtils.ln_r` now uses Ruby's
+    `link_entry`, and the file requires `fileutils` itself.
+  * `Pathname#glob` from `facets/pathname/glob` ignored a block; it now gives
+    the block each match, as Ruby's does. With symbol flags, such as
+    `:dotmatch`, it now uses Ruby's glob too, so it works in a directory
+    whose name has glob characters such as `[`, and returns paths in the
+    same form as it does without them. The file requires `pathname` itself.
+  * `Kernel#extend` with no arguments and no block raises `ArgumentError`,
+    as Ruby's does; before, it returned the object. `ruby -w` no longer warns
+    that `extend` was redefined.
+  * `require 'facets/digest'` raised `LoadError`, because it required a file
+    that had moved. `#salted_digest`'s automatic salt now comes from
+    `SecureRandom` instead of `rand`.
+  * `facets/zlib` no longer defines its own copies of Ruby's `Zlib.inflate`
+    and `Zlib.deflate`. It now requires `zlib` and `stringio` itself;
+    before, `Zlib.compress` raised `NameError` unless they were already
+    loaded.
+  * `OpenStruct#initialize` from `facets/ostruct` calls Ruby's own
+    `initialize` for the hash, instead of a copy of it, and `ruby -w` no
+    longer warns that it was redefined.
+
+* Additions
+
+  * `Time#change` takes `nsec:` and `offset:`.
+  * `String#remove` and `#remove!` take several patterns.
+  * `Hash#deep_merge` and `#deep_merge!` take a block, as `Hash#merge` does,
+    to decide the value of a key both hashes have.
+  * `Array#split` takes a block instead of a pattern, and splits on `nil`
+    when given neither.
+  * `String#indent` and `#indent!` take a third argument; when true, empty
+    lines are indented too.
+
+* Deprecations
+
+  * `Kernel#extend` with a block, which Facets has added since 2.8.0, now
+    warns, and will be removed after 2027-09-30. It's the only reason Facets
+    overrides Ruby's `extend`, which every `extend` call in a program then
+    goes through. Use `obj.extend(Module.new { ... })` instead. Without
+    Facets, Ruby raises if given only a block, and ignores a block given
+    with modules.
+
+* Changes that can affect existing code
+
+  * `Hash#count(value)` and `Array#shelljoin` no longer do what Facets'
+    versions did; see Bug Fixes. Both warn until 2027-09-30 when called
+    the old way.
+  * `Hash#shellwords` gives `--name=jim` rather than `--name="jim"`. Code
+    that joined the words with spaces into a shell command should use
+    `shelljoin` instead.
+  * `Array#split` keeps an empty piece where a match is at either end:
+    `[2, 1, 2].split(2)` is `[[], [1], []]`, and `[].split(2)` is `[[]]`.
+    Before, empty pieces at the end were dropped.
+  * `String#indent` leaves empty lines unchanged unless asked. Without an
+    indent string, it indents with the string's own indentation character,
+    so a tab-indented string gets more tabs.
+  * `String#remove!` returns the string even when nothing was removed.
+    Before, it returned `nil` then.
+  * `Hash#deep_merge!` replaces a sub-hash with a merged copy instead of
+    changing it, so other references to the sub-hash no longer see the
+    change.
+  * `Class#descendants` lists all subclasses before their own descendants.
+
 ## 4.0.1 / 2026-11-02
 
 A patch release with a security fix: `require 'facets/shellwords'` replaced

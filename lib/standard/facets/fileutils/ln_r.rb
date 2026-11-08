@@ -1,6 +1,8 @@
+require 'fileutils'
+
 module FileUtils
 
-  unless method_defined?(:ln_r)
+  unless respond_to?(:ln_r)
 
     #
     # Options: noop verbose dereference_root remove_destination
@@ -25,6 +27,9 @@ module FileUtils
     #   FileUtils.ln_r 'src/.', 'dest'     # cp_r('src', 'dest') makes src/dest,
     #                                      # but this doesn't.
     #
+    # It is much like Ruby's own FileUtils.cp_lr, and uses Ruby's
+    # FileUtils.link_entry to make the links.
+    #
     # TODO: Why --remove-destination and not just --force?
     def ln_r(src, dest, options = {})
       fu_output_message "ln -r#{options[:remove_destination] ? ' --remove-destination' : ''} #{[src,dest].flatten.join ' '}" if options[:verbose]
@@ -37,61 +42,7 @@ module FileUtils
     end
     module_function :ln_r
 
-    OPT_TABLE = {} unless const_defined?(:OPT_TABLE)
-    OPT_TABLE['ln_r'] = [:noop, :verbose, :dereference_root, :remove_destination]
-
-    #
-    # Hard links a file system entry +src+ to +dest+.
-    # If +src+ is a directory, this method links its contents recursively.
-    #
-    # Both of +src+ and +dest+ must be a path name.
-    # +src+ must exist, +dest+ must not exist.
-    #
-    # If +dereference_root+ is true, this method dereference tree root.
-    #
-    # If +remove_destination+ is true, this method removes each destination file before copy.
-    #
-    def link_entry(src, dest, dereference_root = false, remove_destination = false)
-      Entry_.new(src, nil, dereference_root).traverse do |ent|
-        destent = Entry_.new(dest, ent.rel, false)
-        File.unlink destent.path if remove_destination && File.file?(destent.path)
-        ent.link destent.path
-      end
-    end
-    module_function :link_entry
-
-    class Entry_ #:nodoc:
-      def link(dest)
-        case
-        when directory?
-          if !File.exist?(dest) and descendant_diretory?(dest, path)
-            raise ArgumentError, "cannot link directory %s to itself %s" % [path, dest]
-          end
-          begin
-            Dir.mkdir dest
-          rescue
-            raise unless File.directory?(dest)
-          end
-        else file?
-          File.link path(), dest
-        end
-      end
-
-      unless const_defined?(:DIRECTORY_TERM)
-        if File::ALT_SEPARATOR
-          DIRECTORY_TERM = "(?=[/#{Regexp.quote(File::ALT_SEPARATOR)}]|\\z)".freeze
-        else
-          DIRECTORY_TERM = "(?=/|\\z)".freeze
-        end
-        SYSCASE = File::FNM_SYSCASE.nonzero? ? "-i" : ""
-      end
-
-      unless method_defined?(:descendant_diretory?)
-        def descendant_diretory?(descendant, ascendant)
-          /\A(?#{SYSCASE}:#{Regexp.quote(ascendant)})#{DIRECTORY_TERM}/ =~ File.dirname(descendant)
-        end
-      end
-    end
+    OPT_TABLE['ln_r'] = [:noop, :verbose, :dereference_root, :remove_destination] if const_defined?(:OPT_TABLE) && !OPT_TABLE.frozen?
 
   end
 

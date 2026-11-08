@@ -1,17 +1,22 @@
 class String
 
-  # Removes all occurrences of a pattern in a string.
+  # Removes all occurrences of one or more patterns in a string.
   #
-  # Returns a new [String] with all occurrences of the pattern removed.
-  def remove(pattern)
-    gsub(pattern, '')
+  #   "foo bar".remove("o")       #=> "f bar"
+  #   "foo bar".remove(/o/, "b")  #=> "f ar"
+  #
+  # Returns a new [String] with all occurrences of the patterns removed.
+  def remove(*patterns)
+    dup.remove!(*patterns)
   end
 
-  # Removes all occurrences of a pattern in a string.
+  # Removes all occurrences of one or more patterns in a string.
   #
-  # Returns the [String] with all occurrences of the pattern removed.
-  def remove!(pattern)
-    gsub!(pattern, '')
+  # Returns the [String] with all occurrences of the patterns removed,
+  # even if nothing was removed.
+  def remove!(*patterns)
+    patterns.each { |pattern| gsub!(pattern, '') }
+    self
   end
 
   # Removes occurances of a string or regexp. This is an operator

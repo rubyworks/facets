@@ -15,6 +15,11 @@ test_case String do
       r.assert == "foo bar boo"
     end
 
+
+    test "counts Unicode whitespace" do
+      "\u00a0a\u3000\u3000b\u00a0".squish.assert == "a b"
+    end
+
   end
 
   method :squish! do

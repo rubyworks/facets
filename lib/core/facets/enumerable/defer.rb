@@ -26,9 +26,12 @@ module Enumerable
   # Array or Hash built with the results, or each{...} if you just want
   # to output each result and discard it.
   #
+  # @deprecated Use Enumerable#lazy, built into Ruby since 2.0. The block
+  #   form is Enumerator::Lazy.new(enum) { |out, i| ... }. Scheduled for
+  #   removal after 2027-09-30.
   def defer(&blk)
     warn "Enumerable#defer is deprecated. Use Enumerable#lazy instead. It will be removed after 2027-09-30.", uplevel: 1
-    lazy
+    blk ? Enumerator::Lazy.new(self, &blk) : lazy
   end
 
 end

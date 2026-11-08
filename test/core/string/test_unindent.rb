@@ -90,6 +90,21 @@ by.
       actual.assert == expected
     end
 
+
+    test "removes the indentation of the least indented line" do
+      "  a\n\n    b".unindent.assert == "a\n\n  b"
+      "        ohaie\n          wurld\n".unindent.assert == "ohaie\n  wurld\n"
+    end
+
+    test "tabs" do
+      "\t\tx\n\t\t\ty".unindent.assert == "x\n\ty"
+    end
+
+    test "nothing to remove" do
+      "".unindent.assert == ""
+      "x\n  y".unindent.assert == "x\n  y"
+    end
+
   end
 
   method :unindent! do

@@ -27,6 +27,16 @@
   require line, and comment out their line in the aggregator file with
   `# uncommon`.
 
+* Facets must not change what Ruby's own methods do, in the core or the
+  standard library. A Facets method with the same name as one of Ruby's is
+  allowed only if it is compatible, giving Ruby's result for everything
+  Ruby's version accepts (or differing only where Ruby's gives no useful
+  answer, such as raising or returning nil), and it adds something useful.
+  Otherwise Facets gets out of Ruby's way, and the Facets version is either
+  dropped or kept under a new name. Never redefine a method just to copy
+  Ruby's. If Ruby later adds a method Facets already has, the same rule
+  applies.
+
 * Standard libraries that are not extensions of existing standard libraries
   do not have to be divvied up into individual method files. But note that
   full classes and/or modules are less likely to make it into Facets, as

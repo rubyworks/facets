@@ -1,3 +1,6 @@
+require 'zlib'
+require 'stringio'
+
 # A convenient wrapper for the zlib standard library that allows
 # compression/decompression of strings with gzip.
 
@@ -24,15 +27,8 @@ module Zlib
     output.string
   end
 
-  # Inflate a deflated sting.
-  def self.inflate(string)
-    Inflate.inflate(string)
-  end
-
-  # Deflate a string.
-  def self.deflate(string, level=DEFAULT_COMPRESSION)
-    Deflate.deflate(string, level)
-  end
+  # Zlib.inflate and Zlib.deflate are Ruby's own. Facets used to define
+  # copies of them here.
 
 end
 
