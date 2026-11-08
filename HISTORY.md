@@ -136,6 +136,9 @@ Changes:
     changing it, so other references to the sub-hash no longer see the
     change.
   * `Class#descendants` lists all subclasses before their own descendants.
+    On Ruby 4.1, which adds its own `Module#descendants`, a call without a
+    number of generations is passed to Ruby's, so it gives Ruby's list, in
+    Ruby's order. Only `descendants(n)` is still Facets' own there.
 
 ## 4.0.1 / 2026-11-02
 
