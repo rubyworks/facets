@@ -3,10 +3,7 @@ title: What Concerns
 date: 2013-01-01
 ---
 
-> **Update, November 2026:** Nothing in Ruby has changed that bears on
-> this: including a module still doesn't bring along its singleton methods,
-> and modules still can't inherit from one another, which I proposed in
-> [The Case for Module Inheritance]({{ site.baseurl }}{% post_url 2010-04-13-a-case-for-module-inheritance %}).
+> **Update, November 2026:** Nothing has changed here: including a module still doesn't bring its singleton methods along, and modules still can't inherit from one another, as I proposed in [The Case for Module Inheritance]({{ site.baseurl }}{% post_url 2010-04-13-a-case-for-module-inheritance %}).
 
 David Heinemeier Hansson, the well known creator of Rails, recently gave a little [pep-talk](http://37signals.com/svn/posts/3372-put-chubby-models-on-a-diet-with-concerns) for the use of `ActiveSupport::Concern`, making an argument that they were sufficient to satisfy the practical needs of [DCI](http://en.wikipedia.org/wiki/Data,_context_and_interaction)'s theory.
 

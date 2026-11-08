@@ -3,7 +3,7 @@ title: Setting Priorities Trumps Warnings
 date: 2012-02-25
 ---
 
-> **Update, November 2026:** Ruby never adopted exception priorities. It went another way, sorting warnings into named categories rather than levels. Ruby 2.4 added the `Warning` module, whose `Warning.warn` can be overridden to decide what happens to each warning. Ruby 2.7 added `Warning[]` and `Warning[]=`, and command-line options such as `-W:no-deprecated`, to switch the `:deprecated` and `:experimental` categories on and off; since Ruby 2.7.2, deprecation warnings are off by default. Ruby 3.0 let `warn` take a `category:` keyword, though it accepts only Ruby's own categories, and Ruby 3.3 and 3.4 added the `:performance` and `:strict_unused_block` categories. `$VERBOSE` still has just three settings, `nil`, `false` and `true`, and `warn` is still separate from `raise`.
+> **Update, November 2026:** Ruby never adopted anything like this. It went with warning categories instead: since Ruby 2.7, categories like `:deprecated` can be switched on and off, and since Ruby 2.4, `Warning.warn` can be overridden to handle warnings however you like. `$VERBOSE` still has just three settings.
 
 Today I had to consider how best to handle omission exceptions in the context of test frameworks, and their use case to mark *pending tests*. In the course of doing so, I realized there are at least two reasonable levels of omission, those that are "ASAP" and those that are "NSM" (Not So Much). Whereas other frameworks used their own specially defined classes for these, e.g. `Pending` and `Omission`, my approach is to re-utilize Ruby's own `NotImplementedError`. But then I had to consider how to differentiate between these priorities.
 

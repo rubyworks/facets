@@ -3,14 +3,7 @@ title: Negative Arrays
 date: 2006-12-03
 ---
 
-> **Update, November 2026:** Ruby 2.3 gave String its own unary minus,
-> `String#-@`, which returns a frozen copy of the string (deduplicated since
-> Ruby 2.5). So `-'InstalledFiles'` now means something else, and an
-> `Object#-@` like the one proposed here never sees strings. Facets did take
-> up the `'-InstalledFiles'` form for a while: `Dir.multiglob` accepted `+`
-> and `-` prefixes in 2007, but Facets 2.1.2 dropped them, and today it just
-> takes a list of patterns. I have also corrected the code samples: the
-> unary minus method is `-@`, not `@-`.
+> **Update, November 2026:** Ruby 2.3 gave strings their own unary minus, which returns a frozen copy, so `-'InstalledFiles'` can't be used this way anymore. Facets' `Dir.multiglob` did support `+` and `-` prefixes for a while, but they were dropped in Facets 2.1.
 
 My current work involves the creation of an extensive configuration file format representing project information. In a number of cases I have had need of an inclusion list, representing files and file patterns to include for some operation --say, what files to include in a package. In such a case I generally end up with at least two parameters which I basically label include and exclude. While include is the list of files to use, exclude is a list of files to exclude from the included list. Using exclude makes it easier to specify a large selection and then subsequently omit a file or two. The include list typically has a suitable default value, so a third parameter is sometimes also of use, append, which concats to the defaults as opposed to replacing the include parameter outright.
 

@@ -3,14 +3,7 @@ title: The Case for Module Inheritance
 date: 2010-04-13
 ---
 
-> **Update, November 2026:** Ruby 3.0 fixed the Double Inclusion Problem
-> ([#9573](https://bugs.ruby-lang.org/issues/9573)): when a module includes
-> another module, any class or object that already included or extended the
-> first one now gets the new one too, so components can be loaded as needed.
-> Module inheritance never came, though. `module English < Language` is
-> still a syntax error, and singleton methods still aren't inherited through
-> `include`, so the `self.included`/`ClassMethods` idiom is still needed for
-> that.
+> **Update, November 2026:** Ruby 3.0 fixed the double inclusion problem ([#9573](https://bugs.ruby-lang.org/issues/9573)): including a module into another now reaches the classes that already included it. Module inheritance never came, though, so the `self.included`/`ClassMethods` idiom is still with us.
 
 I love beautifully written code. Unfortunately the realities of the
 language sometimes clash with requirements of the implementation. While

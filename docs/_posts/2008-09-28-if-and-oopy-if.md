@@ -3,15 +3,7 @@ title: If and OOPY If
 date: 2008-09-28
 ---
 
-> **Update, November 2026:** Ruby still treats only `nil` and `false` as
-> false, and an object still has no say in it. Ruby 2.3 did add the safe
-> navigation operator, `&.`, which skips a call when the receiver is `nil`,
-> so `obj&.it&.does&.not&.matter` returns `nil` instead of raising. Facets
-> has its own NullClass (`require 'facets/nullclass'`); it is a plain class
-> rather than a NilClass subclass, and like the one below it is still true
-> in a condition. I took `< NilClass` out of the first sample, since Ruby
-> can't make instances of a NilClass subclass, and fixed the `initialize`
-> in the second, since neither `@if` nor `if` can be a parameter name.
+> **Update, November 2026:** Ruby still treats only `nil` and `false` as false. The safe navigation operator, `&.`, added in Ruby 2.3, covers some of what I wanted `null` for. Facets does have a `NullClass`, but it's still true in a condition.
 
 Ruby takes a unique approach to conditional evaluation: <i>All
 objects are equivalent to `true` except `nil`

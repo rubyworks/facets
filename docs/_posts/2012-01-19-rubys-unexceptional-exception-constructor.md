@@ -3,7 +3,7 @@ title: Ruby's Exceptional Exception Constructor
 date: 2012-01-19
 ---
 
-> **Update, November 2026:** The behavior described here hasn't changed. As of Ruby 3.4, `raise` still passes only the message to the exception's `initialize` (by way of `Exception.exception`) and still sets the backtrace separately with `#set_backtrace`. Ruby 3.4 only widened what that backtrace may be: it can now be an array of `Thread::Backtrace::Location` objects as well as strings. The issue report mentioned at the end, which proposed a `#set_message` to match `#set_backtrace`, was rejected in March 2012. `#message` still calls `#to_s`, and since Ruby 3.2 the default error printer calls a newer method, `#detailed_message`, which in turn calls `#message`. I also corrected the error shown for the last example, which is a `MyError`, not a `RuntimeError`.
+> **Update, November 2026:** Still the case: `raise` passes only the message to `initialize` and sets the backtrace separately. The `set_message` I asked for in that issue was rejected.
 
 You would think after all this time Ruby's Exception class would be a rather robust and clearly comprehensible class.
 

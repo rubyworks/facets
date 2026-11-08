@@ -4,7 +4,7 @@ date: 2012-05-09
 published: false
 ---
 
-> **Update, November 2026:** Nothing here has changed: Ruby's Hash is still written in C, and methods such as `#update` and `#each` still work on the hash table directly rather than through `#store` and `#fetch`.
+> **Update, November 2026:** Nothing has changed: Hash's methods still work on the hash table directly rather than through `store` and `fetch`.
 
 # The Proper Construction of a Class [DRAFT]
 

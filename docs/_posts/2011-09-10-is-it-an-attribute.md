@@ -3,17 +3,7 @@ title: Is it an Attribute?
 date: 2011-09-10
 ---
 
-> **Update, November 2026:** Since Ruby 3.0, `attr`, `attr_reader`,
-> `attr_writer` and `attr_accessor` return the names of the methods they
-> define, so they can be handed to a visibility declaration, as in
-> `private attr_reader :bar`. They still only define methods, though; Ruby
-> has no way to declare an existing method an attribute. The "method
-> redefined" warning mentioned below only appears when warnings are turned
-> on, with `ruby -w`, as was already the case in 2011. RDoc 6.14, the
-> version that comes with Ruby 3.4, still documents the `Foo` and
-> `IsItAnAttribute` examples just as described. I've corrected the comments
-> on `bar` and `baz` in the `IsItAnAttribute` example, which were labeled
-> `#foo`.
+> **Update, November 2026:** Since Ruby 3.0, the `attr` methods return the names they define, so you can write `private attr_reader :bar`. But they still just define methods; there's still no way to declare an existing method an attribute.
 
 What exactly is an attribute? From the standpoint of OOP, a Ruby attribute is 
 intended to be what is generally referred to as an <i>accessor method</i>.

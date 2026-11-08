@@ -3,13 +3,7 @@ title: This Old Hash
 date: 2008-10-06
 ---
 
-> **Update, November 2026:** Ruby never adopted a hash like the one
-> proposed here, but converting keys got easier. Ruby 2.5 added
-> `Hash#transform_keys` and `Hash#transform_keys!`, so
-> `h.transform_keys(&:to_sym)` now does in core Ruby what `h.rekey` does
-> with Facets, and since Ruby 3.0 both also accept a hash that maps old keys
-> to new ones. Facets' `Hash#rekey` is still there, and with no arguments it
-> still converts every key to a Symbol.
+> **Update, November 2026:** Ruby never adopted a hash like this, but Ruby 2.5's `transform_keys` now does in core what Facets' `rekey` does. `rekey` is still in Facets.
 
 The Hash may well be the most used class in Ruby. Sure, our programs
 have arrays and strings galore, but they generally come and go without

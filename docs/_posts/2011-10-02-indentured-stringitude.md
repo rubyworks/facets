@@ -3,7 +3,7 @@ title: Indentured Stringitude
 date: 2011-10-02
 ---
 
-> **Update, November 2026:** Ruby never got a `%L` literal, but Ruby 2.3 (2015) added the squiggly heredoc, `<<~`, which strips the common leading indentation, so the `help_text` heredoc below can now be indented along with the code around it. In Facets, `margin` was renamed to `trim` in version 3.0 (2014), so the margin example below would now be written with `.trim` (`require 'facets/string/trim'`), and `margin` with no argument raises an error saying so. `margin(n)` is now the old `tabto`: it keeps the lines' relative indentation and puts the least-indented line at `n` spaces. `tab` and `tabto` were deprecated in Facets 3.0 and removed in 3.1. `indent` is still there, as described.
+> **Update, November 2026:** Ruby never got a `%L` literal, but Ruby 2.3's squiggly heredoc, `<<~`, strips leading indentation, which takes care of the `help_text` case. In Facets 3.0, `margin` was renamed `trim`, and `margin(n)` took over from `tabto`.
 
 One of the great things about Ruby is the extensive collection of methods
 available to the core classes. Of these the String class reigns supreme with

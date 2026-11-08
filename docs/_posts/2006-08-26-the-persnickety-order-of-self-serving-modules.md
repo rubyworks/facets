@@ -3,13 +3,7 @@ title: The Persnickety Order of Self-Serving Modules
 date: 2006-08-26
 ---
 
-> **Update, November 2026:** Ruby 3.0 fixed this
-> ([#9573](https://bugs.ruby-lang.org/issues/9573)). Including a module now
-> also reaches the classes and modules that already included the receiver,
-> and that covers `Q`'s singleton class, which got `Q` through `extend self`.
-> So on Ruby 3.0 and later, `Q.x` returns `"x"` whichever order the two
-> lines come in. I've fixed the irb prompts in the transcripts below, which
-> read `orb`.
+> **Update, November 2026:** Ruby 3.0 finally fixed this ([#9573](https://bugs.ruby-lang.org/issues/9573)). `Q.x` now works whichever order the two lines come in.
 
 This one caught me off guard.
 

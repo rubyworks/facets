@@ -188,6 +188,7 @@ p { margin-bottom: 1.25em; }
 .archive-article code, .archive-article pre { background: #eee8e4; }
 .archive-article pre { padding: 18px; margin: 24px 0; }
 .archive-back { max-width: 830px; padding-bottom: 80px; }
+.post-byline { margin-top: 48px; padding-top: 18px; border-top: 1px solid #cfc5be; color: var(--muted); font-size: .9rem; }
 .archive-article pre code { background: none; font-size: .88rem; line-height: 1.7; }
 .archive-article div.highlighter-rouge { margin: 24px 0; }
 .archive-article div.highlighter-rouge pre { margin: 0; }

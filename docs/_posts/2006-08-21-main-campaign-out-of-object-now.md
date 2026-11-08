@@ -3,18 +3,7 @@ title: 'Main Campaign: Out of Object Now!'
 date: 2006-08-21
 ---
 
-> **Update, November 2026:** The top level still works as matz describes,
-> and `Object` still defines no methods of its own: run as a script on
-> Ruby 3.4, the first example below still returns `[]`. The `Foo.check`
-> example needs a qualification. A top-level method is a private method of
-> `Object`, so a call with an explicit receiver, like `Foo.check("foo")`,
-> goes to `Foo.method_missing`, and the lazy load works. The top-level
-> `check` only gets in the way when it is called without a receiver from
-> inside `Foo`, or through `send`, or in irb before Ruby 2.0, where
-> top-level methods were public
-> ([Bug #5776](https://bugs.ruby-lang.org/issues/5776)). irb now makes them
-> private, as a script does. I took up the idea of Main again in
-> [Kill the Proxy and Save Toplevel]({{ site.baseurl }}{% post_url 2012-06-17-kill-the-proxy-and-save-toplevel %}).
+> **Update, November 2026:** Top-level methods are private, so in a script an explicit call like `Foo.check("foo")` still reaches `method_missing`. Where the clash bites is irb, which made top-level methods public until Ruby 2.0. I came back to the idea of Main in [Kill the Proxy and Save Toplevel]({{ site.baseurl }}{% post_url 2012-06-17-kill-the-proxy-and-save-toplevel %}).
 
 The word from Matz on Kernel as toplevel object:
 

@@ -3,7 +3,7 @@ title: Real Metal
 date: 2012-05-23
 ---
 
-> **Update, November 2026:** Ruby 2.0 removed the third shortcoming mentioned below: a method taken from a module, such as `Kernel.instance_method(:class)`, can now be bound to any object, including a BasicObject, so `$meta[BasicObject.new].class` returns `BasicObject`. Ruby 2.7 added `UnboundMethod#bind_call`, which does what `bind(obj).call` does without creating an intermediate Method object, so `Kernel.instance_method(:class).bind_call(obj)` gives an object's real class even when `#class` is overridden. Ruby has not adopted the `$` notation suggested here. Facets' own `Kernel#meta` (the 3.0 name for `Kernel#eigen`) is unrelated: it sends messages to an object's singleton class. I also corrected the result shown for `obj$class`, which should be `Object`.
+> **Update, November 2026:** Ruby 2.0 fixed the third shortcoming: a method taken from a module can now be bound to any object, BasicObject included. And Ruby 2.7's `bind_call` makes the technique cheaper: `Kernel.instance_method(:class).bind_call(obj)`. No `$` notation, though.
 
 One of the most regarded capabilities of Ruby, in contrast to many other programming languages, is its powerful meta-programming chops. While not every aspect of the language is meta-programmable, the vast majority of Ruby is. But despite its prowess, there is a serious weakness in its design: _The functions on which meta-coders depend have no guarantee_. 
 

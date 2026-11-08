@@ -3,7 +3,7 @@ title: About those Refinements
 date: 2012-12-04
 ---
 
-> **Update, November 2026:** Refinements shipped in Ruby 2.0 as an experimental feature, with `using` limited to the top level of a file. Ruby 2.1 made them official and added `Module#using`, which activates refinements only for the rest of a class or module body, so the second downside listed at the end no longer holds: different contexts in the same file can use different refinements. The DCI example can't work as written, though. `Person.new` calls `initialize` from inside Ruby, outside the scope where the refinements are active, so it never sees the refined `initialize`, and `Person.new(100)` raises an ArgumentError. The refined `buy` and `sell` do work, but only on a person whose state was set up some other way. I also corrected the code samples: `string.to_s` should have been `object.to_s`, `refine String` was missing its `do`, and `buy` and `sell` changed `@money` by itself instead of by `cost`.
+> **Update, November 2026:** Refinements arrived in Ruby 2.0, and since Ruby 2.1 `using` also works inside a class or module body, so the second downside below no longer applies.
 
 Well, after a ridiculously long discussion about refinements, it's finally become clear what Matz is up to. It would have helped if he had mentioned from the start that he's patterning them directly off of Smalltalk wrappers and CLOS method combinations. Instead we get [this](https://web.archive.org/web/20130227155903/http://bugs.ruby-lang.org:80/projects/ruby-trunk/wiki/RefinementsSpec) "official" spec. Hardly. It was only thanks to Charles Nutter's careful [analysis](https://bugs.ruby-lang.org/issues/4085#note-217) that I was able to get a clear picture. Oh, the time and data that could have been saved!
 

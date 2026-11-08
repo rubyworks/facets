@@ -3,7 +3,7 @@ title: "Ruby ♥ Higher-Order Functions"
 date: 2011-09-07
 ---
 
-> **Update, November 2026:** Nothing here has changed since this was written: Facets still provides `Functor`, both examples run as written on Ruby 3.4 with Facets 4.0.1, and Ruby has not added anything like the special functor method proposed below.
+> **Update, November 2026:** Facets still has `Functor`, and both examples still run. Ruby hasn't added anything like the functor method proposed below.
 
 Ruby Facets has a class called [Functor](https://rubyworks.github.io/rubyfaux/?doc=https://rubyworks.github.io/facets/docs/facets-2.9.3/core.json#api-class-Functor). In common computer science parlance "functor" simply means an objectified function. Ruby already has more than its share of these with Method, Proc and blocks. So what does Functor bring to the table? It's a bit more than just a first-class function. Rather, it is a <i>higher-order function</i>. What it allows us to do is define a function that responds dynamically to a message call. Here is a very basic example to clarify the idea.
 

@@ -3,7 +3,7 @@ title: Autoload Smells like Denmark
 date: 2012-06-14
 ---
 
-> **Update, November 2026:** Ruby has since fixed the first issue and worked on the second. Ruby 2.3 changed autoload to call `require` as an ordinary method instead of using Ruby's internal require directly (Feature #11140), so an overridden `Kernel#require`, such as RubyGems' or Roll's, now handles autoloaded files too. Ruby 2.0 shipped a change, already on trunk when I wrote this, that keeps other threads from seeing an autoloaded constant until its file has finished loading (Bug #921), and Ruby 2.3 and 3.2 fixed more race conditions in autoload. Autoload was never removed: Matz withdrew the proposal in 2019, and Zeitwerk, the code loader Rails uses, is built on it. I also corrected the `autoload` example, which needs the constant's name as a symbol, `:ANSI`.
+> **Update, November 2026:** Both issues have since been dealt with. Since Ruby 2.3, autoload goes through `Kernel#require`, so overrides like RubyGems' work with it, and Ruby 2.0 took care of the thread safety problem. Autoload wasn't removed after all: Matz withdrew the proposal in 2019, and Rails' Zeitwerk loader is built on it.
 
 Ruby has a very cool feature called *autoload*. With autoload, any undefined constant can automatically trigger the loading of a library file. Effectively this gives Ruby a convenient means of lazy loading. For example, let's say some of our app's executable scripts ultimately use the ANSI library, but others do not. We can use `autoload` to only load the ANSI library when it is needed.
 

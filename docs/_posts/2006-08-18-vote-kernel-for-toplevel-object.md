@@ -3,18 +3,7 @@ title: Vote Kernel for Toplevel Object
 date: 2006-08-18
 ---
 
-> **Update, November 2026:** Ruby 2.0 added the kind of top-level method
-> matz mentions below: `main` now has its own private `define_method`,
-> which defines methods on `Object`. Because `main` finds its own
-> `define_method` first, the example below never calls the hand-written one.
-> It still prints `true` and `false`, though, because `main` is still not
-> `Object`. Taskable didn't last in
-> Facets: by version 1.8 (January 2007), taskable.rb had been dropped
-> because its "implementation won't work as toplevel include". For a while
-> Facets also had main_as_module.rb (later main.rb), which made `main` act
-> more like a module; Facets 2.9.3 spun it off as the main_like_module gem.
-> Ruby's top level is still not a module. I took up the idea again in
-> [Kill the Proxy and Save Toplevel]({{ site.baseurl }}{% post_url 2012-06-17-kill-the-proxy-and-save-toplevel %}).
+> **Update, November 2026:** Ruby 2.0 did add a top-level `define_method`, much as matz suggests below. But `main` is still a stand-in for `Object`, not `Object` itself, so the example still prints `true` and `false`. I came back to the idea in [Kill the Proxy and Save Toplevel]({{ site.baseurl }}{% post_url 2012-06-17-kill-the-proxy-and-save-toplevel %}).
 
 As a follow up to my last post on the "pain that is main", I want to offer a potential improvement for Ruby 2.0. I approached the topic on ruby-talk this week and while Matz initially took some interest, he hasn't followed up since his last comment:
 

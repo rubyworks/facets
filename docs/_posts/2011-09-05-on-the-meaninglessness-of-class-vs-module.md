@@ -4,14 +4,7 @@ date: 2011-09-05
 published: false
 ---
 
-> **Update, November 2026:** Ruby's lookup order hasn't changed: included
-> modules still come before the superclass, and a class still can't be
-> included. `Module#prepend`, added in Ruby 2.0, puts a module in front of
-> the class itself, so it doesn't help here. The `Module` trick near the end
-> defined `Module.new` where it meant `Module#new`; I have corrected that,
-> and it needs Ruby 2.1 or later, where `include` became public. Facets has
-> the same idea as the `Instantiable` mixin (`require 'facets/instantiable'`).
-> I also fixed a typo in another code sample.
+> **Update, November 2026:** Nothing has changed here: included modules still come before the superclass, and a class still can't be included. Facets offers the `Module#new` trick at the end as the `Instantiable` mixin.
 
 # Fear Not the Wereclass
 

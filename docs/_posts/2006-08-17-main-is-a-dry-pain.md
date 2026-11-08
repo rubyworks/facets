@@ -3,20 +3,7 @@ title: Main is a DRY Pain
 date: 2006-08-17
 ---
 
-> **Update, November 2026:** Ruby 2.0 gave `main` a `define_method` of its
-> own, which defines a method on `Object`, so the first error below no
-> longer happens, though `main` still has no `ancestors`. Ruby 2.0 also
-> made `main`'s `include`, `public` and `private` private methods, so on
-> Ruby 3.4 the `public_methods` comparison below returns `[]`, and
-> `singleton_methods` returns only `[:to_s, :inspect]`. Ruby 3.0 fixed the
-> Module Inclusion Problem ([#9573](https://bugs.ruby-lang.org/issues/9573)):
-> a module included into `Kernel` now reaches every object, so in the last
-> example both `m` and `Q.new.q` return `"m"`. Methods defined in `main`'s
-> singleton class are still not visible anywhere else, as the `class << self`
-> example shows. I've corrected the method name in that example's error
-> message, which said `s`. I took up the question of `main` as a
-> self-extended module again in
-> [Kill the Proxy and Save Toplevel]({{ site.baseurl }}{% post_url 2012-06-17-kill-the-proxy-and-save-toplevel %}).
+> **Update, November 2026:** Things are better now. Ruby 2.0 gave `main` its own `define_method`, and Ruby 3.0 fixed the module inclusion problem ([#9573](https://bugs.ruby-lang.org/issues/9573)), so a module included into `Kernel` now reaches every object. But `main` still isn't a module. I came back to that idea in [Kill the Proxy and Save Toplevel]({{ site.baseurl }}{% post_url 2012-06-17-kill-the-proxy-and-save-toplevel %}).
 
 <!-- ---
 title: Main is a DRY Pain

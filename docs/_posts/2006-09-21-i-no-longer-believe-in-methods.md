@@ -3,14 +3,7 @@ title: I No Longer Believe in Methods
 date: 2006-09-21
 ---
 
-> **Update, November 2026:** Methods are still not persistent objects in
-> Ruby: `method` and `instance_method` still return a new object every time
-> they are called. Since Ruby 2.1, `def` returns the method's name as a
-> Symbol, so calls like `help` and `valid` below can wrap a definition
-> directly, the way `private def announce` does, but they still work by
-> name. Annotations left Facets in 2.5.0 (2008) for the separate Anise gem,
-> so `require 'facet/annotation'` no longer works with current Facets. I
-> have also fixed a few typos in the code samples.
+> **Update, November 2026:** Still true: `method` and `instance_method` hand back a new object every time. Since Ruby 2.1, `def` returns the method's name, which allows decorator-style calls like `private def announce`, but that's still just passing a name around. Annotations moved out of Facets into the Anise gem in 2008.
 
 Yes, that's right. I no longer believe in methods. Why? Because this is OOP and if the methods aren't honest to goodness objects from the start, without exception, then they are not really methods. They're just glorified functions.
 

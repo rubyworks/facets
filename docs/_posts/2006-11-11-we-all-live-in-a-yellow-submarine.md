@@ -3,12 +3,7 @@ title: We All Live in a Yellow Submarine
 date: 2006-11-11
 ---
 
-> **Update, November 2026:** Ruby hasn't changed on this: a class still
-> can't be included, a module still can't be instantiated, and the
-> `Module#new` trick at the end still works in Ruby 3.4. Facets added that
-> trick as `module/new` in 1.8 (2007); today it is the `Instantiable` mixin
-> (`require 'facets/instantiable'`), which gives any module that includes it
-> a `new` method.
+> **Update, November 2026:** Nothing has changed here: classes still can't be included, and modules still can't be instantiated. The `Module#new` trick at the end still works, and Facets offers it today as the `Instantiable` mixin.
 
 Anyone having read my previous posts, here and on ruby-talk, knows I love to explore ideas. It doesn't matter if they are considered "good" or "bad". Most cannot be judged without first expounding on them anyway. In fact, half the time I have no idea where an idea might lead until I sit down and blog it.
 

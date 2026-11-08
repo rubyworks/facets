@@ -3,16 +3,7 @@ title: From Singleton to Legion
 date: 2006-07-22
 ---
 
-> **Update, November 2026:** Ruby 1.9.2 added `Kernel#singleton_class`,
-> which made "singleton class" the official name. Ruby still keeps a single
-> singleton class per object, so on an unpatched Ruby the second `def o.x`
-> below replaces the first, and its `super` raises `NoMethodError`. But
-> Ruby 2.0 added `Module#prepend`, and prepending a module to the singleton
-> class gives much the same layering: after
-> `o.singleton_class.prepend(Module.new { def x; super + "x"; end })`,
-> `o.x` returns `"xx"`. Facets carried both `eigenclass` and `qua_class` as
-> `Kernel` methods. Facets 3.2 deprecated them in favor of `singleton_class`
-> or Facets' `meta_class`, and they will be removed after 2027-09-30.
+> **Update, November 2026:** Ruby 1.9.2 settled the naming question with `singleton_class`, and Facets has since deprecated its `eigenclass` and `qua_class` in its favor. An object still gets only one singleton class, but Ruby 2.0's `prepend` gives much the same layering: prepend a module to the singleton class and call `super` from there.
 
 <!-- ---
 title: From Singleton to Legion

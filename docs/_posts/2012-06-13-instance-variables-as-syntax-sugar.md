@@ -3,7 +3,7 @@ title: Instance Variables as Syntax Sugar
 date: 2012-06-13
 ---
 
-> **Update, November 2026:** Ruby never adopted `@` as a hash. A bare `@` is still a syntax error, and `instance_variable_get` and `instance_variable_set` are still the way to reach an instance variable by name. Ruby 2.6 did make the serialization loop below a little shorter, since `to_h` now takes a block: `instance_variables.to_h { |var| [var, instance_variable_get(var)] }`. At the time of this post, Facets offered something close to the idea as a method rather than syntax: `Kernel#instance` returned an object with `[]`, `[]=`, `each` and `to_h` over an object's instance variables. It was spun off as the `instance` gem in 2014 and is no longer part of Facets.
+> **Update, November 2026:** Ruby never made `@` a hash, but Ruby 2.6's `to_h` with a block does shorten the serialization loop below: `instance_variables.to_h { |v| [v, instance_variable_get(v)] }`. Facets had something close as `Kernel#instance`; it's now the separate instance gem.
 
 What are instance variables? If we think of them as a single unit we note that they represent an object *state*, which as a data structure is really nothing more than a *hash*. Indeed, it is quite feasible to forgo the use of instance variables altogether save one, to serve as the object's state.
 

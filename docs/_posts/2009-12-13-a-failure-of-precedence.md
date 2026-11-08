@@ -3,16 +3,7 @@ title: A Failure of Precedence
 date: 2009-12-13
 ---
 
-> **Update, November 2026:** Ruby's operator precedence is the same today:
-> `^` still shares a level with `|`, below the arithmetic operators, so
-> `2 ^ 2 / 2` is still `3`, and there is still no way to change an
-> operator's precedence. Two details are out of date, though. Since Ruby
-> 1.9, `!=` and `!~` can be defined as methods too (as can `!`), so the
-> table's note on them no longer holds. And Ruby 3.0 fixed the Double
-> Inclusion Problem ([#9573](https://bugs.ruby-lang.org/issues/9573)). The
-> eigenclass link now points to an archived copy, since that site is gone.
-> I also put a `#` before the `=>` in the unit examples, so they read as
-> Ruby comments.
+> **Update, November 2026:** Ruby's precedence table hasn't changed, and `2 ^ 2 / 2` is still `3`. Two things have: since Ruby 1.9, `!=` and `!~` can be defined as methods, and Ruby 3.0 fixed the double inclusion problem.
 
 (Ruby's Operator Precedence Can Be Improved)
 

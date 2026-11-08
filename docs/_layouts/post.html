@@ -9,5 +9,8 @@ layout: default
   {%- if page.subtitle %}<p>{{ page.subtitle }}</p>{% endif %}
   {%- endif %}
 </div></section>
-<article class="archive-article shell">{{ content }}</article>
+<article class="archive-article shell">
+{{ content }}
+<footer class="post-byline">{{ page.author | default: site.author }} · Published <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></footer>
+</article>
 <div class="archive-back shell"><a class="text-link" href="{{ '/blog/' | relative_url }}">← All posts</a></div>

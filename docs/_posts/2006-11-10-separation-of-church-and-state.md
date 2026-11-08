@@ -3,9 +3,7 @@ title: Separation of Church and State
 date: 2006-11-10
 ---
 
-> **Update, November 2026:** Nothing relevant has changed since this was
-> written: Ruby never adopted `obj.@ivar` or `def @ivar`, and both are still
-> syntax errors.
+> **Update, November 2026:** Ruby never adopted `obj.@ivar` or `def @ivar`.
 
 Have you ever had a class so choke full of interrelated data and function members that you had trouble avoiding name clashes between the two. Of course it's a rare problem when you're in full control of the members, but when you're designing extensible classes, it becomes a major issue and you have to resort to some less-than-lovely work around.
 

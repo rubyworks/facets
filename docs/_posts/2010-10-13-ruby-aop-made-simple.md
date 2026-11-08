@@ -3,15 +3,7 @@ title: Ruby AOP Made Simple
 date: 2010-10-13
 ---
 
-> **Update, November 2026:** Ruby 2.0 added `Module#prepend`, and it works
-> as proposed here: the first example runs as written. The Joinable trick
-> still works too. But now that `prepend` is built in, the `Module` override
-> at the end of this post would replace Ruby's own `prepend`, so prepending
-> to any class or module without a `Joinable` would raise an error. I have
-> since proposed ([Feature #22513](https://bugs.ruby-lang.org/issues/22513))
-> that `Kernel#extend` and `Module#prepend` take a block, evaluated in a new
-> anonymous module, so a module like `A` could be written in place with
-> `C.prepend do ... end`.
+> **Update, November 2026:** Ruby 2.0 added `Module#prepend`, and it works as proposed here. That also means the `Module` override at the end would now replace the built-in `prepend`, so leave it out. I've since proposed that `extend` and `prepend` take a block ([Feature #22513](https://bugs.ruby-lang.org/issues/22513)), so a module like `A` could be written in place with `C.prepend do ... end`.
 
 <!-- ---
 title: Ruby AOP Made Simple

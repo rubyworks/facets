@@ -4,7 +4,7 @@ date: 2011-07-09
 published: false
 ---
 
-> **Update, November 2026:** Ruby 2.0 didn't get `Module#mix` after all: it was added to Ruby's development code, then reverted in June 2012, before 2.0 came out. Since Ruby 3.0, keyword arguments are kept apart from positional ones, so the `method_missing` below no longer passes keywords along unless it takes a `**kw` parameter too. And for `respond_to?` to report the delegated methods, an object also needs a `respond_to_missing?` method (Ruby 1.9.2 and later). I fixed the code samples: neither set up `@_delegates`, so any missing method sent them into endless recursion, and the second called an undefined `delegates` method.
+> **Update, November 2026:** `Module#mix` never made it into Ruby 2.0; it was reverted before the release.
 
 Among experienced developers you will hear no end of praise for delegation. All things considered, it is the most powerful, flexible and controllable means of incorporating reusable behaviors. Even so, I recollect that I once read, no object-oriented programming language utilized delegation as its only means of handling modules.
 

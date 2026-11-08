@@ -3,7 +3,7 @@ title: Lazy Plus Enumerable Begats Denumerable
 date: 2011-10-04
 ---
 
-> **Update, November 2026:** Ruby 2.0 (2013) added `Enumerable#lazy`, which does what `defer` does here: replace `defer` with `lazy` in the example below and you get the same result, just as quickly. Facets 3.2 deprecated `Enumerable#defer` in favor of `lazy`; it now just calls `lazy`, with a warning, and will be removed after 2027-09-30. `Denumerable` and `Denumerator` are still in Facets. The lazy.rb link now points to an archived copy, since its site is gone.
+> **Update, November 2026:** Ruby 2.0 added `Enumerable#lazy`, which does what `defer` does here, and Facets has deprecated `defer` in its favor. `Denumerable` and `Denumerator` are still in Facets.
 
 All Rubyists know and love Enumerable. It's really the showcase of Ruby's mixin system. Some Rubyists also know and appreciate [lazy.rb](https://web.archive.org/web/20110912073235/http://moonbase.rydia.net:80/software/lazy.rb/) MenTaLguY's excellent lazy evaluation library. But did you know there is library that essentially cross-breeds the ideas of both? It's called [Denumerable](https://github.com/rubyworks/facets/blob/main/lib/core/facets/denumerable.rb) and is included in Ruby Facets (`require 'facets/denumerable'`).
 
