@@ -39,6 +39,9 @@ Changes:
     with `shelljoin`, the quotes became part of the value:
     `{name: 'jim'}.shelljoin` passed `"jim"`, quotes included. Each flag and
     its value is now one plain word, `--name=jim`.
+  * `require 'facets'` loads `String#trim`. When `String#margin` was renamed
+    to `#trim` in 3.0, the new file was never added to the core aggregator,
+    so `trim` worked only with its own require.
   * `Time.current` uses ActiveSupport's `Time.zone` when it is set. Before,
     when Facets loaded after ActiveSupport, `Time.current` ignored the Rails
     app's time zone and returned the system's local time.
