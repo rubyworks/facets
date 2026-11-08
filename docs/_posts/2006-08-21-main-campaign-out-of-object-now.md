@@ -1,8 +1,20 @@
 ---
 title: 'Main Campaign: Out of Object Now!'
 date: 2006-08-21
-published: false
 ---
+
+> **Update, November 2026:** The top level still works as matz describes,
+> and `Object` still defines no methods of its own: run as a script on
+> Ruby 3.4, the first example below still returns `[]`. The `Foo.check`
+> example needs a qualification. A top-level method is a private method of
+> `Object`, so a call with an explicit receiver, like `Foo.check("foo")`,
+> goes to `Foo.method_missing`, and the lazy load works. The top-level
+> `check` only gets in the way when it is called without a receiver from
+> inside `Foo`, or through `send`, or in irb before Ruby 2.0, where
+> top-level methods were public
+> ([Bug #5776](https://bugs.ruby-lang.org/issues/5776)). irb now makes them
+> private, as a script does. I took up the idea of Main again in
+> [Kill the Proxy and Save Toplevel]({{ site.baseurl }}{% post_url 2012-06-17-kill-the-proxy-and-save-toplevel %}).
 
 The word from Matz on Kernel as toplevel object:
 
@@ -28,7 +40,7 @@ That's right. There's not a single method defined in Object. All the methods ri 
 
 Now a separate module, eg. Main, would do just as well. Kernel need not be used. And as I've expressed before, Main could be induced into Object for all the same effects. The base hierarchy then being Object < Main < Kernel.
 
-But wait a second! Why are all these toplevel methods sneaking into all my Object's anyway? I can just as easily add them to Object myself if that's what I want. I don't need some cheap toplevel proxy to do it for me. In fact, that can be a problem too.
+But wait a second! Why are all these toplevel methods sneaking into all my Objects anyway? I can just as easily add them to Object myself if that's what I want. I don't need some cheap toplevel proxy to do it for me. In fact, that can be a problem too.
 
 ```ruby
 module Foo
@@ -49,4 +61,4 @@ end
 
 Well, so much for my lazily required Foo.check routine. It's been whacked from the top down!
 
-You see where I'm going now? Primaries are over Main has taken Kernel out of the running with a new divisive platform. "Out of Object Now!"
+You see where I'm going now? Primaries are over. Main has taken Kernel out of the running with a new divisive platform. "Out of Object Now!"

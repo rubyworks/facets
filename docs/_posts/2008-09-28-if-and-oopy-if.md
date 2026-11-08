@@ -1,8 +1,17 @@
 ---
 title: If and OOPY If
 date: 2008-09-28
-published: false
 ---
+
+> **Update, November 2026:** Ruby still treats only `nil` and `false` as
+> false, and an object still has no say in it. Ruby 2.3 did add the safe
+> navigation operator, `&.`, which skips a call when the receiver is `nil`,
+> so `obj&.it&.does&.not&.matter` returns `nil` instead of raising. Facets
+> has its own NullClass (`require 'facets/nullclass'`); it is a plain class
+> rather than a NilClass subclass, and like the one below it is still true
+> in a condition. I took `< NilClass` out of the first sample, since Ruby
+> can't make instances of a NilClass subclass, and fixed the `initialize`
+> in the second, since neither `@if` nor `if` can be a parameter name.
 
 Ruby takes a unique approach to conditional evaluation: <i>All
 objects are equivalent to `true` except `nil`
@@ -12,11 +21,11 @@ from the ideal of OOP all the way down, as any
 <a href="http://pozorvlak.livejournal.com/94558.html">Smalltalker</a>
 can attest.
 
-Consider the following case. For a while now. I have wanted in my arsonal
+Consider the following case. For a while now, I have wanted in my arsenal
 of Ruby classes a NullClass defined basically as:
 
 ```ruby
-class NullClass < NilClass
+class NullClass
   def method_missing(*a)
     self
   end
@@ -30,7 +39,7 @@ end
 ```
 
 This object would greatly benefit fluent interfaces. Instead of returning
-`nil`, such intefaces could return `null`, and no 
+`nil`, such interfaces could return `null`, and no 
 error would be thrown when invoking any method against it.
 
 ```ruby
@@ -64,8 +73,8 @@ To clarify, let's say this special method is simply called #if, then...
 ```ruby
 class IfExample
   attr :if
-  def initialize(@if)
-    @if = if
+  def initialize(value)
+    @if = value
   end
 end
 
@@ -86,7 +95,7 @@ like the previously mentioned `NullClass` become possible,
 but conditions themselves become <i>dynamically controllable</i>.
 
 For example, it would allow method probes to fully map method
-signatures (the Halting Problem not withstanding). This is not 
+signatures (the Halting Problem notwithstanding). This is not 
 currently possible in Ruby because a probe cannot pretend to evaluate
 to false in order to walk through the false side of a condition.
 

@@ -1,15 +1,23 @@
 ---
 title: I No Longer Believe in Methods
 date: 2006-09-21
-published: false
 ---
 
-Yes, that's right. I no longer believe in methods. Why? Becuase this is OOP and if the methods aren't honest to goodness objects from the start, without exception, then they are not really methods. They're just glorified functions.
+> **Update, November 2026:** Methods are still not persistent objects in
+> Ruby: `method` and `instance_method` still return a new object every time
+> they are called. Since Ruby 2.1, `def` returns the method's name as a
+> Symbol, so calls like `help` and `valid` below can wrap a definition
+> directly, the way `private def announce` does, but they still work by
+> name. Annotations left Facets in 2.5.0 (2008) for the separate Anise gem,
+> so `require 'facet/annotation'` no longer works with current Facets. I
+> have also fixed a few typos in the code samples.
+
+Yes, that's right. I no longer believe in methods. Why? Because this is OOP and if the methods aren't honest to goodness objects from the start, without exception, then they are not really methods. They're just glorified functions.
 
 Let me show you what I mean. I have a Project class in which is defined a set of tools that can manipulate it. Clearly the proper implementation abstraction for these tools is the method.
 
 ```ruby
-Class Project
+class Project
   def announce
     puts "This is my new project!"
   end
@@ -31,7 +39,7 @@ module ProjectDSL
   end
 end
 
-Class Project
+class Project
   extend ProjectDSL
 
   def announce
@@ -39,7 +47,7 @@ Class Project
   end
 
   help :announce, "Announces your project to the world!"
-  valid :announce { @version > "0.0.0" }
+  valid(:announce) { @version > "0.0.0" }
 end
 ```
 
@@ -48,7 +56,7 @@ Now this kind of thing has come up enough in large projects, such as Nitro, that
 ```ruby
 require 'facet/annotation'
 
-Class Project
+class Project
   def announce
     puts "This is my new project!"
   end
@@ -60,7 +68,7 @@ end
 
 Annotations works very well, and if you find yourself in need of this kind of "method metadata" it is an excellent approach.
 
-But I've worked with all this long enough now to be able to have a wide perspective on it and it's become very clear to me that the whole "special needs" arises out of the fact that Ruby is still just a functional language in this respect, and not a full OOPL. (And please no objections that method() and instance_method() make it otherwise, these do not provide a persitant object, but return a new object every time they are invoked.) So what might the above look like if it were not so? There would of course be more than one way to go about it, but imagine this:
+But I've worked with all this long enough now to be able to have a wide perspective on it and it's become very clear to me that the whole "special needs" arises out of the fact that Ruby is still just a functional language in this respect, and not a full OOPL. (And please no objections that method() and instance_method() make it otherwise, these do not provide a persistent object, but return a new object every time they are invoked.) So what might the above look like if it were not so? There would of course be more than one way to go about it, but imagine this:
 
 ```ruby
 class Tool < Method
@@ -71,7 +79,7 @@ class Tool < Method
   end
 end
 
-Class Project
+class Project
   def announce => Tool
     puts "This is my new project!"
   end
@@ -82,4 +90,4 @@ Class Project
 end
 ```
 
-I'm taking some liberties with the syntax here for clarity. But in anycase it certainly paints a provocative idea. And I would argue that it paints the approprite OOP idea too.
+I'm taking some liberties with the syntax here for clarity. But in any case it certainly paints a provocative idea. And I would argue that it paints the appropriate OOP idea too.

@@ -1,8 +1,22 @@
 ---
 title: Main is a DRY Pain
 date: 2006-08-17
-published: false
 ---
+
+> **Update, November 2026:** Ruby 2.0 gave `main` a `define_method` of its
+> own, which defines a method on `Object`, so the first error below no
+> longer happens, though `main` still has no `ancestors`. Ruby 2.0 also
+> made `main`'s `include`, `public` and `private` private methods, so on
+> Ruby 3.4 the `public_methods` comparison below returns `[]`, and
+> `singleton_methods` returns only `[:to_s, :inspect]`. Ruby 3.0 fixed the
+> Module Inclusion Problem ([#9573](https://bugs.ruby-lang.org/issues/9573)):
+> a module included into `Kernel` now reaches every object, so in the last
+> example both `m` and `Q.new.q` return `"m"`. Methods defined in `main`'s
+> singleton class are still not visible anywhere else, as the `class << self`
+> example shows. I've corrected the method name in that example's error
+> message, which said `s`. I took up the question of `main` as a
+> self-extended module again in
+> [Kill the Proxy and Save Toplevel]({{ site.baseurl }}{% post_url 2012-06-17-kill-the-proxy-and-save-toplevel %}).
 
 <!-- ---
 title: Main is a DRY Pain
@@ -19,7 +33,7 @@ That seems fairly peculiar when you consider that defining methods at toplevel i
 self    #=> main
 ```
 
-Okay, it calls itself "main". Great. But that doesn't really tell us anything. Let's check it's class:
+Okay, it calls itself "main". Great. But that doesn't really tell us anything. Let's check its class:
 
 ```ruby
 self.class  #=> Object
@@ -46,7 +60,7 @@ class Q
 end
 
 Q.new.q
-#=> NameError: undefined local variable or method 's' for #<Q:0xb7ce9a3c>
+#=> NameError: undefined local variable or method `x' for #<Q:0xb7ce9a3c>
 ```
 
 Which means the sure solution for my problem...
@@ -79,6 +93,6 @@ Q.new.q
 #=> NameError: undefined local variable or method `m' for #<Q:0xb7cbb324>
 ```
 
-Lands me squre in the face of the Module Inclusion Problem.
+Lands me square in the face of the Module Inclusion Problem.
 
 All this leads me to two points. First, I'm stuck! There seems to be no solution to my problem other than rewriting a second version of my module specifically for the toplevel. Talk about lack of DRY! And 2) Why in the world isn't main a self extended module?

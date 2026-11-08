@@ -1,8 +1,9 @@
 ---
 title: Instance Variables as Syntax Sugar
 date: 2012-06-13
-published: false
 ---
+
+> **Update, November 2026:** Ruby never adopted `@` as a hash. A bare `@` is still a syntax error, and `instance_variable_get` and `instance_variable_set` are still the way to reach an instance variable by name. Ruby 2.6 did make the serialization loop below a little shorter, since `to_h` now takes a block: `instance_variables.to_h { |var| [var, instance_variable_get(var)] }`. At the time of this post, Facets offered something close to the idea as a method rather than syntax: `Kernel#instance` returned an object with `[]`, `[]=`, `each` and `to_h` over an object's instance variables. It was spun off as the `instance` gem in 2014 and is no longer part of Facets.
 
 What are instance variables? If we think of them as a single unit we note that they represent an object *state*, which as a data structure is really nothing more than a *hash*. Indeed, it is quite feasible to forgo the use of instance variables altogether save one, to serve as the object's state.
 
@@ -27,9 +28,9 @@ class Example
 end
 ```
 
-So if instance variables are essentially a hash, why is it that we cannot work with them as such? In other words, why not have `@` just represent a syntax sugar for a special hash (even if it's not a standard Ruby Hash instance under the hood, it can behave as if it were). With such a change, handling instance variables immediately become much easier and intuitive since we can apply all our knowledge if hashes.
+So if instance variables are essentially a hash, why is it that we cannot work with them as such? In other words, why not have `@` just represent a syntax sugar for a special hash (even if it's not a standard Ruby Hash instance under the hood, it can behave as if it were). With such a change, handling instance variables immediately becomes much easier and intuitive since we can apply all our knowledge of hashes.
 
-Some neat capabilities immediately become apparent. Looking up an instance variable give a variable name can be done with:
+Some neat capabilities immediately become apparent. Looking up an instance variable given a variable name can be done with:
 
 ```ruby
 @[name]
@@ -43,7 +44,7 @@ Assigning an instance variable likewise can be done with:
 
 No longer would the long-winded `instance_variable_get` and `instance_variable_set` be needed.
 
-Let's take a more complex example. Have you ever wanted to reproduce the name and values of an object instance variable. It's not uncommon really. Any type of object serialization is going to need such a routine -- YAML, Marshal, etc. To do this presently requires some verbose code:
+Let's take a more complex example. Have you ever wanted to reproduce the name and values of an object instance variable? It's not uncommon really. Any type of object serialization is going to need such a routine -- YAML, Marshal, etc. To do this presently requires some verbose code:
 
 ```ruby
 hash = {}
