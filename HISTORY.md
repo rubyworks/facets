@@ -1,6 +1,6 @@
 # Facets Release History
 
-## Unreleased
+## 4.1.0 / 2026-11-08
 
 Facets and ActiveSupport define many of the same methods, and whichever
 loads last replaces the other's. This release makes a set of those methods

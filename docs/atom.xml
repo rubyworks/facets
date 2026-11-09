@@ -4,8 +4,15 @@
   <id>https://rubyworks.github.io/facets/</id>
   <link href="https://rubyworks.github.io/facets/"/>
   <link href="https://rubyworks.github.io/facets/atom.xml" rel="self" type="application/atom+xml"/>
-  <updated>2026-11-02T00:00:00Z</updated>
+  <updated>2026-11-08T00:00:00Z</updated>
   <author><name>Ruby Facets</name></author>
+  <entry>
+    <title>Ruby Facets 4.1.0</title>
+    <id>https://rubyworks.github.io/facets/news.html#facets-4-1-0</id>
+    <link href="https://rubyworks.github.io/facets/news.html#facets-4-1-0"/>
+    <updated>2026-11-08T00:00:00Z</updated>
+    <summary>Matches ActiveSupport where both define a method, and stops changing what Ruby's own methods do.</summary>
+  </entry>
   <entry>
     <title>Ruby Facets 4.0.1</title>
     <id>https://rubyworks.github.io/facets/news.html#facets-4-0-1</id>
