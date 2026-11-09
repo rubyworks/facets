@@ -1,5 +1,24 @@
 # Facets Release History
 
+## Unreleased
+
+Changes:
+
+* Additions
+
+  * `Integer#to_base` and `String#from_base` convert to and from any base
+    from 2 to 62, or with your own digits: `255.to_base(62)` is `"47"`,
+    and `"47".from_base(62)` is 255. Ruby's `to_s` and `to_i` stop at
+    base 36; up to there, `to_base` gives the same result as `to_s`, and
+    `from_base` the same as `to_i` for valid input. Unlike `to_i`,
+    `from_base` raises `ArgumentError` for a character that isn't a digit.
+    In base 256 the digits are bytes: `256.to_base(256)` is `"\x01\x00"`,
+    a binary string, and `from_base(256)` reads a string's bytes.
+  * `Array#from_base` turns digit values in any base, most significant
+    first, back into a number: `[1, 0].from_base(256)` is 256. It reverses
+    Ruby's `Integer#digits`, as `n.digits(b).reverse.from_base(b)`. All
+    three load with `require 'facets'`, and are based on the Radix gem.
+
 ## 4.1.0 / 2026-11-08
 
 Facets and ActiveSupport define many of the same methods, and whichever

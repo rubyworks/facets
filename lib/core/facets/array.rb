@@ -16,6 +16,7 @@ require_relative 'array/each_pair.rb'
 require_relative 'array/each_value.rb'
 require_relative 'array/entropy.rb'
 require_relative 'array/from.rb'
+require_relative 'array/from_base.rb'
 require_relative 'array/indexable.rb'
 #require_relative 'array/intersection.rb'       # too new
 #require_relative 'array/median.rb'             # uncommon
