@@ -47,6 +47,11 @@ Changes:
     `(1..10).defer { |out, i| out << i if i.even? }.first(5)` returned
     `[1, 2, 3, 4, 5]` instead of `[2, 4, 6, 8, 10]`. It is still
     deprecated; the block form is `Enumerator::Lazy.new(enum) { ... }`.
+  * `Range#overlap?` on Ruby 3.1 and 3.2, where Ruby has no version of its
+    own, gives the same answers as Ruby's. Facets' version said an empty
+    range like `3...3` overlapped any range containing 3, raised RangeError
+    for `(3..).overlap?(..5)`, and raised NoMethodError rather than
+    TypeError for a non-Range argument. It now follows Ruby's algorithm.
   * `Time.current` uses ActiveSupport's `Time.zone` when it is set. Before,
     when Facets loaded after ActiveSupport, `Time.current` ignored the Rails
     app's time zone and returned the system's local time.
@@ -131,6 +136,9 @@ Changes:
     changing it, so other references to the sub-hash no longer see the
     change.
   * `Class#descendants` lists all subclasses before their own descendants.
+    On Ruby 4.1, which adds its own `Module#descendants`, a call without a
+    number of generations is passed to Ruby's, so it gives Ruby's list, in
+    Ruby's order. Only `descendants(n)` is still Facets' own there.
 
 ## 4.0.1 / 2026-11-02
 
