@@ -6,9 +6,8 @@ module Kernel
   #     @a   #=> 1
   #     @b   #=> 2
   #
-  # NOTE: Conceptually a better alternative to this method is `instance.update`
-  #       from the `instance` gem. However, practically this method is probably 
-  #       the better choice until such time that Ruby supports anonymous delegators.
+  # `Mirror#update`, from `require 'facets/mirror'`, does the same
+  # through a mirror: `obj.mirror.update(a: 1)`.
   #
   def instance_assign(hash)
     hash.each do |k,v|

@@ -18,6 +18,14 @@ Changes:
     first, back into a number: `[1, 0].from_base(256)` is 256. It reverses
     Ruby's `Integer#digits`, as `n.digits(b).reverse.from_base(b)`. All
     three load with `require 'facets'`, and are based on the Radix gem.
+  * `Mirror`, loaded with `require 'facets/mirror'`, looks at an object
+    from the outside: `obj.mirror.to_h` gives its instance variables as a
+    hash, and the mirror also gets and sets them, and gives the object's
+    class and methods. It calls Ruby's own reflection methods, so it gives
+    the true answers even for an object that redefines `class` or
+    `instance_variables`, or a `BasicObject` that has neither. The class
+    is `Kernel::Mirror`, so an application's own `Mirror` class takes
+    precedence instead of clashing. Based on the Instance gem.
 
 ## 4.1.0 / 2026-11-08
 
