@@ -44,7 +44,7 @@ test_case String do
 
     test "returns the string even if nothing was removed" do
       s = "foo"
-      s.remove!("x").assert.equal?(s)
+      s.remove!("x").equal?(s).assert == true
     end
 
   end

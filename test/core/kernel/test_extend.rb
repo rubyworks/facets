@@ -23,8 +23,8 @@ test_case Kernel do
 
     test "returns the object" do
       obj = Object.new
-      obj.extend(Comparable).assert.equal?(obj)
-      obj.extend { }.assert.equal?(obj)
+      obj.extend(Comparable).equal?(obj).assert == true
+      obj.extend { }.equal?(obj).assert == true
     end
 
     test "without a block, as Ruby's own" do
