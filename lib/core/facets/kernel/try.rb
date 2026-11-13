@@ -8,9 +8,11 @@ module Kernel
   # exactly like a normal call (or &.): a method the receiver doesn't have,
   # or a private one, raises NoMethodError.
   #
+  #   @example = Struct.new(:name).new("bob")
+  #
   #   @example.try(:name)              #=> "bob"
   #   @example.try { |o| o.name }     #=> "bob"
-  #   @example.try.name               #=> "bob"  (Functor form)
+  #   @example.try.name               #=> "bob"
   #   nil.try.name                    #=> nil
   #
   # NOTE: THIS IS NOT ACTIVESUPPORT'S #try. SINCE RAILS 4.0, ACTIVESUPPORT'S

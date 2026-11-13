@@ -14,12 +14,12 @@ class String
   # by the first non-blank line, instead of the minimum white-space for all
   # lines.
   #
-  # Arguments
+  # Arguments:
   #
   #   num   - The size of the desired margin. [Integer]
   #   opts  - Margin options. [Hash]
   #
-  # Options
+  # Options:
   #
   #   :tab  - Size of tab character in spaces. [Integer]
   #   :lead - Use first non-blank line as relative marker. [Boolean] 

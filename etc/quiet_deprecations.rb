@@ -4,15 +4,16 @@
 # each call prints a warning, which buries any warning that matters. This hides
 # a Facets deprecation warning unless it was raised from inside lib/: one from
 # there means Facets itself calls a deprecated method, which is a bug worth
-# seeing.
+# seeing. The exception is a doc comment in lib/, whose examples `rake
+# qed:code` runs, so a deprecated method's own example warns from there.
 #
-# Loaded by etc/test.rb (rubytest) and demo/applique (QED). Set
-# FACETS_DEPRECATIONS=show to see every warning.
+# Loaded by etc/test.rb (rubytest), demo/applique (QED) and `rake qed:code`.
+# Set FACETS_DEPRECATIONS=show to see every warning.
 
 unless ENV['FACETS_DEPRECATIONS'] == 'show'
   module QuietFacetsDeprecations
     DEPRECATION = /: warning: .+ is deprecated\. .*It will be removed after \d{4}-\d{2}-\d{2}\./m
-    LOCATION    = /\A(.+?):\d+: warning: /
+    LOCATION    = /\A(.+?):(\d+): warning: /
     LIB         = File.join(File.expand_path('../lib', __dir__), '')
 
     @hidden = 0
@@ -22,8 +23,16 @@ unless ENV['FACETS_DEPRECATIONS'] == 'show'
 
       def expected?(message)
         return false unless DEPRECATION.match?(message)
-        location = message[LOCATION, 1]
-        !(location && File.expand_path(location).start_with?(LIB))
+        file, line = LOCATION.match(message)&.captures
+        return true unless file
+        file = File.expand_path(file)
+        !file.start_with?(LIB) || comment?(file, line.to_i)
+      end
+
+      def comment?(file, line)
+        File.readlines(file)[line - 1].to_s.lstrip.start_with?('#')
+      rescue SystemCallError
+        false
       end
     end
 

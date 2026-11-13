@@ -26,8 +26,8 @@ module Kernel
   # by the class of object, in the same manner as Array#replace.
   #
   # NOTE: Conceptually a better alternative is `instance.replace` provided
-  #       by the `instance` gem. However, practically this method is probably 
-  #       the better choice until such time that Ruby support anonymous delegators.
+  # by the `instance` gem. However, practically this method is probably
+  # the better choice until such time that Ruby support anonymous delegators.
   #
   def instance_replace(source)
     raise ArgumentError, "not a #{self.class} -- #{source}" unless source.is_a?(self.class)

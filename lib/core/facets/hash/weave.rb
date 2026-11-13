@@ -6,7 +6,7 @@ class Hash
   #
   # Two hashes are weaved together to produce a new hash.
   # The two hashes need to be compatible according to the
-  # following rules for each node: ...
+  # following rules for each node:
   #
   #   hash,   hash    => hash (recursive +)
   #   hash,   array   => error

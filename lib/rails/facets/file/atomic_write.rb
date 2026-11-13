@@ -27,7 +27,7 @@ class File
   # CREDIT: David Heinemeier Hansson
   #
   # @uncommon
-  #   require 'facets/fileutils/atomic_write'
+  #   require 'facets/file/atomic_write'
   #
   def self.atomic_write(file_name, temp_dir=nil)
     temp_dir  = temp_dir || Dir.tmpdir

@@ -17,7 +17,7 @@ class Module
   # loaded automatically when using <code>require 'facets'</code>.
   #
   # @uncommon
-  #   require 'facets/module/attr_class_reader'
+  #   require 'facets/module/attr_class_accessor'
   #
   def attr_class_reader(name)
     module_eval(<<-EOS, __FILE__, __LINE__)
@@ -35,7 +35,7 @@ class Module
   # loaded automatically when using <code>require 'facets'</code>.
   #
   # @uncommon
-  #   require 'facets/module/attr_class_writer'
+  #   require 'facets/module/attr_class_accessor'
   #
   def attr_class_writer(name)
     module_eval(<<-EOS, __FILE__, __LINE__)

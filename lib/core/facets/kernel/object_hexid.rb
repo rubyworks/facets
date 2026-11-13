@@ -17,9 +17,9 @@ module Kernel
   end
 
   # Returns the object id as a string in hexideciaml,
-  # which is how Ruby reports them with inspect...
+  # which is how Ruby reports them with inspect:
   #
-  #   "ABC".object_hexid  #=> "0x402d359c"
+  #   "ABC".object_hexid  #=> "0x000000000006b0"
   #
   def object_hexid
     HEXID_TEMPLATE % (__id__ << 1)

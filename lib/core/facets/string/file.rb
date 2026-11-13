@@ -6,7 +6,7 @@ class String
 
   # Use fluent notation for making file directives.
   #
-  # For instance, if we had a file 'foo.txt',
+  # For instance, if we had a file 'foo.txt':
   #
   #    'foo.txt'.file.mtime
   #

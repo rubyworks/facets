@@ -16,6 +16,11 @@ test_case String do
       "Dash Case".dashcase.assert == "dash-case"
     end
 
+    test "squeezes runs of dashes" do
+      "Dash  -  Case".dashcase.assert == "dash-case"
+      "Dash__Case".dashcase.assert == "dash-case"
+    end
+
   end
 
 end

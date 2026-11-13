@@ -29,7 +29,7 @@ class Time
 
   # Create a time stamp.
   #
-  #   t = Time.at(10000)
+  #   t = Time.at(10000, in: "-05:00")
   #   t.stamp(:short)    #=> "31 Dec 21:46"
   #
   # Supported formats come from the Time::FORMAT constant.

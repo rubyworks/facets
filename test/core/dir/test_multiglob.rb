@@ -9,6 +9,12 @@ test_case Dir do
       r.assert.include?('test/core')
     end
 
+    test "with :recurse" do
+      r = Dir.multiglob('test/core/dir', :recurse => true).sort
+      r.assert == Dir.multiglob_r('test/core/dir').sort
+      r.assert.include?('test/core/dir/test_multiglob.rb')
+    end
+
   end
 
   class_method :multiglob_r do

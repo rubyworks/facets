@@ -41,7 +41,7 @@ class Module
   # Expirmental idea for #is.
   #
   # If the module has #append_feature_function
-  # defined, this will use that instead of #include ...
+  # defined, this will use that instead of #include:
   #
   #   def is(*modules)
   #     module.each do { |m|

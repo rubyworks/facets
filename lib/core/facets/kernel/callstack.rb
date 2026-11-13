@@ -5,11 +5,11 @@ module Kernel
 
   # Returns the call stack as an array of [file, lineno, method] entries.
   #
-  # For example, from irb
+  # For example, from irb:
   #
   #     callstack(1)
   #
-  # _produces_ ...
+  # _produces_:
   #
   #     [["(irb)", 2, :irb_binding], ...]
   #

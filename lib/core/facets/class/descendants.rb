@@ -5,7 +5,7 @@ class Class
   #   class A ; end
   #   class B < A; end
   #   class C < A; end
-  #   A.descendants  #=> [B,C]
+  #   A.descendants  #=> [C,B]
   #
   # You may also limit the generational distance the subclass may be from
   # the parent class.

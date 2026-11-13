@@ -4,7 +4,7 @@ class String
   #
   #   "this is a test".word_wrap(4)
   #
-  # _produces_ ...
+  # _produces_:
   #
   #   this
   #   is a

@@ -2,6 +2,8 @@ class Hash
 
   # Like merge operator '+' but merges in reverse order.
   #
+  #   require 'facets/hash/op_add'
+  #
   #   h1 = {:a=>1}
   #   h2 = {:a=>2, :b=>3}
   #

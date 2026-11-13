@@ -4,13 +4,13 @@ module Kernel
   # Preferably just a block and no string.
 
   # For debugging and showing examples. Currently this
-  # takes an argument of a string in a block...
+  # takes an argument of a string in a block:
   #
   #   demo {%{ a = [1,2,3] }}
   #   demo {%{ a.slice(1,2) }}
   #   demo {%{ a.map { |x| x**3 } }}
   #
-  # produces ...
+  # produces:
   #
   #   a = [1,2,3]             #=>  [1, 2, 3]
   #   a.slice(1,2)            #=>  [2, 3]

@@ -7,7 +7,7 @@ class String
   # change in the future.
   #
   # FIXME: Sometimes adds one too many blank lines, which is why we are
-  #         using rstrip. Fix and probably remove the rstrip.
+  # using rstrip. Fix and probably remove the rstrip.
   #
   def unfold
     blank = false

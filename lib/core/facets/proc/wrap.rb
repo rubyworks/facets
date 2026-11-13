@@ -4,7 +4,7 @@ class Proc
   # already a Proc object.
   #
   # TODO: Would this make more sense as `Kernel#Proc()` method,
-  #        akin to `Integer()` and the like?
+  # akin to `Integer()` and the like?
   #
   # Returns [Proc]
   #

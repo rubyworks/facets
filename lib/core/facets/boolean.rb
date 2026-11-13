@@ -69,7 +69,7 @@ end
 class String
   # Interpret common affirmative string meanings as true,
   # otherwise nil or false. Blank space and case are ignored.
-  # The following strings that will return true ...
+  # The following strings that will return true:
   #
   #   true
   #   yes
@@ -79,7 +79,7 @@ class String
   #   y
   #   ==
   #
-  # The following strings will return nil ...
+  # The following strings will return nil:
   #
   #   nil
   #   null

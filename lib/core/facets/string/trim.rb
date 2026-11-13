@@ -7,7 +7,7 @@ class String
   # when literal multi-line strings are needed in code.
   # 
   # num - Number of extra spaces with which to replace the
-  #       trim character. [Integer]
+  # trim character. [Integer]
   #
   # Examples
   #

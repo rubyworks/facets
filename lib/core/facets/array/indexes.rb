@@ -87,7 +87,7 @@ class Enumerator::Lazy
   # If neither a block nor argument is given, an Enumerator for _all_ indexes is returned.
   #
   #   enum = (42 .. Float::INFINITY).lazy.indexes
-  #   #=> #<Enumerator::Lazy: ...>
+  #   enum.class #=> Enumerator::Lazy
   #   enum.next #=> 0
   #   enum.next #=> 1
   #   enum.first(5)  #=> [0, 1, 2, 3, 4]

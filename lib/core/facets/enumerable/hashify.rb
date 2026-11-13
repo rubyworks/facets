@@ -12,10 +12,10 @@ module Enumerable
   # Here are some (but not a complete set of) examples.
   #
   # If the enumerable is a collection of perfect pairs, like that
-  # which Hash#to_a generates, then #assoc can be used.
+  # which Hash#to_a generates, then #merge can be used.
   #
   #   a = [ [:a,1], [:b,2] ]
-  #   a.hashify.assoc  #=> { :a=>1, :b=>2 }
+  #   a.hashify.merge  #=> { :a=>1, :b=>2 }
   #
   # If it it contains only arrays, but are not perfect pairs,
   # then #concat can be used.
@@ -63,7 +63,7 @@ module Enumerable
     # of elements.
     #
     #   a = [:a,1,:b,2,:c]
-    #   a.to_h_splat  #=> { :a=>1, :b=>2, :c=>nil }
+    #   a.hashify.splat  #=> { :a=>1, :b=>2, :c=>nil }
     def splat
       a = @enum.to_a
       a << nil if a.size.odd?
@@ -75,7 +75,7 @@ module Enumerable
     # of elements.
     #
     #   a = [:a,1,[:b,2,:c]]
-    #   a.to_h_flat  #=> { :a=>1, :b=>2, :c=>nil }
+    #   a.hashify.flat  #=> { :a=>1, :b=>2, :c=>nil }
     def flat
       a = @enum.to_a.flatten
       a << nil if a.size.odd?
@@ -141,7 +141,7 @@ module Enumerable
 
     # Convert enumerable object to Hash using index as keys.
     #
-    #   [:a, :b, :c].hashify.by_index  #=> {1=>:a, 2=>:b, 3=>:c}
+    #   [:a, :b, :c].hashify.by_index  #=> {0=>:a, 1=>:b, 2=>:c}
     #
     def by_index
       h = {}

@@ -27,6 +27,25 @@ Changes:
     is `Kernel::Mirror`, so an application's own `Mirror` class takes
     precedence instead of clashing. Based on the Instance gem.
 
+* Bug fixes
+
+  * `String#dashcase` now squeezes runs of dashes, as its docs say:
+    `"Dash  -  Case".dashcase` is `"dash-case"`, not `"dash-----case"`.
+  * `Dir.multiglob` ignored `:recurse => true`. It now gives the same
+    result as `Dir.multiglob_r`, and no longer changes the options hash
+    it is given.
+  * `Array#delete_first` now returns the block's result when the item
+    isn't found, as its docs say and as `Array#delete` does.
+
+* Documentation
+
+  * The examples in the doc comments run again, with `rake qed:code`,
+    and CI now runs them. Many had gone stale: wrong results, renamed
+    methods, and output that depended on the local time zone. Those that
+    can't run, such as interactive prompts and random output, are now
+    marked as sample text. Six `@uncommon` tags named files that don't
+    exist; a test now checks those paths.
+
 ## 4.1.0 / 2026-11-08
 
 Facets and ActiveSupport define many of the same methods, and whichever

@@ -13,7 +13,7 @@ class File
   # binary mode (no mapping of the plattform's newlines to "\n" is
   # done) or to append to it.
   #
-  # Assuming we had a file 'message.txt' and had a binary file 'binary.dat'.
+  # Assuming we had a file 'message.txt' and had a binary file 'binary.dat':
   #
   #   # Reverse contents of "message.txt"
   #   File.rewrite("message.txt") { |str| str.reverse }
@@ -53,13 +53,13 @@ class File
   end
 
   # In place version of #rewrite. This version of method requires that the
-  # string be modified in place within the block.
+  # string be modified in place within the block:
   #
   #   # Reverse contents of "message"
-  #   File.rewrite("message.txt") { |str| str.reverse! }
+  #   File.rewrite!("message.txt") { |str| str.reverse! }
   #
   #   # Replace "foo" by "bar" in "binary"
-  #   File.rewrite("binary.dat", "b") { |str| str.gsub!("foo", "bar") }
+  #   File.rewrite!("binary.dat", "b") { |str| str.gsub!("foo", "bar") }
   #
   def self.rewrite!(name, mode = "") #:yield:
     unless block_given?

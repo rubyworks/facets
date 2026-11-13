@@ -5,7 +5,7 @@ class Array
   # common if they return the same value for Object#hash and if obj1 == obj2.
   #
   # This can be useful, for instance, in determining all persons that share
-  # their last name with another person.
+  # their last name with another person:
   #
   #     persons.commonality { |person| person.last_name }
   #
