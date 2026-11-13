@@ -29,7 +29,7 @@
 #
 class String
 
-  # 'Natural order' comparison of strings, e.g. ...
+  # 'Natural order' comparison of strings, e.g.:
   #
   #   "my_prog_v1.1.0" < "my_prog_v1.2.0" < "my_prog_v1.10.0"
   #

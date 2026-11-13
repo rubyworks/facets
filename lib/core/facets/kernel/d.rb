@@ -1,12 +1,12 @@
 module Kernel
 
-  # Like #p but gives file and line number...
+  # Like #p but gives file and line number:
   #
   #   d("hi")
   #
-  # produces ...
+  # produces:
   #
-  #   "hi" (/home/dave/projects/foo.rb, 38)
+  #   ["hi"] /home/dave/projects/foo.rb:38:in '<main>'
   #
   def d(*x)
     puts "#{x.inspect} #{caller[0]}"

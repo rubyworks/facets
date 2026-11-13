@@ -16,7 +16,7 @@ class String
   #
   #   s='abcdefgh'
   #   s.rotate!(2)
-  #   s.should eq 'cdefghab'
+  #   s  #=> 'cdefghab'
   #
   # CREDIT: T. Yamada
   def rotate!(count=1) replace(rotate(count)) end

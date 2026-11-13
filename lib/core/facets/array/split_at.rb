@@ -5,10 +5,10 @@ class Array
   #
   # Examples
   #
-  #   ['a1','a2','b1','a3','b2','a4'].split('b1')
-  #   #=> [['a1','a2'],b1,['a3','b2','a4']]
+  #   ['a1','a2','b1','a3','b2','a4'].split_at('b1')
+  #   #=> [['a1','a2'],'b1',['a3','b2','a4']]
   #
-  #   ['a1','a2','b1','a3','b2','a4'].split('foo')
+  #   ['a1','a2','b1','a3','b2','a4'].split_at('foo')
   #   #=> [[],nil,[]]
   #
   # Returns list of split-up arrays. [Tuple<Array,Object,Array>]

@@ -3,7 +3,7 @@ $FIRST_CLASS_INSTANCE_METHODS = Hash.new{ |h,k| h[k] = {} }
 #
 class Module
 
-  # Access method as a singleton object and retain state.
+  # Access method as a singleton object and retain state:
   #
   #   module ::K
   #     def hello
@@ -11,7 +11,7 @@ class Module
   #     end
   #   end
   #
-  #   K.instance_method!(:hello).inspect   #=> "#<UnboundMethod: K#hello>"
+  #   K.instance_method!(:hello).inspect   #=> "#<UnboundMethod: K#hello() ...>"
   #
   # NOTE: This is limited to the scope of the current module/class.
 

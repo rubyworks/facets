@@ -9,7 +9,7 @@ class Numeric
   # * <tt>separator</tt> - defaults to "." but can be any string
   #
   #   1000.delimit(:delimiter => "_") # => "1_000"
-  #   (1000.00).delimit(:delimiter => ".", :separator => ",") # => "1.000,00"
+  #   (1000.00).delimit(:delimiter => ".", :separator => ",") # => "1.000,0"
   def delimit(options = {})
     opts = { :delimiter => ',', :separator => '.' }.merge(options)
     digits, decimals = self.to_s.split('.')

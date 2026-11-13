@@ -3,8 +3,8 @@
 # *essential* we mean, more or less, the extensions we think
 # ought to be in Ruby proper anyway.
 #
-# NOTE: This is very much a work in progress! Please feel frre to 
-#   suggest which extensions you think belong here.
+# NOTE: This is very much a work in progress! Please feel free to
+# suggest which extensions you think belong here.
 
 require_relative 'functor'
 

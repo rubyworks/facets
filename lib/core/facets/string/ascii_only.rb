@@ -2,7 +2,7 @@ class String
   # Get a new string with non-ASCII characters removed.
   #
   # alt - String to replace non-ASCII characters with.
-  #       Defaults to a blank string (`''`).
+  # Defaults to a blank string (`''`).
   #
   # Examples
   #
@@ -27,7 +27,7 @@ class String
   # Modify string keeping only ASCII characters.
   #
   # alt - String to replace non-ASCII characters with.
-  #       Defaults to a blank string (`''`).
+  # Defaults to a blank string (`''`).
   # 
   # Examples
   #

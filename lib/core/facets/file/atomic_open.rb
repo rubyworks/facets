@@ -8,7 +8,7 @@ class File
   # file, copying the file back to the original on completion.
   #
   # @uncommon
-  #   require 'facets/fileutils/atomic_open'
+  #   require 'facets/file/atomic_open'
   #
   def self.atomic_open(file_name, mode="r", temp_dir=nil, &block)
     temp_dir  = temp_dir || Dir.tmpdir

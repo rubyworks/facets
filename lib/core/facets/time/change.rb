@@ -7,7 +7,7 @@ class Time
   # minute, sec, and usec is set to 0. If the hour and
   # minute is passed, then sec and usec is set to 0.
   #
-  #   t1 = Time.at(10000)
+  #   t1 = Time.at(10000, in: "-05:00")
   #   t1.ctime   #=> "Wed Dec 31 21:46:40 1969"
   #
   #   t2 = t1.change(:hour => 11)
@@ -18,8 +18,8 @@ class Time
   # unless :offset gives a new one.
   #
   #   t = Time.new(2026, 11, 4, 15, 30, 0, "+09:00")
-  #   t.change(hour: 1)            #=> 2026-11-04 01:00:00 +0900
-  #   t.change(offset: "+01:00")   #=> 2026-11-04 15:30:00 +0100
+  #   t.change(hour: 1).to_s            #=> "2026-11-04 01:00:00 +0900"
+  #   t.change(offset: "+01:00").to_s   #=> "2026-11-04 15:30:00 +0100"
   #
   # It takes the same options and gives the same results as ActiveSupport's
   # Time#change, so the two agree whichever is loaded.

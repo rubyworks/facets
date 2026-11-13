@@ -4,7 +4,7 @@ class String
   #
   # Character set is an Array which can contain Ranges, Arrays, Characters
   #
-  # Examples
+  # Examples:
   #
   #     String.random
   #     => "D9DxFIaqR3dr8Ct1AfmFxHxqGsmA4Oz3"

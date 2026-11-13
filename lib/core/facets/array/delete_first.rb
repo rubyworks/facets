@@ -7,15 +7,16 @@ class Array
   # the item is not found.
   #
   #    a = [ "a", "b", "b", "b", "c" ]
-  #    a.delete_first("b")                   #=> "b"
-  #    a                               #=> ["a", "c"]
-  #    a.delete("z")                   #=> nil
-  #    a.delete("z") {"not found"}     #=> "not found"
+  #    a.delete_first("b")                  #=> "b"
+  #    a                                    #=> ["a", "b", "b", "c"]
+  #    a.delete_first("z")                  #=> nil
+  #    a.delete_first("z") { "not found" }  #=> "not found"
   def delete_first(el)
     i = index(el)
     if i
       delete_at(i)
+    elsif block_given?
+      yield(el)
     end
   end
 end
-

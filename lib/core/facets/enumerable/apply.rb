@@ -10,9 +10,9 @@ module Enumerable
   #   r  #=> 6
   #
   def apply
-    #Functor.new do |sym, *args, &blk|
-    #  inject{ |r, e| r.__send__(sym, e, *args, &blk) }
-    #end
+    ##Functor.new do |sym, *args, &blk|
+    ##  inject{ |r, e| r.__send__(sym, e, *args, &blk) }
+    ##end
     per(:inject)
   end
 

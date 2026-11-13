@@ -52,3 +52,6 @@ jobs:
       - name: Run demos
         timeout-minutes: 5
         run: bundle exec rake qed
+      - name: Run doc examples
+        timeout-minutes: 5
+        run: bundle exec rake qed:code

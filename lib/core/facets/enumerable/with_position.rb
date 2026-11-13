@@ -27,13 +27,13 @@ module Enumerable
 		end
 	end
 	
-	# Allows one to know the position of the enumeration easily.
+	# Allows one to know the position of the enumeration easily:
 	#
 	#    5.times.collect.with_position do |i, position|
 	#        $stdout.write "#{i}#{position.middle? ? ',' : ''}"
 	#    end
 	#
-	# Where this becomes more useful, is when it's easy to determine the position of elements, e.g.
+	# Where this becomes more useful, is when it's easy to determine the position of elements, e.g.:
 	#
 	#    10.times.select(&:odd?).with_position{|n,p| ... }
 	#

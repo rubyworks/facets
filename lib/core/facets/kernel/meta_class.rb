@@ -2,7 +2,8 @@ module Kernel
 
   # Easy access to an object's singleton class, with optional block eval.
   #
-  #   obj.meta_class  #=> #<Class:obj>
+  #   obj = Object.new
+  #   obj.meta_class  #=> obj.singleton_class
   #   obj.meta_class { def foo; end }
   #
   # This is a concise alternative to Ruby's `singleton_class` that also

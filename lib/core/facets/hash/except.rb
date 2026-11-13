@@ -16,7 +16,7 @@ class Hash
   # This returns the hash of keys removed.
   #
   #   h = {:a=>1, :b=>2, :c=>3}
-  #   h.except!(:a)  #=> {:a=>1}
+  #   h.remove!(:a)  #=> {:a=>1}
   #   h              #=> {:b=>2,:c=>3}
   #
   # Returns a Hash of the removed pairs.

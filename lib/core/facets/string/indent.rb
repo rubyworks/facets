@@ -54,11 +54,11 @@ class String
   #
   # Examples
   #
-  #     <<-END.unindent
+  #     text = <<-END.unindent
   #         ohaie
   #           wurld
-  #     END 
-  #     #=> "ohaie\n  wurld"
+  #     END
+  #     text  #=> "ohaie\n  wurld\n"
   #
   # Returns a new unindented string. [String]
   #

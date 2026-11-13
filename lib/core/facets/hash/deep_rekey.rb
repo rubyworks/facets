@@ -22,7 +22,7 @@ class Hash
   #
   #   foo = { :person=>{ :name=>'Gavin', :wife=>:Lisa } }
   #   foo.deep_rekey{ |k| k.to_s }  #=>  { "person"=>{ "name"=>"Gavin", "wife"=>:Lisa } }
-  #   foo                      #=>  { "person"=>{ "name"=>"Gavin", "wife"=>:Lisa } }
+  #   foo                      #=>  { :person=>{ :name=>'Gavin', :wife=>:Lisa } }
   #
   # If no key map or block is given, then all keys are converted
   # to Symbols.

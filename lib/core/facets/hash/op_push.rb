@@ -14,12 +14,12 @@ class Hash
     self
   end
 
-  #def <<(pairs)
-  #  if Array === pairs
-  #    merge! Hash[*pairs]
-  #  else
-  #    merge! pairs
-  #  end
-  #end
+  ##def <<(pairs)
+  ##  if Array === pairs
+  ##    merge! Hash[*pairs]
+  ##  else
+  ##    merge! pairs
+  ##  end
+  ##end
 
 end

@@ -175,7 +175,8 @@ end
 
 desc "run core qed from code base"
 task 'qed:code' do
-  sh "qed #{qed_flags} -c -Ilib/core lib/core"
+  quiet = File.expand_path('etc/quiet_deprecations', __dir__)
+  sh "qed #{qed_flags} -c -Ilib/core:lib/standard -r ae -r #{quiet} lib/core"
 end
 
 def qed_flags

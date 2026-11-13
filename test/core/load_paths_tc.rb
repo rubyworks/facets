@@ -34,6 +34,28 @@ module FacetsLoadPaths
     missing
   end
 
+  # Return a list of "file:line -> path" for every `require` in an `@uncommon`
+  # doc tag that names no file on the gem's load paths (lib/core,
+  # lib/standard, lib/rails). The tag tells the reader what to require for a
+  # method that `require 'facets'` leaves out.
+  def self.unresolved_uncommon_requires
+    missing = []
+    Dir.glob(File.join(LIB_DIR, '**', '*.rb')).sort.each do |file|
+      lines = File.readlines(file)
+      lines.each_with_index do |line, i|
+        next unless line =~ /^\s*#\s?@uncommon\b/
+        lines[(i + 1)..].each_with_index do |tag_line, j|
+          break unless tag_line =~ /^\s*#\s{2,}\S/          # end of the tag's text
+          next unless tag_line =~ /require\s+["']([^"']+)["']/
+          path = $1
+          next if %w[core standard rails].any? { |dir| File.exist?(File.join(LIB_DIR, dir, "#{path}.rb")) }
+          missing << "#{file.sub("#{LIB_DIR}/", '')}:#{i + j + 2} -> #{path}"
+        end
+      end
+    end
+    missing
+  end
+
   # A single Rubytest-compliant test procedure. It must respond to #call and
   # #to_s but NOT #each (a #each-responding object is treated as a case, not a
   # test) -- so this is a plain class, not a Struct.
@@ -61,6 +83,10 @@ module FacetsLoadPaths
     def each
       yield Check.new('every require_relative target resolves to an existing file') {
         FacetsLoadPaths.unresolved_requires.assert == []
+        true
+      }
+      yield Check.new('every @uncommon require names an existing file') {
+        FacetsLoadPaths.unresolved_uncommon_requires.assert == []
         true
       }
     end

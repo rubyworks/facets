@@ -50,13 +50,13 @@ class Hash
         end
       end
     else
-      #hash = dup.clear  # to keep default_proc
-      #(keys - key_map.keys).each do |key|
-      #  hash[key] = self[key]
-      #end
-      #key_map.each do |from, to|
-      #  hash[to] = self[from] if key?(from)
-      #end
+      ##hash = dup.clear  # to keep default_proc
+      ##(keys - key_map.keys).each do |key|
+      ##  hash[key] = self[key]
+      ##end
+      ##key_map.each do |from, to|
+      ##  hash[to] = self[from] if key?(from)
+      ##end
       hash = dup  # to keep default_proc
       key_map.each_pair do |from, to|
         hash[to] = hash.delete(from) if hash.key?(from)

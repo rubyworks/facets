@@ -8,13 +8,13 @@ class String
   #
   # The way it works:
   #
-  # 1. Converts each string into a "graph like" object, with edges ...
+  # 1. Converts each string into a "graph like" object, with edges:
   #
   #        "alexsander" -> [ alexsander, alexsand, alexsan ... lexsand ... san ... an, etc ]
   #        "aleksander" -> [ aleksander, aleksand ... etc. ]
   #
   # 2. Perform match, then remove any subsets from this matched set (i.e. a hit
-  # on "san" is a subset of a hit on "sander") ...
+  # on "san" is a subset of a hit on "sander"):
   #
   #        Above example, once reduced -> [ ale, sander ]
   #

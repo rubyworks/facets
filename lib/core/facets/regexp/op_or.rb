@@ -2,7 +2,7 @@ class Regexp
 
   # Operator form of `Regexp.union`.
   #
-  #   /a/ | /b/  #=> /(?-mix:a)|(?-mix:b)/
+  #   (/a/ | /b/)  #=> /(?-mix:a)|(?-mix:b)/
   #
   # If +other+ is not a Regexp it is passed to Regexp.escape.
   #

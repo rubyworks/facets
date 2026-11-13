@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 group :test do
   gem 'lemon'
-  gem 'qed'
+  gem 'qed', '>= 3.0.1'  # reads YARD tag text in doc comments as prose, for rake qed:code
   gem 'rubytest', '>= 0.9'
   gem 'rake'
   gem 'simplecov'
