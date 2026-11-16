@@ -25,9 +25,4 @@ module Kernel
     HEXID_TEMPLATE % (__id__ << 1)
   end
 
-  # The 1.9.3 definition is as follows:
-  #def object_hexid
-  #  "0x" + [object_id << 1].pack("L>!").unpack("H*")[0]
-  #end
-
 end

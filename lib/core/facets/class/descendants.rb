@@ -1,11 +1,12 @@
 class Class
 
-  # List all descedents of this class.
+  # List all descendants of this class. The order differs between
+  # Rubies, so these examples sort the list.
   #
   #   class A ; end
   #   class B < A; end
   #   class C < A; end
-  #   A.descendants  #=> [C,B]
+  #   A.descendants.sort_by(&:name)  #=> [B,C]
   #
   # You may also limit the generational distance the subclass may be from
   # the parent class.
@@ -13,8 +14,8 @@ class Class
   #   class X ; end
   #   class Y < X; end
   #   class Z < Y; end
-  #   X.descendants    #=> [Y,Z]
-  #   X.descendants(1) #=> [Y]
+  #   X.descendants.sort_by(&:name)  #=> [Y,Z]
+  #   X.descendants(1)               #=> [Y]
   #
   # Ruby 4.1 adds its own Module#descendants. Where Ruby has it, a call
   # without a limit is passed to Ruby's, and Facets only handles the
