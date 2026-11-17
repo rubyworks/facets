@@ -191,9 +191,11 @@ class String
     # empty slots, whatever character each was made with. A mask is
     # never equal to an ordinary string: compare its `to_s` instead.
     #
-    #     "abc..123".mask('.') == "abc__123".mask('_')   #=> true
-    #     "abc..123".mask('.') == "abc..123"             #=> false
-    #     "abc..123".mask('.').to_s == "abc..123"        #=> true
+    #     m = "abc..123".mask('.')
+    #
+    #     (m == "abc__123".mask('_'))  #=> true
+    #     (m == "abc..123")            #=> false
+    #     (m.to_s == "abc..123")       #=> true
     #
     def ==(other)
       Mask === other && to_str == other.to_str
