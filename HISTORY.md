@@ -18,6 +18,11 @@ Changes:
     first, back into a number: `[1, 0].from_base(256)` is 256. It reverses
     Ruby's `Integer#digits`, as `n.digits(b).reverse.from_base(b)`. All
     three load with `require 'facets'`, and are based on the Radix gem.
+  * `String#margin` takes a `:flush` option, which gives every line the
+    same margin and doesn't keep their relative indentation:
+    `"abc\n    xyz".margin(2, flush: true)` is `"  abc\n  xyz"`. This is
+    what `String#tab`, removed in 3.1.0, used to do; `String#tabto` is
+    `margin(n, lead: true)`.
   * `Mirror`, loaded with `require 'facets/mirror'`, looks at an object
     from the outside: `obj.mirror.to_h` gives its instance variables as a
     hash, and the mirror also gets and sets them, and gives the object's
