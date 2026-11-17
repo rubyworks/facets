@@ -86,6 +86,14 @@ test_case Crypt3 do
       Crypt3.generate_salt(16).size.assert == 16
     end
 
+    test "does not come from Kernel#rand" do
+      srand(1)
+      a = Crypt3.generate_salt(16)
+      srand(1)
+      b = Crypt3.generate_salt(16)
+      a.refute == b
+    end
+
     test "uses only the crypt(3) base 64 characters" do
       Crypt3.generate_salt(200).delete(Crypt3::ITOA64).assert == ''
     end

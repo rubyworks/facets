@@ -36,6 +36,9 @@ Changes:
     it is given.
   * `Array#delete_first` now returns the block's result when the item
     isn't found, as its docs say and as `Array#delete` does.
+  * `Crypt3.generate_salt`, and so the salt `Crypt3.crypt` makes when
+    given none, now comes from `SecureRandom`. It came from `rand`, which
+    isn't a cryptographic source.
 
 * Documentation
 
