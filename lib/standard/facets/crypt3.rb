@@ -1,3 +1,5 @@
+require 'securerandom'
+
 # Crypt3 is a pure Ruby version of crypt(3), a salted one-way hashing
 # of a password.
 #
@@ -112,7 +114,7 @@ module Crypt3
     self.crypt(password, algo, salt, magic) == hash
   end
 
-  # Generate a random salt of the given size.
+  # Generate a random salt of the given size, from SecureRandom.
   #
   #   Crypt3.generate_salt(8)  #=> "xK3d9Wq2"
   #
@@ -120,7 +122,7 @@ module Crypt3
   #
   # Returns random salt. [String]
   def self.generate_salt(size)
-    (1..size).map { ITOA64[rand(ITOA64.size)] }.join
+    (1..size).map { ITOA64[SecureRandom.random_number(ITOA64.size)] }.join
   end
 
 end
