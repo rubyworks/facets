@@ -188,17 +188,18 @@ class String
     end
 
     # Masks are equal if they have the same characters and the same
-    # empty slots. An ordinary string is read as a mask with this mask's
-    # empty-slot character.
+    # empty slots, whatever character each was made with. A mask is
+    # never equal to an ordinary string: compare its `to_s` instead.
+    #
+    #     "abc..123".mask('.') == "abc__123".mask('_')   #=> true
+    #     "abc..123".mask('.') == "abc..123"             #=> false
+    #     "abc..123".mask('.').to_s == "abc..123"        #=> true
+    #
     def ==(other)
-      return false unless Mask === other || other.respond_to?(:to_str)
-      to_str == convert(other).to_str
-    end
-
-    # As ==, but only for another mask, so that masks work as hash keys.
-    def eql?(other)
       Mask === other && to_str == other.to_str
     end
+
+    alias_method :eql?, :==
 
     #
     def hash

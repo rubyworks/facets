@@ -112,9 +112,11 @@ test_case String::Mask do
       x1.assert == String::Mask["abc__123", '_']
     end
 
-    test "reads an ordinary string as a mask" do
-      x1.assert == "abc..123"
-      x1.refute == "abc"
+    test "is false for an ordinary string, either way round" do
+      (x1 == "abc..123").assert == false
+      (x1 == x1.to_str).assert == false
+      ("abc..123" == x1).assert == false
+      (x1.to_s == "abc..123").assert == true
     end
 
     test "is false for anything that isn't a string" do

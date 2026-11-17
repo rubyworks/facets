@@ -45,7 +45,8 @@ Changes:
     2.7.0, then the Strmask gem. Compared with the gem: masks of
     different lengths can be combined, a mask can be made without an
     empty-slot character, equal masks are the same hash key, `apply`
-    works, and only methods a string has are passed on to it.
+    works, only methods a string has are passed on to it, and a mask is
+    equal only to another mask (compare `mask.to_s` with a string).
 
 * Bug fixes
 
