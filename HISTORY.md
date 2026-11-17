@@ -37,6 +37,15 @@ Changes:
     given the parameters and defines the methods that depend on them.
     Paramix was part of Facets until 2.7.0; this is the Paramix gem's
     version.
+  * `String::Mask` and `String#mask`, loaded with
+    `require 'facets/string/mask'`, treat a string as a mask with empty
+    slots and combine masks character by character:
+    `("abc..123".mask('.') + "ab..789.").to_s` is `"abc.7893"`, and `-`,
+    `*`, `&` and `^` work likewise. This was Facets' `string/mask` until
+    2.7.0, then the Strmask gem. Compared with the gem: masks of
+    different lengths can be combined, a mask can be made without an
+    empty-slot character, equal masks are the same hash key, `apply`
+    works, and only methods a string has are passed on to it.
 
 * Bug fixes
 
