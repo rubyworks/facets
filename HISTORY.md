@@ -31,6 +31,12 @@ Changes:
     `instance_variables`, or a `BasicObject` that has neither. The class
     is `Kernel::Mirror`, so an application's own `Mirror` class takes
     precedence instead of clashing. Based on the Instance gem.
+  * `Paramix::Parametric`, loaded with `require 'facets/paramix'`, makes a
+    module take parameters where it is included or extended:
+    `include Greeter[:name => 'x']`. The module's `parameterized` block is
+    given the parameters and defines the methods that depend on them.
+    Paramix was part of Facets until 2.7.0; this is the Paramix gem's
+    version.
 
 * Bug fixes
 
