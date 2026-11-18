@@ -25,6 +25,7 @@ require_relative 'string/line_wrap.rb'
 require_relative 'string/linear.rb'
 require_relative 'string/lowercase.rb'
 require_relative 'string/margin.rb'
+#require_relative 'string/mask.rb'           # uncommon
 require_relative 'string/methodize.rb'
 require_relative 'string/modulize.rb'
 require_relative 'string/mscan.rb'

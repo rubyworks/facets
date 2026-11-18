@@ -14,6 +14,17 @@ class String
   # by the first non-blank line, instead of the minimum white-space for all
   # lines.
   #
+  #     "  abc\n    xyz".margin(0)              #=> "abc\n  xyz"
+  #     "    abc\n  xyz".margin(2, lead: true)  #=> "  abc\nxyz"
+  #
+  # If the `:flush` option is set, relative tabbing is not preserved: every
+  # line that isn't blank gets exactly the given number of spaces before
+  # non-space, whatever spaces or tabs it started with. Blank lines are
+  # left as they are.
+  #
+  #     "abc\n    xyz".margin(2)               #=> "  abc\n      xyz"
+  #     "abc\n    xyz".margin(2, flush: true)  #=> "  abc\n  xyz"
+  #
   # Arguments:
   #
   #   num   - The size of the desired margin. [Integer]
@@ -21,8 +32,9 @@ class String
   #
   # Options:
   #
-  #   :tab  - Size of tab character in spaces. [Integer]
-  #   :lead - Use first non-blank line as relative marker. [Boolean] 
+  #   :tab   - Size of tab character in spaces. [Integer]
+  #   :lead  - Use first non-blank line as relative marker. [Boolean]
+  #   :flush - Give every line the same margin. [Boolean]
   #
   # Returns a new String with adjusted margin. [String]
   #
@@ -32,6 +44,8 @@ class String
   def margin(num=nil, opts={})
     # TODO: temporary to help people transition
     raise ArgumentError, "String#margin has been renamed to #trim." unless num
+
+    return gsub(/^[ \t]*(?=\S)/, ' ' * num) if opts[:flush]
 
     tab = opts[:tab] || 2
     str = gsub("\t", " " * tab)  # TODO: only leading tabs ?

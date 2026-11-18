@@ -18,6 +18,11 @@ Changes:
     first, back into a number: `[1, 0].from_base(256)` is 256. It reverses
     Ruby's `Integer#digits`, as `n.digits(b).reverse.from_base(b)`. All
     three load with `require 'facets'`, and are based on the Radix gem.
+  * `String#margin` takes a `:flush` option, which gives every line the
+    same margin and doesn't keep their relative indentation:
+    `"abc\n    xyz".margin(2, flush: true)` is `"  abc\n  xyz"`. This is
+    what `String#tab`, removed in 3.1.0, used to do; `String#tabto` is
+    `margin(n, lead: true)`.
   * `Mirror`, loaded with `require 'facets/mirror'`, looks at an object
     from the outside: `obj.mirror.to_h` gives its instance variables as a
     hash, and the mirror also gets and sets them, and gives the object's
@@ -26,6 +31,22 @@ Changes:
     `instance_variables`, or a `BasicObject` that has neither. The class
     is `Kernel::Mirror`, so an application's own `Mirror` class takes
     precedence instead of clashing. Based on the Instance gem.
+  * `Paramix::Parametric`, loaded with `require 'facets/paramix'`, makes a
+    module take parameters where it is included or extended:
+    `include Greeter[:name => 'x']`. The module's `parameterized` block is
+    given the parameters and defines the methods that depend on them.
+    Paramix was part of Facets until 2.7.0; this is the Paramix gem's
+    version.
+  * `String::Mask` and `String#mask`, loaded with
+    `require 'facets/string/mask'`, treat a string as a mask with empty
+    slots and combine masks character by character:
+    `("abc..123".mask('.') + "ab..789.").to_s` is `"abc.7893"`, and `-`,
+    `*`, `&` and `^` work likewise. This was Facets' `string/mask` until
+    2.7.0, then the Strmask gem. Compared with the gem: masks of
+    different lengths can be combined, a mask can be made without an
+    empty-slot character, equal masks are the same hash key, `apply`
+    works, only methods a string has are passed on to it, and a mask is
+    equal only to another mask (compare `mask.to_s` with a string).
 
 * Bug fixes
 
