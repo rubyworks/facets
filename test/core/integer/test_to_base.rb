@@ -30,10 +30,40 @@ test_case Integer do
       -37.to_base("OLTWFS").assert == "-LOL"
     end
 
-    test "takes custom digits as a string or an array" do
+    test "takes custom digits as a string" do
       37.to_base("OLTWFS").assert == "LOL"
-      37.to_base(%w[O L T W F S]).assert == "LOL"
-      37.to_base(%i[O L T W F S]).assert == "LOL"
+    end
+
+    test "given an array holding a base, gives the digit values" do
+      1000.to_base([100]).assert == [10, 0]
+      256.to_base([256]).assert == [1, 0]
+      255.to_base([16]).assert == [15, 15]
+      0.to_base([100]).assert == [0]
+      (2**70).to_base([1000]).assert == (2**70).digits(1000).reverse
+    end
+
+    test "given an array of digits, gives an array of them" do
+      37.to_base(%w[O L T W F S]).assert == %w[L O L]
+      37.to_base(%i[O L T W F S]).assert == %i[L O L]
+      5.to_base([:zero, :one]).assert == [:one, :zero, :one]
+      5.to_base(%w[zero one]).assert == %w[one zero one]
+      0.to_base(%w[a b]).assert == %w[a]
+    end
+
+    test "takes numbers as digits when there is more than one" do
+      6.to_base([5, 7]).assert == [7, 7, 5]
+    end
+
+    test "given an array, raises ArgumentError for a negative number" do
+      ArgumentError.assert.raised? { -5.to_base([100]) }
+      ArgumentError.assert.raised? { -5.to_base(%w[a b]) }
+    end
+
+    test "given an array, raises ArgumentError for a bad base or digits" do
+      ArgumentError.assert.raised? { 5.to_base([1]) }
+      ArgumentError.assert.raised? { 5.to_base([]) }
+      ArgumentError.assert.raised? { 5.to_base(%w[a]) }
+      ArgumentError.assert.raised? { 5.to_base(%w[a b a]) }
     end
 
     test "base 256 gives the bytes as a binary string" do
@@ -57,7 +87,6 @@ test_case Integer do
     test "raises ArgumentError for bad digits" do
       ArgumentError.assert.raised? { 1.to_base("O") }
       ArgumentError.assert.raised? { 1.to_base("OLO") }
-      ArgumentError.assert.raised? { 1.to_base(%w[OL TW]) }
     end
 
     test "raises ArgumentError for a negative number when minus is a digit" do

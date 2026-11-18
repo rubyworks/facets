@@ -12,12 +12,10 @@ class Integer
   #     809145531659995.to_base(62)  #=> "3HLszsQsP"
   #     -255.to_base(62)             #=> "-47"
   #
-  # To use other digits, give them as a string or an array of
-  # single characters, starting with the digit for zero. The number of
-  # digits is the base.
+  # To use other digits, give them as a string, starting with the digit
+  # for zero. The number of digits is the base.
   #
   #     37.to_base("OLTWFS")         #=> "LOL"
-  #     37.to_base(%w[O L T W F S])  #=> "LOL"
   #
   # In base 256 the digits are bytes, so the result is the number's
   # bytes, most significant first, as a binary string.
@@ -39,9 +37,26 @@ class Integer
   # digits, in which case it raises ArgumentError. That includes base
   # 256, where "-" is byte 45.
   #
-  # String#from_base converts back. For digit values in any base, as
-  # an array, use Ruby's `digits(base).reverse`, and Array#from_base to
-  # convert back.
+  # Given an array, the result is an array, with one element for each
+  # digit, most significant first. An array holding one number is a
+  # base, of any size from 2 up, and the result is the digit values:
+  #
+  #     1000.to_base([100])          #=> [10, 0]
+  #     256.to_base([256])           #=> [1, 0]
+  #     255.to_base([16])            #=> [15, 15]
+  #
+  # Any other array is the digits themselves, starting with the digit
+  # for zero. They can be any objects:
+  #
+  #     37.to_base(%w[O L T W F S])       #=> ["L", "O", "L"]
+  #     37.to_base(%w[O L T W F S]).join  #=> "LOL"
+  #     5.to_base([:zero, :one])          #=> [:one, :zero, :one]
+  #
+  # An array can't show a sign, so a negative number raises
+  # ArgumentError.
+  #
+  # String#from_base converts a string back, and Array#from_base an
+  # array.
   #
   # Since: 4.2.0
 
@@ -57,15 +72,13 @@ class Integer
         return [hex].pack('H*')
       end
       unless base >= 2 && base <= 62
-        raise ArgumentError, "invalid radix #{base}"
+        hint = base > 62 ? "; for digit values use to_base([#{base}])" : ""
+        raise ArgumentError, "invalid radix #{base}#{hint}"
       end
       return to_s(base) if base <= 36
       digits = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"[0, base]
-    when ::String, ::Array
-      digits = base.is_a?(::Array) ? base.map(&:to_s) : base.chars
-      unless digits.all? { |d| d.length == 1 }
-        raise ArgumentError, "digits must be single characters"
-      end
+    when ::String
+      digits = base.chars
       if digits.size < 2
         raise ArgumentError, "a base needs at least two digits"
       end
@@ -75,7 +88,22 @@ class Integer
       if negative? && digits.include?('-')
         raise ArgumentError, "can't show a negative number when '-' is a digit"
       end
-      digits = digits.join
+      digits = base
+    when ::Array
+      if negative?
+        raise ArgumentError, "can't show a negative number as an array"
+      end
+      if base.size == 1 && base.first.is_a?(::Integer)
+        raise ArgumentError, "invalid radix #{base.first}" if base.first < 2
+        return digits(base.first).reverse
+      end
+      if base.size < 2
+        raise ArgumentError, "a base needs at least two digits"
+      end
+      if base.uniq.size < base.size
+        raise ArgumentError, "digits must not repeat"
+      end
+      return digits(base.size).reverse.map { |d| base[d] }
     else
       raise TypeError, "base must be an Integer, String or Array, not #{base.class}"
     end

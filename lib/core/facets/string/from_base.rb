@@ -29,7 +29,8 @@ class String
   # base, and for an empty string. A leading "-" makes the number
   # negative, unless "-" is one of the digits, as it is in base 256.
   #
-  # Integer#to_base converts back.
+  # Integer#to_base converts back. Given an array of digits, it gives
+  # an array, which Array#from_base reads.
   #
   # Since: 4.2.0
 
