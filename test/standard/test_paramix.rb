@@ -1,12 +1,12 @@
 covers 'facets/paramix'
 
-test_case Paramix::Parametric::Extensions do
+test_case Paramix::Extensions do
 
   # A parametric module that defines the method named by :name, returning
   # :value.
   maker = lambda do
     Module.new do
-      include Paramix::Parametric
+      include Paramix
       parameterized do |params|
         public(params[:name]) { params[:value] }
       end
@@ -15,10 +15,19 @@ test_case Paramix::Parametric::Extensions do
 
   method :parameterized do
 
-    test "is added to a module that includes Parametric" do
+    test "is added to a module that includes Paramix" do
       m = maker.call
       m.assert.respond_to?(:parameterized)
       m.assert.respond_to?(:[])
+    end
+
+    test "Paramix::Parametric, its name in the gem, is the same module" do
+      Paramix::Parametric.assert.equal?(Paramix)
+      m = Module.new do
+        include Paramix::Parametric
+        parameterized { |params| public(:f) { params[:p] } }
+      end
+      Class.new { include m[:p => 1] }.new.f.assert == 1
     end
 
   end
@@ -49,7 +58,7 @@ test_case Paramix::Parametric::Extensions do
 
     test "the module's own methods come along" do
       m = Module.new do
-        include Paramix::Parametric
+        include Paramix
         parameterized do |params|
           define_method(:params) { params }
         end
@@ -63,7 +72,7 @@ test_case Paramix::Parametric::Extensions do
 
     test "the block can define any methods from its parameters" do
       m = Module.new do
-        include Paramix::Parametric
+        include Paramix
         parameterized do |params|
           attr_accessor params[:p]
         end
@@ -76,7 +85,7 @@ test_case Paramix::Parametric::Extensions do
 
     test "private and protected define methods with that visibility" do
       m = Module.new do
-        include Paramix::Parametric
+        include Paramix
         parameterized do |params|
           private(:secret) { params[:value] }
           protected(:guarded) { params[:value] }
@@ -91,7 +100,7 @@ test_case Paramix::Parametric::Extensions do
 
     test "public, private and protected still take names alone" do
       m = Module.new do
-        include Paramix::Parametric
+        include Paramix
         parameterized do |params|
           define_method(:a) { 1 }
           define_method(:b) { 2 }
@@ -106,7 +115,7 @@ test_case Paramix::Parametric::Extensions do
     test "a parametric module can include another with parameters" do
       inner = maker.call
       outer = Module.new do
-        include Paramix::Parametric
+        include Paramix
         include inner[:name => :f, :value => 1]
         parameterized do |params|
           public(params[:name]) { params[:value] }
