@@ -14,10 +14,15 @@ Changes:
     `from_base` raises `ArgumentError` for a character that isn't a digit.
     In base 256 the digits are bytes: `256.to_base(256)` is `"\x01\x00"`,
     a binary string, and `from_base(256)` reads a string's bytes.
-  * `Array#from_base` turns digit values in any base, most significant
-    first, back into a number: `[1, 0].from_base(256)` is 256. It reverses
-    Ruby's `Integer#digits`, as `n.digits(b).reverse.from_base(b)`. All
-    three load with `require 'facets'`, and are based on the Radix gem.
+  * Given an array, `to_base` gives an array, with no limit on the base.
+    An array holding a number is the base, and the result is the digit
+    values: `1000.to_base([100])` is `[10, 0]`. Any other array is the
+    digits, which can be any objects: `5.to_base([:zero, :one])` is
+    `[:one, :zero, :one]`.
+  * `Array#from_base` turns such an array back into a number, given the
+    same base: `[10, 0].from_base([100])` is 1000, and
+    `[1, 0].from_base(256)` is 256. All three load with
+    `require 'facets'`, and are based on the Radix gem.
   * `String#margin` takes a `:flush` option, which gives every line the
     same margin and doesn't keep their relative indentation:
     `"abc\n    xyz".margin(2, flush: true)` is `"  abc\n  xyz"`. This is

@@ -39,8 +39,40 @@ test_case Array do
       ArgumentError.assert.raised? { [0].from_base(1) }
     end
 
-    test "raises TypeError for a base that isn't an Integer" do
+    test "raises TypeError for a base that isn't an Integer or an Array" do
       TypeError.assert.raised? { [1].from_base(10.0) }
+      TypeError.assert.raised? { [1].from_base("ab") }
+    end
+
+    test "takes the base in an array" do
+      [10, 0].from_base([100]).assert == 1000
+      [1, 0].from_base([256]).assert == 256
+    end
+
+    test "takes an array of digits" do
+      %w[L O L].from_base(%w[O L T W F S]).assert == 37
+      [:one, :zero, :one].from_base([:zero, :one]).assert == 5
+      [7, 7, 5].from_base([5, 7]).assert == 6
+    end
+
+    test "reads back what Integer#to_base gave for the same array" do
+      [0, 1, 255, 1000, 2**100].each do |n|
+        [[2], [100], [256], [1000], %w[a b c], [:zero, :one], [5, 7]].each do |b|
+          n.to_base(b).from_base(b).assert == n
+        end
+      end
+    end
+
+    test "raises ArgumentError for an element that isn't one of the digits" do
+      ArgumentError.assert.raised? { [:two].from_base([:zero, :one]) }
+      ArgumentError.assert.raised? { [0].from_base(%w[a b]) }
+    end
+
+    test "raises ArgumentError for a bad array of digits" do
+      ArgumentError.assert.raised? { [1].from_base([1]) }
+      ArgumentError.assert.raised? { [1].from_base([]) }
+      ArgumentError.assert.raised? { %w[a].from_base(%w[a]) }
+      ArgumentError.assert.raised? { %w[a].from_base(%w[a b a]) }
     end
 
   end
