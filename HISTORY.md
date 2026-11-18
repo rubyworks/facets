@@ -1,6 +1,12 @@
 # Facets Release History
 
-## Unreleased
+## 4.2.0 / 2026-11-17
+
+This release brings back four libraries that began in Facets and were
+later kept as gems of their own: number bases (Radix), object
+introspection (Instance, now `Mirror`), parametric mixins (Paramix) and
+string masks (Strmask). The number bases load with `require 'facets'`;
+the other three are loaded on request.
 
 Changes:
 
