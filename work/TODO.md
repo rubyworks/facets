@@ -2,12 +2,6 @@
 
 Small follow-ups that aren't GitHub issues. Newest first.
 
-## Pillage ProUtils next (2026-11-24)
-
-Go through the ProUtils libraries for methods and small classes that
-belong in Facets, as was done for Radix, Instance, Paramix and Strmask
-in 4.2.0, and for the Language gem's `sentences` and `paragraphs`.
-
 ## Date and Time comparisons (2026-11-08)
 
 Plain Ruby can't compare a Date with a Time: `<=>` returns nil, so `<`, `>`,
