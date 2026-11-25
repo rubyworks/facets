@@ -1,5 +1,22 @@
 # Facets Release History
 
+## Unreleased
+
+Changes:
+
+* Additions
+
+  * `String#paragraphs` splits a string at its blank lines:
+    `"One.\n\nTwo.".paragraphs` is `["One.", "Two."]`.
+  * `String#sentences` splits a string into sentences by their closing
+    punctuation: `"It works. Does it? Yes!".sentences` is
+    `["It works.", "Does it?", "Yes!"]`. It goes by punctuation alone, so
+    an abbreviation such as "Dr." is taken for the end of a sentence.
+  * `String#each_paragraph` and `String#each_sentence` iterate over them.
+    All four load with `require 'facets'`. They come from the Language
+    gem, rewritten.
+
+
 ## 4.2.0 / 2026-11-17
 
 This release brings back four libraries that began in Facets and were
