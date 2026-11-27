@@ -15,6 +15,17 @@ Changes:
   * `String#each_paragraph` and `String#each_sentence` iterate over them.
     All four load with `require 'facets'`. They come from the Language
     gem, rewritten.
+  * `NoBacksies`, loaded with `require 'facets/no_backsies'`, adds to
+    Ruby's callback methods with blocks, without redefining them:
+    `callback(:method_added){ |name| ... }` in a class that includes
+    `NoBacksies`. Options use a callback once (`:once`) or keep it from
+    calling itself (`:safe`). It comes from the NoBacksies gem, where the
+    module to include was `NoBacksies::Callbacks`; that name still works.
+    Three things are fixed. `super` is called once after the callbacks,
+    and also when there are none; before, it was called once for each
+    callback. A callback added in a subclass is no longer added to its
+    superclass. And a missing constant is an error again unless a
+    `const_missing` callback supplies it, whose value is now returned.
 
 
 ## 4.2.0 / 2026-11-17
