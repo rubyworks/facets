@@ -5,4 +5,5 @@ require_relative 'numeric/length.rb'
 #require_relative 'numeric/positive.rb'  # removed: now provided by Ruby
 require_relative 'numeric/round_to.rb'
 require_relative 'numeric/spacing.rb'
+require_relative 'numeric/strfbytes.rb'
 
