@@ -15,6 +15,11 @@ Changes:
   * `String#each_paragraph` and `String#each_sentence` iterate over them.
     All four load with `require 'facets'`. They come from the Language
     gem, rewritten.
+  * `Numeric#strfbytes` formats a number of bytes in the largest unit
+    that fits: `3000000.strfbytes` is `"2.86 MB"`. A format string sets
+    how the number is shown: `1536.strfbytes('%.0f')` is `"2 KB"`. The
+    units are powers of 1024 and go up to YB. It comes from the RichUnits
+    gem, where it stopped at TB.
   * `NoBacksies`, loaded with `require 'facets/no_backsies'`, adds to
     Ruby's callback methods with blocks, without redefining them:
     `callback(:method_added){ |name| ... }` in a class that includes
